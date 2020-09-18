@@ -1,2 +1,2 @@
 # rubico.land
-rubico - [a]synchronous functional programming
+rubico website
