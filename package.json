@@ -1,0 +1,22 @@
+{
+  "name": "cronist",
+  "version": "0.0.2",
+  "description": "Inline documentation parser",
+  "author": "Richard Tong",
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "github:richytong/cronist"
+  },
+  "homepage": "https://github.com/richytong/cronist",
+  "keywords": [
+    "inline",
+    "documentation",
+    "parser",
+    "docs"
+  ],
+  "dependencies": {
+    "rubico": "latest"
+  }
+}
