@@ -79,8 +79,32 @@ const Br = ReactElement('br')
 const Code = ReactElement('code')
 const Pre = ReactElement('pre')
 
-const Root = ReactElement(() => {
-  return H1('hey')
+// () -> Home React.Element
+const Home = ReactElement(() => H1('Home'))
+
+// { path } -> Echo React.Element
+const Echo = ReactElement(({ path }) => H1(path))
+
+// props { path: string } -> React.Element
+const router = switchCase([
+  eq('/', get('path')), Home,
+  Echo,
+])
+
+/**
+ * @name Root
+ *
+ * @synopsis
+ * Root({ path: string }) -> root React.Element
+ */
+const Root = ReactElement(props => {
+  useEffect(() => {
+    console.log('props', props)
+  }, [])
+
+  return router(props)
 })
 
-ReactDOM.render(Root({}), document.getElementById('js-root'))
+ReactDOM.render(Root({
+  path: window.location.pathname,
+}), document.getElementById('js-root'))
