@@ -48,7 +48,7 @@ a {
 #layout {
   width: 100%;
   display: grid;
-  grid-template-columns: 50px 1fr 50px;
+  grid-template-columns: 80px 1fr 50px;
   grid-column-gap: 10px;
 }
 @media only screen and (max-width: 780px) {
@@ -59,8 +59,26 @@ a {
 
 #navbar {
   display: grid;
-  grid-template-columns: 50px 1fr 80px;
+  grid-template-columns: minmax(100px, 355px) 1fr 100px;
   grid-column-gap: 10px;
+  margin-bottom: 50px;
+}
+#navbar > nav {
+  display: flex;
+  place-items: center;
+  margin-top: 3px;
+}
+#navbar > nav > a {
+  color: #333;
+  font-size: 28px;
+  font-weight: 600;
+  margin-right: 25px;
+}
+#navbar > nav > span {
+  color: lightgrey;
+  font-size: 28px;
+  font-weight: 600;
+  margin-right: 25px;
 }
 
 #home-link {
@@ -68,7 +86,7 @@ a {
   place-items: center;
 }
 #home-link > span {
-  margin-top: 12px;
+  margin-top: 8px;
   margin-left: 10px;
   font-size: 32px;
   font-weight: 700;
@@ -85,36 +103,43 @@ a {
   place-items: center;
 }
 #github-link > span {
-  margin-top: 10px;
+  margin-top: 6px;
   display: flex;
-  font-size: 20px;
+  font-size: 24px;
 }
 #github-link > span > svg {
   margin-left: 2px;
 }
-
 </style>
 
 <body>
   <br>
   <div id="layout">
     <div></div>
-    <div id="navbar">
-      <a id="home-link" href="/">
-        <img src="assets/national-park-emoji.png" alt="rubico-national-park" height="50" />
-        <span class="text1">rubico</span>
-      </a>
-      <div></div>
-      <a id="github-link" href="https://github.com/a-synchronous/rubico">
-        <span class="text2">
-          Github
-          <svg x="0px" y="0px" viewBox="0 0 100 100" width="18" height="18">
-            <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path>
-            <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon>
-          </svg>
-        </span>
-      </a>
+    <div>
+      <div id="navbar">
+        <a id="home-link" href="/">
+          <img src="https://raw.githubusercontent.com/a-synchronous/assets/master/rubico-logo.png" alt="rubico-national-park" width="130" height="60" />
+          <span class="text1">rubico</span>
+        </a>
+        <nav>
+          <a href="/tour">Tour</a>
+          <a href="/docs">Docs</a>
+          <a href="/blog">Blog</a>
+        </nav>
+        <a id="github-link" href="https://github.com/a-synchronous/rubico">
+          <span class="text2">
+            GitHub
+            <svg x="0px" y="0px" viewBox="0 0 100 100" width="20" height="20">
+              <path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path>
+              <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon>
+            </svg>
+          </span>
+        </a>
+      </div>
+      <div id="js-root"></div>
     </div>
+    <div></div>
   </div>
 </body>
 
