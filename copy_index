@@ -1,0 +1,5 @@
+#!/bin/sh
+
+cp index.html tour/index.html
+cp index.html docs/index.html
+cp index.html blog/index.html

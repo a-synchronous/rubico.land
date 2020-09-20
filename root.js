@@ -1,5 +1,3 @@
-import rubico from 'https://unpkg.com/rubico/es.js'
-
 const {
   pipe, fork, assign,
   tap, tryCatch, switchCase,
@@ -86,7 +84,7 @@ const Home = ReactElement(() => H1('Home'))
 const Echo = ReactElement(({ path }) => H1(path))
 
 // props { path: string } -> React.Element
-const router = switchCase([
+const Router = switchCase([
   eq('/', get('path')), Home,
   Echo,
 ])
@@ -105,6 +103,9 @@ const Root = ReactElement(props => {
   return router(props)
 })
 
-ReactDOM.render(Root({
+// js-root
+ReactDOM.render(pipe([
+  Router,
+])({
   path: window.location.pathname,
 }), document.getElementById('js-root'))

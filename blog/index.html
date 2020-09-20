@@ -40,7 +40,6 @@ a {
 .text1 {
   color: steelblue;
 }
-
 .text2 {
   color: #333;
 }
@@ -59,7 +58,7 @@ a {
 
 #navbar {
   display: grid;
-  grid-template-columns: minmax(100px, 355px) 1fr 100px;
+  grid-template-columns: minmax(0px, 355px) 1fr 100px;
   grid-column-gap: 10px;
   margin-bottom: 50px;
 }
@@ -72,7 +71,7 @@ a {
   color: #333;
   font-size: 28px;
   font-weight: 600;
-  margin-right: 25px;
+  margin-right: 36px;
 }
 #navbar > nav > span {
   color: lightgrey;
@@ -122,11 +121,14 @@ a {
           <img src="https://raw.githubusercontent.com/a-synchronous/assets/master/rubico-logo.png" alt="rubico-national-park" width="130" height="60" />
           <span class="text1">rubico</span>
         </a>
+
         <nav>
-          <a href="/tour">Tour</a>
-          <a href="/docs">Docs</a>
-          <a href="/blog">Blog</a>
+          <a id="navbar-tour" href="/tour">Tour</a>
+          <a id="navbar-docs" href="/docs">Docs</a>
+          <a id="navbar-blog" href="/blog">Blog</a>
+          <script type="module" src="highlight-current-navigation.js"></script>
         </nav>
+
         <a id="github-link" href="https://github.com/a-synchronous/rubico">
           <span class="text2">
             GitHub
@@ -137,11 +139,13 @@ a {
           </span>
         </a>
       </div>
+
+      <!-- @entrypoint -->
       <div id="js-root"></div>
+      <script type="module" src="root.js"></script>
+      <p style="font-size: 12px; color: grey">© 2020 Richard Tong</p>
     </div>
     <div></div>
   </div>
 </body>
-
-<script type="module" src="index.js"></script>
 </html>
