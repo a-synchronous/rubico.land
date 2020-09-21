@@ -52,6 +52,7 @@ const DOM = {
 // one element is transferred when it is appended
 const activeSpacer = ActiveSpacer()
 
+// Tour Docs Blog
 const tabAnchors = [...document.querySelectorAll('header > nav > a')]
 
 tabAnchors.forEach(anchor => {
