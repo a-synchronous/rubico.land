@@ -1,12 +1,3 @@
-import ReactElement, {
-  A, P, B, Button, Img,
-  H1, H2, H3, H4, H5, H6,
-  Span, Div, Section,
-  Script, Iframe,
-  Ul, Ol, Li,
-  Code, Pre,
-} from './ReactElement.js'
-
 const {
   pipe, fork, assign,
   tap, tryCatch, switchCase,
@@ -52,6 +43,15 @@ const DOM = {
 // one element is transferred when it is appended
 const activeSpacer = ActiveSpacer()
 
+// rubico
+const homeAnchor = document.getElementById('home')
+
+homeAnchor.addEventListener('click', event => {
+  event.preventDefault()
+  DOM.removeElement(activeSpacer)
+  history.pushState({}, '', homeAnchor.pathname)
+})
+
 // Tour Docs Blog
 const tabAnchors = [...document.querySelectorAll('header > nav > a')]
 
@@ -59,7 +59,7 @@ tabAnchors.forEach(anchor => {
   if (anchor.pathname == window.location.pathname) {
     anchor.appendChild(activeSpacer)
   }
-  anchor.addEventListener('click', function handler(event) {
+  anchor.addEventListener('click', event => {
     event.preventDefault()
     if (anchor.pathname == window.location.pathname) {
       return undefined
@@ -69,10 +69,12 @@ tabAnchors.forEach(anchor => {
   })
 })
 
-const homeAnchor = document.getElementById('home')
-
-homeAnchor.addEventListener('click', function handler(event) {
-  event.preventDefault()
+// history
+window.addEventListener('popstate', () => {
   DOM.removeElement(activeSpacer)
-  history.pushState({}, '', homeAnchor.pathname)
+  tabAnchors.forEach(anchor => {
+    if (anchor.pathname == window.location.pathname) {
+      anchor.appendChild(activeSpacer)
+    }
+  })
 })
