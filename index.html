@@ -58,7 +58,7 @@ a {
 
 header {
   display: grid;
-  grid-template-columns: minmax(0px, 355px) 1fr 100px;
+  grid-template-columns: minmax(0px, 355px) 1fr minmax(0px, 100px);
   grid-column-gap: 10px;
   margin-bottom: 50px;
 }
@@ -79,6 +79,17 @@ header > nav > span {
   font-size: 28px;
   font-weight: 600;
   margin-right: 25px;
+}
+@media only screen and (max-width: 532px) {
+  header {
+    display: block;
+  }
+  header > nav {
+    margin-bottom: 10px;
+  }
+  header > nav > a {
+    margin-right: 22px;
+  }
 }
 
 #home {
@@ -109,6 +120,13 @@ header > nav > span {
 }
 #github-link > span > svg {
   margin-left: 2px;
+}
+
+#root {
+  display: grid;
+  grid-template-columns: 80% 1fr;
+  grid-column-gap: 10px;
+  margin-bottom: 50px;
 }
 </style>
 

@@ -6,6 +6,8 @@ import ReactElement, {
   Ul, Ol, Li,
   Code, Pre,
 } from './ReactElement.js'
+import CodeRunner from './CodeRunner.js'
+import documentation from './documentation.js'
 
 const {
   pipe, fork, assign,
@@ -20,8 +22,49 @@ const { useState, useEffect, useRef, useCallback, useReducer } = React
 
 const isArray = Array.isArray
 
+const documentationBase = documentation.reduce(
+  (result, item) => result.set(item.name, item), new Map())
+
+// mdast {
+//   type: string,
+//   value: string,
+//   children: Array<this>,
+// } -> React.Element
+const mdastToReactElement = function (mdast) {
+  switch (mdast.type) {
+    case 'root':
+      return Div(mdast.children.map(mdastToReactElement))
+    case 'paragraph':
+      return P(mdast.children.map(mdastToReactElement))
+    case 'text':
+      return Span(mdast.value)
+    case 'list':
+      return mdast.ordered
+        ? Ol(mdast.children.map(mdastToReactElement))
+        : Ul(mdast.children.map(mdastToReactElement))
+    case 'listItem':
+      return Li(mdast.children.map(mdastToReactElement))
+    case 'inlineCode':
+      return 'children' in mdast
+        ? Code(mdast.children.map(mdastToReactElement))
+        : Code(mdast.value)
+    case 'code':
+      return mdast.lang == 'javascript' && mdast.meta == '[playground]'
+        ? CodeRunner({ code: mdast.value })
+        : Pre(mdast.value)
+    case 'link':
+      return 'children' in mdast
+        ? A({ href: mdast.url }, mdast.children.map(mdastToReactElement))
+        : A({ href: mdast.url }, [mdast.value])
+    default:
+      return Span(mdast.value)
+  }
+}
+
+const PipeDoc = mdastToReactElement(documentationBase.get('pipe').description_mdast)
+
 // () -> Home React.Element
-const Home = ReactElement(() => H1('Home'))
+const Home = ReactElement(() => PipeDoc)
 
 // () -> Tour React.Element
 const Tour = ReactElement(() => H1('Tour'))
