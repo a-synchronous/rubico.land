@@ -88,28 +88,27 @@ const transformCodeToIFrameSrc = pipe([
 
 const codeMirrors = new Map()
 
-// { code } -> codeRunner React.Element
-const CodeRunner = ReactElement(({
+// { code } -> codeViewer React.Element
+const CodeViewer = ReactElement(({
   code,
-  theme = 'rubico',
+  mode = 'javascript',
+  theme = 'default',
   lineWrapping = true,
-  lineNumbers = true,
+  lineNumbers = false,
 }) => {
   const codeAreaRef = useRef(null)
-  const outputAreaRef = useRef(null)
-  const [outputAreaSrc, setOutputAreaSrc] = useState(null)
   useEffect(() => {
     if (!codeMirrors.has(codeAreaRef)) return
     codeMirrors.get(codeAreaRef).getDoc().setValue(code)
-    setOutputAreaSrc(null)
   }, [code])
   useEffect(() => {
     const cm = CodeMirror(codeAreaRef.current, {
       value: code,
-      mode: 'javascript',
+      mode,
       lineWrapping,
       lineNumbers,
       theme,
+      readOnly: true,
     })
     codeMirrors.set(codeAreaRef, cm)
     return () => {
@@ -119,50 +118,7 @@ const CodeRunner = ReactElement(({
 
   return Div([
     Div({ ref: codeAreaRef }),
-    Div({ style: { height: '.5em' } }),
-    Div({
-      style: {
-        display: 'grid',
-        gridTemplateColumns: '36px 26px 1fr',
-      },
-    }, [
-      Button({
-        style: {
-          borderRadius: '2px',
-          cursor: 'pointer',
-          height: '2em',
-        },
-        onClick: pipe([
-          () => codeMirrors.get(codeAreaRef).getValue(),
-          transformCodeToIFrameSrc,
-          iframeSrc => {
-            setOutputAreaSrc(iframeSrc)
-          },
-        ]),
-      }, ['run']),
-      Span({
-        style: {
-          visibility: outputAreaSrc ? 'visible' : 'hidden',
-          color: '#3f72fc',
-          fontSize: '.80em',
-          fontWeight: '625',
-          position: 'relative',
-          right: '-0.75em',
-          bottom: '-0.65em',
-        },
-      }, [' >']),
-      Iframe({
-        style: {
-          visibility: outputAreaSrc ? 'visible' : 'hidden',
-          height: '6em',
-          position: 'relative',
-          bottom: '-0.05em',
-          width: '99%',
-        },
-        src: outputAreaSrc,
-      }),
-    ]),
   ])
 })
 
-export default CodeRunner
+export default CodeViewer

@@ -36,6 +36,25 @@ html {
 a {
   text-decoration: none;
 }
+blockquote {
+  font-style: italic;
+  line-height: 18px;
+  color: grey;
+}
+article > a > h1 {
+  color: black;
+}
+article > a:hover::after {
+  content: "¶";
+  margin-left: 10px;
+  font-size: 32px;
+  color: black;
+}
+code {
+  background-color: lightgrey;
+  color: black;
+  padding: 2px 5px;
+}
 
 .text1 {
   color: steelblue;
@@ -52,7 +71,7 @@ a {
 }
 @media only screen and (max-width: 818px) {
   #layout {
-    grid-template-columns: 0px 1fr;
+    grid-template-columns: minmax(0px, 10px) 1fr;
   }
 }
 

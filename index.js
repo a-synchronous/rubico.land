@@ -1,12 +1,13 @@
 import ReactElement, {
   A, P, B, Q, Button, Img, Br,
   H1, H2, H3, H4, H5, H6,
-  Span, Div, Section,
-  Script, Iframe,
+  Span, Div, Section, Article,
+  Script, Iframe, Blockquote,
   Ul, Ol, Li,
   Code, Pre,
 } from './ReactElement.js'
 import CodeRunner from './CodeRunner.js'
+import CodeViewer from './CodeViewer.js'
 import parsedComments from './rubico-parsed-comments.js'
 import parsedReadme from './rubico-parsed-readme.js'
 
@@ -36,59 +37,6 @@ const constructMdastReactElement = function (mdast, constructor) {
   return result
 }
 
-  /*
-// mdast {
-//   type: string,
-//   value: string,
-//   children: Array<this>,
-// } -> React.Element
-var mdastToReactElement = function (mdast) {
-  console.log('ayo', mdast)
-  switch (mdast.type) {
-    case 'root':
-      return constructMdastReactElement(mdast, Div)
-    case 'heading':
-      switch (mdast.depth) {
-        case 1: return constructMdastReactElement(mdast, H1)
-        case 2: return constructMdastReactElement(mdast, H2)
-        case 3: return constructMdastReactElement(mdast, H3)
-        case 4: return constructMdastReactElement(mdast, H4)
-        case 5: return constructMdastReactElement(mdast, H5)
-        default: return constructMdastReactElement(mdast, H6)
-      }
-    case 'image':
-      return Img({ src: mdast.url, alt: mdast.alt })
-    case 'blockquote':
-      return constructMdastReactElement(mdast, Q)
-    case 'paragraph':
-      return constructMdastReactElement(mdast, P)
-    case 'text':
-      return Span(mdast.value)
-    case 'list':
-      return mdast.ordered
-        ? constructMdastReactElement(mdast, Ol)
-        : constructMdastReactElement(mdast, Ul)
-    case 'listItem':
-      return constructMdastReactElement(mdast, Li)
-    case 'inlineCode':
-      return constructMdastReactElement(mdast, Code)
-    case 'code':
-      return mdast.lang == 'javascript' && mdast.meta == '[playground]'
-        ? CodeRunner({ code: mdast.value })
-        : constructMdastReactElement(mdast, Pre)
-    case 'link':
-      return constructMdastReactElement(mdast, A)
-    case 'html':
-      if (mdast.value == '<br />') {
-        return Br()
-      }
-      return Span('')
-    default:
-      return constructMdastReactElement(mdast, Div)
-  }
-}
-  */
-
 // string -> string
 const formatAnchorHash = value => value.replace(/ /g, '-').toLowerCase()
 
@@ -103,14 +51,16 @@ const mdastToReactElement = function (mdast) {
     : mdast.value
   switch (mdast.type) {
     case 'root':
-      return Div(recurse(mdast))
+      return Article(recurse(mdast))
     case 'heading':
       switch (mdast.depth) {
         case 1:
           const anchorHash = formatAnchorHash(mdast.children[0].value)
-          return A(
-            { href: `#${anchorHash}` },
-            [H1({ id: anchorHash }, recurse(mdast))])
+          return A({
+            class: 'anchor-hash',
+            href: `#${anchorHash}`,
+            style: { display: 'flex', placeItems: 'center' },
+          }, [H1({ id: anchorHash }, recurse(mdast))])
         case 2: return H2(recurse(mdast))
         case 3: return H3(recurse(mdast))
         case 4: return H4(recurse(mdast))
@@ -120,7 +70,7 @@ const mdastToReactElement = function (mdast) {
     case 'image':
       return Img({ src: mdast.url, alt: mdast.alt })
     case 'blockquote':
-      return Q(recurse(mdast))
+      return Blockquote(recurse(mdast))
     case 'paragraph':
       return P(recurse(mdast))
     case 'text':
@@ -132,9 +82,9 @@ const mdastToReactElement = function (mdast) {
     case 'inlineCode':
       return Code(recurse(mdast))
     case 'code':
-      return mdast.lang == 'javascript' && mdast.meta == '[playground]'
-        ? CodeRunner({ code: mdast.value })
-        : Pre(recurse(mdast))
+      return mdast.meta == '[playground]'
+        ? CodeRunner({ code: mdast.value, mode: mdast.lang })
+        : CodeViewer({ code: mdast.value, mode: mdast.lang })
     case 'link':
       return A({ href: mdast.url }, recurse(mdast))
     case 'linkReference':
