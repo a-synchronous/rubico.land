@@ -8,8 +8,6 @@ import ReactElement, {
 } from './ReactElement.js'
 import inspect from './inspect.js'
 
-console.log(inspect.toString())
-
 const { useState, useEffect, useRef, useCallback, useReducer } = React
 
 const {

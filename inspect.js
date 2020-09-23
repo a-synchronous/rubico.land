@@ -28,8 +28,8 @@ const inspect = function (value) {
   if (value.constructor == Object) {
     let result = '{ '
     const entries = []
-    for (const key in object) {
-      entries.push(key + ': ' + inspect(object[key]))
+    for (const key in value) {
+      entries.push(key + ': ' + inspect(value[key]))
     }
     result += entries.join(', ')
     result += ' }'
