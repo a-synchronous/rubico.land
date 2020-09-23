@@ -5,7 +5,7 @@ const inspect = function (value, depth = 0) {
     return `[${value.map(inspectDeeper).join(', ')}]`
   }
   if (ArrayBuffer.isView(value)) {
-    return `${value.constructor} [${value.join(', ')}]`
+    return `${value.constructor.name} [${value.join(', ')}]`
   }
   if (typeof value == 'string') {
     return depth == 0 ? value : `'${value}'`
@@ -27,7 +27,7 @@ const inspect = function (value, depth = 0) {
     let result = 'Map { '
     const entries = []
     for (const [key, item] of value) {
-      entries.push(`${key} => ${inspectDeeper(item)}`)
+      entries.push(`${inspectDeeper(key)} => ${inspectDeeper(item)}`)
     }
     result += entries.join(', ')
     result += ' }'

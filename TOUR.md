@@ -92,6 +92,7 @@ const iterables = [
   new Set([1, 2, 3, 4, 5]),
   new Uint8Array([1, 2, 3, 4, 5]),
   { a: 1, b: 2, c: 3, d: 4, e: 5 },
+  new Map([['a', 1], ['b', 2], ['c', 3], ['d', 4], ['e', 5]]),
 ]
 
 iterables.forEach(pipe([map(square), console.log]))
@@ -100,10 +101,11 @@ iterables.forEach(pipe([map(square), console.log]))
 // Set { 1, 4, 9, 16, 25 }
 // Uint8Array [1, 4, 9, 16, 25]
 // { a: 1, b: 4, c: 9, d: 16, e: 25 }
+// Map { 'a' => 1, 'b' => 4, 'c' => 9, 'd' => 16, 'e' => 25 }
 ```
 
 # Compositional Control Flow
-**Combine logical expressions by composing predicates** - the following rubico logical operators are analogs of the JavaScript logical operators.
+**Create declarative, SQL-like logical expressions** by composing predicates with rubico's logical operators.
 
 * `a ? b : c` → `switchCase([f, g, h])`
 * `a && b` → `and([f, g])`
@@ -114,8 +116,6 @@ iterables.forEach(pipe([map(square), console.log]))
 * `a < b` → `lt(f, g)`
 * `a >= b` → `gte(f, g)`
 * `a <= b` → `lte(f, g)`
-
-With functional logical operators, you can control flow within function pipelines.
 
 ```javascript [playground]
 const hasFlag = flag => array => array.includes(flag)
@@ -140,7 +140,7 @@ cli(['???']) // USAGE: ...
 ```
 
 # Tryer-Catcher Error Handling
-**Reliably catch thrown or rejected errors** - for anything that could potentially error, put it in a `tryCatch`.
+**Reliably catch errors**, synchronous or asynchronous, with `tryCatch`.
 
 ```javascript [playground]
 console.log(
