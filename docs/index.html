@@ -38,6 +38,28 @@ a {
 }
 blockquote {
   font-style: italic;
+  line-height: 18px;
+  color: grey;
+}
+article > a > h1 {
+  color: black;
+}
+article > a:hover::after {
+  content: "¶";
+  margin-left: 10px;
+  font-size: 32px;
+  color: black;
+}
+article > p > img {
+  max-width: 300px;
+}
+code {
+  background-color: #f6f8fa;
+  color: black;
+  padding: 2px 5px;
+}
+p {
+  line-height: 18px;
 }
 
 .text1 {
@@ -55,7 +77,7 @@ blockquote {
 }
 @media only screen and (max-width: 818px) {
   #layout {
-    grid-template-columns: 0px 1fr;
+    grid-template-columns: minmax(0px, 10px) 1fr;
   }
 }
 
@@ -130,10 +152,6 @@ header > nav > span {
   grid-template-columns: 80% 1fr;
   grid-column-gap: 10px;
   margin-bottom: 50px;
-}
-
-.anchorHash:hover::before {
-  content: "Ayo";
 }
 </style>
 

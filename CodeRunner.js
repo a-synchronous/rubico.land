@@ -20,7 +20,7 @@ const {
 } = rubico
 
 const templateCodeSandbox = code => `
-import rubico from 'https://unpkg.com/rubico/es.js'
+import rubico from 'https://unpkg.com/rubico@latest/es.js'
 
 const {
   pipe, fork, assign,

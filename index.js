@@ -10,6 +10,7 @@ import CodeRunner from './CodeRunner.js'
 import CodeViewer from './CodeViewer.js'
 import parsedComments from './rubico-parsed-comments.js'
 import parsedReadme from './rubico-parsed-readme.js'
+import parsedTour from './rubico-parsed-tour.js'
 
 // leave off image and title from original readme
 parsedReadme.children = parsedReadme.children.slice(2)
@@ -38,7 +39,21 @@ const constructMdastReactElement = function (mdast, constructor) {
 }
 
 // string -> string
-const formatAnchorHash = value => value.replace(/ /g, '-').toLowerCase()
+const anchorHashFormat = value => value
+  .replace(/\[([\w ]+)\]/g, '$1-')
+  .replace(/ /g, '-')
+  .toLowerCase()
+
+const anchorHashFromMdast = function (mdast) {
+  switch (get('children[0].type')(mdast)) {
+    case 'linkReference':
+      const firstChar = get('children[0].label')(mdast),
+        rest = get('children[1].value')(mdast)
+      return `[${firstChar}]${rest}`
+    default:
+      return get('children[0].value')(mdast)
+  }
+}
 
 // mdast {
 //   type: string,
@@ -55,7 +70,10 @@ const mdastToReactElement = function (mdast) {
     case 'heading':
       switch (mdast.depth) {
         case 1:
-          const anchorHash = formatAnchorHash(mdast.children[0].value)
+          const anchorHash = pipe([
+            anchorHashFromMdast,
+            anchorHashFormat,
+          ])(mdast)
           return A({
             class: 'anchor-hash',
             href: `#${anchorHash}`,
@@ -73,6 +91,8 @@ const mdastToReactElement = function (mdast) {
       return Blockquote(recurse(mdast))
     case 'paragraph':
       return P(recurse(mdast))
+    case 'strong':
+      return B(recurse(mdast))
     case 'text':
       return Span(recurse(mdast))
     case 'list':
@@ -105,7 +125,7 @@ const pipeDescription = mdastToReactElement(parsedDocumentationBase.get('pipe').
 const Home = ReactElement(() => mdastToReactElement(parsedReadme))
 
 // () -> Tour React.Element
-const Tour = ReactElement(() => H1('Tour'))
+const Tour = ReactElement(() => mdastToReactElement(parsedTour))
 
 // () -> Docs React.Element
 const Docs = ReactElement(() => H1('Docs'))

@@ -16,6 +16,9 @@
     "parser",
     "docs"
   ],
+  "scripts": {
+    "cp": "./copy_index && ./parse_markdown TOUR.md > rubico-parsed-tour.js"
+  },
   "dependencies": {
     "rubico": "latest"
   }

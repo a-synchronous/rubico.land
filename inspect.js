@@ -1,25 +1,33 @@
 // any -> string
-const inspect = function (value) {
+const inspect = function (value, depth = 0) {
+  const inspectDeeper = item => inspect(item, depth + 1)
   if (Array.isArray(value)) {
-    return `[${value.map(inspect).join(', ')}]`
+    return `[${value.map(inspectDeeper).join(', ')}]`
   }
   if (ArrayBuffer.isView(value)) {
     return `${value.constructor} [${value.join(', ')}]`
   }
   if (typeof value == 'string') {
-    return value
+    return depth == 0 ? value : `'${value}'`
   }
   if (value == null) {
     return `${value}`
   }
   if (value.constructor == Set) {
-    return `Set { ${[...value].map(inspect).join(', ')} }`
+    let result = `Set { `
+    const resultValues = []
+    for (const item of value) {
+      resultValues.push(inspectDeeper(item))
+    }
+    result += resultValues.join(', ')
+    result += ' }'
+    return result
   }
   if (value.constructor == Map) {
     let result = 'Map { '
     const entries = []
     for (const [key, item] of value) {
-      entries.push(`${key} => ${inspect(item)}`)
+      entries.push(`${key} => ${inspectDeeper(item)}`)
     }
     result += entries.join(', ')
     result += ' }'
@@ -29,11 +37,14 @@ const inspect = function (value) {
     let result = '{ '
     const entries = []
     for (const key in value) {
-      entries.push(key + ': ' + inspect(value[key]))
+      entries.push(`${key}: ${inspectDeeper(value[key])}`)
     }
     result += entries.join(', ')
     result += ' }'
     return result
+  }
+  if (value instanceof Error) {
+    return `${value.name}: ${value.message}`
   }
   return `${value}`
 }
