@@ -54,11 +54,11 @@ p {
 
 #layout {
   width: 100%;
+  padding-left: 5%;
 }
 
 header {
   display: flex;
-  margin-left: 5%;
   margin-bottom: 35px;
 }
 header > nav {
@@ -143,9 +143,9 @@ header > nav > span {
 }
 
 #root {
-  margin-left: 5%;
   width: 90%;
   max-width: 900px;
+  margin-bottom: 50px;
 }
 
 #back-to-top {
