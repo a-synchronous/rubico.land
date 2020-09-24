@@ -162,7 +162,7 @@ console.log(
 
 ```javascript [playground]
 // length number => string => Generator<string>
-const generateSegmentsOfLength = length => function*(string) {
+const generateSegmentsOfLength = length => function* (string) {
   for (let i = 0; i < string.length; i += length) {
     yield string.slice(i, i + length)
   }

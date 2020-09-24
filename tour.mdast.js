@@ -1839,7 +1839,7 @@ export default {
       lang: 'javascript',
       meta: '[playground]',
       value: '// length number => string => Generator<string>\n' +
-        'const generateSegmentsOfLength = length => function*(string) {\n' +
+        'const generateSegmentsOfLength = length => function* (string) {\n' +
         '  for (let i = 0; i < string.length; i += length) {\n' +
         '    yield string.slice(i, i + length)\n' +
         '  }\n' +
@@ -1867,7 +1867,7 @@ export default {
         ') // CCGGAAGFFEEDDCGGFFEEDGGFFEEDCCGGAAGFFEEDDC',
       position: {
         start: { line: 163, column: 1, offset: 5456 },
-        end: { line: 191, column: 4, offset: 6279 },
+        end: { line: 191, column: 4, offset: 6280 },
         indent: [
           1, 1, 1, 1, 1, 1, 1, 1,
           1, 1, 1, 1, 1, 1, 1, 1,
@@ -1883,8 +1883,8 @@ export default {
           type: 'text',
           value: 'That concludes the rubico tour. From here, you could get started with rubico in a project (',
           position: {
-            start: { line: 193, column: 1, offset: 6281 },
-            end: { line: 193, column: 92, offset: 6372 },
+            start: { line: 193, column: 1, offset: 6282 },
+            end: { line: 193, column: 92, offset: 6373 },
             indent: []
           }
         },
@@ -1897,15 +1897,15 @@ export default {
               type: 'text',
               value: 'installation',
               position: {
-                start: { line: 193, column: 93, offset: 6373 },
-                end: { line: 193, column: 105, offset: 6385 },
+                start: { line: 193, column: 93, offset: 6374 },
+                end: { line: 193, column: 105, offset: 6386 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 193, column: 92, offset: 6372 },
-            end: { line: 193, column: 122, offset: 6402 },
+            start: { line: 193, column: 92, offset: 6373 },
+            end: { line: 193, column: 122, offset: 6403 },
             indent: []
           }
         },
@@ -1913,8 +1913,8 @@ export default {
           type: 'text',
           value: ') or read more at the ',
           position: {
-            start: { line: 193, column: 122, offset: 6402 },
-            end: { line: 193, column: 144, offset: 6424 },
+            start: { line: 193, column: 122, offset: 6403 },
+            end: { line: 193, column: 144, offset: 6425 },
             indent: []
           }
         },
@@ -1927,15 +1927,15 @@ export default {
               type: 'text',
               value: 'docs',
               position: {
-                start: { line: 193, column: 145, offset: 6425 },
-                end: { line: 193, column: 149, offset: 6429 },
+                start: { line: 193, column: 145, offset: 6426 },
+                end: { line: 193, column: 149, offset: 6430 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 193, column: 144, offset: 6424 },
-            end: { line: 193, column: 157, offset: 6437 },
+            start: { line: 193, column: 144, offset: 6425 },
+            end: { line: 193, column: 157, offset: 6438 },
             indent: []
           }
         },
@@ -1943,21 +1943,21 @@ export default {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 193, column: 157, offset: 6437 },
-            end: { line: 193, column: 158, offset: 6438 },
+            start: { line: 193, column: 157, offset: 6438 },
+            end: { line: 193, column: 158, offset: 6439 },
             indent: []
           }
         }
       ],
       position: {
-        start: { line: 193, column: 1, offset: 6281 },
-        end: { line: 193, column: 158, offset: 6438 },
+        start: { line: 193, column: 1, offset: 6282 },
+        end: { line: 193, column: 158, offset: 6439 },
         indent: []
       }
     }
   ],
   position: {
     start: { line: 1, column: 1, offset: 0 },
-    end: { line: 194, column: 1, offset: 6439 }
+    end: { line: 194, column: 1, offset: 6440 }
   }
 }
