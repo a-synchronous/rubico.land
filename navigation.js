@@ -72,8 +72,9 @@ tabAnchors.forEach(anchor => {
 // history
 window.addEventListener('popstate', () => {
   DOM.removeElement(activeSpacer)
+  const windowLocationPathname = window.location.pathname
   tabAnchors.forEach(anchor => {
-    if (anchor.pathname == window.location.pathname) {
+    if (windowLocationPathname.startsWith(anchor.pathname)) {
       anchor.appendChild(activeSpacer)
     }
   })

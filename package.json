@@ -17,7 +17,7 @@
     "docs"
   ],
   "scripts": {
-    "cp": "./copy_index && ./parse_markdown TOUR.md > rubico-parsed-tour.js && ./parse_markdown ../rubico/README.md > rubico-parsed-readme.js"
+    "cp": "./copy_index && ./parse_markdown TOUR.md > tour.mdast.js && ./parse_markdown ../rubico/README.md > rubico-parsed-readme.js"
   },
   "dependencies": {
     "rubico": "latest"

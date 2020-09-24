@@ -8,12 +8,13 @@ import ReactElement, {
 } from './ReactElement.js'
 import CodeRunner from './CodeRunner.js'
 import CodeViewer from './CodeViewer.js'
-import parsedComments from './rubico-parsed-comments.js'
-import parsedReadme from './rubico-parsed-readme.js'
-import parsedTour from './rubico-parsed-tour.js'
+import ShortCircuitLink from './ShortCircuitLink.js'
+import commentsMdast from './comments.mdast.js'
+import readmeMdast from './readme.mdast.js'
+import tourMdast from './tour.mdast.js'
 
 // leave off image and title from original readme
-parsedReadme.children = parsedReadme.children.slice(2)
+readmeMdast.children = readmeMdast.children.slice(2)
 
 const {
   pipe, fork, assign,
@@ -29,7 +30,7 @@ const { useState, useEffect, useRef, useCallback, useReducer } = React
 const isArray = Array.isArray
 
 // Map<(parsedCommentName string)=>(parsedComment object)>
-const parsedDocumentationBase = parsedComments.reduce(
+const parsedDocumentationBase = commentsMdast.reduce(
   (result, item) => result.set(item.name, item), new Map())
 
 // (mdast object, constructor function) => result any
@@ -122,6 +123,7 @@ const mdastToReactElement = function (mdast) {
   }
 }
 
+// backToTop React.Element
 const backToTop = Button({
   id: 'back-to-top',
   onClick() {
@@ -129,20 +131,28 @@ const backToTop = Button({
   },
 }, 'Back to top')
 
-// { goto: function } -> Home React.Element
-const Home = ReactElement(({ goto }) => Div([
-  mdastToReactElement(parsedReadme),
+// readme React.Element
+const readme = mdastToReactElement(readmeMdast)
+
+// () -> Home React.Element
+const Home = ReactElement(() => Div([
+  readme,
   Div([backToTop]),
 ]))
 
-// { goto: function } -> React.Element
-const Tour = ReactElement(({ goto }) => Div([
-  mdastToReactElement(parsedTour),
+// tour React.Element
+const tour = mdastToReactElement(tourMdast)
+
+// () -> React.Element
+const Tour = ReactElement(() => Div([
+  tour,
   Div([backToTop]),
 ]))
 
 // () -> Docs React.Element
-const Docs = ReactElement(() => H1('Docs'))
+const Docs = ReactElement(() => Div([
+  // TODO
+]))
 
 // () -> Blog React.Element
 const Blog = ReactElement(() => H1('Blog'))

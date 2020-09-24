@@ -24,7 +24,7 @@ map(pipe([
 ```
 
 # Function Composition
-**Reduce application complexity** by chaining functions together with `pipe`. You can think about `pipe` as an analog to the Unix pipe, though with JavaScript functions instead of command line utilities.
+**Reduce code complexity** by chaining functions together with `pipe`. You can think about `pipe` as an analog to the Unix pipe, though with JavaScript functions instead of command line utilities.
 
 ```javascript [playground]
 const square = number => number ** 2

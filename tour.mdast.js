@@ -548,17 +548,45 @@ export default {
           children: [
             {
               type: 'text',
-              value: 'Reduce application complexity',
+              value: 'Maximize code reuse',
               position: {
                 start: { line: 27, column: 3, offset: 1138 },
-                end: { line: 27, column: 32, offset: 1167 },
+                end: { line: 27, column: 22, offset: 1157 },
                 indent: []
               }
             }
           ],
           position: {
             start: { line: 27, column: 1, offset: 1136 },
-            end: { line: 27, column: 34, offset: 1169 },
+            end: { line: 27, column: 24, offset: 1159 },
+            indent: []
+          }
+        },
+        {
+          type: 'text',
+          value: ' and ',
+          position: {
+            start: { line: 27, column: 24, offset: 1159 },
+            end: { line: 27, column: 29, offset: 1164 },
+            indent: []
+          }
+        },
+        {
+          type: 'strong',
+          children: [
+            {
+              type: 'text',
+              value: 'reduce code complexity',
+              position: {
+                start: { line: 27, column: 31, offset: 1166 },
+                end: { line: 27, column: 53, offset: 1188 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 27, column: 29, offset: 1164 },
+            end: { line: 27, column: 55, offset: 1190 },
             indent: []
           }
         },
@@ -566,8 +594,8 @@ export default {
           type: 'text',
           value: ' by chaining functions together with ',
           position: {
-            start: { line: 27, column: 34, offset: 1169 },
-            end: { line: 27, column: 71, offset: 1206 },
+            start: { line: 27, column: 55, offset: 1190 },
+            end: { line: 27, column: 92, offset: 1227 },
             indent: []
           }
         },
@@ -575,8 +603,8 @@ export default {
           type: 'inlineCode',
           value: 'pipe',
           position: {
-            start: { line: 27, column: 71, offset: 1206 },
-            end: { line: 27, column: 77, offset: 1212 },
+            start: { line: 27, column: 92, offset: 1227 },
+            end: { line: 27, column: 98, offset: 1233 },
             indent: []
           }
         },
@@ -584,8 +612,8 @@ export default {
           type: 'text',
           value: '. You can think about ',
           position: {
-            start: { line: 27, column: 77, offset: 1212 },
-            end: { line: 27, column: 99, offset: 1234 },
+            start: { line: 27, column: 98, offset: 1233 },
+            end: { line: 27, column: 120, offset: 1255 },
             indent: []
           }
         },
@@ -593,8 +621,8 @@ export default {
           type: 'inlineCode',
           value: 'pipe',
           position: {
-            start: { line: 27, column: 99, offset: 1234 },
-            end: { line: 27, column: 105, offset: 1240 },
+            start: { line: 27, column: 120, offset: 1255 },
+            end: { line: 27, column: 126, offset: 1261 },
             indent: []
           }
         },
@@ -602,15 +630,15 @@ export default {
           type: 'text',
           value: ' as an analog to the Unix pipe, though with JavaScript functions instead of command line utilities.',
           position: {
-            start: { line: 27, column: 105, offset: 1240 },
-            end: { line: 27, column: 204, offset: 1339 },
+            start: { line: 27, column: 126, offset: 1261 },
+            end: { line: 27, column: 225, offset: 1360 },
             indent: []
           }
         }
       ],
       position: {
         start: { line: 27, column: 1, offset: 1136 },
-        end: { line: 27, column: 204, offset: 1339 },
+        end: { line: 27, column: 225, offset: 1360 },
         indent: []
       }
     },
@@ -635,8 +663,8 @@ export default {
         "console.log('input:', numbers) // [1, 2, 3, 4, 5]\n" +
         "console.log('output:', squaredOdds(numbers)) // [1, 9, 25]",
       position: {
-        start: { line: 29, column: 1, offset: 1341 },
-        end: { line: 46, column: 4, offset: 1746 },
+        start: { line: 29, column: 1, offset: 1362 },
+        end: { line: 46, column: 4, offset: 1767 },
         indent: [
           1, 1, 1, 1, 1, 1, 1,
           1, 1, 1, 1, 1, 1, 1,
@@ -652,15 +680,15 @@ export default {
           type: 'text',
           value: 'Object Composition',
           position: {
-            start: { line: 48, column: 3, offset: 1750 },
-            end: { line: 48, column: 21, offset: 1768 },
+            start: { line: 48, column: 3, offset: 1771 },
+            end: { line: 48, column: 21, offset: 1789 },
             indent: []
           }
         }
       ],
       position: {
-        start: { line: 48, column: 1, offset: 1748 },
-        end: { line: 48, column: 21, offset: 1768 },
+        start: { line: 48, column: 1, offset: 1769 },
+        end: { line: 48, column: 21, offset: 1789 },
         indent: []
       }
     },
@@ -674,15 +702,15 @@ export default {
               type: 'text',
               value: 'Declaratively transform objects',
               position: {
-                start: { line: 49, column: 3, offset: 1771 },
-                end: { line: 49, column: 34, offset: 1802 },
+                start: { line: 49, column: 3, offset: 1792 },
+                end: { line: 49, column: 34, offset: 1823 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 49, column: 1, offset: 1769 },
-            end: { line: 49, column: 36, offset: 1804 },
+            start: { line: 49, column: 1, offset: 1790 },
+            end: { line: 49, column: 36, offset: 1825 },
             indent: []
           }
         },
@@ -690,8 +718,8 @@ export default {
           type: 'text',
           value: " - there may be times when you'll want to extend an object in a pipeline with new properties, or construct a new object from an existing one. For times like these, use the property accessor function ",
           position: {
-            start: { line: 49, column: 36, offset: 1804 },
-            end: { line: 49, column: 235, offset: 2003 },
+            start: { line: 49, column: 36, offset: 1825 },
+            end: { line: 49, column: 235, offset: 2024 },
             indent: []
           }
         },
@@ -699,8 +727,8 @@ export default {
           type: 'inlineCode',
           value: 'get',
           position: {
-            start: { line: 49, column: 235, offset: 2003 },
-            end: { line: 49, column: 240, offset: 2008 },
+            start: { line: 49, column: 235, offset: 2024 },
+            end: { line: 49, column: 240, offset: 2029 },
             indent: []
           }
         },
@@ -708,8 +736,8 @@ export default {
           type: 'text',
           value: ' in conjunction with object composers ',
           position: {
-            start: { line: 49, column: 240, offset: 2008 },
-            end: { line: 49, column: 278, offset: 2046 },
+            start: { line: 49, column: 240, offset: 2029 },
+            end: { line: 49, column: 278, offset: 2067 },
             indent: []
           }
         },
@@ -717,8 +745,8 @@ export default {
           type: 'inlineCode',
           value: 'fork',
           position: {
-            start: { line: 49, column: 278, offset: 2046 },
-            end: { line: 49, column: 284, offset: 2052 },
+            start: { line: 49, column: 278, offset: 2067 },
+            end: { line: 49, column: 284, offset: 2073 },
             indent: []
           }
         },
@@ -726,8 +754,8 @@ export default {
           type: 'text',
           value: ' or ',
           position: {
-            start: { line: 49, column: 284, offset: 2052 },
-            end: { line: 49, column: 288, offset: 2056 },
+            start: { line: 49, column: 284, offset: 2073 },
+            end: { line: 49, column: 288, offset: 2077 },
             indent: []
           }
         },
@@ -735,8 +763,8 @@ export default {
           type: 'inlineCode',
           value: 'assign',
           position: {
-            start: { line: 49, column: 288, offset: 2056 },
-            end: { line: 49, column: 296, offset: 2064 },
+            start: { line: 49, column: 288, offset: 2077 },
+            end: { line: 49, column: 296, offset: 2085 },
             indent: []
           }
         },
@@ -744,15 +772,15 @@ export default {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 49, column: 296, offset: 2064 },
-            end: { line: 49, column: 297, offset: 2065 },
+            start: { line: 49, column: 296, offset: 2085 },
+            end: { line: 49, column: 297, offset: 2086 },
             indent: []
           }
         }
       ],
       position: {
-        start: { line: 49, column: 1, offset: 1769 },
-        end: { line: 49, column: 297, offset: 2065 },
+        start: { line: 49, column: 1, offset: 1790 },
+        end: { line: 49, column: 297, offset: 2086 },
         indent: []
       }
     },
@@ -790,8 +818,8 @@ export default {
         '\n' +
         "console.log('maths on 3:', doMaths(3)) // { original: 3, doubled: 6, squared: 9 }",
       position: {
-        start: { line: 51, column: 1, offset: 2067 },
-        end: { line: 81, column: 4, offset: 2625 },
+        start: { line: 51, column: 1, offset: 2088 },
+        end: { line: 81, column: 4, offset: 2646 },
         indent: [
           1, 1, 1, 1, 1, 1, 1, 1, 1,
           1, 1, 1, 1, 1, 1, 1, 1, 1,
@@ -808,15 +836,15 @@ export default {
           type: 'text',
           value: 'Polymorphism',
           position: {
-            start: { line: 83, column: 3, offset: 2629 },
-            end: { line: 83, column: 15, offset: 2641 },
+            start: { line: 83, column: 3, offset: 2650 },
+            end: { line: 83, column: 15, offset: 2662 },
             indent: []
           }
         }
       ],
       position: {
-        start: { line: 83, column: 1, offset: 2627 },
-        end: { line: 83, column: 15, offset: 2641 },
+        start: { line: 83, column: 1, offset: 2648 },
+        end: { line: 83, column: 15, offset: 2662 },
         indent: []
       }
     },
@@ -830,15 +858,15 @@ export default {
               type: 'text',
               value: 'Act on any collection',
               position: {
-                start: { line: 84, column: 3, offset: 2644 },
-                end: { line: 84, column: 24, offset: 2665 },
+                start: { line: 84, column: 3, offset: 2665 },
+                end: { line: 84, column: 24, offset: 2686 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 84, column: 1, offset: 2642 },
-            end: { line: 84, column: 26, offset: 2667 },
+            start: { line: 84, column: 1, offset: 2663 },
+            end: { line: 84, column: 26, offset: 2688 },
             indent: []
           }
         },
@@ -846,8 +874,8 @@ export default {
           type: 'text',
           value: ' - in addition to arrays, you can use ',
           position: {
-            start: { line: 84, column: 26, offset: 2667 },
-            end: { line: 84, column: 64, offset: 2705 },
+            start: { line: 84, column: 26, offset: 2688 },
+            end: { line: 84, column: 64, offset: 2726 },
             indent: []
           }
         },
@@ -855,8 +883,8 @@ export default {
           type: 'inlineCode',
           value: 'map',
           position: {
-            start: { line: 84, column: 64, offset: 2705 },
-            end: { line: 84, column: 69, offset: 2710 },
+            start: { line: 84, column: 64, offset: 2726 },
+            end: { line: 84, column: 69, offset: 2731 },
             indent: []
           }
         },
@@ -864,15 +892,15 @@ export default {
           type: 'text',
           value: ' to transform async iterables, strings, sets, maps, binary arrays, and object values. This concept applies generally to any function of rubico; if a transformation + data structure pairing makes sense by math, it should be supported.',
           position: {
-            start: { line: 84, column: 69, offset: 2710 },
-            end: { line: 84, column: 302, offset: 2943 },
+            start: { line: 84, column: 69, offset: 2731 },
+            end: { line: 84, column: 302, offset: 2964 },
             indent: []
           }
         }
       ],
       position: {
-        start: { line: 84, column: 1, offset: 2642 },
-        end: { line: 84, column: 302, offset: 2943 },
+        start: { line: 84, column: 1, offset: 2663 },
+        end: { line: 84, column: 302, offset: 2964 },
         indent: []
       }
     },
@@ -899,8 +927,8 @@ export default {
         '// { a: 1, b: 4, c: 9, d: 16, e: 25 }\n' +
         "// Map { 'a' => 1, 'b' => 4, 'c' => 9, 'd' => 16, 'e' => 25 }",
       position: {
-        start: { line: 86, column: 1, offset: 2945 },
-        end: { line: 105, column: 4, offset: 3471 },
+        start: { line: 86, column: 1, offset: 2966 },
+        end: { line: 105, column: 4, offset: 3492 },
         indent: [
           1, 1, 1, 1, 1, 1, 1,
           1, 1, 1, 1, 1, 1, 1,
@@ -916,15 +944,15 @@ export default {
           type: 'text',
           value: 'Compositional Control Flow',
           position: {
-            start: { line: 107, column: 3, offset: 3475 },
-            end: { line: 107, column: 29, offset: 3501 },
+            start: { line: 107, column: 3, offset: 3496 },
+            end: { line: 107, column: 29, offset: 3522 },
             indent: []
           }
         }
       ],
       position: {
-        start: { line: 107, column: 1, offset: 3473 },
-        end: { line: 107, column: 29, offset: 3501 },
+        start: { line: 107, column: 1, offset: 3494 },
+        end: { line: 107, column: 29, offset: 3522 },
         indent: []
       }
     },
@@ -938,15 +966,15 @@ export default {
               type: 'text',
               value: 'Create declarative, SQL-like logical expressions',
               position: {
-                start: { line: 108, column: 3, offset: 3504 },
-                end: { line: 108, column: 51, offset: 3552 },
+                start: { line: 108, column: 3, offset: 3525 },
+                end: { line: 108, column: 51, offset: 3573 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 108, column: 1, offset: 3502 },
-            end: { line: 108, column: 53, offset: 3554 },
+            start: { line: 108, column: 1, offset: 3523 },
+            end: { line: 108, column: 53, offset: 3575 },
             indent: []
           }
         },
@@ -954,15 +982,15 @@ export default {
           type: 'text',
           value: " by composing predicates with rubico's logical operators. Below is a map of vanilla JavaScript operators to their functional analogs in rubico.",
           position: {
-            start: { line: 108, column: 53, offset: 3554 },
-            end: { line: 108, column: 196, offset: 3697 },
+            start: { line: 108, column: 53, offset: 3575 },
+            end: { line: 108, column: 196, offset: 3718 },
             indent: []
           }
         }
       ],
       position: {
-        start: { line: 108, column: 1, offset: 3502 },
-        end: { line: 108, column: 196, offset: 3697 },
+        start: { line: 108, column: 1, offset: 3523 },
+        end: { line: 108, column: 196, offset: 3718 },
         indent: []
       }
     },
@@ -984,8 +1012,8 @@ export default {
                   type: 'text',
                   value: 'Conditional (Ternary), ',
                   position: {
-                    start: { line: 110, column: 3, offset: 3701 },
-                    end: { line: 110, column: 26, offset: 3724 },
+                    start: { line: 110, column: 3, offset: 3722 },
+                    end: { line: 110, column: 26, offset: 3745 },
                     indent: []
                   }
                 },
@@ -993,8 +1021,8 @@ export default {
                   type: 'inlineCode',
                   value: 'a ? b : c',
                   position: {
-                    start: { line: 110, column: 26, offset: 3724 },
-                    end: { line: 110, column: 37, offset: 3735 },
+                    start: { line: 110, column: 26, offset: 3745 },
+                    end: { line: 110, column: 37, offset: 3756 },
                     indent: []
                   }
                 },
@@ -1002,8 +1030,8 @@ export default {
                   type: 'text',
                   value: ' → ',
                   position: {
-                    start: { line: 110, column: 37, offset: 3735 },
-                    end: { line: 110, column: 40, offset: 3738 },
+                    start: { line: 110, column: 37, offset: 3756 },
+                    end: { line: 110, column: 40, offset: 3759 },
                     indent: []
                   }
                 },
@@ -1011,22 +1039,22 @@ export default {
                   type: 'inlineCode',
                   value: 'switchCase([f, g, h])',
                   position: {
-                    start: { line: 110, column: 40, offset: 3738 },
-                    end: { line: 110, column: 63, offset: 3761 },
+                    start: { line: 110, column: 40, offset: 3759 },
+                    end: { line: 110, column: 63, offset: 3782 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 110, column: 3, offset: 3701 },
-                end: { line: 110, column: 63, offset: 3761 },
+                start: { line: 110, column: 3, offset: 3722 },
+                end: { line: 110, column: 63, offset: 3782 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 110, column: 1, offset: 3699 },
-            end: { line: 110, column: 63, offset: 3761 },
+            start: { line: 110, column: 1, offset: 3720 },
+            end: { line: 110, column: 63, offset: 3782 },
             indent: []
           }
         },
@@ -1042,8 +1070,8 @@ export default {
                   type: 'text',
                   value: 'Logical And, ',
                   position: {
-                    start: { line: 111, column: 3, offset: 3764 },
-                    end: { line: 111, column: 16, offset: 3777 },
+                    start: { line: 111, column: 3, offset: 3785 },
+                    end: { line: 111, column: 16, offset: 3798 },
                     indent: []
                   }
                 },
@@ -1051,8 +1079,8 @@ export default {
                   type: 'inlineCode',
                   value: 'a && b',
                   position: {
-                    start: { line: 111, column: 16, offset: 3777 },
-                    end: { line: 111, column: 24, offset: 3785 },
+                    start: { line: 111, column: 16, offset: 3798 },
+                    end: { line: 111, column: 24, offset: 3806 },
                     indent: []
                   }
                 },
@@ -1060,8 +1088,8 @@ export default {
                   type: 'text',
                   value: ' → ',
                   position: {
-                    start: { line: 111, column: 24, offset: 3785 },
-                    end: { line: 111, column: 27, offset: 3788 },
+                    start: { line: 111, column: 24, offset: 3806 },
+                    end: { line: 111, column: 27, offset: 3809 },
                     indent: []
                   }
                 },
@@ -1069,22 +1097,22 @@ export default {
                   type: 'inlineCode',
                   value: 'and([f, g])',
                   position: {
-                    start: { line: 111, column: 27, offset: 3788 },
-                    end: { line: 111, column: 40, offset: 3801 },
+                    start: { line: 111, column: 27, offset: 3809 },
+                    end: { line: 111, column: 40, offset: 3822 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 111, column: 3, offset: 3764 },
-                end: { line: 111, column: 40, offset: 3801 },
+                start: { line: 111, column: 3, offset: 3785 },
+                end: { line: 111, column: 40, offset: 3822 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 111, column: 1, offset: 3762 },
-            end: { line: 111, column: 40, offset: 3801 },
+            start: { line: 111, column: 1, offset: 3783 },
+            end: { line: 111, column: 40, offset: 3822 },
             indent: []
           }
         },
@@ -1100,8 +1128,8 @@ export default {
                   type: 'text',
                   value: 'Logical Or, ',
                   position: {
-                    start: { line: 112, column: 3, offset: 3804 },
-                    end: { line: 112, column: 15, offset: 3816 },
+                    start: { line: 112, column: 3, offset: 3825 },
+                    end: { line: 112, column: 15, offset: 3837 },
                     indent: []
                   }
                 },
@@ -1109,8 +1137,8 @@ export default {
                   type: 'inlineCode',
                   value: 'a || b',
                   position: {
-                    start: { line: 112, column: 15, offset: 3816 },
-                    end: { line: 112, column: 23, offset: 3824 },
+                    start: { line: 112, column: 15, offset: 3837 },
+                    end: { line: 112, column: 23, offset: 3845 },
                     indent: []
                   }
                 },
@@ -1118,8 +1146,8 @@ export default {
                   type: 'text',
                   value: ' → ',
                   position: {
-                    start: { line: 112, column: 23, offset: 3824 },
-                    end: { line: 112, column: 26, offset: 3827 },
+                    start: { line: 112, column: 23, offset: 3845 },
+                    end: { line: 112, column: 26, offset: 3848 },
                     indent: []
                   }
                 },
@@ -1127,22 +1155,22 @@ export default {
                   type: 'inlineCode',
                   value: 'or([f, g])',
                   position: {
-                    start: { line: 112, column: 26, offset: 3827 },
-                    end: { line: 112, column: 38, offset: 3839 },
+                    start: { line: 112, column: 26, offset: 3848 },
+                    end: { line: 112, column: 38, offset: 3860 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 112, column: 3, offset: 3804 },
-                end: { line: 112, column: 38, offset: 3839 },
+                start: { line: 112, column: 3, offset: 3825 },
+                end: { line: 112, column: 38, offset: 3860 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 112, column: 1, offset: 3802 },
-            end: { line: 112, column: 38, offset: 3839 },
+            start: { line: 112, column: 1, offset: 3823 },
+            end: { line: 112, column: 38, offset: 3860 },
             indent: []
           }
         },
@@ -1158,8 +1186,8 @@ export default {
                   type: 'text',
                   value: 'Logical Not, ',
                   position: {
-                    start: { line: 113, column: 3, offset: 3842 },
-                    end: { line: 113, column: 16, offset: 3855 },
+                    start: { line: 113, column: 3, offset: 3863 },
+                    end: { line: 113, column: 16, offset: 3876 },
                     indent: []
                   }
                 },
@@ -1167,8 +1195,8 @@ export default {
                   type: 'inlineCode',
                   value: '!a',
                   position: {
-                    start: { line: 113, column: 16, offset: 3855 },
-                    end: { line: 113, column: 20, offset: 3859 },
+                    start: { line: 113, column: 16, offset: 3876 },
+                    end: { line: 113, column: 20, offset: 3880 },
                     indent: []
                   }
                 },
@@ -1176,8 +1204,8 @@ export default {
                   type: 'text',
                   value: ' → ',
                   position: {
-                    start: { line: 113, column: 20, offset: 3859 },
-                    end: { line: 113, column: 23, offset: 3862 },
+                    start: { line: 113, column: 20, offset: 3880 },
+                    end: { line: 113, column: 23, offset: 3883 },
                     indent: []
                   }
                 },
@@ -1185,22 +1213,22 @@ export default {
                   type: 'inlineCode',
                   value: 'not(f)',
                   position: {
-                    start: { line: 113, column: 23, offset: 3862 },
-                    end: { line: 113, column: 31, offset: 3870 },
+                    start: { line: 113, column: 23, offset: 3883 },
+                    end: { line: 113, column: 31, offset: 3891 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 113, column: 3, offset: 3842 },
-                end: { line: 113, column: 31, offset: 3870 },
+                start: { line: 113, column: 3, offset: 3863 },
+                end: { line: 113, column: 31, offset: 3891 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 113, column: 1, offset: 3840 },
-            end: { line: 113, column: 31, offset: 3870 },
+            start: { line: 113, column: 1, offset: 3861 },
+            end: { line: 113, column: 31, offset: 3891 },
             indent: []
           }
         },
@@ -1216,8 +1244,8 @@ export default {
                   type: 'text',
                   value: 'Identity, ',
                   position: {
-                    start: { line: 114, column: 3, offset: 3873 },
-                    end: { line: 114, column: 13, offset: 3883 },
+                    start: { line: 114, column: 3, offset: 3894 },
+                    end: { line: 114, column: 13, offset: 3904 },
                     indent: []
                   }
                 },
@@ -1225,8 +1253,8 @@ export default {
                   type: 'inlineCode',
                   value: 'a === b',
                   position: {
-                    start: { line: 114, column: 13, offset: 3883 },
-                    end: { line: 114, column: 22, offset: 3892 },
+                    start: { line: 114, column: 13, offset: 3904 },
+                    end: { line: 114, column: 22, offset: 3913 },
                     indent: []
                   }
                 },
@@ -1234,8 +1262,8 @@ export default {
                   type: 'text',
                   value: ' → ',
                   position: {
-                    start: { line: 114, column: 22, offset: 3892 },
-                    end: { line: 114, column: 25, offset: 3895 },
+                    start: { line: 114, column: 22, offset: 3913 },
+                    end: { line: 114, column: 25, offset: 3916 },
                     indent: []
                   }
                 },
@@ -1243,22 +1271,22 @@ export default {
                   type: 'inlineCode',
                   value: 'eq(f, g)',
                   position: {
-                    start: { line: 114, column: 25, offset: 3895 },
-                    end: { line: 114, column: 35, offset: 3905 },
+                    start: { line: 114, column: 25, offset: 3916 },
+                    end: { line: 114, column: 35, offset: 3926 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 114, column: 3, offset: 3873 },
-                end: { line: 114, column: 35, offset: 3905 },
+                start: { line: 114, column: 3, offset: 3894 },
+                end: { line: 114, column: 35, offset: 3926 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 114, column: 1, offset: 3871 },
-            end: { line: 114, column: 35, offset: 3905 },
+            start: { line: 114, column: 1, offset: 3892 },
+            end: { line: 114, column: 35, offset: 3926 },
             indent: []
           }
         },
@@ -1274,8 +1302,8 @@ export default {
                   type: 'text',
                   value: 'Greater Than, ',
                   position: {
-                    start: { line: 115, column: 3, offset: 3908 },
-                    end: { line: 115, column: 17, offset: 3922 },
+                    start: { line: 115, column: 3, offset: 3929 },
+                    end: { line: 115, column: 17, offset: 3943 },
                     indent: []
                   }
                 },
@@ -1283,8 +1311,8 @@ export default {
                   type: 'inlineCode',
                   value: 'a > b',
                   position: {
-                    start: { line: 115, column: 17, offset: 3922 },
-                    end: { line: 115, column: 24, offset: 3929 },
+                    start: { line: 115, column: 17, offset: 3943 },
+                    end: { line: 115, column: 24, offset: 3950 },
                     indent: []
                   }
                 },
@@ -1292,8 +1320,8 @@ export default {
                   type: 'text',
                   value: ' → ',
                   position: {
-                    start: { line: 115, column: 24, offset: 3929 },
-                    end: { line: 115, column: 27, offset: 3932 },
+                    start: { line: 115, column: 24, offset: 3950 },
+                    end: { line: 115, column: 27, offset: 3953 },
                     indent: []
                   }
                 },
@@ -1301,22 +1329,22 @@ export default {
                   type: 'inlineCode',
                   value: 'gt(f, g)',
                   position: {
-                    start: { line: 115, column: 27, offset: 3932 },
-                    end: { line: 115, column: 37, offset: 3942 },
+                    start: { line: 115, column: 27, offset: 3953 },
+                    end: { line: 115, column: 37, offset: 3963 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 115, column: 3, offset: 3908 },
-                end: { line: 115, column: 37, offset: 3942 },
+                start: { line: 115, column: 3, offset: 3929 },
+                end: { line: 115, column: 37, offset: 3963 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 115, column: 1, offset: 3906 },
-            end: { line: 115, column: 37, offset: 3942 },
+            start: { line: 115, column: 1, offset: 3927 },
+            end: { line: 115, column: 37, offset: 3963 },
             indent: []
           }
         },
@@ -1332,8 +1360,8 @@ export default {
                   type: 'text',
                   value: 'Less Than, ',
                   position: {
-                    start: { line: 116, column: 3, offset: 3945 },
-                    end: { line: 116, column: 14, offset: 3956 },
+                    start: { line: 116, column: 3, offset: 3966 },
+                    end: { line: 116, column: 14, offset: 3977 },
                     indent: []
                   }
                 },
@@ -1341,8 +1369,8 @@ export default {
                   type: 'inlineCode',
                   value: 'a < b',
                   position: {
-                    start: { line: 116, column: 14, offset: 3956 },
-                    end: { line: 116, column: 21, offset: 3963 },
+                    start: { line: 116, column: 14, offset: 3977 },
+                    end: { line: 116, column: 21, offset: 3984 },
                     indent: []
                   }
                 },
@@ -1350,8 +1378,8 @@ export default {
                   type: 'text',
                   value: ' → ',
                   position: {
-                    start: { line: 116, column: 21, offset: 3963 },
-                    end: { line: 116, column: 24, offset: 3966 },
+                    start: { line: 116, column: 21, offset: 3984 },
+                    end: { line: 116, column: 24, offset: 3987 },
                     indent: []
                   }
                 },
@@ -1359,22 +1387,22 @@ export default {
                   type: 'inlineCode',
                   value: 'lt(f, g)',
                   position: {
-                    start: { line: 116, column: 24, offset: 3966 },
-                    end: { line: 116, column: 34, offset: 3976 },
+                    start: { line: 116, column: 24, offset: 3987 },
+                    end: { line: 116, column: 34, offset: 3997 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 116, column: 3, offset: 3945 },
-                end: { line: 116, column: 34, offset: 3976 },
+                start: { line: 116, column: 3, offset: 3966 },
+                end: { line: 116, column: 34, offset: 3997 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 116, column: 1, offset: 3943 },
-            end: { line: 116, column: 34, offset: 3976 },
+            start: { line: 116, column: 1, offset: 3964 },
+            end: { line: 116, column: 34, offset: 3997 },
             indent: []
           }
         },
@@ -1390,8 +1418,8 @@ export default {
                   type: 'text',
                   value: 'Greater Than or Equal, ',
                   position: {
-                    start: { line: 117, column: 3, offset: 3979 },
-                    end: { line: 117, column: 26, offset: 4002 },
+                    start: { line: 117, column: 3, offset: 4000 },
+                    end: { line: 117, column: 26, offset: 4023 },
                     indent: []
                   }
                 },
@@ -1399,8 +1427,8 @@ export default {
                   type: 'inlineCode',
                   value: 'a >= b',
                   position: {
-                    start: { line: 117, column: 26, offset: 4002 },
-                    end: { line: 117, column: 34, offset: 4010 },
+                    start: { line: 117, column: 26, offset: 4023 },
+                    end: { line: 117, column: 34, offset: 4031 },
                     indent: []
                   }
                 },
@@ -1408,8 +1436,8 @@ export default {
                   type: 'text',
                   value: ' → ',
                   position: {
-                    start: { line: 117, column: 34, offset: 4010 },
-                    end: { line: 117, column: 37, offset: 4013 },
+                    start: { line: 117, column: 34, offset: 4031 },
+                    end: { line: 117, column: 37, offset: 4034 },
                     indent: []
                   }
                 },
@@ -1417,22 +1445,22 @@ export default {
                   type: 'inlineCode',
                   value: 'gte(f, g)',
                   position: {
-                    start: { line: 117, column: 37, offset: 4013 },
-                    end: { line: 117, column: 48, offset: 4024 },
+                    start: { line: 117, column: 37, offset: 4034 },
+                    end: { line: 117, column: 48, offset: 4045 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 117, column: 3, offset: 3979 },
-                end: { line: 117, column: 48, offset: 4024 },
+                start: { line: 117, column: 3, offset: 4000 },
+                end: { line: 117, column: 48, offset: 4045 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 117, column: 1, offset: 3977 },
-            end: { line: 117, column: 48, offset: 4024 },
+            start: { line: 117, column: 1, offset: 3998 },
+            end: { line: 117, column: 48, offset: 4045 },
             indent: []
           }
         },
@@ -1448,8 +1476,8 @@ export default {
                   type: 'text',
                   value: 'Less Than or Equal, ',
                   position: {
-                    start: { line: 118, column: 3, offset: 4027 },
-                    end: { line: 118, column: 23, offset: 4047 },
+                    start: { line: 118, column: 3, offset: 4048 },
+                    end: { line: 118, column: 23, offset: 4068 },
                     indent: []
                   }
                 },
@@ -1457,8 +1485,8 @@ export default {
                   type: 'inlineCode',
                   value: 'a <= b',
                   position: {
-                    start: { line: 118, column: 23, offset: 4047 },
-                    end: { line: 118, column: 31, offset: 4055 },
+                    start: { line: 118, column: 23, offset: 4068 },
+                    end: { line: 118, column: 31, offset: 4076 },
                     indent: []
                   }
                 },
@@ -1466,8 +1494,8 @@ export default {
                   type: 'text',
                   value: ' → ',
                   position: {
-                    start: { line: 118, column: 31, offset: 4055 },
-                    end: { line: 118, column: 34, offset: 4058 },
+                    start: { line: 118, column: 31, offset: 4076 },
+                    end: { line: 118, column: 34, offset: 4079 },
                     indent: []
                   }
                 },
@@ -1475,29 +1503,29 @@ export default {
                   type: 'inlineCode',
                   value: 'lte(f, g)',
                   position: {
-                    start: { line: 118, column: 34, offset: 4058 },
-                    end: { line: 118, column: 45, offset: 4069 },
+                    start: { line: 118, column: 34, offset: 4079 },
+                    end: { line: 118, column: 45, offset: 4090 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 118, column: 3, offset: 4027 },
-                end: { line: 118, column: 45, offset: 4069 },
+                start: { line: 118, column: 3, offset: 4048 },
+                end: { line: 118, column: 45, offset: 4090 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 118, column: 1, offset: 4025 },
-            end: { line: 118, column: 45, offset: 4069 },
+            start: { line: 118, column: 1, offset: 4046 },
+            end: { line: 118, column: 45, offset: 4090 },
             indent: []
           }
         }
       ],
       position: {
-        start: { line: 110, column: 1, offset: 3699 },
-        end: { line: 118, column: 45, offset: 4069 },
+        start: { line: 110, column: 1, offset: 3720 },
+        end: { line: 118, column: 45, offset: 4090 },
         indent: [
           1, 1, 1, 1,
           1, 1, 1, 1
@@ -1528,8 +1556,8 @@ export default {
         "cli(['--version']) // v0.0.0\n" +
         "cli(['???']) // USAGE: ...",
       position: {
-        start: { line: 120, column: 1, offset: 4071 },
-        end: { line: 140, column: 4, offset: 4486 },
+        start: { line: 120, column: 1, offset: 4092 },
+        end: { line: 140, column: 4, offset: 4507 },
         indent: [
           1, 1, 1, 1, 1, 1, 1,
           1, 1, 1, 1, 1, 1, 1,
@@ -1545,15 +1573,15 @@ export default {
           type: 'text',
           value: 'Tryer-Catcher Error Handling',
           position: {
-            start: { line: 142, column: 3, offset: 4490 },
-            end: { line: 142, column: 31, offset: 4518 },
+            start: { line: 142, column: 3, offset: 4511 },
+            end: { line: 142, column: 31, offset: 4539 },
             indent: []
           }
         }
       ],
       position: {
-        start: { line: 142, column: 1, offset: 4488 },
-        end: { line: 142, column: 31, offset: 4518 },
+        start: { line: 142, column: 1, offset: 4509 },
+        end: { line: 142, column: 31, offset: 4539 },
         indent: []
       }
     },
@@ -1567,15 +1595,15 @@ export default {
               type: 'text',
               value: 'Reliably catch errors',
               position: {
-                start: { line: 143, column: 3, offset: 4521 },
-                end: { line: 143, column: 24, offset: 4542 },
+                start: { line: 143, column: 3, offset: 4542 },
+                end: { line: 143, column: 24, offset: 4563 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 143, column: 1, offset: 4519 },
-            end: { line: 143, column: 26, offset: 4544 },
+            start: { line: 143, column: 1, offset: 4540 },
+            end: { line: 143, column: 26, offset: 4565 },
             indent: []
           }
         },
@@ -1583,8 +1611,8 @@ export default {
           type: 'text',
           value: ', synchronous or asynchronous, with ',
           position: {
-            start: { line: 143, column: 26, offset: 4544 },
-            end: { line: 143, column: 62, offset: 4580 },
+            start: { line: 143, column: 26, offset: 4565 },
+            end: { line: 143, column: 62, offset: 4601 },
             indent: []
           }
         },
@@ -1592,8 +1620,8 @@ export default {
           type: 'inlineCode',
           value: 'tryCatch',
           position: {
-            start: { line: 143, column: 62, offset: 4580 },
-            end: { line: 143, column: 72, offset: 4590 },
+            start: { line: 143, column: 62, offset: 4601 },
+            end: { line: 143, column: 72, offset: 4611 },
             indent: []
           }
         },
@@ -1601,15 +1629,15 @@ export default {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 143, column: 72, offset: 4590 },
-            end: { line: 143, column: 73, offset: 4591 },
+            start: { line: 143, column: 72, offset: 4611 },
+            end: { line: 143, column: 73, offset: 4612 },
             indent: []
           }
         }
       ],
       position: {
-        start: { line: 143, column: 1, offset: 4519 },
-        end: { line: 143, column: 73, offset: 4591 },
+        start: { line: 143, column: 1, offset: 4540 },
+        end: { line: 143, column: 73, offset: 4612 },
         indent: []
       }
     },
@@ -1620,15 +1648,15 @@ export default {
           type: 'text',
           value: 'Note: when composing, ensure return values from both the tryer and the catcher are the same type.',
           position: {
-            start: { line: 145, column: 1, offset: 4593 },
-            end: { line: 145, column: 98, offset: 4690 },
+            start: { line: 145, column: 1, offset: 4614 },
+            end: { line: 145, column: 98, offset: 4711 },
             indent: []
           }
         }
       ],
       position: {
-        start: { line: 145, column: 1, offset: 4593 },
-        end: { line: 145, column: 98, offset: 4690 },
+        start: { line: 145, column: 1, offset: 4614 },
+        end: { line: 145, column: 98, offset: 4711 },
         indent: []
       }
     },
@@ -1647,8 +1675,8 @@ export default {
         '//   timestamp: number,\n' +
         '// }',
       position: {
-        start: { line: 147, column: 1, offset: 4692 },
-        end: { line: 158, column: 4, offset: 4927 },
+        start: { line: 147, column: 1, offset: 4713 },
+        end: { line: 158, column: 4, offset: 4948 },
         indent: [
           1, 1, 1, 1, 1,
           1, 1, 1, 1, 1,
@@ -1664,15 +1692,15 @@ export default {
           type: 'text',
           value: 'Transducers',
           position: {
-            start: { line: 160, column: 3, offset: 4931 },
-            end: { line: 160, column: 14, offset: 4942 },
+            start: { line: 160, column: 3, offset: 4952 },
+            end: { line: 160, column: 14, offset: 4963 },
             indent: []
           }
         }
       ],
       position: {
-        start: { line: 160, column: 1, offset: 4929 },
-        end: { line: 160, column: 14, offset: 4942 },
+        start: { line: 160, column: 1, offset: 4950 },
+        end: { line: 160, column: 14, offset: 4963 },
         indent: []
       }
     },
@@ -1686,15 +1714,15 @@ export default {
               type: 'text',
               value: 'Wrangle large or infinite streams of data',
               position: {
-                start: { line: 161, column: 3, offset: 4945 },
-                end: { line: 161, column: 44, offset: 4986 },
+                start: { line: 161, column: 3, offset: 4966 },
+                end: { line: 161, column: 44, offset: 5007 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 161, column: 1, offset: 4943 },
-            end: { line: 161, column: 46, offset: 4988 },
+            start: { line: 161, column: 1, offset: 4964 },
+            end: { line: 161, column: 46, offset: 5009 },
             indent: []
           }
         },
@@ -1702,8 +1730,8 @@ export default {
           type: 'text',
           value: " with rubico's transducers. Create transducers via the transformation functions ",
           position: {
-            start: { line: 161, column: 46, offset: 4988 },
-            end: { line: 161, column: 126, offset: 5068 },
+            start: { line: 161, column: 46, offset: 5009 },
+            end: { line: 161, column: 126, offset: 5089 },
             indent: []
           }
         },
@@ -1711,8 +1739,8 @@ export default {
           type: 'inlineCode',
           value: 'map',
           position: {
-            start: { line: 161, column: 126, offset: 5068 },
-            end: { line: 161, column: 131, offset: 5073 },
+            start: { line: 161, column: 126, offset: 5089 },
+            end: { line: 161, column: 131, offset: 5094 },
             indent: []
           }
         },
@@ -1720,8 +1748,8 @@ export default {
           type: 'text',
           value: ', ',
           position: {
-            start: { line: 161, column: 131, offset: 5073 },
-            end: { line: 161, column: 133, offset: 5075 },
+            start: { line: 161, column: 131, offset: 5094 },
+            end: { line: 161, column: 133, offset: 5096 },
             indent: []
           }
         },
@@ -1729,8 +1757,8 @@ export default {
           type: 'inlineCode',
           value: 'filter',
           position: {
-            start: { line: 161, column: 133, offset: 5075 },
-            end: { line: 161, column: 141, offset: 5083 },
+            start: { line: 161, column: 133, offset: 5096 },
+            end: { line: 161, column: 141, offset: 5104 },
             indent: []
           }
         },
@@ -1738,8 +1766,8 @@ export default {
           type: 'text',
           value: ', or ',
           position: {
-            start: { line: 161, column: 141, offset: 5083 },
-            end: { line: 161, column: 146, offset: 5088 },
+            start: { line: 161, column: 141, offset: 5104 },
+            end: { line: 161, column: 146, offset: 5109 },
             indent: []
           }
         },
@@ -1747,8 +1775,8 @@ export default {
           type: 'inlineCode',
           value: 'flatMap',
           position: {
-            start: { line: 161, column: 146, offset: 5088 },
-            end: { line: 161, column: 155, offset: 5097 },
+            start: { line: 161, column: 146, offset: 5109 },
+            end: { line: 161, column: 155, offset: 5118 },
             indent: []
           }
         },
@@ -1756,8 +1784,8 @@ export default {
           type: 'text',
           value: ', then consume them with ',
           position: {
-            start: { line: 161, column: 155, offset: 5097 },
-            end: { line: 161, column: 180, offset: 5122 },
+            start: { line: 161, column: 155, offset: 5118 },
+            end: { line: 161, column: 180, offset: 5143 },
             indent: []
           }
         },
@@ -1765,8 +1793,8 @@ export default {
           type: 'inlineCode',
           value: 'reduce',
           position: {
-            start: { line: 161, column: 180, offset: 5122 },
-            end: { line: 161, column: 188, offset: 5130 },
+            start: { line: 161, column: 180, offset: 5143 },
+            end: { line: 161, column: 188, offset: 5151 },
             indent: []
           }
         },
@@ -1774,8 +1802,8 @@ export default {
           type: 'text',
           value: ' or ',
           position: {
-            start: { line: 161, column: 188, offset: 5130 },
-            end: { line: 161, column: 192, offset: 5134 },
+            start: { line: 161, column: 188, offset: 5151 },
+            end: { line: 161, column: 192, offset: 5155 },
             indent: []
           }
         },
@@ -1783,8 +1811,8 @@ export default {
           type: 'inlineCode',
           value: 'transform',
           position: {
-            start: { line: 161, column: 192, offset: 5134 },
-            end: { line: 161, column: 203, offset: 5145 },
+            start: { line: 161, column: 192, offset: 5155 },
+            end: { line: 161, column: 203, offset: 5166 },
             indent: []
           }
         },
@@ -1792,8 +1820,8 @@ export default {
           type: 'text',
           value: '. Additionally, transducers created with rubico can act on asynchronous data streams or operate asynchronously. More on this behavior ',
           position: {
-            start: { line: 161, column: 203, offset: 5145 },
-            end: { line: 161, column: 337, offset: 5279 },
+            start: { line: 161, column: 203, offset: 5166 },
+            end: { line: 161, column: 337, offset: 5300 },
             indent: []
           }
         },
@@ -1806,15 +1834,15 @@ export default {
               type: 'text',
               value: 'here',
               position: {
-                start: { line: 161, column: 338, offset: 5280 },
-                end: { line: 161, column: 342, offset: 5284 },
+                start: { line: 161, column: 338, offset: 5301 },
+                end: { line: 161, column: 342, offset: 5305 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 161, column: 337, offset: 5279 },
-            end: { line: 161, column: 411, offset: 5353 },
+            start: { line: 161, column: 337, offset: 5300 },
+            end: { line: 161, column: 411, offset: 5374 },
             indent: []
           }
         },
@@ -1822,15 +1850,15 @@ export default {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 161, column: 411, offset: 5353 },
-            end: { line: 161, column: 412, offset: 5354 },
+            start: { line: 161, column: 411, offset: 5374 },
+            end: { line: 161, column: 412, offset: 5375 },
             indent: []
           }
         }
       ],
       position: {
-        start: { line: 161, column: 1, offset: 4943 },
-        end: { line: 161, column: 412, offset: 5354 },
+        start: { line: 161, column: 1, offset: 4964 },
+        end: { line: 161, column: 412, offset: 5375 },
         indent: []
       }
     },
@@ -1866,8 +1894,8 @@ export default {
         "  decimalStringToNotes('16791573288892525934609440079317541905554393653557736896280802239551592289061061348368963')\n" +
         ') // CCGGAAGFFEEDDCGGFFEEDGGFFEEDCCGGAAGFFEEDDC',
       position: {
-        start: { line: 163, column: 1, offset: 5356 },
-        end: { line: 191, column: 4, offset: 6179 },
+        start: { line: 163, column: 1, offset: 5377 },
+        end: { line: 191, column: 4, offset: 6200 },
         indent: [
           1, 1, 1, 1, 1, 1, 1, 1,
           1, 1, 1, 1, 1, 1, 1, 1,
@@ -1883,8 +1911,8 @@ export default {
           type: 'text',
           value: 'That concludes the rubico tour. From here, you could get started with rubico in a project (',
           position: {
-            start: { line: 193, column: 1, offset: 6181 },
-            end: { line: 193, column: 92, offset: 6272 },
+            start: { line: 193, column: 1, offset: 6202 },
+            end: { line: 193, column: 92, offset: 6293 },
             indent: []
           }
         },
@@ -1897,15 +1925,15 @@ export default {
               type: 'text',
               value: 'installation',
               position: {
-                start: { line: 193, column: 93, offset: 6273 },
-                end: { line: 193, column: 105, offset: 6285 },
+                start: { line: 193, column: 93, offset: 6294 },
+                end: { line: 193, column: 105, offset: 6306 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 193, column: 92, offset: 6272 },
-            end: { line: 193, column: 122, offset: 6302 },
+            start: { line: 193, column: 92, offset: 6293 },
+            end: { line: 193, column: 122, offset: 6323 },
             indent: []
           }
         },
@@ -1913,8 +1941,8 @@ export default {
           type: 'text',
           value: ') or read more at the ',
           position: {
-            start: { line: 193, column: 122, offset: 6302 },
-            end: { line: 193, column: 144, offset: 6324 },
+            start: { line: 193, column: 122, offset: 6323 },
+            end: { line: 193, column: 144, offset: 6345 },
             indent: []
           }
         },
@@ -1927,15 +1955,15 @@ export default {
               type: 'text',
               value: 'docs',
               position: {
-                start: { line: 193, column: 145, offset: 6325 },
-                end: { line: 193, column: 149, offset: 6329 },
+                start: { line: 193, column: 145, offset: 6346 },
+                end: { line: 193, column: 149, offset: 6350 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 193, column: 144, offset: 6324 },
-            end: { line: 193, column: 157, offset: 6337 },
+            start: { line: 193, column: 144, offset: 6345 },
+            end: { line: 193, column: 157, offset: 6358 },
             indent: []
           }
         },
@@ -1943,21 +1971,21 @@ export default {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 193, column: 157, offset: 6337 },
-            end: { line: 193, column: 158, offset: 6338 },
+            start: { line: 193, column: 157, offset: 6358 },
+            end: { line: 193, column: 158, offset: 6359 },
             indent: []
           }
         }
       ],
       position: {
-        start: { line: 193, column: 1, offset: 6181 },
-        end: { line: 193, column: 158, offset: 6338 },
+        start: { line: 193, column: 1, offset: 6202 },
+        end: { line: 193, column: 158, offset: 6359 },
         indent: []
       }
     }
   ],
   position: {
     start: { line: 1, column: 1, offset: 0 },
-    end: { line: 194, column: 1, offset: 6339 }
+    end: { line: 194, column: 1, offset: 6360 }
   }
 }

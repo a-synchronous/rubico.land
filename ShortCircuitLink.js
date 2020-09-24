@@ -19,6 +19,7 @@ const ShortCircuitLink = ReactElement(({
   },
 }, children))
 
+/* example
 // { goto: function } -> Home React.Element
 const Home = ReactElement(({ goto }) => Div([
   mdastToReactElement(parsedReadme),
@@ -28,5 +29,6 @@ const Home = ReactElement(({ goto }) => Div([
     ShortCircuitLink({ goto, href: '/blog' }, 'Blog'),
   ]),
 ]))
+*/
 
 export default ShortCircuitLink
