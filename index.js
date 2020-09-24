@@ -124,6 +124,8 @@ const Docs = ReactElement(props => Div([
   Article([
     H1('Function Composition'),
     Div([DocsPipe(props), DocsFork(props), DocsAssign(props)]),
+    Div([DocsTap(props), DocsTryCatch(props), DocsSwitchCase(props)]),
+
     H1('Transformation + Transducers'),
     Div([
       DocsMap(props), DocsFilter(props), DocsReduce(props),
@@ -158,27 +160,21 @@ const homeAnchor = document.getElementById('home')
 // Tour Docs Blog
 const tabAnchors = [...document.querySelectorAll('header > nav > a')]
 
-// props { state: { path: string } } -> ReactElement
-const Router = ReactElement(switchCase([
-  startsWith('/tour', get('state.path')), Tour,
-  startsWith('/docs', get('state.path')), Docs,
-  startsWith('/blog', get('state.path')), Blog,
-  startsWith('/', get('state.path')), Home,
-  NotFound,
-]))
+// reducer function => initialState any => any
+const StateReducer = reducer => initialState => useReducer(reducer, initialState)
 
-// props { path: string } -> ReactElement
-const Root = ReactElement(
-  ({ path }) => {
-    const [state, dispatch] = useReducer((state, action) => {
-      switch (action.type) {
-        case 'SET_PATH':
-          return { ...state, path: action.path }
-        default:
-          return state
-      }
-    }, { path })
+// initialState { path: string } -> ReactElement
+const Root = ReactElement(pipe([
+  StateReducer((state, action) => {
+    switch (action.type) {
+      case 'SET_PATH':
+        return { ...state, path: action.path }
+      default:
+        return state
+    }
+  }),
 
+  ([state, dispatch]) => {
     const updatePathWithLocation = () => {
       dispatch({ type: 'SET_PATH', path: window.location.pathname })
     }
@@ -186,7 +182,6 @@ const Root = ReactElement(
       history.pushState({ path }, '', path)
       dispatch({ type: 'SET_PATH', path })
     }
-
     useEffect(() => {
       window.addEventListener('popstate', updatePathWithLocation)
       homeAnchor.addEventListener('click', updatePathWithLocation)
@@ -202,10 +197,17 @@ const Root = ReactElement(
         })
       }
     }, [])
-
-    return Router({ state, goto })
+    return { state, goto }
   },
-)
+
+  switchCase([
+    startsWith('/tour', get('state.path')), Tour,
+    startsWith('/docs', get('state.path')), Docs,
+    startsWith('/blog', get('state.path')), Blog,
+    startsWith('/', get('state.path')), Home,
+    NotFound,
+  ]),
+]))
 
 ReactDOM.render(Root({
   path: window.location.pathname,

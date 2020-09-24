@@ -1,5 +1,45 @@
 #!/bin/sh
 
+rm -rf docs tour blog
+
+mkdir -p tour/ \
+  docs/ \
+  docs/pipe/ docs/fork/ docs/assign/ \
+  docs/tap/ docs/tryCatch/ docs/switchCase/ \
+  docs/map/ docs/filter/ docs/reduce/ docs/transform/ docs/flatMap/ \
+  docs/any/ docs/all/ docs/and/ docs/or/ docs/not/ \
+  docs/eq/ docs/gt/ docs/lt/ docs/gte/ docs/lte/ \
+  docs/get/ docs/pick/ docs/omit/ \
+  blog/
+
 cp index.html tour/index.html
 cp index.html docs/index.html
+cp index.html docs/index.html
+cp index.html docs/pipe/index.html
+cp index.html docs/fork/index.html
+cp index.html docs/assign/index.html
+cp index.html docs/tap/index.html
+cp index.html docs/tryCatch/index.html
+cp index.html docs/switchCase/index.html
+cp index.html docs/map/index.html
+cp index.html docs/filter/index.html
+cp index.html docs/reduce/index.html
+cp index.html docs/transform/index.html
+cp index.html docs/flatMap/index.html
+cp index.html docs/any/index.html
+cp index.html docs/all/index.html
+cp index.html docs/and/index.html
+cp index.html docs/or/index.html
+cp index.html docs/not/index.html
+cp index.html docs/eq/index.html
+cp index.html docs/gt/index.html
+cp index.html docs/lt/index.html
+cp index.html docs/gte/index.html
+cp index.html docs/lte/index.html
+cp index.html docs/get/index.html
+cp index.html docs/pick/index.html
+cp index.html docs/omit/index.html
 cp index.html blog/index.html
+
+cp -r assets/ docs/assets/
+cp -r assets/ blog/assets/
