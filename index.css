@@ -1,0 +1,158 @@
+html {
+  font-family: x-locale-heading-primary,zillaslab,Palatino,"Palatino Linotype",x-locale-heading-secondary,serif;
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  color: steelblue;
+  text-decoration: none;
+  font-weight: 500;
+}
+blockquote {
+  font-style: italic;
+  line-height: 18px;
+  color: grey;
+}
+article {
+  margin-bottom: 50px;
+}
+article > a > h1 {
+  color: black;
+}
+article > a:hover::after {
+  content: "¶";
+  margin-left: 10px;
+  font-size: 32px;
+  color: black;
+}
+article > p > a:hover {
+  text-decoration: underline;
+}
+article > ul > li > p > a:hover {
+  text-decoration: underline;
+}
+article > ol > li > p > a:hover {
+  text-decoration: underline;
+}
+article > p > img {
+  max-width: 300px;
+}
+code {
+  background-color: #f6f8fa;
+  color: black;
+  padding: 2px 5px;
+}
+p {
+  line-height: 18px;
+}
+
+.text1 {
+  color: steelblue;
+}
+.text2 {
+  color: #333;
+}
+
+#layout {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 80px 1fr 50px;
+  grid-column-gap: 10px;
+}
+@media only screen and (max-width: 818px) {
+  #layout {
+    grid-template-columns: minmax(0px, 10px) 1fr;
+  }
+}
+
+header {
+  display: grid;
+  grid-template-columns: minmax(0px, 355px) 1fr minmax(0px, 100px);
+  grid-column-gap: 10px;
+  margin-bottom: 50px;
+}
+header > nav {
+  display: flex;
+  place-items: center;
+  margin-top: 3px;
+}
+header > nav > a {
+  position: relative;
+  color: #333;
+  font-size: 28px;
+  font-weight: 600;
+  margin-right: 36px;
+}
+header > nav > span {
+  color: lightgrey;
+  font-size: 28px;
+  font-weight: 600;
+  margin-right: 25px;
+}
+@media only screen and (max-width: 532px) {
+  header {
+    display: block;
+  }
+  header > nav {
+    margin-bottom: 10px;
+  }
+  header > nav > a {
+    margin-right: 22px;
+  }
+}
+
+#home {
+  display: flex;
+  place-items: center;
+}
+#home > span {
+  margin-top: 8px;
+  margin-left: 10px;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1em;
+}
+@media only screen and (max-width: 687px) {
+  #home > span {
+    display: none;
+  }
+}
+
+#github-link {
+  display: flex;
+  place-items: center;
+}
+#github-link > span {
+  margin-top: 6px;
+  display: flex;
+  font-size: 24px;
+}
+#github-link > span > svg {
+  margin-left: 2px;
+}
+
+#root {
+  display: grid;
+  grid-template-columns: 80% 1fr;
+  grid-column-gap: 10px;
+  margin-bottom: 50px;
+}
+#back-to-top {
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+  color: steelblue;
+  outline: none;
+}
+#back-to-top:hover {
+  text-decoration: underline;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.short-circuit-link {
+  font-size: 32px;
+  margin-right: 32px;
+}
