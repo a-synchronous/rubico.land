@@ -151,7 +151,7 @@ const Tour = ReactElement(() => Div([
 
 // () -> Docs React.Element
 const Docs = ReactElement(() => Div([
-  // TODO
+  Div([backToTop]),
 ]))
 
 // () -> Blog React.Element
