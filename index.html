@@ -34,12 +34,17 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 a {
+  color: steelblue;
   text-decoration: none;
+  font-weight: 500;
 }
 blockquote {
   font-style: italic;
   line-height: 18px;
   color: grey;
+}
+article {
+  margin-bottom: 50px;
 }
 article > a > h1 {
   color: black;
@@ -49,6 +54,15 @@ article > a:hover::after {
   margin-left: 10px;
   font-size: 32px;
   color: black;
+}
+article > p > a:hover {
+  text-decoration: underline;
+}
+article > ul > li > p > a:hover {
+  text-decoration: underline;
+}
+article > ol > li > p > a:hover {
+  text-decoration: underline;
 }
 article > p > img {
   max-width: 300px;
@@ -152,6 +166,26 @@ header > nav > span {
   grid-template-columns: 80% 1fr;
   grid-column-gap: 10px;
   margin-bottom: 50px;
+}
+#back-to-top {
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+  color: steelblue;
+  outline: none;
+}
+#back-to-top:hover {
+  text-decoration: underline;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.short-circuit-link {
+  font-size: 32px;
+  margin-right: 32px;
 }
 </style>
 

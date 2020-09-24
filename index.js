@@ -28,9 +28,11 @@ const { useState, useEffect, useRef, useCallback, useReducer } = React
 
 const isArray = Array.isArray
 
+// Map<(parsedCommentName string)=>(parsedComment object)>
 const parsedDocumentationBase = parsedComments.reduce(
   (result, item) => result.set(item.name, item), new Map())
 
+// (mdast object, constructor function) => result any
 const constructMdastReactElement = function (mdast, constructor) {
   const result = constructor(mdast.children == null
     ? mdast.children.map(mdastToReactElement)
@@ -38,12 +40,13 @@ const constructMdastReactElement = function (mdast, constructor) {
   return result
 }
 
-// string -> string
+// string => string
 const anchorHashFormat = value => value
   .replace(/\[([\w ]+)\]/g, '$1-')
   .replace(/ /g, '-')
   .toLowerCase()
 
+// mdast object => anchorHash string
 const anchorHashFromMdast = function (mdast) {
   switch (get('children[0].type')(mdast)) {
     case 'linkReference':
@@ -119,13 +122,24 @@ const mdastToReactElement = function (mdast) {
   }
 }
 
-const pipeDescription = mdastToReactElement(parsedDocumentationBase.get('pipe').description_mdast)
+const backToTop = Button({
+  id: 'back-to-top',
+  onClick() {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+  },
+}, 'Back to top')
 
-// () -> Home React.Element
-const Home = ReactElement(() => mdastToReactElement(parsedReadme))
+// { goto: function } -> Home React.Element
+const Home = ReactElement(({ goto }) => Div([
+  mdastToReactElement(parsedReadme),
+  Div([backToTop]),
+]))
 
-// () -> Tour React.Element
-const Tour = ReactElement(() => mdastToReactElement(parsedTour))
+// { goto: function } -> React.Element
+const Tour = ReactElement(({ goto }) => Div([
+  mdastToReactElement(parsedTour),
+  Div([backToTop]),
+]))
 
 // () -> Docs React.Element
 const Docs = ReactElement(() => H1('Docs'))
@@ -146,7 +160,7 @@ const tabAnchors = [...document.querySelectorAll('header > nav > a')]
 const Root = ReactElement(pipe([
   ({ path }) => useReducer((state, action) => {
     switch (action.type) {
-      case 'SET_LOCATION':
+      case 'SET_PATH':
         return { ...state, path: action.path }
       default:
         return state
@@ -154,31 +168,36 @@ const Root = ReactElement(pipe([
   }, { path }),
 
   ([state, dispatch]) => {
-    const setLocation = function () {
-      dispatch({ type: 'SET_LOCATION', path: window.location.pathname })
+    const updatePathWithLocation = () => {
+      dispatch({ type: 'SET_PATH', path: window.location.pathname })
+    }
+    const goto = path => {
+      history.pushState({ path }, '', path)
+      dispatch({ type: 'SET_PATH', path })
+      window.scrollTo(0, 0)
     }
     useEffect(() => {
-      window.addEventListener('popstate', setLocation)
-      homeAnchor.addEventListener('click', setLocation)
+      window.addEventListener('popstate', updatePathWithLocation)
+      homeAnchor.addEventListener('click', updatePathWithLocation)
       tabAnchors.forEach(anchor => {
-        anchor.addEventListener('click', setLocation)
+        anchor.addEventListener('click', updatePathWithLocation)
       })
       return () => {
-        window.removeEventListener('popstate', setLocation)
-        homeAnchor.removeEventListener('click', setLocation)
+        window.removeEventListener('popstate', updatePathWithLocation)
+        homeAnchor.removeEventListener('click', updatePathWithLocation)
         tabAnchors.forEach(anchor => {
-          anchor.removeEventListener('click', setLocation)
+          anchor.removeEventListener('click', updatePathWithLocation)
         })
       }
     }, [])
-    return state
+    return { state, goto }
   },
 
   switchCase([
-    eq('/', get('path')), Home,
-    eq('/tour', get('path')), Tour,
-    eq('/docs', get('path')), Docs,
-    eq('/blog', get('path')), Blog,
+    eq('/', get('state.path')), Home,
+    eq('/tour', get('state.path')), Tour,
+    eq('/docs', get('state.path')), Docs,
+    eq('/blog', get('state.path')), Blog,
     NotFound,
   ]),
 ]))

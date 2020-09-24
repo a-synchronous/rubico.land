@@ -105,17 +105,17 @@ iterables.forEach(pipe([map(square), console.log]))
 ```
 
 # Compositional Control Flow
-**Create declarative, SQL-like logical expressions** by composing predicates with rubico's logical operators.
+**Create declarative, SQL-like logical expressions** by composing predicates with rubico's logical operators. Below is a map of vanilla JavaScript operators to their functional analogs in rubico.
 
-* `a ? b : c` → `switchCase([f, g, h])`
-* `a && b` → `and([f, g])`
-* `a || b` → `or([f, g])`
-* `!a` → `not(f)`
-* `a === b` → `eq(f, g)`
-* `a > b` → `gt(f, g)`
-* `a < b` → `lt(f, g)`
-* `a >= b` → `gte(f, g)`
-* `a <= b` → `lte(f, g)`
+* Conditional (Ternary), `a ? b : c` → `switchCase([f, g, h])`
+* Logical And, `a && b` → `and([f, g])`
+* Logical Or, `a || b` → `or([f, g])`
+* Logical Not, `!a` → `not(f)`
+* Identity, `a === b` → `eq(f, g)`
+* Greater Than, `a > b` → `gt(f, g)`
+* Less Than, `a < b` → `lt(f, g)`
+* Greater Than or Equal, `a >= b` → `gte(f, g)`
+* Less Than or Equal, `a <= b` → `lte(f, g)`
 
 ```javascript [playground]
 const hasFlag = flag => array => array.includes(flag)
