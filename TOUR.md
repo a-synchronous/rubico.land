@@ -1,4 +1,15 @@
-Welcome to the rubico tour. This tour covers high level concepts and provides runnable and editable code examples.
+Welcome to the rubico tour. This tour covers high level concepts and provides runnable and editable code examples. All code areas have the rubico core methods imported globally.
+
+```javascript
+const {
+  pipe, fork, assign,
+  tap, tryCatch, switchCase,
+  map, filter, reduce, transform, flatMap,
+  any, all, and, or, not,
+  eq, gt, lt, gte, lte,
+  get, pick, omit,
+} = rubico // available globally
+```
 
 # Table of Contents
 
@@ -11,7 +22,7 @@ Welcome to the rubico tour. This tour covers high level concepts and provides ru
  7. [Transducers](#transducers)
 
 # [a]synchrony
-**Built-in Promise handling** - you can pass synchronous or asynchronous functions to any rubico method, hence the `[a]` (optionally asynchronous). All rubico methods handle the promise resolution for you, meaning you can run things in parallel without having to call `Promise.all`. More on this behavior [here](https://dev.to/richytong/rubico-a-synchrnous-functional-syntax-motivation-20hf).
+**Built-in Promise handling** - you can pass synchronous or asynchronous functions to any rubico method, hence the `[a]` (optionally asynchronous). All rubico methods handle promise resolution for you, meaning you can run things in parallel without having to call `Promise.all`. More on this behavior [here](https://dev.to/richytong/rubico-a-synchrnous-functional-syntax-motivation-20hf).
 
 ```javascript [playground]
 const getTodo = id => fetch('https://jsonplaceholder.typicode.com/todos/' + id)
@@ -24,7 +35,7 @@ map(pipe([
 ```
 
 # Function Composition
-**Reduce code complexity** by chaining functions together with `pipe`. You can think about `pipe` as an analog to the Unix pipe, though with JavaScript functions instead of command line utilities. Enjoy less bugs, more code reuse, and easier maintenance by composing your application's components as smaller, more specialized functions.
+**Reduce code complexity** by chaining functions together with `pipe`. You can think about `pipe` as an analog to the Unix pipe, though with JavaScript functions instead of command line utilities. Enjoy less bugs, more code reuse, and easier maintenance by composing your application as a combination of smaller components via `pipe`.
 
 ```javascript [playground]
 const square = number => number ** 2
@@ -36,7 +47,7 @@ const add = (a, b) => a + b
 const squaredOdds = pipe([
   filter(isOdd),
   map(square),
-  // reduce(add), // try uncommenting this reducing function
+  reduce(add), // try uncommenting this reducing function
 ])
 
 const numbers = [1, 2, 3, 4, 5]
