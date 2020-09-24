@@ -1614,6 +1614,25 @@ export default {
       }
     },
     {
+      type: 'paragraph',
+      children: [
+        {
+          type: 'text',
+          value: 'Note: when composing, ensure return values from both the tryer and the catcher are the same type.',
+          position: {
+            start: { line: 145, column: 1, offset: 4596 },
+            end: { line: 145, column: 98, offset: 4693 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 145, column: 1, offset: 4596 },
+        end: { line: 145, column: 98, offset: 4693 },
+        indent: []
+      }
+    },
+    {
       type: 'code',
       lang: 'javascript',
       meta: '[playground]',
@@ -1628,8 +1647,8 @@ export default {
         '//   timestamp: number,\n' +
         '// }',
       position: {
-        start: { line: 145, column: 1, offset: 4596 },
-        end: { line: 156, column: 4, offset: 4831 },
+        start: { line: 147, column: 1, offset: 4695 },
+        end: { line: 158, column: 4, offset: 4930 },
         indent: [
           1, 1, 1, 1, 1,
           1, 1, 1, 1, 1,
@@ -1645,15 +1664,15 @@ export default {
           type: 'text',
           value: 'Transducers',
           position: {
-            start: { line: 158, column: 3, offset: 4835 },
-            end: { line: 158, column: 14, offset: 4846 },
+            start: { line: 160, column: 3, offset: 4934 },
+            end: { line: 160, column: 14, offset: 4945 },
             indent: []
           }
         }
       ],
       position: {
-        start: { line: 158, column: 1, offset: 4833 },
-        end: { line: 158, column: 14, offset: 4846 },
+        start: { line: 160, column: 1, offset: 4932 },
+        end: { line: 160, column: 14, offset: 4945 },
         indent: []
       }
     },
@@ -1667,15 +1686,15 @@ export default {
               type: 'text',
               value: 'Wrangle large or infinite streams of data',
               position: {
-                start: { line: 159, column: 3, offset: 4849 },
-                end: { line: 159, column: 44, offset: 4890 },
+                start: { line: 161, column: 3, offset: 4948 },
+                end: { line: 161, column: 44, offset: 4989 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 159, column: 1, offset: 4847 },
-            end: { line: 159, column: 46, offset: 4892 },
+            start: { line: 161, column: 1, offset: 4946 },
+            end: { line: 161, column: 46, offset: 4991 },
             indent: []
           }
         },
@@ -1683,8 +1702,8 @@ export default {
           type: 'text',
           value: " with rubico's transducers. Create transducers via the transformation functions ",
           position: {
-            start: { line: 159, column: 46, offset: 4892 },
-            end: { line: 159, column: 126, offset: 4972 },
+            start: { line: 161, column: 46, offset: 4991 },
+            end: { line: 161, column: 126, offset: 5071 },
             indent: []
           }
         },
@@ -1692,8 +1711,8 @@ export default {
           type: 'inlineCode',
           value: 'map',
           position: {
-            start: { line: 159, column: 126, offset: 4972 },
-            end: { line: 159, column: 131, offset: 4977 },
+            start: { line: 161, column: 126, offset: 5071 },
+            end: { line: 161, column: 131, offset: 5076 },
             indent: []
           }
         },
@@ -1701,8 +1720,8 @@ export default {
           type: 'text',
           value: ', ',
           position: {
-            start: { line: 159, column: 131, offset: 4977 },
-            end: { line: 159, column: 133, offset: 4979 },
+            start: { line: 161, column: 131, offset: 5076 },
+            end: { line: 161, column: 133, offset: 5078 },
             indent: []
           }
         },
@@ -1710,8 +1729,8 @@ export default {
           type: 'inlineCode',
           value: 'filter',
           position: {
-            start: { line: 159, column: 133, offset: 4979 },
-            end: { line: 159, column: 141, offset: 4987 },
+            start: { line: 161, column: 133, offset: 5078 },
+            end: { line: 161, column: 141, offset: 5086 },
             indent: []
           }
         },
@@ -1719,8 +1738,8 @@ export default {
           type: 'text',
           value: ', or ',
           position: {
-            start: { line: 159, column: 141, offset: 4987 },
-            end: { line: 159, column: 146, offset: 4992 },
+            start: { line: 161, column: 141, offset: 5086 },
+            end: { line: 161, column: 146, offset: 5091 },
             indent: []
           }
         },
@@ -1728,8 +1747,8 @@ export default {
           type: 'inlineCode',
           value: 'flatMap',
           position: {
-            start: { line: 159, column: 146, offset: 4992 },
-            end: { line: 159, column: 155, offset: 5001 },
+            start: { line: 161, column: 146, offset: 5091 },
+            end: { line: 161, column: 155, offset: 5100 },
             indent: []
           }
         },
@@ -1737,8 +1756,8 @@ export default {
           type: 'text',
           value: ', then consume them with ',
           position: {
-            start: { line: 159, column: 155, offset: 5001 },
-            end: { line: 159, column: 180, offset: 5026 },
+            start: { line: 161, column: 155, offset: 5100 },
+            end: { line: 161, column: 180, offset: 5125 },
             indent: []
           }
         },
@@ -1746,8 +1765,8 @@ export default {
           type: 'inlineCode',
           value: 'reduce',
           position: {
-            start: { line: 159, column: 180, offset: 5026 },
-            end: { line: 159, column: 188, offset: 5034 },
+            start: { line: 161, column: 180, offset: 5125 },
+            end: { line: 161, column: 188, offset: 5133 },
             indent: []
           }
         },
@@ -1755,8 +1774,8 @@ export default {
           type: 'text',
           value: ' or ',
           position: {
-            start: { line: 159, column: 188, offset: 5034 },
-            end: { line: 159, column: 192, offset: 5038 },
+            start: { line: 161, column: 188, offset: 5133 },
+            end: { line: 161, column: 192, offset: 5137 },
             indent: []
           }
         },
@@ -1764,8 +1783,8 @@ export default {
           type: 'inlineCode',
           value: 'transform',
           position: {
-            start: { line: 159, column: 192, offset: 5038 },
-            end: { line: 159, column: 203, offset: 5049 },
+            start: { line: 161, column: 192, offset: 5137 },
+            end: { line: 161, column: 203, offset: 5148 },
             indent: []
           }
         },
@@ -1773,8 +1792,8 @@ export default {
           type: 'text',
           value: '. Additionally, transducers created with rubico can act on asynchronous data streams or operate asynchronously. More on this behavior ',
           position: {
-            start: { line: 159, column: 203, offset: 5049 },
-            end: { line: 159, column: 337, offset: 5183 },
+            start: { line: 161, column: 203, offset: 5148 },
+            end: { line: 161, column: 337, offset: 5282 },
             indent: []
           }
         },
@@ -1787,15 +1806,15 @@ export default {
               type: 'text',
               value: 'here',
               position: {
-                start: { line: 159, column: 338, offset: 5184 },
-                end: { line: 159, column: 342, offset: 5188 },
+                start: { line: 161, column: 338, offset: 5283 },
+                end: { line: 161, column: 342, offset: 5287 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 159, column: 337, offset: 5183 },
-            end: { line: 159, column: 411, offset: 5257 },
+            start: { line: 161, column: 337, offset: 5282 },
+            end: { line: 161, column: 411, offset: 5356 },
             indent: []
           }
         },
@@ -1803,15 +1822,15 @@ export default {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 159, column: 411, offset: 5257 },
-            end: { line: 159, column: 412, offset: 5258 },
+            start: { line: 161, column: 411, offset: 5356 },
+            end: { line: 161, column: 412, offset: 5357 },
             indent: []
           }
         }
       ],
       position: {
-        start: { line: 159, column: 1, offset: 4847 },
-        end: { line: 159, column: 412, offset: 5258 },
+        start: { line: 161, column: 1, offset: 4946 },
+        end: { line: 161, column: 412, offset: 5357 },
         indent: []
       }
     },
@@ -1847,8 +1866,8 @@ export default {
         "  decimalStringToNotes('16791573288892525934609440079317541905554393653557736896280802239551592289061061348368963')\n" +
         ') // CCGGAAGFFEEDDCGGFFEEDGGFFEEDCCGGAAGFFEEDDC',
       position: {
-        start: { line: 161, column: 1, offset: 5260 },
-        end: { line: 189, column: 4, offset: 6083 },
+        start: { line: 163, column: 1, offset: 5359 },
+        end: { line: 191, column: 4, offset: 6182 },
         indent: [
           1, 1, 1, 1, 1, 1, 1, 1,
           1, 1, 1, 1, 1, 1, 1, 1,
@@ -1860,6 +1879,6 @@ export default {
   ],
   position: {
     start: { line: 1, column: 1, offset: 0 },
-    end: { line: 190, column: 1, offset: 6084 }
+    end: { line: 192, column: 1, offset: 6183 }
   }
 }
