@@ -190,4 +190,4 @@ console.log(
 ) // CCGGAAGFFEEDDCGGFFEEDGGFFEEDCCGGAAGFFEEDDC
 ```
 
-That concludes the rubico tour.
+That concludes the rubico tour. From here, you could get started with rubico in a project ([installation](/#installation)) or read more at the [docs](/docs).
