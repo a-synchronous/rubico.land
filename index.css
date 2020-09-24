@@ -3,7 +3,7 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 a {
-  color: steelblue;
+  color: #65799B;
   text-decoration: none;
   font-weight: 500;
 }
@@ -46,7 +46,7 @@ p {
 }
 
 .text1 {
-  color: steelblue;
+  color: #65799B;
 }
 .text2 {
   color: #333;
@@ -152,7 +152,7 @@ header > nav > span {
   border: none;
   background-color: #fff;
   cursor: pointer;
-  color: steelblue;
+  color: #65799B;
   outline: none;
 }
 #back-to-top:hover {

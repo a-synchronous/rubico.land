@@ -23,7 +23,7 @@ const ActiveSpacer = function () {
   result.style.width = '72px'
   result.style.right = '-8px'
   result.style.top = '32px'
-  result.style.background = 'steelblue'
+  result.style.background = '#65799B'
   result.style.border = 'none'
   result.style.borderRadius = '8px'
   return result
