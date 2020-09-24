@@ -1,4 +1,4 @@
-Welcome to the rubico tour.
+Welcome to the rubico tour. This tour covers high level concepts and provides runnable and editable code examples.
 
 # Table of Contents
 
@@ -46,7 +46,7 @@ console.log('output:', squaredOdds(numbers)) // [1, 9, 25]
 ```
 
 # Object Composition
-**Declaratively transform objects** - there will be times when you'll want to control the shape of objects in a pipeline. You may want to extend an object in your pipeline with new properties, or create a step whereby you construct a new object from an existing one. For times like these, use the property accessor function `get` in conjunction with object composers `fork` or `assign`.
+**Declaratively transform objects** - there may be times when you'll want to extend an object in a pipeline with new properties, or construct a new object from an existing one. For times like these, use the property accessor function `get` in conjunction with object composers `fork` or `assign`.
 
 ```javascript [playground]
 const identity = value => value
@@ -189,3 +189,5 @@ console.log(
   decimalStringToNotes('16791573288892525934609440079317541905554393653557736896280802239551592289061061348368963')
 ) // CCGGAAGFFEEDDCGGFFEEDGGFFEEDCCGGAAGFFEEDDC
 ```
+
+That concludes the rubico tour.
