@@ -11,13 +11,13 @@
   },
   "homepage": "https://github.com/a-synchronous/rubico.land",
   "keywords": [
-    "inline",
-    "documentation",
-    "parser",
-    "docs"
+    "vanilla",
+    "rubico",
+    "react"
   ],
   "scripts": {
-    "cp": "./copy_index && ./parse_markdown TOUR.md > tour.mdast.js && ./parse_markdown ../rubico/README.md > rubico-parsed-readme.js"
+    "cp": "./copy_index && ./parse_markdown TOUR.md > tour.mdast.js && ./parse_markdown ../rubico/README.md > readme.mdast.js",
+    "cronist": "cronist ../rubico/index.js ../rubico/x ../rubico/monad > comments.mdast.js"
   },
   "dependencies": {
     "rubico": "latest"

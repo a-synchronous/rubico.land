@@ -6,9 +6,7 @@ import ReactElement, {
   Ul, Ol, Li,
   Code, Pre,
 } from './ReactElement.js'
-import CodeRunner from './CodeRunner.js'
-import CodeViewer from './CodeViewer.js'
-import ShortCircuitLink from './ShortCircuitLink.js'
+import ReactElementFromMdast from './ReactElementFromMdast.js'
 import commentsMdast from './comments.mdast.js'
 import readmeMdast from './readme.mdast.js'
 import tourMdast from './tour.mdast.js'
@@ -27,103 +25,18 @@ const {
 
 const { useState, useEffect, useRef, useCallback, useReducer } = React
 
+const identity = value => value
+
 const isArray = Array.isArray
 
+// (prefix string, getter any=>string) => boolean
+const startsWith = (prefix, getter) => value => getter(value).startsWith(prefix)
+
 // Map<(parsedCommentName string)=>(parsedComment object)>
-const parsedDocumentationBase = commentsMdast.reduce(
+const commentsBase = commentsMdast.reduce(
   (result, item) => result.set(item.name, item), new Map())
 
-// (mdast object, constructor function) => result any
-const constructMdastReactElement = function (mdast, constructor) {
-  const result = constructor(mdast.children == null
-    ? mdast.children.map(mdastToReactElement)
-    : mdast.value)
-  return result
-}
-
-// string => string
-const anchorHashFormat = value => value
-  .replace(/\[([\w ]+)\]/g, '$1-')
-  .replace(/ /g, '-')
-  .toLowerCase()
-
-// mdast object => anchorHash string
-const anchorHashFromMdast = function (mdast) {
-  switch (get('children[0].type')(mdast)) {
-    case 'linkReference':
-      const firstChar = get('children[0].label')(mdast),
-        rest = get('children[1].value')(mdast)
-      return `[${firstChar}]${rest}`
-    default:
-      return get('children[0].value')(mdast)
-  }
-}
-
-// mdast {
-//   type: string,
-//   value: string,
-//   children: Array<this>,
-// } -> React.Element
-const mdastToReactElement = function (mdast) {
-  const recurse = mdast => 'children' in mdast
-    ? mdast.children.map(mdastToReactElement)
-    : mdast.value
-  switch (mdast.type) {
-    case 'root':
-      return Article(recurse(mdast))
-    case 'heading':
-      switch (mdast.depth) {
-        case 1:
-          const anchorHash = pipe([
-            anchorHashFromMdast,
-            anchorHashFormat,
-          ])(mdast)
-          return A({
-            class: 'anchor-hash',
-            href: `#${anchorHash}`,
-            style: { display: 'flex', placeItems: 'center' },
-          }, [H1({ id: anchorHash }, recurse(mdast))])
-        case 2: return H2(recurse(mdast))
-        case 3: return H3(recurse(mdast))
-        case 4: return H4(recurse(mdast))
-        case 5: return H5(recurse(mdast))
-        default: return H6(recurse(mdast))
-      }
-    case 'image':
-      return Img({ src: mdast.url, alt: mdast.alt })
-    case 'blockquote':
-      return Blockquote(recurse(mdast))
-    case 'paragraph':
-      return P(recurse(mdast))
-    case 'strong':
-      return B(recurse(mdast))
-    case 'text':
-      return Span(recurse(mdast))
-    case 'list':
-      return mdast.ordered ? Ol(recurse(mdast)) : Ul(recurse(mdast))
-    case 'listItem':
-      return Li(recurse(mdast))
-    case 'inlineCode':
-      return Code(recurse(mdast))
-    case 'code':
-      return mdast.meta == '[playground]'
-        ? CodeRunner({ code: mdast.value, mode: mdast.lang })
-        : CodeViewer({ code: mdast.value, mode: mdast.lang })
-    case 'link':
-      return A({ href: mdast.url }, recurse(mdast))
-    case 'linkReference':
-      return Span([Span('['), recurse(mdast), Span(']')])
-    case 'html':
-      if (mdast.value == '<br />') {
-        return Br()
-      }
-      return Span('')
-    default:
-      return Span(mdast.value)
-  }
-}
-
-// backToTop React.Element
+// backToTop ReactElement
 const backToTop = Button({
   id: 'back-to-top',
   onClick() {
@@ -131,33 +44,112 @@ const backToTop = Button({
   },
 }, 'Back to top')
 
-// readme React.Element
-const readme = mdastToReactElement(readmeMdast)
+// readmeContent ReactElement
+const readmeContent = ReactElementFromMdast(readmeMdast)
 
-// () -> Home React.Element
+// () -> Home ReactElement
 const Home = ReactElement(() => Div([
-  readme,
+  readmeContent,
   Div([backToTop]),
 ]))
 
-// tour React.Element
-const tour = mdastToReactElement(tourMdast)
+// tour ReactElement
+const tourContent = ReactElementFromMdast(tourMdast)
 
-// () -> React.Element
+// () -> ReactElement
 const Tour = ReactElement(() => Div([
-  tour,
+  tourContent,
   Div([backToTop]),
 ]))
 
-// () -> Docs React.Element
-const Docs = ReactElement(() => Div([
+// name string => ReactElement
+const DocsItem = pipe([
+  fork({
+    name: identity,
+    comment: pipe([
+      name => commentsBase.get(name),
+      get('description_mdast'),
+      ReactElementFromMdast,
+    ]),
+    path: name => `/docs/${name}`,
+  }),
+
+  ({ name, comment, path }) =>
+    ReactElement(({ goto, state }) => {
+      return Span({ class: 'docs-item' }, [
+        Button({
+          class: 'docs-item-button-shrink',
+          onClick() {
+            if (state.path == path) {
+              goto('/docs')
+            } else {
+              goto(path)
+            }
+          },
+        }, [Span(name)]),
+        state.path == path ? comment : Span(),
+      ])
+    }),
+])
+
+// documentation React components
+const DocsPipe = DocsItem('pipe')
+const DocsFork = DocsItem('fork')
+const DocsAssign = DocsItem('assign')
+const DocsTap = DocsItem('tap')
+const DocsTryCatch = DocsItem('tryCatch')
+const DocsSwitchCase = DocsItem('switchCase')
+const DocsMap = DocsItem('map')
+const DocsFilter = DocsItem('filter')
+const DocsReduce = DocsItem('reduce')
+const DocsTransform = DocsItem('transform')
+const DocsFlatMap = DocsItem('flatMap')
+
+const DocsAny = DocsItem('any')
+const DocsAll = DocsItem('all')
+const DocsAnd = DocsItem('and')
+const DocsOr = DocsItem('or')
+const DocsNot = DocsItem('not')
+const DocsEq = DocsItem('eq')
+const DocsGt = DocsItem('gt')
+const DocsLt = DocsItem('lt')
+const DocsGte = DocsItem('gte')
+const DocsLte = DocsItem('lte')
+const DocsGet = DocsItem('get')
+const DocsPick = DocsItem('pick')
+const DocsOmit = DocsItem('omit')
+
+// props Object -> Docs ReactElement
+const Docs = ReactElement(props => Div([
+  Article([
+    H1('Function Composition'),
+    Div([DocsPipe(props), DocsFork(props), DocsAssign(props)]),
+    H1('Transformation + Transducers'),
+    Div([
+      DocsMap(props), DocsFilter(props), DocsReduce(props),
+      DocsTransform(props), DocsFlatMap(props)]),
+
+    H1('Predicate Composition'),
+    Div([
+      DocsAny(props), DocsAll(props), DocsAnd(props),
+      DocsOr(props), DocsNot(props)]),
+    Div([
+      DocsEq(props), DocsGt(props), DocsLt(props),
+      DocsGte(props), DocsLte(props)]),
+
+    H1('Property Access'),
+    Div([DocsGet(props), DocsPick(props), DocsOmit(props)]),
+  ]),
+  Article([
+    H1('rubico/x/'),
+  ]),
   Div([backToTop]),
 ]))
 
-// () -> Blog React.Element
+// () -> Blog ReactElement
 const Blog = ReactElement(() => H1('Blog'))
 
-// () -> NotFound React.Element
+// () -> NotFound ReactElement
 const NotFound = ReactElement(() => H1('Not Found'))
 
 // rubico
@@ -166,32 +158,42 @@ const homeAnchor = document.getElementById('home')
 // Tour Docs Blog
 const tabAnchors = [...document.querySelectorAll('header > nav > a')]
 
-// props { path: string } -> React.Element
-const Root = ReactElement(pipe([
-  ({ path }) => useReducer((state, action) => {
-    switch (action.type) {
-      case 'SET_PATH':
-        return { ...state, path: action.path }
-      default:
-        return state
-    }
-  }, { path }),
+// props { state: { path: string } } -> ReactElement
+const Router = ReactElement(switchCase([
+  startsWith('/tour', get('state.path')), Tour,
+  startsWith('/docs', get('state.path')), Docs,
+  startsWith('/blog', get('state.path')), Blog,
+  startsWith('/', get('state.path')), Home,
+  NotFound,
+]))
 
-  ([state, dispatch]) => {
+// props { path: string } -> ReactElement
+const Root = ReactElement(
+  ({ path }) => {
+    const [state, dispatch] = useReducer((state, action) => {
+      switch (action.type) {
+        case 'SET_PATH':
+          return { ...state, path: action.path }
+        default:
+          return state
+      }
+    }, { path })
+
     const updatePathWithLocation = () => {
       dispatch({ type: 'SET_PATH', path: window.location.pathname })
     }
     const goto = path => {
       history.pushState({ path }, '', path)
       dispatch({ type: 'SET_PATH', path })
-      window.scrollTo(0, 0)
     }
+
     useEffect(() => {
       window.addEventListener('popstate', updatePathWithLocation)
       homeAnchor.addEventListener('click', updatePathWithLocation)
       tabAnchors.forEach(anchor => {
         anchor.addEventListener('click', updatePathWithLocation)
       })
+
       return () => {
         window.removeEventListener('popstate', updatePathWithLocation)
         homeAnchor.removeEventListener('click', updatePathWithLocation)
@@ -200,17 +202,10 @@ const Root = ReactElement(pipe([
         })
       }
     }, [])
-    return { state, goto }
-  },
 
-  switchCase([
-    eq('/', get('state.path')), Home,
-    eq('/tour', get('state.path')), Tour,
-    eq('/docs', get('state.path')), Docs,
-    eq('/blog', get('state.path')), Blog,
-    NotFound,
-  ]),
-]))
+    return Router({ state, goto })
+  },
+)
 
 ReactDOM.render(Root({
   path: window.location.pathname,

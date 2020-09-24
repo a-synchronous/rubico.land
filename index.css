@@ -168,3 +168,11 @@ header > nav > span {
   font-size: 32px;
   margin-right: 32px;
 }
+
+.docs-item > * {
+  display: 'inline',
+}
+.docs-item-button-expand {
+}
+.docs-item-button-shrink {
+}
