@@ -11,7 +11,7 @@ Welcome to the rubico tour. This tour covers high level concepts and provides ru
  7. [Transducers](#transducers)
 
 # [a]synchrony
-**Save mental resources on Promise handling** - you can pass synchronous or asynchronous functions to any rubico method, hence the `[a]` (optionally asynchronous). For asynchronous functions, rubico handles the promise resolution for you, meaning you can run things in parallel without having to call `Promise.all`. More on this behavior [here](https://dev.to/richytong/rubico-a-synchrnous-functional-syntax-motivation-20hf).
+**Stop worrying about Promise handling** - you can pass synchronous or asynchronous functions to any rubico method, hence the `[a]` (optionally asynchronous). All rubico methods handle promise resolution for you, meaning you can run things in parallel without having to call `Promise.all`. More on this behavior [here](https://dev.to/richytong/rubico-a-synchrnous-functional-syntax-motivation-20hf).
 
 ```javascript [playground]
 const getTodo = id => fetch('https://jsonplaceholder.typicode.com/todos/' + id)
@@ -24,7 +24,7 @@ map(pipe([
 ```
 
 # Function Composition
-**Reduce code complexity** by chaining functions together with `pipe`. You can think about `pipe` as an analog to the Unix pipe, though with JavaScript functions instead of command line utilities.
+**Reduce code complexity** by chaining functions together with `pipe`. You can think about `pipe` as an analog to the Unix pipe, though with JavaScript functions instead of command line utilities. Enjoy less bugs, more code reuse, and easier maintenance by composing your application's components as smaller, more specialized functions.
 
 ```javascript [playground]
 const square = number => number ** 2
