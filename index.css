@@ -54,26 +54,18 @@ p {
 
 #layout {
   width: 100%;
-  display: grid;
-  grid-template-columns: 80px 1fr 50px;
-  grid-column-gap: 10px;
-}
-@media only screen and (max-width: 818px) {
-  #layout {
-    grid-template-columns: minmax(0px, 10px) 1fr;
-  }
 }
 
 header {
-  display: grid;
-  grid-template-columns: minmax(0px, 355px) 1fr minmax(0px, 100px);
-  grid-column-gap: 10px;
-  margin-bottom: 50px;
+  display: flex;
+  margin-left: 5%;
+  margin-bottom: 35px;
 }
 header > nav {
   display: flex;
   place-items: center;
-  margin-top: 3px;
+  margin-top: 8px;
+  margin-right: 2vw;
 }
 header > nav > a {
   position: relative;
@@ -88,21 +80,36 @@ header > nav > span {
   font-weight: 600;
   margin-right: 25px;
 }
-@media only screen and (max-width: 532px) {
+@media only screen and (max-width: 575px) {
   header {
     display: block;
+    margin-left: 5%;
+  }
+  header > a > img {
+    min-width: 65px;
+    max-width: 150px;
+    width: 45%;
+    height: 20%;
   }
   header > nav {
+    display: block;
     margin-bottom: 10px;
   }
   header > nav > a {
     margin-right: 22px;
+    margin-bottom: 10px;
+  }
+}
+@media only screen and (max-width: 280px) {
+  header {
+    line-height: 36px;
   }
 }
 
 #home {
   display: flex;
   place-items: center;
+  margin-right: 8vw;
 }
 #home > span {
   margin-top: 8px;
@@ -111,9 +118,14 @@ header > nav > span {
   font-weight: 700;
   line-height: 1em;
 }
-@media only screen and (max-width: 687px) {
+@media only screen and (max-width: 768px) {
   #home > span {
     display: none;
+  }
+}
+@media only screen and (max-width: 618px) {
+  #home {
+    margin-right: 5px;
   }
 }
 
@@ -122,7 +134,7 @@ header > nav > span {
   place-items: center;
 }
 #github-link > span {
-  margin-top: 6px;
+  margin-top: 10px;
   display: flex;
   font-size: 24px;
 }
@@ -131,11 +143,11 @@ header > nav > span {
 }
 
 #root {
-  display: grid;
-  grid-template-columns: 80% 1fr;
-  grid-column-gap: 10px;
-  margin-bottom: 50px;
+  margin-left: 5%;
+  width: 90%;
+  max-width: 900px;
 }
+
 #back-to-top {
   border: none;
   background-color: #fff;
