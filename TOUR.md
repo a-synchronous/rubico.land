@@ -142,6 +142,8 @@ cli(['???']) // USAGE: ...
 # Tryer-Catcher Error Handling
 **Reliably catch errors**, synchronous or asynchronous, with `tryCatch`.
 
+Note: when composing, ensure return values from both the tryer and the catcher are the same type.
+
 ```javascript [playground]
 console.log(
   tryCatch(
