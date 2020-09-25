@@ -88,7 +88,7 @@ const ReactElementFromMdast = function (mdast, props = {}) {
     case 'code':
       if (mdast.lang == 'coffeescript') {
         return Div([
-          H3('Synopsis'),
+          H3('Syntax'),
           CodeViewer({
             code: mdast.value,
             mode: mdast.lang,

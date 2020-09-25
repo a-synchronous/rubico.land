@@ -84,13 +84,31 @@ const DocsItem = pipe([
   ({ name, path, synopsis, description }) =>
     ReactElement(({ goto, state }) => {
       const isExpanded = state.path == path
+      const [isTransitioning, setIsTransitioning] = useState(false)
+      useEffect(() => {
+        if (isExpanded) {
+          console.log('running this')
+          setIsTransitioning(true)
+          setTimeout(() => {
+            setIsTransitioning(false)
+          }, 500)
+        }
+      }, [])
+
       return Span({ class: 'docs-item' }, [
         Button({
           onClick() {
             isExpanded ? goto('/docs') : goto(path)
           },
-        }, [H3({ class: isExpanded ? 'active' : '' }, name)]),
-        Div(isExpanded ? [synopsis, description] : [])
+        }, [
+          H3({ class: isExpanded ? 'active' : '' }, name),
+          isExpanded ? Span({ id: 'retractor-arrow' }, '⇤') : Span(),
+        ]),
+        Div({
+          className: isExpanded && isTransitioning ? 'slide-down transitioning'
+            : isExpanded ? 'slide-down'
+            : 'slide-down closed'
+        }, isExpanded ? [synopsis, description] : []),
       ])
     }),
 ])

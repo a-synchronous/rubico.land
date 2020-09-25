@@ -179,6 +179,16 @@ header > nav > span {
   display: inline;
 }
 
+#retractor-arrow {
+  color: #51D48D;
+  font-size: 38px;
+  margin-left: 15px;
+  font-weight: 700;
+}
+#retractor-arrow:hover {
+  text-decoration: underline;
+}
+
 .docs-item > button {
   border: none;
   background-color: #fff;
@@ -187,14 +197,35 @@ header > nav > span {
   cursor: pointer;
   outline: none;
 }
+.docs-item > button.active:hover {
+  text-decoration: underline;
+  color: #51D48D;
+}
 .docs-item > button > h3 {
   color: #65799B;
   font-size: 22px;
   margin: 0;
+  display: inline;
+  transition: font-size 0.24s;
 }
 .docs-item > button > .active {
   color: #51D48D;
-  font-size: 32px;
+  font-size: 36px;
   margin-bottom: 36px;
   padding-top: 36px;
+}
+
+.slide-down > article {
+  max-height: 450vh;
+  transition-property: max-height;
+  transition-duration: .5s;
+  transition-timing-function: ease-in-out;
+}
+.slide-down.transitioning > article {
+  max-height: 450vh;
+  overflow-y: hidden;
+}
+.slide-down.closed > article {
+  max-height: 0vh;
+  display: none;
 }
