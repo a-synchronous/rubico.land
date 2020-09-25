@@ -169,10 +169,29 @@ header > nav > span {
   margin-right: 32px;
 }
 
-.docs-item > * {
-  display: 'inline',
+#docs > div > * {
+  display: inline;
 }
-.docs-item-button-expand {
+
+#docs > div > * > * {
+  display: inline;
 }
-.docs-item-button-shrink {
+
+.docs-item > button {
+  border: none;
+  background-color: #fff;
+  padding: 0px 0px;
+  margin: 5px 8px;
+  cursor: pointer;
+  outline: none;
+}
+.docs-item > button > h3 {
+  color: #65799B;
+  font-size: 22px;
+  margin: 0;
+}
+.docs-item > button > .active {
+  color: #51D48D;
+  font-size: 32px;
+  margin-bottom: 36px;
 }

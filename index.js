@@ -7,7 +7,8 @@ import ReactElement, {
   Code, Pre,
 } from './ReactElement.js'
 import ReactElementFromMdast from './ReactElementFromMdast.js'
-import commentsMdast from './comments.mdast.js'
+import CodeViewer from './CodeViewer.js'
+import cronistComments from './comments.cronist.js'
 import readmeMdast from './readme.mdast.js'
 import tourMdast from './tour.mdast.js'
 
@@ -33,8 +34,10 @@ const isArray = Array.isArray
 const startsWith = (prefix, getter) => value => getter(value).startsWith(prefix)
 
 // Map<(parsedCommentName string)=>(parsedComment object)>
-const commentsBase = commentsMdast.reduce(
+const commentsBase = cronistComments.reduce(
   (result, item) => result.set(item.name, item), new Map())
+
+console.log('commentsBase', commentsBase)
 
 // backToTop ReactElement
 const backToTop = Button({
@@ -63,31 +66,31 @@ const Tour = ReactElement(() => Div([
 ]))
 
 // name string => ReactElement
+// { name: string, path: string } => ReactElement
 const DocsItem = pipe([
-  fork({
-    name: identity,
-    comment: pipe([
-      name => commentsBase.get(name),
-      get('description_mdast'),
-      ReactElementFromMdast,
-    ]),
-    path: name => `/docs/${name}`,
+  value => typeof value == 'string' ? ({ name: value }) : value,
+  assign({
+    path: get('path', ({ name }) => `/docs/${name}`),
+    comment: ({ name }) => commentsBase.get(name),
+  }),
+  assign({
+    synopsis: ({ comment }) => 'synopsis_mdast' in comment
+      ? ReactElementFromMdast(comment.synopsis_mdast)
+      : Pre(comment.synopsis),
+    description: ({ comment }) =>
+      ReactElementFromMdast(comment.description_mdast),
   }),
 
-  ({ name, comment, path }) =>
+  ({ name, path, synopsis, description }) =>
     ReactElement(({ goto, state }) => {
+      const isExpanded = state.path == path
       return Span({ class: 'docs-item' }, [
         Button({
-          class: 'docs-item-button-shrink',
           onClick() {
-            if (state.path == path) {
-              goto('/docs')
-            } else {
-              goto(path)
-            }
+            isExpanded ? goto('/docs') : goto(path)
           },
-        }, [Span(name)]),
-        state.path == path ? comment : Span(),
+        }, [H3({ class: isExpanded ? 'active' : '' }, name)]),
+        isExpanded ? Span([synopsis, description]) : Div(),
       ])
     }),
 ])
@@ -119,9 +122,11 @@ const DocsGet = DocsItem('get')
 const DocsPick = DocsItem('pick')
 const DocsOmit = DocsItem('omit')
 
+const DocsTrace = DocsItem({ name: 'trace', path: '/docs/x/trace' })
+
 // props Object -> Docs ReactElement
 const Docs = ReactElement(props => Div([
-  Article([
+  Article({ id: 'docs' }, [
     H1('Function Composition'),
     Div([DocsPipe(props), DocsFork(props), DocsAssign(props)]),
     Div([DocsTap(props), DocsTryCatch(props), DocsSwitchCase(props)]),
@@ -129,22 +134,26 @@ const Docs = ReactElement(props => Div([
     H1('Transformation + Transducers'),
     Div([
       DocsMap(props), DocsFilter(props), DocsReduce(props),
-      DocsTransform(props), DocsFlatMap(props)]),
+      DocsTransform(props), DocsFlatMap(props),
+    ]),
 
     H1('Predicate Composition'),
     Div([
       DocsAny(props), DocsAll(props), DocsAnd(props),
-      DocsOr(props), DocsNot(props)]),
+      DocsOr(props), DocsNot(props),
+    ]),
     Div([
       DocsEq(props), DocsGt(props), DocsLt(props),
-      DocsGte(props), DocsLte(props)]),
+      DocsGte(props), DocsLte(props),
+    ]),
 
     H1('Property Access'),
     Div([DocsGet(props), DocsPick(props), DocsOmit(props)]),
   ]),
-  Article([
-    H1('rubico/x/'),
-  ]),
+  // Article([
+    // H1('rubico/x/'), // TODO es exports for rubico/x
+    // Div([DocsTrace(props)]),
+  // ]),
   Div([backToTop]),
 ]))
 

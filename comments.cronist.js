@@ -1,15 +1,47 @@
 export default [
   {
     name: 'arrayExtendMap',
-    synopsis: 'any -> value; any -> mapped\n' +
+    synopsis: '```coffeescript [specscript]\n' +
+      'any -> value; any -> mapped\n' +
       '\n' +
       'arrayExtendMap(\n' +
       '  array Array<mapped>,\n' +
       '  values Array<value>,\n' +
       '  valuesIndex number,\n' +
       '  valuesMapper value=>mapped,\n' +
-      ') -> array\n',
+      ') -> array\n' +
+      '```\n',
     description: 'internal extend while mapping\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'any -> value; any -> mapped\n' +
+            '\n' +
+            'arrayExtendMap(\n' +
+            '  array Array<mapped>,\n' +
+            '  values Array<value>,\n' +
+            '  valuesIndex number,\n' +
+            '  valuesMapper value=>mapped,\n' +
+            ') -> array',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 10, column: 4, offset: 186 },
+            indent: [
+              1, 1, 1, 1, 1,
+              1, 1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 11, column: 1, offset: 187 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [
@@ -41,7 +73,8 @@ export default [
   },
   {
     name: 'pipe',
-    synopsis: 'pipe(\n' +
+    synopsis: '```coffeescript [specscript]\n' +
+      'pipe(\n' +
       '  funcs Array<any=>Promise|any>,\n' +
       ')(value any) -> Promise|any\n' +
       '\n' +
@@ -49,7 +82,8 @@ export default [
       '\n' +
       'pipe(\n' +
       '  Array<Reducer=>Reducer>,\n' +
-      ')(Reducer) -> composed Reducer\n',
+      ')(Reducer) -> composed Reducer\n' +
+      '```\n',
     description: 'Chain together an array of functions as a pipe, each function passing its return value as the first argument to the next function until all functions have executed. The final result is the return of the last function execution.\n' +
       '\n' +
       '```javascript [playground]\n' +
@@ -84,6 +118,37 @@ export default [
       '  squaredOdds([1, 2, 3, 4, 5])\n' +
       ') // [1, 9, 25]\n' +
       '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'pipe(\n' +
+            '  funcs Array<any=>Promise|any>,\n' +
+            ')(value any) -> Promise|any\n' +
+            '\n' +
+            'Reducer = (any, any)=>Promise|any\n' +
+            '\n' +
+            'pipe(\n' +
+            '  Array<Reducer=>Reducer>,\n' +
+            ')(Reducer) -> composed Reducer',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 11, column: 4, offset: 199 },
+            indent: [
+              1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 12, column: 1, offset: 200 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [
@@ -234,13 +299,15 @@ export default [
   },
   {
     name: 'fork',
-    synopsis: 'fork(\n' +
+    synopsis: '```coffeescript [specscript]\n' +
+      'fork(\n' +
       '  funcs Object<value=>Promise|any>,\n' +
       ')(value any) -> Promise|Object\n' +
       '\n' +
       'fork(\n' +
       '  funcs Array<value=>Promise|any>,\n' +
-      ')(value any) -> Promise|Array\n',
+      ')(value any) -> Promise|Array\n' +
+      '```\n',
     description: 'Parallelize multiple functions with concurrent execution into either an object or array.\n' +
       '\n' +
       ' * `fork(Array<function>) -> Array` - an Array result is yielded for an Array of functions\n' +
@@ -256,6 +323,35 @@ export default [
       "  })('hello'),\n" +
       ") // { greetings: ['hello world', 'hello mom'] }\n" +
       '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'fork(\n' +
+            '  funcs Object<value=>Promise|any>,\n' +
+            ')(value any) -> Promise|Object\n' +
+            '\n' +
+            'fork(\n' +
+            '  funcs Array<value=>Promise|any>,\n' +
+            ')(value any) -> Promise|Array',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 9, column: 4, offset: 177 },
+            indent: [
+              1, 1, 1, 1,
+              1, 1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 10, column: 1, offset: 178 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [
@@ -401,9 +497,11 @@ export default [
   },
   {
     name: 'fork.series',
-    synopsis: 'fork.series(\n' +
-      '  funcs Array<args=>Promise|any>,\n' +
-      ')(args ...any) -> Promise|Array\n',
+    synopsis: '```coffeescript [specscript]\n' +
+      'fork.series<args ...any>(\n' +
+      '  funcs Array<...args=>Promise|any>,\n' +
+      ')(...args) -> Promise|Array\n' +
+      '```\n',
     description: '`fork` with serial execution.\n' +
       '\n' +
       '```javascript [playground]\n' +
@@ -419,6 +517,28 @@ export default [
       '            // hello mom\n' +
       '            // hello darkness\n' +
       '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'fork.series<args ...any>(\n' +
+            '  funcs Array<...args=>Promise|any>,\n' +
+            ')(...args) -> Promise|Array',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 5, column: 4, offset: 123 },
+            indent: [ 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 6, column: 1, offset: 124 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [
@@ -484,9 +604,11 @@ export default [
   },
   {
     name: 'assign',
-    synopsis: 'assign(\n' +
+    synopsis: '```coffeescript [specscript]\n' +
+      'assign(\n' +
       '  funcs Object<value=>Promise|any>,\n' +
-      ')(value Object) -> result Promise|Object\n',
+      ')(value Object) -> result Promise|Object\n' +
+      '```\n',
     description: 'Lazily set properties on a target object by an input object of functions.\n' +
       '\n' +
       '```javascript [playground]\n' +
@@ -501,6 +623,28 @@ export default [
       '  asyncNumber: async ({ number }) => number,\n' +
       '})({ number: 3 }).then(console.log) // { number: 3, asyncNumber: 3 }\n' +
       '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'assign(\n' +
+            '  funcs Object<value=>Promise|any>,\n' +
+            ')(value Object) -> result Promise|Object',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 5, column: 4, offset: 117 },
+            indent: [ 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 6, column: 1, offset: 118 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [
@@ -556,7 +700,11 @@ export default [
   },
   {
     name: 'tap',
-    synopsis: 'tap(\n  tapper value=>Promise|any,\n)(value any) -> value\n',
+    synopsis: '```coffeescript [specscript]\n' +
+      'tap(\n' +
+      '  tapper value=>Promise|any,\n' +
+      ')(value any) -> value\n' +
+      '```\n',
     description: 'Call a function with a value, returning the value.\n' +
       '\n' +
       '```javascript [playground]\n' +
@@ -567,6 +715,26 @@ export default [
       "])('foo') // 'foo'\n" +
       "          // 'foobar'\n" +
       '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'tap(\n  tapper value=>Promise|any,\n)(value any) -> value',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 5, column: 4, offset: 88 },
+            indent: [ 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 6, column: 1, offset: 89 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [
@@ -617,7 +785,11 @@ export default [
   },
   {
     name: 'tap.sync',
-    synopsis: 'tap.sync(\n  tapper value=>any,\n)(value any) -> value\n',
+    synopsis: '```coffeescript [specscript]\n' +
+      'tap.sync(\n' +
+      '  tapper value=>any,\n' +
+      ')(value any) -> value\n' +
+      '```\n',
     description: 'Synchronous tap\n' +
       '\n' +
       '```javascript [playground]\n' +
@@ -627,6 +799,26 @@ export default [
       '])(3) // 9\n' +
       '      // 27\n' +
       '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'tap.sync(\n  tapper value=>any,\n)(value any) -> value',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 5, column: 4, offset: 85 },
+            indent: [ 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 6, column: 1, offset: 86 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [
@@ -673,10 +865,12 @@ export default [
   },
   {
     name: 'tap.if',
-    synopsis: 'tap.if<args ...any>(\n' +
+    synopsis: '```coffeescript [specscript]\n' +
+      'tap.if<args ...any>(\n' +
       '  predicate ...args=>Promise|boolean,\n' +
       '  func ...args=>Promise|any,\n' +
-      ')(...args) -> Promise|value\n',
+      ')(...args) -> Promise|value\n' +
+      '```\n',
     description: 'Conditional tap by predicate\n' +
       '\n' +
       '```javascript [playground]\n' +
@@ -689,6 +883,29 @@ export default [
       'logIfOdd(2)\n' +
       'logIfOdd(3) // 3 is an odd number\n' +
       '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'tap.if<args ...any>(\n' +
+            '  predicate ...args=>Promise|boolean,\n' +
+            '  func ...args=>Promise|any,\n' +
+            ')(...args) -> Promise|value',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 6, column: 4, offset: 148 },
+            indent: [ 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 7, column: 1, offset: 149 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [
@@ -741,10 +958,12 @@ export default [
   },
   {
     name: 'tryCatch',
-    synopsis: 'tryCatch(\n' +
+    synopsis: '```coffeescript [specscript]\n' +
+      'tryCatch(\n' +
       '  tryer ...args=>Promise|any,\n' +
       '  catcher (err Error|any, ...args)=>Promise|any,\n' +
-      ')(args ...any) -> Promise|any\n',
+      ')(args ...any) -> Promise|any\n' +
+      '```\n',
     description: 'Try a tryer, catch with catcher. On error or rejected Promise, call catcher with the error as the first argument followed by any arguments.\n' +
       '\n' +
       '```javascript [playground]\n' +
@@ -761,6 +980,29 @@ export default [
       "console.log(errorThrower('hello')) // Error: hello\n" +
       '                                   // hello from catcher\n' +
       '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'tryCatch(\n' +
+            '  tryer ...args=>Promise|any,\n' +
+            '  catcher (err Error|any, ...args)=>Promise|any,\n' +
+            ')(args ...any) -> Promise|any',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 6, column: 4, offset: 151 },
+            indent: [ 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 7, column: 1, offset: 152 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [
@@ -818,11 +1060,13 @@ export default [
   },
   {
     name: 'switchCase',
-    synopsis: 'switchCase(\n' +
+    synopsis: '```coffeescript [specscript]\n' +
+      'switchCase(\n' +
       '  funcs Array<\n' +
       '    (predicate value=>Promise|boolean)\n' +
       '      |(resolver value=>Promise|any)>,\n' +
-      ')(value any) -> resolved Promise|any\n',
+      ')(value any) -> resolved Promise|any\n' +
+      '```\n',
     description: 'Conditional operator for functions. Odd indexed functions should be resolvers, while even indexed functions excluding the last should be predicates. For an odd number of functions, the last even indexed function should be a default resolver function. Any predicates or resolvers may be asynchronous.\n' +
       '\n' +
       '```javascript [playground]\n' +
@@ -853,6 +1097,30 @@ export default [
       'console.log(questionableIsOdd(1)) // true\n' +
       'console.log(questionableIsOdd(6)) // false\n' +
       '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'switchCase(\n' +
+            '  funcs Array<\n' +
+            '    (predicate value=>Promise|boolean)\n' +
+            '      |(resolver value=>Promise|any)>,\n' +
+            ')(value any) -> resolved Promise|any',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 7, column: 4, offset: 174 },
+            indent: [ 1, 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 8, column: 1, offset: 175 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [
@@ -952,7 +1220,8 @@ export default [
   },
   {
     name: 'map',
-    synopsis: 'map(\n' +
+    synopsis: '```coffeescript [specscript]\n' +
+      'map(\n' +
       '  mapper any=>Promise|any,\n' +
       ')(value any) -> result any\n' +
       '\n' +
@@ -974,7 +1243,8 @@ export default [
       '\n' +
       'map(\n' +
       '  mapper T=>Promise|any,\n' +
-      ')(reducer (any, T)=>Promise|any) -> mappingReducer (any, any)=>Promise|any\n',
+      ')(reducer (any, T)=>Promise|any) -> mappingReducer (any, any)=>Promise|any\n' +
+      '```\n',
     description: 'Apply a mapper concurrently to each item of a collection, returning a collection of the same type with all results. If order is implied by the collection, it is maintained in the result. Below are valid collections along with their iteration behavior.\n' +
       '\n' +
       ' * `Array` - iterate values by index\n' +
@@ -1063,6 +1333,52 @@ export default [
       "  [1, 2, 3, 4, 5].reduce(squareConcatReducer, ''),\n" +
       ") // '1491625'\n" +
       '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'map(\n' +
+            '  mapper any=>Promise|any,\n' +
+            ')(value any) -> result any\n' +
+            '\n' +
+            'Functor = Array|Object|Iterator|AsyncIterator|{ map: function }\n' +
+            '\n' +
+            'map(\n' +
+            '  mapper T=>Promise|any,\n' +
+            ')(Functor<T>) -> mappedFunctor Promise|Functor\n' +
+            '\n' +
+            'map(\n' +
+            '  mapper T=>any,\n' +
+            ')(...any=>Iterator<T>) -> mappingGeneratorFunction ...any=>Iterator\n' +
+            '\n' +
+            'map(\n' +
+            '  mapper T=>Promise|any,\n' +
+            ')(\n' +
+            '  ...any=>AsyncGenerator<T>,\n' +
+            ') -> mappingAsyncGeneratorFunction ...any=>AsyncIterator\n' +
+            '\n' +
+            'map(\n' +
+            '  mapper T=>Promise|any,\n' +
+            ')(reducer (any, T)=>Promise|any) -> mappingReducer (any, any)=>Promise|any',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 25, column: 4, offset: 551 },
+            indent: [
+              1, 1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 26, column: 1, offset: 552 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [
@@ -1878,10 +2194,12 @@ export default [
   },
   {
     name: 'map.pool',
-    synopsis: 'map.pool(\n' +
+    synopsis: '```coffeescript [specscript]\n' +
+      'map.pool(\n' +
       '  maxConcurrency number,\n' +
       '  mapper any=>Promise|any\n' +
-      ')(value Array) -> Promise|Array\n',
+      ')(value Array) -> Promise|Array\n' +
+      '```\n',
     description: '`map` with a concurrency limit that specifies the maximum number of promises in flight at any given moment.\n' +
       '\n' +
       '```javascript [playground]\n' +
@@ -1895,6 +2213,29 @@ export default [
       "console.log('start')\n" +
       'map.pool(2, delayedLog)([1, 2, 3, 4, 5])\n' +
       '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'map.pool(\n' +
+            '  maxConcurrency number,\n' +
+            '  mapper any=>Promise|any\n' +
+            ')(value Array) -> Promise|Array',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 6, column: 4, offset: 125 },
+            indent: [ 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 7, column: 1, offset: 126 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [
@@ -1957,9 +2298,11 @@ export default [
   },
   {
     name: 'map.withIndex',
-    synopsis: 'map.withIndex(\n' +
+    synopsis: '```coffeescript [specscript]\n' +
+      'map.withIndex(\n' +
       '  mapper (item T, index number, Array<T>)=>Promise|any,\n' +
-      ')(Array<T>) -> Promise|Array\n',
+      ')(Array<T>) -> Promise|Array\n' +
+      '```\n',
     description: '`map` with index and collection parameters additionally supplied to the mapper each iteration.\n' +
       '\n' +
       '```javascript [playground]\n' +
@@ -1968,6 +2311,28 @@ export default [
       '\n' +
       'console.log(range(5)) // [1, 2, 3, 4, 5]\n' +
       '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'map.withIndex(\n' +
+            '  mapper (item T, index number, Array<T>)=>Promise|any,\n' +
+            ')(Array<T>) -> Promise|Array',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 5, column: 4, offset: 132 },
+            indent: [ 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 6, column: 1, offset: 133 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [
@@ -2022,7 +2387,8 @@ export default [
   },
   {
     name: 'filter',
-    synopsis: 'filter(\n' +
+    synopsis: '```coffeescript [specscript]\n' +
+      'filter(\n' +
       '  predicate any=>Promise|boolean,\n' +
       ')(value any) -> result Promise|any\n' +
       '\n' +
@@ -2040,7 +2406,8 @@ export default [
       ') -> filteredAsyncGeneratorFunction ...args=>AsyncGenerator<T>\n' +
       '\n' +
       'filter(predicate T=>Promise|boolean)(\n' +
-      '  reducer (any, T)=>Promise|any) -> filteringReducer (any, T)=>Promise|any\n',
+      '  reducer (any, T)=>Promise|any) -> filteringReducer (any, T)=>Promise|any\n' +
+      '```\n',
     description: 'Exclude items from a collection based on the results of their concurrent execution with the predicate. The predicate may be asynchronous.\n' +
       '\n' +
       '```javascript [playground]\n' +
@@ -2124,6 +2491,48 @@ export default [
       '  [1, 2, 3, 4, 5].reduce(concatOddNumbers, []),\n' +
       ') // [1, 3, 5]\n' +
       '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'filter(\n' +
+            '  predicate any=>Promise|boolean,\n' +
+            ')(value any) -> result Promise|any\n' +
+            '\n' +
+            'Filterable = Array|Object|Iterable|AsyncIterable|{ filter: function }\n' +
+            '\n' +
+            'filter(predicate T=>Promise|boolean)(\n' +
+            '  value Filterable<T>) -> filtered Promise|Filterable<T>\n' +
+            '\n' +
+            'filter(predicate T=>boolean)(\n' +
+            '  generatorFunction ...args=>Generator<T>,\n' +
+            ') -> filteredGeneratorFunction ...args=>Generator<T>\n' +
+            '\n' +
+            'filter(predicate T=>boolean)(\n' +
+            '  asyncGeneratorFunction ...args=>AsyncGenerator<T>,\n' +
+            ') -> filteredAsyncGeneratorFunction ...args=>AsyncGenerator<T>\n' +
+            '\n' +
+            'filter(predicate T=>Promise|boolean)(\n' +
+            '  reducer (any, T)=>Promise|any) -> filteringReducer (any, T)=>Promise|any',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 21, column: 4, offset: 664 },
+            indent: [
+              1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 22, column: 1, offset: 665 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [
@@ -2475,9 +2884,11 @@ export default [
   },
   {
     name: 'filter.withIndex',
-    synopsis: 'filter.withIndex(\n' +
+    synopsis: '```coffeescript [specscript]\n' +
+      'filter.withIndex(\n' +
       '  predicate T=>Promise|boolean,\n' +
-      ')(value Array<T>) -> filteredArray Array<T>\n',
+      ')(value Array<T>) -> filteredArray Array<T>\n' +
+      '```\n',
     description: '`filter` with each predicate call supplemented by index and reference to original collection.\n' +
       '\n' +
       '```javascript [playground]\n' +
@@ -2488,6 +2899,28 @@ export default [
       '  uniq([1, 1, 1, 2, 2, 2, 3, 3, 3]),\n' +
       ') // [1, 2, 3]\n' +
       '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'filter.withIndex(\n' +
+            '  predicate T=>Promise|boolean,\n' +
+            ')(value Array<T>) -> filteredArray Array<T>',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 5, column: 4, offset: 126 },
+            indent: [ 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 6, column: 1, offset: 127 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [
@@ -2547,33 +2980,36 @@ export default [
   },
   {
     name: 'reduce',
-    synopsis: 'reduce(\n' +
+    synopsis: '```coffeescript [specscript]\n' +
+      'reduce(\n' +
       '  reducer function,\n' +
       '  init function|any?,\n' +
-      ')(...any) -> Promise|any\n' +
+      ')(collection any) -> Promise|any\n' +
       '\n' +
-      'Foldable = Iterable|AsyncIterable|{ reduce: function }|Object|any\n' +
+      'Foldable<T> = Iterable<T>|AsyncIterable<T>\n' +
+      '  |{ reduce: (any, T)=>any }|Object<T>\n' +
       '\n' +
-      'reduce(\n' +
+      'reduce<T>(\n' +
       '  reducer Reducer,\n' +
       '  init (collection=>Promise|any)|any?,\n' +
-      ')(collection Foldable) -> Promise|any\n' +
+      ')(collection Foldable<T>) -> Promise|any\n' +
       '\n' +
-      'reduce(\n' +
+      'reduce<args ...any>(\n' +
       '  reducer Reducer,\n' +
       '  init (...args=>Promise|any)|any?,\n' +
       ')(\n' +
       '  generatorFunction (...args=>Generator)|(...args=>AsyncGenerator),\n' +
-      ') -> reducingFunction (args ...any)=>Promise|any\n' +
+      ') -> reducingFunction (...args)=>Promise|any\n' +
       '\n' +
-      'Reducer = (any, T)=>Promise|any\n' +
+      'Reducer<T> = (any, T)=>Promise|any\n' +
       '\n' +
-      'reduce(\n' +
-      '  reducer Reducer,\n' +
+      'reduce<T>(\n' +
+      '  reducer Reducer<T>,\n' +
       '  init (...args=>Promise|any)|any?,\n' +
       ')(\n' +
-      '  anotherReducer Reducer, moreReducers ...Reducer\n' +
-      ') -> chainedReducingFunction (args ...any)=>Promise|any\n',
+      '  anotherReducer Reducer<T>, moreReducers ...Reducer<T>\n' +
+      ') -> chainedReducingFunction (args ...any)=>Promise|any\n' +
+      '```\n',
     description: 'Execute a reducer for each item of a collection, resulting in a single output value.\n' +
       '\n' +
       '```javascript [playground]\n' +
@@ -2683,6 +3119,58 @@ export default [
       '  reducingABC(actions),\n' +
       ') // { A: true, B: true, C: true }\n' +
       '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'reduce(\n' +
+            '  reducer function,\n' +
+            '  init function|any?,\n' +
+            ')(collection any) -> Promise|any\n' +
+            '\n' +
+            'Foldable<T> = Iterable<T>|AsyncIterable<T>\n' +
+            '  |{ reduce: (any, T)=>any }|Object<T>\n' +
+            '\n' +
+            'reduce<T>(\n' +
+            '  reducer Reducer,\n' +
+            '  init (collection=>Promise|any)|any?,\n' +
+            ')(collection Foldable<T>) -> Promise|any\n' +
+            '\n' +
+            'reduce<args ...any>(\n' +
+            '  reducer Reducer,\n' +
+            '  init (...args=>Promise|any)|any?,\n' +
+            ')(\n' +
+            '  generatorFunction (...args=>Generator)|(...args=>AsyncGenerator),\n' +
+            ') -> reducingFunction (...args)=>Promise|any\n' +
+            '\n' +
+            'Reducer<T> = (any, T)=>Promise|any\n' +
+            '\n' +
+            'reduce<T>(\n' +
+            '  reducer Reducer<T>,\n' +
+            '  init (...args=>Promise|any)|any?,\n' +
+            ')(\n' +
+            '  anotherReducer Reducer<T>, moreReducers ...Reducer<T>\n' +
+            ') -> chainedReducingFunction (args ...any)=>Promise|any',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 30, column: 4, offset: 723 },
+            indent: [
+              1, 1, 1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1, 1, 1, 1,
+              1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 31, column: 1, offset: 724 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [
@@ -2974,12 +3462,13 @@ export default [
   },
   {
     name: 'transform',
-    synopsis: 'transform(\n' +
+    synopsis: '```coffeescript [specscript]\n' +
+      'transform(\n' +
       '  transducer function,\n' +
       '  init function|any,\n' +
       ')(...any) -> Promise|any\n' +
       '\n' +
-      'Reducer = (any, T)=>Promise|any\n' +
+      'Reducer<T> = (any, T)=>Promise|any\n' +
       '\n' +
       'Transducer = Reducer=>Reducer\n' +
       '\n' +
@@ -3011,7 +3500,8 @@ export default [
       '    |any,\n' +
       ')(\n' +
       '  reducer Reducer, moreReducers ...Reducer\n' +
-      ') -> chainedReducingFunction (args ...any)=>Promise|any\n',
+      ') -> chainedReducingFunction (args ...any)=>Promise|any\n' +
+      '```\n',
     description: 'Execute a transducer for each item of a collection, concatenating results into the accumulator. The initial value may be a function, in which case it is treated as a resolver.\n' +
       '\n' +
       '```javascript [playground]\n' +
@@ -3126,6 +3616,68 @@ export default [
       "                                        // action { type: 'C' }\n" +
       '                                        // state { A: true, B: true, C: true }\n' +
       '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'transform(\n' +
+            '  transducer function,\n' +
+            '  init function|any,\n' +
+            ')(...any) -> Promise|any\n' +
+            '\n' +
+            'Reducer<T> = (any, T)=>Promise|any\n' +
+            '\n' +
+            'Transducer = Reducer=>Reducer\n' +
+            '\n' +
+            'Semigroup = Array|string|Set|TypedArray\n' +
+            '  |{ concat: function }|{ write: function }|Object\n' +
+            '\n' +
+            'Foldable = Iterable|AsyncIterable|{ reduce: function }|Object|any\n' +
+            '\n' +
+            'transform(\n' +
+            '  transducer Transducer,\n' +
+            '  init (collection=>Promise|Semigroup|any)\n' +
+            '    |Semigroup\n' +
+            '    |any,\n' +
+            ')(collection Foldable) -> result Promise|Semigroup|any\n' +
+            '\n' +
+            'transform(\n' +
+            '  transducer Transducer,\n' +
+            '  init (...args=>Promise|Semigroup|any)\n' +
+            '    |Semigroup\n' +
+            '    |any,\n' +
+            ')(\n' +
+            '  generatorFunction GeneratorFunction|AsyncGeneratorFunction,\n' +
+            ') -> reducingFunction (args ...any)=>Promise|Semigroup|any\n' +
+            '\n' +
+            'transform(\n' +
+            '  transducer Transducer,\n' +
+            '  init (...args=>Promise|Semigroup|any)\n' +
+            '    |Semigroup\n' +
+            '    |any,\n' +
+            ')(\n' +
+            '  reducer Reducer, moreReducers ...Reducer\n' +
+            ') -> chainedReducingFunction (args ...any)=>Promise|any',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 40, column: 4, offset: 928 },
+            indent: [
+              1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1, 1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 41, column: 1, offset: 929 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [
@@ -3904,17 +4456,17 @@ export default [
       '\n' +
       'Foldable = Iterable|AsyncIterable|{ reduce: function }\n' +
       '\n' +
-      'flatMap(\n' +
+      'flatMap<T>(\n' +
       '  flatMapper T=>Promise|Monad|Foldable|any,\n' +
       ')(value Monad<T>) -> result Monad\n' +
       '\n' +
-      'flatMap(\n' +
+      'flatMap<T>(\n' +
       '  flatMapper T=>Promise|Monad|Foldable|any,\n' +
       ')(\n' +
       '  value (args ...any)=>Generator<T>,\n' +
       ') -> flatMappingGeneratorFunction ...args=>Generator\n' +
       '\n' +
-      'flatMap(\n' +
+      'flatMap<T>(\n' +
       '  flatMapper T=>Promise|Monad|Foldable|any,\n' +
       ')(\n' +
       '  value (args ...any)=>AsyncGenerator<T>,\n' +
@@ -3922,7 +4474,7 @@ export default [
       '\n' +
       'Reducer<T> = (any, T)=>Promise|any\n' +
       '\n' +
-      'flatMap(\n' +
+      'flatMap<T>(\n' +
       '  flatMapper T=>Promise|Monad|Foldable|any,\n' +
       ')(value Reducer<T>) -> flatMappingReducer Reducer\n' +
       '```\n',
@@ -4048,6 +4600,61 @@ export default [
       'transform(asyncOddPowers, [])([1, 2, 3, 4, 5]).then(console.log)\n' +
       '// [1, 1, 1, 3, 9, 27, 5, 25, 125]\n' +
       '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'flatMap(flatMapper function)(value any) -> result any\n' +
+            '\n' +
+            'DuplexStream = { read: function, write: function }\n' +
+            '\n' +
+            'Monad = Array|String|Set\n' +
+            '  |TypedArray|DuplexStream|Iterator|AsyncIterator\n' +
+            '  |{ chain: function }|{ flatMap: function }|Object\n' +
+            '\n' +
+            'Foldable = Iterable|AsyncIterable|{ reduce: function }\n' +
+            '\n' +
+            'flatMap<T>(\n' +
+            '  flatMapper T=>Promise|Monad|Foldable|any,\n' +
+            ')(value Monad<T>) -> result Monad\n' +
+            '\n' +
+            'flatMap<T>(\n' +
+            '  flatMapper T=>Promise|Monad|Foldable|any,\n' +
+            ')(\n' +
+            '  value (args ...any)=>Generator<T>,\n' +
+            ') -> flatMappingGeneratorFunction ...args=>Generator\n' +
+            '\n' +
+            'flatMap<T>(\n' +
+            '  flatMapper T=>Promise|Monad|Foldable|any,\n' +
+            ')(\n' +
+            '  value (args ...any)=>AsyncGenerator<T>,\n' +
+            ') -> flatMappingAsyncGeneratorFunction ...args=>AsyncGenerator\n' +
+            '\n' +
+            'Reducer<T> = (any, T)=>Promise|any\n' +
+            '\n' +
+            'flatMap<T>(\n' +
+            '  flatMapper T=>Promise|Monad|Foldable|any,\n' +
+            ')(value Reducer<T>) -> flatMappingReducer Reducer',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 33, column: 4, offset: 871 },
+            indent: [
+              1, 1, 1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 34, column: 1, offset: 872 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [
@@ -5236,10 +5843,12 @@ export default [
   },
   {
     name: 'get',
-    synopsis: 'get(\n' +
+    synopsis: '```coffeescript [specscript]\n' +
+      'get(\n' +
       '  path string|Array|any,\n' +
       '  defaultValue (value=>any)|any?,\n' +
-      ')(value any) -> result any\n',
+      ')(value any) -> result any\n' +
+      '```\n',
     description: 'Access properties on objects. `get(property)` creates a function that, when supplied an object, returns the value on the object associated with `property`.\n' +
       '\n' +
       '```javascript [playground]\n' +
@@ -5287,6 +5896,29 @@ export default [
       '  get([0, 0, 0, 0, 0])(nested00000),\n' +
       ') // foo\n' +
       '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'get(\n' +
+            '  path string|Array|any,\n' +
+            '  defaultValue (value=>any)|any?,\n' +
+            ')(value any) -> result any',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 6, column: 4, offset: 123 },
+            indent: [ 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 7, column: 1, offset: 124 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [
@@ -5607,7 +6239,9 @@ export default [
   },
   {
     name: 'pick',
-    synopsis: 'pick(Array<string>)(source Object) -> picked Object\n',
+    synopsis: '```coffeescript [specscript]\n' +
+      'pick(Array<string>)(source Object) -> picked Object\n' +
+      '```\n',
     description: 'Create a new object by including specific keys.\n' +
       '\n' +
       '```javascript [playground]\n' +
@@ -5615,6 +6249,26 @@ export default [
       "  pick(['hello', 'world'])({ goodbye: 1, world: 2 }),\n" +
       ') // { world: 2 }\n' +
       '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'pick(Array<string>)(source Object) -> picked Object',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 3, column: 4, offset: 84 },
+            indent: [ 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 4, column: 1, offset: 85 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [
@@ -5659,7 +6313,9 @@ export default [
   },
   {
     name: 'omit',
-    synopsis: 'omit(Array<string>)(source Object) -> omitted Object\n',
+    synopsis: '```coffeescript [specscript]\n' +
+      'omit(Array<string>)(source Object) -> omitted Object\n' +
+      '```\n',
     description: 'Create a new object by excluding specific keys.\n' +
       '\n' +
       '```javascript [playground]\n' +
@@ -5667,6 +6323,26 @@ export default [
       "  omit(['_id'])({ _id: '1', name: 'George' }),\n" +
       ") // { name: 'George' }\n" +
       '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'omit(Array<string>)(source Object) -> omitted Object',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 3, column: 4, offset: 85 },
+            indent: [ 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 4, column: 1, offset: 86 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [
@@ -5711,7 +6387,8 @@ export default [
   },
   {
     name: 'any',
-    synopsis: 'any(\n' +
+    synopsis: '```coffeescript [specscript]\n' +
+      'any(\n' +
       '  predicate any=>Promise|boolean,\n' +
       ')(value any) -> anyTruthy Promise|boolean\n' +
       '\n' +
@@ -5719,7 +6396,8 @@ export default [
       '\n' +
       'any(\n' +
       '  predicate any=>Promise|boolean\n' +
-      ')(value Foldable) -> Promise|boolean\n',
+      ')(value Foldable) -> Promise|boolean\n' +
+      '```\n',
     description: 'Test a predicate concurrently across all items of a collection, returning true if any predication is truthy.\n' +
       '\n' +
       '```javascript [playground]\n' +
@@ -5752,6 +6430,37 @@ export default [
       "  todo => todo.title.startsWith('fugiat'),\n" +
       ']))(todoIDsGenerator()).then(console.log) // true\n' +
       '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'any(\n' +
+            '  predicate any=>Promise|boolean,\n' +
+            ')(value any) -> anyTruthy Promise|boolean\n' +
+            '\n' +
+            'Foldable = Iterable|AsyncIterable|{ reduce: function }\n' +
+            '\n' +
+            'any(\n' +
+            '  predicate any=>Promise|boolean\n' +
+            ')(value Foldable) -> Promise|boolean',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 11, column: 4, offset: 245 },
+            indent: [
+              1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 12, column: 1, offset: 246 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [
@@ -5849,7 +6558,8 @@ export default [
   },
   {
     name: 'all',
-    synopsis: 'all(\n' +
+    synopsis: '```coffeescript [specscript]\n' +
+      'all(\n' +
       '  predicate any=>Promise|boolean,\n' +
       ')(value any) -> allTruthy Promise|boolean\n' +
       '\n' +
@@ -5857,7 +6567,8 @@ export default [
       '\n' +
       'all(\n' +
       '  predicate T=>Promise|boolean,\n' +
-      ')(value Foldable<T>) -> Promise|boolean\n',
+      ')(value Foldable<T>) -> Promise|boolean\n' +
+      '```\n',
     description: 'Test a predicate concurrently across all items of a collection, returning true if all predications are truthy.\n' +
       '\n' +
       '```javascript [playground]\n' +
@@ -5881,6 +6592,37 @@ export default [
       '\n' +
       'all(async number => number < 6)(asyncNumbers()).then(console.log) // true\n' +
       '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'all(\n' +
+            '  predicate any=>Promise|boolean,\n' +
+            ')(value any) -> allTruthy Promise|boolean\n' +
+            '\n' +
+            'Foldable = Iterable|AsyncIterable|{ reduce: function }\n' +
+            '\n' +
+            'all(\n' +
+            '  predicate T=>Promise|boolean,\n' +
+            ')(value Foldable<T>) -> Promise|boolean',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 11, column: 4, offset: 247 },
+            indent: [
+              1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 12, column: 1, offset: 248 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [
@@ -5968,9 +6710,11 @@ export default [
   },
   {
     name: 'not',
-    synopsis: 'not(\n' +
+    synopsis: '```coffeescript [specscript]\n' +
+      'not(\n' +
       '  predicate ...any=>Promise|boolean,\n' +
-      ') -> invertedPredicate ...any=>Promise|boolean\n',
+      ') -> invertedPredicate ...any=>Promise|boolean\n' +
+      '```\n',
     description: 'Logically invert a predicate (`!`) by always logically inverting its return value. Predicate may be asynchronous.\n' +
       '\n' +
       '```javascript [playground]\n' +
@@ -5978,6 +6722,28 @@ export default [
       '  not(isOdd)(3),\n' +
       ') // false\n' +
       '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'not(\n' +
+            '  predicate ...any=>Promise|boolean,\n' +
+            ') -> invertedPredicate ...any=>Promise|boolean',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 5, column: 4, offset: 121 },
+            indent: [ 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 6, column: 1, offset: 122 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [
@@ -6038,7 +6804,9 @@ export default [
   },
   {
     name: 'not.sync',
-    synopsis: 'not.sync(func ...any=>boolean) -> logicallyInverted ...any=>boolean\n',
+    synopsis: '```coffeescript [specscript]\n' +
+      'not.sync(func ...any=>boolean) -> logicallyInverted ...any=>boolean\n' +
+      '```\n',
     description: 'Logically invert a function without promise handling.\n' +
       '\n' +
       '```javascript [playground]\n' +
@@ -6046,6 +6814,26 @@ export default [
       '  not.sync(isOdd)(2),\n' +
       ') // true\n' +
       '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'not.sync(func ...any=>boolean) -> logicallyInverted ...any=>boolean',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 3, column: 4, offset: 100 },
+            indent: [ 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 4, column: 1, offset: 101 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [
@@ -6088,9 +6876,11 @@ export default [
   },
   {
     name: 'and',
-    synopsis: 'and(\n' +
+    synopsis: '```coffeescript [specscript]\n' +
+      'and(\n' +
       '  predicates Array<value=>Promise|boolean>\n' +
-      ')(value any) -> allTruthy Promise|boolean\n',
+      ')(value any) -> allTruthy Promise|boolean\n' +
+      '```\n',
     description: 'Test an array of predicates concurrently against a single input, returning true if all are truthy. Predicates may be asynchronous.\n' +
       '\n' +
       '```javascript [playground]\n' +
@@ -6104,6 +6894,28 @@ export default [
       '  and([isOdd, isPositive, isLessThan3])(1),\n' +
       ') // true\n' +
       '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'and(\n' +
+            '  predicates Array<value=>Promise|boolean>\n' +
+            ')(value any) -> allTruthy Promise|boolean',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 5, column: 4, offset: 122 },
+            indent: [ 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 6, column: 1, offset: 123 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [
@@ -6157,9 +6969,11 @@ export default [
   },
   {
     name: 'or',
-    synopsis: 'or(\n' +
+    synopsis: '```coffeescript [specscript]\n' +
+      'or(\n' +
       '  predicates Array<value=>Promise|boolean>\n' +
-      ')(value any) -> anyTruthy Promise|boolean\n',
+      ')(value any) -> anyTruthy Promise|boolean\n' +
+      '```\n',
     description: 'Test an array of predicates concurrently against a single input, returning true if any of them test truthy. Predicates may be asynchronous.\n' +
       '\n' +
       '```javascript [playground]\n' +
@@ -6171,6 +6985,28 @@ export default [
       '  or([isOdd, isEven])(0),\n' +
       ') // true\n' +
       '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'or(\n' +
+            '  predicates Array<value=>Promise|boolean>\n' +
+            ')(value any) -> anyTruthy Promise|boolean',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 5, column: 4, offset: 121 },
+            indent: [ 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 6, column: 1, offset: 122 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [
@@ -6222,10 +7058,12 @@ export default [
   },
   {
     name: 'eq',
-    synopsis: 'eq(\n' +
+    synopsis: '```coffeescript [specscript]\n' +
+      'eq(\n' +
       '  left (any=>Promise|boolean)|any,\n' +
       '  right (any=>Promise|boolean)|any,\n' +
-      ') -> strictEqualBy (value any)=>Promise|boolean\n',
+      ') -> strictEqualBy (value any)=>Promise|boolean\n' +
+      '```\n',
     description: 'Test for strict equality (`===`) between two values. Either parameter may be an asynchronous resolver.\n' +
       '\n' +
       '```javascript [playground]\n' +
@@ -6235,6 +7073,29 @@ export default [
       "  personIsGeorge({ name: 'George', likes: 'bananas' }),\n" +
       ') // true\n' +
       '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'eq(\n' +
+            '  left (any=>Promise|boolean)|any,\n' +
+            '  right (any=>Promise|boolean)|any,\n' +
+            ') -> strictEqualBy (value any)=>Promise|boolean',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 6, column: 4, offset: 155 },
+            indent: [ 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 7, column: 1, offset: 156 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [
@@ -6299,10 +7160,12 @@ export default [
   },
   {
     name: 'gt',
-    synopsis: 'gt(\n' +
+    synopsis: '```coffeescript [specscript]\n' +
+      'gt(\n' +
       '  left (any=>Promise|boolean)|any,\n' +
       '  right (any=>Promise|boolean)|any,\n' +
-      ')(value any) -> greaterThanBy(value any)=>Promise|boolean\n',
+      ')(value any) -> greaterThanBy(value any)=>Promise|boolean\n' +
+      '```\n',
     description: 'Test for left value greater than (`>`) right value. Either parameter may be an asynchronous resolver.\n' +
       '\n' +
       '```javascript [playground]\n' +
@@ -6312,6 +7175,29 @@ export default [
       '\n' +
       'console.log(isOfLegalAge(juvenile)) // false\n' +
       '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'gt(\n' +
+            '  left (any=>Promise|boolean)|any,\n' +
+            '  right (any=>Promise|boolean)|any,\n' +
+            ')(value any) -> greaterThanBy(value any)=>Promise|boolean',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 6, column: 4, offset: 165 },
+            indent: [ 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 7, column: 1, offset: 166 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [
@@ -6376,10 +7262,12 @@ export default [
   },
   {
     name: 'lt',
-    synopsis: 'lt(\n' +
+    synopsis: '```coffeescript [specscript]\n' +
+      'lt(\n' +
       '  left (any=>Promise|boolean)|any,\n' +
       '  right (any=>Promise|boolean)|any,\n' +
-      ')(value any) -> lessThanBy(value any)=>Promise|boolean\n',
+      ')(value any) -> lessThanBy(value any)=>Promise|boolean\n' +
+      '```\n',
     description: 'Test for left value less than (`<`) right value. Either parameter may be an asynchronous resolver.\n' +
       '\n' +
       '```javascript [playground]\n' +
@@ -6391,6 +7279,29 @@ export default [
       'console.log(isLessThan3(3), false)\n' +
       'console.log(isLessThan3(5), false)\n' +
       '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'lt(\n' +
+            '  left (any=>Promise|boolean)|any,\n' +
+            '  right (any=>Promise|boolean)|any,\n' +
+            ')(value any) -> lessThanBy(value any)=>Promise|boolean',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 6, column: 4, offset: 162 },
+            indent: [ 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 7, column: 1, offset: 163 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [
@@ -6460,10 +7371,12 @@ export default [
   },
   {
     name: 'gte',
-    synopsis: 'gte(\n' +
+    synopsis: '```coffeescript [specscript]\n' +
+      'gte(\n' +
       '  left (any=>Promise|boolean)|any,\n' +
       '  right (any=>Promise|boolean)|any,\n' +
-      ')(value any) -> greaterThanOrEqualToBy(value any)=>Promise|boolean\n',
+      ')(value any) -> greaterThanOrEqualToBy(value any)=>Promise|boolean\n' +
+      '```\n',
     description: 'Test for left value greater than or equal to (`>=`) right value. Either parameter may be an asynchronous resolver.\n' +
       '\n' +
       '```javascript [playground]\n' +
@@ -6475,6 +7388,29 @@ export default [
       'console.log(isAtLeast100(100)) // true\n' +
       'console.log(isAtLeast100(101)) // true\n' +
       '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'gte(\n' +
+            '  left (any=>Promise|boolean)|any,\n' +
+            '  right (any=>Promise|boolean)|any,\n' +
+            ')(value any) -> greaterThanOrEqualToBy(value any)=>Promise|boolean',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 6, column: 4, offset: 175 },
+            indent: [ 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 7, column: 1, offset: 176 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [
@@ -6544,10 +7480,12 @@ export default [
   },
   {
     name: 'lte',
-    synopsis: 'lte(\n' +
+    synopsis: '```coffeescript [specscript]\n' +
+      'lte(\n' +
       '  left (any=>Promise|boolean)|any,\n' +
       '  right (any=>Promise|boolean)|any,\n' +
-      ')(value any) -> lessThanBy(value any)=>Promise|boolean\n',
+      ')(value any) -> lessThanBy(value any)=>Promise|boolean\n' +
+      '```\n',
     description: 'Test for left value less than or equal to (`<=`) right value. Either parameter may be an asynchronous resolver.\n' +
       '\n' +
       '```javascript [playground]\n' +
@@ -6559,6 +7497,29 @@ export default [
       'console.log(isLessThanOrEqualTo3(3), true)\n' +
       'console.log(isLessThanOrEqualTo3(5), false)\n' +
       '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'lte(\n' +
+            '  left (any=>Promise|boolean)|any,\n' +
+            '  right (any=>Promise|boolean)|any,\n' +
+            ')(value any) -> lessThanBy(value any)=>Promise|boolean',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 6, column: 4, offset: 163 },
+            indent: [ 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 7, column: 1, offset: 164 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [
@@ -6650,6 +7611,38 @@ export default [
       '  "avg": "5.50 MiB"\n' +
       '}\n' +
       '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'heapUsedInLoop(\n' +
+                '  desc string,\n' +
+                '  loopCount number,\n' +
+                '  func (loop number)=>any\n' +
+                ') -> ()',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 5, column: 8, offset: 84 },
+                indent: [ 1, 1, 1, 1 ]
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 5, column: 8, offset: 84 },
+            indent: [ 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 6, column: 1, offset: 85 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [
@@ -6801,6 +7794,34 @@ export default [
     name: 'size',
     synopsis: 'size(value String|Array|Object|Set|Map) -> number\n',
     description: '`size` accepts a String, Array, Object, Set, or Map and returns its current size in items as a number.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'size(value String|Array|Object|Set|Map) -> number',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 50, offset: 49 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 50, offset: 49 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 50 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [
@@ -6848,15 +7869,83 @@ export default [
       ') -> tracingReducer (any, ...any)=>Promise|any,\n' +
       '\n' +
       'trace(point !function, ...restArgs) -> point\n',
-    description: '**trace** is essentially `tap(console.log)` but with the extended functionality of lazy evaluation when called with a function.\n' +
+    description: 'Log a value out to the console, returning the value. If the value is a function, treat is as a resolver and log lazily.\n' +
       '\n' +
-      '```javascript\n' +
+      '```javascript [playground]\n' +
       'pipe([\n' +
       '  trace,\n' +
       '  trace(value => value.toUpperCase()),\n' +
       "])('hey') // hey\n" +
       '          // HEY\n' +
       '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'any -> T',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 9, offset: 8 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 9, offset: 8 },
+            indent: []
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'trace(\n' +
+                '  reducer (any, ...any)=>Promise|any\n' +
+                ') -> tracingReducer (any, ...any)=>Promise|any,',
+              position: {
+                start: { line: 3, column: 1, offset: 10 },
+                end: { line: 5, column: 48, offset: 101 },
+                indent: [ 1, 1 ]
+              }
+            }
+          ],
+          position: {
+            start: { line: 3, column: 1, offset: 10 },
+            end: { line: 5, column: 48, offset: 101 },
+            indent: [ 1, 1 ]
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'trace(point !function, ...restArgs) -> point',
+              position: {
+                start: { line: 7, column: 1, offset: 103 },
+                end: { line: 7, column: 45, offset: 147 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 7, column: 1, offset: 103 },
+            end: { line: 7, column: 45, offset: 147 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 8, column: 1, offset: 148 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [
@@ -6864,77 +7953,40 @@ export default [
           type: 'paragraph',
           children: [
             {
-              type: 'strong',
-              children: [
-                {
-                  type: 'text',
-                  value: 'trace',
-                  position: {
-                    start: { line: 1, column: 3, offset: 2 },
-                    end: { line: 1, column: 8, offset: 7 },
-                    indent: []
-                  }
-                }
-              ],
+              type: 'text',
+              value: 'Log a value out to the console, returning the value. If the value is a function, treat is as a resolver and log lazily.',
               position: {
                 start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 10, offset: 9 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: ' is essentially ',
-              position: {
-                start: { line: 1, column: 10, offset: 9 },
-                end: { line: 1, column: 26, offset: 25 },
-                indent: []
-              }
-            },
-            {
-              type: 'inlineCode',
-              value: 'tap(console.log)',
-              position: {
-                start: { line: 1, column: 26, offset: 25 },
-                end: { line: 1, column: 44, offset: 43 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: ' but with the extended functionality of lazy evaluation when called with a function.',
-              position: {
-                start: { line: 1, column: 44, offset: 43 },
-                end: { line: 1, column: 128, offset: 127 },
+                end: { line: 1, column: 120, offset: 119 },
                 indent: []
               }
             }
           ],
           position: {
             start: { line: 1, column: 1, offset: 0 },
-            end: { line: 1, column: 128, offset: 127 },
+            end: { line: 1, column: 120, offset: 119 },
             indent: []
           }
         },
         {
           type: 'code',
           lang: 'javascript',
-          meta: null,
+          meta: '[playground]',
           value: 'pipe([\n' +
             '  trace,\n' +
             '  trace(value => value.toUpperCase()),\n' +
             "])('hey') // hey\n" +
             '          // HEY',
           position: {
-            start: { line: 3, column: 1, offset: 129 },
-            end: { line: 9, column: 4, offset: 235 },
+            start: { line: 3, column: 1, offset: 121 },
+            end: { line: 9, column: 4, offset: 240 },
             indent: [ 1, 1, 1, 1, 1, 1 ]
           }
         }
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 10, column: 1, offset: 236 }
+        end: { line: 10, column: 1, offset: 241 }
       }
     }
   },
@@ -6964,6 +8016,348 @@ export default [
       ' * Set - for Set `values`\n' +
       ' * Iterator - for Iterables beyond Array and Set, such as GeneratorFunctions\n' +
       ' * AsyncIterator - for AsyncIterables and AsyncGeneratorFunctions\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Iterable|GeneratorFunction -> SyncSequence\n' +
+                'AsyncIterable|AsyncGeneratorFunction -> AsyncSequence\n' +
+                'SyncSequence|AsyncSequence -> Sequence',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 3, column: 39, offset: 135 },
+                indent: [ 1, 1 ]
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 3, column: 39, offset: 135 },
+            indent: [ 1, 1 ]
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'html',
+              value: '<T any>',
+              position: {
+                start: { line: 5, column: 1, offset: 137 },
+                end: { line: 5, column: 8, offset: 144 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: 'unionWith(\n  predicate (T, T)=>Promise',
+              position: {
+                start: { line: 5, column: 8, offset: 144 },
+                end: { line: 6, column: 28, offset: 182 },
+                indent: [ 1 ]
+              }
+            },
+            {
+              type: 'html',
+              value: '<boolean>',
+              position: {
+                start: { line: 6, column: 28, offset: 182 },
+                end: { line: 6, column: 37, offset: 191 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: '|boolean,\n)(values Array<Sequence',
+              position: {
+                start: { line: 6, column: 37, offset: 191 },
+                end: { line: 7, column: 24, offset: 224 },
+                indent: [ 1 ]
+              }
+            },
+            {
+              type: 'html',
+              value: '<T>',
+              position: {
+                start: { line: 7, column: 24, offset: 224 },
+                end: { line: 7, column: 27, offset: 227 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: '|T>|T) -> result Promise<Array',
+              position: {
+                start: { line: 7, column: 27, offset: 227 },
+                end: { line: 7, column: 57, offset: 257 },
+                indent: []
+              }
+            },
+            {
+              type: 'html',
+              value: '<T>',
+              position: {
+                start: { line: 7, column: 57, offset: 257 },
+                end: { line: 7, column: 60, offset: 260 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: '>|Array',
+              position: {
+                start: { line: 7, column: 60, offset: 260 },
+                end: { line: 7, column: 67, offset: 267 },
+                indent: []
+              }
+            },
+            {
+              type: 'html',
+              value: '<T>',
+              position: {
+                start: { line: 7, column: 67, offset: 267 },
+                end: { line: 7, column: 70, offset: 270 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 5, column: 1, offset: 137 },
+            end: { line: 7, column: 70, offset: 270 },
+            indent: [ 1, 1 ]
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'html',
+              value: '<T any>',
+              position: {
+                start: { line: 9, column: 1, offset: 272 },
+                end: { line: 9, column: 8, offset: 279 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: 'unionWith(\n  predicate (T, T)=>Promise',
+              position: {
+                start: { line: 9, column: 8, offset: 279 },
+                end: { line: 10, column: 28, offset: 317 },
+                indent: [ 1 ]
+              }
+            },
+            {
+              type: 'html',
+              value: '<boolean>',
+              position: {
+                start: { line: 10, column: 28, offset: 317 },
+                end: { line: 10, column: 37, offset: 326 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: '|boolean,\n)(values Set<Sequence',
+              position: {
+                start: { line: 10, column: 37, offset: 326 },
+                end: { line: 11, column: 22, offset: 357 },
+                indent: [ 1 ]
+              }
+            },
+            {
+              type: 'html',
+              value: '<T>',
+              position: {
+                start: { line: 11, column: 22, offset: 357 },
+                end: { line: 11, column: 25, offset: 360 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: '|T>|T) -> result Promise<Set',
+              position: {
+                start: { line: 11, column: 25, offset: 360 },
+                end: { line: 11, column: 53, offset: 388 },
+                indent: []
+              }
+            },
+            {
+              type: 'html',
+              value: '<T>',
+              position: {
+                start: { line: 11, column: 53, offset: 388 },
+                end: { line: 11, column: 56, offset: 391 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: '>|Set',
+              position: {
+                start: { line: 11, column: 56, offset: 391 },
+                end: { line: 11, column: 61, offset: 396 },
+                indent: []
+              }
+            },
+            {
+              type: 'html',
+              value: '<T>',
+              position: {
+                start: { line: 11, column: 61, offset: 396 },
+                end: { line: 11, column: 64, offset: 399 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 9, column: 1, offset: 272 },
+            end: { line: 11, column: 64, offset: 399 },
+            indent: [ 1, 1 ]
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'html',
+              value: '<T any>',
+              position: {
+                start: { line: 13, column: 1, offset: 401 },
+                end: { line: 13, column: 8, offset: 408 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: 'unionWith(\n' +
+                '  predicate (T, T)=>boolean,\n' +
+                ')(values SyncSequence<SyncSequence',
+              position: {
+                start: { line: 13, column: 8, offset: 408 },
+                end: { line: 15, column: 35, offset: 482 },
+                indent: [ 1, 1 ]
+              }
+            },
+            {
+              type: 'html',
+              value: '<T>',
+              position: {
+                start: { line: 15, column: 35, offset: 482 },
+                end: { line: 15, column: 38, offset: 485 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: '|T>|T) -> result Iterator',
+              position: {
+                start: { line: 15, column: 38, offset: 485 },
+                end: { line: 15, column: 63, offset: 510 },
+                indent: []
+              }
+            },
+            {
+              type: 'html',
+              value: '<T>',
+              position: {
+                start: { line: 15, column: 63, offset: 510 },
+                end: { line: 15, column: 66, offset: 513 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 13, column: 1, offset: 401 },
+            end: { line: 15, column: 66, offset: 513 },
+            indent: [ 1, 1 ]
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'html',
+              value: '<T any>',
+              position: {
+                start: { line: 17, column: 1, offset: 515 },
+                end: { line: 17, column: 8, offset: 522 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: 'unionWith(\n  predicate (T, T)=>Promise',
+              position: {
+                start: { line: 17, column: 8, offset: 522 },
+                end: { line: 18, column: 28, offset: 560 },
+                indent: [ 1 ]
+              }
+            },
+            {
+              type: 'html',
+              value: '<boolean>',
+              position: {
+                start: { line: 18, column: 28, offset: 560 },
+                end: { line: 18, column: 37, offset: 569 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: '|boolean,\n)(values Sequence<Sequence',
+              position: {
+                start: { line: 18, column: 37, offset: 569 },
+                end: { line: 19, column: 27, offset: 605 },
+                indent: [ 1 ]
+              }
+            },
+            {
+              type: 'html',
+              value: '<T>',
+              position: {
+                start: { line: 19, column: 27, offset: 605 },
+                end: { line: 19, column: 30, offset: 608 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: '|T>|T) -> result AsyncIterator',
+              position: {
+                start: { line: 19, column: 30, offset: 608 },
+                end: { line: 19, column: 60, offset: 638 },
+                indent: []
+              }
+            },
+            {
+              type: 'html',
+              value: '<T>',
+              position: {
+                start: { line: 19, column: 60, offset: 638 },
+                end: { line: 19, column: 63, offset: 641 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 17, column: 1, offset: 515 },
+            end: { line: 19, column: 63, offset: 641 },
+            indent: [ 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 20, column: 1, offset: 642 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [
@@ -7305,6 +8699,70 @@ export default [
     name: 'uniq',
     synopsis: '<T any>uniq(arr Array<T>) -> uniqArr Array<T>\n',
     description: '`uniq` takes an Array of items and returns an Array of items containing only the unique items of that Array.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'html',
+              value: '<T any>',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 8, offset: 7 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: 'uniq(arr Array',
+              position: {
+                start: { line: 1, column: 8, offset: 7 },
+                end: { line: 1, column: 22, offset: 21 },
+                indent: []
+              }
+            },
+            {
+              type: 'html',
+              value: '<T>',
+              position: {
+                start: { line: 1, column: 22, offset: 21 },
+                end: { line: 1, column: 25, offset: 24 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ') -> uniqArr Array',
+              position: {
+                start: { line: 1, column: 25, offset: 24 },
+                end: { line: 1, column: 43, offset: 42 },
+                indent: []
+              }
+            },
+            {
+              type: 'html',
+              value: '<T>',
+              position: {
+                start: { line: 1, column: 43, offset: 42 },
+                end: { line: 1, column: 46, offset: 45 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 46, offset: 45 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 46 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [
@@ -7351,6 +8809,34 @@ export default [
       '```javascript\n' +
       'new BrokenPromise() // a new BrokenPromise instance\n' +
       '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'new BrokenPromise() -> BrokenPromise {}',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 40, offset: 39 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 40, offset: 39 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 40 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [
@@ -7427,6 +8913,34 @@ export default [
       '```javascript\n' +
       "new BrokenPromise().then(() => console.log('unreachable'))\n" +
       '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'new BrokenPromise().then(unreachableResolver function)',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 55, offset: 54 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 55, offset: 54 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 55 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [
@@ -7587,6 +9101,55 @@ export default [
       "cancellablePromise.cancel(new Error('cancelled')).catch(\n" +
       '  err => console.error(err)) // Error: cancelled\n' +
       '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Promise { cancel: any=>() } -> CancellablePromise',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 50, offset: 49 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 50, offset: 49 },
+            indent: []
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Cancellable(\n' +
+                '  func ...any=>Promise|any,\n' +
+                ') -> cancellablePromiseFactory ...any=>CancellablePromise|any',
+              position: {
+                start: { line: 3, column: 1, offset: 51 },
+                end: { line: 5, column: 62, offset: 153 },
+                indent: [ 1, 1 ]
+              }
+            }
+          ],
+          position: {
+            start: { line: 3, column: 1, offset: 51 },
+            end: { line: 5, column: 62, offset: 153 },
+            indent: [ 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 6, column: 1, offset: 154 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [
@@ -7678,6 +9241,34 @@ export default [
     name: 'Mux.isSequence',
     synopsis: 'Mux.isSequence(x any) -> boolean\n',
     description: 'Mux.isSequence takes anything and returns a Boolean value. Mux.isSequence returns true if the value is an Iterable, GeneratorFunction, AsyncIterable, or AsyncGeneratorFunction.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Mux.isSequence(x any) -> boolean',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 33, offset: 32 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 33, offset: 32 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 33 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [
@@ -7721,6 +9312,128 @@ export default [
       '  x Sequence<Sequence<T>|T>|T,\n' +
       ') -> AsyncIterator<Array<T|undefined>>\n',
     description: 'Mux.zip takes a Sequence of items or Sequences of items and outputs either an Iterator or an AsyncIterator that yields an Array of items of each supplied Sequence for a given iteration. If any Sequence supplied to Mux.zip is AsyncIterable or an AsyncGeneratorFunction, Mux.zip outputs an AsyncIterator. The Iterator or AsyncIterator will iterate as long as the longest iterator of the supplied Sequences; shorter iterators will yield undefined until the longest iterator is consumed.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Iterable|GeneratorFunction -> SyncSequence\n' +
+                'AsyncIterable|AsyncGeneratorFunction -> AsyncSequence\n' +
+                'SyncSequence|AsyncSequence -> Sequence',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 3, column: 39, offset: 135 },
+                indent: [ 1, 1 ]
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 3, column: 39, offset: 135 },
+            indent: [ 1, 1 ]
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'html',
+              value: '<T any>',
+              position: {
+                start: { line: 5, column: 1, offset: 137 },
+                end: { line: 5, column: 8, offset: 144 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: 'Mux.zip(\n  x SyncSequence<SyncSequence',
+              position: {
+                start: { line: 5, column: 8, offset: 144 },
+                end: { line: 6, column: 30, offset: 182 },
+                indent: [ 1 ]
+              }
+            },
+            {
+              type: 'html',
+              value: '<T>',
+              position: {
+                start: { line: 6, column: 30, offset: 182 },
+                end: { line: 6, column: 33, offset: 185 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: '|T>|T,\n) -> Iterator<Array<T|undefined>>',
+              position: {
+                start: { line: 6, column: 33, offset: 185 },
+                end: { line: 7, column: 34, offset: 225 },
+                indent: [ 1 ]
+              }
+            }
+          ],
+          position: {
+            start: { line: 5, column: 1, offset: 137 },
+            end: { line: 7, column: 34, offset: 225 },
+            indent: [ 1, 1 ]
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'html',
+              value: '<T any>',
+              position: {
+                start: { line: 9, column: 1, offset: 227 },
+                end: { line: 9, column: 8, offset: 234 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: 'Mux.zip(\n  x Sequence<Sequence',
+              position: {
+                start: { line: 9, column: 8, offset: 234 },
+                end: { line: 10, column: 22, offset: 264 },
+                indent: [ 1 ]
+              }
+            },
+            {
+              type: 'html',
+              value: '<T>',
+              position: {
+                start: { line: 10, column: 22, offset: 264 },
+                end: { line: 10, column: 25, offset: 267 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: '|T>|T,\n) -> AsyncIterator<Array<T|undefined>>',
+              position: {
+                start: { line: 10, column: 25, offset: 267 },
+                end: { line: 11, column: 39, offset: 312 },
+                indent: [ 1 ]
+              }
+            }
+          ],
+          position: {
+            start: { line: 9, column: 1, offset: 227 },
+            end: { line: 11, column: 39, offset: 312 },
+            indent: [ 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 12, column: 1, offset: 313 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [
@@ -7764,6 +9477,146 @@ export default [
       '  x Sequence<Sequence<T>|T>|T,\n' +
       ') -> AsyncIterator<T>\n',
     description: 'Mux.concat takes a Sequence of items or Sequences of items and outputs either an Iterator or an AsyncIterator that yields each item individually. The first of these items is the first item of the first Sequence, the next is the second item of the first Sequence, and so on until all Sequences have been iterated in order. Non-Sequence Items in the top-level Sequence are yielded as they are.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Iterable|GeneratorFunction -> SyncSequence\n' +
+                'AsyncIterable|AsyncGeneratorFunction -> AsyncSequence\n' +
+                'SyncSequence|AsyncSequence -> Sequence',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 3, column: 39, offset: 135 },
+                indent: [ 1, 1 ]
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 3, column: 39, offset: 135 },
+            indent: [ 1, 1 ]
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'html',
+              value: '<T any>',
+              position: {
+                start: { line: 5, column: 1, offset: 137 },
+                end: { line: 5, column: 8, offset: 144 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: 'Mux.concat(\n  x SyncSequence<SyncSequence',
+              position: {
+                start: { line: 5, column: 8, offset: 144 },
+                end: { line: 6, column: 30, offset: 185 },
+                indent: [ 1 ]
+              }
+            },
+            {
+              type: 'html',
+              value: '<T>',
+              position: {
+                start: { line: 6, column: 30, offset: 185 },
+                end: { line: 6, column: 33, offset: 188 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: '|T>|T,\n) -> Iterator',
+              position: {
+                start: { line: 6, column: 33, offset: 188 },
+                end: { line: 7, column: 14, offset: 208 },
+                indent: [ 1 ]
+              }
+            },
+            {
+              type: 'html',
+              value: '<T>',
+              position: {
+                start: { line: 7, column: 14, offset: 208 },
+                end: { line: 7, column: 17, offset: 211 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 5, column: 1, offset: 137 },
+            end: { line: 7, column: 17, offset: 211 },
+            indent: [ 1, 1 ]
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'html',
+              value: '<T any>',
+              position: {
+                start: { line: 9, column: 1, offset: 213 },
+                end: { line: 9, column: 8, offset: 220 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: 'Mux.concat(\n  x Sequence<Sequence',
+              position: {
+                start: { line: 9, column: 8, offset: 220 },
+                end: { line: 10, column: 22, offset: 253 },
+                indent: [ 1 ]
+              }
+            },
+            {
+              type: 'html',
+              value: '<T>',
+              position: {
+                start: { line: 10, column: 22, offset: 253 },
+                end: { line: 10, column: 25, offset: 256 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: '|T>|T,\n) -> AsyncIterator',
+              position: {
+                start: { line: 10, column: 25, offset: 256 },
+                end: { line: 11, column: 19, offset: 281 },
+                indent: [ 1 ]
+              }
+            },
+            {
+              type: 'html',
+              value: '<T>',
+              position: {
+                start: { line: 11, column: 19, offset: 281 },
+                end: { line: 11, column: 22, offset: 284 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 9, column: 1, offset: 213 },
+            end: { line: 11, column: 22, offset: 284 },
+            indent: [ 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 12, column: 1, offset: 285 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [
@@ -7807,6 +9660,146 @@ export default [
       '  x Sequence<Sequence<T>|T>|T,\n' +
       ') -> AsyncIterator<T>\n',
     description: 'Mux.switch takes a Sequence of items or Sequences of items and outputs either an Iterator or an AsyncIterator that yields each item individually. The first of these items is the first item of the first Sequence, the next is the first item of the second Sequence, and so on until all Sequences have yielded their first item. Then, the first Sequence yields its second item, the second Sequence yields its second item, and so on until all Sequences have finished iterating. Non-Sequence Items in the top-level Sequence are yielded as they are. When a shorter Sequence finishes iterating, the remaining Sequences will switch yielding amongst themselves.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Iterable|GeneratorFunction -> SyncSequence\n' +
+                'AsyncIterable|AsyncGeneratorFunction -> AsyncSequence\n' +
+                'SyncSequence|AsyncSequence -> Sequence',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 3, column: 39, offset: 135 },
+                indent: [ 1, 1 ]
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 3, column: 39, offset: 135 },
+            indent: [ 1, 1 ]
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'html',
+              value: '<T any>',
+              position: {
+                start: { line: 5, column: 1, offset: 137 },
+                end: { line: 5, column: 8, offset: 144 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: 'Mux.switch(\n  x SyncSequence<SyncSequence',
+              position: {
+                start: { line: 5, column: 8, offset: 144 },
+                end: { line: 6, column: 30, offset: 185 },
+                indent: [ 1 ]
+              }
+            },
+            {
+              type: 'html',
+              value: '<T>',
+              position: {
+                start: { line: 6, column: 30, offset: 185 },
+                end: { line: 6, column: 33, offset: 188 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: '|T>|T,\n) -> Iterator',
+              position: {
+                start: { line: 6, column: 33, offset: 188 },
+                end: { line: 7, column: 14, offset: 208 },
+                indent: [ 1 ]
+              }
+            },
+            {
+              type: 'html',
+              value: '<T>',
+              position: {
+                start: { line: 7, column: 14, offset: 208 },
+                end: { line: 7, column: 17, offset: 211 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 5, column: 1, offset: 137 },
+            end: { line: 7, column: 17, offset: 211 },
+            indent: [ 1, 1 ]
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'html',
+              value: '<T any>',
+              position: {
+                start: { line: 9, column: 1, offset: 213 },
+                end: { line: 9, column: 8, offset: 220 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: 'Mux.switch(\n  x Sequence<Sequence',
+              position: {
+                start: { line: 9, column: 8, offset: 220 },
+                end: { line: 10, column: 22, offset: 253 },
+                indent: [ 1 ]
+              }
+            },
+            {
+              type: 'html',
+              value: '<T>',
+              position: {
+                start: { line: 10, column: 22, offset: 253 },
+                end: { line: 10, column: 25, offset: 256 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: '|T>|T,\n) -> AsyncIterator',
+              position: {
+                start: { line: 10, column: 25, offset: 256 },
+                end: { line: 11, column: 19, offset: 281 },
+                indent: [ 1 ]
+              }
+            },
+            {
+              type: 'html',
+              value: '<T>',
+              position: {
+                start: { line: 11, column: 19, offset: 281 },
+                end: { line: 11, column: 22, offset: 284 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 9, column: 1, offset: 213 },
+            end: { line: 11, column: 22, offset: 284 },
+            indent: [ 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 12, column: 1, offset: 285 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [
@@ -7850,6 +9843,146 @@ export default [
       '  x Sequence<Sequence<T>|T>T,\n' +
       ') -> AsyncIterator<T>\n',
     description: 'Mux.race takes a Sequence of items or Sequences of items and outputs either an Iterator or an AsyncIterator that yields each item individually. The first of these items are the synchronous items of the top level Sequence, followed by the asynchronous items of any asynchronous sub Sequences. If any sub Sequences are asynchronous, the order of these asynchronous items in the final returned AsyncIterator is determined by the serial asynchronous resolution of the individual asynchronous sub Sequences. If all Sequences are synchronous, Mux.race behaves just as Mux.concat.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Iterable|GeneratorFunction -> SyncSequence\n' +
+                'AsyncIterable|AsyncGeneratorFunction -> AsyncSequence\n' +
+                'SyncSequence|AsyncSequence -> Sequence',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 3, column: 39, offset: 135 },
+                indent: [ 1, 1 ]
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 3, column: 39, offset: 135 },
+            indent: [ 1, 1 ]
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'html',
+              value: '<T any>',
+              position: {
+                start: { line: 5, column: 1, offset: 137 },
+                end: { line: 5, column: 8, offset: 144 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: 'Mux.race(\n  x SyncSequence<SyncSequence',
+              position: {
+                start: { line: 5, column: 8, offset: 144 },
+                end: { line: 6, column: 30, offset: 183 },
+                indent: [ 1 ]
+              }
+            },
+            {
+              type: 'html',
+              value: '<T>',
+              position: {
+                start: { line: 6, column: 30, offset: 183 },
+                end: { line: 6, column: 33, offset: 186 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: '|T>T,\n) -> Iterator',
+              position: {
+                start: { line: 6, column: 33, offset: 186 },
+                end: { line: 7, column: 14, offset: 205 },
+                indent: [ 1 ]
+              }
+            },
+            {
+              type: 'html',
+              value: '<T>',
+              position: {
+                start: { line: 7, column: 14, offset: 205 },
+                end: { line: 7, column: 17, offset: 208 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 5, column: 1, offset: 137 },
+            end: { line: 7, column: 17, offset: 208 },
+            indent: [ 1, 1 ]
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'html',
+              value: '<T any>',
+              position: {
+                start: { line: 9, column: 1, offset: 210 },
+                end: { line: 9, column: 8, offset: 217 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: 'Mux.race(\n  x Sequence<Sequence',
+              position: {
+                start: { line: 9, column: 8, offset: 217 },
+                end: { line: 10, column: 22, offset: 248 },
+                indent: [ 1 ]
+              }
+            },
+            {
+              type: 'html',
+              value: '<T>',
+              position: {
+                start: { line: 10, column: 22, offset: 248 },
+                end: { line: 10, column: 25, offset: 251 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: '|T>T,\n) -> AsyncIterator',
+              position: {
+                start: { line: 10, column: 25, offset: 251 },
+                end: { line: 11, column: 19, offset: 275 },
+                indent: [ 1 ]
+              }
+            },
+            {
+              type: 'html',
+              value: '<T>',
+              position: {
+                start: { line: 11, column: 19, offset: 275 },
+                end: { line: 11, column: 22, offset: 278 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 9, column: 1, offset: 210 },
+            end: { line: 11, column: 22, offset: 278 },
+            indent: [ 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 12, column: 1, offset: 279 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [
@@ -7887,6 +10020,144 @@ export default [
       '\n' +
       '<T !Array|!Set>Mux.flatten(x T) -> Mux.concat(x)\n',
     description: 'Mux.flatten behaves just as Mux.concat except for cases when passed an Array or Set. When passed an Array, Mux.flatten outputs another Array with all elements of the input Array concatenated. When passed a Set, Mux.flatten outputs another Set in the same regard.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'html',
+              value: '<T any>',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 8, offset: 7 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: 'Mux.flatten(x Array<Iterable',
+              position: {
+                start: { line: 1, column: 8, offset: 7 },
+                end: { line: 1, column: 36, offset: 35 },
+                indent: []
+              }
+            },
+            {
+              type: 'html',
+              value: '<T>',
+              position: {
+                start: { line: 1, column: 36, offset: 35 },
+                end: { line: 1, column: 39, offset: 38 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: '|T>) -> Array',
+              position: {
+                start: { line: 1, column: 39, offset: 38 },
+                end: { line: 1, column: 52, offset: 51 },
+                indent: []
+              }
+            },
+            {
+              type: 'html',
+              value: '<T>',
+              position: {
+                start: { line: 1, column: 52, offset: 51 },
+                end: { line: 1, column: 55, offset: 54 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 55, offset: 54 },
+            indent: []
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'html',
+              value: '<T any>',
+              position: {
+                start: { line: 3, column: 1, offset: 56 },
+                end: { line: 3, column: 8, offset: 63 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: 'Mux.flatten(x Set<Iterable',
+              position: {
+                start: { line: 3, column: 8, offset: 63 },
+                end: { line: 3, column: 34, offset: 89 },
+                indent: []
+              }
+            },
+            {
+              type: 'html',
+              value: '<T>',
+              position: {
+                start: { line: 3, column: 34, offset: 89 },
+                end: { line: 3, column: 37, offset: 92 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: '|T>) -> Set',
+              position: {
+                start: { line: 3, column: 37, offset: 92 },
+                end: { line: 3, column: 48, offset: 103 },
+                indent: []
+              }
+            },
+            {
+              type: 'html',
+              value: '<T>',
+              position: {
+                start: { line: 3, column: 48, offset: 103 },
+                end: { line: 3, column: 51, offset: 106 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 3, column: 1, offset: 56 },
+            end: { line: 3, column: 51, offset: 106 },
+            indent: []
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: '<T !Array|!Set>Mux.flatten(x T) -> Mux.concat(x)',
+              position: {
+                start: { line: 5, column: 1, offset: 108 },
+                end: { line: 5, column: 49, offset: 156 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 5, column: 1, offset: 108 },
+            end: { line: 5, column: 49, offset: 156 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 6, column: 1, offset: 157 }
+      }
+    },
     description_mdast: {
       type: 'root',
       children: [

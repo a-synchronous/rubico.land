@@ -96,6 +96,7 @@ const CodeViewer = ReactElement(({
   lineWrapping = true,
   lineNumbers = false,
 }) => {
+  console.log('mode', code, mode)
   const codeAreaRef = useRef(null)
   useEffect(() => {
     if (!codeMirrors.has(codeAreaRef)) return
@@ -108,7 +109,8 @@ const CodeViewer = ReactElement(({
       lineWrapping,
       lineNumbers,
       theme,
-      readOnly: true,
+      readOnly: 'nocursor',
+      // cursorBlinkRate: -1,
     })
     codeMirrors.set(codeAreaRef, cm)
     return () => {
