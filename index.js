@@ -83,14 +83,17 @@ const DocsItem = pipe([
 
   ({ name, path, synopsis, description }) =>
     ReactElement(({ goto, state }) => {
+      // const [isExpanded, setIsExpanded] = useState(false)
       const isExpanded = state.path == path
       return Span({ class: 'docs-item' }, [
         Button({
           onClick() {
+            // setIsExpanded(!isExpanded)
             isExpanded ? goto('/docs') : goto(path)
           },
         }, [H3({ class: isExpanded ? 'active' : '' }, name)]),
-        isExpanded ? Span([synopsis, description]) : Div(),
+        Div(isExpanded ? [synopsis, description] : [])
+        // isExpanded ? Div([synopsis, description]) : Div(),
       ])
     }),
 ])
@@ -127,6 +130,8 @@ const DocsTrace = DocsItem({ name: 'trace', path: '/docs/x/trace' })
 // props Object -> Docs ReactElement
 const Docs = ReactElement(props => Div([
   Article({ id: 'docs' }, [
+    P('This page documents rubico\'s core API. To get started, click on a method below.'),
+
     H1('Function Composition'),
     Div([DocsPipe(props), DocsFork(props), DocsAssign(props)]),
     Div([DocsTap(props), DocsTryCatch(props), DocsSwitchCase(props)]),
@@ -190,6 +195,12 @@ const Root = ReactElement(pipe([
     const goto = path => {
       history.pushState({ path }, '', path)
       dispatch({ type: 'SET_PATH', path })
+      setTimeout(() => {
+        const active = document.querySelector('.active')
+        if (active != null) {
+          active.scrollIntoView({ behavior: 'smooth' })
+        }
+      }, 50)
     }
     useEffect(() => {
       window.addEventListener('popstate', updatePathWithLocation)

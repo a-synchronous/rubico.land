@@ -46,11 +46,13 @@ const console = {
   },
 }
 
-try {
-  ${code}
-} catch (e) {
-  console.log(e)
-}
+;(async function () {
+  try {
+    ${code}
+  } catch (e) {
+    console.log(e)
+  }
+})()
 `.trim()
 
 // code => html_string_with_code

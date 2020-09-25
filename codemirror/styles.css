@@ -108,6 +108,14 @@
 }
 
 /* DEFAULT THEME */
+.cm-s-default.CodeMirror {
+  border-radius: 1em;
+  padding-left: 2px;
+  padding-right: 0px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  pointer-events: none;
+}
 
 .cm-s-default .cm-header {color: blue;}
 .cm-s-default .cm-quote {color: #090;}

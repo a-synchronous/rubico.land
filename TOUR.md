@@ -1,6 +1,6 @@
 Welcome to the rubico tour. This tour covers high level concepts and provides runnable and editable code examples. All code areas have the rubico core methods imported globally.
 
-```javascript
+```javascript [theme=default]
 const {
   pipe, fork, assign,
   tap, tryCatch, switchCase,

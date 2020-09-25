@@ -96,7 +96,6 @@ const CodeViewer = ReactElement(({
   lineWrapping = true,
   lineNumbers = false,
 }) => {
-  console.log('mode', code, mode)
   const codeAreaRef = useRef(null)
   useEffect(() => {
     if (!codeMirrors.has(codeAreaRef)) return

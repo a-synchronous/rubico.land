@@ -86,9 +86,22 @@ const ReactElementFromMdast = function (mdast) {
     case 'inlineCode':
       return Code(recurse(mdast))
     case 'code':
+      if (mdast.lang == 'coffeescript') {
+        return Div([
+          H3('Synopsis'),
+          CodeViewer({
+            code: mdast.value,
+            mode: mdast.lang,
+            theme: 'coffeescript',
+          }),
+        ])
+      }
+      if (mdast.meta == '[theme=default]') {
+        return CodeViewer({ code: mdast.value, mode: mdast.lang, theme: 'default' })
+      }
       return mdast.meta == '[playground]'
         ? CodeRunner({ code: mdast.value, mode: mdast.lang })
-        : CodeViewer({ code: mdast.value, mode: mdast.lang })
+        : CodeViewer({ code: mdast.value, mode: mdast.lang, theme: 'rubico' })
     case 'link':
       return A({ href: mdast.url }, recurse(mdast))
     case 'linkReference':
