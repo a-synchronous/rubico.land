@@ -61,7 +61,7 @@ tabAnchors.forEach(anchor => {
   }
   anchor.addEventListener('click', event => {
     event.preventDefault()
-    if (window.location.pathname.startsWith(anchor.pathname)) {
+    if (window.location.pathname == anchor.pathname) {
       return undefined
     }
     history.pushState({}, '', anchor.pathname)
