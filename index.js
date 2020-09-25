@@ -74,7 +74,7 @@ const DocsItem = pipe([
     comment: ({ name }) => commentsBase.get(name),
   }),
   assign({
-    synopsis: ({ comment }) => 'synopsis_mdast' in comment
+    synopsis: ({ path, comment }) => 'synopsis_mdast' in comment
       ? ReactElementFromMdast(comment.synopsis_mdast)
       : Pre(comment.synopsis),
     description: ({ comment }) =>
@@ -83,17 +83,14 @@ const DocsItem = pipe([
 
   ({ name, path, synopsis, description }) =>
     ReactElement(({ goto, state }) => {
-      // const [isExpanded, setIsExpanded] = useState(false)
       const isExpanded = state.path == path
       return Span({ class: 'docs-item' }, [
         Button({
           onClick() {
-            // setIsExpanded(!isExpanded)
             isExpanded ? goto('/docs') : goto(path)
           },
         }, [H3({ class: isExpanded ? 'active' : '' }, name)]),
         Div(isExpanded ? [synopsis, description] : [])
-        // isExpanded ? Div([synopsis, description]) : Div(),
       ])
     }),
 ])
@@ -130,7 +127,7 @@ const DocsTrace = DocsItem({ name: 'trace', path: '/docs/x/trace' })
 // props Object -> Docs ReactElement
 const Docs = ReactElement(props => Div([
   Article({ id: 'docs' }, [
-    P('This page documents rubico\'s core API. To get started, click on a method below.'),
+    P('This page documents rubico\'s core API methods. To get started, click on a method below.'),
 
     H1('Function Composition'),
     Div([DocsPipe(props), DocsFork(props), DocsAssign(props)]),
@@ -200,7 +197,7 @@ const Root = ReactElement(pipe([
         if (active != null) {
           active.scrollIntoView({ behavior: 'smooth' })
         }
-      }, 50)
+      }, 325)
     }
     useEffect(() => {
       window.addEventListener('popstate', updatePathWithLocation)

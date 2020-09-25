@@ -56,13 +56,12 @@ homeAnchor.addEventListener('click', event => {
 const tabAnchors = [...document.querySelectorAll('header > nav > a')]
 
 tabAnchors.forEach(anchor => {
-  const isCurrent = window.location.pathname.startsWith(anchor.pathname)
-  if (isCurrent) {
+  if (window.location.pathname.startsWith(anchor.pathname)) {
     anchor.appendChild(activeSpacer)
   }
   anchor.addEventListener('click', event => {
     event.preventDefault()
-    if (isCurrent) {
+    if (window.location.pathname.startsWith(anchor.pathname)) {
       return undefined
     }
     history.pushState({}, '', anchor.pathname)

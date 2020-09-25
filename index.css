@@ -3,7 +3,7 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 a {
-  color: blue;
+  color: #65799B;
   text-decoration: none;
   font-weight: 500;
 }
@@ -152,8 +152,10 @@ header > nav > span {
   border: none;
   background-color: #fff;
   cursor: pointer;
-  color: blue;
+  color: #65799B;
   outline: none;
+  font-size: 16px;
+  font-weight: 600;
 }
 #back-to-top:hover {
   text-decoration: underline;
@@ -194,5 +196,5 @@ header > nav > span {
   color: #51D48D;
   font-size: 32px;
   margin-bottom: 36px;
-  padding-top: 26px;
+  padding-top: 36px;
 }

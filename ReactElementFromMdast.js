@@ -41,14 +41,14 @@ const anchorHashFromMdast = function (mdast) {
 //   value: string,
 //   children: Array<this>,
 // } -> ReactElement
-const ReactElementFromMdast = function (mdast) {
+const ReactElementFromMdast = function (mdast, props = {}) {
   const recurse = mdast => 'children' in mdast
     ? mdast.children.map(ReactElementFromMdast)
     : mdast.value
 
   switch (mdast.type) {
     case 'root':
-      return Article(recurse(mdast))
+      return Article(props, recurse(mdast))
     case 'heading':
       switch (mdast.depth) {
         case 1:

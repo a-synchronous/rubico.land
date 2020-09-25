@@ -621,7 +621,7 @@ export default [
       '```javascript [playground]\n' +
       'pipe([\n' +
       '  tap(console.log),\n' +
-      "  value => value + 'bar'\n" +
+      "  value => value + 'bar',\n" +
       '  tap(console.log),\n' +
       "])('foo') // 'foo'\n" +
       "          // 'foobar'\n" +
@@ -674,13 +674,13 @@ export default [
           meta: '[playground]',
           value: 'pipe([\n' +
             '  tap(console.log),\n' +
-            "  value => value + 'bar'\n" +
+            "  value => value + 'bar',\n" +
             '  tap(console.log),\n' +
             "])('foo') // 'foo'\n" +
             "          // 'foobar'",
           position: {
             start: { line: 3, column: 1, offset: 124 },
-            end: { line: 10, column: 4, offset: 267 },
+            end: { line: 10, column: 4, offset: 268 },
             indent: [
               1, 1, 1, 1,
               1, 1, 1
@@ -690,7 +690,7 @@ export default [
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 11, column: 1, offset: 268 }
+        end: { line: 11, column: 1, offset: 269 }
       }
     }
   },
