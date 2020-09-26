@@ -198,6 +198,36 @@ header > nav > span {
   text-decoration: underline;
 }
 
+#take-the-tour-button {
+  border-radius: 10px;
+  font-size: 26px;
+  border: none;
+  color: #FFF;
+  background-color: #65799B;
+  padding: 18px 32px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.18s ease;
+}
+#take-the-tour-button:hover {
+  background-color: #6078EA;
+}
+
+#read-the-docs-button {
+  margin-left: 25px;
+  border-radius: 10px;
+  font-size: 26px;
+  border: none;
+  color: #65799B;
+  background-color: #FFF;
+  padding: 18px 32px;
+  cursor: pointer;
+  outline: none;
+}
+#read-the-docs-button:hover {
+  text-decoration: underline;
+}
+
 .docs-item > button {
   border: none;
   background-color: #fff;
@@ -212,6 +242,9 @@ header > nav > span {
   margin: 0;
   display: inline;
   transition: font-size 0.24s;
+}
+.docs-item > button > h3:hover {
+  text-decoration: underline;
 }
 .docs-item > button.active > h3,
 .docs-item > button.active > span {

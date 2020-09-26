@@ -91,21 +91,18 @@ const descriptionBase = {
 
 console.log('commentsBase', commentsBase)
 
-// backToTop ReactElement
-const backToTop = Button({
-  id: 'back-to-top',
-  onClick() {
-    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
-  },
-}, 'Back to top')
-
 // readmeContent ReactElement
 const readmeContent = ReactElementFromMdast(readmeMdast)
 
 // () -> Home ReactElement
 const Home = ReactElement(() => Div([
   readmeContent,
-  Div([backToTop]),
+  A({ href: '/tour' }, [
+    Button({ id: 'take-the-tour-button' }, 'Take the tour'),
+  ]),
+  A({ href: '/docs' }, [
+    Button({ id: 'read-the-docs-button' }, 'Read the docs'),
+  ]),
 ]))
 
 // tour ReactElement
@@ -114,7 +111,6 @@ const tourContent = ReactElementFromMdast(tourMdast)
 // () -> ReactElement
 const Tour = ReactElement(() => Div([
   tourContent,
-  Div([backToTop]),
 ]))
 
 const namesOrder = [
@@ -152,7 +148,6 @@ const DocsItem = pipe([
         ]),
         isExpanded ? Button({
           onClick() {
-            console.log(getNextName(name))
             goto(`/docs/${getNextName(name)}`)
           },
         }, [Span({ id: 'next-arrow' }, '➦')]) : Span(),
@@ -228,7 +223,6 @@ const Docs = ReactElement(props => Div([
     // H1('rubico/x/'), // TODO es exports for rubico/x
     // Div([DocsTrace(props)]),
   // ]),
-  Div([backToTop]),
 ]))
 
 // () -> Blog ReactElement
