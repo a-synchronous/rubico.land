@@ -171,13 +171,17 @@ header > nav > span {
   margin-right: 32px;
 }
 
+#docs > div {
+  margin-bottom: 15px;
+}
+/*
 #docs > div > * {
-  display: inline;
+  display: block;
 }
-
 #docs > div > * > * {
-  display: inline;
+  display: block;
 }
+*/
 
 #retractor-header:after {
   margin-left: 10px;
@@ -228,7 +232,20 @@ header > nav > span {
   text-decoration: underline;
 }
 
-.docs-item > button {
+#active-spacer {
+  position: absolute;
+  top: -42px;
+}
+
+.indent-1 {
+  margin-left: 26px;
+}
+
+.docs-item {
+  position: relative;
+  margin-bottom: 10px;
+}
+.docs-item > a {
   border: none;
   background-color: #fff;
   padding: 0px 0px;
@@ -236,26 +253,21 @@ header > nav > span {
   cursor: pointer;
   outline: none;
 }
-.docs-item > button > h3 {
+.docs-item > a > h3 {
   color: #65799B;
   font-size: 22px;
   margin: 0;
   display: inline;
   transition: font-size 0.24s;
 }
-.docs-item > button > h3:hover {
-  text-decoration: underline;
-}
-.docs-item > button.active > h3,
-.docs-item > button.active > span {
+.docs-item > a.active > h3,
+.docs-item > a.active > span {
   color: #51D48D;
   font-size: 36px;
   margin-bottom: 36px;
-  padding-top: 36px;
 }
-.docs-item > button.active:hover {
+.docs-item > a.active:hover {
   color: #51D48D;
-  text-decoration: underline;
 }
 
 .fade-in-out > article {

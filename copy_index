@@ -4,7 +4,7 @@ rm -rf docs tour blog
 
 mkdir -p tour/ \
   docs/ \
-  docs/pipe/ docs/fork/ docs/assign/ \
+  docs/pipe/ docs/fork/ docs/fork/series docs/assign/ \
   docs/tap/ docs/tryCatch/ docs/switchCase/ \
   docs/map/ docs/filter/ docs/reduce/ docs/transform/ docs/flatMap/ \
   docs/any/ docs/all/ docs/and/ docs/or/ docs/not/ \
@@ -16,13 +16,19 @@ cp index.html tour/index.html
 cp index.html docs/index.html
 cp index.html docs/index.html
 cp index.html docs/pipe/index.html
+cp index.html docs/pipe.sync
 cp index.html docs/fork/index.html
 cp index.html docs/assign/index.html
 cp index.html docs/tap/index.html
+cp index.html docs/tap.sync
 cp index.html docs/tryCatch/index.html
 cp index.html docs/switchCase/index.html
 cp index.html docs/map/index.html
+cp index.html docs/map.series
+cp index.html docs/map.pool
+cp index.html docs/map.withIndex
 cp index.html docs/filter/index.html
+cp index.html docs/filter.withIndex
 cp index.html docs/reduce/index.html
 cp index.html docs/transform/index.html
 cp index.html docs/flatMap/index.html

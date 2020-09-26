@@ -114,12 +114,35 @@ const Tour = ReactElement(() => Div([
 ]))
 
 const namesOrder = [
-  'pipe', 'fork', 'assign',
-  'tap', 'tryCatch', 'switchCase',
-  'map', 'filter', 'reduce', 'transform', 'flatMap',
-  'any', 'all', 'and', 'or', 'not',
-  'eq', 'gt', 'lt', 'gte', 'lte',
-  'get', 'pick', 'omit',
+  'pipe',
+    'pipe.sync',
+  'fork',
+    'fork.series',
+  'assign',
+  'tap',
+    'tap.sync',
+  'tryCatch',
+  'switchCase',
+  'map',
+    'map.series', 'map.pool', 'map.withIndex',
+  'filter',
+    'filter.withIndex',
+  'reduce',
+  'transform',
+  'flatMap',
+  'any',
+  'all',
+  'and',
+  'or',
+  'not',
+  'eq',
+  'gt',
+  'lt',
+  'gte',
+  'lte',
+  'get',
+  'pick',
+  'omit',
 ]
 
 // name string -> nextName string
@@ -132,22 +155,29 @@ const DocsItem = pipe([
   assign({
     path: get('path', ({ name }) => `/docs/${name}`),
   }),
-
   ({ name, path }) =>
-    ReactElement(({ goto, state }) => {
-      const isExpanded = state.path == path
-      const [isTransitioning, setIsTransitioning] = useState(false)
-      return Span({ class: 'docs-item' }, [
-        Button({
+    ReactElement(props => {
+      const { goto, state, children } = props,
+        isExpanded = state.path == path,
+        [isTransitioning, setIsTransitioning] = useState(false)
+
+      return Div({ class: 'docs-item' }, [
+        isExpanded ? Span({ id: 'active-spacer' }) : Span(),
+        A({
+          href: isExpanded ? '/docs' : path,
           class: isExpanded ? 'active' : '',
-          onClick() {
+          onClick(event) {
+            event.preventDefault()
             isExpanded ? goto('/docs') : goto(path)
           },
         }, [
           H3({ id: isExpanded ? 'retractor-header' : '' }, name),
         ]),
-        isExpanded ? Button({
-          onClick() {
+
+        isExpanded ? A({
+          href: `/docs/${getNextName(name)}`,
+          onClick(event) {
+            event.preventDefault()
             goto(`/docs/${getNextName(name)}`)
           },
         }, [Span({ id: 'next-arrow' }, '➦')]) : Span(),
@@ -155,22 +185,32 @@ const DocsItem = pipe([
           className: isExpanded
             ? 'fade-in-out transition-end'
             : 'fade-in-out transition-start',
-        }, isExpanded
-          ? [synopsisBase.get(name), descriptionBase.get(name)]
-          : []),
+        }, isExpanded ? [
+          synopsisBase.get(name),
+          descriptionBase.get(name),
+        ] : []),
+
+        Div({ className: 'indent-1' }, children),
       ])
     }),
 ])
 
 // documentation React components
 const DocsPipe = DocsItem('pipe')
+const DocsPipeSync = DocsItem('pipe.sync')
 const DocsFork = DocsItem('fork')
+const DocsForkSeries = DocsItem('fork.series')
 const DocsAssign = DocsItem('assign')
 const DocsTap = DocsItem('tap')
+const DocsTapSync = DocsItem('tap.sync')
 const DocsTryCatch = DocsItem('tryCatch')
 const DocsSwitchCase = DocsItem('switchCase')
 const DocsMap = DocsItem('map')
+const DocsMapSeries = DocsItem('map.series')
+const DocsMapPool = DocsItem('map.pool')
+const DocsMapWithIndex = DocsItem('map.withIndex')
 const DocsFilter = DocsItem('filter')
+const DocsFilterWithIndex = DocsItem('filter.withIndex')
 const DocsReduce = DocsItem('reduce')
 const DocsTransform = DocsItem('transform')
 const DocsFlatMap = DocsItem('flatMap')
@@ -197,27 +237,54 @@ const Docs = ReactElement(props => Div([
     P('This page documents rubico\'s core API methods. To get started, click on a method below.'),
 
     H1('Function Composition'),
-    Div([DocsPipe(props), DocsFork(props), DocsAssign(props)]),
-    Div([DocsTap(props), DocsTryCatch(props), DocsSwitchCase(props)]),
+    Div([
+      DocsPipe(props, [
+        DocsPipeSync(props),
+      ]),
+      DocsFork(props, [
+        DocsForkSeries(props),
+      ]),
+      DocsAssign(props),
+      DocsTap(props, [
+        DocsTapSync(props)
+      ]),
+      DocsTryCatch(props),
+      DocsSwitchCase(props),
+    ]),
 
     H1('Transformation + Transducers'),
     Div([
-      DocsMap(props), DocsFilter(props), DocsReduce(props),
-      DocsTransform(props), DocsFlatMap(props),
+      DocsMap(props, [
+        DocsMapSeries(props), DocsMapPool(props), DocsMapWithIndex(props),
+      ]),
+      DocsFilter(props, [
+        DocsFilterWithIndex(props),
+      ]),
+      DocsReduce(props),
+      DocsTransform(props),
+      DocsFlatMap(props),
     ]),
 
     H1('Predicate Composition'),
     Div([
-      DocsAny(props), DocsAll(props), DocsAnd(props),
-      DocsOr(props), DocsNot(props),
-    ]),
-    Div([
-      DocsEq(props), DocsGt(props), DocsLt(props),
-      DocsGte(props), DocsLte(props),
+      DocsAny(props),
+      DocsAll(props),
+      DocsAnd(props),
+      DocsOr(props),
+      DocsNot(props),
+      DocsEq(props),
+      DocsGt(props),
+      DocsLt(props),
+      DocsGte(props),
+      DocsLte(props),
     ]),
 
     H1('Property Access'),
-    Div([DocsGet(props), DocsPick(props), DocsOmit(props)]),
+    Div([
+      DocsGet(props),
+      DocsPick(props),
+      DocsOmit(props),
+    ]),
   ]),
   // Article([
     // H1('rubico/x/'), // TODO es exports for rubico/x
@@ -259,7 +326,7 @@ const Root = ReactElement(pipe([
       history.pushState({ path }, '', path)
       dispatch({ type: 'SET_PATH', path })
       setTimeout(() => {
-        const active = document.querySelector('.active > h3')
+        const active = document.querySelector('#active-spacer')
         if (active != null) {
           active.scrollIntoView({ behavior: 'smooth' })
         }

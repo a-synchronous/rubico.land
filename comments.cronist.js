@@ -76,8 +76,8 @@ export default [
     synopsis: '```coffeescript [specscript]\n' +
       'pipe<args ...any>(\n' +
       '  funcs [\n' +
-      '    ...args=>any,\n' +
-      '    ...Array<any=>any>,\n' +
+      '    ...args=>Promise|any,\n' +
+      '    ...Array<any=>Promise|any>,\n' +
       '  ],\n' +
       ') -> pipeline ...args=>Promise|any\n' +
       '\n' +
@@ -131,8 +131,8 @@ export default [
           meta: '[specscript]',
           value: 'pipe<args ...any>(\n' +
             '  funcs [\n' +
-            '    ...args=>any,\n' +
-            '    ...Array<any=>any>,\n' +
+            '    ...args=>Promise|any,\n' +
+            '    ...Array<any=>Promise|any>,\n' +
             '  ],\n' +
             ') -> pipeline ...args=>Promise|any\n' +
             '\n' +
@@ -144,7 +144,7 @@ export default [
             ')(reducer Reducer) -> composed Reducer',
           position: {
             start: { line: 1, column: 1, offset: 0 },
-            end: { line: 15, column: 4, offset: 288 },
+            end: { line: 15, column: 4, offset: 304 },
             indent: [
               1, 1, 1, 1, 1, 1,
               1, 1, 1, 1, 1, 1,
@@ -155,7 +155,7 @@ export default [
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 16, column: 1, offset: 289 }
+        end: { line: 16, column: 1, offset: 305 }
       }
     },
     description_mdast: {
@@ -303,6 +303,104 @@ export default [
       position: {
         start: { line: 1, column: 1, offset: 0 },
         end: { line: 35, column: 1, offset: 1117 }
+      }
+    }
+  },
+  {
+    name: 'pipe.sync',
+    synopsis: '```coffeescript [specscript]\n' +
+      'pipe.sync<args ...any>(\n' +
+      '  funcs [\n' +
+      '    ...args=>any,\n' +
+      '    ...Array<any=>any>,\n' +
+      '  ],\n' +
+      ') -> pipeline ...args=>any\n' +
+      '```\n',
+    description: "`pipe` that doesn't automatically resolve promises. This variant is a good option if more performance is desired or if manual promise handling is required.\n" +
+      '\n' +
+      '```javascript [playground]\n' +
+      'pipe.sync([\n' +
+      '  value => Promise.resolve(value),\n' +
+      '  promise => promise.then(console.log)\n' +
+      "])('hey') // hey\n" +
+      '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'pipe.sync<args ...any>(\n' +
+            '  funcs [\n' +
+            '    ...args=>any,\n' +
+            '    ...Array<any=>any>,\n' +
+            '  ],\n' +
+            ') -> pipeline ...args=>any',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 8, column: 4, offset: 140 },
+            indent: [
+              1, 1, 1, 1,
+              1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 9, column: 1, offset: 141 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'inlineCode',
+              value: 'pipe',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 7, offset: 6 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: " that doesn't automatically resolve promises. This variant is a good option if more performance is desired or if manual promise handling is required.",
+              position: {
+                start: { line: 1, column: 7, offset: 6 },
+                end: { line: 1, column: 156, offset: 155 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 156, offset: 155 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[playground]',
+          value: 'pipe.sync([\n' +
+            '  value => Promise.resolve(value),\n' +
+            '  promise => promise.then(console.log)\n' +
+            "])('hey') // hey",
+          position: {
+            start: { line: 3, column: 1, offset: 157 },
+            end: { line: 8, column: 4, offset: 290 },
+            indent: [ 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 9, column: 1, offset: 291 }
       }
     }
   },
@@ -614,7 +712,9 @@ export default [
   {
     name: 'tap',
     synopsis: '```coffeescript [specscript]\n' +
-      'tap(tapper value=>Promise|any)(value any) -> value\n' +
+      'tap(\n' +
+      '  tapper value=>Promise|any,\n' +
+      ')(value any) -> value\n' +
       '```\n',
     description: 'Call a function with a value, returning the value. Promises created by the tapper are resolved before returning the value.\n' +
       '\n' +
@@ -633,17 +733,17 @@ export default [
           type: 'code',
           lang: 'coffeescript',
           meta: '[specscript]',
-          value: 'tap(tapper value=>Promise|any)(value any) -> value',
+          value: 'tap(\n  tapper value=>Promise|any,\n)(value any) -> value',
           position: {
             start: { line: 1, column: 1, offset: 0 },
-            end: { line: 3, column: 4, offset: 83 },
-            indent: [ 1, 1 ]
+            end: { line: 5, column: 4, offset: 88 },
+            indent: [ 1, 1, 1, 1 ]
           }
         }
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 4, column: 1, offset: 84 }
+        end: { line: 6, column: 1, offset: 89 }
       }
     },
     description_mdast: {
@@ -2093,6 +2193,108 @@ export default [
       position: {
         start: { line: 1, column: 1, offset: 0 },
         end: { line: 89, column: 1, offset: 3656 }
+      }
+    }
+  },
+  {
+    name: 'map.series',
+    synopsis: '```coffeescript [specscript]\n' +
+      'map.series<T>(\n' +
+      '  mapper T=>Promise|any,\n' +
+      ')(value Array<T>) -> Promise|Array\n' +
+      '```\n',
+    description: '`map` with serial execution.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const delayedLog = number => new Promise(function (resolve) {\n' +
+      '  setTimeout(function () {\n' +
+      '    console.log(number)\n' +
+      '    resolve()\n' +
+      '  }, 1000)\n' +
+      '})\n' +
+      '\n' +
+      "console.log('start')\n" +
+      'map.series(delayedLog)([1, 2, 3, 4, 5])\n' +
+      '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'map.series<T>(\n' +
+            '  mapper T=>Promise|any,\n' +
+            ')(value Array<T>) -> Promise|Array',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 5, column: 4, offset: 107 },
+            indent: [ 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 6, column: 1, offset: 108 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'inlineCode',
+              value: 'map',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 6, offset: 5 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ' with serial execution.',
+              position: {
+                start: { line: 1, column: 6, offset: 5 },
+                end: { line: 1, column: 29, offset: 28 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 29, offset: 28 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[playground]',
+          value: 'const delayedLog = number => new Promise(function (resolve) {\n' +
+            '  setTimeout(function () {\n' +
+            '    console.log(number)\n' +
+            '    resolve()\n' +
+            '  }, 1000)\n' +
+            '})\n' +
+            '\n' +
+            "console.log('start')\n" +
+            'map.series(delayedLog)([1, 2, 3, 4, 5])',
+          position: {
+            start: { line: 3, column: 1, offset: 30 },
+            end: { line: 13, column: 4, offset: 263 },
+            indent: [
+              1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 14, column: 1, offset: 264 }
       }
     }
   },
