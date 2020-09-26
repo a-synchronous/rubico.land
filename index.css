@@ -179,13 +179,22 @@ header > nav > span {
   display: inline;
 }
 
-#retractor-arrow {
+#retractor-header:after {
+  margin-left: 10px;
+  content: "▼";
+}
+#retractor-header:hover::after {
+  margin-left: 10px;
+  content: "▲";
+}
+
+#next-arrow {
   color: #51D48D;
   font-size: 38px;
-  margin-left: 15px;
+  margin-left: 22px;
   font-weight: 700;
 }
-#retractor-arrow:hover {
+#next-arrow:hover {
   text-decoration: underline;
 }
 
@@ -197,10 +206,6 @@ header > nav > span {
   cursor: pointer;
   outline: none;
 }
-.docs-item > button.active:hover {
-  text-decoration: underline;
-  color: #51D48D;
-}
 .docs-item > button > h3 {
   color: #65799B;
   font-size: 22px;
@@ -208,24 +213,37 @@ header > nav > span {
   display: inline;
   transition: font-size 0.24s;
 }
-.docs-item > button > .active {
+.docs-item > button.active > h3,
+.docs-item > button.active > span {
   color: #51D48D;
   font-size: 36px;
   margin-bottom: 36px;
   padding-top: 36px;
 }
+.docs-item > button.active:hover {
+  color: #51D48D;
+  text-decoration: underline;
+}
 
-.slide-down > article {
-  max-height: 450vh;
-  transition-property: max-height;
-  transition-duration: .5s;
-  transition-timing-function: ease-in-out;
+.fade-in-out > article {
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: .65s;
+  transition-timing-function: ease;
 }
-.slide-down.transitioning > article {
-  max-height: 450vh;
-  overflow-y: hidden;
+.fade-in-out.transition-start > article {
+  /* visibility: hidden; */
+  opacity: 0;
 }
-.slide-down.closed > article {
-  max-height: 0vh;
-  display: none;
+.fade-in-out.transition-end > article {
+  /* visibility: visible; */
+  opacity: 1;
+}
+.fade-in-out.transition-start > article > p {
+  /* visibility: hidden; */
+  opacity: 0;
+}
+.fade-in-out.transition-end > article > p {
+  /* visibility: visible; */
+  opacity: 1;
 }

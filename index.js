@@ -12,9 +12,6 @@ import cronistComments from './comments.cronist.js'
 import readmeMdast from './readme.mdast.js'
 import tourMdast from './tour.mdast.js'
 
-// leave off image and title from original readme
-readmeMdast.children = readmeMdast.children.slice(2)
-
 const {
   pipe, fork, assign,
   tap, tryCatch, switchCase,
@@ -26,6 +23,42 @@ const {
 
 const { useState, useEffect, useRef, useCallback, useReducer } = React
 
+// Map<(parsedCommentName string)=>(parsedComment object)>
+const commentsBase = cronistComments.reduce(
+  (result, item) => result.set(item.name, item), new Map())
+
+// leave off image and title from original readme
+readmeMdast.children = readmeMdast.children.slice(2)
+
+// memoizeCappedUnary(func function, cap number) -> memoized function
+const memoizeCappedUnary = function (func, cap) {
+  const cache = new Map(),
+    memoized = function memoized(arg0) {
+      if (cache.has(arg0)) {
+        return cache.get(arg0)
+      }
+      const result = func(arg0)
+      cache.set(arg0, result)
+      if (cache.size > cap) {
+        cache.clear()
+      }
+      return result
+    }
+  memoized.cache = cache
+  return memoized
+}
+
+// memoize React components, cache size 500
+const MemoizedReactElementFromMdast = memoizeCappedUnary(ReactElementFromMdast, 500)
+
+// preload some of the larger cache items
+const preload = ['map', 'filter', 'reduce', 'transform', 'flatMap']
+preload.forEach(name => {
+  const comment = commentsBase.get(name)
+  MemoizedReactElementFromMdast(comment.description_mdast)
+  MemoizedReactElementFromMdast(comment.synopsis_mdast)
+})
+
 const identity = value => value
 
 const isArray = Array.isArray
@@ -33,9 +66,28 @@ const isArray = Array.isArray
 // (prefix string, getter any=>string) => boolean
 const startsWith = (prefix, getter) => value => getter(value).startsWith(prefix)
 
-// Map<(parsedCommentName string)=>(parsedComment object)>
-const commentsBase = cronistComments.reduce(
-  (result, item) => result.set(item.name, item), new Map())
+// synopsisBase.get(name string) -> synopsis ReactElement
+const synopsisBase = {
+  get(name) {
+    const comment = commentsBase.get(name)
+    if (comment == null) {
+      return Span('Syntax not found')
+    }
+    return 'synopsis_mdast' in comment
+      ? MemoizedReactElementFromMdast(comment.synopsis_mdast)
+      : Pre(comment.synopsis)
+  },
+}
+
+// descriptionBase.get(name string) -> description ReactElement
+const descriptionBase = {
+  get(name) {
+    const comment = commentsBase.get(name)
+    return comment == null
+      ? Span('Description not found')
+      : MemoizedReactElementFromMdast(comment.description_mdast)
+  },
+}
 
 console.log('commentsBase', commentsBase)
 
@@ -65,50 +117,52 @@ const Tour = ReactElement(() => Div([
   Div([backToTop]),
 ]))
 
+const namesOrder = [
+  'pipe', 'fork', 'assign',
+  'tap', 'tryCatch', 'switchCase',
+  'map', 'filter', 'reduce', 'transform', 'flatMap',
+  'any', 'all', 'and', 'or', 'not',
+  'eq', 'gt', 'lt', 'gte', 'lte',
+  'get', 'pick', 'omit',
+]
+
+// name string -> nextName string
+const getNextName = name => namesOrder[(namesOrder.indexOf(name) + 1) % namesOrder.length]
+
 // name string => ReactElement
 // { name: string, path: string } => ReactElement
 const DocsItem = pipe([
   value => typeof value == 'string' ? ({ name: value }) : value,
   assign({
     path: get('path', ({ name }) => `/docs/${name}`),
-    comment: ({ name }) => commentsBase.get(name),
-  }),
-  assign({
-    synopsis: ({ path, comment }) => 'synopsis_mdast' in comment
-      ? ReactElementFromMdast(comment.synopsis_mdast)
-      : Pre(comment.synopsis),
-    description: ({ comment }) =>
-      ReactElementFromMdast(comment.description_mdast),
   }),
 
-  ({ name, path, synopsis, description }) =>
+  ({ name, path }) =>
     ReactElement(({ goto, state }) => {
       const isExpanded = state.path == path
       const [isTransitioning, setIsTransitioning] = useState(false)
-      useEffect(() => {
-        if (isExpanded) {
-          console.log('running this')
-          setIsTransitioning(true)
-          setTimeout(() => {
-            setIsTransitioning(false)
-          }, 500)
-        }
-      }, [])
-
       return Span({ class: 'docs-item' }, [
         Button({
+          class: isExpanded ? 'active' : '',
           onClick() {
             isExpanded ? goto('/docs') : goto(path)
           },
         }, [
-          H3({ class: isExpanded ? 'active' : '' }, name),
-          isExpanded ? Span({ id: 'retractor-arrow' }, '⇤') : Span(),
+          H3({ id: isExpanded ? 'retractor-header' : '' }, name),
         ]),
+        isExpanded ? Button({
+          onClick() {
+            console.log(getNextName(name))
+            goto(`/docs/${getNextName(name)}`)
+          },
+        }, [Span({ id: 'next-arrow' }, '➦')]) : Span(),
         Div({
-          className: isExpanded && isTransitioning ? 'slide-down transitioning'
-            : isExpanded ? 'slide-down'
-            : 'slide-down closed'
-        }, isExpanded ? [synopsis, description] : []),
+          className: isExpanded
+            ? 'fade-in-out transition-end'
+            : 'fade-in-out transition-start',
+        }, isExpanded
+          ? [synopsisBase.get(name), descriptionBase.get(name)]
+          : []),
       ])
     }),
 ])
@@ -211,7 +265,7 @@ const Root = ReactElement(pipe([
       history.pushState({ path }, '', path)
       dispatch({ type: 'SET_PATH', path })
       setTimeout(() => {
-        const active = document.querySelector('.active')
+        const active = document.querySelector('.active > h3')
         if (active != null) {
           active.scrollIntoView({ behavior: 'smooth' })
         }
