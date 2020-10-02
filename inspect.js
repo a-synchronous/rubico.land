@@ -14,6 +14,9 @@ const inspect = function (value, depth = 0) {
     return `${value}`
   }
   if (value.constructor == Set) {
+    if (value.size == 0) {
+      return 'Set {}'
+    }
     let result = `Set { `
     const resultValues = []
     for (const item of value) {
@@ -24,6 +27,9 @@ const inspect = function (value, depth = 0) {
     return result
   }
   if (value.constructor == Map) {
+    if (value.size == 0) {
+      return 'Map {}'
+    }
     let result = 'Map { '
     const entries = []
     for (const [key, item] of value) {
@@ -34,6 +40,9 @@ const inspect = function (value, depth = 0) {
     return result
   }
   if (value.constructor == Object) {
+    if (Object.keys(value).length == 0) {
+      return '{}'
+    }
     let result = '{ '
     const entries = []
     for (const key in value) {

@@ -7,6 +7,7 @@ import ReactElement, {
   Code, Pre,
 } from './ReactElement.js'
 import ReactElementFromMdast from './ReactElementFromMdast.js'
+import ShortLink from './ShortLink.js'
 import CodeViewer from './CodeViewer.js'
 import cronistComments from './comments.cronist.js'
 import readmeMdast from './readme.mdast.js'
@@ -121,6 +122,7 @@ const namesOrder = [
   'assign',
   'tap',
     'tap.sync',
+    'tap.if',
   'tryCatch',
   'switchCase',
   'map',
@@ -135,6 +137,7 @@ const namesOrder = [
   'and',
   'or',
   'not',
+  'not.sync',
   'eq',
   'gt',
   'lt',
@@ -143,6 +146,21 @@ const namesOrder = [
   'get',
   'pick',
   'omit',
+  'defaultsDeep',
+  'find',
+  'flatten',
+  'forEach',
+  'isDeepEqual',
+  'isEmpty',
+  'isFunction',
+  'isObject',
+  'isString',
+  'last',
+  'pluck',
+  'size',
+  'trace',
+  'unionWith',
+  'uniq',
 ]
 
 // name string -> nextName string
@@ -155,32 +173,34 @@ const DocsItem = pipe([
   assign({
     path: get('path', ({ name }) => `/docs/${name}`),
   }),
-  ({ name, path }) =>
+  ({
+    name, path, back = '/docs', getNextMethodName = getNextName,
+  }) =>
     ReactElement(props => {
       const { goto, state, children } = props,
         isExpanded = state.path == path,
         [isTransitioning, setIsTransitioning] = useState(false)
 
-      return Div({ class: 'docs-item' }, [
+      return Div({ className: 'docs-item' }, [
         isExpanded ? Span({ id: 'active-spacer' }) : Span(),
         A({
-          href: isExpanded ? '/docs' : path,
-          class: isExpanded ? 'active' : '',
+          href: isExpanded ? back : path,
+          className: isExpanded ? 'active' : '',
           onClick(event) {
             event.preventDefault()
-            isExpanded ? goto('/docs') : goto(path)
+            isExpanded ? goto(back) : goto(path)
           },
         }, [
           H3({ id: isExpanded ? 'retractor-header' : '' }, name),
         ]),
-
         isExpanded ? A({
-          href: `/docs/${getNextName(name)}`,
+          href: `${back}/${getNextMethodName(name)}`,
           onClick(event) {
             event.preventDefault()
-            goto(`/docs/${getNextName(name)}`)
+            goto(`${back}/${getNextMethodName(name)}`)
           },
         }, [Span({ id: 'next-arrow' }, '➦')]) : Span(),
+
         Div({
           className: isExpanded
             ? 'fade-in-out transition-end'
@@ -189,8 +209,7 @@ const DocsItem = pipe([
           synopsisBase.get(name),
           descriptionBase.get(name),
         ] : []),
-
-        Div({ className: 'indent-1' }, children),
+        Div({ className: 'docs-item-children' }, children),
       ])
     }),
 ])
@@ -203,6 +222,7 @@ const DocsForkSeries = DocsItem('fork.series')
 const DocsAssign = DocsItem('assign')
 const DocsTap = DocsItem('tap')
 const DocsTapSync = DocsItem('tap.sync')
+const DocsTapIf = DocsItem('tap.if')
 const DocsTryCatch = DocsItem('tryCatch')
 const DocsSwitchCase = DocsItem('switchCase')
 const DocsMap = DocsItem('map')
@@ -220,6 +240,7 @@ const DocsAll = DocsItem('all')
 const DocsAnd = DocsItem('and')
 const DocsOr = DocsItem('or')
 const DocsNot = DocsItem('not')
+const DocsNotSync = DocsItem('not.sync')
 const DocsEq = DocsItem('eq')
 const DocsGt = DocsItem('gt')
 const DocsLt = DocsItem('lt')
@@ -229,12 +250,40 @@ const DocsGet = DocsItem('get')
 const DocsPick = DocsItem('pick')
 const DocsOmit = DocsItem('omit')
 
-const DocsTrace = DocsItem({ name: 'trace', path: '/docs/x/trace' })
+const DocsDefaultsDeep = DocsItem('defaultsDeep')
+const DocsFind = DocsItem('find')
+const DocsFirst = DocsItem('first')
+const DocsFlatten = DocsItem('flatten')
+const DocsForEach = DocsItem('forEach')
+const DocsIsDeepEqual = DocsItem('isDeepEqual')
+const DocsIsEmpty = DocsItem('isEmpty')
+const DocsIsFunction = DocsItem('isFunction')
+const DocsIsObject = DocsItem('isObject')
+const DocsIsString = DocsItem('isString')
+const DocsLast = DocsItem('last')
+const DocsPluck = DocsItem('pluck')
+const DocsSize = DocsItem('size')
+const DocsTrace = DocsItem('trace')
+const DocsUnionWith = DocsItem('unionWith')
+const DocsUniq = DocsItem('uniq')
 
 // props Object -> Docs ReactElement
 const Docs = ReactElement(props => Div([
   Article({ id: 'docs' }, [
-    P('This page documents rubico\'s core API methods. To get started, click on a method below.'),
+    P('This page documents rubico\'s API methods. To get started, click on a link below.'),
+
+    /* probably will move this to the bottom
+    Span([
+      A({
+        href: '/docs/x',
+        className: 'docs-link',
+        onClick(event) {
+          event.preventDefault()
+          props.goto('/docs/x')
+        },
+      }, [H1('x/')]),
+    ]),
+    */
 
     H1('Function Composition'),
     Div([
@@ -246,7 +295,8 @@ const Docs = ReactElement(props => Div([
       ]),
       DocsAssign(props),
       DocsTap(props, [
-        DocsTapSync(props)
+        DocsTapSync(props),
+        DocsTapIf(props),
       ]),
       DocsTryCatch(props),
       DocsSwitchCase(props),
@@ -271,7 +321,9 @@ const Docs = ReactElement(props => Div([
       DocsAll(props),
       DocsAnd(props),
       DocsOr(props),
-      DocsNot(props),
+      DocsNot(props, [
+        DocsNotSync(props),
+      ]),
       DocsEq(props),
       DocsGt(props),
       DocsLt(props),
@@ -285,11 +337,27 @@ const Docs = ReactElement(props => Div([
       DocsPick(props),
       DocsOmit(props),
     ]),
+
+    H1('x/ - stable'),
+    Div([
+      DocsDefaultsDeep(props),
+      DocsFind(props),
+      DocsFirst(props),
+      DocsFlatten(props),
+      DocsForEach(props),
+      DocsIsDeepEqual(props),
+      DocsIsEmpty(props),
+      DocsIsFunction(props),
+      DocsIsObject(props),
+      DocsIsString(props),
+      DocsLast(props),
+      DocsPluck(props),
+      DocsSize(props),
+      DocsTrace(props),
+      DocsUnionWith(props),
+      DocsUniq(props),
+    ]),
   ]),
-  // Article([
-    // H1('rubico/x/'), // TODO es exports for rubico/x
-    // Div([DocsTrace(props)]),
-  // ]),
 ]))
 
 // () -> Blog ReactElement
@@ -332,6 +400,14 @@ const Root = ReactElement(pipe([
         }
       }, 325)
     }
+
+    useEffect(() => {
+      // scroll active into view on first render
+      const active = document.querySelector('#active-spacer')
+      if (active != null) {
+        active.scrollIntoView({ behavior: 'smooth' })
+      }
+    }, [])
     useEffect(() => {
       window.addEventListener('popstate', updatePathWithLocation)
       homeAnchor.addEventListener('click', updatePathWithLocation)

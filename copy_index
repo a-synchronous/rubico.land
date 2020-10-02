@@ -3,7 +3,7 @@
 rm -rf docs tour blog
 
 mkdir -p tour/ \
-  docs/ \
+  docs/ docs/x \
   docs/pipe/ docs/fork/ docs/fork/series docs/assign/ \
   docs/tap/ docs/tryCatch/ docs/switchCase/ \
   docs/map/ docs/filter/ docs/reduce/ docs/transform/ docs/flatMap/ \
@@ -14,12 +14,14 @@ mkdir -p tour/ \
 
 cp index.html tour/index.html
 cp index.html docs/index.html
-cp index.html docs/index.html
+cp index.html docs/x/index.html
 cp index.html docs/pipe/index.html
 cp index.html docs/pipe.sync
 cp index.html docs/fork/index.html
+cp index.html docs/fork.series
 cp index.html docs/assign/index.html
 cp index.html docs/tap/index.html
+cp index.html docs/tap.if
 cp index.html docs/tap.sync
 cp index.html docs/tryCatch/index.html
 cp index.html docs/switchCase/index.html
@@ -37,6 +39,7 @@ cp index.html docs/all/index.html
 cp index.html docs/and/index.html
 cp index.html docs/or/index.html
 cp index.html docs/not/index.html
+cp index.html docs/not.sync
 cp index.html docs/eq/index.html
 cp index.html docs/gt/index.html
 cp index.html docs/lt/index.html
@@ -45,4 +48,22 @@ cp index.html docs/lte/index.html
 cp index.html docs/get/index.html
 cp index.html docs/pick/index.html
 cp index.html docs/omit/index.html
+cp index.html docs/defaultsDeep
+cp index.html docs/find
+cp index.html docs/first
+cp index.html docs/flatten
+cp index.html docs/forEach
+cp index.html docs/isDeepEqual
+cp index.html docs/isEmpty
+cp index.html docs/isEqual
+cp index.html docs/isFunction
+cp index.html docs/isObject
+cp index.html docs/isString
+cp index.html docs/last
+cp index.html docs/pluck
+cp index.html docs/size
+cp index.html docs/trace
+cp index.html docs/unionWith
+cp index.html docs/uniq
+
 cp index.html blog/index.html

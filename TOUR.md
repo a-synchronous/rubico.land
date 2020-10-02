@@ -17,12 +17,12 @@ const {
  2. [Function Composition](#function-composition)
  3. [Object Composition](#object-composition)
  4. [Polymorphism](#polymorphism)
- 5. [Compositional Control Flow](#compositional-control-flow)
- 6. [Tryer-Catcher Error Handling](#tryer-catcher-error-handling)
+ 5. [Control Flow](#control-flow)
+ 6. [Error Handling](#error-handling)
  7. [Transducers](#transducers)
 
 # [a]synchrony
-**Built-in Promise handling** - you can pass synchronous or asynchronous functions to any rubico method, hence the `[a]` (optionally asynchronous). All rubico methods handle promise resolution for you, meaning you can run things in parallel without having to call `Promise.all`. More on this behavior [here](https://dev.to/richytong/rubico-a-synchrnous-functional-syntax-motivation-20hf).
+**Stop worrying about async** - you can pass synchronous or asynchronous functions to any rubico method, hence the `[a]` (optionally asynchronous). All rubico methods handle promise resolution for you, meaning you can run things in parallel without having to call `Promise.all`. More on this behavior [here](https://dev.to/richytong/rubico-a-synchrnous-functional-syntax-motivation-20hf).
 
 ```javascript [playground]
 const getTodo = id => fetch('https://jsonplaceholder.typicode.com/todos/' + id)
@@ -47,7 +47,7 @@ const add = (a, b) => a + b
 const squaredOdds = pipe([
   filter(isOdd),
   map(square),
-  reduce(add), // try uncommenting this reducing function
+  // reduce(add), // try uncommenting this reducing function
 ])
 
 const numbers = [1, 2, 3, 4, 5]
@@ -57,7 +57,7 @@ console.log('output:', squaredOdds(numbers)) // [1, 9, 25]
 ```
 
 # Object Composition
-**Declaratively transform objects** - there may be times when you'll want to extend an object in a pipeline with new properties, or construct a new object from an existing one. For times like these, use the property accessor function `get` in conjunction with object composers `fork` or `assign`.
+**Declaratively massage object shape** to fit the next function in your pipeline. There may be times when you'll want to extend an object with new properties, or construct a new object from an existing one. For times like these, use the property accessor function `get` in conjunction with object composers `fork` or `assign`.
 
 ```javascript [playground]
 const identity = value => value
@@ -115,8 +115,8 @@ iterables.forEach(pipe([map(square), console.log]))
 // Map { 'a' => 1, 'b' => 4, 'c' => 9, 'd' => 16, 'e' => 25 }
 ```
 
-# Compositional Control Flow
-**Create declarative, SQL-like logical expressions** by composing predicates with rubico's logical operators. Below is a map of vanilla JavaScript operators to their functional analogs in rubico.
+# Control Flow
+**Create declarative, SQL-esque logical expressions** by composing predicates with rubico's logical operators. Below is a map of vanilla JavaScript operators to their functional analogs in rubico.
 
 * Conditional (Ternary), `a ? b : c` → `switchCase([f, g, h])`
 * Logical And, `a && b` → `and([f, g])`
@@ -150,10 +150,8 @@ cli(['--version']) // v0.0.0
 cli(['???']) // USAGE: ...
 ```
 
-# Tryer-Catcher Error Handling
-**Reliably catch errors**, synchronous or asynchronous, with `tryCatch`.
-
-Note: when composing, ensure return values from both the tryer and the catcher are the same type.
+# Error Handling
+**Handle errors with functions** - a `tryer` and a `catcher`. The `tryer` is tried, while the `catcher` catches any errors thrown or Promises rejected.
 
 ```javascript [playground]
 console.log(

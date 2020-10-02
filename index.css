@@ -5,7 +5,7 @@ html {
 a {
   color: #65799B;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 650;
 }
 blockquote {
   font-style: italic;
@@ -137,6 +137,7 @@ header > nav > span {
   margin-top: 10px;
   display: flex;
   font-size: 24px;
+  font-weight: 600;
 }
 #github-link > span > svg {
   margin-left: 2px;
@@ -165,10 +166,6 @@ header > nav > span {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.short-circuit-link {
-  font-size: 32px;
-  margin-right: 32px;
 }
 
 #docs > div {
@@ -199,7 +196,7 @@ header > nav > span {
   font-weight: 700;
 }
 #next-arrow:hover {
-  text-decoration: underline;
+  color: #5DDE98;
 }
 
 #take-the-tour-button {
@@ -237,7 +234,30 @@ header > nav > span {
   top: -42px;
 }
 
-.indent-1 {
+#x-docs > h1 {
+  font-size: 42px;
+}
+
+#docs-x-back-button {
+  position: relative;
+  color: #65799B;
+  margin: 0;
+  font-size: 80px;
+  font-weight: 800;
+  line-height: 132px;
+}
+#docs-x-back-button:hover {
+  color: #6078EA;
+}
+/* #docs-x-back-button:hover::after {
+  font-size: 80px;
+  position: absolute;
+  top: -16px;
+  left: 100px;
+  content: "⇤";
+} */
+
+.docs-item-children {
   margin-left: 26px;
 }
 
@@ -260,6 +280,9 @@ header > nav > span {
   display: inline;
   transition: font-size 0.24s;
 }
+.docs-item > a > h3:hover {
+  color: #6078EA;
+}
 .docs-item > a.active > h3,
 .docs-item > a.active > span {
   color: #51D48D;
@@ -268,6 +291,15 @@ header > nav > span {
 }
 .docs-item > a.active:hover {
   color: #51D48D;
+}
+
+.docs-link {
+  color: #65799B;
+  font-size: 22px;
+  font-weight: 800;
+}
+.docs-link:hover {
+  color: #6078EA;
 }
 
 .fade-in-out > article {

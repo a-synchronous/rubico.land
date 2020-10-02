@@ -1,5 +1,405 @@
 export default [
   {
+    name: 'FilteringIterator',
+    synopsis: '```coffeescript [specscript]\n' +
+      'FilteringIterator<\n' +
+      '  T any,\n' +
+      '  iterator Iterator<T>,\n' +
+      '  predicate T=>boolean, # no async\n' +
+      '>(iterator, predicate) -> filteringIterator Iterator<T>\n' +
+      '\n' +
+      'filteringIterator.next() -> { value: T, done: boolean }\n' +
+      '```\n',
+    description: 'Creates a filtering iterator, i.e. an iterator that filteres a source iterator by predicate.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'FilteringIterator<\n' +
+            '  T any,\n' +
+            '  iterator Iterator<T>,\n' +
+            '  predicate T=>boolean, # no async\n' +
+            '>(iterator, predicate) -> filteringIterator Iterator<T>\n' +
+            '\n' +
+            'filteringIterator.next() -> { value: T, done: boolean }',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 9, column: 4, offset: 232 },
+            indent: [
+              1, 1, 1, 1,
+              1, 1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 10, column: 1, offset: 233 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Creates a filtering iterator, i.e. an iterator that filteres a source iterator by predicate.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 93, offset: 92 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 93, offset: 92 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 93 }
+      }
+    }
+  },
+  {
+    name: 'MappingIterator',
+    synopsis: '```coffeescript [specscript]\n' +
+      'MappingIterator<\n' +
+      '  T any,\n' +
+      '  iterator Iterator<T>,\n' +
+      '  mapper T=>any,\n' +
+      '>(iterator, mapper) -> mappingIterator Object\n' +
+      '\n' +
+      'mappingIterator.next() -> nextIteration { value: any, done: boolean }\n' +
+      '```\n',
+    description: 'Creates a mapping iterator, i.e. an iterator that applies a mapper to each item of a source iterator.\n' +
+      '\n' +
+      'Note: consuming the mapping iterator also consumes the source iterator.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'MappingIterator<\n' +
+            '  T any,\n' +
+            '  iterator Iterator<T>,\n' +
+            '  mapper T=>any,\n' +
+            '>(iterator, mapper) -> mappingIterator Object\n' +
+            '\n' +
+            'mappingIterator.next() -> nextIteration { value: any, done: boolean }',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 9, column: 4, offset: 216 },
+            indent: [
+              1, 1, 1, 1,
+              1, 1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 10, column: 1, offset: 217 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Creates a mapping iterator, i.e. an iterator that applies a mapper to each item of a source iterator.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 102, offset: 101 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 102, offset: 101 },
+            indent: []
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Note: consuming the mapping iterator also consumes the source iterator.',
+              position: {
+                start: { line: 3, column: 1, offset: 103 },
+                end: { line: 3, column: 72, offset: 174 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 3, column: 1, offset: 103 },
+            end: { line: 3, column: 72, offset: 174 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 4, column: 1, offset: 175 }
+      }
+    }
+  },
+  {
+    name: 'NextIteration',
+    synopsis: 'NextIteration(value any) -> nextIteration { value, done: false }\n',
+    description: 'Create an object to send for the next iteration\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'NextIteration(value any) -> nextIteration { value, done: false }',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 65, offset: 64 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 65, offset: 64 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 65 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Create an object to send for the next iteration',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 48, offset: 47 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 48, offset: 47 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 48 }
+      }
+    }
+  },
+  {
+    name: 'add',
+    synopsis: 'add (a any, b any) -> a + b\n',
+    description: '`+` two things\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'add (a any, b any) -> a + b',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 28, offset: 27 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 28, offset: 27 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 28 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'inlineCode',
+              value: '+',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 4, offset: 3 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ' two things',
+              position: {
+                start: { line: 1, column: 4, offset: 3 },
+                end: { line: 1, column: 15, offset: 14 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 15, offset: 14 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 15 }
+      }
+    }
+  },
+  {
+    name: 'always',
+    synopsis: '```coffeescript [specscript]\nalways(value any) -> getter ()=>value\n```\n',
+    description: 'Create a function that always returns a value.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'always(value any) -> getter ()=>value',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 3, column: 4, offset: 70 },
+            indent: [ 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 4, column: 1, offset: 71 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Create a function that always returns a value.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 47, offset: 46 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 47, offset: 46 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 47 }
+      }
+    }
+  },
+  {
+    name: 'arrayExtend',
+    synopsis: '```coffeescript [specscript]\n' +
+      'arrayExtend(array Array, values Array) -> array\n' +
+      '```\n',
+    description: 'Extend an array with values.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'arrayExtend(array Array, values Array) -> array',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 3, column: 4, offset: 80 },
+            indent: [ 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 4, column: 1, offset: 81 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Extend an array with values.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 29, offset: 28 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 29, offset: 28 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 29 }
+      }
+    }
+  },
+  {
     name: 'arrayExtendMap',
     synopsis: '```coffeescript [specscript]\n' +
       'any -> value; any -> mapped\n' +
@@ -11,7 +411,7 @@ export default [
       '  valuesMapper value=>mapped,\n' +
       ') -> array\n' +
       '```\n',
-    description: 'internal extend while mapping\n',
+    description: '`arrayExtend` while mapping\n',
     synopsis_mdast: {
       type: 'root',
       children: [
@@ -49,79 +449,49 @@ export default [
           type: 'paragraph',
           children: [
             {
-              type: 'text',
-              value: 'internal extend while mapping',
+              type: 'inlineCode',
+              value: 'arrayExtend',
               position: {
                 start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 30, offset: 29 },
+                end: { line: 1, column: 14, offset: 13 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ' while mapping',
+              position: {
+                start: { line: 1, column: 14, offset: 13 },
+                end: { line: 1, column: 28, offset: 27 },
                 indent: []
               }
             }
           ],
           position: {
             start: { line: 1, column: 1, offset: 0 },
-            end: { line: 1, column: 30, offset: 29 },
+            end: { line: 1, column: 28, offset: 27 },
             indent: []
           }
         }
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 2, column: 1, offset: 30 }
+        end: { line: 2, column: 1, offset: 28 }
       }
     }
   },
   {
-    name: 'pipe',
+    name: 'arrayExtendMapWithIndex',
     synopsis: '```coffeescript [specscript]\n' +
-      'pipe<args ...any>(\n' +
-      '  funcs [\n' +
-      '    ...args=>Promise|any,\n' +
-      '    ...Array<any=>Promise|any>,\n' +
-      '  ],\n' +
-      ') -> pipeline ...args=>Promise|any\n' +
-      '\n' +
-      'Reducer<T> = (any, T)=>Promise|any\n' +
-      'Transducer = Reducer=>Reducer\n' +
-      '\n' +
-      'pipe(\n' +
-      '  transducers Array<Transducer>,\n' +
-      ')(reducer Reducer) -> composed Reducer\n' +
+      'arrayExtendMapWithIndex<\n' +
+      '  T any,\n' +
+      '  array Array<T>,\n' +
+      '  values Array<T>,\n' +
+      '  mapper T=>Promise|any,\n' +
+      '  index number,\n' +
+      '>(array, values, mapper, index) -> Promise|array\n' +
       '```\n',
-    description: 'Chain together an array of functions as a pipe, each function passing its return value as the first argument to the next function until all functions have executed. The final result is the return of the last function execution.\n' +
-      '\n' +
-      '```javascript [playground]\n' +
-      'console.log(\n' +
-      '  pipe([\n' +
-      '    number => number + 1,\n' +
-      '    number => number + 2,\n' +
-      '    number => number + 3,\n' +
-      '  ])(5),\n' +
-      ') // 11\n' +
-      '```\n' +
-      '\n' +
-      'When passed a reducer, a pipe of transducers composes the reducer such that the transducers are applied in series, calling the reducer as the last step to end the chain. The resulting reducer must be used in conjunction with `reduce` to have a transducing effect. For more information on this behavior, see [this resource on transducers](https://github.com/a-synchronous/rubico/blob/master/TRANSDUCERS.md).\n' +
-      '\n' +
-      '```javascript [playground]\n' +
-      'const isOdd = number => number % 2 == 1\n' +
-      '\n' +
-      'const square = number => number ** 2\n' +
-      '\n' +
-      'const add = (a, b) => a + b\n' +
-      '\n' +
-      'const squaredOdds = pipe([\n' +
-      '  filter(isOdd),\n' +
-      '  map(square),\n' +
-      '])\n' +
-      '\n' +
-      'console.log(\n' +
-      '  [1, 2, 3, 4, 5].reduce(squaredOdds(add), 0),\n' +
-      ') // 35\n' +
-      '\n' +
-      'console.log(\n' +
-      '  squaredOdds([1, 2, 3, 4, 5])\n' +
-      ') // [1, 9, 25]\n' +
-      '```\n',
+    description: 'Extend an array with values from a mapping operation.\n',
     synopsis_mdast: {
       type: 'root',
       children: [
@@ -129,33 +499,26 @@ export default [
           type: 'code',
           lang: 'coffeescript',
           meta: '[specscript]',
-          value: 'pipe<args ...any>(\n' +
-            '  funcs [\n' +
-            '    ...args=>Promise|any,\n' +
-            '    ...Array<any=>Promise|any>,\n' +
-            '  ],\n' +
-            ') -> pipeline ...args=>Promise|any\n' +
-            '\n' +
-            'Reducer<T> = (any, T)=>Promise|any\n' +
-            'Transducer = Reducer=>Reducer\n' +
-            '\n' +
-            'pipe(\n' +
-            '  transducers Array<Transducer>,\n' +
-            ')(reducer Reducer) -> composed Reducer',
+          value: 'arrayExtendMapWithIndex<\n' +
+            '  T any,\n' +
+            '  array Array<T>,\n' +
+            '  values Array<T>,\n' +
+            '  mapper T=>Promise|any,\n' +
+            '  index number,\n' +
+            '>(array, values, mapper, index) -> Promise|array',
           position: {
             start: { line: 1, column: 1, offset: 0 },
-            end: { line: 15, column: 4, offset: 304 },
+            end: { line: 9, column: 4, offset: 193 },
             indent: [
-              1, 1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1, 1,
-              1, 1
+              1, 1, 1, 1,
+              1, 1, 1, 1
             ]
           }
         }
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 16, column: 1, offset: 305 }
+        end: { line: 10, column: 1, offset: 194 }
       }
     },
     description_mdast: {
@@ -166,164 +529,36 @@ export default [
           children: [
             {
               type: 'text',
-              value: 'Chain together an array of functions as a pipe, each function passing its return value as the first argument to the next function until all functions have executed. The final result is the return of the last function execution.',
+              value: 'Extend an array with values from a mapping operation.',
               position: {
                 start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 228, offset: 227 },
+                end: { line: 1, column: 54, offset: 53 },
                 indent: []
               }
             }
           ],
           position: {
             start: { line: 1, column: 1, offset: 0 },
-            end: { line: 1, column: 228, offset: 227 },
+            end: { line: 1, column: 54, offset: 53 },
             indent: []
-          }
-        },
-        {
-          type: 'code',
-          lang: 'javascript',
-          meta: '[playground]',
-          value: 'console.log(\n' +
-            '  pipe([\n' +
-            '    number => number + 1,\n' +
-            '    number => number + 2,\n' +
-            '    number => number + 3,\n' +
-            '  ])(5),\n' +
-            ') // 11',
-          position: {
-            start: { line: 3, column: 1, offset: 229 },
-            end: { line: 11, column: 4, offset: 376 },
-            indent: [
-              1, 1, 1, 1,
-              1, 1, 1, 1
-            ]
-          }
-        },
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'When passed a reducer, a pipe of transducers composes the reducer such that the transducers are applied in series, calling the reducer as the last step to end the chain. The resulting reducer must be used in conjunction with ',
-              position: {
-                start: { line: 13, column: 1, offset: 378 },
-                end: { line: 13, column: 226, offset: 603 },
-                indent: []
-              }
-            },
-            {
-              type: 'inlineCode',
-              value: 'reduce',
-              position: {
-                start: { line: 13, column: 226, offset: 603 },
-                end: { line: 13, column: 234, offset: 611 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: ' to have a transducing effect. For more information on this behavior, see ',
-              position: {
-                start: { line: 13, column: 234, offset: 611 },
-                end: { line: 13, column: 308, offset: 685 },
-                indent: []
-              }
-            },
-            {
-              type: 'link',
-              title: null,
-              url: 'https://github.com/a-synchronous/rubico/blob/master/TRANSDUCERS.md',
-              children: [
-                {
-                  type: 'text',
-                  value: 'this resource on transducers',
-                  position: {
-                    start: { line: 13, column: 309, offset: 686 },
-                    end: { line: 13, column: 337, offset: 714 },
-                    indent: []
-                  }
-                }
-              ],
-              position: {
-                start: { line: 13, column: 308, offset: 685 },
-                end: { line: 13, column: 406, offset: 783 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: '.',
-              position: {
-                start: { line: 13, column: 406, offset: 783 },
-                end: { line: 13, column: 407, offset: 784 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 13, column: 1, offset: 378 },
-            end: { line: 13, column: 407, offset: 784 },
-            indent: []
-          }
-        },
-        {
-          type: 'code',
-          lang: 'javascript',
-          meta: '[playground]',
-          value: 'const isOdd = number => number % 2 == 1\n' +
-            '\n' +
-            'const square = number => number ** 2\n' +
-            '\n' +
-            'const add = (a, b) => a + b\n' +
-            '\n' +
-            'const squaredOdds = pipe([\n' +
-            '  filter(isOdd),\n' +
-            '  map(square),\n' +
-            '])\n' +
-            '\n' +
-            'console.log(\n' +
-            '  [1, 2, 3, 4, 5].reduce(squaredOdds(add), 0),\n' +
-            ') // 35\n' +
-            '\n' +
-            'console.log(\n' +
-            '  squaredOdds([1, 2, 3, 4, 5])\n' +
-            ') // [1, 9, 25]',
-          position: {
-            start: { line: 15, column: 1, offset: 786 },
-            end: { line: 34, column: 4, offset: 1116 },
-            indent: [
-              1, 1, 1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1
-            ]
           }
         }
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 35, column: 1, offset: 1117 }
+        end: { line: 2, column: 1, offset: 54 }
       }
     }
   },
   {
-    name: 'pipe.sync',
+    name: 'arrayFilter',
     synopsis: '```coffeescript [specscript]\n' +
-      'pipe.sync<args ...any>(\n' +
-      '  funcs [\n' +
-      '    ...args=>any,\n' +
-      '    ...Array<any=>any>,\n' +
-      '  ],\n' +
-      ') -> pipeline ...args=>any\n' +
+      'arrayFilter<T>(\n' +
+      '  array Array<T>,\n' +
+      '  predicate T=>Promise|boolean,\n' +
+      ') -> result Promise|Array<T>\n' +
       '```\n',
-    description: "`pipe` that doesn't automatically resolve promises. This variant is a good option if more performance is desired or if manual promise handling is required.\n" +
-      '\n' +
-      '```javascript [playground]\n' +
-      'pipe.sync([\n' +
-      '  value => Promise.resolve(value),\n' +
-      '  promise => promise.then(console.log)\n' +
-      "])('hey') // hey\n" +
-      '```\n',
+    description: 'Filter an array concurrently by predicate. `predicate` may be asynchronous.\n',
     synopsis_mdast: {
       type: 'root',
       children: [
@@ -331,12 +566,1441 @@ export default [
           type: 'code',
           lang: 'coffeescript',
           meta: '[specscript]',
-          value: 'pipe.sync<args ...any>(\n' +
-            '  funcs [\n' +
-            '    ...args=>any,\n' +
-            '    ...Array<any=>any>,\n' +
-            '  ],\n' +
-            ') -> pipeline ...args=>any',
+          value: 'arrayFilter<T>(\n' +
+            '  array Array<T>,\n' +
+            '  predicate T=>Promise|boolean,\n' +
+            ') -> result Promise|Array<T>',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 6, column: 4, offset: 127 },
+            indent: [ 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 7, column: 1, offset: 128 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Filter an array concurrently by predicate. ',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 44, offset: 43 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'predicate',
+              position: {
+                start: { line: 1, column: 44, offset: 43 },
+                end: { line: 1, column: 55, offset: 54 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ' may be asynchronous.',
+              position: {
+                start: { line: 1, column: 55, offset: 54 },
+                end: { line: 1, column: 76, offset: 75 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 76, offset: 75 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 76 }
+      }
+    }
+  },
+  {
+    name: 'arrayFilterByConditions',
+    synopsis: '```coffeescript [specscript]\n' +
+      'arrayFilterByConditions(\n' +
+      '  array Array,\n' +
+      '  result Array,\n' +
+      '  index number,\n' +
+      '  conditions Array<boolean>,\n' +
+      ') -> result\n' +
+      '```\n',
+    description: 'Filter an array by a boolean array of conditions\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'arrayFilterByConditions(\n' +
+            '  array Array,\n' +
+            '  result Array,\n' +
+            '  index number,\n' +
+            '  conditions Array<boolean>,\n' +
+            ') -> result',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 8, column: 4, offset: 145 },
+            indent: [
+              1, 1, 1, 1,
+              1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 9, column: 1, offset: 146 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Filter an array by a boolean array of conditions',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 49, offset: 48 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 49, offset: 48 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 49 }
+      }
+    }
+  },
+  {
+    name: 'arrayFilterWithIndex',
+    synopsis: '```coffeescript [specscript]\n' +
+      'arrayFilterWithIndex<\n' +
+      '  T any,\n' +
+      '  array Array<T>,\n' +
+      '  index number,\n' +
+      '  indexedPredicate (T, index, array)=>Promise|boolean,\n' +
+      '>(array, indexedPredicate) -> filteredWithIndex Array<T>\n' +
+      '```\n',
+    description: 'Filter an array concurrently by predicate.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'arrayFilterWithIndex<\n' +
+            '  T any,\n' +
+            '  array Array<T>,\n' +
+            '  index number,\n' +
+            '  indexedPredicate (T, index, array)=>Promise|boolean,\n' +
+            '>(array, indexedPredicate) -> filteredWithIndex Array<T>',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 8, column: 4, offset: 209 },
+            indent: [
+              1, 1, 1, 1,
+              1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 9, column: 1, offset: 210 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Filter an array concurrently by predicate.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 43, offset: 42 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 43, offset: 42 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 43 }
+      }
+    }
+  },
+  {
+    name: 'arrayForEach',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var T any,\n' +
+      '  array Array<T>,\n' +
+      '  callback T=>()\n' +
+      '\n' +
+      'arrayForEach(array, callback) -> ()\n' +
+      '```\n',
+    description: 'Call a callback for each item of an iterator. Return a promise if any executions are asynchronous.\n' +
+      '\n' +
+      'Note: iterator is consumed\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'var T any,\n' +
+            '  array Array<T>,\n' +
+            '  callback T=>()\n' +
+            '\n' +
+            'arrayForEach(array, callback) -> ()',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 7, column: 4, offset: 115 },
+            indent: [ 1, 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 8, column: 1, offset: 116 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Call a callback for each item of an iterator. Return a promise if any executions are asynchronous.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 99, offset: 98 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 99, offset: 98 },
+            indent: []
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Note: iterator is consumed',
+              position: {
+                start: { line: 3, column: 1, offset: 100 },
+                end: { line: 3, column: 27, offset: 126 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 3, column: 1, offset: 100 },
+            end: { line: 3, column: 27, offset: 126 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 4, column: 1, offset: 127 }
+      }
+    }
+  },
+  {
+    name: 'arrayJoin',
+    synopsis: '```coffeescript [specscript]\n' +
+      'arrayJoin(array Array, delimiter string) -> string\n' +
+      '```\n',
+    description: 'Call `.join` on an array.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'arrayJoin(array Array, delimiter string) -> string',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 3, column: 4, offset: 83 },
+            indent: [ 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 4, column: 1, offset: 84 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Call ',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 6, offset: 5 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: '.join',
+              position: {
+                start: { line: 1, column: 6, offset: 5 },
+                end: { line: 1, column: 13, offset: 12 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ' on an array.',
+              position: {
+                start: { line: 1, column: 13, offset: 12 },
+                end: { line: 1, column: 26, offset: 25 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 26, offset: 25 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 26 }
+      }
+    }
+  },
+  {
+    name: 'arrayMap',
+    synopsis: '```coffeescript [specscript]\n' +
+      'arrayMap<\n' +
+      '  T any,\n' +
+      '  array Array<T>,\n' +
+      '  mapper T=>Promise|any,\n' +
+      '>(array, mapper) -> Promise|Array\n' +
+      '```\n',
+    description: 'Apply a mapper to each item of an array, returning an array. Mapper may be asynchronous.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'arrayMap<\n' +
+            '  T any,\n' +
+            '  array Array<T>,\n' +
+            '  mapper T=>Promise|any,\n' +
+            '>(array, mapper) -> Promise|Array',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 7, column: 4, offset: 128 },
+            indent: [ 1, 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 8, column: 1, offset: 129 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Apply a mapper to each item of an array, returning an array. Mapper may be asynchronous.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 89, offset: 88 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 89, offset: 88 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 89 }
+      }
+    }
+  },
+  {
+    name: 'arrayMapPoolAsync',
+    synopsis: '```coffeescript [specscript]\n' +
+      'arrayMapPoolAsync<\n' +
+      '  T any,\n' +
+      '  array Array<T>,\n' +
+      '  mapper T=>Promise|any,\n' +
+      '  concurrencyLimit number,\n' +
+      '  result Array,\n' +
+      '  index number,\n' +
+      '  promises Set<Promise>,\n' +
+      '>(array, mapper, concurrencyLimit, result, index, promises) -> result\n' +
+      '```\n',
+    description: 'Apply a mapper with limited concurrency to each item of an array, returning a Promise of an array of results.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'arrayMapPoolAsync<\n' +
+            '  T any,\n' +
+            '  array Array<T>,\n' +
+            '  mapper T=>Promise|any,\n' +
+            '  concurrencyLimit number,\n' +
+            '  result Array,\n' +
+            '  index number,\n' +
+            '  promises Set<Promise>,\n' +
+            '>(array, mapper, concurrencyLimit, result, index, promises) -> result',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 11, column: 4, offset: 257 },
+            indent: [
+              1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 12, column: 1, offset: 258 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Apply a mapper with limited concurrency to each item of an array, returning a Promise of an array of results.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 110, offset: 109 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 110, offset: 109 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 110 }
+      }
+    }
+  },
+  {
+    name: '\narrayMapPool',
+    synopsis: '```coffeescript [specscript]\n' +
+      'arrayMapPool<\n' +
+      '  T any,\n' +
+      '  array Array<T>\n' +
+      '  mapper T=>Promise|any,\n' +
+      '  concurrentLimit number,\n' +
+      '>(array, mapper, concurrentLimit) -> Promise|Array\n' +
+      '```\n',
+    description: 'Apply a mapper with limited concurrency to each item of an array, returning an array of results.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'arrayMapPool<\n' +
+            '  T any,\n' +
+            '  array Array<T>\n' +
+            '  mapper T=>Promise|any,\n' +
+            '  concurrentLimit number,\n' +
+            '>(array, mapper, concurrentLimit) -> Promise|Array',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 8, column: 4, offset: 174 },
+            indent: [
+              1, 1, 1, 1,
+              1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 9, column: 1, offset: 175 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Apply a mapper with limited concurrency to each item of an array, returning an array of results.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 97, offset: 96 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 97, offset: 96 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 97 }
+      }
+    }
+  },
+  {
+    name: 'arrayMapSeriesAsync',
+    synopsis: '```coffeescript [specscript]\n' +
+      'arrayMapSeriesAsync<\n' +
+      '  T any,\n' +
+      '  array Array<T>,\n' +
+      '  mapper T=>Promise|any,\n' +
+      '  result Array,\n' +
+      '  index number,\n' +
+      '>(array, mapper, result Array, index) -> Promise|result\n' +
+      '```\n',
+    description: 'Apply a mapper in series to each item of an array, returning a Promise of an array of results. `mapper` can be asynchronous.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'arrayMapSeriesAsync<\n' +
+            '  T any,\n' +
+            '  array Array<T>,\n' +
+            '  mapper T=>Promise|any,\n' +
+            '  result Array,\n' +
+            '  index number,\n' +
+            '>(array, mapper, result Array, index) -> Promise|result',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 9, column: 4, offset: 193 },
+            indent: [
+              1, 1, 1, 1,
+              1, 1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 10, column: 1, offset: 194 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Apply a mapper in series to each item of an array, returning a Promise of an array of results. ',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 96, offset: 95 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'mapper',
+              position: {
+                start: { line: 1, column: 96, offset: 95 },
+                end: { line: 1, column: 104, offset: 103 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ' can be asynchronous.',
+              position: {
+                start: { line: 1, column: 104, offset: 103 },
+                end: { line: 1, column: 125, offset: 124 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 125, offset: 124 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 125 }
+      }
+    }
+  },
+  {
+    name: 'arrayMapSeries',
+    synopsis: '```coffeescript [specscript]\n' +
+      'arrayMapSeries<\n' +
+      '  T any,\n' +
+      '  array Array<T>,\n' +
+      '  mapper T=>Promise|any,\n' +
+      '>(array, mapper) -> mappedInSeries Promise|Array\n' +
+      '```\n',
+    description: 'Apply a mapper in series to each item of an array, returning an array of results.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'arrayMapSeries<\n' +
+            '  T any,\n' +
+            '  array Array<T>,\n' +
+            '  mapper T=>Promise|any,\n' +
+            '>(array, mapper) -> mappedInSeries Promise|Array',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 7, column: 4, offset: 149 },
+            indent: [ 1, 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 8, column: 1, offset: 150 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Apply a mapper in series to each item of an array, returning an array of results.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 82, offset: 81 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 82, offset: 81 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 82 }
+      }
+    }
+  },
+  {
+    name: 'arrayMapWithIndex',
+    synopsis: '```coffeescript [specscript]\n' +
+      'arrayMapWithIndex<\n' +
+      '  T any,\n' +
+      '  array Array<T>,\n' +
+      '  index number,\n' +
+      '  indexedMapper (T, index, array)=>Promise|any,\n' +
+      '>(array, mapper) -> mappedWithIndex Promise|Array\n' +
+      '```\n',
+    description: 'Apply an indexed mapper to each item of an array, returning an array of results.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'arrayMapWithIndex<\n' +
+            '  T any,\n' +
+            '  array Array<T>,\n' +
+            '  index number,\n' +
+            '  indexedMapper (T, index, array)=>Promise|any,\n' +
+            '>(array, mapper) -> mappedWithIndex Promise|Array',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 8, column: 4, offset: 192 },
+            indent: [
+              1, 1, 1, 1,
+              1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 9, column: 1, offset: 193 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Apply an indexed mapper to each item of an array, returning an array of results.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 81, offset: 80 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 81, offset: 80 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 81 }
+      }
+    }
+  },
+  {
+    name: 'arrayReduceAsync',
+    synopsis: '```coffeescript [specscript]\n' +
+      'arrayReduceAsync<T>(\n' +
+      '  array Array<T>,\n' +
+      '  reducer (any, T)=>any,\n' +
+      '  result any,\n' +
+      '  index number,\n' +
+      ') -> result\n' +
+      '```\n',
+    description: 'Execute a reducer for each item of an array, returning a Promise of a single value.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'arrayReduceAsync<T>(\n' +
+            '  array Array<T>,\n' +
+            '  reducer (any, T)=>any,\n' +
+            '  result any,\n' +
+            '  index number,\n' +
+            ') -> result',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 8, column: 4, offset: 138 },
+            indent: [
+              1, 1, 1, 1,
+              1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 9, column: 1, offset: 139 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Execute a reducer for each item of an array, returning a Promise of a single value.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 84, offset: 83 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 84, offset: 83 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 84 }
+      }
+    }
+  },
+  {
+    name: 'async',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var args ...any,\n' +
+      '  result any,\n' +
+      '  func ...args=>result\n' +
+      '\n' +
+      'async(func) -> ...args=>Promise<result>\n' +
+      '```\n',
+    description: 'Make a function always return a promise.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'var args ...any,\n' +
+            '  result any,\n' +
+            '  func ...args=>result\n' +
+            '\n' +
+            'async(func) -> ...args=>Promise<result>',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 7, column: 4, offset: 127 },
+            indent: [ 1, 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 8, column: 1, offset: 128 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Make a function always return a promise.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 41, offset: 40 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 41, offset: 40 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 41 }
+      }
+    }
+  },
+  {
+    name: 'asyncGeneratorFunctionFilter',
+    synopsis: '```coffeescript [specscript]\n' +
+      'asyncGeneratorFunctionFilter<\n' +
+      '  T any,\n' +
+      '  args ...any,\n' +
+      '  asyncGeneratorFunction ...args=>AsyncGenerator<T>,\n' +
+      '  predicate T=>Promise|boolean,\n' +
+      '>(asyncGeneratorFunction, predicate)\n' +
+      '  -> filteringAsyncGeneratorFunction ...args=>AsyncGenerator<T>\n' +
+      '```\n',
+    description: 'Filter an async generator function by predicate. Predicate may be asynchronous, in which case its evaluation is awaited.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'asyncGeneratorFunctionFilter<\n' +
+            '  T any,\n' +
+            '  args ...any,\n' +
+            '  asyncGeneratorFunction ...args=>AsyncGenerator<T>,\n' +
+            '  predicate T=>Promise|boolean,\n' +
+            '>(asyncGeneratorFunction, predicate)\n' +
+            '  -> filteringAsyncGeneratorFunction ...args=>AsyncGenerator<T>',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 9, column: 4, offset: 272 },
+            indent: [
+              1, 1, 1, 1,
+              1, 1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 10, column: 1, offset: 273 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Filter an async generator function by predicate. Predicate may be asynchronous, in which case its evaluation is awaited.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 121, offset: 120 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 121, offset: 120 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 121 }
+      }
+    }
+  },
+  {
+    name: 'asyncGeneratorFunctionForEach',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var T any,\n' +
+      '  asyncGeneratorFunction ...args=>AsyncGenerator<T>,\n' +
+      '  callback T=>()\n' +
+      '\n' +
+      'asyncGeneratorFunctionForEach(asyncGeneratorFunction, callback) -> ...args=>Promise<AsyncGenerator<>>\n' +
+      '```\n',
+    description: 'Create an async generator executor that executes a callback for each item of an async generator generated by an async generator function.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'var T any,\n' +
+            '  asyncGeneratorFunction ...args=>AsyncGenerator<T>,\n' +
+            '  callback T=>()\n' +
+            '\n' +
+            'asyncGeneratorFunctionForEach(asyncGeneratorFunction, callback) -> ...args=>Promise<AsyncGenerator<>>',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 7, column: 4, offset: 216 },
+            indent: [ 1, 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 8, column: 1, offset: 217 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Create an async generator executor that executes a callback for each item of an async generator generated by an async generator function.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 138, offset: 137 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 138, offset: 137 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 138 }
+      }
+    }
+  },
+  {
+    name: 'asyncGeneratorFunctionMap',
+    synopsis: '```coffeescript [specscript]\n' +
+      'asyncGeneratorFunctionMap<\n' +
+      '  T any,\n' +
+      '  args ...any,\n' +
+      '  asyncGeneratorFunc ...args=>AsyncGenerator<T>,\n' +
+      '  mapper T=>Promise|any,\n' +
+      '>(asyncGeneratorFunc, mapper)\n' +
+      '  -> mappingAsyncGeneratorFunc ...args=>AsyncGenerator,\n' +
+      '```\n',
+    description: 'Create a mapping async generator function from an async generator function and a mapper. A mapping async generator function produces async mapping generators that apply the mapper to each item of the original async generator.\n' +
+      '\n' +
+      '`mapper` may be asynchronous.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'asyncGeneratorFunctionMap<\n' +
+            '  T any,\n' +
+            '  args ...any,\n' +
+            '  asyncGeneratorFunc ...args=>AsyncGenerator<T>,\n' +
+            '  mapper T=>Promise|any,\n' +
+            '>(asyncGeneratorFunc, mapper)\n' +
+            '  -> mappingAsyncGeneratorFunc ...args=>AsyncGenerator,',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 9, column: 4, offset: 243 },
+            indent: [
+              1, 1, 1, 1,
+              1, 1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 10, column: 1, offset: 244 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Create a mapping async generator function from an async generator function and a mapper. A mapping async generator function produces async mapping generators that apply the mapper to each item of the original async generator.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 226, offset: 225 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 226, offset: 225 },
+            indent: []
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'inlineCode',
+              value: 'mapper',
+              position: {
+                start: { line: 3, column: 1, offset: 227 },
+                end: { line: 3, column: 9, offset: 235 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ' may be asynchronous.',
+              position: {
+                start: { line: 3, column: 9, offset: 235 },
+                end: { line: 3, column: 30, offset: 256 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 3, column: 1, offset: 227 },
+            end: { line: 3, column: 30, offset: 256 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 4, column: 1, offset: 257 }
+      }
+    }
+  },
+  {
+    name: 'asyncIteratorForEach',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var T any,\n' +
+      '  asyncIterator AsyncIterator<T>,\n' +
+      '  callback T=>()\n' +
+      '\n' +
+      'asyncIteratorForEach(asyncIterator, callback) -> Promise<>\n' +
+      '```\n',
+    description: 'Execute a callback function for each item of an async iterator\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'var T any,\n' +
+            '  asyncIterator AsyncIterator<T>,\n' +
+            '  callback T=>()\n' +
+            '\n' +
+            'asyncIteratorForEach(asyncIterator, callback) -> Promise<>',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 7, column: 4, offset: 154 },
+            indent: [ 1, 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 8, column: 1, offset: 155 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Execute a callback function for each item of an async iterator',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 63, offset: 62 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 63, offset: 62 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 63 }
+      }
+    }
+  },
+  {
+    name: 'asyncIteratorToArray',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var T any,\n' +
+      '  asyncIterator AsyncIterator<T>\n' +
+      '\n' +
+      'asyncIteratorToArray(asyncIterator) -> Array<T>\n' +
+      '```\n',
+    description: 'Convert an async iterator to an array.\n' +
+      '\n' +
+      'Note: async iterator is consumed\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'var T any,\n' +
+            '  asyncIterator AsyncIterator<T>\n' +
+            '\n' +
+            'asyncIteratorToArray(asyncIterator) -> Array<T>',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 6, column: 4, offset: 125 },
+            indent: [ 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 7, column: 1, offset: 126 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Convert an async iterator to an array.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 39, offset: 38 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 39, offset: 38 },
+            indent: []
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Note: async iterator is consumed',
+              position: {
+                start: { line: 3, column: 1, offset: 40 },
+                end: { line: 3, column: 33, offset: 72 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 3, column: 1, offset: 40 },
+            end: { line: 3, column: 33, offset: 72 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 4, column: 1, offset: 73 }
+      }
+    }
+  },
+  {
+    name: '_binaryExtend',
+    synopsis: '```coffeescript [specscript]\n' +
+      '_binaryExtend(\n' +
+      '  typedArray TypedArray,\n' +
+      '  array Array|TypedArray,\n' +
+      ') -> concatenatedTypedArray\n' +
+      '```\n',
+    description: 'Extend a typed array with an array of values.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: '_binaryExtend(\n' +
+            '  typedArray TypedArray,\n' +
+            '  array Array|TypedArray,\n' +
+            ') -> concatenatedTypedArray',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 6, column: 4, offset: 126 },
+            indent: [ 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 7, column: 1, offset: 127 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Extend a typed array with an array of values.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 46, offset: 45 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 46, offset: 45 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 46 }
+      }
+    }
+  },
+  {
+    name: 'binaryExtend',
+    synopsis: '```coffeescript [specscript]\n' +
+      'binaryExtend(\n' +
+      '  typedArray TypedArray,\n' +
+      '  array Array|TypedArray|any,\n' +
+      ') -> concatenatedTypedArray\n' +
+      '```\n',
+    description: 'Types branching for _binaryExtend\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'binaryExtend(\n' +
+            '  typedArray TypedArray,\n' +
+            '  array Array|TypedArray|any,\n' +
+            ') -> concatenatedTypedArray',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 6, column: 4, offset: 129 },
+            indent: [ 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 7, column: 1, offset: 130 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Types branching for _binaryExtend',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 34, offset: 33 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 34, offset: 33 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 34 }
+      }
+    }
+  },
+  {
+    name: 'callPropBinary',
+    synopsis: '```coffeescript [specscript]\n' +
+      'callPropBinary(\n' +
+      '  value object,\n' +
+      '  property string,\n' +
+      '  arg0 any,\n' +
+      '  arg1 any,\n' +
+      ') -> value[property](arg0, arg1)\n' +
+      '```\n',
+    description: 'Call a property function on a value with two arguments.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'callPropBinary(\n' +
+            '  value object,\n' +
+            '  property string,\n' +
+            '  arg0 any,\n' +
+            '  arg1 any,\n' +
+            ') -> value[property](arg0, arg1)',
           position: {
             start: { line: 1, column: 1, offset: 0 },
             end: { line: 8, column: 4, offset: 140 },
@@ -359,74 +2023,38 @@ export default [
           type: 'paragraph',
           children: [
             {
-              type: 'inlineCode',
-              value: 'pipe',
+              type: 'text',
+              value: 'Call a property function on a value with two arguments.',
               position: {
                 start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 7, offset: 6 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: " that doesn't automatically resolve promises. This variant is a good option if more performance is desired or if manual promise handling is required.",
-              position: {
-                start: { line: 1, column: 7, offset: 6 },
-                end: { line: 1, column: 156, offset: 155 },
+                end: { line: 1, column: 56, offset: 55 },
                 indent: []
               }
             }
           ],
           position: {
             start: { line: 1, column: 1, offset: 0 },
-            end: { line: 1, column: 156, offset: 155 },
+            end: { line: 1, column: 56, offset: 55 },
             indent: []
-          }
-        },
-        {
-          type: 'code',
-          lang: 'javascript',
-          meta: '[playground]',
-          value: 'pipe.sync([\n' +
-            '  value => Promise.resolve(value),\n' +
-            '  promise => promise.then(console.log)\n' +
-            "])('hey') // hey",
-          position: {
-            start: { line: 3, column: 1, offset: 157 },
-            end: { line: 8, column: 4, offset: 290 },
-            indent: [ 1, 1, 1, 1, 1 ]
           }
         }
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 9, column: 1, offset: 291 }
+        end: { line: 2, column: 1, offset: 56 }
       }
     }
   },
   {
-    name: 'fork',
+    name: 'callPropUnary',
     synopsis: '```coffeescript [specscript]\n' +
-      'fork<args ...any>(\n' +
-      '  funcs Object<...args=>Promise|any>,\n' +
-      ')(...args) -> result Promise|Object\n' +
-      '\n' +
-      'fork<args ...any>(\n' +
-      '  funcs Array<...args=>Promise|any>,\n' +
-      ')(...args) -> result Promise|Array\n' +
+      'callPropUnary(\n' +
+      '  value object,\n' +
+      '  property string,\n' +
+      '  arg0 any,\n' +
+      ') -> value[property](arg0)\n' +
       '```\n',
-    description: 'A multi-purpose function, parallelizes multiple functions with concurrent execution into either an object, an array, or a nested mix of both. Has use cases in parallel execution and object composition.\n' +
-      '\n' +
-      '```javascript [playground]\n' +
-      'console.log(\n' +
-      '  fork({\n' +
-      '    greetings: fork([\n' +
-      "      greeting => greeting + ' world',\n" +
-      "      greeting => greeting + ' mom',\n" +
-      '    ]),\n' +
-      "  })('hello'),\n" +
-      ") // { greetings: ['hello world', 'hello mom'] }\n" +
-      '```\n',
+    description: 'Call a property function on a value with a single argument.\n',
     synopsis_mdast: {
       type: 'root',
       children: [
@@ -434,16 +2062,146 @@ export default [
           type: 'code',
           lang: 'coffeescript',
           meta: '[specscript]',
-          value: 'fork<args ...any>(\n' +
-            '  funcs Object<...args=>Promise|any>,\n' +
-            ')(...args) -> result Promise|Object\n' +
-            '\n' +
-            'fork<args ...any>(\n' +
-            '  funcs Array<...args=>Promise|any>,\n' +
-            ')(...args) -> result Promise|Array',
+          value: 'callPropUnary(\n' +
+            '  value object,\n' +
+            '  property string,\n' +
+            '  arg0 any,\n' +
+            ') -> value[property](arg0)',
           position: {
             start: { line: 1, column: 1, offset: 0 },
-            end: { line: 9, column: 4, offset: 217 },
+            end: { line: 7, column: 4, offset: 121 },
+            indent: [ 1, 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 8, column: 1, offset: 122 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Call a property function on a value with a single argument.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 60, offset: 59 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 60, offset: 59 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 60 }
+      }
+    }
+  },
+  {
+    name: 'catcherApply',
+    synopsis: '```coffeescript [specscript]\n' +
+      'catcherApply<\n' +
+      '  args ...any,\n' +
+      '  err Error|any,\n' +
+      '  catcher (err, ...args)=>any,\n' +
+      '>(catcher, err, args) -> catcher(err, ...args)\n' +
+      '```\n',
+    description: 'Apply an error and arguments to a catcher.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'catcherApply<\n' +
+            '  args ...any,\n' +
+            '  err Error|any,\n' +
+            '  catcher (err, ...args)=>any,\n' +
+            '>(catcher, err, args) -> catcher(err, ...args)',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 7, column: 4, offset: 156 },
+            indent: [ 1, 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 8, column: 1, offset: 157 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Apply an error and arguments to a catcher.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 43, offset: 42 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 43, offset: 42 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 43 }
+      }
+    }
+  },
+  {
+    name: 'curry2',
+    synopsis: '```coffeescript [specscript]\n' +
+      "__ = Symbol('placeholder')\n" +
+      '\n' +
+      'curry2(\n' +
+      '  baseFunc function,\n' +
+      '  arg0 __|any,\n' +
+      '  arg1 __|any,\n' +
+      ') -> function\n' +
+      '```\n',
+    description: 'Curry a binary function.\n' +
+      '\n' +
+      'Note: at least one argument must be the placeholder\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: "__ = Symbol('placeholder')\n" +
+            '\n' +
+            'curry2(\n' +
+            '  baseFunc function,\n' +
+            '  arg0 __|any,\n' +
+            '  arg1 __|any,\n' +
+            ') -> function',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 9, column: 4, offset: 133 },
             indent: [
               1, 1, 1, 1,
               1, 1, 1, 1
@@ -453,7 +2211,7 @@ export default [
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 10, column: 1, offset: 218 }
+        end: { line: 10, column: 1, offset: 134 }
       }
     },
     description_mdast: {
@@ -464,35 +2222,79 @@ export default [
           children: [
             {
               type: 'text',
-              value: 'A multi-purpose function, parallelizes multiple functions with concurrent execution into either an object, an array, or a nested mix of both. Has use cases in parallel execution and object composition.',
+              value: 'Curry a binary function.',
               position: {
                 start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 202, offset: 201 },
+                end: { line: 1, column: 25, offset: 24 },
                 indent: []
               }
             }
           ],
           position: {
             start: { line: 1, column: 1, offset: 0 },
-            end: { line: 1, column: 202, offset: 201 },
+            end: { line: 1, column: 25, offset: 24 },
             indent: []
           }
         },
         {
-          type: 'code',
-          lang: 'javascript',
-          meta: '[playground]',
-          value: 'console.log(\n' +
-            '  fork({\n' +
-            '    greetings: fork([\n' +
-            "      greeting => greeting + ' world',\n" +
-            "      greeting => greeting + ' mom',\n" +
-            '    ]),\n' +
-            "  })('hello'),\n" +
-            ") // { greetings: ['hello world', 'hello mom'] }",
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Note: at least one argument must be the placeholder',
+              position: {
+                start: { line: 3, column: 1, offset: 26 },
+                end: { line: 3, column: 52, offset: 77 },
+                indent: []
+              }
+            }
+          ],
           position: {
-            start: { line: 3, column: 1, offset: 203 },
-            end: { line: 12, column: 4, offset: 425 },
+            start: { line: 3, column: 1, offset: 26 },
+            end: { line: 3, column: 52, offset: 77 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 4, column: 1, offset: 78 }
+      }
+    }
+  },
+  {
+    name: 'curry3',
+    synopsis: '```coffeescript [specscript]\n' +
+      "__ = Symbol('placeholder')\n" +
+      '\n' +
+      'curry3(\n' +
+      '  baseFunc function,\n' +
+      '  arg0 __|any,\n' +
+      '  arg1 __|any,\n' +
+      '  arg2 __|any\n' +
+      ') -> function\n' +
+      '```\n',
+    description: 'Curry a 3-ary function.\n' +
+      '\n' +
+      'Note: at least one argument must be the placeholder\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: "__ = Symbol('placeholder')\n" +
+            '\n' +
+            'curry3(\n' +
+            '  baseFunc function,\n' +
+            '  arg0 __|any,\n' +
+            '  arg1 __|any,\n' +
+            '  arg2 __|any\n' +
+            ') -> function',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 10, column: 4, offset: 147 },
             indent: [
               1, 1, 1, 1, 1,
               1, 1, 1, 1
@@ -502,52 +2304,7 @@ export default [
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 13, column: 1, offset: 426 }
-      }
-    }
-  },
-  {
-    name: 'fork.series',
-    synopsis: '```coffeescript [specscript]\n' +
-      'fork.series<args ...any>(\n' +
-      '  funcs Array<...args=>Promise|any>,\n' +
-      ')(...args) -> Promise|Array\n' +
-      '```\n',
-    description: '`fork` with serial execution.\n' +
-      '\n' +
-      '```javascript [playground]\n' +
-      'const sleep = ms => () => new Promise(resolve => setTimeout(resolve, ms))\n' +
-      '\n' +
-      'fork.series([\n' +
-      "  greeting => console.log(greeting + ' world'),\n" +
-      '  sleep(1000),\n' +
-      "  greeting => console.log(greeting + ' mom'),\n" +
-      '  sleep(1000),\n' +
-      "  greeting => console.log(greeting + ' darkness'),\n" +
-      "])('hello') // hello world\n" +
-      '            // hello mom\n' +
-      '            // hello darkness\n' +
-      '```\n',
-    synopsis_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'code',
-          lang: 'coffeescript',
-          meta: '[specscript]',
-          value: 'fork.series<args ...any>(\n' +
-            '  funcs Array<...args=>Promise|any>,\n' +
-            ')(...args) -> Promise|Array',
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 5, column: 4, offset: 123 },
-            indent: [ 1, 1, 1, 1 ]
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 6, column: 1, offset: 124 }
+        end: { line: 11, column: 1, offset: 148 }
       }
     },
     description_mdast: {
@@ -557,19 +2314,946 @@ export default [
           type: 'paragraph',
           children: [
             {
-              type: 'inlineCode',
-              value: 'fork',
+              type: 'text',
+              value: 'Curry a 3-ary function.',
               position: {
                 start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 7, offset: 6 },
+                end: { line: 1, column: 24, offset: 23 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 24, offset: 23 },
+            indent: []
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Note: at least one argument must be the placeholder',
+              position: {
+                start: { line: 3, column: 1, offset: 25 },
+                end: { line: 3, column: 52, offset: 76 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 3, column: 1, offset: 25 },
+            end: { line: 3, column: 52, offset: 76 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 4, column: 1, offset: 77 }
+      }
+    }
+  },
+  {
+    name: 'curry4',
+    synopsis: '```coffeescript [specscript]\n' +
+      "__ = Symbol('placeholder')\n" +
+      '\n' +
+      'curry4(\n' +
+      '  baseFunc function,\n' +
+      '  arg0 __|any,\n' +
+      '  arg1 __|any,\n' +
+      '  arg2 __|any,\n' +
+      '  arg3 __|any,\n' +
+      ') -> function\n' +
+      '```\n',
+    description: 'Curry a 4-ary function.\n' +
+      '\n' +
+      'Note: at least one argument must be the placeholder\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: "__ = Symbol('placeholder')\n" +
+            '\n' +
+            'curry4(\n' +
+            '  baseFunc function,\n' +
+            '  arg0 __|any,\n' +
+            '  arg1 __|any,\n' +
+            '  arg2 __|any,\n' +
+            '  arg3 __|any,\n' +
+            ') -> function',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 11, column: 4, offset: 163 },
+            indent: [
+              1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 12, column: 1, offset: 164 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Curry a 4-ary function.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 24, offset: 23 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 24, offset: 23 },
+            indent: []
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Note: at least one argument must be the placeholder',
+              position: {
+                start: { line: 3, column: 1, offset: 25 },
+                end: { line: 3, column: 52, offset: 76 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 3, column: 1, offset: 25 },
+            end: { line: 3, column: 52, offset: 76 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 4, column: 1, offset: 77 }
+      }
+    }
+  },
+  {
+    name: 'curryArgs3',
+    synopsis: '```coffeescript [specscript]\n' +
+      "__ = Symbol('placeholder')\n" +
+      '\n' +
+      'curryArgs3(\n' +
+      '  baseFunc function,\n' +
+      '  arg0 __|any,\n' +
+      '  arg1 __|any,\n' +
+      '  arg2 __|any\n' +
+      ') -> function\n' +
+      '```\n',
+    description: 'Curry arguments for a 3-ary function. Arguments are supplied in placeholder position as an array.\n' +
+      '\n' +
+      'Note: at least one argument must be the placeholder\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: "__ = Symbol('placeholder')\n" +
+            '\n' +
+            'curryArgs3(\n' +
+            '  baseFunc function,\n' +
+            '  arg0 __|any,\n' +
+            '  arg1 __|any,\n' +
+            '  arg2 __|any\n' +
+            ') -> function',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 10, column: 4, offset: 151 },
+            indent: [
+              1, 1, 1, 1, 1,
+              1, 1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 11, column: 1, offset: 152 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Curry arguments for a 3-ary function. Arguments are supplied in placeholder position as an array.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 98, offset: 97 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 98, offset: 97 },
+            indent: []
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Note: at least one argument must be the placeholder',
+              position: {
+                start: { line: 3, column: 1, offset: 99 },
+                end: { line: 3, column: 52, offset: 150 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 3, column: 1, offset: 99 },
+            end: { line: 3, column: 52, offset: 150 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 4, column: 1, offset: 151 }
+      }
+    }
+  },
+  {
+    name: 'funcApply',
+    synopsis: '```coffeescript [specscript]\n' +
+      'funcApply<\n' +
+      '  args ...any,\n' +
+      '  func ...args=>any,\n' +
+      '>(func, args) -> func(...args)\n' +
+      '```\n',
+    description: 'Apply arguments to a function.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'funcApply<\n' +
+            '  args ...any,\n' +
+            '  func ...args=>any,\n' +
+            '>(func, args) -> func(...args)',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 6, column: 4, offset: 110 },
+            indent: [ 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 7, column: 1, offset: 111 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Apply arguments to a function.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 31, offset: 30 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 31, offset: 30 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 31 }
+      }
+    }
+  },
+  {
+    name: 'funcConditional',
+    synopsis: '```coffeescript [specscript]\n' +
+      'funcConditional(\n' +
+      '  funcs Array<args=>Promise|any>,\n' +
+      '  args Array,\n' +
+      '  funcsIndex number,\n' +
+      ') -> Promise|any\n' +
+      '```\n',
+    description: 'Conditional operator `a ? b : c ? d : e ? ...` for functions.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'funcConditional(\n' +
+            '  funcs Array<args=>Promise|any>,\n' +
+            '  args Array,\n' +
+            '  funcsIndex number,\n' +
+            ') -> Promise|any',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 7, column: 4, offset: 135 },
+            indent: [ 1, 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 8, column: 1, offset: 136 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Conditional operator ',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 22, offset: 21 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'a ? b : c ? d : e ? ...',
+              position: {
+                start: { line: 1, column: 22, offset: 21 },
+                end: { line: 1, column: 47, offset: 46 },
                 indent: []
               }
             },
             {
               type: 'text',
-              value: ' with serial execution.',
+              value: ' for functions.',
               position: {
-                start: { line: 1, column: 7, offset: 6 },
+                start: { line: 1, column: 47, offset: 46 },
+                end: { line: 1, column: 62, offset: 61 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 62, offset: 61 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 62 }
+      }
+    }
+  },
+  {
+    name: 'funcObjectAll',
+    synopsis: '```coffeescript [specscript]\n' +
+      'funcObjectAll(\n' +
+      '  funcs Object<args=>Promise|any>\n' +
+      ')(args ...any) -> objectAllFuncs ...args=>Promise|Object\n' +
+      '```\n',
+    description: 'Concurrently execute the same arguments for each function of an object of functions, returning an object of results.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'funcObjectAll(\n' +
+            '  funcs Object<args=>Promise|any>\n' +
+            ')(args ...any) -> objectAllFuncs ...args=>Promise|Object',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 5, column: 4, offset: 138 },
+            indent: [ 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 6, column: 1, offset: 139 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Concurrently execute the same arguments for each function of an object of functions, returning an object of results.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 117, offset: 116 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 117, offset: 116 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 117 }
+      }
+    }
+  },
+  {
+    name: 'generatorFunctionFilter',
+    synopsis: '```coffeescript [specscript]\n' +
+      'generatorFunctionFilter<\n' +
+      '  T any,\n' +
+      '  args ...any,\n' +
+      '  generatorFunction ...args=>Generator<T>,\n' +
+      '  predicate T=>boolean,\n' +
+      '>(generatorFunction, predicate)\n' +
+      '  -> filteringGeneratorFunction ...args=>Generator\n' +
+      '```\n',
+    description: 'Filter a generator function by predicate.\n' +
+      '\n' +
+      'Note: async predicates may beget unexpected results\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'generatorFunctionFilter<\n' +
+            '  T any,\n' +
+            '  args ...any,\n' +
+            '  generatorFunction ...args=>Generator<T>,\n' +
+            '  predicate T=>boolean,\n' +
+            '>(generatorFunction, predicate)\n' +
+            '  -> filteringGeneratorFunction ...args=>Generator',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 9, column: 4, offset: 231 },
+            indent: [
+              1, 1, 1, 1,
+              1, 1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 10, column: 1, offset: 232 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Filter a generator function by predicate.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 42, offset: 41 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 42, offset: 41 },
+            indent: []
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Note: async predicates may beget unexpected results',
+              position: {
+                start: { line: 3, column: 1, offset: 43 },
+                end: { line: 3, column: 52, offset: 94 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 3, column: 1, offset: 43 },
+            end: { line: 3, column: 52, offset: 94 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 4, column: 1, offset: 95 }
+      }
+    }
+  },
+  {
+    name: 'generatorFunctionForEach',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var T any,\n' +
+      '  generatorFunction ...args=>Generator<T>,\n' +
+      '  callback T=>()\n' +
+      '\n' +
+      'generatorFunctionForEach(generatorFunction, callback) -> ...args=>Promise|Generator<>\n' +
+      '```\n',
+    description: 'Create a generator executor that executes a callback for each item of a generator generated by a generator function. The executor may return a promise if any execution is asynchronous.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'var T any,\n' +
+            '  generatorFunction ...args=>Generator<T>,\n' +
+            '  callback T=>()\n' +
+            '\n' +
+            'generatorFunctionForEach(generatorFunction, callback) -> ...args=>Promise|Generator<>',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 7, column: 4, offset: 190 },
+            indent: [ 1, 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 8, column: 1, offset: 191 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Create a generator executor that executes a callback for each item of a generator generated by a generator function. The executor may return a promise if any execution is asynchronous.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 185, offset: 184 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 185, offset: 184 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 185 }
+      }
+    }
+  },
+  {
+    name: 'generatorFunctionMap',
+    synopsis: '```coffeescript [specscript]\n' +
+      'generatorFunctionMap<\n' +
+      '  T any,\n' +
+      '  args ...any,\n' +
+      '  generatorFunc ...args=>Generator<T>,\n' +
+      '  mapper T=>any,\n' +
+      '>(generatorFunc, mapper) -> mappingGeneratorFunc ...args=>Generator\n' +
+      '```\n',
+    description: 'Create a mapping generator function from a generator function and a mapper. A mapping generator function produces mapping generators that apply the mapper to each item of the original generator.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'generatorFunctionMap<\n' +
+            '  T any,\n' +
+            '  args ...any,\n' +
+            '  generatorFunc ...args=>Generator<T>,\n' +
+            '  mapper T=>any,\n' +
+            '>(generatorFunc, mapper) -> mappingGeneratorFunc ...args=>Generator',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 8, column: 4, offset: 202 },
+            indent: [
+              1, 1, 1, 1,
+              1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 9, column: 1, offset: 203 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Create a mapping generator function from a generator function and a mapper. A mapping generator function produces mapping generators that apply the mapper to each item of the original generator.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 195, offset: 194 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 195, offset: 194 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 195 }
+      }
+    }
+  },
+  {
+    name: 'generatorFunctionReduce',
+    synopsis: '```coffeescript [specscript]\n' +
+      'generatorFunctionReduce<\n' +
+      '  T any,\n' +
+      '  args ...any,\n' +
+      '  generatorFunction ...args=>Generator<Promise|T>,\n' +
+      '  reducer (any, T)=>Promise|any,\n' +
+      '  result any,\n' +
+      '>(generatorFunction, reducer, result)\n' +
+      '  -> reducingFunction ...args=>Promise|result\n' +
+      '```\n',
+    description: 'Execute a reducer for each item of a generator function, returning a single value.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'generatorFunctionReduce<\n' +
+            '  T any,\n' +
+            '  args ...any,\n' +
+            '  generatorFunction ...args=>Generator<Promise|T>,\n' +
+            '  reducer (any, T)=>Promise|any,\n' +
+            '  result any,\n' +
+            '>(generatorFunction, reducer, result)\n' +
+            '  -> reducingFunction ...args=>Promise|result',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 10, column: 4, offset: 263 },
+            indent: [
+              1, 1, 1, 1, 1,
+              1, 1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 11, column: 1, offset: 264 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Execute a reducer for each item of a generator function, returning a single value.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 83, offset: 82 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 83, offset: 82 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 83 }
+      }
+    }
+  },
+  {
+    name: 'genericTransformToNull',
+    synopsis: '```coffeescript [specscript]\n' +
+      'Reducer = (any, any)=>Promise|any\n' +
+      '\n' +
+      'genericTransformToNull<\n' +
+      '  args Array,\n' +
+      '  transducer Reducer=>Reducer,\n' +
+      '  result undefined|null,\n' +
+      '>(args, transducer, result) -> Promise|result\n' +
+      '```\n',
+    description: 'Reduce a value, always returning null or undefined.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'Reducer = (any, any)=>Promise|any\n' +
+            '\n' +
+            'genericTransformToNull<\n' +
+            '  args Array,\n' +
+            '  transducer Reducer=>Reducer,\n' +
+            '  result undefined|null,\n' +
+            '>(args, transducer, result) -> Promise|result',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 9, column: 4, offset: 207 },
+            indent: [
+              1, 1, 1, 1,
+              1, 1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 10, column: 1, offset: 208 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Reduce a value, always returning null or undefined.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 52, offset: 51 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 52, offset: 51 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 52 }
+      }
+    }
+  },
+  {
+    name: 'globalThisHasBuffer',
+    synopsis: 'globalThisHasBuffer boolean\n',
+    description: 'Is there a global `Buffer`\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'globalThisHasBuffer boolean',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 28, offset: 27 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 28, offset: 27 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 28 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Is there a global ',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 19, offset: 18 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'Buffer',
+              position: {
+                start: { line: 1, column: 19, offset: 18 },
+                end: { line: 1, column: 27, offset: 26 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 27, offset: 26 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 27 }
+      }
+    }
+  },
+  {
+    name: 'identity',
+    synopsis: 'identity(value any) -> value\n',
+    description: 'Returns the first argument\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'identity(value any) -> value',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 29, offset: 28 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 29, offset: 28 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 29 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Returns the first argument',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 27, offset: 26 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 27, offset: 26 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 27 }
+      }
+    }
+  },
+  {
+    name: 'isArray',
+    synopsis: 'isArray(value any) -> boolean\n',
+    description: 'Determine whether a value is an array.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'isArray(value any) -> boolean',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
                 end: { line: 1, column: 30, offset: 29 },
                 indent: []
               }
@@ -580,47 +3264,3373 @@ export default [
             end: { line: 1, column: 30, offset: 29 },
             indent: []
           }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 30 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Determine whether a value is an array.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 39, offset: 38 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 39, offset: 38 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 39 }
+      }
+    }
+  },
+  {
+    name: 'isAsyncGeneratorFunction',
+    synopsis: 'isAsyncGeneratorFunction(value any) -> boolean\n',
+    description: 'Determine whether a value is an async generator function.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'isAsyncGeneratorFunction(value any) -> boolean',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 47, offset: 46 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 47, offset: 46 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 47 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Determine whether a value is an async generator function.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 58, offset: 57 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 58, offset: 57 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 58 }
+      }
+    }
+  },
+  {
+    name: 'isBinary',
+    synopsis: 'isBinary(value any) -> boolean\n',
+    description: 'Determine whether a value is binary. This could be `true` for `TypedArray` or a Node.js `Buffer`.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'isBinary(value any) -> boolean',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 31, offset: 30 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 31, offset: 30 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 31 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Determine whether a value is binary. This could be ',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 52, offset: 51 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'true',
+              position: {
+                start: { line: 1, column: 52, offset: 51 },
+                end: { line: 1, column: 58, offset: 57 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ' for ',
+              position: {
+                start: { line: 1, column: 58, offset: 57 },
+                end: { line: 1, column: 63, offset: 62 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'TypedArray',
+              position: {
+                start: { line: 1, column: 63, offset: 62 },
+                end: { line: 1, column: 75, offset: 74 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ' or a Node.js ',
+              position: {
+                start: { line: 1, column: 75, offset: 74 },
+                end: { line: 1, column: 89, offset: 88 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'Buffer',
+              position: {
+                start: { line: 1, column: 89, offset: 88 },
+                end: { line: 1, column: 97, offset: 96 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: '.',
+              position: {
+                start: { line: 1, column: 97, offset: 96 },
+                end: { line: 1, column: 98, offset: 97 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 98, offset: 97 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 98 }
+      }
+    }
+  },
+  {
+    name: 'isGeneratorFunction',
+    synopsis: 'isGeneratorFunction(value any) -> boolean\n',
+    description: 'Determine whether a value is a generator function.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'isGeneratorFunction(value any) -> boolean',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 42, offset: 41 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 42, offset: 41 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 42 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Determine whether a value is a generator function.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 51, offset: 50 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 51, offset: 50 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 51 }
+      }
+    }
+  },
+  {
+    name: 'isNodeReadStream',
+    synopsis: 'isNodeReadStream(value any) -> boolean\n',
+    description: 'Determine whether a value is a Node.js Readable Stream.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'isNodeReadStream(value any) -> boolean',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 39, offset: 38 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 39, offset: 38 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 39 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Determine whether a value is a Node.js Readable Stream.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 56, offset: 55 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 56, offset: 55 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 56 }
+      }
+    }
+  },
+  {
+    name: 'isPromise',
+    synopsis: 'isPromise(value any) -> boolean\n',
+    description: 'Determine whether a value is a promise.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'isPromise(value any) -> boolean',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 32, offset: 31 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 32, offset: 31 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 32 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Determine whether a value is a promise.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 40, offset: 39 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 40, offset: 39 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 40 }
+      }
+    }
+  },
+  {
+    name: 'iterationMap',
+    synopsis: 'iterationMap<\n' +
+      '  T any,\n' +
+      '  iteration { value: T, done: boolean },\n' +
+      '  mapper T=>any,\n' +
+      '>(iteration, mapper) -> nextIteration { value: any, done: boolean }\n',
+    description: 'Apply a mapper to an iteration. Noop if iteration is done.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'iterationMap<\n' +
+                '  T any,\n' +
+                '  iteration { value: T, done: boolean },\n' +
+                '  mapper T=>any,',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 4, column: 17, offset: 80 },
+                indent: [ 1, 1, 1 ]
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 4, column: 17, offset: 80 },
+            indent: [ 1, 1, 1 ]
+          }
         },
         {
-          type: 'code',
-          lang: 'javascript',
-          meta: '[playground]',
-          value: 'const sleep = ms => () => new Promise(resolve => setTimeout(resolve, ms))\n' +
-            '\n' +
-            'fork.series([\n' +
-            "  greeting => console.log(greeting + ' world'),\n" +
-            '  sleep(1000),\n' +
-            "  greeting => console.log(greeting + ' mom'),\n" +
-            '  sleep(1000),\n' +
-            "  greeting => console.log(greeting + ' darkness'),\n" +
-            "])('hello') // hello world\n" +
-            '            // hello mom\n' +
-            '            // hello darkness',
+          type: 'blockquote',
+          children: [
+            {
+              type: 'paragraph',
+              children: [
+                {
+                  type: 'text',
+                  value: '(iteration, mapper) -> nextIteration { value: any, done: boolean }',
+                  position: {
+                    start: { line: 5, column: 2, offset: 82 },
+                    end: { line: 5, column: 68, offset: 148 },
+                    indent: []
+                  }
+                }
+              ],
+              position: {
+                start: { line: 5, column: 2, offset: 82 },
+                end: { line: 5, column: 68, offset: 148 },
+                indent: []
+              }
+            }
+          ],
           position: {
-            start: { line: 3, column: 1, offset: 31 },
-            end: { line: 15, column: 4, offset: 407 },
+            start: { line: 5, column: 1, offset: 81 },
+            end: { line: 5, column: 68, offset: 148 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 6, column: 1, offset: 149 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Apply a mapper to an iteration. Noop if iteration is done.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 59, offset: 58 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 59, offset: 58 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 59 }
+      }
+    }
+  },
+  {
+    name: 'iteratorForEach',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var T any,\n' +
+      '  iterator Iterator<T>,\n' +
+      '  callback T=>()\n' +
+      '\n' +
+      'iteratorForEach(iterator, callback) -> ()\n' +
+      '```\n',
+    description: 'Call a callback for each item of an iterator. Return a promise if any executions are asynchronous.\n' +
+      '\n' +
+      'Note: iterator is consumed\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'var T any,\n' +
+            '  iterator Iterator<T>,\n' +
+            '  callback T=>()\n' +
+            '\n' +
+            'iteratorForEach(iterator, callback) -> ()',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 7, column: 4, offset: 127 },
+            indent: [ 1, 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 8, column: 1, offset: 128 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Call a callback for each item of an iterator. Return a promise if any executions are asynchronous.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 99, offset: 98 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 99, offset: 98 },
+            indent: []
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Note: iterator is consumed',
+              position: {
+                start: { line: 3, column: 1, offset: 100 },
+                end: { line: 3, column: 27, offset: 126 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 3, column: 1, offset: 100 },
+            end: { line: 3, column: 27, offset: 126 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 4, column: 1, offset: 127 }
+      }
+    }
+  },
+  {
+    name: 'iteratorReduceAsync',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var T any,\n' +
+      '  iterator Iterator<T>,\n' +
+      '  reducer (any, T)=>Promise|any,\n' +
+      '  result any,\n' +
+      '\n' +
+      'iteratorReduceAsync(iterator, reducer, result) -> Promise\n' +
+      '```\n',
+    description: 'Execute a reducer for each item of an iterator or async iterator, returning a promise of a single value.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'var T any,\n' +
+            '  iterator Iterator<T>,\n' +
+            '  reducer (any, T)=>Promise|any,\n' +
+            '  result any,\n' +
+            '\n' +
+            'iteratorReduceAsync(iterator, reducer, result) -> Promise',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 8, column: 4, offset: 173 },
             indent: [
-              1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1,
-              1, 1
+              1, 1, 1, 1,
+              1, 1, 1
             ]
           }
         }
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 16, column: 1, offset: 408 }
+        end: { line: 9, column: 1, offset: 174 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Execute a reducer for each item of an iterator or async iterator, returning a promise of a single value.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 105, offset: 104 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 105, offset: 104 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 105 }
+      }
+    }
+  },
+  {
+    name: 'iteratorReduce',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var T any,\n' +
+      '  iterator Iterator<T>,\n' +
+      '  reducer (any, T)=>Promise|any,\n' +
+      '  result any,\n' +
+      '\n' +
+      'iteratorReduce(iterator, reducer, result?) -> Promise|any\n' +
+      '```\n',
+    description: 'Execute a reducer for each item of an iterator, returning a single value.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'var T any,\n' +
+            '  iterator Iterator<T>,\n' +
+            '  reducer (any, T)=>Promise|any,\n' +
+            '  result any,\n' +
+            '\n' +
+            'iteratorReduce(iterator, reducer, result?) -> Promise|any',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 8, column: 4, offset: 173 },
+            indent: [
+              1, 1, 1, 1,
+              1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 9, column: 1, offset: 174 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Execute a reducer for each item of an iterator, returning a single value.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 74, offset: 73 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 74, offset: 73 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 74 }
+      }
+    }
+  },
+  {
+    name: 'mapFilter',
+    synopsis: '```coffeescript [specscript]\n' +
+      'mapFilter<\n' +
+      '  T any,\n' +
+      '  map Map<any=>T>,\n' +
+      '  predicate T=>Promise|boolean,\n' +
+      '>(map, predicate) -> filteredValuesByPredicate Map<any=>T>\n' +
+      '```\n',
+    description: 'Filter the values of a Map concurrently by predicate. `predicate` may be asynchronous.\n' +
+      '\n' +
+      'Note: for asynchronous predicates, the order of the resulting Map is not guaranteed\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'mapFilter<\n' +
+            '  T any,\n' +
+            '  map Map<any=>T>,\n' +
+            '  predicate T=>Promise|boolean,\n' +
+            '>(map, predicate) -> filteredValuesByPredicate Map<any=>T>',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 7, column: 4, offset: 162 },
+            indent: [ 1, 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 8, column: 1, offset: 163 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Filter the values of a Map concurrently by predicate. ',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 55, offset: 54 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'predicate',
+              position: {
+                start: { line: 1, column: 55, offset: 54 },
+                end: { line: 1, column: 66, offset: 65 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ' may be asynchronous.',
+              position: {
+                start: { line: 1, column: 66, offset: 65 },
+                end: { line: 1, column: 87, offset: 86 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 87, offset: 86 },
+            indent: []
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Note: for asynchronous predicates, the order of the resulting Map is not guaranteed',
+              position: {
+                start: { line: 3, column: 1, offset: 88 },
+                end: { line: 3, column: 84, offset: 171 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 3, column: 1, offset: 88 },
+            end: { line: 3, column: 84, offset: 171 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 4, column: 1, offset: 172 }
+      }
+    }
+  },
+  {
+    name: 'mapMap',
+    synopsis: '```coffeescript [specscript]\n' +
+      'mapMap<\n' +
+      '  T any,\n' +
+      '  value Map<any=>T>,\n' +
+      '  mapper T=>Promise|any,\n' +
+      '>(value, mapper) -> Promise|Map<any=>any>\n' +
+      '```\n',
+    description: 'Apply a mapper concurrently to each value (not entry) of a Map, returning a Map of results. `mapper` may be asynchronous.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'mapMap<\n' +
+            '  T any,\n' +
+            '  value Map<any=>T>,\n' +
+            '  mapper T=>Promise|any,\n' +
+            '>(value, mapper) -> Promise|Map<any=>any>',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 7, column: 4, offset: 137 },
+            indent: [ 1, 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 8, column: 1, offset: 138 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Apply a mapper concurrently to each value (not entry) of a Map, returning a Map of results. ',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 93, offset: 92 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'mapper',
+              position: {
+                start: { line: 1, column: 93, offset: 92 },
+                end: { line: 1, column: 101, offset: 100 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ' may be asynchronous.',
+              position: {
+                start: { line: 1, column: 101, offset: 100 },
+                end: { line: 1, column: 122, offset: 121 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 122, offset: 121 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 122 }
+      }
+    }
+  },
+  {
+    name: 'memoizeCappedUnary',
+    synopsis: '```coffeescript [specscript]\n' +
+      'memoizeCappedUnary(func function, cap number) -> memoized function\n' +
+      '```\n',
+    description: 'Memoize a function. Clear cache when size reaches cap.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'memoizeCappedUnary(func function, cap number) -> memoized function',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 3, column: 4, offset: 99 },
+            indent: [ 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 4, column: 1, offset: 100 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Memoize a function. Clear cache when size reaches cap.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 55, offset: 54 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 55, offset: 54 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 55 }
+      }
+    }
+  },
+  {
+    name: 'noop',
+    synopsis: 'noop() -> ()\n',
+    description: 'Takes nothing, returns `undefined`\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'noop() -> ()',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 13, offset: 12 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 13, offset: 12 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 13 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Takes nothing, returns ',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 24, offset: 23 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'undefined',
+              position: {
+                start: { line: 1, column: 24, offset: 23 },
+                end: { line: 1, column: 35, offset: 34 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 35, offset: 34 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 35 }
+      }
+    }
+  },
+  {
+    name: 'objectAssign',
+    synopsis: '```coffeescript [specscript]\n' +
+      'objectAssign<\n' +
+      '  targetObject Object, sourceObjects ...Object,\n' +
+      '>(targetObject, ...sourceObjects) -> merged Object\n' +
+      '```\n',
+    description: 'Dereferenced `Object.assign`\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'objectAssign<\n' +
+            '  targetObject Object, sourceObjects ...Object,\n' +
+            '>(targetObject, ...sourceObjects) -> merged Object',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 5, column: 4, offset: 145 },
+            indent: [ 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 6, column: 1, offset: 146 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Dereferenced ',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 14, offset: 13 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'Object.assign',
+              position: {
+                start: { line: 1, column: 14, offset: 13 },
+                end: { line: 1, column: 29, offset: 28 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 29, offset: 28 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 29 }
+      }
+    }
+  },
+  {
+    name: 'objectFlatMap',
+    synopsis: '```coffeescript [specscript]\n' +
+      'Stream<T> = { read: ()=>T, write: T=>() }\n' +
+      'Monad<T> = Array<T>|String<T>|Set<T>\n' +
+      '  |TypedArray<T>|Stream<T>|Iterator<Promise|T>\n' +
+      '  |{ chain: T=>Monad<T> }|{ flatMap: T=>Monad<T> }|Object<T>\n' +
+      'Reducer<T> = (any, T)=>Promise|any\n' +
+      'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: Reducer<T> }|Object<T>\n' +
+      '\n' +
+      'objectFlatMap<\n' +
+      '  T any,\n' +
+      '  object Object<T>,\n' +
+      '  flatMapper T=>Promise|Monad<T>|Foldable<T>|T,\n' +
+      '>(object, flatMapper) -> Promise|Object<T>\n' +
+      '```\n',
+    description: 'Apply a flatMapper to each value of an object, assigning all items of all results into a new object.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'Stream<T> = { read: ()=>T, write: T=>() }\n' +
+            'Monad<T> = Array<T>|String<T>|Set<T>\n' +
+            '  |TypedArray<T>|Stream<T>|Iterator<Promise|T>\n' +
+            '  |{ chain: T=>Monad<T> }|{ flatMap: T=>Monad<T> }|Object<T>\n' +
+            'Reducer<T> = (any, T)=>Promise|any\n' +
+            'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: Reducer<T> }|Object<T>\n' +
+            '\n' +
+            'objectFlatMap<\n' +
+            '  T any,\n' +
+            '  object Object<T>,\n' +
+            '  flatMapper T=>Promise|Monad<T>|Foldable<T>|T,\n' +
+            '>(object, flatMapper) -> Promise|Object<T>',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 14, column: 4, offset: 466 },
+            indent: [
+              1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1,
+              1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 15, column: 1, offset: 467 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Apply a flatMapper to each value of an object, assigning all items of all results into a new object.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 101, offset: 100 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 101, offset: 100 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 101 }
+      }
+    }
+  },
+  {
+    name: 'objectForEach',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var T any,\n' +
+      '  object Object<T>,\n' +
+      '  callback T=>()\n' +
+      '\n' +
+      'objectForEach(object, callback) -> ()\n' +
+      '```\n',
+    description: 'Execute a callback for each value of an object. Return a promise if any executions are asynchronous.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'var T any,\n' +
+            '  object Object<T>,\n' +
+            '  callback T=>()\n' +
+            '\n' +
+            'objectForEach(object, callback) -> ()',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 7, column: 4, offset: 119 },
+            indent: [ 1, 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 8, column: 1, offset: 120 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Execute a callback for each value of an object. Return a promise if any executions are asynchronous.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 101, offset: 100 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 101, offset: 100 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 101 }
+      }
+    }
+  },
+  {
+    name: 'objectMap',
+    synopsis: '```coffeescript [specscript]\n' +
+      'objectMap<\n' +
+      '  T any,\n' +
+      '  object Object<T>,\n' +
+      '  mapper T=>Promise|any,\n' +
+      '>(object, mapper) -> Promise|Object\n' +
+      '```\n',
+    description: 'Apply a mapper concurrently to each value of an object, returning an object of results. Mapper may be asynchronous.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'objectMap<\n' +
+            '  T any,\n' +
+            '  object Object<T>,\n' +
+            '  mapper T=>Promise|any,\n' +
+            '>(object, mapper) -> Promise|Object',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 7, column: 4, offset: 133 },
+            indent: [ 1, 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 8, column: 1, offset: 134 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Apply a mapper concurrently to each value of an object, returning an object of results. Mapper may be asynchronous.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 116, offset: 115 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 116, offset: 115 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 116 }
+      }
+    }
+  },
+  {
+    name: 'objectToString',
+    synopsis: 'objectToString(value any) -> string\n',
+    description: 'Get the tag of an object\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'objectToString(value any) -> string',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 36, offset: 35 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 36, offset: 35 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 36 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Get the tag of an object',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 25, offset: 24 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 25, offset: 24 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 25 }
+      }
+    }
+  },
+  {
+    name: 'objectValues',
+    synopsis: 'objectValues<T>(object Object<T>) -> Array<T>\n',
+    description: 'Dereferenced `Object.values`\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'objectValues',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 13, offset: 12 },
+                indent: []
+              }
+            },
+            {
+              type: 'html',
+              value: '<T>',
+              position: {
+                start: { line: 1, column: 13, offset: 12 },
+                end: { line: 1, column: 16, offset: 15 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: '(object Object',
+              position: {
+                start: { line: 1, column: 16, offset: 15 },
+                end: { line: 1, column: 30, offset: 29 },
+                indent: []
+              }
+            },
+            {
+              type: 'html',
+              value: '<T>',
+              position: {
+                start: { line: 1, column: 30, offset: 29 },
+                end: { line: 1, column: 33, offset: 32 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ') -> Array',
+              position: {
+                start: { line: 1, column: 33, offset: 32 },
+                end: { line: 1, column: 43, offset: 42 },
+                indent: []
+              }
+            },
+            {
+              type: 'html',
+              value: '<T>',
+              position: {
+                start: { line: 1, column: 43, offset: 42 },
+                end: { line: 1, column: 46, offset: 45 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 46, offset: 45 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 46 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Dereferenced ',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 14, offset: 13 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'Object.values',
+              position: {
+                start: { line: 1, column: 14, offset: 13 },
+                end: { line: 1, column: 29, offset: 28 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 29, offset: 28 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 29 }
+      }
+    }
+  },
+  {
+    name: 'promiseAll',
+    synopsis: 'promiseAll(Iterable<Promise|any>) -> Promise<Array>\n',
+    description: 'Dereferenced Promise.all\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'promiseAll(Iterable<Promise|any>) -> Promise',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 45, offset: 44 },
+                indent: []
+              }
+            },
+            {
+              type: 'html',
+              value: '<Array>',
+              position: {
+                start: { line: 1, column: 45, offset: 44 },
+                end: { line: 1, column: 52, offset: 51 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 52, offset: 51 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 52 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Dereferenced Promise.all',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 25, offset: 24 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 25, offset: 24 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 25 }
+      }
+    }
+  },
+  {
+    name: 'promiseObjectAll',
+    synopsis: '```coffeescript [specscript]\n' +
+      'promiseObjectAll(object<Promise|any>) -> Promise<object>\n' +
+      '```\n',
+    description: 'Like `Promise.all` but for objects.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'promiseObjectAll(object<Promise|any>) -> Promise<object>',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 3, column: 4, offset: 89 },
+            indent: [ 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 4, column: 1, offset: 90 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Like ',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 6, offset: 5 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'Promise.all',
+              position: {
+                start: { line: 1, column: 6, offset: 5 },
+                end: { line: 1, column: 19, offset: 18 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ' but for objects.',
+              position: {
+                start: { line: 1, column: 19, offset: 18 },
+                end: { line: 1, column: 36, offset: 35 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 36, offset: 35 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 36 }
+      }
+    }
+  },
+  {
+    name: 'promiseRace',
+    synopsis: 'promiseRace(Iterable<Promise|any>) -> firstResolvedOrRejected Promise\n',
+    description: 'Dereferenced Promise.race\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'promiseRace(Iterable<Promise|any>) -> firstResolvedOrRejected Promise',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 70, offset: 69 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 70, offset: 69 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 70 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Dereferenced Promise.race',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 26, offset: 25 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 26, offset: 25 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 26 }
+      }
+    }
+  },
+  {
+    name: 'reducerFilter',
+    synopsis: '```coffeescript [specscript]\n' +
+      'reducerFilter<\n' +
+      '  T any,\n' +
+      '  reducer (any, T)=>Promise|any,\n' +
+      '  predicate T=>Promise|boolean,\n' +
+      '>(reducer, predicate) -> filteringReducer (any, any)=>Promise|any\n' +
+      '```\n',
+    description: "Filter items from a reducer's operation by predicate. `predicate` may be asynchronous.\n" +
+      '\n' +
+      'Note: If the predicate is asynchronous, the implementation of reduce that consumes the filtering reducer must resolve promises\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'reducerFilter<\n' +
+            '  T any,\n' +
+            '  reducer (any, T)=>Promise|any,\n' +
+            '  predicate T=>Promise|boolean,\n' +
+            '>(reducer, predicate) -> filteringReducer (any, any)=>Promise|any',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 7, column: 4, offset: 187 },
+            indent: [ 1, 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 8, column: 1, offset: 188 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: "Filter items from a reducer's operation by predicate. ",
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 55, offset: 54 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'predicate',
+              position: {
+                start: { line: 1, column: 55, offset: 54 },
+                end: { line: 1, column: 66, offset: 65 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ' may be asynchronous.',
+              position: {
+                start: { line: 1, column: 66, offset: 65 },
+                end: { line: 1, column: 87, offset: 86 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 87, offset: 86 },
+            indent: []
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Note: If the predicate is asynchronous, the implementation of reduce that consumes the filtering reducer must resolve promises',
+              position: {
+                start: { line: 3, column: 1, offset: 88 },
+                end: { line: 3, column: 127, offset: 214 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 3, column: 1, offset: 88 },
+            end: { line: 3, column: 127, offset: 214 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 4, column: 1, offset: 215 }
+      }
+    }
+  },
+  {
+    name: 'reducerFlatten',
+    synopsis: '```coffeescript [specscript]\n' +
+      'Stream<T> = { read: ()=>T, write: T=>() }\n' +
+      'Monad<T> = Array<T>|String<T>|Set<T>\n' +
+      '  |TypedArray<T>|Stream<T>|Iterator<Promise|T>\n' +
+      '  |{ chain: T=>Monad<T> }|{ flatMap: T=>Monad<T> }|Object<T>\n' +
+      'Reducer<T> = (any, T)=>Promise|any\n' +
+      'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: Reducer<T> }|Object<T>\n' +
+      '\n' +
+      'reducerFlatten<T>(\n' +
+      '  reducer Reducer<Monad<T>|Foldable<T>|T>,\n' +
+      ') -> flatteningReducer Reducer<T>\n' +
+      '```\n',
+    description: 'Create a flattening reducer - a reducer that flattens all items of a reducing operation into the result.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'Stream<T> = { read: ()=>T, write: T=>() }\n' +
+            'Monad<T> = Array<T>|String<T>|Set<T>\n' +
+            '  |TypedArray<T>|Stream<T>|Iterator<Promise|T>\n' +
+            '  |{ chain: T=>Monad<T> }|{ flatMap: T=>Monad<T> }|Object<T>\n' +
+            'Reducer<T> = (any, T)=>Promise|any\n' +
+            'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: Reducer<T> }|Object<T>\n' +
+            '\n' +
+            'reducerFlatten<T>(\n' +
+            '  reducer Reducer<Monad<T>|Foldable<T>|T>,\n' +
+            ') -> flatteningReducer Reducer<T>',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 12, column: 4, offset: 427 },
+            indent: [
+              1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1,
+              1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 13, column: 1, offset: 428 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Create a flattening reducer - a reducer that flattens all items of a reducing operation into the result.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 105, offset: 104 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 105, offset: 104 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 105 }
+      }
+    }
+  },
+  {
+    name: 'reducerForEach',
+    synopsis: '```coffeescript [specscript]\n' +
+      'Reducer<T> = (any, T)=>Promise|any\n' +
+      '\n' +
+      'var T any,\n' +
+      '  reducer Reducer<T>\n' +
+      '\n' +
+      'reducerForEach(reducer, callback) -> reducer\n' +
+      '```\n',
+    description: 'Create a reducer that additionally executes a callback for each item of its reducing operation.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'Reducer<T> = (any, T)=>Promise|any\n' +
+            '\n' +
+            'var T any,\n' +
+            '  reducer Reducer<T>\n' +
+            '\n' +
+            'reducerForEach(reducer, callback) -> reducer',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 8, column: 4, offset: 146 },
+            indent: [
+              1, 1, 1, 1,
+              1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 9, column: 1, offset: 147 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Create a reducer that additionally executes a callback for each item of its reducing operation.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 96, offset: 95 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 96, offset: 95 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 96 }
+      }
+    }
+  },
+  {
+    name: 'reducerMap',
+    synopsis: '```coffeescript [specscript]\n' +
+      'reducerMap<\n' +
+      '  T any,\n' +
+      '  reducer (any, T)=>Promise|any,\n' +
+      '  mapper T=>Promise|any,\n' +
+      '>(reducer, mapper) -> mappingReducer (any, any)=>Promise|any\n' +
+      '```\n',
+    description: "Apply a mapper to elements of a reducer's operation. `mapper` may be asynchronous\n" +
+      '\n' +
+      'Note: If the mapper is asynchronous, the implementation of reduce that consumes the mapping reducer must resolve promises\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'reducerMap<\n' +
+            '  T any,\n' +
+            '  reducer (any, T)=>Promise|any,\n' +
+            '  mapper T=>Promise|any,\n' +
+            '>(reducer, mapper) -> mappingReducer (any, any)=>Promise|any',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 7, column: 4, offset: 172 },
+            indent: [ 1, 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 8, column: 1, offset: 173 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: "Apply a mapper to elements of a reducer's operation. ",
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 54, offset: 53 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'mapper',
+              position: {
+                start: { line: 1, column: 54, offset: 53 },
+                end: { line: 1, column: 62, offset: 61 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ' may be asynchronous',
+              position: {
+                start: { line: 1, column: 62, offset: 61 },
+                end: { line: 1, column: 82, offset: 81 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 82, offset: 81 },
+            indent: []
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Note: If the mapper is asynchronous, the implementation of reduce that consumes the mapping reducer must resolve promises',
+              position: {
+                start: { line: 3, column: 1, offset: 83 },
+                end: { line: 3, column: 122, offset: 204 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 3, column: 1, offset: 83 },
+            end: { line: 3, column: 122, offset: 204 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 4, column: 1, offset: 205 }
+      }
+    }
+  },
+  {
+    name: 'setFilter',
+    synopsis: '```coffeescript [specscript]\n' +
+      'setFilter<T>(\n' +
+      '  set Set<T>,\n' +
+      '  predicate T=>Promise|boolean,\n' +
+      ') -> filteredSet Promise|Set<T>\n' +
+      '```\n',
+    description: 'Filter items of a Set concurrently by predicate. `predicate` may be asynchronous.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'setFilter<T>(\n' +
+            '  set Set<T>,\n' +
+            '  predicate T=>Promise|boolean,\n' +
+            ') -> filteredSet Promise|Set<T>',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 6, column: 4, offset: 124 },
+            indent: [ 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 7, column: 1, offset: 125 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Filter items of a Set concurrently by predicate. ',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 50, offset: 49 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'predicate',
+              position: {
+                start: { line: 1, column: 50, offset: 49 },
+                end: { line: 1, column: 61, offset: 60 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ' may be asynchronous.',
+              position: {
+                start: { line: 1, column: 61, offset: 60 },
+                end: { line: 1, column: 82, offset: 81 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 82, offset: 81 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 82 }
+      }
+    }
+  },
+  {
+    name: 'setMap',
+    synopsis: '```coffeescript [specscript]\n' +
+      'setMap<\n' +
+      '  T any,\n' +
+      '  value Set<T>,\n' +
+      '  mapper T=>Promise|any,\n' +
+      '>(value, mapper) -> Promise|Set\n' +
+      '```\n',
+    description: 'Apply a mapper concurrently to each item of a set, returning a set of results.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'setMap<\n' +
+            '  T any,\n' +
+            '  value Set<T>,\n' +
+            '  mapper T=>Promise|any,\n' +
+            '>(value, mapper) -> Promise|Set',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 7, column: 4, offset: 122 },
+            indent: [ 1, 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 8, column: 1, offset: 123 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Apply a mapper concurrently to each item of a set, returning a set of results.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 79, offset: 78 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 79, offset: 78 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 79 }
+      }
+    }
+  },
+  {
+    name: 'streamWrite',
+    synopsis: '```coffeescript [specscript]\n' +
+      'streamWrite(\n' +
+      '  stream Writable,\n' +
+      '  chunk string|Buffer|Uint8Array|any,\n' +
+      '  encoding string|undefined,\n' +
+      '  callback function|undefined,\n' +
+      ') -> stream\n' +
+      '```\n',
+    description: 'Call `.write` on a Node.js stream\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'streamWrite(\n' +
+            '  stream Writable,\n' +
+            '  chunk string|Buffer|Uint8Array|any,\n' +
+            '  encoding string|undefined,\n' +
+            '  callback function|undefined,\n' +
+            ') -> stream',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 8, column: 4, offset: 174 },
+            indent: [
+              1, 1, 1, 1,
+              1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 9, column: 1, offset: 175 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Call ',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 6, offset: 5 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: '.write',
+              position: {
+                start: { line: 1, column: 6, offset: 5 },
+                end: { line: 1, column: 14, offset: 13 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ' on a Node.js stream',
+              position: {
+                start: { line: 1, column: 14, offset: 13 },
+                end: { line: 1, column: 34, offset: 33 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 34, offset: 33 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 34 }
+      }
+    }
+  },
+  {
+    name: 'stringMap',
+    synopsis: '```coffeescript [specscript]\n' +
+      'stringMap<\n' +
+      '  character string,\n' +
+      '  str String<character>,\n' +
+      '  mapper character=>Promise|string|any,\n' +
+      '>(str, mapper) -> stringWithCharactersMapped string\n' +
+      '```\n',
+    description: "Filter a string's characters by predicate.\n",
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'stringMap<\n' +
+            '  character string,\n' +
+            '  str String<character>,\n' +
+            '  mapper character=>Promise|string|any,\n' +
+            '>(str, mapper) -> stringWithCharactersMapped string',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 7, column: 4, offset: 180 },
+            indent: [ 1, 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 8, column: 1, offset: 181 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: "Filter a string's characters by predicate.",
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 43, offset: 42 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 43, offset: 42 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 43 }
+      }
+    }
+  },
+  {
+    name: 'stringMap',
+    synopsis: '```coffeescript [specscript]\n' +
+      'stringMap<\n' +
+      '  character string,\n' +
+      '  str String<character>,\n' +
+      '  mapper character=>Promise|string|any,\n' +
+      '>(str, mapper) -> stringWithCharactersMapped string\n' +
+      '```\n',
+    description: 'Apply a mapper concurrently to each character of a string, returning a string result. `mapper` may be asynchronous.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'stringMap<\n' +
+            '  character string,\n' +
+            '  str String<character>,\n' +
+            '  mapper character=>Promise|string|any,\n' +
+            '>(str, mapper) -> stringWithCharactersMapped string',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 7, column: 4, offset: 180 },
+            indent: [ 1, 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 8, column: 1, offset: 181 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Apply a mapper concurrently to each character of a string, returning a string result. ',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 87, offset: 86 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'mapper',
+              position: {
+                start: { line: 1, column: 87, offset: 86 },
+                end: { line: 1, column: 95, offset: 94 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ' may be asynchronous.',
+              position: {
+                start: { line: 1, column: 95, offset: 94 },
+                end: { line: 1, column: 116, offset: 115 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 116, offset: 115 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 116 }
+      }
+    }
+  },
+  {
+    name: 'symbolAsyncIterator',
+    synopsis: 'symbolAsyncIterator = Symbol.asyncIterator\n',
+    description: 'Dereferenced `Symbol.asyncIterator`\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'symbolAsyncIterator = Symbol.asyncIterator',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 43, offset: 42 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 43, offset: 42 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 43 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Dereferenced ',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 14, offset: 13 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'Symbol.asyncIterator',
+              position: {
+                start: { line: 1, column: 14, offset: 13 },
+                end: { line: 1, column: 36, offset: 35 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 36, offset: 35 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 36 }
+      }
+    }
+  },
+  {
+    name: 'symbolIterator',
+    synopsis: 'symbolIterator = Symbol.iterator\n',
+    description: 'Dereferenced `Symbol.iterator`\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'symbolIterator = Symbol.iterator',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 33, offset: 32 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 33, offset: 32 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 33 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Dereferenced ',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 14, offset: 13 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'Symbol.iterator',
+              position: {
+                start: { line: 1, column: 14, offset: 13 },
+                end: { line: 1, column: 31, offset: 30 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 31, offset: 30 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 31 }
+      }
+    }
+  },
+  {
+    name: 'tapSync',
+    synopsis: '```coffeescript [specscript]\n' +
+      'tapSync<\n' +
+      '  tapper function,\n' +
+      '  args ...any,\n' +
+      '>(tapper)(...args) -> args[0]\n' +
+      '```\n',
+    description: 'Call a function with arguments, returning the first argument. Promises are not handled.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'tapSync<\n' +
+            '  tapper function,\n' +
+            '  args ...any,\n' +
+            '>(tapper)(...args) -> args[0]',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 6, column: 4, offset: 105 },
+            indent: [ 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 7, column: 1, offset: 106 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Call a function with arguments, returning the first argument. Promises are not handled.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 88, offset: 87 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 88, offset: 87 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 88 }
+      }
+    }
+  },
+  {
+    name: 'thunkConditional',
+    synopsis: '```coffeescript [specscript]\n' +
+      'thunkConditional<\n' +
+      '  conditionalExpression boolean,\n' +
+      '  thunkOnTruthy ()=>any,\n' +
+      '  thunkOnFalsy ()=>any,\n' +
+      '>(conditionalExpression, thunkOnTruthy, thunkOnFalsy) -> any\n' +
+      '```\n',
+    description: 'Like the conditional operator `a ? b : c` but for thunks.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'thunkConditional<\n' +
+            '  conditionalExpression boolean,\n' +
+            '  thunkOnTruthy ()=>any,\n' +
+            '  thunkOnFalsy ()=>any,\n' +
+            '>(conditionalExpression, thunkOnTruthy, thunkOnFalsy) -> any',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 7, column: 4, offset: 193 },
+            indent: [ 1, 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 8, column: 1, offset: 194 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Like the conditional operator ',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 31, offset: 30 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'a ? b : c',
+              position: {
+                start: { line: 1, column: 31, offset: 30 },
+                end: { line: 1, column: 42, offset: 41 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ' but for thunks.',
+              position: {
+                start: { line: 1, column: 42, offset: 41 },
+                end: { line: 1, column: 58, offset: 57 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 58, offset: 57 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 58 }
+      }
+    }
+  },
+  {
+    name: 'thunkify1',
+    synopsis: '```coffeescript [specscript]\n' +
+      'thunkify1<\n' +
+      '  arg0 any,\n' +
+      '  func arg0=>any,\n' +
+      '>(func, arg0) -> thunk ()=>func(arg0)\n' +
+      '```\n',
+    description: 'Create a thunk from a function and one argument.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'thunkify1<\n' +
+            '  arg0 any,\n' +
+            '  func arg0=>any,\n' +
+            '>(func, arg0) -> thunk ()=>func(arg0)',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 6, column: 4, offset: 111 },
+            indent: [ 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 7, column: 1, offset: 112 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Create a thunk from a function and one argument.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 49, offset: 48 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 49, offset: 48 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 49 }
+      }
+    }
+  },
+  {
+    name: 'thunkify2',
+    synopsis: '```coffeescript [specscript]\n' +
+      'thunkify2<\n' +
+      '  arg0 any,\n' +
+      '  arg1 any,\n' +
+      '  func (arg0, arg1)=>any,\n' +
+      '>(func, arg0, arg1) -> thunk ()=>func(arg0, arg1)\n' +
+      '```\n',
+    description: 'Create a thunk from a function and two arguments.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'thunkify2<\n' +
+            '  arg0 any,\n' +
+            '  arg1 any,\n' +
+            '  func (arg0, arg1)=>any,\n' +
+            '>(func, arg0, arg1) -> thunk ()=>func(arg0, arg1)',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 7, column: 4, offset: 143 },
+            indent: [ 1, 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 8, column: 1, offset: 144 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Create a thunk from a function and two arguments.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 50, offset: 49 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 50, offset: 49 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 50 }
+      }
+    }
+  },
+  {
+    name: 'thunkify3',
+    synopsis: '```coffeescript [specscript]\n' +
+      'thunkify3<\n' +
+      '  arg0 any,\n' +
+      '  arg1 any,\n' +
+      '  arg2 any,\n' +
+      '  func (arg0, arg1, arg2)=>any,\n' +
+      '>(func, arg0, arg1, arg2) -> thunk ()=>func(arg0, arg1, arg2)\n' +
+      '```\n',
+    description: 'Create a thunk from a function and three arguments.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'thunkify3<\n' +
+            '  arg0 any,\n' +
+            '  arg1 any,\n' +
+            '  arg2 any,\n' +
+            '  func (arg0, arg1, arg2)=>any,\n' +
+            '>(func, arg0, arg1, arg2) -> thunk ()=>func(arg0, arg1, arg2)',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 8, column: 4, offset: 173 },
+            indent: [
+              1, 1, 1, 1,
+              1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 9, column: 1, offset: 174 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Create a thunk from a function and three arguments.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 52, offset: 51 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 52, offset: 51 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 52 }
+      }
+    }
+  },
+  {
+    name: 'thunkify4',
+    synopsis: '```coffeescript [specscript]\n' +
+      'thunkify4<\n' +
+      '  arg0 any,\n' +
+      '  arg1 any,\n' +
+      '  arg2 any,\n' +
+      '  arg3 any,\n' +
+      '  func (arg0, arg1, arg2, arg3)=>any,\n' +
+      '>(func, arg0, arg1, arg2, arg3) -> thunk ()=>func(arg0, arg1, arg2, arg3)\n' +
+      '```\n',
+    description: 'Create a thunk from a function and four arguments.\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'thunkify4<\n' +
+            '  arg0 any,\n' +
+            '  arg1 any,\n' +
+            '  arg2 any,\n' +
+            '  arg3 any,\n' +
+            '  func (arg0, arg1, arg2, arg3)=>any,\n' +
+            '>(func, arg0, arg1, arg2, arg3) -> thunk ()=>func(arg0, arg1, arg2, arg3)',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 9, column: 4, offset: 203 },
+            indent: [
+              1, 1, 1, 1,
+              1, 1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 10, column: 1, offset: 204 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Create a thunk from a function and four arguments.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 51, offset: 50 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 51, offset: 50 },
+            indent: []
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 2, column: 1, offset: 51 }
+      }
+    }
+  },
+  {
+    name: 'all',
+    synopsis: '```coffeescript [specscript]\n' +
+      'Reducer<T> = (any, T)=>Promise|any\n' +
+      'Foldable<T> = Iterable<T>|AsyncIterable<T>\n' +
+      '  |{ reduce: Reducer<T>=>any }|Object<T>\n' +
+      '\n' +
+      'var T any,\n' +
+      '  predicate T=>Promise|boolean,\n' +
+      '  foldable Foldable<T>\n' +
+      '\n' +
+      'all(predicate)(foldable) -> Promise|boolean\n' +
+      '```\n',
+    description: 'Test a predicate concurrently across all items of a collection, returning true if all predications are truthy.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const isOdd = number => number % 2 == 1\n' +
+      '\n' +
+      'console.log(\n' +
+      '  all(isOdd)([1, 2, 3, 4, 5]),\n' +
+      ') // false\n' +
+      '\n' +
+      'console.log(\n' +
+      '  all(isOdd)([1, 3, 5]),\n' +
+      ') // true\n' +
+      '```\n' +
+      '\n' +
+      'The value may be an asynchronous stream.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const asyncNumbers = async function* () {\n' +
+      '  yield 1; yield 2; yield 3; yield 4; yield 5\n' +
+      '}\n' +
+      '\n' +
+      'all(async number => number < 6)(asyncNumbers()).then(console.log) // true\n' +
+      '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'Reducer<T> = (any, T)=>Promise|any\n' +
+            'Foldable<T> = Iterable<T>|AsyncIterable<T>\n' +
+            '  |{ reduce: Reducer<T>=>any }|Object<T>\n' +
+            '\n' +
+            'var T any,\n' +
+            '  predicate T=>Promise|boolean,\n' +
+            '  foldable Foldable<T>\n' +
+            '\n' +
+            'all(predicate)(foldable) -> Promise|boolean',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 11, column: 4, offset: 263 },
+            indent: [
+              1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 12, column: 1, offset: 264 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Test a predicate concurrently across all items of a collection, returning true if all predications are truthy.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 111, offset: 110 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 111, offset: 110 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[playground]',
+          value: 'const isOdd = number => number % 2 == 1\n' +
+            '\n' +
+            'console.log(\n' +
+            '  all(isOdd)([1, 2, 3, 4, 5]),\n' +
+            ') // false\n' +
+            '\n' +
+            'console.log(\n' +
+            '  all(isOdd)([1, 3, 5]),\n' +
+            ') // true',
+          position: {
+            start: { line: 3, column: 1, offset: 112 },
+            end: { line: 13, column: 4, offset: 287 },
+            indent: [
+              1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1
+            ]
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'The value may be an asynchronous stream.',
+              position: {
+                start: { line: 15, column: 1, offset: 289 },
+                end: { line: 15, column: 41, offset: 329 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 15, column: 1, offset: 289 },
+            end: { line: 15, column: 41, offset: 329 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[playground]',
+          value: 'const asyncNumbers = async function* () {\n' +
+            '  yield 1; yield 2; yield 3; yield 4; yield 5\n' +
+            '}\n' +
+            '\n' +
+            'all(async number => number < 6)(asyncNumbers()).then(console.log) // true',
+          position: {
+            start: { line: 17, column: 1, offset: 331 },
+            end: { line: 23, column: 4, offset: 526 },
+            indent: [ 1, 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 24, column: 1, offset: 527 }
+      }
+    }
+  },
+  {
+    name: 'and',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var value any,\n' +
+      '  predicates Array<value=>Promise|boolean>\n' +
+      '\n' +
+      'and(predicates)(value) -> Promise|boolean\n' +
+      '```\n',
+    description: 'Test an array of predicates concurrently against a single input, returning true if all test truthy.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const isOdd = number => number % 2 == 1\n' +
+      '\n' +
+      'const isPositive = number => number > 0\n' +
+      '\n' +
+      'const isLessThan3 = number => number < 3\n' +
+      '\n' +
+      'console.log(\n' +
+      '  and([isOdd, isPositive, isLessThan3])(1),\n' +
+      ') // true\n' +
+      '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'var value any,\n' +
+            '  predicates Array<value=>Promise|boolean>\n' +
+            '\n' +
+            'and(predicates)(value) -> Promise|boolean',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 6, column: 4, offset: 133 },
+            indent: [ 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 7, column: 1, offset: 134 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Test an array of predicates concurrently against a single input, returning true if all test truthy.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 100, offset: 99 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 100, offset: 99 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[playground]',
+          value: 'const isOdd = number => number % 2 == 1\n' +
+            '\n' +
+            'const isPositive = number => number > 0\n' +
+            '\n' +
+            'const isLessThan3 = number => number < 3\n' +
+            '\n' +
+            'console.log(\n' +
+            '  and([isOdd, isPositive, isLessThan3])(1),\n' +
+            ') // true',
+          position: {
+            start: { line: 3, column: 1, offset: 101 },
+            end: { line: 13, column: 4, offset: 322 },
+            indent: [
+              1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 14, column: 1, offset: 323 }
+      }
+    }
+  },
+  {
+    name: 'any',
+    synopsis: '```coffeescript [specscript]\n' +
+      'Reducer<T> = (any, T)=>Promise|any\n' +
+      'Foldable<T> = Iterable<T>|AsyncIterable<T>\n' +
+      '  |{ reduce: Reducer<T>=>any }|Object<T>\n' +
+      '\n' +
+      'var T any,\n' +
+      '  predicate T=>Promise|boolean,\n' +
+      '  foldable Foldable<T>\n' +
+      '\n' +
+      'any(predicate)(foldable) -> Promise|boolean\n' +
+      '```\n',
+    description: 'Test a predicate concurrently across all items of a collection, returning true if any test truthy.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const isOdd = number => number % 2 == 1\n' +
+      '\n' +
+      'console.log(\n' +
+      '  any(isOdd)([1, 2, 3, 4, 5]),\n' +
+      ') // true\n' +
+      '```\n' +
+      '\n' +
+      'The value may be an asynchronous stream.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      "const toTodosUrl = id => 'https://jsonplaceholder.typicode.com/todos/' + id\n" +
+      '\n' +
+      'const fetchedToJson = fetched => fetched.json()\n' +
+      '\n' +
+      'const fetchTodo = pipe([\n' +
+      '  toTodosUrl,\n' +
+      '  fetch,\n' +
+      '  fetchedToJson,\n' +
+      '])\n' +
+      '\n' +
+      'const todoIDsGenerator = async function* () {\n' +
+      '  yield 1; yield 2; yield 3; yield 4; yield 5\n' +
+      '}\n' +
+      '\n' +
+      'any(pipe([\n' +
+      '  fetchTodo,\n' +
+      "  todo => todo.title.startsWith('fugiat'),\n" +
+      ']))(todoIDsGenerator()).then(console.log) // true\n' +
+      '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'Reducer<T> = (any, T)=>Promise|any\n' +
+            'Foldable<T> = Iterable<T>|AsyncIterable<T>\n' +
+            '  |{ reduce: Reducer<T>=>any }|Object<T>\n' +
+            '\n' +
+            'var T any,\n' +
+            '  predicate T=>Promise|boolean,\n' +
+            '  foldable Foldable<T>\n' +
+            '\n' +
+            'any(predicate)(foldable) -> Promise|boolean',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 11, column: 4, offset: 263 },
+            indent: [
+              1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 12, column: 1, offset: 264 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Test a predicate concurrently across all items of a collection, returning true if any test truthy.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 99, offset: 98 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 99, offset: 98 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[playground]',
+          value: 'const isOdd = number => number % 2 == 1\n' +
+            '\n' +
+            'console.log(\n' +
+            '  any(isOdd)([1, 2, 3, 4, 5]),\n' +
+            ') // true',
+          position: {
+            start: { line: 3, column: 1, offset: 100 },
+            end: { line: 9, column: 4, offset: 225 },
+            indent: [ 1, 1, 1, 1, 1, 1 ]
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'The value may be an asynchronous stream.',
+              position: {
+                start: { line: 11, column: 1, offset: 227 },
+                end: { line: 11, column: 41, offset: 267 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 11, column: 1, offset: 227 },
+            end: { line: 11, column: 41, offset: 267 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[playground]',
+          value: "const toTodosUrl = id => 'https://jsonplaceholder.typicode.com/todos/' + id\n" +
+            '\n' +
+            'const fetchedToJson = fetched => fetched.json()\n' +
+            '\n' +
+            'const fetchTodo = pipe([\n' +
+            '  toTodosUrl,\n' +
+            '  fetch,\n' +
+            '  fetchedToJson,\n' +
+            '])\n' +
+            '\n' +
+            'const todoIDsGenerator = async function* () {\n' +
+            '  yield 1; yield 2; yield 3; yield 4; yield 5\n' +
+            '}\n' +
+            '\n' +
+            'any(pipe([\n' +
+            '  fetchTodo,\n' +
+            "  todo => todo.title.startsWith('fugiat'),\n" +
+            ']))(todoIDsGenerator()).then(console.log) // true',
+          position: {
+            start: { line: 13, column: 1, offset: 269 },
+            end: { line: 32, column: 4, offset: 706 },
+            indent: [
+              1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 33, column: 1, offset: 707 }
       }
     }
   },
   {
     name: 'assign',
     synopsis: '```coffeescript [specscript]\n' +
-      'assign(\n' +
-      '  funcs Object<source=>Promise|any>,\n' +
-      ')(source Object) -> resultsMergedWithSource Promise|Object\n' +
+      'var source Object,\n' +
+      '  funcsObject Object<source=>Promise|any>\n' +
+      '\n' +
+      'assign(funcsObject)(source) -> resultsMergedWithSource Promise|Object\n' +
       '```\n',
-    description: 'Compose an object from a source object merged with the evaluations of the property functions of a specifying object of functions. Functions of the specifying object of functions may be asynchronous.\n' +
+    description: 'Compose an object from a source object merged with the evaluations of a specifying object of functions. Functions of the specifying object may return Promises.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'console.log(\n' +
@@ -641,19 +6651,20 @@ export default [
           type: 'code',
           lang: 'coffeescript',
           meta: '[specscript]',
-          value: 'assign(\n' +
-            '  funcs Object<source=>Promise|any>,\n' +
-            ')(source Object) -> resultsMergedWithSource Promise|Object',
+          value: 'var source Object,\n' +
+            '  funcsObject Object<source=>Promise|any>\n' +
+            '\n' +
+            'assign(funcsObject)(source) -> resultsMergedWithSource Promise|Object',
           position: {
             start: { line: 1, column: 1, offset: 0 },
-            end: { line: 5, column: 4, offset: 136 },
-            indent: [ 1, 1, 1, 1 ]
+            end: { line: 6, column: 4, offset: 164 },
+            indent: [ 1, 1, 1, 1, 1 ]
           }
         }
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 6, column: 1, offset: 137 }
+        end: { line: 7, column: 1, offset: 165 }
       }
     },
     description_mdast: {
@@ -664,17 +6675,17 @@ export default [
           children: [
             {
               type: 'text',
-              value: 'Compose an object from a source object merged with the evaluations of the property functions of a specifying object of functions. Functions of the specifying object of functions may be asynchronous.',
+              value: 'Compose an object from a source object merged with the evaluations of a specifying object of functions. Functions of the specifying object may return Promises.',
               position: {
                 start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 199, offset: 198 },
+                end: { line: 1, column: 160, offset: 159 },
                 indent: []
               }
             }
           ],
           position: {
             start: { line: 1, column: 1, offset: 0 },
-            end: { line: 1, column: 199, offset: 198 },
+            end: { line: 1, column: 160, offset: 159 },
             indent: []
           }
         },
@@ -693,8 +6704,8 @@ export default [
             '  asyncNumber: async ({ number }) => number,\n' +
             '})({ number: 3 }).then(console.log) // { number: 3, asyncNumber: 3 }',
           position: {
-            start: { line: 3, column: 1, offset: 200 },
-            end: { line: 14, column: 4, offset: 523 },
+            start: { line: 3, column: 1, offset: 161 },
+            end: { line: 14, column: 4, offset: 484 },
             indent: [
               1, 1, 1, 1, 1,
               1, 1, 1, 1, 1,
@@ -705,26 +6716,29 @@ export default [
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 15, column: 1, offset: 524 }
+        end: { line: 15, column: 1, offset: 485 }
       }
     }
   },
   {
-    name: 'tap',
+    name: 'eq',
     synopsis: '```coffeescript [specscript]\n' +
-      'tap(\n' +
-      '  tapper value=>Promise|any,\n' +
-      ')(value any) -> value\n' +
+      'var value any,\n' +
+      '  leftCompare any,\n' +
+      '  rightCompare any,\n' +
+      '  left (value=>Promise|leftCompare)|leftCompare,\n' +
+      '  right (value=>Promise|rightCompare)|rightCompare\n' +
+      '\n' +
+      'eq(left, right)(value) -> Promise|boolean\n' +
       '```\n',
-    description: 'Call a function with a value, returning the value. Promises created by the tapper are resolved before returning the value.\n' +
+    description: 'Test for strict equality (`===`) between the returns of two functions. Either parameter may be an actual value.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      'pipe([\n' +
-      '  tap(console.log),\n' +
-      "  value => value + 'bar',\n" +
-      '  tap(console.log),\n' +
-      "])('foo') // 'foo'\n" +
-      "          // 'foobar'\n" +
+      "const personIsGeorge = eq(person => person.name, 'George')\n" +
+      '\n' +
+      'console.log(\n' +
+      "  personIsGeorge({ name: 'George', likes: 'bananas' }),\n" +
+      ') // true\n' +
       '```\n',
     synopsis_mdast: {
       type: 'root',
@@ -733,101 +6747,26 @@ export default [
           type: 'code',
           lang: 'coffeescript',
           meta: '[specscript]',
-          value: 'tap(\n  tapper value=>Promise|any,\n)(value any) -> value',
+          value: 'var value any,\n' +
+            '  leftCompare any,\n' +
+            '  rightCompare any,\n' +
+            '  left (value=>Promise|leftCompare)|leftCompare,\n' +
+            '  right (value=>Promise|rightCompare)|rightCompare\n' +
+            '\n' +
+            'eq(left, right)(value) -> Promise|boolean',
           position: {
             start: { line: 1, column: 1, offset: 0 },
-            end: { line: 5, column: 4, offset: 88 },
-            indent: [ 1, 1, 1, 1 ]
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 6, column: 1, offset: 89 }
-      }
-    },
-    description_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'Call a function with a value, returning the value. Promises created by the tapper are resolved before returning the value.',
-              position: {
-                start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 123, offset: 122 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 1, column: 123, offset: 122 },
-            indent: []
-          }
-        },
-        {
-          type: 'code',
-          lang: 'javascript',
-          meta: '[playground]',
-          value: 'pipe([\n' +
-            '  tap(console.log),\n' +
-            "  value => value + 'bar',\n" +
-            '  tap(console.log),\n' +
-            "])('foo') // 'foo'\n" +
-            "          // 'foobar'",
-          position: {
-            start: { line: 3, column: 1, offset: 124 },
-            end: { line: 10, column: 4, offset: 268 },
+            end: { line: 9, column: 4, offset: 229 },
             indent: [
               1, 1, 1, 1,
-              1, 1, 1
+              1, 1, 1, 1
             ]
           }
         }
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 11, column: 1, offset: 269 }
-      }
-    }
-  },
-  {
-    name: 'tap.sync',
-    synopsis: '```coffeescript [specscript]\n' +
-      'tap.sync(\n' +
-      '  tapper value=>any,\n' +
-      ')(value any) -> value\n' +
-      '```\n',
-    description: 'Synchronous tap\n' +
-      '\n' +
-      '```javascript [playground]\n' +
-      'pipe([\n' +
-      "  tap.sync(number => console.log('square', number ** 2))\n" +
-      "  tap.sync(number => console.log('cube', number ** 3))\n" +
-      '])(3) // 9\n' +
-      '      // 27\n' +
-      '```\n',
-    synopsis_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'code',
-          lang: 'coffeescript',
-          meta: '[specscript]',
-          value: 'tap.sync(\n  tapper value=>any,\n)(value any) -> value',
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 5, column: 4, offset: 85 },
-            indent: [ 1, 1, 1, 1 ]
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 6, column: 1, offset: 86 }
+        end: { line: 10, column: 1, offset: 230 }
       }
     },
     description_mdast: {
@@ -838,17 +6777,35 @@ export default [
           children: [
             {
               type: 'text',
-              value: 'Synchronous tap',
+              value: 'Test for strict equality (',
               position: {
                 start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 16, offset: 15 },
+                end: { line: 1, column: 27, offset: 26 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: '===',
+              position: {
+                start: { line: 1, column: 27, offset: 26 },
+                end: { line: 1, column: 32, offset: 31 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ') between the returns of two functions. Either parameter may be an actual value.',
+              position: {
+                start: { line: 1, column: 32, offset: 31 },
+                end: { line: 1, column: 112, offset: 111 },
                 indent: []
               }
             }
           ],
           position: {
             start: { line: 1, column: 1, offset: 0 },
-            end: { line: 1, column: 16, offset: 15 },
+            end: { line: 1, column: 112, offset: 111 },
             indent: []
           }
         },
@@ -856,1667 +6813,47 @@ export default [
           type: 'code',
           lang: 'javascript',
           meta: '[playground]',
-          value: 'pipe([\n' +
-            "  tap.sync(number => console.log('square', number ** 2))\n" +
-            "  tap.sync(number => console.log('cube', number ** 3))\n" +
-            '])(3) // 9\n' +
-            '      // 27',
+          value: "const personIsGeorge = eq(person => person.name, 'George')\n" +
+            '\n' +
+            'console.log(\n' +
+            "  personIsGeorge({ name: 'George', likes: 'bananas' }),\n" +
+            ') // true',
           position: {
-            start: { line: 3, column: 1, offset: 17 },
-            end: { line: 9, column: 4, offset: 189 },
+            start: { line: 3, column: 1, offset: 113 },
+            end: { line: 9, column: 4, offset: 282 },
             indent: [ 1, 1, 1, 1, 1, 1 ]
           }
         }
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 10, column: 1, offset: 190 }
-      }
-    }
-  },
-  {
-    name: 'tap.if',
-    synopsis: '```coffeescript [specscript]\n' +
-      'tap.if<args ...any>(\n' +
-      '  predicate ...args=>Promise|boolean,\n' +
-      '  func ...args=>Promise|any,\n' +
-      ')(...args) -> Promise|value\n' +
-      '```\n',
-    description: 'Conditional tap by predicate\n' +
-      '\n' +
-      '```javascript [playground]\n' +
-      'const isOdd = number => number % 2 == 1\n' +
-      '\n' +
-      'const logIfOdd = tap.if(\n' +
-      '  isOdd,\n' +
-      "  number => console.log(number, 'is an odd number'))\n" +
-      '\n' +
-      'logIfOdd(2)\n' +
-      'logIfOdd(3) // 3 is an odd number\n' +
-      '```\n',
-    synopsis_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'code',
-          lang: 'coffeescript',
-          meta: '[specscript]',
-          value: 'tap.if<args ...any>(\n' +
-            '  predicate ...args=>Promise|boolean,\n' +
-            '  func ...args=>Promise|any,\n' +
-            ')(...args) -> Promise|value',
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 6, column: 4, offset: 148 },
-            indent: [ 1, 1, 1, 1, 1 ]
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 7, column: 1, offset: 149 }
-      }
-    },
-    description_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'Conditional tap by predicate',
-              position: {
-                start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 29, offset: 28 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 1, column: 29, offset: 28 },
-            indent: []
-          }
-        },
-        {
-          type: 'code',
-          lang: 'javascript',
-          meta: '[playground]',
-          value: 'const isOdd = number => number % 2 == 1\n' +
-            '\n' +
-            'const logIfOdd = tap.if(\n' +
-            '  isOdd,\n' +
-            "  number => console.log(number, 'is an odd number'))\n" +
-            '\n' +
-            'logIfOdd(2)\n' +
-            'logIfOdd(3) // 3 is an odd number',
-          position: {
-            start: { line: 3, column: 1, offset: 30 },
-            end: { line: 12, column: 4, offset: 235 },
-            indent: [
-              1, 1, 1, 1, 1,
-              1, 1, 1, 1
-            ]
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 13, column: 1, offset: 236 }
-      }
-    }
-  },
-  {
-    name: 'tryCatch',
-    synopsis: '```coffeescript [specscript]\n' +
-      'tryCatch<args ...any>(\n' +
-      '  tryer ...args=>Promise|any,\n' +
-      '  catcher (err Error|any, ...args)=>Promise|any,\n' +
-      ')(...args) -> result Promise|any\n' +
-      '```\n',
-    description: 'Try a tryer, catch with catcher. On error or rejected Promise, call the catcher with the error followed by any arguments to the tryer.\n' +
-      '\n' +
-      '```javascript [playground]\n' +
-      'const errorThrower = tryCatch(\n' +
-      '  message => {\n' +
-      '    throw new Error(message)\n' +
-      '  },\n' +
-      '  (err, message) => {\n' +
-      '    console.log(err)\n' +
-      '    return `${message} from catcher`\n' +
-      '  },\n' +
-      ')\n' +
-      '\n' +
-      "console.log(errorThrower('hello')) // Error: hello\n" +
-      '                                   // hello from catcher\n' +
-      '```\n',
-    synopsis_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'code',
-          lang: 'coffeescript',
-          meta: '[specscript]',
-          value: 'tryCatch<args ...any>(\n' +
-            '  tryer ...args=>Promise|any,\n' +
-            '  catcher (err Error|any, ...args)=>Promise|any,\n' +
-            ')(...args) -> result Promise|any',
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 6, column: 4, offset: 167 },
-            indent: [ 1, 1, 1, 1, 1 ]
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 7, column: 1, offset: 168 }
-      }
-    },
-    description_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'Try a tryer, catch with catcher. On error or rejected Promise, call the catcher with the error followed by any arguments to the tryer.',
-              position: {
-                start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 135, offset: 134 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 1, column: 135, offset: 134 },
-            indent: []
-          }
-        },
-        {
-          type: 'code',
-          lang: 'javascript',
-          meta: '[playground]',
-          value: 'const errorThrower = tryCatch(\n' +
-            '  message => {\n' +
-            '    throw new Error(message)\n' +
-            '  },\n' +
-            '  (err, message) => {\n' +
-            '    console.log(err)\n' +
-            '    return `${message} from catcher`\n' +
-            '  },\n' +
-            ')\n' +
-            '\n' +
-            "console.log(errorThrower('hello')) // Error: hello\n" +
-            '                                   // hello from catcher',
-          position: {
-            start: { line: 3, column: 1, offset: 136 },
-            end: { line: 16, column: 4, offset: 442 },
-            indent: [
-              1, 1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1, 1,
-              1
-            ]
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 17, column: 1, offset: 443 }
-      }
-    }
-  },
-  {
-    name: 'switchCase',
-    synopsis: '```coffeescript [specscript]\n' +
-      'switchCase<args ...any>(\n' +
-      '  conditionalFunctions Array<...args=>Promise|boolean|any>\n' +
-      ')(...args) -> result Promise|any\n' +
-      '```\n',
-    description: 'Conditional operator for functions. Odd indexed functions should be resolvers, while even indexed functions excluding the last should be predicates. For an odd number of functions, the last even indexed function should be a default resolver function. Any predicates or resolvers may be asynchronous.\n' +
-      '\n' +
-      '```javascript [playground]\n' +
-      "const fruitIsYellow = fruit => fruit.color == 'yellow'\n" +
-      '\n' +
-      'const fruitsGuesser = switchCase([\n' +
-      "  fruitIsYellow, fruit => fruit.name + ' is possibly a banana',\n" +
-      "  fruit => fruit.name + ' is probably not a banana',\n" +
-      '])\n' +
-      '\n' +
-      'console.log(\n' +
-      "  fruitsGuesser({ name: 'plantain', color: 'yellow' }),\n" +
-      ') // plantain is possibly a banana\n' +
-      '```\n' +
-      '\n' +
-      'If an even number of functions is supplied, the last predicate should always return true.\n' +
-      '\n' +
-      '```javascript [playground]\n' +
-      'const questionableIsOdd = switchCase([\n' +
-      '  number => number === 1, () => true,\n' +
-      '  number => number === 2, () => false,\n' +
-      '  number => number === 3, () => true,\n' +
-      '  number => number === 4, () => false,\n' +
-      '  number => number === 5, () => true,\n' +
-      '  () => true, number => number % 2 === 1,\n' +
-      '])\n' +
-      '\n' +
-      'console.log(questionableIsOdd(1)) // true\n' +
-      'console.log(questionableIsOdd(6)) // false\n' +
-      '```\n',
-    synopsis_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'code',
-          lang: 'coffeescript',
-          meta: '[specscript]',
-          value: 'switchCase<args ...any>(\n' +
-            '  conditionalFunctions Array<...args=>Promise|boolean|any>\n' +
-            ')(...args) -> result Promise|any',
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 5, column: 4, offset: 149 },
-            indent: [ 1, 1, 1, 1 ]
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 6, column: 1, offset: 150 }
-      }
-    },
-    description_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'Conditional operator for functions. Odd indexed functions should be resolvers, while even indexed functions excluding the last should be predicates. For an odd number of functions, the last even indexed function should be a default resolver function. Any predicates or resolvers may be asynchronous.',
-              position: {
-                start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 300, offset: 299 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 1, column: 300, offset: 299 },
-            indent: []
-          }
-        },
-        {
-          type: 'code',
-          lang: 'javascript',
-          meta: '[playground]',
-          value: "const fruitIsYellow = fruit => fruit.color == 'yellow'\n" +
-            '\n' +
-            'const fruitsGuesser = switchCase([\n' +
-            "  fruitIsYellow, fruit => fruit.name + ' is possibly a banana',\n" +
-            "  fruit => fruit.name + ' is probably not a banana',\n" +
-            '])\n' +
-            '\n' +
-            'console.log(\n' +
-            "  fruitsGuesser({ name: 'plantain', color: 'yellow' }),\n" +
-            ') // plantain is possibly a banana',
-          position: {
-            start: { line: 3, column: 1, offset: 301 },
-            end: { line: 14, column: 4, offset: 647 },
-            indent: [
-              1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1,
-              1
-            ]
-          }
-        },
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'If an even number of functions is supplied, the last predicate should always return true.',
-              position: {
-                start: { line: 16, column: 1, offset: 649 },
-                end: { line: 16, column: 90, offset: 738 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 16, column: 1, offset: 649 },
-            end: { line: 16, column: 90, offset: 738 },
-            indent: []
-          }
-        },
-        {
-          type: 'code',
-          lang: 'javascript',
-          meta: '[playground]',
-          value: 'const questionableIsOdd = switchCase([\n' +
-            '  number => number === 1, () => true,\n' +
-            '  number => number === 2, () => false,\n' +
-            '  number => number === 3, () => true,\n' +
-            '  number => number === 4, () => false,\n' +
-            '  number => number === 5, () => true,\n' +
-            '  () => true, number => number % 2 === 1,\n' +
-            '])\n' +
-            '\n' +
-            'console.log(questionableIsOdd(1)) // true\n' +
-            'console.log(questionableIsOdd(6)) // false',
-          position: {
-            start: { line: 18, column: 1, offset: 740 },
-            end: { line: 30, column: 4, offset: 1132 },
-            indent: [
-              1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1,
-              1, 1
-            ]
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 31, column: 1, offset: 1133 }
-      }
-    }
-  },
-  {
-    name: 'map',
-    synopsis: '```coffeescript [specscript]\n' +
-      'Functor<T> = Array<T>|Object<T>\n' +
-      '  |Iterator<T>|AsyncIterator<T>|{ map: T=>any }\n' +
-      'Reducer<T> = (any, T)=>Promise|any\n' +
-      '\n' +
-      'map<T>(\n' +
-      '  mapper T=>Promise|any,\n' +
-      ')(Functor<T>) -> mappedFunctor Promise|Functor\n' +
-      '\n' +
-      'map<T>(\n' +
-      '  mapper T=>any, # note: only synchronous predicates allowed here\n' +
-      ')(generatorFunction GeneratorFunction<T>)\n' +
-      '  -> mappingGeneratorFunction GeneratorFunction\n' +
-      '\n' +
-      'map<T>(\n' +
-      '  mapper T=>Promise|any,\n' +
-      ')(asyncGeneratorFunction AsyncGeneratorFunction<T>)\n' +
-      '  -> mappingAsyncGeneratorFunction AsyncGeneratorFunction\n' +
-      '\n' +
-      'map<T>(\n' +
-      '  mapper T=>Promise|any,\n' +
-      ')(reducer Reducer<T>) -> mappingReducer Reducer\n' +
-      '```\n',
-    description: 'Apply a mapper concurrently to each item of a collection, returning a collection of the same type with all results. If order is implied by the collection, it is maintained in the result. Below are valid collections along with their iteration behavior.\n' +
-      '\n' +
-      ' * `Array` - iterate values by index\n' +
-      ' * `Object` - iterate object values\n' +
-      ' * `Iterator`/`Generator` - iterate by calling `.next`\n' +
-      ' * `AsyncIterator`/`AsyncGenerator` - iterate by calling `.next`, then awaiting. Mapper is still applied concurrently.\n' +
-      ' * `{ map: mapper (T=>any)=>this }` - literal functor - call `.map` directly with mapper.\n' +
-      '\n' +
-      'For all other types, the mapper is applied directly to the data parameter.\n' +
-      '\n' +
-      '```javascript [playground]\n' +
-      'const square = number => number ** 2\n' +
-      '\n' +
-      'console.log(\n' +
-      '  map(square)([1, 2, 3, 4, 5]),\n' +
-      ') // [1, 4, 9, 16, 25]\n' +
-      '\n' +
-      'console.log(\n' +
-      '  map(square)({ a: 1, b: 2, c: 3 }),\n' +
-      ') // { a: 1, b: 4, c: 9 }\n' +
-      '\n' +
-      'console.log(\n' +
-      '  map(square)(3)\n' +
-      ') // 9\n' +
-      '```\n' +
-      '\n' +
-      'Functions are regarded as resolvers. Each of the following calls, when passed to a mapping function `map(mapper)`, creates a function with all items of its return transformed by the mapper.\n' +
-      '\n' +
-      ' * `...any=>Iterator` or `GeneratorFunction` - items of the iterator are mapped into a new iterator. Warning: using an async mapper in a synchronous generator function is not recommended and could lead to unexpected behavior.\n' +
-      ' * `...any=>AsyncIterator` or `AsyncGeneratorFunction` - items of the async iterator are mapped into a new async iterator. Async result items are awaited in a new async iterator. Async mapper functions are valid.\n' +
-      ' * `Reducer<T> = (any, T)=>Promise|any` - when combined with `reduce` or any implementation thereof, items of the reducing operation are transformed by the mapper function. If an async mapper function is desired here, it is possible with rubico `reduce`.\n' +
-      '\n' +
-      'With mapping generator functions and mapping async generator functions, transformations on iterators and their async counterparts are simple to compose.\n' +
-      '\n' +
-      '```javascript [playground]\n' +
-      'const capitalize = string => string.toUpperCase()\n' +
-      '\n' +
-      'const abc = function* () {\n' +
-      "  yield 'a'; yield 'b'; yield 'c'\n" +
-      '}\n' +
-      '\n' +
-      'const ABC = map(capitalize)(abc)\n' +
-      '\n' +
-      'const abcIter = abc()\n' +
-      '\n' +
-      'const ABCIter = ABC()\n' +
-      '\n' +
-      "console.log([...abcIter]) // ['a', 'b', 'c']\n" +
-      '\n' +
-      "console.log([...ABCIter]) // ['A', 'B', 'C']\n" +
-      '```\n' +
-      '\n' +
-      'Function laziness is extended to reducer functions as [transducers](https://github.com/a-synchronous/rubico/blob/master/TRANSDUCERS.md).\n' +
-      '\n' +
-      '```\n' +
-      'Reducer<T> = (any, T)=>Promise|any\n' +
-      '\n' +
-      'Transducer = Reducer=>Reducer\n' +
-      '```\n' +
-      '\n' +
-      'A reducer is a variadic function like the one supplied to `Array.prototype.reduce`, but without the index and reference to the accumulated result per call. A transducer is a function that accepts a reducer function as an argument and returns another reducer function, which enables chaining functionality for reducers. `map` is core to this mechanism, and provides a way to create transducers with mapper functions.\n' +
-      '\n' +
-      '```javascript [playground]\n' +
-      'const square = number => number ** 2\n' +
-      '\n' +
-      'const concat = (array, item) => array.concat(item)\n' +
-      '\n' +
-      'const mapSquare = map(square)\n' +
-      '// mapSquare could potentially be a transducer, but at this point, it is\n' +
-      '// undifferentiated and not necessarily locked in to transducer behavior.\n' +
-      '\n' +
-      'console.log(\n' +
-      '  mapSquare([1, 2, 3, 4, 5]),\n' +
-      ') // [1, 4, 9, 16, 25]\n' +
-      '\n' +
-      'const squareConcatReducer = mapSquare(concat)\n' +
-      '// now mapSquare is passed the function concat, so it assumes transducer\n' +
-      '// position. squareConcatReducer is a reducer with chained functionality\n' +
-      '// square and concat.\n' +
-      '\n' +
-      'console.log(\n' +
-      '  [1, 2, 3, 4, 5].reduce(squareConcatReducer, []),\n' +
-      ') // [1, 4, 9, 16, 25]\n' +
-      '\n' +
-      'console.log(\n' +
-      "  [1, 2, 3, 4, 5].reduce(squareConcatReducer, ''),\n" +
-      ") // '1491625'\n" +
-      '```\n',
-    synopsis_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'code',
-          lang: 'coffeescript',
-          meta: '[specscript]',
-          value: 'Functor<T> = Array<T>|Object<T>\n' +
-            '  |Iterator<T>|AsyncIterator<T>|{ map: T=>any }\n' +
-            'Reducer<T> = (any, T)=>Promise|any\n' +
-            '\n' +
-            'map<T>(\n' +
-            '  mapper T=>Promise|any,\n' +
-            ')(Functor<T>) -> mappedFunctor Promise|Functor\n' +
-            '\n' +
-            'map<T>(\n' +
-            '  mapper T=>any, # note: only synchronous predicates allowed here\n' +
-            ')(generatorFunction GeneratorFunction<T>)\n' +
-            '  -> mappingGeneratorFunction GeneratorFunction\n' +
-            '\n' +
-            'map<T>(\n' +
-            '  mapper T=>Promise|any,\n' +
-            ')(asyncGeneratorFunction AsyncGeneratorFunction<T>)\n' +
-            '  -> mappingAsyncGeneratorFunction AsyncGeneratorFunction\n' +
-            '\n' +
-            'map<T>(\n' +
-            '  mapper T=>Promise|any,\n' +
-            ')(reducer Reducer<T>) -> mappingReducer Reducer',
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 23, column: 4, offset: 619 },
-            indent: [
-              1, 1, 1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1, 1, 1,
-              1
-            ]
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 24, column: 1, offset: 620 }
-      }
-    },
-    description_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'Apply a mapper concurrently to each item of a collection, returning a collection of the same type with all results. If order is implied by the collection, it is maintained in the result. Below are valid collections along with their iteration behavior.',
-              position: {
-                start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 252, offset: 251 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 1, column: 252, offset: 251 },
-            indent: []
-          }
-        },
-        {
-          type: 'list',
-          ordered: false,
-          start: null,
-          spread: false,
-          children: [
-            {
-              type: 'listItem',
-              spread: false,
-              checked: null,
-              children: [
-                {
-                  type: 'paragraph',
-                  children: [
-                    {
-                      type: 'inlineCode',
-                      value: 'Array',
-                      position: {
-                        start: { line: 3, column: 4, offset: 256 },
-                        end: { line: 3, column: 11, offset: 263 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: ' - iterate values by index',
-                      position: {
-                        start: { line: 3, column: 11, offset: 263 },
-                        end: { line: 3, column: 37, offset: 289 },
-                        indent: []
-                      }
-                    }
-                  ],
-                  position: {
-                    start: { line: 3, column: 4, offset: 256 },
-                    end: { line: 3, column: 37, offset: 289 },
-                    indent: []
-                  }
-                }
-              ],
-              position: {
-                start: { line: 3, column: 1, offset: 253 },
-                end: { line: 3, column: 37, offset: 289 },
-                indent: []
-              }
-            },
-            {
-              type: 'listItem',
-              spread: false,
-              checked: null,
-              children: [
-                {
-                  type: 'paragraph',
-                  children: [
-                    {
-                      type: 'inlineCode',
-                      value: 'Object',
-                      position: {
-                        start: { line: 4, column: 4, offset: 293 },
-                        end: { line: 4, column: 12, offset: 301 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: ' - iterate object values',
-                      position: {
-                        start: { line: 4, column: 12, offset: 301 },
-                        end: { line: 4, column: 36, offset: 325 },
-                        indent: []
-                      }
-                    }
-                  ],
-                  position: {
-                    start: { line: 4, column: 4, offset: 293 },
-                    end: { line: 4, column: 36, offset: 325 },
-                    indent: []
-                  }
-                }
-              ],
-              position: {
-                start: { line: 4, column: 1, offset: 290 },
-                end: { line: 4, column: 36, offset: 325 },
-                indent: []
-              }
-            },
-            {
-              type: 'listItem',
-              spread: false,
-              checked: null,
-              children: [
-                {
-                  type: 'paragraph',
-                  children: [
-                    {
-                      type: 'inlineCode',
-                      value: 'Iterator',
-                      position: {
-                        start: { line: 5, column: 4, offset: 329 },
-                        end: { line: 5, column: 14, offset: 339 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: '/',
-                      position: {
-                        start: { line: 5, column: 14, offset: 339 },
-                        end: { line: 5, column: 15, offset: 340 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'inlineCode',
-                      value: 'Generator',
-                      position: {
-                        start: { line: 5, column: 15, offset: 340 },
-                        end: { line: 5, column: 26, offset: 351 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: ' - iterate by calling ',
-                      position: {
-                        start: { line: 5, column: 26, offset: 351 },
-                        end: { line: 5, column: 48, offset: 373 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'inlineCode',
-                      value: '.next',
-                      position: {
-                        start: { line: 5, column: 48, offset: 373 },
-                        end: { line: 5, column: 55, offset: 380 },
-                        indent: []
-                      }
-                    }
-                  ],
-                  position: {
-                    start: { line: 5, column: 4, offset: 329 },
-                    end: { line: 5, column: 55, offset: 380 },
-                    indent: []
-                  }
-                }
-              ],
-              position: {
-                start: { line: 5, column: 1, offset: 326 },
-                end: { line: 5, column: 55, offset: 380 },
-                indent: []
-              }
-            },
-            {
-              type: 'listItem',
-              spread: false,
-              checked: null,
-              children: [
-                {
-                  type: 'paragraph',
-                  children: [
-                    {
-                      type: 'inlineCode',
-                      value: 'AsyncIterator',
-                      position: {
-                        start: { line: 6, column: 4, offset: 384 },
-                        end: { line: 6, column: 19, offset: 399 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: '/',
-                      position: {
-                        start: { line: 6, column: 19, offset: 399 },
-                        end: { line: 6, column: 20, offset: 400 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'inlineCode',
-                      value: 'AsyncGenerator',
-                      position: {
-                        start: { line: 6, column: 20, offset: 400 },
-                        end: { line: 6, column: 36, offset: 416 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: ' - iterate by calling ',
-                      position: {
-                        start: { line: 6, column: 36, offset: 416 },
-                        end: { line: 6, column: 58, offset: 438 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'inlineCode',
-                      value: '.next',
-                      position: {
-                        start: { line: 6, column: 58, offset: 438 },
-                        end: { line: 6, column: 65, offset: 445 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: ', then awaiting. Mapper is still applied concurrently.',
-                      position: {
-                        start: { line: 6, column: 65, offset: 445 },
-                        end: { line: 6, column: 119, offset: 499 },
-                        indent: []
-                      }
-                    }
-                  ],
-                  position: {
-                    start: { line: 6, column: 4, offset: 384 },
-                    end: { line: 6, column: 119, offset: 499 },
-                    indent: []
-                  }
-                }
-              ],
-              position: {
-                start: { line: 6, column: 1, offset: 381 },
-                end: { line: 6, column: 119, offset: 499 },
-                indent: []
-              }
-            },
-            {
-              type: 'listItem',
-              spread: false,
-              checked: null,
-              children: [
-                {
-                  type: 'paragraph',
-                  children: [
-                    {
-                      type: 'inlineCode',
-                      value: '{ map: mapper (T=>any)=>this }',
-                      position: {
-                        start: { line: 7, column: 4, offset: 503 },
-                        end: { line: 7, column: 36, offset: 535 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: ' - literal functor - call ',
-                      position: {
-                        start: { line: 7, column: 36, offset: 535 },
-                        end: { line: 7, column: 62, offset: 561 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'inlineCode',
-                      value: '.map',
-                      position: {
-                        start: { line: 7, column: 62, offset: 561 },
-                        end: { line: 7, column: 68, offset: 567 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: ' directly with mapper.',
-                      position: {
-                        start: { line: 7, column: 68, offset: 567 },
-                        end: { line: 7, column: 90, offset: 589 },
-                        indent: []
-                      }
-                    }
-                  ],
-                  position: {
-                    start: { line: 7, column: 4, offset: 503 },
-                    end: { line: 7, column: 90, offset: 589 },
-                    indent: []
-                  }
-                }
-              ],
-              position: {
-                start: { line: 7, column: 1, offset: 500 },
-                end: { line: 7, column: 90, offset: 589 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 3, column: 1, offset: 253 },
-            end: { line: 7, column: 90, offset: 589 },
-            indent: [ 1, 1, 1, 1 ]
-          }
-        },
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'For all other types, the mapper is applied directly to the data parameter.',
-              position: {
-                start: { line: 9, column: 1, offset: 591 },
-                end: { line: 9, column: 75, offset: 665 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 9, column: 1, offset: 591 },
-            end: { line: 9, column: 75, offset: 665 },
-            indent: []
-          }
-        },
-        {
-          type: 'code',
-          lang: 'javascript',
-          meta: '[playground]',
-          value: 'const square = number => number ** 2\n' +
-            '\n' +
-            'console.log(\n' +
-            '  map(square)([1, 2, 3, 4, 5]),\n' +
-            ') // [1, 4, 9, 16, 25]\n' +
-            '\n' +
-            'console.log(\n' +
-            '  map(square)({ a: 1, b: 2, c: 3 }),\n' +
-            ') // { a: 1, b: 4, c: 9 }\n' +
-            '\n' +
-            'console.log(\n' +
-            '  map(square)(3)\n' +
-            ') // 9',
-          position: {
-            start: { line: 11, column: 1, offset: 667 },
-            end: { line: 25, column: 4, offset: 918 },
-            indent: [
-              1, 1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1, 1,
-              1, 1
-            ]
-          }
-        },
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'Functions are regarded as resolvers. Each of the following calls, when passed to a mapping function ',
-              position: {
-                start: { line: 27, column: 1, offset: 920 },
-                end: { line: 27, column: 101, offset: 1020 },
-                indent: []
-              }
-            },
-            {
-              type: 'inlineCode',
-              value: 'map(mapper)',
-              position: {
-                start: { line: 27, column: 101, offset: 1020 },
-                end: { line: 27, column: 114, offset: 1033 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: ', creates a function with all items of its return transformed by the mapper.',
-              position: {
-                start: { line: 27, column: 114, offset: 1033 },
-                end: { line: 27, column: 190, offset: 1109 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 27, column: 1, offset: 920 },
-            end: { line: 27, column: 190, offset: 1109 },
-            indent: []
-          }
-        },
-        {
-          type: 'list',
-          ordered: false,
-          start: null,
-          spread: false,
-          children: [
-            {
-              type: 'listItem',
-              spread: false,
-              checked: null,
-              children: [
-                {
-                  type: 'paragraph',
-                  children: [
-                    {
-                      type: 'inlineCode',
-                      value: '...any=>Iterator',
-                      position: {
-                        start: { line: 29, column: 4, offset: 1114 },
-                        end: { line: 29, column: 22, offset: 1132 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: ' or ',
-                      position: {
-                        start: { line: 29, column: 22, offset: 1132 },
-                        end: { line: 29, column: 26, offset: 1136 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'inlineCode',
-                      value: 'GeneratorFunction',
-                      position: {
-                        start: { line: 29, column: 26, offset: 1136 },
-                        end: { line: 29, column: 45, offset: 1155 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: ' - items of the iterator are mapped into a new iterator. Warning: using an async mapper in a synchronous generator function is not recommended and could lead to unexpected behavior.',
-                      position: {
-                        start: { line: 29, column: 45, offset: 1155 },
-                        end: { line: 29, column: 226, offset: 1336 },
-                        indent: []
-                      }
-                    }
-                  ],
-                  position: {
-                    start: { line: 29, column: 4, offset: 1114 },
-                    end: { line: 29, column: 226, offset: 1336 },
-                    indent: []
-                  }
-                }
-              ],
-              position: {
-                start: { line: 29, column: 1, offset: 1111 },
-                end: { line: 29, column: 226, offset: 1336 },
-                indent: []
-              }
-            },
-            {
-              type: 'listItem',
-              spread: false,
-              checked: null,
-              children: [
-                {
-                  type: 'paragraph',
-                  children: [
-                    {
-                      type: 'inlineCode',
-                      value: '...any=>AsyncIterator',
-                      position: {
-                        start: { line: 30, column: 4, offset: 1340 },
-                        end: { line: 30, column: 27, offset: 1363 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: ' or ',
-                      position: {
-                        start: { line: 30, column: 27, offset: 1363 },
-                        end: { line: 30, column: 31, offset: 1367 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'inlineCode',
-                      value: 'AsyncGeneratorFunction',
-                      position: {
-                        start: { line: 30, column: 31, offset: 1367 },
-                        end: { line: 30, column: 55, offset: 1391 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: ' - items of the async iterator are mapped into a new async iterator. Async result items are awaited in a new async iterator. Async mapper functions are valid.',
-                      position: {
-                        start: { line: 30, column: 55, offset: 1391 },
-                        end: { line: 30, column: 213, offset: 1549 },
-                        indent: []
-                      }
-                    }
-                  ],
-                  position: {
-                    start: { line: 30, column: 4, offset: 1340 },
-                    end: { line: 30, column: 213, offset: 1549 },
-                    indent: []
-                  }
-                }
-              ],
-              position: {
-                start: { line: 30, column: 1, offset: 1337 },
-                end: { line: 30, column: 213, offset: 1549 },
-                indent: []
-              }
-            },
-            {
-              type: 'listItem',
-              spread: false,
-              checked: null,
-              children: [
-                {
-                  type: 'paragraph',
-                  children: [
-                    {
-                      type: 'inlineCode',
-                      value: 'Reducer<T> = (any, T)=>Promise|any',
-                      position: {
-                        start: { line: 31, column: 4, offset: 1553 },
-                        end: { line: 31, column: 40, offset: 1589 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: ' - when combined with ',
-                      position: {
-                        start: { line: 31, column: 40, offset: 1589 },
-                        end: { line: 31, column: 62, offset: 1611 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'inlineCode',
-                      value: 'reduce',
-                      position: {
-                        start: { line: 31, column: 62, offset: 1611 },
-                        end: { line: 31, column: 70, offset: 1619 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: ' or any implementation thereof, items of the reducing operation are transformed by the mapper function. If an async mapper function is desired here, it is possible with rubico ',
-                      position: {
-                        start: { line: 31, column: 70, offset: 1619 },
-                        end: { line: 31, column: 246, offset: 1795 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'inlineCode',
-                      value: 'reduce',
-                      position: {
-                        start: { line: 31, column: 246, offset: 1795 },
-                        end: { line: 31, column: 254, offset: 1803 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: '.',
-                      position: {
-                        start: { line: 31, column: 254, offset: 1803 },
-                        end: { line: 31, column: 255, offset: 1804 },
-                        indent: []
-                      }
-                    }
-                  ],
-                  position: {
-                    start: { line: 31, column: 4, offset: 1553 },
-                    end: { line: 31, column: 255, offset: 1804 },
-                    indent: []
-                  }
-                }
-              ],
-              position: {
-                start: { line: 31, column: 1, offset: 1550 },
-                end: { line: 31, column: 255, offset: 1804 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 29, column: 1, offset: 1111 },
-            end: { line: 31, column: 255, offset: 1804 },
-            indent: [ 1, 1 ]
-          }
-        },
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'With mapping generator functions and mapping async generator functions, transformations on iterators and their async counterparts are simple to compose.',
-              position: {
-                start: { line: 33, column: 1, offset: 1806 },
-                end: { line: 33, column: 153, offset: 1958 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 33, column: 1, offset: 1806 },
-            end: { line: 33, column: 153, offset: 1958 },
-            indent: []
-          }
-        },
-        {
-          type: 'code',
-          lang: 'javascript',
-          meta: '[playground]',
-          value: 'const capitalize = string => string.toUpperCase()\n' +
-            '\n' +
-            'const abc = function* () {\n' +
-            "  yield 'a'; yield 'b'; yield 'c'\n" +
-            '}\n' +
-            '\n' +
-            'const ABC = map(capitalize)(abc)\n' +
-            '\n' +
-            'const abcIter = abc()\n' +
-            '\n' +
-            'const ABCIter = ABC()\n' +
-            '\n' +
-            "console.log([...abcIter]) // ['a', 'b', 'c']\n" +
-            '\n' +
-            "console.log([...ABCIter]) // ['A', 'B', 'C']",
-          position: {
-            start: { line: 35, column: 1, offset: 1960 },
-            end: { line: 51, column: 4, offset: 2276 },
-            indent: [
-              1, 1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1, 1,
-              1, 1, 1, 1
-            ]
-          }
-        },
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'Function laziness is extended to reducer functions as ',
-              position: {
-                start: { line: 53, column: 1, offset: 2278 },
-                end: { line: 53, column: 55, offset: 2332 },
-                indent: []
-              }
-            },
-            {
-              type: 'link',
-              title: null,
-              url: 'https://github.com/a-synchronous/rubico/blob/master/TRANSDUCERS.md',
-              children: [
-                {
-                  type: 'text',
-                  value: 'transducers',
-                  position: {
-                    start: { line: 53, column: 56, offset: 2333 },
-                    end: { line: 53, column: 67, offset: 2344 },
-                    indent: []
-                  }
-                }
-              ],
-              position: {
-                start: { line: 53, column: 55, offset: 2332 },
-                end: { line: 53, column: 136, offset: 2413 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: '.',
-              position: {
-                start: { line: 53, column: 136, offset: 2413 },
-                end: { line: 53, column: 137, offset: 2414 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 53, column: 1, offset: 2278 },
-            end: { line: 53, column: 137, offset: 2414 },
-            indent: []
-          }
-        },
-        {
-          type: 'code',
-          lang: null,
-          meta: null,
-          value: 'Reducer<T> = (any, T)=>Promise|any\n\nTransducer = Reducer=>Reducer',
-          position: {
-            start: { line: 55, column: 1, offset: 2416 },
-            end: { line: 59, column: 4, offset: 2489 },
-            indent: [ 1, 1, 1, 1 ]
-          }
-        },
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'A reducer is a variadic function like the one supplied to ',
-              position: {
-                start: { line: 61, column: 1, offset: 2491 },
-                end: { line: 61, column: 59, offset: 2549 },
-                indent: []
-              }
-            },
-            {
-              type: 'inlineCode',
-              value: 'Array.prototype.reduce',
-              position: {
-                start: { line: 61, column: 59, offset: 2549 },
-                end: { line: 61, column: 83, offset: 2573 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: ', but without the index and reference to the accumulated result per call. A transducer is a function that accepts a reducer function as an argument and returns another reducer function, which enables chaining functionality for reducers. ',
-              position: {
-                start: { line: 61, column: 83, offset: 2573 },
-                end: { line: 61, column: 320, offset: 2810 },
-                indent: []
-              }
-            },
-            {
-              type: 'inlineCode',
-              value: 'map',
-              position: {
-                start: { line: 61, column: 320, offset: 2810 },
-                end: { line: 61, column: 325, offset: 2815 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: ' is core to this mechanism, and provides a way to create transducers with mapper functions.',
-              position: {
-                start: { line: 61, column: 325, offset: 2815 },
-                end: { line: 61, column: 416, offset: 2906 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 61, column: 1, offset: 2491 },
-            end: { line: 61, column: 416, offset: 2906 },
-            indent: []
-          }
-        },
-        {
-          type: 'code',
-          lang: 'javascript',
-          meta: '[playground]',
-          value: 'const square = number => number ** 2\n' +
-            '\n' +
-            'const concat = (array, item) => array.concat(item)\n' +
-            '\n' +
-            'const mapSquare = map(square)\n' +
-            '// mapSquare could potentially be a transducer, but at this point, it is\n' +
-            '// undifferentiated and not necessarily locked in to transducer behavior.\n' +
-            '\n' +
-            'console.log(\n' +
-            '  mapSquare([1, 2, 3, 4, 5]),\n' +
-            ') // [1, 4, 9, 16, 25]\n' +
-            '\n' +
-            'const squareConcatReducer = mapSquare(concat)\n' +
-            '// now mapSquare is passed the function concat, so it assumes transducer\n' +
-            '// position. squareConcatReducer is a reducer with chained functionality\n' +
-            '// square and concat.\n' +
-            '\n' +
-            'console.log(\n' +
-            '  [1, 2, 3, 4, 5].reduce(squareConcatReducer, []),\n' +
-            ') // [1, 4, 9, 16, 25]\n' +
-            '\n' +
-            'console.log(\n' +
-            "  [1, 2, 3, 4, 5].reduce(squareConcatReducer, ''),\n" +
-            ") // '1491625'",
-          position: {
-            start: { line: 63, column: 1, offset: 2908 },
-            end: { line: 88, column: 4, offset: 3655 },
-            indent: [
-              1, 1, 1, 1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1, 1, 1, 1,
-              1
-            ]
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 89, column: 1, offset: 3656 }
-      }
-    }
-  },
-  {
-    name: 'map.series',
-    synopsis: '```coffeescript [specscript]\n' +
-      'map.series<T>(\n' +
-      '  mapper T=>Promise|any,\n' +
-      ')(value Array<T>) -> Promise|Array\n' +
-      '```\n',
-    description: '`map` with serial execution.\n' +
-      '\n' +
-      '```javascript [playground]\n' +
-      'const delayedLog = number => new Promise(function (resolve) {\n' +
-      '  setTimeout(function () {\n' +
-      '    console.log(number)\n' +
-      '    resolve()\n' +
-      '  }, 1000)\n' +
-      '})\n' +
-      '\n' +
-      "console.log('start')\n" +
-      'map.series(delayedLog)([1, 2, 3, 4, 5])\n' +
-      '```\n',
-    synopsis_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'code',
-          lang: 'coffeescript',
-          meta: '[specscript]',
-          value: 'map.series<T>(\n' +
-            '  mapper T=>Promise|any,\n' +
-            ')(value Array<T>) -> Promise|Array',
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 5, column: 4, offset: 107 },
-            indent: [ 1, 1, 1, 1 ]
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 6, column: 1, offset: 108 }
-      }
-    },
-    description_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'inlineCode',
-              value: 'map',
-              position: {
-                start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 6, offset: 5 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: ' with serial execution.',
-              position: {
-                start: { line: 1, column: 6, offset: 5 },
-                end: { line: 1, column: 29, offset: 28 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 1, column: 29, offset: 28 },
-            indent: []
-          }
-        },
-        {
-          type: 'code',
-          lang: 'javascript',
-          meta: '[playground]',
-          value: 'const delayedLog = number => new Promise(function (resolve) {\n' +
-            '  setTimeout(function () {\n' +
-            '    console.log(number)\n' +
-            '    resolve()\n' +
-            '  }, 1000)\n' +
-            '})\n' +
-            '\n' +
-            "console.log('start')\n" +
-            'map.series(delayedLog)([1, 2, 3, 4, 5])',
-          position: {
-            start: { line: 3, column: 1, offset: 30 },
-            end: { line: 13, column: 4, offset: 263 },
-            indent: [
-              1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1
-            ]
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 14, column: 1, offset: 264 }
-      }
-    }
-  },
-  {
-    name: 'map.pool',
-    synopsis: '```coffeescript [specscript]\n' +
-      'map.pool(\n' +
-      '  maxConcurrency number,\n' +
-      '  mapper any=>Promise|any\n' +
-      ')(value Array) -> Promise|Array\n' +
-      '```\n',
-    description: '`map` with a concurrency limit that specifies the maximum number of promises in flight at any given moment.\n' +
-      '\n' +
-      '```javascript [playground]\n' +
-      'const delayedLog = x => new Promise(function (resolve) {\n' +
-      '  setTimeout(function () {\n' +
-      '    console.log(x)\n' +
-      '    resolve()\n' +
-      '  }, 1000)\n' +
-      '})\n' +
-      '\n' +
-      "console.log('start')\n" +
-      'map.pool(2, delayedLog)([1, 2, 3, 4, 5])\n' +
-      '```\n',
-    synopsis_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'code',
-          lang: 'coffeescript',
-          meta: '[specscript]',
-          value: 'map.pool(\n' +
-            '  maxConcurrency number,\n' +
-            '  mapper any=>Promise|any\n' +
-            ')(value Array) -> Promise|Array',
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 6, column: 4, offset: 125 },
-            indent: [ 1, 1, 1, 1, 1 ]
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 7, column: 1, offset: 126 }
-      }
-    },
-    description_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'inlineCode',
-              value: 'map',
-              position: {
-                start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 6, offset: 5 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: ' with a concurrency limit that specifies the maximum number of promises in flight at any given moment.',
-              position: {
-                start: { line: 1, column: 6, offset: 5 },
-                end: { line: 1, column: 108, offset: 107 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 1, column: 108, offset: 107 },
-            indent: []
-          }
-        },
-        {
-          type: 'code',
-          lang: 'javascript',
-          meta: '[playground]',
-          value: 'const delayedLog = x => new Promise(function (resolve) {\n' +
-            '  setTimeout(function () {\n' +
-            '    console.log(x)\n' +
-            '    resolve()\n' +
-            '  }, 1000)\n' +
-            '})\n' +
-            '\n' +
-            "console.log('start')\n" +
-            'map.pool(2, delayedLog)([1, 2, 3, 4, 5])',
-          position: {
-            start: { line: 3, column: 1, offset: 109 },
-            end: { line: 13, column: 4, offset: 333 },
-            indent: [
-              1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1
-            ]
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 14, column: 1, offset: 334 }
-      }
-    }
-  },
-  {
-    name: 'map.withIndex',
-    synopsis: '```coffeescript [specscript]\n' +
-      'map.withIndex(\n' +
-      '  mapper (item T, index number, Array<T>)=>Promise|any,\n' +
-      ')(Array<T>) -> Promise|Array\n' +
-      '```\n',
-    description: '`map` with index and collection parameters additionally supplied to the mapper each iteration.\n' +
-      '\n' +
-      '```javascript [playground]\n' +
-      'const range = length => map.withIndex(\n' +
-      '  (_, index) => index + 1)(Array(length))\n' +
-      '\n' +
-      'console.log(range(5)) // [1, 2, 3, 4, 5]\n' +
-      '```\n',
-    synopsis_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'code',
-          lang: 'coffeescript',
-          meta: '[specscript]',
-          value: 'map.withIndex(\n' +
-            '  mapper (item T, index number, Array<T>)=>Promise|any,\n' +
-            ')(Array<T>) -> Promise|Array',
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 5, column: 4, offset: 132 },
-            indent: [ 1, 1, 1, 1 ]
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 6, column: 1, offset: 133 }
-      }
-    },
-    description_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'inlineCode',
-              value: 'map',
-              position: {
-                start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 6, offset: 5 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: ' with index and collection parameters additionally supplied to the mapper each iteration.',
-              position: {
-                start: { line: 1, column: 6, offset: 5 },
-                end: { line: 1, column: 95, offset: 94 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 1, column: 95, offset: 94 },
-            indent: []
-          }
-        },
-        {
-          type: 'code',
-          lang: 'javascript',
-          meta: '[playground]',
-          value: 'const range = length => map.withIndex(\n' +
-            '  (_, index) => index + 1)(Array(length))\n' +
-            '\n' +
-            'console.log(range(5)) // [1, 2, 3, 4, 5]',
-          position: {
-            start: { line: 3, column: 1, offset: 96 },
-            end: { line: 8, column: 4, offset: 249 },
-            indent: [ 1, 1, 1, 1, 1 ]
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 9, column: 1, offset: 250 }
+        end: { line: 10, column: 1, offset: 283 }
       }
     }
   },
   {
     name: 'filter',
     synopsis: '```coffeescript [specscript]\n' +
-      'Filterable<T> = Array<T>|Object<T>\n' +
-      '  |Iterable<T>|AsyncIterable<T>|{ filter: T=>boolean }\n' +
+      'Filterable<T> = Array<T>|Object<T>|Iterable<T>|AsyncIterable<T>|{ filter: (T=>boolean)=>any }\n' +
+      'Reducer<T> = (any, T)=>Promise|any\n' +
       '\n' +
-      'filter<T>(\n' +
+      'var T any,\n' +
       '  predicate T=>Promise|boolean,\n' +
-      ')(value Filterable<T>) -> filtered Promise|Filterable<T>\n' +
+      '  filterable Filterable<T>,\n' +
+      '  args ...any,\n' +
+      '  generatorFunction ...args=>Generator<Promise|T>,\n' +
+      '  asyncGeneratorFunction ...args=>AsyncGenerator<T>,\n' +
+      '  reducer Reducer<T>\n' +
       '\n' +
-      'filter<T>(\n' +
-      '  predicate T=>boolean, # note: only synchronous predicates allowed here\n' +
-      ')(generatorFunction GeneratorFunction<T>)\n' +
-      '  -> filteringGeneratorFunction GeneratorFunction<T>\n' +
+      'filter(predicate)(filterable) -> Promise|Filterable<T>\n' +
       '\n' +
-      'filter<T>(\n' +
-      '  predicate T=>Promise|boolean,\n' +
-      ')(asyncGeneratorFunction AsyncGeneratorFunction<T>)\n' +
-      '  -> filteringAsyncGeneratorFunction AsyncGeneratorFunction<T>\n' +
+      'filter(predicate)(generatorFunction) -> ...args=>Generator<T>\n' +
       '\n' +
-      'filter<T>(\n' +
-      '  predicate T=>Promise|boolean,\n' +
-      ')(reducer (any, T)=>Promise|any)\n' +
-      '  -> filteringReducer (any, T)=>Promise|any\n' +
+      'filter(predicate)(asyncGeneratorFunction) -> ...args=>AsyncGenerator<T>\n' +
+      '\n' +
+      'filter(predicate)(reducer) -> Reducer<T>\n' +
       '```\n',
-    description: 'Exclude items from a collection based on the results of their concurrent execution with the predicate. The predicate may be asynchronous.\n' +
+    description: 'Exclude items based on the results of their concurrent execution with a predicate.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const isOdd = number => number % 2 == 1\n' +
@@ -2531,8 +6868,6 @@ export default [
       '```\n' +
       '\n' +
       'Passing a generator function to `filter` returns a filtering generator function; all values that are normally yielded by a generator function that test falsy with the predicate are skipped by the returned filtering generator function.\n' +
-      '\n' +
-      '**Warning**: usage of an async predicate with generator functions or iterators may lead to undesirable behavior.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const isOdd = number => number % 2 == 1\n' +
@@ -2606,42 +6941,38 @@ export default [
           type: 'code',
           lang: 'coffeescript',
           meta: '[specscript]',
-          value: 'Filterable<T> = Array<T>|Object<T>\n' +
-            '  |Iterable<T>|AsyncIterable<T>|{ filter: T=>boolean }\n' +
+          value: 'Filterable<T> = Array<T>|Object<T>|Iterable<T>|AsyncIterable<T>|{ filter: (T=>boolean)=>any }\n' +
+            'Reducer<T> = (any, T)=>Promise|any\n' +
             '\n' +
-            'filter<T>(\n' +
+            'var T any,\n' +
             '  predicate T=>Promise|boolean,\n' +
-            ')(value Filterable<T>) -> filtered Promise|Filterable<T>\n' +
+            '  filterable Filterable<T>,\n' +
+            '  args ...any,\n' +
+            '  generatorFunction ...args=>Generator<Promise|T>,\n' +
+            '  asyncGeneratorFunction ...args=>AsyncGenerator<T>,\n' +
+            '  reducer Reducer<T>\n' +
             '\n' +
-            'filter<T>(\n' +
-            '  predicate T=>boolean, # note: only synchronous predicates allowed here\n' +
-            ')(generatorFunction GeneratorFunction<T>)\n' +
-            '  -> filteringGeneratorFunction GeneratorFunction<T>\n' +
+            'filter(predicate)(filterable) -> Promise|Filterable<T>\n' +
             '\n' +
-            'filter<T>(\n' +
-            '  predicate T=>Promise|boolean,\n' +
-            ')(asyncGeneratorFunction AsyncGeneratorFunction<T>)\n' +
-            '  -> filteringAsyncGeneratorFunction AsyncGeneratorFunction<T>\n' +
+            'filter(predicate)(generatorFunction) -> ...args=>Generator<T>\n' +
             '\n' +
-            'filter<T>(\n' +
-            '  predicate T=>Promise|boolean,\n' +
-            ')(reducer (any, T)=>Promise|any)\n' +
-            '  -> filteringReducer (any, T)=>Promise|any',
+            'filter(predicate)(asyncGeneratorFunction) -> ...args=>AsyncGenerator<T>\n' +
+            '\n' +
+            'filter(predicate)(reducer) -> Reducer<T>',
           position: {
             start: { line: 1, column: 1, offset: 0 },
-            end: { line: 23, column: 4, offset: 683 },
+            end: { line: 20, column: 4, offset: 607 },
             indent: [
               1, 1, 1, 1, 1, 1, 1,
               1, 1, 1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1, 1, 1,
-              1
+              1, 1, 1, 1, 1
             ]
           }
         }
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 24, column: 1, offset: 684 }
+        end: { line: 21, column: 1, offset: 608 }
       }
     },
     description_mdast: {
@@ -2652,17 +6983,17 @@ export default [
           children: [
             {
               type: 'text',
-              value: 'Exclude items from a collection based on the results of their concurrent execution with the predicate. The predicate may be asynchronous.',
+              value: 'Exclude items based on the results of their concurrent execution with a predicate.',
               position: {
                 start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 138, offset: 137 },
+                end: { line: 1, column: 83, offset: 82 },
                 indent: []
               }
             }
           ],
           position: {
             start: { line: 1, column: 1, offset: 0 },
-            end: { line: 1, column: 138, offset: 137 },
+            end: { line: 1, column: 83, offset: 82 },
             indent: []
           }
         },
@@ -2680,8 +7011,8 @@ export default [
             '  filter(isOdd)({ a: 1, b: 2, c: 3, d: 4, e: 5 }),\n' +
             ') // { a: 1, c: 3, e: 5 }',
           position: {
-            start: { line: 3, column: 1, offset: 139 },
-            end: { line: 13, column: 4, offset: 363 },
+            start: { line: 3, column: 1, offset: 84 },
+            end: { line: 13, column: 4, offset: 308 },
             indent: [
               1, 1, 1, 1, 1,
               1, 1, 1, 1, 1
@@ -2695,8 +7026,8 @@ export default [
               type: 'text',
               value: 'Passing a generator function to ',
               position: {
-                start: { line: 15, column: 1, offset: 365 },
-                end: { line: 15, column: 33, offset: 397 },
+                start: { line: 15, column: 1, offset: 310 },
+                end: { line: 15, column: 33, offset: 342 },
                 indent: []
               }
             },
@@ -2704,8 +7035,8 @@ export default [
               type: 'inlineCode',
               value: 'filter',
               position: {
-                start: { line: 15, column: 33, offset: 397 },
-                end: { line: 15, column: 41, offset: 405 },
+                start: { line: 15, column: 33, offset: 342 },
+                end: { line: 15, column: 41, offset: 350 },
                 indent: []
               }
             },
@@ -2713,53 +7044,15 @@ export default [
               type: 'text',
               value: ' returns a filtering generator function; all values that are normally yielded by a generator function that test falsy with the predicate are skipped by the returned filtering generator function.',
               position: {
-                start: { line: 15, column: 41, offset: 405 },
-                end: { line: 15, column: 235, offset: 599 },
+                start: { line: 15, column: 41, offset: 350 },
+                end: { line: 15, column: 235, offset: 544 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 15, column: 1, offset: 365 },
-            end: { line: 15, column: 235, offset: 599 },
-            indent: []
-          }
-        },
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'strong',
-              children: [
-                {
-                  type: 'text',
-                  value: 'Warning',
-                  position: {
-                    start: { line: 17, column: 3, offset: 603 },
-                    end: { line: 17, column: 10, offset: 610 },
-                    indent: []
-                  }
-                }
-              ],
-              position: {
-                start: { line: 17, column: 1, offset: 601 },
-                end: { line: 17, column: 12, offset: 612 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: ': usage of an async predicate with generator functions or iterators may lead to undesirable behavior.',
-              position: {
-                start: { line: 17, column: 12, offset: 612 },
-                end: { line: 17, column: 113, offset: 713 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 17, column: 1, offset: 601 },
-            end: { line: 17, column: 113, offset: 713 },
+            start: { line: 15, column: 1, offset: 310 },
+            end: { line: 15, column: 235, offset: 544 },
             indent: []
           }
         },
@@ -2789,8 +7082,8 @@ export default [
             '                      // 5\n' +
             '}',
           position: {
-            start: { line: 19, column: 1, offset: 715 },
-            end: { line: 41, column: 4, offset: 1211 },
+            start: { line: 17, column: 1, offset: 546 },
+            end: { line: 39, column: 4, offset: 1042 },
             indent: [
               1, 1, 1, 1, 1, 1, 1,
               1, 1, 1, 1, 1, 1, 1,
@@ -2806,8 +7099,8 @@ export default [
               type: 'text',
               value: 'In a similar vein to generators, ',
               position: {
-                start: { line: 43, column: 1, offset: 1213 },
-                end: { line: 43, column: 34, offset: 1246 },
+                start: { line: 41, column: 1, offset: 1044 },
+                end: { line: 41, column: 34, offset: 1077 },
                 indent: []
               }
             },
@@ -2815,8 +7108,8 @@ export default [
               type: 'inlineCode',
               value: 'filter',
               position: {
-                start: { line: 43, column: 34, offset: 1246 },
-                end: { line: 43, column: 42, offset: 1254 },
+                start: { line: 41, column: 34, offset: 1077 },
+                end: { line: 41, column: 42, offset: 1085 },
                 indent: []
               }
             },
@@ -2824,15 +7117,15 @@ export default [
               type: 'text',
               value: ' also filters elements from async generators.',
               position: {
-                start: { line: 43, column: 42, offset: 1254 },
-                end: { line: 43, column: 87, offset: 1299 },
+                start: { line: 41, column: 42, offset: 1085 },
+                end: { line: 41, column: 87, offset: 1130 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 43, column: 1, offset: 1213 },
-            end: { line: 43, column: 87, offset: 1299 },
+            start: { line: 41, column: 1, offset: 1044 },
+            end: { line: 41, column: 87, offset: 1130 },
             indent: []
           }
         },
@@ -2862,8 +7155,8 @@ export default [
             '                      // 5\n' +
             '}',
           position: {
-            start: { line: 45, column: 1, offset: 1301 },
-            end: { line: 67, column: 4, offset: 1871 },
+            start: { line: 43, column: 1, offset: 1132 },
+            end: { line: 65, column: 4, offset: 1702 },
             indent: [
               1, 1, 1, 1, 1, 1, 1,
               1, 1, 1, 1, 1, 1, 1,
@@ -2879,8 +7172,8 @@ export default [
               type: 'text',
               value: 'Finally, ',
               position: {
-                start: { line: 69, column: 1, offset: 1873 },
-                end: { line: 69, column: 10, offset: 1882 },
+                start: { line: 67, column: 1, offset: 1704 },
+                end: { line: 67, column: 10, offset: 1713 },
                 indent: []
               }
             },
@@ -2888,8 +7181,8 @@ export default [
               type: 'inlineCode',
               value: 'filter',
               position: {
-                start: { line: 69, column: 10, offset: 1882 },
-                end: { line: 69, column: 18, offset: 1890 },
+                start: { line: 67, column: 10, offset: 1713 },
+                end: { line: 67, column: 18, offset: 1721 },
                 indent: []
               }
             },
@@ -2897,15 +7190,15 @@ export default [
               type: 'text',
               value: ' creates filtering transducers. A reducer created from a filtering transducer skips items of a reducing operation if they test falsy under the predicate.',
               position: {
-                start: { line: 69, column: 18, offset: 1890 },
-                end: { line: 69, column: 171, offset: 2043 },
+                start: { line: 67, column: 18, offset: 1721 },
+                end: { line: 67, column: 171, offset: 1874 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 69, column: 1, offset: 1873 },
-            end: { line: 69, column: 171, offset: 2043 },
+            start: { line: 67, column: 1, offset: 1704 },
+            end: { line: 67, column: 171, offset: 1874 },
             indent: []
           }
         },
@@ -2916,8 +7209,8 @@ export default [
               type: 'text',
               value: 'Note: It is possible to use an asynchronous predicate when filtering a reducer, however the implementation of ',
               position: {
-                start: { line: 71, column: 1, offset: 2045 },
-                end: { line: 71, column: 111, offset: 2155 },
+                start: { line: 69, column: 1, offset: 1876 },
+                end: { line: 69, column: 111, offset: 1986 },
                 indent: []
               }
             },
@@ -2925,8 +7218,8 @@ export default [
               type: 'inlineCode',
               value: 'reduce',
               position: {
-                start: { line: 71, column: 111, offset: 2155 },
-                end: { line: 71, column: 119, offset: 2163 },
+                start: { line: 69, column: 111, offset: 1986 },
+                end: { line: 69, column: 119, offset: 1994 },
                 indent: []
               }
             },
@@ -2934,8 +7227,8 @@ export default [
               type: 'text',
               value: ' must support asynchronous operations. This library provides such an implementation as ',
               position: {
-                start: { line: 71, column: 119, offset: 2163 },
-                end: { line: 71, column: 206, offset: 2250 },
+                start: { line: 69, column: 119, offset: 1994 },
+                end: { line: 69, column: 206, offset: 2081 },
                 indent: []
               }
             },
@@ -2943,8 +7236,8 @@ export default [
               type: 'inlineCode',
               value: 'reduce',
               position: {
-                start: { line: 71, column: 206, offset: 2250 },
-                end: { line: 71, column: 214, offset: 2258 },
+                start: { line: 69, column: 206, offset: 2081 },
+                end: { line: 69, column: 214, offset: 2089 },
                 indent: []
               }
             },
@@ -2952,15 +7245,15 @@ export default [
               type: 'text',
               value: '.',
               position: {
-                start: { line: 71, column: 214, offset: 2258 },
-                end: { line: 71, column: 215, offset: 2259 },
+                start: { line: 69, column: 214, offset: 2089 },
+                end: { line: 69, column: 215, offset: 2090 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 71, column: 1, offset: 2045 },
-            end: { line: 71, column: 215, offset: 2259 },
+            start: { line: 69, column: 1, offset: 1876 },
+            end: { line: 69, column: 215, offset: 2090 },
             indent: []
           }
         },
@@ -2978,8 +7271,8 @@ export default [
             '  [1, 2, 3, 4, 5].reduce(concatOddNumbers, []),\n' +
             ') // [1, 3, 5]',
           position: {
-            start: { line: 73, column: 1, offset: 2261 },
-            end: { line: 83, column: 4, offset: 2508 },
+            start: { line: 71, column: 1, offset: 2092 },
+            end: { line: 81, column: 4, offset: 2339 },
             indent: [
               1, 1, 1, 1, 1,
               1, 1, 1, 1, 1
@@ -2989,16 +7282,19 @@ export default [
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 84, column: 1, offset: 2509 }
+        end: { line: 82, column: 1, offset: 2340 }
       }
     }
   },
   {
     name: 'filter.withIndex',
     synopsis: '```coffeescript [specscript]\n' +
-      'filter.withIndex(\n' +
-      '  predicate T=>Promise|boolean,\n' +
-      ')(value Array<T>) -> filteredArray Array<T>\n' +
+      'var T any,\n' +
+      '  index number,\n' +
+      '  array Array<T>,\n' +
+      '  indexedPredicate (T, index, array)=>Promise|boolean\n' +
+      '\n' +
+      'filter.withIndex(indexedPredicate)(array) -> Array<T>\n' +
       '```\n',
     description: '`filter` with each predicate call supplemented by index and reference to original collection.\n' +
       '\n' +
@@ -3017,19 +7313,25 @@ export default [
           type: 'code',
           lang: 'coffeescript',
           meta: '[specscript]',
-          value: 'filter.withIndex(\n' +
-            '  predicate T=>Promise|boolean,\n' +
-            ')(value Array<T>) -> filteredArray Array<T>',
+          value: 'var T any,\n' +
+            '  index number,\n' +
+            '  array Array<T>,\n' +
+            '  indexedPredicate (T, index, array)=>Promise|boolean\n' +
+            '\n' +
+            'filter.withIndex(indexedPredicate)(array) -> Array<T>',
           position: {
             start: { line: 1, column: 1, offset: 0 },
-            end: { line: 5, column: 4, offset: 126 },
-            indent: [ 1, 1, 1, 1 ]
+            end: { line: 8, column: 4, offset: 186 },
+            indent: [
+              1, 1, 1, 1,
+              1, 1, 1
+            ]
           }
         }
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 6, column: 1, offset: 127 }
+        end: { line: 9, column: 1, offset: 187 }
       }
     },
     description_mdast: {
@@ -3090,1466 +7392,43 @@ export default [
     }
   },
   {
-    name: 'reduce',
-    synopsis: '```coffeescript [specscript]\n' +
-      'Foldable<T> = Iterable<T>|AsyncIterable<T>\n' +
-      '  |{ reduce: (any, T)=>any }|Object<T>\n' +
-      'Reducer<T> = (any, T)=>Promise|any\n' +
-      'Transducer = Reducer=>Reducer\n' +
-      '\n' +
-      'reduce<T>(\n' +
-      '  reducer Reducer<T>,\n' +
-      '  init (collection=>Promise|any)|any?,\n' +
-      ')(collection Foldable<T>) -> Promise|any\n' +
-      '\n' +
-      'reduce<args ...any>(\n' +
-      '  reducer Reducer,\n' +
-      '  init (...args=>Promise|any)|any?,\n' +
-      ')(value GeneratorFunction|AsyncGeneratorFunction)\n' +
-      '  -> reducingFunction ...args=>Promise|Semigroup|any\n' +
-      '\n' +
-      'reduce<args ...any>(\n' +
-      '  reducer Reducer,\n' +
-      '  init (...args=>Promise|any)|any?,\n' +
-      ')(anotherReducer Reducer, moreReducers ...Reducer)\n' +
-      '  -> chainedReducingFunction ...args=>Promise|any\n' +
-      '```\n',
-    description: 'Execute a reducer for each item of a collection, resulting in a single output value.\n' +
-      '\n' +
-      '```javascript [playground]\n' +
-      'const max = (a, b) => a > b ? a : b\n' +
-      '\n' +
-      'console.log(\n' +
-      '  reduce(max)([1, 3, 5, 4, 2]),\n' +
-      ') // 5\n' +
-      '```\n' +
-      '\n' +
-      'If the optional initialization parameter is supplied, the result starts as that parameter rather than the first item of the collection.\n' +
-      '\n' +
-      '```javascript [playground]\n' +
-      'const add = (a, b) => a + b\n' +
-      '\n' +
-      'console.log(\n' +
-      '  reduce(add)([1, 2, 3, 4, 5], 0),\n' +
-      ') // 15\n' +
-      '```\n' +
-      '\n' +
-      'If the initialization parameter is a function, it is treated as a resolver and called with the input arguments to resolve an initial value for the accumulator. Unless care is exercised when handling references for this initial value, a function `init` is the recommended way to use reduce for transformations on non-primitive initial values.\n' +
-      '\n' +
-      '```javascript [playground]\n' +
-      'const concatSquares = (array, value) => array.concat(value ** 2)\n' +
-      '\n' +
-      'const initEmptyArray = () => []\n' +
-      '\n' +
-      'console.log(\n' +
-      '  reduce(concatSquares, initEmptyArray)([1, 2, 3, 4, 5]),\n' +
-      ') // [1, 4, 9, 16, 25]\n' +
-      '```\n' +
-      '\n' +
-      'The concept of iteratable reducer execution goes beyond synchronous reducers on arrays. Reducers can be asynchronous, while data parameters can be asynchronous streams.\n' +
-      '\n' +
-      '```javascript [playground]\n' +
-      'const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))\n' +
-      '\n' +
-      '// asyncAppReducer(\n' +
-      '//   state { todos: Array },\n' +
-      '//   action { type: string, todoID: string },\n' +
-      '// ) -> state\n' +
-      'const asyncAppReducer = async function (state, action) {\n' +
-      "  if (action.type == 'FETCH_TODO') {\n" +
-      '    const todo = await fetch(\n' +
-      "      'https://jsonplaceholder.typicode.com/todos/' + action.todoID,\n" +
-      '    ).then(response => response.json())\n' +
-      "    console.log('fetched', todo)\n" +
-      '    state.todos.push(todo)\n' +
-      '    return state\n' +
-      '  }\n' +
-      '  return state\n' +
-      '}\n' +
-      '\n' +
-      'const asyncFetchActions = async function* (count) {\n' +
-      '  let idCount = 0\n' +
-      '  while (++idCount <= count) {\n' +
-      '    await sleep(1000)\n' +
-      "    yield { type: 'FETCH_TODO', todoID: idCount }\n" +
-      '  }\n' +
-      '}\n' +
-      '\n' +
-      'const state = { todos: [] }\n' +
-      '\n' +
-      'reduce(asyncAppReducer, state)(asyncFetchActions(5)).then(\n' +
-      "  reducedState => console.log('finalState', reducedState))\n" +
-      '\n' +
-      "// fetched { userId: 1, id: 1, title: 'delectus aut autem', completed: false }\n" +
-      "// fetched { userId: 1, id: 2, title: 'quis ut nam facilis...', completed: false }\n" +
-      "// fetched { userId: 1, id: 3, title: 'fugiat veniam minus', completed: false }\n" +
-      "// fetched { userId: 1, id: 4, title: 'et porro tempora', completed: true }\n" +
-      "// fetched { userId: 1, id: 5, title: 'laboriosam mollitia...', completed: false }\n" +
-      '// finalState {\n' +
-      '//   todos: [\n' +
-      "//     { userId: 1, id: 1, title: 'delectus aut autem', completed: false },\n" +
-      "//     { userId: 1, id: 2, title: 'quis ut nam facilis...', completed: false },\n" +
-      "//     { userId: 1, id: 3, title: 'fugiat veniam minus', completed: false },\n" +
-      "//     { userId: 1, id: 4, title: 'et porro tempora', completed: true },\n" +
-      "//     { userId: 1, id: 5, title: 'laboriosam mollitia...', completed: false },\n" +
-      '//   ],\n' +
-      '// }\n' +
-      '```\n' +
-      '\n' +
-      'If the first argument to a reducing function is a reducer, `reduce` concatenates any reducers in argument position onto the initial reducer, producing a combined reducer that performs a chained operation per each item in a reducing operation.\n' +
-      '\n' +
-      '```javascript [playground]\n' +
-      'const reducerA = (state, action) => {\n' +
-      "  if (action.type == 'A') return { ...state, A: true }\n" +
-      '  return state\n' +
-      '}\n' +
-      '\n' +
-      'const reducerB = (state, action) => {\n' +
-      "  if (action.type == 'B') return { ...state, B: true }\n" +
-      '  return state\n' +
-      '}\n' +
-      '\n' +
-      'const reducerC = (state, action) => {\n' +
-      "  if (action.type == 'C') return { ...state, C: true }\n" +
-      '  return state\n' +
-      '}\n' +
-      '\n' +
-      'const reducingABC = reduce(\n' +
-      '  reducerA, () => ({}))(reducerB, reducerC)\n' +
-      '\n' +
-      "const actions = [{ type: 'A' }, { type: 'B' }, { type: 'C' }]\n" +
-      '\n' +
-      'console.log(\n' +
-      '  reducingABC(actions),\n' +
-      ') // { A: true, B: true, C: true }\n' +
-      '```\n',
-    synopsis_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'code',
-          lang: 'coffeescript',
-          meta: '[specscript]',
-          value: 'Foldable<T> = Iterable<T>|AsyncIterable<T>\n' +
-            '  |{ reduce: (any, T)=>any }|Object<T>\n' +
-            'Reducer<T> = (any, T)=>Promise|any\n' +
-            'Transducer = Reducer=>Reducer\n' +
-            '\n' +
-            'reduce<T>(\n' +
-            '  reducer Reducer<T>,\n' +
-            '  init (collection=>Promise|any)|any?,\n' +
-            ')(collection Foldable<T>) -> Promise|any\n' +
-            '\n' +
-            'reduce<args ...any>(\n' +
-            '  reducer Reducer,\n' +
-            '  init (...args=>Promise|any)|any?,\n' +
-            ')(value GeneratorFunction|AsyncGeneratorFunction)\n' +
-            '  -> reducingFunction ...args=>Promise|Semigroup|any\n' +
-            '\n' +
-            'reduce<args ...any>(\n' +
-            '  reducer Reducer,\n' +
-            '  init (...args=>Promise|any)|any?,\n' +
-            ')(anotherReducer Reducer, moreReducers ...Reducer)\n' +
-            '  -> chainedReducingFunction ...args=>Promise|any',
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 23, column: 4, offset: 651 },
-            indent: [
-              1, 1, 1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1, 1, 1,
-              1
-            ]
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 24, column: 1, offset: 652 }
-      }
-    },
-    description_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'Execute a reducer for each item of a collection, resulting in a single output value.',
-              position: {
-                start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 85, offset: 84 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 1, column: 85, offset: 84 },
-            indent: []
-          }
-        },
-        {
-          type: 'code',
-          lang: 'javascript',
-          meta: '[playground]',
-          value: 'const max = (a, b) => a > b ? a : b\n' +
-            '\n' +
-            'console.log(\n' +
-            '  reduce(max)([1, 3, 5, 4, 2]),\n' +
-            ') // 5',
-          position: {
-            start: { line: 3, column: 1, offset: 86 },
-            end: { line: 9, column: 4, offset: 205 },
-            indent: [ 1, 1, 1, 1, 1, 1 ]
-          }
-        },
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'If the optional initialization parameter is supplied, the result starts as that parameter rather than the first item of the collection.',
-              position: {
-                start: { line: 11, column: 1, offset: 207 },
-                end: { line: 11, column: 136, offset: 342 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 11, column: 1, offset: 207 },
-            end: { line: 11, column: 136, offset: 342 },
-            indent: []
-          }
-        },
-        {
-          type: 'code',
-          lang: 'javascript',
-          meta: '[playground]',
-          value: 'const add = (a, b) => a + b\n' +
-            '\n' +
-            'console.log(\n' +
-            '  reduce(add)([1, 2, 3, 4, 5], 0),\n' +
-            ') // 15',
-          position: {
-            start: { line: 13, column: 1, offset: 344 },
-            end: { line: 19, column: 4, offset: 459 },
-            indent: [ 1, 1, 1, 1, 1, 1 ]
-          }
-        },
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'If the initialization parameter is a function, it is treated as a resolver and called with the input arguments to resolve an initial value for the accumulator. Unless care is exercised when handling references for this initial value, a function ',
-              position: {
-                start: { line: 21, column: 1, offset: 461 },
-                end: { line: 21, column: 246, offset: 706 },
-                indent: []
-              }
-            },
-            {
-              type: 'inlineCode',
-              value: 'init',
-              position: {
-                start: { line: 21, column: 246, offset: 706 },
-                end: { line: 21, column: 252, offset: 712 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: ' is the recommended way to use reduce for transformations on non-primitive initial values.',
-              position: {
-                start: { line: 21, column: 252, offset: 712 },
-                end: { line: 21, column: 342, offset: 802 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 21, column: 1, offset: 461 },
-            end: { line: 21, column: 342, offset: 802 },
-            indent: []
-          }
-        },
-        {
-          type: 'code',
-          lang: 'javascript',
-          meta: '[playground]',
-          value: 'const concatSquares = (array, value) => array.concat(value ** 2)\n' +
-            '\n' +
-            'const initEmptyArray = () => []\n' +
-            '\n' +
-            'console.log(\n' +
-            '  reduce(concatSquares, initEmptyArray)([1, 2, 3, 4, 5]),\n' +
-            ') // [1, 4, 9, 16, 25]',
-          position: {
-            start: { line: 23, column: 1, offset: 804 },
-            end: { line: 31, column: 4, offset: 1027 },
-            indent: [
-              1, 1, 1, 1,
-              1, 1, 1, 1
-            ]
-          }
-        },
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'The concept of iteratable reducer execution goes beyond synchronous reducers on arrays. Reducers can be asynchronous, while data parameters can be asynchronous streams.',
-              position: {
-                start: { line: 33, column: 1, offset: 1029 },
-                end: { line: 33, column: 169, offset: 1197 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 33, column: 1, offset: 1029 },
-            end: { line: 33, column: 169, offset: 1197 },
-            indent: []
-          }
-        },
-        {
-          type: 'code',
-          lang: 'javascript',
-          meta: '[playground]',
-          value: 'const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))\n' +
-            '\n' +
-            '// asyncAppReducer(\n' +
-            '//   state { todos: Array },\n' +
-            '//   action { type: string, todoID: string },\n' +
-            '// ) -> state\n' +
-            'const asyncAppReducer = async function (state, action) {\n' +
-            "  if (action.type == 'FETCH_TODO') {\n" +
-            '    const todo = await fetch(\n' +
-            "      'https://jsonplaceholder.typicode.com/todos/' + action.todoID,\n" +
-            '    ).then(response => response.json())\n' +
-            "    console.log('fetched', todo)\n" +
-            '    state.todos.push(todo)\n' +
-            '    return state\n' +
-            '  }\n' +
-            '  return state\n' +
-            '}\n' +
-            '\n' +
-            'const asyncFetchActions = async function* (count) {\n' +
-            '  let idCount = 0\n' +
-            '  while (++idCount <= count) {\n' +
-            '    await sleep(1000)\n' +
-            "    yield { type: 'FETCH_TODO', todoID: idCount }\n" +
-            '  }\n' +
-            '}\n' +
-            '\n' +
-            'const state = { todos: [] }\n' +
-            '\n' +
-            'reduce(asyncAppReducer, state)(asyncFetchActions(5)).then(\n' +
-            "  reducedState => console.log('finalState', reducedState))\n" +
-            '\n' +
-            "// fetched { userId: 1, id: 1, title: 'delectus aut autem', completed: false }\n" +
-            "// fetched { userId: 1, id: 2, title: 'quis ut nam facilis...', completed: false }\n" +
-            "// fetched { userId: 1, id: 3, title: 'fugiat veniam minus', completed: false }\n" +
-            "// fetched { userId: 1, id: 4, title: 'et porro tempora', completed: true }\n" +
-            "// fetched { userId: 1, id: 5, title: 'laboriosam mollitia...', completed: false }\n" +
-            '// finalState {\n' +
-            '//   todos: [\n' +
-            "//     { userId: 1, id: 1, title: 'delectus aut autem', completed: false },\n" +
-            "//     { userId: 1, id: 2, title: 'quis ut nam facilis...', completed: false },\n" +
-            "//     { userId: 1, id: 3, title: 'fugiat veniam minus', completed: false },\n" +
-            "//     { userId: 1, id: 4, title: 'et porro tempora', completed: true },\n" +
-            "//     { userId: 1, id: 5, title: 'laboriosam mollitia...', completed: false },\n" +
-            '//   ],\n' +
-            '// }',
-          position: {
-            start: { line: 35, column: 1, offset: 1199 },
-            end: { line: 81, column: 4, offset: 2897 },
-            indent: [
-              1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-              1, 1
-            ]
-          }
-        },
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'If the first argument to a reducing function is a reducer, ',
-              position: {
-                start: { line: 83, column: 1, offset: 2899 },
-                end: { line: 83, column: 60, offset: 2958 },
-                indent: []
-              }
-            },
-            {
-              type: 'inlineCode',
-              value: 'reduce',
-              position: {
-                start: { line: 83, column: 60, offset: 2958 },
-                end: { line: 83, column: 68, offset: 2966 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: ' concatenates any reducers in argument position onto the initial reducer, producing a combined reducer that performs a chained operation per each item in a reducing operation.',
-              position: {
-                start: { line: 83, column: 68, offset: 2966 },
-                end: { line: 83, column: 243, offset: 3141 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 83, column: 1, offset: 2899 },
-            end: { line: 83, column: 243, offset: 3141 },
-            indent: []
-          }
-        },
-        {
-          type: 'code',
-          lang: 'javascript',
-          meta: '[playground]',
-          value: 'const reducerA = (state, action) => {\n' +
-            "  if (action.type == 'A') return { ...state, A: true }\n" +
-            '  return state\n' +
-            '}\n' +
-            '\n' +
-            'const reducerB = (state, action) => {\n' +
-            "  if (action.type == 'B') return { ...state, B: true }\n" +
-            '  return state\n' +
-            '}\n' +
-            '\n' +
-            'const reducerC = (state, action) => {\n' +
-            "  if (action.type == 'C') return { ...state, C: true }\n" +
-            '  return state\n' +
-            '}\n' +
-            '\n' +
-            'const reducingABC = reduce(\n' +
-            '  reducerA, () => ({}))(reducerB, reducerC)\n' +
-            '\n' +
-            "const actions = [{ type: 'A' }, { type: 'B' }, { type: 'C' }]\n" +
-            '\n' +
-            'console.log(\n' +
-            '  reducingABC(actions),\n' +
-            ') // { A: true, B: true, C: true }',
-          position: {
-            start: { line: 85, column: 1, offset: 3143 },
-            end: { line: 109, column: 4, offset: 3714 },
-            indent: [
-              1, 1, 1, 1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1, 1, 1, 1
-            ]
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 110, column: 1, offset: 3715 }
-      }
-    }
-  },
-  {
-    name: 'transform',
-    synopsis: '```coffeescript [specscript]\n' +
-      'Reducer<T> = (any, T)=>Promise|any\n' +
-      'Transducer = Reducer=>Reducer\n' +
-      'Semigroup = Array|string|Set|TypedArray\n' +
-      '  |{ concat: function }|{ write: function }|Object\n' +
-      'Foldable = Iterable|AsyncIterable|{ reduce: function }|Object|any\n' +
-      '\n' +
-      'transform(\n' +
-      '  transducer Transducer,\n' +
-      '  init (collection=>Promise|Semigroup|any)|Semigroup|any,\n' +
-      ')(collection Foldable)\n' +
-      '  -> result Promise|Semigroup|any\n' +
-      '\n' +
-      'transform<args ...any>(\n' +
-      '  transducer Transducer,\n' +
-      '  init (...args=>Promise|Semigroup|any)|Semigroup|any,\n' +
-      ')(value GeneratorFunction|AsyncGeneratorFunction)\n' +
-      '  -> transformingFunction ...args=>Promise|Semigroup|any\n' +
-      '\n' +
-      'transform<args ...any>(\n' +
-      '  transducer Transducer,\n' +
-      '  init (...args=>Promise|Semigroup|any)|Semigroup|any,\n' +
-      ')(reducer Reducer, moreReducers ...Reducer)\n' +
-      '  -> chainedTransformingFunction ...args=>Promise|Semigroup|any\n' +
-      '```\n',
-    description: 'Execute a transducer for each item of a collection, concatenating results into the accumulator. The initial value may be a function, in which case it is treated as a resolver.\n' +
-      '\n' +
-      '```javascript [playground]\n' +
-      'const square = number => number ** 2\n' +
-      '\n' +
-      'const isOdd = number => number % 2 == 1\n' +
-      '\n' +
-      'const squaredOdds = pipe([\n' +
-      '  filter(isOdd),\n' +
-      '  map(square),\n' +
-      '])\n' +
-      '\n' +
-      'console.log(\n' +
-      '  transform(squaredOdds, () => [])([1, 2, 3, 4, 5]),\n' +
-      ') // [1, 9, 25]\n' +
-      '\n' +
-      'console.log(\n' +
-      "  transform(squaredOdds, '')([1, 2, 3, 4, 5]),\n" +
-      ") // '1925'\n" +
-      '\n' +
-      'console.log(\n' +
-      '  transform(squaredOdds, () => new Uint8Array())([1, 2, 3, 4, 5]),\n' +
-      ') // Uint8Array(3) [ 1, 9, 25 ]\n' +
-      '```\n' +
-      '\n' +
-      'Concatenation varies by aggregate result and pipeline item. Generally, if an item is of the same type as the aggregate result, it is flattened into the result. Otherwise, the item is appended.\n' +
-      '\n' +
-      ' * `Array` - concatenation resembles `result.concat(item)`. Non-arrays are concatenated as items, while arrays are flattened.\n' +
-      ' * `string` - concatenation is `result + item`\n' +
-      ' * `Set` - concatenation resembles `result.add(item)` for individual items; other sets are flattened.\n' +
-      ' * `TypedArray` - concatenation is managing ArrayBuffers while appending items. Careful about the types here - a `Uint8Array` should only concatenate 8-bit unsigned numbers if not concatenating other `Uint8Array`s\n' +
-      ' * { concat: function } - an object that implements concat. Concatenation calls the `.concat` method in `result.concat(item)`. Flattening is left to the implementation.\n' +
-      ' * { write: function } - an object that implements write; these are for Node.js streams. Concatenation calls the method `.write` in `result.write(item)` or `item.pipe(result)` if the `item` is readable.\n' +
-      ' * Object - a regular object, this could be state. Concatenation is a shallow merge `{ ...object, ...item }` or identity for null and undefined.\n' +
-      '\n' +
-      'Any object that implements `.concat` can be transformed as a Semigroup.\n' +
-      '\n' +
-      '```javascript [playground]\n' +
-      'const Max = function (number) {\n' +
-      '  this.number = number\n' +
-      '}\n' +
-      '\n' +
-      'Max.prototype.concat = function (otherMax) {\n' +
-      '  return new Max(Math.max(\n' +
-      '    this.number,\n' +
-      '    otherMax.constructor == Max ? otherMax.number : otherMax,\n' +
-      '  ))\n' +
-      '}\n' +
-      '\n' +
-      'console.log(\n' +
-      '  transform(\n' +
-      '    map(Math.abs), new Max(-Infinity),\n' +
-      '  )([-1, -2, -3, -4, -5]).number,\n' +
-      ') // 5\n' +
-      '```\n' +
-      '\n' +
-      'Node.js WritableStream interfaces are consumed as well.\n' +
-      '\n' +
-      '```javascript\n' +
-      '// this example is duplicated in rubico/examples/transformStreamRandomInts.js\n' +
-      '\n' +
-      "const { pipe, map, transform } = require('rubico')\n" +
-      '\n' +
-      'const square = number => number ** 2\n' +
-      '\n' +
-      'const toString = value => value.toString()\n' +
-      '\n' +
-      'const randomInt = () => Math.ceil(Math.random() * 100)\n' +
-      '\n' +
-      'const streamRandomInts = async function* () {\n' +
-      '  while (true) {\n' +
-      '    yield randomInt()\n' +
-      '  }\n' +
-      '}\n' +
-      '\n' +
-      'transform(\n' +
-      '  map(pipe([square, toString])), process.stdout,\n' +
-      ')(streamRandomInts()) // 9216576529289484980147613249169774446246768649...\n' +
-      '```\n' +
-      '\n' +
-      '`transform`, like `reduce`, supports reducer combination. This has a use case in state management, where for an aggregate state object, incoming values are concatenated (shallowly assigned).\n' +
-      '\n' +
-      '```javascript [playground]\n' +
-      'const reducerA = async (state, action) => {\n' +
-      "  if (action.type == 'A') return { ...state, A: true }\n" +
-      '  return state\n' +
-      '}\n' +
-      '\n' +
-      'const reducerB = async (state, action) => {\n' +
-      "  if (action.type == 'B') return { ...state, B: true }\n" +
-      '  return state\n' +
-      '}\n' +
-      '\n' +
-      'const reducerC = async (state, action) => {\n' +
-      "  if (action.type == 'C') return { ...state, C: true }\n" +
-      '  return state\n' +
-      '}\n' +
-      '\n' +
-      'const logAction = function (action) {\n' +
-      "  console.log('action', action)\n" +
-      '  return action\n' +
-      '}\n' +
-      '\n' +
-      'const reducingABC = transform(\n' +
-      '  map(logAction), // transducer middleware\n' +
-      '  () => ({}),\n' +
-      ')(reducerA, reducerB, reducerC)\n' +
-      '\n' +
-      "const actions = [{ type: 'A' }, { type: 'B' }, { type: 'C' }]\n" +
-      '\n' +
-      'reducingABC(actions).then(\n' +
-      "  state => console.log('state', state)) // action { type: 'A' }\n" +
-      "                                        // action { type: 'B' }\n" +
-      "                                        // action { type: 'C' }\n" +
-      '                                        // state { A: true, B: true, C: true }\n' +
-      '```\n',
-    synopsis_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'code',
-          lang: 'coffeescript',
-          meta: '[specscript]',
-          value: 'Reducer<T> = (any, T)=>Promise|any\n' +
-            'Transducer = Reducer=>Reducer\n' +
-            'Semigroup = Array|string|Set|TypedArray\n' +
-            '  |{ concat: function }|{ write: function }|Object\n' +
-            'Foldable = Iterable|AsyncIterable|{ reduce: function }|Object|any\n' +
-            '\n' +
-            'transform(\n' +
-            '  transducer Transducer,\n' +
-            '  init (collection=>Promise|Semigroup|any)|Semigroup|any,\n' +
-            ')(collection Foldable)\n' +
-            '  -> result Promise|Semigroup|any\n' +
-            '\n' +
-            'transform<args ...any>(\n' +
-            '  transducer Transducer,\n' +
-            '  init (...args=>Promise|Semigroup|any)|Semigroup|any,\n' +
-            ')(value GeneratorFunction|AsyncGeneratorFunction)\n' +
-            '  -> transformingFunction ...args=>Promise|Semigroup|any\n' +
-            '\n' +
-            'transform<args ...any>(\n' +
-            '  transducer Transducer,\n' +
-            '  init (...args=>Promise|Semigroup|any)|Semigroup|any,\n' +
-            ')(reducer Reducer, moreReducers ...Reducer)\n' +
-            '  -> chainedTransformingFunction ...args=>Promise|Semigroup|any',
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 25, column: 4, offset: 831 },
-            indent: [
-              1, 1, 1, 1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1, 1, 1, 1
-            ]
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 26, column: 1, offset: 832 }
-      }
-    },
-    description_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'Execute a transducer for each item of a collection, concatenating results into the accumulator. The initial value may be a function, in which case it is treated as a resolver.',
-              position: {
-                start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 176, offset: 175 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 1, column: 176, offset: 175 },
-            indent: []
-          }
-        },
-        {
-          type: 'code',
-          lang: 'javascript',
-          meta: '[playground]',
-          value: 'const square = number => number ** 2\n' +
-            '\n' +
-            'const isOdd = number => number % 2 == 1\n' +
-            '\n' +
-            'const squaredOdds = pipe([\n' +
-            '  filter(isOdd),\n' +
-            '  map(square),\n' +
-            '])\n' +
-            '\n' +
-            'console.log(\n' +
-            '  transform(squaredOdds, () => [])([1, 2, 3, 4, 5]),\n' +
-            ') // [1, 9, 25]\n' +
-            '\n' +
-            'console.log(\n' +
-            "  transform(squaredOdds, '')([1, 2, 3, 4, 5]),\n" +
-            ") // '1925'\n" +
-            '\n' +
-            'console.log(\n' +
-            '  transform(squaredOdds, () => new Uint8Array())([1, 2, 3, 4, 5]),\n' +
-            ') // Uint8Array(3) [ 1, 9, 25 ]',
-          position: {
-            start: { line: 3, column: 1, offset: 177 },
-            end: { line: 24, column: 4, offset: 617 },
-            indent: [
-              1, 1, 1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1, 1, 1
-            ]
-          }
-        },
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'Concatenation varies by aggregate result and pipeline item. Generally, if an item is of the same type as the aggregate result, it is flattened into the result. Otherwise, the item is appended.',
-              position: {
-                start: { line: 26, column: 1, offset: 619 },
-                end: { line: 26, column: 193, offset: 811 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 26, column: 1, offset: 619 },
-            end: { line: 26, column: 193, offset: 811 },
-            indent: []
-          }
-        },
-        {
-          type: 'list',
-          ordered: false,
-          start: null,
-          spread: false,
-          children: [
-            {
-              type: 'listItem',
-              spread: false,
-              checked: null,
-              children: [
-                {
-                  type: 'paragraph',
-                  children: [
-                    {
-                      type: 'inlineCode',
-                      value: 'Array',
-                      position: {
-                        start: { line: 28, column: 4, offset: 816 },
-                        end: { line: 28, column: 11, offset: 823 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: ' - concatenation resembles ',
-                      position: {
-                        start: { line: 28, column: 11, offset: 823 },
-                        end: { line: 28, column: 38, offset: 850 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'inlineCode',
-                      value: 'result.concat(item)',
-                      position: {
-                        start: { line: 28, column: 38, offset: 850 },
-                        end: { line: 28, column: 59, offset: 871 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: '. Non-arrays are concatenated as items, while arrays are flattened.',
-                      position: {
-                        start: { line: 28, column: 59, offset: 871 },
-                        end: { line: 28, column: 126, offset: 938 },
-                        indent: []
-                      }
-                    }
-                  ],
-                  position: {
-                    start: { line: 28, column: 4, offset: 816 },
-                    end: { line: 28, column: 126, offset: 938 },
-                    indent: []
-                  }
-                }
-              ],
-              position: {
-                start: { line: 28, column: 1, offset: 813 },
-                end: { line: 28, column: 126, offset: 938 },
-                indent: []
-              }
-            },
-            {
-              type: 'listItem',
-              spread: false,
-              checked: null,
-              children: [
-                {
-                  type: 'paragraph',
-                  children: [
-                    {
-                      type: 'inlineCode',
-                      value: 'string',
-                      position: {
-                        start: { line: 29, column: 4, offset: 942 },
-                        end: { line: 29, column: 12, offset: 950 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: ' - concatenation is ',
-                      position: {
-                        start: { line: 29, column: 12, offset: 950 },
-                        end: { line: 29, column: 32, offset: 970 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'inlineCode',
-                      value: 'result + item',
-                      position: {
-                        start: { line: 29, column: 32, offset: 970 },
-                        end: { line: 29, column: 47, offset: 985 },
-                        indent: []
-                      }
-                    }
-                  ],
-                  position: {
-                    start: { line: 29, column: 4, offset: 942 },
-                    end: { line: 29, column: 47, offset: 985 },
-                    indent: []
-                  }
-                }
-              ],
-              position: {
-                start: { line: 29, column: 1, offset: 939 },
-                end: { line: 29, column: 47, offset: 985 },
-                indent: []
-              }
-            },
-            {
-              type: 'listItem',
-              spread: false,
-              checked: null,
-              children: [
-                {
-                  type: 'paragraph',
-                  children: [
-                    {
-                      type: 'inlineCode',
-                      value: 'Set',
-                      position: {
-                        start: { line: 30, column: 4, offset: 989 },
-                        end: { line: 30, column: 9, offset: 994 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: ' - concatenation resembles ',
-                      position: {
-                        start: { line: 30, column: 9, offset: 994 },
-                        end: { line: 30, column: 36, offset: 1021 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'inlineCode',
-                      value: 'result.add(item)',
-                      position: {
-                        start: { line: 30, column: 36, offset: 1021 },
-                        end: { line: 30, column: 54, offset: 1039 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: ' for individual items; other sets are flattened.',
-                      position: {
-                        start: { line: 30, column: 54, offset: 1039 },
-                        end: { line: 30, column: 102, offset: 1087 },
-                        indent: []
-                      }
-                    }
-                  ],
-                  position: {
-                    start: { line: 30, column: 4, offset: 989 },
-                    end: { line: 30, column: 102, offset: 1087 },
-                    indent: []
-                  }
-                }
-              ],
-              position: {
-                start: { line: 30, column: 1, offset: 986 },
-                end: { line: 30, column: 102, offset: 1087 },
-                indent: []
-              }
-            },
-            {
-              type: 'listItem',
-              spread: false,
-              checked: null,
-              children: [
-                {
-                  type: 'paragraph',
-                  children: [
-                    {
-                      type: 'inlineCode',
-                      value: 'TypedArray',
-                      position: {
-                        start: { line: 31, column: 4, offset: 1091 },
-                        end: { line: 31, column: 16, offset: 1103 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: ' - concatenation is managing ArrayBuffers while appending items. Careful about the types here - a ',
-                      position: {
-                        start: { line: 31, column: 16, offset: 1103 },
-                        end: { line: 31, column: 114, offset: 1201 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'inlineCode',
-                      value: 'Uint8Array',
-                      position: {
-                        start: { line: 31, column: 114, offset: 1201 },
-                        end: { line: 31, column: 126, offset: 1213 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: ' should only concatenate 8-bit unsigned numbers if not concatenating other ',
-                      position: {
-                        start: { line: 31, column: 126, offset: 1213 },
-                        end: { line: 31, column: 201, offset: 1288 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'inlineCode',
-                      value: 'Uint8Array',
-                      position: {
-                        start: { line: 31, column: 201, offset: 1288 },
-                        end: { line: 31, column: 213, offset: 1300 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: 's',
-                      position: {
-                        start: { line: 31, column: 213, offset: 1300 },
-                        end: { line: 31, column: 214, offset: 1301 },
-                        indent: []
-                      }
-                    }
-                  ],
-                  position: {
-                    start: { line: 31, column: 4, offset: 1091 },
-                    end: { line: 31, column: 214, offset: 1301 },
-                    indent: []
-                  }
-                }
-              ],
-              position: {
-                start: { line: 31, column: 1, offset: 1088 },
-                end: { line: 31, column: 214, offset: 1301 },
-                indent: []
-              }
-            },
-            {
-              type: 'listItem',
-              spread: false,
-              checked: null,
-              children: [
-                {
-                  type: 'paragraph',
-                  children: [
-                    {
-                      type: 'text',
-                      value: '{ concat: function } - an object that implements concat. Concatenation calls the ',
-                      position: {
-                        start: { line: 32, column: 4, offset: 1305 },
-                        end: { line: 32, column: 85, offset: 1386 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'inlineCode',
-                      value: '.concat',
-                      position: {
-                        start: { line: 32, column: 85, offset: 1386 },
-                        end: { line: 32, column: 94, offset: 1395 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: ' method in ',
-                      position: {
-                        start: { line: 32, column: 94, offset: 1395 },
-                        end: { line: 32, column: 105, offset: 1406 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'inlineCode',
-                      value: 'result.concat(item)',
-                      position: {
-                        start: { line: 32, column: 105, offset: 1406 },
-                        end: { line: 32, column: 126, offset: 1427 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: '. Flattening is left to the implementation.',
-                      position: {
-                        start: { line: 32, column: 126, offset: 1427 },
-                        end: { line: 32, column: 169, offset: 1470 },
-                        indent: []
-                      }
-                    }
-                  ],
-                  position: {
-                    start: { line: 32, column: 4, offset: 1305 },
-                    end: { line: 32, column: 169, offset: 1470 },
-                    indent: []
-                  }
-                }
-              ],
-              position: {
-                start: { line: 32, column: 1, offset: 1302 },
-                end: { line: 32, column: 169, offset: 1470 },
-                indent: []
-              }
-            },
-            {
-              type: 'listItem',
-              spread: false,
-              checked: null,
-              children: [
-                {
-                  type: 'paragraph',
-                  children: [
-                    {
-                      type: 'text',
-                      value: '{ write: function } - an object that implements write; these are for Node.js streams. Concatenation calls the method ',
-                      position: {
-                        start: { line: 33, column: 4, offset: 1474 },
-                        end: { line: 33, column: 121, offset: 1591 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'inlineCode',
-                      value: '.write',
-                      position: {
-                        start: { line: 33, column: 121, offset: 1591 },
-                        end: { line: 33, column: 129, offset: 1599 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: ' in ',
-                      position: {
-                        start: { line: 33, column: 129, offset: 1599 },
-                        end: { line: 33, column: 133, offset: 1603 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'inlineCode',
-                      value: 'result.write(item)',
-                      position: {
-                        start: { line: 33, column: 133, offset: 1603 },
-                        end: { line: 33, column: 153, offset: 1623 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: ' or ',
-                      position: {
-                        start: { line: 33, column: 153, offset: 1623 },
-                        end: { line: 33, column: 157, offset: 1627 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'inlineCode',
-                      value: 'item.pipe(result)',
-                      position: {
-                        start: { line: 33, column: 157, offset: 1627 },
-                        end: { line: 33, column: 176, offset: 1646 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: ' if the ',
-                      position: {
-                        start: { line: 33, column: 176, offset: 1646 },
-                        end: { line: 33, column: 184, offset: 1654 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'inlineCode',
-                      value: 'item',
-                      position: {
-                        start: { line: 33, column: 184, offset: 1654 },
-                        end: { line: 33, column: 190, offset: 1660 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: ' is readable.',
-                      position: {
-                        start: { line: 33, column: 190, offset: 1660 },
-                        end: { line: 33, column: 203, offset: 1673 },
-                        indent: []
-                      }
-                    }
-                  ],
-                  position: {
-                    start: { line: 33, column: 4, offset: 1474 },
-                    end: { line: 33, column: 203, offset: 1673 },
-                    indent: []
-                  }
-                }
-              ],
-              position: {
-                start: { line: 33, column: 1, offset: 1471 },
-                end: { line: 33, column: 203, offset: 1673 },
-                indent: []
-              }
-            },
-            {
-              type: 'listItem',
-              spread: false,
-              checked: null,
-              children: [
-                {
-                  type: 'paragraph',
-                  children: [
-                    {
-                      type: 'text',
-                      value: 'Object - a regular object, this could be state. Concatenation is a shallow merge ',
-                      position: {
-                        start: { line: 34, column: 4, offset: 1677 },
-                        end: { line: 34, column: 85, offset: 1758 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'inlineCode',
-                      value: '{ ...object, ...item }',
-                      position: {
-                        start: { line: 34, column: 85, offset: 1758 },
-                        end: { line: 34, column: 109, offset: 1782 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: ' or identity for null and undefined.',
-                      position: {
-                        start: { line: 34, column: 109, offset: 1782 },
-                        end: { line: 34, column: 145, offset: 1818 },
-                        indent: []
-                      }
-                    }
-                  ],
-                  position: {
-                    start: { line: 34, column: 4, offset: 1677 },
-                    end: { line: 34, column: 145, offset: 1818 },
-                    indent: []
-                  }
-                }
-              ],
-              position: {
-                start: { line: 34, column: 1, offset: 1674 },
-                end: { line: 34, column: 145, offset: 1818 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 28, column: 1, offset: 813 },
-            end: { line: 34, column: 145, offset: 1818 },
-            indent: [ 1, 1, 1, 1, 1, 1 ]
-          }
-        },
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'Any object that implements ',
-              position: {
-                start: { line: 36, column: 1, offset: 1820 },
-                end: { line: 36, column: 28, offset: 1847 },
-                indent: []
-              }
-            },
-            {
-              type: 'inlineCode',
-              value: '.concat',
-              position: {
-                start: { line: 36, column: 28, offset: 1847 },
-                end: { line: 36, column: 37, offset: 1856 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: ' can be transformed as a Semigroup.',
-              position: {
-                start: { line: 36, column: 37, offset: 1856 },
-                end: { line: 36, column: 72, offset: 1891 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 36, column: 1, offset: 1820 },
-            end: { line: 36, column: 72, offset: 1891 },
-            indent: []
-          }
-        },
-        {
-          type: 'code',
-          lang: 'javascript',
-          meta: '[playground]',
-          value: 'const Max = function (number) {\n' +
-            '  this.number = number\n' +
-            '}\n' +
-            '\n' +
-            'Max.prototype.concat = function (otherMax) {\n' +
-            '  return new Max(Math.max(\n' +
-            '    this.number,\n' +
-            '    otherMax.constructor == Max ? otherMax.number : otherMax,\n' +
-            '  ))\n' +
-            '}\n' +
-            '\n' +
-            'console.log(\n' +
-            '  transform(\n' +
-            '    map(Math.abs), new Max(-Infinity),\n' +
-            '  )([-1, -2, -3, -4, -5]).number,\n' +
-            ') // 5',
-          position: {
-            start: { line: 38, column: 1, offset: 1893 },
-            end: { line: 55, column: 4, offset: 2246 },
-            indent: [
-              1, 1, 1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1, 1, 1,
-              1, 1, 1
-            ]
-          }
-        },
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'Node.js WritableStream interfaces are consumed as well.',
-              position: {
-                start: { line: 57, column: 1, offset: 2248 },
-                end: { line: 57, column: 56, offset: 2303 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 57, column: 1, offset: 2248 },
-            end: { line: 57, column: 56, offset: 2303 },
-            indent: []
-          }
-        },
-        {
-          type: 'code',
-          lang: 'javascript',
-          meta: null,
-          value: '// this example is duplicated in rubico/examples/transformStreamRandomInts.js\n' +
-            '\n' +
-            "const { pipe, map, transform } = require('rubico')\n" +
-            '\n' +
-            'const square = number => number ** 2\n' +
-            '\n' +
-            'const toString = value => value.toString()\n' +
-            '\n' +
-            'const randomInt = () => Math.ceil(Math.random() * 100)\n' +
-            '\n' +
-            'const streamRandomInts = async function* () {\n' +
-            '  while (true) {\n' +
-            '    yield randomInt()\n' +
-            '  }\n' +
-            '}\n' +
-            '\n' +
-            'transform(\n' +
-            '  map(pipe([square, toString])), process.stdout,\n' +
-            ')(streamRandomInts()) // 9216576529289484980147613249169774446246768649...',
-          position: {
-            start: { line: 59, column: 1, offset: 2305 },
-            end: { line: 79, column: 4, offset: 2818 },
-            indent: [
-              1, 1, 1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1, 1
-            ]
-          }
-        },
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'inlineCode',
-              value: 'transform',
-              position: {
-                start: { line: 81, column: 1, offset: 2820 },
-                end: { line: 81, column: 12, offset: 2831 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: ', like ',
-              position: {
-                start: { line: 81, column: 12, offset: 2831 },
-                end: { line: 81, column: 19, offset: 2838 },
-                indent: []
-              }
-            },
-            {
-              type: 'inlineCode',
-              value: 'reduce',
-              position: {
-                start: { line: 81, column: 19, offset: 2838 },
-                end: { line: 81, column: 27, offset: 2846 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: ', supports reducer combination. This has a use case in state management, where for an aggregate state object, incoming values are concatenated (shallowly assigned).',
-              position: {
-                start: { line: 81, column: 27, offset: 2846 },
-                end: { line: 81, column: 191, offset: 3010 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 81, column: 1, offset: 2820 },
-            end: { line: 81, column: 191, offset: 3010 },
-            indent: []
-          }
-        },
-        {
-          type: 'code',
-          lang: 'javascript',
-          meta: '[playground]',
-          value: 'const reducerA = async (state, action) => {\n' +
-            "  if (action.type == 'A') return { ...state, A: true }\n" +
-            '  return state\n' +
-            '}\n' +
-            '\n' +
-            'const reducerB = async (state, action) => {\n' +
-            "  if (action.type == 'B') return { ...state, B: true }\n" +
-            '  return state\n' +
-            '}\n' +
-            '\n' +
-            'const reducerC = async (state, action) => {\n' +
-            "  if (action.type == 'C') return { ...state, C: true }\n" +
-            '  return state\n' +
-            '}\n' +
-            '\n' +
-            'const logAction = function (action) {\n' +
-            "  console.log('action', action)\n" +
-            '  return action\n' +
-            '}\n' +
-            '\n' +
-            'const reducingABC = transform(\n' +
-            '  map(logAction), // transducer middleware\n' +
-            '  () => ({}),\n' +
-            ')(reducerA, reducerB, reducerC)\n' +
-            '\n' +
-            "const actions = [{ type: 'A' }, { type: 'B' }, { type: 'C' }]\n" +
-            '\n' +
-            'reducingABC(actions).then(\n' +
-            "  state => console.log('state', state)) // action { type: 'A' }\n" +
-            "                                        // action { type: 'B' }\n" +
-            "                                        // action { type: 'C' }\n" +
-            '                                        // state { A: true, B: true, C: true }',
-          position: {
-            start: { line: 83, column: 1, offset: 3012 },
-            end: { line: 116, column: 4, offset: 3964 },
-            indent: [
-              1, 1, 1, 1, 1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1, 1
-            ]
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 117, column: 1, offset: 3965 }
-      }
-    }
-  },
-  {
     name: 'flatMap',
     synopsis: '```coffeescript [specscript]\n' +
-      'DuplexStream = { read: function, write: function }\n' +
-      'Monad = Array|String|Set\n' +
-      '  |TypedArray|DuplexStream|Iterator|AsyncIterator\n' +
-      '  |{ chain: function }|{ flatMap: function }|Object\n' +
-      'Foldable = Iterable|AsyncIterable|{ reduce: function }\n' +
+      'Stream<T> = { read: ()=>T, write: T=>() }\n' +
+      'Monad<T> = Array<T>|String<T>|Set<T>\n' +
+      '  |TypedArray<T>|Stream<T>|Iterator<T>|AsyncIterator<T>\n' +
+      '  |{ chain: T=>Monad<T> }|{ flatMap: T=>Monad<T> }|Object<T>\n' +
       'Reducer<T> = (any, T)=>Promise|any\n' +
+      'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: Reducer<T>=>any }|Object<T>\n' +
       '\n' +
-      'flatMap<T>(\n' +
-      '  flatMapper T=>Promise|Monad|Foldable|any,\n' +
-      ')(value Monad<T>) -> result Monad\n' +
+      'var T any,\n' +
+      '  flatMapper T=>Promise|Monad<T>|Foldable<T>|T,\n' +
+      '  monad Monad<T>,\n' +
+      '  args ...any,\n' +
+      '  generatorFunction ...args=>Generator<Promise|T>,\n' +
+      '  asyncGeneratorFunction ...args=>AsyncGenerator<T>,\n' +
+      '  reducer Reducer<T>\n' +
       '\n' +
-      'flatMap<T>(\n' +
-      '  flatMapper T=>Promise|Monad|Foldable|any,\n' +
-      ')(value GeneratorFunction<T>|AsyncGeneratorFunction<T>)\n' +
-      '  -> flatMappingGeneratorFunction GeneratorFunction<T>|AsyncGeneratorFunction<T>\n' +
+      'flatMap(flatMapper)(monad) -> Monad<T>\n' +
       '\n' +
-      'flatMap<T>(\n' +
-      '  flatMapper T=>Promise|Monad|Foldable|any,\n' +
-      ')(value Reducer<T>) -> flatMappingReducer Reducer\n' +
+      'flatMap(flatMapper)(generatorFunction) -> ...args=>Generator<T>\n' +
+      '\n' +
+      'flatMap(flatMapper)(asyncGeneratorFunction) -> ...args=>AsyncGenerator<T>\n' +
+      '\n' +
+      'flatMap(flatMapper)(reducer) -> Reducer<T>\n' +
       '```\n',
-    description: 'Apply a function to each item of a collection, flattening any resulting collection. The result is always the same type as the input value with all items mapped and flattened. The following outlines behavior for various collections.\n' +
+    description: 'Apply a flatMapper to each item of a collection, flattening all results into a new collection of the same type. The following outlines the flattening behavior for various collections.\n' +
       '\n' +
-      '  * `Array` - map items then flatten results into a new `Array`\n' +
-      '  * `String|string` - map items then flatten (`+`) results into a new `string`\n' +
-      '  * `Set` - map items then flatten results into a new `Set`\n' +
-      '  * `TypedArray` - map items then flatten results into a new `TypedArray`\n' +
-      '  * `Buffer (Node.js)` - map items then flatten results into a new `Buffer`\n' +
-      "  * `stream.Duplex (Node.js)` - map over stream items by async iteration, then call stream's `.write` to flatten\n" +
-      '  * `{ chain: function }`, i.e. object that implements `.chain` - this function is called directly\n' +
-      '  * `{ flatMap: function }`, i.e. object that implements `.flatMap` - this function is called directly\n' +
-      '  * `Object` - a plain Object, values are mapped then flattened into result by `Object.assign`\n' +
-      '  * `Reducer` - a function to be used in a reducing operation. Items of a flatMapped reducing operation are mapped then flattened into the aggregate\n' +
-      '\n' +
-      'On arrays, map the flatMapper function with concurrent asynchronous execution, then flatten the result one depth.\n' +
+      '  * `Array` - concatenate results into a new `Array`\n' +
+      '  * `String|string` - `+` results into a new `string`\n' +
+      '  * `Set` - add results into a new `Set`\n' +
+      '  * `TypedArray` - set items in a new `TypedArray`\n' +
+      '  * `Buffer (Node.js)` - set items in a new `Buffer`\n' +
+      "  * `stream.Duplex (Node.js)` - call stream's `.write`\n" +
+      "  * `{ chain: function }` - call object's `.chain`\n" +
+      "  * `{ flatMap: function }` - call object's `.flatMap`\n" +
+      '  * `Object` - assign all results into a new object\n' +
+      '  * `Reducer` - execute the reducer for each item per item of a reducing operation\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const duplicate = number => [number, number]\n' +
@@ -4564,7 +7443,7 @@ export default [
       '  [1, 2, 3, 4, 5]).then(console.log) // [1, 1, 2, 2, 3, 3, 4, 4, 5, 5]\n' +
       '```\n' +
       '\n' +
-      'Collections returned by the flatMapper are flattened into the result by type-specific iteration and concatenation, while async iterables are muxed. Muxing, or asynchronously "mixing", is the process of combining multiple asynchronous sources into one source, with order determined by the asynchronous resolution of the individual items. This behavior is useful for working with asynchronous streams, e.g. of DOM events or requests.\n' +
+      '`flatMap` muxes async iterables. Muxing, or asynchronously "mixing", is the process of combining multiple asynchronous sources into one source, with order determined by the asynchronous resolution of the individual items.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))\n' +
@@ -4590,17 +7469,18 @@ export default [
       "// ['foo', 'bar', 'baz', 'foo', 'bar', 'baz', 'foo', 'bar', 'baz']\n" +
       '```\n' +
       '\n' +
-      'Upon flatMapper execution, flatten any collection return into the result.\n' +
+      'The following list defines concatenation behavior recognized by `flatMap` for individual items being flattened.\n' +
       '\n' +
-      '  * Iterable - items are concatenated into the result\n' +
-      '  * Iterator/Generator - items are concatenated into the result. Source is consumed.\n' +
-      '  * Object that implements `.reduce` - this function is called directly for flattening\n' +
-      '  * Object that implements `.chain` or `.flatMap` - either of these is called directly to flatten\n' +
-      '  * any other Object - values are flattened\n' +
-      '  * AsyncIterable - items are muxed by asynchronous resolution\n' +
-      '  * AsyncIterator/AsyncGenerator - items are muxed by asynchronous resolution. Source is consumed.\n' +
+      '  * `Iterable` - items are iterated into the result\n' +
+      '  * `Iterator/Generator` - items are iterated into the result, source is consumed\n' +
+      "  * `{ reduce: function }` - call object's `.reduce` with result's concatenation function\n" +
+      "  * `{ chain: function }` - call object's `.chain` with result's concatenation function\n" +
+      "  * `{ flatMap: function }` - call object's `.flatMap` with result's concatentation function\n" +
+      '  * `Object` - values are flattened\n' +
+      '  * `AsyncIterable` - items are muxed into the result\n' +
+      '  * `AsyncIterator/AsyncGenerator` - items are muxed into the result, source is consumed\n' +
       '\n' +
-      'All other types are left in the result as they are.\n' +
+      'All other types are added into the result as they are.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const identity = value => value\n' +
@@ -4618,7 +7498,7 @@ export default [
       '// [1, 1, 2, 3, 3, 5, 5, 6, 7, 8, 4, 4]\n' +
       '```\n' +
       '\n' +
-      "Purer functional programming is possible with flatMap operation on monads. A monad could be any object that implements `.chain` or `.flatMap`. When a flatMapping operation encounters a monad, it calls the monad's `.chain` method directly to flatten.\n" +
+      '`flatMap` supports purer functional programming with monads. A monad is any object that defines a method `.chain` or `.flatMap` that takes some item and returns a monad.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const Maybe = value => ({\n' +
@@ -4627,12 +7507,26 @@ export default [
       '  },\n' +
       '})\n' +
       '\n' +
-      'flatMap(console.log)(Maybe(null))\n' +
+      'const userbase = new Map([\n' +
+      "  ['1', { _id: '1', name: 'George' }],\n" +
+      "  ['2', { _id: '2', name: 'Jane' }],\n" +
+      "  ['3', { _id: '3', name: 'Jim' }],\n" +
+      '])\n' +
       '\n' +
-      "flatMap(console.log)(Maybe('hello world')) // hello world\n" +
+      'const getUserByID = async userID => userbase.get(userID)\n' +
+      '\n' +
+      'const logUserByID = pipe([\n' +
+      '  getUserByID,\n' +
+      '  Maybe,\n' +
+      '  flatMap(console.log),\n' +
+      '])\n' +
+      '\n' +
+      "logUserByID('5')\n" +
+      '\n' +
+      "logUserByID('1') // { _id: '1', name: 'George' }\n" +
       '```\n' +
       '\n' +
-      'In addition to monads, `flatMap` is a powerful option when working with transducers as well. A flatMapping transducer is like a mapping transducer except all items of the reducing operation are additionally flattened into the result.\n' +
+      'Additionally, `flatMap` is a powerful option when working with transducers. A flatMapping transducer is like a mapping transducer except all items of the reducing operation are additionally flattened into the result.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const isOdd = number => number % 2 == 1\n' +
@@ -4665,39 +7559,42 @@ export default [
           type: 'code',
           lang: 'coffeescript',
           meta: '[specscript]',
-          value: 'DuplexStream = { read: function, write: function }\n' +
-            'Monad = Array|String|Set\n' +
-            '  |TypedArray|DuplexStream|Iterator|AsyncIterator\n' +
-            '  |{ chain: function }|{ flatMap: function }|Object\n' +
-            'Foldable = Iterable|AsyncIterable|{ reduce: function }\n' +
+          value: 'Stream<T> = { read: ()=>T, write: T=>() }\n' +
+            'Monad<T> = Array<T>|String<T>|Set<T>\n' +
+            '  |TypedArray<T>|Stream<T>|Iterator<T>|AsyncIterator<T>\n' +
+            '  |{ chain: T=>Monad<T> }|{ flatMap: T=>Monad<T> }|Object<T>\n' +
             'Reducer<T> = (any, T)=>Promise|any\n' +
+            'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: Reducer<T>=>any }|Object<T>\n' +
             '\n' +
-            'flatMap<T>(\n' +
-            '  flatMapper T=>Promise|Monad|Foldable|any,\n' +
-            ')(value Monad<T>) -> result Monad\n' +
+            'var T any,\n' +
+            '  flatMapper T=>Promise|Monad<T>|Foldable<T>|T,\n' +
+            '  monad Monad<T>,\n' +
+            '  args ...any,\n' +
+            '  generatorFunction ...args=>Generator<Promise|T>,\n' +
+            '  asyncGeneratorFunction ...args=>AsyncGenerator<T>,\n' +
+            '  reducer Reducer<T>\n' +
             '\n' +
-            'flatMap<T>(\n' +
-            '  flatMapper T=>Promise|Monad|Foldable|any,\n' +
-            ')(value GeneratorFunction<T>|AsyncGeneratorFunction<T>)\n' +
-            '  -> flatMappingGeneratorFunction GeneratorFunction<T>|AsyncGeneratorFunction<T>\n' +
+            'flatMap(flatMapper)(monad) -> Monad<T>\n' +
             '\n' +
-            'flatMap<T>(\n' +
-            '  flatMapper T=>Promise|Monad|Foldable|any,\n' +
-            ')(value Reducer<T>) -> flatMappingReducer Reducer',
+            'flatMap(flatMapper)(generatorFunction) -> ...args=>Generator<T>\n' +
+            '\n' +
+            'flatMap(flatMapper)(asyncGeneratorFunction) -> ...args=>AsyncGenerator<T>\n' +
+            '\n' +
+            'flatMap(flatMapper)(reducer) -> Reducer<T>',
           position: {
             start: { line: 1, column: 1, offset: 0 },
-            end: { line: 21, column: 4, offset: 692 },
+            end: { line: 24, column: 4, offset: 786 },
             indent: [
-              1, 1, 1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1, 1
+              1, 1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1, 1
             ]
           }
         }
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 22, column: 1, offset: 693 }
+        end: { line: 25, column: 1, offset: 787 }
       }
     },
     description_mdast: {
@@ -4708,17 +7605,17 @@ export default [
           children: [
             {
               type: 'text',
-              value: 'Apply a function to each item of a collection, flattening any resulting collection. The result is always the same type as the input value with all items mapped and flattened. The following outlines behavior for various collections.',
+              value: 'Apply a flatMapper to each item of a collection, flattening all results into a new collection of the same type. The following outlines the flattening behavior for various collections.',
               position: {
                 start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 232, offset: 231 },
+                end: { line: 1, column: 184, offset: 183 },
                 indent: []
               }
             }
           ],
           position: {
             start: { line: 1, column: 1, offset: 0 },
-            end: { line: 1, column: 232, offset: 231 },
+            end: { line: 1, column: 184, offset: 183 },
             indent: []
           }
         },
@@ -4740,17 +7637,17 @@ export default [
                       type: 'inlineCode',
                       value: 'Array',
                       position: {
-                        start: { line: 3, column: 5, offset: 237 },
-                        end: { line: 3, column: 12, offset: 244 },
+                        start: { line: 3, column: 5, offset: 189 },
+                        end: { line: 3, column: 12, offset: 196 },
                         indent: []
                       }
                     },
                     {
                       type: 'text',
-                      value: ' - map items then flatten results into a new ',
+                      value: ' - concatenate results into a new ',
                       position: {
-                        start: { line: 3, column: 12, offset: 244 },
-                        end: { line: 3, column: 57, offset: 289 },
+                        start: { line: 3, column: 12, offset: 196 },
+                        end: { line: 3, column: 46, offset: 230 },
                         indent: []
                       }
                     },
@@ -4758,22 +7655,22 @@ export default [
                       type: 'inlineCode',
                       value: 'Array',
                       position: {
-                        start: { line: 3, column: 57, offset: 289 },
-                        end: { line: 3, column: 64, offset: 296 },
+                        start: { line: 3, column: 46, offset: 230 },
+                        end: { line: 3, column: 53, offset: 237 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 3, column: 5, offset: 237 },
-                    end: { line: 3, column: 64, offset: 296 },
+                    start: { line: 3, column: 5, offset: 189 },
+                    end: { line: 3, column: 53, offset: 237 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 3, column: 1, offset: 233 },
-                end: { line: 3, column: 64, offset: 296 },
+                start: { line: 3, column: 1, offset: 185 },
+                end: { line: 3, column: 53, offset: 237 },
                 indent: []
               }
             },
@@ -4789,17 +7686,17 @@ export default [
                       type: 'inlineCode',
                       value: 'String|string',
                       position: {
-                        start: { line: 4, column: 5, offset: 301 },
-                        end: { line: 4, column: 20, offset: 316 },
+                        start: { line: 4, column: 5, offset: 242 },
+                        end: { line: 4, column: 20, offset: 257 },
                         indent: []
                       }
                     },
                     {
                       type: 'text',
-                      value: ' - map items then flatten (',
+                      value: ' - ',
                       position: {
-                        start: { line: 4, column: 20, offset: 316 },
-                        end: { line: 4, column: 47, offset: 343 },
+                        start: { line: 4, column: 20, offset: 257 },
+                        end: { line: 4, column: 23, offset: 260 },
                         indent: []
                       }
                     },
@@ -4807,17 +7704,17 @@ export default [
                       type: 'inlineCode',
                       value: '+',
                       position: {
-                        start: { line: 4, column: 47, offset: 343 },
-                        end: { line: 4, column: 50, offset: 346 },
+                        start: { line: 4, column: 23, offset: 260 },
+                        end: { line: 4, column: 26, offset: 263 },
                         indent: []
                       }
                     },
                     {
                       type: 'text',
-                      value: ') results into a new ',
+                      value: ' results into a new ',
                       position: {
-                        start: { line: 4, column: 50, offset: 346 },
-                        end: { line: 4, column: 71, offset: 367 },
+                        start: { line: 4, column: 26, offset: 263 },
+                        end: { line: 4, column: 46, offset: 283 },
                         indent: []
                       }
                     },
@@ -4825,22 +7722,22 @@ export default [
                       type: 'inlineCode',
                       value: 'string',
                       position: {
-                        start: { line: 4, column: 71, offset: 367 },
-                        end: { line: 4, column: 79, offset: 375 },
+                        start: { line: 4, column: 46, offset: 283 },
+                        end: { line: 4, column: 54, offset: 291 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 4, column: 5, offset: 301 },
-                    end: { line: 4, column: 79, offset: 375 },
+                    start: { line: 4, column: 5, offset: 242 },
+                    end: { line: 4, column: 54, offset: 291 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 4, column: 1, offset: 297 },
-                end: { line: 4, column: 79, offset: 375 },
+                start: { line: 4, column: 1, offset: 238 },
+                end: { line: 4, column: 54, offset: 291 },
                 indent: []
               }
             },
@@ -4856,17 +7753,17 @@ export default [
                       type: 'inlineCode',
                       value: 'Set',
                       position: {
-                        start: { line: 5, column: 5, offset: 380 },
-                        end: { line: 5, column: 10, offset: 385 },
+                        start: { line: 5, column: 5, offset: 296 },
+                        end: { line: 5, column: 10, offset: 301 },
                         indent: []
                       }
                     },
                     {
                       type: 'text',
-                      value: ' - map items then flatten results into a new ',
+                      value: ' - add results into a new ',
                       position: {
-                        start: { line: 5, column: 10, offset: 385 },
-                        end: { line: 5, column: 55, offset: 430 },
+                        start: { line: 5, column: 10, offset: 301 },
+                        end: { line: 5, column: 36, offset: 327 },
                         indent: []
                       }
                     },
@@ -4874,22 +7771,22 @@ export default [
                       type: 'inlineCode',
                       value: 'Set',
                       position: {
-                        start: { line: 5, column: 55, offset: 430 },
-                        end: { line: 5, column: 60, offset: 435 },
+                        start: { line: 5, column: 36, offset: 327 },
+                        end: { line: 5, column: 41, offset: 332 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 5, column: 5, offset: 380 },
-                    end: { line: 5, column: 60, offset: 435 },
+                    start: { line: 5, column: 5, offset: 296 },
+                    end: { line: 5, column: 41, offset: 332 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 5, column: 1, offset: 376 },
-                end: { line: 5, column: 60, offset: 435 },
+                start: { line: 5, column: 1, offset: 292 },
+                end: { line: 5, column: 41, offset: 332 },
                 indent: []
               }
             },
@@ -4905,17 +7802,17 @@ export default [
                       type: 'inlineCode',
                       value: 'TypedArray',
                       position: {
-                        start: { line: 6, column: 5, offset: 440 },
-                        end: { line: 6, column: 17, offset: 452 },
+                        start: { line: 6, column: 5, offset: 337 },
+                        end: { line: 6, column: 17, offset: 349 },
                         indent: []
                       }
                     },
                     {
                       type: 'text',
-                      value: ' - map items then flatten results into a new ',
+                      value: ' - set items in a new ',
                       position: {
-                        start: { line: 6, column: 17, offset: 452 },
-                        end: { line: 6, column: 62, offset: 497 },
+                        start: { line: 6, column: 17, offset: 349 },
+                        end: { line: 6, column: 39, offset: 371 },
                         indent: []
                       }
                     },
@@ -4923,22 +7820,22 @@ export default [
                       type: 'inlineCode',
                       value: 'TypedArray',
                       position: {
-                        start: { line: 6, column: 62, offset: 497 },
-                        end: { line: 6, column: 74, offset: 509 },
+                        start: { line: 6, column: 39, offset: 371 },
+                        end: { line: 6, column: 51, offset: 383 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 6, column: 5, offset: 440 },
-                    end: { line: 6, column: 74, offset: 509 },
+                    start: { line: 6, column: 5, offset: 337 },
+                    end: { line: 6, column: 51, offset: 383 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 6, column: 1, offset: 436 },
-                end: { line: 6, column: 74, offset: 509 },
+                start: { line: 6, column: 1, offset: 333 },
+                end: { line: 6, column: 51, offset: 383 },
                 indent: []
               }
             },
@@ -4954,17 +7851,17 @@ export default [
                       type: 'inlineCode',
                       value: 'Buffer (Node.js)',
                       position: {
-                        start: { line: 7, column: 5, offset: 514 },
-                        end: { line: 7, column: 23, offset: 532 },
+                        start: { line: 7, column: 5, offset: 388 },
+                        end: { line: 7, column: 23, offset: 406 },
                         indent: []
                       }
                     },
                     {
                       type: 'text',
-                      value: ' - map items then flatten results into a new ',
+                      value: ' - set items in a new ',
                       position: {
-                        start: { line: 7, column: 23, offset: 532 },
-                        end: { line: 7, column: 68, offset: 577 },
+                        start: { line: 7, column: 23, offset: 406 },
+                        end: { line: 7, column: 45, offset: 428 },
                         indent: []
                       }
                     },
@@ -4972,22 +7869,22 @@ export default [
                       type: 'inlineCode',
                       value: 'Buffer',
                       position: {
-                        start: { line: 7, column: 68, offset: 577 },
-                        end: { line: 7, column: 76, offset: 585 },
+                        start: { line: 7, column: 45, offset: 428 },
+                        end: { line: 7, column: 53, offset: 436 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 7, column: 5, offset: 514 },
-                    end: { line: 7, column: 76, offset: 585 },
+                    start: { line: 7, column: 5, offset: 388 },
+                    end: { line: 7, column: 53, offset: 436 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 7, column: 1, offset: 510 },
-                end: { line: 7, column: 76, offset: 585 },
+                start: { line: 7, column: 1, offset: 384 },
+                end: { line: 7, column: 53, offset: 436 },
                 indent: []
               }
             },
@@ -5003,17 +7900,17 @@ export default [
                       type: 'inlineCode',
                       value: 'stream.Duplex (Node.js)',
                       position: {
-                        start: { line: 8, column: 5, offset: 590 },
-                        end: { line: 8, column: 30, offset: 615 },
+                        start: { line: 8, column: 5, offset: 441 },
+                        end: { line: 8, column: 30, offset: 466 },
                         indent: []
                       }
                     },
                     {
                       type: 'text',
-                      value: " - map over stream items by async iteration, then call stream's ",
+                      value: " - call stream's ",
                       position: {
-                        start: { line: 8, column: 30, offset: 615 },
-                        end: { line: 8, column: 94, offset: 679 },
+                        start: { line: 8, column: 30, offset: 466 },
+                        end: { line: 8, column: 47, offset: 483 },
                         indent: []
                       }
                     },
@@ -5021,31 +7918,22 @@ export default [
                       type: 'inlineCode',
                       value: '.write',
                       position: {
-                        start: { line: 8, column: 94, offset: 679 },
-                        end: { line: 8, column: 102, offset: 687 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: ' to flatten',
-                      position: {
-                        start: { line: 8, column: 102, offset: 687 },
-                        end: { line: 8, column: 113, offset: 698 },
+                        start: { line: 8, column: 47, offset: 483 },
+                        end: { line: 8, column: 55, offset: 491 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 8, column: 5, offset: 590 },
-                    end: { line: 8, column: 113, offset: 698 },
+                    start: { line: 8, column: 5, offset: 441 },
+                    end: { line: 8, column: 55, offset: 491 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 8, column: 1, offset: 586 },
-                end: { line: 8, column: 113, offset: 698 },
+                start: { line: 8, column: 1, offset: 437 },
+                end: { line: 8, column: 55, offset: 491 },
                 indent: []
               }
             },
@@ -5061,17 +7949,17 @@ export default [
                       type: 'inlineCode',
                       value: '{ chain: function }',
                       position: {
-                        start: { line: 9, column: 5, offset: 703 },
-                        end: { line: 9, column: 26, offset: 724 },
+                        start: { line: 9, column: 5, offset: 496 },
+                        end: { line: 9, column: 26, offset: 517 },
                         indent: []
                       }
                     },
                     {
                       type: 'text',
-                      value: ', i.e. object that implements ',
+                      value: " - call object's ",
                       position: {
-                        start: { line: 9, column: 26, offset: 724 },
-                        end: { line: 9, column: 56, offset: 754 },
+                        start: { line: 9, column: 26, offset: 517 },
+                        end: { line: 9, column: 43, offset: 534 },
                         indent: []
                       }
                     },
@@ -5079,31 +7967,22 @@ export default [
                       type: 'inlineCode',
                       value: '.chain',
                       position: {
-                        start: { line: 9, column: 56, offset: 754 },
-                        end: { line: 9, column: 64, offset: 762 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: ' - this function is called directly',
-                      position: {
-                        start: { line: 9, column: 64, offset: 762 },
-                        end: { line: 9, column: 99, offset: 797 },
+                        start: { line: 9, column: 43, offset: 534 },
+                        end: { line: 9, column: 51, offset: 542 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 9, column: 5, offset: 703 },
-                    end: { line: 9, column: 99, offset: 797 },
+                    start: { line: 9, column: 5, offset: 496 },
+                    end: { line: 9, column: 51, offset: 542 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 9, column: 1, offset: 699 },
-                end: { line: 9, column: 99, offset: 797 },
+                start: { line: 9, column: 1, offset: 492 },
+                end: { line: 9, column: 51, offset: 542 },
                 indent: []
               }
             },
@@ -5119,17 +7998,17 @@ export default [
                       type: 'inlineCode',
                       value: '{ flatMap: function }',
                       position: {
-                        start: { line: 10, column: 5, offset: 802 },
-                        end: { line: 10, column: 28, offset: 825 },
+                        start: { line: 10, column: 5, offset: 547 },
+                        end: { line: 10, column: 28, offset: 570 },
                         indent: []
                       }
                     },
                     {
                       type: 'text',
-                      value: ', i.e. object that implements ',
+                      value: " - call object's ",
                       position: {
-                        start: { line: 10, column: 28, offset: 825 },
-                        end: { line: 10, column: 58, offset: 855 },
+                        start: { line: 10, column: 28, offset: 570 },
+                        end: { line: 10, column: 45, offset: 587 },
                         indent: []
                       }
                     },
@@ -5137,31 +8016,22 @@ export default [
                       type: 'inlineCode',
                       value: '.flatMap',
                       position: {
-                        start: { line: 10, column: 58, offset: 855 },
-                        end: { line: 10, column: 68, offset: 865 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: ' - this function is called directly',
-                      position: {
-                        start: { line: 10, column: 68, offset: 865 },
-                        end: { line: 10, column: 103, offset: 900 },
+                        start: { line: 10, column: 45, offset: 587 },
+                        end: { line: 10, column: 55, offset: 597 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 10, column: 5, offset: 802 },
-                    end: { line: 10, column: 103, offset: 900 },
+                    start: { line: 10, column: 5, offset: 547 },
+                    end: { line: 10, column: 55, offset: 597 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 10, column: 1, offset: 798 },
-                end: { line: 10, column: 103, offset: 900 },
+                start: { line: 10, column: 1, offset: 543 },
+                end: { line: 10, column: 55, offset: 597 },
                 indent: []
               }
             },
@@ -5177,40 +8047,31 @@ export default [
                       type: 'inlineCode',
                       value: 'Object',
                       position: {
-                        start: { line: 11, column: 5, offset: 905 },
-                        end: { line: 11, column: 13, offset: 913 },
+                        start: { line: 11, column: 5, offset: 602 },
+                        end: { line: 11, column: 13, offset: 610 },
                         indent: []
                       }
                     },
                     {
                       type: 'text',
-                      value: ' - a plain Object, values are mapped then flattened into result by ',
+                      value: ' - assign all results into a new object',
                       position: {
-                        start: { line: 11, column: 13, offset: 913 },
-                        end: { line: 11, column: 80, offset: 980 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'inlineCode',
-                      value: 'Object.assign',
-                      position: {
-                        start: { line: 11, column: 80, offset: 980 },
-                        end: { line: 11, column: 95, offset: 995 },
+                        start: { line: 11, column: 13, offset: 610 },
+                        end: { line: 11, column: 52, offset: 649 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 11, column: 5, offset: 905 },
-                    end: { line: 11, column: 95, offset: 995 },
+                    start: { line: 11, column: 5, offset: 602 },
+                    end: { line: 11, column: 52, offset: 649 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 11, column: 1, offset: 901 },
-                end: { line: 11, column: 95, offset: 995 },
+                start: { line: 11, column: 1, offset: 598 },
+                end: { line: 11, column: 52, offset: 649 },
                 indent: []
               }
             },
@@ -5226,61 +8087,42 @@ export default [
                       type: 'inlineCode',
                       value: 'Reducer',
                       position: {
-                        start: { line: 12, column: 5, offset: 1000 },
-                        end: { line: 12, column: 14, offset: 1009 },
+                        start: { line: 12, column: 5, offset: 654 },
+                        end: { line: 12, column: 14, offset: 663 },
                         indent: []
                       }
                     },
                     {
                       type: 'text',
-                      value: ' - a function to be used in a reducing operation. Items of a flatMapped reducing operation are mapped then flattened into the aggregate',
+                      value: ' - execute the reducer for each item per item of a reducing operation',
                       position: {
-                        start: { line: 12, column: 14, offset: 1009 },
-                        end: { line: 12, column: 149, offset: 1144 },
+                        start: { line: 12, column: 14, offset: 663 },
+                        end: { line: 12, column: 83, offset: 732 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 12, column: 5, offset: 1000 },
-                    end: { line: 12, column: 149, offset: 1144 },
+                    start: { line: 12, column: 5, offset: 654 },
+                    end: { line: 12, column: 83, offset: 732 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 12, column: 1, offset: 996 },
-                end: { line: 12, column: 149, offset: 1144 },
+                start: { line: 12, column: 1, offset: 650 },
+                end: { line: 12, column: 83, offset: 732 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 3, column: 1, offset: 233 },
-            end: { line: 12, column: 149, offset: 1144 },
+            start: { line: 3, column: 1, offset: 185 },
+            end: { line: 12, column: 83, offset: 732 },
             indent: [
               1, 1, 1, 1, 1,
               1, 1, 1, 1
             ]
-          }
-        },
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'On arrays, map the flatMapper function with concurrent asynchronous execution, then flatten the result one depth.',
-              position: {
-                start: { line: 14, column: 1, offset: 1146 },
-                end: { line: 14, column: 114, offset: 1259 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 14, column: 1, offset: 1146 },
-            end: { line: 14, column: 114, offset: 1259 },
-            indent: []
           }
         },
         {
@@ -5298,8 +8140,8 @@ export default [
             'flatMap(asyncDuplicate)( // concurrent execution\n' +
             '  [1, 2, 3, 4, 5]).then(console.log) // [1, 1, 2, 2, 3, 3, 4, 4, 5, 5]',
           position: {
-            start: { line: 16, column: 1, offset: 1261 },
-            end: { line: 27, column: 4, offset: 1603 },
+            start: { line: 14, column: 1, offset: 734 },
+            end: { line: 25, column: 4, offset: 1076 },
             indent: [
               1, 1, 1, 1, 1,
               1, 1, 1, 1, 1,
@@ -5311,18 +8153,27 @@ export default [
           type: 'paragraph',
           children: [
             {
-              type: 'text',
-              value: 'Collections returned by the flatMapper are flattened into the result by type-specific iteration and concatenation, while async iterables are muxed. Muxing, or asynchronously "mixing", is the process of combining multiple asynchronous sources into one source, with order determined by the asynchronous resolution of the individual items. This behavior is useful for working with asynchronous streams, e.g. of DOM events or requests.',
+              type: 'inlineCode',
+              value: 'flatMap',
               position: {
-                start: { line: 29, column: 1, offset: 1605 },
-                end: { line: 29, column: 432, offset: 2036 },
+                start: { line: 27, column: 1, offset: 1078 },
+                end: { line: 27, column: 10, offset: 1087 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ' muxes async iterables. Muxing, or asynchronously "mixing", is the process of combining multiple asynchronous sources into one source, with order determined by the asynchronous resolution of the individual items.',
+              position: {
+                start: { line: 27, column: 10, offset: 1087 },
+                end: { line: 27, column: 222, offset: 1299 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 29, column: 1, offset: 1605 },
-            end: { line: 29, column: 432, offset: 2036 },
+            start: { line: 27, column: 1, offset: 1078 },
+            end: { line: 27, column: 222, offset: 1299 },
             indent: []
           }
         },
@@ -5352,8 +8203,8 @@ export default [
             "  ['foo', 'bar', 'baz']).then(console.log)\n" +
             "// ['foo', 'bar', 'baz', 'foo', 'bar', 'baz', 'foo', 'bar', 'baz']",
           position: {
-            start: { line: 31, column: 1, offset: 2038 },
-            end: { line: 53, column: 4, offset: 2664 },
+            start: { line: 29, column: 1, offset: 1301 },
+            end: { line: 51, column: 4, offset: 1927 },
             indent: [
               1, 1, 1, 1, 1, 1, 1,
               1, 1, 1, 1, 1, 1, 1,
@@ -5367,17 +8218,35 @@ export default [
           children: [
             {
               type: 'text',
-              value: 'Upon flatMapper execution, flatten any collection return into the result.',
+              value: 'The following list defines concatenation behavior recognized by ',
               position: {
-                start: { line: 55, column: 1, offset: 2666 },
-                end: { line: 55, column: 74, offset: 2739 },
+                start: { line: 53, column: 1, offset: 1929 },
+                end: { line: 53, column: 65, offset: 1993 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'flatMap',
+              position: {
+                start: { line: 53, column: 65, offset: 1993 },
+                end: { line: 53, column: 74, offset: 2002 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ' for individual items being flattened.',
+              position: {
+                start: { line: 53, column: 74, offset: 2002 },
+                end: { line: 53, column: 112, offset: 2040 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 55, column: 1, offset: 2666 },
-            end: { line: 55, column: 74, offset: 2739 },
+            start: { line: 53, column: 1, offset: 1929 },
+            end: { line: 53, column: 112, offset: 2040 },
             indent: []
           }
         },
@@ -5396,25 +8265,34 @@ export default [
                   type: 'paragraph',
                   children: [
                     {
-                      type: 'text',
-                      value: 'Iterable - items are concatenated into the result',
+                      type: 'inlineCode',
+                      value: 'Iterable',
                       position: {
-                        start: { line: 57, column: 5, offset: 2745 },
-                        end: { line: 57, column: 54, offset: 2794 },
+                        start: { line: 55, column: 5, offset: 2046 },
+                        end: { line: 55, column: 15, offset: 2056 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: ' - items are iterated into the result',
+                      position: {
+                        start: { line: 55, column: 15, offset: 2056 },
+                        end: { line: 55, column: 52, offset: 2093 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 57, column: 5, offset: 2745 },
-                    end: { line: 57, column: 54, offset: 2794 },
+                    start: { line: 55, column: 5, offset: 2046 },
+                    end: { line: 55, column: 52, offset: 2093 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 57, column: 1, offset: 2741 },
-                end: { line: 57, column: 54, offset: 2794 },
+                start: { line: 55, column: 1, offset: 2042 },
+                end: { line: 55, column: 52, offset: 2093 },
                 indent: []
               }
             },
@@ -5427,25 +8305,34 @@ export default [
                   type: 'paragraph',
                   children: [
                     {
-                      type: 'text',
-                      value: 'Iterator/Generator - items are concatenated into the result. Source is consumed.',
+                      type: 'inlineCode',
+                      value: 'Iterator/Generator',
                       position: {
-                        start: { line: 58, column: 5, offset: 2799 },
-                        end: { line: 58, column: 85, offset: 2879 },
+                        start: { line: 56, column: 5, offset: 2098 },
+                        end: { line: 56, column: 25, offset: 2118 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: ' - items are iterated into the result, source is consumed',
+                      position: {
+                        start: { line: 56, column: 25, offset: 2118 },
+                        end: { line: 56, column: 82, offset: 2175 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 58, column: 5, offset: 2799 },
-                    end: { line: 58, column: 85, offset: 2879 },
+                    start: { line: 56, column: 5, offset: 2098 },
+                    end: { line: 56, column: 82, offset: 2175 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 58, column: 1, offset: 2795 },
-                end: { line: 58, column: 85, offset: 2879 },
+                start: { line: 56, column: 1, offset: 2094 },
+                end: { line: 56, column: 82, offset: 2175 },
                 indent: []
               }
             },
@@ -5458,11 +8345,20 @@ export default [
                   type: 'paragraph',
                   children: [
                     {
-                      type: 'text',
-                      value: 'Object that implements ',
+                      type: 'inlineCode',
+                      value: '{ reduce: function }',
                       position: {
-                        start: { line: 59, column: 5, offset: 2884 },
-                        end: { line: 59, column: 28, offset: 2907 },
+                        start: { line: 57, column: 5, offset: 2180 },
+                        end: { line: 57, column: 27, offset: 2202 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: " - call object's ",
+                      position: {
+                        start: { line: 57, column: 27, offset: 2202 },
+                        end: { line: 57, column: 44, offset: 2219 },
                         indent: []
                       }
                     },
@@ -5470,31 +8366,31 @@ export default [
                       type: 'inlineCode',
                       value: '.reduce',
                       position: {
-                        start: { line: 59, column: 28, offset: 2907 },
-                        end: { line: 59, column: 37, offset: 2916 },
+                        start: { line: 57, column: 44, offset: 2219 },
+                        end: { line: 57, column: 53, offset: 2228 },
                         indent: []
                       }
                     },
                     {
                       type: 'text',
-                      value: ' - this function is called directly for flattening',
+                      value: " with result's concatenation function",
                       position: {
-                        start: { line: 59, column: 37, offset: 2916 },
-                        end: { line: 59, column: 87, offset: 2966 },
+                        start: { line: 57, column: 53, offset: 2228 },
+                        end: { line: 57, column: 90, offset: 2265 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 59, column: 5, offset: 2884 },
-                    end: { line: 59, column: 87, offset: 2966 },
+                    start: { line: 57, column: 5, offset: 2180 },
+                    end: { line: 57, column: 90, offset: 2265 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 59, column: 1, offset: 2880 },
-                end: { line: 59, column: 87, offset: 2966 },
+                start: { line: 57, column: 1, offset: 2176 },
+                end: { line: 57, column: 90, offset: 2265 },
                 indent: []
               }
             },
@@ -5507,11 +8403,20 @@ export default [
                   type: 'paragraph',
                   children: [
                     {
-                      type: 'text',
-                      value: 'Object that implements ',
+                      type: 'inlineCode',
+                      value: '{ chain: function }',
                       position: {
-                        start: { line: 60, column: 5, offset: 2971 },
-                        end: { line: 60, column: 28, offset: 2994 },
+                        start: { line: 58, column: 5, offset: 2270 },
+                        end: { line: 58, column: 26, offset: 2291 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: " - call object's ",
+                      position: {
+                        start: { line: 58, column: 26, offset: 2291 },
+                        end: { line: 58, column: 43, offset: 2308 },
                         indent: []
                       }
                     },
@@ -5519,17 +8424,57 @@ export default [
                       type: 'inlineCode',
                       value: '.chain',
                       position: {
-                        start: { line: 60, column: 28, offset: 2994 },
-                        end: { line: 60, column: 36, offset: 3002 },
+                        start: { line: 58, column: 43, offset: 2308 },
+                        end: { line: 58, column: 51, offset: 2316 },
                         indent: []
                       }
                     },
                     {
                       type: 'text',
-                      value: ' or ',
+                      value: " with result's concatenation function",
                       position: {
-                        start: { line: 60, column: 36, offset: 3002 },
-                        end: { line: 60, column: 40, offset: 3006 },
+                        start: { line: 58, column: 51, offset: 2316 },
+                        end: { line: 58, column: 88, offset: 2353 },
+                        indent: []
+                      }
+                    }
+                  ],
+                  position: {
+                    start: { line: 58, column: 5, offset: 2270 },
+                    end: { line: 58, column: 88, offset: 2353 },
+                    indent: []
+                  }
+                }
+              ],
+              position: {
+                start: { line: 58, column: 1, offset: 2266 },
+                end: { line: 58, column: 88, offset: 2353 },
+                indent: []
+              }
+            },
+            {
+              type: 'listItem',
+              spread: false,
+              checked: null,
+              children: [
+                {
+                  type: 'paragraph',
+                  children: [
+                    {
+                      type: 'inlineCode',
+                      value: '{ flatMap: function }',
+                      position: {
+                        start: { line: 59, column: 5, offset: 2358 },
+                        end: { line: 59, column: 28, offset: 2381 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: " - call object's ",
+                      position: {
+                        start: { line: 59, column: 28, offset: 2381 },
+                        end: { line: 59, column: 45, offset: 2398 },
                         indent: []
                       }
                     },
@@ -5537,31 +8482,31 @@ export default [
                       type: 'inlineCode',
                       value: '.flatMap',
                       position: {
-                        start: { line: 60, column: 40, offset: 3006 },
-                        end: { line: 60, column: 50, offset: 3016 },
+                        start: { line: 59, column: 45, offset: 2398 },
+                        end: { line: 59, column: 55, offset: 2408 },
                         indent: []
                       }
                     },
                     {
                       type: 'text',
-                      value: ' - either of these is called directly to flatten',
+                      value: " with result's concatentation function",
                       position: {
-                        start: { line: 60, column: 50, offset: 3016 },
-                        end: { line: 60, column: 98, offset: 3064 },
+                        start: { line: 59, column: 55, offset: 2408 },
+                        end: { line: 59, column: 93, offset: 2446 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 60, column: 5, offset: 2971 },
-                    end: { line: 60, column: 98, offset: 3064 },
+                    start: { line: 59, column: 5, offset: 2358 },
+                    end: { line: 59, column: 93, offset: 2446 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 60, column: 1, offset: 2967 },
-                end: { line: 60, column: 98, offset: 3064 },
+                start: { line: 59, column: 1, offset: 2354 },
+                end: { line: 59, column: 93, offset: 2446 },
                 indent: []
               }
             },
@@ -5574,25 +8519,34 @@ export default [
                   type: 'paragraph',
                   children: [
                     {
-                      type: 'text',
-                      value: 'any other Object - values are flattened',
+                      type: 'inlineCode',
+                      value: 'Object',
                       position: {
-                        start: { line: 61, column: 5, offset: 3069 },
-                        end: { line: 61, column: 44, offset: 3108 },
+                        start: { line: 60, column: 5, offset: 2451 },
+                        end: { line: 60, column: 13, offset: 2459 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: ' - values are flattened',
+                      position: {
+                        start: { line: 60, column: 13, offset: 2459 },
+                        end: { line: 60, column: 36, offset: 2482 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 61, column: 5, offset: 3069 },
-                    end: { line: 61, column: 44, offset: 3108 },
+                    start: { line: 60, column: 5, offset: 2451 },
+                    end: { line: 60, column: 36, offset: 2482 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 61, column: 1, offset: 3065 },
-                end: { line: 61, column: 44, offset: 3108 },
+                start: { line: 60, column: 1, offset: 2447 },
+                end: { line: 60, column: 36, offset: 2482 },
                 indent: []
               }
             },
@@ -5605,25 +8559,34 @@ export default [
                   type: 'paragraph',
                   children: [
                     {
-                      type: 'text',
-                      value: 'AsyncIterable - items are muxed by asynchronous resolution',
+                      type: 'inlineCode',
+                      value: 'AsyncIterable',
                       position: {
-                        start: { line: 62, column: 5, offset: 3113 },
-                        end: { line: 62, column: 63, offset: 3171 },
+                        start: { line: 61, column: 5, offset: 2487 },
+                        end: { line: 61, column: 20, offset: 2502 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: ' - items are muxed into the result',
+                      position: {
+                        start: { line: 61, column: 20, offset: 2502 },
+                        end: { line: 61, column: 54, offset: 2536 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 62, column: 5, offset: 3113 },
-                    end: { line: 62, column: 63, offset: 3171 },
+                    start: { line: 61, column: 5, offset: 2487 },
+                    end: { line: 61, column: 54, offset: 2536 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 62, column: 1, offset: 3109 },
-                end: { line: 62, column: 63, offset: 3171 },
+                start: { line: 61, column: 1, offset: 2483 },
+                end: { line: 61, column: 54, offset: 2536 },
                 indent: []
               }
             },
@@ -5636,33 +8599,45 @@ export default [
                   type: 'paragraph',
                   children: [
                     {
-                      type: 'text',
-                      value: 'AsyncIterator/AsyncGenerator - items are muxed by asynchronous resolution. Source is consumed.',
+                      type: 'inlineCode',
+                      value: 'AsyncIterator/AsyncGenerator',
                       position: {
-                        start: { line: 63, column: 5, offset: 3176 },
-                        end: { line: 63, column: 99, offset: 3270 },
+                        start: { line: 62, column: 5, offset: 2541 },
+                        end: { line: 62, column: 35, offset: 2571 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: ' - items are muxed into the result, source is consumed',
+                      position: {
+                        start: { line: 62, column: 35, offset: 2571 },
+                        end: { line: 62, column: 89, offset: 2625 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 63, column: 5, offset: 3176 },
-                    end: { line: 63, column: 99, offset: 3270 },
+                    start: { line: 62, column: 5, offset: 2541 },
+                    end: { line: 62, column: 89, offset: 2625 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 63, column: 1, offset: 3172 },
-                end: { line: 63, column: 99, offset: 3270 },
+                start: { line: 62, column: 1, offset: 2537 },
+                end: { line: 62, column: 89, offset: 2625 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 57, column: 1, offset: 2741 },
-            end: { line: 63, column: 99, offset: 3270 },
-            indent: [ 1, 1, 1, 1, 1, 1 ]
+            start: { line: 55, column: 1, offset: 2042 },
+            end: { line: 62, column: 89, offset: 2625 },
+            indent: [
+              1, 1, 1, 1,
+              1, 1, 1
+            ]
           }
         },
         {
@@ -5670,17 +8645,17 @@ export default [
           children: [
             {
               type: 'text',
-              value: 'All other types are left in the result as they are.',
+              value: 'All other types are added into the result as they are.',
               position: {
-                start: { line: 65, column: 1, offset: 3272 },
-                end: { line: 65, column: 52, offset: 3323 },
+                start: { line: 64, column: 1, offset: 2627 },
+                end: { line: 64, column: 55, offset: 2681 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 65, column: 1, offset: 3272 },
-            end: { line: 65, column: 52, offset: 3323 },
+            start: { line: 64, column: 1, offset: 2627 },
+            end: { line: 64, column: 55, offset: 2681 },
             indent: []
           }
         },
@@ -5702,8 +8677,8 @@ export default [
             ']).then(console.log)\n' +
             '// [1, 1, 2, 3, 3, 5, 5, 6, 7, 8, 4, 4]',
           position: {
-            start: { line: 67, column: 1, offset: 3325 },
-            end: { line: 81, column: 4, offset: 3654 },
+            start: { line: 66, column: 1, offset: 2683 },
+            end: { line: 80, column: 4, offset: 3012 },
             indent: [
               1, 1, 1, 1, 1, 1,
               1, 1, 1, 1, 1, 1,
@@ -5715,11 +8690,20 @@ export default [
           type: 'paragraph',
           children: [
             {
-              type: 'text',
-              value: 'Purer functional programming is possible with flatMap operation on monads. A monad could be any object that implements ',
+              type: 'inlineCode',
+              value: 'flatMap',
               position: {
-                start: { line: 83, column: 1, offset: 3656 },
-                end: { line: 83, column: 120, offset: 3775 },
+                start: { line: 82, column: 1, offset: 3014 },
+                end: { line: 82, column: 10, offset: 3023 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ' supports purer functional programming with monads. A monad is any object that defines a method ',
+              position: {
+                start: { line: 82, column: 10, offset: 3023 },
+                end: { line: 82, column: 106, offset: 3119 },
                 indent: []
               }
             },
@@ -5727,8 +8711,8 @@ export default [
               type: 'inlineCode',
               value: '.chain',
               position: {
-                start: { line: 83, column: 120, offset: 3775 },
-                end: { line: 83, column: 128, offset: 3783 },
+                start: { line: 82, column: 106, offset: 3119 },
+                end: { line: 82, column: 114, offset: 3127 },
                 indent: []
               }
             },
@@ -5736,8 +8720,8 @@ export default [
               type: 'text',
               value: ' or ',
               position: {
-                start: { line: 83, column: 128, offset: 3783 },
-                end: { line: 83, column: 132, offset: 3787 },
+                start: { line: 82, column: 114, offset: 3127 },
+                end: { line: 82, column: 118, offset: 3131 },
                 indent: []
               }
             },
@@ -5745,42 +8729,24 @@ export default [
               type: 'inlineCode',
               value: '.flatMap',
               position: {
-                start: { line: 83, column: 132, offset: 3787 },
-                end: { line: 83, column: 142, offset: 3797 },
+                start: { line: 82, column: 118, offset: 3131 },
+                end: { line: 82, column: 128, offset: 3141 },
                 indent: []
               }
             },
             {
               type: 'text',
-              value: ". When a flatMapping operation encounters a monad, it calls the monad's ",
+              value: ' that takes some item and returns a monad.',
               position: {
-                start: { line: 83, column: 142, offset: 3797 },
-                end: { line: 83, column: 214, offset: 3869 },
-                indent: []
-              }
-            },
-            {
-              type: 'inlineCode',
-              value: '.chain',
-              position: {
-                start: { line: 83, column: 214, offset: 3869 },
-                end: { line: 83, column: 222, offset: 3877 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: ' method directly to flatten.',
-              position: {
-                start: { line: 83, column: 222, offset: 3877 },
-                end: { line: 83, column: 250, offset: 3905 },
+                start: { line: 82, column: 128, offset: 3141 },
+                end: { line: 82, column: 170, offset: 3183 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 83, column: 1, offset: 3656 },
-            end: { line: 83, column: 250, offset: 3905 },
+            start: { line: 82, column: 1, offset: 3014 },
+            end: { line: 82, column: 170, offset: 3183 },
             indent: []
           }
         },
@@ -5794,15 +8760,30 @@ export default [
             '  },\n' +
             '})\n' +
             '\n' +
-            'flatMap(console.log)(Maybe(null))\n' +
+            'const userbase = new Map([\n' +
+            "  ['1', { _id: '1', name: 'George' }],\n" +
+            "  ['2', { _id: '2', name: 'Jane' }],\n" +
+            "  ['3', { _id: '3', name: 'Jim' }],\n" +
+            '])\n' +
             '\n' +
-            "flatMap(console.log)(Maybe('hello world')) // hello world",
+            'const getUserByID = async userID => userbase.get(userID)\n' +
+            '\n' +
+            'const logUserByID = pipe([\n' +
+            '  getUserByID,\n' +
+            '  Maybe,\n' +
+            '  flatMap(console.log),\n' +
+            '])\n' +
+            '\n' +
+            "logUserByID('5')\n" +
+            '\n' +
+            "logUserByID('1') // { _id: '1', name: 'George' }",
           position: {
-            start: { line: 85, column: 1, offset: 3907 },
-            end: { line: 95, column: 4, offset: 4140 },
+            start: { line: 84, column: 1, offset: 3185 },
+            end: { line: 108, column: 4, offset: 3672 },
             indent: [
-              1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1
+              1, 1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1, 1, 1
             ]
           }
         },
@@ -5811,10 +8792,10 @@ export default [
           children: [
             {
               type: 'text',
-              value: 'In addition to monads, ',
+              value: 'Additionally, ',
               position: {
-                start: { line: 97, column: 1, offset: 4142 },
-                end: { line: 97, column: 24, offset: 4165 },
+                start: { line: 110, column: 1, offset: 3674 },
+                end: { line: 110, column: 15, offset: 3688 },
                 indent: []
               }
             },
@@ -5822,24 +8803,24 @@ export default [
               type: 'inlineCode',
               value: 'flatMap',
               position: {
-                start: { line: 97, column: 24, offset: 4165 },
-                end: { line: 97, column: 33, offset: 4174 },
+                start: { line: 110, column: 15, offset: 3688 },
+                end: { line: 110, column: 24, offset: 3697 },
                 indent: []
               }
             },
             {
               type: 'text',
-              value: ' is a powerful option when working with transducers as well. A flatMapping transducer is like a mapping transducer except all items of the reducing operation are additionally flattened into the result.',
+              value: ' is a powerful option when working with transducers. A flatMapping transducer is like a mapping transducer except all items of the reducing operation are additionally flattened into the result.',
               position: {
-                start: { line: 97, column: 33, offset: 4174 },
-                end: { line: 97, column: 234, offset: 4375 },
+                start: { line: 110, column: 24, offset: 3697 },
+                end: { line: 110, column: 217, offset: 3890 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 97, column: 1, offset: 4142 },
-            end: { line: 97, column: 234, offset: 4375 },
+            start: { line: 110, column: 1, offset: 3674 },
+            end: { line: 110, column: 217, offset: 3890 },
             indent: []
           }
         },
@@ -5870,8 +8851,8 @@ export default [
             'transform(asyncOddPowers, [])([1, 2, 3, 4, 5]).then(console.log)\n' +
             '// [1, 1, 1, 3, 9, 27, 5, 25, 125]',
           position: {
-            start: { line: 99, column: 1, offset: 4377 },
-            end: { line: 122, column: 4, offset: 4917 },
+            start: { line: 112, column: 1, offset: 3892 },
+            end: { line: 135, column: 4, offset: 4432 },
             indent: [
               1, 1, 1, 1, 1, 1, 1, 1,
               1, 1, 1, 1, 1, 1, 1, 1,
@@ -5882,19 +8863,231 @@ export default [
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 123, column: 1, offset: 4918 }
+        end: { line: 136, column: 1, offset: 4433 }
+      }
+    }
+  },
+  {
+    name: 'fork',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var args ...any,\n' +
+      '  funcsArray Array<...args=>Promise|any>,\n' +
+      '  funcsObject Object<...args=>Promise|any>\n' +
+      '\n' +
+      'fork(funcsArray)(...args) -> parallelized Promise|Array\n' +
+      '\n' +
+      'fork(funcsObject)(...args) -> parallelized Promise|Object\n' +
+      '```\n',
+    description: 'A multi-purpose function. Parallelizes multiple functions with concurrent execution into either an object, an array, or a nested mix of both.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'console.log(\n' +
+      '  fork({\n' +
+      '    greetings: fork([\n' +
+      "      greeting => greeting + ' world',\n" +
+      "      greeting => greeting + ' mom',\n" +
+      '    ]),\n' +
+      "  })('hello'),\n" +
+      ") // { greetings: ['hello world', 'hello mom'] }\n" +
+      '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'var args ...any,\n' +
+            '  funcsArray Array<...args=>Promise|any>,\n' +
+            '  funcsObject Object<...args=>Promise|any>\n' +
+            '\n' +
+            'fork(funcsArray)(...args) -> parallelized Promise|Array\n' +
+            '\n' +
+            'fork(funcsObject)(...args) -> parallelized Promise|Object',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 9, column: 4, offset: 250 },
+            indent: [
+              1, 1, 1, 1,
+              1, 1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 10, column: 1, offset: 251 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'A multi-purpose function. Parallelizes multiple functions with concurrent execution into either an object, an array, or a nested mix of both.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 142, offset: 141 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 142, offset: 141 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[playground]',
+          value: 'console.log(\n' +
+            '  fork({\n' +
+            '    greetings: fork([\n' +
+            "      greeting => greeting + ' world',\n" +
+            "      greeting => greeting + ' mom',\n" +
+            '    ]),\n' +
+            "  })('hello'),\n" +
+            ") // { greetings: ['hello world', 'hello mom'] }",
+          position: {
+            start: { line: 3, column: 1, offset: 143 },
+            end: { line: 12, column: 4, offset: 365 },
+            indent: [
+              1, 1, 1, 1, 1,
+              1, 1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 13, column: 1, offset: 366 }
+      }
+    }
+  },
+  {
+    name: 'fork.series',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var args ...any,\n' +
+      '  funcs Array<...args=>Promise|any>\n' +
+      '\n' +
+      'fork.series(funcs)(...args) => forkedInSeries Promise|Array\n' +
+      '```\n',
+    description: '`fork` with serial execution.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const sleep = ms => () => new Promise(resolve => setTimeout(resolve, ms))\n' +
+      '\n' +
+      'fork.series([\n' +
+      "  greeting => console.log(greeting + ' world'),\n" +
+      '  sleep(1000),\n' +
+      "  greeting => console.log(greeting + ' mom'),\n" +
+      '  sleep(1000),\n' +
+      "  greeting => console.log(greeting + ' darkness'),\n" +
+      "])('hello') // hello world\n" +
+      '            // hello mom\n' +
+      '            // hello darkness\n' +
+      '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'var args ...any,\n' +
+            '  funcs Array<...args=>Promise|any>\n' +
+            '\n' +
+            'fork.series(funcs)(...args) => forkedInSeries Promise|Array',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 6, column: 4, offset: 146 },
+            indent: [ 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 7, column: 1, offset: 147 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'inlineCode',
+              value: 'fork',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 7, offset: 6 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ' with serial execution.',
+              position: {
+                start: { line: 1, column: 7, offset: 6 },
+                end: { line: 1, column: 30, offset: 29 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 30, offset: 29 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[playground]',
+          value: 'const sleep = ms => () => new Promise(resolve => setTimeout(resolve, ms))\n' +
+            '\n' +
+            'fork.series([\n' +
+            "  greeting => console.log(greeting + ' world'),\n" +
+            '  sleep(1000),\n' +
+            "  greeting => console.log(greeting + ' mom'),\n" +
+            '  sleep(1000),\n' +
+            "  greeting => console.log(greeting + ' darkness'),\n" +
+            "])('hello') // hello world\n" +
+            '            // hello mom\n' +
+            '            // hello darkness',
+          position: {
+            start: { line: 3, column: 1, offset: 31 },
+            end: { line: 15, column: 4, offset: 407 },
+            indent: [
+              1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1,
+              1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 16, column: 1, offset: 408 }
       }
     }
   },
   {
     name: 'get',
     synopsis: '```coffeescript [specscript]\n' +
-      'get(\n' +
-      '  path string|Array|any,\n' +
-      '  defaultValue (object=>any)|any?,\n' +
-      ')(object) -> result any\n' +
+      'var value any,\n' +
+      '  path string|number|Array<string|number>,\n' +
+      '  defaultValue (value=>any)|any\n' +
+      '\n' +
+      'get(path, defaultValue?) -> getter value=>any\n' +
       '```\n',
-    description: 'Access properties on objects. `get(property)` creates a function that, when supplied an object, returns the value on the object associated with `property`.\n' +
+    description: 'Create a getter that accesses a property on a value denoted by path.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'console.log(\n' +
@@ -5902,7 +9095,7 @@ export default [
       ') // world\n' +
       '```\n' +
       '\n' +
-      '`get` accepts a default value to return if the property is not found. This default value may be a resolver of such value.\n' +
+      'It is possible to return a default value on not found by supplying the value or resolver of such value as the second parameter.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'console.log(\n' +
@@ -5914,11 +9107,11 @@ export default [
       ') // bar\n' +
       '```\n' +
       '\n' +
-      'At times it is necessary to access nested properties. `get` supports nested property access for the following `path` patterns.\n' +
+      '`get` supports three types of path patterns for nested property access.\n' +
       '\n' +
-      ' * a dot delimited string\n' +
-      ' * bracket notation property access\n' +
-      ' * an array of string keys or number indices\n' +
+      " * dot delimited - `'a.b.c'`\n" +
+      " * bracket notation - `'a[0].value'`\n" +
+      " * an array of keys or indices - `['a', 0, 'value']`\n" +
       '\n' +
       '```javascript [playground]\n' +
       "const nestedABC0 = { a: { b: { c: ['hello'] } } }\n" +
@@ -5948,20 +9141,21 @@ export default [
           type: 'code',
           lang: 'coffeescript',
           meta: '[specscript]',
-          value: 'get(\n' +
-            '  path string|Array|any,\n' +
-            '  defaultValue (object=>any)|any?,\n' +
-            ')(object) -> result any',
+          value: 'var value any,\n' +
+            '  path string|number|Array<string|number>,\n' +
+            '  defaultValue (value=>any)|any\n' +
+            '\n' +
+            'get(path, defaultValue?) -> getter value=>any',
           position: {
             start: { line: 1, column: 1, offset: 0 },
-            end: { line: 6, column: 4, offset: 121 },
-            indent: [ 1, 1, 1, 1, 1 ]
+            end: { line: 7, column: 4, offset: 169 },
+            indent: [ 1, 1, 1, 1, 1, 1 ]
           }
         }
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 7, column: 1, offset: 122 }
+        end: { line: 8, column: 1, offset: 170 }
       }
     },
     description_mdast: {
@@ -5972,53 +9166,17 @@ export default [
           children: [
             {
               type: 'text',
-              value: 'Access properties on objects. ',
+              value: 'Create a getter that accesses a property on a value denoted by path.',
               position: {
                 start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 31, offset: 30 },
-                indent: []
-              }
-            },
-            {
-              type: 'inlineCode',
-              value: 'get(property)',
-              position: {
-                start: { line: 1, column: 31, offset: 30 },
-                end: { line: 1, column: 46, offset: 45 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: ' creates a function that, when supplied an object, returns the value on the object associated with ',
-              position: {
-                start: { line: 1, column: 46, offset: 45 },
-                end: { line: 1, column: 145, offset: 144 },
-                indent: []
-              }
-            },
-            {
-              type: 'inlineCode',
-              value: 'property',
-              position: {
-                start: { line: 1, column: 145, offset: 144 },
-                end: { line: 1, column: 155, offset: 154 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: '.',
-              position: {
-                start: { line: 1, column: 155, offset: 154 },
-                end: { line: 1, column: 156, offset: 155 },
+                end: { line: 1, column: 69, offset: 68 },
                 indent: []
               }
             }
           ],
           position: {
             start: { line: 1, column: 1, offset: 0 },
-            end: { line: 1, column: 156, offset: 155 },
+            end: { line: 1, column: 69, offset: 68 },
             indent: []
           }
         },
@@ -6028,8 +9186,8 @@ export default [
           meta: '[playground]',
           value: "console.log(\n  get('hello')({ hello: 'world' }),\n) // world",
           position: {
-            start: { line: 3, column: 1, offset: 157 },
-            end: { line: 7, column: 4, offset: 247 },
+            start: { line: 3, column: 1, offset: 70 },
+            end: { line: 7, column: 4, offset: 160 },
             indent: [ 1, 1, 1, 1 ]
           }
         },
@@ -6037,27 +9195,18 @@ export default [
           type: 'paragraph',
           children: [
             {
-              type: 'inlineCode',
-              value: 'get',
-              position: {
-                start: { line: 9, column: 1, offset: 249 },
-                end: { line: 9, column: 6, offset: 254 },
-                indent: []
-              }
-            },
-            {
               type: 'text',
-              value: ' accepts a default value to return if the property is not found. This default value may be a resolver of such value.',
+              value: 'It is possible to return a default value on not found by supplying the value or resolver of such value as the second parameter.',
               position: {
-                start: { line: 9, column: 6, offset: 254 },
-                end: { line: 9, column: 122, offset: 370 },
+                start: { line: 9, column: 1, offset: 162 },
+                end: { line: 9, column: 128, offset: 289 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 9, column: 1, offset: 249 },
-            end: { line: 9, column: 122, offset: 370 },
+            start: { line: 9, column: 1, offset: 162 },
+            end: { line: 9, column: 128, offset: 289 },
             indent: []
           }
         },
@@ -6073,8 +9222,8 @@ export default [
             "  get('hello', object => object.foo)({ foo: 'bar' }),\n" +
             ') // bar',
           position: {
-            start: { line: 11, column: 1, offset: 372 },
-            end: { line: 19, column: 4, offset: 548 },
+            start: { line: 11, column: 1, offset: 291 },
+            end: { line: 19, column: 4, offset: 467 },
             indent: [
               1, 1, 1, 1,
               1, 1, 1, 1
@@ -6085,54 +9234,27 @@ export default [
           type: 'paragraph',
           children: [
             {
-              type: 'text',
-              value: 'At times it is necessary to access nested properties. ',
-              position: {
-                start: { line: 21, column: 1, offset: 550 },
-                end: { line: 21, column: 55, offset: 604 },
-                indent: []
-              }
-            },
-            {
               type: 'inlineCode',
               value: 'get',
               position: {
-                start: { line: 21, column: 55, offset: 604 },
-                end: { line: 21, column: 60, offset: 609 },
+                start: { line: 21, column: 1, offset: 469 },
+                end: { line: 21, column: 6, offset: 474 },
                 indent: []
               }
             },
             {
               type: 'text',
-              value: ' supports nested property access for the following ',
+              value: ' supports three types of path patterns for nested property access.',
               position: {
-                start: { line: 21, column: 60, offset: 609 },
-                end: { line: 21, column: 111, offset: 660 },
-                indent: []
-              }
-            },
-            {
-              type: 'inlineCode',
-              value: 'path',
-              position: {
-                start: { line: 21, column: 111, offset: 660 },
-                end: { line: 21, column: 117, offset: 666 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: ' patterns.',
-              position: {
-                start: { line: 21, column: 117, offset: 666 },
-                end: { line: 21, column: 127, offset: 676 },
+                start: { line: 21, column: 6, offset: 474 },
+                end: { line: 21, column: 72, offset: 540 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 21, column: 1, offset: 550 },
-            end: { line: 21, column: 127, offset: 676 },
+            start: { line: 21, column: 1, offset: 469 },
+            end: { line: 21, column: 72, offset: 540 },
             indent: []
           }
         },
@@ -6152,24 +9274,33 @@ export default [
                   children: [
                     {
                       type: 'text',
-                      value: 'a dot delimited string',
+                      value: 'dot delimited - ',
                       position: {
-                        start: { line: 23, column: 4, offset: 681 },
-                        end: { line: 23, column: 26, offset: 703 },
+                        start: { line: 23, column: 4, offset: 545 },
+                        end: { line: 23, column: 20, offset: 561 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'inlineCode',
+                      value: "'a.b.c'",
+                      position: {
+                        start: { line: 23, column: 20, offset: 561 },
+                        end: { line: 23, column: 29, offset: 570 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 23, column: 4, offset: 681 },
-                    end: { line: 23, column: 26, offset: 703 },
+                    start: { line: 23, column: 4, offset: 545 },
+                    end: { line: 23, column: 29, offset: 570 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 23, column: 1, offset: 678 },
-                end: { line: 23, column: 26, offset: 703 },
+                start: { line: 23, column: 1, offset: 542 },
+                end: { line: 23, column: 29, offset: 570 },
                 indent: []
               }
             },
@@ -6183,24 +9314,33 @@ export default [
                   children: [
                     {
                       type: 'text',
-                      value: 'bracket notation property access',
+                      value: 'bracket notation - ',
                       position: {
-                        start: { line: 24, column: 4, offset: 707 },
-                        end: { line: 24, column: 36, offset: 739 },
+                        start: { line: 24, column: 4, offset: 574 },
+                        end: { line: 24, column: 23, offset: 593 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'inlineCode',
+                      value: "'a[0].value'",
+                      position: {
+                        start: { line: 24, column: 23, offset: 593 },
+                        end: { line: 24, column: 37, offset: 607 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 24, column: 4, offset: 707 },
-                    end: { line: 24, column: 36, offset: 739 },
+                    start: { line: 24, column: 4, offset: 574 },
+                    end: { line: 24, column: 37, offset: 607 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 24, column: 1, offset: 704 },
-                end: { line: 24, column: 36, offset: 739 },
+                start: { line: 24, column: 1, offset: 571 },
+                end: { line: 24, column: 37, offset: 607 },
                 indent: []
               }
             },
@@ -6214,31 +9354,40 @@ export default [
                   children: [
                     {
                       type: 'text',
-                      value: 'an array of string keys or number indices',
+                      value: 'an array of keys or indices - ',
                       position: {
-                        start: { line: 25, column: 4, offset: 743 },
-                        end: { line: 25, column: 45, offset: 784 },
+                        start: { line: 25, column: 4, offset: 611 },
+                        end: { line: 25, column: 34, offset: 641 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'inlineCode',
+                      value: "['a', 0, 'value']",
+                      position: {
+                        start: { line: 25, column: 34, offset: 641 },
+                        end: { line: 25, column: 53, offset: 660 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 25, column: 4, offset: 743 },
-                    end: { line: 25, column: 45, offset: 784 },
+                    start: { line: 25, column: 4, offset: 611 },
+                    end: { line: 25, column: 53, offset: 660 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 25, column: 1, offset: 740 },
-                end: { line: 25, column: 45, offset: 784 },
+                start: { line: 25, column: 1, offset: 608 },
+                end: { line: 25, column: 53, offset: 660 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 23, column: 1, offset: 678 },
-            end: { line: 25, column: 45, offset: 784 },
+            start: { line: 23, column: 1, offset: 542 },
+            end: { line: 25, column: 53, offset: 660 },
             indent: [ 1, 1 ]
           }
         },
@@ -6266,8 +9415,8 @@ export default [
             '  get([0, 0, 0, 0, 0])(nested00000),\n' +
             ') // foo',
           position: {
-            start: { line: 27, column: 1, offset: 786 },
-            end: { line: 47, column: 4, offset: 1137 },
+            start: { line: 27, column: 1, offset: 662 },
+            end: { line: 47, column: 4, offset: 1013 },
             indent: [
               1, 1, 1, 1, 1, 1, 1,
               1, 1, 1, 1, 1, 1, 1,
@@ -6278,934 +9427,22 @@ export default [
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 48, column: 1, offset: 1138 }
-      }
-    }
-  },
-  {
-    name: 'pick',
-    synopsis: '```coffeescript [specscript]\n' +
-      'pick<T>(Array<string>)(source Object<T>) -> picked Object<T>\n' +
-      '```\n',
-    description: 'Create a new object by including specific keys.\n' +
-      '\n' +
-      '```javascript [playground]\n' +
-      'console.log(\n' +
-      "  pick(['hello', 'world'])({ goodbye: 1, world: 2 }),\n" +
-      ') // { world: 2 }\n' +
-      '```\n',
-    synopsis_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'code',
-          lang: 'coffeescript',
-          meta: '[specscript]',
-          value: 'pick<T>(Array<string>)(source Object<T>) -> picked Object<T>',
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 3, column: 4, offset: 93 },
-            indent: [ 1, 1 ]
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 4, column: 1, offset: 94 }
-      }
-    },
-    description_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'Create a new object by including specific keys.',
-              position: {
-                start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 48, offset: 47 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 1, column: 48, offset: 47 },
-            indent: []
-          }
-        },
-        {
-          type: 'code',
-          lang: 'javascript',
-          meta: '[playground]',
-          value: 'console.log(\n' +
-            "  pick(['hello', 'world'])({ goodbye: 1, world: 2 }),\n" +
-            ') // { world: 2 }',
-          position: {
-            start: { line: 3, column: 1, offset: 49 },
-            end: { line: 7, column: 4, offset: 164 },
-            indent: [ 1, 1, 1, 1 ]
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 8, column: 1, offset: 165 }
-      }
-    }
-  },
-  {
-    name: 'omit',
-    synopsis: '```coffeescript [specscript]\n' +
-      'omit<T>(Array<string>)(source Object<T>) -> omitted Object<T>\n' +
-      '```\n',
-    description: 'Create a new object by excluding specific keys.\n' +
-      '\n' +
-      '```javascript [playground]\n' +
-      'console.log(\n' +
-      "  omit(['_id'])({ _id: '1', name: 'George' }),\n" +
-      ") // { name: 'George' }\n" +
-      '```\n',
-    synopsis_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'code',
-          lang: 'coffeescript',
-          meta: '[specscript]',
-          value: 'omit<T>(Array<string>)(source Object<T>) -> omitted Object<T>',
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 3, column: 4, offset: 94 },
-            indent: [ 1, 1 ]
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 4, column: 1, offset: 95 }
-      }
-    },
-    description_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'Create a new object by excluding specific keys.',
-              position: {
-                start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 48, offset: 47 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 1, column: 48, offset: 47 },
-            indent: []
-          }
-        },
-        {
-          type: 'code',
-          lang: 'javascript',
-          meta: '[playground]',
-          value: 'console.log(\n' +
-            "  omit(['_id'])({ _id: '1', name: 'George' }),\n" +
-            ") // { name: 'George' }",
-          position: {
-            start: { line: 3, column: 1, offset: 49 },
-            end: { line: 7, column: 4, offset: 163 },
-            indent: [ 1, 1, 1, 1 ]
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 8, column: 1, offset: 164 }
-      }
-    }
-  },
-  {
-    name: 'any',
-    synopsis: '```coffeescript [specscript]\n' +
-      'Foldable<T> = Iterable<T>|AsyncIterable<T>\n' +
-      '  |{ reduce: (any, T)=>any }|Object<T>\n' +
-      '\n' +
-      'any<T>(\n' +
-      '  predicate T=>Promise|boolean\n' +
-      ')(value Foldable<T>) -> anyTruthyByPredicate Promise|boolean\n' +
-      '```\n',
-    description: 'Test a predicate concurrently across all items of a collection, returning true if any predication is truthy.\n' +
-      '\n' +
-      '```javascript [playground]\n' +
-      'const isOdd = number => number % 2 == 1\n' +
-      '\n' +
-      'console.log(\n' +
-      '  any(isOdd)([1, 2, 3, 4, 5]),\n' +
-      ') // true\n' +
-      '```\n' +
-      '\n' +
-      'The predicate may return a Promise, while the value may be an asynchronous stream.\n' +
-      '\n' +
-      '```javascript [playground]\n' +
-      "const toTodosUrl = id => 'https://jsonplaceholder.typicode.com/todos/' + id\n" +
-      '\n' +
-      'const fetchedToJson = fetched => fetched.json()\n' +
-      '\n' +
-      'const fetchTodo = pipe([\n' +
-      '  toTodosUrl,\n' +
-      '  fetch,\n' +
-      '  fetchedToJson,\n' +
-      '])\n' +
-      '\n' +
-      'const todoIDsGenerator = async function* () {\n' +
-      '  yield 1; yield 2; yield 3; yield 4; yield 5\n' +
-      '}\n' +
-      '\n' +
-      'any(pipe([\n' +
-      '  fetchTodo,\n' +
-      "  todo => todo.title.startsWith('fugiat'),\n" +
-      ']))(todoIDsGenerator()).then(console.log) // true\n' +
-      '```\n',
-    synopsis_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'code',
-          lang: 'coffeescript',
-          meta: '[specscript]',
-          value: 'Foldable<T> = Iterable<T>|AsyncIterable<T>\n' +
-            '  |{ reduce: (any, T)=>any }|Object<T>\n' +
-            '\n' +
-            'any<T>(\n' +
-            '  predicate T=>Promise|boolean\n' +
-            ')(value Foldable<T>) -> anyTruthyByPredicate Promise|boolean',
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 8, column: 4, offset: 215 },
-            indent: [
-              1, 1, 1, 1,
-              1, 1, 1
-            ]
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 9, column: 1, offset: 216 }
-      }
-    },
-    description_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'Test a predicate concurrently across all items of a collection, returning true if any predication is truthy.',
-              position: {
-                start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 109, offset: 108 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 1, column: 109, offset: 108 },
-            indent: []
-          }
-        },
-        {
-          type: 'code',
-          lang: 'javascript',
-          meta: '[playground]',
-          value: 'const isOdd = number => number % 2 == 1\n' +
-            '\n' +
-            'console.log(\n' +
-            '  any(isOdd)([1, 2, 3, 4, 5]),\n' +
-            ') // true',
-          position: {
-            start: { line: 3, column: 1, offset: 110 },
-            end: { line: 9, column: 4, offset: 235 },
-            indent: [ 1, 1, 1, 1, 1, 1 ]
-          }
-        },
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'The predicate may return a Promise, while the value may be an asynchronous stream.',
-              position: {
-                start: { line: 11, column: 1, offset: 237 },
-                end: { line: 11, column: 83, offset: 319 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 11, column: 1, offset: 237 },
-            end: { line: 11, column: 83, offset: 319 },
-            indent: []
-          }
-        },
-        {
-          type: 'code',
-          lang: 'javascript',
-          meta: '[playground]',
-          value: "const toTodosUrl = id => 'https://jsonplaceholder.typicode.com/todos/' + id\n" +
-            '\n' +
-            'const fetchedToJson = fetched => fetched.json()\n' +
-            '\n' +
-            'const fetchTodo = pipe([\n' +
-            '  toTodosUrl,\n' +
-            '  fetch,\n' +
-            '  fetchedToJson,\n' +
-            '])\n' +
-            '\n' +
-            'const todoIDsGenerator = async function* () {\n' +
-            '  yield 1; yield 2; yield 3; yield 4; yield 5\n' +
-            '}\n' +
-            '\n' +
-            'any(pipe([\n' +
-            '  fetchTodo,\n' +
-            "  todo => todo.title.startsWith('fugiat'),\n" +
-            ']))(todoIDsGenerator()).then(console.log) // true',
-          position: {
-            start: { line: 13, column: 1, offset: 321 },
-            end: { line: 32, column: 4, offset: 758 },
-            indent: [
-              1, 1, 1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1
-            ]
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 33, column: 1, offset: 759 }
-      }
-    }
-  },
-  {
-    name: 'all',
-    synopsis: '```coffeescript [specscript]\n' +
-      'Foldable<T> = Iterable<T>|AsyncIterable<T>\n' +
-      '  |{ reduce: (any, T)=>any }|Object<T>\n' +
-      '\n' +
-      'all<T>(\n' +
-      '  predicate T=>Promise|boolean,\n' +
-      ')(value Foldable<T>) -> allTruthyByPredicate Promise|boolean\n' +
-      '```\n',
-    description: 'Test a predicate concurrently across all items of a collection, returning true if all predications are truthy.\n' +
-      '\n' +
-      '```javascript [playground]\n' +
-      'const isOdd = number => number % 2 == 1\n' +
-      '\n' +
-      'console.log(\n' +
-      '  all(isOdd)([1, 2, 3, 4, 5]),\n' +
-      ') // false\n' +
-      '\n' +
-      'console.log(\n' +
-      '  all(isOdd)([1, 3, 5]),\n' +
-      ') // true\n' +
-      '```\n' +
-      '\n' +
-      'The predicate may return a Promise, while the value may be an asynchronous stream.\n' +
-      '\n' +
-      '```javascript [playground]\n' +
-      'const asyncNumbers = async function* () {\n' +
-      '  yield 1; yield 2; yield 3; yield 4; yield 5\n' +
-      '}\n' +
-      '\n' +
-      'all(async number => number < 6)(asyncNumbers()).then(console.log) // true\n' +
-      '```\n',
-    synopsis_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'code',
-          lang: 'coffeescript',
-          meta: '[specscript]',
-          value: 'Foldable<T> = Iterable<T>|AsyncIterable<T>\n' +
-            '  |{ reduce: (any, T)=>any }|Object<T>\n' +
-            '\n' +
-            'all<T>(\n' +
-            '  predicate T=>Promise|boolean,\n' +
-            ')(value Foldable<T>) -> allTruthyByPredicate Promise|boolean',
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 8, column: 4, offset: 216 },
-            indent: [
-              1, 1, 1, 1,
-              1, 1, 1
-            ]
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 9, column: 1, offset: 217 }
-      }
-    },
-    description_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'Test a predicate concurrently across all items of a collection, returning true if all predications are truthy.',
-              position: {
-                start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 111, offset: 110 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 1, column: 111, offset: 110 },
-            indent: []
-          }
-        },
-        {
-          type: 'code',
-          lang: 'javascript',
-          meta: '[playground]',
-          value: 'const isOdd = number => number % 2 == 1\n' +
-            '\n' +
-            'console.log(\n' +
-            '  all(isOdd)([1, 2, 3, 4, 5]),\n' +
-            ') // false\n' +
-            '\n' +
-            'console.log(\n' +
-            '  all(isOdd)([1, 3, 5]),\n' +
-            ') // true',
-          position: {
-            start: { line: 3, column: 1, offset: 112 },
-            end: { line: 13, column: 4, offset: 287 },
-            indent: [
-              1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1
-            ]
-          }
-        },
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'The predicate may return a Promise, while the value may be an asynchronous stream.',
-              position: {
-                start: { line: 15, column: 1, offset: 289 },
-                end: { line: 15, column: 83, offset: 371 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 15, column: 1, offset: 289 },
-            end: { line: 15, column: 83, offset: 371 },
-            indent: []
-          }
-        },
-        {
-          type: 'code',
-          lang: 'javascript',
-          meta: '[playground]',
-          value: 'const asyncNumbers = async function* () {\n' +
-            '  yield 1; yield 2; yield 3; yield 4; yield 5\n' +
-            '}\n' +
-            '\n' +
-            'all(async number => number < 6)(asyncNumbers()).then(console.log) // true',
-          position: {
-            start: { line: 17, column: 1, offset: 373 },
-            end: { line: 23, column: 4, offset: 568 },
-            indent: [ 1, 1, 1, 1, 1, 1 ]
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 24, column: 1, offset: 569 }
-      }
-    }
-  },
-  {
-    name: 'not',
-    synopsis: '```coffeescript [specscript]\n' +
-      'not(\n' +
-      '  predicate ...any=>Promise|boolean,\n' +
-      ') -> invertedPredicate ...any=>Promise|boolean\n' +
-      '```\n',
-    description: 'Logically invert a predicate (`!`) by always logically inverting its return value. Predicate may be asynchronous.\n' +
-      '\n' +
-      '```javascript [playground]\n' +
-      'const isOdd = number => number % 2 == 1\n' +
-      '\n' +
-      'console.log(\n' +
-      '  not(isOdd)(3),\n' +
-      ') // false\n' +
-      '```\n',
-    synopsis_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'code',
-          lang: 'coffeescript',
-          meta: '[specscript]',
-          value: 'not(\n' +
-            '  predicate ...any=>Promise|boolean,\n' +
-            ') -> invertedPredicate ...any=>Promise|boolean',
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 5, column: 4, offset: 121 },
-            indent: [ 1, 1, 1, 1 ]
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 6, column: 1, offset: 122 }
-      }
-    },
-    description_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'Logically invert a predicate (',
-              position: {
-                start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 31, offset: 30 },
-                indent: []
-              }
-            },
-            {
-              type: 'inlineCode',
-              value: '!',
-              position: {
-                start: { line: 1, column: 31, offset: 30 },
-                end: { line: 1, column: 34, offset: 33 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: ') by always logically inverting its return value. Predicate may be asynchronous.',
-              position: {
-                start: { line: 1, column: 34, offset: 33 },
-                end: { line: 1, column: 114, offset: 113 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 1, column: 114, offset: 113 },
-            indent: []
-          }
-        },
-        {
-          type: 'code',
-          lang: 'javascript',
-          meta: '[playground]',
-          value: 'const isOdd = number => number % 2 == 1\n' +
-            '\n' +
-            'console.log(\n' +
-            '  not(isOdd)(3),\n' +
-            ') // false',
-          position: {
-            start: { line: 3, column: 1, offset: 115 },
-            end: { line: 9, column: 4, offset: 227 },
-            indent: [ 1, 1, 1, 1, 1, 1 ]
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 10, column: 1, offset: 228 }
-      }
-    }
-  },
-  {
-    name: 'not.sync',
-    synopsis: '```coffeescript [specscript]\n' +
-      'not.sync(func ...any=>boolean) -> logicallyInverted ...any=>boolean\n' +
-      '```\n',
-    description: 'Logically invert a function without promise handling.\n' +
-      '\n' +
-      '```javascript [playground]\n' +
-      'console.log(\n' +
-      '  not.sync(isOdd)(2),\n' +
-      ') // true\n' +
-      '```\n',
-    synopsis_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'code',
-          lang: 'coffeescript',
-          meta: '[specscript]',
-          value: 'not.sync(func ...any=>boolean) -> logicallyInverted ...any=>boolean',
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 3, column: 4, offset: 100 },
-            indent: [ 1, 1 ]
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 4, column: 1, offset: 101 }
-      }
-    },
-    description_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'Logically invert a function without promise handling.',
-              position: {
-                start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 54, offset: 53 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 1, column: 54, offset: 53 },
-            indent: []
-          }
-        },
-        {
-          type: 'code',
-          lang: 'javascript',
-          meta: '[playground]',
-          value: 'console.log(\n  not.sync(isOdd)(2),\n) // true',
-          position: {
-            start: { line: 3, column: 1, offset: 55 },
-            end: { line: 7, column: 4, offset: 130 },
-            indent: [ 1, 1, 1, 1 ]
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 8, column: 1, offset: 131 }
-      }
-    }
-  },
-  {
-    name: 'and',
-    synopsis: '```coffeescript [specscript]\n' +
-      'and(\n' +
-      '  predicates Array<value=>Promise|boolean>\n' +
-      ')(value any) -> allTruthy Promise|boolean\n' +
-      '```\n',
-    description: 'Test an array of predicates concurrently against a single input, returning true if all are truthy. Predicates may be asynchronous.\n' +
-      '\n' +
-      '```javascript [playground]\n' +
-      'const isOdd = number => number % 2 == 1\n' +
-      '\n' +
-      'const isPositive = number => number > 0\n' +
-      '\n' +
-      'const isLessThan3 = number => number < 3\n' +
-      '\n' +
-      'console.log(\n' +
-      '  and([isOdd, isPositive, isLessThan3])(1),\n' +
-      ') // true\n' +
-      '```\n',
-    synopsis_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'code',
-          lang: 'coffeescript',
-          meta: '[specscript]',
-          value: 'and(\n' +
-            '  predicates Array<value=>Promise|boolean>\n' +
-            ')(value any) -> allTruthy Promise|boolean',
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 5, column: 4, offset: 122 },
-            indent: [ 1, 1, 1, 1 ]
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 6, column: 1, offset: 123 }
-      }
-    },
-    description_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'Test an array of predicates concurrently against a single input, returning true if all are truthy. Predicates may be asynchronous.',
-              position: {
-                start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 131, offset: 130 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 1, column: 131, offset: 130 },
-            indent: []
-          }
-        },
-        {
-          type: 'code',
-          lang: 'javascript',
-          meta: '[playground]',
-          value: 'const isOdd = number => number % 2 == 1\n' +
-            '\n' +
-            'const isPositive = number => number > 0\n' +
-            '\n' +
-            'const isLessThan3 = number => number < 3\n' +
-            '\n' +
-            'console.log(\n' +
-            '  and([isOdd, isPositive, isLessThan3])(1),\n' +
-            ') // true',
-          position: {
-            start: { line: 3, column: 1, offset: 132 },
-            end: { line: 13, column: 4, offset: 353 },
-            indent: [
-              1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1
-            ]
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 14, column: 1, offset: 354 }
-      }
-    }
-  },
-  {
-    name: 'or',
-    synopsis: '```coffeescript [specscript]\n' +
-      'or(\n' +
-      '  predicates Array<value=>Promise|boolean>\n' +
-      ')(value any) -> anyTruthy Promise|boolean\n' +
-      '```\n',
-    description: 'Test an array of predicates concurrently against a single input, returning true if any of them test truthy. Predicates may be asynchronous.\n' +
-      '\n' +
-      '```javascript [playground]\n' +
-      'const isOdd = number => number % 2 == 1\n' +
-      '\n' +
-      'const isEven = number => number % 2 == 0\n' +
-      '\n' +
-      'console.log(\n' +
-      '  or([isOdd, isEven])(0),\n' +
-      ') // true\n' +
-      '```\n',
-    synopsis_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'code',
-          lang: 'coffeescript',
-          meta: '[specscript]',
-          value: 'or(\n' +
-            '  predicates Array<value=>Promise|boolean>\n' +
-            ')(value any) -> anyTruthy Promise|boolean',
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 5, column: 4, offset: 121 },
-            indent: [ 1, 1, 1, 1 ]
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 6, column: 1, offset: 122 }
-      }
-    },
-    description_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'Test an array of predicates concurrently against a single input, returning true if any of them test truthy. Predicates may be asynchronous.',
-              position: {
-                start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 140, offset: 139 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 1, column: 140, offset: 139 },
-            indent: []
-          }
-        },
-        {
-          type: 'code',
-          lang: 'javascript',
-          meta: '[playground]',
-          value: 'const isOdd = number => number % 2 == 1\n' +
-            '\n' +
-            'const isEven = number => number % 2 == 0\n' +
-            '\n' +
-            'console.log(\n' +
-            '  or([isOdd, isEven])(0),\n' +
-            ') // true',
-          position: {
-            start: { line: 3, column: 1, offset: 141 },
-            end: { line: 11, column: 4, offset: 303 },
-            indent: [
-              1, 1, 1, 1,
-              1, 1, 1, 1
-            ]
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 12, column: 1, offset: 304 }
-      }
-    }
-  },
-  {
-    name: 'eq',
-    synopsis: '```coffeescript [specscript]\n' +
-      'eq(\n' +
-      '  left (any=>Promise|boolean)|any,\n' +
-      '  right (any=>Promise|boolean)|any,\n' +
-      ') -> strictEqualBy (value any)=>Promise|boolean\n' +
-      '```\n',
-    description: 'Test for strict equality (`===`) between two values. Either parameter may be an asynchronous resolver.\n' +
-      '\n' +
-      '```javascript [playground]\n' +
-      "const personIsGeorge = eq(person => person.name, 'George')\n" +
-      '\n' +
-      'console.log(\n' +
-      "  personIsGeorge({ name: 'George', likes: 'bananas' }),\n" +
-      ') // true\n' +
-      '```\n',
-    synopsis_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'code',
-          lang: 'coffeescript',
-          meta: '[specscript]',
-          value: 'eq(\n' +
-            '  left (any=>Promise|boolean)|any,\n' +
-            '  right (any=>Promise|boolean)|any,\n' +
-            ') -> strictEqualBy (value any)=>Promise|boolean',
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 6, column: 4, offset: 155 },
-            indent: [ 1, 1, 1, 1, 1 ]
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 7, column: 1, offset: 156 }
-      }
-    },
-    description_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'Test for strict equality (',
-              position: {
-                start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 27, offset: 26 },
-                indent: []
-              }
-            },
-            {
-              type: 'inlineCode',
-              value: '===',
-              position: {
-                start: { line: 1, column: 27, offset: 26 },
-                end: { line: 1, column: 32, offset: 31 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: ') between two values. Either parameter may be an asynchronous resolver.',
-              position: {
-                start: { line: 1, column: 32, offset: 31 },
-                end: { line: 1, column: 103, offset: 102 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 1, column: 103, offset: 102 },
-            indent: []
-          }
-        },
-        {
-          type: 'code',
-          lang: 'javascript',
-          meta: '[playground]',
-          value: "const personIsGeorge = eq(person => person.name, 'George')\n" +
-            '\n' +
-            'console.log(\n' +
-            "  personIsGeorge({ name: 'George', likes: 'bananas' }),\n" +
-            ') // true',
-          position: {
-            start: { line: 3, column: 1, offset: 104 },
-            end: { line: 9, column: 4, offset: 273 },
-            indent: [ 1, 1, 1, 1, 1, 1 ]
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 10, column: 1, offset: 274 }
+        end: { line: 48, column: 1, offset: 1014 }
       }
     }
   },
   {
     name: 'gt',
     synopsis: '```coffeescript [specscript]\n' +
-      'gt(\n' +
-      '  left (any=>Promise|boolean)|any,\n' +
-      '  right (any=>Promise|boolean)|any,\n' +
-      ')(value any) -> greaterThanBy(value any)=>Promise|boolean\n' +
+      'var value any,\n' +
+      '  leftCompare any,\n' +
+      '  rightCompare any,\n' +
+      '  left (value=>Promise|leftCompare)|leftCompare,\n' +
+      '  right (value=>Promise|rightCompare)|rightCompare\n' +
+      '\n' +
+      'gt(left, right)(value) -> Promise|boolean\n' +
       '```\n',
-    description: 'Test for left value greater than (`>`) right value. Either parameter may be an asynchronous resolver.\n' +
+    description: 'Test if a left value is greater than (`>`) a right value. Either parameter may be an actual value.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const isOfLegalAge = gt(21, person => person.age)\n' +
@@ -7221,20 +9458,26 @@ export default [
           type: 'code',
           lang: 'coffeescript',
           meta: '[specscript]',
-          value: 'gt(\n' +
-            '  left (any=>Promise|boolean)|any,\n' +
-            '  right (any=>Promise|boolean)|any,\n' +
-            ')(value any) -> greaterThanBy(value any)=>Promise|boolean',
+          value: 'var value any,\n' +
+            '  leftCompare any,\n' +
+            '  rightCompare any,\n' +
+            '  left (value=>Promise|leftCompare)|leftCompare,\n' +
+            '  right (value=>Promise|rightCompare)|rightCompare\n' +
+            '\n' +
+            'gt(left, right)(value) -> Promise|boolean',
           position: {
             start: { line: 1, column: 1, offset: 0 },
-            end: { line: 6, column: 4, offset: 165 },
-            indent: [ 1, 1, 1, 1, 1 ]
+            end: { line: 9, column: 4, offset: 229 },
+            indent: [
+              1, 1, 1, 1,
+              1, 1, 1, 1
+            ]
           }
         }
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 7, column: 1, offset: 166 }
+        end: { line: 10, column: 1, offset: 230 }
       }
     },
     description_mdast: {
@@ -7245,10 +9488,10 @@ export default [
           children: [
             {
               type: 'text',
-              value: 'Test for left value greater than (',
+              value: 'Test if a left value is greater than (',
               position: {
                 start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 35, offset: 34 },
+                end: { line: 1, column: 39, offset: 38 },
                 indent: []
               }
             },
@@ -7256,120 +9499,16 @@ export default [
               type: 'inlineCode',
               value: '>',
               position: {
-                start: { line: 1, column: 35, offset: 34 },
-                end: { line: 1, column: 38, offset: 37 },
+                start: { line: 1, column: 39, offset: 38 },
+                end: { line: 1, column: 42, offset: 41 },
                 indent: []
               }
             },
             {
               type: 'text',
-              value: ') right value. Either parameter may be an asynchronous resolver.',
+              value: ') a right value. Either parameter may be an actual value.',
               position: {
-                start: { line: 1, column: 38, offset: 37 },
-                end: { line: 1, column: 102, offset: 101 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 1, column: 102, offset: 101 },
-            indent: []
-          }
-        },
-        {
-          type: 'code',
-          lang: 'javascript',
-          meta: '[playground]',
-          value: 'const isOfLegalAge = gt(21, person => person.age)\n' +
-            '\n' +
-            'const juvenile = { age: 16 }\n' +
-            '\n' +
-            'console.log(isOfLegalAge(juvenile)) // false',
-          position: {
-            start: { line: 3, column: 1, offset: 103 },
-            end: { line: 9, column: 4, offset: 259 },
-            indent: [ 1, 1, 1, 1, 1, 1 ]
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 10, column: 1, offset: 260 }
-      }
-    }
-  },
-  {
-    name: 'lt',
-    synopsis: '```coffeescript [specscript]\n' +
-      'lt(\n' +
-      '  left (any=>Promise|boolean)|any,\n' +
-      '  right (any=>Promise|boolean)|any,\n' +
-      ')(value any) -> lessThanBy(value any)=>Promise|boolean\n' +
-      '```\n',
-    description: 'Test for left value less than (`<`) right value. Either parameter may be an asynchronous resolver.\n' +
-      '\n' +
-      '```javascript [playground]\n' +
-      'const identity = value => value\n' +
-      '\n' +
-      'const isLessThan3 = lt(identity, 3)\n' +
-      '\n' +
-      'console.log(isLessThan3(1), true)\n' +
-      'console.log(isLessThan3(3), false)\n' +
-      'console.log(isLessThan3(5), false)\n' +
-      '```\n',
-    synopsis_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'code',
-          lang: 'coffeescript',
-          meta: '[specscript]',
-          value: 'lt(\n' +
-            '  left (any=>Promise|boolean)|any,\n' +
-            '  right (any=>Promise|boolean)|any,\n' +
-            ')(value any) -> lessThanBy(value any)=>Promise|boolean',
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 6, column: 4, offset: 162 },
-            indent: [ 1, 1, 1, 1, 1 ]
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 7, column: 1, offset: 163 }
-      }
-    },
-    description_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'Test for left value less than (',
-              position: {
-                start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 32, offset: 31 },
-                indent: []
-              }
-            },
-            {
-              type: 'inlineCode',
-              value: '<',
-              position: {
-                start: { line: 1, column: 32, offset: 31 },
-                end: { line: 1, column: 35, offset: 34 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: ') right value. Either parameter may be an asynchronous resolver.',
-              position: {
-                start: { line: 1, column: 35, offset: 34 },
+                start: { line: 1, column: 42, offset: 41 },
                 end: { line: 1, column: 99, offset: 98 },
                 indent: []
               }
@@ -7385,38 +9524,36 @@ export default [
           type: 'code',
           lang: 'javascript',
           meta: '[playground]',
-          value: 'const identity = value => value\n' +
+          value: 'const isOfLegalAge = gt(21, person => person.age)\n' +
             '\n' +
-            'const isLessThan3 = lt(identity, 3)\n' +
+            'const juvenile = { age: 16 }\n' +
             '\n' +
-            'console.log(isLessThan3(1), true)\n' +
-            'console.log(isLessThan3(3), false)\n' +
-            'console.log(isLessThan3(5), false)',
+            'console.log(isOfLegalAge(juvenile)) // false',
           position: {
             start: { line: 3, column: 1, offset: 100 },
-            end: { line: 11, column: 4, offset: 304 },
-            indent: [
-              1, 1, 1, 1,
-              1, 1, 1, 1
-            ]
+            end: { line: 9, column: 4, offset: 256 },
+            indent: [ 1, 1, 1, 1, 1, 1 ]
           }
         }
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 12, column: 1, offset: 305 }
+        end: { line: 10, column: 1, offset: 257 }
       }
     }
   },
   {
     name: 'gte',
     synopsis: '```coffeescript [specscript]\n' +
-      'gte(\n' +
-      '  left (any=>Promise|boolean)|any,\n' +
-      '  right (any=>Promise|boolean)|any,\n' +
-      ')(value any) -> greaterThanOrEqualToBy(value any)=>Promise|boolean\n' +
+      'var value any,\n' +
+      '  leftCompare any,\n' +
+      '  rightCompare any,\n' +
+      '  left (value=>Promise|leftCompare)|leftCompare,\n' +
+      '  right (value=>Promise|rightCompare)|rightCompare\n' +
+      '\n' +
+      'gte(left, right)(value) -> Promise|boolean\n' +
       '```\n',
-    description: 'Test for left value greater than or equal to (`>=`) right value. Either parameter may be an asynchronous resolver.\n' +
+    description: 'Test if a left value is greater than or equal (`>=`) to a right value. Either parameter may be an actual value.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const identity = value => value\n' +
@@ -7434,76 +9571,16 @@ export default [
           type: 'code',
           lang: 'coffeescript',
           meta: '[specscript]',
-          value: 'gte(\n' +
-            '  left (any=>Promise|boolean)|any,\n' +
-            '  right (any=>Promise|boolean)|any,\n' +
-            ')(value any) -> greaterThanOrEqualToBy(value any)=>Promise|boolean',
+          value: 'var value any,\n' +
+            '  leftCompare any,\n' +
+            '  rightCompare any,\n' +
+            '  left (value=>Promise|leftCompare)|leftCompare,\n' +
+            '  right (value=>Promise|rightCompare)|rightCompare\n' +
+            '\n' +
+            'gte(left, right)(value) -> Promise|boolean',
           position: {
             start: { line: 1, column: 1, offset: 0 },
-            end: { line: 6, column: 4, offset: 175 },
-            indent: [ 1, 1, 1, 1, 1 ]
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 7, column: 1, offset: 176 }
-      }
-    },
-    description_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'Test for left value greater than or equal to (',
-              position: {
-                start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 47, offset: 46 },
-                indent: []
-              }
-            },
-            {
-              type: 'inlineCode',
-              value: '>=',
-              position: {
-                start: { line: 1, column: 47, offset: 46 },
-                end: { line: 1, column: 51, offset: 50 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: ') right value. Either parameter may be an asynchronous resolver.',
-              position: {
-                start: { line: 1, column: 51, offset: 50 },
-                end: { line: 1, column: 115, offset: 114 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 1, column: 115, offset: 114 },
-            indent: []
-          }
-        },
-        {
-          type: 'code',
-          lang: 'javascript',
-          meta: '[playground]',
-          value: 'const identity = value => value\n' +
-            '\n' +
-            'const isAtLeast100 = gte(identity, 100)\n' +
-            '\n' +
-            'console.log(isAtLeast100(99)) // false\n' +
-            'console.log(isAtLeast100(100)) // true\n' +
-            'console.log(isAtLeast100(101)) // true',
-          position: {
-            start: { line: 3, column: 1, offset: 116 },
-            end: { line: 11, column: 4, offset: 337 },
+            end: { line: 9, column: 4, offset: 230 },
             indent: [
               1, 1, 1, 1,
               1, 1, 1, 1
@@ -7513,50 +9590,7 @@ export default [
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 12, column: 1, offset: 338 }
-      }
-    }
-  },
-  {
-    name: 'lte',
-    synopsis: '```coffeescript [specscript]\n' +
-      'lte(\n' +
-      '  left (any=>Promise|boolean)|any,\n' +
-      '  right (any=>Promise|boolean)|any,\n' +
-      ')(value any) -> lessThanBy(value any)=>Promise|boolean\n' +
-      '```\n',
-    description: 'Test for left value less than or equal to (`<=`) right value. Either parameter may be an asynchronous resolver.\n' +
-      '\n' +
-      '```javascript [playground]\n' +
-      'const identity = value => value\n' +
-      '\n' +
-      'const isLessThanOrEqualTo3 = lte(identity, 3)\n' +
-      '\n' +
-      'console.log(isLessThanOrEqualTo3(1), true)\n' +
-      'console.log(isLessThanOrEqualTo3(3), true)\n' +
-      'console.log(isLessThanOrEqualTo3(5), false)\n' +
-      '```\n',
-    synopsis_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'code',
-          lang: 'coffeescript',
-          meta: '[specscript]',
-          value: 'lte(\n' +
-            '  left (any=>Promise|boolean)|any,\n' +
-            '  right (any=>Promise|boolean)|any,\n' +
-            ')(value any) -> lessThanBy(value any)=>Promise|boolean',
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 6, column: 4, offset: 163 },
-            indent: [ 1, 1, 1, 1, 1 ]
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 7, column: 1, offset: 164 }
+        end: { line: 10, column: 1, offset: 231 }
       }
     },
     description_mdast: {
@@ -7567,27 +9601,27 @@ export default [
           children: [
             {
               type: 'text',
-              value: 'Test for left value less than or equal to (',
+              value: 'Test if a left value is greater than or equal (',
               position: {
                 start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 44, offset: 43 },
-                indent: []
-              }
-            },
-            {
-              type: 'inlineCode',
-              value: '<=',
-              position: {
-                start: { line: 1, column: 44, offset: 43 },
                 end: { line: 1, column: 48, offset: 47 },
                 indent: []
               }
             },
             {
-              type: 'text',
-              value: ') right value. Either parameter may be an asynchronous resolver.',
+              type: 'inlineCode',
+              value: '>=',
               position: {
                 start: { line: 1, column: 48, offset: 47 },
+                end: { line: 1, column: 52, offset: 51 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ') to a right value. Either parameter may be an actual value.',
+              position: {
+                start: { line: 1, column: 52, offset: 51 },
                 end: { line: 1, column: 112, offset: 111 },
                 indent: []
               }
@@ -7605,14 +9639,14 @@ export default [
           meta: '[playground]',
           value: 'const identity = value => value\n' +
             '\n' +
-            'const isLessThanOrEqualTo3 = lte(identity, 3)\n' +
+            'const isAtLeast100 = gte(identity, 100)\n' +
             '\n' +
-            'console.log(isLessThanOrEqualTo3(1), true)\n' +
-            'console.log(isLessThanOrEqualTo3(3), true)\n' +
-            'console.log(isLessThanOrEqualTo3(5), false)',
+            'console.log(isAtLeast100(99)) // false\n' +
+            'console.log(isAtLeast100(100)) // true\n' +
+            'console.log(isAtLeast100(101)) // true',
           position: {
             start: { line: 3, column: 1, offset: 113 },
-            end: { line: 11, column: 4, offset: 353 },
+            end: { line: 11, column: 4, offset: 334 },
             indent: [
               1, 1, 1, 1,
               1, 1, 1, 1
@@ -7622,243 +9656,59 @@ export default [
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 12, column: 1, offset: 354 }
+        end: { line: 12, column: 1, offset: 335 }
       }
     }
   },
   {
-    name: 'heapUsedInLoop',
-    synopsis: 'heapUsedInLoop(\n' +
-      '  desc string,\n' +
-      '  loopCount number,\n' +
-      '  func (loop number)=>any\n' +
-      ') -> ()\n',
-    description: '**heapUsedInLoop** is a memory usage measurement function. Supply `description`, `loopCount`, and a function `func` for that function to be run `loopCount` times, finally logging average and max heap used per loop in terms of megabytes MiB.\n' +
+    name: 'lt',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var value any,\n' +
+      '  leftCompare any,\n' +
+      '  rightCompare any,\n' +
+      '  left (value=>Promise|leftCompare)|leftCompare,\n' +
+      '  right (value=>Promise|rightCompare)|rightCompare\n' +
       '\n' +
-      '```javascript\n' +
-      "heapUsedInLoop('my-description', 1e5, function () {\n" +
-      '  return 1 + 1\n' +
-      '}) /*\n' +
-      '0 5.88 MiB\n' +
-      '1 5.92 MiB\n' +
-      '...\n' +
-      '99997 7.34 MiB\n' +
-      '99998 7.34 MiB\n' +
-      '99999 7.35 MiB\n' +
-      'my-description: 1e+5: {\n' +
-      '  "max": "7.15 MiB",\n' +
-      '  "avg": "5.50 MiB"\n' +
-      '}\n' +
+      'lt(left, right)(value) -> Promise|boolean\n' +
+      '```\n',
+    description: 'Test if a left value is less than (`<`) a right value. Either parameter may be an actual value.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const identity = value => value\n' +
+      '\n' +
+      'const isLessThan3 = lt(identity, 3)\n' +
+      '\n' +
+      'console.log(isLessThan3(1), true)\n' +
+      'console.log(isLessThan3(3), false)\n' +
+      'console.log(isLessThan3(5), false)\n' +
       '```\n',
     synopsis_mdast: {
       type: 'root',
       children: [
         {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'heapUsedInLoop(\n' +
-                '  desc string,\n' +
-                '  loopCount number,\n' +
-                '  func (loop number)=>any\n' +
-                ') -> ()',
-              position: {
-                start: { line: 1, column: 1, offset: 0 },
-                end: { line: 5, column: 8, offset: 84 },
-                indent: [ 1, 1, 1, 1 ]
-              }
-            }
-          ],
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 5, column: 8, offset: 84 },
-            indent: [ 1, 1, 1, 1 ]
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 6, column: 1, offset: 85 }
-      }
-    },
-    description_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'strong',
-              children: [
-                {
-                  type: 'text',
-                  value: 'heapUsedInLoop',
-                  position: {
-                    start: { line: 1, column: 3, offset: 2 },
-                    end: { line: 1, column: 17, offset: 16 },
-                    indent: []
-                  }
-                }
-              ],
-              position: {
-                start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 19, offset: 18 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: ' is a memory usage measurement function. Supply ',
-              position: {
-                start: { line: 1, column: 19, offset: 18 },
-                end: { line: 1, column: 67, offset: 66 },
-                indent: []
-              }
-            },
-            {
-              type: 'inlineCode',
-              value: 'description',
-              position: {
-                start: { line: 1, column: 67, offset: 66 },
-                end: { line: 1, column: 80, offset: 79 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: ', ',
-              position: {
-                start: { line: 1, column: 80, offset: 79 },
-                end: { line: 1, column: 82, offset: 81 },
-                indent: []
-              }
-            },
-            {
-              type: 'inlineCode',
-              value: 'loopCount',
-              position: {
-                start: { line: 1, column: 82, offset: 81 },
-                end: { line: 1, column: 93, offset: 92 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: ', and a function ',
-              position: {
-                start: { line: 1, column: 93, offset: 92 },
-                end: { line: 1, column: 110, offset: 109 },
-                indent: []
-              }
-            },
-            {
-              type: 'inlineCode',
-              value: 'func',
-              position: {
-                start: { line: 1, column: 110, offset: 109 },
-                end: { line: 1, column: 116, offset: 115 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: ' for that function to be run ',
-              position: {
-                start: { line: 1, column: 116, offset: 115 },
-                end: { line: 1, column: 145, offset: 144 },
-                indent: []
-              }
-            },
-            {
-              type: 'inlineCode',
-              value: 'loopCount',
-              position: {
-                start: { line: 1, column: 145, offset: 144 },
-                end: { line: 1, column: 156, offset: 155 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: ' times, finally logging average and max heap used per loop in terms of megabytes MiB.',
-              position: {
-                start: { line: 1, column: 156, offset: 155 },
-                end: { line: 1, column: 241, offset: 240 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 1, column: 241, offset: 240 },
-            indent: []
-          }
-        },
-        {
           type: 'code',
-          lang: 'javascript',
-          meta: null,
-          value: "heapUsedInLoop('my-description', 1e5, function () {\n" +
-            '  return 1 + 1\n' +
-            '}) /*\n' +
-            '0 5.88 MiB\n' +
-            '1 5.92 MiB\n' +
-            '...\n' +
-            '99997 7.34 MiB\n' +
-            '99998 7.34 MiB\n' +
-            '99999 7.35 MiB\n' +
-            'my-description: 1e+5: {\n' +
-            '  "max": "7.15 MiB",\n' +
-            '  "avg": "5.50 MiB"\n' +
-            '}',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'var value any,\n' +
+            '  leftCompare any,\n' +
+            '  rightCompare any,\n' +
+            '  left (value=>Promise|leftCompare)|leftCompare,\n' +
+            '  right (value=>Promise|rightCompare)|rightCompare\n' +
+            '\n' +
+            'lt(left, right)(value) -> Promise|boolean',
           position: {
-            start: { line: 3, column: 1, offset: 242 },
-            end: { line: 17, column: 4, offset: 470 },
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 9, column: 4, offset: 229 },
             indent: [
-              1, 1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1, 1,
-              1, 1
+              1, 1, 1, 1,
+              1, 1, 1, 1
             ]
           }
         }
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 18, column: 1, offset: 471 }
-      }
-    }
-  },
-  {
-    name: 'size',
-    synopsis: 'size(value String|Array|Object|Set|Map) -> number\n',
-    description: '`size` accepts a String, Array, Object, Set, or Map and returns its current size in items as a number.\n',
-    synopsis_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'size(value String|Array|Object|Set|Map) -> number',
-              position: {
-                start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 50, offset: 49 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 1, column: 50, offset: 49 },
-            indent: []
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 2, column: 1, offset: 50 }
+        end: { line: 10, column: 1, offset: 230 }
       }
     },
     description_mdast: {
@@ -7868,142 +9718,36 @@ export default [
           type: 'paragraph',
           children: [
             {
-              type: 'inlineCode',
-              value: 'size',
+              type: 'text',
+              value: 'Test if a left value is less than (',
               position: {
                 start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 7, offset: 6 },
+                end: { line: 1, column: 36, offset: 35 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: '<',
+              position: {
+                start: { line: 1, column: 36, offset: 35 },
+                end: { line: 1, column: 39, offset: 38 },
                 indent: []
               }
             },
             {
               type: 'text',
-              value: ' accepts a String, Array, Object, Set, or Map and returns its current size in items as a number.',
+              value: ') a right value. Either parameter may be an actual value.',
               position: {
-                start: { line: 1, column: 7, offset: 6 },
-                end: { line: 1, column: 103, offset: 102 },
+                start: { line: 1, column: 39, offset: 38 },
+                end: { line: 1, column: 96, offset: 95 },
                 indent: []
               }
             }
           ],
           position: {
             start: { line: 1, column: 1, offset: 0 },
-            end: { line: 1, column: 103, offset: 102 },
-            indent: []
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 2, column: 1, offset: 103 }
-      }
-    }
-  },
-  {
-    name: 'trace',
-    synopsis: 'any -> T\n' +
-      '\n' +
-      'trace(\n' +
-      '  reducer (any, ...any)=>Promise|any\n' +
-      ') -> tracingReducer (any, ...any)=>Promise|any,\n' +
-      '\n' +
-      'trace(point !function, ...restArgs) -> point\n',
-    description: 'Log a value out to the console, returning the value. If the value is a function, treat is as a resolver and log lazily.\n' +
-      '\n' +
-      '```javascript [playground]\n' +
-      'pipe([\n' +
-      '  trace,\n' +
-      '  trace(value => value.toUpperCase()),\n' +
-      "])('hey') // hey\n" +
-      '          // HEY\n' +
-      '```\n',
-    synopsis_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'any -> T',
-              position: {
-                start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 9, offset: 8 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 1, column: 9, offset: 8 },
-            indent: []
-          }
-        },
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'trace(\n' +
-                '  reducer (any, ...any)=>Promise|any\n' +
-                ') -> tracingReducer (any, ...any)=>Promise|any,',
-              position: {
-                start: { line: 3, column: 1, offset: 10 },
-                end: { line: 5, column: 48, offset: 101 },
-                indent: [ 1, 1 ]
-              }
-            }
-          ],
-          position: {
-            start: { line: 3, column: 1, offset: 10 },
-            end: { line: 5, column: 48, offset: 101 },
-            indent: [ 1, 1 ]
-          }
-        },
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'trace(point !function, ...restArgs) -> point',
-              position: {
-                start: { line: 7, column: 1, offset: 103 },
-                end: { line: 7, column: 45, offset: 147 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 7, column: 1, offset: 103 },
-            end: { line: 7, column: 45, offset: 147 },
-            indent: []
-          }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 8, column: 1, offset: 148 }
-      }
-    },
-    description_mdast: {
-      type: 'root',
-      children: [
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'Log a value out to the console, returning the value. If the value is a function, treat is as a resolver and log lazily.',
-              position: {
-                start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 120, offset: 119 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 1, column: 120, offset: 119 },
+            end: { line: 1, column: 96, offset: 95 },
             indent: []
           }
         },
@@ -8011,390 +9755,78 @@ export default [
           type: 'code',
           lang: 'javascript',
           meta: '[playground]',
-          value: 'pipe([\n' +
-            '  trace,\n' +
-            '  trace(value => value.toUpperCase()),\n' +
-            "])('hey') // hey\n" +
-            '          // HEY',
+          value: 'const identity = value => value\n' +
+            '\n' +
+            'const isLessThan3 = lt(identity, 3)\n' +
+            '\n' +
+            'console.log(isLessThan3(1), true)\n' +
+            'console.log(isLessThan3(3), false)\n' +
+            'console.log(isLessThan3(5), false)',
           position: {
-            start: { line: 3, column: 1, offset: 121 },
-            end: { line: 9, column: 4, offset: 240 },
-            indent: [ 1, 1, 1, 1, 1, 1 ]
+            start: { line: 3, column: 1, offset: 97 },
+            end: { line: 11, column: 4, offset: 301 },
+            indent: [
+              1, 1, 1, 1,
+              1, 1, 1, 1
+            ]
           }
         }
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 10, column: 1, offset: 241 }
+        end: { line: 12, column: 1, offset: 302 }
       }
     }
   },
   {
-    name: 'unionWith',
-    synopsis: 'Iterable|GeneratorFunction -> SyncSequence\n' +
-      'AsyncIterable|AsyncGeneratorFunction -> AsyncSequence\n' +
-      'SyncSequence|AsyncSequence -> Sequence\n' +
+    name: 'lte',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var value any,\n' +
+      '  leftCompare any,\n' +
+      '  rightCompare any,\n' +
+      '  left (value=>Promise|leftCompare)|leftCompare,\n' +
+      '  right (value=>Promise|rightCompare)|rightCompare\n' +
       '\n' +
-      '<T any>unionWith(\n' +
-      '  predicate (T, T)=>Promise<boolean>|boolean,\n' +
-      ')(values Array<Sequence<T>|T>|T) -> result Promise<Array<T>>|Array<T>\n' +
+      'lte(left, right)(value) -> Promise|boolean\n' +
+      '```\n',
+    description: 'Test if a left value is less than or equal (`<=`) to a right value. Either parameter may be an actual value.\n' +
       '\n' +
-      '<T any>unionWith(\n' +
-      '  predicate (T, T)=>Promise<boolean>|boolean,\n' +
-      ')(values Set<Sequence<T>|T>|T) -> result Promise<Set<T>>|Set<T>\n' +
+      '```javascript [playground]\n' +
+      'const identity = value => value\n' +
       '\n' +
-      '<T any>unionWith(\n' +
-      '  predicate (T, T)=>boolean,\n' +
-      ')(values SyncSequence<SyncSequence<T>|T>|T) -> result Iterator<T>\n' +
+      'const isLessThanOrEqualTo3 = lte(identity, 3)\n' +
       '\n' +
-      '<T any>unionWith(\n' +
-      '  predicate (T, T)=>Promise<boolean>|boolean,\n' +
-      ')(values Sequence<Sequence<T>|T>|T) -> result AsyncIterator<T>\n',
-    description: "`unionWith` accepts a binary function `predicate` and any Sequence `values` and returns a flattened collection with all sub items `T` of the Sequence `values` uniq'd by `predicate`. The binary function `predicate` takes two arguments that represent two given sub items `T` and returns an expression that evaluates to true if those two given sub items are the same. A Sequence of values can be an Iterable, GeneratorFunction, AsyncIterable, or AsyncGeneratorFunction. The possible return values of `unionWith` are:\n" +
-      ' * Array - for Array `values`\n' +
-      ' * Set - for Set `values`\n' +
-      ' * Iterator - for Iterables beyond Array and Set, such as GeneratorFunctions\n' +
-      ' * AsyncIterator - for AsyncIterables and AsyncGeneratorFunctions\n',
+      'console.log(isLessThanOrEqualTo3(1), true)\n' +
+      'console.log(isLessThanOrEqualTo3(3), true)\n' +
+      'console.log(isLessThanOrEqualTo3(5), false)\n' +
+      '```\n',
     synopsis_mdast: {
       type: 'root',
       children: [
         {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'Iterable|GeneratorFunction -> SyncSequence\n' +
-                'AsyncIterable|AsyncGeneratorFunction -> AsyncSequence\n' +
-                'SyncSequence|AsyncSequence -> Sequence',
-              position: {
-                start: { line: 1, column: 1, offset: 0 },
-                end: { line: 3, column: 39, offset: 135 },
-                indent: [ 1, 1 ]
-              }
-            }
-          ],
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'var value any,\n' +
+            '  leftCompare any,\n' +
+            '  rightCompare any,\n' +
+            '  left (value=>Promise|leftCompare)|leftCompare,\n' +
+            '  right (value=>Promise|rightCompare)|rightCompare\n' +
+            '\n' +
+            'lte(left, right)(value) -> Promise|boolean',
           position: {
             start: { line: 1, column: 1, offset: 0 },
-            end: { line: 3, column: 39, offset: 135 },
-            indent: [ 1, 1 ]
-          }
-        },
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'html',
-              value: '<T any>',
-              position: {
-                start: { line: 5, column: 1, offset: 137 },
-                end: { line: 5, column: 8, offset: 144 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: 'unionWith(\n  predicate (T, T)=>Promise',
-              position: {
-                start: { line: 5, column: 8, offset: 144 },
-                end: { line: 6, column: 28, offset: 182 },
-                indent: [ 1 ]
-              }
-            },
-            {
-              type: 'html',
-              value: '<boolean>',
-              position: {
-                start: { line: 6, column: 28, offset: 182 },
-                end: { line: 6, column: 37, offset: 191 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: '|boolean,\n)(values Array<Sequence',
-              position: {
-                start: { line: 6, column: 37, offset: 191 },
-                end: { line: 7, column: 24, offset: 224 },
-                indent: [ 1 ]
-              }
-            },
-            {
-              type: 'html',
-              value: '<T>',
-              position: {
-                start: { line: 7, column: 24, offset: 224 },
-                end: { line: 7, column: 27, offset: 227 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: '|T>|T) -> result Promise<Array',
-              position: {
-                start: { line: 7, column: 27, offset: 227 },
-                end: { line: 7, column: 57, offset: 257 },
-                indent: []
-              }
-            },
-            {
-              type: 'html',
-              value: '<T>',
-              position: {
-                start: { line: 7, column: 57, offset: 257 },
-                end: { line: 7, column: 60, offset: 260 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: '>|Array',
-              position: {
-                start: { line: 7, column: 60, offset: 260 },
-                end: { line: 7, column: 67, offset: 267 },
-                indent: []
-              }
-            },
-            {
-              type: 'html',
-              value: '<T>',
-              position: {
-                start: { line: 7, column: 67, offset: 267 },
-                end: { line: 7, column: 70, offset: 270 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 5, column: 1, offset: 137 },
-            end: { line: 7, column: 70, offset: 270 },
-            indent: [ 1, 1 ]
-          }
-        },
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'html',
-              value: '<T any>',
-              position: {
-                start: { line: 9, column: 1, offset: 272 },
-                end: { line: 9, column: 8, offset: 279 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: 'unionWith(\n  predicate (T, T)=>Promise',
-              position: {
-                start: { line: 9, column: 8, offset: 279 },
-                end: { line: 10, column: 28, offset: 317 },
-                indent: [ 1 ]
-              }
-            },
-            {
-              type: 'html',
-              value: '<boolean>',
-              position: {
-                start: { line: 10, column: 28, offset: 317 },
-                end: { line: 10, column: 37, offset: 326 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: '|boolean,\n)(values Set<Sequence',
-              position: {
-                start: { line: 10, column: 37, offset: 326 },
-                end: { line: 11, column: 22, offset: 357 },
-                indent: [ 1 ]
-              }
-            },
-            {
-              type: 'html',
-              value: '<T>',
-              position: {
-                start: { line: 11, column: 22, offset: 357 },
-                end: { line: 11, column: 25, offset: 360 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: '|T>|T) -> result Promise<Set',
-              position: {
-                start: { line: 11, column: 25, offset: 360 },
-                end: { line: 11, column: 53, offset: 388 },
-                indent: []
-              }
-            },
-            {
-              type: 'html',
-              value: '<T>',
-              position: {
-                start: { line: 11, column: 53, offset: 388 },
-                end: { line: 11, column: 56, offset: 391 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: '>|Set',
-              position: {
-                start: { line: 11, column: 56, offset: 391 },
-                end: { line: 11, column: 61, offset: 396 },
-                indent: []
-              }
-            },
-            {
-              type: 'html',
-              value: '<T>',
-              position: {
-                start: { line: 11, column: 61, offset: 396 },
-                end: { line: 11, column: 64, offset: 399 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 9, column: 1, offset: 272 },
-            end: { line: 11, column: 64, offset: 399 },
-            indent: [ 1, 1 ]
-          }
-        },
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'html',
-              value: '<T any>',
-              position: {
-                start: { line: 13, column: 1, offset: 401 },
-                end: { line: 13, column: 8, offset: 408 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: 'unionWith(\n' +
-                '  predicate (T, T)=>boolean,\n' +
-                ')(values SyncSequence<SyncSequence',
-              position: {
-                start: { line: 13, column: 8, offset: 408 },
-                end: { line: 15, column: 35, offset: 482 },
-                indent: [ 1, 1 ]
-              }
-            },
-            {
-              type: 'html',
-              value: '<T>',
-              position: {
-                start: { line: 15, column: 35, offset: 482 },
-                end: { line: 15, column: 38, offset: 485 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: '|T>|T) -> result Iterator',
-              position: {
-                start: { line: 15, column: 38, offset: 485 },
-                end: { line: 15, column: 63, offset: 510 },
-                indent: []
-              }
-            },
-            {
-              type: 'html',
-              value: '<T>',
-              position: {
-                start: { line: 15, column: 63, offset: 510 },
-                end: { line: 15, column: 66, offset: 513 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 13, column: 1, offset: 401 },
-            end: { line: 15, column: 66, offset: 513 },
-            indent: [ 1, 1 ]
-          }
-        },
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'html',
-              value: '<T any>',
-              position: {
-                start: { line: 17, column: 1, offset: 515 },
-                end: { line: 17, column: 8, offset: 522 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: 'unionWith(\n  predicate (T, T)=>Promise',
-              position: {
-                start: { line: 17, column: 8, offset: 522 },
-                end: { line: 18, column: 28, offset: 560 },
-                indent: [ 1 ]
-              }
-            },
-            {
-              type: 'html',
-              value: '<boolean>',
-              position: {
-                start: { line: 18, column: 28, offset: 560 },
-                end: { line: 18, column: 37, offset: 569 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: '|boolean,\n)(values Sequence<Sequence',
-              position: {
-                start: { line: 18, column: 37, offset: 569 },
-                end: { line: 19, column: 27, offset: 605 },
-                indent: [ 1 ]
-              }
-            },
-            {
-              type: 'html',
-              value: '<T>',
-              position: {
-                start: { line: 19, column: 27, offset: 605 },
-                end: { line: 19, column: 30, offset: 608 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: '|T>|T) -> result AsyncIterator',
-              position: {
-                start: { line: 19, column: 30, offset: 608 },
-                end: { line: 19, column: 60, offset: 638 },
-                indent: []
-              }
-            },
-            {
-              type: 'html',
-              value: '<T>',
-              position: {
-                start: { line: 19, column: 60, offset: 638 },
-                end: { line: 19, column: 63, offset: 641 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 17, column: 1, offset: 515 },
-            end: { line: 19, column: 63, offset: 641 },
-            indent: [ 1, 1 ]
+            end: { line: 9, column: 4, offset: 230 },
+            indent: [
+              1, 1, 1, 1,
+              1, 1, 1, 1
+            ]
           }
         }
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 20, column: 1, offset: 642 }
+        end: { line: 10, column: 1, offset: 231 }
       }
     },
     description_mdast: {
@@ -8404,171 +9836,233 @@ export default [
           type: 'paragraph',
           children: [
             {
-              type: 'inlineCode',
-              value: 'unionWith',
+              type: 'text',
+              value: 'Test if a left value is less than or equal (',
               position: {
                 start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 12, offset: 11 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: ' accepts a binary function ',
-              position: {
-                start: { line: 1, column: 12, offset: 11 },
-                end: { line: 1, column: 39, offset: 38 },
+                end: { line: 1, column: 45, offset: 44 },
                 indent: []
               }
             },
             {
               type: 'inlineCode',
-              value: 'predicate',
+              value: '<=',
               position: {
-                start: { line: 1, column: 39, offset: 38 },
-                end: { line: 1, column: 50, offset: 49 },
+                start: { line: 1, column: 45, offset: 44 },
+                end: { line: 1, column: 49, offset: 48 },
                 indent: []
               }
             },
             {
               type: 'text',
-              value: ' and any Sequence ',
+              value: ') to a right value. Either parameter may be an actual value.',
               position: {
-                start: { line: 1, column: 50, offset: 49 },
-                end: { line: 1, column: 68, offset: 67 },
-                indent: []
-              }
-            },
-            {
-              type: 'inlineCode',
-              value: 'values',
-              position: {
-                start: { line: 1, column: 68, offset: 67 },
-                end: { line: 1, column: 76, offset: 75 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: ' and returns a flattened collection with all sub items ',
-              position: {
-                start: { line: 1, column: 76, offset: 75 },
-                end: { line: 1, column: 131, offset: 130 },
-                indent: []
-              }
-            },
-            {
-              type: 'inlineCode',
-              value: 'T',
-              position: {
-                start: { line: 1, column: 131, offset: 130 },
-                end: { line: 1, column: 134, offset: 133 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: ' of the Sequence ',
-              position: {
-                start: { line: 1, column: 134, offset: 133 },
-                end: { line: 1, column: 151, offset: 150 },
-                indent: []
-              }
-            },
-            {
-              type: 'inlineCode',
-              value: 'values',
-              position: {
-                start: { line: 1, column: 151, offset: 150 },
-                end: { line: 1, column: 159, offset: 158 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: " uniq'd by ",
-              position: {
-                start: { line: 1, column: 159, offset: 158 },
-                end: { line: 1, column: 170, offset: 169 },
-                indent: []
-              }
-            },
-            {
-              type: 'inlineCode',
-              value: 'predicate',
-              position: {
-                start: { line: 1, column: 170, offset: 169 },
-                end: { line: 1, column: 181, offset: 180 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: '. The binary function ',
-              position: {
-                start: { line: 1, column: 181, offset: 180 },
-                end: { line: 1, column: 203, offset: 202 },
-                indent: []
-              }
-            },
-            {
-              type: 'inlineCode',
-              value: 'predicate',
-              position: {
-                start: { line: 1, column: 203, offset: 202 },
-                end: { line: 1, column: 214, offset: 213 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: ' takes two arguments that represent two given sub items ',
-              position: {
-                start: { line: 1, column: 214, offset: 213 },
-                end: { line: 1, column: 270, offset: 269 },
-                indent: []
-              }
-            },
-            {
-              type: 'inlineCode',
-              value: 'T',
-              position: {
-                start: { line: 1, column: 270, offset: 269 },
-                end: { line: 1, column: 273, offset: 272 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: ' and returns an expression that evaluates to true if those two given sub items are the same. A Sequence of values can be an Iterable, GeneratorFunction, AsyncIterable, or AsyncGeneratorFunction. The possible return values of ',
-              position: {
-                start: { line: 1, column: 273, offset: 272 },
-                end: { line: 1, column: 498, offset: 497 },
-                indent: []
-              }
-            },
-            {
-              type: 'inlineCode',
-              value: 'unionWith',
-              position: {
-                start: { line: 1, column: 498, offset: 497 },
-                end: { line: 1, column: 509, offset: 508 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: ' are:',
-              position: {
-                start: { line: 1, column: 509, offset: 508 },
-                end: { line: 1, column: 514, offset: 513 },
+                start: { line: 1, column: 49, offset: 48 },
+                end: { line: 1, column: 109, offset: 108 },
                 indent: []
               }
             }
           ],
           position: {
             start: { line: 1, column: 1, offset: 0 },
-            end: { line: 1, column: 514, offset: 513 },
+            end: { line: 1, column: 109, offset: 108 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[playground]',
+          value: 'const identity = value => value\n' +
+            '\n' +
+            'const isLessThanOrEqualTo3 = lte(identity, 3)\n' +
+            '\n' +
+            'console.log(isLessThanOrEqualTo3(1), true)\n' +
+            'console.log(isLessThanOrEqualTo3(3), true)\n' +
+            'console.log(isLessThanOrEqualTo3(5), false)',
+          position: {
+            start: { line: 3, column: 1, offset: 110 },
+            end: { line: 11, column: 4, offset: 350 },
+            indent: [
+              1, 1, 1, 1,
+              1, 1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 12, column: 1, offset: 351 }
+      }
+    }
+  },
+  {
+    name: 'map',
+    synopsis: '```coffeescript [specscript]\n' +
+      'Functor<T> = Array<T>|Object<T>|Iterator<T>|AsyncIterator<T>|{ map: T=>any }\n' +
+      'Reducer<T> = (any, T)=>Promise|any\n' +
+      '\n' +
+      'var T any,\n' +
+      '  mapper T=>Promise|any,\n' +
+      '  functor Functor<T>\n' +
+      '  args ...any,\n' +
+      '  generatorFunction ...args=>Generator<T>,\n' +
+      '  asyncGeneratorFunction ...args=>AsyncGenerator<T>,\n' +
+      '  reducer Reducer<T>\n' +
+      '\n' +
+      'map(mapper)(functor) -> Promise|Functor\n' +
+      '\n' +
+      'map(mapper)(generatorFunction) -> ...args=>Generator\n' +
+      '\n' +
+      'map(mapper)(asyncGeneratorFunction) -> ...args=>AsyncGenerator\n' +
+      '\n' +
+      'map(mapper)(reducer) -> Reducer\n' +
+      '```\n',
+    description: 'Apply a mapper concurrently to each item of a collection, returning the results in a collection of the same type. If order is implied by the collection, it is maintained in the result. Below are valid collections along with their iteration behavior.\n' +
+      '\n' +
+      ' * `Array` - iterate values by index\n' +
+      ' * `Object` - iterate object values\n' +
+      ' * `Map` - iterate Map values (not entries)\n' +
+      ' * `Iterator`/`Generator` - iterate by calling `.next`\n' +
+      ' * `AsyncIterator`/`AsyncGenerator` - iterate by calling `.next`\n' +
+      ' * `{ map: function }` - call `.map` directly\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const square = number => number ** 2\n' +
+      '\n' +
+      'console.log(\n' +
+      '  map(square)([1, 2, 3, 4, 5]),\n' +
+      ') // [1, 4, 9, 16, 25]\n' +
+      '\n' +
+      'console.log(\n' +
+      "  map(square)(new Map([['a', 1], ['b', 2], ['c', 3], ['d', 4], ['e', 5]])),\n" +
+      ") // Map { 'a' => 1, 'b' => 4, 'c' => 9, 'd' => 16, 'e' => 25 }\n" +
+      '\n' +
+      'console.log(\n' +
+      '  map(square)({ a: 1, b: 2, c: 3, d: 4, e: 5 }),\n' +
+      ') // { a: 1, b: 4, c: 9, d: 16, e: 25 }\n' +
+      '```\n' +
+      '\n' +
+      'Functions are regarded as resolvers. Each of the following calls, when passed to a mapping function `map(mapper)`, creates a function with all items of its return transformed by the mapper.\n' +
+      '\n' +
+      ' * `GeneratorFunction` - items of the iterator are mapped into a new iterator. Warning: using an async mapper in a synchronous generator function is not recommended and could lead to unexpected behavior.\n' +
+      ' * `AsyncGeneratorFunction` - items of the async iterator are mapped into a new async iterator. Async result items are awaited in a new async iterator. Async mapper functions are valid.\n' +
+      ' * `Reducer` - items of a reducing operation are transformed by the mapper function. Fully asynchronous transducing operations are possible with a mapping reducer and `reduce`.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const capitalize = string => string.toUpperCase()\n' +
+      '\n' +
+      'const abc = function* () {\n' +
+      "  yield 'a'; yield 'b'; yield 'c'\n" +
+      '}\n' +
+      '\n' +
+      'const ABC = map(capitalize)(abc)\n' +
+      '\n' +
+      'const abcIter = abc()\n' +
+      '\n' +
+      'const ABCIter = ABC()\n' +
+      '\n' +
+      "console.log([...abcIter]) // ['a', 'b', 'c']\n" +
+      '\n' +
+      "console.log([...ABCIter]) // ['A', 'B', 'C']\n" +
+      '```\n' +
+      '\n' +
+      'Function laziness is extended to reducer functions as [transducers](https://github.com/a-synchronous/rubico/blob/master/TRANSDUCERS.md).\n' +
+      '\n' +
+      '```coffeescript [specscript]\n' +
+      'Reducer<T> = (any, T)=>Promise|any\n' +
+      '\n' +
+      'Transducer = Reducer=>Reducer\n' +
+      '```\n' +
+      '\n' +
+      'A reducer is a variadic function like the one supplied to `Array.prototype.reduce`, but without the index and reference to the accumulated result per call. A transducer is a function that accepts a reducer function as an argument and returns another reducer function, which enables chaining functionality for reducers. `map` is core to this mechanism, and provides a way to create transducers with mapper functions.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const square = number => number ** 2\n' +
+      '\n' +
+      'const concat = (array, item) => array.concat(item)\n' +
+      '\n' +
+      'const mapSquare = map(square)\n' +
+      '// mapSquare could potentially be a transducer, but at this point, it is\n' +
+      '// undifferentiated and not necessarily locked in to transducer behavior.\n' +
+      '\n' +
+      'console.log(\n' +
+      '  mapSquare([1, 2, 3, 4, 5]),\n' +
+      ') // [1, 4, 9, 16, 25]\n' +
+      '\n' +
+      'const squareConcatReducer = mapSquare(concat)\n' +
+      '// now mapSquare is passed the function concat, so it assumes transducer\n' +
+      '// position. squareConcatReducer is a reducer with chained functionality\n' +
+      '// square and concat.\n' +
+      '\n' +
+      'console.log(\n' +
+      '  [1, 2, 3, 4, 5].reduce(squareConcatReducer, []),\n' +
+      ') // [1, 4, 9, 16, 25]\n' +
+      '\n' +
+      'console.log(\n' +
+      "  [1, 2, 3, 4, 5].reduce(squareConcatReducer, ''),\n" +
+      ") // '1491625'\n" +
+      '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'Functor<T> = Array<T>|Object<T>|Iterator<T>|AsyncIterator<T>|{ map: T=>any }\n' +
+            'Reducer<T> = (any, T)=>Promise|any\n' +
+            '\n' +
+            'var T any,\n' +
+            '  mapper T=>Promise|any,\n' +
+            '  functor Functor<T>\n' +
+            '  args ...any,\n' +
+            '  generatorFunction ...args=>Generator<T>,\n' +
+            '  asyncGeneratorFunction ...args=>AsyncGenerator<T>,\n' +
+            '  reducer Reducer<T>\n' +
+            '\n' +
+            'map(mapper)(functor) -> Promise|Functor\n' +
+            '\n' +
+            'map(mapper)(generatorFunction) -> ...args=>Generator\n' +
+            '\n' +
+            'map(mapper)(asyncGeneratorFunction) -> ...args=>AsyncGenerator\n' +
+            '\n' +
+            'map(mapper)(reducer) -> Reducer',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 20, column: 4, offset: 526 },
+            indent: [
+              1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 21, column: 1, offset: 527 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Apply a mapper concurrently to each item of a collection, returning the results in a collection of the same type. If order is implied by the collection, it is maintained in the result. Below are valid collections along with their iteration behavior.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 250, offset: 249 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 250, offset: 249 },
             indent: []
           }
         },
@@ -8587,74 +10081,181 @@ export default [
                   type: 'paragraph',
                   children: [
                     {
-                      type: 'text',
-                      value: 'Array - for Array ',
+                      type: 'inlineCode',
+                      value: 'Array',
                       position: {
-                        start: { line: 2, column: 4, offset: 517 },
-                        end: { line: 2, column: 22, offset: 535 },
+                        start: { line: 3, column: 4, offset: 254 },
+                        end: { line: 3, column: 11, offset: 261 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: ' - iterate values by index',
+                      position: {
+                        start: { line: 3, column: 11, offset: 261 },
+                        end: { line: 3, column: 37, offset: 287 },
+                        indent: []
+                      }
+                    }
+                  ],
+                  position: {
+                    start: { line: 3, column: 4, offset: 254 },
+                    end: { line: 3, column: 37, offset: 287 },
+                    indent: []
+                  }
+                }
+              ],
+              position: {
+                start: { line: 3, column: 1, offset: 251 },
+                end: { line: 3, column: 37, offset: 287 },
+                indent: []
+              }
+            },
+            {
+              type: 'listItem',
+              spread: false,
+              checked: null,
+              children: [
+                {
+                  type: 'paragraph',
+                  children: [
+                    {
+                      type: 'inlineCode',
+                      value: 'Object',
+                      position: {
+                        start: { line: 4, column: 4, offset: 291 },
+                        end: { line: 4, column: 12, offset: 299 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: ' - iterate object values',
+                      position: {
+                        start: { line: 4, column: 12, offset: 299 },
+                        end: { line: 4, column: 36, offset: 323 },
+                        indent: []
+                      }
+                    }
+                  ],
+                  position: {
+                    start: { line: 4, column: 4, offset: 291 },
+                    end: { line: 4, column: 36, offset: 323 },
+                    indent: []
+                  }
+                }
+              ],
+              position: {
+                start: { line: 4, column: 1, offset: 288 },
+                end: { line: 4, column: 36, offset: 323 },
+                indent: []
+              }
+            },
+            {
+              type: 'listItem',
+              spread: false,
+              checked: null,
+              children: [
+                {
+                  type: 'paragraph',
+                  children: [
+                    {
+                      type: 'inlineCode',
+                      value: 'Map',
+                      position: {
+                        start: { line: 5, column: 4, offset: 327 },
+                        end: { line: 5, column: 9, offset: 332 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: ' - iterate Map values (not entries)',
+                      position: {
+                        start: { line: 5, column: 9, offset: 332 },
+                        end: { line: 5, column: 44, offset: 367 },
+                        indent: []
+                      }
+                    }
+                  ],
+                  position: {
+                    start: { line: 5, column: 4, offset: 327 },
+                    end: { line: 5, column: 44, offset: 367 },
+                    indent: []
+                  }
+                }
+              ],
+              position: {
+                start: { line: 5, column: 1, offset: 324 },
+                end: { line: 5, column: 44, offset: 367 },
+                indent: []
+              }
+            },
+            {
+              type: 'listItem',
+              spread: false,
+              checked: null,
+              children: [
+                {
+                  type: 'paragraph',
+                  children: [
+                    {
+                      type: 'inlineCode',
+                      value: 'Iterator',
+                      position: {
+                        start: { line: 6, column: 4, offset: 371 },
+                        end: { line: 6, column: 14, offset: 381 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: '/',
+                      position: {
+                        start: { line: 6, column: 14, offset: 381 },
+                        end: { line: 6, column: 15, offset: 382 },
                         indent: []
                       }
                     },
                     {
                       type: 'inlineCode',
-                      value: 'values',
+                      value: 'Generator',
                       position: {
-                        start: { line: 2, column: 22, offset: 535 },
-                        end: { line: 2, column: 30, offset: 543 },
+                        start: { line: 6, column: 15, offset: 382 },
+                        end: { line: 6, column: 26, offset: 393 },
                         indent: []
                       }
-                    }
-                  ],
-                  position: {
-                    start: { line: 2, column: 4, offset: 517 },
-                    end: { line: 2, column: 30, offset: 543 },
-                    indent: []
-                  }
-                }
-              ],
-              position: {
-                start: { line: 2, column: 1, offset: 514 },
-                end: { line: 2, column: 30, offset: 543 },
-                indent: []
-              }
-            },
-            {
-              type: 'listItem',
-              spread: false,
-              checked: null,
-              children: [
-                {
-                  type: 'paragraph',
-                  children: [
+                    },
                     {
                       type: 'text',
-                      value: 'Set - for Set ',
+                      value: ' - iterate by calling ',
                       position: {
-                        start: { line: 3, column: 4, offset: 547 },
-                        end: { line: 3, column: 18, offset: 561 },
+                        start: { line: 6, column: 26, offset: 393 },
+                        end: { line: 6, column: 48, offset: 415 },
                         indent: []
                       }
                     },
                     {
                       type: 'inlineCode',
-                      value: 'values',
+                      value: '.next',
                       position: {
-                        start: { line: 3, column: 18, offset: 561 },
-                        end: { line: 3, column: 26, offset: 569 },
+                        start: { line: 6, column: 48, offset: 415 },
+                        end: { line: 6, column: 55, offset: 422 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 3, column: 4, offset: 547 },
-                    end: { line: 3, column: 26, offset: 569 },
+                    start: { line: 6, column: 4, offset: 371 },
+                    end: { line: 6, column: 55, offset: 422 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 3, column: 1, offset: 544 },
-                end: { line: 3, column: 26, offset: 569 },
+                start: { line: 6, column: 1, offset: 368 },
+                end: { line: 6, column: 55, offset: 422 },
                 indent: []
               }
             },
@@ -8667,25 +10268,61 @@ export default [
                   type: 'paragraph',
                   children: [
                     {
-                      type: 'text',
-                      value: 'Iterator - for Iterables beyond Array and Set, such as GeneratorFunctions',
+                      type: 'inlineCode',
+                      value: 'AsyncIterator',
                       position: {
-                        start: { line: 4, column: 4, offset: 573 },
-                        end: { line: 4, column: 77, offset: 646 },
+                        start: { line: 7, column: 4, offset: 426 },
+                        end: { line: 7, column: 19, offset: 441 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: '/',
+                      position: {
+                        start: { line: 7, column: 19, offset: 441 },
+                        end: { line: 7, column: 20, offset: 442 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'inlineCode',
+                      value: 'AsyncGenerator',
+                      position: {
+                        start: { line: 7, column: 20, offset: 442 },
+                        end: { line: 7, column: 36, offset: 458 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: ' - iterate by calling ',
+                      position: {
+                        start: { line: 7, column: 36, offset: 458 },
+                        end: { line: 7, column: 58, offset: 480 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'inlineCode',
+                      value: '.next',
+                      position: {
+                        start: { line: 7, column: 58, offset: 480 },
+                        end: { line: 7, column: 65, offset: 487 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 4, column: 4, offset: 573 },
-                    end: { line: 4, column: 77, offset: 646 },
+                    start: { line: 7, column: 4, offset: 426 },
+                    end: { line: 7, column: 65, offset: 487 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 4, column: 1, offset: 570 },
-                end: { line: 4, column: 77, offset: 646 },
+                start: { line: 7, column: 1, offset: 423 },
+                end: { line: 7, column: 65, offset: 487 },
                 indent: []
               }
             },
@@ -8698,108 +10335,511 @@ export default [
                   type: 'paragraph',
                   children: [
                     {
-                      type: 'text',
-                      value: 'AsyncIterator - for AsyncIterables and AsyncGeneratorFunctions',
+                      type: 'inlineCode',
+                      value: '{ map: function }',
                       position: {
-                        start: { line: 5, column: 4, offset: 650 },
-                        end: { line: 5, column: 66, offset: 712 },
+                        start: { line: 8, column: 4, offset: 491 },
+                        end: { line: 8, column: 23, offset: 510 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: ' - call ',
+                      position: {
+                        start: { line: 8, column: 23, offset: 510 },
+                        end: { line: 8, column: 31, offset: 518 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'inlineCode',
+                      value: '.map',
+                      position: {
+                        start: { line: 8, column: 31, offset: 518 },
+                        end: { line: 8, column: 37, offset: 524 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: ' directly',
+                      position: {
+                        start: { line: 8, column: 37, offset: 524 },
+                        end: { line: 8, column: 46, offset: 533 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 5, column: 4, offset: 650 },
-                    end: { line: 5, column: 66, offset: 712 },
+                    start: { line: 8, column: 4, offset: 491 },
+                    end: { line: 8, column: 46, offset: 533 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 5, column: 1, offset: 647 },
-                end: { line: 5, column: 66, offset: 712 },
+                start: { line: 8, column: 1, offset: 488 },
+                end: { line: 8, column: 46, offset: 533 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 2, column: 1, offset: 514 },
-            end: { line: 5, column: 66, offset: 712 },
-            indent: [ 1, 1, 1 ]
+            start: { line: 3, column: 1, offset: 251 },
+            end: { line: 8, column: 46, offset: 533 },
+            indent: [ 1, 1, 1, 1, 1 ]
           }
-        }
-      ],
-      position: {
-        start: { line: 1, column: 1, offset: 0 },
-        end: { line: 6, column: 1, offset: 713 }
-      }
-    }
-  },
-  {
-    name: 'uniq',
-    synopsis: '<T any>uniq(arr Array<T>) -> uniqArr Array<T>\n',
-    description: '`uniq` takes an Array of items and returns an Array of items containing only the unique items of that Array.\n',
-    synopsis_mdast: {
-      type: 'root',
-      children: [
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[playground]',
+          value: 'const square = number => number ** 2\n' +
+            '\n' +
+            'console.log(\n' +
+            '  map(square)([1, 2, 3, 4, 5]),\n' +
+            ') // [1, 4, 9, 16, 25]\n' +
+            '\n' +
+            'console.log(\n' +
+            "  map(square)(new Map([['a', 1], ['b', 2], ['c', 3], ['d', 4], ['e', 5]])),\n" +
+            ") // Map { 'a' => 1, 'b' => 4, 'c' => 9, 'd' => 16, 'e' => 25 }\n" +
+            '\n' +
+            'console.log(\n' +
+            '  map(square)({ a: 1, b: 2, c: 3, d: 4, e: 5 }),\n' +
+            ') // { a: 1, b: 4, c: 9, d: 16, e: 25 }',
+          position: {
+            start: { line: 10, column: 1, offset: 535 },
+            end: { line: 24, column: 4, offset: 928 },
+            indent: [
+              1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1,
+              1, 1
+            ]
+          }
+        },
         {
           type: 'paragraph',
           children: [
             {
-              type: 'html',
-              value: '<T any>',
+              type: 'text',
+              value: 'Functions are regarded as resolvers. Each of the following calls, when passed to a mapping function ',
               position: {
-                start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 8, offset: 7 },
+                start: { line: 26, column: 1, offset: 930 },
+                end: { line: 26, column: 101, offset: 1030 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'map(mapper)',
+              position: {
+                start: { line: 26, column: 101, offset: 1030 },
+                end: { line: 26, column: 114, offset: 1043 },
                 indent: []
               }
             },
             {
               type: 'text',
-              value: 'uniq(arr Array',
+              value: ', creates a function with all items of its return transformed by the mapper.',
               position: {
-                start: { line: 1, column: 8, offset: 7 },
-                end: { line: 1, column: 22, offset: 21 },
-                indent: []
-              }
-            },
-            {
-              type: 'html',
-              value: '<T>',
-              position: {
-                start: { line: 1, column: 22, offset: 21 },
-                end: { line: 1, column: 25, offset: 24 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: ') -> uniqArr Array',
-              position: {
-                start: { line: 1, column: 25, offset: 24 },
-                end: { line: 1, column: 43, offset: 42 },
-                indent: []
-              }
-            },
-            {
-              type: 'html',
-              value: '<T>',
-              position: {
-                start: { line: 1, column: 43, offset: 42 },
-                end: { line: 1, column: 46, offset: 45 },
+                start: { line: 26, column: 114, offset: 1043 },
+                end: { line: 26, column: 190, offset: 1119 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 1, column: 1, offset: 0 },
-            end: { line: 1, column: 46, offset: 45 },
+            start: { line: 26, column: 1, offset: 930 },
+            end: { line: 26, column: 190, offset: 1119 },
             indent: []
+          }
+        },
+        {
+          type: 'list',
+          ordered: false,
+          start: null,
+          spread: false,
+          children: [
+            {
+              type: 'listItem',
+              spread: false,
+              checked: null,
+              children: [
+                {
+                  type: 'paragraph',
+                  children: [
+                    {
+                      type: 'inlineCode',
+                      value: 'GeneratorFunction',
+                      position: {
+                        start: { line: 28, column: 4, offset: 1124 },
+                        end: { line: 28, column: 23, offset: 1143 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: ' - items of the iterator are mapped into a new iterator. Warning: using an async mapper in a synchronous generator function is not recommended and could lead to unexpected behavior.',
+                      position: {
+                        start: { line: 28, column: 23, offset: 1143 },
+                        end: { line: 28, column: 204, offset: 1324 },
+                        indent: []
+                      }
+                    }
+                  ],
+                  position: {
+                    start: { line: 28, column: 4, offset: 1124 },
+                    end: { line: 28, column: 204, offset: 1324 },
+                    indent: []
+                  }
+                }
+              ],
+              position: {
+                start: { line: 28, column: 1, offset: 1121 },
+                end: { line: 28, column: 204, offset: 1324 },
+                indent: []
+              }
+            },
+            {
+              type: 'listItem',
+              spread: false,
+              checked: null,
+              children: [
+                {
+                  type: 'paragraph',
+                  children: [
+                    {
+                      type: 'inlineCode',
+                      value: 'AsyncGeneratorFunction',
+                      position: {
+                        start: { line: 29, column: 4, offset: 1328 },
+                        end: { line: 29, column: 28, offset: 1352 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: ' - items of the async iterator are mapped into a new async iterator. Async result items are awaited in a new async iterator. Async mapper functions are valid.',
+                      position: {
+                        start: { line: 29, column: 28, offset: 1352 },
+                        end: { line: 29, column: 186, offset: 1510 },
+                        indent: []
+                      }
+                    }
+                  ],
+                  position: {
+                    start: { line: 29, column: 4, offset: 1328 },
+                    end: { line: 29, column: 186, offset: 1510 },
+                    indent: []
+                  }
+                }
+              ],
+              position: {
+                start: { line: 29, column: 1, offset: 1325 },
+                end: { line: 29, column: 186, offset: 1510 },
+                indent: []
+              }
+            },
+            {
+              type: 'listItem',
+              spread: false,
+              checked: null,
+              children: [
+                {
+                  type: 'paragraph',
+                  children: [
+                    {
+                      type: 'inlineCode',
+                      value: 'Reducer',
+                      position: {
+                        start: { line: 30, column: 4, offset: 1514 },
+                        end: { line: 30, column: 13, offset: 1523 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: ' - items of a reducing operation are transformed by the mapper function. Fully asynchronous transducing operations are possible with a mapping reducer and ',
+                      position: {
+                        start: { line: 30, column: 13, offset: 1523 },
+                        end: { line: 30, column: 168, offset: 1678 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'inlineCode',
+                      value: 'reduce',
+                      position: {
+                        start: { line: 30, column: 168, offset: 1678 },
+                        end: { line: 30, column: 176, offset: 1686 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: '.',
+                      position: {
+                        start: { line: 30, column: 176, offset: 1686 },
+                        end: { line: 30, column: 177, offset: 1687 },
+                        indent: []
+                      }
+                    }
+                  ],
+                  position: {
+                    start: { line: 30, column: 4, offset: 1514 },
+                    end: { line: 30, column: 177, offset: 1687 },
+                    indent: []
+                  }
+                }
+              ],
+              position: {
+                start: { line: 30, column: 1, offset: 1511 },
+                end: { line: 30, column: 177, offset: 1687 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 28, column: 1, offset: 1121 },
+            end: { line: 30, column: 177, offset: 1687 },
+            indent: [ 1, 1 ]
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[playground]',
+          value: 'const capitalize = string => string.toUpperCase()\n' +
+            '\n' +
+            'const abc = function* () {\n' +
+            "  yield 'a'; yield 'b'; yield 'c'\n" +
+            '}\n' +
+            '\n' +
+            'const ABC = map(capitalize)(abc)\n' +
+            '\n' +
+            'const abcIter = abc()\n' +
+            '\n' +
+            'const ABCIter = ABC()\n' +
+            '\n' +
+            "console.log([...abcIter]) // ['a', 'b', 'c']\n" +
+            '\n' +
+            "console.log([...ABCIter]) // ['A', 'B', 'C']",
+          position: {
+            start: { line: 32, column: 1, offset: 1689 },
+            end: { line: 48, column: 4, offset: 2005 },
+            indent: [
+              1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1
+            ]
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Function laziness is extended to reducer functions as ',
+              position: {
+                start: { line: 50, column: 1, offset: 2007 },
+                end: { line: 50, column: 55, offset: 2061 },
+                indent: []
+              }
+            },
+            {
+              type: 'link',
+              title: null,
+              url: 'https://github.com/a-synchronous/rubico/blob/master/TRANSDUCERS.md',
+              children: [
+                {
+                  type: 'text',
+                  value: 'transducers',
+                  position: {
+                    start: { line: 50, column: 56, offset: 2062 },
+                    end: { line: 50, column: 67, offset: 2073 },
+                    indent: []
+                  }
+                }
+              ],
+              position: {
+                start: { line: 50, column: 55, offset: 2061 },
+                end: { line: 50, column: 136, offset: 2142 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: '.',
+              position: {
+                start: { line: 50, column: 136, offset: 2142 },
+                end: { line: 50, column: 137, offset: 2143 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 50, column: 1, offset: 2007 },
+            end: { line: 50, column: 137, offset: 2143 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'Reducer<T> = (any, T)=>Promise|any\n\nTransducer = Reducer=>Reducer',
+          position: {
+            start: { line: 52, column: 1, offset: 2145 },
+            end: { line: 56, column: 4, offset: 2243 },
+            indent: [ 1, 1, 1, 1 ]
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'A reducer is a variadic function like the one supplied to ',
+              position: {
+                start: { line: 58, column: 1, offset: 2245 },
+                end: { line: 58, column: 59, offset: 2303 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'Array.prototype.reduce',
+              position: {
+                start: { line: 58, column: 59, offset: 2303 },
+                end: { line: 58, column: 83, offset: 2327 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ', but without the index and reference to the accumulated result per call. A transducer is a function that accepts a reducer function as an argument and returns another reducer function, which enables chaining functionality for reducers. ',
+              position: {
+                start: { line: 58, column: 83, offset: 2327 },
+                end: { line: 58, column: 320, offset: 2564 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'map',
+              position: {
+                start: { line: 58, column: 320, offset: 2564 },
+                end: { line: 58, column: 325, offset: 2569 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ' is core to this mechanism, and provides a way to create transducers with mapper functions.',
+              position: {
+                start: { line: 58, column: 325, offset: 2569 },
+                end: { line: 58, column: 416, offset: 2660 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 58, column: 1, offset: 2245 },
+            end: { line: 58, column: 416, offset: 2660 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[playground]',
+          value: 'const square = number => number ** 2\n' +
+            '\n' +
+            'const concat = (array, item) => array.concat(item)\n' +
+            '\n' +
+            'const mapSquare = map(square)\n' +
+            '// mapSquare could potentially be a transducer, but at this point, it is\n' +
+            '// undifferentiated and not necessarily locked in to transducer behavior.\n' +
+            '\n' +
+            'console.log(\n' +
+            '  mapSquare([1, 2, 3, 4, 5]),\n' +
+            ') // [1, 4, 9, 16, 25]\n' +
+            '\n' +
+            'const squareConcatReducer = mapSquare(concat)\n' +
+            '// now mapSquare is passed the function concat, so it assumes transducer\n' +
+            '// position. squareConcatReducer is a reducer with chained functionality\n' +
+            '// square and concat.\n' +
+            '\n' +
+            'console.log(\n' +
+            '  [1, 2, 3, 4, 5].reduce(squareConcatReducer, []),\n' +
+            ') // [1, 4, 9, 16, 25]\n' +
+            '\n' +
+            'console.log(\n' +
+            "  [1, 2, 3, 4, 5].reduce(squareConcatReducer, ''),\n" +
+            ") // '1491625'",
+          position: {
+            start: { line: 60, column: 1, offset: 2662 },
+            end: { line: 85, column: 4, offset: 3409 },
+            indent: [
+              1, 1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1, 1, 1,
+              1
+            ]
           }
         }
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 2, column: 1, offset: 46 }
+        end: { line: 86, column: 1, offset: 3410 }
+      }
+    }
+  },
+  {
+    name: 'map.series',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var T any,\n' +
+      '  mapper T=>Promise|any,\n' +
+      '  array Array<T>\n' +
+      '\n' +
+      'map.series(mapper)(array) -> Promise|Array\n' +
+      '```\n',
+    description: '`map` with serial execution.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const delayedLog = number => new Promise(function (resolve) {\n' +
+      '  setTimeout(function () {\n' +
+      '    console.log(number)\n' +
+      '    resolve()\n' +
+      '  }, 1000)\n' +
+      '})\n' +
+      '\n' +
+      "console.log('start')\n" +
+      'map.series(delayedLog)([1, 2, 3, 4, 5])\n' +
+      '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'var T any,\n' +
+            '  mapper T=>Promise|any,\n' +
+            '  array Array<T>\n' +
+            '\n' +
+            'map.series(mapper)(array) -> Promise|Array',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 7, column: 4, offset: 129 },
+            indent: [ 1, 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 8, column: 1, offset: 130 }
       }
     },
     description_mdast: {
@@ -8810,33 +10850,264 @@ export default [
           children: [
             {
               type: 'inlineCode',
-              value: 'uniq',
+              value: 'map',
               position: {
                 start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 7, offset: 6 },
+                end: { line: 1, column: 6, offset: 5 },
                 indent: []
               }
             },
             {
               type: 'text',
-              value: ' takes an Array of items and returns an Array of items containing only the unique items of that Array.',
+              value: ' with serial execution.',
               position: {
-                start: { line: 1, column: 7, offset: 6 },
-                end: { line: 1, column: 109, offset: 108 },
+                start: { line: 1, column: 6, offset: 5 },
+                end: { line: 1, column: 29, offset: 28 },
                 indent: []
               }
             }
           ],
           position: {
             start: { line: 1, column: 1, offset: 0 },
-            end: { line: 1, column: 109, offset: 108 },
+            end: { line: 1, column: 29, offset: 28 },
             indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[playground]',
+          value: 'const delayedLog = number => new Promise(function (resolve) {\n' +
+            '  setTimeout(function () {\n' +
+            '    console.log(number)\n' +
+            '    resolve()\n' +
+            '  }, 1000)\n' +
+            '})\n' +
+            '\n' +
+            "console.log('start')\n" +
+            'map.series(delayedLog)([1, 2, 3, 4, 5])',
+          position: {
+            start: { line: 3, column: 1, offset: 30 },
+            end: { line: 13, column: 4, offset: 263 },
+            indent: [
+              1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1
+            ]
           }
         }
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 2, column: 1, offset: 109 }
+        end: { line: 14, column: 1, offset: 264 }
+      }
+    }
+  },
+  {
+    name: 'map.pool',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var maxConcurrency number,\n' +
+      '  T any,\n' +
+      '  mapper T=>Promise|any,\n' +
+      '  array Array<T>\n' +
+      '\n' +
+      'map.pool(maxConcurrency, mapper)(array) -> Promise|Array\n' +
+      '```\n',
+    description: '`map` with limited concurrency.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const delayedLog = x => new Promise(function (resolve) {\n' +
+      '  setTimeout(function () {\n' +
+      '    console.log(x)\n' +
+      '    resolve()\n' +
+      '  }, 1000)\n' +
+      '})\n' +
+      '\n' +
+      "console.log('start')\n" +
+      'map.pool(2, delayedLog)([1, 2, 3, 4, 5])\n' +
+      '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'var maxConcurrency number,\n' +
+            '  T any,\n' +
+            '  mapper T=>Promise|any,\n' +
+            '  array Array<T>\n' +
+            '\n' +
+            'map.pool(maxConcurrency, mapper)(array) -> Promise|Array',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 8, column: 4, offset: 168 },
+            indent: [
+              1, 1, 1, 1,
+              1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 9, column: 1, offset: 169 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'inlineCode',
+              value: 'map',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 6, offset: 5 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ' with limited concurrency.',
+              position: {
+                start: { line: 1, column: 6, offset: 5 },
+                end: { line: 1, column: 32, offset: 31 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 32, offset: 31 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[playground]',
+          value: 'const delayedLog = x => new Promise(function (resolve) {\n' +
+            '  setTimeout(function () {\n' +
+            '    console.log(x)\n' +
+            '    resolve()\n' +
+            '  }, 1000)\n' +
+            '})\n' +
+            '\n' +
+            "console.log('start')\n" +
+            'map.pool(2, delayedLog)([1, 2, 3, 4, 5])',
+          position: {
+            start: { line: 3, column: 1, offset: 33 },
+            end: { line: 13, column: 4, offset: 257 },
+            indent: [
+              1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 14, column: 1, offset: 258 }
+      }
+    }
+  },
+  {
+    name: 'map.withIndex',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var T any,\n' +
+      '  index number,\n' +
+      '  array Array<T>,\n' +
+      '  indexedMapper (T, index, array)=>Promise|any\n' +
+      '\n' +
+      'map.withIndex(indexedMapper)(array) -> Promise|Array\n' +
+      '```\n',
+    description: '`map` with an indexed mapper.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const range = length => map.withIndex(\n' +
+      '  (_, index) => index + 1)(Array(length))\n' +
+      '\n' +
+      'console.log(range(5)) // [1, 2, 3, 4, 5]\n' +
+      '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'var T any,\n' +
+            '  index number,\n' +
+            '  array Array<T>,\n' +
+            '  indexedMapper (T, index, array)=>Promise|any\n' +
+            '\n' +
+            'map.withIndex(indexedMapper)(array) -> Promise|Array',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 8, column: 4, offset: 178 },
+            indent: [
+              1, 1, 1, 1,
+              1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 9, column: 1, offset: 179 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'inlineCode',
+              value: 'map',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 6, offset: 5 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ' with an indexed mapper.',
+              position: {
+                start: { line: 1, column: 6, offset: 5 },
+                end: { line: 1, column: 30, offset: 29 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 30, offset: 29 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[playground]',
+          value: 'const range = length => map.withIndex(\n' +
+            '  (_, index) => index + 1)(Array(length))\n' +
+            '\n' +
+            'console.log(range(5)) // [1, 2, 3, 4, 5]',
+          position: {
+            start: { line: 3, column: 1, offset: 31 },
+            end: { line: 8, column: 4, offset: 184 },
+            indent: [ 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 9, column: 1, offset: 185 }
       }
     }
   },
@@ -10223,6 +12494,4719 @@ export default [
       position: {
         start: { line: 1, column: 1, offset: 0 },
         end: { line: 2, column: 1, offset: 263 }
+      }
+    }
+  },
+  {
+    name: 'not',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var args ...any,\n' +
+      '  predicate ...args=>Promise|boolean\n' +
+      '\n' +
+      'not(predicate)(...args) -> boolean\n' +
+      '```\n',
+    description: 'Negate a predicate (`!`)\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const isOdd = number => number % 2 == 1\n' +
+      '\n' +
+      'console.log(\n' +
+      '  not(isOdd)(3),\n' +
+      ') // false\n' +
+      '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'var args ...any,\n' +
+            '  predicate ...args=>Promise|boolean\n' +
+            '\n' +
+            'not(predicate)(...args) -> boolean',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 6, column: 4, offset: 122 },
+            indent: [ 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 7, column: 1, offset: 123 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Negate a predicate (',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 21, offset: 20 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: '!',
+              position: {
+                start: { line: 1, column: 21, offset: 20 },
+                end: { line: 1, column: 24, offset: 23 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ')',
+              position: {
+                start: { line: 1, column: 24, offset: 23 },
+                end: { line: 1, column: 25, offset: 24 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 25, offset: 24 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[playground]',
+          value: 'const isOdd = number => number % 2 == 1\n' +
+            '\n' +
+            'console.log(\n' +
+            '  not(isOdd)(3),\n' +
+            ') // false',
+          position: {
+            start: { line: 3, column: 1, offset: 26 },
+            end: { line: 9, column: 4, offset: 138 },
+            indent: [ 1, 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 10, column: 1, offset: 139 }
+      }
+    }
+  },
+  {
+    name: 'not.sync',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var args ...any,\n' +
+      '  syncPredicate ...args=>boolean\n' +
+      '\n' +
+      'not.sync(syncPredicate)(...args) -> boolean\n' +
+      '```\n',
+    description: '`not` without promise handling.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const isOdd = number => number % 2 == 1\n' +
+      '\n' +
+      'console.log(\n' +
+      '  not.sync(isOdd)(2),\n' +
+      ') // true\n' +
+      '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'var args ...any,\n' +
+            '  syncPredicate ...args=>boolean\n' +
+            '\n' +
+            'not.sync(syncPredicate)(...args) -> boolean',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 6, column: 4, offset: 127 },
+            indent: [ 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 7, column: 1, offset: 128 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'inlineCode',
+              value: 'not',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 6, offset: 5 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ' without promise handling.',
+              position: {
+                start: { line: 1, column: 6, offset: 5 },
+                end: { line: 1, column: 32, offset: 31 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 32, offset: 31 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[playground]',
+          value: 'const isOdd = number => number % 2 == 1\n' +
+            '\n' +
+            'console.log(\n' +
+            '  not.sync(isOdd)(2),\n' +
+            ') // true',
+          position: {
+            start: { line: 3, column: 1, offset: 33 },
+            end: { line: 9, column: 4, offset: 149 },
+            indent: [ 1, 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 10, column: 1, offset: 150 }
+      }
+    }
+  },
+  {
+    name: 'omit',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var keys Array<string>,\n' +
+      '  source Object\n' +
+      '\n' +
+      'omit(keys)(source) -> omitted Object\n' +
+      '```\n',
+    description: 'Create a new object by excluding specific keys.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'console.log(\n' +
+      "  omit(['_id'])({ _id: '1', name: 'George' }),\n" +
+      ") // { name: 'George' }\n" +
+      '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'var keys Array<string>,\n' +
+            '  source Object\n' +
+            '\n' +
+            'omit(keys)(source) -> omitted Object',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 6, column: 4, offset: 110 },
+            indent: [ 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 7, column: 1, offset: 111 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Create a new object by excluding specific keys.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 48, offset: 47 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 48, offset: 47 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[playground]',
+          value: 'console.log(\n' +
+            "  omit(['_id'])({ _id: '1', name: 'George' }),\n" +
+            ") // { name: 'George' }",
+          position: {
+            start: { line: 3, column: 1, offset: 49 },
+            end: { line: 7, column: 4, offset: 163 },
+            indent: [ 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 8, column: 1, offset: 164 }
+      }
+    }
+  },
+  {
+    name: 'or',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var value any,\n' +
+      '  predicates Array<value=>Promise|boolean>\n' +
+      '\n' +
+      'or(predicates)(value) -> Promise|boolean\n' +
+      '```\n',
+    description: 'Test an array of predicates concurrently against a single input, returning true if any of them test truthy.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const isOdd = number => number % 2 == 1\n' +
+      '\n' +
+      'const isEven = number => number % 2 == 0\n' +
+      '\n' +
+      'console.log(\n' +
+      '  or([isOdd, isEven])(0),\n' +
+      ') // true\n' +
+      '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'var value any,\n' +
+            '  predicates Array<value=>Promise|boolean>\n' +
+            '\n' +
+            'or(predicates)(value) -> Promise|boolean',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 6, column: 4, offset: 132 },
+            indent: [ 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 7, column: 1, offset: 133 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Test an array of predicates concurrently against a single input, returning true if any of them test truthy.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 108, offset: 107 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 108, offset: 107 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[playground]',
+          value: 'const isOdd = number => number % 2 == 1\n' +
+            '\n' +
+            'const isEven = number => number % 2 == 0\n' +
+            '\n' +
+            'console.log(\n' +
+            '  or([isOdd, isEven])(0),\n' +
+            ') // true',
+          position: {
+            start: { line: 3, column: 1, offset: 109 },
+            end: { line: 11, column: 4, offset: 271 },
+            indent: [
+              1, 1, 1, 1,
+              1, 1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 12, column: 1, offset: 272 }
+      }
+    }
+  },
+  {
+    name: 'pick',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var keys Array<string>,\n' +
+      '  source Object\n' +
+      '\n' +
+      'pick(keys)(source) -> picked Object\n' +
+      '```\n',
+    description: 'Create a new object by including specific keys.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'console.log(\n' +
+      "  pick(['hello', 'world'])({ goodbye: 1, world: 2 }),\n" +
+      ') // { world: 2 }\n' +
+      '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'var keys Array<string>,\n' +
+            '  source Object\n' +
+            '\n' +
+            'pick(keys)(source) -> picked Object',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 6, column: 4, offset: 109 },
+            indent: [ 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 7, column: 1, offset: 110 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Create a new object by including specific keys.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 48, offset: 47 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 48, offset: 47 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[playground]',
+          value: 'console.log(\n' +
+            "  pick(['hello', 'world'])({ goodbye: 1, world: 2 }),\n" +
+            ') // { world: 2 }',
+          position: {
+            start: { line: 3, column: 1, offset: 49 },
+            end: { line: 7, column: 4, offset: 164 },
+            indent: [ 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 8, column: 1, offset: 165 }
+      }
+    }
+  },
+  {
+    name: 'pipe',
+    synopsis: '```coffeescript [specscript]\n' +
+      'Reducer<T> = (any, T)=>Promise|any\n' +
+      '\n' +
+      'var args ...any,\n' +
+      '  funcs [\n' +
+      '    ...args=>Promise|any,\n' +
+      '    ...Array<any=>Promise|any>,\n' +
+      '  ],\n' +
+      '  transducers Array<Reducer=>Reducer>\n' +
+      '\n' +
+      'pipe(funcs) -> pipeline ...args=>Promise|any\n' +
+      '\n' +
+      'pipe(transducers) -> chainedTransducer Reducer=>Reducer\n' +
+      '```\n',
+    description: 'Chain together an array of functions as a pipe, each function passing its return value as the first argument to the next function until all functions have executed. The final result is the return of the last function execution.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'console.log(\n' +
+      '  pipe([\n' +
+      '    number => number + 1,\n' +
+      '    number => number + 2,\n' +
+      '    number => number + 3,\n' +
+      '  ])(5),\n' +
+      ') // 11\n' +
+      '```\n' +
+      '\n' +
+      'When passed a reducer, a pipe of transducers composes the reducer such that the transducers are applied in series, calling the reducer as the last step to end the chain. The resulting reducer must be used in conjunction with `reduce` to have a transducing effect. For more information on this behavior, see [this resource on transducers](https://github.com/a-synchronous/rubico/blob/master/TRANSDUCERS.md).\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const isOdd = number => number % 2 == 1\n' +
+      '\n' +
+      'const square = number => number ** 2\n' +
+      '\n' +
+      'const add = (a, b) => a + b\n' +
+      '\n' +
+      'const squaredOdds = pipe([\n' +
+      '  filter(isOdd),\n' +
+      '  map(square),\n' +
+      '])\n' +
+      '\n' +
+      'console.log(\n' +
+      '  [1, 2, 3, 4, 5].reduce(squaredOdds(add), 0),\n' +
+      ') // 35\n' +
+      '\n' +
+      'console.log(\n' +
+      '  squaredOdds([1, 2, 3, 4, 5])\n' +
+      ') // [1, 9, 25]\n' +
+      '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'Reducer<T> = (any, T)=>Promise|any\n' +
+            '\n' +
+            'var args ...any,\n' +
+            '  funcs [\n' +
+            '    ...args=>Promise|any,\n' +
+            '    ...Array<any=>Promise|any>,\n' +
+            '  ],\n' +
+            '  transducers Array<Reducer=>Reducer>\n' +
+            '\n' +
+            'pipe(funcs) -> pipeline ...args=>Promise|any\n' +
+            '\n' +
+            'pipe(transducers) -> chainedTransducer Reducer=>Reducer',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 14, column: 4, offset: 299 },
+            indent: [
+              1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1,
+              1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 15, column: 1, offset: 300 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Chain together an array of functions as a pipe, each function passing its return value as the first argument to the next function until all functions have executed. The final result is the return of the last function execution.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 228, offset: 227 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 228, offset: 227 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[playground]',
+          value: 'console.log(\n' +
+            '  pipe([\n' +
+            '    number => number + 1,\n' +
+            '    number => number + 2,\n' +
+            '    number => number + 3,\n' +
+            '  ])(5),\n' +
+            ') // 11',
+          position: {
+            start: { line: 3, column: 1, offset: 229 },
+            end: { line: 11, column: 4, offset: 376 },
+            indent: [
+              1, 1, 1, 1,
+              1, 1, 1, 1
+            ]
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'When passed a reducer, a pipe of transducers composes the reducer such that the transducers are applied in series, calling the reducer as the last step to end the chain. The resulting reducer must be used in conjunction with ',
+              position: {
+                start: { line: 13, column: 1, offset: 378 },
+                end: { line: 13, column: 226, offset: 603 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'reduce',
+              position: {
+                start: { line: 13, column: 226, offset: 603 },
+                end: { line: 13, column: 234, offset: 611 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ' to have a transducing effect. For more information on this behavior, see ',
+              position: {
+                start: { line: 13, column: 234, offset: 611 },
+                end: { line: 13, column: 308, offset: 685 },
+                indent: []
+              }
+            },
+            {
+              type: 'link',
+              title: null,
+              url: 'https://github.com/a-synchronous/rubico/blob/master/TRANSDUCERS.md',
+              children: [
+                {
+                  type: 'text',
+                  value: 'this resource on transducers',
+                  position: {
+                    start: { line: 13, column: 309, offset: 686 },
+                    end: { line: 13, column: 337, offset: 714 },
+                    indent: []
+                  }
+                }
+              ],
+              position: {
+                start: { line: 13, column: 308, offset: 685 },
+                end: { line: 13, column: 406, offset: 783 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: '.',
+              position: {
+                start: { line: 13, column: 406, offset: 783 },
+                end: { line: 13, column: 407, offset: 784 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 13, column: 1, offset: 378 },
+            end: { line: 13, column: 407, offset: 784 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[playground]',
+          value: 'const isOdd = number => number % 2 == 1\n' +
+            '\n' +
+            'const square = number => number ** 2\n' +
+            '\n' +
+            'const add = (a, b) => a + b\n' +
+            '\n' +
+            'const squaredOdds = pipe([\n' +
+            '  filter(isOdd),\n' +
+            '  map(square),\n' +
+            '])\n' +
+            '\n' +
+            'console.log(\n' +
+            '  [1, 2, 3, 4, 5].reduce(squaredOdds(add), 0),\n' +
+            ') // 35\n' +
+            '\n' +
+            'console.log(\n' +
+            '  squaredOdds([1, 2, 3, 4, 5])\n' +
+            ') // [1, 9, 25]',
+          position: {
+            start: { line: 15, column: 1, offset: 786 },
+            end: { line: 34, column: 4, offset: 1116 },
+            indent: [
+              1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 35, column: 1, offset: 1117 }
+      }
+    }
+  },
+  {
+    name: 'pipe.sync',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var args ...any,\n' +
+      '  funcs [...args=>any, ...Array<any=>any>]\n' +
+      '\n' +
+      'pipe.sync(funcs) -> syncPipeline ...args=>any\n' +
+      '```\n',
+    description: "`pipe` that doesn't automatically resolve promises. This variant is a good option if more performance is desired or if manual promise handling is required.\n" +
+      '\n' +
+      '```javascript [playground]\n' +
+      'pipe.sync([\n' +
+      '  value => Promise.resolve(value),\n' +
+      '  promise => promise.then(console.log)\n' +
+      "])('hey') // hey\n" +
+      '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'var args ...any,\n' +
+            '  funcs [...args=>any, ...Array<any=>any>]\n' +
+            '\n' +
+            'pipe.sync(funcs) -> syncPipeline ...args=>any',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 6, column: 4, offset: 139 },
+            indent: [ 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 7, column: 1, offset: 140 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'inlineCode',
+              value: 'pipe',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 7, offset: 6 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: " that doesn't automatically resolve promises. This variant is a good option if more performance is desired or if manual promise handling is required.",
+              position: {
+                start: { line: 1, column: 7, offset: 6 },
+                end: { line: 1, column: 156, offset: 155 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 156, offset: 155 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[playground]',
+          value: 'pipe.sync([\n' +
+            '  value => Promise.resolve(value),\n' +
+            '  promise => promise.then(console.log)\n' +
+            "])('hey') // hey",
+          position: {
+            start: { line: 3, column: 1, offset: 157 },
+            end: { line: 8, column: 4, offset: 290 },
+            indent: [ 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 9, column: 1, offset: 291 }
+      }
+    }
+  },
+  {
+    name: 'reduce',
+    synopsis: '```coffeescript [specscript]\n' +
+      'Reducer<T> = (any, T)=>Promise|any\n' +
+      'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: Reducer<T>=>any }|Object<T>\n' +
+      '\n' +
+      'var T any,\n' +
+      '  args ...any,\n' +
+      '  reducer Reducer<T>,\n' +
+      '  init (...args=>Promise|any)|any,\n' +
+      '  foldable Foldable<T>\n' +
+      '  generatorFunction ...args=>Generator<Promise|T>,\n' +
+      '  asyncGeneratorFunction ...args=>AsyncGenerator<T>,\n' +
+      '  moreReducers ...Reducer<T>\n' +
+      '\n' +
+      'reduce(reducer, init?)(foldable) -> Promise|any\n' +
+      '\n' +
+      'reduce(reducer, init?)(generatorFunction) -> ...args=>Promise|any\n' +
+      '\n' +
+      'reduce(reducer, init?)(asyncGeneratorFunction) -> ...args=>Promise|any\n' +
+      '\n' +
+      'reduce(reducer, init?)(...moreReducers) -> ...args=>Promise|any\n' +
+      '```\n',
+    description: 'Execute a reducer for each item of a collection, resulting in a single output value.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const max = (a, b) => a > b ? a : b\n' +
+      '\n' +
+      'console.log(\n' +
+      '  reduce(max)([1, 3, 5, 4, 2]),\n' +
+      ') // 5\n' +
+      '```\n' +
+      '\n' +
+      'If an optional initialization parameter is supplied, the result starts as that parameter rather than the first item of the collection.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const add = (a, b) => a + b\n' +
+      '\n' +
+      'console.log(\n' +
+      '  reduce(add)([1, 2, 3, 4, 5], 0),\n' +
+      ') // 15\n' +
+      '```\n' +
+      '\n' +
+      'Note: For memory and performance, this library makes no assumptions about immutability. Handle references for this initial value with care, as they could be mutated.\n' +
+      '\n' +
+      'If the initialization parameter is a function, it is treated as a resolver and called with the input arguments to resolve an initial value for the accumulator.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const concatSquares = (array, value) => array.concat(value ** 2)\n' +
+      '\n' +
+      'const initEmptyArray = () => []\n' +
+      '\n' +
+      'console.log(\n' +
+      '  reduce(concatSquares, initEmptyArray)([1, 2, 3, 4, 5]),\n' +
+      ') // [1, 4, 9, 16, 25]\n' +
+      '```\n' +
+      '\n' +
+      'Additionally, reducers can be asynchronous, while data parameters can be asynchronous streams.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))\n' +
+      '\n' +
+      '// asyncAppReducer(\n' +
+      '//   state { todos: Array },\n' +
+      '//   action { type: string, todoID: string },\n' +
+      '// ) -> state\n' +
+      'const asyncAppReducer = async function (state, action) {\n' +
+      "  if (action.type == 'FETCH_TODO') {\n" +
+      '    const todo = await fetch(\n' +
+      "      'https://jsonplaceholder.typicode.com/todos/' + action.todoID,\n" +
+      '    ).then(response => response.json())\n' +
+      "    console.log('fetched', todo)\n" +
+      '    state.todos.push(todo)\n' +
+      '    return state\n' +
+      '  }\n' +
+      '  return state\n' +
+      '}\n' +
+      '\n' +
+      'const asyncFetchActions = async function* (count) {\n' +
+      '  let idCount = 0\n' +
+      '  while (++idCount <= count) {\n' +
+      '    await sleep(1000)\n' +
+      "    yield { type: 'FETCH_TODO', todoID: idCount }\n" +
+      '  }\n' +
+      '}\n' +
+      '\n' +
+      'const state = { todos: [] }\n' +
+      '\n' +
+      'reduce(asyncAppReducer, state)(asyncFetchActions(5)).then(\n' +
+      "  reducedState => console.log('finalState', reducedState))\n" +
+      '\n' +
+      "// fetched { userId: 1, id: 1, title: 'delectus aut autem', completed: false }\n" +
+      "// fetched { userId: 1, id: 2, title: 'quis ut nam facilis...', completed: false }\n" +
+      "// fetched { userId: 1, id: 3, title: 'fugiat veniam minus', completed: false }\n" +
+      "// fetched { userId: 1, id: 4, title: 'et porro tempora', completed: true }\n" +
+      "// fetched { userId: 1, id: 5, title: 'laboriosam mollitia...', completed: false }\n" +
+      '// finalState {\n' +
+      '//   todos: [\n' +
+      "//     { userId: 1, id: 1, title: 'delectus aut autem', completed: false },\n" +
+      "//     { userId: 1, id: 2, title: 'quis ut nam facilis...', completed: false },\n" +
+      "//     { userId: 1, id: 3, title: 'fugiat veniam minus', completed: false },\n" +
+      "//     { userId: 1, id: 4, title: 'et porro tempora', completed: true },\n" +
+      "//     { userId: 1, id: 5, title: 'laboriosam mollitia...', completed: false },\n" +
+      '//   ],\n' +
+      '// }\n' +
+      '```\n' +
+      '\n' +
+      'If the first argument to a reducing function is a reducer, `reduce` concatenates any reducers in argument position onto the initial reducer, producing a combined reducer that performs a chained operation per each item in a reducing operation.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const reducerA = (state, action) => {\n' +
+      "  if (action.type == 'A') return { ...state, A: true }\n" +
+      '  return state\n' +
+      '}\n' +
+      '\n' +
+      'const reducerB = (state, action) => {\n' +
+      "  if (action.type == 'B') return { ...state, B: true }\n" +
+      '  return state\n' +
+      '}\n' +
+      '\n' +
+      'const reducerC = (state, action) => {\n' +
+      "  if (action.type == 'C') return { ...state, C: true }\n" +
+      '  return state\n' +
+      '}\n' +
+      '\n' +
+      '// state => state\n' +
+      'const traceMiddleware = tap(\n' +
+      "  (state, action) => console.log('state, action', state, action))\n" +
+      '\n' +
+      'const reducingABC = reduce(\n' +
+      '  traceMiddleware, () => ({}))(reducerA, reducerB, reducerC)\n' +
+      '\n' +
+      "const actions = [{ type: 'A' }, { type: 'B' }, { type: 'C' }]\n" +
+      '\n' +
+      'console.log(\n' +
+      "  'final state:',\n" +
+      '  reducingABC(actions),\n' +
+      ') // { A: true, B: true, C: true }\n' +
+      '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'Reducer<T> = (any, T)=>Promise|any\n' +
+            'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: Reducer<T>=>any }|Object<T>\n' +
+            '\n' +
+            'var T any,\n' +
+            '  args ...any,\n' +
+            '  reducer Reducer<T>,\n' +
+            '  init (...args=>Promise|any)|any,\n' +
+            '  foldable Foldable<T>\n' +
+            '  generatorFunction ...args=>Generator<Promise|T>,\n' +
+            '  asyncGeneratorFunction ...args=>AsyncGenerator<T>,\n' +
+            '  moreReducers ...Reducer<T>\n' +
+            '\n' +
+            'reduce(reducer, init?)(foldable) -> Promise|any\n' +
+            '\n' +
+            'reduce(reducer, init?)(generatorFunction) -> ...args=>Promise|any\n' +
+            '\n' +
+            'reduce(reducer, init?)(asyncGeneratorFunction) -> ...args=>Promise|any\n' +
+            '\n' +
+            'reduce(reducer, init?)(...moreReducers) -> ...args=>Promise|any',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 21, column: 4, offset: 641 },
+            indent: [
+              1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 22, column: 1, offset: 642 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Execute a reducer for each item of a collection, resulting in a single output value.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 85, offset: 84 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 85, offset: 84 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[playground]',
+          value: 'const max = (a, b) => a > b ? a : b\n' +
+            '\n' +
+            'console.log(\n' +
+            '  reduce(max)([1, 3, 5, 4, 2]),\n' +
+            ') // 5',
+          position: {
+            start: { line: 3, column: 1, offset: 86 },
+            end: { line: 9, column: 4, offset: 205 },
+            indent: [ 1, 1, 1, 1, 1, 1 ]
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'If an optional initialization parameter is supplied, the result starts as that parameter rather than the first item of the collection.',
+              position: {
+                start: { line: 11, column: 1, offset: 207 },
+                end: { line: 11, column: 135, offset: 341 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 11, column: 1, offset: 207 },
+            end: { line: 11, column: 135, offset: 341 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[playground]',
+          value: 'const add = (a, b) => a + b\n' +
+            '\n' +
+            'console.log(\n' +
+            '  reduce(add)([1, 2, 3, 4, 5], 0),\n' +
+            ') // 15',
+          position: {
+            start: { line: 13, column: 1, offset: 343 },
+            end: { line: 19, column: 4, offset: 458 },
+            indent: [ 1, 1, 1, 1, 1, 1 ]
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Note: For memory and performance, this library makes no assumptions about immutability. Handle references for this initial value with care, as they could be mutated.',
+              position: {
+                start: { line: 21, column: 1, offset: 460 },
+                end: { line: 21, column: 166, offset: 625 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 21, column: 1, offset: 460 },
+            end: { line: 21, column: 166, offset: 625 },
+            indent: []
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'If the initialization parameter is a function, it is treated as a resolver and called with the input arguments to resolve an initial value for the accumulator.',
+              position: {
+                start: { line: 23, column: 1, offset: 627 },
+                end: { line: 23, column: 160, offset: 786 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 23, column: 1, offset: 627 },
+            end: { line: 23, column: 160, offset: 786 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[playground]',
+          value: 'const concatSquares = (array, value) => array.concat(value ** 2)\n' +
+            '\n' +
+            'const initEmptyArray = () => []\n' +
+            '\n' +
+            'console.log(\n' +
+            '  reduce(concatSquares, initEmptyArray)([1, 2, 3, 4, 5]),\n' +
+            ') // [1, 4, 9, 16, 25]',
+          position: {
+            start: { line: 25, column: 1, offset: 788 },
+            end: { line: 33, column: 4, offset: 1011 },
+            indent: [
+              1, 1, 1, 1,
+              1, 1, 1, 1
+            ]
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Additionally, reducers can be asynchronous, while data parameters can be asynchronous streams.',
+              position: {
+                start: { line: 35, column: 1, offset: 1013 },
+                end: { line: 35, column: 95, offset: 1107 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 35, column: 1, offset: 1013 },
+            end: { line: 35, column: 95, offset: 1107 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[playground]',
+          value: 'const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))\n' +
+            '\n' +
+            '// asyncAppReducer(\n' +
+            '//   state { todos: Array },\n' +
+            '//   action { type: string, todoID: string },\n' +
+            '// ) -> state\n' +
+            'const asyncAppReducer = async function (state, action) {\n' +
+            "  if (action.type == 'FETCH_TODO') {\n" +
+            '    const todo = await fetch(\n' +
+            "      'https://jsonplaceholder.typicode.com/todos/' + action.todoID,\n" +
+            '    ).then(response => response.json())\n' +
+            "    console.log('fetched', todo)\n" +
+            '    state.todos.push(todo)\n' +
+            '    return state\n' +
+            '  }\n' +
+            '  return state\n' +
+            '}\n' +
+            '\n' +
+            'const asyncFetchActions = async function* (count) {\n' +
+            '  let idCount = 0\n' +
+            '  while (++idCount <= count) {\n' +
+            '    await sleep(1000)\n' +
+            "    yield { type: 'FETCH_TODO', todoID: idCount }\n" +
+            '  }\n' +
+            '}\n' +
+            '\n' +
+            'const state = { todos: [] }\n' +
+            '\n' +
+            'reduce(asyncAppReducer, state)(asyncFetchActions(5)).then(\n' +
+            "  reducedState => console.log('finalState', reducedState))\n" +
+            '\n' +
+            "// fetched { userId: 1, id: 1, title: 'delectus aut autem', completed: false }\n" +
+            "// fetched { userId: 1, id: 2, title: 'quis ut nam facilis...', completed: false }\n" +
+            "// fetched { userId: 1, id: 3, title: 'fugiat veniam minus', completed: false }\n" +
+            "// fetched { userId: 1, id: 4, title: 'et porro tempora', completed: true }\n" +
+            "// fetched { userId: 1, id: 5, title: 'laboriosam mollitia...', completed: false }\n" +
+            '// finalState {\n' +
+            '//   todos: [\n' +
+            "//     { userId: 1, id: 1, title: 'delectus aut autem', completed: false },\n" +
+            "//     { userId: 1, id: 2, title: 'quis ut nam facilis...', completed: false },\n" +
+            "//     { userId: 1, id: 3, title: 'fugiat veniam minus', completed: false },\n" +
+            "//     { userId: 1, id: 4, title: 'et porro tempora', completed: true },\n" +
+            "//     { userId: 1, id: 5, title: 'laboriosam mollitia...', completed: false },\n" +
+            '//   ],\n' +
+            '// }',
+          position: {
+            start: { line: 37, column: 1, offset: 1109 },
+            end: { line: 83, column: 4, offset: 2807 },
+            indent: [
+              1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+              1, 1
+            ]
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'If the first argument to a reducing function is a reducer, ',
+              position: {
+                start: { line: 85, column: 1, offset: 2809 },
+                end: { line: 85, column: 60, offset: 2868 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'reduce',
+              position: {
+                start: { line: 85, column: 60, offset: 2868 },
+                end: { line: 85, column: 68, offset: 2876 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ' concatenates any reducers in argument position onto the initial reducer, producing a combined reducer that performs a chained operation per each item in a reducing operation.',
+              position: {
+                start: { line: 85, column: 68, offset: 2876 },
+                end: { line: 85, column: 243, offset: 3051 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 85, column: 1, offset: 2809 },
+            end: { line: 85, column: 243, offset: 3051 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[playground]',
+          value: 'const reducerA = (state, action) => {\n' +
+            "  if (action.type == 'A') return { ...state, A: true }\n" +
+            '  return state\n' +
+            '}\n' +
+            '\n' +
+            'const reducerB = (state, action) => {\n' +
+            "  if (action.type == 'B') return { ...state, B: true }\n" +
+            '  return state\n' +
+            '}\n' +
+            '\n' +
+            'const reducerC = (state, action) => {\n' +
+            "  if (action.type == 'C') return { ...state, C: true }\n" +
+            '  return state\n' +
+            '}\n' +
+            '\n' +
+            '// state => state\n' +
+            'const traceMiddleware = tap(\n' +
+            "  (state, action) => console.log('state, action', state, action))\n" +
+            '\n' +
+            'const reducingABC = reduce(\n' +
+            '  traceMiddleware, () => ({}))(reducerA, reducerB, reducerC)\n' +
+            '\n' +
+            "const actions = [{ type: 'A' }, { type: 'B' }, { type: 'C' }]\n" +
+            '\n' +
+            'console.log(\n' +
+            "  'final state:',\n" +
+            '  reducingABC(actions),\n' +
+            ') // { A: true, B: true, C: true }',
+          position: {
+            start: { line: 87, column: 1, offset: 3053 },
+            end: { line: 116, column: 4, offset: 3773 },
+            indent: [
+              1, 1, 1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1, 1, 1, 1,
+              1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 117, column: 1, offset: 3774 }
+      }
+    }
+  },
+  {
+    name: 'switchCase',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var args ...any,\n' +
+      '  result any,\n' +
+      '  predicate ...args=>Promise|boolean,\n' +
+      '  resolver ...args=>Promise|result,\n' +
+      '  defaultResolver ...args=>Promise|result,\n' +
+      '  conditionalFunctions [\n' +
+      '    ...Array<predicate|resolver>,\n' +
+      '    defaultResolver,\n' +
+      '  ]\n' +
+      '\n' +
+      'switchCase(conditionalFunctions)(...args) -> Promise|result\n' +
+      '```\n',
+    description: 'Conditional operator for functions. Cases are defined as pairings of `predicate` and `resolver`, with the exception of the last, default case.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      "const fruitIsYellow = fruit => fruit.color == 'yellow'\n" +
+      '\n' +
+      'const fruitsGuesser = switchCase([\n' +
+      "  fruitIsYellow, fruit => fruit.name + ' is possibly a banana',\n" +
+      "  fruit => fruit.name + ' is probably not a banana',\n" +
+      '])\n' +
+      '\n' +
+      'console.log(\n' +
+      "  fruitsGuesser({ name: 'plantain', color: 'yellow' }),\n" +
+      ') // plantain is possibly a banana\n' +
+      '```\n' +
+      '\n' +
+      'If an even number of functions is supplied, the last predicate should always return true.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const questionableIsOdd = switchCase([\n' +
+      '  number => number === 1, () => true,\n' +
+      '  number => number === 2, () => false,\n' +
+      '  number => number === 3, () => true,\n' +
+      '  number => number === 4, () => false,\n' +
+      '  number => number === 5, () => true,\n' +
+      '  () => true, number => number % 2 === 1,\n' +
+      '])\n' +
+      '\n' +
+      'console.log(questionableIsOdd(1)) // true\n' +
+      'console.log(questionableIsOdd(6)) // false\n' +
+      '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'var args ...any,\n' +
+            '  result any,\n' +
+            '  predicate ...args=>Promise|boolean,\n' +
+            '  resolver ...args=>Promise|result,\n' +
+            '  defaultResolver ...args=>Promise|result,\n' +
+            '  conditionalFunctions [\n' +
+            '    ...Array<predicate|resolver>,\n' +
+            '    defaultResolver,\n' +
+            '  ]\n' +
+            '\n' +
+            'switchCase(conditionalFunctions)(...args) -> Promise|result',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 13, column: 4, offset: 325 },
+            indent: [
+              1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1,
+              1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 14, column: 1, offset: 326 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Conditional operator for functions. Cases are defined as pairings of ',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 70, offset: 69 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'predicate',
+              position: {
+                start: { line: 1, column: 70, offset: 69 },
+                end: { line: 1, column: 81, offset: 80 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ' and ',
+              position: {
+                start: { line: 1, column: 81, offset: 80 },
+                end: { line: 1, column: 86, offset: 85 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'resolver',
+              position: {
+                start: { line: 1, column: 86, offset: 85 },
+                end: { line: 1, column: 96, offset: 95 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ', with the exception of the last, default case.',
+              position: {
+                start: { line: 1, column: 96, offset: 95 },
+                end: { line: 1, column: 143, offset: 142 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 143, offset: 142 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[playground]',
+          value: "const fruitIsYellow = fruit => fruit.color == 'yellow'\n" +
+            '\n' +
+            'const fruitsGuesser = switchCase([\n' +
+            "  fruitIsYellow, fruit => fruit.name + ' is possibly a banana',\n" +
+            "  fruit => fruit.name + ' is probably not a banana',\n" +
+            '])\n' +
+            '\n' +
+            'console.log(\n' +
+            "  fruitsGuesser({ name: 'plantain', color: 'yellow' }),\n" +
+            ') // plantain is possibly a banana',
+          position: {
+            start: { line: 3, column: 1, offset: 144 },
+            end: { line: 14, column: 4, offset: 490 },
+            indent: [
+              1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1,
+              1
+            ]
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'If an even number of functions is supplied, the last predicate should always return true.',
+              position: {
+                start: { line: 16, column: 1, offset: 492 },
+                end: { line: 16, column: 90, offset: 581 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 16, column: 1, offset: 492 },
+            end: { line: 16, column: 90, offset: 581 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[playground]',
+          value: 'const questionableIsOdd = switchCase([\n' +
+            '  number => number === 1, () => true,\n' +
+            '  number => number === 2, () => false,\n' +
+            '  number => number === 3, () => true,\n' +
+            '  number => number === 4, () => false,\n' +
+            '  number => number === 5, () => true,\n' +
+            '  () => true, number => number % 2 === 1,\n' +
+            '])\n' +
+            '\n' +
+            'console.log(questionableIsOdd(1)) // true\n' +
+            'console.log(questionableIsOdd(6)) // false',
+          position: {
+            start: { line: 18, column: 1, offset: 583 },
+            end: { line: 30, column: 4, offset: 975 },
+            indent: [
+              1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1,
+              1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 31, column: 1, offset: 976 }
+      }
+    }
+  },
+  {
+    name: 'tap',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var args ...any,\n' +
+      '  tapper ...args=>Promise|any\n' +
+      '\n' +
+      'tap(tapper)(...args) -> Promise|args[0]\n' +
+      '```\n',
+    description: 'Call a function with a value, returning the value. Promises created by the tapper are resolved before returning the value.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'pipe([\n' +
+      '  tap(console.log),\n' +
+      "  value => value + 'bar',\n" +
+      '  tap(console.log),\n' +
+      "])('foo') // 'foo'\n" +
+      "          // 'foobar'\n" +
+      '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'var args ...any,\n' +
+            '  tapper ...args=>Promise|any\n' +
+            '\n' +
+            'tap(tapper)(...args) -> Promise|args[0]',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 6, column: 4, offset: 120 },
+            indent: [ 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 7, column: 1, offset: 121 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Call a function with a value, returning the value. Promises created by the tapper are resolved before returning the value.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 123, offset: 122 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 123, offset: 122 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[playground]',
+          value: 'pipe([\n' +
+            '  tap(console.log),\n' +
+            "  value => value + 'bar',\n" +
+            '  tap(console.log),\n' +
+            "])('foo') // 'foo'\n" +
+            "          // 'foobar'",
+          position: {
+            start: { line: 3, column: 1, offset: 124 },
+            end: { line: 10, column: 4, offset: 268 },
+            indent: [
+              1, 1, 1, 1,
+              1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 11, column: 1, offset: 269 }
+      }
+    }
+  },
+  {
+    name: 'tap.sync',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var args ...any,\n' +
+      '  tapper ...args=>any\n' +
+      '\n' +
+      'tap.sync(tapper)(...args) -> args[0]\n' +
+      '```\n',
+    description: 'Synchronous `tap`\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'pipe([\n' +
+      "  tap.sync(number => console.log('square', number ** 2)),\n" +
+      "  tap.sync(number => console.log('cube', number ** 3)),\n" +
+      '])(3) // 9\n' +
+      '      // 27\n' +
+      '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'var args ...any,\n' +
+            '  tapper ...args=>any\n' +
+            '\n' +
+            'tap.sync(tapper)(...args) -> args[0]',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 6, column: 4, offset: 109 },
+            indent: [ 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 7, column: 1, offset: 110 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Synchronous ',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 13, offset: 12 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'tap',
+              position: {
+                start: { line: 1, column: 13, offset: 12 },
+                end: { line: 1, column: 18, offset: 17 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 18, offset: 17 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[playground]',
+          value: 'pipe([\n' +
+            "  tap.sync(number => console.log('square', number ** 2)),\n" +
+            "  tap.sync(number => console.log('cube', number ** 3)),\n" +
+            '])(3) // 9\n' +
+            '      // 27',
+          position: {
+            start: { line: 3, column: 1, offset: 19 },
+            end: { line: 9, column: 4, offset: 193 },
+            indent: [ 1, 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 10, column: 1, offset: 194 }
+      }
+    }
+  },
+  {
+    name: 'tap.if',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var args ...any,\n' +
+      '  predicate ...args=>Promise|boolean,\n' +
+      '  tapper ...args=>Promise|any\n' +
+      '\n' +
+      'tap.if(predicate, tapper)(...args) -> Promise|args[0]\n' +
+      '```\n',
+    description: 'Conditional `tap` by predicate\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const isOdd = number => number % 2 == 1\n' +
+      '\n' +
+      'const logIfOdd = tap.if(\n' +
+      '  isOdd,\n' +
+      "  number => console.log(number, 'is an odd number'))\n" +
+      '\n' +
+      'logIfOdd(2)\n' +
+      'logIfOdd(3) // 3 is an odd number\n' +
+      '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'var args ...any,\n' +
+            '  predicate ...args=>Promise|boolean,\n' +
+            '  tapper ...args=>Promise|any\n' +
+            '\n' +
+            'tap.if(predicate, tapper)(...args) -> Promise|args[0]',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 7, column: 4, offset: 172 },
+            indent: [ 1, 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 8, column: 1, offset: 173 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Conditional ',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 13, offset: 12 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'tap',
+              position: {
+                start: { line: 1, column: 13, offset: 12 },
+                end: { line: 1, column: 18, offset: 17 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ' by predicate',
+              position: {
+                start: { line: 1, column: 18, offset: 17 },
+                end: { line: 1, column: 31, offset: 30 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 31, offset: 30 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[playground]',
+          value: 'const isOdd = number => number % 2 == 1\n' +
+            '\n' +
+            'const logIfOdd = tap.if(\n' +
+            '  isOdd,\n' +
+            "  number => console.log(number, 'is an odd number'))\n" +
+            '\n' +
+            'logIfOdd(2)\n' +
+            'logIfOdd(3) // 3 is an odd number',
+          position: {
+            start: { line: 3, column: 1, offset: 32 },
+            end: { line: 12, column: 4, offset: 237 },
+            indent: [
+              1, 1, 1, 1, 1,
+              1, 1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 13, column: 1, offset: 238 }
+      }
+    }
+  },
+  {
+    name: 'transform',
+    synopsis: '```coffeescript [specscript]\n' +
+      'Reducer<T> = (any, T)=>Promise|any\n' +
+      'Semigroup<T> = Array<T>|String<T>|Set<T>|TypedArray<T>\n' +
+      '  |{ concat: Reducer<T> }|{ write: Reducer<T> }|Object<T>\n' +
+      'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: Reducer<T>=>any }|Object<T>\n' +
+      '\n' +
+      'var T any,\n' +
+      '  args ...any,\n' +
+      '  transducer Reducer=>Reducer,\n' +
+      '  init (...args=>Promise|Semigroup<T>)|Semigroup<T>,\n' +
+      '  foldable Foldable<T>,\n' +
+      '  generatorFunction ...args=>Generator<T>,\n' +
+      '  asyncGeneratorFunction ...args=>AsyncGenerator<T>,\n' +
+      '  reducers ...Reducer<T>\n' +
+      '\n' +
+      'transform(transducer, init?)(foldable) -> Promise|Semigroup\n' +
+      '\n' +
+      'transform(transducer, init?)(generatorFunction) -> ...args=>Promise|Semigroup\n' +
+      '\n' +
+      'transform(transducer, init?)(asyncGeneratorFunction) -> ...args=>Promise|Semigroup\n' +
+      '\n' +
+      'transform(transducer, init?)(...reducers) -> ...args=>Promise|Semigroup\n' +
+      '```\n',
+    description: 'Reduce a value by transducer and concatenation, returning a semigroup of transduced items. The initial value may be a function, in which case it is treated as a resolver.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const square = number => number ** 2\n' +
+      '\n' +
+      'const isOdd = number => number % 2 == 1\n' +
+      '\n' +
+      'const squaredOdds = pipe([\n' +
+      '  filter(isOdd),\n' +
+      '  map(square),\n' +
+      '])\n' +
+      '\n' +
+      'console.log(\n' +
+      '  transform(squaredOdds, () => [])([1, 2, 3, 4, 5]),\n' +
+      ') // [1, 9, 25]\n' +
+      '\n' +
+      'console.log(\n' +
+      "  transform(squaredOdds, '')([1, 2, 3, 4, 5]),\n" +
+      ") // '1925'\n" +
+      '\n' +
+      'console.log(\n' +
+      '  transform(squaredOdds, () => new Uint8Array())([1, 2, 3, 4, 5]),\n' +
+      ') // Uint8Array(3) [ 1, 9, 25 ]\n' +
+      '```\n' +
+      '\n' +
+      'A `Semigroup` is any type with some notion of concatenation. This could manifest in a `.concat` method.\n' +
+      ' * `Array` - `result.concat(values)`\n' +
+      ' * `string` - `result + values`\n' +
+      ' * `Set` - `result.add(...values)`\n' +
+      ' * `TypedArray` - `result.set(prevResult); result.set(values, offset)`\n' +
+      ' * `{ concat: function }` - `result.concat(values)`\n' +
+      ' * `{ write: function }` - essentially `item.pipe(result)` or `result.write(item)`\n' +
+      ' * `Object` - `({ ...result, ...values })`\n' +
+      '\n' +
+      'Here is a simple `Semigroup` as an object that implements `.concat`.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const square = number => number ** 2\n' +
+      '\n' +
+      'const Stdout = {\n' +
+      '  concat(...args) {\n' +
+      '    console.log(...args)\n' +
+      '    return this\n' +
+      '  },\n' +
+      '}\n' +
+      '\n' +
+      'transform(map(square), Stdout)([1, 2, 3, 4, 5])\n' +
+      '// 1\n' +
+      '// 4\n' +
+      '// 9\n' +
+      '// 16\n' +
+      '// 25\n' +
+      '```\n' +
+      '\n' +
+      'Here is a transformation of an async generator to a Node.js writable stream, `process.stdout`.\n' +
+      '\n' +
+      '```javascript [node]\n' +
+      '// this example is duplicated in rubico/examples/transformStreamRandomInts.js\n' +
+      '\n' +
+      "const { pipe, map, transform } = require('rubico')\n" +
+      '\n' +
+      'const square = number => number ** 2\n' +
+      '\n' +
+      'const toString = value => value.toString()\n' +
+      '\n' +
+      'const randomInt = () => Math.ceil(Math.random() * 100)\n' +
+      '\n' +
+      'const streamRandomInts = async function* () {\n' +
+      '  while (true) {\n' +
+      '    yield randomInt()\n' +
+      '  }\n' +
+      '}\n' +
+      '\n' +
+      'transform(\n' +
+      '  map(pipe([square, toString])), process.stdout,\n' +
+      ')(streamRandomInts()) // 9216576529289484980147613249169774446246768649...\n' +
+      '```\n' +
+      '\n' +
+      '`transform`, like `reduce`, supports reducer combination. This has a use case in state management, where, for a state object, incoming objects are merged.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const reducerA = async (state, action) => {\n' +
+      "  if (action.type == 'A') return { ...state, A: true }\n" +
+      '  return state\n' +
+      '}\n' +
+      '\n' +
+      'const reducerB = async (state, action) => {\n' +
+      "  if (action.type == 'B') return { ...state, B: true }\n" +
+      '  return state\n' +
+      '}\n' +
+      '\n' +
+      'const reducerC = async (state, action) => {\n' +
+      "  if (action.type == 'C') return { ...state, C: true }\n" +
+      '  return state\n' +
+      '}\n' +
+      '\n' +
+      'const logAction = function (action) {\n' +
+      "  console.log('action', action)\n" +
+      '  return action\n' +
+      '}\n' +
+      '\n' +
+      'const reducingABC = transform(\n' +
+      '  map(logAction), // transducer logger middleware\n' +
+      '  () => ({}), // initial state resolver\n' +
+      ')(reducerA, reducerB, reducerC)\n' +
+      '\n' +
+      "const actions = [{ type: 'A' }, { type: 'B' }, { type: 'C' }]\n" +
+      '\n' +
+      'reducingABC(actions).then(\n' +
+      "  state => console.log('state', state))\n" +
+      "// action { type: 'A' }\n" +
+      "// action { type: 'B' }\n" +
+      "// action { type: 'C' }\n" +
+      '// state { A: true, B: true, C: true }\n' +
+      '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'Reducer<T> = (any, T)=>Promise|any\n' +
+            'Semigroup<T> = Array<T>|String<T>|Set<T>|TypedArray<T>\n' +
+            '  |{ concat: Reducer<T> }|{ write: Reducer<T> }|Object<T>\n' +
+            'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: Reducer<T>=>any }|Object<T>\n' +
+            '\n' +
+            'var T any,\n' +
+            '  args ...any,\n' +
+            '  transducer Reducer=>Reducer,\n' +
+            '  init (...args=>Promise|Semigroup<T>)|Semigroup<T>,\n' +
+            '  foldable Foldable<T>,\n' +
+            '  generatorFunction ...args=>Generator<T>,\n' +
+            '  asyncGeneratorFunction ...args=>AsyncGenerator<T>,\n' +
+            '  reducers ...Reducer<T>\n' +
+            '\n' +
+            'transform(transducer, init?)(foldable) -> Promise|Semigroup\n' +
+            '\n' +
+            'transform(transducer, init?)(generatorFunction) -> ...args=>Promise|Semigroup\n' +
+            '\n' +
+            'transform(transducer, init?)(asyncGeneratorFunction) -> ...args=>Promise|Semigroup\n' +
+            '\n' +
+            'transform(transducer, init?)(...reducers) -> ...args=>Promise|Semigroup',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 23, column: 4, offset: 814 },
+            indent: [
+              1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1, 1,
+              1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 24, column: 1, offset: 815 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Reduce a value by transducer and concatenation, returning a semigroup of transduced items. The initial value may be a function, in which case it is treated as a resolver.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 171, offset: 170 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 171, offset: 170 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[playground]',
+          value: 'const square = number => number ** 2\n' +
+            '\n' +
+            'const isOdd = number => number % 2 == 1\n' +
+            '\n' +
+            'const squaredOdds = pipe([\n' +
+            '  filter(isOdd),\n' +
+            '  map(square),\n' +
+            '])\n' +
+            '\n' +
+            'console.log(\n' +
+            '  transform(squaredOdds, () => [])([1, 2, 3, 4, 5]),\n' +
+            ') // [1, 9, 25]\n' +
+            '\n' +
+            'console.log(\n' +
+            "  transform(squaredOdds, '')([1, 2, 3, 4, 5]),\n" +
+            ") // '1925'\n" +
+            '\n' +
+            'console.log(\n' +
+            '  transform(squaredOdds, () => new Uint8Array())([1, 2, 3, 4, 5]),\n' +
+            ') // Uint8Array(3) [ 1, 9, 25 ]',
+          position: {
+            start: { line: 3, column: 1, offset: 172 },
+            end: { line: 24, column: 4, offset: 612 },
+            indent: [
+              1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1, 1
+            ]
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'A ',
+              position: {
+                start: { line: 26, column: 1, offset: 614 },
+                end: { line: 26, column: 3, offset: 616 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'Semigroup',
+              position: {
+                start: { line: 26, column: 3, offset: 616 },
+                end: { line: 26, column: 14, offset: 627 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ' is any type with some notion of concatenation. This could manifest in a ',
+              position: {
+                start: { line: 26, column: 14, offset: 627 },
+                end: { line: 26, column: 87, offset: 700 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: '.concat',
+              position: {
+                start: { line: 26, column: 87, offset: 700 },
+                end: { line: 26, column: 96, offset: 709 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ' method.',
+              position: {
+                start: { line: 26, column: 96, offset: 709 },
+                end: { line: 26, column: 104, offset: 717 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 26, column: 1, offset: 614 },
+            end: { line: 26, column: 104, offset: 717 },
+            indent: []
+          }
+        },
+        {
+          type: 'list',
+          ordered: false,
+          start: null,
+          spread: false,
+          children: [
+            {
+              type: 'listItem',
+              spread: false,
+              checked: null,
+              children: [
+                {
+                  type: 'paragraph',
+                  children: [
+                    {
+                      type: 'inlineCode',
+                      value: 'Array',
+                      position: {
+                        start: { line: 27, column: 4, offset: 721 },
+                        end: { line: 27, column: 11, offset: 728 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: ' - ',
+                      position: {
+                        start: { line: 27, column: 11, offset: 728 },
+                        end: { line: 27, column: 14, offset: 731 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'inlineCode',
+                      value: 'result.concat(values)',
+                      position: {
+                        start: { line: 27, column: 14, offset: 731 },
+                        end: { line: 27, column: 37, offset: 754 },
+                        indent: []
+                      }
+                    }
+                  ],
+                  position: {
+                    start: { line: 27, column: 4, offset: 721 },
+                    end: { line: 27, column: 37, offset: 754 },
+                    indent: []
+                  }
+                }
+              ],
+              position: {
+                start: { line: 27, column: 1, offset: 718 },
+                end: { line: 27, column: 37, offset: 754 },
+                indent: []
+              }
+            },
+            {
+              type: 'listItem',
+              spread: false,
+              checked: null,
+              children: [
+                {
+                  type: 'paragraph',
+                  children: [
+                    {
+                      type: 'inlineCode',
+                      value: 'string',
+                      position: {
+                        start: { line: 28, column: 4, offset: 758 },
+                        end: { line: 28, column: 12, offset: 766 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: ' - ',
+                      position: {
+                        start: { line: 28, column: 12, offset: 766 },
+                        end: { line: 28, column: 15, offset: 769 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'inlineCode',
+                      value: 'result + values',
+                      position: {
+                        start: { line: 28, column: 15, offset: 769 },
+                        end: { line: 28, column: 32, offset: 786 },
+                        indent: []
+                      }
+                    }
+                  ],
+                  position: {
+                    start: { line: 28, column: 4, offset: 758 },
+                    end: { line: 28, column: 32, offset: 786 },
+                    indent: []
+                  }
+                }
+              ],
+              position: {
+                start: { line: 28, column: 1, offset: 755 },
+                end: { line: 28, column: 32, offset: 786 },
+                indent: []
+              }
+            },
+            {
+              type: 'listItem',
+              spread: false,
+              checked: null,
+              children: [
+                {
+                  type: 'paragraph',
+                  children: [
+                    {
+                      type: 'inlineCode',
+                      value: 'Set',
+                      position: {
+                        start: { line: 29, column: 4, offset: 790 },
+                        end: { line: 29, column: 9, offset: 795 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: ' - ',
+                      position: {
+                        start: { line: 29, column: 9, offset: 795 },
+                        end: { line: 29, column: 12, offset: 798 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'inlineCode',
+                      value: 'result.add(...values)',
+                      position: {
+                        start: { line: 29, column: 12, offset: 798 },
+                        end: { line: 29, column: 35, offset: 821 },
+                        indent: []
+                      }
+                    }
+                  ],
+                  position: {
+                    start: { line: 29, column: 4, offset: 790 },
+                    end: { line: 29, column: 35, offset: 821 },
+                    indent: []
+                  }
+                }
+              ],
+              position: {
+                start: { line: 29, column: 1, offset: 787 },
+                end: { line: 29, column: 35, offset: 821 },
+                indent: []
+              }
+            },
+            {
+              type: 'listItem',
+              spread: false,
+              checked: null,
+              children: [
+                {
+                  type: 'paragraph',
+                  children: [
+                    {
+                      type: 'inlineCode',
+                      value: 'TypedArray',
+                      position: {
+                        start: { line: 30, column: 4, offset: 825 },
+                        end: { line: 30, column: 16, offset: 837 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: ' - ',
+                      position: {
+                        start: { line: 30, column: 16, offset: 837 },
+                        end: { line: 30, column: 19, offset: 840 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'inlineCode',
+                      value: 'result.set(prevResult); result.set(values, offset)',
+                      position: {
+                        start: { line: 30, column: 19, offset: 840 },
+                        end: { line: 30, column: 71, offset: 892 },
+                        indent: []
+                      }
+                    }
+                  ],
+                  position: {
+                    start: { line: 30, column: 4, offset: 825 },
+                    end: { line: 30, column: 71, offset: 892 },
+                    indent: []
+                  }
+                }
+              ],
+              position: {
+                start: { line: 30, column: 1, offset: 822 },
+                end: { line: 30, column: 71, offset: 892 },
+                indent: []
+              }
+            },
+            {
+              type: 'listItem',
+              spread: false,
+              checked: null,
+              children: [
+                {
+                  type: 'paragraph',
+                  children: [
+                    {
+                      type: 'inlineCode',
+                      value: '{ concat: function }',
+                      position: {
+                        start: { line: 31, column: 4, offset: 896 },
+                        end: { line: 31, column: 26, offset: 918 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: ' - ',
+                      position: {
+                        start: { line: 31, column: 26, offset: 918 },
+                        end: { line: 31, column: 29, offset: 921 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'inlineCode',
+                      value: 'result.concat(values)',
+                      position: {
+                        start: { line: 31, column: 29, offset: 921 },
+                        end: { line: 31, column: 52, offset: 944 },
+                        indent: []
+                      }
+                    }
+                  ],
+                  position: {
+                    start: { line: 31, column: 4, offset: 896 },
+                    end: { line: 31, column: 52, offset: 944 },
+                    indent: []
+                  }
+                }
+              ],
+              position: {
+                start: { line: 31, column: 1, offset: 893 },
+                end: { line: 31, column: 52, offset: 944 },
+                indent: []
+              }
+            },
+            {
+              type: 'listItem',
+              spread: false,
+              checked: null,
+              children: [
+                {
+                  type: 'paragraph',
+                  children: [
+                    {
+                      type: 'inlineCode',
+                      value: '{ write: function }',
+                      position: {
+                        start: { line: 32, column: 4, offset: 948 },
+                        end: { line: 32, column: 25, offset: 969 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: ' - essentially ',
+                      position: {
+                        start: { line: 32, column: 25, offset: 969 },
+                        end: { line: 32, column: 40, offset: 984 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'inlineCode',
+                      value: 'item.pipe(result)',
+                      position: {
+                        start: { line: 32, column: 40, offset: 984 },
+                        end: { line: 32, column: 59, offset: 1003 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: ' or ',
+                      position: {
+                        start: { line: 32, column: 59, offset: 1003 },
+                        end: { line: 32, column: 63, offset: 1007 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'inlineCode',
+                      value: 'result.write(item)',
+                      position: {
+                        start: { line: 32, column: 63, offset: 1007 },
+                        end: { line: 32, column: 83, offset: 1027 },
+                        indent: []
+                      }
+                    }
+                  ],
+                  position: {
+                    start: { line: 32, column: 4, offset: 948 },
+                    end: { line: 32, column: 83, offset: 1027 },
+                    indent: []
+                  }
+                }
+              ],
+              position: {
+                start: { line: 32, column: 1, offset: 945 },
+                end: { line: 32, column: 83, offset: 1027 },
+                indent: []
+              }
+            },
+            {
+              type: 'listItem',
+              spread: false,
+              checked: null,
+              children: [
+                {
+                  type: 'paragraph',
+                  children: [
+                    {
+                      type: 'inlineCode',
+                      value: 'Object',
+                      position: {
+                        start: { line: 33, column: 4, offset: 1031 },
+                        end: { line: 33, column: 12, offset: 1039 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: ' - ',
+                      position: {
+                        start: { line: 33, column: 12, offset: 1039 },
+                        end: { line: 33, column: 15, offset: 1042 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'inlineCode',
+                      value: '({ ...result, ...values })',
+                      position: {
+                        start: { line: 33, column: 15, offset: 1042 },
+                        end: { line: 33, column: 43, offset: 1070 },
+                        indent: []
+                      }
+                    }
+                  ],
+                  position: {
+                    start: { line: 33, column: 4, offset: 1031 },
+                    end: { line: 33, column: 43, offset: 1070 },
+                    indent: []
+                  }
+                }
+              ],
+              position: {
+                start: { line: 33, column: 1, offset: 1028 },
+                end: { line: 33, column: 43, offset: 1070 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 27, column: 1, offset: 718 },
+            end: { line: 33, column: 43, offset: 1070 },
+            indent: [ 1, 1, 1, 1, 1, 1 ]
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Here is a simple ',
+              position: {
+                start: { line: 35, column: 1, offset: 1072 },
+                end: { line: 35, column: 18, offset: 1089 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'Semigroup',
+              position: {
+                start: { line: 35, column: 18, offset: 1089 },
+                end: { line: 35, column: 29, offset: 1100 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ' as an object that implements ',
+              position: {
+                start: { line: 35, column: 29, offset: 1100 },
+                end: { line: 35, column: 59, offset: 1130 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: '.concat',
+              position: {
+                start: { line: 35, column: 59, offset: 1130 },
+                end: { line: 35, column: 68, offset: 1139 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: '.',
+              position: {
+                start: { line: 35, column: 68, offset: 1139 },
+                end: { line: 35, column: 69, offset: 1140 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 35, column: 1, offset: 1072 },
+            end: { line: 35, column: 69, offset: 1140 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[playground]',
+          value: 'const square = number => number ** 2\n' +
+            '\n' +
+            'const Stdout = {\n' +
+            '  concat(...args) {\n' +
+            '    console.log(...args)\n' +
+            '    return this\n' +
+            '  },\n' +
+            '}\n' +
+            '\n' +
+            'transform(map(square), Stdout)([1, 2, 3, 4, 5])\n' +
+            '// 1\n' +
+            '// 4\n' +
+            '// 9\n' +
+            '// 16\n' +
+            '// 25',
+          position: {
+            start: { line: 37, column: 1, offset: 1142 },
+            end: { line: 53, column: 4, offset: 1371 },
+            indent: [
+              1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1
+            ]
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Here is a transformation of an async generator to a Node.js writable stream, ',
+              position: {
+                start: { line: 55, column: 1, offset: 1373 },
+                end: { line: 55, column: 78, offset: 1450 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'process.stdout',
+              position: {
+                start: { line: 55, column: 78, offset: 1450 },
+                end: { line: 55, column: 94, offset: 1466 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: '.',
+              position: {
+                start: { line: 55, column: 94, offset: 1466 },
+                end: { line: 55, column: 95, offset: 1467 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 55, column: 1, offset: 1373 },
+            end: { line: 55, column: 95, offset: 1467 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[node]',
+          value: '// this example is duplicated in rubico/examples/transformStreamRandomInts.js\n' +
+            '\n' +
+            "const { pipe, map, transform } = require('rubico')\n" +
+            '\n' +
+            'const square = number => number ** 2\n' +
+            '\n' +
+            'const toString = value => value.toString()\n' +
+            '\n' +
+            'const randomInt = () => Math.ceil(Math.random() * 100)\n' +
+            '\n' +
+            'const streamRandomInts = async function* () {\n' +
+            '  while (true) {\n' +
+            '    yield randomInt()\n' +
+            '  }\n' +
+            '}\n' +
+            '\n' +
+            'transform(\n' +
+            '  map(pipe([square, toString])), process.stdout,\n' +
+            ')(streamRandomInts()) // 9216576529289484980147613249169774446246768649...',
+          position: {
+            start: { line: 57, column: 1, offset: 1469 },
+            end: { line: 77, column: 4, offset: 1989 },
+            indent: [
+              1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1
+            ]
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'inlineCode',
+              value: 'transform',
+              position: {
+                start: { line: 79, column: 1, offset: 1991 },
+                end: { line: 79, column: 12, offset: 2002 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ', like ',
+              position: {
+                start: { line: 79, column: 12, offset: 2002 },
+                end: { line: 79, column: 19, offset: 2009 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'reduce',
+              position: {
+                start: { line: 79, column: 19, offset: 2009 },
+                end: { line: 79, column: 27, offset: 2017 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ', supports reducer combination. This has a use case in state management, where, for a state object, incoming objects are merged.',
+              position: {
+                start: { line: 79, column: 27, offset: 2017 },
+                end: { line: 79, column: 155, offset: 2145 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 79, column: 1, offset: 1991 },
+            end: { line: 79, column: 155, offset: 2145 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[playground]',
+          value: 'const reducerA = async (state, action) => {\n' +
+            "  if (action.type == 'A') return { ...state, A: true }\n" +
+            '  return state\n' +
+            '}\n' +
+            '\n' +
+            'const reducerB = async (state, action) => {\n' +
+            "  if (action.type == 'B') return { ...state, B: true }\n" +
+            '  return state\n' +
+            '}\n' +
+            '\n' +
+            'const reducerC = async (state, action) => {\n' +
+            "  if (action.type == 'C') return { ...state, C: true }\n" +
+            '  return state\n' +
+            '}\n' +
+            '\n' +
+            'const logAction = function (action) {\n' +
+            "  console.log('action', action)\n" +
+            '  return action\n' +
+            '}\n' +
+            '\n' +
+            'const reducingABC = transform(\n' +
+            '  map(logAction), // transducer logger middleware\n' +
+            '  () => ({}), // initial state resolver\n' +
+            ')(reducerA, reducerB, reducerC)\n' +
+            '\n' +
+            "const actions = [{ type: 'A' }, { type: 'B' }, { type: 'C' }]\n" +
+            '\n' +
+            'reducingABC(actions).then(\n' +
+            "  state => console.log('state', state))\n" +
+            "// action { type: 'A' }\n" +
+            "// action { type: 'B' }\n" +
+            "// action { type: 'C' }\n" +
+            '// state { A: true, B: true, C: true }',
+          position: {
+            start: { line: 81, column: 1, offset: 2147 },
+            end: { line: 115, column: 4, offset: 3012 },
+            indent: [
+              1, 1, 1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 116, column: 1, offset: 3013 }
+      }
+    }
+  },
+  {
+    name: 'tryCatch',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var args ...any,\n' +
+      '  tryer ...args=>Promise|any,\n' +
+      '  catcher (error Error, ...args)=>Promise|any\n' +
+      '\n' +
+      'tryCatch(tryer, catcher)(...args) -> Promise|any\n' +
+      '```\n',
+    description: 'Try a `tryer`, catch with `catcher`. On error or rejected promise, call the `catcher` with the error followed by any arguments to the tryer.\n' +
+      '\n' +
+      'Note: if the return value is to be used in a future computation, be sure to account for that in both the `tryer` and the `catcher`\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const errorThrower = tryCatch(\n' +
+      '  message => {\n' +
+      '    throw new Error(message)\n' +
+      '  },\n' +
+      '  (err, message) => {\n' +
+      '    console.log(err)\n' +
+      '    return `${message} from catcher`\n' +
+      '  },\n' +
+      ')\n' +
+      '\n' +
+      "console.log(errorThrower('hello')) // Error: hello\n" +
+      '                                   // hello from catcher\n' +
+      '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'var args ...any,\n' +
+            '  tryer ...args=>Promise|any,\n' +
+            '  catcher (error Error, ...args)=>Promise|any\n' +
+            '\n' +
+            'tryCatch(tryer, catcher)(...args) -> Promise|any',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 7, column: 4, offset: 175 },
+            indent: [ 1, 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 8, column: 1, offset: 176 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Try a ',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 7, offset: 6 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'tryer',
+              position: {
+                start: { line: 1, column: 7, offset: 6 },
+                end: { line: 1, column: 14, offset: 13 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ', catch with ',
+              position: {
+                start: { line: 1, column: 14, offset: 13 },
+                end: { line: 1, column: 27, offset: 26 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'catcher',
+              position: {
+                start: { line: 1, column: 27, offset: 26 },
+                end: { line: 1, column: 36, offset: 35 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: '. On error or rejected promise, call the ',
+              position: {
+                start: { line: 1, column: 36, offset: 35 },
+                end: { line: 1, column: 77, offset: 76 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'catcher',
+              position: {
+                start: { line: 1, column: 77, offset: 76 },
+                end: { line: 1, column: 86, offset: 85 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ' with the error followed by any arguments to the tryer.',
+              position: {
+                start: { line: 1, column: 86, offset: 85 },
+                end: { line: 1, column: 141, offset: 140 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 141, offset: 140 },
+            indent: []
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Note: if the return value is to be used in a future computation, be sure to account for that in both the ',
+              position: {
+                start: { line: 3, column: 1, offset: 142 },
+                end: { line: 3, column: 106, offset: 247 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'tryer',
+              position: {
+                start: { line: 3, column: 106, offset: 247 },
+                end: { line: 3, column: 113, offset: 254 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ' and the ',
+              position: {
+                start: { line: 3, column: 113, offset: 254 },
+                end: { line: 3, column: 122, offset: 263 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'catcher',
+              position: {
+                start: { line: 3, column: 122, offset: 263 },
+                end: { line: 3, column: 131, offset: 272 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 3, column: 1, offset: 142 },
+            end: { line: 3, column: 131, offset: 272 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[playground]',
+          value: 'const errorThrower = tryCatch(\n' +
+            '  message => {\n' +
+            '    throw new Error(message)\n' +
+            '  },\n' +
+            '  (err, message) => {\n' +
+            '    console.log(err)\n' +
+            '    return `${message} from catcher`\n' +
+            '  },\n' +
+            ')\n' +
+            '\n' +
+            "console.log(errorThrower('hello')) // Error: hello\n" +
+            '                                   // hello from catcher',
+          position: {
+            start: { line: 5, column: 1, offset: 274 },
+            end: { line: 18, column: 4, offset: 580 },
+            indent: [
+              1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1,
+              1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 19, column: 1, offset: 581 }
+      }
+    }
+  },
+  {
+    name: 'defaultsDeep',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var defaultCollection Array|Object,\n' +
+      '  value Array|Object\n' +
+      '\n' +
+      'defaultsDeep(defaultCollection)(value) -> Array|Object\n' +
+      '```\n',
+    description: 'Deeply assign default values to an array or object by an array or object of possibly nested default values.\n' +
+      '\n' +
+      '```javascript [node]\n' +
+      'const defaultUser = defaultsDeep({\n' +
+      "  name: 'placeholder',\n" +
+      '  images: [\n' +
+      "    { url: 'https://via.placeholder.com/150' },\n" +
+      "    { url: 'https://via.placeholder.com/150' },\n" +
+      "    { url: 'https://via.placeholder.com/150' },\n" +
+      '  ],\n' +
+      '})\n' +
+      '\n' +
+      'console.log(defaultUser({\n' +
+      "  name: 'George',\n" +
+      "  images: [{ url: 'https://via.placeholder.com/150/0000FF/808080%20?Text=Digital.com' }],\n" +
+      '}))\n' +
+      '// {\n' +
+      "//   name: 'George',\n" +
+      '//   images: [\n' +
+      "//    { url: 'https://via.placeholder.com/150/0000FF/808080%20?Text=Digital.com' },\n" +
+      "//    { url: 'https://via.placeholder.com/150' },\n" +
+      "//    { url: 'https://via.placeholder.com/150' },\n" +
+      '//   ],\n' +
+      '// }\n' +
+      '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'var defaultCollection Array|Object,\n' +
+            '  value Array|Object\n' +
+            '\n' +
+            'defaultsDeep(defaultCollection)(value) -> Array|Object',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 6, column: 4, offset: 145 },
+            indent: [ 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 7, column: 1, offset: 146 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Deeply assign default values to an array or object by an array or object of possibly nested default values.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 108, offset: 107 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 108, offset: 107 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[node]',
+          value: 'const defaultUser = defaultsDeep({\n' +
+            "  name: 'placeholder',\n" +
+            '  images: [\n' +
+            "    { url: 'https://via.placeholder.com/150' },\n" +
+            "    { url: 'https://via.placeholder.com/150' },\n" +
+            "    { url: 'https://via.placeholder.com/150' },\n" +
+            '  ],\n' +
+            '})\n' +
+            '\n' +
+            'console.log(defaultUser({\n' +
+            "  name: 'George',\n" +
+            "  images: [{ url: 'https://via.placeholder.com/150/0000FF/808080%20?Text=Digital.com' }],\n" +
+            '}))\n' +
+            '// {\n' +
+            "//   name: 'George',\n" +
+            '//   images: [\n' +
+            "//    { url: 'https://via.placeholder.com/150/0000FF/808080%20?Text=Digital.com' },\n" +
+            "//    { url: 'https://via.placeholder.com/150' },\n" +
+            "//    { url: 'https://via.placeholder.com/150' },\n" +
+            '//   ],\n' +
+            '// }',
+          position: {
+            start: { line: 3, column: 1, offset: 109 },
+            end: { line: 25, column: 4, offset: 732 },
+            indent: [
+              1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1, 1,
+              1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 26, column: 1, offset: 733 }
+      }
+    }
+  },
+  {
+    name: 'find',
+    synopsis: '```coffeescript [specscript]\n' +
+      'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: (any, T)=>any }|Object<T>\n' +
+      '\n' +
+      'var T any,\n' +
+      '  predicate T=>Promise|boolean,\n' +
+      '  foldable Foldable<T>,\n' +
+      '  result Promise|T|undefined\n' +
+      '\n' +
+      'find(predicate)(foldable) -> result\n' +
+      '```\n',
+    description: 'Get the first item in a foldable collection that matches a predicate.\n' +
+      '\n' +
+      '```javascript [node]\n' +
+      'const users = [\n' +
+      "  { name: 'John', age: 16 },\n" +
+      "  { name: 'Jill', age: 32 },\n" +
+      "  { name: 'George', age: 51 },\n" +
+      ']\n' +
+      '\n' +
+      'console.log(\n' +
+      '  find(user => user.age > 50)(users),\n' +
+      ") // { name: 'George', age: 51 }\n" +
+      '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: (any, T)=>any }|Object<T>\n' +
+            '\n' +
+            'var T any,\n' +
+            '  predicate T=>Promise|boolean,\n' +
+            '  foldable Foldable<T>,\n' +
+            '  result Promise|T|undefined\n' +
+            '\n' +
+            'find(predicate)(foldable) -> result',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 10, column: 4, offset: 245 },
+            indent: [
+              1, 1, 1, 1, 1,
+              1, 1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 11, column: 1, offset: 246 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Get the first item in a foldable collection that matches a predicate.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 70, offset: 69 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 70, offset: 69 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[node]',
+          value: 'const users = [\n' +
+            "  { name: 'John', age: 16 },\n" +
+            "  { name: 'Jill', age: 32 },\n" +
+            "  { name: 'George', age: 51 },\n" +
+            ']\n' +
+            '\n' +
+            'console.log(\n' +
+            '  find(user => user.age > 50)(users),\n' +
+            ") // { name: 'George', age: 51 }",
+          position: {
+            start: { line: 3, column: 1, offset: 71 },
+            end: { line: 13, column: 4, offset: 287 },
+            indent: [
+              1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 14, column: 1, offset: 288 }
+      }
+    }
+  },
+  {
+    name: 'first',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var value Array|string\n' +
+      '\n' +
+      'first(value) -> any\n' +
+      '```\n',
+    description: 'Get the first item of a collection\n' +
+      '\n' +
+      '```javascript [node]\n' +
+      'console.log(first([1, 2, 3])) // 1\n' +
+      "console.log(first('abc')) // 'a'\n" +
+      'console.log(first([])) // undefined\n' +
+      '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'var value Array|string\n\nfirst(value) -> any',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 5, column: 4, offset: 76 },
+            indent: [ 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 6, column: 1, offset: 77 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Get the first item of a collection',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 35, offset: 34 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 35, offset: 34 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[node]',
+          value: 'console.log(first([1, 2, 3])) // 1\n' +
+            "console.log(first('abc')) // 'a'\n" +
+            'console.log(first([])) // undefined',
+          position: {
+            start: { line: 3, column: 1, offset: 36 },
+            end: { line: 7, column: 4, offset: 164 },
+            indent: [ 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 8, column: 1, offset: 165 }
+      }
+    }
+  },
+  {
+    name: 'flatten',
+    synopsis: '```coffeescript [specscript]\n' +
+      'Stream<T> = { read: ()=>T, write: T=>() }\n' +
+      'Monad<T> = Array<T>|String<T>|Set<T>\n' +
+      '  |TypedArray<T>|Stream<T>|Iterator<T>|AsyncIterator<T>\n' +
+      '  |{ chain: T=>Monad<T> }|{ flatMap: T=>Monad<T> }|Object<T>\n' +
+      'Reducer<T> = (any, T)=>Promise|any\n' +
+      'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: Reducer<T>=>any }|Object<T>\n' +
+      '\n' +
+      'var T any,\n' +
+      '  monad Monad<Monad<T>|Foldable<T>|T>,\n' +
+      '  args ...any,\n' +
+      '  generatorFunction ...args=>Generator<Monad<T>|Foldable<T>|T>,\n' +
+      '  asyncGeneratorFunction ...args=>AsyncGenerator<Monad<T>|Foldable<T>|T>,\n' +
+      '  reducer Reducer<Monad<T>|Foldable<T>|T>\n' +
+      '\n' +
+      'flatten(monad) -> Monad<T>\n' +
+      '\n' +
+      'flatten(generatorFunction) -> ...args=>Generator<T>\n' +
+      '\n' +
+      'flatten(asyncGeneratorFunction) -> ...args=>AsyncGenerator<T>\n' +
+      '\n' +
+      'flatten(reducer) -> Reducer<T>\n' +
+      '```\n',
+    description: 'Flatten a collection. Works in transducer position.\n' +
+      '\n' +
+      '```javascript [node]\n' +
+      'flatten([\n' +
+      '  [1, 1],\n' +
+      '  new Set([2, 2]),\n' +
+      '  (function* () { yield 3; yield 3 })(),\n' +
+      '  (async function* () { yield 4; yield 4 })(),\n' +
+      '  { a: 5, b: 5 },\n' +
+      '  6,\n' +
+      '  Promise.resolve(7),\n' +
+      '  new Uint8Array([8]),\n' +
+      ']).then(console.log)\n' +
+      '// [1, 1, 2, 3, 3, 5, 5, 6, 7, 8, 4, 4]\n' +
+      '\n' +
+      'const add = (a, b) => a + b\n' +
+      '\n' +
+      'console.log(\n' +
+      '  [[1], [2], [3], [4], [5]].reduce(flatten(add), 0),\n' +
+      ') // 15\n' +
+      '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'Stream<T> = { read: ()=>T, write: T=>() }\n' +
+            'Monad<T> = Array<T>|String<T>|Set<T>\n' +
+            '  |TypedArray<T>|Stream<T>|Iterator<T>|AsyncIterator<T>\n' +
+            '  |{ chain: T=>Monad<T> }|{ flatMap: T=>Monad<T> }|Object<T>\n' +
+            'Reducer<T> = (any, T)=>Promise|any\n' +
+            'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: Reducer<T>=>any }|Object<T>\n' +
+            '\n' +
+            'var T any,\n' +
+            '  monad Monad<Monad<T>|Foldable<T>|T>,\n' +
+            '  args ...any,\n' +
+            '  generatorFunction ...args=>Generator<Monad<T>|Foldable<T>|T>,\n' +
+            '  asyncGeneratorFunction ...args=>AsyncGenerator<Monad<T>|Foldable<T>|T>,\n' +
+            '  reducer Reducer<Monad<T>|Foldable<T>|T>\n' +
+            '\n' +
+            'flatten(monad) -> Monad<T>\n' +
+            '\n' +
+            'flatten(generatorFunction) -> ...args=>Generator<T>\n' +
+            '\n' +
+            'flatten(asyncGeneratorFunction) -> ...args=>AsyncGenerator<T>\n' +
+            '\n' +
+            'flatten(reducer) -> Reducer<T>',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 23, column: 4, offset: 766 },
+            indent: [
+              1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1, 1,
+              1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 24, column: 1, offset: 767 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Flatten a collection. Works in transducer position.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 52, offset: 51 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 52, offset: 51 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[node]',
+          value: 'flatten([\n' +
+            '  [1, 1],\n' +
+            '  new Set([2, 2]),\n' +
+            '  (function* () { yield 3; yield 3 })(),\n' +
+            '  (async function* () { yield 4; yield 4 })(),\n' +
+            '  { a: 5, b: 5 },\n' +
+            '  6,\n' +
+            '  Promise.resolve(7),\n' +
+            '  new Uint8Array([8]),\n' +
+            ']).then(console.log)\n' +
+            '// [1, 1, 2, 3, 3, 5, 5, 6, 7, 8, 4, 4]\n' +
+            '\n' +
+            'const add = (a, b) => a + b\n' +
+            '\n' +
+            'console.log(\n' +
+            '  [[1], [2], [3], [4], [5]].reduce(flatten(add), 0),\n' +
+            ') // 15',
+          position: {
+            start: { line: 3, column: 1, offset: 53 },
+            end: { line: 21, column: 4, offset: 437 },
+            indent: [
+              1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 22, column: 1, offset: 438 }
+      }
+    }
+  },
+  {
+    name: 'forEach',
+    synopsis: '```coffeescript [specscript]\n' +
+      'Reducer<T> = (any, T)=>Promise|any\n' +
+      '\n' +
+      'var T any,\n' +
+      '  callback T=>(),\n' +
+      '  collection Iterable<T>|AsyncIterable<T>{ forEach: callback=>() }|Object<T>,\n' +
+      '  args ...any,\n' +
+      '  generatorFunction ...args=>Generator<T>,\n' +
+      '  asyncGeneratorFunction ...args=>AsyncGenerator<T>,\n' +
+      '  reducer Reducer<T>\n' +
+      '\n' +
+      'forEach(callback)(collection) -> Promise<>|()\n' +
+      '\n' +
+      'forEach(callback)(generatorFunction) -> ...args=>Promise<>|()\n' +
+      '\n' +
+      'forEach(callback)(asyncGeneratorFunction) -> ...args=>Promise<>\n' +
+      '\n' +
+      'forEach(callback)(reducer) -> Reducer<T>\n' +
+      '```\n',
+    description: 'Execute a callback for each item of a collection, returning a Promise if any execution is asynchronous. Effectively `callback => map(tap)(callback)`. Also works in transducer position.\n' +
+      '\n' +
+      '```javascript [node]\n' +
+      'forEach(console.log)([1, 2, 3, 4, 5]) // 1 2 3 4 5\n' +
+      'forEach(console.log)({ a: 1, b: 2, c: 3 }) // 1 2 3\n' +
+      '\n' +
+      'const add = (a, b) => a + b\n' +
+      '\n' +
+      "const logNumber = number => console.log('got number', number)\n" +
+      '\n' +
+      'const numbers = [1, 2, 3, 4, 5]\n' +
+      'const result = numbers.reduce(forEach(logNumber)(add), 0)\n' +
+      '// got number 1\n' +
+      '// got number 2\n' +
+      '// got number 3\n' +
+      '// got number 4\n' +
+      '// got number 5\n' +
+      '\n' +
+      "console.log('result', result) // result 10\n" +
+      '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'Reducer<T> = (any, T)=>Promise|any\n' +
+            '\n' +
+            'var T any,\n' +
+            '  callback T=>(),\n' +
+            '  collection Iterable<T>|AsyncIterable<T>{ forEach: callback=>() }|Object<T>,\n' +
+            '  args ...any,\n' +
+            '  generatorFunction ...args=>Generator<T>,\n' +
+            '  asyncGeneratorFunction ...args=>AsyncGenerator<T>,\n' +
+            '  reducer Reducer<T>\n' +
+            '\n' +
+            'forEach(callback)(collection) -> Promise<>|()\n' +
+            '\n' +
+            'forEach(callback)(generatorFunction) -> ...args=>Promise<>|()\n' +
+            '\n' +
+            'forEach(callback)(asyncGeneratorFunction) -> ...args=>Promise<>\n' +
+            '\n' +
+            'forEach(callback)(reducer) -> Reducer<T>',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 19, column: 4, offset: 524 },
+            indent: [
+              1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 20, column: 1, offset: 525 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Execute a callback for each item of a collection, returning a Promise if any execution is asynchronous. Effectively ',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 117, offset: 116 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'callback => map(tap)(callback)',
+              position: {
+                start: { line: 1, column: 117, offset: 116 },
+                end: { line: 1, column: 149, offset: 148 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: '. Also works in transducer position.',
+              position: {
+                start: { line: 1, column: 149, offset: 148 },
+                end: { line: 1, column: 185, offset: 184 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 185, offset: 184 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[node]',
+          value: 'forEach(console.log)([1, 2, 3, 4, 5]) // 1 2 3 4 5\n' +
+            'forEach(console.log)({ a: 1, b: 2, c: 3 }) // 1 2 3\n' +
+            '\n' +
+            'const add = (a, b) => a + b\n' +
+            '\n' +
+            "const logNumber = number => console.log('got number', number)\n" +
+            '\n' +
+            'const numbers = [1, 2, 3, 4, 5]\n' +
+            'const result = numbers.reduce(forEach(logNumber)(add), 0)\n' +
+            '// got number 1\n' +
+            '// got number 2\n' +
+            '// got number 3\n' +
+            '// got number 4\n' +
+            '// got number 5\n' +
+            '\n' +
+            "console.log('result', result) // result 10",
+          position: {
+            start: { line: 3, column: 1, offset: 186 },
+            end: { line: 20, column: 4, offset: 620 },
+            indent: [
+              1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 21, column: 1, offset: 621 }
+      }
+    }
+  },
+  {
+    name: 'heapUsedInLoop',
+    synopsis: 'heapUsedInLoop(\n' +
+      '  desc string,\n' +
+      '  loopCount number,\n' +
+      '  func (loop number)=>any\n' +
+      ') -> ()\n',
+    description: '**heapUsedInLoop** is a memory usage measurement function. Supply `description`, `loopCount`, and a function `func` for that function to be run `loopCount` times, finally logging average and max heap used per loop in terms of megabytes MiB.\n' +
+      '\n' +
+      '```javascript\n' +
+      "heapUsedInLoop('my-description', 1e5, function () {\n" +
+      '  return 1 + 1\n' +
+      '}) /*\n' +
+      '0 5.88 MiB\n' +
+      '1 5.92 MiB\n' +
+      '...\n' +
+      '99997 7.34 MiB\n' +
+      '99998 7.34 MiB\n' +
+      '99999 7.35 MiB\n' +
+      'my-description: 1e+5: {\n' +
+      '  "max": "7.15 MiB",\n' +
+      '  "avg": "5.50 MiB"\n' +
+      '}\n' +
+      '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'heapUsedInLoop(\n' +
+                '  desc string,\n' +
+                '  loopCount number,\n' +
+                '  func (loop number)=>any\n' +
+                ') -> ()',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 5, column: 8, offset: 84 },
+                indent: [ 1, 1, 1, 1 ]
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 5, column: 8, offset: 84 },
+            indent: [ 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 6, column: 1, offset: 85 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'strong',
+              children: [
+                {
+                  type: 'text',
+                  value: 'heapUsedInLoop',
+                  position: {
+                    start: { line: 1, column: 3, offset: 2 },
+                    end: { line: 1, column: 17, offset: 16 },
+                    indent: []
+                  }
+                }
+              ],
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 19, offset: 18 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ' is a memory usage measurement function. Supply ',
+              position: {
+                start: { line: 1, column: 19, offset: 18 },
+                end: { line: 1, column: 67, offset: 66 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'description',
+              position: {
+                start: { line: 1, column: 67, offset: 66 },
+                end: { line: 1, column: 80, offset: 79 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ', ',
+              position: {
+                start: { line: 1, column: 80, offset: 79 },
+                end: { line: 1, column: 82, offset: 81 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'loopCount',
+              position: {
+                start: { line: 1, column: 82, offset: 81 },
+                end: { line: 1, column: 93, offset: 92 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ', and a function ',
+              position: {
+                start: { line: 1, column: 93, offset: 92 },
+                end: { line: 1, column: 110, offset: 109 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'func',
+              position: {
+                start: { line: 1, column: 110, offset: 109 },
+                end: { line: 1, column: 116, offset: 115 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ' for that function to be run ',
+              position: {
+                start: { line: 1, column: 116, offset: 115 },
+                end: { line: 1, column: 145, offset: 144 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'loopCount',
+              position: {
+                start: { line: 1, column: 145, offset: 144 },
+                end: { line: 1, column: 156, offset: 155 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ' times, finally logging average and max heap used per loop in terms of megabytes MiB.',
+              position: {
+                start: { line: 1, column: 156, offset: 155 },
+                end: { line: 1, column: 241, offset: 240 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 241, offset: 240 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: null,
+          value: "heapUsedInLoop('my-description', 1e5, function () {\n" +
+            '  return 1 + 1\n' +
+            '}) /*\n' +
+            '0 5.88 MiB\n' +
+            '1 5.92 MiB\n' +
+            '...\n' +
+            '99997 7.34 MiB\n' +
+            '99998 7.34 MiB\n' +
+            '99999 7.35 MiB\n' +
+            'my-description: 1e+5: {\n' +
+            '  "max": "7.15 MiB",\n' +
+            '  "avg": "5.50 MiB"\n' +
+            '}',
+          position: {
+            start: { line: 3, column: 1, offset: 242 },
+            end: { line: 17, column: 4, offset: 470 },
+            indent: [
+              1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1,
+              1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 18, column: 1, offset: 471 }
+      }
+    }
+  },
+  {
+    name: 'isDeepEqual',
+    synopsis: '```coffeescript [specscript]\n' +
+      'Nested<T> = Array<Array<T>|Object<T>|Iterable<T>|T>|Object<Array<T>|Object<T>|Iterable<T>|T>\n' +
+      '\n' +
+      'var left Nested,\n' +
+      '  right Nested\n' +
+      '\n' +
+      'isDeepEqual(left, right) -> boolean\n' +
+      '```\n',
+    description: 'Check two values for deep strict equality.\n' +
+      '\n' +
+      '```javascript [node]\n' +
+      'console.log(\n' +
+      '  isDeepEqual({ a: 1, b: 2, c: [3] }, { a: 1, b: 2, c: [3] }),\n' +
+      ') // true\n' +
+      '\n' +
+      'console.log(\n' +
+      '  isDeepEqual({ a: 1, b: 2, c: [3] }, { a: 1, b: 2, c: [5] }),\n' +
+      ') // false\n' +
+      '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'Nested<T> = Array<Array<T>|Object<T>|Iterable<T>|T>|Object<Array<T>|Object<T>|Iterable<T>|T>\n' +
+            '\n' +
+            'var left Nested,\n' +
+            '  right Nested\n' +
+            '\n' +
+            'isDeepEqual(left, right) -> boolean',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 8, column: 4, offset: 195 },
+            indent: [
+              1, 1, 1, 1,
+              1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 9, column: 1, offset: 196 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Check two values for deep strict equality.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 43, offset: 42 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 43, offset: 42 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[node]',
+          value: 'console.log(\n' +
+            '  isDeepEqual({ a: 1, b: 2, c: [3] }, { a: 1, b: 2, c: [3] }),\n' +
+            ') // true\n' +
+            '\n' +
+            'console.log(\n' +
+            '  isDeepEqual({ a: 1, b: 2, c: [3] }, { a: 1, b: 2, c: [5] }),\n' +
+            ') // false',
+          position: {
+            start: { line: 3, column: 1, offset: 44 },
+            end: { line: 11, column: 4, offset: 242 },
+            indent: [
+              1, 1, 1, 1,
+              1, 1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 12, column: 1, offset: 243 }
+      }
+    }
+  },
+  {
+    name: 'isEmpty',
+    synopsis: '```coffeescript [specscript]\nisEmpty(value any) -> boolean\n```\n',
+    description: 'Check if a value is empty.\n' +
+      '\n' +
+      '```javascript [node]\n' +
+      "console.log(isEmpty('')) // true\n" +
+      'console.log(isEmpty([])) // true\n' +
+      'console.log(isEmpty(new Set())) // true\n' +
+      'console.log(isEmpty(new Map())) // true\n' +
+      'console.log(isEmpty({})) // true\n' +
+      "console.log(isEmpty('hey')) // false\n" +
+      'console.log(isEmpty([1, 2, 3])) // false\n' +
+      'console.log(isEmpty(new Set([1, 2, 3]))) // false\n' +
+      "console.log(isEmpty(new Map([['a', 1], ['b', 2], ['c', 3]]))) // false\n" +
+      'console.log(isEmpty({ a: 1, b: 2, c: 3 })) // false\n' +
+      'console.log(isEmpty(100)) // false\n' +
+      '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'isEmpty(value any) -> boolean',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 3, column: 4, offset: 62 },
+            indent: [ 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 4, column: 1, offset: 63 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Check if a value is empty.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 27, offset: 26 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 27, offset: 26 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[node]',
+          value: "console.log(isEmpty('')) // true\n" +
+            'console.log(isEmpty([])) // true\n' +
+            'console.log(isEmpty(new Set())) // true\n' +
+            'console.log(isEmpty(new Map())) // true\n' +
+            'console.log(isEmpty({})) // true\n' +
+            "console.log(isEmpty('hey')) // false\n" +
+            'console.log(isEmpty([1, 2, 3])) // false\n' +
+            'console.log(isEmpty(new Set([1, 2, 3]))) // false\n' +
+            "console.log(isEmpty(new Map([['a', 1], ['b', 2], ['c', 3]]))) // false\n" +
+            'console.log(isEmpty({ a: 1, b: 2, c: 3 })) // false\n' +
+            'console.log(isEmpty(100)) // false',
+          position: {
+            start: { line: 3, column: 1, offset: 28 },
+            end: { line: 15, column: 4, offset: 517 },
+            indent: [
+              1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1,
+              1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 16, column: 1, offset: 518 }
+      }
+    }
+  },
+  {
+    name: 'isFunction',
+    synopsis: '```coffeescript [specscript]\nisFunction(value any) -> boolean\n```\n',
+    description: 'Determine whether a value is a function.\n' +
+      '\n' +
+      '```javascript [node]\n' +
+      'const add = (a, b) => a + b\n' +
+      '\n' +
+      'console.log(\n' +
+      '  isFunction(add),\n' +
+      ') // true\n' +
+      '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'isFunction(value any) -> boolean',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 3, column: 4, offset: 65 },
+            indent: [ 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 4, column: 1, offset: 66 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Determine whether a value is a function.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 41, offset: 40 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 41, offset: 40 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[node]',
+          value: 'const add = (a, b) => a + b\n' +
+            '\n' +
+            'console.log(\n' +
+            '  isFunction(add),\n' +
+            ') // true',
+          position: {
+            start: { line: 3, column: 1, offset: 42 },
+            end: { line: 9, column: 4, offset: 137 },
+            indent: [ 1, 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 10, column: 1, offset: 138 }
+      }
+    }
+  },
+  {
+    name: 'isObject',
+    synopsis: '```coffeescript [specscript]\nisObject(value any) -> boolean\n```\n',
+    description: 'Determine whether a value is a direct `Object`.\n' +
+      '\n' +
+      '```javascript [node]\n' +
+      'console.log(\n' +
+      '  isObject({ a: 1, b: 2, c: 3 }),\n' +
+      ') // true\n' +
+      '\n' +
+      'console.log(\n' +
+      "  isObject('hey'),\n" +
+      ') // false\n' +
+      '\n' +
+      'console.log(\n' +
+      '  isObject(new Set([1, 2, 3])),\n' +
+      ') // false\n' +
+      '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'isObject(value any) -> boolean',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 3, column: 4, offset: 63 },
+            indent: [ 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 4, column: 1, offset: 64 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Determine whether a value is a direct ',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 39, offset: 38 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'Object',
+              position: {
+                start: { line: 1, column: 39, offset: 38 },
+                end: { line: 1, column: 47, offset: 46 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: '.',
+              position: {
+                start: { line: 1, column: 47, offset: 46 },
+                end: { line: 1, column: 48, offset: 47 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 48, offset: 47 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[node]',
+          value: 'console.log(\n' +
+            '  isObject({ a: 1, b: 2, c: 3 }),\n' +
+            ') // true\n' +
+            '\n' +
+            'console.log(\n' +
+            "  isObject('hey'),\n" +
+            ') // false\n' +
+            '\n' +
+            'console.log(\n' +
+            '  isObject(new Set([1, 2, 3])),\n' +
+            ') // false',
+          position: {
+            start: { line: 3, column: 1, offset: 49 },
+            end: { line: 15, column: 4, offset: 231 },
+            indent: [
+              1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1,
+              1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 16, column: 1, offset: 232 }
+      }
+    }
+  },
+  {
+    name: 'isString',
+    synopsis: '```coffeescript [specscript]\nisString(value any) -> boolean\n```\n',
+    description: 'Determine whether a value is a string.\n' +
+      '\n' +
+      '```javascript [node]\n' +
+      'console.log(\n' +
+      "  isString('hey'),\n" +
+      ') // true\n' +
+      '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'isString(value any) -> boolean',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 3, column: 4, offset: 63 },
+            indent: [ 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 4, column: 1, offset: 64 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Determine whether a value is a string.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 39, offset: 38 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 39, offset: 38 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[node]',
+          value: "console.log(\n  isString('hey'),\n) // true",
+          position: {
+            start: { line: 3, column: 1, offset: 40 },
+            end: { line: 7, column: 4, offset: 106 },
+            indent: [ 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 8, column: 1, offset: 107 }
+      }
+    }
+  },
+  {
+    name: 'last',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var value Array|string\n' +
+      '\n' +
+      'last(value) -> any\n' +
+      '```\n',
+    description: 'Get the last item of a collection\n' +
+      '\n' +
+      '```javascript [node]\n' +
+      "const last = require('rubico/x/last')\n" +
+      '\n' +
+      'console.log(last([1, 2, 3])) // 3\n' +
+      'console.log(last([])) // undefined\n' +
+      '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'var value Array|string\n\nlast(value) -> any',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 5, column: 4, offset: 75 },
+            indent: [ 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 6, column: 1, offset: 76 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Get the last item of a collection',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 34, offset: 33 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 34, offset: 33 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[node]',
+          value: "const last = require('rubico/x/last')\n" +
+            '\n' +
+            'console.log(last([1, 2, 3])) // 3\n' +
+            'console.log(last([])) // undefined',
+          position: {
+            start: { line: 3, column: 1, offset: 35 },
+            end: { line: 8, column: 4, offset: 167 },
+            indent: [ 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 9, column: 1, offset: 168 }
+      }
+    }
+  },
+  {
+    name: 'pluck',
+    synopsis: '```coffeescript [specscript]\n' +
+      'Functor<T> = Array<T>|Object<T>|Iterator<T>|AsyncIterator<T>|{ map: T=>any }\n' +
+      'Reducer<T> = (any, T)=>Promise|any\n' +
+      '\n' +
+      'var T any,\n' +
+      '  mapper T=>Promise|any,\n' +
+      '  functor Functor<T>\n' +
+      '  args ...any,\n' +
+      '  generatorFunction ...args=>Generator<T>,\n' +
+      '  asyncGeneratorFunction ...args=>AsyncGenerator<T>,\n' +
+      '  reducer Reducer<T>\n' +
+      '\n' +
+      'pluck(functor) -> Promise|Functor\n' +
+      '\n' +
+      'pluck(generatorFunction) -> ...args=>Generator\n' +
+      '\n' +
+      'pluck(asyncGeneratorFunction) -> ...args=>AsyncGenerator\n' +
+      '\n' +
+      'pluck(reducer) -> Reducer\n' +
+      '```\n',
+    description: 'Apply a getter denoted by path across all items of a collection, creating a new collection of plucked values. Also works in transducer position.\n' +
+      '\n' +
+      '```javascript [node]\n' +
+      'const users = [\n' +
+      "  { name: 'George', age: 33 },\n" +
+      "  { name: 'Jane', age: 51 },\n" +
+      "  { name: 'Jim', age: 22 },\n" +
+      ']\n' +
+      '\n' +
+      "const usernames = pluck('name')(users)\n" +
+      '\n' +
+      "console.log(usernames) // ['George', 'Jane', 'Jim']\n" +
+      '\n' +
+      'const add = (a, b) => a + b\n' +
+      '\n' +
+      'console.log(\n' +
+      "  'total age:',\n" +
+      "  users.reduce(pluck('age')(add)),\n" +
+      ') // total age: 96\n' +
+      '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'Functor<T> = Array<T>|Object<T>|Iterator<T>|AsyncIterator<T>|{ map: T=>any }\n' +
+            'Reducer<T> = (any, T)=>Promise|any\n' +
+            '\n' +
+            'var T any,\n' +
+            '  mapper T=>Promise|any,\n' +
+            '  functor Functor<T>\n' +
+            '  args ...any,\n' +
+            '  generatorFunction ...args=>Generator<T>,\n' +
+            '  asyncGeneratorFunction ...args=>AsyncGenerator<T>,\n' +
+            '  reducer Reducer<T>\n' +
+            '\n' +
+            'pluck(functor) -> Promise|Functor\n' +
+            '\n' +
+            'pluck(generatorFunction) -> ...args=>Generator\n' +
+            '\n' +
+            'pluck(asyncGeneratorFunction) -> ...args=>AsyncGenerator\n' +
+            '\n' +
+            'pluck(reducer) -> Reducer',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 20, column: 4, offset: 502 },
+            indent: [
+              1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 21, column: 1, offset: 503 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Apply a getter denoted by path across all items of a collection, creating a new collection of plucked values. Also works in transducer position.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 145, offset: 144 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 145, offset: 144 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[node]',
+          value: 'const users = [\n' +
+            "  { name: 'George', age: 33 },\n" +
+            "  { name: 'Jane', age: 51 },\n" +
+            "  { name: 'Jim', age: 22 },\n" +
+            ']\n' +
+            '\n' +
+            "const usernames = pluck('name')(users)\n" +
+            '\n' +
+            "console.log(usernames) // ['George', 'Jane', 'Jim']\n" +
+            '\n' +
+            'const add = (a, b) => a + b\n' +
+            '\n' +
+            'console.log(\n' +
+            "  'total age:',\n" +
+            "  users.reduce(pluck('age')(add)),\n" +
+            ') // total age: 96',
+          position: {
+            start: { line: 3, column: 1, offset: 146 },
+            end: { line: 20, column: 4, offset: 482 },
+            indent: [
+              1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 21, column: 1, offset: 483 }
+      }
+    }
+  },
+  {
+    name: 'size',
+    synopsis: '```coffeescript [specscript]\nsize(value any) -> number\n```\n',
+    description: 'Get the count of items in a value.\n' +
+      '\n' +
+      '```javascript [node]\n' +
+      'console.log(\n' +
+      '  size([1, 2, 3]),\n' +
+      ') // 3\n' +
+      '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'size(value any) -> number',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 3, column: 4, offset: 58 },
+            indent: [ 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 4, column: 1, offset: 59 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Get the count of items in a value.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 35, offset: 34 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 35, offset: 34 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[node]',
+          value: 'console.log(\n  size([1, 2, 3]),\n) // 3',
+          position: {
+            start: { line: 3, column: 1, offset: 36 },
+            end: { line: 7, column: 4, offset: 99 },
+            indent: [ 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 8, column: 1, offset: 100 }
+      }
+    }
+  },
+  {
+    name: 'trace',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var args ...any,\n' +
+      '  resolved any,\n' +
+      '  resolver ...args=>resolved\n' +
+      '\n' +
+      'trace(...args) -> args[0]\n' +
+      '\n' +
+      'trace(resolver)(...args) -> resolved\n' +
+      '```\n',
+    description: 'Log a value out to the console, returning the value. If the value is a function, treat it as a resolver.\n' +
+      '\n' +
+      '```javascript [node]\n' +
+      'pipe([\n' +
+      '  trace,\n' +
+      '  trace(value => value.toUpperCase()),\n' +
+      "])('hey') // hey\n" +
+      '          // HEY\n' +
+      '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'var args ...any,\n' +
+            '  resolved any,\n' +
+            '  resolver ...args=>resolved\n' +
+            '\n' +
+            'trace(...args) -> args[0]\n' +
+            '\n' +
+            'trace(resolver)(...args) -> resolved',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 9, column: 4, offset: 159 },
+            indent: [
+              1, 1, 1, 1,
+              1, 1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 10, column: 1, offset: 160 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Log a value out to the console, returning the value. If the value is a function, treat it as a resolver.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 105, offset: 104 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 105, offset: 104 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[node]',
+          value: 'pipe([\n' +
+            '  trace,\n' +
+            '  trace(value => value.toUpperCase()),\n' +
+            "])('hey') // hey\n" +
+            '          // HEY',
+          position: {
+            start: { line: 3, column: 1, offset: 106 },
+            end: { line: 9, column: 4, offset: 219 },
+            indent: [ 1, 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 10, column: 1, offset: 220 }
+      }
+    }
+  },
+  {
+    name: 'unionWith',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var T any,\n' +
+      '  arrayOfArrays Array<Array<T>>,\n' +
+      '  comparator (T, T)=>Promise|boolean\n' +
+      '\n' +
+      'unionWith(comparator)(arrayOfArrays) -> Array<T>\n' +
+      '```\n',
+    description: 'Create an array of unique values from an array of arrays with uniqueness determined by a comparator. The comparator is a function that returns a boolean value, `true` if two given values are distinct.\n' +
+      '\n' +
+      '```javascript [node]\n' +
+      'console.log(\n' +
+      '  unionWith(isDeepEqual)([\n' +
+      '    [{ a: 1 }, { b: 2 }, { a: 1 }],\n' +
+      '    [{ b: 2 }, { b: 2 }, { b: 2 }],\n' +
+      '  ]),\n' +
+      ') // [{ a: 1 }, { b: 2 }]\n' +
+      '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'var T any,\n' +
+            '  arrayOfArrays Array<Array<T>>,\n' +
+            '  comparator (T, T)=>Promise|boolean\n' +
+            '\n' +
+            'unionWith(comparator)(arrayOfArrays) -> Array<T>',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 7, column: 4, offset: 163 },
+            indent: [ 1, 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 8, column: 1, offset: 164 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Create an array of unique values from an array of arrays with uniqueness determined by a comparator. The comparator is a function that returns a boolean value, ',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 161, offset: 160 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'true',
+              position: {
+                start: { line: 1, column: 161, offset: 160 },
+                end: { line: 1, column: 167, offset: 166 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ' if two given values are distinct.',
+              position: {
+                start: { line: 1, column: 167, offset: 166 },
+                end: { line: 1, column: 201, offset: 200 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 201, offset: 200 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[node]',
+          value: 'console.log(\n' +
+            '  unionWith(isDeepEqual)([\n' +
+            '    [{ a: 1 }, { b: 2 }, { a: 1 }],\n' +
+            '    [{ b: 2 }, { b: 2 }, { b: 2 }],\n' +
+            '  ]),\n' +
+            ') // [{ a: 1 }, { b: 2 }]',
+          position: {
+            start: { line: 3, column: 1, offset: 202 },
+            end: { line: 10, column: 4, offset: 370 },
+            indent: [
+              1, 1, 1, 1,
+              1, 1, 1
+            ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 11, column: 1, offset: 371 }
+      }
+    }
+  },
+  {
+    name: 'uniq',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var T any,\n' +
+      '  array Array<T>\n' +
+      '\n' +
+      'uniq(array) -> Array\n' +
+      '```\n',
+    description: 'Get an array of unique values from an array.\n' +
+      '\n' +
+      '```javascript [node]\n' +
+      'console.log(\n' +
+      '  uniq([1, 2, 2, 3]),\n' +
+      ') // [1, 2, 3]\n' +
+      '```\n',
+    synopsis_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'code',
+          lang: 'coffeescript',
+          meta: '[specscript]',
+          value: 'var T any,\n  array Array<T>\n\nuniq(array) -> Array',
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 6, column: 4, offset: 82 },
+            indent: [ 1, 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 7, column: 1, offset: 83 }
+      }
+    },
+    description_mdast: {
+      type: 'root',
+      children: [
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Get an array of unique values from an array.',
+              position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 45, offset: 44 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 1, column: 1, offset: 0 },
+            end: { line: 1, column: 45, offset: 44 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[node]',
+          value: 'console.log(\n  uniq([1, 2, 2, 3]),\n) // [1, 2, 3]',
+          position: {
+            start: { line: 3, column: 1, offset: 46 },
+            end: { line: 7, column: 4, offset: 120 },
+            indent: [ 1, 1, 1, 1 ]
+          }
+        }
+      ],
+      position: {
+        start: { line: 1, column: 1, offset: 0 },
+        end: { line: 8, column: 1, offset: 121 }
       }
     }
   }

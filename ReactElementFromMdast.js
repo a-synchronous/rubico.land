@@ -82,26 +82,40 @@ const ReactElementFromMdast = function (mdast, props = {}) {
       return mdast.ordered ? Ol(recurse(mdast)) : Ul(recurse(mdast))
     case 'listItem':
       return Li(recurse(mdast))
-
     case 'inlineCode':
       return Code(recurse(mdast))
+
     case 'code':
-      if (mdast.lang == 'coffeescript') {
-        return Div([
-          H3('Syntax'),
-          CodeViewer({
+      switch (mdast.meta) {
+        case '[specscript]':
+          return Div([
+            H3('Syntax'),
+            CodeViewer({
+              code: mdast.value,
+              mode: mdast.lang,
+              theme: 'coffeescript',
+            }),
+          ])
+        case '[playground]':
+          return CodeRunner({
             code: mdast.value,
             mode: mdast.lang,
-            theme: 'coffeescript',
-          }),
-        ])
+            theme: 'rubico',
+          })
+        case '[node]':
+          return CodeViewer({
+            code: mdast.value,
+            mode: mdast.lang,
+            theme: 'rubico',
+          })
+        default:
+          return CodeViewer({
+            code: mdast.value,
+            mode: mdast.lang,
+            theme: 'default',
+          })
       }
-      if (mdast.meta == '[theme=default]') {
-        return CodeViewer({ code: mdast.value, mode: mdast.lang, theme: 'default' })
-      }
-      return mdast.meta == '[playground]'
-        ? CodeRunner({ code: mdast.value, mode: mdast.lang })
-        : CodeViewer({ code: mdast.value, mode: mdast.lang, theme: 'rubico' })
+
     case 'link':
       return A({ href: mdast.url }, recurse(mdast))
     case 'linkReference':
