@@ -16,7 +16,7 @@
     "react"
   ],
   "scripts": {
-    "cp": "./copy_index && ./parse_markdown TOUR.md > tour.mdast.js && ./parse_markdown ../rubico/README.md > readme.mdast.js",
+    "cp": "./copy_index && ./parse_markdown ../rubico-md/TOUR.md > tour.mdast.js && ./parse_markdown ../rubico/README.md > readme.mdast.js && ./parse_markdown ../rubico/TRANSDUCERS.md > transducers.mdast.js",
     "cronist": "cronist ../rubico > comments.cronist.js"
   },
   "dependencies": {

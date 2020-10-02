@@ -33,9 +33,6 @@ article > ul > li > p > a:hover {
 article > ol > li > p > a:hover {
   text-decoration: underline;
 }
-article > p > img {
-  max-width: 300px;
-}
 code {
   background-color: #f6f8fa;
   color: black;
@@ -324,3 +321,5 @@ header > nav > span {
   /* visibility: visible; */
   opacity: 1;
 }
+
+#transducers

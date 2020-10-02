@@ -18,6 +18,8 @@ const {
   get, pick, omit,
 } = rubico
 
+const isArray = Array.isArray
+
 // string => string
 const anchorHashFormat = value => value
   .replace(/\[([\w ]+)\]/g, '$1-')
@@ -36,19 +38,22 @@ const anchorHashFromMdast = function (mdast) {
   }
 }
 
+// mdast -> ReactElement
+const ReactElementFromMdastRecurse = function (mdast, props = {}) {
+  return isArray(mdast.children)
+    ? mdast.children.map(ReactElementFromMdast)
+    : mdast.value
+}
+
 // mdast {
 //   type: string,
 //   value: string,
 //   children: Array<this>,
 // } -> ReactElement
 const ReactElementFromMdast = function (mdast, props = {}) {
-  const recurse = mdast => 'children' in mdast
-    ? mdast.children.map(ReactElementFromMdast)
-    : mdast.value
-
   switch (mdast.type) {
     case 'root':
-      return Article(props, recurse(mdast))
+      return Article(props, ReactElementFromMdastRecurse(mdast, props))
     case 'heading':
       switch (mdast.depth) {
         case 1:
@@ -60,30 +65,32 @@ const ReactElementFromMdast = function (mdast, props = {}) {
             class: 'anchor-hash',
             href: `#${anchorHash}`,
             style: { display: 'flex', placeItems: 'center' },
-          }, [H1({ id: anchorHash }, recurse(mdast))])
-        case 2: return H2(recurse(mdast))
-        case 3: return H3(recurse(mdast))
-        case 4: return H4(recurse(mdast))
-        case 5: return H5(recurse(mdast))
-        default: return H6(recurse(mdast))
+          }, [H1({ id: anchorHash }, ReactElementFromMdastRecurse(mdast))])
+        case 2: return H2(ReactElementFromMdastRecurse(mdast))
+        case 3: return H3(ReactElementFromMdastRecurse(mdast))
+        case 4: return H4(ReactElementFromMdastRecurse(mdast))
+        case 5: return H5(ReactElementFromMdastRecurse(mdast))
+        default: return H6(ReactElementFromMdastRecurse(mdast))
       }
 
     case 'image':
       return Img({ src: mdast.url, alt: mdast.alt })
     case 'blockquote':
-      return Blockquote(recurse(mdast))
+      return Blockquote(ReactElementFromMdastRecurse(mdast))
     case 'paragraph':
-      return P(recurse(mdast))
+      return P(ReactElementFromMdastRecurse(mdast))
     case 'strong':
-      return B(recurse(mdast))
+      return B(ReactElementFromMdastRecurse(mdast))
     case 'text':
-      return Span(recurse(mdast))
+      return Span(ReactElementFromMdastRecurse(mdast))
     case 'list':
-      return mdast.ordered ? Ol(recurse(mdast)) : Ul(recurse(mdast))
+      return mdast.ordered
+        ? Ol(ReactElementFromMdastRecurse(mdast))
+        : Ul(ReactElementFromMdastRecurse(mdast))
     case 'listItem':
-      return Li(recurse(mdast))
+      return Li(ReactElementFromMdastRecurse(mdast))
     case 'inlineCode':
-      return Code(recurse(mdast))
+      return Code(ReactElementFromMdastRecurse(mdast))
 
     case 'code':
       switch (mdast.meta) {
@@ -117,9 +124,9 @@ const ReactElementFromMdast = function (mdast, props = {}) {
       }
 
     case 'link':
-      return A({ href: mdast.url }, recurse(mdast))
+      return A({ href: mdast.url }, ReactElementFromMdastRecurse(mdast))
     case 'linkReference':
-      return Span([Span('['), recurse(mdast), Span(']')])
+      return Span([Span('['), ReactElementFromMdastRecurse(mdast), Span(']')])
     case 'html':
       if (mdast.value == '<br />') {
         return Br()
