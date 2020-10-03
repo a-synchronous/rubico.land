@@ -1,6 +1,27 @@
+/*
+@font-face {
+  font-family: zillaslab;
+  src: url('./fonts/ZillaSlab-Medium.ttf');
+}
+@font-face {
+  font-family: roboto;
+  src: url('./fonts/Roboto-Medium.ttf');
+}
+*/
 html {
-  font-family: x-locale-heading-primary,zillaslab,Palatino,"Palatino Linotype",x-locale-heading-secondary,serif;
+  /* font-family: x-locale-heading-primary,zillaslab,Palatino,"Palatino Linotype",x-locale-heading-secondary,serif; */
+  /* font-family: x-locale-heading-primary,roboto,Palatino,"Palatino Linotype",x-locale-heading-secondary,serif; */
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, 
+             'Segoe UI', Roboto, 'Helvetica Neue', 
+             Ubuntu, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
+}
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+    font-size: 1.5rem;
 }
 @media only screen and (max-width: 280px) {
   html {
@@ -61,8 +82,8 @@ p {
 }
 
 #layout {
-  width: 95%;
-  padding-left: 5%;
+  width: 90%;
+  padding-left: 10%;
 }
 
 header {
@@ -189,6 +210,7 @@ header > nav > span {
 */
 
 #retractor-header:after {
+  font-size: 26px;
   margin-left: 10px;
   content: "▼";
 }

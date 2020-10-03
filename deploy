@@ -81,7 +81,7 @@ const extensionContentTypeMap = new Map([
 const getContentType = pipe([
   nodePath.parse,
   get('ext'),
-  ext => extensionContentTypeMap.get(ext) || 'text/plain',
+  ext => extensionContentTypeMap.get(ext) || 'text/html',
 ])
 
 // (entrypoint, filepath) => bucket_key
