@@ -69,6 +69,7 @@ const flattenAll = arr => arr.flat(Infinity)
 const extensionContentTypeMap = new Map([
   ['.webmanifest', 'application/manifest+json'],
   ['.json', 'application/json'],
+  ['.svg', 'image/svg+xml'],
   ['.js', 'text/javascript'],
   ['.html', 'text/html'],
   ['.css', 'text/css'],
