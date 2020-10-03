@@ -110,6 +110,7 @@ const namesOrder = [
   'omit',
   'defaultsDeep',
   'find',
+  'first',
   'flatten',
   'forEach',
   'isDeepEqual',
@@ -151,7 +152,12 @@ const DocsItem = pipe([
             isExpanded ? goto(back) : goto(path)
           },
         }, [
-          H3({ id: isExpanded ? 'retractor-header' : '' }, name),
+          H3(name),
+          isExpanded ? Img({
+            className: 'expander-arrow',
+            src: '/assets/down-arrow-rubico-green.svg',
+            alt: 'down-arrow-rubico-green',
+          }) : Span()
         ]),
         isExpanded ? A({
           href: `${back}/${getNextMethodName(name)}`,
@@ -159,7 +165,11 @@ const DocsItem = pipe([
             event.preventDefault()
             goto(`${back}/${getNextMethodName(name)}`)
           },
-        }, [Span({ id: 'next-arrow' }, '➦')]) : Span(),
+        }, [Img({
+          className: 'next-arrow',
+          src: '/assets/right-arrow-rubico-green.svg',
+          alt: 'right-green-arrow',
+        })]) : Span(),
 
         Div({
           className: isExpanded

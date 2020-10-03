@@ -42,7 +42,13 @@ const BlogItem = pipe([
           isExpanded ? goto(back) : goto(path)
         },
       }, [
-        H1({ id: isExpanded ? 'retractor-header' : '' }, title),
+        // H1({ id: isExpanded ? 'retractor-header' : '' }, title),
+        H1(title),
+        isExpanded ? Img({
+          className: 'expander-arrow',
+          src: '/assets/down-arrow-black.svg',
+          alt: 'down-arrow-black',
+        }) : Span()
       ]),
       P({ class: isExpanded ? '' : 'inactive' }, `${published} by ${author}`),
 

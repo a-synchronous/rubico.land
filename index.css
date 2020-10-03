@@ -210,6 +210,7 @@ header > nav > span {
 #retractor-header:hover::after {
   margin-left: 10px;
   content: "▲";
+  content: url(/assets/triangle-up-rubico-green.svg);
 }
 
 #next-arrow {
@@ -378,11 +379,15 @@ header > nav > span {
   margin: 0;
 }
 .blog-item > a {
+  display: flex;
   font-size: 16px;
   color: #65799B;
   transition-property: color, font-size;
   transition-duration: 0.28s, 0.28s;
   transition-timing-function: ease, ease;
+}
+.blog-item > a > img {
+  filter: grayscale(100%);
 }
 .blog-item > a:hover {
   text-decoration: underline;
@@ -391,4 +396,24 @@ header > nav > span {
   font-size: 18px;
   color: black;
   text-decoration: none;
+}
+
+.expander-arrow {
+  position: relative;
+  margin-left: 18px;
+  width: 26px;
+  transition: transform 0.12s;
+}
+.expander-arrow:hover {
+  transform: rotate(180deg);
+}
+
+.next-arrow {
+  margin-left: 36px;
+  width: 36px;
+  position: relative;
+  bottom: -6px;
+}
+.next-arrow:hover {
+  filter: brightness(108%);
 }
