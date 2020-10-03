@@ -130,6 +130,7 @@ const CodeRunner = ReactElement(({
     }, [
       Button({
         style: {
+          textAlign: 'center',
           borderRadius: '2px',
           width: '36px',
           cursor: 'pointer',
