@@ -381,6 +381,7 @@ header > nav > span {
 .blog-item > a {
   display: flex;
   font-size: 16px;
+  align-items: center;
   color: #65799B;
   transition-property: color, font-size;
   transition-duration: 0.28s, 0.28s;
