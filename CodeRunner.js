@@ -133,8 +133,11 @@ const CodeRunner = ReactElement(({
           textAlign: 'center',
           borderRadius: '2px',
           width: '36px',
+          padding: '0',
           cursor: 'pointer',
           height: '2em',
+          outline: 'none',
+          boxShadow: '1px 1px grey',
         },
         onClick: pipe([
           () => codeMirrors.get(codeAreaRef).getValue(),

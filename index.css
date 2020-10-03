@@ -40,7 +40,7 @@ article > a > h1 {
 article > a:hover::after {
   content: "¶";
   margin-left: 10px;
-  font-size: 32px;
+  margin-left: 10px;
   font-weight: 500;
   color: black;
 }
