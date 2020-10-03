@@ -131,6 +131,7 @@ const CodeRunner = ReactElement(({
       Button({
         style: {
           borderRadius: '2px',
+          width: '36px',
           cursor: 'pointer',
           height: '2em',
         },
