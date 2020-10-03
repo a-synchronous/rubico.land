@@ -6834,7 +6834,8 @@ export default [
   {
     name: 'filter',
     synopsis: '```coffeescript [specscript]\n' +
-      'Filterable<T> = Array<T>|Object<T>|Iterable<T>|AsyncIterable<T>|{ filter: (T=>boolean)=>any }\n' +
+      'Filterable<T> = Array<T>|Object<T>|Set<T>|Map<T>\n' +
+      '  |Iterator<T>|AsyncIterator<T>|{ filter: (T=>boolean)=>any }\n' +
       'Reducer<T> = (any, T)=>Promise|any\n' +
       '\n' +
       'var T any,\n' +
@@ -6853,7 +6854,14 @@ export default [
       '\n' +
       'filter(predicate)(reducer) -> Reducer<T>\n' +
       '```\n',
-    description: 'Exclude items based on the results of their concurrent execution with a predicate.\n' +
+    description: 'Filter out items from a filterable based on the results of their concurrent executions with a predicate. `filter` recognizes several vanilla JavaScript types as filterables.\n' +
+      '\n' +
+      ' * `Array` - filter array items by predicate\n' +
+      ' * `Object` - filter object values by predicate\n' +
+      ' * `Set` - filter Set values by predicate\n' +
+      ' * `Map` - filter Map values by predicate (not entries)\n' +
+      ' * `Iterator` - skip iterations by predicate\n' +
+      ' * `AsyncIterator` - skip async iterations by predicate\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const isOdd = number => number % 2 == 1\n' +
@@ -6865,26 +6873,30 @@ export default [
       'console.log(\n' +
       '  filter(isOdd)({ a: 1, b: 2, c: 3, d: 4, e: 5 }),\n' +
       ') // { a: 1, c: 3, e: 5 }\n' +
+      '\n' +
+      'console.log(\n' +
+      '  filter(isOdd)(new Set([1, 2, 3, 4, 5])),\n' +
+      ') // Set { 1, 3, 5 }\n' +
       '```\n' +
       '\n' +
-      'Passing a generator function to `filter` returns a filtering generator function; all values that are normally yielded by a generator function that test falsy with the predicate are skipped by the returned filtering generator function.\n' +
+      'Passing a generator function to `filter` in filterable position returns a generator function that produces filtering generators; all values that are normally yielded by a generator that test falsy by the predicate are skipped by a filtering generator.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const isOdd = number => number % 2 == 1\n' +
       '\n' +
-      'const numbers = function* () {\n' +
+      'const numbersGeneratorFunction = function* () {\n' +
       '  yield 1; yield 2; yield 3; yield 4; yield 5\n' +
       '}\n' +
       '\n' +
-      'const oddNumbers = filter(isOdd)(numbers)\n' +
+      'const oddNumbersGeneratorFunction = filter(isOdd)(numbersGeneratorFunction)\n' +
       '\n' +
-      'for (const number of oddNumbers()) {\n' +
+      'for (const number of oddNumbersGeneratorFunction()) {\n' +
       '  console.log(number) // 1\n' +
       '                      // 3\n' +
       '                      // 5\n' +
       '}\n' +
       '\n' +
-      'const oddNumbersGenerator = filter(isOdd)(numbers())\n' +
+      'const oddNumbersGenerator = filter(isOdd)(numbersGeneratorFunction())\n' +
       '\n' +
       'for (const number of oddNumbersGenerator) {\n' +
       '  console.log(number) // 1\n' +
@@ -6893,24 +6905,24 @@ export default [
       '}\n' +
       '```\n' +
       '\n' +
-      'In a similar vein to generators, `filter` also filters elements from async generators.\n' +
+      'In a similar vein to generator functions, passing an async generator function in filterable position creates an async generator function of filtered async generators. Each filtered async generator skips async iterations with values that test falsy by the predicate.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const asyncIsOdd = async number => number % 2 == 1\n' +
       '\n' +
-      'const asyncNumbers = async function* () {\n' +
+      'const asyncNumbersGeneratorFunction = async function* () {\n' +
       '  yield 1; yield 2; yield 3; yield 4; yield 5\n' +
       '}\n' +
       '\n' +
-      'const asyncOddNumbers = filter(asyncIsOdd)(asyncNumbers)\n' +
+      'const asyncOddNumbersGeneratorFunction = filter(asyncIsOdd)(asyncNumbersGeneratorFunction)\n' +
       '\n' +
-      'for await (const number of asyncOddNumbers()) {\n' +
+      'for await (const number of asyncOddNumbersGeneratorFunction()) {\n' +
       '  console.log(number) // 1\n' +
       '                      // 3\n' +
       '                      // 5\n' +
       '}\n' +
       '\n' +
-      'const asyncOddNumbersGenerator = filter(asyncIsOdd)(asyncNumbers())\n' +
+      'const asyncOddNumbersGenerator = filter(asyncIsOdd)(asyncNumbersGeneratorFunction())\n' +
       '\n' +
       'for await (const number of asyncOddNumbersGenerator) {\n' +
       '  console.log(number) // 1\n' +
@@ -6919,9 +6931,7 @@ export default [
       '}\n' +
       '```\n' +
       '\n' +
-      'Finally, `filter` creates filtering transducers. A reducer created from a filtering transducer skips items of a reducing operation if they test falsy under the predicate.\n' +
-      '\n' +
-      'Note: It is possible to use an asynchronous predicate when filtering a reducer, however the implementation of `reduce` must support asynchronous operations. This library provides such an implementation as `reduce`.\n' +
+      "A reducer in filterable position creates a filtering reducer - one that skips items of the reducer's reducing operation if they test falsy by the predicate. It is possible to use an asynchronous predicate when filtering a reducer, however the implementation of `reduce` must support asynchronous operations. This library provides such an implementation as `reduce`.\n" +
       '\n' +
       '```javascript [playground]\n' +
       'const isOdd = number => number % 2 == 1\n' +
@@ -6941,7 +6951,8 @@ export default [
           type: 'code',
           lang: 'coffeescript',
           meta: '[specscript]',
-          value: 'Filterable<T> = Array<T>|Object<T>|Iterable<T>|AsyncIterable<T>|{ filter: (T=>boolean)=>any }\n' +
+          value: 'Filterable<T> = Array<T>|Object<T>|Set<T>|Map<T>\n' +
+            '  |Iterator<T>|AsyncIterator<T>|{ filter: (T=>boolean)=>any }\n' +
             'Reducer<T> = (any, T)=>Promise|any\n' +
             '\n' +
             'var T any,\n' +
@@ -6961,18 +6972,18 @@ export default [
             'filter(predicate)(reducer) -> Reducer<T>',
           position: {
             start: { line: 1, column: 1, offset: 0 },
-            end: { line: 20, column: 4, offset: 607 },
+            end: { line: 21, column: 4, offset: 624 },
             indent: [
               1, 1, 1, 1, 1, 1, 1,
               1, 1, 1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1
+              1, 1, 1, 1, 1, 1
             ]
           }
         }
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 21, column: 1, offset: 608 }
+        end: { line: 22, column: 1, offset: 625 }
       }
     },
     description_mdast: {
@@ -6983,18 +6994,289 @@ export default [
           children: [
             {
               type: 'text',
-              value: 'Exclude items based on the results of their concurrent execution with a predicate.',
+              value: 'Filter out items from a filterable based on the results of their concurrent executions with a predicate. ',
               position: {
                 start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 83, offset: 82 },
+                end: { line: 1, column: 106, offset: 105 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'filter',
+              position: {
+                start: { line: 1, column: 106, offset: 105 },
+                end: { line: 1, column: 114, offset: 113 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ' recognizes several vanilla JavaScript types as filterables.',
+              position: {
+                start: { line: 1, column: 114, offset: 113 },
+                end: { line: 1, column: 174, offset: 173 },
                 indent: []
               }
             }
           ],
           position: {
             start: { line: 1, column: 1, offset: 0 },
-            end: { line: 1, column: 83, offset: 82 },
+            end: { line: 1, column: 174, offset: 173 },
             indent: []
+          }
+        },
+        {
+          type: 'list',
+          ordered: false,
+          start: null,
+          spread: false,
+          children: [
+            {
+              type: 'listItem',
+              spread: false,
+              checked: null,
+              children: [
+                {
+                  type: 'paragraph',
+                  children: [
+                    {
+                      type: 'inlineCode',
+                      value: 'Array',
+                      position: {
+                        start: { line: 3, column: 4, offset: 178 },
+                        end: { line: 3, column: 11, offset: 185 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: ' - filter array items by predicate',
+                      position: {
+                        start: { line: 3, column: 11, offset: 185 },
+                        end: { line: 3, column: 45, offset: 219 },
+                        indent: []
+                      }
+                    }
+                  ],
+                  position: {
+                    start: { line: 3, column: 4, offset: 178 },
+                    end: { line: 3, column: 45, offset: 219 },
+                    indent: []
+                  }
+                }
+              ],
+              position: {
+                start: { line: 3, column: 1, offset: 175 },
+                end: { line: 3, column: 45, offset: 219 },
+                indent: []
+              }
+            },
+            {
+              type: 'listItem',
+              spread: false,
+              checked: null,
+              children: [
+                {
+                  type: 'paragraph',
+                  children: [
+                    {
+                      type: 'inlineCode',
+                      value: 'Object',
+                      position: {
+                        start: { line: 4, column: 4, offset: 223 },
+                        end: { line: 4, column: 12, offset: 231 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: ' - filter object values by predicate',
+                      position: {
+                        start: { line: 4, column: 12, offset: 231 },
+                        end: { line: 4, column: 48, offset: 267 },
+                        indent: []
+                      }
+                    }
+                  ],
+                  position: {
+                    start: { line: 4, column: 4, offset: 223 },
+                    end: { line: 4, column: 48, offset: 267 },
+                    indent: []
+                  }
+                }
+              ],
+              position: {
+                start: { line: 4, column: 1, offset: 220 },
+                end: { line: 4, column: 48, offset: 267 },
+                indent: []
+              }
+            },
+            {
+              type: 'listItem',
+              spread: false,
+              checked: null,
+              children: [
+                {
+                  type: 'paragraph',
+                  children: [
+                    {
+                      type: 'inlineCode',
+                      value: 'Set',
+                      position: {
+                        start: { line: 5, column: 4, offset: 271 },
+                        end: { line: 5, column: 9, offset: 276 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: ' - filter Set values by predicate',
+                      position: {
+                        start: { line: 5, column: 9, offset: 276 },
+                        end: { line: 5, column: 42, offset: 309 },
+                        indent: []
+                      }
+                    }
+                  ],
+                  position: {
+                    start: { line: 5, column: 4, offset: 271 },
+                    end: { line: 5, column: 42, offset: 309 },
+                    indent: []
+                  }
+                }
+              ],
+              position: {
+                start: { line: 5, column: 1, offset: 268 },
+                end: { line: 5, column: 42, offset: 309 },
+                indent: []
+              }
+            },
+            {
+              type: 'listItem',
+              spread: false,
+              checked: null,
+              children: [
+                {
+                  type: 'paragraph',
+                  children: [
+                    {
+                      type: 'inlineCode',
+                      value: 'Map',
+                      position: {
+                        start: { line: 6, column: 4, offset: 313 },
+                        end: { line: 6, column: 9, offset: 318 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: ' - filter Map values by predicate (not entries)',
+                      position: {
+                        start: { line: 6, column: 9, offset: 318 },
+                        end: { line: 6, column: 56, offset: 365 },
+                        indent: []
+                      }
+                    }
+                  ],
+                  position: {
+                    start: { line: 6, column: 4, offset: 313 },
+                    end: { line: 6, column: 56, offset: 365 },
+                    indent: []
+                  }
+                }
+              ],
+              position: {
+                start: { line: 6, column: 1, offset: 310 },
+                end: { line: 6, column: 56, offset: 365 },
+                indent: []
+              }
+            },
+            {
+              type: 'listItem',
+              spread: false,
+              checked: null,
+              children: [
+                {
+                  type: 'paragraph',
+                  children: [
+                    {
+                      type: 'inlineCode',
+                      value: 'Iterator',
+                      position: {
+                        start: { line: 7, column: 4, offset: 369 },
+                        end: { line: 7, column: 14, offset: 379 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: ' - skip iterations by predicate',
+                      position: {
+                        start: { line: 7, column: 14, offset: 379 },
+                        end: { line: 7, column: 45, offset: 410 },
+                        indent: []
+                      }
+                    }
+                  ],
+                  position: {
+                    start: { line: 7, column: 4, offset: 369 },
+                    end: { line: 7, column: 45, offset: 410 },
+                    indent: []
+                  }
+                }
+              ],
+              position: {
+                start: { line: 7, column: 1, offset: 366 },
+                end: { line: 7, column: 45, offset: 410 },
+                indent: []
+              }
+            },
+            {
+              type: 'listItem',
+              spread: false,
+              checked: null,
+              children: [
+                {
+                  type: 'paragraph',
+                  children: [
+                    {
+                      type: 'inlineCode',
+                      value: 'AsyncIterator',
+                      position: {
+                        start: { line: 8, column: 4, offset: 414 },
+                        end: { line: 8, column: 19, offset: 429 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: ' - skip async iterations by predicate',
+                      position: {
+                        start: { line: 8, column: 19, offset: 429 },
+                        end: { line: 8, column: 56, offset: 466 },
+                        indent: []
+                      }
+                    }
+                  ],
+                  position: {
+                    start: { line: 8, column: 4, offset: 414 },
+                    end: { line: 8, column: 56, offset: 466 },
+                    indent: []
+                  }
+                }
+              ],
+              position: {
+                start: { line: 8, column: 1, offset: 411 },
+                end: { line: 8, column: 56, offset: 466 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 3, column: 1, offset: 175 },
+            end: { line: 8, column: 56, offset: 466 },
+            indent: [ 1, 1, 1, 1, 1 ]
           }
         },
         {
@@ -7009,13 +7291,18 @@ export default [
             '\n' +
             'console.log(\n' +
             '  filter(isOdd)({ a: 1, b: 2, c: 3, d: 4, e: 5 }),\n' +
-            ') // { a: 1, c: 3, e: 5 }',
+            ') // { a: 1, c: 3, e: 5 }\n' +
+            '\n' +
+            'console.log(\n' +
+            '  filter(isOdd)(new Set([1, 2, 3, 4, 5])),\n' +
+            ') // Set { 1, 3, 5 }',
           position: {
-            start: { line: 3, column: 1, offset: 84 },
-            end: { line: 13, column: 4, offset: 308 },
+            start: { line: 10, column: 1, offset: 468 },
+            end: { line: 24, column: 4, offset: 770 },
             indent: [
-              1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1
+              1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1,
+              1, 1
             ]
           }
         },
@@ -7026,8 +7313,8 @@ export default [
               type: 'text',
               value: 'Passing a generator function to ',
               position: {
-                start: { line: 15, column: 1, offset: 310 },
-                end: { line: 15, column: 33, offset: 342 },
+                start: { line: 26, column: 1, offset: 772 },
+                end: { line: 26, column: 33, offset: 804 },
                 indent: []
               }
             },
@@ -7035,24 +7322,24 @@ export default [
               type: 'inlineCode',
               value: 'filter',
               position: {
-                start: { line: 15, column: 33, offset: 342 },
-                end: { line: 15, column: 41, offset: 350 },
+                start: { line: 26, column: 33, offset: 804 },
+                end: { line: 26, column: 41, offset: 812 },
                 indent: []
               }
             },
             {
               type: 'text',
-              value: ' returns a filtering generator function; all values that are normally yielded by a generator function that test falsy with the predicate are skipped by the returned filtering generator function.',
+              value: ' in filterable position returns a generator function that produces filtering generators; all values that are normally yielded by a generator that test falsy by the predicate are skipped by a filtering generator.',
               position: {
-                start: { line: 15, column: 41, offset: 350 },
-                end: { line: 15, column: 235, offset: 544 },
+                start: { line: 26, column: 41, offset: 812 },
+                end: { line: 26, column: 252, offset: 1023 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 15, column: 1, offset: 310 },
-            end: { line: 15, column: 235, offset: 544 },
+            start: { line: 26, column: 1, offset: 772 },
+            end: { line: 26, column: 252, offset: 1023 },
             indent: []
           }
         },
@@ -7062,19 +7349,19 @@ export default [
           meta: '[playground]',
           value: 'const isOdd = number => number % 2 == 1\n' +
             '\n' +
-            'const numbers = function* () {\n' +
+            'const numbersGeneratorFunction = function* () {\n' +
             '  yield 1; yield 2; yield 3; yield 4; yield 5\n' +
             '}\n' +
             '\n' +
-            'const oddNumbers = filter(isOdd)(numbers)\n' +
+            'const oddNumbersGeneratorFunction = filter(isOdd)(numbersGeneratorFunction)\n' +
             '\n' +
-            'for (const number of oddNumbers()) {\n' +
+            'for (const number of oddNumbersGeneratorFunction()) {\n' +
             '  console.log(number) // 1\n' +
             '                      // 3\n' +
             '                      // 5\n' +
             '}\n' +
             '\n' +
-            'const oddNumbersGenerator = filter(isOdd)(numbers())\n' +
+            'const oddNumbersGenerator = filter(isOdd)(numbersGeneratorFunction())\n' +
             '\n' +
             'for (const number of oddNumbersGenerator) {\n' +
             '  console.log(number) // 1\n' +
@@ -7082,8 +7369,8 @@ export default [
             '                      // 5\n' +
             '}',
           position: {
-            start: { line: 17, column: 1, offset: 546 },
-            end: { line: 39, column: 4, offset: 1042 },
+            start: { line: 28, column: 1, offset: 1025 },
+            end: { line: 50, column: 4, offset: 1606 },
             indent: [
               1, 1, 1, 1, 1, 1, 1,
               1, 1, 1, 1, 1, 1, 1,
@@ -7097,35 +7384,17 @@ export default [
           children: [
             {
               type: 'text',
-              value: 'In a similar vein to generators, ',
+              value: 'In a similar vein to generator functions, passing an async generator function in filterable position creates an async generator function of filtered async generators. Each filtered async generator skips async iterations with values that test falsy by the predicate.',
               position: {
-                start: { line: 41, column: 1, offset: 1044 },
-                end: { line: 41, column: 34, offset: 1077 },
-                indent: []
-              }
-            },
-            {
-              type: 'inlineCode',
-              value: 'filter',
-              position: {
-                start: { line: 41, column: 34, offset: 1077 },
-                end: { line: 41, column: 42, offset: 1085 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: ' also filters elements from async generators.',
-              position: {
-                start: { line: 41, column: 42, offset: 1085 },
-                end: { line: 41, column: 87, offset: 1130 },
+                start: { line: 52, column: 1, offset: 1608 },
+                end: { line: 52, column: 266, offset: 1873 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 41, column: 1, offset: 1044 },
-            end: { line: 41, column: 87, offset: 1130 },
+            start: { line: 52, column: 1, offset: 1608 },
+            end: { line: 52, column: 266, offset: 1873 },
             indent: []
           }
         },
@@ -7135,19 +7404,19 @@ export default [
           meta: '[playground]',
           value: 'const asyncIsOdd = async number => number % 2 == 1\n' +
             '\n' +
-            'const asyncNumbers = async function* () {\n' +
+            'const asyncNumbersGeneratorFunction = async function* () {\n' +
             '  yield 1; yield 2; yield 3; yield 4; yield 5\n' +
             '}\n' +
             '\n' +
-            'const asyncOddNumbers = filter(asyncIsOdd)(asyncNumbers)\n' +
+            'const asyncOddNumbersGeneratorFunction = filter(asyncIsOdd)(asyncNumbersGeneratorFunction)\n' +
             '\n' +
-            'for await (const number of asyncOddNumbers()) {\n' +
+            'for await (const number of asyncOddNumbersGeneratorFunction()) {\n' +
             '  console.log(number) // 1\n' +
             '                      // 3\n' +
             '                      // 5\n' +
             '}\n' +
             '\n' +
-            'const asyncOddNumbersGenerator = filter(asyncIsOdd)(asyncNumbers())\n' +
+            'const asyncOddNumbersGenerator = filter(asyncIsOdd)(asyncNumbersGeneratorFunction())\n' +
             '\n' +
             'for await (const number of asyncOddNumbersGenerator) {\n' +
             '  console.log(number) // 1\n' +
@@ -7155,8 +7424,8 @@ export default [
             '                      // 5\n' +
             '}',
           position: {
-            start: { line: 43, column: 1, offset: 1132 },
-            end: { line: 65, column: 4, offset: 1702 },
+            start: { line: 54, column: 1, offset: 1875 },
+            end: { line: 76, column: 4, offset: 2530 },
             indent: [
               1, 1, 1, 1, 1, 1, 1,
               1, 1, 1, 1, 1, 1, 1,
@@ -7170,47 +7439,10 @@ export default [
           children: [
             {
               type: 'text',
-              value: 'Finally, ',
+              value: "A reducer in filterable position creates a filtering reducer - one that skips items of the reducer's reducing operation if they test falsy by the predicate. It is possible to use an asynchronous predicate when filtering a reducer, however the implementation of ",
               position: {
-                start: { line: 67, column: 1, offset: 1704 },
-                end: { line: 67, column: 10, offset: 1713 },
-                indent: []
-              }
-            },
-            {
-              type: 'inlineCode',
-              value: 'filter',
-              position: {
-                start: { line: 67, column: 10, offset: 1713 },
-                end: { line: 67, column: 18, offset: 1721 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: ' creates filtering transducers. A reducer created from a filtering transducer skips items of a reducing operation if they test falsy under the predicate.',
-              position: {
-                start: { line: 67, column: 18, offset: 1721 },
-                end: { line: 67, column: 171, offset: 1874 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 67, column: 1, offset: 1704 },
-            end: { line: 67, column: 171, offset: 1874 },
-            indent: []
-          }
-        },
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'Note: It is possible to use an asynchronous predicate when filtering a reducer, however the implementation of ',
-              position: {
-                start: { line: 69, column: 1, offset: 1876 },
-                end: { line: 69, column: 111, offset: 1986 },
+                start: { line: 78, column: 1, offset: 2532 },
+                end: { line: 78, column: 262, offset: 2793 },
                 indent: []
               }
             },
@@ -7218,8 +7450,8 @@ export default [
               type: 'inlineCode',
               value: 'reduce',
               position: {
-                start: { line: 69, column: 111, offset: 1986 },
-                end: { line: 69, column: 119, offset: 1994 },
+                start: { line: 78, column: 262, offset: 2793 },
+                end: { line: 78, column: 270, offset: 2801 },
                 indent: []
               }
             },
@@ -7227,8 +7459,8 @@ export default [
               type: 'text',
               value: ' must support asynchronous operations. This library provides such an implementation as ',
               position: {
-                start: { line: 69, column: 119, offset: 1994 },
-                end: { line: 69, column: 206, offset: 2081 },
+                start: { line: 78, column: 270, offset: 2801 },
+                end: { line: 78, column: 357, offset: 2888 },
                 indent: []
               }
             },
@@ -7236,8 +7468,8 @@ export default [
               type: 'inlineCode',
               value: 'reduce',
               position: {
-                start: { line: 69, column: 206, offset: 2081 },
-                end: { line: 69, column: 214, offset: 2089 },
+                start: { line: 78, column: 357, offset: 2888 },
+                end: { line: 78, column: 365, offset: 2896 },
                 indent: []
               }
             },
@@ -7245,15 +7477,15 @@ export default [
               type: 'text',
               value: '.',
               position: {
-                start: { line: 69, column: 214, offset: 2089 },
-                end: { line: 69, column: 215, offset: 2090 },
+                start: { line: 78, column: 365, offset: 2896 },
+                end: { line: 78, column: 366, offset: 2897 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 69, column: 1, offset: 1876 },
-            end: { line: 69, column: 215, offset: 2090 },
+            start: { line: 78, column: 1, offset: 2532 },
+            end: { line: 78, column: 366, offset: 2897 },
             indent: []
           }
         },
@@ -7271,8 +7503,8 @@ export default [
             '  [1, 2, 3, 4, 5].reduce(concatOddNumbers, []),\n' +
             ') // [1, 3, 5]',
           position: {
-            start: { line: 71, column: 1, offset: 2092 },
-            end: { line: 81, column: 4, offset: 2339 },
+            start: { line: 80, column: 1, offset: 2899 },
+            end: { line: 90, column: 4, offset: 3146 },
             indent: [
               1, 1, 1, 1, 1,
               1, 1, 1, 1, 1
@@ -7282,7 +7514,7 @@ export default [
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 82, column: 1, offset: 2340 }
+        end: { line: 91, column: 1, offset: 3147 }
       }
     }
   },
@@ -7417,18 +7649,20 @@ export default [
       '\n' +
       'flatMap(flatMapper)(reducer) -> Reducer<T>\n' +
       '```\n',
-    description: 'Apply a flatMapper to each item of a collection, flattening all results into a new collection of the same type. The following outlines the flattening behavior for various collections.\n' +
+    description: 'Apply a flatMapper concurrently to each item of a monad, flattening the items of each execution into a new monad that is the same type as the original.\n' +
       '\n' +
-      '  * `Array` - concatenate results into a new `Array`\n' +
-      '  * `String|string` - `+` results into a new `string`\n' +
-      '  * `Set` - add results into a new `Set`\n' +
-      '  * `TypedArray` - set items in a new `TypedArray`\n' +
-      '  * `Buffer (Node.js)` - set items in a new `Buffer`\n' +
-      "  * `stream.Duplex (Node.js)` - call stream's `.write`\n" +
-      "  * `{ chain: function }` - call object's `.chain`\n" +
-      "  * `{ flatMap: function }` - call object's `.flatMap`\n" +
-      '  * `Object` - assign all results into a new object\n' +
-      '  * `Reducer` - execute the reducer for each item per item of a reducing operation\n' +
+      'The following list outlines high level behavior for various input monads.\n' +
+      '\n' +
+      ' * `Array` - Apply a flatMapper to each item, pushing (`.push`) the items of each execution into a new array\n' +
+      ' * `String` - Apply a flatMapper to each character, adding (`+`) the items of each execution into a new string\n' +
+      ' * `Set` - Apply a flatMapper to each item, adding (`.add`) the items of each execution into a new set\n' +
+      ' * `TypedArray` - Apply a flatMapper to each byte, setting (`.set`) the items of each execution into a new typed array\n' +
+      ' * `Buffer (Node.js)` - Apply a flatMapper to each byte, setting (`.set`) the items of each execution into a new Node.js Buffer\n' +
+      ' * `stream.Duplex (Node.js)` - Apply a flatMapper to each item, writing (`.write`) the items of each execution into a new duplex stream\n' +
+      ' * `Object` - Apply a flatMapper to each value, assigning (`Object.assign`) the items of each execution into a new object\n' +
+      " * `Reducer` - Apply a flatMapper to each item of a reducer's reducing operation, calling each item of each execution with the reducer.\n" +
+      ' * `{ chain: function }` - Call `.chain` directly with flatMapper\n' +
+      ' * `{ flatMap: function }` - Call `.flatMap` directly with flatMapper\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const duplicate = number => [number, number]\n' +
@@ -7443,7 +7677,7 @@ export default [
       '  [1, 2, 3, 4, 5]).then(console.log) // [1, 1, 2, 2, 3, 3, 4, 4, 5, 5]\n' +
       '```\n' +
       '\n' +
-      '`flatMap` muxes async iterables. Muxing, or asynchronously "mixing", is the process of combining multiple asynchronous sources into one source, with order determined by the asynchronous resolution of the individual items.\n' +
+      'A flatMapping operation concatenates onto the result synchronous values and muxes any asynchronous values. Muxing, or asynchronously "mixing", is the process of combining multiple asynchronous sources into one source, with order determined by the asynchronous resolution of the individual items.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))\n' +
@@ -7469,18 +7703,7 @@ export default [
       "// ['foo', 'bar', 'baz', 'foo', 'bar', 'baz', 'foo', 'bar', 'baz']\n" +
       '```\n' +
       '\n' +
-      'The following list defines concatenation behavior recognized by `flatMap` for individual items being flattened.\n' +
-      '\n' +
-      '  * `Iterable` - items are iterated into the result\n' +
-      '  * `Iterator/Generator` - items are iterated into the result, source is consumed\n' +
-      "  * `{ reduce: function }` - call object's `.reduce` with result's concatenation function\n" +
-      "  * `{ chain: function }` - call object's `.chain` with result's concatenation function\n" +
-      "  * `{ flatMap: function }` - call object's `.flatMap` with result's concatentation function\n" +
-      '  * `Object` - values are flattened\n' +
-      '  * `AsyncIterable` - items are muxed into the result\n' +
-      '  * `AsyncIterator/AsyncGenerator` - items are muxed into the result, source is consumed\n' +
-      '\n' +
-      'All other types are added into the result as they are.\n' +
+      'In general, flattening is by order of concatenation with the exception of async iterables, which are muxed. Below, the two `4`s are asynchronous and are pushed onto the result after all the synchronous values have been flattened.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const identity = value => value\n' +
@@ -7498,7 +7721,7 @@ export default [
       '// [1, 1, 2, 3, 3, 5, 5, 6, 7, 8, 4, 4]\n' +
       '```\n' +
       '\n' +
-      '`flatMap` supports purer functional programming with monads. A monad is any object that defines a method `.chain` or `.flatMap` that takes some item and returns a monad.\n' +
+      'Purer functional programming is possible with `flatMap` and explicit monads. An explicit monad is any object that defines a method `.chain` or `.flatMap`.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const Maybe = value => ({\n' +
@@ -7526,7 +7749,7 @@ export default [
       "logUserByID('1') // { _id: '1', name: 'George' }\n" +
       '```\n' +
       '\n' +
-      'Additionally, `flatMap` is a powerful option when working with transducers. A flatMapping transducer is like a mapping transducer except all items of the reducing operation are additionally flattened into the result.\n' +
+      "Additionally, `flatMap` is a powerful option when working with transducers. A flatMapping transducer applies a flatMapper to each item of a reducer's reducing operation, calling each item of each execution with the reducer.\n" +
       '\n' +
       '```javascript [playground]\n' +
       'const isOdd = number => number % 2 == 1\n' +
@@ -7538,20 +7761,14 @@ export default [
       '  flatMap(powers),\n' +
       '])\n' +
       '\n' +
+      'const arrayConcat = (array, value) => array.concat(value)\n' +
+      '\n' +
       'console.log(\n' +
-      '  transform(oddPowers, [])([1, 2, 3, 4, 5]),\n' +
+      '  reduce(oddPowers(arrayConcat), [])([1, 2, 3, 4, 5]),\n' +
       ') // [1, 1, 1, 3, 9, 27, 5, 25, 125]\n' +
+      '```\n' +
       '\n' +
-      'const asyncPowers = async number => [number, number ** 2, number ** 3]\n' +
-      '\n' +
-      'const asyncOddPowers = pipe([\n' +
-      '  filter(isOdd),\n' +
-      '  flatMap(asyncPowers),\n' +
-      '])\n' +
-      '\n' +
-      'transform(asyncOddPowers, [])([1, 2, 3, 4, 5]).then(console.log)\n' +
-      '// [1, 1, 1, 3, 9, 27, 5, 25, 125]\n' +
-      '```\n',
+      'In the case above, each item of the array of numbers returned by `powers` is called with the reducer `arrayConcat` for flattening into the final result.\n',
     synopsis_mdast: {
       type: 'root',
       children: [
@@ -7605,17 +7822,36 @@ export default [
           children: [
             {
               type: 'text',
-              value: 'Apply a flatMapper to each item of a collection, flattening all results into a new collection of the same type. The following outlines the flattening behavior for various collections.',
+              value: 'Apply a flatMapper concurrently to each item of a monad, flattening the items of each execution into a new monad that is the same type as the original.',
               position: {
                 start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 184, offset: 183 },
+                end: { line: 1, column: 152, offset: 151 },
                 indent: []
               }
             }
           ],
           position: {
             start: { line: 1, column: 1, offset: 0 },
-            end: { line: 1, column: 184, offset: 183 },
+            end: { line: 1, column: 152, offset: 151 },
+            indent: []
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'The following list outlines high level behavior for various input monads.',
+              position: {
+                start: { line: 3, column: 1, offset: 153 },
+                end: { line: 3, column: 74, offset: 226 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 3, column: 1, offset: 153 },
+            end: { line: 3, column: 74, offset: 226 },
             indent: []
           }
         },
@@ -7637,40 +7873,49 @@ export default [
                       type: 'inlineCode',
                       value: 'Array',
                       position: {
-                        start: { line: 3, column: 5, offset: 189 },
-                        end: { line: 3, column: 12, offset: 196 },
+                        start: { line: 5, column: 4, offset: 231 },
+                        end: { line: 5, column: 11, offset: 238 },
                         indent: []
                       }
                     },
                     {
                       type: 'text',
-                      value: ' - concatenate results into a new ',
+                      value: ' - Apply a flatMapper to each item, pushing (',
                       position: {
-                        start: { line: 3, column: 12, offset: 196 },
-                        end: { line: 3, column: 46, offset: 230 },
+                        start: { line: 5, column: 11, offset: 238 },
+                        end: { line: 5, column: 56, offset: 283 },
                         indent: []
                       }
                     },
                     {
                       type: 'inlineCode',
-                      value: 'Array',
+                      value: '.push',
                       position: {
-                        start: { line: 3, column: 46, offset: 230 },
-                        end: { line: 3, column: 53, offset: 237 },
+                        start: { line: 5, column: 56, offset: 283 },
+                        end: { line: 5, column: 63, offset: 290 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: ') the items of each execution into a new array',
+                      position: {
+                        start: { line: 5, column: 63, offset: 290 },
+                        end: { line: 5, column: 109, offset: 336 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 3, column: 5, offset: 189 },
-                    end: { line: 3, column: 53, offset: 237 },
+                    start: { line: 5, column: 4, offset: 231 },
+                    end: { line: 5, column: 109, offset: 336 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 3, column: 1, offset: 185 },
-                end: { line: 3, column: 53, offset: 237 },
+                start: { line: 5, column: 1, offset: 228 },
+                end: { line: 5, column: 109, offset: 336 },
                 indent: []
               }
             },
@@ -7684,19 +7929,19 @@ export default [
                   children: [
                     {
                       type: 'inlineCode',
-                      value: 'String|string',
+                      value: 'String',
                       position: {
-                        start: { line: 4, column: 5, offset: 242 },
-                        end: { line: 4, column: 20, offset: 257 },
+                        start: { line: 6, column: 4, offset: 340 },
+                        end: { line: 6, column: 12, offset: 348 },
                         indent: []
                       }
                     },
                     {
                       type: 'text',
-                      value: ' - ',
+                      value: ' - Apply a flatMapper to each character, adding (',
                       position: {
-                        start: { line: 4, column: 20, offset: 257 },
-                        end: { line: 4, column: 23, offset: 260 },
+                        start: { line: 6, column: 12, offset: 348 },
+                        end: { line: 6, column: 61, offset: 397 },
                         indent: []
                       }
                     },
@@ -7704,40 +7949,31 @@ export default [
                       type: 'inlineCode',
                       value: '+',
                       position: {
-                        start: { line: 4, column: 23, offset: 260 },
-                        end: { line: 4, column: 26, offset: 263 },
+                        start: { line: 6, column: 61, offset: 397 },
+                        end: { line: 6, column: 64, offset: 400 },
                         indent: []
                       }
                     },
                     {
                       type: 'text',
-                      value: ' results into a new ',
+                      value: ') the items of each execution into a new string',
                       position: {
-                        start: { line: 4, column: 26, offset: 263 },
-                        end: { line: 4, column: 46, offset: 283 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'inlineCode',
-                      value: 'string',
-                      position: {
-                        start: { line: 4, column: 46, offset: 283 },
-                        end: { line: 4, column: 54, offset: 291 },
+                        start: { line: 6, column: 64, offset: 400 },
+                        end: { line: 6, column: 111, offset: 447 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 4, column: 5, offset: 242 },
-                    end: { line: 4, column: 54, offset: 291 },
+                    start: { line: 6, column: 4, offset: 340 },
+                    end: { line: 6, column: 111, offset: 447 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 4, column: 1, offset: 238 },
-                end: { line: 4, column: 54, offset: 291 },
+                start: { line: 6, column: 1, offset: 337 },
+                end: { line: 6, column: 111, offset: 447 },
                 indent: []
               }
             },
@@ -7753,40 +7989,49 @@ export default [
                       type: 'inlineCode',
                       value: 'Set',
                       position: {
-                        start: { line: 5, column: 5, offset: 296 },
-                        end: { line: 5, column: 10, offset: 301 },
+                        start: { line: 7, column: 4, offset: 451 },
+                        end: { line: 7, column: 9, offset: 456 },
                         indent: []
                       }
                     },
                     {
                       type: 'text',
-                      value: ' - add results into a new ',
+                      value: ' - Apply a flatMapper to each item, adding (',
                       position: {
-                        start: { line: 5, column: 10, offset: 301 },
-                        end: { line: 5, column: 36, offset: 327 },
+                        start: { line: 7, column: 9, offset: 456 },
+                        end: { line: 7, column: 53, offset: 500 },
                         indent: []
                       }
                     },
                     {
                       type: 'inlineCode',
-                      value: 'Set',
+                      value: '.add',
                       position: {
-                        start: { line: 5, column: 36, offset: 327 },
-                        end: { line: 5, column: 41, offset: 332 },
+                        start: { line: 7, column: 53, offset: 500 },
+                        end: { line: 7, column: 59, offset: 506 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: ') the items of each execution into a new set',
+                      position: {
+                        start: { line: 7, column: 59, offset: 506 },
+                        end: { line: 7, column: 103, offset: 550 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 5, column: 5, offset: 296 },
-                    end: { line: 5, column: 41, offset: 332 },
+                    start: { line: 7, column: 4, offset: 451 },
+                    end: { line: 7, column: 103, offset: 550 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 5, column: 1, offset: 292 },
-                end: { line: 5, column: 41, offset: 332 },
+                start: { line: 7, column: 1, offset: 448 },
+                end: { line: 7, column: 103, offset: 550 },
                 indent: []
               }
             },
@@ -7802,40 +8047,49 @@ export default [
                       type: 'inlineCode',
                       value: 'TypedArray',
                       position: {
-                        start: { line: 6, column: 5, offset: 337 },
-                        end: { line: 6, column: 17, offset: 349 },
+                        start: { line: 8, column: 4, offset: 554 },
+                        end: { line: 8, column: 16, offset: 566 },
                         indent: []
                       }
                     },
                     {
                       type: 'text',
-                      value: ' - set items in a new ',
+                      value: ' - Apply a flatMapper to each byte, setting (',
                       position: {
-                        start: { line: 6, column: 17, offset: 349 },
-                        end: { line: 6, column: 39, offset: 371 },
+                        start: { line: 8, column: 16, offset: 566 },
+                        end: { line: 8, column: 61, offset: 611 },
                         indent: []
                       }
                     },
                     {
                       type: 'inlineCode',
-                      value: 'TypedArray',
+                      value: '.set',
                       position: {
-                        start: { line: 6, column: 39, offset: 371 },
-                        end: { line: 6, column: 51, offset: 383 },
+                        start: { line: 8, column: 61, offset: 611 },
+                        end: { line: 8, column: 67, offset: 617 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: ') the items of each execution into a new typed array',
+                      position: {
+                        start: { line: 8, column: 67, offset: 617 },
+                        end: { line: 8, column: 119, offset: 669 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 6, column: 5, offset: 337 },
-                    end: { line: 6, column: 51, offset: 383 },
+                    start: { line: 8, column: 4, offset: 554 },
+                    end: { line: 8, column: 119, offset: 669 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 6, column: 1, offset: 333 },
-                end: { line: 6, column: 51, offset: 383 },
+                start: { line: 8, column: 1, offset: 551 },
+                end: { line: 8, column: 119, offset: 669 },
                 indent: []
               }
             },
@@ -7851,40 +8105,49 @@ export default [
                       type: 'inlineCode',
                       value: 'Buffer (Node.js)',
                       position: {
-                        start: { line: 7, column: 5, offset: 388 },
-                        end: { line: 7, column: 23, offset: 406 },
+                        start: { line: 9, column: 4, offset: 673 },
+                        end: { line: 9, column: 22, offset: 691 },
                         indent: []
                       }
                     },
                     {
                       type: 'text',
-                      value: ' - set items in a new ',
+                      value: ' - Apply a flatMapper to each byte, setting (',
                       position: {
-                        start: { line: 7, column: 23, offset: 406 },
-                        end: { line: 7, column: 45, offset: 428 },
+                        start: { line: 9, column: 22, offset: 691 },
+                        end: { line: 9, column: 67, offset: 736 },
                         indent: []
                       }
                     },
                     {
                       type: 'inlineCode',
-                      value: 'Buffer',
+                      value: '.set',
                       position: {
-                        start: { line: 7, column: 45, offset: 428 },
-                        end: { line: 7, column: 53, offset: 436 },
+                        start: { line: 9, column: 67, offset: 736 },
+                        end: { line: 9, column: 73, offset: 742 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: ') the items of each execution into a new Node.js Buffer',
+                      position: {
+                        start: { line: 9, column: 73, offset: 742 },
+                        end: { line: 9, column: 128, offset: 797 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 7, column: 5, offset: 388 },
-                    end: { line: 7, column: 53, offset: 436 },
+                    start: { line: 9, column: 4, offset: 673 },
+                    end: { line: 9, column: 128, offset: 797 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 7, column: 1, offset: 384 },
-                end: { line: 7, column: 53, offset: 436 },
+                start: { line: 9, column: 1, offset: 670 },
+                end: { line: 9, column: 128, offset: 797 },
                 indent: []
               }
             },
@@ -7900,17 +8163,17 @@ export default [
                       type: 'inlineCode',
                       value: 'stream.Duplex (Node.js)',
                       position: {
-                        start: { line: 8, column: 5, offset: 441 },
-                        end: { line: 8, column: 30, offset: 466 },
+                        start: { line: 10, column: 4, offset: 801 },
+                        end: { line: 10, column: 29, offset: 826 },
                         indent: []
                       }
                     },
                     {
                       type: 'text',
-                      value: " - call stream's ",
+                      value: ' - Apply a flatMapper to each item, writing (',
                       position: {
-                        start: { line: 8, column: 30, offset: 466 },
-                        end: { line: 8, column: 47, offset: 483 },
+                        start: { line: 10, column: 29, offset: 826 },
+                        end: { line: 10, column: 74, offset: 871 },
                         indent: []
                       }
                     },
@@ -7918,120 +8181,31 @@ export default [
                       type: 'inlineCode',
                       value: '.write',
                       position: {
-                        start: { line: 8, column: 47, offset: 483 },
-                        end: { line: 8, column: 55, offset: 491 },
-                        indent: []
-                      }
-                    }
-                  ],
-                  position: {
-                    start: { line: 8, column: 5, offset: 441 },
-                    end: { line: 8, column: 55, offset: 491 },
-                    indent: []
-                  }
-                }
-              ],
-              position: {
-                start: { line: 8, column: 1, offset: 437 },
-                end: { line: 8, column: 55, offset: 491 },
-                indent: []
-              }
-            },
-            {
-              type: 'listItem',
-              spread: false,
-              checked: null,
-              children: [
-                {
-                  type: 'paragraph',
-                  children: [
-                    {
-                      type: 'inlineCode',
-                      value: '{ chain: function }',
-                      position: {
-                        start: { line: 9, column: 5, offset: 496 },
-                        end: { line: 9, column: 26, offset: 517 },
+                        start: { line: 10, column: 74, offset: 871 },
+                        end: { line: 10, column: 82, offset: 879 },
                         indent: []
                       }
                     },
                     {
                       type: 'text',
-                      value: " - call object's ",
+                      value: ') the items of each execution into a new duplex stream',
                       position: {
-                        start: { line: 9, column: 26, offset: 517 },
-                        end: { line: 9, column: 43, offset: 534 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'inlineCode',
-                      value: '.chain',
-                      position: {
-                        start: { line: 9, column: 43, offset: 534 },
-                        end: { line: 9, column: 51, offset: 542 },
+                        start: { line: 10, column: 82, offset: 879 },
+                        end: { line: 10, column: 136, offset: 933 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 9, column: 5, offset: 496 },
-                    end: { line: 9, column: 51, offset: 542 },
+                    start: { line: 10, column: 4, offset: 801 },
+                    end: { line: 10, column: 136, offset: 933 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 9, column: 1, offset: 492 },
-                end: { line: 9, column: 51, offset: 542 },
-                indent: []
-              }
-            },
-            {
-              type: 'listItem',
-              spread: false,
-              checked: null,
-              children: [
-                {
-                  type: 'paragraph',
-                  children: [
-                    {
-                      type: 'inlineCode',
-                      value: '{ flatMap: function }',
-                      position: {
-                        start: { line: 10, column: 5, offset: 547 },
-                        end: { line: 10, column: 28, offset: 570 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: " - call object's ",
-                      position: {
-                        start: { line: 10, column: 28, offset: 570 },
-                        end: { line: 10, column: 45, offset: 587 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'inlineCode',
-                      value: '.flatMap',
-                      position: {
-                        start: { line: 10, column: 45, offset: 587 },
-                        end: { line: 10, column: 55, offset: 597 },
-                        indent: []
-                      }
-                    }
-                  ],
-                  position: {
-                    start: { line: 10, column: 5, offset: 547 },
-                    end: { line: 10, column: 55, offset: 597 },
-                    indent: []
-                  }
-                }
-              ],
-              position: {
-                start: { line: 10, column: 1, offset: 543 },
-                end: { line: 10, column: 55, offset: 597 },
+                start: { line: 10, column: 1, offset: 798 },
+                end: { line: 10, column: 136, offset: 933 },
                 indent: []
               }
             },
@@ -8047,31 +8221,49 @@ export default [
                       type: 'inlineCode',
                       value: 'Object',
                       position: {
-                        start: { line: 11, column: 5, offset: 602 },
-                        end: { line: 11, column: 13, offset: 610 },
+                        start: { line: 11, column: 4, offset: 937 },
+                        end: { line: 11, column: 12, offset: 945 },
                         indent: []
                       }
                     },
                     {
                       type: 'text',
-                      value: ' - assign all results into a new object',
+                      value: ' - Apply a flatMapper to each value, assigning (',
                       position: {
-                        start: { line: 11, column: 13, offset: 610 },
-                        end: { line: 11, column: 52, offset: 649 },
+                        start: { line: 11, column: 12, offset: 945 },
+                        end: { line: 11, column: 60, offset: 993 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'inlineCode',
+                      value: 'Object.assign',
+                      position: {
+                        start: { line: 11, column: 60, offset: 993 },
+                        end: { line: 11, column: 75, offset: 1008 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: ') the items of each execution into a new object',
+                      position: {
+                        start: { line: 11, column: 75, offset: 1008 },
+                        end: { line: 11, column: 122, offset: 1055 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 11, column: 5, offset: 602 },
-                    end: { line: 11, column: 52, offset: 649 },
+                    start: { line: 11, column: 4, offset: 937 },
+                    end: { line: 11, column: 122, offset: 1055 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 11, column: 1, offset: 598 },
-                end: { line: 11, column: 52, offset: 649 },
+                start: { line: 11, column: 1, offset: 934 },
+                end: { line: 11, column: 122, offset: 1055 },
                 indent: []
               }
             },
@@ -8087,38 +8279,154 @@ export default [
                       type: 'inlineCode',
                       value: 'Reducer',
                       position: {
-                        start: { line: 12, column: 5, offset: 654 },
-                        end: { line: 12, column: 14, offset: 663 },
+                        start: { line: 12, column: 4, offset: 1059 },
+                        end: { line: 12, column: 13, offset: 1068 },
                         indent: []
                       }
                     },
                     {
                       type: 'text',
-                      value: ' - execute the reducer for each item per item of a reducing operation',
+                      value: " - Apply a flatMapper to each item of a reducer's reducing operation, calling each item of each execution with the reducer.",
                       position: {
-                        start: { line: 12, column: 14, offset: 663 },
-                        end: { line: 12, column: 83, offset: 732 },
+                        start: { line: 12, column: 13, offset: 1068 },
+                        end: { line: 12, column: 136, offset: 1191 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 12, column: 5, offset: 654 },
-                    end: { line: 12, column: 83, offset: 732 },
+                    start: { line: 12, column: 4, offset: 1059 },
+                    end: { line: 12, column: 136, offset: 1191 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 12, column: 1, offset: 650 },
-                end: { line: 12, column: 83, offset: 732 },
+                start: { line: 12, column: 1, offset: 1056 },
+                end: { line: 12, column: 136, offset: 1191 },
+                indent: []
+              }
+            },
+            {
+              type: 'listItem',
+              spread: false,
+              checked: null,
+              children: [
+                {
+                  type: 'paragraph',
+                  children: [
+                    {
+                      type: 'inlineCode',
+                      value: '{ chain: function }',
+                      position: {
+                        start: { line: 13, column: 4, offset: 1195 },
+                        end: { line: 13, column: 25, offset: 1216 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: ' - Call ',
+                      position: {
+                        start: { line: 13, column: 25, offset: 1216 },
+                        end: { line: 13, column: 33, offset: 1224 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'inlineCode',
+                      value: '.chain',
+                      position: {
+                        start: { line: 13, column: 33, offset: 1224 },
+                        end: { line: 13, column: 41, offset: 1232 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: ' directly with flatMapper',
+                      position: {
+                        start: { line: 13, column: 41, offset: 1232 },
+                        end: { line: 13, column: 66, offset: 1257 },
+                        indent: []
+                      }
+                    }
+                  ],
+                  position: {
+                    start: { line: 13, column: 4, offset: 1195 },
+                    end: { line: 13, column: 66, offset: 1257 },
+                    indent: []
+                  }
+                }
+              ],
+              position: {
+                start: { line: 13, column: 1, offset: 1192 },
+                end: { line: 13, column: 66, offset: 1257 },
+                indent: []
+              }
+            },
+            {
+              type: 'listItem',
+              spread: false,
+              checked: null,
+              children: [
+                {
+                  type: 'paragraph',
+                  children: [
+                    {
+                      type: 'inlineCode',
+                      value: '{ flatMap: function }',
+                      position: {
+                        start: { line: 14, column: 4, offset: 1261 },
+                        end: { line: 14, column: 27, offset: 1284 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: ' - Call ',
+                      position: {
+                        start: { line: 14, column: 27, offset: 1284 },
+                        end: { line: 14, column: 35, offset: 1292 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'inlineCode',
+                      value: '.flatMap',
+                      position: {
+                        start: { line: 14, column: 35, offset: 1292 },
+                        end: { line: 14, column: 45, offset: 1302 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: ' directly with flatMapper',
+                      position: {
+                        start: { line: 14, column: 45, offset: 1302 },
+                        end: { line: 14, column: 70, offset: 1327 },
+                        indent: []
+                      }
+                    }
+                  ],
+                  position: {
+                    start: { line: 14, column: 4, offset: 1261 },
+                    end: { line: 14, column: 70, offset: 1327 },
+                    indent: []
+                  }
+                }
+              ],
+              position: {
+                start: { line: 14, column: 1, offset: 1258 },
+                end: { line: 14, column: 70, offset: 1327 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 3, column: 1, offset: 185 },
-            end: { line: 12, column: 83, offset: 732 },
+            start: { line: 5, column: 1, offset: 228 },
+            end: { line: 14, column: 70, offset: 1327 },
             indent: [
               1, 1, 1, 1, 1,
               1, 1, 1, 1
@@ -8140,8 +8448,8 @@ export default [
             'flatMap(asyncDuplicate)( // concurrent execution\n' +
             '  [1, 2, 3, 4, 5]).then(console.log) // [1, 1, 2, 2, 3, 3, 4, 4, 5, 5]',
           position: {
-            start: { line: 14, column: 1, offset: 734 },
-            end: { line: 25, column: 4, offset: 1076 },
+            start: { line: 16, column: 1, offset: 1329 },
+            end: { line: 27, column: 4, offset: 1671 },
             indent: [
               1, 1, 1, 1, 1,
               1, 1, 1, 1, 1,
@@ -8153,27 +8461,18 @@ export default [
           type: 'paragraph',
           children: [
             {
-              type: 'inlineCode',
-              value: 'flatMap',
-              position: {
-                start: { line: 27, column: 1, offset: 1078 },
-                end: { line: 27, column: 10, offset: 1087 },
-                indent: []
-              }
-            },
-            {
               type: 'text',
-              value: ' muxes async iterables. Muxing, or asynchronously "mixing", is the process of combining multiple asynchronous sources into one source, with order determined by the asynchronous resolution of the individual items.',
+              value: 'A flatMapping operation concatenates onto the result synchronous values and muxes any asynchronous values. Muxing, or asynchronously "mixing", is the process of combining multiple asynchronous sources into one source, with order determined by the asynchronous resolution of the individual items.',
               position: {
-                start: { line: 27, column: 10, offset: 1087 },
-                end: { line: 27, column: 222, offset: 1299 },
+                start: { line: 29, column: 1, offset: 1673 },
+                end: { line: 29, column: 296, offset: 1968 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 27, column: 1, offset: 1078 },
-            end: { line: 27, column: 222, offset: 1299 },
+            start: { line: 29, column: 1, offset: 1673 },
+            end: { line: 29, column: 296, offset: 1968 },
             indent: []
           }
         },
@@ -8203,8 +8502,8 @@ export default [
             "  ['foo', 'bar', 'baz']).then(console.log)\n" +
             "// ['foo', 'bar', 'baz', 'foo', 'bar', 'baz', 'foo', 'bar', 'baz']",
           position: {
-            start: { line: 29, column: 1, offset: 1301 },
-            end: { line: 51, column: 4, offset: 1927 },
+            start: { line: 31, column: 1, offset: 1970 },
+            end: { line: 53, column: 4, offset: 2596 },
             indent: [
               1, 1, 1, 1, 1, 1, 1,
               1, 1, 1, 1, 1, 1, 1,
@@ -8218,444 +8517,35 @@ export default [
           children: [
             {
               type: 'text',
-              value: 'The following list defines concatenation behavior recognized by ',
+              value: 'In general, flattening is by order of concatenation with the exception of async iterables, which are muxed. Below, the two ',
               position: {
-                start: { line: 53, column: 1, offset: 1929 },
-                end: { line: 53, column: 65, offset: 1993 },
+                start: { line: 55, column: 1, offset: 2598 },
+                end: { line: 55, column: 124, offset: 2721 },
                 indent: []
               }
             },
             {
               type: 'inlineCode',
-              value: 'flatMap',
+              value: '4',
               position: {
-                start: { line: 53, column: 65, offset: 1993 },
-                end: { line: 53, column: 74, offset: 2002 },
+                start: { line: 55, column: 124, offset: 2721 },
+                end: { line: 55, column: 127, offset: 2724 },
                 indent: []
               }
             },
             {
               type: 'text',
-              value: ' for individual items being flattened.',
+              value: 's are asynchronous and are pushed onto the result after all the synchronous values have been flattened.',
               position: {
-                start: { line: 53, column: 74, offset: 2002 },
-                end: { line: 53, column: 112, offset: 2040 },
+                start: { line: 55, column: 127, offset: 2724 },
+                end: { line: 55, column: 230, offset: 2827 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 53, column: 1, offset: 1929 },
-            end: { line: 53, column: 112, offset: 2040 },
-            indent: []
-          }
-        },
-        {
-          type: 'list',
-          ordered: false,
-          start: null,
-          spread: false,
-          children: [
-            {
-              type: 'listItem',
-              spread: false,
-              checked: null,
-              children: [
-                {
-                  type: 'paragraph',
-                  children: [
-                    {
-                      type: 'inlineCode',
-                      value: 'Iterable',
-                      position: {
-                        start: { line: 55, column: 5, offset: 2046 },
-                        end: { line: 55, column: 15, offset: 2056 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: ' - items are iterated into the result',
-                      position: {
-                        start: { line: 55, column: 15, offset: 2056 },
-                        end: { line: 55, column: 52, offset: 2093 },
-                        indent: []
-                      }
-                    }
-                  ],
-                  position: {
-                    start: { line: 55, column: 5, offset: 2046 },
-                    end: { line: 55, column: 52, offset: 2093 },
-                    indent: []
-                  }
-                }
-              ],
-              position: {
-                start: { line: 55, column: 1, offset: 2042 },
-                end: { line: 55, column: 52, offset: 2093 },
-                indent: []
-              }
-            },
-            {
-              type: 'listItem',
-              spread: false,
-              checked: null,
-              children: [
-                {
-                  type: 'paragraph',
-                  children: [
-                    {
-                      type: 'inlineCode',
-                      value: 'Iterator/Generator',
-                      position: {
-                        start: { line: 56, column: 5, offset: 2098 },
-                        end: { line: 56, column: 25, offset: 2118 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: ' - items are iterated into the result, source is consumed',
-                      position: {
-                        start: { line: 56, column: 25, offset: 2118 },
-                        end: { line: 56, column: 82, offset: 2175 },
-                        indent: []
-                      }
-                    }
-                  ],
-                  position: {
-                    start: { line: 56, column: 5, offset: 2098 },
-                    end: { line: 56, column: 82, offset: 2175 },
-                    indent: []
-                  }
-                }
-              ],
-              position: {
-                start: { line: 56, column: 1, offset: 2094 },
-                end: { line: 56, column: 82, offset: 2175 },
-                indent: []
-              }
-            },
-            {
-              type: 'listItem',
-              spread: false,
-              checked: null,
-              children: [
-                {
-                  type: 'paragraph',
-                  children: [
-                    {
-                      type: 'inlineCode',
-                      value: '{ reduce: function }',
-                      position: {
-                        start: { line: 57, column: 5, offset: 2180 },
-                        end: { line: 57, column: 27, offset: 2202 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: " - call object's ",
-                      position: {
-                        start: { line: 57, column: 27, offset: 2202 },
-                        end: { line: 57, column: 44, offset: 2219 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'inlineCode',
-                      value: '.reduce',
-                      position: {
-                        start: { line: 57, column: 44, offset: 2219 },
-                        end: { line: 57, column: 53, offset: 2228 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: " with result's concatenation function",
-                      position: {
-                        start: { line: 57, column: 53, offset: 2228 },
-                        end: { line: 57, column: 90, offset: 2265 },
-                        indent: []
-                      }
-                    }
-                  ],
-                  position: {
-                    start: { line: 57, column: 5, offset: 2180 },
-                    end: { line: 57, column: 90, offset: 2265 },
-                    indent: []
-                  }
-                }
-              ],
-              position: {
-                start: { line: 57, column: 1, offset: 2176 },
-                end: { line: 57, column: 90, offset: 2265 },
-                indent: []
-              }
-            },
-            {
-              type: 'listItem',
-              spread: false,
-              checked: null,
-              children: [
-                {
-                  type: 'paragraph',
-                  children: [
-                    {
-                      type: 'inlineCode',
-                      value: '{ chain: function }',
-                      position: {
-                        start: { line: 58, column: 5, offset: 2270 },
-                        end: { line: 58, column: 26, offset: 2291 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: " - call object's ",
-                      position: {
-                        start: { line: 58, column: 26, offset: 2291 },
-                        end: { line: 58, column: 43, offset: 2308 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'inlineCode',
-                      value: '.chain',
-                      position: {
-                        start: { line: 58, column: 43, offset: 2308 },
-                        end: { line: 58, column: 51, offset: 2316 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: " with result's concatenation function",
-                      position: {
-                        start: { line: 58, column: 51, offset: 2316 },
-                        end: { line: 58, column: 88, offset: 2353 },
-                        indent: []
-                      }
-                    }
-                  ],
-                  position: {
-                    start: { line: 58, column: 5, offset: 2270 },
-                    end: { line: 58, column: 88, offset: 2353 },
-                    indent: []
-                  }
-                }
-              ],
-              position: {
-                start: { line: 58, column: 1, offset: 2266 },
-                end: { line: 58, column: 88, offset: 2353 },
-                indent: []
-              }
-            },
-            {
-              type: 'listItem',
-              spread: false,
-              checked: null,
-              children: [
-                {
-                  type: 'paragraph',
-                  children: [
-                    {
-                      type: 'inlineCode',
-                      value: '{ flatMap: function }',
-                      position: {
-                        start: { line: 59, column: 5, offset: 2358 },
-                        end: { line: 59, column: 28, offset: 2381 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: " - call object's ",
-                      position: {
-                        start: { line: 59, column: 28, offset: 2381 },
-                        end: { line: 59, column: 45, offset: 2398 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'inlineCode',
-                      value: '.flatMap',
-                      position: {
-                        start: { line: 59, column: 45, offset: 2398 },
-                        end: { line: 59, column: 55, offset: 2408 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: " with result's concatentation function",
-                      position: {
-                        start: { line: 59, column: 55, offset: 2408 },
-                        end: { line: 59, column: 93, offset: 2446 },
-                        indent: []
-                      }
-                    }
-                  ],
-                  position: {
-                    start: { line: 59, column: 5, offset: 2358 },
-                    end: { line: 59, column: 93, offset: 2446 },
-                    indent: []
-                  }
-                }
-              ],
-              position: {
-                start: { line: 59, column: 1, offset: 2354 },
-                end: { line: 59, column: 93, offset: 2446 },
-                indent: []
-              }
-            },
-            {
-              type: 'listItem',
-              spread: false,
-              checked: null,
-              children: [
-                {
-                  type: 'paragraph',
-                  children: [
-                    {
-                      type: 'inlineCode',
-                      value: 'Object',
-                      position: {
-                        start: { line: 60, column: 5, offset: 2451 },
-                        end: { line: 60, column: 13, offset: 2459 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: ' - values are flattened',
-                      position: {
-                        start: { line: 60, column: 13, offset: 2459 },
-                        end: { line: 60, column: 36, offset: 2482 },
-                        indent: []
-                      }
-                    }
-                  ],
-                  position: {
-                    start: { line: 60, column: 5, offset: 2451 },
-                    end: { line: 60, column: 36, offset: 2482 },
-                    indent: []
-                  }
-                }
-              ],
-              position: {
-                start: { line: 60, column: 1, offset: 2447 },
-                end: { line: 60, column: 36, offset: 2482 },
-                indent: []
-              }
-            },
-            {
-              type: 'listItem',
-              spread: false,
-              checked: null,
-              children: [
-                {
-                  type: 'paragraph',
-                  children: [
-                    {
-                      type: 'inlineCode',
-                      value: 'AsyncIterable',
-                      position: {
-                        start: { line: 61, column: 5, offset: 2487 },
-                        end: { line: 61, column: 20, offset: 2502 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: ' - items are muxed into the result',
-                      position: {
-                        start: { line: 61, column: 20, offset: 2502 },
-                        end: { line: 61, column: 54, offset: 2536 },
-                        indent: []
-                      }
-                    }
-                  ],
-                  position: {
-                    start: { line: 61, column: 5, offset: 2487 },
-                    end: { line: 61, column: 54, offset: 2536 },
-                    indent: []
-                  }
-                }
-              ],
-              position: {
-                start: { line: 61, column: 1, offset: 2483 },
-                end: { line: 61, column: 54, offset: 2536 },
-                indent: []
-              }
-            },
-            {
-              type: 'listItem',
-              spread: false,
-              checked: null,
-              children: [
-                {
-                  type: 'paragraph',
-                  children: [
-                    {
-                      type: 'inlineCode',
-                      value: 'AsyncIterator/AsyncGenerator',
-                      position: {
-                        start: { line: 62, column: 5, offset: 2541 },
-                        end: { line: 62, column: 35, offset: 2571 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'text',
-                      value: ' - items are muxed into the result, source is consumed',
-                      position: {
-                        start: { line: 62, column: 35, offset: 2571 },
-                        end: { line: 62, column: 89, offset: 2625 },
-                        indent: []
-                      }
-                    }
-                  ],
-                  position: {
-                    start: { line: 62, column: 5, offset: 2541 },
-                    end: { line: 62, column: 89, offset: 2625 },
-                    indent: []
-                  }
-                }
-              ],
-              position: {
-                start: { line: 62, column: 1, offset: 2537 },
-                end: { line: 62, column: 89, offset: 2625 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 55, column: 1, offset: 2042 },
-            end: { line: 62, column: 89, offset: 2625 },
-            indent: [
-              1, 1, 1, 1,
-              1, 1, 1
-            ]
-          }
-        },
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'All other types are added into the result as they are.',
-              position: {
-                start: { line: 64, column: 1, offset: 2627 },
-                end: { line: 64, column: 55, offset: 2681 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 64, column: 1, offset: 2627 },
-            end: { line: 64, column: 55, offset: 2681 },
+            start: { line: 55, column: 1, offset: 2598 },
+            end: { line: 55, column: 230, offset: 2827 },
             indent: []
           }
         },
@@ -8677,8 +8567,8 @@ export default [
             ']).then(console.log)\n' +
             '// [1, 1, 2, 3, 3, 5, 5, 6, 7, 8, 4, 4]',
           position: {
-            start: { line: 66, column: 1, offset: 2683 },
-            end: { line: 80, column: 4, offset: 3012 },
+            start: { line: 57, column: 1, offset: 2829 },
+            end: { line: 71, column: 4, offset: 3158 },
             indent: [
               1, 1, 1, 1, 1, 1,
               1, 1, 1, 1, 1, 1,
@@ -8690,20 +8580,29 @@ export default [
           type: 'paragraph',
           children: [
             {
+              type: 'text',
+              value: 'Purer functional programming is possible with ',
+              position: {
+                start: { line: 73, column: 1, offset: 3160 },
+                end: { line: 73, column: 47, offset: 3206 },
+                indent: []
+              }
+            },
+            {
               type: 'inlineCode',
               value: 'flatMap',
               position: {
-                start: { line: 82, column: 1, offset: 3014 },
-                end: { line: 82, column: 10, offset: 3023 },
+                start: { line: 73, column: 47, offset: 3206 },
+                end: { line: 73, column: 56, offset: 3215 },
                 indent: []
               }
             },
             {
               type: 'text',
-              value: ' supports purer functional programming with monads. A monad is any object that defines a method ',
+              value: ' and explicit monads. An explicit monad is any object that defines a method ',
               position: {
-                start: { line: 82, column: 10, offset: 3023 },
-                end: { line: 82, column: 106, offset: 3119 },
+                start: { line: 73, column: 56, offset: 3215 },
+                end: { line: 73, column: 132, offset: 3291 },
                 indent: []
               }
             },
@@ -8711,8 +8610,8 @@ export default [
               type: 'inlineCode',
               value: '.chain',
               position: {
-                start: { line: 82, column: 106, offset: 3119 },
-                end: { line: 82, column: 114, offset: 3127 },
+                start: { line: 73, column: 132, offset: 3291 },
+                end: { line: 73, column: 140, offset: 3299 },
                 indent: []
               }
             },
@@ -8720,8 +8619,8 @@ export default [
               type: 'text',
               value: ' or ',
               position: {
-                start: { line: 82, column: 114, offset: 3127 },
-                end: { line: 82, column: 118, offset: 3131 },
+                start: { line: 73, column: 140, offset: 3299 },
+                end: { line: 73, column: 144, offset: 3303 },
                 indent: []
               }
             },
@@ -8729,24 +8628,24 @@ export default [
               type: 'inlineCode',
               value: '.flatMap',
               position: {
-                start: { line: 82, column: 118, offset: 3131 },
-                end: { line: 82, column: 128, offset: 3141 },
+                start: { line: 73, column: 144, offset: 3303 },
+                end: { line: 73, column: 154, offset: 3313 },
                 indent: []
               }
             },
             {
               type: 'text',
-              value: ' that takes some item and returns a monad.',
+              value: '.',
               position: {
-                start: { line: 82, column: 128, offset: 3141 },
-                end: { line: 82, column: 170, offset: 3183 },
+                start: { line: 73, column: 154, offset: 3313 },
+                end: { line: 73, column: 155, offset: 3314 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 82, column: 1, offset: 3014 },
-            end: { line: 82, column: 170, offset: 3183 },
+            start: { line: 73, column: 1, offset: 3160 },
+            end: { line: 73, column: 155, offset: 3314 },
             indent: []
           }
         },
@@ -8778,8 +8677,8 @@ export default [
             '\n' +
             "logUserByID('1') // { _id: '1', name: 'George' }",
           position: {
-            start: { line: 84, column: 1, offset: 3185 },
-            end: { line: 108, column: 4, offset: 3672 },
+            start: { line: 75, column: 1, offset: 3316 },
+            end: { line: 99, column: 4, offset: 3803 },
             indent: [
               1, 1, 1, 1, 1, 1, 1, 1,
               1, 1, 1, 1, 1, 1, 1, 1,
@@ -8794,8 +8693,8 @@ export default [
               type: 'text',
               value: 'Additionally, ',
               position: {
-                start: { line: 110, column: 1, offset: 3674 },
-                end: { line: 110, column: 15, offset: 3688 },
+                start: { line: 101, column: 1, offset: 3805 },
+                end: { line: 101, column: 15, offset: 3819 },
                 indent: []
               }
             },
@@ -8803,24 +8702,24 @@ export default [
               type: 'inlineCode',
               value: 'flatMap',
               position: {
-                start: { line: 110, column: 15, offset: 3688 },
-                end: { line: 110, column: 24, offset: 3697 },
+                start: { line: 101, column: 15, offset: 3819 },
+                end: { line: 101, column: 24, offset: 3828 },
                 indent: []
               }
             },
             {
               type: 'text',
-              value: ' is a powerful option when working with transducers. A flatMapping transducer is like a mapping transducer except all items of the reducing operation are additionally flattened into the result.',
+              value: " is a powerful option when working with transducers. A flatMapping transducer applies a flatMapper to each item of a reducer's reducing operation, calling each item of each execution with the reducer.",
               position: {
-                start: { line: 110, column: 24, offset: 3697 },
-                end: { line: 110, column: 217, offset: 3890 },
+                start: { line: 101, column: 24, offset: 3828 },
+                end: { line: 101, column: 224, offset: 4028 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 110, column: 1, offset: 3674 },
-            end: { line: 110, column: 217, offset: 3890 },
+            start: { line: 101, column: 1, offset: 3805 },
+            end: { line: 101, column: 224, offset: 4028 },
             indent: []
           }
         },
@@ -8837,33 +8736,80 @@ export default [
             '  flatMap(powers),\n' +
             '])\n' +
             '\n' +
+            'const arrayConcat = (array, value) => array.concat(value)\n' +
+            '\n' +
             'console.log(\n' +
-            '  transform(oddPowers, [])([1, 2, 3, 4, 5]),\n' +
-            ') // [1, 1, 1, 3, 9, 27, 5, 25, 125]\n' +
-            '\n' +
-            'const asyncPowers = async number => [number, number ** 2, number ** 3]\n' +
-            '\n' +
-            'const asyncOddPowers = pipe([\n' +
-            '  filter(isOdd),\n' +
-            '  flatMap(asyncPowers),\n' +
-            '])\n' +
-            '\n' +
-            'transform(asyncOddPowers, [])([1, 2, 3, 4, 5]).then(console.log)\n' +
-            '// [1, 1, 1, 3, 9, 27, 5, 25, 125]',
+            '  reduce(oddPowers(arrayConcat), [])([1, 2, 3, 4, 5]),\n' +
+            ') // [1, 1, 1, 3, 9, 27, 5, 25, 125]',
           position: {
-            start: { line: 112, column: 1, offset: 3892 },
-            end: { line: 135, column: 4, offset: 4432 },
+            start: { line: 103, column: 1, offset: 4030 },
+            end: { line: 118, column: 4, offset: 4391 },
             indent: [
-              1, 1, 1, 1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1, 1, 1
+              1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1,
+              1, 1, 1
             ]
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'In the case above, each item of the array of numbers returned by ',
+              position: {
+                start: { line: 120, column: 1, offset: 4393 },
+                end: { line: 120, column: 66, offset: 4458 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'powers',
+              position: {
+                start: { line: 120, column: 66, offset: 4458 },
+                end: { line: 120, column: 74, offset: 4466 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ' is called with the reducer ',
+              position: {
+                start: { line: 120, column: 74, offset: 4466 },
+                end: { line: 120, column: 102, offset: 4494 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'arrayConcat',
+              position: {
+                start: { line: 120, column: 102, offset: 4494 },
+                end: { line: 120, column: 115, offset: 4507 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ' for flattening into the final result.',
+              position: {
+                start: { line: 120, column: 115, offset: 4507 },
+                end: { line: 120, column: 153, offset: 4545 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 120, column: 1, offset: 4393 },
+            end: { line: 120, column: 153, offset: 4545 },
+            indent: []
           }
         }
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 136, column: 1, offset: 4433 }
+        end: { line: 121, column: 1, offset: 4546 }
       }
     }
   },
@@ -8878,7 +8824,7 @@ export default [
       '\n' +
       'fork(funcsObject)(...args) -> parallelized Promise|Object\n' +
       '```\n',
-    description: 'A multi-purpose function. Parallelizes multiple functions with concurrent execution into either an object, an array, or a nested mix of both.\n' +
+    description: 'Run an array or object of functions in parallel, returning an array or object result.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'console.log(\n' +
@@ -8889,6 +8835,27 @@ export default [
       '    ]),\n' +
       "  })('hello'),\n" +
       ") // { greetings: ['hello world', 'hello mom'] }\n" +
+      '```\n' +
+      '\n' +
+      'Use `fork` to simultaneously compose objects and handle async.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const identity = value => value\n' +
+      '\n' +
+      'const userbase = new Map()\n' +
+      "userbase.set('1', { _id: 1, name: 'George' })\n" +
+      '\n' +
+      'const getUserByID = async id => userbase.get(id)\n' +
+      '\n' +
+      'pipe([\n' +
+      '  fork({\n' +
+      '    id: identity,\n' +
+      '    user: getUserByID,\n' +
+      '  }),\n' +
+      '  tap(({ id, user }) => {\n' +
+      '    console.log(`Got user ${JSON.stringify(user)} by id ${id}`)\n' +
+      '  }),\n' +
+      "])('1')\n" +
       '```\n',
     synopsis_mdast: {
       type: 'root',
@@ -8927,17 +8894,17 @@ export default [
           children: [
             {
               type: 'text',
-              value: 'A multi-purpose function. Parallelizes multiple functions with concurrent execution into either an object, an array, or a nested mix of both.',
+              value: 'Run an array or object of functions in parallel, returning an array or object result.',
               position: {
                 start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 142, offset: 141 },
+                end: { line: 1, column: 86, offset: 85 },
                 indent: []
               }
             }
           ],
           position: {
             start: { line: 1, column: 1, offset: 0 },
-            end: { line: 1, column: 142, offset: 141 },
+            end: { line: 1, column: 86, offset: 85 },
             indent: []
           }
         },
@@ -8954,18 +8921,85 @@ export default [
             "  })('hello'),\n" +
             ") // { greetings: ['hello world', 'hello mom'] }",
           position: {
-            start: { line: 3, column: 1, offset: 143 },
-            end: { line: 12, column: 4, offset: 365 },
+            start: { line: 3, column: 1, offset: 87 },
+            end: { line: 12, column: 4, offset: 309 },
             indent: [
               1, 1, 1, 1, 1,
               1, 1, 1, 1
+            ]
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Use ',
+              position: {
+                start: { line: 14, column: 1, offset: 311 },
+                end: { line: 14, column: 5, offset: 315 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'fork',
+              position: {
+                start: { line: 14, column: 5, offset: 315 },
+                end: { line: 14, column: 11, offset: 321 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ' to simultaneously compose objects and handle async.',
+              position: {
+                start: { line: 14, column: 11, offset: 321 },
+                end: { line: 14, column: 63, offset: 373 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 14, column: 1, offset: 311 },
+            end: { line: 14, column: 63, offset: 373 },
+            indent: []
+          }
+        },
+        {
+          type: 'code',
+          lang: 'javascript',
+          meta: '[playground]',
+          value: 'const identity = value => value\n' +
+            '\n' +
+            'const userbase = new Map()\n' +
+            "userbase.set('1', { _id: 1, name: 'George' })\n" +
+            '\n' +
+            'const getUserByID = async id => userbase.get(id)\n' +
+            '\n' +
+            'pipe([\n' +
+            '  fork({\n' +
+            '    id: identity,\n' +
+            '    user: getUserByID,\n' +
+            '  }),\n' +
+            '  tap(({ id, user }) => {\n' +
+            '    console.log(`Got user ${JSON.stringify(user)} by id ${id}`)\n' +
+            '  }),\n' +
+            "])('1')",
+          position: {
+            start: { line: 16, column: 1, offset: 375 },
+            end: { line: 33, column: 4, offset: 729 },
+            indent: [
+              1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1, 1,
+              1, 1, 1
             ]
           }
         }
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 13, column: 1, offset: 366 }
+        end: { line: 34, column: 1, offset: 730 }
       }
     }
   },
@@ -9899,7 +9933,8 @@ export default [
   {
     name: 'map',
     synopsis: '```coffeescript [specscript]\n' +
-      'Functor<T> = Array<T>|Object<T>|Iterator<T>|AsyncIterator<T>|{ map: T=>any }\n' +
+      'Functor<T> = Array<T>|Object<T>|Set<T>|Map<T>\n' +
+      '  |Iterator<T>|AsyncIterator<T>|{ map: (T=>any)=>any }\n' +
       'Reducer<T> = (any, T)=>Promise|any\n' +
       '\n' +
       'var T any,\n' +
@@ -9918,14 +9953,15 @@ export default [
       '\n' +
       'map(mapper)(reducer) -> Reducer\n' +
       '```\n',
-    description: 'Apply a mapper concurrently to each item of a collection, returning the results in a collection of the same type. If order is implied by the collection, it is maintained in the result. Below are valid collections along with their iteration behavior.\n' +
+    description: 'Apply a mapper concurrently to each item of a functor, returning the results in a functor of the same type. If order is implied by the collection, it is maintained in the result. The following list describes `map` behavior with vanilla JavaScript functors.\n' +
       '\n' +
-      ' * `Array` - iterate values by index\n' +
-      ' * `Object` - iterate object values\n' +
-      ' * `Map` - iterate Map values (not entries)\n' +
-      ' * `Iterator`/`Generator` - iterate by calling `.next`\n' +
-      ' * `AsyncIterator`/`AsyncGenerator` - iterate by calling `.next`\n' +
-      ' * `{ map: function }` - call `.map` directly\n' +
+      ' * `Array` - apply a mapper to items, returning a new array of results\n' +
+      ' * `Object` - apply a mapper to object values, returning a new object of results\n' +
+      ' * `Set` - apply a mapper to Set items, returning a new `Set` of results\n' +
+      ' * `Map` - apply a mapper to Map values (not entries), returning a new `Map` of results\n' +
+      " * `Iterator`/`Generator` - return an iterator that applies a mapper to each iteration's value, yielding mapped iterations\n" +
+      " * `AsyncIterator`/`AsyncGenerator` - return an async iterator that applies a mapper to each async iteration's value, yielding Promises of a mapped iterations\n" +
+      ' * `{ map: function }` - call `.map` directly with mapper\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const square = number => number ** 2\n' +
@@ -9943,11 +9979,13 @@ export default [
       ') // { a: 1, b: 4, c: 9, d: 16, e: 25 }\n' +
       '```\n' +
       '\n' +
-      'Functions are regarded as resolvers. Each of the following calls, when passed to a mapping function `map(mapper)`, creates a function with all items of its return transformed by the mapper.\n' +
+      '`map` recognizes three types of functions in functor position:\n' +
       '\n' +
-      ' * `GeneratorFunction` - items of the iterator are mapped into a new iterator. Warning: using an async mapper in a synchronous generator function is not recommended and could lead to unexpected behavior.\n' +
-      ' * `AsyncGeneratorFunction` - items of the async iterator are mapped into a new async iterator. Async result items are awaited in a new async iterator. Async mapper functions are valid.\n' +
-      ' * `Reducer` - items of a reducing operation are transformed by the mapper function. Fully asynchronous transducing operations are possible with a mapping reducer and `reduce`.\n' +
+      ' * Generator Functions `function* () {}` - `map(mapper)(generatorFunction)` creates a generator function that generates generators of mapped values. Async mappers are yielded synchronously and may lead to unexpected results here.\n' +
+      ' * Async Generator Functions `async function* () {}` - `map(mapper)(asyncGeneratorFunction)` creates an async generator function that generates async generators of mapped values. Promises produced by async mappers are resolved.\n' +
+      " * Reducers `(accumulator, item)=>accumulator` - `map(mapper)(reducer)` creates a transducer that, when called with another reducer, creates a mapping step for each item of the reducer's reducing operation. Promises produced by async mappers are resolved.\n" +
+      '\n' +
+      'Use mapping generator functions to create lazy computations executed at iteration time.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const capitalize = string => string.toUpperCase()\n' +
@@ -9967,7 +10005,7 @@ export default [
       "console.log([...ABCIter]) // ['A', 'B', 'C']\n" +
       '```\n' +
       '\n' +
-      'Function laziness is extended to reducer functions as [transducers](https://github.com/a-synchronous/rubico/blob/master/TRANSDUCERS.md).\n' +
+      'Create a mapping transducer by supplying `map` with a reducer. A reducer is a variadic function that depicts a relationship between an accumulator and any number of arguments. A transducer is a function that accepts a reducer as an argument and returns another reducer.\n' +
       '\n' +
       '```coffeescript [specscript]\n' +
       'Reducer<T> = (any, T)=>Promise|any\n' +
@@ -9975,7 +10013,7 @@ export default [
       'Transducer = Reducer=>Reducer\n' +
       '```\n' +
       '\n' +
-      'A reducer is a variadic function like the one supplied to `Array.prototype.reduce`, but without the index and reference to the accumulated result per call. A transducer is a function that accepts a reducer function as an argument and returns another reducer function, which enables chaining functionality for reducers. `map` is core to this mechanism, and provides a way to create transducers with mapper functions.\n' +
+      'The transducer signature enables chaining functionality for reducers. `map` is core to this mechanism, and provides a way via transducers to transform items of reducers. To `map`, reducers are just another category.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const square = number => number ** 2\n' +
@@ -10010,7 +10048,8 @@ export default [
           type: 'code',
           lang: 'coffeescript',
           meta: '[specscript]',
-          value: 'Functor<T> = Array<T>|Object<T>|Iterator<T>|AsyncIterator<T>|{ map: T=>any }\n' +
+          value: 'Functor<T> = Array<T>|Object<T>|Set<T>|Map<T>\n' +
+            '  |Iterator<T>|AsyncIterator<T>|{ map: (T=>any)=>any }\n' +
             'Reducer<T> = (any, T)=>Promise|any\n' +
             '\n' +
             'var T any,\n' +
@@ -10030,18 +10069,18 @@ export default [
             'map(mapper)(reducer) -> Reducer',
           position: {
             start: { line: 1, column: 1, offset: 0 },
-            end: { line: 20, column: 4, offset: 526 },
+            end: { line: 21, column: 4, offset: 550 },
             indent: [
               1, 1, 1, 1, 1, 1, 1,
               1, 1, 1, 1, 1, 1, 1,
-              1, 1, 1, 1, 1
+              1, 1, 1, 1, 1, 1
             ]
           }
         }
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 21, column: 1, offset: 527 }
+        end: { line: 22, column: 1, offset: 551 }
       }
     },
     description_mdast: {
@@ -10052,17 +10091,35 @@ export default [
           children: [
             {
               type: 'text',
-              value: 'Apply a mapper concurrently to each item of a collection, returning the results in a collection of the same type. If order is implied by the collection, it is maintained in the result. Below are valid collections along with their iteration behavior.',
+              value: 'Apply a mapper concurrently to each item of a functor, returning the results in a functor of the same type. If order is implied by the collection, it is maintained in the result. The following list describes ',
               position: {
                 start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 250, offset: 249 },
+                end: { line: 1, column: 209, offset: 208 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'map',
+              position: {
+                start: { line: 1, column: 209, offset: 208 },
+                end: { line: 1, column: 214, offset: 213 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ' behavior with vanilla JavaScript functors.',
+              position: {
+                start: { line: 1, column: 214, offset: 213 },
+                end: { line: 1, column: 257, offset: 256 },
                 indent: []
               }
             }
           ],
           position: {
             start: { line: 1, column: 1, offset: 0 },
-            end: { line: 1, column: 250, offset: 249 },
+            end: { line: 1, column: 257, offset: 256 },
             indent: []
           }
         },
@@ -10084,31 +10141,31 @@ export default [
                       type: 'inlineCode',
                       value: 'Array',
                       position: {
-                        start: { line: 3, column: 4, offset: 254 },
-                        end: { line: 3, column: 11, offset: 261 },
+                        start: { line: 3, column: 4, offset: 261 },
+                        end: { line: 3, column: 11, offset: 268 },
                         indent: []
                       }
                     },
                     {
                       type: 'text',
-                      value: ' - iterate values by index',
+                      value: ' - apply a mapper to items, returning a new array of results',
                       position: {
-                        start: { line: 3, column: 11, offset: 261 },
-                        end: { line: 3, column: 37, offset: 287 },
+                        start: { line: 3, column: 11, offset: 268 },
+                        end: { line: 3, column: 71, offset: 328 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 3, column: 4, offset: 254 },
-                    end: { line: 3, column: 37, offset: 287 },
+                    start: { line: 3, column: 4, offset: 261 },
+                    end: { line: 3, column: 71, offset: 328 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 3, column: 1, offset: 251 },
-                end: { line: 3, column: 37, offset: 287 },
+                start: { line: 3, column: 1, offset: 258 },
+                end: { line: 3, column: 71, offset: 328 },
                 indent: []
               }
             },
@@ -10124,31 +10181,89 @@ export default [
                       type: 'inlineCode',
                       value: 'Object',
                       position: {
-                        start: { line: 4, column: 4, offset: 291 },
-                        end: { line: 4, column: 12, offset: 299 },
+                        start: { line: 4, column: 4, offset: 332 },
+                        end: { line: 4, column: 12, offset: 340 },
                         indent: []
                       }
                     },
                     {
                       type: 'text',
-                      value: ' - iterate object values',
+                      value: ' - apply a mapper to object values, returning a new object of results',
                       position: {
-                        start: { line: 4, column: 12, offset: 299 },
-                        end: { line: 4, column: 36, offset: 323 },
+                        start: { line: 4, column: 12, offset: 340 },
+                        end: { line: 4, column: 81, offset: 409 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 4, column: 4, offset: 291 },
-                    end: { line: 4, column: 36, offset: 323 },
+                    start: { line: 4, column: 4, offset: 332 },
+                    end: { line: 4, column: 81, offset: 409 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 4, column: 1, offset: 288 },
-                end: { line: 4, column: 36, offset: 323 },
+                start: { line: 4, column: 1, offset: 329 },
+                end: { line: 4, column: 81, offset: 409 },
+                indent: []
+              }
+            },
+            {
+              type: 'listItem',
+              spread: false,
+              checked: null,
+              children: [
+                {
+                  type: 'paragraph',
+                  children: [
+                    {
+                      type: 'inlineCode',
+                      value: 'Set',
+                      position: {
+                        start: { line: 5, column: 4, offset: 413 },
+                        end: { line: 5, column: 9, offset: 418 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: ' - apply a mapper to Set items, returning a new ',
+                      position: {
+                        start: { line: 5, column: 9, offset: 418 },
+                        end: { line: 5, column: 57, offset: 466 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'inlineCode',
+                      value: 'Set',
+                      position: {
+                        start: { line: 5, column: 57, offset: 466 },
+                        end: { line: 5, column: 62, offset: 471 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: ' of results',
+                      position: {
+                        start: { line: 5, column: 62, offset: 471 },
+                        end: { line: 5, column: 73, offset: 482 },
+                        indent: []
+                      }
+                    }
+                  ],
+                  position: {
+                    start: { line: 5, column: 4, offset: 413 },
+                    end: { line: 5, column: 73, offset: 482 },
+                    indent: []
+                  }
+                }
+              ],
+              position: {
+                start: { line: 5, column: 1, offset: 410 },
+                end: { line: 5, column: 73, offset: 482 },
                 indent: []
               }
             },
@@ -10164,31 +10279,49 @@ export default [
                       type: 'inlineCode',
                       value: 'Map',
                       position: {
-                        start: { line: 5, column: 4, offset: 327 },
-                        end: { line: 5, column: 9, offset: 332 },
+                        start: { line: 6, column: 4, offset: 486 },
+                        end: { line: 6, column: 9, offset: 491 },
                         indent: []
                       }
                     },
                     {
                       type: 'text',
-                      value: ' - iterate Map values (not entries)',
+                      value: ' - apply a mapper to Map values (not entries), returning a new ',
                       position: {
-                        start: { line: 5, column: 9, offset: 332 },
-                        end: { line: 5, column: 44, offset: 367 },
+                        start: { line: 6, column: 9, offset: 491 },
+                        end: { line: 6, column: 72, offset: 554 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'inlineCode',
+                      value: 'Map',
+                      position: {
+                        start: { line: 6, column: 72, offset: 554 },
+                        end: { line: 6, column: 77, offset: 559 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: ' of results',
+                      position: {
+                        start: { line: 6, column: 77, offset: 559 },
+                        end: { line: 6, column: 88, offset: 570 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 5, column: 4, offset: 327 },
-                    end: { line: 5, column: 44, offset: 367 },
+                    start: { line: 6, column: 4, offset: 486 },
+                    end: { line: 6, column: 88, offset: 570 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 5, column: 1, offset: 324 },
-                end: { line: 5, column: 44, offset: 367 },
+                start: { line: 6, column: 1, offset: 483 },
+                end: { line: 6, column: 88, offset: 570 },
                 indent: []
               }
             },
@@ -10204,8 +10337,8 @@ export default [
                       type: 'inlineCode',
                       value: 'Iterator',
                       position: {
-                        start: { line: 6, column: 4, offset: 371 },
-                        end: { line: 6, column: 14, offset: 381 },
+                        start: { line: 7, column: 4, offset: 574 },
+                        end: { line: 7, column: 14, offset: 584 },
                         indent: []
                       }
                     },
@@ -10213,8 +10346,8 @@ export default [
                       type: 'text',
                       value: '/',
                       position: {
-                        start: { line: 6, column: 14, offset: 381 },
-                        end: { line: 6, column: 15, offset: 382 },
+                        start: { line: 7, column: 14, offset: 584 },
+                        end: { line: 7, column: 15, offset: 585 },
                         indent: []
                       }
                     },
@@ -10222,40 +10355,31 @@ export default [
                       type: 'inlineCode',
                       value: 'Generator',
                       position: {
-                        start: { line: 6, column: 15, offset: 382 },
-                        end: { line: 6, column: 26, offset: 393 },
+                        start: { line: 7, column: 15, offset: 585 },
+                        end: { line: 7, column: 26, offset: 596 },
                         indent: []
                       }
                     },
                     {
                       type: 'text',
-                      value: ' - iterate by calling ',
+                      value: " - return an iterator that applies a mapper to each iteration's value, yielding mapped iterations",
                       position: {
-                        start: { line: 6, column: 26, offset: 393 },
-                        end: { line: 6, column: 48, offset: 415 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'inlineCode',
-                      value: '.next',
-                      position: {
-                        start: { line: 6, column: 48, offset: 415 },
-                        end: { line: 6, column: 55, offset: 422 },
+                        start: { line: 7, column: 26, offset: 596 },
+                        end: { line: 7, column: 123, offset: 693 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 6, column: 4, offset: 371 },
-                    end: { line: 6, column: 55, offset: 422 },
+                    start: { line: 7, column: 4, offset: 574 },
+                    end: { line: 7, column: 123, offset: 693 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 6, column: 1, offset: 368 },
-                end: { line: 6, column: 55, offset: 422 },
+                start: { line: 7, column: 1, offset: 571 },
+                end: { line: 7, column: 123, offset: 693 },
                 indent: []
               }
             },
@@ -10271,8 +10395,8 @@ export default [
                       type: 'inlineCode',
                       value: 'AsyncIterator',
                       position: {
-                        start: { line: 7, column: 4, offset: 426 },
-                        end: { line: 7, column: 19, offset: 441 },
+                        start: { line: 8, column: 4, offset: 697 },
+                        end: { line: 8, column: 19, offset: 712 },
                         indent: []
                       }
                     },
@@ -10280,8 +10404,8 @@ export default [
                       type: 'text',
                       value: '/',
                       position: {
-                        start: { line: 7, column: 19, offset: 441 },
-                        end: { line: 7, column: 20, offset: 442 },
+                        start: { line: 8, column: 19, offset: 712 },
+                        end: { line: 8, column: 20, offset: 713 },
                         indent: []
                       }
                     },
@@ -10289,40 +10413,31 @@ export default [
                       type: 'inlineCode',
                       value: 'AsyncGenerator',
                       position: {
-                        start: { line: 7, column: 20, offset: 442 },
-                        end: { line: 7, column: 36, offset: 458 },
+                        start: { line: 8, column: 20, offset: 713 },
+                        end: { line: 8, column: 36, offset: 729 },
                         indent: []
                       }
                     },
                     {
                       type: 'text',
-                      value: ' - iterate by calling ',
+                      value: " - return an async iterator that applies a mapper to each async iteration's value, yielding Promises of a mapped iterations",
                       position: {
-                        start: { line: 7, column: 36, offset: 458 },
-                        end: { line: 7, column: 58, offset: 480 },
-                        indent: []
-                      }
-                    },
-                    {
-                      type: 'inlineCode',
-                      value: '.next',
-                      position: {
-                        start: { line: 7, column: 58, offset: 480 },
-                        end: { line: 7, column: 65, offset: 487 },
+                        start: { line: 8, column: 36, offset: 729 },
+                        end: { line: 8, column: 159, offset: 852 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 7, column: 4, offset: 426 },
-                    end: { line: 7, column: 65, offset: 487 },
+                    start: { line: 8, column: 4, offset: 697 },
+                    end: { line: 8, column: 159, offset: 852 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 7, column: 1, offset: 423 },
-                end: { line: 7, column: 65, offset: 487 },
+                start: { line: 8, column: 1, offset: 694 },
+                end: { line: 8, column: 159, offset: 852 },
                 indent: []
               }
             },
@@ -10338,8 +10453,8 @@ export default [
                       type: 'inlineCode',
                       value: '{ map: function }',
                       position: {
-                        start: { line: 8, column: 4, offset: 491 },
-                        end: { line: 8, column: 23, offset: 510 },
+                        start: { line: 9, column: 4, offset: 856 },
+                        end: { line: 9, column: 23, offset: 875 },
                         indent: []
                       }
                     },
@@ -10347,8 +10462,8 @@ export default [
                       type: 'text',
                       value: ' - call ',
                       position: {
-                        start: { line: 8, column: 23, offset: 510 },
-                        end: { line: 8, column: 31, offset: 518 },
+                        start: { line: 9, column: 23, offset: 875 },
+                        end: { line: 9, column: 31, offset: 883 },
                         indent: []
                       }
                     },
@@ -10356,39 +10471,39 @@ export default [
                       type: 'inlineCode',
                       value: '.map',
                       position: {
-                        start: { line: 8, column: 31, offset: 518 },
-                        end: { line: 8, column: 37, offset: 524 },
+                        start: { line: 9, column: 31, offset: 883 },
+                        end: { line: 9, column: 37, offset: 889 },
                         indent: []
                       }
                     },
                     {
                       type: 'text',
-                      value: ' directly',
+                      value: ' directly with mapper',
                       position: {
-                        start: { line: 8, column: 37, offset: 524 },
-                        end: { line: 8, column: 46, offset: 533 },
+                        start: { line: 9, column: 37, offset: 889 },
+                        end: { line: 9, column: 58, offset: 910 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 8, column: 4, offset: 491 },
-                    end: { line: 8, column: 46, offset: 533 },
+                    start: { line: 9, column: 4, offset: 856 },
+                    end: { line: 9, column: 58, offset: 910 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 8, column: 1, offset: 488 },
-                end: { line: 8, column: 46, offset: 533 },
+                start: { line: 9, column: 1, offset: 853 },
+                end: { line: 9, column: 58, offset: 910 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 3, column: 1, offset: 251 },
-            end: { line: 8, column: 46, offset: 533 },
-            indent: [ 1, 1, 1, 1, 1 ]
+            start: { line: 3, column: 1, offset: 258 },
+            end: { line: 9, column: 58, offset: 910 },
+            indent: [ 1, 1, 1, 1, 1, 1 ]
           }
         },
         {
@@ -10409,8 +10524,8 @@ export default [
             '  map(square)({ a: 1, b: 2, c: 3, d: 4, e: 5 }),\n' +
             ') // { a: 1, b: 4, c: 9, d: 16, e: 25 }',
           position: {
-            start: { line: 10, column: 1, offset: 535 },
-            end: { line: 24, column: 4, offset: 928 },
+            start: { line: 11, column: 1, offset: 912 },
+            end: { line: 25, column: 4, offset: 1305 },
             indent: [
               1, 1, 1, 1, 1, 1,
               1, 1, 1, 1, 1, 1,
@@ -10422,36 +10537,27 @@ export default [
           type: 'paragraph',
           children: [
             {
-              type: 'text',
-              value: 'Functions are regarded as resolvers. Each of the following calls, when passed to a mapping function ',
-              position: {
-                start: { line: 26, column: 1, offset: 930 },
-                end: { line: 26, column: 101, offset: 1030 },
-                indent: []
-              }
-            },
-            {
               type: 'inlineCode',
-              value: 'map(mapper)',
+              value: 'map',
               position: {
-                start: { line: 26, column: 101, offset: 1030 },
-                end: { line: 26, column: 114, offset: 1043 },
+                start: { line: 27, column: 1, offset: 1307 },
+                end: { line: 27, column: 6, offset: 1312 },
                 indent: []
               }
             },
             {
               type: 'text',
-              value: ', creates a function with all items of its return transformed by the mapper.',
+              value: ' recognizes three types of functions in functor position:',
               position: {
-                start: { line: 26, column: 114, offset: 1043 },
-                end: { line: 26, column: 190, offset: 1119 },
+                start: { line: 27, column: 6, offset: 1312 },
+                end: { line: 27, column: 63, offset: 1369 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 26, column: 1, offset: 930 },
-            end: { line: 26, column: 190, offset: 1119 },
+            start: { line: 27, column: 1, offset: 1307 },
+            end: { line: 27, column: 63, offset: 1369 },
             indent: []
           }
         },
@@ -10470,34 +10576,61 @@ export default [
                   type: 'paragraph',
                   children: [
                     {
-                      type: 'inlineCode',
-                      value: 'GeneratorFunction',
+                      type: 'text',
+                      value: 'Generator Functions ',
                       position: {
-                        start: { line: 28, column: 4, offset: 1124 },
-                        end: { line: 28, column: 23, offset: 1143 },
+                        start: { line: 29, column: 4, offset: 1374 },
+                        end: { line: 29, column: 24, offset: 1394 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'inlineCode',
+                      value: 'function* () {}',
+                      position: {
+                        start: { line: 29, column: 24, offset: 1394 },
+                        end: { line: 29, column: 41, offset: 1411 },
                         indent: []
                       }
                     },
                     {
                       type: 'text',
-                      value: ' - items of the iterator are mapped into a new iterator. Warning: using an async mapper in a synchronous generator function is not recommended and could lead to unexpected behavior.',
+                      value: ' - ',
                       position: {
-                        start: { line: 28, column: 23, offset: 1143 },
-                        end: { line: 28, column: 204, offset: 1324 },
+                        start: { line: 29, column: 41, offset: 1411 },
+                        end: { line: 29, column: 44, offset: 1414 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'inlineCode',
+                      value: 'map(mapper)(generatorFunction)',
+                      position: {
+                        start: { line: 29, column: 44, offset: 1414 },
+                        end: { line: 29, column: 76, offset: 1446 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: ' creates a generator function that generates generators of mapped values. Async mappers are yielded synchronously and may lead to unexpected results here.',
+                      position: {
+                        start: { line: 29, column: 76, offset: 1446 },
+                        end: { line: 29, column: 230, offset: 1600 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 28, column: 4, offset: 1124 },
-                    end: { line: 28, column: 204, offset: 1324 },
+                    start: { line: 29, column: 4, offset: 1374 },
+                    end: { line: 29, column: 230, offset: 1600 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 28, column: 1, offset: 1121 },
-                end: { line: 28, column: 204, offset: 1324 },
+                start: { line: 29, column: 1, offset: 1371 },
+                end: { line: 29, column: 230, offset: 1600 },
                 indent: []
               }
             },
@@ -10510,34 +10643,61 @@ export default [
                   type: 'paragraph',
                   children: [
                     {
-                      type: 'inlineCode',
-                      value: 'AsyncGeneratorFunction',
+                      type: 'text',
+                      value: 'Async Generator Functions ',
                       position: {
-                        start: { line: 29, column: 4, offset: 1328 },
-                        end: { line: 29, column: 28, offset: 1352 },
+                        start: { line: 30, column: 4, offset: 1604 },
+                        end: { line: 30, column: 30, offset: 1630 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'inlineCode',
+                      value: 'async function* () {}',
+                      position: {
+                        start: { line: 30, column: 30, offset: 1630 },
+                        end: { line: 30, column: 53, offset: 1653 },
                         indent: []
                       }
                     },
                     {
                       type: 'text',
-                      value: ' - items of the async iterator are mapped into a new async iterator. Async result items are awaited in a new async iterator. Async mapper functions are valid.',
+                      value: ' - ',
                       position: {
-                        start: { line: 29, column: 28, offset: 1352 },
-                        end: { line: 29, column: 186, offset: 1510 },
+                        start: { line: 30, column: 53, offset: 1653 },
+                        end: { line: 30, column: 56, offset: 1656 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'inlineCode',
+                      value: 'map(mapper)(asyncGeneratorFunction)',
+                      position: {
+                        start: { line: 30, column: 56, offset: 1656 },
+                        end: { line: 30, column: 93, offset: 1693 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: ' creates an async generator function that generates async generators of mapped values. Promises produced by async mappers are resolved.',
+                      position: {
+                        start: { line: 30, column: 93, offset: 1693 },
+                        end: { line: 30, column: 228, offset: 1828 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 29, column: 4, offset: 1328 },
-                    end: { line: 29, column: 186, offset: 1510 },
+                    start: { line: 30, column: 4, offset: 1604 },
+                    end: { line: 30, column: 228, offset: 1828 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 29, column: 1, offset: 1325 },
-                end: { line: 29, column: 186, offset: 1510 },
+                start: { line: 30, column: 1, offset: 1601 },
+                end: { line: 30, column: 228, offset: 1828 },
                 indent: []
               }
             },
@@ -10550,60 +10710,88 @@ export default [
                   type: 'paragraph',
                   children: [
                     {
-                      type: 'inlineCode',
-                      value: 'Reducer',
-                      position: {
-                        start: { line: 30, column: 4, offset: 1514 },
-                        end: { line: 30, column: 13, offset: 1523 },
-                        indent: []
-                      }
-                    },
-                    {
                       type: 'text',
-                      value: ' - items of a reducing operation are transformed by the mapper function. Fully asynchronous transducing operations are possible with a mapping reducer and ',
+                      value: 'Reducers ',
                       position: {
-                        start: { line: 30, column: 13, offset: 1523 },
-                        end: { line: 30, column: 168, offset: 1678 },
+                        start: { line: 31, column: 4, offset: 1832 },
+                        end: { line: 31, column: 13, offset: 1841 },
                         indent: []
                       }
                     },
                     {
                       type: 'inlineCode',
-                      value: 'reduce',
+                      value: '(accumulator, item)=>accumulator',
                       position: {
-                        start: { line: 30, column: 168, offset: 1678 },
-                        end: { line: 30, column: 176, offset: 1686 },
+                        start: { line: 31, column: 13, offset: 1841 },
+                        end: { line: 31, column: 47, offset: 1875 },
                         indent: []
                       }
                     },
                     {
                       type: 'text',
-                      value: '.',
+                      value: ' - ',
                       position: {
-                        start: { line: 30, column: 176, offset: 1686 },
-                        end: { line: 30, column: 177, offset: 1687 },
+                        start: { line: 31, column: 47, offset: 1875 },
+                        end: { line: 31, column: 50, offset: 1878 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'inlineCode',
+                      value: 'map(mapper)(reducer)',
+                      position: {
+                        start: { line: 31, column: 50, offset: 1878 },
+                        end: { line: 31, column: 72, offset: 1900 },
+                        indent: []
+                      }
+                    },
+                    {
+                      type: 'text',
+                      value: " creates a transducer that, when called with another reducer, creates a mapping step for each item of the reducer's reducing operation. Promises produced by async mappers are resolved.",
+                      position: {
+                        start: { line: 31, column: 72, offset: 1900 },
+                        end: { line: 31, column: 256, offset: 2084 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 30, column: 4, offset: 1514 },
-                    end: { line: 30, column: 177, offset: 1687 },
+                    start: { line: 31, column: 4, offset: 1832 },
+                    end: { line: 31, column: 256, offset: 2084 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 30, column: 1, offset: 1511 },
-                end: { line: 30, column: 177, offset: 1687 },
+                start: { line: 31, column: 1, offset: 1829 },
+                end: { line: 31, column: 256, offset: 2084 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 28, column: 1, offset: 1121 },
-            end: { line: 30, column: 177, offset: 1687 },
+            start: { line: 29, column: 1, offset: 1371 },
+            end: { line: 31, column: 256, offset: 2084 },
             indent: [ 1, 1 ]
+          }
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              value: 'Use mapping generator functions to create lazy computations executed at iteration time.',
+              position: {
+                start: { line: 33, column: 1, offset: 2086 },
+                end: { line: 33, column: 88, offset: 2173 },
+                indent: []
+              }
+            }
+          ],
+          position: {
+            start: { line: 33, column: 1, offset: 2086 },
+            end: { line: 33, column: 88, offset: 2173 },
+            indent: []
           }
         },
         {
@@ -10626,8 +10814,8 @@ export default [
             '\n' +
             "console.log([...ABCIter]) // ['A', 'B', 'C']",
           position: {
-            start: { line: 32, column: 1, offset: 1689 },
-            end: { line: 48, column: 4, offset: 2005 },
+            start: { line: 35, column: 1, offset: 2175 },
+            end: { line: 51, column: 4, offset: 2491 },
             indent: [
               1, 1, 1, 1, 1, 1,
               1, 1, 1, 1, 1, 1,
@@ -10640,47 +10828,35 @@ export default [
           children: [
             {
               type: 'text',
-              value: 'Function laziness is extended to reducer functions as ',
+              value: 'Create a mapping transducer by supplying ',
               position: {
-                start: { line: 50, column: 1, offset: 2007 },
-                end: { line: 50, column: 55, offset: 2061 },
+                start: { line: 53, column: 1, offset: 2493 },
+                end: { line: 53, column: 42, offset: 2534 },
                 indent: []
               }
             },
             {
-              type: 'link',
-              title: null,
-              url: 'https://github.com/a-synchronous/rubico/blob/master/TRANSDUCERS.md',
-              children: [
-                {
-                  type: 'text',
-                  value: 'transducers',
-                  position: {
-                    start: { line: 50, column: 56, offset: 2062 },
-                    end: { line: 50, column: 67, offset: 2073 },
-                    indent: []
-                  }
-                }
-              ],
+              type: 'inlineCode',
+              value: 'map',
               position: {
-                start: { line: 50, column: 55, offset: 2061 },
-                end: { line: 50, column: 136, offset: 2142 },
+                start: { line: 53, column: 42, offset: 2534 },
+                end: { line: 53, column: 47, offset: 2539 },
                 indent: []
               }
             },
             {
               type: 'text',
-              value: '.',
+              value: ' with a reducer. A reducer is a variadic function that depicts a relationship between an accumulator and any number of arguments. A transducer is a function that accepts a reducer as an argument and returns another reducer.',
               position: {
-                start: { line: 50, column: 136, offset: 2142 },
-                end: { line: 50, column: 137, offset: 2143 },
+                start: { line: 53, column: 47, offset: 2539 },
+                end: { line: 53, column: 270, offset: 2762 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 50, column: 1, offset: 2007 },
-            end: { line: 50, column: 137, offset: 2143 },
+            start: { line: 53, column: 1, offset: 2493 },
+            end: { line: 53, column: 270, offset: 2762 },
             indent: []
           }
         },
@@ -10690,8 +10866,8 @@ export default [
           meta: '[specscript]',
           value: 'Reducer<T> = (any, T)=>Promise|any\n\nTransducer = Reducer=>Reducer',
           position: {
-            start: { line: 52, column: 1, offset: 2145 },
-            end: { line: 56, column: 4, offset: 2243 },
+            start: { line: 55, column: 1, offset: 2764 },
+            end: { line: 59, column: 4, offset: 2862 },
             indent: [ 1, 1, 1, 1 ]
           }
         },
@@ -10700,28 +10876,10 @@ export default [
           children: [
             {
               type: 'text',
-              value: 'A reducer is a variadic function like the one supplied to ',
+              value: 'The transducer signature enables chaining functionality for reducers. ',
               position: {
-                start: { line: 58, column: 1, offset: 2245 },
-                end: { line: 58, column: 59, offset: 2303 },
-                indent: []
-              }
-            },
-            {
-              type: 'inlineCode',
-              value: 'Array.prototype.reduce',
-              position: {
-                start: { line: 58, column: 59, offset: 2303 },
-                end: { line: 58, column: 83, offset: 2327 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: ', but without the index and reference to the accumulated result per call. A transducer is a function that accepts a reducer function as an argument and returns another reducer function, which enables chaining functionality for reducers. ',
-              position: {
-                start: { line: 58, column: 83, offset: 2327 },
-                end: { line: 58, column: 320, offset: 2564 },
+                start: { line: 61, column: 1, offset: 2864 },
+                end: { line: 61, column: 71, offset: 2934 },
                 indent: []
               }
             },
@@ -10729,24 +10887,42 @@ export default [
               type: 'inlineCode',
               value: 'map',
               position: {
-                start: { line: 58, column: 320, offset: 2564 },
-                end: { line: 58, column: 325, offset: 2569 },
+                start: { line: 61, column: 71, offset: 2934 },
+                end: { line: 61, column: 76, offset: 2939 },
                 indent: []
               }
             },
             {
               type: 'text',
-              value: ' is core to this mechanism, and provides a way to create transducers with mapper functions.',
+              value: ' is core to this mechanism, and provides a way via transducers to transform items of reducers. To ',
               position: {
-                start: { line: 58, column: 325, offset: 2569 },
-                end: { line: 58, column: 416, offset: 2660 },
+                start: { line: 61, column: 76, offset: 2939 },
+                end: { line: 61, column: 174, offset: 3037 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'map',
+              position: {
+                start: { line: 61, column: 174, offset: 3037 },
+                end: { line: 61, column: 179, offset: 3042 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ', reducers are just another category.',
+              position: {
+                start: { line: 61, column: 179, offset: 3042 },
+                end: { line: 61, column: 216, offset: 3079 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 58, column: 1, offset: 2245 },
-            end: { line: 58, column: 416, offset: 2660 },
+            start: { line: 61, column: 1, offset: 2864 },
+            end: { line: 61, column: 216, offset: 3079 },
             indent: []
           }
         },
@@ -10779,8 +10955,8 @@ export default [
             "  [1, 2, 3, 4, 5].reduce(squareConcatReducer, ''),\n" +
             ") // '1491625'",
           position: {
-            start: { line: 60, column: 1, offset: 2662 },
-            end: { line: 85, column: 4, offset: 3409 },
+            start: { line: 63, column: 1, offset: 3081 },
+            end: { line: 88, column: 4, offset: 3828 },
             indent: [
               1, 1, 1, 1, 1, 1, 1, 1,
               1, 1, 1, 1, 1, 1, 1, 1,
@@ -10792,7 +10968,7 @@ export default [
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 86, column: 1, offset: 3410 }
+        end: { line: 89, column: 1, offset: 3829 }
       }
     }
   },
@@ -12954,12 +13130,13 @@ export default [
       '    ...Array<any=>Promise|any>,\n' +
       '  ],\n' +
       '  transducers Array<Reducer=>Reducer>\n' +
+      '  reducer Reducer,\n' +
       '\n' +
-      'pipe(funcs) -> pipeline ...args=>Promise|any\n' +
+      'pipe(funcs)(...args) -> Promise|any\n' +
       '\n' +
-      'pipe(transducers) -> chainedTransducer Reducer=>Reducer\n' +
+      'pipe(transducers)(reducer) -> Reducer\n' +
       '```\n',
-    description: 'Chain together an array of functions as a pipe, each function passing its return value as the first argument to the next function until all functions have executed. The final result is the return of the last function execution.\n' +
+    description: 'Create a function pipeline, where each function passes its return value as a single argument to the next function until all functions have executed. The result of a pipeline execution is the return of its last function.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'console.log(\n' +
@@ -12971,7 +13148,7 @@ export default [
       ') // 11\n' +
       '```\n' +
       '\n' +
-      'When passed a reducer, a pipe of transducers composes the reducer such that the transducers are applied in series, calling the reducer as the last step to end the chain. The resulting reducer must be used in conjunction with `reduce` to have a transducing effect. For more information on this behavior, see [this resource on transducers](https://github.com/a-synchronous/rubico/blob/master/TRANSDUCERS.md).\n' +
+      'When passed a reducer in argument position, a function pipeline composes the reducer such that the transducers are applied in series, calling the reducer as the last step to end the chain. The resulting reducer has chained transducing functionality; note however that it must be used in conjunction with `transform` or `reduce` to have a transducing effect. For more information on this behavior, see [this resource on transducers](https://github.com/a-synchronous/rubico/blob/master/TRANSDUCERS.md).\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const isOdd = number => number % 2 == 1\n' +
@@ -13008,24 +13185,25 @@ export default [
             '    ...Array<any=>Promise|any>,\n' +
             '  ],\n' +
             '  transducers Array<Reducer=>Reducer>\n' +
+            '  reducer Reducer,\n' +
             '\n' +
-            'pipe(funcs) -> pipeline ...args=>Promise|any\n' +
+            'pipe(funcs)(...args) -> Promise|any\n' +
             '\n' +
-            'pipe(transducers) -> chainedTransducer Reducer=>Reducer',
+            'pipe(transducers)(reducer) -> Reducer',
           position: {
             start: { line: 1, column: 1, offset: 0 },
-            end: { line: 14, column: 4, offset: 299 },
+            end: { line: 15, column: 4, offset: 291 },
             indent: [
               1, 1, 1, 1, 1, 1,
               1, 1, 1, 1, 1, 1,
-              1
+              1, 1
             ]
           }
         }
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 15, column: 1, offset: 300 }
+        end: { line: 16, column: 1, offset: 292 }
       }
     },
     description_mdast: {
@@ -13036,17 +13214,17 @@ export default [
           children: [
             {
               type: 'text',
-              value: 'Chain together an array of functions as a pipe, each function passing its return value as the first argument to the next function until all functions have executed. The final result is the return of the last function execution.',
+              value: 'Create a function pipeline, where each function passes its return value as a single argument to the next function until all functions have executed. The result of a pipeline execution is the return of its last function.',
               position: {
                 start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 228, offset: 227 },
+                end: { line: 1, column: 220, offset: 219 },
                 indent: []
               }
             }
           ],
           position: {
             start: { line: 1, column: 1, offset: 0 },
-            end: { line: 1, column: 228, offset: 227 },
+            end: { line: 1, column: 220, offset: 219 },
             indent: []
           }
         },
@@ -13062,8 +13240,8 @@ export default [
             '  ])(5),\n' +
             ') // 11',
           position: {
-            start: { line: 3, column: 1, offset: 229 },
-            end: { line: 11, column: 4, offset: 376 },
+            start: { line: 3, column: 1, offset: 221 },
+            end: { line: 11, column: 4, offset: 368 },
             indent: [
               1, 1, 1, 1,
               1, 1, 1, 1
@@ -13075,10 +13253,28 @@ export default [
           children: [
             {
               type: 'text',
-              value: 'When passed a reducer, a pipe of transducers composes the reducer such that the transducers are applied in series, calling the reducer as the last step to end the chain. The resulting reducer must be used in conjunction with ',
+              value: 'When passed a reducer in argument position, a function pipeline composes the reducer such that the transducers are applied in series, calling the reducer as the last step to end the chain. The resulting reducer has chained transducing functionality; note however that it must be used in conjunction with ',
               position: {
-                start: { line: 13, column: 1, offset: 378 },
-                end: { line: 13, column: 226, offset: 603 },
+                start: { line: 13, column: 1, offset: 370 },
+                end: { line: 13, column: 305, offset: 674 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'transform',
+              position: {
+                start: { line: 13, column: 305, offset: 674 },
+                end: { line: 13, column: 316, offset: 685 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ' or ',
+              position: {
+                start: { line: 13, column: 316, offset: 685 },
+                end: { line: 13, column: 320, offset: 689 },
                 indent: []
               }
             },
@@ -13086,8 +13282,8 @@ export default [
               type: 'inlineCode',
               value: 'reduce',
               position: {
-                start: { line: 13, column: 226, offset: 603 },
-                end: { line: 13, column: 234, offset: 611 },
+                start: { line: 13, column: 320, offset: 689 },
+                end: { line: 13, column: 328, offset: 697 },
                 indent: []
               }
             },
@@ -13095,8 +13291,8 @@ export default [
               type: 'text',
               value: ' to have a transducing effect. For more information on this behavior, see ',
               position: {
-                start: { line: 13, column: 234, offset: 611 },
-                end: { line: 13, column: 308, offset: 685 },
+                start: { line: 13, column: 328, offset: 697 },
+                end: { line: 13, column: 402, offset: 771 },
                 indent: []
               }
             },
@@ -13109,15 +13305,15 @@ export default [
                   type: 'text',
                   value: 'this resource on transducers',
                   position: {
-                    start: { line: 13, column: 309, offset: 686 },
-                    end: { line: 13, column: 337, offset: 714 },
+                    start: { line: 13, column: 403, offset: 772 },
+                    end: { line: 13, column: 431, offset: 800 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 13, column: 308, offset: 685 },
-                end: { line: 13, column: 406, offset: 783 },
+                start: { line: 13, column: 402, offset: 771 },
+                end: { line: 13, column: 500, offset: 869 },
                 indent: []
               }
             },
@@ -13125,15 +13321,15 @@ export default [
               type: 'text',
               value: '.',
               position: {
-                start: { line: 13, column: 406, offset: 783 },
-                end: { line: 13, column: 407, offset: 784 },
+                start: { line: 13, column: 500, offset: 869 },
+                end: { line: 13, column: 501, offset: 870 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 13, column: 1, offset: 378 },
-            end: { line: 13, column: 407, offset: 784 },
+            start: { line: 13, column: 1, offset: 370 },
+            end: { line: 13, column: 501, offset: 870 },
             indent: []
           }
         },
@@ -13160,8 +13356,8 @@ export default [
             '  squaredOdds([1, 2, 3, 4, 5])\n' +
             ') // [1, 9, 25]',
           position: {
-            start: { line: 15, column: 1, offset: 786 },
-            end: { line: 34, column: 4, offset: 1116 },
+            start: { line: 15, column: 1, offset: 872 },
+            end: { line: 34, column: 4, offset: 1202 },
             indent: [
               1, 1, 1, 1, 1, 1, 1,
               1, 1, 1, 1, 1, 1, 1,
@@ -13172,7 +13368,7 @@ export default [
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 35, column: 1, offset: 1117 }
+        end: { line: 35, column: 1, offset: 1203 }
       }
     }
   },
@@ -13300,7 +13496,7 @@ export default [
       ') // 5\n' +
       '```\n' +
       '\n' +
-      'If an optional initialization parameter is supplied, the result starts as that parameter rather than the first item of the collection.\n' +
+      'If an optional initialization parameter is supplied, the result starts as that parameter rather than the first item of the collection. For memory and performance, this library makes no assumptions about immutability. Handle references for this initial value with care, as they could be mutated.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const add = (a, b) => a + b\n' +
@@ -13310,9 +13506,7 @@ export default [
       ') // 15\n' +
       '```\n' +
       '\n' +
-      'Note: For memory and performance, this library makes no assumptions about immutability. Handle references for this initial value with care, as they could be mutated.\n' +
-      '\n' +
-      'If the initialization parameter is a function, it is treated as a resolver and called with the input arguments to resolve an initial value for the accumulator.\n' +
+      'If the initialization parameter is a function, it is treated as a resolver and called with the input arguments to resolve an initial value for the accumulator at execution time.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const concatSquares = (array, value) => array.concat(value ** 2)\n' +
@@ -13324,7 +13518,7 @@ export default [
       ') // [1, 4, 9, 16, 25]\n' +
       '```\n' +
       '\n' +
-      'Additionally, reducers can be asynchronous, while data parameters can be asynchronous streams.\n' +
+      'Fully asynchronous reducing operations are possible with asynchronous reducers and asynchronous data streams.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))\n' +
@@ -13490,17 +13684,17 @@ export default [
           children: [
             {
               type: 'text',
-              value: 'If an optional initialization parameter is supplied, the result starts as that parameter rather than the first item of the collection.',
+              value: 'If an optional initialization parameter is supplied, the result starts as that parameter rather than the first item of the collection. For memory and performance, this library makes no assumptions about immutability. Handle references for this initial value with care, as they could be mutated.',
               position: {
                 start: { line: 11, column: 1, offset: 207 },
-                end: { line: 11, column: 135, offset: 341 },
+                end: { line: 11, column: 295, offset: 501 },
                 indent: []
               }
             }
           ],
           position: {
             start: { line: 11, column: 1, offset: 207 },
-            end: { line: 11, column: 135, offset: 341 },
+            end: { line: 11, column: 295, offset: 501 },
             indent: []
           }
         },
@@ -13514,8 +13708,8 @@ export default [
             '  reduce(add)([1, 2, 3, 4, 5], 0),\n' +
             ') // 15',
           position: {
-            start: { line: 13, column: 1, offset: 343 },
-            end: { line: 19, column: 4, offset: 458 },
+            start: { line: 13, column: 1, offset: 503 },
+            end: { line: 19, column: 4, offset: 618 },
             indent: [ 1, 1, 1, 1, 1, 1 ]
           }
         },
@@ -13524,36 +13718,17 @@ export default [
           children: [
             {
               type: 'text',
-              value: 'Note: For memory and performance, this library makes no assumptions about immutability. Handle references for this initial value with care, as they could be mutated.',
+              value: 'If the initialization parameter is a function, it is treated as a resolver and called with the input arguments to resolve an initial value for the accumulator at execution time.',
               position: {
-                start: { line: 21, column: 1, offset: 460 },
-                end: { line: 21, column: 166, offset: 625 },
+                start: { line: 21, column: 1, offset: 620 },
+                end: { line: 21, column: 178, offset: 797 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 21, column: 1, offset: 460 },
-            end: { line: 21, column: 166, offset: 625 },
-            indent: []
-          }
-        },
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'If the initialization parameter is a function, it is treated as a resolver and called with the input arguments to resolve an initial value for the accumulator.',
-              position: {
-                start: { line: 23, column: 1, offset: 627 },
-                end: { line: 23, column: 160, offset: 786 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 23, column: 1, offset: 627 },
-            end: { line: 23, column: 160, offset: 786 },
+            start: { line: 21, column: 1, offset: 620 },
+            end: { line: 21, column: 178, offset: 797 },
             indent: []
           }
         },
@@ -13569,8 +13744,8 @@ export default [
             '  reduce(concatSquares, initEmptyArray)([1, 2, 3, 4, 5]),\n' +
             ') // [1, 4, 9, 16, 25]',
           position: {
-            start: { line: 25, column: 1, offset: 788 },
-            end: { line: 33, column: 4, offset: 1011 },
+            start: { line: 23, column: 1, offset: 799 },
+            end: { line: 31, column: 4, offset: 1022 },
             indent: [
               1, 1, 1, 1,
               1, 1, 1, 1
@@ -13582,17 +13757,17 @@ export default [
           children: [
             {
               type: 'text',
-              value: 'Additionally, reducers can be asynchronous, while data parameters can be asynchronous streams.',
+              value: 'Fully asynchronous reducing operations are possible with asynchronous reducers and asynchronous data streams.',
               position: {
-                start: { line: 35, column: 1, offset: 1013 },
-                end: { line: 35, column: 95, offset: 1107 },
+                start: { line: 33, column: 1, offset: 1024 },
+                end: { line: 33, column: 110, offset: 1133 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 35, column: 1, offset: 1013 },
-            end: { line: 35, column: 95, offset: 1107 },
+            start: { line: 33, column: 1, offset: 1024 },
+            end: { line: 33, column: 110, offset: 1133 },
             indent: []
           }
         },
@@ -13646,8 +13821,8 @@ export default [
             '//   ],\n' +
             '// }',
           position: {
-            start: { line: 37, column: 1, offset: 1109 },
-            end: { line: 83, column: 4, offset: 2807 },
+            start: { line: 35, column: 1, offset: 1135 },
+            end: { line: 81, column: 4, offset: 2833 },
             indent: [
               1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
               1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
@@ -13664,8 +13839,8 @@ export default [
               type: 'text',
               value: 'If the first argument to a reducing function is a reducer, ',
               position: {
-                start: { line: 85, column: 1, offset: 2809 },
-                end: { line: 85, column: 60, offset: 2868 },
+                start: { line: 83, column: 1, offset: 2835 },
+                end: { line: 83, column: 60, offset: 2894 },
                 indent: []
               }
             },
@@ -13673,8 +13848,8 @@ export default [
               type: 'inlineCode',
               value: 'reduce',
               position: {
-                start: { line: 85, column: 60, offset: 2868 },
-                end: { line: 85, column: 68, offset: 2876 },
+                start: { line: 83, column: 60, offset: 2894 },
+                end: { line: 83, column: 68, offset: 2902 },
                 indent: []
               }
             },
@@ -13682,15 +13857,15 @@ export default [
               type: 'text',
               value: ' concatenates any reducers in argument position onto the initial reducer, producing a combined reducer that performs a chained operation per each item in a reducing operation.',
               position: {
-                start: { line: 85, column: 68, offset: 2876 },
-                end: { line: 85, column: 243, offset: 3051 },
+                start: { line: 83, column: 68, offset: 2902 },
+                end: { line: 83, column: 243, offset: 3077 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 85, column: 1, offset: 2809 },
-            end: { line: 85, column: 243, offset: 3051 },
+            start: { line: 83, column: 1, offset: 2835 },
+            end: { line: 83, column: 243, offset: 3077 },
             indent: []
           }
         },
@@ -13727,8 +13902,8 @@ export default [
             '  reducingABC(actions),\n' +
             ') // { A: true, B: true, C: true }',
           position: {
-            start: { line: 87, column: 1, offset: 3053 },
-            end: { line: 116, column: 4, offset: 3773 },
+            start: { line: 85, column: 1, offset: 3079 },
+            end: { line: 114, column: 4, offset: 3799 },
             indent: [
               1, 1, 1, 1, 1, 1, 1, 1, 1,
               1, 1, 1, 1, 1, 1, 1, 1, 1,
@@ -13740,7 +13915,7 @@ export default [
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 117, column: 1, offset: 3774 }
+        end: { line: 115, column: 1, offset: 3800 }
       }
     }
   },
@@ -14301,7 +14476,7 @@ export default [
       ') // Uint8Array(3) [ 1, 9, 25 ]\n' +
       '```\n' +
       '\n' +
-      'A `Semigroup` is any type with some notion of concatenation. This could manifest in a `.concat` method.\n' +
+      'A `Semigroup` is any type with some notion of concatenation. This could possibly manifest in a `.concat` method.\n' +
       ' * `Array` - `result.concat(values)`\n' +
       ' * `string` - `result + values`\n' +
       ' * `Set` - `result.add(...values)`\n' +
@@ -14515,10 +14690,10 @@ export default [
             },
             {
               type: 'text',
-              value: ' is any type with some notion of concatenation. This could manifest in a ',
+              value: ' is any type with some notion of concatenation. This could possibly manifest in a ',
               position: {
                 start: { line: 26, column: 14, offset: 627 },
-                end: { line: 26, column: 87, offset: 700 },
+                end: { line: 26, column: 96, offset: 709 },
                 indent: []
               }
             },
@@ -14526,8 +14701,8 @@ export default [
               type: 'inlineCode',
               value: '.concat',
               position: {
-                start: { line: 26, column: 87, offset: 700 },
-                end: { line: 26, column: 96, offset: 709 },
+                start: { line: 26, column: 96, offset: 709 },
+                end: { line: 26, column: 105, offset: 718 },
                 indent: []
               }
             },
@@ -14535,15 +14710,15 @@ export default [
               type: 'text',
               value: ' method.',
               position: {
-                start: { line: 26, column: 96, offset: 709 },
-                end: { line: 26, column: 104, offset: 717 },
+                start: { line: 26, column: 105, offset: 718 },
+                end: { line: 26, column: 113, offset: 726 },
                 indent: []
               }
             }
           ],
           position: {
             start: { line: 26, column: 1, offset: 614 },
-            end: { line: 26, column: 104, offset: 717 },
+            end: { line: 26, column: 113, offset: 726 },
             indent: []
           }
         },
@@ -14565,8 +14740,8 @@ export default [
                       type: 'inlineCode',
                       value: 'Array',
                       position: {
-                        start: { line: 27, column: 4, offset: 721 },
-                        end: { line: 27, column: 11, offset: 728 },
+                        start: { line: 27, column: 4, offset: 730 },
+                        end: { line: 27, column: 11, offset: 737 },
                         indent: []
                       }
                     },
@@ -14574,8 +14749,8 @@ export default [
                       type: 'text',
                       value: ' - ',
                       position: {
-                        start: { line: 27, column: 11, offset: 728 },
-                        end: { line: 27, column: 14, offset: 731 },
+                        start: { line: 27, column: 11, offset: 737 },
+                        end: { line: 27, column: 14, offset: 740 },
                         indent: []
                       }
                     },
@@ -14583,22 +14758,22 @@ export default [
                       type: 'inlineCode',
                       value: 'result.concat(values)',
                       position: {
-                        start: { line: 27, column: 14, offset: 731 },
-                        end: { line: 27, column: 37, offset: 754 },
+                        start: { line: 27, column: 14, offset: 740 },
+                        end: { line: 27, column: 37, offset: 763 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 27, column: 4, offset: 721 },
-                    end: { line: 27, column: 37, offset: 754 },
+                    start: { line: 27, column: 4, offset: 730 },
+                    end: { line: 27, column: 37, offset: 763 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 27, column: 1, offset: 718 },
-                end: { line: 27, column: 37, offset: 754 },
+                start: { line: 27, column: 1, offset: 727 },
+                end: { line: 27, column: 37, offset: 763 },
                 indent: []
               }
             },
@@ -14614,8 +14789,8 @@ export default [
                       type: 'inlineCode',
                       value: 'string',
                       position: {
-                        start: { line: 28, column: 4, offset: 758 },
-                        end: { line: 28, column: 12, offset: 766 },
+                        start: { line: 28, column: 4, offset: 767 },
+                        end: { line: 28, column: 12, offset: 775 },
                         indent: []
                       }
                     },
@@ -14623,8 +14798,8 @@ export default [
                       type: 'text',
                       value: ' - ',
                       position: {
-                        start: { line: 28, column: 12, offset: 766 },
-                        end: { line: 28, column: 15, offset: 769 },
+                        start: { line: 28, column: 12, offset: 775 },
+                        end: { line: 28, column: 15, offset: 778 },
                         indent: []
                       }
                     },
@@ -14632,22 +14807,22 @@ export default [
                       type: 'inlineCode',
                       value: 'result + values',
                       position: {
-                        start: { line: 28, column: 15, offset: 769 },
-                        end: { line: 28, column: 32, offset: 786 },
+                        start: { line: 28, column: 15, offset: 778 },
+                        end: { line: 28, column: 32, offset: 795 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 28, column: 4, offset: 758 },
-                    end: { line: 28, column: 32, offset: 786 },
+                    start: { line: 28, column: 4, offset: 767 },
+                    end: { line: 28, column: 32, offset: 795 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 28, column: 1, offset: 755 },
-                end: { line: 28, column: 32, offset: 786 },
+                start: { line: 28, column: 1, offset: 764 },
+                end: { line: 28, column: 32, offset: 795 },
                 indent: []
               }
             },
@@ -14663,8 +14838,8 @@ export default [
                       type: 'inlineCode',
                       value: 'Set',
                       position: {
-                        start: { line: 29, column: 4, offset: 790 },
-                        end: { line: 29, column: 9, offset: 795 },
+                        start: { line: 29, column: 4, offset: 799 },
+                        end: { line: 29, column: 9, offset: 804 },
                         indent: []
                       }
                     },
@@ -14672,8 +14847,8 @@ export default [
                       type: 'text',
                       value: ' - ',
                       position: {
-                        start: { line: 29, column: 9, offset: 795 },
-                        end: { line: 29, column: 12, offset: 798 },
+                        start: { line: 29, column: 9, offset: 804 },
+                        end: { line: 29, column: 12, offset: 807 },
                         indent: []
                       }
                     },
@@ -14681,22 +14856,22 @@ export default [
                       type: 'inlineCode',
                       value: 'result.add(...values)',
                       position: {
-                        start: { line: 29, column: 12, offset: 798 },
-                        end: { line: 29, column: 35, offset: 821 },
+                        start: { line: 29, column: 12, offset: 807 },
+                        end: { line: 29, column: 35, offset: 830 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 29, column: 4, offset: 790 },
-                    end: { line: 29, column: 35, offset: 821 },
+                    start: { line: 29, column: 4, offset: 799 },
+                    end: { line: 29, column: 35, offset: 830 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 29, column: 1, offset: 787 },
-                end: { line: 29, column: 35, offset: 821 },
+                start: { line: 29, column: 1, offset: 796 },
+                end: { line: 29, column: 35, offset: 830 },
                 indent: []
               }
             },
@@ -14712,8 +14887,8 @@ export default [
                       type: 'inlineCode',
                       value: 'TypedArray',
                       position: {
-                        start: { line: 30, column: 4, offset: 825 },
-                        end: { line: 30, column: 16, offset: 837 },
+                        start: { line: 30, column: 4, offset: 834 },
+                        end: { line: 30, column: 16, offset: 846 },
                         indent: []
                       }
                     },
@@ -14721,8 +14896,8 @@ export default [
                       type: 'text',
                       value: ' - ',
                       position: {
-                        start: { line: 30, column: 16, offset: 837 },
-                        end: { line: 30, column: 19, offset: 840 },
+                        start: { line: 30, column: 16, offset: 846 },
+                        end: { line: 30, column: 19, offset: 849 },
                         indent: []
                       }
                     },
@@ -14730,22 +14905,22 @@ export default [
                       type: 'inlineCode',
                       value: 'result.set(prevResult); result.set(values, offset)',
                       position: {
-                        start: { line: 30, column: 19, offset: 840 },
-                        end: { line: 30, column: 71, offset: 892 },
+                        start: { line: 30, column: 19, offset: 849 },
+                        end: { line: 30, column: 71, offset: 901 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 30, column: 4, offset: 825 },
-                    end: { line: 30, column: 71, offset: 892 },
+                    start: { line: 30, column: 4, offset: 834 },
+                    end: { line: 30, column: 71, offset: 901 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 30, column: 1, offset: 822 },
-                end: { line: 30, column: 71, offset: 892 },
+                start: { line: 30, column: 1, offset: 831 },
+                end: { line: 30, column: 71, offset: 901 },
                 indent: []
               }
             },
@@ -14761,8 +14936,8 @@ export default [
                       type: 'inlineCode',
                       value: '{ concat: function }',
                       position: {
-                        start: { line: 31, column: 4, offset: 896 },
-                        end: { line: 31, column: 26, offset: 918 },
+                        start: { line: 31, column: 4, offset: 905 },
+                        end: { line: 31, column: 26, offset: 927 },
                         indent: []
                       }
                     },
@@ -14770,8 +14945,8 @@ export default [
                       type: 'text',
                       value: ' - ',
                       position: {
-                        start: { line: 31, column: 26, offset: 918 },
-                        end: { line: 31, column: 29, offset: 921 },
+                        start: { line: 31, column: 26, offset: 927 },
+                        end: { line: 31, column: 29, offset: 930 },
                         indent: []
                       }
                     },
@@ -14779,22 +14954,22 @@ export default [
                       type: 'inlineCode',
                       value: 'result.concat(values)',
                       position: {
-                        start: { line: 31, column: 29, offset: 921 },
-                        end: { line: 31, column: 52, offset: 944 },
+                        start: { line: 31, column: 29, offset: 930 },
+                        end: { line: 31, column: 52, offset: 953 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 31, column: 4, offset: 896 },
-                    end: { line: 31, column: 52, offset: 944 },
+                    start: { line: 31, column: 4, offset: 905 },
+                    end: { line: 31, column: 52, offset: 953 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 31, column: 1, offset: 893 },
-                end: { line: 31, column: 52, offset: 944 },
+                start: { line: 31, column: 1, offset: 902 },
+                end: { line: 31, column: 52, offset: 953 },
                 indent: []
               }
             },
@@ -14810,8 +14985,8 @@ export default [
                       type: 'inlineCode',
                       value: '{ write: function }',
                       position: {
-                        start: { line: 32, column: 4, offset: 948 },
-                        end: { line: 32, column: 25, offset: 969 },
+                        start: { line: 32, column: 4, offset: 957 },
+                        end: { line: 32, column: 25, offset: 978 },
                         indent: []
                       }
                     },
@@ -14819,8 +14994,8 @@ export default [
                       type: 'text',
                       value: ' - essentially ',
                       position: {
-                        start: { line: 32, column: 25, offset: 969 },
-                        end: { line: 32, column: 40, offset: 984 },
+                        start: { line: 32, column: 25, offset: 978 },
+                        end: { line: 32, column: 40, offset: 993 },
                         indent: []
                       }
                     },
@@ -14828,8 +15003,8 @@ export default [
                       type: 'inlineCode',
                       value: 'item.pipe(result)',
                       position: {
-                        start: { line: 32, column: 40, offset: 984 },
-                        end: { line: 32, column: 59, offset: 1003 },
+                        start: { line: 32, column: 40, offset: 993 },
+                        end: { line: 32, column: 59, offset: 1012 },
                         indent: []
                       }
                     },
@@ -14837,8 +15012,8 @@ export default [
                       type: 'text',
                       value: ' or ',
                       position: {
-                        start: { line: 32, column: 59, offset: 1003 },
-                        end: { line: 32, column: 63, offset: 1007 },
+                        start: { line: 32, column: 59, offset: 1012 },
+                        end: { line: 32, column: 63, offset: 1016 },
                         indent: []
                       }
                     },
@@ -14846,22 +15021,22 @@ export default [
                       type: 'inlineCode',
                       value: 'result.write(item)',
                       position: {
-                        start: { line: 32, column: 63, offset: 1007 },
-                        end: { line: 32, column: 83, offset: 1027 },
+                        start: { line: 32, column: 63, offset: 1016 },
+                        end: { line: 32, column: 83, offset: 1036 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 32, column: 4, offset: 948 },
-                    end: { line: 32, column: 83, offset: 1027 },
+                    start: { line: 32, column: 4, offset: 957 },
+                    end: { line: 32, column: 83, offset: 1036 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 32, column: 1, offset: 945 },
-                end: { line: 32, column: 83, offset: 1027 },
+                start: { line: 32, column: 1, offset: 954 },
+                end: { line: 32, column: 83, offset: 1036 },
                 indent: []
               }
             },
@@ -14877,8 +15052,8 @@ export default [
                       type: 'inlineCode',
                       value: 'Object',
                       position: {
-                        start: { line: 33, column: 4, offset: 1031 },
-                        end: { line: 33, column: 12, offset: 1039 },
+                        start: { line: 33, column: 4, offset: 1040 },
+                        end: { line: 33, column: 12, offset: 1048 },
                         indent: []
                       }
                     },
@@ -14886,8 +15061,8 @@ export default [
                       type: 'text',
                       value: ' - ',
                       position: {
-                        start: { line: 33, column: 12, offset: 1039 },
-                        end: { line: 33, column: 15, offset: 1042 },
+                        start: { line: 33, column: 12, offset: 1048 },
+                        end: { line: 33, column: 15, offset: 1051 },
                         indent: []
                       }
                     },
@@ -14895,29 +15070,29 @@ export default [
                       type: 'inlineCode',
                       value: '({ ...result, ...values })',
                       position: {
-                        start: { line: 33, column: 15, offset: 1042 },
-                        end: { line: 33, column: 43, offset: 1070 },
+                        start: { line: 33, column: 15, offset: 1051 },
+                        end: { line: 33, column: 43, offset: 1079 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 33, column: 4, offset: 1031 },
-                    end: { line: 33, column: 43, offset: 1070 },
+                    start: { line: 33, column: 4, offset: 1040 },
+                    end: { line: 33, column: 43, offset: 1079 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 33, column: 1, offset: 1028 },
-                end: { line: 33, column: 43, offset: 1070 },
+                start: { line: 33, column: 1, offset: 1037 },
+                end: { line: 33, column: 43, offset: 1079 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 27, column: 1, offset: 718 },
-            end: { line: 33, column: 43, offset: 1070 },
+            start: { line: 27, column: 1, offset: 727 },
+            end: { line: 33, column: 43, offset: 1079 },
             indent: [ 1, 1, 1, 1, 1, 1 ]
           }
         },
@@ -14928,8 +15103,8 @@ export default [
               type: 'text',
               value: 'Here is a simple ',
               position: {
-                start: { line: 35, column: 1, offset: 1072 },
-                end: { line: 35, column: 18, offset: 1089 },
+                start: { line: 35, column: 1, offset: 1081 },
+                end: { line: 35, column: 18, offset: 1098 },
                 indent: []
               }
             },
@@ -14937,8 +15112,8 @@ export default [
               type: 'inlineCode',
               value: 'Semigroup',
               position: {
-                start: { line: 35, column: 18, offset: 1089 },
-                end: { line: 35, column: 29, offset: 1100 },
+                start: { line: 35, column: 18, offset: 1098 },
+                end: { line: 35, column: 29, offset: 1109 },
                 indent: []
               }
             },
@@ -14946,8 +15121,8 @@ export default [
               type: 'text',
               value: ' as an object that implements ',
               position: {
-                start: { line: 35, column: 29, offset: 1100 },
-                end: { line: 35, column: 59, offset: 1130 },
+                start: { line: 35, column: 29, offset: 1109 },
+                end: { line: 35, column: 59, offset: 1139 },
                 indent: []
               }
             },
@@ -14955,8 +15130,8 @@ export default [
               type: 'inlineCode',
               value: '.concat',
               position: {
-                start: { line: 35, column: 59, offset: 1130 },
-                end: { line: 35, column: 68, offset: 1139 },
+                start: { line: 35, column: 59, offset: 1139 },
+                end: { line: 35, column: 68, offset: 1148 },
                 indent: []
               }
             },
@@ -14964,15 +15139,15 @@ export default [
               type: 'text',
               value: '.',
               position: {
-                start: { line: 35, column: 68, offset: 1139 },
-                end: { line: 35, column: 69, offset: 1140 },
+                start: { line: 35, column: 68, offset: 1148 },
+                end: { line: 35, column: 69, offset: 1149 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 35, column: 1, offset: 1072 },
-            end: { line: 35, column: 69, offset: 1140 },
+            start: { line: 35, column: 1, offset: 1081 },
+            end: { line: 35, column: 69, offset: 1149 },
             indent: []
           }
         },
@@ -14996,8 +15171,8 @@ export default [
             '// 16\n' +
             '// 25',
           position: {
-            start: { line: 37, column: 1, offset: 1142 },
-            end: { line: 53, column: 4, offset: 1371 },
+            start: { line: 37, column: 1, offset: 1151 },
+            end: { line: 53, column: 4, offset: 1380 },
             indent: [
               1, 1, 1, 1, 1, 1,
               1, 1, 1, 1, 1, 1,
@@ -15012,8 +15187,8 @@ export default [
               type: 'text',
               value: 'Here is a transformation of an async generator to a Node.js writable stream, ',
               position: {
-                start: { line: 55, column: 1, offset: 1373 },
-                end: { line: 55, column: 78, offset: 1450 },
+                start: { line: 55, column: 1, offset: 1382 },
+                end: { line: 55, column: 78, offset: 1459 },
                 indent: []
               }
             },
@@ -15021,8 +15196,8 @@ export default [
               type: 'inlineCode',
               value: 'process.stdout',
               position: {
-                start: { line: 55, column: 78, offset: 1450 },
-                end: { line: 55, column: 94, offset: 1466 },
+                start: { line: 55, column: 78, offset: 1459 },
+                end: { line: 55, column: 94, offset: 1475 },
                 indent: []
               }
             },
@@ -15030,15 +15205,15 @@ export default [
               type: 'text',
               value: '.',
               position: {
-                start: { line: 55, column: 94, offset: 1466 },
-                end: { line: 55, column: 95, offset: 1467 },
+                start: { line: 55, column: 94, offset: 1475 },
+                end: { line: 55, column: 95, offset: 1476 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 55, column: 1, offset: 1373 },
-            end: { line: 55, column: 95, offset: 1467 },
+            start: { line: 55, column: 1, offset: 1382 },
+            end: { line: 55, column: 95, offset: 1476 },
             indent: []
           }
         },
@@ -15066,8 +15241,8 @@ export default [
             '  map(pipe([square, toString])), process.stdout,\n' +
             ')(streamRandomInts()) // 9216576529289484980147613249169774446246768649...',
           position: {
-            start: { line: 57, column: 1, offset: 1469 },
-            end: { line: 77, column: 4, offset: 1989 },
+            start: { line: 57, column: 1, offset: 1478 },
+            end: { line: 77, column: 4, offset: 1998 },
             indent: [
               1, 1, 1, 1, 1, 1, 1,
               1, 1, 1, 1, 1, 1, 1,
@@ -15082,8 +15257,8 @@ export default [
               type: 'inlineCode',
               value: 'transform',
               position: {
-                start: { line: 79, column: 1, offset: 1991 },
-                end: { line: 79, column: 12, offset: 2002 },
+                start: { line: 79, column: 1, offset: 2000 },
+                end: { line: 79, column: 12, offset: 2011 },
                 indent: []
               }
             },
@@ -15091,8 +15266,8 @@ export default [
               type: 'text',
               value: ', like ',
               position: {
-                start: { line: 79, column: 12, offset: 2002 },
-                end: { line: 79, column: 19, offset: 2009 },
+                start: { line: 79, column: 12, offset: 2011 },
+                end: { line: 79, column: 19, offset: 2018 },
                 indent: []
               }
             },
@@ -15100,8 +15275,8 @@ export default [
               type: 'inlineCode',
               value: 'reduce',
               position: {
-                start: { line: 79, column: 19, offset: 2009 },
-                end: { line: 79, column: 27, offset: 2017 },
+                start: { line: 79, column: 19, offset: 2018 },
+                end: { line: 79, column: 27, offset: 2026 },
                 indent: []
               }
             },
@@ -15109,15 +15284,15 @@ export default [
               type: 'text',
               value: ', supports reducer combination. This has a use case in state management, where, for a state object, incoming objects are merged.',
               position: {
-                start: { line: 79, column: 27, offset: 2017 },
-                end: { line: 79, column: 155, offset: 2145 },
+                start: { line: 79, column: 27, offset: 2026 },
+                end: { line: 79, column: 155, offset: 2154 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 79, column: 1, offset: 1991 },
-            end: { line: 79, column: 155, offset: 2145 },
+            start: { line: 79, column: 1, offset: 2000 },
+            end: { line: 79, column: 155, offset: 2154 },
             indent: []
           }
         },
@@ -15159,8 +15334,8 @@ export default [
             "// action { type: 'C' }\n" +
             '// state { A: true, B: true, C: true }',
           position: {
-            start: { line: 81, column: 1, offset: 2147 },
-            end: { line: 115, column: 4, offset: 3012 },
+            start: { line: 81, column: 1, offset: 2156 },
+            end: { line: 115, column: 4, offset: 3021 },
             indent: [
               1, 1, 1, 1, 1, 1, 1, 1, 1,
               1, 1, 1, 1, 1, 1, 1, 1, 1,
@@ -15172,7 +15347,7 @@ export default [
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 116, column: 1, offset: 3013 }
+        end: { line: 116, column: 1, offset: 3022 }
       }
     }
   },

@@ -229,7 +229,7 @@ const DocsUniq = DocsItem('uniq')
 
 // props Object -> Docs ReactElement
 const Docs = ReactElement(props => Div([
-  Article({ id: 'docs' }, [
+  Div({ id: 'docs' }, [
     P('This page documents rubico\'s API methods. To get started, click on a link below.'),
 
     /* probably will move this to the bottom

@@ -52,6 +52,15 @@ const ReactElementFromMdastRecurse = function (mdast, props = {}) {
 // } -> ReactElement
 const ReactElementFromMdast = function (mdast, props = {}) {
   switch (mdast.type) {
+    case 'definition':
+      switch (mdast.identifier) {
+        case 'meta':
+        case 'author':
+        case 'published':
+          return P({ className: 'blog-metadata' }, mdast.title)
+        default:
+          return Span()
+      }
     case 'root':
       return Article(props, ReactElementFromMdastRecurse(mdast, props))
     case 'heading':

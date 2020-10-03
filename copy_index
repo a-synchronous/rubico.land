@@ -66,4 +66,7 @@ cp index.html docs/trace
 cp index.html docs/unionWith
 cp index.html docs/uniq
 
+mkdir -p blog/2020/10/02
+
 cp index.html blog/index.html
+cp index.html blog/2020/10/02/transducers-crash-course

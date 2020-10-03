@@ -16,8 +16,8 @@
     "react"
   ],
   "scripts": {
-    "cp": "./copy_index && ./parse_markdown ../rubico-md/TOUR.md > tour.mdast.js && ./parse_markdown ../rubico/README.md > readme.mdast.js && ./parse_markdown ../rubico/TRANSDUCERS.md > transducers.mdast.js",
-    "cronist": "cronist ../rubico > comments.cronist.js"
+    "cp": "./copy_index && ./parse_markdown ../md/TOUR.md > ./mdast/tour.js && ./parse_markdown ../rubico/README.md > ./mdast/readme.js && ./parse_markdown ../rubico/TRANSDUCERS.md > ./mdast/transducers.js",
+    "cronist": "cronist ../rubico > ./mdast/comments.cronist.js"
   },
   "dependencies": {
     "rubico": "latest"

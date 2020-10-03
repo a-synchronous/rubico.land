@@ -20,22 +20,63 @@ const {
 
 const { useState, useEffect, useRef, useCallback, useReducer } = React
 
-// transducersContent ReactElementFromMdast
+// transducersContent ReactElement
 const transducersContent = ReactElementFromMdast(mdastBase.get('article:transducers'))
 
+// (path string, content ReactElement) => ReactElement
 const BlogItem = pipe([
-  value => typeof value == 'string' ? ({ name: value }) : value,
-  assign({
-    path: get('path', ({ name }) => `/blog/${name}`),
-  }),
-  ({ name, path, back = '/blog' }) => ReactElement(props => {
-      const { goto, state, children } = props
+  ({
+    title, author, published, path, content, back = '/blog',
+  }) => ReactElement(props => {
+    const { goto, state, children } = props,
+      isExpanded = state.path == path,
+      [isTransitioning, setIsTransitioning] = useState(false)
+
+    return Div({ className: 'blog-item' }, [
+      isExpanded ? Span({ id: 'active-spacer' }) : Span(),
+      A({
+        href: isExpanded ? back : path,
+        className: isExpanded ? 'active' : '',
+        onClick(event) {
+          event.preventDefault()
+          isExpanded ? goto(back) : goto(path)
+        },
+      }, [
+        H1({ id: isExpanded ? 'retractor-header' : '' }, title),
+      ]),
+      P({ class: isExpanded ? '' : 'inactive' }, `${published} by ${author}`),
+
+      Div({
+        className: isExpanded
+          ? 'fade-in-out transition-end'
+          : 'fade-in-out transition-start',
+      }, isExpanded ? [content] : []),
+    ])
   }),
 ])
 
-// () -> Blog ReactElement
-const Blog = ReactElement(props => Div([
-  transducersContent,
-]))
+const CURRENT_PATH = '/blog/2020/10/02/transducers-crash-course'
+
+// ReactElement
+const BlogTransducers = BlogItem({
+  title: 'Transducers Crash Course',
+  author: 'Richard Tong',
+  published: 'October 2, 2020',
+  path: '/blog/2020/10/02/transducers-crash-course',
+  content: transducersContent,
+})
+
+// { state, goto } => ReactElement
+const Blog = ReactElement(props => {
+  const { state, goto } = props
+  useEffect(() => {
+    if (state.path == '/blog') {
+      goto(CURRENT_PATH)
+    }
+  }, [])
+  return Div({ id: 'blog' }, [
+    BlogTransducers(props),
+  ])
+})
 
 export default Blog

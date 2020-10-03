@@ -3,8 +3,11 @@ import tourMdast from './mdast/tour.js'
 import transducersMdast from './mdast/transducers.js'
 import cronistComments from './mdast/comments.cronist.js'
 
-// leave off image and title from original readme
+// leave off image and title from readme
 readmeMdast.children = readmeMdast.children.slice(2)
+
+// leave off title from transducers
+transducersMdast.children = transducersMdast.children.slice(1)
 
 // Map<(parsedCommentName string)=>(parsedComment object)>
 const mdastBase = cronistComments.reduce(

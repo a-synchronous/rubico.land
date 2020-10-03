@@ -2,6 +2,11 @@ html {
   font-family: x-locale-heading-primary,zillaslab,Palatino,"Palatino Linotype",x-locale-heading-secondary,serif;
   -webkit-font-smoothing: antialiased;
 }
+@media only screen and (max-width: 280px) {
+  html {
+    overflow-x: hidden;
+  }
+}
 a {
   color: #65799B;
   text-decoration: none;
@@ -22,9 +27,14 @@ article > a:hover::after {
   content: "¶";
   margin-left: 10px;
   font-size: 32px;
+  font-weight: 500;
   color: black;
 }
 article > p > a:hover {
+  text-decoration: underline;
+}
+article > ul > li > p > a {
+  word-break: break-all;
   text-decoration: underline;
 }
 article > ul > li > p > a:hover {
@@ -37,6 +47,7 @@ code {
   background-color: #f6f8fa;
   color: black;
   padding: 2px 5px;
+  word-break: break-word;
 }
 p {
   line-height: 18px;
@@ -322,4 +333,47 @@ header > nav > span {
   opacity: 1;
 }
 
-#transducers
+#blog > article > p > img {
+  width: 100%;
+  max-width: 650px;
+}
+#blog > article > h1 {
+  font-size: 48px;
+  margin-bottom: 0px;
+  /* word-break: break-word; */
+}
+
+.blog-metadata {
+  margin-right: 18px;
+  margin-bottom: 36px;
+  color: grey;
+}
+
+.blog-item > p {
+  margin-right: 18px;
+  margin-bottom: 36px;
+  color: grey;
+  opacity: 1;
+  transition-property: opacity;
+  transition-duration: 0.28s;
+  transition-timing-function: ease;
+}
+.blog-item > p.inactive {
+  opacity: 0;
+  margin: 0;
+}
+.blog-item > a {
+  font-size: 16px;
+  color: #65799B;
+  transition-property: color, font-size;
+  transition-duration: 0.28s, 0.28s;
+  transition-timing-function: ease, ease;
+}
+.blog-item > a:hover {
+  text-decoration: underline;
+}
+.blog-item > a.active {
+  font-size: 18px;
+  color: black;
+  text-decoration: none;
+}

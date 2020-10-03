@@ -7428,7 +7428,7 @@ export default [
       "  * `{ chain: function }` - call object's `.chain`\n" +
       "  * `{ flatMap: function }` - call object's `.flatMap`\n" +
       '  * `Object` - assign all results into a new object\n' +
-      '  * `Reducer` - execute the reducer for each item per item of a reducing operation\n' +
+      '  * `Reducer` - execute the reducer per item of the items of a reducing operation\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const duplicate = number => [number, number]\n' +
@@ -8094,31 +8094,31 @@ export default [
                     },
                     {
                       type: 'text',
-                      value: ' - execute the reducer for each item per item of a reducing operation',
+                      value: ' - execute the reducer per item of the items of a reducing operation',
                       position: {
                         start: { line: 12, column: 14, offset: 663 },
-                        end: { line: 12, column: 83, offset: 732 },
+                        end: { line: 12, column: 82, offset: 731 },
                         indent: []
                       }
                     }
                   ],
                   position: {
                     start: { line: 12, column: 5, offset: 654 },
-                    end: { line: 12, column: 83, offset: 732 },
+                    end: { line: 12, column: 82, offset: 731 },
                     indent: []
                   }
                 }
               ],
               position: {
                 start: { line: 12, column: 1, offset: 650 },
-                end: { line: 12, column: 83, offset: 732 },
+                end: { line: 12, column: 82, offset: 731 },
                 indent: []
               }
             }
           ],
           position: {
             start: { line: 3, column: 1, offset: 185 },
-            end: { line: 12, column: 83, offset: 732 },
+            end: { line: 12, column: 82, offset: 731 },
             indent: [
               1, 1, 1, 1, 1,
               1, 1, 1, 1
@@ -8140,8 +8140,8 @@ export default [
             'flatMap(asyncDuplicate)( // concurrent execution\n' +
             '  [1, 2, 3, 4, 5]).then(console.log) // [1, 1, 2, 2, 3, 3, 4, 4, 5, 5]',
           position: {
-            start: { line: 14, column: 1, offset: 734 },
-            end: { line: 25, column: 4, offset: 1076 },
+            start: { line: 14, column: 1, offset: 733 },
+            end: { line: 25, column: 4, offset: 1075 },
             indent: [
               1, 1, 1, 1, 1,
               1, 1, 1, 1, 1,
@@ -8156,8 +8156,8 @@ export default [
               type: 'inlineCode',
               value: 'flatMap',
               position: {
-                start: { line: 27, column: 1, offset: 1078 },
-                end: { line: 27, column: 10, offset: 1087 },
+                start: { line: 27, column: 1, offset: 1077 },
+                end: { line: 27, column: 10, offset: 1086 },
                 indent: []
               }
             },
@@ -8165,15 +8165,15 @@ export default [
               type: 'text',
               value: ' muxes async iterables. Muxing, or asynchronously "mixing", is the process of combining multiple asynchronous sources into one source, with order determined by the asynchronous resolution of the individual items.',
               position: {
-                start: { line: 27, column: 10, offset: 1087 },
-                end: { line: 27, column: 222, offset: 1299 },
+                start: { line: 27, column: 10, offset: 1086 },
+                end: { line: 27, column: 222, offset: 1298 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 27, column: 1, offset: 1078 },
-            end: { line: 27, column: 222, offset: 1299 },
+            start: { line: 27, column: 1, offset: 1077 },
+            end: { line: 27, column: 222, offset: 1298 },
             indent: []
           }
         },
@@ -8203,8 +8203,8 @@ export default [
             "  ['foo', 'bar', 'baz']).then(console.log)\n" +
             "// ['foo', 'bar', 'baz', 'foo', 'bar', 'baz', 'foo', 'bar', 'baz']",
           position: {
-            start: { line: 29, column: 1, offset: 1301 },
-            end: { line: 51, column: 4, offset: 1927 },
+            start: { line: 29, column: 1, offset: 1300 },
+            end: { line: 51, column: 4, offset: 1926 },
             indent: [
               1, 1, 1, 1, 1, 1, 1,
               1, 1, 1, 1, 1, 1, 1,
@@ -8220,8 +8220,8 @@ export default [
               type: 'text',
               value: 'The following list defines concatenation behavior recognized by ',
               position: {
-                start: { line: 53, column: 1, offset: 1929 },
-                end: { line: 53, column: 65, offset: 1993 },
+                start: { line: 53, column: 1, offset: 1928 },
+                end: { line: 53, column: 65, offset: 1992 },
                 indent: []
               }
             },
@@ -8229,8 +8229,8 @@ export default [
               type: 'inlineCode',
               value: 'flatMap',
               position: {
-                start: { line: 53, column: 65, offset: 1993 },
-                end: { line: 53, column: 74, offset: 2002 },
+                start: { line: 53, column: 65, offset: 1992 },
+                end: { line: 53, column: 74, offset: 2001 },
                 indent: []
               }
             },
@@ -8238,15 +8238,15 @@ export default [
               type: 'text',
               value: ' for individual items being flattened.',
               position: {
-                start: { line: 53, column: 74, offset: 2002 },
-                end: { line: 53, column: 112, offset: 2040 },
+                start: { line: 53, column: 74, offset: 2001 },
+                end: { line: 53, column: 112, offset: 2039 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 53, column: 1, offset: 1929 },
-            end: { line: 53, column: 112, offset: 2040 },
+            start: { line: 53, column: 1, offset: 1928 },
+            end: { line: 53, column: 112, offset: 2039 },
             indent: []
           }
         },
@@ -8268,8 +8268,8 @@ export default [
                       type: 'inlineCode',
                       value: 'Iterable',
                       position: {
-                        start: { line: 55, column: 5, offset: 2046 },
-                        end: { line: 55, column: 15, offset: 2056 },
+                        start: { line: 55, column: 5, offset: 2045 },
+                        end: { line: 55, column: 15, offset: 2055 },
                         indent: []
                       }
                     },
@@ -8277,22 +8277,22 @@ export default [
                       type: 'text',
                       value: ' - items are iterated into the result',
                       position: {
-                        start: { line: 55, column: 15, offset: 2056 },
-                        end: { line: 55, column: 52, offset: 2093 },
+                        start: { line: 55, column: 15, offset: 2055 },
+                        end: { line: 55, column: 52, offset: 2092 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 55, column: 5, offset: 2046 },
-                    end: { line: 55, column: 52, offset: 2093 },
+                    start: { line: 55, column: 5, offset: 2045 },
+                    end: { line: 55, column: 52, offset: 2092 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 55, column: 1, offset: 2042 },
-                end: { line: 55, column: 52, offset: 2093 },
+                start: { line: 55, column: 1, offset: 2041 },
+                end: { line: 55, column: 52, offset: 2092 },
                 indent: []
               }
             },
@@ -8308,8 +8308,8 @@ export default [
                       type: 'inlineCode',
                       value: 'Iterator/Generator',
                       position: {
-                        start: { line: 56, column: 5, offset: 2098 },
-                        end: { line: 56, column: 25, offset: 2118 },
+                        start: { line: 56, column: 5, offset: 2097 },
+                        end: { line: 56, column: 25, offset: 2117 },
                         indent: []
                       }
                     },
@@ -8317,22 +8317,22 @@ export default [
                       type: 'text',
                       value: ' - items are iterated into the result, source is consumed',
                       position: {
-                        start: { line: 56, column: 25, offset: 2118 },
-                        end: { line: 56, column: 82, offset: 2175 },
+                        start: { line: 56, column: 25, offset: 2117 },
+                        end: { line: 56, column: 82, offset: 2174 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 56, column: 5, offset: 2098 },
-                    end: { line: 56, column: 82, offset: 2175 },
+                    start: { line: 56, column: 5, offset: 2097 },
+                    end: { line: 56, column: 82, offset: 2174 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 56, column: 1, offset: 2094 },
-                end: { line: 56, column: 82, offset: 2175 },
+                start: { line: 56, column: 1, offset: 2093 },
+                end: { line: 56, column: 82, offset: 2174 },
                 indent: []
               }
             },
@@ -8348,8 +8348,8 @@ export default [
                       type: 'inlineCode',
                       value: '{ reduce: function }',
                       position: {
-                        start: { line: 57, column: 5, offset: 2180 },
-                        end: { line: 57, column: 27, offset: 2202 },
+                        start: { line: 57, column: 5, offset: 2179 },
+                        end: { line: 57, column: 27, offset: 2201 },
                         indent: []
                       }
                     },
@@ -8357,8 +8357,8 @@ export default [
                       type: 'text',
                       value: " - call object's ",
                       position: {
-                        start: { line: 57, column: 27, offset: 2202 },
-                        end: { line: 57, column: 44, offset: 2219 },
+                        start: { line: 57, column: 27, offset: 2201 },
+                        end: { line: 57, column: 44, offset: 2218 },
                         indent: []
                       }
                     },
@@ -8366,8 +8366,8 @@ export default [
                       type: 'inlineCode',
                       value: '.reduce',
                       position: {
-                        start: { line: 57, column: 44, offset: 2219 },
-                        end: { line: 57, column: 53, offset: 2228 },
+                        start: { line: 57, column: 44, offset: 2218 },
+                        end: { line: 57, column: 53, offset: 2227 },
                         indent: []
                       }
                     },
@@ -8375,22 +8375,22 @@ export default [
                       type: 'text',
                       value: " with result's concatenation function",
                       position: {
-                        start: { line: 57, column: 53, offset: 2228 },
-                        end: { line: 57, column: 90, offset: 2265 },
+                        start: { line: 57, column: 53, offset: 2227 },
+                        end: { line: 57, column: 90, offset: 2264 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 57, column: 5, offset: 2180 },
-                    end: { line: 57, column: 90, offset: 2265 },
+                    start: { line: 57, column: 5, offset: 2179 },
+                    end: { line: 57, column: 90, offset: 2264 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 57, column: 1, offset: 2176 },
-                end: { line: 57, column: 90, offset: 2265 },
+                start: { line: 57, column: 1, offset: 2175 },
+                end: { line: 57, column: 90, offset: 2264 },
                 indent: []
               }
             },
@@ -8406,8 +8406,8 @@ export default [
                       type: 'inlineCode',
                       value: '{ chain: function }',
                       position: {
-                        start: { line: 58, column: 5, offset: 2270 },
-                        end: { line: 58, column: 26, offset: 2291 },
+                        start: { line: 58, column: 5, offset: 2269 },
+                        end: { line: 58, column: 26, offset: 2290 },
                         indent: []
                       }
                     },
@@ -8415,8 +8415,8 @@ export default [
                       type: 'text',
                       value: " - call object's ",
                       position: {
-                        start: { line: 58, column: 26, offset: 2291 },
-                        end: { line: 58, column: 43, offset: 2308 },
+                        start: { line: 58, column: 26, offset: 2290 },
+                        end: { line: 58, column: 43, offset: 2307 },
                         indent: []
                       }
                     },
@@ -8424,8 +8424,8 @@ export default [
                       type: 'inlineCode',
                       value: '.chain',
                       position: {
-                        start: { line: 58, column: 43, offset: 2308 },
-                        end: { line: 58, column: 51, offset: 2316 },
+                        start: { line: 58, column: 43, offset: 2307 },
+                        end: { line: 58, column: 51, offset: 2315 },
                         indent: []
                       }
                     },
@@ -8433,22 +8433,22 @@ export default [
                       type: 'text',
                       value: " with result's concatenation function",
                       position: {
-                        start: { line: 58, column: 51, offset: 2316 },
-                        end: { line: 58, column: 88, offset: 2353 },
+                        start: { line: 58, column: 51, offset: 2315 },
+                        end: { line: 58, column: 88, offset: 2352 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 58, column: 5, offset: 2270 },
-                    end: { line: 58, column: 88, offset: 2353 },
+                    start: { line: 58, column: 5, offset: 2269 },
+                    end: { line: 58, column: 88, offset: 2352 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 58, column: 1, offset: 2266 },
-                end: { line: 58, column: 88, offset: 2353 },
+                start: { line: 58, column: 1, offset: 2265 },
+                end: { line: 58, column: 88, offset: 2352 },
                 indent: []
               }
             },
@@ -8464,8 +8464,8 @@ export default [
                       type: 'inlineCode',
                       value: '{ flatMap: function }',
                       position: {
-                        start: { line: 59, column: 5, offset: 2358 },
-                        end: { line: 59, column: 28, offset: 2381 },
+                        start: { line: 59, column: 5, offset: 2357 },
+                        end: { line: 59, column: 28, offset: 2380 },
                         indent: []
                       }
                     },
@@ -8473,8 +8473,8 @@ export default [
                       type: 'text',
                       value: " - call object's ",
                       position: {
-                        start: { line: 59, column: 28, offset: 2381 },
-                        end: { line: 59, column: 45, offset: 2398 },
+                        start: { line: 59, column: 28, offset: 2380 },
+                        end: { line: 59, column: 45, offset: 2397 },
                         indent: []
                       }
                     },
@@ -8482,8 +8482,8 @@ export default [
                       type: 'inlineCode',
                       value: '.flatMap',
                       position: {
-                        start: { line: 59, column: 45, offset: 2398 },
-                        end: { line: 59, column: 55, offset: 2408 },
+                        start: { line: 59, column: 45, offset: 2397 },
+                        end: { line: 59, column: 55, offset: 2407 },
                         indent: []
                       }
                     },
@@ -8491,22 +8491,22 @@ export default [
                       type: 'text',
                       value: " with result's concatentation function",
                       position: {
-                        start: { line: 59, column: 55, offset: 2408 },
-                        end: { line: 59, column: 93, offset: 2446 },
+                        start: { line: 59, column: 55, offset: 2407 },
+                        end: { line: 59, column: 93, offset: 2445 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 59, column: 5, offset: 2358 },
-                    end: { line: 59, column: 93, offset: 2446 },
+                    start: { line: 59, column: 5, offset: 2357 },
+                    end: { line: 59, column: 93, offset: 2445 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 59, column: 1, offset: 2354 },
-                end: { line: 59, column: 93, offset: 2446 },
+                start: { line: 59, column: 1, offset: 2353 },
+                end: { line: 59, column: 93, offset: 2445 },
                 indent: []
               }
             },
@@ -8522,8 +8522,8 @@ export default [
                       type: 'inlineCode',
                       value: 'Object',
                       position: {
-                        start: { line: 60, column: 5, offset: 2451 },
-                        end: { line: 60, column: 13, offset: 2459 },
+                        start: { line: 60, column: 5, offset: 2450 },
+                        end: { line: 60, column: 13, offset: 2458 },
                         indent: []
                       }
                     },
@@ -8531,22 +8531,22 @@ export default [
                       type: 'text',
                       value: ' - values are flattened',
                       position: {
-                        start: { line: 60, column: 13, offset: 2459 },
-                        end: { line: 60, column: 36, offset: 2482 },
+                        start: { line: 60, column: 13, offset: 2458 },
+                        end: { line: 60, column: 36, offset: 2481 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 60, column: 5, offset: 2451 },
-                    end: { line: 60, column: 36, offset: 2482 },
+                    start: { line: 60, column: 5, offset: 2450 },
+                    end: { line: 60, column: 36, offset: 2481 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 60, column: 1, offset: 2447 },
-                end: { line: 60, column: 36, offset: 2482 },
+                start: { line: 60, column: 1, offset: 2446 },
+                end: { line: 60, column: 36, offset: 2481 },
                 indent: []
               }
             },
@@ -8562,8 +8562,8 @@ export default [
                       type: 'inlineCode',
                       value: 'AsyncIterable',
                       position: {
-                        start: { line: 61, column: 5, offset: 2487 },
-                        end: { line: 61, column: 20, offset: 2502 },
+                        start: { line: 61, column: 5, offset: 2486 },
+                        end: { line: 61, column: 20, offset: 2501 },
                         indent: []
                       }
                     },
@@ -8571,22 +8571,22 @@ export default [
                       type: 'text',
                       value: ' - items are muxed into the result',
                       position: {
-                        start: { line: 61, column: 20, offset: 2502 },
-                        end: { line: 61, column: 54, offset: 2536 },
+                        start: { line: 61, column: 20, offset: 2501 },
+                        end: { line: 61, column: 54, offset: 2535 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 61, column: 5, offset: 2487 },
-                    end: { line: 61, column: 54, offset: 2536 },
+                    start: { line: 61, column: 5, offset: 2486 },
+                    end: { line: 61, column: 54, offset: 2535 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 61, column: 1, offset: 2483 },
-                end: { line: 61, column: 54, offset: 2536 },
+                start: { line: 61, column: 1, offset: 2482 },
+                end: { line: 61, column: 54, offset: 2535 },
                 indent: []
               }
             },
@@ -8602,8 +8602,8 @@ export default [
                       type: 'inlineCode',
                       value: 'AsyncIterator/AsyncGenerator',
                       position: {
-                        start: { line: 62, column: 5, offset: 2541 },
-                        end: { line: 62, column: 35, offset: 2571 },
+                        start: { line: 62, column: 5, offset: 2540 },
+                        end: { line: 62, column: 35, offset: 2570 },
                         indent: []
                       }
                     },
@@ -8611,29 +8611,29 @@ export default [
                       type: 'text',
                       value: ' - items are muxed into the result, source is consumed',
                       position: {
-                        start: { line: 62, column: 35, offset: 2571 },
-                        end: { line: 62, column: 89, offset: 2625 },
+                        start: { line: 62, column: 35, offset: 2570 },
+                        end: { line: 62, column: 89, offset: 2624 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 62, column: 5, offset: 2541 },
-                    end: { line: 62, column: 89, offset: 2625 },
+                    start: { line: 62, column: 5, offset: 2540 },
+                    end: { line: 62, column: 89, offset: 2624 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 62, column: 1, offset: 2537 },
-                end: { line: 62, column: 89, offset: 2625 },
+                start: { line: 62, column: 1, offset: 2536 },
+                end: { line: 62, column: 89, offset: 2624 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 55, column: 1, offset: 2042 },
-            end: { line: 62, column: 89, offset: 2625 },
+            start: { line: 55, column: 1, offset: 2041 },
+            end: { line: 62, column: 89, offset: 2624 },
             indent: [
               1, 1, 1, 1,
               1, 1, 1
@@ -8647,15 +8647,15 @@ export default [
               type: 'text',
               value: 'All other types are added into the result as they are.',
               position: {
-                start: { line: 64, column: 1, offset: 2627 },
-                end: { line: 64, column: 55, offset: 2681 },
+                start: { line: 64, column: 1, offset: 2626 },
+                end: { line: 64, column: 55, offset: 2680 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 64, column: 1, offset: 2627 },
-            end: { line: 64, column: 55, offset: 2681 },
+            start: { line: 64, column: 1, offset: 2626 },
+            end: { line: 64, column: 55, offset: 2680 },
             indent: []
           }
         },
@@ -8677,8 +8677,8 @@ export default [
             ']).then(console.log)\n' +
             '// [1, 1, 2, 3, 3, 5, 5, 6, 7, 8, 4, 4]',
           position: {
-            start: { line: 66, column: 1, offset: 2683 },
-            end: { line: 80, column: 4, offset: 3012 },
+            start: { line: 66, column: 1, offset: 2682 },
+            end: { line: 80, column: 4, offset: 3011 },
             indent: [
               1, 1, 1, 1, 1, 1,
               1, 1, 1, 1, 1, 1,
@@ -8693,8 +8693,8 @@ export default [
               type: 'inlineCode',
               value: 'flatMap',
               position: {
-                start: { line: 82, column: 1, offset: 3014 },
-                end: { line: 82, column: 10, offset: 3023 },
+                start: { line: 82, column: 1, offset: 3013 },
+                end: { line: 82, column: 10, offset: 3022 },
                 indent: []
               }
             },
@@ -8702,8 +8702,8 @@ export default [
               type: 'text',
               value: ' supports purer functional programming with monads. A monad is any object that defines a method ',
               position: {
-                start: { line: 82, column: 10, offset: 3023 },
-                end: { line: 82, column: 106, offset: 3119 },
+                start: { line: 82, column: 10, offset: 3022 },
+                end: { line: 82, column: 106, offset: 3118 },
                 indent: []
               }
             },
@@ -8711,8 +8711,8 @@ export default [
               type: 'inlineCode',
               value: '.chain',
               position: {
-                start: { line: 82, column: 106, offset: 3119 },
-                end: { line: 82, column: 114, offset: 3127 },
+                start: { line: 82, column: 106, offset: 3118 },
+                end: { line: 82, column: 114, offset: 3126 },
                 indent: []
               }
             },
@@ -8720,8 +8720,8 @@ export default [
               type: 'text',
               value: ' or ',
               position: {
-                start: { line: 82, column: 114, offset: 3127 },
-                end: { line: 82, column: 118, offset: 3131 },
+                start: { line: 82, column: 114, offset: 3126 },
+                end: { line: 82, column: 118, offset: 3130 },
                 indent: []
               }
             },
@@ -8729,8 +8729,8 @@ export default [
               type: 'inlineCode',
               value: '.flatMap',
               position: {
-                start: { line: 82, column: 118, offset: 3131 },
-                end: { line: 82, column: 128, offset: 3141 },
+                start: { line: 82, column: 118, offset: 3130 },
+                end: { line: 82, column: 128, offset: 3140 },
                 indent: []
               }
             },
@@ -8738,15 +8738,15 @@ export default [
               type: 'text',
               value: ' that takes some item and returns a monad.',
               position: {
-                start: { line: 82, column: 128, offset: 3141 },
-                end: { line: 82, column: 170, offset: 3183 },
+                start: { line: 82, column: 128, offset: 3140 },
+                end: { line: 82, column: 170, offset: 3182 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 82, column: 1, offset: 3014 },
-            end: { line: 82, column: 170, offset: 3183 },
+            start: { line: 82, column: 1, offset: 3013 },
+            end: { line: 82, column: 170, offset: 3182 },
             indent: []
           }
         },
@@ -8778,8 +8778,8 @@ export default [
             '\n' +
             "logUserByID('1') // { _id: '1', name: 'George' }",
           position: {
-            start: { line: 84, column: 1, offset: 3185 },
-            end: { line: 108, column: 4, offset: 3672 },
+            start: { line: 84, column: 1, offset: 3184 },
+            end: { line: 108, column: 4, offset: 3671 },
             indent: [
               1, 1, 1, 1, 1, 1, 1, 1,
               1, 1, 1, 1, 1, 1, 1, 1,
@@ -8794,8 +8794,8 @@ export default [
               type: 'text',
               value: 'Additionally, ',
               position: {
-                start: { line: 110, column: 1, offset: 3674 },
-                end: { line: 110, column: 15, offset: 3688 },
+                start: { line: 110, column: 1, offset: 3673 },
+                end: { line: 110, column: 15, offset: 3687 },
                 indent: []
               }
             },
@@ -8803,8 +8803,8 @@ export default [
               type: 'inlineCode',
               value: 'flatMap',
               position: {
-                start: { line: 110, column: 15, offset: 3688 },
-                end: { line: 110, column: 24, offset: 3697 },
+                start: { line: 110, column: 15, offset: 3687 },
+                end: { line: 110, column: 24, offset: 3696 },
                 indent: []
               }
             },
@@ -8812,15 +8812,15 @@ export default [
               type: 'text',
               value: ' is a powerful option when working with transducers. A flatMapping transducer is like a mapping transducer except all items of the reducing operation are additionally flattened into the result.',
               position: {
-                start: { line: 110, column: 24, offset: 3697 },
-                end: { line: 110, column: 217, offset: 3890 },
+                start: { line: 110, column: 24, offset: 3696 },
+                end: { line: 110, column: 217, offset: 3889 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 110, column: 1, offset: 3674 },
-            end: { line: 110, column: 217, offset: 3890 },
+            start: { line: 110, column: 1, offset: 3673 },
+            end: { line: 110, column: 217, offset: 3889 },
             indent: []
           }
         },
@@ -8851,8 +8851,8 @@ export default [
             'transform(asyncOddPowers, [])([1, 2, 3, 4, 5]).then(console.log)\n' +
             '// [1, 1, 1, 3, 9, 27, 5, 25, 125]',
           position: {
-            start: { line: 112, column: 1, offset: 3892 },
-            end: { line: 135, column: 4, offset: 4432 },
+            start: { line: 112, column: 1, offset: 3891 },
+            end: { line: 135, column: 4, offset: 4431 },
             indent: [
               1, 1, 1, 1, 1, 1, 1, 1,
               1, 1, 1, 1, 1, 1, 1, 1,
@@ -8863,7 +8863,7 @@ export default [
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 136, column: 1, offset: 4433 }
+        end: { line: 136, column: 1, offset: 4432 }
       }
     }
   },
