@@ -1910,7 +1910,7 @@ export default {
         {
           type: 'link',
           title: null,
-          url: 'https://github.com/a-synchronous/rubico/blob/master/TRANSDUCERS.md',
+          url: 'https://rubico.land/blog/2020/10/02/transducers-crash-course',
           children: [
             {
               type: 'text',
@@ -1924,7 +1924,7 @@ export default {
           ],
           position: {
             start: { line: 170, column: 337, offset: 5500 },
-            end: { line: 170, column: 411, offset: 5574 },
+            end: { line: 170, column: 405, offset: 5568 },
             indent: []
           }
         },
@@ -1932,15 +1932,15 @@ export default {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 170, column: 411, offset: 5574 },
-            end: { line: 170, column: 412, offset: 5575 },
+            start: { line: 170, column: 405, offset: 5568 },
+            end: { line: 170, column: 406, offset: 5569 },
             indent: []
           }
         }
       ],
       position: {
         start: { line: 170, column: 1, offset: 5164 },
-        end: { line: 170, column: 412, offset: 5575 },
+        end: { line: 170, column: 406, offset: 5569 },
         indent: []
       }
     },
@@ -1976,8 +1976,8 @@ export default {
         "  decimalStringToNotes('16791573288892525934609440079317541905554393653557736896280802239551592289061061348368963')\n" +
         ') // CCGGAAGFFEEDDCGGFFEEDGGFFEEDCCGGAAGFFEEDDC',
       position: {
-        start: { line: 172, column: 1, offset: 5577 },
-        end: { line: 200, column: 4, offset: 6401 },
+        start: { line: 172, column: 1, offset: 5571 },
+        end: { line: 200, column: 4, offset: 6395 },
         indent: [
           1, 1, 1, 1, 1, 1, 1, 1,
           1, 1, 1, 1, 1, 1, 1, 1,
@@ -1993,8 +1993,8 @@ export default {
           type: 'text',
           value: 'That concludes the rubico tour. From here, you could get started with rubico in a project (',
           position: {
-            start: { line: 202, column: 1, offset: 6403 },
-            end: { line: 202, column: 92, offset: 6494 },
+            start: { line: 202, column: 1, offset: 6397 },
+            end: { line: 202, column: 92, offset: 6488 },
             indent: []
           }
         },
@@ -2007,15 +2007,15 @@ export default {
               type: 'text',
               value: 'installation',
               position: {
-                start: { line: 202, column: 93, offset: 6495 },
-                end: { line: 202, column: 105, offset: 6507 },
+                start: { line: 202, column: 93, offset: 6489 },
+                end: { line: 202, column: 105, offset: 6501 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 202, column: 92, offset: 6494 },
-            end: { line: 202, column: 122, offset: 6524 },
+            start: { line: 202, column: 92, offset: 6488 },
+            end: { line: 202, column: 122, offset: 6518 },
             indent: []
           }
         },
@@ -2023,8 +2023,8 @@ export default {
           type: 'text',
           value: ') or read more at the ',
           position: {
-            start: { line: 202, column: 122, offset: 6524 },
-            end: { line: 202, column: 144, offset: 6546 },
+            start: { line: 202, column: 122, offset: 6518 },
+            end: { line: 202, column: 144, offset: 6540 },
             indent: []
           }
         },
@@ -2037,15 +2037,15 @@ export default {
               type: 'text',
               value: 'docs',
               position: {
-                start: { line: 202, column: 145, offset: 6547 },
-                end: { line: 202, column: 149, offset: 6551 },
+                start: { line: 202, column: 145, offset: 6541 },
+                end: { line: 202, column: 149, offset: 6545 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 202, column: 144, offset: 6546 },
-            end: { line: 202, column: 157, offset: 6559 },
+            start: { line: 202, column: 144, offset: 6540 },
+            end: { line: 202, column: 157, offset: 6553 },
             indent: []
           }
         },
@@ -2053,21 +2053,21 @@ export default {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 202, column: 157, offset: 6559 },
-            end: { line: 202, column: 158, offset: 6560 },
+            start: { line: 202, column: 157, offset: 6553 },
+            end: { line: 202, column: 158, offset: 6554 },
             indent: []
           }
         }
       ],
       position: {
-        start: { line: 202, column: 1, offset: 6403 },
-        end: { line: 202, column: 158, offset: 6560 },
+        start: { line: 202, column: 1, offset: 6397 },
+        end: { line: 202, column: 158, offset: 6554 },
         indent: []
       }
     }
   ],
   position: {
     start: { line: 1, column: 1, offset: 0 },
-    end: { line: 203, column: 1, offset: 6561 }
+    end: { line: 203, column: 1, offset: 6555 }
   }
 }

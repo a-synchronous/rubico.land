@@ -1615,58 +1615,12 @@ export default {
             end: { line: 123, column: 161, offset: 5134 },
             indent: []
           }
-        },
-        {
-          type: 'listItem',
-          spread: false,
-          checked: null,
-          children: [
-            {
-              type: 'paragraph',
-              children: [
-                {
-                  type: 'link',
-                  title: null,
-                  url: 'https://github.com/a-synchronous/rubico/blob/master/TRANSDUCERS.md',
-                  children: [
-                    {
-                      type: 'text',
-                      value: 'Transducers',
-                      position: {
-                        start: { line: 124, column: 5, offset: 5139 },
-                        end: { line: 124, column: 16, offset: 5150 },
-                        indent: []
-                      }
-                    }
-                  ],
-                  position: {
-                    start: { line: 124, column: 4, offset: 5138 },
-                    end: { line: 124, column: 85, offset: 5219 },
-                    indent: []
-                  }
-                }
-              ],
-              position: {
-                start: { line: 124, column: 4, offset: 5138 },
-                end: { line: 124, column: 85, offset: 5219 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 124, column: 1, offset: 5135 },
-            end: { line: 124, column: 85, offset: 5219 },
-            indent: []
-          }
         }
       ],
       position: {
         start: { line: 117, column: 1, offset: 3938 },
-        end: { line: 124, column: 85, offset: 5219 },
-        indent: [
-          1, 1, 1, 1,
-          1, 1, 1
-        ]
+        end: { line: 123, column: 161, offset: 5134 },
+        indent: [ 1, 1, 1, 1, 1, 1 ]
       }
     },
     {
@@ -1677,15 +1631,15 @@ export default {
           type: 'text',
           value: 'Contributing',
           position: {
-            start: { line: 126, column: 3, offset: 5223 },
-            end: { line: 126, column: 15, offset: 5235 },
+            start: { line: 125, column: 3, offset: 5138 },
+            end: { line: 125, column: 15, offset: 5150 },
             indent: []
           }
         }
       ],
       position: {
-        start: { line: 126, column: 1, offset: 5221 },
-        end: { line: 126, column: 15, offset: 5235 },
+        start: { line: 125, column: 1, offset: 5136 },
+        end: { line: 125, column: 15, offset: 5150 },
         indent: []
       }
     },
@@ -1696,15 +1650,15 @@ export default {
           type: 'text',
           value: 'Your feedback and contributions are welcome. If you have a suggestion, please raise an issue. Prior to that, please search through the issues first in case your suggestion has been made already. If you decide to work on an issue, please announce on the issue thread that you will work on it.',
           position: {
-            start: { line: 127, column: 1, offset: 5236 },
-            end: { line: 127, column: 292, offset: 5527 },
+            start: { line: 126, column: 1, offset: 5151 },
+            end: { line: 126, column: 292, offset: 5442 },
             indent: []
           }
         }
       ],
       position: {
-        start: { line: 127, column: 1, offset: 5236 },
-        end: { line: 127, column: 292, offset: 5527 },
+        start: { line: 126, column: 1, offset: 5151 },
+        end: { line: 126, column: 292, offset: 5442 },
         indent: []
       }
     },
@@ -1715,8 +1669,8 @@ export default {
           type: 'text',
           value: 'Pull requests should provide some basic context and link the relevant issue. Here is an ',
           position: {
-            start: { line: 129, column: 1, offset: 5529 },
-            end: { line: 129, column: 89, offset: 5617 },
+            start: { line: 128, column: 1, offset: 5444 },
+            end: { line: 128, column: 89, offset: 5532 },
             indent: []
           }
         },
@@ -1729,15 +1683,15 @@ export default {
               type: 'text',
               value: 'example pull request',
               position: {
-                start: { line: 129, column: 90, offset: 5618 },
-                end: { line: 129, column: 110, offset: 5638 },
+                start: { line: 128, column: 90, offset: 5533 },
+                end: { line: 128, column: 110, offset: 5553 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 129, column: 89, offset: 5617 },
-            end: { line: 129, column: 160, offset: 5688 },
+            start: { line: 128, column: 89, offset: 5532 },
+            end: { line: 128, column: 160, offset: 5603 },
             indent: []
           }
         },
@@ -1745,8 +1699,8 @@ export default {
           type: 'text',
           value: '. If you are interested in contributing, the ',
           position: {
-            start: { line: 129, column: 160, offset: 5688 },
-            end: { line: 129, column: 205, offset: 5733 },
+            start: { line: 128, column: 160, offset: 5603 },
+            end: { line: 128, column: 205, offset: 5648 },
             indent: []
           }
         },
@@ -1759,15 +1713,15 @@ export default {
               type: 'text',
               value: 'help wanted',
               position: {
-                start: { line: 129, column: 206, offset: 5734 },
-                end: { line: 129, column: 217, offset: 5745 },
+                start: { line: 128, column: 206, offset: 5649 },
+                end: { line: 128, column: 217, offset: 5660 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 129, column: 205, offset: 5733 },
-            end: { line: 129, column: 315, offset: 5843 },
+            start: { line: 128, column: 205, offset: 5648 },
+            end: { line: 128, column: 315, offset: 5758 },
             indent: []
           }
         },
@@ -1775,15 +1729,15 @@ export default {
           type: 'text',
           value: ' tag is a good place to start.',
           position: {
-            start: { line: 129, column: 315, offset: 5843 },
-            end: { line: 129, column: 345, offset: 5873 },
+            start: { line: 128, column: 315, offset: 5758 },
+            end: { line: 128, column: 345, offset: 5788 },
             indent: []
           }
         }
       ],
       position: {
-        start: { line: 129, column: 1, offset: 5529 },
-        end: { line: 129, column: 345, offset: 5873 },
+        start: { line: 128, column: 1, offset: 5444 },
+        end: { line: 128, column: 345, offset: 5788 },
         indent: []
       }
     },
@@ -1795,15 +1749,15 @@ export default {
           type: 'text',
           value: 'License',
           position: {
-            start: { line: 131, column: 3, offset: 5877 },
-            end: { line: 131, column: 10, offset: 5884 },
+            start: { line: 130, column: 3, offset: 5792 },
+            end: { line: 130, column: 10, offset: 5799 },
             indent: []
           }
         }
       ],
       position: {
-        start: { line: 131, column: 1, offset: 5875 },
-        end: { line: 131, column: 10, offset: 5884 },
+        start: { line: 130, column: 1, offset: 5790 },
+        end: { line: 130, column: 10, offset: 5799 },
         indent: []
       }
     },
@@ -1814,8 +1768,8 @@ export default {
           type: 'text',
           value: 'rubico is ',
           position: {
-            start: { line: 132, column: 1, offset: 5885 },
-            end: { line: 132, column: 11, offset: 5895 },
+            start: { line: 131, column: 1, offset: 5800 },
+            end: { line: 131, column: 11, offset: 5810 },
             indent: []
           }
         },
@@ -1828,15 +1782,15 @@ export default {
               type: 'text',
               value: 'MIT Licensed',
               position: {
-                start: { line: 132, column: 12, offset: 5896 },
-                end: { line: 132, column: 24, offset: 5908 },
+                start: { line: 131, column: 12, offset: 5811 },
+                end: { line: 131, column: 24, offset: 5823 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 132, column: 11, offset: 5895 },
-            end: { line: 132, column: 86, offset: 5970 },
+            start: { line: 131, column: 11, offset: 5810 },
+            end: { line: 131, column: 86, offset: 5885 },
             indent: []
           }
         },
@@ -1844,21 +1798,21 @@ export default {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 132, column: 86, offset: 5970 },
-            end: { line: 132, column: 87, offset: 5971 },
+            start: { line: 131, column: 86, offset: 5885 },
+            end: { line: 131, column: 87, offset: 5886 },
             indent: []
           }
         }
       ],
       position: {
-        start: { line: 132, column: 1, offset: 5885 },
-        end: { line: 132, column: 87, offset: 5971 },
+        start: { line: 131, column: 1, offset: 5800 },
+        end: { line: 131, column: 87, offset: 5886 },
         indent: []
       }
     }
   ],
   position: {
     start: { line: 1, column: 1, offset: 0 },
-    end: { line: 133, column: 1, offset: 5972 }
+    end: { line: 132, column: 1, offset: 5887 }
   }
 }
