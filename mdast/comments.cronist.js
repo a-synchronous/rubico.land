@@ -13486,7 +13486,7 @@ export default [
       '\n' +
       'reduce(reducer, init?)(...moreReducers) -> ...args=>Promise|any\n' +
       '```\n',
-    description: 'Execute a reducer for each item of a collection, resulting in a single output value.\n' +
+    description: 'Execute a reducer for each item of a collection, returning a single output value.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const max = (a, b) => a > b ? a : b\n' +
@@ -13650,17 +13650,17 @@ export default [
           children: [
             {
               type: 'text',
-              value: 'Execute a reducer for each item of a collection, resulting in a single output value.',
+              value: 'Execute a reducer for each item of a collection, returning a single output value.',
               position: {
                 start: { line: 1, column: 1, offset: 0 },
-                end: { line: 1, column: 85, offset: 84 },
+                end: { line: 1, column: 82, offset: 81 },
                 indent: []
               }
             }
           ],
           position: {
             start: { line: 1, column: 1, offset: 0 },
-            end: { line: 1, column: 85, offset: 84 },
+            end: { line: 1, column: 82, offset: 81 },
             indent: []
           }
         },
@@ -13674,8 +13674,8 @@ export default [
             '  reduce(max)([1, 3, 5, 4, 2]),\n' +
             ') // 5',
           position: {
-            start: { line: 3, column: 1, offset: 86 },
-            end: { line: 9, column: 4, offset: 205 },
+            start: { line: 3, column: 1, offset: 83 },
+            end: { line: 9, column: 4, offset: 202 },
             indent: [ 1, 1, 1, 1, 1, 1 ]
           }
         },
@@ -13686,15 +13686,15 @@ export default [
               type: 'text',
               value: 'If an optional initialization parameter is supplied, the result starts as that parameter rather than the first item of the collection. For memory and performance, this library makes no assumptions about immutability. Handle references for this initial value with care, as they could be mutated.',
               position: {
-                start: { line: 11, column: 1, offset: 207 },
-                end: { line: 11, column: 295, offset: 501 },
+                start: { line: 11, column: 1, offset: 204 },
+                end: { line: 11, column: 295, offset: 498 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 11, column: 1, offset: 207 },
-            end: { line: 11, column: 295, offset: 501 },
+            start: { line: 11, column: 1, offset: 204 },
+            end: { line: 11, column: 295, offset: 498 },
             indent: []
           }
         },
@@ -13708,8 +13708,8 @@ export default [
             '  reduce(add)([1, 2, 3, 4, 5], 0),\n' +
             ') // 15',
           position: {
-            start: { line: 13, column: 1, offset: 503 },
-            end: { line: 19, column: 4, offset: 618 },
+            start: { line: 13, column: 1, offset: 500 },
+            end: { line: 19, column: 4, offset: 615 },
             indent: [ 1, 1, 1, 1, 1, 1 ]
           }
         },
@@ -13720,15 +13720,15 @@ export default [
               type: 'text',
               value: 'If the initialization parameter is a function, it is treated as a resolver and called with the input arguments to resolve an initial value for the accumulator at execution time.',
               position: {
-                start: { line: 21, column: 1, offset: 620 },
-                end: { line: 21, column: 178, offset: 797 },
+                start: { line: 21, column: 1, offset: 617 },
+                end: { line: 21, column: 178, offset: 794 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 21, column: 1, offset: 620 },
-            end: { line: 21, column: 178, offset: 797 },
+            start: { line: 21, column: 1, offset: 617 },
+            end: { line: 21, column: 178, offset: 794 },
             indent: []
           }
         },
@@ -13744,8 +13744,8 @@ export default [
             '  reduce(concatSquares, initEmptyArray)([1, 2, 3, 4, 5]),\n' +
             ') // [1, 4, 9, 16, 25]',
           position: {
-            start: { line: 23, column: 1, offset: 799 },
-            end: { line: 31, column: 4, offset: 1022 },
+            start: { line: 23, column: 1, offset: 796 },
+            end: { line: 31, column: 4, offset: 1019 },
             indent: [
               1, 1, 1, 1,
               1, 1, 1, 1
@@ -13759,15 +13759,15 @@ export default [
               type: 'text',
               value: 'Fully asynchronous reducing operations are possible with asynchronous reducers and asynchronous data streams.',
               position: {
-                start: { line: 33, column: 1, offset: 1024 },
-                end: { line: 33, column: 110, offset: 1133 },
+                start: { line: 33, column: 1, offset: 1021 },
+                end: { line: 33, column: 110, offset: 1130 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 33, column: 1, offset: 1024 },
-            end: { line: 33, column: 110, offset: 1133 },
+            start: { line: 33, column: 1, offset: 1021 },
+            end: { line: 33, column: 110, offset: 1130 },
             indent: []
           }
         },
@@ -13821,8 +13821,8 @@ export default [
             '//   ],\n' +
             '// }',
           position: {
-            start: { line: 35, column: 1, offset: 1135 },
-            end: { line: 81, column: 4, offset: 2833 },
+            start: { line: 35, column: 1, offset: 1132 },
+            end: { line: 81, column: 4, offset: 2830 },
             indent: [
               1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
               1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
@@ -13839,8 +13839,8 @@ export default [
               type: 'text',
               value: 'If the first argument to a reducing function is a reducer, ',
               position: {
-                start: { line: 83, column: 1, offset: 2835 },
-                end: { line: 83, column: 60, offset: 2894 },
+                start: { line: 83, column: 1, offset: 2832 },
+                end: { line: 83, column: 60, offset: 2891 },
                 indent: []
               }
             },
@@ -13848,8 +13848,8 @@ export default [
               type: 'inlineCode',
               value: 'reduce',
               position: {
-                start: { line: 83, column: 60, offset: 2894 },
-                end: { line: 83, column: 68, offset: 2902 },
+                start: { line: 83, column: 60, offset: 2891 },
+                end: { line: 83, column: 68, offset: 2899 },
                 indent: []
               }
             },
@@ -13857,15 +13857,15 @@ export default [
               type: 'text',
               value: ' concatenates any reducers in argument position onto the initial reducer, producing a combined reducer that performs a chained operation per each item in a reducing operation.',
               position: {
-                start: { line: 83, column: 68, offset: 2902 },
-                end: { line: 83, column: 243, offset: 3077 },
+                start: { line: 83, column: 68, offset: 2899 },
+                end: { line: 83, column: 243, offset: 3074 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 83, column: 1, offset: 2835 },
-            end: { line: 83, column: 243, offset: 3077 },
+            start: { line: 83, column: 1, offset: 2832 },
+            end: { line: 83, column: 243, offset: 3074 },
             indent: []
           }
         },
@@ -13902,8 +13902,8 @@ export default [
             '  reducingABC(actions),\n' +
             ') // { A: true, B: true, C: true }',
           position: {
-            start: { line: 85, column: 1, offset: 3079 },
-            end: { line: 114, column: 4, offset: 3799 },
+            start: { line: 85, column: 1, offset: 3076 },
+            end: { line: 114, column: 4, offset: 3796 },
             indent: [
               1, 1, 1, 1, 1, 1, 1, 1, 1,
               1, 1, 1, 1, 1, 1, 1, 1, 1,
@@ -13915,7 +13915,7 @@ export default [
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 115, column: 1, offset: 3800 }
+        end: { line: 115, column: 1, offset: 3797 }
       }
     }
   },
