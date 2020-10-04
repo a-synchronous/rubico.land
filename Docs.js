@@ -139,7 +139,9 @@ const DocsItem = pipe([
   ({ name, path, back = '/docs', getNextMethodName = getNextName }) =>
     ReactElement(props => {
       const { goto, state, children } = props,
-        isExpanded = state.path == path,
+        isExpanded = path.endsWith('/')
+          ? (state.path == path.slice(0, path.length - 1))
+          : (state.path == path),
         [isTransitioning, setIsTransitioning] = useState(false)
 
       return Div({ className: 'docs-item' }, [
