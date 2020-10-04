@@ -15362,8 +15362,6 @@ export default [
       '```\n',
     description: 'Try a `tryer`, catch with `catcher`. On error or rejected promise, call the `catcher` with the error followed by any arguments to the tryer.\n' +
       '\n' +
-      'Note: if the return value is to be used in a future computation, be sure to account for that in both the `tryer` and the `catcher`\n' +
-      '\n' +
       '```javascript [playground]\n' +
       'const errorThrower = tryCatch(\n' +
       '  message => {\n' +
@@ -15479,52 +15477,6 @@ export default [
           }
         },
         {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              value: 'Note: if the return value is to be used in a future computation, be sure to account for that in both the ',
-              position: {
-                start: { line: 3, column: 1, offset: 142 },
-                end: { line: 3, column: 106, offset: 247 },
-                indent: []
-              }
-            },
-            {
-              type: 'inlineCode',
-              value: 'tryer',
-              position: {
-                start: { line: 3, column: 106, offset: 247 },
-                end: { line: 3, column: 113, offset: 254 },
-                indent: []
-              }
-            },
-            {
-              type: 'text',
-              value: ' and the ',
-              position: {
-                start: { line: 3, column: 113, offset: 254 },
-                end: { line: 3, column: 122, offset: 263 },
-                indent: []
-              }
-            },
-            {
-              type: 'inlineCode',
-              value: 'catcher',
-              position: {
-                start: { line: 3, column: 122, offset: 263 },
-                end: { line: 3, column: 131, offset: 272 },
-                indent: []
-              }
-            }
-          ],
-          position: {
-            start: { line: 3, column: 1, offset: 142 },
-            end: { line: 3, column: 131, offset: 272 },
-            indent: []
-          }
-        },
-        {
           type: 'code',
           lang: 'javascript',
           meta: '[playground]',
@@ -15541,8 +15493,8 @@ export default [
             "console.log(errorThrower('hello')) // Error: hello\n" +
             '                                   // hello from catcher',
           position: {
-            start: { line: 5, column: 1, offset: 274 },
-            end: { line: 18, column: 4, offset: 580 },
+            start: { line: 3, column: 1, offset: 142 },
+            end: { line: 16, column: 4, offset: 448 },
             indent: [
               1, 1, 1, 1, 1, 1,
               1, 1, 1, 1, 1, 1,
@@ -15553,7 +15505,7 @@ export default [
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 19, column: 1, offset: 581 }
+        end: { line: 17, column: 1, offset: 449 }
       }
     }
   },
