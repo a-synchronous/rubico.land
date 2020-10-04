@@ -140,7 +140,7 @@ const DocsItem = pipe([
     ReactElement(props => {
       const { goto, state, children } = props,
         isExpanded = state.path.endsWith('/')
-          ? (path == state.path.slice(0, path.length - 1))
+          ? (path == state.path.slice(0, state.path.length - 1))
           : (path == state.path),
         [isTransitioning, setIsTransitioning] = useState(false)
 
