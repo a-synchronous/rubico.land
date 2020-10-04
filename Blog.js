@@ -29,8 +29,19 @@ const BlogItem = pipe([
     title, author, published, path, content, back = '/blog',
   }) => ReactElement(props => {
     const { goto, state, children } = props,
-      isExpanded = state.path == path,
-      [isTransitioning, setIsTransitioning] = useState(false)
+      isExpanded = state.path.endsWith('/')
+        ? (state.path == `${path}/`)
+        : (state.path == path),
+      [transition, setTransition] = useState('none')
+
+    useEffect(() => {
+      if (isExpanded) {
+        setTransition('start')
+        setTimeout(() => {
+          setTransition('end')
+        }, 360)
+      }
+    }, [isExpanded])
 
     return Div({ className: 'blog-item' }, [
       isExpanded ? Span({ id: 'active-spacer' }) : Span(),
@@ -42,7 +53,6 @@ const BlogItem = pipe([
           isExpanded ? goto(back) : goto(path)
         },
       }, [
-        // H1({ id: isExpanded ? 'retractor-header' : '' }, title),
         H1(title),
         isExpanded ? Img({
           className: 'expander-arrow',
@@ -53,9 +63,9 @@ const BlogItem = pipe([
       P({ class: isExpanded ? '' : 'inactive' }, `${published} by ${author}`),
 
       Div({
-        className: isExpanded
-          ? 'fade-in-out transition-end'
-          : 'fade-in-out transition-start',
+        className: transition == 'start' ? 'fade-in-out'
+          : isExpanded && transition == 'end' ? 'fade-in-out transition-end'
+          : 'fade-in-out',
       }, isExpanded ? [content] : []),
     ])
   }),
@@ -74,13 +84,17 @@ const BlogTransducers = BlogItem({
 
 // { state, goto } => ReactElement
 const Blog = ReactElement(props => {
-  const { state, goto } = props
+  const { state, goto } = props,
+    isExpanded = state.path.endsWith('/')
+      ? (state.path == '/blog/')
+      : (state.path == '/blog')
   useEffect(() => {
-    if (state.path == '/blog') {
+    if (isExpanded) {
       goto(CURRENT_PATH)
     }
   }, [])
   return Div({ id: 'blog' }, [
+    P('This is a blog about the rubico library, JavaScript, and functional programming.'),
     BlogTransducers(props),
   ])
 })

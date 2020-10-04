@@ -142,7 +142,16 @@ const DocsItem = pipe([
         isExpanded = state.path.endsWith('/')
           ? (path == state.path.slice(0, state.path.length - 1))
           : (path == state.path),
-        [isTransitioning, setIsTransitioning] = useState(false)
+        [transition, setTransition] = useState('none')
+
+      useEffect(() => {
+        if (isExpanded) {
+          setTransition('start')
+          setTimeout(() => {
+            setTransition('end')
+          }, 360)
+        }
+      }, [isExpanded])
 
       return Div({ className: 'docs-item' }, [
         isExpanded ? Span({ id: 'active-spacer' }) : Span(),
@@ -174,13 +183,14 @@ const DocsItem = pipe([
         })]) : Span(),
 
         Div({
-          className: isExpanded
-            ? 'fade-in-out transition-end'
-            : 'fade-in-out transition-start',
+          className: transition == 'start' ? 'fade-in-out'
+            : isExpanded && transition == 'end' ? 'fade-in-out transition-end'
+            : 'fade-in-out',
         }, isExpanded ? [
           synopsisBase.get(name),
           descriptionBase.get(name),
         ] : []),
+
         Div({ className: 'docs-item-children' }, children),
       ])
     }),

@@ -13148,7 +13148,7 @@ export default [
       ') // 11\n' +
       '```\n' +
       '\n' +
-      'When passed a reducer in argument position, a function pipeline composes the reducer such that the transducers are applied in series, calling the reducer as the last step to end the chain. The resulting reducer has chained transducing functionality; note however that it must be used in conjunction with `transform` or `reduce` to have a transducing effect. For more information on this behavior, see [this resource on transducers](https://github.com/a-synchronous/rubico/blob/master/TRANSDUCERS.md).\n' +
+      'When passed a reducer in argument position, a function pipeline composes the reducer such that the transducers are applied in series, calling the reducer as the last step to end the chain. The resulting reducer has chained transducing functionality; note however that it must be used in conjunction with `transform` or `reduce` to have a transducing effect. For more information on this behavior, see [this blog post on transducers](https://rubico.land/blog/2020/10/02/transducers-crash-course).\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const isOdd = number => number % 2 == 1\n' +
@@ -13299,21 +13299,21 @@ export default [
             {
               type: 'link',
               title: null,
-              url: 'https://github.com/a-synchronous/rubico/blob/master/TRANSDUCERS.md',
+              url: 'https://rubico.land/blog/2020/10/02/transducers-crash-course',
               children: [
                 {
                   type: 'text',
-                  value: 'this resource on transducers',
+                  value: 'this blog post on transducers',
                   position: {
                     start: { line: 13, column: 403, offset: 772 },
-                    end: { line: 13, column: 431, offset: 800 },
+                    end: { line: 13, column: 432, offset: 801 },
                     indent: []
                   }
                 }
               ],
               position: {
                 start: { line: 13, column: 402, offset: 771 },
-                end: { line: 13, column: 500, offset: 869 },
+                end: { line: 13, column: 495, offset: 864 },
                 indent: []
               }
             },
@@ -13321,15 +13321,15 @@ export default [
               type: 'text',
               value: '.',
               position: {
-                start: { line: 13, column: 500, offset: 869 },
-                end: { line: 13, column: 501, offset: 870 },
+                start: { line: 13, column: 495, offset: 864 },
+                end: { line: 13, column: 496, offset: 865 },
                 indent: []
               }
             }
           ],
           position: {
             start: { line: 13, column: 1, offset: 370 },
-            end: { line: 13, column: 501, offset: 870 },
+            end: { line: 13, column: 496, offset: 865 },
             indent: []
           }
         },
@@ -13356,8 +13356,8 @@ export default [
             '  squaredOdds([1, 2, 3, 4, 5])\n' +
             ') // [1, 9, 25]',
           position: {
-            start: { line: 15, column: 1, offset: 872 },
-            end: { line: 34, column: 4, offset: 1202 },
+            start: { line: 15, column: 1, offset: 867 },
+            end: { line: 34, column: 4, offset: 1197 },
             indent: [
               1, 1, 1, 1, 1, 1, 1,
               1, 1, 1, 1, 1, 1, 1,
@@ -13368,7 +13368,7 @@ export default [
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 35, column: 1, offset: 1203 }
+        end: { line: 35, column: 1, offset: 1198 }
       }
     }
   },
@@ -14529,7 +14529,7 @@ export default [
       ')(streamRandomInts()) // 9216576529289484980147613249169774446246768649...\n' +
       '```\n' +
       '\n' +
-      '`transform`, like `reduce`, supports reducer combination. This has a use case in state management, where, for a state object, incoming objects are merged.\n' +
+      '`transform`, like `reduce`, supports reducer combination. This variant of state management automatically assigns (`Object.assign`) pipeline objects into the aggregate state object.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const reducerA = async (state, action) => {\n' +
@@ -15282,17 +15282,35 @@ export default [
             },
             {
               type: 'text',
-              value: ', supports reducer combination. This has a use case in state management, where, for a state object, incoming objects are merged.',
+              value: ', supports reducer combination. This variant of state management automatically assigns (',
               position: {
                 start: { line: 79, column: 27, offset: 2026 },
-                end: { line: 79, column: 155, offset: 2154 },
+                end: { line: 79, column: 115, offset: 2114 },
+                indent: []
+              }
+            },
+            {
+              type: 'inlineCode',
+              value: 'Object.assign',
+              position: {
+                start: { line: 79, column: 115, offset: 2114 },
+                end: { line: 79, column: 130, offset: 2129 },
+                indent: []
+              }
+            },
+            {
+              type: 'text',
+              value: ') pipeline objects into the aggregate state object.',
+              position: {
+                start: { line: 79, column: 130, offset: 2129 },
+                end: { line: 79, column: 181, offset: 2180 },
                 indent: []
               }
             }
           ],
           position: {
             start: { line: 79, column: 1, offset: 2000 },
-            end: { line: 79, column: 155, offset: 2154 },
+            end: { line: 79, column: 181, offset: 2180 },
             indent: []
           }
         },
@@ -15334,8 +15352,8 @@ export default [
             "// action { type: 'C' }\n" +
             '// state { A: true, B: true, C: true }',
           position: {
-            start: { line: 81, column: 1, offset: 2156 },
-            end: { line: 115, column: 4, offset: 3021 },
+            start: { line: 81, column: 1, offset: 2182 },
+            end: { line: 115, column: 4, offset: 3047 },
             indent: [
               1, 1, 1, 1, 1, 1, 1, 1, 1,
               1, 1, 1, 1, 1, 1, 1, 1, 1,
@@ -15347,7 +15365,7 @@ export default [
       ],
       position: {
         start: { line: 1, column: 1, offset: 0 },
-        end: { line: 116, column: 1, offset: 3022 }
+        end: { line: 116, column: 1, offset: 3048 }
       }
     }
   },
