@@ -2,18 +2,23 @@
 
 'use strict'
 
-const {
-  pipe, fork, assign, tap,
-  switchCase,
-  map,
-  and, not, gte,
-  get,
-} = require('rubico')
+const rubico = require('rubico')
 const fs = require('fs').promises
 const nodePath = require('path')
 const execa = require('execa')
 
+const {
+  pipe, fork, assign,
+  tap, tryCatch, switchCase,
+  map, filter, reduce, transform, flatMap,
+  any, all, and, or, not,
+  eq, gt, lt, gte, lte,
+  get, pick, omit,
+} = rubico
+
 const identity = x => x
+
+const noop = function () {}
 
 const trace = tap(console.log)
 
@@ -113,7 +118,13 @@ const main = pipe([
       '--content-type', getContentType(filepath),
       '--acl', 'public-read',
     ],
-    args => execa('aws', args),
+    switchCase([
+      or([
+        () => process.argv.includes('-n'),
+        () => process.argv.includes('--dry-run'),
+      ]), noop,
+      args => execa('aws', args),
+    ]),
   ]))(filepaths),
   tap(() => console.log('done')),
 ])
