@@ -100,7 +100,7 @@ const main = pipe([
       flattenAll,
     ]),
   }),
-  ({ entrypoint, bucketname, filepaths }) => map(pipe([
+  ({ entrypoint, bucketname, filepaths }) => map.pool(10, pipe([
     tap(filepath => console.log(
       'uploading', filepath, '->',
       `${bucketname}/${toS3Key(entrypoint, filepath)}`,
