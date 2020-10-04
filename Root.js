@@ -11,6 +11,7 @@ import Tour from './Tour.js'
 import Docs from './Docs.js'
 import Blog from './Blog.js'
 import NotFound from './NotFound.js'
+import Analytics from './Analytics.js'
 
 const {
   pipe, fork, assign,
@@ -59,6 +60,7 @@ const Root = ReactElement(pipe([
           active.scrollIntoView({ behavior: 'smooth' })
         }
       }, 325)
+      Analytics.goto(path)
     }
 
     useEffect(() => {
