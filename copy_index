@@ -29,6 +29,7 @@ cp index.html docs/map/index.html
 cp index.html docs/map.series
 cp index.html docs/map.pool
 cp index.html docs/map.withIndex
+cp index.html docs/map.own
 cp index.html docs/filter/index.html
 cp index.html docs/filter.withIndex
 cp index.html docs/reduce/index.html

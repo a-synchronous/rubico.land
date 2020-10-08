@@ -43,11 +43,15 @@ const MemoizedReactElementFromMdast = memoizeCappedUnary(ReactElementFromMdast, 
 
 // preload some of the larger cache items
 const preload = ['map', 'filter', 'reduce', 'transform', 'flatMap']
-preload.forEach(name => {
-  const comment = mdastBase.get(name)
-  MemoizedReactElementFromMdast(comment.description_mdast)
-  MemoizedReactElementFromMdast(comment.synopsis_mdast)
-})
+
+preload.forEach(pipe([
+  name => mdastBase.get(name),
+  fork([
+    get('mdast.description'),
+    get('mdast.synopsis'),
+  ]),
+  map(MemoizedReactElementFromMdast),
+]))
 
 const identity = value => value
 
@@ -60,9 +64,7 @@ const synopsisBase = {
     if (comment == null) {
       return Span('Syntax not found')
     }
-    return 'synopsis_mdast' in comment
-      ? MemoizedReactElementFromMdast(comment.synopsis_mdast)
-      : Pre(comment.synopsis)
+    return MemoizedReactElementFromMdast(comment.mdast.synopsis)
   },
 }
 
@@ -72,7 +74,7 @@ const descriptionBase = {
     const comment = mdastBase.get(name)
     return comment == null
       ? Span('Description not found')
-      : MemoizedReactElementFromMdast(comment.description_mdast)
+      : MemoizedReactElementFromMdast(comment.mdast.description)
   },
 }
 
@@ -88,7 +90,7 @@ const namesOrder = [
   'tryCatch',
   'switchCase',
   'map',
-    'map.series', 'map.pool', 'map.withIndex',
+    'map.series', 'map.pool', 'map.withIndex', 'map.own',
   'filter',
     'filter.withIndex',
   'reduce',
@@ -211,6 +213,7 @@ const DocsMap = DocsItem('map')
 const DocsMapSeries = DocsItem('map.series')
 const DocsMapPool = DocsItem('map.pool')
 const DocsMapWithIndex = DocsItem('map.withIndex')
+const DocsMapOwn = DocsItem('map.own')
 const DocsFilter = DocsItem('filter')
 const DocsFilterWithIndex = DocsItem('filter.withIndex')
 const DocsReduce = DocsItem('reduce')
@@ -287,7 +290,10 @@ const Docs = ReactElement(props => Div([
     H1('Transformation + Transducers'),
     Div([
       DocsMap(props, [
-        DocsMapSeries(props), DocsMapPool(props), DocsMapWithIndex(props),
+        DocsMapSeries(props),
+        DocsMapPool(props),
+        DocsMapWithIndex(props),
+        DocsMapOwn(props),
       ]),
       DocsFilter(props, [
         DocsFilterWithIndex(props),

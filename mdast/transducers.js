@@ -912,31 +912,31 @@ export default {
               children: [
                 {
                   type: 'text',
-                  value: 'modifying the functionality into an existing reducing operation',
+                  value: 'modifying the behavior of an existing reducing operation',
                   position: {
                     start: { line: 121, column: 5, offset: 4008 },
-                    end: { line: 121, column: 68, offset: 4071 },
+                    end: { line: 121, column: 61, offset: 4064 },
                     indent: []
                   }
                 }
               ],
               position: {
                 start: { line: 121, column: 5, offset: 4008 },
-                end: { line: 121, column: 68, offset: 4071 },
+                end: { line: 121, column: 61, offset: 4064 },
                 indent: []
               }
             }
           ],
           position: {
             start: { line: 121, column: 1, offset: 4004 },
-            end: { line: 121, column: 68, offset: 4071 },
+            end: { line: 121, column: 61, offset: 4064 },
             indent: []
           }
         }
       ],
       position: {
         start: { line: 119, column: 1, offset: 3893 },
-        end: { line: 121, column: 68, offset: 4071 },
+        end: { line: 121, column: 61, offset: 4064 },
         indent: [ 1, 1 ]
       }
     },
@@ -947,15 +947,15 @@ export default {
           type: 'text',
           value: 'Photo credits:',
           position: {
-            start: { line: 124, column: 1, offset: 4074 },
-            end: { line: 124, column: 15, offset: 4088 },
+            start: { line: 124, column: 1, offset: 4067 },
+            end: { line: 124, column: 15, offset: 4081 },
             indent: []
           }
         }
       ],
       position: {
-        start: { line: 124, column: 1, offset: 4074 },
-        end: { line: 124, column: 15, offset: 4088 },
+        start: { line: 124, column: 1, offset: 4067 },
+        end: { line: 124, column: 15, offset: 4081 },
         indent: []
       }
     },
@@ -982,36 +982,36 @@ export default {
                       type: 'text',
                       value: 'https://www.pngkit.com/view/u2w7e6u2y3o0o0y3_junior-alex-berlaga-helps-set-dominoes-world-records/',
                       position: {
-                        start: { line: 125, column: 4, offset: 4092 },
-                        end: { line: 125, column: 102, offset: 4190 },
+                        start: { line: 125, column: 4, offset: 4085 },
+                        end: { line: 125, column: 102, offset: 4183 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 125, column: 4, offset: 4092 },
-                    end: { line: 125, column: 102, offset: 4190 },
+                    start: { line: 125, column: 4, offset: 4085 },
+                    end: { line: 125, column: 102, offset: 4183 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 125, column: 4, offset: 4092 },
-                end: { line: 125, column: 102, offset: 4190 },
+                start: { line: 125, column: 4, offset: 4085 },
+                end: { line: 125, column: 102, offset: 4183 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 125, column: 1, offset: 4089 },
-            end: { line: 125, column: 102, offset: 4190 },
+            start: { line: 125, column: 1, offset: 4082 },
+            end: { line: 125, column: 102, offset: 4183 },
             indent: []
           }
         }
       ],
       position: {
-        start: { line: 125, column: 1, offset: 4089 },
-        end: { line: 125, column: 102, offset: 4190 },
+        start: { line: 125, column: 1, offset: 4082 },
+        end: { line: 125, column: 102, offset: 4183 },
         indent: []
       }
     },
@@ -1022,15 +1022,15 @@ export default {
           type: 'text',
           value: 'Further reading:',
           position: {
-            start: { line: 127, column: 1, offset: 4192 },
-            end: { line: 127, column: 17, offset: 4208 },
+            start: { line: 127, column: 1, offset: 4185 },
+            end: { line: 127, column: 17, offset: 4201 },
             indent: []
           }
         }
       ],
       position: {
-        start: { line: 127, column: 1, offset: 4192 },
-        end: { line: 127, column: 17, offset: 4208 },
+        start: { line: 127, column: 1, offset: 4185 },
+        end: { line: 127, column: 17, offset: 4201 },
         indent: []
       }
     },
@@ -1057,42 +1057,42 @@ export default {
                       type: 'text',
                       value: 'https://tgvashworth.com/2014/08/31/csp-and-transducers.html',
                       position: {
-                        start: { line: 128, column: 4, offset: 4212 },
-                        end: { line: 128, column: 63, offset: 4271 },
+                        start: { line: 128, column: 4, offset: 4205 },
+                        end: { line: 128, column: 63, offset: 4264 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 128, column: 4, offset: 4212 },
-                    end: { line: 128, column: 63, offset: 4271 },
+                    start: { line: 128, column: 4, offset: 4205 },
+                    end: { line: 128, column: 63, offset: 4264 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 128, column: 4, offset: 4212 },
-                end: { line: 128, column: 63, offset: 4271 },
+                start: { line: 128, column: 4, offset: 4205 },
+                end: { line: 128, column: 63, offset: 4264 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 128, column: 1, offset: 4209 },
-            end: { line: 128, column: 63, offset: 4271 },
+            start: { line: 128, column: 1, offset: 4202 },
+            end: { line: 128, column: 63, offset: 4264 },
             indent: []
           }
         }
       ],
       position: {
-        start: { line: 128, column: 1, offset: 4209 },
-        end: { line: 128, column: 63, offset: 4271 },
+        start: { line: 128, column: 1, offset: 4202 },
+        end: { line: 128, column: 63, offset: 4264 },
         indent: []
       }
     }
   ],
   position: {
     start: { line: 1, column: 1, offset: 0 },
-    end: { line: 129, column: 1, offset: 4272 }
+    end: { line: 129, column: 1, offset: 4265 }
   }
 }
