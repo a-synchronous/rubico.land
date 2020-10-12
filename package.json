@@ -1,7 +1,7 @@
 {
   "name": "rubico.land",
   "version": "0.0.1",
-  "description": "rubico land",
+  "description": "rubico's home page",
   "author": "Richard Tong",
   "license": "MIT",
   "main": "index.js",
@@ -20,6 +20,9 @@
     "cronist": "cronist ../rubico > ./mdast/comments.cronist.js"
   },
   "dependencies": {
+    "arche": "latest",
+    "react": "latest",
+    "react-dom": "latest",
     "rubico": "latest"
   }
 }
