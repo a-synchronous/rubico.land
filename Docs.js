@@ -93,7 +93,8 @@ const namesOrder = [
   'tryCatch',
   'switchCase',
   'map',
-    'map.series', 'map.pool', 'map.withIndex', 'map.own',
+    'map.series', 'map.pool', 'map.withIndex',
+    // 'map.own', TODO: uncomment with rubico v1.6.0
   'filter',
     'filter.withIndex',
   'reduce',
