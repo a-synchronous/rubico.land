@@ -296,7 +296,7 @@ const Docs = ReactElement(props => Div([
         DocsMapSeries(props),
         DocsMapPool(props),
         DocsMapWithIndex(props),
-        DocsMapOwn(props),
+        // DocsMapOwn(props), // TODO: uncomment with rubico v1.6.0
       ]),
       DocsFilter(props, [
         DocsFilterWithIndex(props),
