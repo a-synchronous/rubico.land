@@ -13942,7 +13942,7 @@ export default [
       '\n' +
       '`map` recognizes three types of functions in functor position:\n' +
       '\n' +
-      ' * Generator Functions `function* () {}` - `map(mapper)(generatorFunction)` creates a generator function that generates generators of mapped values. Async mappers are yielded synchronously and may lead to unexpected results here.\n' +
+      ' * Generator Functions `function* () {}` - `map(mapper)(generatorFunction)` creates a generator function that generates generators of mapped values. Async mappers are yielded synchronously and may lead to unexpected results.\n' +
       ' * Async Generator Functions `async function* () {}` - `map(mapper)(asyncGeneratorFunction)` creates an async generator function that generates async generators of mapped values. Promises produced by async mappers are resolved.\n' +
       " * Reducers `(accumulator, item)=>accumulator` - `map(mapper)(reducer)` creates a transducer that, when called with another reducer, creates a mapping step for each item of the reducer's reducing operation. Promises produced by async mappers are resolved.\n" +
       '\n' +
@@ -14606,24 +14606,24 @@ export default [
                       },
                       {
                         type: 'text',
-                        value: ' creates a generator function that generates generators of mapped values. Async mappers are yielded synchronously and may lead to unexpected results here.',
+                        value: ' creates a generator function that generates generators of mapped values. Async mappers are yielded synchronously and may lead to unexpected results.',
                         position: {
                           start: { line: 29, column: 76, offset: 1446 },
-                          end: { line: 29, column: 230, offset: 1600 },
+                          end: { line: 29, column: 225, offset: 1595 },
                           indent: []
                         }
                       }
                     ],
                     position: {
                       start: { line: 29, column: 4, offset: 1374 },
-                      end: { line: 29, column: 230, offset: 1600 },
+                      end: { line: 29, column: 225, offset: 1595 },
                       indent: []
                     }
                   }
                 ],
                 position: {
                   start: { line: 29, column: 1, offset: 1371 },
-                  end: { line: 29, column: 230, offset: 1600 },
+                  end: { line: 29, column: 225, offset: 1595 },
                   indent: []
                 }
               },
@@ -14639,8 +14639,8 @@ export default [
                         type: 'text',
                         value: 'Async Generator Functions ',
                         position: {
-                          start: { line: 30, column: 4, offset: 1604 },
-                          end: { line: 30, column: 30, offset: 1630 },
+                          start: { line: 30, column: 4, offset: 1599 },
+                          end: { line: 30, column: 30, offset: 1625 },
                           indent: []
                         }
                       },
@@ -14648,8 +14648,8 @@ export default [
                         type: 'inlineCode',
                         value: 'async function* () {}',
                         position: {
-                          start: { line: 30, column: 30, offset: 1630 },
-                          end: { line: 30, column: 53, offset: 1653 },
+                          start: { line: 30, column: 30, offset: 1625 },
+                          end: { line: 30, column: 53, offset: 1648 },
                           indent: []
                         }
                       },
@@ -14657,8 +14657,8 @@ export default [
                         type: 'text',
                         value: ' - ',
                         position: {
-                          start: { line: 30, column: 53, offset: 1653 },
-                          end: { line: 30, column: 56, offset: 1656 },
+                          start: { line: 30, column: 53, offset: 1648 },
+                          end: { line: 30, column: 56, offset: 1651 },
                           indent: []
                         }
                       },
@@ -14666,8 +14666,8 @@ export default [
                         type: 'inlineCode',
                         value: 'map(mapper)(asyncGeneratorFunction)',
                         position: {
-                          start: { line: 30, column: 56, offset: 1656 },
-                          end: { line: 30, column: 93, offset: 1693 },
+                          start: { line: 30, column: 56, offset: 1651 },
+                          end: { line: 30, column: 93, offset: 1688 },
                           indent: []
                         }
                       },
@@ -14675,22 +14675,22 @@ export default [
                         type: 'text',
                         value: ' creates an async generator function that generates async generators of mapped values. Promises produced by async mappers are resolved.',
                         position: {
-                          start: { line: 30, column: 93, offset: 1693 },
-                          end: { line: 30, column: 228, offset: 1828 },
+                          start: { line: 30, column: 93, offset: 1688 },
+                          end: { line: 30, column: 228, offset: 1823 },
                           indent: []
                         }
                       }
                     ],
                     position: {
-                      start: { line: 30, column: 4, offset: 1604 },
-                      end: { line: 30, column: 228, offset: 1828 },
+                      start: { line: 30, column: 4, offset: 1599 },
+                      end: { line: 30, column: 228, offset: 1823 },
                       indent: []
                     }
                   }
                 ],
                 position: {
-                  start: { line: 30, column: 1, offset: 1601 },
-                  end: { line: 30, column: 228, offset: 1828 },
+                  start: { line: 30, column: 1, offset: 1596 },
+                  end: { line: 30, column: 228, offset: 1823 },
                   indent: []
                 }
               },
@@ -14706,8 +14706,8 @@ export default [
                         type: 'text',
                         value: 'Reducers ',
                         position: {
-                          start: { line: 31, column: 4, offset: 1832 },
-                          end: { line: 31, column: 13, offset: 1841 },
+                          start: { line: 31, column: 4, offset: 1827 },
+                          end: { line: 31, column: 13, offset: 1836 },
                           indent: []
                         }
                       },
@@ -14715,8 +14715,8 @@ export default [
                         type: 'inlineCode',
                         value: '(accumulator, item)=>accumulator',
                         position: {
-                          start: { line: 31, column: 13, offset: 1841 },
-                          end: { line: 31, column: 47, offset: 1875 },
+                          start: { line: 31, column: 13, offset: 1836 },
+                          end: { line: 31, column: 47, offset: 1870 },
                           indent: []
                         }
                       },
@@ -14724,8 +14724,8 @@ export default [
                         type: 'text',
                         value: ' - ',
                         position: {
-                          start: { line: 31, column: 47, offset: 1875 },
-                          end: { line: 31, column: 50, offset: 1878 },
+                          start: { line: 31, column: 47, offset: 1870 },
+                          end: { line: 31, column: 50, offset: 1873 },
                           indent: []
                         }
                       },
@@ -14733,8 +14733,8 @@ export default [
                         type: 'inlineCode',
                         value: 'map(mapper)(reducer)',
                         position: {
-                          start: { line: 31, column: 50, offset: 1878 },
-                          end: { line: 31, column: 72, offset: 1900 },
+                          start: { line: 31, column: 50, offset: 1873 },
+                          end: { line: 31, column: 72, offset: 1895 },
                           indent: []
                         }
                       },
@@ -14742,29 +14742,29 @@ export default [
                         type: 'text',
                         value: " creates a transducer that, when called with another reducer, creates a mapping step for each item of the reducer's reducing operation. Promises produced by async mappers are resolved.",
                         position: {
-                          start: { line: 31, column: 72, offset: 1900 },
-                          end: { line: 31, column: 256, offset: 2084 },
+                          start: { line: 31, column: 72, offset: 1895 },
+                          end: { line: 31, column: 256, offset: 2079 },
                           indent: []
                         }
                       }
                     ],
                     position: {
-                      start: { line: 31, column: 4, offset: 1832 },
-                      end: { line: 31, column: 256, offset: 2084 },
+                      start: { line: 31, column: 4, offset: 1827 },
+                      end: { line: 31, column: 256, offset: 2079 },
                       indent: []
                     }
                   }
                 ],
                 position: {
-                  start: { line: 31, column: 1, offset: 1829 },
-                  end: { line: 31, column: 256, offset: 2084 },
+                  start: { line: 31, column: 1, offset: 1824 },
+                  end: { line: 31, column: 256, offset: 2079 },
                   indent: []
                 }
               }
             ],
             position: {
               start: { line: 29, column: 1, offset: 1371 },
-              end: { line: 31, column: 256, offset: 2084 },
+              end: { line: 31, column: 256, offset: 2079 },
               indent: [ 1, 1 ]
             }
           },
@@ -14775,15 +14775,15 @@ export default [
                 type: 'text',
                 value: 'Use mapping generator functions to create lazy computations executed at iteration time.',
                 position: {
-                  start: { line: 33, column: 1, offset: 2086 },
-                  end: { line: 33, column: 88, offset: 2173 },
+                  start: { line: 33, column: 1, offset: 2081 },
+                  end: { line: 33, column: 88, offset: 2168 },
                   indent: []
                 }
               }
             ],
             position: {
-              start: { line: 33, column: 1, offset: 2086 },
-              end: { line: 33, column: 88, offset: 2173 },
+              start: { line: 33, column: 1, offset: 2081 },
+              end: { line: 33, column: 88, offset: 2168 },
               indent: []
             }
           },
@@ -14807,8 +14807,8 @@ export default [
               '\n' +
               "console.log([...ABCIter]) // ['A', 'B', 'C']",
             position: {
-              start: { line: 35, column: 1, offset: 2175 },
-              end: { line: 51, column: 4, offset: 2491 },
+              start: { line: 35, column: 1, offset: 2170 },
+              end: { line: 51, column: 4, offset: 2486 },
               indent: [
                 1, 1, 1, 1, 1, 1,
                 1, 1, 1, 1, 1, 1,
@@ -14823,8 +14823,8 @@ export default [
                 type: 'text',
                 value: 'Create a mapping transducer by supplying ',
                 position: {
-                  start: { line: 53, column: 1, offset: 2493 },
-                  end: { line: 53, column: 42, offset: 2534 },
+                  start: { line: 53, column: 1, offset: 2488 },
+                  end: { line: 53, column: 42, offset: 2529 },
                   indent: []
                 }
               },
@@ -14832,8 +14832,8 @@ export default [
                 type: 'inlineCode',
                 value: 'map',
                 position: {
-                  start: { line: 53, column: 42, offset: 2534 },
-                  end: { line: 53, column: 47, offset: 2539 },
+                  start: { line: 53, column: 42, offset: 2529 },
+                  end: { line: 53, column: 47, offset: 2534 },
                   indent: []
                 }
               },
@@ -14841,15 +14841,15 @@ export default [
                 type: 'text',
                 value: ' with a reducer. A reducer is a variadic function that depicts a relationship between an accumulator and any number of arguments. A transducer is a function that accepts a reducer as an argument and returns another reducer.',
                 position: {
-                  start: { line: 53, column: 47, offset: 2539 },
-                  end: { line: 53, column: 270, offset: 2762 },
+                  start: { line: 53, column: 47, offset: 2534 },
+                  end: { line: 53, column: 270, offset: 2757 },
                   indent: []
                 }
               }
             ],
             position: {
-              start: { line: 53, column: 1, offset: 2493 },
-              end: { line: 53, column: 270, offset: 2762 },
+              start: { line: 53, column: 1, offset: 2488 },
+              end: { line: 53, column: 270, offset: 2757 },
               indent: []
             }
           },
@@ -14861,8 +14861,8 @@ export default [
               '\n' +
               'Transducer = Reducer=>Reducer',
             position: {
-              start: { line: 55, column: 1, offset: 2764 },
-              end: { line: 59, column: 4, offset: 2862 },
+              start: { line: 55, column: 1, offset: 2759 },
+              end: { line: 59, column: 4, offset: 2857 },
               indent: [ 1, 1, 1, 1 ]
             }
           },
@@ -14873,8 +14873,8 @@ export default [
                 type: 'text',
                 value: 'The transducer signature enables chaining functionality for reducers. ',
                 position: {
-                  start: { line: 61, column: 1, offset: 2864 },
-                  end: { line: 61, column: 71, offset: 2934 },
+                  start: { line: 61, column: 1, offset: 2859 },
+                  end: { line: 61, column: 71, offset: 2929 },
                   indent: []
                 }
               },
@@ -14882,8 +14882,8 @@ export default [
                 type: 'inlineCode',
                 value: 'map',
                 position: {
-                  start: { line: 61, column: 71, offset: 2934 },
-                  end: { line: 61, column: 76, offset: 2939 },
+                  start: { line: 61, column: 71, offset: 2929 },
+                  end: { line: 61, column: 76, offset: 2934 },
                   indent: []
                 }
               },
@@ -14891,8 +14891,8 @@ export default [
                 type: 'text',
                 value: ' is core to this mechanism, and provides a way via transducers to transform items of reducers. To ',
                 position: {
-                  start: { line: 61, column: 76, offset: 2939 },
-                  end: { line: 61, column: 174, offset: 3037 },
+                  start: { line: 61, column: 76, offset: 2934 },
+                  end: { line: 61, column: 174, offset: 3032 },
                   indent: []
                 }
               },
@@ -14900,8 +14900,8 @@ export default [
                 type: 'inlineCode',
                 value: 'map',
                 position: {
-                  start: { line: 61, column: 174, offset: 3037 },
-                  end: { line: 61, column: 179, offset: 3042 },
+                  start: { line: 61, column: 174, offset: 3032 },
+                  end: { line: 61, column: 179, offset: 3037 },
                   indent: []
                 }
               },
@@ -14909,15 +14909,15 @@ export default [
                 type: 'text',
                 value: ', reducers are just another category.',
                 position: {
-                  start: { line: 61, column: 179, offset: 3042 },
-                  end: { line: 61, column: 216, offset: 3079 },
+                  start: { line: 61, column: 179, offset: 3037 },
+                  end: { line: 61, column: 216, offset: 3074 },
                   indent: []
                 }
               }
             ],
             position: {
-              start: { line: 61, column: 1, offset: 2864 },
-              end: { line: 61, column: 216, offset: 3079 },
+              start: { line: 61, column: 1, offset: 2859 },
+              end: { line: 61, column: 216, offset: 3074 },
               indent: []
             }
           },
@@ -14950,8 +14950,8 @@ export default [
               "  [1, 2, 3, 4, 5].reduce(squareConcatReducer, ''),\n" +
               ") // '1491625'",
             position: {
-              start: { line: 63, column: 1, offset: 3081 },
-              end: { line: 88, column: 4, offset: 3828 },
+              start: { line: 63, column: 1, offset: 3076 },
+              end: { line: 88, column: 4, offset: 3823 },
               indent: [
                 1, 1, 1, 1, 1, 1, 1, 1,
                 1, 1, 1, 1, 1, 1, 1, 1,
@@ -14963,7 +14963,7 @@ export default [
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 88, column: 4, offset: 3828 }
+          end: { line: 88, column: 4, offset: 3823 }
         }
       },
       execution: {
