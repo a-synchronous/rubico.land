@@ -1,13 +1,16 @@
-import ReactElement, {
+import ReactElementFromMdast from './ReactElementFromMdast.js'
+import mdastBase from './mdastBase.js'
+
+const ReactElement = Arche(React)
+
+const {
   A, P, B, Q, Button, Img, Br,
   H1, H2, H3, H4, H5, H6,
   Span, Div, Section, Article,
   Script, Iframe, Blockquote,
   Ul, Ol, Li,
   Code, Pre,
-} from './ReactElement.js'
-import ReactElementFromMdast from './ReactElementFromMdast.js'
-import mdastBase from './mdastBase.js'
+} = ReactElement
 
 const {
   pipe, fork, assign,

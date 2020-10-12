@@ -1,12 +1,15 @@
-import ReactElement, {
+import inspect from './inspect.js'
+
+const ReactElement = Arche(React)
+
+const {
   H1, H2, H3, H4, H5, H6,
   A, P, B, Button, Img,
   Span, Div, Section,
   Script, Iframe,
   Ul, Ol, Li,
   Code, Pre,
-} from './ReactElement.js'
-import inspect from './inspect.js'
+} = ReactElement
 
 const { useState, useEffect, useRef, useCallback, useReducer } = React
 

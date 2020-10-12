@@ -1,4 +1,6 @@
-import ReactElement, { H1 } from './ReactElement.js'
+const ReactElement = Arche(React)
+
+const { H1 } = ReactElement
 
 // () -> NotFound ReactElement
 const NotFound = ReactElement(() => H1('Not Found'))

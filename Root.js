@@ -1,17 +1,22 @@
-import ReactElement, {
-  A, P, B, Q, Button, Img, Br,
-  H1, H2, H3, H4, H5, H6,
-  Span, Div, Section, Article,
-  Script, Iframe, Blockquote,
-  Ul, Ol, Li,
-  Code, Pre,
-} from './ReactElement.js'
 import Home from './Home.js'
 import Tour from './Tour.js'
 import Docs from './Docs.js'
 import Blog from './Blog.js'
 import NotFound from './NotFound.js'
 import Analytics from './Analytics.js'
+import curry2 from './curry2.js'
+import __ from './placeholder.js'
+
+const ReactElement = Arche(React)
+
+const {
+  A, P, B, Q, Button, Img, Br,
+  H1, H2, H3, H4, H5, H6,
+  Span, Div, Section, Article,
+  Script, Iframe, Blockquote,
+  Ul, Ol, Li,
+  Code, Pre,
+} = ReactElement
 
 const {
   pipe, fork, assign,
@@ -33,19 +38,16 @@ const homeAnchor = document.getElementById('home')
 // (prefix string, getter any=>string) => boolean
 const startsWith = (prefix, getter) => value => getter(value).startsWith(prefix)
 
-// reducer function => initialState any => any
-const StateReducer = reducer => initialState => useReducer(reducer, initialState)
-
 // initialState { path: string } -> ReactElement
 const Root = ReactElement(pipe([
-  StateReducer((state, action) => {
+  curry2(useReducer, (state, action) => {
     switch (action.type) {
       case 'SET_PATH':
         return { ...state, path: action.path }
       default:
         return state
     }
-  }),
+  }, __),
 
   ([state, dispatch]) => {
     const updatePathWithLocation = () => {

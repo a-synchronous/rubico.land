@@ -1,13 +1,16 @@
-import ReactElement, {
+import CodeRunner from './CodeRunner.js'
+import CodeViewer from './CodeViewer.js'
+
+const ReactElement = Arche(React)
+
+const {
   H1, H2, H3, H4, H5, H6,
   A, P, B, Q, Button, Img, Br,
   Span, Div, Section, Article,
   Script, Iframe, Blockquote,
   Ul, Ol, Li,
   Code, Pre,
-} from './ReactElement.js'
-import CodeRunner from './CodeRunner.js'
-import CodeViewer from './CodeViewer.js'
+} = ReactElement
 
 const {
   pipe, fork, assign,
