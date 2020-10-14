@@ -4,18 +4,18 @@
   <title>rubico – [a]synchronous functional programming</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width">
-  <meta name="description" content="Create declarative, extensible, and async-enabled function compositions." />
-  <meta name="keywords" content="javascript,functional,programming,async,asynchronous,sync,synchronous,documentation,rubico,land" />
+  <meta name="description" content="Create async-enabled function compositions." />
+  <meta name="keywords" content="javascript,functional,programming,async,asynchronous,pipeline,sync,synchronous,documentation,rubico,land" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@richytong_" />
   <meta name="twitter:title" content="rubico - [a]synchronous functional programming" />
-  <meta name="twitter:description" content="Create declarative, extensible, and async-enabled function compositions." />
+  <meta name="twitter:description" content="Create async-enabled function compositions." />
   <meta name="twitter:image" content="https://rubico.land/assets/android-chrome-192x192.png" />
   <meta property="og:title" content="rubico - [a]synchronous functional programming" />
   <meta property="og:type" content="object" />
   <meta property="og:image" content="https://rubico.land/assets/android-chrome-192x192.png" />
   <meta property="og:url" content="https://rubico.land" />
-  <meta property="og:description" content="Create declarative, extensible, and async-enabled function compositions." />
+  <meta property="og:description" content="Create async-enabled function compositions." />
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
