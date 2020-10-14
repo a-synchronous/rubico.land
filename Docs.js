@@ -87,17 +87,17 @@ const namesOrder = [
   'tap',
     'tap.sync',
     'tap.if',
+  'switchCase',
+  'tryCatch',
   'fork',
     'fork.series',
   'assign',
   'get',
   'pick',
   'omit',
-  'switchCase',
-  'tryCatch',
   'map',
     'map.series', 'map.pool', 'map.withIndex',
-    // 'map.own', TODO: uncomment with rubico v1.6.0
+    // 'map.own', TODO: uncomment with v1.6
   'filter',
     'filter.withIndex',
   'reduce',
@@ -114,6 +114,11 @@ const namesOrder = [
   'lt',
   'gte',
   'lte',
+  /* TODO: uncomment with v1.6
+  'thunkify',
+  'curry',
+  '__',
+  */
   'defaultsDeep',
   'find',
   'first',
@@ -272,6 +277,16 @@ const Docs = ReactElement(props => Div([
       ]),
     ]),
 
+    H1('Control Flow'),
+    Div([
+      DocsSwitchCase(props),
+    ]),
+
+    H1('Handle Errors'),
+    Div([
+      DocsTryCatch(props),
+    ]),
+
     H1('Compose Objects'),
     Div([
       DocsFork(props, [
@@ -281,16 +296,6 @@ const Docs = ReactElement(props => Div([
       DocsGet(props),
       DocsPick(props),
       DocsOmit(props),
-    ]),
-
-    H1('Control Flow'),
-    Div([
-      DocsSwitchCase(props),
-    ]),
-
-    H1('Handle Errors'),
-    Div([
-      DocsTryCatch(props),
     ]),
 
     H1('Transform Data'),
