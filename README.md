@@ -1,5 +1,5 @@
 # rubico.land
-[rubico](https://rubico.land/) - [a]synchronous functional programming. Create async-enabled function compositions.
+Website for [rubico](https://rubico.land/) - [a]synchronous functional programming. Create async-enabled function compositions.
 
 ## deployment
 ```sh
