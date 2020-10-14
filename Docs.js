@@ -84,14 +84,17 @@ const descriptionBase = {
 const namesOrder = [
   'pipe',
     'pipe.sync',
-  'fork',
-    'fork.series',
-  'assign',
   'tap',
     'tap.sync',
     'tap.if',
-  'tryCatch',
+  'fork',
+    'fork.series',
+  'assign',
+  'get',
+  'pick',
+  'omit',
   'switchCase',
+  'tryCatch',
   'map',
     'map.series', 'map.pool', 'map.withIndex',
     // 'map.own', TODO: uncomment with rubico v1.6.0
@@ -100,20 +103,17 @@ const namesOrder = [
   'reduce',
   'transform',
   'flatMap',
-  'any',
-  'all',
   'and',
   'or',
   'not',
   'not.sync',
+  'any',
+  'all',
   'eq',
   'gt',
   'lt',
   'gte',
   'lte',
-  'get',
-  'pick',
-  'omit',
   'defaultsDeep',
   'find',
   'first',
@@ -261,37 +261,39 @@ const Docs = ReactElement(props => Div([
   Div({ id: 'docs' }, [
     P('This page documents rubico\'s API methods. To get started, click on a link below.'),
 
-    /* probably will move this to the bottom
-    Span([
-      A({
-        href: '/docs/x',
-        className: 'docs-link',
-        onClick(event) {
-          event.preventDefault()
-          props.goto('/docs/x')
-        },
-      }, [H1('x/')]),
-    ]),
-    */
-
-    H1('Function Composition'),
+    H1('Create Pipelines'),
     Div([
       DocsPipe(props, [
         DocsPipeSync(props),
       ]),
-      DocsFork(props, [
-        DocsForkSeries(props),
-      ]),
-      DocsAssign(props),
       DocsTap(props, [
         DocsTapSync(props),
         DocsTapIf(props),
       ]),
-      DocsTryCatch(props),
+    ]),
+
+    H1('Compose Objects'),
+    Div([
+      DocsFork(props, [
+        DocsForkSeries(props),
+      ]),
+      DocsAssign(props),
+      DocsGet(props),
+      DocsPick(props),
+      DocsOmit(props),
+    ]),
+
+    H1('Control Flow'),
+    Div([
       DocsSwitchCase(props),
     ]),
 
-    H1('Transformation + Transducers'),
+    H1('Handle Errors'),
+    Div([
+      DocsTryCatch(props),
+    ]),
+
+    H1('Transform Data'),
     Div([
       DocsMap(props, [
         DocsMapSeries(props),
@@ -307,27 +309,28 @@ const Docs = ReactElement(props => Div([
       DocsFlatMap(props),
     ]),
 
-    H1('Predicate Composition'),
+    H1('Compose Predicates'),
     Div([
-      DocsAny(props),
-      DocsAll(props),
       DocsAnd(props),
       DocsOr(props),
       DocsNot(props, [
         DocsNotSync(props),
       ]),
+    ]),
+
+    H1('Aggregate Predicates'),
+    Div([
+      DocsAny(props),
+      DocsAll(props),
+    ]),
+
+    H1('Compare Values'),
+    Div([
       DocsEq(props),
       DocsGt(props),
       DocsLt(props),
       DocsGte(props),
       DocsLte(props),
-    ]),
-
-    H1('Property Access'),
-    Div([
-      DocsGet(props),
-      DocsPick(props),
-      DocsOmit(props),
     ]),
 
     H1('x/ - stable'),
