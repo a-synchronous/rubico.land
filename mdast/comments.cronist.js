@@ -1,5 +1,125 @@
 export default [
   {
+    name: '__',
+    synopsis: '```coffeescript [specscript]\n__ = Symbol(placeholder)\n```',
+    description: 'A special placeholder value `__` (two underscores) that denotes the position of an argument in a curried function.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'console.log(\n' +
+      '  curry.arity(3, Array.of, __, 2, 3)(1),\n' +
+      ') // [1, 2, 3]\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: '__',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 3, offset: 2 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 3, offset: 2 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 3, offset: 2 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: '__ = Symbol(placeholder)',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 57 },
+              indent: [ 1, 1 ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 57 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'A special placeholder value ',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 29, offset: 28 },
+                  indent: []
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: '__',
+                position: {
+                  start: { line: 1, column: 29, offset: 28 },
+                  end: { line: 1, column: 33, offset: 32 },
+                  indent: []
+                }
+              },
+              {
+                type: 'text',
+                value: ' (two underscores) that denotes the position of an argument in a curried function.',
+                position: {
+                  start: { line: 1, column: 33, offset: 32 },
+                  end: { line: 1, column: 115, offset: 114 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 115, offset: 114 },
+              indent: []
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'console.log(\n' +
+              '  curry.arity(3, Array.of, __, 2, 3)(1),\n' +
+              ') // [1, 2, 3]',
+            position: {
+              start: { line: 3, column: 1, offset: 116 },
+              end: { line: 7, column: 4, offset: 215 },
+              indent: [ 1, 1, 1, 1 ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 7, column: 4, offset: 215 }
+        }
+      }
+    }
+  },
+  {
     name: 'FilteringIterator',
     synopsis: '```coffeescript [specscript]\n' +
       'FilteringIterator<\n' +
@@ -3187,6 +3307,86 @@ export default [
     }
   },
   {
+    name: 'curry1',
+    synopsis: '```coffeescript [specscript]\n' +
+      '__ = Symbol(placeholder)\n' +
+      '\n' +
+      'var func function,\n' +
+      '  arg0 __|any,\n' +
+      '  _arg0 __|any\n' +
+      '\n' +
+      'curry1(func, arg0) -> curried _arg0=>function|any\n' +
+      '```',
+    description: '',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'curry1',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 7, offset: 6 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 7, offset: 6 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 7, offset: 6 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: '__ = Symbol(placeholder)\n' +
+              '\n' +
+              'var func function,\n' +
+              '  arg0 __|any,\n' +
+              '  _arg0 __|any\n' +
+              '\n' +
+              'curry1(func, arg0) -> curried _arg0=>function|any',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 9, column: 4, offset: 158 },
+              indent: [
+                1, 1, 1, 1,
+                1, 1, 1, 1
+              ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 9, column: 4, offset: 158 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 1, offset: 0 }
+        }
+      }
+    }
+  },
+  {
     name: 'curry2',
     synopsis: '```coffeescript [specscript]\n' +
       "__ = Symbol('placeholder')\n" +
@@ -3674,6 +3874,108 @@ export default [
         position: {
           start: { line: 1, column: 1, offset: 0 },
           end: { line: 3, column: 52, offset: 150 }
+        }
+      }
+    }
+  },
+  {
+    name: 'curryArity',
+    synopsis: '```coffeescript [specscript]\n' +
+      '__ = Symbol(placeholder)\n' +
+      '\n' +
+      'var arity number,\n' +
+      '  func function,\n' +
+      '  args Array<__|any>,\n' +
+      '  curried function\n' +
+      '\n' +
+      'curryArity(arity, func, args) -> curried|any\n' +
+      '```',
+    description: 'Create a curried version of a function with specified arity.',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'curryArity',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 11, offset: 10 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 11, offset: 10 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 11, offset: 10 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: '__ = Symbol(placeholder)\n' +
+              '\n' +
+              'var arity number,\n' +
+              '  func function,\n' +
+              '  args Array<__|any>,\n' +
+              '  curried function\n' +
+              '\n' +
+              'curryArity(arity, func, args) -> curried|any',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 10, column: 4, offset: 180 },
+              indent: [
+                1, 1, 1, 1, 1,
+                1, 1, 1, 1
+              ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 10, column: 4, offset: 180 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Create a curried version of a function with specified arity.',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 61, offset: 60 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 61, offset: 60 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 61, offset: 60 }
         }
       }
     }
@@ -4425,17 +4727,17 @@ export default [
     }
   },
   {
-    name: 'genericTransformToNull',
+    name: 'identityTransform',
     synopsis: '```coffeescript [specscript]\n' +
       'Reducer = (any, any)=>Promise|any\n' +
       '\n' +
-      'genericTransformToNull<\n' +
+      'identityTransform<\n' +
       '  args Array,\n' +
       '  transducer Reducer=>Reducer,\n' +
       '  result undefined|null,\n' +
       '>(args, transducer, result) -> Promise|result\n' +
       '```',
-    description: 'Reduce a value, always returning null or undefined.',
+    description: 'Reduce a value, always returning the initial result',
     mdast: {
       name: {
         type: 'root',
@@ -4445,24 +4747,24 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'genericTransformToNull',
+                value: 'identityTransform',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 23, offset: 22 },
+                  end: { line: 1, column: 18, offset: 17 },
                   indent: []
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 23, offset: 22 },
+              end: { line: 1, column: 18, offset: 17 },
               indent: []
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 1, column: 23, offset: 22 }
+          end: { line: 1, column: 18, offset: 17 }
         }
       },
       synopsis: {
@@ -4474,14 +4776,14 @@ export default [
             meta: '[specscript]',
             value: 'Reducer = (any, any)=>Promise|any\n' +
               '\n' +
-              'genericTransformToNull<\n' +
+              'identityTransform<\n' +
               '  args Array,\n' +
               '  transducer Reducer=>Reducer,\n' +
               '  result undefined|null,\n' +
               '>(args, transducer, result) -> Promise|result',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 9, column: 4, offset: 207 },
+              end: { line: 9, column: 4, offset: 202 },
               indent: [
                 1, 1, 1, 1,
                 1, 1, 1, 1
@@ -4491,7 +4793,7 @@ export default [
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 9, column: 4, offset: 207 }
+          end: { line: 9, column: 4, offset: 202 }
         }
       },
       description: {
@@ -4502,7 +4804,7 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Reduce a value, always returning null or undefined.',
+                value: 'Reduce a value, always returning the initial result',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
                   end: { line: 1, column: 52, offset: 51 },
@@ -9303,6 +9605,108 @@ export default [
     }
   },
   {
+    name: 'thunkify5',
+    synopsis: '```coffeescript [specscript]\n' +
+      'thunkify5<\n' +
+      '  arg0 any,\n' +
+      '  arg1 any,\n' +
+      '  arg2 any,\n' +
+      '  arg3 any,\n' +
+      '  arg4 any,\n' +
+      '  func (arg0, arg1, arg2, arg3, arg4)=>any,\n' +
+      '>(func, arg0, arg1, arg2, arg3, arg4) -> thunk ()=>func(arg0, arg1, arg2, arg3, arg4)\n' +
+      '```',
+    description: 'Create a thunk from a function and five arguments.',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'thunkify5',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 10, offset: 9 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 10, offset: 9 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 10, offset: 9 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'thunkify5<\n' +
+              '  arg0 any,\n' +
+              '  arg1 any,\n' +
+              '  arg2 any,\n' +
+              '  arg3 any,\n' +
+              '  arg4 any,\n' +
+              '  func (arg0, arg1, arg2, arg3, arg4)=>any,\n' +
+              '>(func, arg0, arg1, arg2, arg3, arg4) -> thunk ()=>func(arg0, arg1, arg2, arg3, arg4)',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 10, column: 4, offset: 233 },
+              indent: [
+                1, 1, 1, 1, 1,
+                1, 1, 1, 1
+              ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 10, column: 4, offset: 233 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Create a thunk from a function and five arguments.',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 51, offset: 50 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 51, offset: 50 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 51, offset: 50 }
+        }
+      }
+    }
+  },
+  {
     name: 'all',
     synopsis: '```coffeescript [specscript]\n' +
       'Reducer<T> = (any, T)=>Promise|any\n' +
@@ -9518,6 +9922,128 @@ export default [
         position: {
           start: { line: 1, column: 1, offset: 0 },
           end: { line: 1, column: 1, offset: 0 }
+        }
+      }
+    }
+  },
+  {
+    name: 'always',
+    synopsis: '```coffeescript [specscript]\nalways(value any) -> getter ()=>value\n```',
+    description: 'Create a function that always returns a value.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const always5 = always(5)\n' +
+      '\n' +
+      'console.log(always5()) // 5\n' +
+      '\n' +
+      'console.log(\n' +
+      '  fork({\n' +
+      '    a: always(1),\n' +
+      '    b: always(2),\n' +
+      '    c: always(3),\n' +
+      '  })(),\n' +
+      ') // { a: 1, b: 2, c: 3 }\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'always',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 7, offset: 6 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 7, offset: 6 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 7, offset: 6 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'always(value any) -> getter ()=>value',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 70 },
+              indent: [ 1, 1 ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 70 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Create a function that always returns a value.',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 47, offset: 46 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 47, offset: 46 },
+              indent: []
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'const always5 = always(5)\n' +
+              '\n' +
+              'console.log(always5()) // 5\n' +
+              '\n' +
+              'console.log(\n' +
+              '  fork({\n' +
+              '    a: always(1),\n' +
+              '    b: always(2),\n' +
+              '    c: always(3),\n' +
+              '  })(),\n' +
+              ') // { a: 1, b: 2, c: 3 }',
+            position: {
+              start: { line: 3, column: 1, offset: 48 },
+              end: { line: 15, column: 4, offset: 244 },
+              indent: [
+                1, 1, 1, 1, 1,
+                1, 1, 1, 1, 1,
+                1, 1
+              ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 15, column: 4, offset: 244 }
         }
       }
     }
@@ -10126,6 +10652,297 @@ export default [
         position: {
           start: { line: 1, column: 1, offset: 0 },
           end: { line: 1, column: 11, offset: 10 }
+        }
+      }
+    }
+  },
+  {
+    name: 'curry',
+    synopsis: '```coffeescript [specscript]\n' +
+      '__ = Symbol(placeholder)\n' +
+      '\n' +
+      'var func function,\n' +
+      '  args ...(__|any),\n' +
+      '  moreArgs ...(__|any)\n' +
+      '\n' +
+      'curry(func, ...args) -> curried function|any\n' +
+      '\n' +
+      'curry(func, ...args)(...moreArgs) -> curried function|any\n' +
+      '```',
+    description: "Enable partial application of a function's arguments in any order. Provide the placeholder value `__` to specify an argument to be resolved in the partially applied function.\n" +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const add = (a, b, c) => a + b + c\n' +
+      '\n' +
+      "console.log(curry(add, 'a', 'b', 'c')) // 'abc'\n" +
+      "console.log(curry(add)('a', 'b', 'c')) // 'abc'\n" +
+      "console.log(curry(add, 'a')('b', 'c')) // 'abc'\n" +
+      "console.log(curry(add, 'a', 'b')('c')) // 'abc'\n" +
+      "console.log(curry(add)('a')('b')('c')) // 'abc'\n" +
+      '\n' +
+      "console.log(curry(add, __, 'b', 'c')('a')) // abc\n" +
+      "console.log(curry(add, __, __, 'c')('a', 'b')) // abc\n" +
+      "console.log(curry(add, __, __, 'c')(__, 'b')('a')) // abc\n" +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'curry',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 6, offset: 5 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 6, offset: 5 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 6, offset: 5 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: '__ = Symbol(placeholder)\n' +
+              '\n' +
+              'var func function,\n' +
+              '  args ...(__|any),\n' +
+              '  moreArgs ...(__|any)\n' +
+              '\n' +
+              'curry(func, ...args) -> curried function|any\n' +
+              '\n' +
+              'curry(func, ...args)(...moreArgs) -> curried function|any',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 11, column: 4, offset: 225 },
+              indent: [
+                1, 1, 1, 1, 1,
+                1, 1, 1, 1, 1
+              ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 11, column: 4, offset: 225 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: "Enable partial application of a function's arguments in any order. Provide the placeholder value ",
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 98, offset: 97 },
+                  indent: []
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: '__',
+                position: {
+                  start: { line: 1, column: 98, offset: 97 },
+                  end: { line: 1, column: 102, offset: 101 },
+                  indent: []
+                }
+              },
+              {
+                type: 'text',
+                value: ' to specify an argument to be resolved in the partially applied function.',
+                position: {
+                  start: { line: 1, column: 102, offset: 101 },
+                  end: { line: 1, column: 175, offset: 174 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 175, offset: 174 },
+              indent: []
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'const add = (a, b, c) => a + b + c\n' +
+              '\n' +
+              "console.log(curry(add, 'a', 'b', 'c')) // 'abc'\n" +
+              "console.log(curry(add)('a', 'b', 'c')) // 'abc'\n" +
+              "console.log(curry(add, 'a')('b', 'c')) // 'abc'\n" +
+              "console.log(curry(add, 'a', 'b')('c')) // 'abc'\n" +
+              "console.log(curry(add)('a')('b')('c')) // 'abc'\n" +
+              '\n' +
+              "console.log(curry(add, __, 'b', 'c')('a')) // abc\n" +
+              "console.log(curry(add, __, __, 'c')('a', 'b')) // abc\n" +
+              "console.log(curry(add, __, __, 'c')(__, 'b')('a')) // abc",
+            position: {
+              start: { line: 3, column: 1, offset: 176 },
+              end: { line: 15, column: 4, offset: 645 },
+              indent: [
+                1, 1, 1, 1, 1,
+                1, 1, 1, 1, 1,
+                1, 1
+              ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 15, column: 4, offset: 645 }
+        }
+      }
+    }
+  },
+  {
+    name: 'curry.arity',
+    synopsis: '```coffeescript [specscript]\n' +
+      '__ = Symbol(placeholder)\n' +
+      '\n' +
+      'var arity number,\n' +
+      '  func function,\n' +
+      '  args Array<__|any>,\n' +
+      '  curried function\n' +
+      '\n' +
+      'curry.arity(arity, func, ...args) -> curried|any\n' +
+      '```',
+    description: '`curry` with specified arity as the first parameter. Useful for locking down variadic functions.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const add = (a, b, c = 0) => a + b + c\n' +
+      '\n' +
+      'console.log(curry.arity(2, add, 1, 2)) // 3\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'curry.arity',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 12, offset: 11 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 12, offset: 11 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 12, offset: 11 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: '__ = Symbol(placeholder)\n' +
+              '\n' +
+              'var arity number,\n' +
+              '  func function,\n' +
+              '  args Array<__|any>,\n' +
+              '  curried function\n' +
+              '\n' +
+              'curry.arity(arity, func, ...args) -> curried|any',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 10, column: 4, offset: 184 },
+              indent: [
+                1, 1, 1, 1, 1,
+                1, 1, 1, 1
+              ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 10, column: 4, offset: 184 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'inlineCode',
+                value: 'curry',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 8, offset: 7 },
+                  indent: []
+                }
+              },
+              {
+                type: 'text',
+                value: ' with specified arity as the first parameter. Useful for locking down variadic functions.',
+                position: {
+                  start: { line: 1, column: 8, offset: 7 },
+                  end: { line: 1, column: 97, offset: 96 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 97, offset: 96 },
+              indent: []
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'const add = (a, b, c = 0) => a + b + c\n' +
+              '\n' +
+              'console.log(curry.arity(2, add, 1, 2)) // 3',
+            position: {
+              start: { line: 3, column: 1, offset: 98 },
+              end: { line: 7, column: 4, offset: 212 },
+              indent: [ 1, 1, 1, 1 ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 7, column: 4, offset: 212 }
         }
       }
     }
@@ -19092,7 +19909,7 @@ export default [
       ') // 11\n' +
       '```\n' +
       '\n' +
-      'When passed a reducer in argument position, a function pipeline composes the reducer such that the transducers are applied in series, calling the reducer as the last step to end the chain. The resulting reducer has chained transducing functionality; note however that it must be used in conjunction with `transform` or `reduce` to have a transducing effect. For more information on this behavior, see [this blog post on transducers](https://rubico.land/blog/2020/10/02/transducers-crash-course).\n' +
+      'In order to create pipelines of transducers that read left to right, `pipe` chains the functions (assuming they are transducers) in reverse when passed a reducer in argument position. This results in a reducer with chained functionality. For more information on this behavior, see [this blog post on transducers](https://rubico.land/blog/2020/10/02/transducers-crash-course).\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const isOdd = number => number % 2 == 1\n' +
@@ -19228,46 +20045,28 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'When passed a reducer in argument position, a function pipeline composes the reducer such that the transducers are applied in series, calling the reducer as the last step to end the chain. The resulting reducer has chained transducing functionality; note however that it must be used in conjunction with ',
+                value: 'In order to create pipelines of transducers that read left to right, ',
                 position: {
                   start: { line: 13, column: 1, offset: 370 },
-                  end: { line: 13, column: 305, offset: 674 },
+                  end: { line: 13, column: 70, offset: 439 },
                   indent: []
                 }
               },
               {
                 type: 'inlineCode',
-                value: 'transform',
+                value: 'pipe',
                 position: {
-                  start: { line: 13, column: 305, offset: 674 },
-                  end: { line: 13, column: 316, offset: 685 },
+                  start: { line: 13, column: 70, offset: 439 },
+                  end: { line: 13, column: 76, offset: 445 },
                   indent: []
                 }
               },
               {
                 type: 'text',
-                value: ' or ',
+                value: ' chains the functions (assuming they are transducers) in reverse when passed a reducer in argument position. This results in a reducer with chained functionality. For more information on this behavior, see ',
                 position: {
-                  start: { line: 13, column: 316, offset: 685 },
-                  end: { line: 13, column: 320, offset: 689 },
-                  indent: []
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'reduce',
-                position: {
-                  start: { line: 13, column: 320, offset: 689 },
-                  end: { line: 13, column: 328, offset: 697 },
-                  indent: []
-                }
-              },
-              {
-                type: 'text',
-                value: ' to have a transducing effect. For more information on this behavior, see ',
-                position: {
-                  start: { line: 13, column: 328, offset: 697 },
-                  end: { line: 13, column: 402, offset: 771 },
+                  start: { line: 13, column: 76, offset: 445 },
+                  end: { line: 13, column: 282, offset: 651 },
                   indent: []
                 }
               },
@@ -19280,15 +20079,15 @@ export default [
                     type: 'text',
                     value: 'this blog post on transducers',
                     position: {
-                      start: { line: 13, column: 403, offset: 772 },
-                      end: { line: 13, column: 432, offset: 801 },
+                      start: { line: 13, column: 283, offset: 652 },
+                      end: { line: 13, column: 312, offset: 681 },
                       indent: []
                     }
                   }
                 ],
                 position: {
-                  start: { line: 13, column: 402, offset: 771 },
-                  end: { line: 13, column: 495, offset: 864 },
+                  start: { line: 13, column: 282, offset: 651 },
+                  end: { line: 13, column: 375, offset: 744 },
                   indent: []
                 }
               },
@@ -19296,15 +20095,15 @@ export default [
                 type: 'text',
                 value: '.',
                 position: {
-                  start: { line: 13, column: 495, offset: 864 },
-                  end: { line: 13, column: 496, offset: 865 },
+                  start: { line: 13, column: 375, offset: 744 },
+                  end: { line: 13, column: 376, offset: 745 },
                   indent: []
                 }
               }
             ],
             position: {
               start: { line: 13, column: 1, offset: 370 },
-              end: { line: 13, column: 496, offset: 865 },
+              end: { line: 13, column: 376, offset: 745 },
               indent: []
             }
           },
@@ -19331,8 +20130,8 @@ export default [
               '  squaredOdds([1, 2, 3, 4, 5])\n' +
               ') // [1, 9, 25]',
             position: {
-              start: { line: 15, column: 1, offset: 867 },
-              end: { line: 34, column: 4, offset: 1197 },
+              start: { line: 15, column: 1, offset: 747 },
+              end: { line: 34, column: 4, offset: 1077 },
               indent: [
                 1, 1, 1, 1, 1, 1, 1,
                 1, 1, 1, 1, 1, 1, 1,
@@ -19343,7 +20142,7 @@ export default [
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 34, column: 4, offset: 1197 }
+          end: { line: 34, column: 4, offset: 1077 }
         }
       },
       execution: {
@@ -20695,6 +21494,120 @@ export default [
     }
   },
   {
+    name: 'thunkify',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var func function,\n' +
+      '  args ...any\n' +
+      '\n' +
+      'thunkify(func, ...args) -> thunk ()=>func(...args)\n' +
+      '```',
+    description: 'Create a thunk from a function and any number of arguments. A thunk is a function that takes no arguments - the computation it represents has already been "thunk" with given function and arguments.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const add = (a, b) => a + b\n' +
+      '\n' +
+      'const thunkAdd12 = thunkify(add, 1, 2)\n' +
+      '\n' +
+      'console.log(thunkAdd12()) // 3\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'thunkify',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 9, offset: 8 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 9, offset: 8 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 9, offset: 8 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'var func function,\n' +
+              '  args ...any\n' +
+              '\n' +
+              'thunkify(func, ...args) -> thunk ()=>func(...args)',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 6, column: 4, offset: 117 },
+              indent: [ 1, 1, 1, 1, 1 ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 6, column: 4, offset: 117 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Create a thunk from a function and any number of arguments. A thunk is a function that takes no arguments - the computation it represents has already been "thunk" with given function and arguments.',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 198, offset: 197 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 198, offset: 197 },
+              indent: []
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'const add = (a, b) => a + b\n' +
+              '\n' +
+              'const thunkAdd12 = thunkify(add, 1, 2)\n' +
+              '\n' +
+              'console.log(thunkAdd12()) // 3',
+            position: {
+              start: { line: 3, column: 1, offset: 199 },
+              end: { line: 9, column: 4, offset: 329 },
+              indent: [ 1, 1, 1, 1, 1, 1 ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 9, column: 4, offset: 329 }
+        }
+      }
+    }
+  },
+  {
     name: 'transform',
     synopsis: '```coffeescript [specscript]\n' +
       'Reducer<T> = (any, T)=>Promise|any\n' +
@@ -21923,7 +22836,9 @@ export default [
       '```',
     description: 'Deeply assign default values to an array or object by an array or object of possibly nested default values.\n' +
       '\n' +
-      '```javascript [node]\n' +
+      '```javascript [playground]\n' +
+      "import defaultsDeep from 'https://unpkg.com/rubico/dist/x/defaultsDeep.es.js'\n" +
+      '\n' +
       'const defaultUser = defaultsDeep({\n' +
       "  name: 'placeholder',\n" +
       '  images: [\n' +
@@ -22023,8 +22938,10 @@ export default [
           {
             type: 'code',
             lang: 'javascript',
-            meta: '[node]',
-            value: 'const defaultUser = defaultsDeep({\n' +
+            meta: '[playground]',
+            value: "import defaultsDeep from 'https://unpkg.com/rubico/dist/x/defaultsDeep.es.js'\n" +
+              '\n' +
+              'const defaultUser = defaultsDeep({\n' +
               "  name: 'placeholder',\n" +
               '  images: [\n' +
               "    { url: 'https://via.placeholder.com/150' },\n" +
@@ -22047,19 +22964,137 @@ export default [
               '// }',
             position: {
               start: { line: 3, column: 1, offset: 109 },
-              end: { line: 25, column: 4, offset: 732 },
+              end: { line: 27, column: 4, offset: 817 },
               indent: [
-                1, 1, 1, 1, 1, 1, 1,
-                1, 1, 1, 1, 1, 1, 1,
-                1, 1, 1, 1, 1, 1, 1,
-                1
+                1, 1, 1, 1, 1, 1, 1, 1,
+                1, 1, 1, 1, 1, 1, 1, 1,
+                1, 1, 1, 1, 1, 1, 1, 1
               ]
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 25, column: 4, offset: 732 }
+          end: { line: 27, column: 4, offset: 817 }
+        }
+      }
+    }
+  },
+  {
+    name: 'differenceWith',
+    synopsis: '```coffeescript [specscript]\n' +
+      'differenceWith(\n' +
+      '  comparator (any, any)=>Promise|boolean,\n' +
+      '  allValues Array,\n' +
+      ')(values Array) -> someOrAllValues Array\n' +
+      '```',
+    description: 'Create an array of all the values in an array that are not in another array as dictated by a comparator.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      "import differenceWith from 'https://unpkg.com/rubico/dist/x/differenceWith.es.js'\n" +
+      "import isDeepEqual from 'https://unpkg.com/rubico/dist/x/isDeepEqual.es.js'\n" +
+      '\n' +
+      'console.log(\n' +
+      '  differenceWith(isDeepEqual, [{ a: 1 }, { b: 2 }, { c: 3 }])([{ b: 2 }]),\n' +
+      ') // [{ a: 1 }, { c: 3 }]\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'differenceWith',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 15, offset: 14 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 15, offset: 14 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 15, offset: 14 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'differenceWith(\n' +
+              '  comparator (any, any)=>Promise|boolean,\n' +
+              '  allValues Array,\n' +
+              ')(values Array) -> someOrAllValues Array',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 6, column: 4, offset: 150 },
+              indent: [ 1, 1, 1, 1, 1 ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 6, column: 4, offset: 150 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Create an array of all the values in an array that are not in another array as dictated by a comparator.',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 105, offset: 104 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 105, offset: 104 },
+              indent: []
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: "import differenceWith from 'https://unpkg.com/rubico/dist/x/differenceWith.es.js'\n" +
+              "import isDeepEqual from 'https://unpkg.com/rubico/dist/x/isDeepEqual.es.js'\n" +
+              '\n' +
+              'console.log(\n' +
+              '  differenceWith(isDeepEqual, [{ a: 1 }, { b: 2 }, { c: 3 }])([{ b: 2 }]),\n' +
+              ') // [{ a: 1 }, { c: 3 }]',
+            position: {
+              start: { line: 3, column: 1, offset: 106 },
+              end: { line: 10, column: 4, offset: 409 },
+              indent: [
+                1, 1, 1, 1,
+                1, 1, 1
+              ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 10, column: 4, offset: 409 }
         }
       }
     }
@@ -22078,7 +23113,9 @@ export default [
       '```',
     description: 'Get the first item in a foldable collection that matches a predicate.\n' +
       '\n' +
-      '```javascript [node]\n' +
+      '```javascript [playground]\n' +
+      "import find from 'https://unpkg.com/rubico/dist/x/find.es.js'\n" +
+      '\n' +
       'const users = [\n' +
       "  { name: 'John', age: 16 },\n" +
       "  { name: 'Jill', age: 32 },\n" +
@@ -22173,8 +23210,10 @@ export default [
           {
             type: 'code',
             lang: 'javascript',
-            meta: '[node]',
-            value: 'const users = [\n' +
+            meta: '[playground]',
+            value: "import find from 'https://unpkg.com/rubico/dist/x/find.es.js'\n" +
+              '\n' +
+              'const users = [\n' +
               "  { name: 'John', age: 16 },\n" +
               "  { name: 'Jill', age: 32 },\n" +
               "  { name: 'George', age: 51 },\n" +
@@ -22185,17 +23224,18 @@ export default [
               ") // { name: 'George', age: 51 }",
             position: {
               start: { line: 3, column: 1, offset: 71 },
-              end: { line: 13, column: 4, offset: 287 },
+              end: { line: 15, column: 4, offset: 356 },
               indent: [
                 1, 1, 1, 1, 1,
-                1, 1, 1, 1, 1
+                1, 1, 1, 1, 1,
+                1, 1
               ]
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 13, column: 4, offset: 287 }
+          end: { line: 15, column: 4, offset: 356 }
         }
       }
     }
@@ -22209,7 +23249,9 @@ export default [
       '```',
     description: 'Get the first item of a collection\n' +
       '\n' +
-      '```javascript [node]\n' +
+      '```javascript [playground]\n' +
+      "import first from 'https://unpkg.com/rubico/dist/x/first.es.js'\n" +
+      '\n' +
       'console.log(first([1, 2, 3])) // 1\n' +
       "console.log(first('abc')) // 'a'\n" +
       'console.log(first([])) // undefined\n' +
@@ -22288,20 +23330,22 @@ export default [
           {
             type: 'code',
             lang: 'javascript',
-            meta: '[node]',
-            value: 'console.log(first([1, 2, 3])) // 1\n' +
+            meta: '[playground]',
+            value: "import first from 'https://unpkg.com/rubico/dist/x/first.es.js'\n" +
+              '\n' +
+              'console.log(first([1, 2, 3])) // 1\n' +
               "console.log(first('abc')) // 'a'\n" +
               'console.log(first([])) // undefined',
             position: {
               start: { line: 3, column: 1, offset: 36 },
-              end: { line: 7, column: 4, offset: 164 },
-              indent: [ 1, 1, 1, 1 ]
+              end: { line: 9, column: 4, offset: 235 },
+              indent: [ 1, 1, 1, 1, 1, 1 ]
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 7, column: 4, offset: 164 }
+          end: { line: 9, column: 4, offset: 235 }
         }
       }
     }
@@ -22333,7 +23377,9 @@ export default [
       '```',
     description: 'Flatten a collection. Works in transducer position.\n' +
       '\n' +
-      '```javascript [node]\n' +
+      '```javascript [playground]\n' +
+      "import flatten from 'https://unpkg.com/rubico/dist/x/flatten.es.js'\n" +
+      '\n' +
       'flatten([\n' +
       '  [1, 1],\n' +
       '  new Set([2, 2]),\n' +
@@ -22452,8 +23498,10 @@ export default [
           {
             type: 'code',
             lang: 'javascript',
-            meta: '[node]',
-            value: 'flatten([\n' +
+            meta: '[playground]',
+            value: "import flatten from 'https://unpkg.com/rubico/dist/x/flatten.es.js'\n" +
+              '\n' +
+              'flatten([\n' +
               '  [1, 1],\n' +
               '  new Set([2, 2]),\n' +
               '  (function* () { yield 3; yield 3 })(),\n' +
@@ -22472,18 +23520,18 @@ export default [
               ') // 15',
             position: {
               start: { line: 3, column: 1, offset: 53 },
-              end: { line: 21, column: 4, offset: 437 },
+              end: { line: 23, column: 4, offset: 512 },
               indent: [
                 1, 1, 1, 1, 1, 1, 1,
                 1, 1, 1, 1, 1, 1, 1,
-                1, 1, 1, 1
+                1, 1, 1, 1, 1, 1
               ]
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 21, column: 4, offset: 437 }
+          end: { line: 23, column: 4, offset: 512 }
         }
       },
       TODO: {
@@ -22539,7 +23587,9 @@ export default [
       '```',
     description: 'Execute a callback for each item of a collection, returning a Promise if any execution is asynchronous. Effectively `callback => map(tap)(callback)`. Also works in transducer position.\n' +
       '\n' +
-      '```javascript [node]\n' +
+      '```javascript [playground]\n' +
+      "import forEach from 'https://unpkg.com/rubico/dist/x/forEach.es.js'\n" +
+      '\n' +
       'forEach(console.log)([1, 2, 3, 4, 5]) // 1 2 3 4 5\n' +
       'forEach(console.log)({ a: 1, b: 2, c: 3 }) // 1 2 3\n' +
       '\n' +
@@ -22669,8 +23719,10 @@ export default [
           {
             type: 'code',
             lang: 'javascript',
-            meta: '[node]',
-            value: 'forEach(console.log)([1, 2, 3, 4, 5]) // 1 2 3 4 5\n' +
+            meta: '[playground]',
+            value: "import forEach from 'https://unpkg.com/rubico/dist/x/forEach.es.js'\n" +
+              '\n' +
+              'forEach(console.log)([1, 2, 3, 4, 5]) // 1 2 3 4 5\n' +
               'forEach(console.log)({ a: 1, b: 2, c: 3 }) // 1 2 3\n' +
               '\n' +
               'const add = (a, b) => a + b\n' +
@@ -22688,18 +23740,18 @@ export default [
               "console.log('result', result) // result 10",
             position: {
               start: { line: 3, column: 1, offset: 186 },
-              end: { line: 20, column: 4, offset: 620 },
+              end: { line: 22, column: 4, offset: 695 },
               indent: [
                 1, 1, 1, 1, 1, 1, 1,
                 1, 1, 1, 1, 1, 1, 1,
-                1, 1, 1
+                1, 1, 1, 1, 1
               ]
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 20, column: 4, offset: 620 }
+          end: { line: 22, column: 4, offset: 695 }
         }
       }
     }
@@ -22976,6 +24028,112 @@ export default [
     }
   },
   {
+    name: 'identity',
+    synopsis: '```coffeescript [specscript]\nidentity(value any) -> value\n```',
+    description: 'Pass a value and receive the same value back.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      "import identity from 'https://unpkg.com/rubico/dist/x/identity.es.js'\n" +
+      '\n' +
+      'console.log(\n' +
+      '  identity(1),\n' +
+      ') // 1\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'identity',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 9, offset: 8 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 9, offset: 8 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 9, offset: 8 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'identity(value any) -> value',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 61 },
+              indent: [ 1, 1 ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 61 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Pass a value and receive the same value back.',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 46, offset: 45 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 46, offset: 45 },
+              indent: []
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: "import identity from 'https://unpkg.com/rubico/dist/x/identity.es.js'\n" +
+              '\n' +
+              'console.log(\n' +
+              '  identity(1),\n' +
+              ') // 1',
+            position: {
+              start: { line: 3, column: 1, offset: 47 },
+              end: { line: 9, column: 4, offset: 183 },
+              indent: [ 1, 1, 1, 1, 1, 1 ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 9, column: 4, offset: 183 }
+        }
+      }
+    }
+  },
+  {
     name: 'isDeepEqual',
     synopsis: '```coffeescript [specscript]\n' +
       'Nested<T> = Array<Array<T>|Object<T>|Iterable<T>|T>|Object<Array<T>|Object<T>|Iterable<T>|T>\n' +
@@ -22987,7 +24145,9 @@ export default [
       '```',
     description: 'Check two values for deep strict equality.\n' +
       '\n' +
-      '```javascript [node]\n' +
+      '```javascript [playground]\n' +
+      "import isDeepEqual from 'https://unpkg.com/rubico/dist/x/isDeepEqual.es.js'\n" +
+      '\n' +
       'console.log(\n' +
       '  isDeepEqual({ a: 1, b: 2, c: [3] }, { a: 1, b: 2, c: [3] }),\n' +
       ') // true\n' +
@@ -23078,8 +24238,10 @@ export default [
           {
             type: 'code',
             lang: 'javascript',
-            meta: '[node]',
-            value: 'console.log(\n' +
+            meta: '[playground]',
+            value: "import isDeepEqual from 'https://unpkg.com/rubico/dist/x/isDeepEqual.es.js'\n" +
+              '\n' +
+              'console.log(\n' +
               '  isDeepEqual({ a: 1, b: 2, c: [3] }, { a: 1, b: 2, c: [3] }),\n' +
               ') // true\n' +
               '\n' +
@@ -23088,17 +24250,17 @@ export default [
               ') // false',
             position: {
               start: { line: 3, column: 1, offset: 44 },
-              end: { line: 11, column: 4, offset: 242 },
+              end: { line: 13, column: 4, offset: 325 },
               indent: [
-                1, 1, 1, 1,
-                1, 1, 1, 1
+                1, 1, 1, 1, 1,
+                1, 1, 1, 1, 1
               ]
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 11, column: 4, offset: 242 }
+          end: { line: 13, column: 4, offset: 325 }
         }
       }
     }
@@ -23108,18 +24270,15 @@ export default [
     synopsis: '```coffeescript [specscript]\nisEmpty(value any) -> boolean\n```',
     description: 'Check if a value is empty.\n' +
       '\n' +
-      '```javascript [node]\n' +
-      "console.log(isEmpty('')) // true\n" +
-      'console.log(isEmpty([])) // true\n' +
-      'console.log(isEmpty(new Set())) // true\n' +
-      'console.log(isEmpty(new Map())) // true\n' +
-      'console.log(isEmpty({})) // true\n' +
-      "console.log(isEmpty('hey')) // false\n" +
-      'console.log(isEmpty([1, 2, 3])) // false\n' +
-      'console.log(isEmpty(new Set([1, 2, 3]))) // false\n' +
-      "console.log(isEmpty(new Map([['a', 1], ['b', 2], ['c', 3]]))) // false\n" +
-      'console.log(isEmpty({ a: 1, b: 2, c: 3 })) // false\n' +
-      'console.log(isEmpty(100)) // false\n' +
+      '```javascript [playground]\n' +
+      "import isEmpty from 'https://unpkg.com/rubico/dist/x/isEmpty.es.js'\n" +
+      '\n' +
+      "console.log('', isEmpty('')) // true\n" +
+      'console.log([], isEmpty([])) // true\n' +
+      'console.log({}, isEmpty({})) // true\n' +
+      'console.log([1, 2, 3], isEmpty([1, 2, 3])) // false\n' +
+      'console.log(new Set([1, 2, 3]), isEmpty(new Set([1, 2, 3]))) // false\n' +
+      'console.log({ a: 1, b: 2, c: 3 }, isEmpty({ a: 1, b: 2, c: 3 })) // false\n' +
       '```',
     mdast: {
       name: {
@@ -23195,32 +24354,28 @@ export default [
           {
             type: 'code',
             lang: 'javascript',
-            meta: '[node]',
-            value: "console.log(isEmpty('')) // true\n" +
-              'console.log(isEmpty([])) // true\n' +
-              'console.log(isEmpty(new Set())) // true\n' +
-              'console.log(isEmpty(new Map())) // true\n' +
-              'console.log(isEmpty({})) // true\n' +
-              "console.log(isEmpty('hey')) // false\n" +
-              'console.log(isEmpty([1, 2, 3])) // false\n' +
-              'console.log(isEmpty(new Set([1, 2, 3]))) // false\n' +
-              "console.log(isEmpty(new Map([['a', 1], ['b', 2], ['c', 3]]))) // false\n" +
-              'console.log(isEmpty({ a: 1, b: 2, c: 3 })) // false\n' +
-              'console.log(isEmpty(100)) // false',
+            meta: '[playground]',
+            value: "import isEmpty from 'https://unpkg.com/rubico/dist/x/isEmpty.es.js'\n" +
+              '\n' +
+              "console.log('', isEmpty('')) // true\n" +
+              'console.log([], isEmpty([])) // true\n' +
+              'console.log({}, isEmpty({})) // true\n' +
+              'console.log([1, 2, 3], isEmpty([1, 2, 3])) // false\n' +
+              'console.log(new Set([1, 2, 3]), isEmpty(new Set([1, 2, 3]))) // false\n' +
+              'console.log({ a: 1, b: 2, c: 3 }, isEmpty({ a: 1, b: 2, c: 3 })) // false',
             position: {
               start: { line: 3, column: 1, offset: 28 },
-              end: { line: 15, column: 4, offset: 517 },
+              end: { line: 12, column: 4, offset: 434 },
               indent: [
                 1, 1, 1, 1, 1,
-                1, 1, 1, 1, 1,
-                1, 1
+                1, 1, 1, 1
               ]
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 15, column: 4, offset: 517 }
+          end: { line: 12, column: 4, offset: 434 }
         }
       }
     }
@@ -23230,7 +24385,9 @@ export default [
     synopsis: '```coffeescript [specscript]\nisFunction(value any) -> boolean\n```',
     description: 'Determine whether a value is a function.\n' +
       '\n' +
-      '```javascript [node]\n' +
+      '```javascript [playground]\n' +
+      "import isFunction from 'https://unpkg.com/rubico/dist/x/isFunction.es.js'\n" +
+      '\n' +
       'const add = (a, b) => a + b\n' +
       '\n' +
       'console.log(\n' +
@@ -23311,22 +24468,27 @@ export default [
           {
             type: 'code',
             lang: 'javascript',
-            meta: '[node]',
-            value: 'const add = (a, b) => a + b\n' +
+            meta: '[playground]',
+            value: "import isFunction from 'https://unpkg.com/rubico/dist/x/isFunction.es.js'\n" +
+              '\n' +
+              'const add = (a, b) => a + b\n' +
               '\n' +
               'console.log(\n' +
               '  isFunction(add),\n' +
               ') // true',
             position: {
               start: { line: 3, column: 1, offset: 42 },
-              end: { line: 9, column: 4, offset: 137 },
-              indent: [ 1, 1, 1, 1, 1, 1 ]
+              end: { line: 11, column: 4, offset: 218 },
+              indent: [
+                1, 1, 1, 1,
+                1, 1, 1, 1
+              ]
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 9, column: 4, offset: 137 }
+          end: { line: 11, column: 4, offset: 218 }
         }
       }
     }
@@ -23336,7 +24498,9 @@ export default [
     synopsis: '```coffeescript [specscript]\nisObject(value any) -> boolean\n```',
     description: 'Determine whether a value is a direct `Object`.\n' +
       '\n' +
-      '```javascript [node]\n' +
+      '```javascript [playground]\n' +
+      "import isObject from 'https://unpkg.com/rubico/dist/x/isObject.es.js'\n" +
+      '\n' +
       'console.log(\n' +
       '  isObject({ a: 1, b: 2, c: 3 }),\n' +
       ') // true\n' +
@@ -23441,8 +24605,10 @@ export default [
           {
             type: 'code',
             lang: 'javascript',
-            meta: '[node]',
-            value: 'console.log(\n' +
+            meta: '[playground]',
+            value: "import isObject from 'https://unpkg.com/rubico/dist/x/isObject.es.js'\n" +
+              '\n' +
+              'console.log(\n' +
               '  isObject({ a: 1, b: 2, c: 3 }),\n' +
               ') // true\n' +
               '\n' +
@@ -23455,10 +24621,10 @@ export default [
               ') // false',
             position: {
               start: { line: 3, column: 1, offset: 49 },
-              end: { line: 15, column: 4, offset: 231 },
+              end: { line: 17, column: 4, offset: 308 },
               indent: [
-                1, 1, 1, 1, 1,
-                1, 1, 1, 1, 1,
+                1, 1, 1, 1, 1, 1,
+                1, 1, 1, 1, 1, 1,
                 1, 1
               ]
             }
@@ -23466,7 +24632,7 @@ export default [
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 15, column: 4, offset: 231 }
+          end: { line: 17, column: 4, offset: 308 }
         }
       }
     }
@@ -23476,7 +24642,9 @@ export default [
     synopsis: '```coffeescript [specscript]\nisString(value any) -> boolean\n```',
     description: 'Determine whether a value is a string.\n' +
       '\n' +
-      '```javascript [node]\n' +
+      '```javascript [playground]\n' +
+      "import isString from 'https://unpkg.com/rubico/dist/x/isString.es.js'\n" +
+      '\n' +
       'console.log(\n' +
       "  isString('hey'),\n" +
       ') // true\n' +
@@ -23555,18 +24723,22 @@ export default [
           {
             type: 'code',
             lang: 'javascript',
-            meta: '[node]',
-            value: "console.log(\n  isString('hey'),\n) // true",
+            meta: '[playground]',
+            value: "import isString from 'https://unpkg.com/rubico/dist/x/isString.es.js'\n" +
+              '\n' +
+              'console.log(\n' +
+              "  isString('hey'),\n" +
+              ') // true',
             position: {
               start: { line: 3, column: 1, offset: 40 },
-              end: { line: 7, column: 4, offset: 106 },
-              indent: [ 1, 1, 1, 1 ]
+              end: { line: 9, column: 4, offset: 183 },
+              indent: [ 1, 1, 1, 1, 1, 1 ]
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 7, column: 4, offset: 106 }
+          end: { line: 9, column: 4, offset: 183 }
         }
       }
     }
@@ -23580,8 +24752,8 @@ export default [
       '```',
     description: 'Get the last item of a collection\n' +
       '\n' +
-      '```javascript [node]\n' +
-      "const last = require('rubico/x/last')\n" +
+      '```javascript [playground]\n' +
+      "import last from 'https://unpkg.com/rubico/dist/x/last.es.js'\n" +
       '\n' +
       'console.log(last([1, 2, 3])) // 3\n' +
       'console.log(last([])) // undefined\n' +
@@ -23660,21 +24832,127 @@ export default [
           {
             type: 'code',
             lang: 'javascript',
-            meta: '[node]',
-            value: "const last = require('rubico/x/last')\n" +
+            meta: '[playground]',
+            value: "import last from 'https://unpkg.com/rubico/dist/x/last.es.js'\n" +
               '\n' +
               'console.log(last([1, 2, 3])) // 3\n' +
               'console.log(last([])) // undefined',
             position: {
               start: { line: 3, column: 1, offset: 35 },
-              end: { line: 8, column: 4, offset: 167 },
+              end: { line: 8, column: 4, offset: 197 },
               indent: [ 1, 1, 1, 1, 1 ]
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 8, column: 4, offset: 167 }
+          end: { line: 8, column: 4, offset: 197 }
+        }
+      }
+    }
+  },
+  {
+    name: 'noop',
+    synopsis: '```coffeescript [specscript]\nnoop() -> undefined\n```',
+    description: "Doesn't do anything.\n" +
+      '\n' +
+      '```javascript [playground]\n' +
+      "import noop from 'https://unpkg.com/rubico/dist/x/noop.es.js'\n" +
+      '\n' +
+      'console.log(\n' +
+      '  noop(),\n' +
+      ') // undefined\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'noop',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 5, offset: 4 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 5, offset: 4 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 5, offset: 4 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'noop() -> undefined',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 52 },
+              indent: [ 1, 1 ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 52 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: "Doesn't do anything.",
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 21, offset: 20 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 21, offset: 20 },
+              indent: []
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: "import noop from 'https://unpkg.com/rubico/dist/x/noop.es.js'\n" +
+              '\n' +
+              'console.log(\n' +
+              '  noop(),\n' +
+              ') // undefined',
+            position: {
+              start: { line: 3, column: 1, offset: 22 },
+              end: { line: 9, column: 4, offset: 153 },
+              indent: [ 1, 1, 1, 1, 1, 1 ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 9, column: 4, offset: 153 }
         }
       }
     }
@@ -23703,7 +24981,9 @@ export default [
       '```',
     description: 'Apply a getter denoted by path across all items of a collection, creating a new collection of plucked values. Also works in transducer position.\n' +
       '\n' +
-      '```javascript [node]\n' +
+      '```javascript [playground]\n' +
+      "import pluck from 'https://unpkg.com/rubico/dist/x/pluck.es.js'\n" +
+      '\n' +
       'const users = [\n' +
       "  { name: 'George', age: 33 },\n" +
       "  { name: 'Jane', age: 51 },\n" +
@@ -23718,7 +24998,7 @@ export default [
       '\n' +
       'console.log(\n' +
       "  'total age:',\n" +
-      "  users.reduce(pluck('age')(add)),\n" +
+      "  users.reduce(pluck('age')(add), 0),\n" +
       ') // total age: 96\n' +
       '```',
     mdast: {
@@ -23816,8 +25096,10 @@ export default [
           {
             type: 'code',
             lang: 'javascript',
-            meta: '[node]',
-            value: 'const users = [\n' +
+            meta: '[playground]',
+            value: "import pluck from 'https://unpkg.com/rubico/dist/x/pluck.es.js'\n" +
+              '\n' +
+              'const users = [\n' +
               "  { name: 'George', age: 33 },\n" +
               "  { name: 'Jane', age: 51 },\n" +
               "  { name: 'Jim', age: 22 },\n" +
@@ -23831,22 +25113,22 @@ export default [
               '\n' +
               'console.log(\n' +
               "  'total age:',\n" +
-              "  users.reduce(pluck('age')(add)),\n" +
+              "  users.reduce(pluck('age')(add), 0),\n" +
               ') // total age: 96',
             position: {
               start: { line: 3, column: 1, offset: 146 },
-              end: { line: 20, column: 4, offset: 482 },
+              end: { line: 22, column: 4, offset: 556 },
               indent: [
                 1, 1, 1, 1, 1, 1, 1,
                 1, 1, 1, 1, 1, 1, 1,
-                1, 1, 1
+                1, 1, 1, 1, 1
               ]
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 20, column: 4, offset: 482 }
+          end: { line: 22, column: 4, offset: 556 }
         }
       }
     }
@@ -23856,10 +25138,12 @@ export default [
     synopsis: '```coffeescript [specscript]\nsize(value any) -> number\n```',
     description: 'Get the count of items in a value.\n' +
       '\n' +
-      '```javascript [node]\n' +
-      'console.log(\n' +
-      '  size([1, 2, 3]),\n' +
-      ') // 3\n' +
+      '```javascript [playground]\n' +
+      "import size from 'https://unpkg.com/rubico/dist/x/size.es.js'\n" +
+      '\n' +
+      'console.log(size([1, 2, 3])) // 3\n' +
+      "console.log(size('hey')) // 3\n" +
+      'console.log(size(new Set([1, 2, 3]))) // 3\n' +
       '```',
     mdast: {
       name: {
@@ -23935,18 +25219,22 @@ export default [
           {
             type: 'code',
             lang: 'javascript',
-            meta: '[node]',
-            value: 'console.log(\n  size([1, 2, 3]),\n) // 3',
+            meta: '[playground]',
+            value: "import size from 'https://unpkg.com/rubico/dist/x/size.es.js'\n" +
+              '\n' +
+              'console.log(size([1, 2, 3])) // 3\n' +
+              "console.log(size('hey')) // 3\n" +
+              'console.log(size(new Set([1, 2, 3]))) // 3',
             position: {
               start: { line: 3, column: 1, offset: 36 },
-              end: { line: 7, column: 4, offset: 99 },
-              indent: [ 1, 1, 1, 1 ]
+              end: { line: 9, column: 4, offset: 236 },
+              indent: [ 1, 1, 1, 1, 1, 1 ]
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 7, column: 4, offset: 99 }
+          end: { line: 9, column: 4, offset: 236 }
         }
       }
     }
@@ -23964,12 +25252,15 @@ export default [
       '```',
     description: 'Log a value out to the console, returning the value. If the value is a function, treat it as a resolver.\n' +
       '\n' +
-      '```javascript [node]\n' +
+      '```javascript [playground]\n' +
+      "import trace from 'https://unpkg.com/rubico/dist/x/trace.es.js'\n" +
+      '\n' +
       'pipe([\n' +
       '  trace,\n' +
       '  trace(value => value.toUpperCase()),\n' +
       "])('hey') // hey\n" +
       '          // HEY\n' +
+      "console.log('check your console')\n" +
       '```',
     mdast: {
       name: {
@@ -24054,22 +25345,28 @@ export default [
           {
             type: 'code',
             lang: 'javascript',
-            meta: '[node]',
-            value: 'pipe([\n' +
+            meta: '[playground]',
+            value: "import trace from 'https://unpkg.com/rubico/dist/x/trace.es.js'\n" +
+              '\n' +
+              'pipe([\n' +
               '  trace,\n' +
               '  trace(value => value.toUpperCase()),\n' +
               "])('hey') // hey\n" +
-              '          // HEY',
+              '          // HEY\n' +
+              "console.log('check your console')",
             position: {
               start: { line: 3, column: 1, offset: 106 },
-              end: { line: 9, column: 4, offset: 219 },
-              indent: [ 1, 1, 1, 1, 1, 1 ]
+              end: { line: 12, column: 4, offset: 324 },
+              indent: [
+                1, 1, 1, 1, 1,
+                1, 1, 1, 1
+              ]
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 9, column: 4, offset: 219 }
+          end: { line: 12, column: 4, offset: 324 }
         }
       }
     }
@@ -24085,7 +25382,10 @@ export default [
       '```',
     description: 'Create an array of unique values from an array of arrays with uniqueness determined by a comparator. The comparator is a function that returns a boolean value, `true` if two given values are distinct.\n' +
       '\n' +
-      '```javascript [node]\n' +
+      '```javascript [playground]\n' +
+      "import isDeepEqual from 'https://unpkg.com/rubico/dist/x/isDeepEqual.es.js'\n" +
+      "import unionWith from 'https://unpkg.com/rubico/dist/x/unionWith.es.js'\n" +
+      '\n' +
       'console.log(\n' +
       '  unionWith(isDeepEqual)([\n' +
       '    [{ a: 1 }, { b: 2 }, { a: 1 }],\n' +
@@ -24190,8 +25490,11 @@ export default [
           {
             type: 'code',
             lang: 'javascript',
-            meta: '[node]',
-            value: 'console.log(\n' +
+            meta: '[playground]',
+            value: "import isDeepEqual from 'https://unpkg.com/rubico/dist/x/isDeepEqual.es.js'\n" +
+              "import unionWith from 'https://unpkg.com/rubico/dist/x/unionWith.es.js'\n" +
+              '\n' +
+              'console.log(\n' +
               '  unionWith(isDeepEqual)([\n' +
               '    [{ a: 1 }, { b: 2 }, { a: 1 }],\n' +
               '    [{ b: 2 }, { b: 2 }, { b: 2 }],\n' +
@@ -24199,17 +25502,17 @@ export default [
               ') // [{ a: 1 }, { b: 2 }]',
             position: {
               start: { line: 3, column: 1, offset: 202 },
-              end: { line: 10, column: 4, offset: 370 },
+              end: { line: 13, column: 4, offset: 525 },
               indent: [
-                1, 1, 1, 1,
-                1, 1, 1
+                1, 1, 1, 1, 1,
+                1, 1, 1, 1, 1
               ]
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 10, column: 4, offset: 370 }
+          end: { line: 13, column: 4, offset: 525 }
         }
       },
       TODO: {
@@ -24252,7 +25555,9 @@ export default [
       '```',
     description: 'Get an array of unique values from an array.\n' +
       '\n' +
-      '```javascript [node]\n' +
+      '```javascript [playground]\n' +
+      "import uniq from 'https://unpkg.com/rubico/dist/x/uniq.es.js'\n" +
+      '\n' +
       'console.log(\n' +
       '  uniq([1, 2, 2, 3]),\n' +
       ') // [1, 2, 3]\n' +
@@ -24331,18 +25636,22 @@ export default [
           {
             type: 'code',
             lang: 'javascript',
-            meta: '[node]',
-            value: 'console.log(\n  uniq([1, 2, 2, 3]),\n) // [1, 2, 3]',
+            meta: '[playground]',
+            value: "import uniq from 'https://unpkg.com/rubico/dist/x/uniq.es.js'\n" +
+              '\n' +
+              'console.log(\n' +
+              '  uniq([1, 2, 2, 3]),\n' +
+              ') // [1, 2, 3]',
             position: {
               start: { line: 3, column: 1, offset: 46 },
-              end: { line: 7, column: 4, offset: 120 },
-              indent: [ 1, 1, 1, 1 ]
+              end: { line: 9, column: 4, offset: 189 },
+              indent: [ 1, 1, 1, 1, 1, 1 ]
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 7, column: 4, offset: 120 }
+          end: { line: 9, column: 4, offset: 189 }
         }
       }
     }

@@ -97,7 +97,7 @@ const namesOrder = [
   'omit',
   'map',
     'map.series', 'map.pool', 'map.withIndex',
-    // 'map.own', TODO: uncomment with v1.6
+    'map.own',
   'filter',
     'filter.withIndex',
   'reduce',
@@ -114,22 +114,25 @@ const namesOrder = [
   'lt',
   'gte',
   'lte',
-  /* TODO: uncomment with v1.6
   'thunkify',
+  'always',
   'curry',
+  'curry.arity',
   '__',
-  */
   'defaultsDeep',
+  'differenceWith',
   'find',
   'first',
   'flatten',
   'forEach',
+  'identity',
   'isDeepEqual',
   'isEmpty',
   'isFunction',
   'isObject',
   'isString',
   'last',
+  'noop',
   'pluck',
   'size',
   'trace',
@@ -244,17 +247,26 @@ const DocsGet = DocsItem('get')
 const DocsPick = DocsItem('pick')
 const DocsOmit = DocsItem('omit')
 
+const DocsThunkify = DocsItem('thunkify')
+const DocsAlways = DocsItem('always')
+const DocsCurry = DocsItem('curry')
+const DocsCurryArity = DocsItem('curry.arity')
+const Docs__ = DocsItem('__')
+
 const DocsDefaultsDeep = DocsItem('defaultsDeep')
+const DocsDifferenceWith = DocsItem('differenceWith')
 const DocsFind = DocsItem('find')
 const DocsFirst = DocsItem('first')
 const DocsFlatten = DocsItem('flatten')
 const DocsForEach = DocsItem('forEach')
+const DocsIdentity = DocsItem('identity')
 const DocsIsDeepEqual = DocsItem('isDeepEqual')
 const DocsIsEmpty = DocsItem('isEmpty')
 const DocsIsFunction = DocsItem('isFunction')
 const DocsIsObject = DocsItem('isObject')
 const DocsIsString = DocsItem('isString')
 const DocsLast = DocsItem('last')
+const DocsNoop = DocsItem('noop')
 const DocsPluck = DocsItem('pluck')
 const DocsSize = DocsItem('size')
 const DocsTrace = DocsItem('trace')
@@ -304,7 +316,7 @@ const Docs = ReactElement(props => Div([
         DocsMapSeries(props),
         DocsMapPool(props),
         DocsMapWithIndex(props),
-        // DocsMapOwn(props), // TODO: uncomment with rubico v1.6.0
+        DocsMapOwn(props),
       ]),
       DocsFilter(props, [
         DocsFilterWithIndex(props),
@@ -338,19 +350,36 @@ const Docs = ReactElement(props => Div([
       DocsLte(props),
     ]),
 
+    H1('Create Thunks'),
+    Div([
+      DocsThunkify(props),
+      DocsAlways(props),
+    ]),
+
+    H1('Partially Apply Arguments'),
+    Div([
+      DocsCurry(props, [
+        DocsCurryArity(props),
+      ]),
+      Docs__(props),
+    ]),
+
     H1('x/ - stable'),
     Div([
       DocsDefaultsDeep(props),
+      DocsDifferenceWith(props),
       DocsFind(props),
       DocsFirst(props),
       DocsFlatten(props),
       DocsForEach(props),
+      DocsIdentity(props),
       DocsIsDeepEqual(props),
       DocsIsEmpty(props),
       DocsIsFunction(props),
       DocsIsObject(props),
       DocsIsString(props),
       DocsLast(props),
+      DocsNoop(props),
       DocsPluck(props),
       DocsSize(props),
       DocsTrace(props),

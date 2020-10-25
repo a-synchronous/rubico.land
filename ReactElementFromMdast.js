@@ -13,12 +13,14 @@ const {
 } = ReactElement
 
 const {
-  pipe, fork, assign,
-  tap, tryCatch, switchCase,
+  pipe, tap,
+  switchCase, tryCatch,
+  fork, assign, get, pick, omit,
   map, filter, reduce, transform, flatMap,
-  any, all, and, or, not,
+  and, or, not, any, all,
   eq, gt, lt, gte, lte,
-  get, pick, omit,
+  thunkify, always,
+  curry, __,
 } = rubico
 
 const isArray = Array.isArray
@@ -46,6 +48,22 @@ const ReactElementFromMdastRecurse = function (mdast, props = {}) {
   return isArray(mdast.children)
     ? mdast.children.map(ReactElementFromMdast)
     : mdast.value
+}
+
+// code string => [code string, imports Object<string=>string>]
+const codeSpliceImports = function (code) {
+  const imports = {}
+  let result = code
+  while (result.includes('import')) {
+    result = result.replace(/import (\w+) from '([\s\S]+?)'\n/, (
+      match, name, url,
+    ) => {
+      imports[name] = url
+      return ''
+    })
+  }
+  result = result.trimStart()
+  return [result, imports]
 }
 
 // mdast {
@@ -116,10 +134,15 @@ const ReactElementFromMdast = function (mdast, props = {}) {
             }),
           ])
         case '[playground]':
+          const [code, imports] = codeSpliceImports(mdast.value)
           return CodeRunner({
-            code: mdast.value,
+            code,
             mode: mdast.lang,
             theme: 'rubico',
+            imports: {
+              ...imports,
+              rubico: 'https://unpkg.com/rubico@1.6.6/dist/rubico.es.min.js',
+            },
           })
         case '[node]':
           return CodeViewer({

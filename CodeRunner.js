@@ -14,24 +14,32 @@ const {
 const { useState, useEffect, useRef, useCallback, useReducer } = React
 
 const {
-  pipe, fork, assign,
-  tap, tryCatch, switchCase,
+  pipe, tap,
+  switchCase, tryCatch,
+  fork, assign, get, pick, omit,
   map, filter, reduce, transform, flatMap,
-  any, all, and, or, not,
+  and, or, not, any, all,
   eq, gt, lt, gte, lte,
-  get, pick, omit,
+  thunkify, always,
+  curry, __,
 } = rubico
 
-const templateCodeSandbox = code => `
-import rubico from 'https://unpkg.com/rubico@latest/es.js'
+const templateCodeSandbox = ({ code, imports }) => `
+${
+  Object.entries(imports)
+    .map(([name, url]) => `import ${name} from '${url}'`)
+    .join('\n')
+}
 
 const {
-  pipe, fork, assign,
-  tap, tryCatch, switchCase,
+  pipe, tap,
+  switchCase, tryCatch,
+  fork, assign, get, pick, omit,
   map, filter, reduce, transform, flatMap,
-  any, all, and, or, not,
+  and, or, not, any, all,
   eq, gt, lt, gte, lte,
-  get, pick, omit,
+  thunkify, always,
+  curry, __,
 } = rubico
 
 const inspect = ${inspect.toString()}
@@ -58,11 +66,11 @@ const console = {
 })()
 `.trim()
 
-// code => html_string_with_code
-const generateHTMLScript = code => {
+// { code: string, imports: Object<string> } => html_string_with_code string
+const generateHTMLScript = ({ code, imports }) => {
   const script = document.createElement('script')
   script.type = 'module'
-  script.innerHTML = templateCodeSandbox(code)
+  script.innerHTML = templateCodeSandbox({ code, imports })
   return script
 }
 
@@ -82,7 +90,7 @@ const htmlToString = el => {
   return div.innerHTML
 }
 
-// code => iframeSrc
+// { code: string, imports: Object<string> } => iframeSrc
 const transformCodeToIFrameSrc = pipe([
   generateHTMLScript,
   renderIntoNewHTMLDoc,
@@ -96,6 +104,7 @@ const codeMirrors = new Map()
 // { code } -> codeRunner React.Element
 const CodeRunner = ReactElement(({
   code,
+  imports,
   theme = 'rubico',
   lineWrapping = true,
   lineNumbers = true,
@@ -143,7 +152,10 @@ const CodeRunner = ReactElement(({
           boxShadow: '1px 1px grey',
         },
         onClick: pipe([
-          () => codeMirrors.get(codeAreaRef).getValue(),
+          fork({
+            code: () => codeMirrors.get(codeAreaRef).getValue(),
+            imports: always(imports),
+          }),
           transformCodeToIFrameSrc,
           iframeSrc => {
             setOutputAreaSrc(iframeSrc)
