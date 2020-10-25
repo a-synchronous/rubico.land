@@ -4,8 +4,6 @@ import Docs from './Docs.js'
 import Blog from './Blog.js'
 import NotFound from './NotFound.js'
 import Analytics from './Analytics.js'
-import curry2 from './curry2.js'
-import __ from './placeholder.js'
 
 const ReactElement = Arche(React)
 
@@ -19,12 +17,14 @@ const {
 } = ReactElement
 
 const {
-  pipe, fork, assign,
-  tap, tryCatch, switchCase,
+  pipe, tap,
+  switchCase, tryCatch,
+  fork, assign, get, pick, omit,
   map, filter, reduce, transform, flatMap,
-  any, all, and, or, not,
+  and, or, not, any, all,
   eq, gt, lt, gte, lte,
-  get, pick, omit,
+  thunkify, always,
+  curry, __,
 } = rubico
 
 const { useState, useEffect, useRef, useCallback, useReducer } = React
@@ -40,7 +40,7 @@ const startsWith = (prefix, getter) => value => getter(value).startsWith(prefix)
 
 // initialState { path: string } -> ReactElement
 const Root = ReactElement(pipe([
-  curry2(useReducer, (state, action) => {
+  curry.arity(2, useReducer, (state, action) => {
     switch (action.type) {
       case 'SET_PATH':
         return { ...state, path: action.path }

@@ -1,3 +1,4 @@
+import forEach from 'https://unpkg.com/rubico/dist/x/forEach.es.min.js'
 import ReactElementFromMdast from './ReactElementFromMdast.js'
 import mdastBase from './mdastBase.js'
 
@@ -13,12 +14,14 @@ const {
 } = ReactElement
 
 const {
-  pipe, fork, assign,
-  tap, tryCatch, switchCase,
+  pipe, tap,
+  switchCase, tryCatch,
+  fork, assign, get, pick, omit,
   map, filter, reduce, transform, flatMap,
-  any, all, and, or, not,
+  and, or, not, any, all,
   eq, gt, lt, gte, lte,
-  get, pick, omit,
+  thunkify, always,
+  curry, __,
 } = rubico
 
 const { useState, useEffect, useRef, useCallback, useReducer } = React
@@ -81,64 +84,8 @@ const descriptionBase = {
   },
 }
 
-const namesOrder = [
-  'pipe',
-    'pipe.sync',
-  'tap',
-    'tap.sync',
-    'tap.if',
-  'switchCase',
-  'tryCatch',
-  'fork',
-    'fork.series',
-  'assign',
-  'get',
-  'pick',
-  'omit',
-  'map',
-    'map.series', 'map.pool', 'map.withIndex',
-    'map.own',
-  'filter',
-    'filter.withIndex',
-  'reduce',
-  'transform',
-  'flatMap',
-  'and',
-  'or',
-  'not',
-  'not.sync',
-  'any',
-  'all',
-  'eq',
-  'gt',
-  'lt',
-  'gte',
-  'lte',
-  'thunkify',
-  'always',
-  'curry',
-  'curry.arity',
-  '__',
-  'defaultsDeep',
-  'differenceWith',
-  'find',
-  'first',
-  'flatten',
-  'forEach',
-  'identity',
-  'isDeepEqual',
-  'isEmpty',
-  'isFunction',
-  'isObject',
-  'isString',
-  'last',
-  'noop',
-  'pluck',
-  'size',
-  'trace',
-  'unionWith',
-  'uniq',
-]
+// each call to DocsItem adds to this list
+const namesOrder = []
 
 // name string -> nextName string
 const getNextName = name => namesOrder[(namesOrder.indexOf(name) + 1) % namesOrder.length]
@@ -147,80 +94,86 @@ const getNextName = name => namesOrder[(namesOrder.indexOf(name) + 1) % namesOrd
 // { name: string, path: string } => ReactElement
 const DocsItem = pipe([
   value => typeof value == 'string' ? ({ name: value }) : value,
+  tap(({ name }) => namesOrder.push(name)),
   assign({
     path: get('path', ({ name }) => `/docs/${name}`),
   }),
-  ({ name, path, back = '/docs', getNextMethodName = getNextName }) =>
-    ReactElement(props => {
-      const { goto, state, children } = props,
-        isExpanded = state.path.endsWith('/')
-          ? (path == state.path.slice(0, state.path.length - 1))
-          : (path == state.path),
-        [transition, setTransition] = useState('none')
+  ({
+    name, path, back = '/docs', getNextMethodName = getNextName,
+  }) => ReactElement(props => {
+    const { goto, state, children } = props,
+      isExpanded = state.path.endsWith('/')
+        ? (path == state.path.slice(0, state.path.length - 1))
+        : (path == state.path),
+      [transition, setTransition] = useState('none')
 
-      useEffect(() => {
-        if (isExpanded) {
-          setTransition('start')
-          setTimeout(() => {
-            setTransition('end')
-          }, 360)
-        }
-      }, [isExpanded])
+    useEffect(() => {
+      if (isExpanded) {
+        setTransition('start')
+        setTimeout(() => {
+          setTransition('end')
+        }, 360)
+      }
+    }, [isExpanded])
 
-      return Div({ className: 'docs-item' }, [
-        isExpanded ? Span({ id: 'active-spacer' }) : Span(),
-        A({
-          href: isExpanded ? back : path,
-          className: isExpanded ? 'active' : '',
-          onClick(event) {
-            event.preventDefault()
-            isExpanded ? goto(back) : goto(path)
-          },
-        }, [
-          H3(name),
-          isExpanded ? Img({
-            className: 'expander-arrow',
-            src: '/assets/down-arrow-rubico-green.svg',
-            alt: 'down-arrow-rubico-green',
-          }) : Span()
-        ]),
-        isExpanded ? A({
-          href: `${back}/${getNextMethodName(name)}`,
-          onClick(event) {
-            event.preventDefault()
-            goto(`${back}/${getNextMethodName(name)}`)
-          },
-        }, [Img({
-          className: 'next-arrow',
-          src: '/assets/right-arrow-rubico-green.svg',
-          alt: 'right-green-arrow',
-        })]) : Span(),
+    return Div({ key: name, className: 'docs-item' }, [
+      isExpanded ? Span({ id: 'active-spacer' }) : Span(),
+      A({
+        href: isExpanded ? back : path,
+        className: isExpanded ? 'active' : '',
+        onClick(event) {
+          event.preventDefault()
+          isExpanded ? goto(back) : goto(path)
+        },
+      }, [
+        H3(name),
+        isExpanded ? Img({
+          className: 'expander-arrow',
+          src: '/assets/down-arrow-rubico-green.svg',
+          alt: 'down-arrow-rubico-green',
+        }) : Span()
+      ]),
+      isExpanded ? A({
+        href: `${back}/${getNextMethodName(name)}`,
+        onClick(event) {
+          event.preventDefault()
+          goto(`${back}/${getNextMethodName(name)}`)
+        },
+      }, [Img({
+        className: 'next-arrow',
+        src: '/assets/right-arrow-rubico-green.svg',
+        alt: 'right-green-arrow',
+      })]) : Span(),
 
-        Div({
-          className: transition == 'start' ? 'fade-in-out'
-            : isExpanded && transition == 'end' ? 'fade-in-out transition-end'
-            : 'fade-in-out',
-        }, isExpanded ? [
-          synopsisBase.get(name),
-          descriptionBase.get(name),
-        ] : []),
+      Div({
+        className: transition == 'start' ? 'fade-in-out'
+        : isExpanded && transition == 'end' ? 'fade-in-out transition-end'
+        : 'fade-in-out',
+      }, isExpanded ? [
+        synopsisBase.get(name),
+        descriptionBase.get(name),
+      ] : []),
 
-        Div({ className: 'docs-item-children' }, children),
-      ])
-    }),
+      Div({ className: 'docs-item-children' }, children),
+    ])
+  }),
 ])
 
 // documentation React components
+// order of creation dictates order on page
 const DocsPipe = DocsItem('pipe')
 const DocsPipeSync = DocsItem('pipe.sync')
-const DocsFork = DocsItem('fork')
-const DocsForkSeries = DocsItem('fork.series')
-const DocsAssign = DocsItem('assign')
 const DocsTap = DocsItem('tap')
 const DocsTapSync = DocsItem('tap.sync')
 const DocsTapIf = DocsItem('tap.if')
-const DocsTryCatch = DocsItem('tryCatch')
 const DocsSwitchCase = DocsItem('switchCase')
+const DocsTryCatch = DocsItem('tryCatch')
+const DocsFork = DocsItem('fork')
+const DocsForkSeries = DocsItem('fork.series')
+const DocsAssign = DocsItem('assign')
+const DocsGet = DocsItem('get')
+const DocsPick = DocsItem('pick')
+const DocsOmit = DocsItem('omit')
 const DocsMap = DocsItem('map')
 const DocsMapSeries = DocsItem('map.series')
 const DocsMapPool = DocsItem('map.pool')
@@ -232,20 +185,17 @@ const DocsReduce = DocsItem('reduce')
 const DocsTransform = DocsItem('transform')
 const DocsFlatMap = DocsItem('flatMap')
 
-const DocsAny = DocsItem('any')
-const DocsAll = DocsItem('all')
 const DocsAnd = DocsItem('and')
 const DocsOr = DocsItem('or')
 const DocsNot = DocsItem('not')
 const DocsNotSync = DocsItem('not.sync')
+const DocsAny = DocsItem('any')
+const DocsAll = DocsItem('all')
 const DocsEq = DocsItem('eq')
 const DocsGt = DocsItem('gt')
 const DocsLt = DocsItem('lt')
 const DocsGte = DocsItem('gte')
 const DocsLte = DocsItem('lte')
-const DocsGet = DocsItem('get')
-const DocsPick = DocsItem('pick')
-const DocsOmit = DocsItem('omit')
 
 const DocsThunkify = DocsItem('thunkify')
 const DocsAlways = DocsItem('always')
