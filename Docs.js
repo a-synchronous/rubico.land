@@ -138,6 +138,7 @@ const DocsItem = pipe([
         onClick(event) {
           event.preventDefault()
           goto(`${back}/${getNextMethodName(name)}`)
+          console.log('clicked', `${back}/${getNextMethodName(name)}`)
         },
       }, [Img({
         className: 'next-arrow',
@@ -209,6 +210,7 @@ const DocsFind = DocsItem('find')
 const DocsFirst = DocsItem('first')
 const DocsFlatten = DocsItem('flatten')
 const DocsForEach = DocsItem('forEach')
+const DocsGroupBy = DocsItem('groupBy')
 const DocsIdentity = DocsItem('identity')
 const DocsIsDeepEqual = DocsItem('isDeepEqual')
 const DocsIsEmpty = DocsItem('isEmpty')
@@ -222,6 +224,7 @@ const DocsSize = DocsItem('size')
 const DocsTrace = DocsItem('trace')
 const DocsUnionWith = DocsItem('unionWith')
 const DocsUniq = DocsItem('uniq')
+const DocsValues = DocsItem('values')
 
 // props Object -> Docs ReactElement
 const Docs = ReactElement(props => Div([
@@ -322,6 +325,7 @@ const Docs = ReactElement(props => Div([
       DocsFirst(props),
       DocsFlatten(props),
       DocsForEach(props),
+      DocsGroupBy(props),
       DocsIdentity(props),
       DocsIsDeepEqual(props),
       DocsIsEmpty(props),
@@ -335,6 +339,7 @@ const Docs = ReactElement(props => Div([
       DocsTrace(props),
       DocsUnionWith(props),
       DocsUniq(props),
+      DocsValues(props),
     ]),
   ]),
 ]))

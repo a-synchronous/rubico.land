@@ -61,6 +61,7 @@ cp index.html docs/find
 cp index.html docs/first
 cp index.html docs/flatten
 cp index.html docs/forEach
+cp index.html docs/groupBy
 cp index.html docs/isDeepEqual
 cp index.html docs/isEmpty
 cp index.html docs/isEqual
@@ -73,6 +74,7 @@ cp index.html docs/size
 cp index.html docs/trace
 cp index.html docs/unionWith
 cp index.html docs/uniq
+cp index.html docs/values
 
 mkdir -p blog/2020/10/02
 

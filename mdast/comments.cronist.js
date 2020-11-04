@@ -23757,6 +23757,207 @@ export default [
     }
   },
   {
+    name: 'groupBy',
+    synopsis: '```coffeescript [specscript]\n' +
+      'Reducer<T> = (any, T)=>Promise|any\n' +
+      'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: Reducer<T>=>any }|Object<T>\n' +
+      '\n' +
+      'var property any,\n' +
+      '  resolver any=>Promise|any,\n' +
+      '  value Foldable\n' +
+      '\n' +
+      'groupBy(property)(value) -> groupedByProperty Map<any=>Array>\n' +
+      '\n' +
+      'groupBy(resolver)(value) -> groupedByResolver Promise|Map<any=>Array>\n' +
+      '```',
+    description: 'Group a foldable collection into a Map of arrays by a property on each of its elements.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      "import groupBy from 'https://unpkg.com/rubico/dist/x/groupBy.es.js'\n" +
+      '\n' +
+      'console.log(\n' +
+      "  groupBy('age')([\n" +
+      "    { name: 'George', age: 22 },\n" +
+      "    { name: 'Jane', age: 22 },\n" +
+      "    { name: 'Henry', age: 23 },\n" +
+      '  ]),\n' +
+      ')\n' +
+      '// Map {\n' +
+      "//   22 => [{ name: 'George', age: 22 }, { name: 'Jane', age: 22 }],\n" +
+      "//   23 => [{ name: 'Henry', age: 23 }],\n" +
+      '// }\n' +
+      '```\n' +
+      '\n' +
+      'Additionally, pass a resolver in property position to resolve a value for group membership for each item.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      "import groupBy from 'https://unpkg.com/rubico/dist/x/groupBy.es.js'\n" +
+      '\n' +
+      'console.log(\n' +
+      '  groupBy(\n' +
+      '    word => word.toLowerCase(),\n' +
+      "  )(['Hello', 'hello', 'Hey']),\n" +
+      ") // Map { 'hello' => ['Hello', 'hello'], 'hey' => ['Hey'] }\n" +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'groupBy',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 8, offset: 7 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 8, offset: 7 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 8, offset: 7 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'Reducer<T> = (any, T)=>Promise|any\n' +
+              'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: Reducer<T>=>any }|Object<T>\n' +
+              '\n' +
+              'var property any,\n' +
+              '  resolver any=>Promise|any,\n' +
+              '  value Foldable\n' +
+              '\n' +
+              'groupBy(property)(value) -> groupedByProperty Map<any=>Array>\n' +
+              '\n' +
+              'groupBy(resolver)(value) -> groupedByResolver Promise|Map<any=>Array>',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 12, column: 4, offset: 347 },
+              indent: [
+                1, 1, 1, 1, 1,
+                1, 1, 1, 1, 1,
+                1
+              ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 12, column: 4, offset: 347 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Group a foldable collection into a Map of arrays by a property on each of its elements.',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 88, offset: 87 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 88, offset: 87 },
+              indent: []
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: "import groupBy from 'https://unpkg.com/rubico/dist/x/groupBy.es.js'\n" +
+              '\n' +
+              'console.log(\n' +
+              "  groupBy('age')([\n" +
+              "    { name: 'George', age: 22 },\n" +
+              "    { name: 'Jane', age: 22 },\n" +
+              "    { name: 'Henry', age: 23 },\n" +
+              '  ]),\n' +
+              ')\n' +
+              '// Map {\n' +
+              "//   22 => [{ name: 'George', age: 22 }, { name: 'Jane', age: 22 }],\n" +
+              "//   23 => [{ name: 'Henry', age: 23 }],\n" +
+              '// }',
+            position: {
+              start: { line: 3, column: 1, offset: 89 },
+              end: { line: 17, column: 4, offset: 448 },
+              indent: [
+                1, 1, 1, 1, 1, 1,
+                1, 1, 1, 1, 1, 1,
+                1, 1
+              ]
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Additionally, pass a resolver in property position to resolve a value for group membership for each item.',
+                position: {
+                  start: { line: 19, column: 1, offset: 450 },
+                  end: { line: 19, column: 106, offset: 555 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 19, column: 1, offset: 450 },
+              end: { line: 19, column: 106, offset: 555 },
+              indent: []
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: "import groupBy from 'https://unpkg.com/rubico/dist/x/groupBy.es.js'\n" +
+              '\n' +
+              'console.log(\n' +
+              '  groupBy(\n' +
+              '    word => word.toLowerCase(),\n' +
+              "  )(['Hello', 'hello', 'Hey']),\n" +
+              ") // Map { 'hello' => ['Hello', 'hello'], 'hey' => ['Hey'] }",
+            position: {
+              start: { line: 21, column: 1, offset: 557 },
+              end: { line: 29, column: 4, offset: 805 },
+              indent: [
+                1, 1, 1, 1,
+                1, 1, 1, 1
+              ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 29, column: 4, offset: 805 }
+        }
+      }
+    }
+  },
+  {
     name: 'heapUsedInLoop',
     catchphrase: 'max and avg heap used in loop',
     synopsis: 'heapUsedInLoop(\n' +
@@ -25652,6 +25853,118 @@ export default [
         position: {
           start: { line: 1, column: 1, offset: 0 },
           end: { line: 9, column: 4, offset: 189 }
+        }
+      }
+    }
+  },
+  {
+    name: 'values',
+    synopsis: '```coffeescript [specscript]\n' +
+      'values<T>(\n' +
+      '  object String<T>|Array<T>|Set<T>|Map<any=>T>|Object<T>,\n' +
+      ') -> Array<T>\n' +
+      '```',
+    description: 'Get an array of values from an instance.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      "import values from 'https://unpkg.com/rubico/dist/x/values.es.js'\n" +
+      '\n' +
+      'console.log(values({ a: 1, b: 2, c: 3 })) // [1, 2, 3]\n' +
+      "console.log(values('abc')) // ['a', 'b', 'c']\n" +
+      "console.log(values(new Map([[1, 'hello'], [2, 'world']]))) // ['hello', 'world']\n" +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'values',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 7, offset: 6 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 7, offset: 6 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 7, offset: 6 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'values<T>(\n' +
+              '  object String<T>|Array<T>|Set<T>|Map<any=>T>|Object<T>,\n' +
+              ') -> Array<T>',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 5, column: 4, offset: 115 },
+              indent: [ 1, 1, 1, 1 ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 5, column: 4, offset: 115 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Get an array of values from an instance.',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 41, offset: 40 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 41, offset: 40 },
+              indent: []
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: "import values from 'https://unpkg.com/rubico/dist/x/values.es.js'\n" +
+              '\n' +
+              'console.log(values({ a: 1, b: 2, c: 3 })) // [1, 2, 3]\n' +
+              "console.log(values('abc')) // ['a', 'b', 'c']\n" +
+              "console.log(values(new Map([[1, 'hello'], [2, 'world']]))) // ['hello', 'world']",
+            position: {
+              start: { line: 3, column: 1, offset: 42 },
+              end: { line: 9, column: 4, offset: 321 },
+              indent: [ 1, 1, 1, 1, 1, 1 ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 9, column: 4, offset: 321 }
         }
       }
     }

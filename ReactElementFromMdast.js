@@ -141,7 +141,7 @@ const ReactElementFromMdast = function (mdast, props = {}) {
             theme: 'rubico',
             imports: {
               ...imports,
-              rubico: 'https://unpkg.com/rubico@1.6.6/dist/rubico.es.min.js',
+              rubico: 'https://unpkg.com/rubico@1.6.9/dist/rubico.es.min.js',
             },
           })
         case '[node]':
