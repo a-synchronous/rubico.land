@@ -39,7 +39,7 @@ const parseArgs = pipe([
   }),
 ])
 
-const ignoredExpressions = new Set([/.git/, /deploy/])
+const ignoredExpressions = new Set([/.git/, /deploy/, /node_modules/])
 
 // dirent => boolean
 const isIgnored = dirent => {
