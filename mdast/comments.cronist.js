@@ -8270,6 +8270,121 @@ export default [
     }
   },
   {
+    name: 'sameValueZero',
+    synopsis: '```coffeescript [specscript]\n' +
+      'sameValueZero(left any, right any) -> boolean\n' +
+      '```',
+    description: 'Determine if two values are the same value. [SameValueZero](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero).',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'sameValueZero',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 14, offset: 13 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 14, offset: 13 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 14, offset: 13 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'sameValueZero(left any, right any) -> boolean',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 78 },
+              indent: [ 1, 1 ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 78 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Determine if two values are the same value. ',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 45, offset: 44 },
+                  indent: []
+                }
+              },
+              {
+                type: 'link',
+                title: null,
+                url: 'http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'SameValueZero',
+                    position: {
+                      start: { line: 1, column: 46, offset: 45 },
+                      end: { line: 1, column: 59, offset: 58 },
+                      indent: []
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 45, offset: 44 },
+                  end: { line: 1, column: 123, offset: 122 },
+                  indent: []
+                }
+              },
+              {
+                type: 'text',
+                value: '.',
+                position: {
+                  start: { line: 1, column: 123, offset: 122 },
+                  end: { line: 1, column: 124, offset: 123 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 124, offset: 123 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 124, offset: 123 }
+        }
+      }
+    }
+  },
+  {
     name: 'setFilter',
     synopsis: '```coffeescript [specscript]\n' +
       'setFilter<T>(\n' +
@@ -10958,7 +11073,7 @@ export default [
       '\n' +
       'eq(left, right)(value) -> Promise|boolean\n' +
       '```',
-    description: 'Test for strict equality (`===`) between the returns of two functions. Either parameter may be an actual value.\n' +
+    description: 'Test for [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero) between the returns of two functions. Either parameter may be an actual value for comparison.\n' +
       '\n' +
       '```javascript [playground]\n' +
       "const personIsGeorge = eq(person => person.name, 'George')\n" +
@@ -11034,35 +11149,47 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Test for strict equality (',
+                value: 'Test for ',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 27, offset: 26 },
+                  end: { line: 1, column: 10, offset: 9 },
                   indent: []
                 }
               },
               {
-                type: 'inlineCode',
-                value: '===',
+                type: 'link',
+                title: null,
+                url: 'http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero',
+                children: [
+                  {
+                    type: 'inlineCode',
+                    value: 'SameValueZero',
+                    position: {
+                      start: { line: 1, column: 11, offset: 10 },
+                      end: { line: 1, column: 26, offset: 25 },
+                      indent: []
+                    }
+                  }
+                ],
                 position: {
-                  start: { line: 1, column: 27, offset: 26 },
-                  end: { line: 1, column: 32, offset: 31 },
+                  start: { line: 1, column: 10, offset: 9 },
+                  end: { line: 1, column: 90, offset: 89 },
                   indent: []
                 }
               },
               {
                 type: 'text',
-                value: ') between the returns of two functions. Either parameter may be an actual value.',
+                value: ' between the returns of two functions. Either parameter may be an actual value for comparison.',
                 position: {
-                  start: { line: 1, column: 32, offset: 31 },
-                  end: { line: 1, column: 112, offset: 111 },
+                  start: { line: 1, column: 90, offset: 89 },
+                  end: { line: 1, column: 184, offset: 183 },
                   indent: []
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 112, offset: 111 },
+              end: { line: 1, column: 184, offset: 183 },
               indent: []
             }
           },
@@ -11076,15 +11203,15 @@ export default [
               "  personIsGeorge({ name: 'George', likes: 'bananas' }),\n" +
               ') // true',
             position: {
-              start: { line: 3, column: 1, offset: 113 },
-              end: { line: 9, column: 4, offset: 282 },
+              start: { line: 3, column: 1, offset: 185 },
+              end: { line: 9, column: 4, offset: 354 },
               indent: [ 1, 1, 1, 1, 1, 1 ]
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 9, column: 4, offset: 282 }
+          end: { line: 9, column: 4, offset: 354 }
         }
       },
       execution: {
@@ -24344,7 +24471,7 @@ export default [
       '\n' +
       'isDeepEqual(left, right) -> boolean\n' +
       '```',
-    description: 'Check two values for deep strict equality.\n' +
+    description: 'Check two values for deep equality.\n' +
       '\n' +
       '```javascript [playground]\n' +
       "import isDeepEqual from 'https://unpkg.com/rubico/dist/x/isDeepEqual.es.js'\n" +
@@ -24422,17 +24549,17 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Check two values for deep strict equality.',
+                value: 'Check two values for deep equality.',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 43, offset: 42 },
+                  end: { line: 1, column: 36, offset: 35 },
                   indent: []
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 43, offset: 42 },
+              end: { line: 1, column: 36, offset: 35 },
               indent: []
             }
           },
@@ -24450,8 +24577,8 @@ export default [
               '  isDeepEqual({ a: 1, b: 2, c: [3] }, { a: 1, b: 2, c: [5] }),\n' +
               ') // false',
             position: {
-              start: { line: 3, column: 1, offset: 44 },
-              end: { line: 13, column: 4, offset: 325 },
+              start: { line: 3, column: 1, offset: 37 },
+              end: { line: 13, column: 4, offset: 318 },
               indent: [
                 1, 1, 1, 1, 1,
                 1, 1, 1, 1, 1
@@ -24461,7 +24588,7 @@ export default [
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 13, column: 4, offset: 325 }
+          end: { line: 13, column: 4, offset: 318 }
         }
       }
     }
@@ -24697,7 +24824,7 @@ export default [
   {
     name: 'isObject',
     synopsis: '```coffeescript [specscript]\nisObject(value any) -> boolean\n```',
-    description: 'Determine whether a value is a direct `Object`.\n' +
+    description: 'Determine whether a value has the [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types) of `Object`.\n' +
       '\n' +
       '```javascript [playground]\n' +
       "import isObject from 'https://unpkg.com/rubico/dist/x/isObject.es.js'\n" +
@@ -24712,7 +24839,7 @@ export default [
       '\n' +
       'console.log(\n' +
       '  isObject(new Set([1, 2, 3])),\n' +
-      ') // false\n' +
+      ') // true\n' +
       '```',
     mdast: {
       name: {
@@ -24771,10 +24898,40 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Determine whether a value is a direct ',
+                value: 'Determine whether a value has the ',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 39, offset: 38 },
+                  end: { line: 1, column: 35, offset: 34 },
+                  indent: []
+                }
+              },
+              {
+                type: 'link',
+                title: null,
+                url: 'http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'language type',
+                    position: {
+                      start: { line: 1, column: 36, offset: 35 },
+                      end: { line: 1, column: 49, offset: 48 },
+                      indent: []
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 35, offset: 34 },
+                  end: { line: 1, column: 129, offset: 128 },
+                  indent: []
+                }
+              },
+              {
+                type: 'text',
+                value: ' of ',
+                position: {
+                  start: { line: 1, column: 129, offset: 128 },
+                  end: { line: 1, column: 133, offset: 132 },
                   indent: []
                 }
               },
@@ -24782,8 +24939,8 @@ export default [
                 type: 'inlineCode',
                 value: 'Object',
                 position: {
-                  start: { line: 1, column: 39, offset: 38 },
-                  end: { line: 1, column: 47, offset: 46 },
+                  start: { line: 1, column: 133, offset: 132 },
+                  end: { line: 1, column: 141, offset: 140 },
                   indent: []
                 }
               },
@@ -24791,15 +24948,15 @@ export default [
                 type: 'text',
                 value: '.',
                 position: {
-                  start: { line: 1, column: 47, offset: 46 },
-                  end: { line: 1, column: 48, offset: 47 },
+                  start: { line: 1, column: 141, offset: 140 },
+                  end: { line: 1, column: 142, offset: 141 },
                   indent: []
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 48, offset: 47 },
+              end: { line: 1, column: 142, offset: 141 },
               indent: []
             }
           },
@@ -24819,10 +24976,10 @@ export default [
               '\n' +
               'console.log(\n' +
               '  isObject(new Set([1, 2, 3])),\n' +
-              ') // false',
+              ') // true',
             position: {
-              start: { line: 3, column: 1, offset: 49 },
-              end: { line: 17, column: 4, offset: 308 },
+              start: { line: 3, column: 1, offset: 143 },
+              end: { line: 17, column: 4, offset: 401 },
               indent: [
                 1, 1, 1, 1, 1, 1,
                 1, 1, 1, 1, 1, 1,
@@ -24833,7 +24990,7 @@ export default [
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 17, column: 4, offset: 308 }
+          end: { line: 17, column: 4, offset: 401 }
         }
       }
     }

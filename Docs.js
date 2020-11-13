@@ -294,7 +294,7 @@ const Docs = ReactElement(props => Div([
       DocsAll(props),
     ]),
 
-    H1('Compare Values'),
+    H1('Comparison'),
     Div([
       DocsEq(props),
       DocsGt(props),
@@ -303,14 +303,10 @@ const Docs = ReactElement(props => Div([
       DocsLte(props),
     ]),
 
-    H1('Create Thunks'),
+    H1('Partial Application'),
     Div([
       DocsThunkify(props),
       DocsAlways(props),
-    ]),
-
-    H1('Partially Apply Arguments'),
-    Div([
       DocsCurry(props, [
         DocsCurryArity(props),
       ]),
