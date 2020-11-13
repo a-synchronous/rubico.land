@@ -11073,7 +11073,7 @@ export default [
       '\n' +
       'eq(left, right)(value) -> Promise|boolean\n' +
       '```',
-    description: 'Test for [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero) between the returns of two functions. Either parameter may be an actual value for comparison.\n' +
+    description: 'Test for [SameValueZero](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero) between the returns of two functions. Either parameter may be an actual value for comparison.\n' +
       '\n' +
       '```javascript [playground]\n' +
       "const personIsGeorge = eq(person => person.name, 'George')\n" +
@@ -11081,7 +11081,9 @@ export default [
       'console.log(\n' +
       "  personIsGeorge({ name: 'George', likes: 'bananas' }),\n" +
       ') // true\n' +
-      '```',
+      '```\n' +
+      '\n' +
+      'More on SameValueZero: [Equality comparisons and sameness](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness)',
     execution: 'concurrent',
     mdast: {
       name: {
@@ -11162,18 +11164,18 @@ export default [
                 url: 'http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero',
                 children: [
                   {
-                    type: 'inlineCode',
+                    type: 'text',
                     value: 'SameValueZero',
                     position: {
                       start: { line: 1, column: 11, offset: 10 },
-                      end: { line: 1, column: 26, offset: 25 },
+                      end: { line: 1, column: 24, offset: 23 },
                       indent: []
                     }
                   }
                 ],
                 position: {
                   start: { line: 1, column: 10, offset: 9 },
-                  end: { line: 1, column: 90, offset: 89 },
+                  end: { line: 1, column: 88, offset: 87 },
                   indent: []
                 }
               },
@@ -11181,15 +11183,15 @@ export default [
                 type: 'text',
                 value: ' between the returns of two functions. Either parameter may be an actual value for comparison.',
                 position: {
-                  start: { line: 1, column: 90, offset: 89 },
-                  end: { line: 1, column: 184, offset: 183 },
+                  start: { line: 1, column: 88, offset: 87 },
+                  end: { line: 1, column: 182, offset: 181 },
                   indent: []
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 184, offset: 183 },
+              end: { line: 1, column: 182, offset: 181 },
               indent: []
             }
           },
@@ -11203,15 +11205,55 @@ export default [
               "  personIsGeorge({ name: 'George', likes: 'bananas' }),\n" +
               ') // true',
             position: {
-              start: { line: 3, column: 1, offset: 185 },
-              end: { line: 9, column: 4, offset: 354 },
+              start: { line: 3, column: 1, offset: 183 },
+              end: { line: 9, column: 4, offset: 352 },
               indent: [ 1, 1, 1, 1, 1, 1 ]
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'More on SameValueZero: ',
+                position: {
+                  start: { line: 11, column: 1, offset: 354 },
+                  end: { line: 11, column: 24, offset: 377 },
+                  indent: []
+                }
+              },
+              {
+                type: 'link',
+                title: null,
+                url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Equality comparisons and sameness',
+                    position: {
+                      start: { line: 11, column: 25, offset: 378 },
+                      end: { line: 11, column: 58, offset: 411 },
+                      indent: []
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 11, column: 24, offset: 377 },
+                  end: { line: 11, column: 150, offset: 503 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 11, column: 1, offset: 354 },
+              end: { line: 11, column: 150, offset: 503 },
+              indent: []
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 9, column: 4, offset: 354 }
+          end: { line: 11, column: 150, offset: 503 }
         }
       },
       execution: {
@@ -24471,7 +24513,7 @@ export default [
       '\n' +
       'isDeepEqual(left, right) -> boolean\n' +
       '```',
-    description: 'Check two values for deep equality.\n' +
+    description: 'Check two values for deep [SameValueZero](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero) equality.\n' +
       '\n' +
       '```javascript [playground]\n' +
       "import isDeepEqual from 'https://unpkg.com/rubico/dist/x/isDeepEqual.es.js'\n" +
@@ -24549,17 +24591,47 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Check two values for deep equality.',
+                value: 'Check two values for deep ',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 36, offset: 35 },
+                  end: { line: 1, column: 27, offset: 26 },
+                  indent: []
+                }
+              },
+              {
+                type: 'link',
+                title: null,
+                url: 'http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'SameValueZero',
+                    position: {
+                      start: { line: 1, column: 28, offset: 27 },
+                      end: { line: 1, column: 41, offset: 40 },
+                      indent: []
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 27, offset: 26 },
+                  end: { line: 1, column: 105, offset: 104 },
+                  indent: []
+                }
+              },
+              {
+                type: 'text',
+                value: ' equality.',
+                position: {
+                  start: { line: 1, column: 105, offset: 104 },
+                  end: { line: 1, column: 115, offset: 114 },
                   indent: []
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 36, offset: 35 },
+              end: { line: 1, column: 115, offset: 114 },
               indent: []
             }
           },
@@ -24577,8 +24649,8 @@ export default [
               '  isDeepEqual({ a: 1, b: 2, c: [3] }, { a: 1, b: 2, c: [5] }),\n' +
               ') // false',
             position: {
-              start: { line: 3, column: 1, offset: 37 },
-              end: { line: 13, column: 4, offset: 318 },
+              start: { line: 3, column: 1, offset: 116 },
+              end: { line: 13, column: 4, offset: 397 },
               indent: [
                 1, 1, 1, 1, 1,
                 1, 1, 1, 1, 1
@@ -24588,7 +24660,7 @@ export default [
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 13, column: 4, offset: 318 }
+          end: { line: 13, column: 4, offset: 397 }
         }
       }
     }
