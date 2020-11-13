@@ -16,6 +16,7 @@
     "react"
   ],
   "scripts": {
+    "start": "serve -p 4507 .",
     "cp": "./copy_index && ./parse_markdown ../md/TOUR.md > ./mdast/tour.js && ./parse_markdown ../rubico/README.md > ./mdast/readme.js && ./parse_markdown ../md/TRANSDUCERS.md > ./mdast/transducers.js",
     "cronist": "cronist --required-keys name,synopsis,description ../rubico > ./mdast/comments.cronist.js"
   },
@@ -26,6 +27,7 @@
     "rubico": "latest"
   },
   "devDependencies": {
-    "cronist": "latest"
+    "cronist": "latest",
+    "serve": "^11.3.2"
   }
 }
