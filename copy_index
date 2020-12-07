@@ -27,6 +27,7 @@ cp index.html docs/tap.sync
 cp index.html docs/tryCatch/index.html
 cp index.html docs/switchCase/index.html
 cp index.html docs/map/index.html
+cp index.html docs/map.entries
 cp index.html docs/map.series
 cp index.html docs/map.pool
 cp index.html docs/map.withIndex

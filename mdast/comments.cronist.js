@@ -5200,6 +5200,107 @@ export default [
     }
   },
   {
+    name: 'isArrayLike',
+    synopsis: '```coffeescript [specscript]\nisArrayLike(value any) -> boolean\n```',
+    description: 'Tell if a value has positive `length` like an Array.',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'isArrayLike',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 12, offset: 11 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 12, offset: 11 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 12, offset: 11 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'isArrayLike(value any) -> boolean',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 66 },
+              indent: [ 1, 1 ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 66 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Tell if a value has positive ',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 30, offset: 29 },
+                  indent: []
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'length',
+                position: {
+                  start: { line: 1, column: 30, offset: 29 },
+                  end: { line: 1, column: 38, offset: 37 },
+                  indent: []
+                }
+              },
+              {
+                type: 'text',
+                value: ' like an Array.',
+                position: {
+                  start: { line: 1, column: 38, offset: 37 },
+                  end: { line: 1, column: 53, offset: 52 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 53, offset: 52 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 53, offset: 52 }
+        }
+      }
+    }
+  },
+  {
     name: 'isAsyncGeneratorFunction',
     synopsis: 'isAsyncGeneratorFunction(value any) -> boolean',
     description: 'Determine whether a value is an async generator function.',
@@ -6393,6 +6494,89 @@ export default [
         position: {
           start: { line: 1, column: 1, offset: 0 },
           end: { line: 1, column: 67, offset: 66 }
+        }
+      }
+    }
+  },
+  {
+    name: 'mapFrom',
+    synopsis: '```coffeescript [specscript]\nmapFrom(object Object) -> Map\n```',
+    description: 'Create a new Map from an object.',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'mapFrom',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 8, offset: 7 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 8, offset: 7 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 8, offset: 7 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'mapFrom(object Object) -> Map',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 62 },
+              indent: [ 1, 1 ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 62 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Create a new Map from an object.',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 33, offset: 32 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 33, offset: 32 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 33, offset: 32 }
         }
       }
     }
@@ -10622,7 +10806,7 @@ export default [
       '\n' +
       'assign(funcsObject)(source) -> resultsMergedWithSource Promise|Object\n' +
       '```',
-    description: 'Compose an object from a source object merged with the evaluations of a specifying object of functions. Functions of the specifying object may return Promises.\n' +
+    description: 'Compose an object from a source object merged with its evaluations with a specifying object of functions. Functions of the specifying object may return Promises.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'console.log(\n' +
@@ -10697,17 +10881,17 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Compose an object from a source object merged with the evaluations of a specifying object of functions. Functions of the specifying object may return Promises.',
+                value: 'Compose an object from a source object merged with its evaluations with a specifying object of functions. Functions of the specifying object may return Promises.',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 160, offset: 159 },
+                  end: { line: 1, column: 162, offset: 161 },
                   indent: []
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 160, offset: 159 },
+              end: { line: 1, column: 162, offset: 161 },
               indent: []
             }
           },
@@ -10726,8 +10910,8 @@ export default [
               '  asyncNumber: async ({ number }) => number,\n' +
               '})({ number: 3 }).then(console.log) // { number: 3, asyncNumber: 3 }',
             position: {
-              start: { line: 3, column: 1, offset: 161 },
-              end: { line: 14, column: 4, offset: 484 },
+              start: { line: 3, column: 1, offset: 163 },
+              end: { line: 14, column: 4, offset: 486 },
               indent: [
                 1, 1, 1, 1, 1,
                 1, 1, 1, 1, 1,
@@ -10738,7 +10922,7 @@ export default [
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 14, column: 4, offset: 484 }
+          end: { line: 14, column: 4, offset: 486 }
         }
       },
       execution: {
@@ -16019,6 +16203,191 @@ export default [
     }
   },
   {
+    name: 'map.entries',
+    synopsis: '```coffeescript [specscript]\n' +
+      'map.entries(\n' +
+      '  mapper ([key any, value any])=>Promise|[any, any],\n' +
+      ')(value Map|Object) -> Promise|Map|Object\n' +
+      '```',
+    description: '`map` over the entries of a `Map` or `Object`.\n' +
+      '```javascript [playground]\n' +
+      'console.log(\n' +
+      '  map.entries(\n' +
+      '    ([key, value]) => [key.toUpperCase(), value ** 2],\n' +
+      '  )({ a: 1, b: 2, c: 3 })\n' +
+      ') // { A: 1, B: 4, C: 9 }\n' +
+      '```',
+    since: 'v1.7.0',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'map.entries',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 12, offset: 11 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 12, offset: 11 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 12, offset: 11 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'map.entries(\n' +
+              '  mapper ([key any, value any])=>Promise|[any, any],\n' +
+              ')(value Map|Object) -> Promise|Map|Object',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 5, column: 4, offset: 140 },
+              indent: [ 1, 1, 1, 1 ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 5, column: 4, offset: 140 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'inlineCode',
+                value: 'map',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 6, offset: 5 },
+                  indent: []
+                }
+              },
+              {
+                type: 'text',
+                value: ' over the entries of a ',
+                position: {
+                  start: { line: 1, column: 6, offset: 5 },
+                  end: { line: 1, column: 29, offset: 28 },
+                  indent: []
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'Map',
+                position: {
+                  start: { line: 1, column: 29, offset: 28 },
+                  end: { line: 1, column: 34, offset: 33 },
+                  indent: []
+                }
+              },
+              {
+                type: 'text',
+                value: ' or ',
+                position: {
+                  start: { line: 1, column: 34, offset: 33 },
+                  end: { line: 1, column: 38, offset: 37 },
+                  indent: []
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'Object',
+                position: {
+                  start: { line: 1, column: 38, offset: 37 },
+                  end: { line: 1, column: 46, offset: 45 },
+                  indent: []
+                }
+              },
+              {
+                type: 'text',
+                value: '.',
+                position: {
+                  start: { line: 1, column: 46, offset: 45 },
+                  end: { line: 1, column: 47, offset: 46 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 47, offset: 46 },
+              indent: []
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'console.log(\n' +
+              '  map.entries(\n' +
+              '    ([key, value]) => [key.toUpperCase(), value ** 2],\n' +
+              '  )({ a: 1, b: 2, c: 3 })\n' +
+              ') // { A: 1, B: 4, C: 9 }',
+            position: {
+              start: { line: 2, column: 1, offset: 47 },
+              end: { line: 8, column: 4, offset: 212 },
+              indent: [ 1, 1, 1, 1, 1, 1 ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 8, column: 4, offset: 212 }
+        }
+      },
+      since: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'v1.7.0',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 7, offset: 6 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 7, offset: 6 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 7, offset: 6 }
+        }
+      }
+    }
+  },
+  {
     name: 'map.series',
     synopsis: '```coffeescript [specscript]\n' +
       'var T any,\n' +
@@ -19653,17 +20022,36 @@ export default [
   {
     name: 'omit',
     synopsis: '```coffeescript [specscript]\n' +
-      'var keys Array<string>,\n' +
+      'var paths Array<string>,\n' +
       '  source Object\n' +
       '\n' +
-      'omit(keys)(source) -> omitted Object\n' +
+      'omit(paths)(source) -> omitted Object\n' +
       '```',
-    description: 'Create a new object by excluding specific keys.\n' +
+    description: 'Create a new object by excluding specific paths on a source object.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'console.log(\n' +
       "  omit(['_id'])({ _id: '1', name: 'George' }),\n" +
       ") // { name: 'George' }\n" +
+      '```\n' +
+      '\n' +
+      'Path patterns are the same as those supported by `get`:\n' +
+      '\n' +
+      " * dot delimited - `'a.b.c'`\n" +
+      " * bracket notation - `'a[0].value'`\n" +
+      " * an array of keys or indices - `['a', 0, 'value']`\n" +
+      '\n' +
+      '```javascript [playground]\n' +
+      'console.log(\n' +
+      "  omit(['a.b.d'])({\n" +
+      '    a: {\n' +
+      '      b: {\n' +
+      "        c: 'hello',\n" +
+      "        d: 'goodbye',\n" +
+      '      },\n' +
+      '    },\n' +
+      '  }),\n' +
+      ") // { a: { b: { c: 'hello' } } }\n" +
       '```',
     mdast: {
       name: {
@@ -19701,20 +20089,20 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'var keys Array<string>,\n' +
+            value: 'var paths Array<string>,\n' +
               '  source Object\n' +
               '\n' +
-              'omit(keys)(source) -> omitted Object',
+              'omit(paths)(source) -> omitted Object',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 6, column: 4, offset: 110 },
+              end: { line: 6, column: 4, offset: 112 },
               indent: [ 1, 1, 1, 1, 1 ]
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 6, column: 4, offset: 110 }
+          end: { line: 6, column: 4, offset: 112 }
         }
       },
       description: {
@@ -19725,17 +20113,17 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Create a new object by excluding specific keys.',
+                value: 'Create a new object by excluding specific paths on a source object.',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 48, offset: 47 },
+                  end: { line: 1, column: 68, offset: 67 },
                   indent: []
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 48, offset: 47 },
+              end: { line: 1, column: 68, offset: 67 },
               indent: []
             }
           },
@@ -19747,15 +20135,209 @@ export default [
               "  omit(['_id'])({ _id: '1', name: 'George' }),\n" +
               ") // { name: 'George' }",
             position: {
-              start: { line: 3, column: 1, offset: 49 },
-              end: { line: 7, column: 4, offset: 163 },
+              start: { line: 3, column: 1, offset: 69 },
+              end: { line: 7, column: 4, offset: 183 },
               indent: [ 1, 1, 1, 1 ]
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Path patterns are the same as those supported by ',
+                position: {
+                  start: { line: 9, column: 1, offset: 185 },
+                  end: { line: 9, column: 50, offset: 234 },
+                  indent: []
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'get',
+                position: {
+                  start: { line: 9, column: 50, offset: 234 },
+                  end: { line: 9, column: 55, offset: 239 },
+                  indent: []
+                }
+              },
+              {
+                type: 'text',
+                value: ':',
+                position: {
+                  start: { line: 9, column: 55, offset: 239 },
+                  end: { line: 9, column: 56, offset: 240 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 9, column: 1, offset: 185 },
+              end: { line: 9, column: 56, offset: 240 },
+              indent: []
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'text',
+                        value: 'dot delimited - ',
+                        position: {
+                          start: { line: 11, column: 4, offset: 245 },
+                          end: { line: 11, column: 20, offset: 261 },
+                          indent: []
+                        }
+                      },
+                      {
+                        type: 'inlineCode',
+                        value: "'a.b.c'",
+                        position: {
+                          start: { line: 11, column: 20, offset: 261 },
+                          end: { line: 11, column: 29, offset: 270 },
+                          indent: []
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 11, column: 4, offset: 245 },
+                      end: { line: 11, column: 29, offset: 270 },
+                      indent: []
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 11, column: 1, offset: 242 },
+                  end: { line: 11, column: 29, offset: 270 },
+                  indent: []
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'text',
+                        value: 'bracket notation - ',
+                        position: {
+                          start: { line: 12, column: 4, offset: 274 },
+                          end: { line: 12, column: 23, offset: 293 },
+                          indent: []
+                        }
+                      },
+                      {
+                        type: 'inlineCode',
+                        value: "'a[0].value'",
+                        position: {
+                          start: { line: 12, column: 23, offset: 293 },
+                          end: { line: 12, column: 37, offset: 307 },
+                          indent: []
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 12, column: 4, offset: 274 },
+                      end: { line: 12, column: 37, offset: 307 },
+                      indent: []
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 12, column: 1, offset: 271 },
+                  end: { line: 12, column: 37, offset: 307 },
+                  indent: []
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'text',
+                        value: 'an array of keys or indices - ',
+                        position: {
+                          start: { line: 13, column: 4, offset: 311 },
+                          end: { line: 13, column: 34, offset: 341 },
+                          indent: []
+                        }
+                      },
+                      {
+                        type: 'inlineCode',
+                        value: "['a', 0, 'value']",
+                        position: {
+                          start: { line: 13, column: 34, offset: 341 },
+                          end: { line: 13, column: 53, offset: 360 },
+                          indent: []
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 13, column: 4, offset: 311 },
+                      end: { line: 13, column: 53, offset: 360 },
+                      indent: []
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 13, column: 1, offset: 308 },
+                  end: { line: 13, column: 53, offset: 360 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 11, column: 1, offset: 242 },
+              end: { line: 13, column: 53, offset: 360 },
+              indent: [ 1, 1 ]
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'console.log(\n' +
+              "  omit(['a.b.d'])({\n" +
+              '    a: {\n' +
+              '      b: {\n' +
+              "        c: 'hello',\n" +
+              "        d: 'goodbye',\n" +
+              '      },\n' +
+              '    },\n' +
+              '  }),\n' +
+              ") // { a: { b: { c: 'hello' } } }",
+            position: {
+              start: { line: 15, column: 1, offset: 362 },
+              end: { line: 26, column: 4, offset: 543 },
+              indent: [
+                1, 1, 1, 1, 1,
+                1, 1, 1, 1, 1,
+                1
+              ]
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 7, column: 4, offset: 163 }
+          end: { line: 26, column: 4, offset: 543 }
         }
       }
     }

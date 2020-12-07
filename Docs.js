@@ -176,6 +176,7 @@ const DocsGet = DocsItem('get')
 const DocsPick = DocsItem('pick')
 const DocsOmit = DocsItem('omit')
 const DocsMap = DocsItem('map')
+const DocsMapEntries = DocsItem('map.entries')
 const DocsMapSeries = DocsItem('map.series')
 const DocsMapPool = DocsItem('map.pool')
 const DocsMapWithIndex = DocsItem('map.withIndex')
@@ -266,6 +267,7 @@ const Docs = ReactElement(props => Div([
     H1('Transform Data'),
     Div([
       DocsMap(props, [
+        DocsMapEntries(props),
         DocsMapSeries(props),
         DocsMapPool(props),
         DocsMapWithIndex(props),
