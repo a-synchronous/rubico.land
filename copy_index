@@ -56,6 +56,7 @@ cp index.html docs/always/index.html
 cp index.html docs/__/index.html
 cp index.html docs/curry/index.html
 cp index.html docs/curry.arity
+cp index.html docs/callProp
 cp index.html docs/defaultsDeep
 cp index.html docs/differenceWith
 cp index.html docs/find
@@ -63,6 +64,8 @@ cp index.html docs/first
 cp index.html docs/flatten
 cp index.html docs/forEach
 cp index.html docs/groupBy
+cp index.html docs/has
+cp index.html docs/includes
 cp index.html docs/isDeepEqual
 cp index.html docs/isEmpty
 cp index.html docs/isEqual

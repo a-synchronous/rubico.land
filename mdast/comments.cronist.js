@@ -21141,8 +21141,8 @@ export default [
       '\n' +
       'const state = { todos: [] }\n' +
       '\n' +
-      'reduce(asyncAppReducer, state)(asyncFetchActions(5)).then(\n' +
-      "  reducedState => console.log('finalState', reducedState))\n" +
+      'reduce(asyncAppReducer, state)(asyncFetchActions(5))\n' +
+      "  .then(reducedState => console.log('finalState', reducedState))\n" +
       '\n' +
       "// fetched { userId: 1, id: 1, title: 'delectus aut autem', completed: false }\n" +
       "// fetched { userId: 1, id: 2, title: 'quis ut nam facilis...', completed: false }\n" +
@@ -21427,8 +21427,8 @@ export default [
               '\n' +
               'const state = { todos: [] }\n' +
               '\n' +
-              'reduce(asyncAppReducer, state)(asyncFetchActions(5)).then(\n' +
-              "  reducedState => console.log('finalState', reducedState))\n" +
+              'reduce(asyncAppReducer, state)(asyncFetchActions(5))\n' +
+              "  .then(reducedState => console.log('finalState', reducedState))\n" +
               '\n' +
               "// fetched { userId: 1, id: 1, title: 'delectus aut autem', completed: false }\n" +
               "// fetched { userId: 1, id: 2, title: 'quis ut nam facilis...', completed: false }\n" +
@@ -21609,7 +21609,8 @@ export default [
       "const fruitIsYellow = fruit => fruit.color == 'yellow'\n" +
       '\n' +
       'const fruitsGuesser = switchCase([\n' +
-      "  fruitIsYellow, fruit => fruit.name + ' is possibly a banana',\n" +
+      '  fruitIsYellow,\n' +
+      "  fruit => fruit.name + ' is possibly a banana',\n" +
       "  fruit => fruit.name + ' is probably not a banana',\n" +
       '])\n' +
       '\n' +
@@ -21761,7 +21762,8 @@ export default [
             value: "const fruitIsYellow = fruit => fruit.color == 'yellow'\n" +
               '\n' +
               'const fruitsGuesser = switchCase([\n' +
-              "  fruitIsYellow, fruit => fruit.name + ' is possibly a banana',\n" +
+              '  fruitIsYellow,\n' +
+              "  fruit => fruit.name + ' is possibly a banana',\n" +
               "  fruit => fruit.name + ' is probably not a banana',\n" +
               '])\n' +
               '\n' +
@@ -21770,11 +21772,11 @@ export default [
               ') // plantain is possibly a banana',
             position: {
               start: { line: 3, column: 1, offset: 144 },
-              end: { line: 14, column: 4, offset: 490 },
+              end: { line: 15, column: 4, offset: 492 },
               indent: [
                 1, 1, 1, 1, 1,
                 1, 1, 1, 1, 1,
-                1
+                1, 1
               ]
             }
           },
@@ -21785,15 +21787,15 @@ export default [
                 type: 'text',
                 value: 'If an even number of functions is supplied, the last predicate should always return true.',
                 position: {
-                  start: { line: 16, column: 1, offset: 492 },
-                  end: { line: 16, column: 90, offset: 581 },
+                  start: { line: 17, column: 1, offset: 494 },
+                  end: { line: 17, column: 90, offset: 583 },
                   indent: []
                 }
               }
             ],
             position: {
-              start: { line: 16, column: 1, offset: 492 },
-              end: { line: 16, column: 90, offset: 581 },
+              start: { line: 17, column: 1, offset: 494 },
+              end: { line: 17, column: 90, offset: 583 },
               indent: []
             }
           },
@@ -21813,8 +21815,8 @@ export default [
               'console.log(questionableIsOdd(1)) // true\n' +
               'console.log(questionableIsOdd(6)) // false',
             position: {
-              start: { line: 18, column: 1, offset: 583 },
-              end: { line: 30, column: 4, offset: 975 },
+              start: { line: 19, column: 1, offset: 585 },
+              end: { line: 31, column: 4, offset: 977 },
               indent: [
                 1, 1, 1, 1, 1,
                 1, 1, 1, 1, 1,
@@ -21825,7 +21827,7 @@ export default [
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 30, column: 4, offset: 975 }
+          end: { line: 31, column: 4, offset: 977 }
         }
       }
     }
@@ -23578,6 +23580,112 @@ export default [
     }
   },
   {
+    name: 'callProp',
+    synopsis: '```coffeescript [specscript]\n' +
+      'callProp(property string, ...args)(object) -> object[property](...args)\n' +
+      '```',
+    description: 'Calls a property on an object with arguments.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      "import callProp from 'https://unpkg.com/rubico/dist/x/callProp.es.js'\n" +
+      '\n' +
+      "const priceRoundedDown = callProp('toFixed', 2)(5.992)\n" +
+      "console.log('priceRoundedDown:', priceRoundedDown) // '5.99'\n" +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'callProp',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 9, offset: 8 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 9, offset: 8 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 9, offset: 8 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'callProp(property string, ...args)(object) -> object[property](...args)',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 104 },
+              indent: [ 1, 1 ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 104 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Calls a property on an object with arguments.',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 46, offset: 45 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 46, offset: 45 },
+              indent: []
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: "import callProp from 'https://unpkg.com/rubico/dist/x/callProp.es.js'\n" +
+              '\n' +
+              "const priceRoundedDown = callProp('toFixed', 2)(5.992)\n" +
+              "console.log('priceRoundedDown:', priceRoundedDown) // '5.99'",
+            position: {
+              start: { line: 3, column: 1, offset: 47 },
+              end: { line: 8, column: 4, offset: 264 },
+              indent: [ 1, 1, 1, 1, 1 ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 8, column: 4, offset: 264 }
+        }
+      }
+    }
+  },
+  {
     name: 'defaultsDeep',
     synopsis: '```coffeescript [specscript]\n' +
       'var defaultCollection Array|Object,\n' +
@@ -24709,6 +24817,125 @@ export default [
     }
   },
   {
+    name: 'has',
+    synopsis: '```coffeescript [specscript]\n' +
+      'has(key any)(container Set|Map|{ has: function }|Object) -> Promise|boolean\n' +
+      '```',
+    description: 'Check if a collection has a key.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      "import has from 'https://unpkg.com/rubico/dist/x/has.es.js'\n" +
+      '\n' +
+      'console.log(\n' +
+      "  has('a')({ a: 1, b: 2, c: 3 }),\n" +
+      ') // true\n' +
+      '\n' +
+      'console.log(\n' +
+      "  has('a')({}),\n" +
+      ') // false\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'has',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 4, offset: 3 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 4, offset: 3 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 4, offset: 3 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'has(key any)(container Set|Map|{ has: function }|Object) -> Promise|boolean',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 108 },
+              indent: [ 1, 1 ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 108 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Check if a collection has a key.',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 33, offset: 32 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 33, offset: 32 },
+              indent: []
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: "import has from 'https://unpkg.com/rubico/dist/x/has.es.js'\n" +
+              '\n' +
+              'console.log(\n' +
+              "  has('a')({ a: 1, b: 2, c: 3 }),\n" +
+              ') // true\n' +
+              '\n' +
+              'console.log(\n' +
+              "  has('a')({}),\n" +
+              ') // false',
+            position: {
+              start: { line: 3, column: 1, offset: 34 },
+              end: { line: 13, column: 4, offset: 223 },
+              indent: [
+                1, 1, 1, 1, 1,
+                1, 1, 1, 1, 1
+              ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 13, column: 4, offset: 223 }
+        }
+      }
+    }
+  },
+  {
     name: 'heapUsedInLoop',
     catchphrase: 'max and avg heap used in loop',
     synopsis: 'heapUsedInLoop(\n' +
@@ -25081,6 +25308,155 @@ export default [
         position: {
           start: { line: 1, column: 1, offset: 0 },
           end: { line: 9, column: 4, offset: 183 }
+        }
+      }
+    }
+  },
+  {
+    name: 'includes',
+    synopsis: '```coffeescript [specscript]\n' +
+      'includes(value any)(container Array|String|Object) -> boolean\n' +
+      '```',
+    description: 'Check if a collection includes another value by [SameValueZero](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero).\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      "import includes from 'https://unpkg.com/rubico/dist/x/includes.es.js'\n" +
+      '\n' +
+      'console.log(\n' +
+      '  includes(5)([1, 2, 3, 4, 5])\n' +
+      ') // true\n' +
+      '\n' +
+      'console.log(\n' +
+      '  includes(5)([1, 2, 3])\n' +
+      ') // false\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'includes',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 9, offset: 8 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 9, offset: 8 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 9, offset: 8 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'includes(value any)(container Array|String|Object) -> boolean',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 94 },
+              indent: [ 1, 1 ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 94 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Check if a collection includes another value by ',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 49, offset: 48 },
+                  indent: []
+                }
+              },
+              {
+                type: 'link',
+                title: null,
+                url: 'http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'SameValueZero',
+                    position: {
+                      start: { line: 1, column: 50, offset: 49 },
+                      end: { line: 1, column: 63, offset: 62 },
+                      indent: []
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 49, offset: 48 },
+                  end: { line: 1, column: 127, offset: 126 },
+                  indent: []
+                }
+              },
+              {
+                type: 'text',
+                value: '.',
+                position: {
+                  start: { line: 1, column: 127, offset: 126 },
+                  end: { line: 1, column: 128, offset: 127 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 128, offset: 127 },
+              indent: []
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: "import includes from 'https://unpkg.com/rubico/dist/x/includes.es.js'\n" +
+              '\n' +
+              'console.log(\n' +
+              '  includes(5)([1, 2, 3, 4, 5])\n' +
+              ') // true\n' +
+              '\n' +
+              'console.log(\n' +
+              '  includes(5)([1, 2, 3])\n' +
+              ') // false',
+            position: {
+              start: { line: 3, column: 1, offset: 129 },
+              end: { line: 13, column: 4, offset: 334 },
+              indent: [
+                1, 1, 1, 1, 1,
+                1, 1, 1, 1, 1
+              ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 13, column: 4, offset: 334 }
         }
       }
     }

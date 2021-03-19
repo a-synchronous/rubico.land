@@ -205,6 +205,7 @@ const DocsCurry = DocsItem('curry')
 const DocsCurryArity = DocsItem('curry.arity')
 const Docs__ = DocsItem('__')
 
+const DocsCallProp = DocsItem('callProp')
 const DocsDefaultsDeep = DocsItem('defaultsDeep')
 const DocsDifferenceWith = DocsItem('differenceWith')
 const DocsFind = DocsItem('find')
@@ -212,7 +213,9 @@ const DocsFirst = DocsItem('first')
 const DocsFlatten = DocsItem('flatten')
 const DocsForEach = DocsItem('forEach')
 const DocsGroupBy = DocsItem('groupBy')
+const DocsHas = DocsItem('has')
 const DocsIdentity = DocsItem('identity')
+const DocsIncludes = DocsItem('includes')
 const DocsIsDeepEqual = DocsItem('isDeepEqual')
 const DocsIsEmpty = DocsItem('isEmpty')
 const DocsIsFunction = DocsItem('isFunction')
@@ -317,6 +320,7 @@ const Docs = ReactElement(props => Div([
 
     H1('x/ - stable'),
     Div([
+      DocsCallProp(props),
       DocsDefaultsDeep(props),
       DocsDifferenceWith(props),
       DocsFind(props),
@@ -324,7 +328,9 @@ const Docs = ReactElement(props => Div([
       DocsFlatten(props),
       DocsForEach(props),
       DocsGroupBy(props),
+      DocsHas(props),
       DocsIdentity(props),
+      DocsIncludes(props),
       DocsIsDeepEqual(props),
       DocsIsEmpty(props),
       DocsIsFunction(props),
