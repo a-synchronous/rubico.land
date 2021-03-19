@@ -336,7 +336,7 @@ export default {
           children: [
             {
               type: 'text',
-              value: 'At a certain point in my career, I grew frustrated with the entanglement of my own code. While looking for something better, I found functional programming. I was excited by the idea of functional composition, but disillusioned by the redundancy of effectful types. I started rubico to capitalize on the prior while rebuking the latter. Many iterations since then, the library has grown into something I personally enjoy using, and continue to use to this day.',
+              value: 'At a certain point in my career, I grew frustrated with the entanglement of my own code. While looking for something better, I found functional programming. I was excited by the idea of functional composition, but disillusioned by the redundancy of effectful types. I started Rubico to capitalize on the prior while rebuking the latter. Many iterations since then, the library has grown into something I personally enjoy using, and continue to use to this day.',
               position: {
                 start: { line: 31, column: 3, offset: 1090 },
                 end: { line: 31, column: 463, offset: 1550 },
@@ -362,7 +362,7 @@ export default {
       children: [
         {
           type: 'text',
-          value: 'rubico is founded on the following principles:',
+          value: 'Rubico is founded on the following principles:',
           position: {
             start: { line: 33, column: 1, offset: 1552 },
             end: { line: 33, column: 47, offset: 1598 },
@@ -526,7 +526,7 @@ export default {
       children: [
         {
           type: 'text',
-          value: 'rubico is a module of twenty-eight operators for async-enabled functional programming in JavaScript.',
+          value: 'Rubico is a module of twenty-eight operators for async-enabled functional programming in JavaScript.',
           position: {
             start: { line: 42, column: 1, offset: 1934 },
             end: { line: 42, column: 101, offset: 2034 },
@@ -621,7 +621,7 @@ export default {
       children: [
         {
           type: 'text',
-          value: 'For different but semanticaly related functionality, rubico exposes additional methods as property functions. For example,',
+          value: 'For different but semanticaly related functionality, Rubico exposes additional methods as property functions. For example,',
           position: {
             start: { line: 81, column: 1, offset: 3152 },
             end: { line: 81, column: 123, offset: 3274 },
@@ -1883,7 +1883,7 @@ export default {
       children: [
         {
           type: 'text',
-          value: 'rubico is ',
+          value: 'Rubico is ',
           position: {
             start: { line: 170, column: 1, offset: 7771 },
             end: { line: 170, column: 11, offset: 7781 },
