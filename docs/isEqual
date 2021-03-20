@@ -38,6 +38,9 @@
   <link rel="stylesheet" href="/index.css">
   <script src="/codemirror/syntax/javascript.js" async></script>
   <script src="/codemirror/syntax/coffeescript.js" async></script>
+  <script src="/codemirror/syntax/htmlmixed.js" async></script>
+  <script src="/codemirror/syntax/xml.js" async></script>
+  <script src="/codemirror/syntax/css.js" async></script>
 </head>
 
 <body>
