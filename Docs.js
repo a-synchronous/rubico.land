@@ -346,6 +346,18 @@ const Docs = ReactElement(props => Div([
       DocsValues(props),
     ]),
   ]),
+  Div({
+    id: 'back-to-top',
+  }, [
+    A({
+      href: '/docs',
+      onClick(event) {
+        event.preventDefault()
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+        window.history.pushState({}, document.title, '/docs')
+      },
+    }, 'Back to top'),
+  ]),
 ]))
 
 export default Docs

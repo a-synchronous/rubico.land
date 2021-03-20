@@ -414,3 +414,7 @@ header > nav > span {
 .next-arrow:hover {
   filter: brightness(108%);
 }
+
+#back-to-top {
+  margin-top: 35px;
+}
