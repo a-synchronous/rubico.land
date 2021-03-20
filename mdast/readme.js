@@ -1207,17 +1207,17 @@ export default {
       children: [
         {
           type: 'text',
-          value: 'Awesome Resources',
+          value: 'Further Reading',
           position: {
             start: { line: 149, column: 3, offset: 5674 },
-            end: { line: 149, column: 20, offset: 5691 },
+            end: { line: 149, column: 18, offset: 5689 },
             indent: []
           }
         }
       ],
       position: {
         start: { line: 149, column: 1, offset: 5672 },
-        end: { line: 149, column: 20, offset: 5691 },
+        end: { line: 149, column: 18, offset: 5689 },
         indent: []
       }
     },
@@ -1244,29 +1244,29 @@ export default {
                       type: 'text',
                       value: "Practical Functional Programming in JavaScript - Why it's worth it",
                       position: {
-                        start: { line: 150, column: 5, offset: 5696 },
-                        end: { line: 150, column: 71, offset: 5762 },
+                        start: { line: 150, column: 5, offset: 5694 },
+                        end: { line: 150, column: 71, offset: 5760 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 150, column: 4, offset: 5695 },
-                    end: { line: 150, column: 167, offset: 5858 },
+                    start: { line: 150, column: 4, offset: 5693 },
+                    end: { line: 150, column: 167, offset: 5856 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 150, column: 4, offset: 5695 },
-                end: { line: 150, column: 167, offset: 5858 },
+                start: { line: 150, column: 4, offset: 5693 },
+                end: { line: 150, column: 167, offset: 5856 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 150, column: 1, offset: 5692 },
-            end: { line: 150, column: 167, offset: 5858 },
+            start: { line: 150, column: 1, offset: 5690 },
+            end: { line: 150, column: 167, offset: 5856 },
             indent: []
           }
         },
@@ -1287,29 +1287,29 @@ export default {
                       type: 'text',
                       value: 'Practical Functional Programming in JavaScript - Data last',
                       position: {
-                        start: { line: 151, column: 5, offset: 5863 },
-                        end: { line: 151, column: 63, offset: 5921 },
+                        start: { line: 151, column: 5, offset: 5861 },
+                        end: { line: 151, column: 63, offset: 5919 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 151, column: 4, offset: 5862 },
-                    end: { line: 151, column: 152, offset: 6010 },
+                    start: { line: 151, column: 4, offset: 5860 },
+                    end: { line: 151, column: 152, offset: 6008 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 151, column: 4, offset: 5862 },
-                end: { line: 151, column: 152, offset: 6010 },
+                start: { line: 151, column: 4, offset: 5860 },
+                end: { line: 151, column: 152, offset: 6008 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 151, column: 1, offset: 5859 },
-            end: { line: 151, column: 152, offset: 6010 },
+            start: { line: 151, column: 1, offset: 5857 },
+            end: { line: 151, column: 152, offset: 6008 },
             indent: []
           }
         },
@@ -1330,29 +1330,29 @@ export default {
                       type: 'text',
                       value: 'Practical Functional Programming in JavaScript - Side Effects and Purity',
                       position: {
-                        start: { line: 152, column: 5, offset: 6015 },
-                        end: { line: 152, column: 77, offset: 6087 },
+                        start: { line: 152, column: 5, offset: 6013 },
+                        end: { line: 152, column: 77, offset: 6085 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 152, column: 4, offset: 6014 },
-                    end: { line: 152, column: 188, offset: 6198 },
+                    start: { line: 152, column: 4, offset: 6012 },
+                    end: { line: 152, column: 188, offset: 6196 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 152, column: 4, offset: 6014 },
-                end: { line: 152, column: 188, offset: 6198 },
+                start: { line: 152, column: 4, offset: 6012 },
+                end: { line: 152, column: 188, offset: 6196 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 152, column: 1, offset: 6011 },
-            end: { line: 152, column: 188, offset: 6198 },
+            start: { line: 152, column: 1, offset: 6009 },
+            end: { line: 152, column: 188, offset: 6196 },
             indent: []
           }
         },
@@ -1373,29 +1373,29 @@ export default {
                       type: 'text',
                       value: 'Practical Functional Programming in JavaScript - Intro to Transformation',
                       position: {
-                        start: { line: 153, column: 5, offset: 6203 },
-                        end: { line: 153, column: 77, offset: 6275 },
+                        start: { line: 153, column: 5, offset: 6201 },
+                        end: { line: 153, column: 77, offset: 6273 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 153, column: 4, offset: 6202 },
-                    end: { line: 153, column: 180, offset: 6378 },
+                    start: { line: 153, column: 4, offset: 6200 },
+                    end: { line: 153, column: 180, offset: 6376 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 153, column: 4, offset: 6202 },
-                end: { line: 153, column: 180, offset: 6378 },
+                start: { line: 153, column: 4, offset: 6200 },
+                end: { line: 153, column: 180, offset: 6376 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 153, column: 1, offset: 6199 },
-            end: { line: 153, column: 180, offset: 6378 },
+            start: { line: 153, column: 1, offset: 6197 },
+            end: { line: 153, column: 180, offset: 6376 },
             indent: []
           }
         },
@@ -1416,29 +1416,29 @@ export default {
                       type: 'text',
                       value: 'Practical Functional Programming in JavaScript - Techniques for Composing Data',
                       position: {
-                        start: { line: 154, column: 5, offset: 6383 },
-                        end: { line: 154, column: 83, offset: 6461 },
+                        start: { line: 154, column: 5, offset: 6381 },
+                        end: { line: 154, column: 83, offset: 6459 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 154, column: 4, offset: 6382 },
-                    end: { line: 154, column: 191, offset: 6569 },
+                    start: { line: 154, column: 4, offset: 6380 },
+                    end: { line: 154, column: 191, offset: 6567 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 154, column: 4, offset: 6382 },
-                end: { line: 154, column: 191, offset: 6569 },
+                start: { line: 154, column: 4, offset: 6380 },
+                end: { line: 154, column: 191, offset: 6567 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 154, column: 1, offset: 6379 },
-            end: { line: 154, column: 191, offset: 6569 },
+            start: { line: 154, column: 1, offset: 6377 },
+            end: { line: 154, column: 191, offset: 6567 },
             indent: []
           }
         },
@@ -1459,29 +1459,29 @@ export default {
                       type: 'text',
                       value: 'Practical Functional Programming in JavaScript - Control Flow',
                       position: {
-                        start: { line: 155, column: 5, offset: 6574 },
-                        end: { line: 155, column: 66, offset: 6635 },
+                        start: { line: 155, column: 5, offset: 6572 },
+                        end: { line: 155, column: 66, offset: 6633 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 155, column: 4, offset: 6573 },
-                    end: { line: 155, column: 158, offset: 6727 },
+                    start: { line: 155, column: 4, offset: 6571 },
+                    end: { line: 155, column: 158, offset: 6725 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 155, column: 4, offset: 6573 },
-                end: { line: 155, column: 158, offset: 6727 },
+                start: { line: 155, column: 4, offset: 6571 },
+                end: { line: 155, column: 158, offset: 6725 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 155, column: 1, offset: 6570 },
-            end: { line: 155, column: 158, offset: 6727 },
+            start: { line: 155, column: 1, offset: 6568 },
+            end: { line: 155, column: 158, offset: 6725 },
             indent: []
           }
         },
@@ -1502,29 +1502,29 @@ export default {
                       type: 'text',
                       value: 'Practical Functional Programming in JavaScript - Error Handling',
                       position: {
-                        start: { line: 156, column: 5, offset: 6732 },
-                        end: { line: 156, column: 68, offset: 6795 },
+                        start: { line: 156, column: 5, offset: 6730 },
+                        end: { line: 156, column: 68, offset: 6793 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 156, column: 4, offset: 6731 },
-                    end: { line: 156, column: 161, offset: 6888 },
+                    start: { line: 156, column: 4, offset: 6729 },
+                    end: { line: 156, column: 161, offset: 6886 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 156, column: 4, offset: 6731 },
-                end: { line: 156, column: 161, offset: 6888 },
+                start: { line: 156, column: 4, offset: 6729 },
+                end: { line: 156, column: 161, offset: 6886 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 156, column: 1, offset: 6728 },
-            end: { line: 156, column: 161, offset: 6888 },
+            start: { line: 156, column: 1, offset: 6726 },
+            end: { line: 156, column: 161, offset: 6886 },
             indent: []
           }
         },
@@ -1545,36 +1545,36 @@ export default {
                       type: 'text',
                       value: 'SurviveJS Rubico Interview',
                       position: {
-                        start: { line: 157, column: 5, offset: 6893 },
-                        end: { line: 157, column: 31, offset: 6919 },
+                        start: { line: 157, column: 5, offset: 6891 },
+                        end: { line: 157, column: 31, offset: 6917 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 157, column: 4, offset: 6892 },
-                    end: { line: 157, column: 78, offset: 6966 },
+                    start: { line: 157, column: 4, offset: 6890 },
+                    end: { line: 157, column: 78, offset: 6964 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 157, column: 4, offset: 6892 },
-                end: { line: 157, column: 78, offset: 6966 },
+                start: { line: 157, column: 4, offset: 6890 },
+                end: { line: 157, column: 78, offset: 6964 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 157, column: 1, offset: 6889 },
-            end: { line: 157, column: 78, offset: 6966 },
+            start: { line: 157, column: 1, offset: 6887 },
+            end: { line: 157, column: 78, offset: 6964 },
             indent: []
           }
         }
       ],
       position: {
-        start: { line: 150, column: 1, offset: 5692 },
-        end: { line: 157, column: 78, offset: 6966 },
+        start: { line: 150, column: 1, offset: 5690 },
+        end: { line: 157, column: 78, offset: 6964 },
         indent: [
           1, 1, 1, 1,
           1, 1, 1
@@ -1589,15 +1589,15 @@ export default {
           type: 'text',
           value: 'Contributing',
           position: {
-            start: { line: 159, column: 3, offset: 6970 },
-            end: { line: 159, column: 15, offset: 6982 },
+            start: { line: 159, column: 3, offset: 6968 },
+            end: { line: 159, column: 15, offset: 6980 },
             indent: []
           }
         }
       ],
       position: {
-        start: { line: 159, column: 1, offset: 6968 },
-        end: { line: 159, column: 15, offset: 6982 },
+        start: { line: 159, column: 1, offset: 6966 },
+        end: { line: 159, column: 15, offset: 6980 },
         indent: []
       }
     },
@@ -1608,15 +1608,15 @@ export default {
           type: 'text',
           value: 'Your feedback and contributions are welcome. If you have a suggestion, please raise an issue. Prior to that, please search through the issues first in case your suggestion has been made already. If you decide to work on an issue, please announce on the issue thread that you will work on it.',
           position: {
-            start: { line: 160, column: 1, offset: 6983 },
-            end: { line: 160, column: 292, offset: 7274 },
+            start: { line: 160, column: 1, offset: 6981 },
+            end: { line: 160, column: 292, offset: 7272 },
             indent: []
           }
         }
       ],
       position: {
-        start: { line: 160, column: 1, offset: 6983 },
-        end: { line: 160, column: 292, offset: 7274 },
+        start: { line: 160, column: 1, offset: 6981 },
+        end: { line: 160, column: 292, offset: 7272 },
         indent: []
       }
     },
@@ -1627,8 +1627,8 @@ export default {
           type: 'text',
           value: 'Pull requests should provide some basic context and link the relevant issue. Here is an ',
           position: {
-            start: { line: 162, column: 1, offset: 7276 },
-            end: { line: 162, column: 89, offset: 7364 },
+            start: { line: 162, column: 1, offset: 7274 },
+            end: { line: 162, column: 89, offset: 7362 },
             indent: []
           }
         },
@@ -1641,15 +1641,15 @@ export default {
               type: 'text',
               value: 'example pull request',
               position: {
-                start: { line: 162, column: 90, offset: 7365 },
-                end: { line: 162, column: 110, offset: 7385 },
+                start: { line: 162, column: 90, offset: 7363 },
+                end: { line: 162, column: 110, offset: 7383 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 162, column: 89, offset: 7364 },
-            end: { line: 162, column: 160, offset: 7435 },
+            start: { line: 162, column: 89, offset: 7362 },
+            end: { line: 162, column: 160, offset: 7433 },
             indent: []
           }
         },
@@ -1657,8 +1657,8 @@ export default {
           type: 'text',
           value: '. If you are interested in contributing, the ',
           position: {
-            start: { line: 162, column: 160, offset: 7435 },
-            end: { line: 162, column: 205, offset: 7480 },
+            start: { line: 162, column: 160, offset: 7433 },
+            end: { line: 162, column: 205, offset: 7478 },
             indent: []
           }
         },
@@ -1671,15 +1671,15 @@ export default {
               type: 'text',
               value: 'help wanted',
               position: {
-                start: { line: 162, column: 206, offset: 7481 },
-                end: { line: 162, column: 217, offset: 7492 },
+                start: { line: 162, column: 206, offset: 7479 },
+                end: { line: 162, column: 217, offset: 7490 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 162, column: 205, offset: 7480 },
-            end: { line: 162, column: 315, offset: 7590 },
+            start: { line: 162, column: 205, offset: 7478 },
+            end: { line: 162, column: 315, offset: 7588 },
             indent: []
           }
         },
@@ -1687,15 +1687,15 @@ export default {
           type: 'text',
           value: ' tag is a good place to start.',
           position: {
-            start: { line: 162, column: 315, offset: 7590 },
-            end: { line: 162, column: 345, offset: 7620 },
+            start: { line: 162, column: 315, offset: 7588 },
+            end: { line: 162, column: 345, offset: 7618 },
             indent: []
           }
         }
       ],
       position: {
-        start: { line: 162, column: 1, offset: 7276 },
-        end: { line: 162, column: 345, offset: 7620 },
+        start: { line: 162, column: 1, offset: 7274 },
+        end: { line: 162, column: 345, offset: 7618 },
         indent: []
       }
     },
@@ -1707,15 +1707,15 @@ export default {
           type: 'text',
           value: 'License',
           position: {
-            start: { line: 164, column: 3, offset: 7624 },
-            end: { line: 164, column: 10, offset: 7631 },
+            start: { line: 164, column: 3, offset: 7622 },
+            end: { line: 164, column: 10, offset: 7629 },
             indent: []
           }
         }
       ],
       position: {
-        start: { line: 164, column: 1, offset: 7622 },
-        end: { line: 164, column: 10, offset: 7631 },
+        start: { line: 164, column: 1, offset: 7620 },
+        end: { line: 164, column: 10, offset: 7629 },
         indent: []
       }
     },
@@ -1726,8 +1726,8 @@ export default {
           type: 'text',
           value: 'Rubico is ',
           position: {
-            start: { line: 165, column: 1, offset: 7632 },
-            end: { line: 165, column: 11, offset: 7642 },
+            start: { line: 165, column: 1, offset: 7630 },
+            end: { line: 165, column: 11, offset: 7640 },
             indent: []
           }
         },
@@ -1740,15 +1740,15 @@ export default {
               type: 'text',
               value: 'MIT Licensed',
               position: {
-                start: { line: 165, column: 12, offset: 7643 },
-                end: { line: 165, column: 24, offset: 7655 },
+                start: { line: 165, column: 12, offset: 7641 },
+                end: { line: 165, column: 24, offset: 7653 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 165, column: 11, offset: 7642 },
-            end: { line: 165, column: 86, offset: 7717 },
+            start: { line: 165, column: 11, offset: 7640 },
+            end: { line: 165, column: 86, offset: 7715 },
             indent: []
           }
         },
@@ -1756,15 +1756,15 @@ export default {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 165, column: 86, offset: 7717 },
-            end: { line: 165, column: 87, offset: 7718 },
+            start: { line: 165, column: 86, offset: 7715 },
+            end: { line: 165, column: 87, offset: 7716 },
             indent: []
           }
         }
       ],
       position: {
-        start: { line: 165, column: 1, offset: 7632 },
-        end: { line: 165, column: 87, offset: 7718 },
+        start: { line: 165, column: 1, offset: 7630 },
+        end: { line: 165, column: 87, offset: 7716 },
         indent: []
       }
     },
@@ -1776,15 +1776,15 @@ export default {
           type: 'text',
           value: 'Support',
           position: {
-            start: { line: 167, column: 3, offset: 7722 },
-            end: { line: 167, column: 10, offset: 7729 },
+            start: { line: 167, column: 3, offset: 7720 },
+            end: { line: 167, column: 10, offset: 7727 },
             indent: []
           }
         }
       ],
       position: {
-        start: { line: 167, column: 1, offset: 7720 },
-        end: { line: 167, column: 10, offset: 7729 },
+        start: { line: 167, column: 1, offset: 7718 },
+        end: { line: 167, column: 10, offset: 7727 },
         indent: []
       }
     },
@@ -1806,22 +1806,22 @@ export default {
                   type: 'text',
                   value: 'minimum Node.js version: 10.3',
                   position: {
-                    start: { line: 168, column: 4, offset: 7733 },
-                    end: { line: 168, column: 33, offset: 7762 },
+                    start: { line: 168, column: 4, offset: 7731 },
+                    end: { line: 168, column: 33, offset: 7760 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 168, column: 4, offset: 7733 },
-                end: { line: 168, column: 33, offset: 7762 },
+                start: { line: 168, column: 4, offset: 7731 },
+                end: { line: 168, column: 33, offset: 7760 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 168, column: 1, offset: 7730 },
-            end: { line: 168, column: 33, offset: 7762 },
+            start: { line: 168, column: 1, offset: 7728 },
+            end: { line: 168, column: 33, offset: 7760 },
             indent: []
           }
         },
@@ -1837,22 +1837,22 @@ export default {
                   type: 'text',
                   value: 'minimum Chrome version: 63',
                   position: {
-                    start: { line: 169, column: 4, offset: 7766 },
-                    end: { line: 169, column: 30, offset: 7792 },
+                    start: { line: 169, column: 4, offset: 7764 },
+                    end: { line: 169, column: 30, offset: 7790 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 169, column: 4, offset: 7766 },
-                end: { line: 169, column: 30, offset: 7792 },
+                start: { line: 169, column: 4, offset: 7764 },
+                end: { line: 169, column: 30, offset: 7790 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 169, column: 1, offset: 7763 },
-            end: { line: 169, column: 30, offset: 7792 },
+            start: { line: 169, column: 1, offset: 7761 },
+            end: { line: 169, column: 30, offset: 7790 },
             indent: []
           }
         },
@@ -1868,22 +1868,22 @@ export default {
                   type: 'text',
                   value: 'minimum Firefox version: 57',
                   position: {
-                    start: { line: 170, column: 4, offset: 7796 },
-                    end: { line: 170, column: 31, offset: 7823 },
+                    start: { line: 170, column: 4, offset: 7794 },
+                    end: { line: 170, column: 31, offset: 7821 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 170, column: 4, offset: 7796 },
-                end: { line: 170, column: 31, offset: 7823 },
+                start: { line: 170, column: 4, offset: 7794 },
+                end: { line: 170, column: 31, offset: 7821 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 170, column: 1, offset: 7793 },
-            end: { line: 170, column: 31, offset: 7823 },
+            start: { line: 170, column: 1, offset: 7791 },
+            end: { line: 170, column: 31, offset: 7821 },
             indent: []
           }
         },
@@ -1899,22 +1899,22 @@ export default {
                   type: 'text',
                   value: 'minimum Edge version: 79',
                   position: {
-                    start: { line: 171, column: 4, offset: 7827 },
-                    end: { line: 171, column: 28, offset: 7851 },
+                    start: { line: 171, column: 4, offset: 7825 },
+                    end: { line: 171, column: 28, offset: 7849 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 171, column: 4, offset: 7827 },
-                end: { line: 171, column: 28, offset: 7851 },
+                start: { line: 171, column: 4, offset: 7825 },
+                end: { line: 171, column: 28, offset: 7849 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 171, column: 1, offset: 7824 },
-            end: { line: 171, column: 28, offset: 7851 },
+            start: { line: 171, column: 1, offset: 7822 },
+            end: { line: 171, column: 28, offset: 7849 },
             indent: []
           }
         },
@@ -1930,35 +1930,35 @@ export default {
                   type: 'text',
                   value: 'minimum Safari version: 11.1',
                   position: {
-                    start: { line: 172, column: 4, offset: 7855 },
-                    end: { line: 172, column: 32, offset: 7883 },
+                    start: { line: 172, column: 4, offset: 7853 },
+                    end: { line: 172, column: 32, offset: 7881 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 172, column: 4, offset: 7855 },
-                end: { line: 172, column: 32, offset: 7883 },
+                start: { line: 172, column: 4, offset: 7853 },
+                end: { line: 172, column: 32, offset: 7881 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 172, column: 1, offset: 7852 },
-            end: { line: 172, column: 32, offset: 7883 },
+            start: { line: 172, column: 1, offset: 7850 },
+            end: { line: 172, column: 32, offset: 7881 },
             indent: []
           }
         }
       ],
       position: {
-        start: { line: 168, column: 1, offset: 7730 },
-        end: { line: 172, column: 32, offset: 7883 },
+        start: { line: 168, column: 1, offset: 7728 },
+        end: { line: 172, column: 32, offset: 7881 },
         indent: [ 1, 1, 1, 1 ]
       }
     }
   ],
   position: {
     start: { line: 1, column: 1, offset: 0 },
-    end: { line: 173, column: 1, offset: 7884 }
+    end: { line: 173, column: 1, offset: 7882 }
   }
 }
