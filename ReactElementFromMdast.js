@@ -153,7 +153,7 @@ const ReactElementFromMdast = function (mdast, props = {}) {
         default:
           return CodeViewer({
             code: mdast.value,
-            mode: mdast.lang,
+            mode: mdast.meta == null ? mdast.lang : mdast.meta.slice(1, -1),
             theme: 'default',
           })
       }

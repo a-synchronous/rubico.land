@@ -23,6 +23,7 @@ const CodeViewer = ReactElement(({
   lineWrapping = true,
   lineNumbers = false,
 }) => {
+  console.log('CodeViewer', { mode, theme })
   const codeAreaRef = useRef(null)
   useEffect(() => {
     if (!codeMirrors.has(codeAreaRef)) return

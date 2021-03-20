@@ -109,11 +109,9 @@
 
 /* DEFAULT THEME */
 .cm-s-default.CodeMirror {
+  background-color: #f7f7f7;
   border-radius: 1em;
-  padding-left: 2px;
-  padding-right: 0px;
-  padding-top: 2px;
-  padding-bottom: 2px;
+  padding: 15px 10px;
   pointer-events: none;
 }
 
