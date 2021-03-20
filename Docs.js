@@ -1,4 +1,3 @@
-import forEach from 'https://unpkg.com/rubico/dist/x/forEach.es.min.js'
 import ReactElementFromMdast from './ReactElementFromMdast.js'
 import mdastBase from './mdastBase.js'
 
