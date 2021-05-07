@@ -7238,6 +7238,151 @@ export default [
     }
   },
   {
+    name: 'objectKeys',
+    synopsis: 'objectKeys<T>(object Object<T>) -> Array<T>',
+    description: 'Dereferenced `Object.keys`',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'objectKeys',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 11, offset: 10 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 11, offset: 10 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 11, offset: 10 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'objectKeys',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 11, offset: 10 },
+                  indent: []
+                }
+              },
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 1, column: 11, offset: 10 },
+                  end: { line: 1, column: 14, offset: 13 },
+                  indent: []
+                }
+              },
+              {
+                type: 'text',
+                value: '(object Object',
+                position: {
+                  start: { line: 1, column: 14, offset: 13 },
+                  end: { line: 1, column: 28, offset: 27 },
+                  indent: []
+                }
+              },
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 1, column: 28, offset: 27 },
+                  end: { line: 1, column: 31, offset: 30 },
+                  indent: []
+                }
+              },
+              {
+                type: 'text',
+                value: ') -> Array',
+                position: {
+                  start: { line: 1, column: 31, offset: 30 },
+                  end: { line: 1, column: 41, offset: 40 },
+                  indent: []
+                }
+              },
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 1, column: 41, offset: 40 },
+                  end: { line: 1, column: 44, offset: 43 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 44, offset: 43 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 44, offset: 43 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Dereferenced ',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 14, offset: 13 },
+                  indent: []
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'Object.keys',
+                position: {
+                  start: { line: 1, column: 14, offset: 13 },
+                  end: { line: 1, column: 27, offset: 26 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 27, offset: 26 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 27, offset: 26 }
+        }
+      }
+    }
+  },
+  {
     name: 'objectMap',
     synopsis: '```coffeescript [specscript]\n' +
       'objectMap<\n' +
@@ -26127,6 +26272,143 @@ export default [
         position: {
           start: { line: 1, column: 1, offset: 0 },
           end: { line: 9, column: 4, offset: 183 }
+        }
+      }
+    }
+  },
+  {
+    name: 'keys',
+    synopsis: '```coffeescript [specscript]\n' +
+      'keys(value string|Array|Set|Map|object) -> Array<key number|string>\n' +
+      '```',
+    description: 'Get an array of keys from an instance.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      "import keys from 'https://unpkg.com/rubico/dist/x/keys.es.js'\n" +
+      '\n' +
+      "console.log(keys({ a: 1, b: 2, c: 3 })) // ['a', 'b', 'c']\n" +
+      "console.log(keys(['hello', 'world'])) // [0, 1]\n" +
+      "console.log(keys(new Map([['hello', 1], ['world', 2]]))) // ['hello', 'world']\n" +
+      '```',
+    since: '1.6.25',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'keys',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 5, offset: 4 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 5, offset: 4 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 5, offset: 4 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'keys(value string|Array|Set|Map|object) -> Array<key number|string>',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 100 },
+              indent: [ 1, 1 ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 100 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Get an array of keys from an instance.',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 39, offset: 38 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 39, offset: 38 },
+              indent: []
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: "import keys from 'https://unpkg.com/rubico/dist/x/keys.es.js'\n" +
+              '\n' +
+              "console.log(keys({ a: 1, b: 2, c: 3 })) // ['a', 'b', 'c']\n" +
+              "console.log(keys(['hello', 'world'])) // [0, 1]\n" +
+              "console.log(keys(new Map([['hello', 1], ['world', 2]]))) // ['hello', 'world']",
+            position: {
+              start: { line: 3, column: 1, offset: 40 },
+              end: { line: 9, column: 4, offset: 319 },
+              indent: [ 1, 1, 1, 1, 1, 1 ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 9, column: 4, offset: 319 }
+        }
+      },
+      since: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: '1.6.25',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 7, offset: 6 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 7, offset: 6 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 7, offset: 6 }
         }
       }
     }

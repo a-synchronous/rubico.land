@@ -220,6 +220,7 @@ const DocsIsEmpty = DocsItem('isEmpty')
 const DocsIsFunction = DocsItem('isFunction')
 const DocsIsObject = DocsItem('isObject')
 const DocsIsString = DocsItem('isString')
+const DocsKeys = DocsItem('keys')
 const DocsLast = DocsItem('last')
 const DocsNoop = DocsItem('noop')
 const DocsPluck = DocsItem('pluck')
@@ -335,6 +336,7 @@ const Docs = ReactElement(props => Div([
       DocsIsFunction(props),
       DocsIsObject(props),
       DocsIsString(props),
+      DocsKeys(props),
       DocsLast(props),
       DocsNoop(props),
       DocsPluck(props),
