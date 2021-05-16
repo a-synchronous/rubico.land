@@ -24245,6 +24245,121 @@ export default [
     }
   },
   {
+    name: 'findIndex',
+    synopsis: '```coffeescript [specscript]\n' +
+      'findIndex(predicate function)(array Array) -> index Promise|number\n' +
+      '```',
+    description: 'Returns the index of the first element in an array that satisfies the predicate. Returns -1 if no element satisfies the predicate.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      "import findIndex from 'https://unpkg.com/rubico/dist/x/findIndex.es.js'\n" +
+      '\n' +
+      'const oddNumberIndex = findIndex(function isOdd(number) {\n' +
+      '  return number % 2 == 1\n' +
+      '})([2, 3, 5])\n' +
+      '\n' +
+      'console.log(oddNumberIndex) // 1\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'findIndex',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 10, offset: 9 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 10, offset: 9 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 10, offset: 9 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'findIndex(predicate function)(array Array) -> index Promise|number',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 99 },
+              indent: [ 1, 1 ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 99 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Returns the index of the first element in an array that satisfies the predicate. Returns -1 if no element satisfies the predicate.',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 131, offset: 130 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 131, offset: 130 },
+              indent: []
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: "import findIndex from 'https://unpkg.com/rubico/dist/x/findIndex.es.js'\n" +
+              '\n' +
+              'const oddNumberIndex = findIndex(function isOdd(number) {\n' +
+              '  return number % 2 == 1\n' +
+              '})([2, 3, 5])\n' +
+              '\n' +
+              'console.log(oddNumberIndex) // 1',
+            position: {
+              start: { line: 3, column: 1, offset: 132 },
+              end: { line: 11, column: 4, offset: 366 },
+              indent: [
+                1, 1, 1, 1,
+                1, 1, 1, 1
+              ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 11, column: 4, offset: 366 }
+        }
+      }
+    }
+  },
+  {
     name: 'first',
     synopsis: '```coffeescript [specscript]\n' +
       'var value Array|string\n' +
