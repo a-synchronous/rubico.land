@@ -1807,24 +1807,24 @@ export default {
               children: [
                 {
                   type: 'text',
-                  value: 'minimum Node.js version: 10.3',
+                  value: 'minimum Node.js version: 12',
                   position: {
                     start: { line: 170, column: 4, offset: 7785 },
-                    end: { line: 170, column: 33, offset: 7814 },
+                    end: { line: 170, column: 31, offset: 7812 },
                     indent: []
                   }
                 }
               ],
               position: {
                 start: { line: 170, column: 4, offset: 7785 },
-                end: { line: 170, column: 33, offset: 7814 },
+                end: { line: 170, column: 31, offset: 7812 },
                 indent: []
               }
             }
           ],
           position: {
             start: { line: 170, column: 1, offset: 7782 },
-            end: { line: 170, column: 33, offset: 7814 },
+            end: { line: 170, column: 31, offset: 7812 },
             indent: []
           }
         },
@@ -1840,22 +1840,22 @@ export default {
                   type: 'text',
                   value: 'minimum Chrome version: 63',
                   position: {
-                    start: { line: 171, column: 4, offset: 7818 },
-                    end: { line: 171, column: 30, offset: 7844 },
+                    start: { line: 171, column: 4, offset: 7816 },
+                    end: { line: 171, column: 30, offset: 7842 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 171, column: 4, offset: 7818 },
-                end: { line: 171, column: 30, offset: 7844 },
+                start: { line: 171, column: 4, offset: 7816 },
+                end: { line: 171, column: 30, offset: 7842 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 171, column: 1, offset: 7815 },
-            end: { line: 171, column: 30, offset: 7844 },
+            start: { line: 171, column: 1, offset: 7813 },
+            end: { line: 171, column: 30, offset: 7842 },
             indent: []
           }
         },
@@ -1871,22 +1871,22 @@ export default {
                   type: 'text',
                   value: 'minimum Firefox version: 57',
                   position: {
-                    start: { line: 172, column: 4, offset: 7848 },
-                    end: { line: 172, column: 31, offset: 7875 },
+                    start: { line: 172, column: 4, offset: 7846 },
+                    end: { line: 172, column: 31, offset: 7873 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 172, column: 4, offset: 7848 },
-                end: { line: 172, column: 31, offset: 7875 },
+                start: { line: 172, column: 4, offset: 7846 },
+                end: { line: 172, column: 31, offset: 7873 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 172, column: 1, offset: 7845 },
-            end: { line: 172, column: 31, offset: 7875 },
+            start: { line: 172, column: 1, offset: 7843 },
+            end: { line: 172, column: 31, offset: 7873 },
             indent: []
           }
         },
@@ -1902,22 +1902,22 @@ export default {
                   type: 'text',
                   value: 'minimum Edge version: 79',
                   position: {
-                    start: { line: 173, column: 4, offset: 7879 },
-                    end: { line: 173, column: 28, offset: 7903 },
+                    start: { line: 173, column: 4, offset: 7877 },
+                    end: { line: 173, column: 28, offset: 7901 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 173, column: 4, offset: 7879 },
-                end: { line: 173, column: 28, offset: 7903 },
+                start: { line: 173, column: 4, offset: 7877 },
+                end: { line: 173, column: 28, offset: 7901 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 173, column: 1, offset: 7876 },
-            end: { line: 173, column: 28, offset: 7903 },
+            start: { line: 173, column: 1, offset: 7874 },
+            end: { line: 173, column: 28, offset: 7901 },
             indent: []
           }
         },
@@ -1933,35 +1933,35 @@ export default {
                   type: 'text',
                   value: 'minimum Safari version: 11.1',
                   position: {
-                    start: { line: 174, column: 4, offset: 7907 },
-                    end: { line: 174, column: 32, offset: 7935 },
+                    start: { line: 174, column: 4, offset: 7905 },
+                    end: { line: 174, column: 32, offset: 7933 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 174, column: 4, offset: 7907 },
-                end: { line: 174, column: 32, offset: 7935 },
+                start: { line: 174, column: 4, offset: 7905 },
+                end: { line: 174, column: 32, offset: 7933 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 174, column: 1, offset: 7904 },
-            end: { line: 174, column: 32, offset: 7935 },
+            start: { line: 174, column: 1, offset: 7902 },
+            end: { line: 174, column: 32, offset: 7933 },
             indent: []
           }
         }
       ],
       position: {
         start: { line: 170, column: 1, offset: 7782 },
-        end: { line: 174, column: 32, offset: 7935 },
+        end: { line: 174, column: 32, offset: 7933 },
         indent: [ 1, 1, 1, 1 ]
       }
     }
   ],
   position: {
     start: { line: 1, column: 1, offset: 0 },
-    end: { line: 175, column: 1, offset: 7936 }
+    end: { line: 175, column: 1, offset: 7934 }
   }
 }
