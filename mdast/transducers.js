@@ -773,17 +773,17 @@ export default {
       children: [
         {
           type: 'text',
-          value: "Due to rubico's polymorphic nature, any transducer not used in a reduce implementation is capable of eager transforomations. Below is an eager version of the above transformation.",
+          value: "Due to rubico's polymorphic nature, any transducer not used in a reduce implementation is capable of eager transformations. Below is an eager version of the above transformation.",
           position: {
             start: { line: 99, column: 1, offset: 3342 },
-            end: { line: 99, column: 180, offset: 3521 },
+            end: { line: 99, column: 179, offset: 3520 },
             indent: []
           }
         }
       ],
       position: {
         start: { line: 99, column: 1, offset: 3342 },
-        end: { line: 99, column: 180, offset: 3521 },
+        end: { line: 99, column: 179, offset: 3520 },
         indent: []
       }
     },
@@ -806,8 +806,8 @@ export default {
         '  squaredOdds(manyNumbers),\n' +
         ') // [1, 9, 25, 36, 49, ...]',
       position: {
-        start: { line: 101, column: 1, offset: 3523 },
-        end: { line: 116, column: 4, offset: 3828 },
+        start: { line: 101, column: 1, offset: 3522 },
+        end: { line: 116, column: 4, offset: 3827 },
         indent: [
           1, 1, 1, 1, 1, 1,
           1, 1, 1, 1, 1, 1,
@@ -822,15 +822,15 @@ export default {
           type: 'text',
           value: "I'll leave you today with three places where transducers shine:",
           position: {
-            start: { line: 118, column: 1, offset: 3830 },
-            end: { line: 118, column: 64, offset: 3893 },
+            start: { line: 118, column: 1, offset: 3829 },
+            end: { line: 118, column: 64, offset: 3892 },
             indent: []
           }
         }
       ],
       position: {
-        start: { line: 118, column: 1, offset: 3830 },
-        end: { line: 118, column: 64, offset: 3893 },
+        start: { line: 118, column: 1, offset: 3829 },
+        end: { line: 118, column: 64, offset: 3892 },
         indent: []
       }
     },
@@ -852,22 +852,22 @@ export default {
                   type: 'text',
                   value: 'chaining transforming operations',
                   position: {
-                    start: { line: 119, column: 5, offset: 3898 },
-                    end: { line: 119, column: 37, offset: 3930 },
+                    start: { line: 119, column: 5, offset: 3897 },
+                    end: { line: 119, column: 37, offset: 3929 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 119, column: 5, offset: 3898 },
-                end: { line: 119, column: 37, offset: 3930 },
+                start: { line: 119, column: 5, offset: 3897 },
+                end: { line: 119, column: 37, offset: 3929 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 119, column: 1, offset: 3894 },
-            end: { line: 119, column: 37, offset: 3930 },
+            start: { line: 119, column: 1, offset: 3893 },
+            end: { line: 119, column: 37, offset: 3929 },
             indent: []
           }
         },
@@ -883,22 +883,22 @@ export default {
                   type: 'text',
                   value: 'transforming items of async iterables or potentially infinite sources',
                   position: {
-                    start: { line: 120, column: 5, offset: 3935 },
-                    end: { line: 120, column: 74, offset: 4004 },
+                    start: { line: 120, column: 5, offset: 3934 },
+                    end: { line: 120, column: 74, offset: 4003 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 120, column: 5, offset: 3935 },
-                end: { line: 120, column: 74, offset: 4004 },
+                start: { line: 120, column: 5, offset: 3934 },
+                end: { line: 120, column: 74, offset: 4003 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 120, column: 1, offset: 3931 },
-            end: { line: 120, column: 74, offset: 4004 },
+            start: { line: 120, column: 1, offset: 3930 },
+            end: { line: 120, column: 74, offset: 4003 },
             indent: []
           }
         },
@@ -914,29 +914,29 @@ export default {
                   type: 'text',
                   value: 'modifying the behavior of an existing reducing operation',
                   position: {
-                    start: { line: 121, column: 5, offset: 4009 },
-                    end: { line: 121, column: 61, offset: 4065 },
+                    start: { line: 121, column: 5, offset: 4008 },
+                    end: { line: 121, column: 61, offset: 4064 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 121, column: 5, offset: 4009 },
-                end: { line: 121, column: 61, offset: 4065 },
+                start: { line: 121, column: 5, offset: 4008 },
+                end: { line: 121, column: 61, offset: 4064 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 121, column: 1, offset: 4005 },
-            end: { line: 121, column: 61, offset: 4065 },
+            start: { line: 121, column: 1, offset: 4004 },
+            end: { line: 121, column: 61, offset: 4064 },
             indent: []
           }
         }
       ],
       position: {
-        start: { line: 119, column: 1, offset: 3894 },
-        end: { line: 121, column: 61, offset: 4065 },
+        start: { line: 119, column: 1, offset: 3893 },
+        end: { line: 121, column: 61, offset: 4064 },
         indent: [ 1, 1 ]
       }
     },
@@ -947,15 +947,15 @@ export default {
           type: 'text',
           value: 'Photo credits:',
           position: {
-            start: { line: 124, column: 1, offset: 4068 },
-            end: { line: 124, column: 15, offset: 4082 },
+            start: { line: 124, column: 1, offset: 4067 },
+            end: { line: 124, column: 15, offset: 4081 },
             indent: []
           }
         }
       ],
       position: {
-        start: { line: 124, column: 1, offset: 4068 },
-        end: { line: 124, column: 15, offset: 4082 },
+        start: { line: 124, column: 1, offset: 4067 },
+        end: { line: 124, column: 15, offset: 4081 },
         indent: []
       }
     },
@@ -982,36 +982,36 @@ export default {
                       type: 'text',
                       value: 'https://www.pngkit.com/view/u2w7e6u2y3o0o0y3_junior-alex-berlaga-helps-set-dominoes-world-records/',
                       position: {
-                        start: { line: 125, column: 4, offset: 4086 },
-                        end: { line: 125, column: 102, offset: 4184 },
+                        start: { line: 125, column: 4, offset: 4085 },
+                        end: { line: 125, column: 102, offset: 4183 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 125, column: 4, offset: 4086 },
-                    end: { line: 125, column: 102, offset: 4184 },
+                    start: { line: 125, column: 4, offset: 4085 },
+                    end: { line: 125, column: 102, offset: 4183 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 125, column: 4, offset: 4086 },
-                end: { line: 125, column: 102, offset: 4184 },
+                start: { line: 125, column: 4, offset: 4085 },
+                end: { line: 125, column: 102, offset: 4183 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 125, column: 1, offset: 4083 },
-            end: { line: 125, column: 102, offset: 4184 },
+            start: { line: 125, column: 1, offset: 4082 },
+            end: { line: 125, column: 102, offset: 4183 },
             indent: []
           }
         }
       ],
       position: {
-        start: { line: 125, column: 1, offset: 4083 },
-        end: { line: 125, column: 102, offset: 4184 },
+        start: { line: 125, column: 1, offset: 4082 },
+        end: { line: 125, column: 102, offset: 4183 },
         indent: []
       }
     },
@@ -1022,15 +1022,15 @@ export default {
           type: 'text',
           value: 'Further reading:',
           position: {
-            start: { line: 127, column: 1, offset: 4186 },
-            end: { line: 127, column: 17, offset: 4202 },
+            start: { line: 127, column: 1, offset: 4185 },
+            end: { line: 127, column: 17, offset: 4201 },
             indent: []
           }
         }
       ],
       position: {
-        start: { line: 127, column: 1, offset: 4186 },
-        end: { line: 127, column: 17, offset: 4202 },
+        start: { line: 127, column: 1, offset: 4185 },
+        end: { line: 127, column: 17, offset: 4201 },
         indent: []
       }
     },
@@ -1057,42 +1057,42 @@ export default {
                       type: 'text',
                       value: 'https://tgvashworth.com/2014/08/31/csp-and-transducers.html',
                       position: {
-                        start: { line: 128, column: 4, offset: 4206 },
-                        end: { line: 128, column: 63, offset: 4265 },
+                        start: { line: 128, column: 4, offset: 4205 },
+                        end: { line: 128, column: 63, offset: 4264 },
                         indent: []
                       }
                     }
                   ],
                   position: {
-                    start: { line: 128, column: 4, offset: 4206 },
-                    end: { line: 128, column: 63, offset: 4265 },
+                    start: { line: 128, column: 4, offset: 4205 },
+                    end: { line: 128, column: 63, offset: 4264 },
                     indent: []
                   }
                 }
               ],
               position: {
-                start: { line: 128, column: 4, offset: 4206 },
-                end: { line: 128, column: 63, offset: 4265 },
+                start: { line: 128, column: 4, offset: 4205 },
+                end: { line: 128, column: 63, offset: 4264 },
                 indent: []
               }
             }
           ],
           position: {
-            start: { line: 128, column: 1, offset: 4203 },
-            end: { line: 128, column: 63, offset: 4265 },
+            start: { line: 128, column: 1, offset: 4202 },
+            end: { line: 128, column: 63, offset: 4264 },
             indent: []
           }
         }
       ],
       position: {
-        start: { line: 128, column: 1, offset: 4203 },
-        end: { line: 128, column: 63, offset: 4265 },
+        start: { line: 128, column: 1, offset: 4202 },
+        end: { line: 128, column: 63, offset: 4264 },
         indent: []
       }
     }
   ],
   position: {
     start: { line: 1, column: 1, offset: 0 },
-    end: { line: 129, column: 1, offset: 4266 }
+    end: { line: 129, column: 1, offset: 4265 }
   }
 }
