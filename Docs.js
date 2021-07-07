@@ -265,8 +265,8 @@ const Docs = ReactElement(props => Div([
       ]),
       DocsAssign(props),
       DocsGet(props),
-      DocsPick(props),
       DocsSet(props),
+      DocsPick(props),
       DocsOmit(props),
     ]),
 
