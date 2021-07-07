@@ -21757,13 +21757,16 @@ export default [
       '\n' +
       '```javascript [playground]\n' +
       'console.log(\n' +
-      "  set('a.b', '1')({ a: { c : 2 }),\n" +
-      ') // { a : { b: 1, c: 2 }}\n' +
+      "  set('a', 1)({ b: 2 })\n" +
+      ') // { a: 1, b: 2 }\n' +
+      '\n' +
       'console.log(\n' +
-      "  set('a[0].b.c', 4)({ 'a': [{ 'b': { 'c': 3 } }] }),\n" +
-      ") // { 'a': [{ 'b': { 'c': 4 } }] }\n" +
-      "  console.log(set(['a', 'b'], '1')({ a: { c : 2 })),\n" +
-      ') // { a: { b: 1, c: 2 }}\n' +
+      "  set('a.b', 1)({ a: { c: 2 } }),\n" +
+      ') // { a : { b: 1, c: 2 }}\n' +
+      '\n' +
+      'console.log(\n' +
+      "  set('a[0].b.c', 4)({ a: [{ b: { c: 3 } }] }),\n" +
+      ') // { a: [{ b: { c: 4 } }] }\n' +
       '```',
     since: '1.7.0',
     mdast: {
@@ -21846,26 +21849,30 @@ export default [
             lang: 'javascript',
             meta: '[playground]',
             value: 'console.log(\n' +
-              "  set('a.b', '1')({ a: { c : 2 }),\n" +
-              ') // { a : { b: 1, c: 2 }}\n' +
+              "  set('a', 1)({ b: 2 })\n" +
+              ') // { a: 1, b: 2 }\n' +
+              '\n' +
               'console.log(\n' +
-              "  set('a[0].b.c', 4)({ 'a': [{ 'b': { 'c': 3 } }] }),\n" +
-              ") // { 'a': [{ 'b': { 'c': 4 } }] }\n" +
-              "  console.log(set(['a', 'b'], '1')({ a: { c : 2 })),\n" +
-              ') // { a: { b: 1, c: 2 }}',
+              "  set('a.b', 1)({ a: { c: 2 } }),\n" +
+              ') // { a : { b: 1, c: 2 }}\n' +
+              '\n' +
+              'console.log(\n' +
+              "  set('a[0].b.c', 4)({ a: [{ b: { c: 3 } }] }),\n" +
+              ') // { a: [{ b: { c: 4 } }] }',
             position: {
               start: { line: 3, column: 1, offset: 68 },
-              end: { line: 12, column: 4, offset: 355 },
+              end: { line: 15, column: 4, offset: 322 },
               indent: [
                 1, 1, 1, 1, 1,
-                1, 1, 1, 1
+                1, 1, 1, 1, 1,
+                1, 1
               ]
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 12, column: 4, offset: 355 }
+          end: { line: 15, column: 4, offset: 322 }
         }
       },
       since: {

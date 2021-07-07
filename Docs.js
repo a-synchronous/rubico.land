@@ -172,6 +172,7 @@ const DocsFork = DocsItem('fork')
 const DocsForkSeries = DocsItem('fork.series')
 const DocsAssign = DocsItem('assign')
 const DocsGet = DocsItem('get')
+const DocsSet = DocsItem('set')
 const DocsPick = DocsItem('pick')
 const DocsOmit = DocsItem('omit')
 const DocsMap = DocsItem('map')
@@ -265,6 +266,7 @@ const Docs = ReactElement(props => Div([
       DocsAssign(props),
       DocsGet(props),
       DocsPick(props),
+      DocsSet(props),
       DocsOmit(props),
     ]),
 

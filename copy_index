@@ -9,7 +9,7 @@ mkdir -p tour/ \
   docs/map/ docs/filter/ docs/reduce/ docs/transform/ docs/flatMap/ \
   docs/any/ docs/all/ docs/and/ docs/or/ docs/not/ \
   docs/eq/ docs/gt/ docs/lt/ docs/gte/ docs/lte/ \
-  docs/get/ docs/pick/ docs/omit/ \
+  docs/get/ docs/set/ docs/pick/ docs/omit/ \
   docs/thunkify/ docs/always/ docs/curry/ docs/__/ \
   blog/
 
@@ -49,6 +49,7 @@ cp index.html docs/lt/index.html
 cp index.html docs/gte/index.html
 cp index.html docs/lte/index.html
 cp index.html docs/get/index.html
+cp index.html docs/set/index.html
 cp index.html docs/pick/index.html
 cp index.html docs/omit/index.html
 cp index.html docs/thunkify/index.html
