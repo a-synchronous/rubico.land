@@ -20680,6 +20680,10 @@ export default [
       'console.log(\n' +
       "  pick(['hello', 'world'])({ goodbye: 1, world: 2 }),\n" +
       ') // { world: 2 }\n' +
+      '\n' +
+      'console.log(\n' +
+      "  pick(['a.b.c.d'])({ a: { b: { c: { d: 1, e: [2, 3] } } } }),\n" +
+      ') // { a: { b: { c: { d: 1 } } } }\n' +
       '```',
     mdast: {
       name: {
@@ -20761,17 +20765,24 @@ export default [
             meta: '[playground]',
             value: 'console.log(\n' +
               "  pick(['hello', 'world'])({ goodbye: 1, world: 2 }),\n" +
-              ') // { world: 2 }',
+              ') // { world: 2 }\n' +
+              '\n' +
+              'console.log(\n' +
+              "  pick(['a.b.c.d'])({ a: { b: { c: { d: 1, e: [2, 3] } } } }),\n" +
+              ') // { a: { b: { c: { d: 1 } } } }',
             position: {
               start: { line: 3, column: 1, offset: 49 },
-              end: { line: 7, column: 4, offset: 164 },
-              indent: [ 1, 1, 1, 1 ]
+              end: { line: 11, column: 4, offset: 276 },
+              indent: [
+                1, 1, 1, 1,
+                1, 1, 1, 1
+              ]
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 7, column: 4, offset: 164 }
+          end: { line: 11, column: 4, offset: 276 }
         }
       }
     }
@@ -21729,6 +21740,160 @@ export default [
         position: {
           start: { line: 1, column: 1, offset: 0 },
           end: { line: 1, column: 1, offset: 0 }
+        }
+      }
+    }
+  },
+  {
+    name: 'set',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var value any,\n' +
+      '  path string|Array<string|number>,\n' +
+      '  value (value=>any)|any\n' +
+      '\n' +
+      'set(path, value) -> setter  object=>object\n' +
+      '```',
+    description: 'Create a setter that sets a property on an object denoted by path.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'console.log(\n' +
+      "  set('a.b', '1')({ a: { c : 2 }),\n" +
+      ') // { a : { b: 1, c: 2 }}\n' +
+      'console.log(\n' +
+      "  set('a[0].b.c', 4)({ 'a': [{ 'b': { 'c': 3 } }] }),\n" +
+      ") // { 'a': [{ 'b': { 'c': 4 } }] }\n" +
+      "  console.log(set(['a', 'b'], '1')({ a: { c : 2 })),\n" +
+      ') // { a: { b: 1, c: 2 }}\n' +
+      '```',
+    since: '1.7.0',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'set',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 4, offset: 3 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 4, offset: 3 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 4, offset: 3 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'var value any,\n' +
+              '  path string|Array<string|number>,\n' +
+              '  value (value=>any)|any\n' +
+              '\n' +
+              'set(path, value) -> setter  object=>object',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 7, column: 4, offset: 152 },
+              indent: [ 1, 1, 1, 1, 1, 1 ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 7, column: 4, offset: 152 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Create a setter that sets a property on an object denoted by path.',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 67, offset: 66 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 67, offset: 66 },
+              indent: []
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'console.log(\n' +
+              "  set('a.b', '1')({ a: { c : 2 }),\n" +
+              ') // { a : { b: 1, c: 2 }}\n' +
+              'console.log(\n' +
+              "  set('a[0].b.c', 4)({ 'a': [{ 'b': { 'c': 3 } }] }),\n" +
+              ") // { 'a': [{ 'b': { 'c': 4 } }] }\n" +
+              "  console.log(set(['a', 'b'], '1')({ a: { c : 2 })),\n" +
+              ') // { a: { b: 1, c: 2 }}',
+            position: {
+              start: { line: 3, column: 1, offset: 68 },
+              end: { line: 12, column: 4, offset: 355 },
+              indent: [
+                1, 1, 1, 1, 1,
+                1, 1, 1, 1
+              ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 12, column: 4, offset: 355 }
+        }
+      },
+      since: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: '1.7.0',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 6, offset: 5 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 6, offset: 5 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 6, offset: 5 }
         }
       }
     }
@@ -24260,6 +24425,7 @@ export default [
       '\n' +
       'console.log(oddNumberIndex) // 1\n' +
       '```',
+    since: '1.6.26',
     mdast: {
       name: {
         type: 'root',
@@ -24355,6 +24521,34 @@ export default [
         position: {
           start: { line: 1, column: 1, offset: 0 },
           end: { line: 11, column: 4, offset: 366 }
+        }
+      },
+      since: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: '1.6.26',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 7, offset: 6 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 7, offset: 6 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 7, offset: 6 }
         }
       }
     }
