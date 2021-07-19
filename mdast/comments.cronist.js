@@ -27753,5 +27753,155 @@ export default [
         }
       }
     }
+  },
+  {
+    name: 'when',
+    synopsis: '```coffeescript [specscript]\n' +
+      'when(\n' +
+      '  predicate any=>Promise|boolean,\n' +
+      '  func function,\n' +
+      ')(value any) -> Promise|any\n' +
+      '```',
+    description: 'Execute a function and return the result when a condition is true, otherwise return the original value.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      "import when from 'https://unpkg.com/rubico/dist/x/when.es.js'\n" +
+      '\n' +
+      'const isEven = num => num % 2 === 0\n' +
+      'const doubleIfEven = when(isEven, num => num * 2)\n' +
+      '\n' +
+      'console.log(doubleIfEven(100)) // 200\n' +
+      'console.log(doubleIfEven(101)) // 101\n' +
+      '```',
+    since: '1.7.1',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'when',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 5, offset: 4 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 5, offset: 4 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 5, offset: 4 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'when(\n' +
+              '  predicate any=>Promise|boolean,\n' +
+              '  func function,\n' +
+              ')(value any) -> Promise|any',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 6, column: 4, offset: 117 },
+              indent: [ 1, 1, 1, 1, 1 ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 6, column: 4, offset: 117 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Execute a function and return the result when a condition is true, otherwise return the original value.',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 104, offset: 103 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 104, offset: 103 },
+              indent: []
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: "import when from 'https://unpkg.com/rubico/dist/x/when.es.js'\n" +
+              '\n' +
+              'const isEven = num => num % 2 === 0\n' +
+              'const doubleIfEven = when(isEven, num => num * 2)\n' +
+              '\n' +
+              'console.log(doubleIfEven(100)) // 200\n' +
+              'console.log(doubleIfEven(101)) // 101',
+            position: {
+              start: { line: 3, column: 1, offset: 105 },
+              end: { line: 11, column: 4, offset: 361 },
+              indent: [
+                1, 1, 1, 1,
+                1, 1, 1, 1
+              ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 11, column: 4, offset: 361 }
+        }
+      },
+      since: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: '1.7.1',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 6, offset: 5 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 6, offset: 5 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 6, offset: 5 }
+        }
+      }
+    }
   }
 ]

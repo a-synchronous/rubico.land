@@ -82,6 +82,7 @@ cp index.html docs/trace
 cp index.html docs/unionWith
 cp index.html docs/uniq
 cp index.html docs/values
+cp index.html docs/when
 
 mkdir -p blog/2020/10/02
 

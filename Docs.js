@@ -231,6 +231,7 @@ const DocsTrace = DocsItem('trace')
 const DocsUnionWith = DocsItem('unionWith')
 const DocsUniq = DocsItem('uniq')
 const DocsValues = DocsItem('values')
+const DocsWhen = DocsItem('when')
 
 // props Object -> Docs ReactElement
 const Docs = ReactElement(props => Div([
@@ -349,6 +350,7 @@ const Docs = ReactElement(props => Div([
       DocsUnionWith(props),
       DocsUniq(props),
       DocsValues(props),
+      DocsWhen(props),
     ]),
   ]),
   Div({
