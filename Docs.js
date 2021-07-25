@@ -205,6 +205,7 @@ const DocsCurry = DocsItem('curry')
 const DocsCurryArity = DocsItem('curry.arity')
 const Docs__ = DocsItem('__')
 
+const DocsAppend = DocsItem('append')
 const DocsCallProp = DocsItem('callProp')
 const DocsDefaultsDeep = DocsItem('defaultsDeep')
 const DocsDifferenceWith = DocsItem('differenceWith')
@@ -226,10 +227,12 @@ const DocsKeys = DocsItem('keys')
 const DocsLast = DocsItem('last')
 const DocsNoop = DocsItem('noop')
 const DocsPluck = DocsItem('pluck')
+const DocsPrepend = DocsItem('prepend')
 const DocsSize = DocsItem('size')
 const DocsTrace = DocsItem('trace')
 const DocsUnionWith = DocsItem('unionWith')
 const DocsUniq = DocsItem('uniq')
+const DocsUnless = DocsItem('unless')
 const DocsValues = DocsItem('values')
 const DocsWhen = DocsItem('when')
 
@@ -324,6 +327,7 @@ const Docs = ReactElement(props => Div([
 
     H1('x/ - stable'),
     Div([
+      DocsAppend(props),
       DocsCallProp(props),
       DocsDefaultsDeep(props),
       DocsDifferenceWith(props),
@@ -345,10 +349,12 @@ const Docs = ReactElement(props => Div([
       DocsLast(props),
       DocsNoop(props),
       DocsPluck(props),
+      DocsPrepend(props),
       DocsSize(props),
       DocsTrace(props),
       DocsUnionWith(props),
       DocsUniq(props),
+      DocsUnless(props),
       DocsValues(props),
       DocsWhen(props),
     ]),

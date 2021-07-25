@@ -20840,6 +20840,7 @@ export default [
       '```',
     execution: 'series',
     transducing: '',
+    since: '1.6.0',
     mdast: {
       name: {
         type: 'root',
@@ -21086,6 +21087,34 @@ export default [
         position: {
           start: { line: 1, column: 1, offset: 0 },
           end: { line: 1, column: 1, offset: 0 }
+        }
+      },
+      since: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: '1.6.0',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 6, offset: 5 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 6, offset: 5 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 6, offset: 5 }
         }
       }
     }
@@ -23892,6 +23921,177 @@ export default [
         position: {
           start: { line: 1, column: 1, offset: 0 },
           end: { line: 16, column: 4, offset: 448 }
+        }
+      }
+    }
+  },
+  {
+    name: 'append',
+    synopsis: '```coffeescript [specscript]\n' +
+      'append(\n' +
+      '  item string|Array,\n' +
+      ')(value string|Array) -> string|array\n' +
+      '```',
+    description: 'Append a string or an array.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      "import append from 'https://unpkg.com/rubico/dist/x/append.es.js'\n" +
+      '\n' +
+      "const myArray = ['orange', 'apple']\n" +
+      '\n' +
+      '{\n' +
+      "  const result = append(['ananas'])(myArray)\n" +
+      "  console.log(result) // ['orange', 'apple', 'ananas']\n" +
+      '}\n' +
+      '\n' +
+      '{\n' +
+      "  const result = append('ananas')(myArray)\n" +
+      "  console.log(result) // ['orange', 'apple', 'ananas']\n" +
+      '}\n' +
+      '\n' +
+      '{\n' +
+      "  const result = append('world')('hello ')\n" +
+      "  console.log(result) // 'hello world'\n" +
+      '}\n' +
+      '```',
+    since: '1.7.3',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'append',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 7, offset: 6 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 7, offset: 6 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 7, offset: 6 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'append(\n' +
+              '  item string|Array,\n' +
+              ')(value string|Array) -> string|array',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 5, column: 4, offset: 99 },
+              indent: [ 1, 1, 1, 1 ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 5, column: 4, offset: 99 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Append a string or an array.',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 29, offset: 28 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 29, offset: 28 },
+              indent: []
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: "import append from 'https://unpkg.com/rubico/dist/x/append.es.js'\n" +
+              '\n' +
+              "const myArray = ['orange', 'apple']\n" +
+              '\n' +
+              '{\n' +
+              "  const result = append(['ananas'])(myArray)\n" +
+              "  console.log(result) // ['orange', 'apple', 'ananas']\n" +
+              '}\n' +
+              '\n' +
+              '{\n' +
+              "  const result = append('ananas')(myArray)\n" +
+              "  console.log(result) // ['orange', 'apple', 'ananas']\n" +
+              '}\n' +
+              '\n' +
+              '{\n' +
+              "  const result = append('world')('hello ')\n" +
+              "  console.log(result) // 'hello world'\n" +
+              '}',
+            position: {
+              start: { line: 3, column: 1, offset: 30 },
+              end: { line: 22, column: 4, offset: 458 },
+              indent: [
+                1, 1, 1, 1, 1, 1, 1,
+                1, 1, 1, 1, 1, 1, 1,
+                1, 1, 1, 1, 1
+              ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 22, column: 4, offset: 458 }
+        }
+      },
+      since: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: '1.7.3',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 6, offset: 5 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 6, offset: 5 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 6, offset: 5 }
         }
       }
     }
@@ -27120,6 +27320,177 @@ export default [
     }
   },
   {
+    name: 'prepend',
+    synopsis: '```coffeescript [specscript]\n' +
+      'prepend(\n' +
+      '  item string|Array,\n' +
+      ')(value string|Array) -> string|array\n' +
+      '```',
+    description: 'Prepend a string or an array.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      "import prepend from 'https://unpkg.com/rubico/dist/x/prepend.es.js'\n" +
+      '\n' +
+      "const myArray = ['orange', 'apple']\n" +
+      '\n' +
+      '{\n' +
+      "  const result = prepend(['ananas'])(myArray)\n" +
+      "  console.log(result) // ['ananas', 'orange', 'apple']\n" +
+      '}\n' +
+      '\n' +
+      '{\n' +
+      "  const result = prepend('ananas')(myArray)\n" +
+      "  console.log(result) // ['ananas', 'orange', 'apple']\n" +
+      '}\n' +
+      '\n' +
+      '{\n' +
+      "  const result = prepend('hello ')('world')\n" +
+      "  console.log(result) // 'hello world'\n" +
+      '}\n' +
+      '```',
+    since: '1.7.3',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'prepend',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 8, offset: 7 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 8, offset: 7 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 8, offset: 7 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'prepend(\n' +
+              '  item string|Array,\n' +
+              ')(value string|Array) -> string|array',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 5, column: 4, offset: 100 },
+              indent: [ 1, 1, 1, 1 ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 5, column: 4, offset: 100 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Prepend a string or an array.',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 30, offset: 29 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 30, offset: 29 },
+              indent: []
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: "import prepend from 'https://unpkg.com/rubico/dist/x/prepend.es.js'\n" +
+              '\n' +
+              "const myArray = ['orange', 'apple']\n" +
+              '\n' +
+              '{\n' +
+              "  const result = prepend(['ananas'])(myArray)\n" +
+              "  console.log(result) // ['ananas', 'orange', 'apple']\n" +
+              '}\n' +
+              '\n' +
+              '{\n' +
+              "  const result = prepend('ananas')(myArray)\n" +
+              "  console.log(result) // ['ananas', 'orange', 'apple']\n" +
+              '}\n' +
+              '\n' +
+              '{\n' +
+              "  const result = prepend('hello ')('world')\n" +
+              "  console.log(result) // 'hello world'\n" +
+              '}',
+            position: {
+              start: { line: 3, column: 1, offset: 31 },
+              end: { line: 22, column: 4, offset: 464 },
+              indent: [
+                1, 1, 1, 1, 1, 1, 1,
+                1, 1, 1, 1, 1, 1, 1,
+                1, 1, 1, 1, 1
+              ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 22, column: 4, offset: 464 }
+        }
+      },
+      since: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: '1.7.3',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 6, offset: 5 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 6, offset: 5 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 6, offset: 5 }
+        }
+      }
+    }
+  },
+  {
     name: 'size',
     synopsis: '```coffeescript [specscript]\nsize(value any) -> number\n```',
     description: 'Get the count of items in a value.\n' +
@@ -27638,6 +28009,156 @@ export default [
         position: {
           start: { line: 1, column: 1, offset: 0 },
           end: { line: 9, column: 4, offset: 189 }
+        }
+      }
+    }
+  },
+  {
+    name: 'unless',
+    synopsis: '```coffeescript [specscript]\n' +
+      'unless(\n' +
+      '  predicate any=>Promise|boolean,\n' +
+      '  func function,\n' +
+      ')(value any) -> Promise|any\n' +
+      '```',
+    description: 'Execute a function and return the result unless a condition is true, otherwise return the original value.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      "import unless from 'https://unpkg.com/rubico/dist/x/unless.es.js'\n" +
+      '\n' +
+      'const isEven = num => num % 2 === 0\n' +
+      'const doubleIfOdd = unless(isEven, num => num * 2)\n' +
+      '\n' +
+      'console.log(doubleIfOdd(100)) // 100\n' +
+      'console.log(doubleIfOdd(101)) // 202\n' +
+      '```',
+    since: '1.7.3',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'unless',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 7, offset: 6 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 7, offset: 6 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 7, offset: 6 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'unless(\n' +
+              '  predicate any=>Promise|boolean,\n' +
+              '  func function,\n' +
+              ')(value any) -> Promise|any',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 6, column: 4, offset: 119 },
+              indent: [ 1, 1, 1, 1, 1 ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 6, column: 4, offset: 119 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Execute a function and return the result unless a condition is true, otherwise return the original value.',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 106, offset: 105 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 106, offset: 105 },
+              indent: []
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: "import unless from 'https://unpkg.com/rubico/dist/x/unless.es.js'\n" +
+              '\n' +
+              'const isEven = num => num % 2 === 0\n' +
+              'const doubleIfOdd = unless(isEven, num => num * 2)\n' +
+              '\n' +
+              'console.log(doubleIfOdd(100)) // 100\n' +
+              'console.log(doubleIfOdd(101)) // 202',
+            position: {
+              start: { line: 3, column: 1, offset: 107 },
+              end: { line: 11, column: 4, offset: 366 },
+              indent: [
+                1, 1, 1, 1,
+                1, 1, 1, 1
+              ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 11, column: 4, offset: 366 }
+        }
+      },
+      since: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: '1.7.3',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 6, offset: 5 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 6, offset: 5 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 6, offset: 5 }
         }
       }
     }

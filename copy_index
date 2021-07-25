@@ -57,6 +57,7 @@ cp index.html docs/always/index.html
 cp index.html docs/__/index.html
 cp index.html docs/curry/index.html
 cp index.html docs/curry.arity
+cp index.html docs/append
 cp index.html docs/callProp
 cp index.html docs/defaultsDeep
 cp index.html docs/differenceWith
@@ -77,11 +78,13 @@ cp index.html docs/isString
 cp index.html docs/keys
 cp index.html docs/last
 cp index.html docs/pluck
+cp index.html docs/prepend
 cp index.html docs/size
 cp index.html docs/trace
 cp index.html docs/unionWith
 cp index.html docs/uniq
 cp index.html docs/values
+cp index.html docs/unless
 cp index.html docs/when
 
 mkdir -p blog/2020/10/02
