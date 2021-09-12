@@ -811,6 +811,113 @@ export default [
     }
   },
   {
+    name: 'arrayExtendMapIndexes',
+    synopsis: '```coffeescript [specscript]\n' +
+      'arrayExtendMapIndexes(\n' +
+      '  array Array,\n' +
+      '  values Array,\n' +
+      '  mapper function,\n' +
+      '  index number,\n' +
+      ') -> array\n' +
+      '```',
+    description: '`arrayExtend` while mapping indexes',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'arrayExtendMapIndexes',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 22, offset: 21 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 22, offset: 21 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 22, offset: 21 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'arrayExtendMapIndexes(\n' +
+              '  array Array,\n' +
+              '  values Array,\n' +
+              '  mapper function,\n' +
+              '  index number,\n' +
+              ') -> array',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 8, column: 4, offset: 132 },
+              indent: [
+                1, 1, 1, 1,
+                1, 1, 1
+              ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 8, column: 4, offset: 132 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'inlineCode',
+                value: 'arrayExtend',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 14, offset: 13 },
+                  indent: []
+                }
+              },
+              {
+                type: 'text',
+                value: ' while mapping indexes',
+                position: {
+                  start: { line: 1, column: 14, offset: 13 },
+                  end: { line: 1, column: 36, offset: 35 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 36, offset: 35 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 36, offset: 35 }
+        }
+      }
+    }
+  },
+  {
     name: 'arrayExtendMapWithIndex',
     catchphrase: 'internal extend while mapping with index',
     synopsis: '```coffeescript [specscript]\n' +
@@ -1493,11 +1600,10 @@ export default [
   {
     name: 'arrayMap',
     synopsis: '```coffeescript [specscript]\n' +
-      'arrayMap<\n' +
-      '  T any,\n' +
-      '  array Array<T>,\n' +
-      '  mapper T=>Promise|any,\n' +
-      '>(array, mapper) -> Promise|Array\n' +
+      'arrayMap(\n' +
+      '  array Array,\n' +
+      '  mapper (item any, index number, array Array)=>Promise|any,\n' +
+      ') -> Promise|Array\n' +
       '```',
     description: 'Apply a mapper to each item of an array, returning an array. Mapper may be asynchronous.',
     mdast: {
@@ -1536,21 +1642,20 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'arrayMap<\n' +
-              '  T any,\n' +
-              '  array Array<T>,\n' +
-              '  mapper T=>Promise|any,\n' +
-              '>(array, mapper) -> Promise|Array',
+            value: 'arrayMap(\n' +
+              '  array Array,\n' +
+              '  mapper (item any, index number, array Array)=>Promise|any,\n' +
+              ') -> Promise|Array',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 7, column: 4, offset: 128 },
-              indent: [ 1, 1, 1, 1, 1, 1 ]
+              end: { line: 6, column: 4, offset: 137 },
+              indent: [ 1, 1, 1, 1, 1 ]
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 7, column: 4, offset: 128 }
+          end: { line: 6, column: 4, offset: 137 }
         }
       },
       description: {
@@ -3317,7 +3422,7 @@ export default [
       '\n' +
       'curry1(func, arg0) -> curried _arg0=>function|any\n' +
       '```',
-    description: '',
+    description: 'Curry a unary function.',
     mdast: {
       name: {
         type: 'root',
@@ -3378,10 +3483,30 @@ export default [
       },
       description: {
         type: 'root',
-        children: [],
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Curry a unary function.',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 24, offset: 23 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 24, offset: 23 },
+              indent: []
+            }
+          }
+        ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 1, column: 1, offset: 0 }
+          end: { line: 1, column: 24, offset: 23 }
         }
       }
     }
@@ -3399,7 +3524,7 @@ export default [
       '```',
     description: 'Curry a binary function.\n' +
       '\n' +
-      'Note: at least one argument must be the placeholder',
+      'Note: exactly one argument must be the placeholder',
     mdast: {
       name: {
         type: 'root',
@@ -3485,24 +3610,24 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Note: at least one argument must be the placeholder',
+                value: 'Note: exactly one argument must be the placeholder',
                 position: {
                   start: { line: 3, column: 1, offset: 26 },
-                  end: { line: 3, column: 52, offset: 77 },
+                  end: { line: 3, column: 51, offset: 76 },
                   indent: []
                 }
               }
             ],
             position: {
               start: { line: 3, column: 1, offset: 26 },
-              end: { line: 3, column: 52, offset: 77 },
+              end: { line: 3, column: 51, offset: 76 },
               indent: []
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 3, column: 52, offset: 77 }
+          end: { line: 3, column: 51, offset: 76 }
         }
       }
     }
@@ -3521,7 +3646,7 @@ export default [
       '```',
     description: 'Curry a 3-ary function.\n' +
       '\n' +
-      'Note: at least one argument must be the placeholder',
+      'Note: exactly one argument must be the placeholder',
     mdast: {
       name: {
         type: 'root',
@@ -3608,24 +3733,24 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Note: at least one argument must be the placeholder',
+                value: 'Note: exactly one argument must be the placeholder',
                 position: {
                   start: { line: 3, column: 1, offset: 25 },
-                  end: { line: 3, column: 52, offset: 76 },
+                  end: { line: 3, column: 51, offset: 75 },
                   indent: []
                 }
               }
             ],
             position: {
               start: { line: 3, column: 1, offset: 25 },
-              end: { line: 3, column: 52, offset: 76 },
+              end: { line: 3, column: 51, offset: 75 },
               indent: []
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 3, column: 52, offset: 76 }
+          end: { line: 3, column: 51, offset: 75 }
         }
       }
     }
@@ -3645,7 +3770,7 @@ export default [
       '```',
     description: 'Curry a 4-ary function.\n' +
       '\n' +
-      'Note: at least one argument must be the placeholder',
+      'Note: exactly one argument must be the placeholder',
     mdast: {
       name: {
         type: 'root',
@@ -3733,24 +3858,152 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Note: at least one argument must be the placeholder',
+                value: 'Note: exactly one argument must be the placeholder',
                 position: {
                   start: { line: 3, column: 1, offset: 25 },
-                  end: { line: 3, column: 52, offset: 76 },
+                  end: { line: 3, column: 51, offset: 75 },
                   indent: []
                 }
               }
             ],
             position: {
               start: { line: 3, column: 1, offset: 25 },
-              end: { line: 3, column: 52, offset: 76 },
+              end: { line: 3, column: 51, offset: 75 },
               indent: []
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 3, column: 52, offset: 76 }
+          end: { line: 3, column: 51, offset: 75 }
+        }
+      }
+    }
+  },
+  {
+    name: 'curry5',
+    synopsis: '```coffeescript [specscript]\n' +
+      "__ = Symbol('placeholder')\n" +
+      '\n' +
+      'curry5(\n' +
+      '  baseFunc function,\n' +
+      '  arg0 __|any,\n' +
+      '  arg1 __|any,\n' +
+      '  arg2 __|any,\n' +
+      '  arg3 __|any,\n' +
+      '  arg4 __|any,\n' +
+      ') -> function\n' +
+      '```',
+    description: 'Curry a 5-ary function.\n' +
+      '\n' +
+      'Note: exactly one argument must be the placeholder',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'curry5',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 7, offset: 6 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 7, offset: 6 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 7, offset: 6 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: "__ = Symbol('placeholder')\n" +
+              '\n' +
+              'curry5(\n' +
+              '  baseFunc function,\n' +
+              '  arg0 __|any,\n' +
+              '  arg1 __|any,\n' +
+              '  arg2 __|any,\n' +
+              '  arg3 __|any,\n' +
+              '  arg4 __|any,\n' +
+              ') -> function',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 12, column: 4, offset: 178 },
+              indent: [
+                1, 1, 1, 1, 1,
+                1, 1, 1, 1, 1,
+                1
+              ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 12, column: 4, offset: 178 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Curry a 5-ary function.',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 24, offset: 23 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 24, offset: 23 },
+              indent: []
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Note: exactly one argument must be the placeholder',
+                position: {
+                  start: { line: 3, column: 1, offset: 25 },
+                  end: { line: 3, column: 51, offset: 75 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 3, column: 1, offset: 25 },
+              end: { line: 3, column: 51, offset: 75 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 51, offset: 75 }
         }
       }
     }
@@ -6584,11 +6837,10 @@ export default [
   {
     name: 'mapMap',
     synopsis: '```coffeescript [specscript]\n' +
-      'mapMap<\n' +
-      '  T any,\n' +
-      '  value Map<any=>T>,\n' +
-      '  mapper T=>Promise|any,\n' +
-      '>(value, mapper) -> Promise|Map<any=>any>\n' +
+      'mapMap(\n' +
+      '  value Map,\n' +
+      '  mapper (item any, key any, value)=>Promise|any\n' +
+      ') -> Promise|Map<any=>any>\n' +
       '```',
     description: 'Apply a mapper concurrently to each value (not entry) of a Map, returning a Map of results. `mapper` may be asynchronous.',
     mdast: {
@@ -6627,21 +6879,20 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'mapMap<\n' +
-              '  T any,\n' +
-              '  value Map<any=>T>,\n' +
-              '  mapper T=>Promise|any,\n' +
-              '>(value, mapper) -> Promise|Map<any=>any>',
+            value: 'mapMap(\n' +
+              '  value Map,\n' +
+              '  mapper (item any, key any, value)=>Promise|any\n' +
+              ') -> Promise|Map<any=>any>',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 7, column: 4, offset: 137 },
-              indent: [ 1, 1, 1, 1, 1, 1 ]
+              end: { line: 6, column: 4, offset: 129 },
+              indent: [ 1, 1, 1, 1, 1 ]
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 7, column: 4, offset: 137 }
+          end: { line: 6, column: 4, offset: 129 }
         }
       },
       description: {
@@ -11619,25 +11870,33 @@ export default [
     name: 'filter',
     catchphrase: 'exclude items by predicate',
     synopsis: '```coffeescript [specscript]\n' +
-      'Filterable<T> = Array<T>|Object<T>|Set<T>|Map<T>\n' +
-      '  |Iterator<T>|AsyncIterator<T>|{ filter: (T=>boolean)=>any }\n' +
-      'Reducer<T> = (any, T)=>Promise|any\n' +
+      'filter(\n' +
+      '  arrayPredicate (value any, index number, array Array)=>Promise|boolean\n' +
+      ')(array) -> filteredArray Promise|Array\n' +
       '\n' +
-      'var T any,\n' +
-      '  predicate T=>Promise|boolean,\n' +
-      '  filterable Filterable<T>,\n' +
-      '  args ...any,\n' +
-      '  generatorFunction ...args=>Generator<Promise|T>,\n' +
-      '  asyncGeneratorFunction ...args=>AsyncGenerator<T>,\n' +
-      '  reducer Reducer<T>\n' +
+      'filter(\n' +
+      '  objectPredicate (value any, key string, object Object)=>Promise|boolean\n' +
+      ')(object) -> filteredObject Promise|Object\n' +
       '\n' +
-      'filter(predicate)(filterable) -> Promise|Filterable<T>\n' +
+      'filter(\n' +
+      '  setPredicate (value any, value, set Set)=>Promise|boolean\n' +
+      ')(set) -> filteredSet Promise|Set\n' +
       '\n' +
-      'filter(predicate)(generatorFunction) -> ...args=>Generator<T>\n' +
+      'filter(\n' +
+      '  mapPredicate (value any, key any, map Map)=>Promise|boolean\n' +
+      ')(map) -> filteredMap Promise|Map\n' +
       '\n' +
-      'filter(predicate)(asyncGeneratorFunction) -> ...args=>AsyncGenerator<T>\n' +
+      'filter(\n' +
+      '  predicate (value any)=>Promise|boolean\n' +
+      ')(generatorFunction GeneratorFunction) -> filteringGeneratorFunction GeneratorFunction\n' +
       '\n' +
-      'filter(predicate)(reducer) -> Reducer<T>\n' +
+      'filter(\n' +
+      '  predicate (value any)=>Promise|boolean\n' +
+      ')(asyncGeneratorFunction AsyncGeneratorFunction) -> filteringAsyncGeneratorFunction AsyncGeneratorFunction\n' +
+      '\n' +
+      'filter(\n' +
+      '  predicate (value any)=>Promise|boolean\n' +
+      ')(reducer Reducer) -> filteringReducer Reducer\n' +
       '```',
     description: 'Filter out items from a filterable based on the results of their concurrent executions with a predicate. `filter` recognizes several vanilla JavaScript types as filterables.\n' +
       '\n' +
@@ -11795,39 +12054,48 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'Filterable<T> = Array<T>|Object<T>|Set<T>|Map<T>\n' +
-              '  |Iterator<T>|AsyncIterator<T>|{ filter: (T=>boolean)=>any }\n' +
-              'Reducer<T> = (any, T)=>Promise|any\n' +
+            value: 'filter(\n' +
+              '  arrayPredicate (value any, index number, array Array)=>Promise|boolean\n' +
+              ')(array) -> filteredArray Promise|Array\n' +
               '\n' +
-              'var T any,\n' +
-              '  predicate T=>Promise|boolean,\n' +
-              '  filterable Filterable<T>,\n' +
-              '  args ...any,\n' +
-              '  generatorFunction ...args=>Generator<Promise|T>,\n' +
-              '  asyncGeneratorFunction ...args=>AsyncGenerator<T>,\n' +
-              '  reducer Reducer<T>\n' +
+              'filter(\n' +
+              '  objectPredicate (value any, key string, object Object)=>Promise|boolean\n' +
+              ')(object) -> filteredObject Promise|Object\n' +
               '\n' +
-              'filter(predicate)(filterable) -> Promise|Filterable<T>\n' +
+              'filter(\n' +
+              '  setPredicate (value any, value, set Set)=>Promise|boolean\n' +
+              ')(set) -> filteredSet Promise|Set\n' +
               '\n' +
-              'filter(predicate)(generatorFunction) -> ...args=>Generator<T>\n' +
+              'filter(\n' +
+              '  mapPredicate (value any, key any, map Map)=>Promise|boolean\n' +
+              ')(map) -> filteredMap Promise|Map\n' +
               '\n' +
-              'filter(predicate)(asyncGeneratorFunction) -> ...args=>AsyncGenerator<T>\n' +
+              'filter(\n' +
+              '  predicate (value any)=>Promise|boolean\n' +
+              ')(generatorFunction GeneratorFunction) -> filteringGeneratorFunction GeneratorFunction\n' +
               '\n' +
-              'filter(predicate)(reducer) -> Reducer<T>',
+              'filter(\n' +
+              '  predicate (value any)=>Promise|boolean\n' +
+              ')(asyncGeneratorFunction AsyncGeneratorFunction) -> filteringAsyncGeneratorFunction AsyncGeneratorFunction\n' +
+              '\n' +
+              'filter(\n' +
+              '  predicate (value any)=>Promise|boolean\n' +
+              ')(reducer Reducer) -> filteringReducer Reducer',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 21, column: 4, offset: 624 },
+              end: { line: 29, column: 4, offset: 878 },
               indent: [
-                1, 1, 1, 1, 1, 1, 1,
-                1, 1, 1, 1, 1, 1, 1,
-                1, 1, 1, 1, 1, 1
+                1, 1, 1, 1, 1, 1, 1, 1,
+                1, 1, 1, 1, 1, 1, 1, 1,
+                1, 1, 1, 1, 1, 1, 1, 1,
+                1, 1, 1, 1
               ]
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 21, column: 4, offset: 624 }
+          end: { line: 29, column: 4, offset: 878 }
         }
       },
       description: {
@@ -15209,25 +15477,33 @@ export default [
   {
     name: 'map',
     synopsis: '```coffeescript [specscript]\n' +
-      'Functor<T> = Array<T>|Object<T>|Set<T>|Map<T>\n' +
-      '  |Iterator<T>|AsyncIterator<T>|{ map: (T=>any)=>any }\n' +
-      'Reducer<T> = (any, T)=>Promise|any\n' +
+      'map(\n' +
+      '  arrayMapper (value any, index number, array Array)=>Promise|any\n' +
+      ')(array) -> mappedArray Promise|Array\n' +
       '\n' +
-      'var T any,\n' +
-      '  mapper T=>Promise|any,\n' +
-      '  functor Functor<T>\n' +
-      '  args ...any,\n' +
-      '  generatorFunction ...args=>Generator<T>,\n' +
-      '  asyncGeneratorFunction ...args=>AsyncGenerator<T>,\n' +
-      '  reducer Reducer<T>\n' +
+      'map(\n' +
+      '  objectMapper (value any, key string, object Object)=>Promise|any\n' +
+      ')(object) -> mappedObject Promise|Array\n' +
       '\n' +
-      'map(mapper)(functor) -> Promise|Functor\n' +
+      'map(\n' +
+      '  setMapper (value any, value, set Set)=>Promise|any\n' +
+      ')(set) -> mappedSet Promise|Set\n' +
       '\n' +
-      'map(mapper)(generatorFunction) -> ...args=>Generator\n' +
+      'map(\n' +
+      '  mapMapper (value any, key any, originalMap Map)=>Promise|any\n' +
+      ')(originalMap) -> mappedMap Promise|Map\n' +
       '\n' +
-      'map(mapper)(asyncGeneratorFunction) -> ...args=>AsyncGenerator\n' +
+      'map(\n' +
+      '  probablyShouldBeSyncMapper (value any)=>any\n' +
+      ')(generatorFunction) -> mappingGeneratorFunction ...args=>Generator\n' +
       '\n' +
-      'map(mapper)(reducer) -> Reducer\n' +
+      'map(\n' +
+      '  mapper (value any)=>Promise|any\n' +
+      ')(asyncGeneratorFunction) -> mappingAsyncGeneratorFunction ...args=>AsyncGenerator\n' +
+      '\n' +
+      'map(\n' +
+      '  mapper (value any)=>Promise|any\n' +
+      ')(originalReducer Reducer) -> mappingReducer Reducer\n' +
       '```',
     description: 'Apply a mapper concurrently to each item of a functor, returning the results in a functor of the same type. If order is implied by the collection, it is maintained in the result. The following list describes `map` behavior with vanilla JavaScript functors.\n' +
       '\n' +
@@ -15356,39 +15632,48 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'Functor<T> = Array<T>|Object<T>|Set<T>|Map<T>\n' +
-              '  |Iterator<T>|AsyncIterator<T>|{ map: (T=>any)=>any }\n' +
-              'Reducer<T> = (any, T)=>Promise|any\n' +
+            value: 'map(\n' +
+              '  arrayMapper (value any, index number, array Array)=>Promise|any\n' +
+              ')(array) -> mappedArray Promise|Array\n' +
               '\n' +
-              'var T any,\n' +
-              '  mapper T=>Promise|any,\n' +
-              '  functor Functor<T>\n' +
-              '  args ...any,\n' +
-              '  generatorFunction ...args=>Generator<T>,\n' +
-              '  asyncGeneratorFunction ...args=>AsyncGenerator<T>,\n' +
-              '  reducer Reducer<T>\n' +
+              'map(\n' +
+              '  objectMapper (value any, key string, object Object)=>Promise|any\n' +
+              ')(object) -> mappedObject Promise|Array\n' +
               '\n' +
-              'map(mapper)(functor) -> Promise|Functor\n' +
+              'map(\n' +
+              '  setMapper (value any, value, set Set)=>Promise|any\n' +
+              ')(set) -> mappedSet Promise|Set\n' +
               '\n' +
-              'map(mapper)(generatorFunction) -> ...args=>Generator\n' +
+              'map(\n' +
+              '  mapMapper (value any, key any, originalMap Map)=>Promise|any\n' +
+              ')(originalMap) -> mappedMap Promise|Map\n' +
               '\n' +
-              'map(mapper)(asyncGeneratorFunction) -> ...args=>AsyncGenerator\n' +
+              'map(\n' +
+              '  probablyShouldBeSyncMapper (value any)=>any\n' +
+              ')(generatorFunction) -> mappingGeneratorFunction ...args=>Generator\n' +
               '\n' +
-              'map(mapper)(reducer) -> Reducer',
+              'map(\n' +
+              '  mapper (value any)=>Promise|any\n' +
+              ')(asyncGeneratorFunction) -> mappingAsyncGeneratorFunction ...args=>AsyncGenerator\n' +
+              '\n' +
+              'map(\n' +
+              '  mapper (value any)=>Promise|any\n' +
+              ')(originalReducer Reducer) -> mappingReducer Reducer',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 21, column: 4, offset: 550 },
+              end: { line: 29, column: 4, offset: 790 },
               indent: [
-                1, 1, 1, 1, 1, 1, 1,
-                1, 1, 1, 1, 1, 1, 1,
-                1, 1, 1, 1, 1, 1
+                1, 1, 1, 1, 1, 1, 1, 1,
+                1, 1, 1, 1, 1, 1, 1, 1,
+                1, 1, 1, 1, 1, 1, 1, 1,
+                1, 1, 1, 1
               ]
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 21, column: 4, offset: 550 }
+          end: { line: 29, column: 4, offset: 790 }
         }
       },
       description: {
@@ -16720,6 +17005,7 @@ export default [
       "console.log('start')\n" +
       'map.pool(2, delayedLog)([1, 2, 3, 4, 5])\n' +
       '```',
+    TODO: 'objectMapPool',
     execution: 'concurrent',
     mdast: {
       name: {
@@ -16835,6 +17121,34 @@ export default [
         position: {
           start: { line: 1, column: 1, offset: 0 },
           end: { line: 13, column: 4, offset: 257 }
+        }
+      },
+      TODO: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'objectMapPool',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 14, offset: 13 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 14, offset: 13 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 14, offset: 13 }
         }
       },
       execution: {
@@ -21243,23 +21557,37 @@ export default [
   {
     name: 'reduce',
     synopsis: '```coffeescript [specscript]\n' +
-      'Reducer<T> = (any, T)=>Promise|any\n' +
-      'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: Reducer<T>=>any }|Object<T>\n' +
+      'reduce(\n' +
+      '  arrayReducer (result any, value any, index number, array Array)=>Promise|any,\n' +
+      '  init? (array=>Promise|any)|any,\n' +
+      ')(array) -> Promise|result\n' +
       '\n' +
-      'var T any,\n' +
-      '  args ...any,\n' +
-      '  reducer Reducer<T>,\n' +
-      '  init (...args=>Promise|any)|any,\n' +
-      '  foldable Foldable<T>\n' +
-      '  generatorFunction ...args=>Generator<Promise|T>,\n' +
-      '  asyncGeneratorFunction ...args=>AsyncGenerator<T>,\n' +
-      '  moreReducers ...Reducer<T>\n' +
+      'reduce(\n' +
+      '  objectReducer (result any, value any, key string, object Object)=>Promise|any,\n' +
+      '  init? (object=>Promise|any)|any,\n' +
+      ')(object) -> Promise|result\n' +
       '\n' +
-      'reduce(reducer, init?)(foldable) -> Promise|any\n' +
+      'reduce(\n' +
+      '  mapReducer (result any, value any, key any, map Map)=>Promise|any,\n' +
+      '  init? (map=>Promise|any)|any,\n' +
+      ')(map) -> Promise|result\n' +
       '\n' +
-      'reduce(reducer, init?)(generatorFunction) -> ...args=>Promise|any\n' +
+      'Foldable = Iterable|AsyncIterable|{ reduce: (reducer, result?)=>any }\n' +
       '\n' +
-      'reduce(reducer, init?)(asyncGeneratorFunction) -> ...args=>Promise|any\n' +
+      'reduce(\n' +
+      '  reducer (result any, value any)=>Promise|any,\n' +
+      '  init? ((foldable Foldable)=>Promise|any)|any,\n' +
+      ')(foldable) -> Promise|result\n' +
+      '\n' +
+      'reduce(\n' +
+      '  reducer (result any, value any)=>Promise|any,\n' +
+      '  init? (()=>Promise|any)|any,\n' +
+      ')(generatorFunction) -> reducingGeneratorValuesFunction (...generatorFunctionArgs)=>Promise|any\n' +
+      '\n' +
+      'reduce(\n' +
+      '  reducer (result any, value any)=>Promise|any,\n' +
+      '  init? (()=>Promise|any)|any,\n' +
+      ')(asyncGeneratorFunction) -> reducingAsyncGeneratorValuesFunction (...asyncGeneratorFunctionArgs)=>Promise|any\n' +
       '\n' +
       'reduce(reducer, init?)(...moreReducers) -> ...args=>Promise|any\n' +
       '```',
@@ -21416,39 +21744,54 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'Reducer<T> = (any, T)=>Promise|any\n' +
-              'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: Reducer<T>=>any }|Object<T>\n' +
+            value: 'reduce(\n' +
+              '  arrayReducer (result any, value any, index number, array Array)=>Promise|any,\n' +
+              '  init? (array=>Promise|any)|any,\n' +
+              ')(array) -> Promise|result\n' +
               '\n' +
-              'var T any,\n' +
-              '  args ...any,\n' +
-              '  reducer Reducer<T>,\n' +
-              '  init (...args=>Promise|any)|any,\n' +
-              '  foldable Foldable<T>\n' +
-              '  generatorFunction ...args=>Generator<Promise|T>,\n' +
-              '  asyncGeneratorFunction ...args=>AsyncGenerator<T>,\n' +
-              '  moreReducers ...Reducer<T>\n' +
+              'reduce(\n' +
+              '  objectReducer (result any, value any, key string, object Object)=>Promise|any,\n' +
+              '  init? (object=>Promise|any)|any,\n' +
+              ')(object) -> Promise|result\n' +
               '\n' +
-              'reduce(reducer, init?)(foldable) -> Promise|any\n' +
+              'reduce(\n' +
+              '  mapReducer (result any, value any, key any, map Map)=>Promise|any,\n' +
+              '  init? (map=>Promise|any)|any,\n' +
+              ')(map) -> Promise|result\n' +
               '\n' +
-              'reduce(reducer, init?)(generatorFunction) -> ...args=>Promise|any\n' +
+              'Foldable = Iterable|AsyncIterable|{ reduce: (reducer, result?)=>any }\n' +
               '\n' +
-              'reduce(reducer, init?)(asyncGeneratorFunction) -> ...args=>Promise|any\n' +
+              'reduce(\n' +
+              '  reducer (result any, value any)=>Promise|any,\n' +
+              '  init? ((foldable Foldable)=>Promise|any)|any,\n' +
+              ')(foldable) -> Promise|result\n' +
+              '\n' +
+              'reduce(\n' +
+              '  reducer (result any, value any)=>Promise|any,\n' +
+              '  init? (()=>Promise|any)|any,\n' +
+              ')(generatorFunction) -> reducingGeneratorValuesFunction (...generatorFunctionArgs)=>Promise|any\n' +
+              '\n' +
+              'reduce(\n' +
+              '  reducer (result any, value any)=>Promise|any,\n' +
+              '  init? (()=>Promise|any)|any,\n' +
+              ')(asyncGeneratorFunction) -> reducingAsyncGeneratorValuesFunction (...asyncGeneratorFunctionArgs)=>Promise|any\n' +
               '\n' +
               'reduce(reducer, init?)(...moreReducers) -> ...args=>Promise|any',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 21, column: 4, offset: 641 },
+              end: { line: 35, column: 4, offset: 1123 },
               indent: [
-                1, 1, 1, 1, 1, 1, 1,
-                1, 1, 1, 1, 1, 1, 1,
-                1, 1, 1, 1, 1, 1
+                1, 1, 1, 1, 1, 1, 1, 1, 1,
+                1, 1, 1, 1, 1, 1, 1, 1, 1,
+                1, 1, 1, 1, 1, 1, 1, 1, 1,
+                1, 1, 1, 1, 1, 1, 1
               ]
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 21, column: 4, offset: 641 }
+          end: { line: 35, column: 4, offset: 1123 }
         }
       },
       description: {
