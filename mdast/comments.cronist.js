@@ -26647,6 +26647,18 @@ export default [
       'console.log(\n' +
       '  isDeepEqual({ a: 1, b: 2, c: [3] }, { a: 1, b: 2, c: [5] }),\n' +
       ') // false\n' +
+      '```\n' +
+      '\n' +
+      'When passed a resolver function as the left or right argument or resolvers as both arguments, returns a function that resolves the value by the resolver before performing the deep equal comparison.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      "import isDeepEqual from 'https://unpkg.com/rubico/dist/x/isDeepEqual.es.js'\n" +
+      '\n' +
+      'const isPropADeepEqualTo123Array = isDeepEqual(object => object.a, [1, 2, 3])\n' +
+      '\n' +
+      'console.log(\n' +
+      '  isPropADeepEqualTo123Array({ a: [1, 2, 3] }),\n' +
+      ') // true\n' +
       '```',
     mdast: {
       name: {
@@ -26778,11 +26790,50 @@ export default [
                 1, 1, 1, 1, 1
               ]
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'When passed a resolver function as the left or right argument or resolvers as both arguments, returns a function that resolves the value by the resolver before performing the deep equal comparison.',
+                position: {
+                  start: { line: 15, column: 1, offset: 399 },
+                  end: { line: 15, column: 198, offset: 596 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 15, column: 1, offset: 399 },
+              end: { line: 15, column: 198, offset: 596 },
+              indent: []
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: "import isDeepEqual from 'https://unpkg.com/rubico/dist/x/isDeepEqual.es.js'\n" +
+              '\n' +
+              'const isPropADeepEqualTo123Array = isDeepEqual(object => object.a, [1, 2, 3])\n' +
+              '\n' +
+              'console.log(\n' +
+              '  isPropADeepEqualTo123Array({ a: [1, 2, 3] }),\n' +
+              ') // true',
+            position: {
+              start: { line: 17, column: 1, offset: 598 },
+              end: { line: 25, column: 4, offset: 855 },
+              indent: [
+                1, 1, 1, 1,
+                1, 1, 1, 1
+              ]
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 13, column: 4, offset: 397 }
+          end: { line: 25, column: 4, offset: 855 }
         }
       }
     }
