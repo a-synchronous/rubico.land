@@ -61,6 +61,7 @@ cp index.html docs/append
 cp index.html docs/callProp
 cp index.html docs/defaultsDeep
 cp index.html docs/differenceWith
+cp index.html docs/filterOut
 cp index.html docs/find
 cp index.html docs/findIndex
 cp index.html docs/first
