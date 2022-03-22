@@ -24819,6 +24819,166 @@ export default [
     }
   },
   {
+    name: 'filterOut',
+    synopsis: '```coffeescript [specscript]\n' +
+      'filterOut(\n' +
+      '  arrayPredicate (value any, index number, array Array)=>Promise|boolean\n' +
+      ')(array) -> rejectedArray Promise|Array\n' +
+      '\n' +
+      'filterOut(\n' +
+      '  objectPredicate (value any, key string, object Object)=>Promise|boolean\n' +
+      ')(object) -> rejectedObject Promise|Object\n' +
+      '\n' +
+      'filterOut(\n' +
+      '  setPredicate (value any, value, set Set)=>Promise|boolean\n' +
+      ')(set) -> rejectedSet Promise|Set\n' +
+      '\n' +
+      'filterOut(\n' +
+      '  mapPredicate (value any, key any, map Map)=>Promise|boolean\n' +
+      ')(map) -> rejectedMap Promise|Map\n' +
+      '\n' +
+      'filterOut(\n' +
+      '  predicate (value any)=>Promise|boolean\n' +
+      ')(generatorFunction GeneratorFunction) -> rejectingGeneratorFunction GeneratorFunction\n' +
+      '\n' +
+      'filterOut(\n' +
+      '  predicate (value any)=>Promise|boolean\n' +
+      ')(asyncGeneratorFunction AsyncGeneratorFunction) -> rejectingAsyncGeneratorFunction AsyncGeneratorFunction\n' +
+      '\n' +
+      'filterOut(\n' +
+      '  predicate (value any)=>Promise|boolean\n' +
+      ')(reducer Reducer) -> rejectingReducer Reducer\n' +
+      '```',
+    description: 'The inverse of `filter`. Values that test true by the predicate are filtered out, or "rejected".',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'filterOut',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 10, offset: 9 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 10, offset: 9 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 10, offset: 9 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'filterOut(\n' +
+              '  arrayPredicate (value any, index number, array Array)=>Promise|boolean\n' +
+              ')(array) -> rejectedArray Promise|Array\n' +
+              '\n' +
+              'filterOut(\n' +
+              '  objectPredicate (value any, key string, object Object)=>Promise|boolean\n' +
+              ')(object) -> rejectedObject Promise|Object\n' +
+              '\n' +
+              'filterOut(\n' +
+              '  setPredicate (value any, value, set Set)=>Promise|boolean\n' +
+              ')(set) -> rejectedSet Promise|Set\n' +
+              '\n' +
+              'filterOut(\n' +
+              '  mapPredicate (value any, key any, map Map)=>Promise|boolean\n' +
+              ')(map) -> rejectedMap Promise|Map\n' +
+              '\n' +
+              'filterOut(\n' +
+              '  predicate (value any)=>Promise|boolean\n' +
+              ')(generatorFunction GeneratorFunction) -> rejectingGeneratorFunction GeneratorFunction\n' +
+              '\n' +
+              'filterOut(\n' +
+              '  predicate (value any)=>Promise|boolean\n' +
+              ')(asyncGeneratorFunction AsyncGeneratorFunction) -> rejectingAsyncGeneratorFunction AsyncGeneratorFunction\n' +
+              '\n' +
+              'filterOut(\n' +
+              '  predicate (value any)=>Promise|boolean\n' +
+              ')(reducer Reducer) -> rejectingReducer Reducer',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 29, column: 4, offset: 899 },
+              indent: [
+                1, 1, 1, 1, 1, 1, 1, 1,
+                1, 1, 1, 1, 1, 1, 1, 1,
+                1, 1, 1, 1, 1, 1, 1, 1,
+                1, 1, 1, 1
+              ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 29, column: 4, offset: 899 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'The inverse of ',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 16, offset: 15 },
+                  indent: []
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'filter',
+                position: {
+                  start: { line: 1, column: 16, offset: 15 },
+                  end: { line: 1, column: 24, offset: 23 },
+                  indent: []
+                }
+              },
+              {
+                type: 'text',
+                value: '. Values that test true by the predicate are filtered out, or "rejected".',
+                position: {
+                  start: { line: 1, column: 24, offset: 23 },
+                  end: { line: 1, column: 97, offset: 96 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 97, offset: 96 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 97, offset: 96 }
+        }
+      }
+    }
+  },
+  {
     name: 'find',
     synopsis: '```coffeescript [specscript]\n' +
       'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: (any, T)=>any }|Object<T>\n' +

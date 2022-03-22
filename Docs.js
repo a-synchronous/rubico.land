@@ -209,6 +209,7 @@ const DocsAppend = DocsItem('append')
 const DocsCallProp = DocsItem('callProp')
 const DocsDefaultsDeep = DocsItem('defaultsDeep')
 const DocsDifferenceWith = DocsItem('differenceWith')
+const DocsFilterOut = DocsItem('filterOut')
 const DocsFind = DocsItem('find')
 const DocsFindIndex = DocsItem('findIndex')
 const DocsFirst = DocsItem('first')
@@ -331,6 +332,7 @@ const Docs = ReactElement(props => Div([
       DocsCallProp(props),
       DocsDefaultsDeep(props),
       DocsDifferenceWith(props),
+      DocsFilterOut(props),
       DocsFind(props),
       DocsFindIndex(props),
       DocsFirst(props),
