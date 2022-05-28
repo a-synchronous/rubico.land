@@ -23026,16 +23026,16 @@ export default [
       ') // plantain is possibly a banana\n' +
       '```\n' +
       '\n' +
-      'A mixture of functions and values can be supplied as any of the array items.\n' +
+      'A mixture of possibly async functions and values can be supplied as any of the array items.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'switchCase([\n' +
-      '  async function asyncFalse() {\n' +
-      '    return false\n' +
+      '  async function asyncIdentity(value) {\n' +
+      '    return value\n' +
       '  },\n' +
-      "  'something not returned',\n" +
+      "  'something',\n" +
       "  'default',\n" +
-      ']).then(console.log) // default\n' +
+      '])(false).then(console.log) // default\n' +
       '```\n' +
       '\n' +
       'If every item in the argument array to switchCase is a value, switchCase should behave as the ternary ? : operator. Any promises are resolved serially.\n' +
@@ -23219,17 +23219,17 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'A mixture of functions and values can be supplied as any of the array items.',
+                value: 'A mixture of possibly async functions and values can be supplied as any of the array items.',
                 position: {
                   start: { line: 17, column: 1, offset: 538 },
-                  end: { line: 17, column: 77, offset: 614 },
+                  end: { line: 17, column: 92, offset: 629 },
                   indent: []
                 }
               }
             ],
             position: {
               start: { line: 17, column: 1, offset: 538 },
-              end: { line: 17, column: 77, offset: 614 },
+              end: { line: 17, column: 92, offset: 629 },
               indent: []
             }
           },
@@ -23238,15 +23238,15 @@ export default [
             lang: 'javascript',
             meta: '[playground]',
             value: 'switchCase([\n' +
-              '  async function asyncFalse() {\n' +
-              '    return false\n' +
+              '  async function asyncIdentity(value) {\n' +
+              '    return value\n' +
               '  },\n' +
-              "  'something not returned',\n" +
+              "  'something',\n" +
               "  'default',\n" +
-              ']).then(console.log) // default',
+              '])(false).then(console.log) // default',
             position: {
-              start: { line: 19, column: 1, offset: 616 },
-              end: { line: 27, column: 4, offset: 786 },
+              start: { line: 19, column: 1, offset: 631 },
+              end: { line: 27, column: 4, offset: 803 },
               indent: [
                 1, 1, 1, 1,
                 1, 1, 1, 1
@@ -23260,15 +23260,15 @@ export default [
                 type: 'text',
                 value: 'If every item in the argument array to switchCase is a value, switchCase should behave as the ternary ? : operator. Any promises are resolved serially.',
                 position: {
-                  start: { line: 29, column: 1, offset: 788 },
-                  end: { line: 29, column: 152, offset: 939 },
+                  start: { line: 29, column: 1, offset: 805 },
+                  end: { line: 29, column: 152, offset: 956 },
                   indent: []
                 }
               }
             ],
             position: {
-              start: { line: 29, column: 1, offset: 788 },
-              end: { line: 29, column: 152, offset: 939 },
+              start: { line: 29, column: 1, offset: 805 },
+              end: { line: 29, column: 152, offset: 956 },
               indent: []
             }
           },
@@ -23284,8 +23284,8 @@ export default [
               "  'default',\n" +
               ']).then(console.log) // hello world',
             position: {
-              start: { line: 31, column: 1, offset: 941 },
-              end: { line: 39, column: 4, offset: 1090 },
+              start: { line: 31, column: 1, offset: 958 },
+              end: { line: 39, column: 4, offset: 1107 },
               indent: [
                 1, 1, 1, 1,
                 1, 1, 1, 1
@@ -23295,7 +23295,7 @@ export default [
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 39, column: 4, offset: 1090 }
+          end: { line: 39, column: 4, offset: 1107 }
         }
       },
       execution: {
