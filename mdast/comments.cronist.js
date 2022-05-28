@@ -4325,129 +4325,6 @@ export default [
     }
   },
   {
-    name: 'funcConditional',
-    synopsis: '```coffeescript [specscript]\n' +
-      'funcConditional(\n' +
-      '  funcs Array<args=>Promise|any>,\n' +
-      '  args Array,\n' +
-      '  funcsIndex number,\n' +
-      ') -> Promise|any\n' +
-      '```',
-    description: 'Conditional operator `a ? b : c ? d : e ? ...` for functions.',
-    TODO: [
-      'isPromise conditional await',
-      'benchmark vs regular promise handling'
-    ],
-    mdast: {
-      name: {
-        type: 'root',
-        children: [
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: 'funcConditional',
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 16, offset: 15 },
-                  indent: []
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 16, offset: 15 },
-              indent: []
-            }
-          }
-        ],
-        position: {
-          start: { line: 1, column: 1, offset: 0 },
-          end: { line: 1, column: 16, offset: 15 }
-        }
-      },
-      synopsis: {
-        type: 'root',
-        children: [
-          {
-            type: 'code',
-            lang: 'coffeescript',
-            meta: '[specscript]',
-            value: 'funcConditional(\n' +
-              '  funcs Array<args=>Promise|any>,\n' +
-              '  args Array,\n' +
-              '  funcsIndex number,\n' +
-              ') -> Promise|any',
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 7, column: 4, offset: 135 },
-              indent: [ 1, 1, 1, 1, 1, 1 ]
-            }
-          }
-        ],
-        position: {
-          start: { line: 1, column: 1, offset: 0 },
-          end: { line: 7, column: 4, offset: 135 }
-        }
-      },
-      description: {
-        type: 'root',
-        children: [
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: 'Conditional operator ',
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 22, offset: 21 },
-                  indent: []
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'a ? b : c ? d : e ? ...',
-                position: {
-                  start: { line: 1, column: 22, offset: 21 },
-                  end: { line: 1, column: 47, offset: 46 },
-                  indent: []
-                }
-              },
-              {
-                type: 'text',
-                value: ' for functions.',
-                position: {
-                  start: { line: 1, column: 47, offset: 46 },
-                  end: { line: 1, column: 62, offset: 61 },
-                  indent: []
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 62, offset: 61 },
-              indent: []
-            }
-          }
-        ],
-        position: {
-          start: { line: 1, column: 1, offset: 0 },
-          end: { line: 1, column: 62, offset: 61 }
-        }
-      },
-      TODO: {
-        type: 'root',
-        children: [],
-        position: {
-          start: { line: 1, column: 1, offset: 0 },
-          end: { line: 1, column: 1, offset: 0 }
-        }
-      }
-    }
-  },
-  {
     name: 'funcObjectAll',
     synopsis: '```coffeescript [specscript]\n' +
       'funcObjectAll(\n' +
@@ -4532,6 +4409,129 @@ export default [
         position: {
           start: { line: 1, column: 1, offset: 0 },
           end: { line: 1, column: 117, offset: 116 }
+        }
+      }
+    }
+  },
+  {
+    name: 'funcsOrValuesConditional',
+    synopsis: '```coffeescript [specscript]\n' +
+      'funcsOrValuesConditional(\n' +
+      '  funcsOrValues Array<function|value>,\n' +
+      '  args Array,\n' +
+      '  funcsIndex number,\n' +
+      ') -> Promise|any\n' +
+      '```',
+    description: 'Conditional operator `a ? b : c ? d : e ? ...` for functions.',
+    TODO: [
+      'isPromise conditional await',
+      'benchmark vs regular promise handling'
+    ],
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'funcsOrValuesConditional',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 25, offset: 24 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 25, offset: 24 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 25, offset: 24 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'funcsOrValuesConditional(\n' +
+              '  funcsOrValues Array<function|value>,\n' +
+              '  args Array,\n' +
+              '  funcsIndex number,\n' +
+              ') -> Promise|any',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 7, column: 4, offset: 149 },
+              indent: [ 1, 1, 1, 1, 1, 1 ]
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 7, column: 4, offset: 149 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Conditional operator ',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 22, offset: 21 },
+                  indent: []
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'a ? b : c ? d : e ? ...',
+                position: {
+                  start: { line: 1, column: 22, offset: 21 },
+                  end: { line: 1, column: 47, offset: 46 },
+                  indent: []
+                }
+              },
+              {
+                type: 'text',
+                value: ' for functions.',
+                position: {
+                  start: { line: 1, column: 47, offset: 46 },
+                  end: { line: 1, column: 62, offset: 61 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 62, offset: 61 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 62, offset: 61 }
+        }
+      },
+      TODO: {
+        type: 'root',
+        children: [],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 1, offset: 0 }
         }
       }
     }
@@ -11645,15 +11645,24 @@ export default [
   {
     name: 'eq',
     synopsis: '```coffeescript [specscript]\n' +
-      'var value any,\n' +
-      '  leftCompare any,\n' +
-      '  rightCompare any,\n' +
-      '  left (value=>Promise|leftCompare)|leftCompare,\n' +
-      '  right (value=>Promise|rightCompare)|rightCompare\n' +
-      '\n' +
-      'eq(left, right)(value) -> Promise|boolean\n' +
+      'eq(leftValue any, rightValue any) -> boolean\n' +
+      'eq(leftValue any, right function)(value any) -> Promise|boolean\n' +
+      'eq(left function, rightValue any)(value any) -> Promise|boolean\n' +
+      'eq(left function, right function)(value any) -> Promise|boolean\n' +
       '```',
     description: 'Test for [SameValueZero](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero) between the returns of two functions. Either parameter may be an actual value for comparison.\n' +
+      '\n' +
+      'If both arguments are values, `eq` eagerly computes and returns a boolean value.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      "const areNamesEqual = eq('Ted', 'George')\n" +
+      '\n' +
+      'console.log(areNamesEqual) // false\n' +
+      '```\n' +
+      '\n' +
+      'If both arguments are functions, `eq` treats those functions as argument resolvers and returns a function that first resolves its arguments by the argument resolvers before making the comparison.\n' +
+      '\n' +
+      'If only one argument is a function, `eq` still returns a function that resolves its arguments by the argument resolver, treating the value (non function) argument as an already resolved value for comparison.\n' +
       '\n' +
       '```javascript [playground]\n' +
       "const personIsGeorge = eq(person => person.name, 'George')\n" +
@@ -11701,26 +11710,20 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'var value any,\n' +
-              '  leftCompare any,\n' +
-              '  rightCompare any,\n' +
-              '  left (value=>Promise|leftCompare)|leftCompare,\n' +
-              '  right (value=>Promise|rightCompare)|rightCompare\n' +
-              '\n' +
-              'eq(left, right)(value) -> Promise|boolean',
+            value: 'eq(leftValue any, rightValue any) -> boolean\n' +
+              'eq(leftValue any, right function)(value any) -> Promise|boolean\n' +
+              'eq(left function, rightValue any)(value any) -> Promise|boolean\n' +
+              'eq(left function, right function)(value any) -> Promise|boolean',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 9, column: 4, offset: 229 },
-              indent: [
-                1, 1, 1, 1,
-                1, 1, 1, 1
-              ]
+              end: { line: 6, column: 4, offset: 269 },
+              indent: [ 1, 1, 1, 1, 1 ]
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 9, column: 4, offset: 229 }
+          end: { line: 6, column: 4, offset: 269 }
         }
       },
       description: {
@@ -11776,6 +11779,130 @@ export default [
             }
           },
           {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If both arguments are values, ',
+                position: {
+                  start: { line: 3, column: 1, offset: 183 },
+                  end: { line: 3, column: 31, offset: 213 },
+                  indent: []
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'eq',
+                position: {
+                  start: { line: 3, column: 31, offset: 213 },
+                  end: { line: 3, column: 35, offset: 217 },
+                  indent: []
+                }
+              },
+              {
+                type: 'text',
+                value: ' eagerly computes and returns a boolean value.',
+                position: {
+                  start: { line: 3, column: 35, offset: 217 },
+                  end: { line: 3, column: 81, offset: 263 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 3, column: 1, offset: 183 },
+              end: { line: 3, column: 81, offset: 263 },
+              indent: []
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: "const areNamesEqual = eq('Ted', 'George')\n" +
+              '\n' +
+              'console.log(areNamesEqual) // false',
+            position: {
+              start: { line: 5, column: 1, offset: 265 },
+              end: { line: 9, column: 4, offset: 374 },
+              indent: [ 1, 1, 1, 1 ]
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If both arguments are functions, ',
+                position: {
+                  start: { line: 11, column: 1, offset: 376 },
+                  end: { line: 11, column: 34, offset: 409 },
+                  indent: []
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'eq',
+                position: {
+                  start: { line: 11, column: 34, offset: 409 },
+                  end: { line: 11, column: 38, offset: 413 },
+                  indent: []
+                }
+              },
+              {
+                type: 'text',
+                value: ' treats those functions as argument resolvers and returns a function that first resolves its arguments by the argument resolvers before making the comparison.',
+                position: {
+                  start: { line: 11, column: 38, offset: 413 },
+                  end: { line: 11, column: 196, offset: 571 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 11, column: 1, offset: 376 },
+              end: { line: 11, column: 196, offset: 571 },
+              indent: []
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If only one argument is a function, ',
+                position: {
+                  start: { line: 13, column: 1, offset: 573 },
+                  end: { line: 13, column: 37, offset: 609 },
+                  indent: []
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'eq',
+                position: {
+                  start: { line: 13, column: 37, offset: 609 },
+                  end: { line: 13, column: 41, offset: 613 },
+                  indent: []
+                }
+              },
+              {
+                type: 'text',
+                value: ' still returns a function that resolves its arguments by the argument resolver, treating the value (non function) argument as an already resolved value for comparison.',
+                position: {
+                  start: { line: 13, column: 41, offset: 613 },
+                  end: { line: 13, column: 208, offset: 780 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 13, column: 1, offset: 573 },
+              end: { line: 13, column: 208, offset: 780 },
+              indent: []
+            }
+          },
+          {
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
@@ -11785,8 +11912,8 @@ export default [
               "  personIsGeorge({ name: 'George', likes: 'bananas' }),\n" +
               ') // true',
             position: {
-              start: { line: 3, column: 1, offset: 183 },
-              end: { line: 9, column: 4, offset: 352 },
+              start: { line: 15, column: 1, offset: 782 },
+              end: { line: 21, column: 4, offset: 951 },
               indent: [ 1, 1, 1, 1, 1, 1 ]
             }
           },
@@ -11797,8 +11924,8 @@ export default [
                 type: 'text',
                 value: 'More on SameValueZero: ',
                 position: {
-                  start: { line: 11, column: 1, offset: 354 },
-                  end: { line: 11, column: 24, offset: 377 },
+                  start: { line: 23, column: 1, offset: 953 },
+                  end: { line: 23, column: 24, offset: 976 },
                   indent: []
                 }
               },
@@ -11811,29 +11938,29 @@ export default [
                     type: 'text',
                     value: 'Equality comparisons and sameness',
                     position: {
-                      start: { line: 11, column: 25, offset: 378 },
-                      end: { line: 11, column: 58, offset: 411 },
+                      start: { line: 23, column: 25, offset: 977 },
+                      end: { line: 23, column: 58, offset: 1010 },
                       indent: []
                     }
                   }
                 ],
                 position: {
-                  start: { line: 11, column: 24, offset: 377 },
-                  end: { line: 11, column: 150, offset: 503 },
+                  start: { line: 23, column: 24, offset: 976 },
+                  end: { line: 23, column: 150, offset: 1102 },
                   indent: []
                 }
               }
             ],
             position: {
-              start: { line: 11, column: 1, offset: 354 },
-              end: { line: 11, column: 150, offset: 503 },
+              start: { line: 23, column: 1, offset: 953 },
+              end: { line: 23, column: 150, offset: 1102 },
               indent: []
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 11, column: 150, offset: 503 }
+          end: { line: 23, column: 150, offset: 1102 }
         }
       },
       execution: {
@@ -14892,15 +15019,26 @@ export default [
   {
     name: 'gt',
     synopsis: '```coffeescript [specscript]\n' +
-      'var value any,\n' +
-      '  leftCompare any,\n' +
-      '  rightCompare any,\n' +
-      '  left (value=>Promise|leftCompare)|leftCompare,\n' +
-      '  right (value=>Promise|rightCompare)|rightCompare\n' +
-      '\n' +
-      'gt(left, right)(value) -> Promise|boolean\n' +
+      'gt(leftValue any, rightValue any) -> boolean\n' +
+      'gt(leftValue any, right function)(value any) -> Promise|boolean\n' +
+      'gt(left function, rightValue any)(value any) -> Promise|boolean\n' +
+      'gt(left function, right function)(value any) -> Promise|boolean\n' +
       '```',
     description: 'Test if a left value is greater than (`>`) a right value. Either parameter may be an actual value.\n' +
+      '\n' +
+      'If both arguments are values, `gt` eagerly computes and returns a boolean value.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const age = 40\n' +
+      '\n' +
+      'const isAgeGreaterThan21 = gt(age, 21)\n' +
+      '\n' +
+      'console.log(isAgeGreaterThan21) // true\n' +
+      '```\n' +
+      '\n' +
+      'If both arguments are functions, `gt` treats those functions as argument resolvers and returns a function that first resolves its arguments by the argument resolvers before making the comparison.\n' +
+      '\n' +
+      'If only one argument is a function, `gt` still returns a function that resolves its arguments by the argument resolver, treating the value (non function) argument as an already resolved value for comparison.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const isOfLegalAge = gt(21, person => person.age)\n' +
@@ -14945,26 +15083,20 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'var value any,\n' +
-              '  leftCompare any,\n' +
-              '  rightCompare any,\n' +
-              '  left (value=>Promise|leftCompare)|leftCompare,\n' +
-              '  right (value=>Promise|rightCompare)|rightCompare\n' +
-              '\n' +
-              'gt(left, right)(value) -> Promise|boolean',
+            value: 'gt(leftValue any, rightValue any) -> boolean\n' +
+              'gt(leftValue any, right function)(value any) -> Promise|boolean\n' +
+              'gt(left function, rightValue any)(value any) -> Promise|boolean\n' +
+              'gt(left function, right function)(value any) -> Promise|boolean',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 9, column: 4, offset: 229 },
-              indent: [
-                1, 1, 1, 1,
-                1, 1, 1, 1
-              ]
+              end: { line: 6, column: 4, offset: 269 },
+              indent: [ 1, 1, 1, 1, 1 ]
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 9, column: 4, offset: 229 }
+          end: { line: 6, column: 4, offset: 269 }
         }
       },
       description: {
@@ -15008,6 +15140,132 @@ export default [
             }
           },
           {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If both arguments are values, ',
+                position: {
+                  start: { line: 3, column: 1, offset: 100 },
+                  end: { line: 3, column: 31, offset: 130 },
+                  indent: []
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'gt',
+                position: {
+                  start: { line: 3, column: 31, offset: 130 },
+                  end: { line: 3, column: 35, offset: 134 },
+                  indent: []
+                }
+              },
+              {
+                type: 'text',
+                value: ' eagerly computes and returns a boolean value.',
+                position: {
+                  start: { line: 3, column: 35, offset: 134 },
+                  end: { line: 3, column: 81, offset: 180 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 3, column: 1, offset: 100 },
+              end: { line: 3, column: 81, offset: 180 },
+              indent: []
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'const age = 40\n' +
+              '\n' +
+              'const isAgeGreaterThan21 = gt(age, 21)\n' +
+              '\n' +
+              'console.log(isAgeGreaterThan21) // true',
+            position: {
+              start: { line: 5, column: 1, offset: 182 },
+              end: { line: 11, column: 4, offset: 308 },
+              indent: [ 1, 1, 1, 1, 1, 1 ]
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If both arguments are functions, ',
+                position: {
+                  start: { line: 13, column: 1, offset: 310 },
+                  end: { line: 13, column: 34, offset: 343 },
+                  indent: []
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'gt',
+                position: {
+                  start: { line: 13, column: 34, offset: 343 },
+                  end: { line: 13, column: 38, offset: 347 },
+                  indent: []
+                }
+              },
+              {
+                type: 'text',
+                value: ' treats those functions as argument resolvers and returns a function that first resolves its arguments by the argument resolvers before making the comparison.',
+                position: {
+                  start: { line: 13, column: 38, offset: 347 },
+                  end: { line: 13, column: 196, offset: 505 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 13, column: 1, offset: 310 },
+              end: { line: 13, column: 196, offset: 505 },
+              indent: []
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If only one argument is a function, ',
+                position: {
+                  start: { line: 15, column: 1, offset: 507 },
+                  end: { line: 15, column: 37, offset: 543 },
+                  indent: []
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'gt',
+                position: {
+                  start: { line: 15, column: 37, offset: 543 },
+                  end: { line: 15, column: 41, offset: 547 },
+                  indent: []
+                }
+              },
+              {
+                type: 'text',
+                value: ' still returns a function that resolves its arguments by the argument resolver, treating the value (non function) argument as an already resolved value for comparison.',
+                position: {
+                  start: { line: 15, column: 41, offset: 547 },
+                  end: { line: 15, column: 208, offset: 714 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 15, column: 1, offset: 507 },
+              end: { line: 15, column: 208, offset: 714 },
+              indent: []
+            }
+          },
+          {
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
@@ -15017,15 +15275,15 @@ export default [
               '\n' +
               'console.log(isOfLegalAge(juvenile)) // false',
             position: {
-              start: { line: 3, column: 1, offset: 100 },
-              end: { line: 9, column: 4, offset: 256 },
+              start: { line: 17, column: 1, offset: 716 },
+              end: { line: 23, column: 4, offset: 872 },
               indent: [ 1, 1, 1, 1, 1, 1 ]
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 9, column: 4, offset: 256 }
+          end: { line: 23, column: 4, offset: 872 }
         }
       }
     }
@@ -15033,15 +15291,26 @@ export default [
   {
     name: 'gte',
     synopsis: '```coffeescript [specscript]\n' +
-      'var value any,\n' +
-      '  leftCompare any,\n' +
-      '  rightCompare any,\n' +
-      '  left (value=>Promise|leftCompare)|leftCompare,\n' +
-      '  right (value=>Promise|rightCompare)|rightCompare\n' +
-      '\n' +
-      'gte(left, right)(value) -> Promise|boolean\n' +
+      'gte(leftValue any, rightValue any) -> boolean\n' +
+      'gte(leftValue any, right function)(value any) -> Promise|boolean\n' +
+      'gte(left function, rightValue any)(value any) -> Promise|boolean\n' +
+      'gte(left function, right function)(value any) -> Promise|boolean\n' +
       '```',
     description: 'Test if a left value is greater than or equal (`>=`) to a right value. Either parameter may be an actual value.\n' +
+      '\n' +
+      'If both arguments are values, `gte` eagerly computes and returns a boolean value.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const age = 20\n' +
+      '\n' +
+      'const isAdultAge = gte(age, 18)\n' +
+      '\n' +
+      'console.log(isAdultAge) // true\n' +
+      '```\n' +
+      '\n' +
+      'If both arguments are functions, `gte` treats those functions as argument resolvers and returns a function that first resolves its arguments by the argument resolvers before making the comparison.\n' +
+      '\n' +
+      'If only one argument is a function, `gte` still returns a function that resolves its arguments by the argument resolver, treating the value (non function) argument as an already resolved value for comparison.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const identity = value => value\n' +
@@ -15088,26 +15357,20 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'var value any,\n' +
-              '  leftCompare any,\n' +
-              '  rightCompare any,\n' +
-              '  left (value=>Promise|leftCompare)|leftCompare,\n' +
-              '  right (value=>Promise|rightCompare)|rightCompare\n' +
-              '\n' +
-              'gte(left, right)(value) -> Promise|boolean',
+            value: 'gte(leftValue any, rightValue any) -> boolean\n' +
+              'gte(leftValue any, right function)(value any) -> Promise|boolean\n' +
+              'gte(left function, rightValue any)(value any) -> Promise|boolean\n' +
+              'gte(left function, right function)(value any) -> Promise|boolean',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 9, column: 4, offset: 230 },
-              indent: [
-                1, 1, 1, 1,
-                1, 1, 1, 1
-              ]
+              end: { line: 6, column: 4, offset: 273 },
+              indent: [ 1, 1, 1, 1, 1 ]
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 9, column: 4, offset: 230 }
+          end: { line: 6, column: 4, offset: 273 }
         }
       },
       description: {
@@ -15151,6 +15414,132 @@ export default [
             }
           },
           {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If both arguments are values, ',
+                position: {
+                  start: { line: 3, column: 1, offset: 113 },
+                  end: { line: 3, column: 31, offset: 143 },
+                  indent: []
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'gte',
+                position: {
+                  start: { line: 3, column: 31, offset: 143 },
+                  end: { line: 3, column: 36, offset: 148 },
+                  indent: []
+                }
+              },
+              {
+                type: 'text',
+                value: ' eagerly computes and returns a boolean value.',
+                position: {
+                  start: { line: 3, column: 36, offset: 148 },
+                  end: { line: 3, column: 82, offset: 194 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 3, column: 1, offset: 113 },
+              end: { line: 3, column: 82, offset: 194 },
+              indent: []
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'const age = 20\n' +
+              '\n' +
+              'const isAdultAge = gte(age, 18)\n' +
+              '\n' +
+              'console.log(isAdultAge) // true',
+            position: {
+              start: { line: 5, column: 1, offset: 196 },
+              end: { line: 11, column: 4, offset: 307 },
+              indent: [ 1, 1, 1, 1, 1, 1 ]
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If both arguments are functions, ',
+                position: {
+                  start: { line: 13, column: 1, offset: 309 },
+                  end: { line: 13, column: 34, offset: 342 },
+                  indent: []
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'gte',
+                position: {
+                  start: { line: 13, column: 34, offset: 342 },
+                  end: { line: 13, column: 39, offset: 347 },
+                  indent: []
+                }
+              },
+              {
+                type: 'text',
+                value: ' treats those functions as argument resolvers and returns a function that first resolves its arguments by the argument resolvers before making the comparison.',
+                position: {
+                  start: { line: 13, column: 39, offset: 347 },
+                  end: { line: 13, column: 197, offset: 505 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 13, column: 1, offset: 309 },
+              end: { line: 13, column: 197, offset: 505 },
+              indent: []
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If only one argument is a function, ',
+                position: {
+                  start: { line: 15, column: 1, offset: 507 },
+                  end: { line: 15, column: 37, offset: 543 },
+                  indent: []
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'gte',
+                position: {
+                  start: { line: 15, column: 37, offset: 543 },
+                  end: { line: 15, column: 42, offset: 548 },
+                  indent: []
+                }
+              },
+              {
+                type: 'text',
+                value: ' still returns a function that resolves its arguments by the argument resolver, treating the value (non function) argument as an already resolved value for comparison.',
+                position: {
+                  start: { line: 15, column: 42, offset: 548 },
+                  end: { line: 15, column: 209, offset: 715 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 15, column: 1, offset: 507 },
+              end: { line: 15, column: 209, offset: 715 },
+              indent: []
+            }
+          },
+          {
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
@@ -15162,8 +15551,8 @@ export default [
               'console.log(isAtLeast100(100)) // true\n' +
               'console.log(isAtLeast100(101)) // true',
             position: {
-              start: { line: 3, column: 1, offset: 113 },
-              end: { line: 11, column: 4, offset: 334 },
+              start: { line: 17, column: 1, offset: 717 },
+              end: { line: 25, column: 4, offset: 938 },
               indent: [
                 1, 1, 1, 1,
                 1, 1, 1, 1
@@ -15173,7 +15562,7 @@ export default [
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 11, column: 4, offset: 334 }
+          end: { line: 25, column: 4, offset: 938 }
         }
       }
     }
@@ -15181,15 +15570,24 @@ export default [
   {
     name: 'lt',
     synopsis: '```coffeescript [specscript]\n' +
-      'var value any,\n' +
-      '  leftCompare any,\n' +
-      '  rightCompare any,\n' +
-      '  left (value=>Promise|leftCompare)|leftCompare,\n' +
-      '  right (value=>Promise|rightCompare)|rightCompare\n' +
-      '\n' +
-      'lt(left, right)(value) -> Promise|boolean\n' +
+      'lt(leftValue any, rightValue any) -> boolean\n' +
+      'lt(leftValue any, right function)(value any) -> Promise|boolean\n' +
+      'lt(left function, rightValue any)(value any) -> Promise|boolean\n' +
+      'lt(left function, right function)(value any) -> Promise|boolean\n' +
       '```',
     description: 'Test if a left value is less than (`<`) a right value. Either parameter may be an actual value.\n' +
+      '\n' +
+      'If both arguments are values, `lt` eagerly computes and returns a boolean value.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'console.log(lt(1, 3)) // true\n' +
+      'console.log(lt(3, 3)) // false\n' +
+      'console.log(lt(4, 3)) // false\n' +
+      '```\n' +
+      '\n' +
+      'If both arguments are functions, `lt` treats those functions as argument resolvers and returns a function that first resolves its arguments by the argument resolvers before making the comparison.\n' +
+      '\n' +
+      'If only one argument is a function, `lt` still returns a function that resolves its arguments by the argument resolver, treating the value (non function) argument as an already resolved value for comparison.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const identity = value => value\n' +
@@ -15236,26 +15634,20 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'var value any,\n' +
-              '  leftCompare any,\n' +
-              '  rightCompare any,\n' +
-              '  left (value=>Promise|leftCompare)|leftCompare,\n' +
-              '  right (value=>Promise|rightCompare)|rightCompare\n' +
-              '\n' +
-              'lt(left, right)(value) -> Promise|boolean',
+            value: 'lt(leftValue any, rightValue any) -> boolean\n' +
+              'lt(leftValue any, right function)(value any) -> Promise|boolean\n' +
+              'lt(left function, rightValue any)(value any) -> Promise|boolean\n' +
+              'lt(left function, right function)(value any) -> Promise|boolean',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 9, column: 4, offset: 229 },
-              indent: [
-                1, 1, 1, 1,
-                1, 1, 1, 1
-              ]
+              end: { line: 6, column: 4, offset: 269 },
+              indent: [ 1, 1, 1, 1, 1 ]
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 9, column: 4, offset: 229 }
+          end: { line: 6, column: 4, offset: 269 }
         }
       },
       description: {
@@ -15299,6 +15691,130 @@ export default [
             }
           },
           {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If both arguments are values, ',
+                position: {
+                  start: { line: 3, column: 1, offset: 97 },
+                  end: { line: 3, column: 31, offset: 127 },
+                  indent: []
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'lt',
+                position: {
+                  start: { line: 3, column: 31, offset: 127 },
+                  end: { line: 3, column: 35, offset: 131 },
+                  indent: []
+                }
+              },
+              {
+                type: 'text',
+                value: ' eagerly computes and returns a boolean value.',
+                position: {
+                  start: { line: 3, column: 35, offset: 131 },
+                  end: { line: 3, column: 81, offset: 177 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 3, column: 1, offset: 97 },
+              end: { line: 3, column: 81, offset: 177 },
+              indent: []
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'console.log(lt(1, 3)) // true\n' +
+              'console.log(lt(3, 3)) // false\n' +
+              'console.log(lt(4, 3)) // false',
+            position: {
+              start: { line: 5, column: 1, offset: 179 },
+              end: { line: 9, column: 4, offset: 301 },
+              indent: [ 1, 1, 1, 1 ]
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If both arguments are functions, ',
+                position: {
+                  start: { line: 11, column: 1, offset: 303 },
+                  end: { line: 11, column: 34, offset: 336 },
+                  indent: []
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'lt',
+                position: {
+                  start: { line: 11, column: 34, offset: 336 },
+                  end: { line: 11, column: 38, offset: 340 },
+                  indent: []
+                }
+              },
+              {
+                type: 'text',
+                value: ' treats those functions as argument resolvers and returns a function that first resolves its arguments by the argument resolvers before making the comparison.',
+                position: {
+                  start: { line: 11, column: 38, offset: 340 },
+                  end: { line: 11, column: 196, offset: 498 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 11, column: 1, offset: 303 },
+              end: { line: 11, column: 196, offset: 498 },
+              indent: []
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If only one argument is a function, ',
+                position: {
+                  start: { line: 13, column: 1, offset: 500 },
+                  end: { line: 13, column: 37, offset: 536 },
+                  indent: []
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'lt',
+                position: {
+                  start: { line: 13, column: 37, offset: 536 },
+                  end: { line: 13, column: 41, offset: 540 },
+                  indent: []
+                }
+              },
+              {
+                type: 'text',
+                value: ' still returns a function that resolves its arguments by the argument resolver, treating the value (non function) argument as an already resolved value for comparison.',
+                position: {
+                  start: { line: 13, column: 41, offset: 540 },
+                  end: { line: 13, column: 208, offset: 707 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 13, column: 1, offset: 500 },
+              end: { line: 13, column: 208, offset: 707 },
+              indent: []
+            }
+          },
+          {
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
@@ -15310,8 +15826,8 @@ export default [
               'console.log(isLessThan3(3), false)\n' +
               'console.log(isLessThan3(5), false)',
             position: {
-              start: { line: 3, column: 1, offset: 97 },
-              end: { line: 11, column: 4, offset: 301 },
+              start: { line: 15, column: 1, offset: 709 },
+              end: { line: 23, column: 4, offset: 913 },
               indent: [
                 1, 1, 1, 1,
                 1, 1, 1, 1
@@ -15321,7 +15837,7 @@ export default [
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 11, column: 4, offset: 301 }
+          end: { line: 23, column: 4, offset: 913 }
         }
       }
     }
@@ -15329,15 +15845,24 @@ export default [
   {
     name: 'lte',
     synopsis: '```coffeescript [specscript]\n' +
-      'var value any,\n' +
-      '  leftCompare any,\n' +
-      '  rightCompare any,\n' +
-      '  left (value=>Promise|leftCompare)|leftCompare,\n' +
-      '  right (value=>Promise|rightCompare)|rightCompare\n' +
-      '\n' +
-      'lte(left, right)(value) -> Promise|boolean\n' +
+      'lte(leftValue any, rightValue any) -> boolean\n' +
+      'lte(leftValue any, right function)(value any) -> Promise|boolean\n' +
+      'lte(left function, rightValue any)(value any) -> Promise|boolean\n' +
+      'lte(left function, right function)(value any) -> Promise|boolean\n' +
       '```',
     description: 'Test if a left value is less than or equal (`<=`) to a right value. Either parameter may be an actual value.\n' +
+      '\n' +
+      'If both arguments are values, `lte` eagerly computes and returns a boolean value.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'console.log(lte(1, 3)) // true\n' +
+      'console.log(lte(3, 3)) // true\n' +
+      'console.log(lte(4, 3)) // false\n' +
+      '```\n' +
+      '\n' +
+      'If both arguments are functions, `lte` treats those functions as argument resolvers and returns a function that first resolves its arguments by the argument resolvers before making the comparison.\n' +
+      '\n' +
+      'If only one argument is a function, `lte` still returns a function that resolves its arguments by the argument resolver, treating the value (non function) argument as an already resolved value for comparison.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const identity = value => value\n' +
@@ -15384,26 +15909,20 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'var value any,\n' +
-              '  leftCompare any,\n' +
-              '  rightCompare any,\n' +
-              '  left (value=>Promise|leftCompare)|leftCompare,\n' +
-              '  right (value=>Promise|rightCompare)|rightCompare\n' +
-              '\n' +
-              'lte(left, right)(value) -> Promise|boolean',
+            value: 'lte(leftValue any, rightValue any) -> boolean\n' +
+              'lte(leftValue any, right function)(value any) -> Promise|boolean\n' +
+              'lte(left function, rightValue any)(value any) -> Promise|boolean\n' +
+              'lte(left function, right function)(value any) -> Promise|boolean',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 9, column: 4, offset: 230 },
-              indent: [
-                1, 1, 1, 1,
-                1, 1, 1, 1
-              ]
+              end: { line: 6, column: 4, offset: 273 },
+              indent: [ 1, 1, 1, 1, 1 ]
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 9, column: 4, offset: 230 }
+          end: { line: 6, column: 4, offset: 273 }
         }
       },
       description: {
@@ -15447,6 +15966,130 @@ export default [
             }
           },
           {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If both arguments are values, ',
+                position: {
+                  start: { line: 3, column: 1, offset: 110 },
+                  end: { line: 3, column: 31, offset: 140 },
+                  indent: []
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'lte',
+                position: {
+                  start: { line: 3, column: 31, offset: 140 },
+                  end: { line: 3, column: 36, offset: 145 },
+                  indent: []
+                }
+              },
+              {
+                type: 'text',
+                value: ' eagerly computes and returns a boolean value.',
+                position: {
+                  start: { line: 3, column: 36, offset: 145 },
+                  end: { line: 3, column: 82, offset: 191 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 3, column: 1, offset: 110 },
+              end: { line: 3, column: 82, offset: 191 },
+              indent: []
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'console.log(lte(1, 3)) // true\n' +
+              'console.log(lte(3, 3)) // true\n' +
+              'console.log(lte(4, 3)) // false',
+            position: {
+              start: { line: 5, column: 1, offset: 193 },
+              end: { line: 9, column: 4, offset: 317 },
+              indent: [ 1, 1, 1, 1 ]
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If both arguments are functions, ',
+                position: {
+                  start: { line: 11, column: 1, offset: 319 },
+                  end: { line: 11, column: 34, offset: 352 },
+                  indent: []
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'lte',
+                position: {
+                  start: { line: 11, column: 34, offset: 352 },
+                  end: { line: 11, column: 39, offset: 357 },
+                  indent: []
+                }
+              },
+              {
+                type: 'text',
+                value: ' treats those functions as argument resolvers and returns a function that first resolves its arguments by the argument resolvers before making the comparison.',
+                position: {
+                  start: { line: 11, column: 39, offset: 357 },
+                  end: { line: 11, column: 197, offset: 515 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 11, column: 1, offset: 319 },
+              end: { line: 11, column: 197, offset: 515 },
+              indent: []
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If only one argument is a function, ',
+                position: {
+                  start: { line: 13, column: 1, offset: 517 },
+                  end: { line: 13, column: 37, offset: 553 },
+                  indent: []
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'lte',
+                position: {
+                  start: { line: 13, column: 37, offset: 553 },
+                  end: { line: 13, column: 42, offset: 558 },
+                  indent: []
+                }
+              },
+              {
+                type: 'text',
+                value: ' still returns a function that resolves its arguments by the argument resolver, treating the value (non function) argument as an already resolved value for comparison.',
+                position: {
+                  start: { line: 13, column: 42, offset: 558 },
+                  end: { line: 13, column: 209, offset: 725 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 13, column: 1, offset: 517 },
+              end: { line: 13, column: 209, offset: 725 },
+              indent: []
+            }
+          },
+          {
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
@@ -15458,8 +16101,8 @@ export default [
               'console.log(isLessThanOrEqualTo3(3), true)\n' +
               'console.log(isLessThanOrEqualTo3(5), false)',
             position: {
-              start: { line: 3, column: 1, offset: 110 },
-              end: { line: 11, column: 4, offset: 350 },
+              start: { line: 15, column: 1, offset: 727 },
+              end: { line: 23, column: 4, offset: 967 },
               indent: [
                 1, 1, 1, 1,
                 1, 1, 1, 1
@@ -15469,7 +16112,7 @@ export default [
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 11, column: 4, offset: 350 }
+          end: { line: 23, column: 4, offset: 967 }
         }
       }
     }
@@ -20202,7 +20845,16 @@ export default [
       '\n' +
       'not(predicate)(...args) -> boolean\n' +
       '```',
-    description: 'Negate a predicate (`!`)\n' +
+    description: 'Negate a value (`!`)\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const myObj = { a: 1 }\n' +
+      '\n' +
+      "console.log(not('a' in myObj)) // false\n" +
+      "console.log(not('b' in myObj)) // true\n" +
+      '```\n' +
+      '\n' +
+      'If passed a function predicate, `not` returns a logically inverted predicate that returns true everywhere the original predicate would have returned false and vice versa.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const isOdd = number => number % 2 == 1\n' +
@@ -20211,7 +20863,6 @@ export default [
       '  not(isOdd)(3),\n' +
       ') // false\n' +
       '```',
-    TODO: 'const not = funcNot\nfuncNotSync',
     mdast: {
       name: {
         type: 'root',
@@ -20272,10 +20923,10 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Negate a predicate (',
+                value: 'Negate a value (',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 21, offset: 20 },
+                  end: { line: 1, column: 17, offset: 16 },
                   indent: []
                 }
               },
@@ -20283,8 +20934,8 @@ export default [
                 type: 'inlineCode',
                 value: '!',
                 position: {
-                  start: { line: 1, column: 21, offset: 20 },
-                  end: { line: 1, column: 24, offset: 23 },
+                  start: { line: 1, column: 17, offset: 16 },
+                  end: { line: 1, column: 20, offset: 19 },
                   indent: []
                 }
               },
@@ -20292,15 +20943,66 @@ export default [
                 type: 'text',
                 value: ')',
                 position: {
-                  start: { line: 1, column: 24, offset: 23 },
-                  end: { line: 1, column: 25, offset: 24 },
+                  start: { line: 1, column: 20, offset: 19 },
+                  end: { line: 1, column: 21, offset: 20 },
                   indent: []
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 25, offset: 24 },
+              end: { line: 1, column: 21, offset: 20 },
+              indent: []
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'const myObj = { a: 1 }\n' +
+              '\n' +
+              "console.log(not('a' in myObj)) // false\n" +
+              "console.log(not('b' in myObj)) // true",
+            position: {
+              start: { line: 3, column: 1, offset: 22 },
+              end: { line: 8, column: 4, offset: 155 },
+              indent: [ 1, 1, 1, 1, 1 ]
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If passed a function predicate, ',
+                position: {
+                  start: { line: 10, column: 1, offset: 157 },
+                  end: { line: 10, column: 33, offset: 189 },
+                  indent: []
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'not',
+                position: {
+                  start: { line: 10, column: 33, offset: 189 },
+                  end: { line: 10, column: 38, offset: 194 },
+                  indent: []
+                }
+              },
+              {
+                type: 'text',
+                value: ' returns a logically inverted predicate that returns true everywhere the original predicate would have returned false and vice versa.',
+                position: {
+                  start: { line: 10, column: 38, offset: 194 },
+                  end: { line: 10, column: 171, offset: 327 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 10, column: 1, offset: 157 },
+              end: { line: 10, column: 171, offset: 327 },
               indent: []
             }
           },
@@ -20314,43 +21016,15 @@ export default [
               '  not(isOdd)(3),\n' +
               ') // false',
             position: {
-              start: { line: 3, column: 1, offset: 26 },
-              end: { line: 9, column: 4, offset: 138 },
+              start: { line: 12, column: 1, offset: 329 },
+              end: { line: 18, column: 4, offset: 441 },
               indent: [ 1, 1, 1, 1, 1, 1 ]
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 9, column: 4, offset: 138 }
-        }
-      },
-      TODO: {
-        type: 'root',
-        children: [
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: 'const not = funcNot\nfuncNotSync',
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 2, column: 12, offset: 31 },
-                  indent: [ 1 ]
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 2, column: 12, offset: 31 },
-              indent: [ 1 ]
-            }
-          }
-        ],
-        position: {
-          start: { line: 1, column: 1, offset: 0 },
-          end: { line: 2, column: 12, offset: 31 }
+          end: { line: 18, column: 4, offset: 441 }
         }
       }
     }
@@ -21151,6 +21825,16 @@ export default [
       'console.log(\n' +
       '  squaredOdds([1, 2, 3, 4, 5])\n' +
       ') // [1, 9, 25]\n' +
+      '```\n' +
+      '\n' +
+      'For the sake of a sane API, pipe behaves eagerly when passed any amount of arguments before the array of functions.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'pipe(1, 2, 3, [\n' +
+      '  Array.of,\n' +
+      '  map(number => number * 3),\n' +
+      '  console.log, // [3, 6, 9]\n' +
+      '])\n' +
       '```',
     execution: 'series',
     transducing: '',
@@ -21360,11 +22044,45 @@ export default [
                 1, 1, 1, 1, 1
               ]
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'For the sake of a sane API, pipe behaves eagerly when passed any amount of arguments before the array of functions.',
+                position: {
+                  start: { line: 36, column: 1, offset: 1079 },
+                  end: { line: 36, column: 116, offset: 1194 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 36, column: 1, offset: 1079 },
+              end: { line: 36, column: 116, offset: 1194 },
+              indent: []
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'pipe(1, 2, 3, [\n' +
+              '  Array.of,\n' +
+              '  map(number => number * 3),\n' +
+              '  console.log, // [3, 6, 9]\n' +
+              '])',
+            position: {
+              start: { line: 38, column: 1, offset: 1196 },
+              end: { line: 44, column: 4, offset: 1314 },
+              indent: [ 1, 1, 1, 1, 1, 1 ]
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 34, column: 4, offset: 1077 }
+          end: { line: 44, column: 4, offset: 1314 }
         }
       },
       execution: {
@@ -22292,7 +23010,7 @@ export default [
       '\n' +
       'switchCase(conditionalFunctions)(...args) -> Promise|result\n' +
       '```',
-    description: 'Conditional operator for functions. Cases are defined as pairings of `predicate` and `resolver`, with the exception of the last, default case.\n' +
+    description: 'Conditional operator for values or functions. Cases are defined as pairings of `predicate` and `value` (or `resolver` thereof), with the exception of the last, default resolver or value.\n' +
       '\n' +
       '```javascript [playground]\n' +
       "const fruitIsYellow = fruit => fruit.color == 'yellow'\n" +
@@ -22308,21 +23026,30 @@ export default [
       ') // plantain is possibly a banana\n' +
       '```\n' +
       '\n' +
-      'If an even number of functions is supplied, the last predicate should always return true.\n' +
+      'A mixture of functions and values can be supplied as any of the array items.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      'const questionableIsOdd = switchCase([\n' +
-      '  number => number === 1, () => true,\n' +
-      '  number => number === 2, () => false,\n' +
-      '  number => number === 3, () => true,\n' +
-      '  number => number === 4, () => false,\n' +
-      '  number => number === 5, () => true,\n' +
-      '  () => true, number => number % 2 === 1,\n' +
-      '])\n' +
+      'switchCase([\n' +
+      '  async function asyncFalse() {\n' +
+      '    return false\n' +
+      '  },\n' +
+      "  'something not returned',\n" +
+      "  'default',\n" +
+      ']).then(console.log) // default\n' +
+      '```\n' +
       '\n' +
-      'console.log(questionableIsOdd(1)) // true\n' +
-      'console.log(questionableIsOdd(6)) // false\n' +
+      'If every item in the argument array to switchCase is a value, switchCase should behave as the ternary ? : operator. Any promises are resolved serially.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const a = 1\n' +
+      '\n' +
+      'switchCase([\n' +
+      '  a == 1,\n' +
+      "  Promise.resolve('hello world'),\n" +
+      "  'default',\n" +
+      ']).then(console.log) // hello world\n' +
       '```',
+    execution: 'series',
     mdast: {
       name: {
         type: 'root',
@@ -22394,10 +23121,10 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Conditional operator for functions. Cases are defined as pairings of ',
+                value: 'Conditional operator for values or functions. Cases are defined as pairings of ',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 70, offset: 69 },
+                  end: { line: 1, column: 80, offset: 79 },
                   indent: []
                 }
               },
@@ -22405,8 +23132,8 @@ export default [
                 type: 'inlineCode',
                 value: 'predicate',
                 position: {
-                  start: { line: 1, column: 70, offset: 69 },
-                  end: { line: 1, column: 81, offset: 80 },
+                  start: { line: 1, column: 80, offset: 79 },
+                  end: { line: 1, column: 91, offset: 90 },
                   indent: []
                 }
               },
@@ -22414,8 +23141,26 @@ export default [
                 type: 'text',
                 value: ' and ',
                 position: {
-                  start: { line: 1, column: 81, offset: 80 },
-                  end: { line: 1, column: 86, offset: 85 },
+                  start: { line: 1, column: 91, offset: 90 },
+                  end: { line: 1, column: 96, offset: 95 },
+                  indent: []
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'value',
+                position: {
+                  start: { line: 1, column: 96, offset: 95 },
+                  end: { line: 1, column: 103, offset: 102 },
+                  indent: []
+                }
+              },
+              {
+                type: 'text',
+                value: ' (or ',
+                position: {
+                  start: { line: 1, column: 103, offset: 102 },
+                  end: { line: 1, column: 108, offset: 107 },
                   indent: []
                 }
               },
@@ -22423,24 +23168,24 @@ export default [
                 type: 'inlineCode',
                 value: 'resolver',
                 position: {
-                  start: { line: 1, column: 86, offset: 85 },
-                  end: { line: 1, column: 96, offset: 95 },
+                  start: { line: 1, column: 108, offset: 107 },
+                  end: { line: 1, column: 118, offset: 117 },
                   indent: []
                 }
               },
               {
                 type: 'text',
-                value: ', with the exception of the last, default case.',
+                value: ' thereof), with the exception of the last, default resolver or value.',
                 position: {
-                  start: { line: 1, column: 96, offset: 95 },
-                  end: { line: 1, column: 143, offset: 142 },
+                  start: { line: 1, column: 118, offset: 117 },
+                  end: { line: 1, column: 187, offset: 186 },
                   indent: []
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 143, offset: 142 },
+              end: { line: 1, column: 187, offset: 186 },
               indent: []
             }
           },
@@ -22460,8 +23205,8 @@ export default [
               "  fruitsGuesser({ name: 'plantain', color: 'yellow' }),\n" +
               ') // plantain is possibly a banana',
             position: {
-              start: { line: 3, column: 1, offset: 144 },
-              end: { line: 15, column: 4, offset: 492 },
+              start: { line: 3, column: 1, offset: 188 },
+              end: { line: 15, column: 4, offset: 536 },
               indent: [
                 1, 1, 1, 1, 1,
                 1, 1, 1, 1, 1,
@@ -22474,17 +23219,17 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'If an even number of functions is supplied, the last predicate should always return true.',
+                value: 'A mixture of functions and values can be supplied as any of the array items.',
                 position: {
-                  start: { line: 17, column: 1, offset: 494 },
-                  end: { line: 17, column: 90, offset: 583 },
+                  start: { line: 17, column: 1, offset: 538 },
+                  end: { line: 17, column: 77, offset: 614 },
                   indent: []
                 }
               }
             ],
             position: {
-              start: { line: 17, column: 1, offset: 494 },
-              end: { line: 17, column: 90, offset: 583 },
+              start: { line: 17, column: 1, offset: 538 },
+              end: { line: 17, column: 77, offset: 614 },
               indent: []
             }
           },
@@ -22492,31 +23237,93 @@ export default [
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: 'const questionableIsOdd = switchCase([\n' +
-              '  number => number === 1, () => true,\n' +
-              '  number => number === 2, () => false,\n' +
-              '  number => number === 3, () => true,\n' +
-              '  number => number === 4, () => false,\n' +
-              '  number => number === 5, () => true,\n' +
-              '  () => true, number => number % 2 === 1,\n' +
-              '])\n' +
-              '\n' +
-              'console.log(questionableIsOdd(1)) // true\n' +
-              'console.log(questionableIsOdd(6)) // false',
+            value: 'switchCase([\n' +
+              '  async function asyncFalse() {\n' +
+              '    return false\n' +
+              '  },\n' +
+              "  'something not returned',\n" +
+              "  'default',\n" +
+              ']).then(console.log) // default',
             position: {
-              start: { line: 19, column: 1, offset: 585 },
-              end: { line: 31, column: 4, offset: 977 },
+              start: { line: 19, column: 1, offset: 616 },
+              end: { line: 27, column: 4, offset: 786 },
               indent: [
-                1, 1, 1, 1, 1,
-                1, 1, 1, 1, 1,
-                1, 1
+                1, 1, 1, 1,
+                1, 1, 1, 1
+              ]
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If every item in the argument array to switchCase is a value, switchCase should behave as the ternary ? : operator. Any promises are resolved serially.',
+                position: {
+                  start: { line: 29, column: 1, offset: 788 },
+                  end: { line: 29, column: 152, offset: 939 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 29, column: 1, offset: 788 },
+              end: { line: 29, column: 152, offset: 939 },
+              indent: []
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'const a = 1\n' +
+              '\n' +
+              'switchCase([\n' +
+              '  a == 1,\n' +
+              "  Promise.resolve('hello world'),\n" +
+              "  'default',\n" +
+              ']).then(console.log) // hello world',
+            position: {
+              start: { line: 31, column: 1, offset: 941 },
+              end: { line: 39, column: 4, offset: 1090 },
+              indent: [
+                1, 1, 1, 1,
+                1, 1, 1, 1
               ]
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 31, column: 4, offset: 977 }
+          end: { line: 39, column: 4, offset: 1090 }
+        }
+      },
+      execution: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'series',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 7, offset: 6 },
+                  indent: []
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 7, offset: 6 },
+              indent: []
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 7, offset: 6 }
         }
       }
     }
