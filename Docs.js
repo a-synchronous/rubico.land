@@ -222,10 +222,12 @@ const DocsIncludes = DocsItem('includes')
 const DocsIsDeepEqual = DocsItem('isDeepEqual')
 const DocsIsEmpty = DocsItem('isEmpty')
 const DocsIsFunction = DocsItem('isFunction')
+const DocsIsIn = DocsItem('isIn')
 const DocsIsObject = DocsItem('isObject')
 const DocsIsString = DocsItem('isString')
 const DocsKeys = DocsItem('keys')
 const DocsLast = DocsItem('last')
+const DocsMaxBy = DocsItem('maxBy')
 const DocsNoop = DocsItem('noop')
 const DocsPluck = DocsItem('pluck')
 const DocsPrepend = DocsItem('prepend')
@@ -345,10 +347,12 @@ const Docs = ReactElement(props => Div([
       DocsIsDeepEqual(props),
       DocsIsEmpty(props),
       DocsIsFunction(props),
+      DocsIsIn(props),
       DocsIsObject(props),
       DocsIsString(props),
       DocsKeys(props),
       DocsLast(props),
+      DocsMaxBy(props),
       DocsNoop(props),
       DocsPluck(props),
       DocsPrepend(props),

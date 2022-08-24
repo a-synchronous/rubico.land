@@ -74,10 +74,12 @@ cp index.html docs/isDeepEqual
 cp index.html docs/isEmpty
 cp index.html docs/isEqual
 cp index.html docs/isFunction
+cp index.html docs/isIn
 cp index.html docs/isObject
 cp index.html docs/isString
 cp index.html docs/keys
 cp index.html docs/last
+cp index.html docs/maxBy
 cp index.html docs/pluck
 cp index.html docs/prepend
 cp index.html docs/size
