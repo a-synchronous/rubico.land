@@ -79,7 +79,7 @@ const CURRENT_PATH = '/blog/2020/10/02/transducers-crash-course'
 // ReactElement
 const BlogTransducers = BlogItem({
   title: 'Transducers Crash Course',
-  author: 'Richard Tong',
+  author: '',
   published: 'October 2, 2020',
   path: '/blog/2020/10/02/transducers-crash-course',
   content: transducersContent,
