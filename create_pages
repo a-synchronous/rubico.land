@@ -1,0 +1,88 @@
+#!/usr/bin/env node
+
+require('rubico/global')
+const rubico = require('rubico')
+const x = require('rubico/x')
+const IndexHtml = require('./internal/IndexHtml')
+const FileSystem = require('./internal/FileSystem')
+
+// FunctionNames() -> names Array<string>
+const FunctionNames = function (lib) {
+  const result = []
+  for (const name in lib) {
+    result.push(name)
+    const fn = lib[name]
+    for (const subName in fn) {
+      result.push(`${name}.${subName}`)
+    }
+  }
+  return result
+}
+
+/**
+ * @name main
+ *
+ * @synopsis
+ * ```coffeescript [specscript]
+ * main(options {
+ * }) -> Promise<>
+ * ```
+ */
+const main = async function (options) {
+  const publicFs = new FileSystem({ cwd: `${__dirname}/public` })
+
+  await publicFs.rmrf('/index.html')
+  await publicFs.rmrf('/tour')
+  await publicFs.rmrf('/docs')
+  await publicFs.rmrf('/blog')
+
+  await publicFs.writeFile('/index.html', IndexHtml({
+    path: '/',
+    title: 'rubico - [a]synchronous functional programming',
+    description: 'A library for creating async-enabled function compositions.',
+  }))
+
+  await publicFs.writeFile('/tour/index.html', IndexHtml({
+    path: '/tour',
+    title: 'A tour of rubico',
+    description: 'An overview of the rubico library',
+  }))
+
+  await publicFs.writeFile('/docs/index.html', IndexHtml({
+    path: '/docs',
+    title: 'rubico documentation',
+    description: 'A reference for the rubico library',
+  }))
+
+  await publicFs.writeFile('/blog/index.html', IndexHtml({
+    path: '/blog',
+    title: 'rubico blog',
+    description: 'A blog about the rubico library, JavaScript, and functional programming',
+  }))
+
+  const coreFunctionNames = FunctionNames(rubico)
+
+  for (const functionName of coreFunctionNames) {
+    await publicFs.writeFile(`/docs/${functionName}/index.html`, IndexHtml({
+      path: `/docs/${functionName}`,
+      title: `${functionName} - rubico documentation`,
+      description: `Reference for ${functionName}`,
+    }))
+  }
+
+  const xFunctionNames = FunctionNames(x)
+
+  for (const functionName of coreFunctionNames) {
+    await publicFs.writeFile(`/docs/x/${functionName}/index.html`, IndexHtml({
+      path: `x/docs/${functionName}`,
+      title: `x/${functionName} - rubico documentation`,
+      description: `Reference for x/${functionName}`,
+    }))
+  }
+}
+
+if (require.main == module) {
+  main()
+}
+
+module.exports = main
