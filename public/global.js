@@ -7,8 +7,10 @@ for (const elementName in ReactElement) {
 }
 
 window.Main = ReactElement('main')
+window.Header = ReactElement('header')
 window.Svg = ReactElement('svg')
 window.Path = ReactElement('path')
+window.Polygon = ReactElement('polygon')
 window.Rect = ReactElement('rect')
 window.Mask = ReactElement('mask')
 window.Style = ReactElement('style')

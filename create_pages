@@ -36,34 +36,47 @@ const main = async function (options) {
   await publicFs.rmrf('/docs')
   await publicFs.rmrf('/blog')
 
-  await publicFs.writeFile('/index.html', IndexHtml({
+  console.log('Creating index.html')
+  await publicFs.writeFile('index.html', IndexHtml({
     path: '/',
     title: 'rubico - [a]synchronous functional programming',
     description: 'A library for creating async-enabled function compositions.',
   }))
 
-  await publicFs.writeFile('/tour/index.html', IndexHtml({
+  console.log('Creating tour/index.html')
+  await publicFs.writeFile('tour/index.html', IndexHtml({
     path: '/tour',
     title: 'A tour of rubico',
     description: 'An overview of the rubico library',
   }))
 
-  await publicFs.writeFile('/docs/index.html', IndexHtml({
+  console.log('Creating docs/index.html')
+  await publicFs.writeFile('docs/index.html', IndexHtml({
     path: '/docs',
     title: 'rubico documentation',
     description: 'A reference for the rubico library',
   }))
 
-  await publicFs.writeFile('/blog/index.html', IndexHtml({
+  console.log('Creating blog/index.html')
+  await publicFs.writeFile('blog/index.html', IndexHtml({
     path: '/blog',
     title: 'rubico blog',
     description: 'A blog about the rubico library, JavaScript, and functional programming',
   }))
 
   const coreFunctionNames = FunctionNames(rubico)
+  const deprecatedFunctionNames = [
+    'pipe.sync',
+    'tap.sync',
+    'map.withIndex',
+    'map.own',
+    'filter.withIndex',
+    'not.sync',
+  ]
 
-  for (const functionName of coreFunctionNames) {
-    await publicFs.writeFile(`/docs/${functionName}/index.html`, IndexHtml({
+  for (const functionName of [...coreFunctionNames, ...deprecatedFunctionNames]) {
+    console.log(`Creating docs/${functionName}`)
+    await publicFs.writeFile(`docs/${functionName}.html`, IndexHtml({
       path: `/docs/${functionName}`,
       title: `${functionName} - rubico documentation`,
       description: `Reference for ${functionName}`,
@@ -73,12 +86,20 @@ const main = async function (options) {
   const xFunctionNames = FunctionNames(x)
 
   for (const functionName of coreFunctionNames) {
-    await publicFs.writeFile(`/docs/x/${functionName}/index.html`, IndexHtml({
-      path: `x/docs/${functionName}`,
+    console.log(`Creating docs/x/${functionName}`)
+    await publicFs.writeFile(`docs/x/${functionName}/index.html`, IndexHtml({
+      path: `/docs/x/${functionName}`,
       title: `x/${functionName} - rubico documentation`,
       description: `Reference for x/${functionName}`,
     }))
   }
+
+  console.log('Creating blog/2020/10/02/transducers-crash-course')
+  await publicFs.writeFile('blog/2020/10/02/transducers-crash-course', IndexHtml({
+    path: '/blog/2020/10/02/transducers-crash-course',
+    title: 'Transducers Crash Course - rubico',
+    description: 'Transducers enable composable and memory efficient wrangling of very large or even infinite sets of data',
+  }))
 }
 
 if (require.main == module) {
