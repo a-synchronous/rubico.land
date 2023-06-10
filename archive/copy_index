@@ -1,0 +1,96 @@
+#!/bin/sh
+
+rm -rf docs tour blog
+
+mkdir -p tour/ \
+  docs/ docs/x \
+  docs/pipe/ docs/fork/ docs/fork/series docs/assign/ \
+  docs/tap/ docs/tryCatch/ docs/switchCase/ \
+  docs/map/ docs/filter/ docs/reduce/ docs/transform/ docs/flatMap/ \
+  docs/any/ docs/all/ docs/and/ docs/or/ docs/not/ \
+  docs/eq/ docs/gt/ docs/lt/ docs/gte/ docs/lte/ \
+  docs/get/ docs/set/ docs/pick/ docs/omit/ \
+  docs/thunkify/ docs/always/ docs/curry/ docs/__/ \
+  blog/
+
+cp index.html tour/index.html
+cp index.html docs/index.html
+cp index.html docs/x/index.html
+cp index.html docs/pipe/index.html
+cp index.html docs/pipe.sync
+cp index.html docs/fork/index.html
+cp index.html docs/fork.series
+cp index.html docs/assign/index.html
+cp index.html docs/tap/index.html
+cp index.html docs/tap.if
+cp index.html docs/tap.sync
+cp index.html docs/tryCatch/index.html
+cp index.html docs/switchCase/index.html
+cp index.html docs/map/index.html
+cp index.html docs/map.entries
+cp index.html docs/map.series
+cp index.html docs/map.pool
+cp index.html docs/map.withIndex
+cp index.html docs/map.own
+cp index.html docs/filter/index.html
+cp index.html docs/filter.withIndex
+cp index.html docs/reduce/index.html
+cp index.html docs/transform/index.html
+cp index.html docs/flatMap/index.html
+cp index.html docs/any/index.html
+cp index.html docs/all/index.html
+cp index.html docs/and/index.html
+cp index.html docs/or/index.html
+cp index.html docs/not/index.html
+cp index.html docs/not.sync
+cp index.html docs/eq/index.html
+cp index.html docs/gt/index.html
+cp index.html docs/lt/index.html
+cp index.html docs/gte/index.html
+cp index.html docs/lte/index.html
+cp index.html docs/get/index.html
+cp index.html docs/set/index.html
+cp index.html docs/pick/index.html
+cp index.html docs/omit/index.html
+cp index.html docs/thunkify/index.html
+cp index.html docs/always/index.html
+cp index.html docs/__/index.html
+cp index.html docs/curry/index.html
+cp index.html docs/curry.arity
+cp index.html docs/append
+cp index.html docs/callProp
+cp index.html docs/defaultsDeep
+cp index.html docs/differenceWith
+cp index.html docs/filterOut
+cp index.html docs/find
+cp index.html docs/findIndex
+cp index.html docs/first
+cp index.html docs/flatten
+cp index.html docs/forEach
+cp index.html docs/groupBy
+cp index.html docs/has
+cp index.html docs/includes
+cp index.html docs/isDeepEqual
+cp index.html docs/isEmpty
+cp index.html docs/isEqual
+cp index.html docs/isFunction
+cp index.html docs/isIn
+cp index.html docs/isObject
+cp index.html docs/isString
+cp index.html docs/keys
+cp index.html docs/last
+cp index.html docs/maxBy
+cp index.html docs/pluck
+cp index.html docs/prepend
+cp index.html docs/size
+cp index.html docs/trace
+cp index.html docs/unionWith
+cp index.html docs/uniq
+cp index.html docs/values
+cp index.html docs/unless
+cp index.html docs/when
+
+mkdir -p blog/2020/10/02
+
+cp index.html blog/index.html
+cp index.html blog/2020/10/02/transducers-crash-course
