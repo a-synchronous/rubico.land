@@ -1,4 +1,4 @@
 import './global.js'
-import Root from './Root.js'
+import Root from './react/Root.js'
 
-ReactDOM.render(Root(), document.getElementById('root'))
+ReactDOM.render(Root(), document.getElementById('react-root'))

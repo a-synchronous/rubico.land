@@ -82,6 +82,8 @@ p {
 header {
   display: flex;
   margin-bottom: 35px;
+  padding-top: 15px;
+  padding-right: 5%;
 }
 header > nav {
   display: flex;
@@ -95,6 +97,12 @@ header > nav > a {
   font-size: 28px;
   font-weight: 600;
   margin-right: 36px;
+  text-decoration: none;
+}
+header > nav > a.active {
+  color: rgb(101, 121, 155);
+  text-decoration: underline;
+  text-decoration-color: rgb(101, 121, 155);
 }
 header > nav > span {
   color: lightgrey;
@@ -106,12 +114,6 @@ header > nav > span {
   header {
     display: block;
     margin-left: 5%;
-  }
-  header > a > img {
-    min-width: 65px;
-    max-width: 150px;
-    width: 45%;
-    height: 20%;
   }
   header > nav {
     display: block;
@@ -140,9 +142,14 @@ header > nav > span {
   font-weight: 700;
   line-height: 1em;
 }
+#home > img {
+  width: 150px;
+}
 @media only screen and (max-width: 768px) {
   #home > span {
     display: none;
+  }
+  #home > img {
   }
 }
 @media only screen and (max-width: 618px) {
@@ -165,7 +172,7 @@ header > nav > span {
   margin-left: 2px;
 }
 
-#root {
+#react-root {
   width: 90%;
   max-width: 900px;
   margin-bottom: 50px;

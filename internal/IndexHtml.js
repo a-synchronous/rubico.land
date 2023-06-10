@@ -40,7 +40,7 @@ const IndexHtml = function (options) {
   <link rel="canonical" href="${url}">
 
   <script src="https://unpkg.com/rubico@1.7.0/dist/rubico.min.js" crossorigin></script>
-  <script src="https://unpkg.com/arche@0.1.6/index.js" crossorigin></script>
+  <script src="https://unpkg.com/arche@0.3.5/index.js" crossorigin></script>
   <script src="https://unpkg.com/react@17.0.1/umd/react.production.min.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@17.0.1/umd/react-dom.production.min.js" crossorigin></script>
   <script src="/codemirror/index.js"></script>
