@@ -1,0 +1,42 @@
+#!/usr/bin/env node
+
+require('rubico/global')
+const x = require('rubico/x')
+const cronist = require('cronist')
+const fs = require('fs')
+const FileSystem = require('./internal/FileSystem')
+const { inspect } = require('util')
+
+const createMdastFile = async function (source, dest) {
+  const data = await fs.promises.readFile(source, { encoding: 'utf8' })
+  const mdast = await cronist.parseMarkdown(data)
+  await fs.promises.writeFile(dest, `export default ${inspect(mdast, { depth: Infinity })}`)
+}
+
+// createMdast() -> Promise<>
+const createMdast = async function () {
+  const publicFs = new FileSystem({ cwd: `${__dirname}/public` })
+  await publicFs.rmrf('/mdast')
+  await publicFs.mkdirp('/mdast')
+
+  await createMdastFile(
+    `${__dirname}/node_modules/rubico/README.md`,
+    `${__dirname}/public/mdast/readme.js`,
+  )
+
+  await createMdastFile(
+    `${__dirname}/articles/tour.md`,
+    `${__dirname}/public/mdast/tour.js`,
+  )
+
+  await createMdastFile(
+    `${__dirname}/articles/transducers-v1.md`,
+    `${__dirname}/public/mdast/transducers-v1.js`,
+  )
+}
+
+if (require.main == module) {
+  createMdast()
+}
+
+module.exports = createMdast

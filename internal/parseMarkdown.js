@@ -1,25 +1,9 @@
-#!/usr/bin/env node
-
-'use strict'
-
-const rubico = require('rubico')
-const trace = require('rubico/x/trace')
+require('rubico/global')
+const x = require('rubico/x')
 const fs = require('fs')
 const nodePath = require('path')
 const util = require('util')
 const cronist = require('cronist')
-
-const {
-  pipe, fork, assign,
-  tap, tryCatch, switchCase,
-  map, filter, reduce, transform, flatMap,
-  any, all, and, or, not,
-  eq, gt, lt, gte, lte,
-  get, pick, omit,
-} = rubico
-
-// any => any
-const identity = value => value
 
 // string => string
 const pathResolve = nodePath.resolve
@@ -46,7 +30,7 @@ const direntIsJSFile = dirent => dirent.name.endsWith('.js')
 // path string => jsFilePaths Array<string>
 const walkPathForJSFilePaths = pipe([
   fork({
-    path: identity,
+    path: x.identity,
     dirents: tryCatch(readdirWithFileTypes, () => []),
   }),
   ({ path, dirents }) => transform(
@@ -87,7 +71,7 @@ const cli = pipe([
   toString,
   cronist.parseMarkdown,
   toJavaScript,
-  trace,
+  x.trace,
 ])
 
 cli(process.argv.slice(2))
