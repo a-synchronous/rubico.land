@@ -31,7 +31,7 @@ const preload = ['map', 'filter', 'reduce', 'transform', 'flatMap']
 
 preload.forEach(pipe([
   name => rubicoCronistMap.get(name),
-  fork([
+  all([
     get('mdast.description'),
     get('mdast.synopsis'),
   ]),

@@ -1,29 +1,5 @@
 import inspect from './inspect.js'
 
-const ReactElement = Arche(React)
-
-const {
-  H1, H2, H3, H4, H5, H6,
-  A, P, B, Button, Img,
-  Span, Div, Section,
-  Script, Iframe,
-  Ul, Ol, Li,
-  Code, Pre,
-} = ReactElement
-
-const { useState, useEffect, useRef, useCallback, useReducer } = React
-
-const {
-  pipe, tap,
-  switchCase, tryCatch,
-  fork, assign, get, pick, omit,
-  map, filter, reduce, transform, flatMap,
-  and, or, not, any, all,
-  eq, gt, lt, gte, lte,
-  thunkify, always,
-  curry, __,
-} = rubico
-
 const templateCodeSandbox = ({ code, imports }) => `
 ${
   Object.entries(imports)
@@ -162,7 +138,7 @@ const CodeRunner = ReactElement(({
           boxShadow: '1px 1px grey',
         },
         onClick: pipe([
-          fork({
+          all({
             code: () => codeMirrors.get(codeAreaRef).getValue(),
             imports: always(imports),
           }),

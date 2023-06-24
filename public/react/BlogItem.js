@@ -1,8 +1,9 @@
 // (path string, content ReactElement) => ReactElement
-const BlogItem = pipe([
-  ({
-    title, author, published, path: blogItemPath, content, back = '/blog',
-  }) => ReactElement(props => {
+const BlogItem = ({
+  title, author, published, path: blogItemPath, content, back = '/blog',
+}) => {
+  console.log(content)
+  return ReactElement(props => {
     const { goto, path, children } = props,
       isExpanded = path.endsWith('/')
         ? (path == `${blogItemPath}/`)
@@ -43,7 +44,7 @@ const BlogItem = pipe([
           : 'fade-in-out',
       }, isExpanded ? [content] : []),
     ])
-  }),
-])
+  })
+}
 
 export default BlogItem
