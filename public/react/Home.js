@@ -1,5 +1,5 @@
 import ReactElementFromMdast from './ReactElementFromMdast.js'
-import mdastBase from './mdastBase.js'
+import readmeMdast from '../mdast/readme.js'
 import Layout from './Layout.js'
 
 const ReactElement = Arche(React)
@@ -7,7 +7,7 @@ const ReactElement = Arche(React)
 const { Div, Button, A } = ReactElement
 
 // readmeContent ReactElement
-const readmeContent = ReactElementFromMdast(mdastBase.get('article:readme'))
+const readmeContent = ReactElementFromMdast(readmeMdast)
 
 // () -> Home ReactElement
 const Home = ReactElement(props => {

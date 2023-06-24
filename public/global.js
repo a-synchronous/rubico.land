@@ -29,3 +29,5 @@ window.useMemo = React.useMemo
 window.useReducer = React.useReducer
 window.useRef = React.useRef
 window.useState = React.useState
+
+window.rubicoPlaygroundVersion = '2.0.1'

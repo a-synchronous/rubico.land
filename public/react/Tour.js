@@ -1,13 +1,9 @@
 import ReactElementFromMdast from './ReactElementFromMdast.js'
-import mdastBase from './mdastBase.js'
+import tourMdast from '../mdast/tour.js'
 import Layout from './Layout.js'
 
-const ReactElement = Arche(React)
-
-const { Div } = ReactElement
-
 // tourContent ReactElement
-const tourContent = ReactElementFromMdast(mdastBase.get('article:tour'))
+const tourContent = ReactElementFromMdast(tourMdast)
 
 // Tour(props {}) -> ReactElement
 const Tour = ReactElement(props => {

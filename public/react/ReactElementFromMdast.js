@@ -1,28 +1,6 @@
 import CodeRunner from './CodeRunner.js'
 import CodeViewer from './CodeViewer.js'
 
-const ReactElement = Arche(React)
-
-const {
-  H1, H2, H3, H4, H5, H6,
-  A, P, B, Q, Button, Img, Br,
-  Span, Div, Section, Article,
-  Script, Iframe, Blockquote,
-  Ul, Ol, Li,
-  Code, Pre,
-} = ReactElement
-
-const {
-  pipe, tap,
-  switchCase, tryCatch,
-  fork, assign, get, pick, omit,
-  map, filter, reduce, transform, flatMap,
-  and, or, not, any, all,
-  eq, gt, lt, gte, lte,
-  thunkify, always,
-  curry, __,
-} = rubico
-
 const isArray = Array.isArray
 
 // string => string
@@ -87,10 +65,12 @@ const ReactElementFromMdast = function (mdast, props = {}) {
     case 'heading':
       switch (mdast.depth) {
         case 1:
-          const anchorHash = pipe([
+          const anchorHash = pipe(mdast, [
+            tap(console.log),
             anchorHashFromMdast,
+            tap(console.log),
             anchorHashFormat,
-          ])(mdast)
+          ])
           return A({
             class: 'anchor-hash',
             href: `#${anchorHash}`,
@@ -141,7 +121,8 @@ const ReactElementFromMdast = function (mdast, props = {}) {
             theme: 'rubico',
             imports: {
               ...imports,
-              rubico: 'https://unpkg.com/rubico@1.9.6/dist/rubico.es.min.js',
+              rubico: `https://unpkg.com/rubico@${rubicoPlaygroundVersion}/dist/rubico.es.min.js`,
+              Transducer: `https://unpkg.com/rubico@${rubicoPlaygroundVersion}/dist/Transducer.es.min.js`,
             },
           })
         case '[node]':

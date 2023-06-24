@@ -1,6 +1,6 @@
 import readmeMdast from '../mdast/readme.js'
 import tourMdast from '../mdast/tour.js'
-import transducersMdast from '../mdast/transducers.js'
+import transducersMdast from '../mdast/transducers-v1.js'
 import cronistComments from '../mdast/comments.cronist.js'
 
 // leave off image and title from readme

@@ -1,10 +1,10 @@
-import mdastBase from './mdastBase.js'
+import transducersMdast from '../mdast/transducers-v1.js'
 import ReactElementFromMdast from './ReactElementFromMdast.js'
 import Layout from './Layout.js'
 import BlogItem from './BlogItem.js'
 
 // transducersContent ReactElement
-const transducersContent = ReactElementFromMdast(mdastBase.get('article:transducers'))
+const transducersContent = ReactElementFromMdast(transducersMdast)
 
 const CURRENT_PATH = '/blog/2020/10/02/transducers-crash-course'
 
