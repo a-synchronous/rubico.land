@@ -2,6 +2,7 @@ import transducersMdast from '../mdast/transducers-v1.js'
 import ReactElementFromMdast from './ReactElementFromMdast.js'
 import Layout from './Layout.js'
 import BlogItem from './BlogItem.js'
+import MdastBlogMetadata from './MdastBlogMetadata.js'
 
 // transducersContent ReactElement
 const transducersContent = ReactElementFromMdast(transducersMdast)
@@ -10,10 +11,7 @@ const CURRENT_PATH = '/blog/2020/10/02/transducers-crash-course'
 
 // ReactElement
 const BlogTransducers = BlogItem({
-  title: 'Transducers Crash Course',
-  author: 'Richard Tong',
-  published: 'October 2, 2020',
-  path: '/blog/2020/10/02/transducers-crash-course',
+  ...MdastBlogMetadata(transducersMdast),
   content: transducersContent,
 })
 

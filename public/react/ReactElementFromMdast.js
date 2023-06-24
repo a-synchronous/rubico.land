@@ -11,13 +11,16 @@ const anchorHashFormat = value => value
 
 // mdast object => anchorHash string
 const anchorHashFromMdast = function (mdast) {
-  switch (get('children[0].type')(mdast)) {
+  const t = get(mdast, 'children[0].type')
+  switch (t) {
     case 'linkReference':
-      const firstChar = get('children[0].label')(mdast),
-        rest = get('children[1].value')(mdast)
+      const firstChar = get(mdast, 'children[0].label'),
+        rest = get(mdast, 'children[1].value')
       return `[${firstChar}]${rest}`
+    case 'text':
+      return get(mdast, 'children[0].value')
     default:
-      return get('children[0].value')(mdast)
+      return ''
   }
 }
 
@@ -51,6 +54,10 @@ const codeSpliceImports = function (code) {
 // } -> ReactElement
 const ReactElementFromMdast = function (mdast, props = {}) {
   switch (mdast.type) {
+    case 'yaml': {
+      return []
+    }
+      
     case 'definition':
       switch (mdast.identifier) {
         case 'meta':
@@ -66,9 +73,7 @@ const ReactElementFromMdast = function (mdast, props = {}) {
       switch (mdast.depth) {
         case 1:
           const anchorHash = pipe(mdast, [
-            tap(console.log),
             anchorHashFromMdast,
-            tap(console.log),
             anchorHashFormat,
           ])
           return A({
