@@ -1,5 +1,9 @@
 import ReactElementFromMdast from './ReactElementFromMdast.js'
-import mdastBase from './mdastBase.js'
+import cronistComments from '../mdast-v1.9.7/comments.cronist.js'
+
+// Map<(parsedCommentName string)=>(parsedComment object)>
+const rubicoCronistMap = cronistComments.reduce(
+  (result, item) => result.set(item.name, item), new Map())
 
 // memoizeCappedUnary(func function, cap number) -> memoized function
 const memoizeCappedUnary = function (func, cap) {
@@ -26,7 +30,7 @@ const MemoizedReactElementFromMdast = memoizeCappedUnary(ReactElementFromMdast, 
 const preload = ['map', 'filter', 'reduce', 'transform', 'flatMap']
 
 preload.forEach(pipe([
-  name => mdastBase.get(name),
+  name => rubicoCronistMap.get(name),
   fork([
     get('mdast.description'),
     get('mdast.synopsis'),
@@ -41,7 +45,7 @@ const isArray = Array.isArray
 // synopsisBase.get(name string) -> synopsis ReactElement
 const synopsisBase = {
   get(name) {
-    const comment = mdastBase.get(name)
+    const comment = rubicoCronistMap.get(name)
     if (comment == null) {
       return Span('Syntax not found')
     }
@@ -52,7 +56,7 @@ const synopsisBase = {
 // descriptionBase.get(name string) -> description ReactElement
 const descriptionBase = {
   get(name) {
-    const comment = mdastBase.get(name)
+    const comment = rubicoCronistMap.get(name)
     return comment == null
       ? Span('Description not found')
       : MemoizedReactElementFromMdast(comment.mdast.description)

@@ -32,14 +32,23 @@ ${
 }
 
 const {
-  pipe, tap,
-  switchCase, tryCatch,
-  fork, assign, get, set, pick, omit,
-  map, filter, reduce, transform, flatMap,
-  and, or, not, any, all,
+  pipe, compose,
+
+  tap, forEach,
+
+  switchCase,
+
+  tryCatch,
+
+  all, assign, get, set, pick, omit,
+
+  map, filter, flatMap, reduce, transform,
+
+  and, or, not, some, every,
+
   eq, gt, lt, gte, lte,
-  thunkify, always,
-  curry, __,
+
+  thunkify, always, curry, __,
 } = rubico
 
 const inspect = ${inspect.toString()}
