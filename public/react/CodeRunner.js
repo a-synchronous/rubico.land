@@ -65,6 +65,7 @@ const console = {
     panel.innerHTML += '\\n'
   },
 }
+console.error = console.log
 
 ;(async function () {
   try {
