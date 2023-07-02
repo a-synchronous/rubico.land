@@ -177,7 +177,7 @@ const decimalsToNotes = pipe([
     for (let i = 0; i < str.length; i += length) {
       yield str.slice(i, i + length)
     }
-  }
+  },
 
   transform(compose([
     Transducer.map(toBinaryInt),
