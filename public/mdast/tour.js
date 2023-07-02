@@ -1545,7 +1545,7 @@ export default {
         '    for (let i = 0; i < str.length; i += length) {\n' +
         '      yield str.slice(i, i + length)\n' +
         '    }\n' +
-        '  }\n' +
+        '  },\n' +
         '\n' +
         '  transform(compose([\n' +
         '    Transducer.map(toBinaryInt),\n' +
@@ -1559,7 +1559,7 @@ export default {
         'console.log(notes) // CCGGAAGFFEEDDCGGFFEEDGGFFEEDCCGGAAGFFEEDDC',
       position: {
         start: { line: 167, column: 1, offset: 5161 },
-        end: { line: 192, column: 4, offset: 5824 }
+        end: { line: 192, column: 4, offset: 5825 }
       }
     },
     {
@@ -1569,8 +1569,8 @@ export default {
           type: 'text',
           value: "You've arrived at the end of the tour. From here, you could get started with rubico in a project (",
           position: {
-            start: { line: 194, column: 1, offset: 5826 },
-            end: { line: 194, column: 99, offset: 5924 }
+            start: { line: 194, column: 1, offset: 5827 },
+            end: { line: 194, column: 99, offset: 5925 }
           }
         },
         {
@@ -1582,22 +1582,22 @@ export default {
               type: 'text',
               value: 'installation',
               position: {
-                start: { line: 194, column: 100, offset: 5925 },
-                end: { line: 194, column: 112, offset: 5937 }
+                start: { line: 194, column: 100, offset: 5926 },
+                end: { line: 194, column: 112, offset: 5938 }
               }
             }
           ],
           position: {
-            start: { line: 194, column: 99, offset: 5924 },
-            end: { line: 194, column: 129, offset: 5954 }
+            start: { line: 194, column: 99, offset: 5925 },
+            end: { line: 194, column: 129, offset: 5955 }
           }
         },
         {
           type: 'text',
           value: ') or read more at the ',
           position: {
-            start: { line: 194, column: 129, offset: 5954 },
-            end: { line: 194, column: 151, offset: 5976 }
+            start: { line: 194, column: 129, offset: 5955 },
+            end: { line: 194, column: 151, offset: 5977 }
           }
         },
         {
@@ -1609,33 +1609,33 @@ export default {
               type: 'text',
               value: 'docs',
               position: {
-                start: { line: 194, column: 152, offset: 5977 },
-                end: { line: 194, column: 156, offset: 5981 }
+                start: { line: 194, column: 152, offset: 5978 },
+                end: { line: 194, column: 156, offset: 5982 }
               }
             }
           ],
           position: {
-            start: { line: 194, column: 151, offset: 5976 },
-            end: { line: 194, column: 164, offset: 5989 }
+            start: { line: 194, column: 151, offset: 5977 },
+            end: { line: 194, column: 164, offset: 5990 }
           }
         },
         {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 194, column: 164, offset: 5989 },
-            end: { line: 194, column: 165, offset: 5990 }
+            start: { line: 194, column: 164, offset: 5990 },
+            end: { line: 194, column: 165, offset: 5991 }
           }
         }
       ],
       position: {
-        start: { line: 194, column: 1, offset: 5826 },
-        end: { line: 194, column: 165, offset: 5990 }
+        start: { line: 194, column: 1, offset: 5827 },
+        end: { line: 194, column: 165, offset: 5991 }
       }
     }
   ],
   position: {
     start: { line: 1, column: 1, offset: 0 },
-    end: { line: 195, column: 1, offset: 5991 }
+    end: { line: 195, column: 1, offset: 5992 }
   }
 }
