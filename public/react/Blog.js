@@ -18,17 +18,21 @@ const BlogTransducers = BlogItem({
 // { state, goto } => ReactElement
 const Blog = ReactElement(props => {
   const { path, goto } = props
-  const isExpanded = path.endsWith('/') ? path == '/blog/' : path == '/blog'
+  const isBlogHome = path.replace(/\/g/, '') == '/blog'
 
   useEffect(() => {
-    if (isExpanded) {
+    if (isBlogHome) {
       goto(CURRENT_PATH)
     }
   }, [])
 
   return Layout(props, [
     Div({ id: 'blog' }, [
-      P('This is a blog about the rubico library, JavaScript, and functional programming.'),
+      /*
+      isBlogHome ? [
+        P('This is a blog about the rubico library, JavaScript, and functional programming.'),
+      ] : [],
+      */
       BlogTransducers(props),
     ]),
   ])

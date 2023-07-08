@@ -1,3 +1,10 @@
+import useMediaQuery from './useMediaQuery.js'
+import useRubicoVersion from './useRubicoVersion.js'
+import NavLink from './NavLink.js'
+import Slider from './Slider.js'
+import GithubMark from './GithubMark.js'
+import HamburgerMenuIcon from './HamburgerMenuIcon.js'
+
 /**
  * @name Layout
  *
@@ -13,73 +20,85 @@
 const Layout = ReactElement(props => {
   const { path, goto, children } = props
 
+  const [mediaQuery] = useMediaQuery('(max-width: 768px)')
+  const [rubicoVersion, setRubicoVersion] = useRubicoVersion()
+  const [isHamburgerMenuActive, setIsHamburgerMenuActive] = useState(false)
+
+  useEffect(function resetHamburgerMenu() {
+    if (!mediaQuery.matches && isHamburgerMenuActive) {
+      setIsHamburgerMenuActive(false)
+    }
+  }, [mediaQuery.matches])
+
   return Div({ id: 'layout' }, [
-    Header([
-      A({
-        id: 'home',
-        href: '/',
-      }, [
-        Img({
-          src: 'https://raw.githubusercontent.com/a-synchronous/assets/master/rubico-logo.png',
-          alt: 'rubico-national-park',
-        }),
-        Span({ class: 'text1' }, 'rubico'),
-      ]),
-
-      Nav([
+    Nav([
+      Div({ class: 'home' }, [
         A({
-          href: '/tour',
-          class: path.startsWith('/tour') ? 'active' : '',
-          onClick(event) {
-            event.preventDefault()
-            goto('/tour')
-          },
-        }, 'Tour'),
-        A({
-          href: '/docs',
-          class: path.startsWith('/docs') ? 'active' : '',
-          onClick(event) {
-            event.preventDefault()
-            goto('/docs')
-          },
-        }, 'Docs'),
-        A({
-          href: '/blog',
-          class: path.startsWith('/blog') ? 'active' : '',
-          onClick(event) {
-            event.preventDefault()
-            goto('/blog')
-          },
-        }, 'Blog'),
-      ]),
-
-      A({
-        id: 'github-link',
-        href: 'https://github.com/a-synchronous/rubico',
-      }, [
-        Span({ class: 'text2' }, [
-          'Github',
-          Svg({
-            x: '0px',
-            y: '0px',
-            viewBox: '0 0 100 100',
-            width: '20',
-            height: '20',
-          }, [
-            Path({
-              fill: 'currentColor',
-              d: 'M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z',
-            }),
-            Polygon({
-              fill: 'currentColor',
-              points: '45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9',
-            }),
-          ]),
+          id: 'home-link',
+          href: '/',
+        }, [
+          Img({
+            src: 'https://raw.githubusercontent.com/a-synchronous/assets/master/rubico-logo.png',
+            alt: 'rubico-national-park',
+          }),
+          Span({ class: 'text1' }, 'rubico'),
         ]),
+
+        Select({
+          onChange(event) {
+            setRubicoVersion(event.target.value)
+          },
+        }, [
+          Option({ value: 'v2', selected: rubicoVersion == 'v2' }, 'v2'),
+          Option({ value: 'v1', selected: rubicoVersion == 'v1' }, 'v1'),
+        ]),
+
+        Div({ class: 'links' }, [
+          NavLink({ ...props, href: '/tour' }, 'Tour'),
+          NavLink({ ...props, href: '/docs' }, 'Docs'),
+          NavLink({ ...props, href: '/blog' }, 'Blog'),
+        ]),
+      ]),
+
+      // Span({ class: 'nav-spacer' }),
+
+
+      Div({ class: 'right-links' }, [
+        mediaQuery.matches ? [
+          Button({
+            id: 'hamburger-menu-icon',
+            class: isHamburgerMenuActive ? 'active' : '',
+            onClick() {
+              setIsHamburgerMenuActive(!isHamburgerMenuActive)
+            },
+          }, [
+            HamburgerMenuIcon(),
+          ]),
+        ] : [
+          A({
+            id: 'github-link',
+            href: 'https://github.com/a-synchronous/rubico',
+          }, [
+            GithubMark(),
+          ])
+        ]
       ]),
     ]),
 
-    children,
+    Slider({
+      index: isHamburgerMenuActive ? 1 : 0,
+      translateOffset: '10%',
+    }, [
+      Main([children]),
+      Div({ id: 'hamburger-menu' }, [
+        Nav([
+          NavLink({ ...props, href: '/' }, 'Home'),
+          NavLink({ ...props, href: '/tour' }, 'Tour'),
+          NavLink({ ...props, href: '/docs' }, 'Docs'),
+          NavLink({ ...props, href: '/blog' }, 'Blog'),
+        ]),
+      ]),
+    ]),
 
     Footer([
       P({

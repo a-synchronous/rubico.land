@@ -21,6 +21,12 @@ html {
     overflow-x: hidden;
   }
 }
+
+body {
+  margin: 0;
+  background-color: #fafafb;
+}
+
 a {
   color: #65799B;
   text-decoration: none;
@@ -67,6 +73,10 @@ p {
   line-height: 18px;
 }
 
+.nav-spacer {
+  width: 100%;
+}
+
 .text1 {
   color: #65799B;
 }
@@ -75,108 +85,193 @@ p {
 }
 
 #layout {
+  width: 100%;
+  margin: 0 auto;
+}
+#layout main {
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 5px 3%;
+  padding-bottom: 25px;
   width: 90%;
-  padding-left: 10%;
-}
-
-header {
-  display: flex;
-  margin-bottom: 35px;
-  padding-top: 15px;
-  padding-right: 5%;
-}
-header > nav {
-  display: flex;
-  place-items: center;
-  margin-top: 8px;
-  margin-right: 2vw;
-}
-header > nav > a {
-  position: relative;
-  color: #333;
-  font-size: 28px;
-  font-weight: 600;
-  margin-right: 36px;
-  text-decoration: none;
-}
-header > nav > a.active {
-  color: rgb(101, 121, 155);
-  text-decoration: underline;
-  text-decoration-color: rgb(101, 121, 155);
-}
-header > nav > span {
-  color: lightgrey;
-  font-size: 28px;
-  font-weight: 600;
-  margin-right: 25px;
-}
-@media only screen and (max-width: 575px) {
-  header {
-    display: block;
-    margin-left: 5%;
-  }
-  header > nav {
-    display: block;
-    margin-bottom: 10px;
-  }
-  header > nav > a {
-    margin-right: 22px;
-    margin-bottom: 10px;
-  }
-}
-@media only screen and (max-width: 280px) {
-  header {
-    line-height: 36px;
-  }
-}
-
-#home {
-  display: flex;
-  place-items: center;
-  margin-right: 8vw;
-}
-#home > span {
-  margin-top: 8px;
-  margin-left: 10px;
-  font-size: 32px;
-  font-weight: 600;
-  line-height: 1em;
-}
-#home > img {
-  width: 150px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin: 25px auto;
 }
 @media only screen and (max-width: 768px) {
-  #home > span {
-    display: none;
-  }
-  #home > img {
+  #layout main {
+    width: 94%;
   }
 }
-@media only screen and (max-width: 618px) {
-  #home {
-    margin-right: 5px;
+#layout > nav {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 15px;
+  height: 50px;
+}
+#layout > nav > .right-links {
+  position: relative;
+  padding-right: 2%;
+  padding-top: 5px;
+}
+@media only screen and (max-width: 768px) {
+  #layout > nav > .right-links {
+    padding-top: 0px;
   }
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+}
+.slider > .panels {
+  transform: translate(0%);
+  transition: transform .25s;
+}
+.slider > .panels > .panel {
+  display: inline-block;
+  float: left;
+  width: 100%;
 }
 
 #github-link {
   display: flex;
   place-items: center;
 }
-#github-link > span {
-  margin-top: 10px;
-  display: flex;
-  font-size: 24px;
-  font-weight: 600;
-}
-#github-link > span > svg {
-  margin-left: 2px;
+#github-link svg {
+  width: 45px;
+  height: 45px;
 }
 
-#react-root {
-  width: 90%;
-  max-width: 900px;
-  margin-bottom: 50px;
+#hamburger-menu-icon {
+  width: 50px;
+  height: 50px;
+  overflow-y: hidden;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 0;
+  position: absolute;
+  left: -50px;
+  background-color: transparent;
 }
+#hamburger-menu-icon svg {
+  transition: opacity 0.25s;
+  opacity: 1;
+  position: absolute;
+  top: -50px;
+  left: 0;
+}
+#hamburger-menu-icon.active svg {
+  opacity: 0.5;
+}
+
+#hamburger-menu {
+}
+#hamburger-menu nav {
+  width: 84%;
+  background-color: #fff;
+  padding: 15px 3%;
+  margin: 10px 5%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+}
+#hamburger-menu nav > .nav-link {
+  display: block;
+  font-size: 28px;
+}
+
+#layout > nav > .home {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 2%;
+}
+#layout > nav > .home > .links {
+  display: flex;
+  align-items: center;
+  margin-left: 10%;
+  padding-top: 5px;
+}
+@media only screen and (max-width: 768px) {
+  #layout > nav > .home > .links {
+    display: none;
+  }
+}
+
+.nav-link {
+  color: #333;
+  font-size: 28px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0 10%;
+  outline: none;
+}
+.nav-link.active {
+  color: rgb(101, 121, 155);
+  text-decoration: underline;
+  text-decoration-color: rgb(101, 121, 155);
+}
+
+#layout > nav > .home select {
+  position: relative;
+  top: 3px;
+  border: none;
+  outline: none;
+  padding: 6px 5px;
+  border-radius: 5px;
+  margin-left: 5px;
+  background-color: #e4e4e4;
+  color: rgb(101, 121, 155);
+  cursor: pointer;
+}
+@media only screen and (max-width: 768px) {
+  #layout > nav > .home {
+    display: flex;
+  }
+  #layout > nav > .home select {
+    top: 0;
+    margin-left: 0px;
+  }
+}
+
+#layout > footer {
+  padding: 15px 30px;
+}
+
+#home-link {
+  display: flex;
+  align-items: center;
+  outline: none;
+  /*
+  margin-right: 8vw;
+  */
+}
+#home-link .text1 {
+  margin-top: 8px;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1em;
+}
+#home-link > img {
+  width: 150px;
+}
+@media only screen and (max-width: 768px) {
+  #home-link {
+  }
+  #home-link .text1 {
+    display: none;
+  }
+  #home-link > img {
+    width: 100px;
+  }
+}
+@media only screen and (max-width: 618px) {
+  #home-link {
+  }
+}
+
+#react-root {}
 
 #back-to-top {
   border: none;
@@ -197,17 +292,9 @@ header > nav > span {
   justify-content: center;
 }
 
-#docs > div {
-  margin-bottom: 15px;
+#docs {
+  display: flex;
 }
-/*
-#docs > div > * {
-  display: block;
-}
-#docs > div > * > * {
-  display: block;
-}
-*/
 
 #retractor-header:after {
   font-size: 32px;

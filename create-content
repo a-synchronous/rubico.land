@@ -16,7 +16,7 @@ const createMdastFile = async function (source, dest, options = {}) {
     readFileUtf8,
     cronist.parseMarkdown,
     data => fs.promises.writeFile(dest, `
-export default ${inspect(data, { depth: Infinity })}
+export default ${inspect(data, { depth: Infinity, maxArrayLength: null })}
   `.trim()),
   ])
 }
@@ -28,7 +28,7 @@ const createCronistFile = async function (source, dest, options = {}) {
     map(readFileUtf8),
     flatMap(curry(cronist, __, requiredKeys)),
     data => fs.promises.writeFile(dest, `
-export default ${inspect(data, { depth: Infinity })}
+export default ${inspect(data, { depth: Infinity, maxArrayLength: null })}
   `.trim()),
   ])
 }
