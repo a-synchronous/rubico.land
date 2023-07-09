@@ -1,6 +1,7 @@
 import ReactElementFromMdast from './ReactElementFromMdast.js'
-import readmeMdast from '../mdast/readme.js'
 import Layout from './Layout.js'
+import NavLink from './NavLink.js'
+import readmeMdast from '../mdast/readme.js'
 
 const ReactElement = Arche(React)
 
@@ -15,13 +16,23 @@ const readmeContent = ReactElementFromMdast(readmeMdast)
 // () -> Home ReactElement
 const Home = ReactElement(props => {
   return Layout(props, [
-    Div([
+    Div({ id: 'home' }, [
       readmeContent,
-      A({ href: '/tour' }, [
-        Button({ id: 'take-the-tour-button' }, 'Take the tour'),
-      ]),
-      A({ href: '/docs' }, [
-        Button({ id: 'read-the-docs-button' }, 'Read the docs'),
+      Div({ class: 'cta-links' }, [
+        NavLink({ ...props, href: '/tour' }, [
+          Button({ id: 'take-the-tour-button' }, 'Take the tour'),
+        ]),
+        NavLink({ ...props, href: '/docs' }, [
+          Button({ id: 'read-the-docs-button' }, 'Read the docs'),
+        ]),
+        /*
+        A({ href: '/tour' }, [
+          Button({ id: 'take-the-tour-button' }, 'Take the tour'),
+        ]),
+        A({ href: '/docs' }, [
+          Button({ id: 'read-the-docs-button' }, 'Read the docs'),
+        ]),
+        */
       ]),
     ])
   ])
