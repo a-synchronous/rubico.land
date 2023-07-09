@@ -40,13 +40,12 @@ const Root = ReactElement(props => {
     Analytics.goto(path)
   }
 
-  useEffect(() => {
-    // scroll active into view on first render
-    const active = document.querySelector('#active-spacer')
-    if (active != null) {
-      active.scrollIntoView({ behavior: 'smooth' })
-    }
-  }, [])
+  {
+    const { path } = appState
+    useEffect(function scrollToTopOnPathChange() {
+      scrollTo(0, 0)
+    }, [path])
+  }
 
   useEffect(() => {
     window.addEventListener('popstate', updatePathWithLocation)
