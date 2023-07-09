@@ -93,8 +93,11 @@ const Layout = ReactElement(props => {
       Div({ id: 'hamburger-menu' }, [
         Nav([
           NavLink({ ...props, href: '/' }, 'Home'),
+          Hr(),
           NavLink({ ...props, href: '/tour' }, 'Tour'),
+          Hr(),
           NavLink({ ...props, href: '/docs' }, 'Docs'),
+          Hr(),
           NavLink({ ...props, href: '/blog' }, 'Blog'),
         ]),
       ]),

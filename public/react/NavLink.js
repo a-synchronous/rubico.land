@@ -22,8 +22,6 @@ const NavLink = ReactElement(props => {
     isActive = true
   }
 
-  console.log('NavLink', { path, href, isActive })
-
   return A({
     href,
     class: isActive ? 'nav-link active' : 'nav-link',
