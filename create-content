@@ -60,10 +60,11 @@ const createMdast = async function () {
   )
 
   const rubicoVersion = require('rubico/package').version
-  console.log(`Creating cronist/rubico-v${rubicoVersion}.js`)
+  const rubicoMajorVersion = rubicoVersion.split('.')[0]
+  console.log(`Creating cronist/rubico-v${rubicoMajorVersion}.js`)
   await createCronistFile(
     `${__dirname}/node_modules/rubico`,
-    `${__dirname}/public/cronist/rubico-v${rubicoVersion}.js`,
+    `${__dirname}/public/cronist/rubico-v${rubicoMajorVersion}.js`,
     { requiredKeys: ['name', 'synopsis', 'description'] },
   )
 }

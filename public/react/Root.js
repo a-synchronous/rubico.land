@@ -59,7 +59,7 @@ const Root = ReactElement(props => {
 
   const { path } = appState
 
-  console.log('Root:', { path })
+  // console.log('Root:', { path })
 
   if (path.startsWith('/tour')) {
     return Tour(childProps)

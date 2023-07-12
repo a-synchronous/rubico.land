@@ -38,7 +38,6 @@ blockquote {
   color: grey;
 }
 article {
-  margin-bottom: 50px;
 }
 article > a > h1 {
   color: black;
@@ -71,6 +70,9 @@ code {
 }
 p {
   line-height: 18px;
+}
+h4 {
+  margin: 0;
 }
 
 .nav-spacer {
@@ -149,7 +151,6 @@ p {
   overflow-y: hidden;
   cursor: pointer;
   border: none;
-  outline: none;
   padding: 0;
   position: absolute;
   left: -50px;
@@ -217,7 +218,6 @@ p {
   font-weight: 600;
   text-decoration: none;
   padding: 0 10%;
-  outline: none;
 }
 .nav-link.active {
   color: rgb(101, 121, 155);
@@ -229,7 +229,6 @@ p {
   position: relative;
   top: 3px;
   border: none;
-  outline: none;
   padding: 6px 5px;
   border-radius: 5px;
   margin-left: 5px;
@@ -254,7 +253,6 @@ p {
 #home-link {
   display: flex;
   align-items: center;
-  outline: none;
   /*
   margin-right: 8vw;
   */
@@ -307,7 +305,6 @@ p {
   font-size: 22px;
   padding: 10px 5%;
   cursor: pointer;
-  outline: none;
 }
 #take-the-tour-button {
   border-radius: 10px;
@@ -336,7 +333,6 @@ p {
   background-color: #fff;
   cursor: pointer;
   color: #65799B;
-  outline: none;
   font-size: 16px;
   font-weight: 600;
 }
@@ -352,6 +348,33 @@ p {
 
 #docs {
   display: flex;
+}
+
+#docs > nav {
+  padding-top: 10px;
+  padding-right: 2%;
+  border-right: 1px solid #e4e4e4;
+}
+#docs > nav section {
+  margin-bottom: 10px;
+}
+#docs > nav h4 {
+  font-size: 18px;
+  padding: 3px 0px;
+}
+#docs > nav .docs-nav-item {
+  padding: 1px 0px;
+}
+
+#docs > .viewer {
+  width: 90%;
+  padding-left: 2%;
+}
+
+#docs > .viewer h1 {
+  font-size: 42px;
+  margin: 12px 0px;
+  color: #65799B;
 }
 
 #retractor-header:after {
@@ -417,7 +440,6 @@ p {
   padding: 0px 0px;
   margin: 5px 8px;
   cursor: pointer;
-  outline: none;
 }
 .docs-item > a > h3 {
   color: #65799B;
