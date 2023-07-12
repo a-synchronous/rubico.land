@@ -1,5 +1,118 @@
 export default [
   {
+    name: 'AggregateReducer',
+    synopsis: '```coffeescript [specscript]\n' +
+      'AggregateReducer(reducers Array<reducer function>) -> aggregateReducer function\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'AggregateReducer',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 17, offset: 16 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 17, offset: 16 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 17, offset: 16 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'AggregateReducer(reducers Array<reducer function>) -> aggregateReducer function',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 112 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 112 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/AggregateReducer.js'
+  },
+  {
+    name: 'Transducer',
+    description: 'Temporary repository of transducer functionality throughout rubico v1',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Transducer',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 11, offset: 10 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 11, offset: 10 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 11, offset: 10 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Temporary repository of transducer functionality throughout rubico v1',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 70, offset: 69 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 70, offset: 69 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 70, offset: 69 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/Transducer.js'
+  },
+  {
     name: 'Transducer.map',
     synopsis: '```coffeescript [specscript]\n' +
       'type Reducer = (accumulator any, item any)=>(nextAccumulator Promise|any)\n' +
@@ -245,7 +358,8 @@ export default [
           end: { line: 42, column: 4, offset: 1526 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/Transducer.js'
   },
   {
     name: 'Transducer.filter',
@@ -393,7 +507,8 @@ export default [
           end: { line: 13, column: 4, offset: 614 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/Transducer.js'
   },
   {
     name: 'Transducer.flatMap',
@@ -586,7 +701,188 @@ export default [
           end: { line: 20, column: 153, offset: 740 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/Transducer.js'
+  },
+  {
+    name: 'Transducer.forEach',
+    synopsis: '```coffeescript [specscript]\n' +
+      'type Reducer = (accumulator any, item any)=>(nextAccumulator Promise|any)\n' +
+      'type Transducer = Reducer=>Reducer\n' +
+      '\n' +
+      'Transducer.forEach(func function) -> forEachTransducer Transducer\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Transducer.forEach',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 19, offset: 18 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 19, offset: 18 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 19, offset: 18 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'type Reducer = (accumulator any, item any)=>(nextAccumulator Promise|any)\n' +
+              'type Transducer = Reducer=>Reducer\n' +
+              '\n' +
+              'Transducer.forEach(func function) -> forEachTransducer Transducer',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 6, column: 4, offset: 208 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 6, column: 4, offset: 208 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/Transducer.js'
+  },
+  {
+    name: 'Transducer.passthrough',
+    synopsis: '```coffeescript [specscript]\n' +
+      'type Reducer = (accumulator any, item any)=>(nextAccumulator Promise|any)\n' +
+      'type Transducer = Reducer=>Reducer\n' +
+      '\n' +
+      'Transducer.passthrough(func function) -> passthroughTransducer Transducer\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Transducer.passthrough',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 23, offset: 22 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 23, offset: 22 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 23, offset: 22 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'type Reducer = (accumulator any, item any)=>(nextAccumulator Promise|any)\n' +
+              'type Transducer = Reducer=>Reducer\n' +
+              '\n' +
+              'Transducer.passthrough(func function) -> passthroughTransducer Transducer',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 6, column: 4, offset: 216 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 6, column: 4, offset: 216 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/Transducer.js'
+  },
+  {
+    name: 'Transducer.tryCatch',
+    synopsis: '```coffeescript [specscript]\n' +
+      'type Reducer = (accumulator any, item any)=>(nextAccumulator Promise|any)\n' +
+      'type Transducer = Reducer=>Reducer\n' +
+      '\n' +
+      'Transducer.tryCatch(func function) -> tryCatchTransducer Transducer\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Transducer.tryCatch',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 20, offset: 19 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 20, offset: 19 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 20, offset: 19 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'type Reducer = (accumulator any, item any)=>(nextAccumulator Promise|any)\n' +
+              'type Transducer = Reducer=>Reducer\n' +
+              '\n' +
+              'Transducer.tryCatch(func function) -> tryCatchTransducer Transducer',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 6, column: 4, offset: 210 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 6, column: 4, offset: 210 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/Transducer.js'
   },
   {
     name: '__',
@@ -698,7 +994,228 @@ export default [
           end: { line: 7, column: 4, offset: 215 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/__.js'
+  },
+  {
+    name: 'File',
+    synopsis: '```coffeescript [specscript]\nnew File(path string) -> File\n```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'File',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 5, offset: 4 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 5, offset: 4 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 5, offset: 4 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'new File(path string) -> File',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 62 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 62 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/File.js'
+  },
+  {
+    name: 'File.prototype.write',
+    synopsis: '```coffeescript [specscript]\nnew File(...).write(str string) -> ()\n```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'File.prototype.write',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 21, offset: 20 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 21, offset: 20 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 21, offset: 20 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'new File(...).write(str string) -> ()',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 70 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 70 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/File.js'
+  },
+  {
+    name: 'File.prototype.rm',
+    synopsis: '```coffeescript [specscript]\nnew File(...).rm() -> Promise<>\n```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'File.prototype.rm',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 18, offset: 17 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 18, offset: 17 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 18, offset: 17 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'new File(...).rm() -> Promise<>',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 64 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 64 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/File.js'
+  },
+  {
+    name: 'FilteringAsyncIterator',
+    synopsis: '```coffeescript [specscript]\n' +
+      'const filteringAsyncIterator = new FilteringAsyncIterator(\n' +
+      '  asyncIterator AsyncIterator<T>,\n' +
+      '  predicate T=>boolean,\n' +
+      ') -> FilteringAsyncIterator<T>\n' +
+      '\n' +
+      'filteringAsyncIterator.next() -> { value: Promise, done: boolean }\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'FilteringAsyncIterator',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 23, offset: 22 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 23, offset: 22 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 23, offset: 22 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'const filteringAsyncIterator = new FilteringAsyncIterator(\n' +
+              '  asyncIterator AsyncIterator<T>,\n' +
+              '  predicate T=>boolean,\n' +
+              ') -> FilteringAsyncIterator<T>\n' +
+              '\n' +
+              'filteringAsyncIterator.next() -> { value: Promise, done: boolean }',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 8, column: 4, offset: 248 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 8, column: 4, offset: 248 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/FilteringAsyncIterator.js'
   },
   {
     name: 'FilteringIterator',
@@ -790,7 +1307,282 @@ export default [
           end: { line: 1, column: 93, offset: 92 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/FilteringIterator.js'
+  },
+  {
+    name: 'FlatMappingAsyncIterator',
+    synopsis: '```coffeescript [specscript]\n' +
+      'new FlatMappingAsyncIterator(\n' +
+      '  asyncIterator AsyncIterator, flatMapper function,\n' +
+      ') -> FlatMappingAsyncIterator AsyncIterator\n' +
+      '```',
+    execution: 'concurrent',
+    muxing: '',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'FlatMappingAsyncIterator',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 25, offset: 24 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 25, offset: 24 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 25, offset: 24 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'new FlatMappingAsyncIterator(\n' +
+              '  asyncIterator AsyncIterator, flatMapper function,\n' +
+              ') -> FlatMappingAsyncIterator AsyncIterator',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 5, column: 4, offset: 158 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 5, column: 4, offset: 158 }
+        }
+      },
+      execution: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'concurrent',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 11, offset: 10 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 11, offset: 10 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 11, offset: 10 }
+        }
+      },
+      muxing: {
+        type: 'root',
+        children: [],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 1, offset: 0 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/FlatMappingAsyncIterator.js'
+  },
+  {
+    name: 'FlatMappingAsyncIterator.prototype.next',
+    synopsis: '```coffeescript [specscript]\n' +
+      'new FlatMappingAsyncIterator(\n' +
+      '  asyncIterator AsyncIterator, flatMapper function,\n' +
+      ').next() -> Promise<{ value, done }>\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'FlatMappingAsyncIterator.prototype.next',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 40, offset: 39 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 40, offset: 39 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 40, offset: 39 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'new FlatMappingAsyncIterator(\n' +
+              '  asyncIterator AsyncIterator, flatMapper function,\n' +
+              ').next() -> Promise<{ value, done }>',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 5, column: 4, offset: 151 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 5, column: 4, offset: 151 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/FlatMappingAsyncIterator.js'
+  },
+  {
+    name: 'FlatMappingIterator',
+    synopsis: '```coffeescript [specscript]\n' +
+      'FlatMappingIterator(\n' +
+      '  iterator Iterator, flatMapper function,\n' +
+      ') -> FlatMappingIterator { next, SymbolIterator }\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'FlatMappingIterator',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 20, offset: 19 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 20, offset: 19 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 20, offset: 19 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'FlatMappingIterator(\n' +
+              '  iterator Iterator, flatMapper function,\n' +
+              ') -> FlatMappingIterator { next, SymbolIterator }',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 5, column: 4, offset: 145 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 5, column: 4, offset: 145 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/FlatMappingIterator.js'
+  },
+  {
+    name: 'MappingAsyncIterator',
+    synopsis: '```coffeescript [specscript]\n' +
+      'mappingAsyncIterator = new MappingAsyncIterator(\n' +
+      '  asyncIter AsyncIterator<T>,\n' +
+      '  mapper T=>Promise|any,\n' +
+      ') -> mappingAsyncIterator AsyncIterator\n' +
+      '\n' +
+      'mappingAsyncIterator.next() -> Promise<{ value: any, done: boolean }>\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'MappingAsyncIterator',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 21, offset: 20 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 21, offset: 20 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 21, offset: 20 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'mappingAsyncIterator = new MappingAsyncIterator(\n' +
+              '  asyncIter AsyncIterator<T>,\n' +
+              '  mapper T=>Promise|any,\n' +
+              ') -> mappingAsyncIterator AsyncIterator\n' +
+              '\n' +
+              'mappingAsyncIterator.next() -> Promise<{ value: any, done: boolean }>',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 8, column: 4, offset: 247 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 8, column: 4, offset: 247 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/MappingAsyncIterator.js'
   },
   {
     name: 'MappingIterator',
@@ -901,7 +1693,8 @@ export default [
           end: { line: 3, column: 72, offset: 174 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/MappingIterator.js'
   },
   {
     name: 'NextIteration',
@@ -986,7 +1779,402 @@ export default [
           end: { line: 1, column: 48, offset: 47 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/NextIteration.js'
+  },
+  {
+    name: 'SelfReferencingPromise',
+    synopsis: '```coffeescript [specscript]\n' +
+      'SelfReferencingPromise(basePromise Promise<T>) -> Promise<[T, basePromise]>\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'SelfReferencingPromise',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 23, offset: 22 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 23, offset: 22 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 23, offset: 22 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'SelfReferencingPromise(basePromise Promise<T>) -> Promise<[T, basePromise]>',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 108 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 108 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/SelfReferencingPromise.js'
+  },
+  {
+    name: 'formatRunOutput',
+    synopsis: '```coffeescript [specscript]\n' +
+      'formatRunOutput(\n' +
+      '  description string,\n' +
+      '  loopCount number,\n' +
+      '  duration number\n' +
+      ') -> formatted string\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'formatRunOutput',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 16, offset: 15 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 16, offset: 15 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 16, offset: 15 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'formatRunOutput(\n' +
+              '  description string,\n' +
+              '  loopCount number,\n' +
+              '  duration number\n' +
+              ') -> formatted string',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 7, column: 4, offset: 131 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 7, column: 4, offset: 131 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/TimeInLoopSuite.js'
+  },
+  {
+    name: 'TimeInLoopSuite',
+    synopsis: '```coffeescript [specscript]\n' +
+      'new TimeInLoopSuite(options? {\n' +
+      '  loopCount?: number,\n' +
+      '  runs?: number,\n' +
+      '  async?: boolean,\n' +
+      '}) -> TimeInLoopSuite\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'TimeInLoopSuite',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 16, offset: 15 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 16, offset: 15 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 16, offset: 15 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'new TimeInLoopSuite(options? {\n' +
+              '  loopCount?: number,\n' +
+              '  runs?: number,\n' +
+              '  async?: boolean,\n' +
+              '}) -> TimeInLoopSuite',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 7, column: 4, offset: 143 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 7, column: 4, offset: 143 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/TimeInLoopSuite.js'
+  },
+  {
+    name: 'TimeInLoopSuite.prototype.emit',
+    synopsis: '```coffeescript [specscript]\n' +
+      'new TimeInLoopSuite(...).emit(eventName string, event Object) -> ()\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'TimeInLoopSuite.prototype.emit',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 31, offset: 30 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 31, offset: 30 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 31, offset: 30 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'new TimeInLoopSuite(...).emit(eventName string, event Object) -> ()',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 100 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 100 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/TimeInLoopSuite.js'
+  },
+  {
+    name: 'TimeInLoopSuite.prototype.on',
+    synopsis: '```coffeescript [specscript]\n' +
+      'new TimeInLoopSuite(...).on(eventName string, handler function) -> ()\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'TimeInLoopSuite.prototype.on',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 29, offset: 28 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 29, offset: 28 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 29, offset: 28 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'new TimeInLoopSuite(...).on(eventName string, handler function) -> ()',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 102 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 102 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/TimeInLoopSuite.js'
+  },
+  {
+    name: 'TimeInLoopSuite.prototype.add',
+    synopsis: '```coffeescript [specscript]\n' +
+      'new TimeInLoopSuite(...).add(description string, func function) -> ()\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'TimeInLoopSuite.prototype.add',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 30, offset: 29 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 30, offset: 29 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 30, offset: 29 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'new TimeInLoopSuite(...).add(description string, func function) -> ()',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 102 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 102 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/TimeInLoopSuite.js'
+  },
+  {
+    name: 'TimeInLoopSuite.prototype.run',
+    synopsis: '```coffeescript [specscript]\n' +
+      'new TimeInLoopSuite(...).run() -> Promise<>\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'TimeInLoopSuite.prototype.run',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 30, offset: 29 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 30, offset: 29 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 30, offset: 29 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'new TimeInLoopSuite(...).run() -> Promise<>',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 76 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 76 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/TimeInLoopSuite.js'
   },
   {
     name: 'add',
@@ -1079,7 +2267,8 @@ export default [
           end: { line: 1, column: 15, offset: 14 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/add.js'
   },
   {
     name: 'always',
@@ -1157,7 +2346,116 @@ export default [
           end: { line: 1, column: 47, offset: 46 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/always.js'
+  },
+  {
+    name: 'areAllValuesNonfunctions',
+    synopsis: '```coffeescript [specscript]\n' +
+      'areAllValuesNonfunctions(values Array<function|value>) -> boolean\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'areAllValuesNonfunctions',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 25, offset: 24 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 25, offset: 24 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 25, offset: 24 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'areAllValuesNonfunctions(values Array<function|value>) -> boolean',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 98 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 98 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/areAllValuesNonfunctions.js'
+  },
+  {
+    name: 'areAnyValuesPromises',
+    synopsis: '```coffeescript [specscript]\n' +
+      'areAnyValuesPromises(values Array) -> boolean\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'areAnyValuesPromises',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 21, offset: 20 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 21, offset: 20 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 21, offset: 20 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'areAnyValuesPromises(values Array) -> boolean',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 78 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 78 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/areAnyValuesPromises.js'
   },
   {
     name: 'arrayConditional',
@@ -1273,7 +2571,116 @@ export default [
           end: { line: 1, column: 1, offset: 0 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayConditional.js'
+  },
+  {
+    name: 'arrayEvery',
+    synopsis: '```coffeescript [specscript]\n' +
+      'arrayEvery(array Array, predicate ...any=>boolean) -> boolean\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'arrayEvery',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 11, offset: 10 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 11, offset: 10 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 11, offset: 10 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'arrayEvery(array Array, predicate ...any=>boolean) -> boolean',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 94 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 94 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayEvery.js'
+  },
+  {
+    name: '_arrayExtend',
+    synopsis: '```coffeescript [specscript]\n' +
+      '_arrayExtend(array Array, values Array) -> array\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: '_arrayExtend',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 13, offset: 12 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 13, offset: 12 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 13, offset: 12 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: '_arrayExtend(array Array, values Array) -> array',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 81 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 81 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayExtend.js'
   },
   {
     name: 'arrayExtend',
@@ -1353,7 +2760,8 @@ export default [
           end: { line: 1, column: 29, offset: 28 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayExtend.js'
   },
   {
     name: 'arrayExtendMap',
@@ -1455,7 +2863,8 @@ export default [
           end: { line: 1, column: 28, offset: 27 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayExtendMap.js'
   },
   {
     name: 'arrayExtendMapIndexes',
@@ -1553,7 +2962,8 @@ export default [
           end: { line: 1, column: 36, offset: 35 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayExtendMapIndexes.js'
   },
   {
     name: 'arrayExtendMapWithIndex',
@@ -1672,7 +3082,8 @@ export default [
           end: { line: 1, column: 54, offset: 53 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayExtendMapWithIndex.js'
   },
   {
     name: 'arrayFilter',
@@ -1774,7 +3185,8 @@ export default [
           end: { line: 1, column: 76, offset: 75 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayFilter.js'
   },
   {
     name: 'arrayFilterByConditions',
@@ -1891,7 +3303,72 @@ export default [
           end: { line: 1, column: 41, offset: 40 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayFilterByConditions.js'
+  },
+  {
+    name: 'arrayFilterIndexes',
+    synopsis: '```coffeescript [specscript]\n' +
+      'KeyPredicate = (key string)=>Promise|boolean\n' +
+      '\n' +
+      'arrayFilterIndexes(\n' +
+      '  predicate KeyPredicate,\n' +
+      '  array Array,\n' +
+      ') -> result Promise|Array\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'arrayFilterIndexes',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 19, offset: 18 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 19, offset: 18 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 19, offset: 18 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'KeyPredicate = (key string)=>Promise|boolean\n' +
+              '\n' +
+              'arrayFilterIndexes(\n' +
+              '  predicate KeyPredicate,\n' +
+              '  array Array,\n' +
+              ') -> result Promise|Array',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 8, column: 4, offset: 165 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 8, column: 4, offset: 165 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayFilterIndexes.js'
   },
   {
     name: 'arrayFilterWithIndex',
@@ -1981,7 +3458,284 @@ export default [
           end: { line: 1, column: 43, offset: 42 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayFilterWithIndex.js'
+  },
+  {
+    name: 'arrayFindAsync',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var T any,\n' +
+      '  array Array<T>,\n' +
+      '  predicate T=>Promise|boolean,\n' +
+      '  result Promise<T|undefined>\n' +
+      '\n' +
+      'arrayFindAsync(array, predicate) -> result\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'arrayFindAsync',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 15, offset: 14 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 15, offset: 14 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 15, offset: 14 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'var T any,\n' +
+              '  array Array<T>,\n' +
+              '  predicate T=>Promise|boolean,\n' +
+              '  result Promise<T|undefined>\n' +
+              '\n' +
+              'arrayFindAsync(array, predicate) -> result',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 8, column: 4, offset: 167 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 8, column: 4, offset: 167 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayFind.js'
+  },
+  {
+    name: 'arrayFind',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var T any,\n' +
+      '  array Array<T>,\n' +
+      '  predicate T=>Promise|boolean,\n' +
+      '  result Promise|T|undefined\n' +
+      '\n' +
+      'arrayFind(array, predicate) -> result\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'arrayFind',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 10, offset: 9 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 10, offset: 9 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 10, offset: 9 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'var T any,\n' +
+              '  array Array<T>,\n' +
+              '  predicate T=>Promise|boolean,\n' +
+              '  result Promise|T|undefined\n' +
+              '\n' +
+              'arrayFind(array, predicate) -> result',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 8, column: 4, offset: 161 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 8, column: 4, offset: 161 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayFind.js'
+  },
+  {
+    name: 'arrayFlatMap',
+    synopsis: '```coffeescript [specscript]\n' +
+      'Stream<T> = { read: ()=>T, write: T=>() }\n' +
+      'Monad<T> = Array<T>|String<T>|Set<T>\n' +
+      '  |TypedArray<T>|Stream<T>|Iterator<Promise|T>\n' +
+      '  |{ chain: T=>Monad<T> }|{ flatMap: T=>Monad<T> }|Object<T>\n' +
+      'Reducer<T> = (any, T)=>Promise|any\n' +
+      'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: Reducer<T> }|Object<T>\n' +
+      '\n' +
+      'arrayFlatMap<T>(\n' +
+      '  array Array<T>,\n' +
+      '  flatMapper T=>Promise|Monad<T>|Foldable<T>|T,\n' +
+      ') -> Promise|Array<T>\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'arrayFlatMap',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 13, offset: 12 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 13, offset: 12 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 13, offset: 12 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'Stream<T> = { read: ()=>T, write: T=>() }\n' +
+              'Monad<T> = Array<T>|String<T>|Set<T>\n' +
+              '  |TypedArray<T>|Stream<T>|Iterator<Promise|T>\n' +
+              '  |{ chain: T=>Monad<T> }|{ flatMap: T=>Monad<T> }|Object<T>\n' +
+              'Reducer<T> = (any, T)=>Promise|any\n' +
+              'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: Reducer<T> }|Object<T>\n' +
+              '\n' +
+              'arrayFlatMap<T>(\n' +
+              '  array Array<T>,\n' +
+              '  flatMapper T=>Promise|Monad<T>|Foldable<T>|T,\n' +
+              ') -> Promise|Array<T>',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 13, column: 4, offset: 436 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 13, column: 4, offset: 436 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayFlatMap.js'
+  },
+  {
+    name: 'arrayFlatten',
+    synopsis: '```coffeescript [specscript]\n' +
+      'Stream<T> = { read: ()=>T, write: T=>() }\n' +
+      'Monad<T> = Array<T>|String<T>|Set<T>\n' +
+      '  |TypedArray<T>|Stream<T>|Iterator<Promise|T>\n' +
+      '  |{ chain: T=>Monad<T> }|{ flatMap: T=>Monad<T> }|Object<T>\n' +
+      'Reducer<T> = (any, T)=>Promise|any\n' +
+      'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: Reducer<T> }|Object<T>\n' +
+      '\n' +
+      'arrayFlatten<\n' +
+      '  T any,\n' +
+      '  array Array<Monad<T>|Foldable<T>|T>\n' +
+      '>(array) -> Array<T>\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'arrayFlatten',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 13, offset: 12 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 13, offset: 12 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 13, offset: 12 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'Stream<T> = { read: ()=>T, write: T=>() }\n' +
+              'Monad<T> = Array<T>|String<T>|Set<T>\n' +
+              '  |TypedArray<T>|Stream<T>|Iterator<Promise|T>\n' +
+              '  |{ chain: T=>Monad<T> }|{ flatMap: T=>Monad<T> }|Object<T>\n' +
+              'Reducer<T> = (any, T)=>Promise|any\n' +
+              'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: Reducer<T> }|Object<T>\n' +
+              '\n' +
+              'arrayFlatten<\n' +
+              '  T any,\n' +
+              '  array Array<Monad<T>|Foldable<T>|T>\n' +
+              '>(array) -> Array<T>',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 13, column: 4, offset: 413 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 13, column: 4, offset: 413 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayFlatten.js'
   },
   {
     name: 'arrayForEach',
@@ -2088,7 +3842,8 @@ export default [
           end: { line: 3, column: 27, offset: 126 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayForEach.js'
   },
   {
     name: 'arrayJoin',
@@ -2184,7 +3939,8 @@ export default [
           end: { line: 1, column: 26, offset: 25 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayJoin.js'
   },
   {
     name: 'arrayMap',
@@ -2270,7 +4026,8 @@ export default [
           end: { line: 1, column: 89, offset: 88 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayMap.js'
   },
   {
     name: 'arrayMapPoolAsync',
@@ -2366,7 +4123,8 @@ export default [
           end: { line: 1, column: 110, offset: 109 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayMapPool.js'
   },
   {
     name: 'arrayMapPool',
@@ -2456,7 +4214,8 @@ export default [
           end: { line: 1, column: 97, offset: 96 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayMapPool.js'
   },
   {
     name: 'arrayMapSeriesAsync',
@@ -2564,7 +4323,8 @@ export default [
           end: { line: 1, column: 125, offset: 124 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayMapSeries.js'
   },
   {
     name: 'arrayMapSeries',
@@ -2652,7 +4412,8 @@ export default [
           end: { line: 1, column: 82, offset: 81 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayMapSeries.js'
   },
   {
     name: 'arrayMapWithIndex',
@@ -2742,7 +4503,134 @@ export default [
           end: { line: 1, column: 81, offset: 80 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayMapWithIndex.js'
+  },
+  {
+    name: 'arrayOf',
+    synopsis: 'Dereferenced `Array.of`',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'arrayOf',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 8, offset: 7 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 8, offset: 7 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 8, offset: 7 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Dereferenced ',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 14, offset: 13 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'Array.of',
+                position: {
+                  start: { line: 1, column: 14, offset: 13 },
+                  end: { line: 1, column: 24, offset: 23 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 24, offset: 23 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 24, offset: 23 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayOf.js'
+  },
+  {
+    name: 'arrayPush',
+    synopsis: 'arrayPush(\n  array Array,\n  value any\n) -> array',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'arrayPush',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 10, offset: 9 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 10, offset: 9 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 10, offset: 9 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'arrayPush(\narray Array,\nvalue any\n) -> array',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 4, column: 11, offset: 48 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 4, column: 11, offset: 48 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 4, column: 11, offset: 48 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayPush.js'
   },
   {
     name: 'arrayReduceAsync',
@@ -2832,7 +4720,194 @@ export default [
           end: { line: 1, column: 84, offset: 83 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayReduce.js'
+  },
+  {
+    name: 'arrayReduce',
+    synopsis: '```coffeescript [specscript]\n' +
+      'arrayReduce<T>(\n' +
+      '  array Array<T>,\n' +
+      '  reducer (any, T)=>Promise|any,\n' +
+      '  result any,\n' +
+      ') -> Promise|result\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'arrayReduce',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 12, offset: 11 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 12, offset: 11 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 12, offset: 11 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'arrayReduce<T>(\n' +
+              '  array Array<T>,\n' +
+              '  reducer (any, T)=>Promise|any,\n' +
+              '  result any,\n' +
+              ') -> Promise|result',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 7, column: 4, offset: 133 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 7, column: 4, offset: 133 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayReduce.js'
+  },
+  {
+    name: 'asyncArraySome',
+    synopsis: '```coffeescript [specscript]\n' +
+      'asyncArraySome(\n' +
+      '  array Array,\n' +
+      '  predicate any=>Promise|boolean,\n' +
+      '  index number,\n' +
+      '  promisesInFlight Set<Promise>,\n' +
+      ') -> boolean\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'asyncArraySome',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 15, offset: 14 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 15, offset: 14 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 15, offset: 14 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'asyncArraySome(\n' +
+              '  array Array,\n' +
+              '  predicate any=>Promise|boolean,\n' +
+              '  index number,\n' +
+              '  promisesInFlight Set<Promise>,\n' +
+              ') -> boolean',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 8, column: 4, offset: 159 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 8, column: 4, offset: 159 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arraySome.js'
+  },
+  {
+    name: 'arraySome',
+    synopsis: '```coffeescript [specscript]\n' +
+      'arraySome(\n' +
+      '  array Array,\n' +
+      '  predicate any=>Promise|boolean,\n' +
+      ') -> boolean\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'arraySome',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 10, offset: 9 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 10, offset: 9 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 10, offset: 9 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'arraySome(\n' +
+              '  array Array,\n' +
+              '  predicate any=>Promise|boolean,\n' +
+              ') -> boolean',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 6, column: 4, offset: 105 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 6, column: 4, offset: 105 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arraySome.js'
   },
   {
     name: 'async',
@@ -2920,7 +4995,8 @@ export default [
           end: { line: 1, column: 41, offset: 40 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/async.js'
   },
   {
     name: 'asyncGeneratorFunctionFilter',
@@ -3012,7 +5088,88 @@ export default [
           end: { line: 1, column: 121, offset: 120 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/asyncGeneratorFunctionFilter.js'
+  },
+  {
+    name: 'asyncGeneratorFunctionFlatMap',
+    synopsis: '```coffeescript [specscript]\n' +
+      'Stream<T> = { read: ()=>T, write: T=>() }\n' +
+      'Monad<T> = Array<T>|String<T>|Set<T>\n' +
+      '  |TypedArray<T>|Stream<T>|Iterator<Promise|T>\n' +
+      '  |{ chain: T=>Monad<T> }|{ flatMap: T=>Monad<T> }|Object<T>\n' +
+      'Reducer<T> = (any, T)=>Promise|any\n' +
+      'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: Reducer<T> }|Object<T>\n' +
+      '\n' +
+      'asyncGeneratorFunctionFlatMap<\n' +
+      '  T any,\n' +
+      '  args ...any,\n' +
+      '  asyncGeneratorFunction ...args=>Generator<Promise<T>>,\n' +
+      '  flatMapper T=>Promise|Monad<T>|Foldable<T>|T,\n' +
+      '>(asyncGeneratorFunction, flatMapper) ->\n' +
+      '  flatMappingAsyncGeneratorFunction ...args=>Generator<Promise<T>>\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'asyncGeneratorFunctionFlatMap',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 30, offset: 29 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 30, offset: 29 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 30, offset: 29 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'Stream<T> = { read: ()=>T, write: T=>() }\n' +
+              'Monad<T> = Array<T>|String<T>|Set<T>\n' +
+              '  |TypedArray<T>|Stream<T>|Iterator<Promise|T>\n' +
+              '  |{ chain: T=>Monad<T> }|{ flatMap: T=>Monad<T> }|Object<T>\n' +
+              'Reducer<T> = (any, T)=>Promise|any\n' +
+              'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: Reducer<T> }|Object<T>\n' +
+              '\n' +
+              'asyncGeneratorFunctionFlatMap<\n' +
+              '  T any,\n' +
+              '  args ...any,\n' +
+              '  asyncGeneratorFunction ...args=>Generator<Promise<T>>,\n' +
+              '  flatMapper T=>Promise|Monad<T>|Foldable<T>|T,\n' +
+              '>(asyncGeneratorFunction, flatMapper) ->\n' +
+              '  flatMappingAsyncGeneratorFunction ...args=>Generator<Promise<T>>',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 16, column: 4, offset: 599 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 16, column: 4, offset: 599 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/asyncGeneratorFunctionFlatMap.js'
   },
   {
     name: 'asyncGeneratorFunctionForEach',
@@ -3100,7 +5257,8 @@ export default [
           end: { line: 1, column: 138, offset: 137 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/asyncGeneratorFunctionForEach.js'
   },
   {
     name: 'asyncGeneratorFunctionMap',
@@ -3246,7 +5404,279 @@ export default [
           end: { line: 1, column: 23, offset: 22 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/asyncGeneratorFunctionMap.js'
+  },
+  {
+    name: 'asyncGeneratorFunctionReduce',
+    synopsis: '```coffeescript [specscript]\n' +
+      'asyncGeneratorFunctionReduce(\n' +
+      '  asyncGeneratorFunction ...args=>AsyncGenerator<T>,\n' +
+      '  reducer (any, T)=>any,\n' +
+      '  result any,\n' +
+      ') -> (...any args)=>any\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'asyncGeneratorFunctionReduce',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 29, offset: 28 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 29, offset: 28 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 29, offset: 28 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'asyncGeneratorFunctionReduce(\n' +
+              '  asyncGeneratorFunction ...args=>AsyncGenerator<T>,\n' +
+              '  reducer (any, T)=>any,\n' +
+              '  result any,\n' +
+              ') -> (...any args)=>any',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 7, column: 4, offset: 178 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 7, column: 4, offset: 178 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/asyncGeneratorFunctionReduce.js'
+  },
+  {
+    name: 'asyncIteratorEvery',
+    synopsis: 'var T any,\n' +
+      '  asyncIterator AsyncIterator<T>,\n' +
+      '  predicate T=>Promise|boolean,\n' +
+      '  promisesInFlight Set<Promise<[T, Promise]>>,\n' +
+      '  maxConcurrency number\n' +
+      '\n' +
+      'asyncIteratorEvery(\n' +
+      '  asyncIterator, predicate, promisesInFlight, maxConcurrency,\n' +
+      ') -> Promise<boolean>',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'asyncIteratorEvery',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 19, offset: 18 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 19, offset: 18 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 19, offset: 18 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'var T any,\nasyncIterator AsyncIterator',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 2, column: 30, offset: 40 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 2, column: 30, offset: 40 },
+                  end: { line: 2, column: 33, offset: 43 }
+                }
+              },
+              {
+                type: 'text',
+                value: ',\n' +
+                  'predicate T=>Promise|boolean,\n' +
+                  'promisesInFlight Set<Promise<[T, Promise]>>,\n' +
+                  'maxConcurrency number',
+                position: {
+                  start: { line: 2, column: 33, offset: 43 },
+                  end: { line: 5, column: 24, offset: 147 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 5, column: 24, offset: 147 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'asyncIteratorEvery(\n' +
+                  'asyncIterator, predicate, promisesInFlight, maxConcurrency,\n' +
+                  ') -> Promise',
+                position: {
+                  start: { line: 7, column: 1, offset: 149 },
+                  end: { line: 9, column: 13, offset: 243 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<boolean>',
+                position: {
+                  start: { line: 9, column: 13, offset: 243 },
+                  end: { line: 9, column: 22, offset: 252 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 7, column: 1, offset: 149 },
+              end: { line: 9, column: 22, offset: 252 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 9, column: 22, offset: 252 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/asyncIteratorEvery.js'
+  },
+  {
+    name: 'asyncIteratorFind',
+    synopsis: 'var T any,\n' +
+      '  asyncIterator AsyncIterator<T>,\n' +
+      '  predicate T=>Promise|boolean\n' +
+      '\n' +
+      'asyncIteratorFind(asyncIterator, predicate) -> Promise|T|undefined',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'asyncIteratorFind',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 18, offset: 17 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 18, offset: 17 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 18, offset: 17 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'var T any,\nasyncIterator AsyncIterator',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 2, column: 30, offset: 40 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 2, column: 30, offset: 40 },
+                  end: { line: 2, column: 33, offset: 43 }
+                }
+              },
+              {
+                type: 'text',
+                value: ',\npredicate T=>Promise|boolean',
+                position: {
+                  start: { line: 2, column: 33, offset: 43 },
+                  end: { line: 3, column: 31, offset: 75 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 31, offset: 75 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'asyncIteratorFind(asyncIterator, predicate) -> Promise|T|undefined',
+                position: {
+                  start: { line: 5, column: 1, offset: 77 },
+                  end: { line: 5, column: 67, offset: 143 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 5, column: 1, offset: 77 },
+              end: { line: 5, column: 67, offset: 143 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 5, column: 67, offset: 143 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/asyncIteratorFind.js'
   },
   {
     name: 'asyncIteratorForEach',
@@ -3334,7 +5764,136 @@ export default [
           end: { line: 1, column: 63, offset: 62 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/asyncIteratorForEach.js'
+  },
+  {
+    name: 'asyncIteratorReduce',
+    synopsis: '```coffeescript [specscript]\n' +
+      'asyncIteratorReduce(\n' +
+      '  asyncIterator AsyncIterator<T>,\n' +
+      '  reducer (any, T)=>Promise|any,\n' +
+      '  result any,\n' +
+      ') -> result any\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'asyncIteratorReduce',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 20, offset: 19 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 20, offset: 19 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 20, offset: 19 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'asyncIteratorReduce(\n' +
+              '  asyncIterator AsyncIterator<T>,\n' +
+              '  reducer (any, T)=>Promise|any,\n' +
+              '  result any,\n' +
+              ') -> result any',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 7, column: 4, offset: 150 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 7, column: 4, offset: 150 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/asyncIteratorReduce.js'
+  },
+  {
+    name: 'asyncIteratorSome',
+    synopsis: '```coffeescript [specscript]\n' +
+      'asyncIteratorSome(\n' +
+      '  iterator Iterator|AsyncIterator,\n' +
+      '  predicate any=>Promise|boolean,\n' +
+      '  index number,\n' +
+      '  promisesInFlight Set<Promise>,\n' +
+      '  maxConcurrency number=20,\n' +
+      ') -> boolean\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'asyncIteratorSome',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 18, offset: 17 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 18, offset: 17 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 18, offset: 17 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'asyncIteratorSome(\n' +
+              '  iterator Iterator|AsyncIterator,\n' +
+              '  predicate any=>Promise|boolean,\n' +
+              '  index number,\n' +
+              '  promisesInFlight Set<Promise>,\n' +
+              '  maxConcurrency number=20,\n' +
+              ') -> boolean',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 9, column: 4, offset: 210 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 9, column: 4, offset: 210 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/asyncIteratorSome.js'
   },
   {
     name: 'asyncIteratorToArray',
@@ -3437,7 +5996,8 @@ export default [
           end: { line: 3, column: 33, offset: 72 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/asyncIteratorToArray.js'
   },
   {
     name: '_binaryExtend',
@@ -3523,7 +6083,8 @@ export default [
           end: { line: 1, column: 46, offset: 45 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/binaryExtend.js'
   },
   {
     name: 'binaryExtend',
@@ -3609,7 +6170,350 @@ export default [
           end: { line: 1, column: 34, offset: 33 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/binaryExtend.js'
+  },
+  {
+    name: 'arrayJoinToBinary',
+    synopsis: '```coffeescript [specscript]\n' +
+      'arrayJoinToBinary<\n' +
+      '  array Array<TypedArray|Buffer>,\n' +
+      '  init TypedArray|Buffer,\n' +
+      '>(array, init) -> TypedArray|Buffer\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'arrayJoinToBinary',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 18, offset: 17 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 18, offset: 17 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 18, offset: 17 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'arrayJoinToBinary<\n' +
+              '  array Array<TypedArray|Buffer>,\n' +
+              '  init TypedArray|Buffer,\n' +
+              '>(array, init) -> TypedArray|Buffer',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 6, column: 4, offset: 147 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 6, column: 4, offset: 147 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/binaryFlatMap.js'
+  },
+  {
+    name: 'arrayFlattenToBinary',
+    synopsis: '```coffeescript [specscript]\n' +
+      'Stream<T> = { read: ()=>T, write: T=>() }\n' +
+      'Monad<T> = Array<T>|String<T>|Set<T>\n' +
+      '  |TypedArray<T>|Stream<T>|Iterator<Promise|T>\n' +
+      '  |{ chain: T=>Monad<T> }|{ flatMap: T=>Monad<T> }|Object<T>\n' +
+      'Reducer<T> = (any, T)=>Promise|any\n' +
+      'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: Reducer<T> }|Object<T>\n' +
+      '\n' +
+      'arrayFlattenToBinary<T>(\n' +
+      '  array Array<Monad<T>|Foldable<T>|T>\n' +
+      '  result TypedArray<T>|Buffer<T>,\n' +
+      ') -> TypedArray<T>|Buffer<T>\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'arrayFlattenToBinary',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 21, offset: 20 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 21, offset: 20 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 21, offset: 20 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'Stream<T> = { read: ()=>T, write: T=>() }\n' +
+              'Monad<T> = Array<T>|String<T>|Set<T>\n' +
+              '  |TypedArray<T>|Stream<T>|Iterator<Promise|T>\n' +
+              '  |{ chain: T=>Monad<T> }|{ flatMap: T=>Monad<T> }|Object<T>\n' +
+              'Reducer<T> = (any, T)=>Promise|any\n' +
+              'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: Reducer<T> }|Object<T>\n' +
+              '\n' +
+              'arrayFlattenToBinary<T>(\n' +
+              '  array Array<Monad<T>|Foldable<T>|T>\n' +
+              '  result TypedArray<T>|Buffer<T>,\n' +
+              ') -> TypedArray<T>|Buffer<T>',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 13, column: 4, offset: 457 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 13, column: 4, offset: 457 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/binaryFlatMap.js'
+  },
+  {
+    name: 'binaryFlatMap',
+    synopsis: '```coffeescript [specscript]\n' +
+      'Stream<T> = { read: ()=>T, write: T=>() }\n' +
+      'Monad<T> = Array<T>|String<T>|Set<T>\n' +
+      '  |TypedArray<T>|Stream<T>|Iterator<Promise|T>\n' +
+      '  |{ chain: T=>Monad<T> }|{ flatMap: T=>Monad<T> }|Object<T>\n' +
+      'Reducer<T> = (any, T)=>Promise|any\n' +
+      'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: Reducer<T> }|Object<T>\n' +
+      '\n' +
+      'binaryFlatMap<T>(\n' +
+      '  binary TypedArray<T>|Buffer<T>,\n' +
+      '  flatMapper T=>Promise|Monad<T>|Foldable<T>|T,\n' +
+      ') -> TypedArray<T>|Buffer<T>\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'binaryFlatMap',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 14, offset: 13 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 14, offset: 13 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 14, offset: 13 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'Stream<T> = { read: ()=>T, write: T=>() }\n' +
+              'Monad<T> = Array<T>|String<T>|Set<T>\n' +
+              '  |TypedArray<T>|Stream<T>|Iterator<Promise|T>\n' +
+              '  |{ chain: T=>Monad<T> }|{ flatMap: T=>Monad<T> }|Object<T>\n' +
+              'Reducer<T> = (any, T)=>Promise|any\n' +
+              'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: Reducer<T> }|Object<T>\n' +
+              '\n' +
+              'binaryFlatMap<T>(\n' +
+              '  binary TypedArray<T>|Buffer<T>,\n' +
+              '  flatMapper T=>Promise|Monad<T>|Foldable<T>|T,\n' +
+              ') -> TypedArray<T>|Buffer<T>',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 13, column: 4, offset: 460 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 13, column: 4, offset: 460 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/binaryFlatMap.js'
+  },
+  {
+    name: 'bufferAlloc',
+    synopsis: 'Dereferenced `Buffer.alloc` or noop',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'bufferAlloc',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 12, offset: 11 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 12, offset: 11 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 12, offset: 11 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Dereferenced ',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 14, offset: 13 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'Buffer.alloc',
+                position: {
+                  start: { line: 1, column: 14, offset: 13 },
+                  end: { line: 1, column: 28, offset: 27 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' or noop',
+                position: {
+                  start: { line: 1, column: 28, offset: 27 },
+                  end: { line: 1, column: 36, offset: 35 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 36, offset: 35 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 36, offset: 35 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/bufferAlloc.js'
+  },
+  {
+    name: 'callConcat',
+    synopsis: 'callConcat(object Object, values any) -> object.concat(values)',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'callConcat',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 11, offset: 10 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 11, offset: 10 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 11, offset: 10 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'callConcat(object Object, values any) -> object.concat(values)',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 63, offset: 62 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 63, offset: 62 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 63, offset: 62 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/callConcat.js'
   },
   {
     name: 'callPropBinary',
@@ -3699,7 +6603,8 @@ export default [
           end: { line: 1, column: 56, offset: 55 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/callPropBinary.js'
   },
   {
     name: 'callPropUnary',
@@ -3787,7 +6692,8 @@ export default [
           end: { line: 1, column: 60, offset: 59 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/callPropUnary.js'
   },
   {
     name: 'catcherApply',
@@ -3875,7 +6781,178 @@ export default [
           end: { line: 1, column: 43, offset: 42 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/catcherApply.js'
+  },
+  {
+    name: 'conditional',
+    synopsis: 'conditional<\n' +
+      '  shouldReturnArg1 boolean,\n' +
+      '  arg1 any,\n' +
+      '  arg2 any,\n' +
+      '>(shouldReturnArg1, arg1, arg2) -> arg1|arg2',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'conditional',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 12, offset: 11 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 12, offset: 11 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 12, offset: 11 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'conditional<\nshouldReturnArg1 boolean,\narg1 any,\narg2 any,',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 4, column: 12, offset: 64 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 4, column: 12, offset: 64 }
+            }
+          },
+          {
+            type: 'blockquote',
+            children: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: '(shouldReturnArg1, arg1, arg2) -> arg1|arg2',
+                    position: {
+                      start: { line: 5, column: 2, offset: 66 },
+                      end: { line: 5, column: 45, offset: 109 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 5, column: 2, offset: 66 },
+                  end: { line: 5, column: 45, offset: 109 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 5, column: 1, offset: 65 },
+              end: { line: 5, column: 45, offset: 109 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 5, column: 45, offset: 109 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/conditional.js'
+  },
+  {
+    name: 'copyDeep',
+    synopsis: '```coffeescript [specscript]\n' +
+      'copyDeep(value Array|Object) -> deepCopy Array|Object\n' +
+      '```',
+    catchphrase: 'Deep copy objects or arrays.',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'copyDeep',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 9, offset: 8 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 9, offset: 8 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 9, offset: 8 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'copyDeep(value Array|Object) -> deepCopy Array|Object',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 86 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 86 }
+        }
+      },
+      catchphrase: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Deep copy objects or arrays.',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 29, offset: 28 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 29, offset: 28 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 29, offset: 28 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/copyDeep.js'
   },
   {
     name: 'curry1',
@@ -3967,7 +7044,8 @@ export default [
           end: { line: 1, column: 24, offset: 23 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/curry1.js'
   },
   {
     name: 'curry2',
@@ -4078,7 +7156,8 @@ export default [
           end: { line: 3, column: 51, offset: 76 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/curry2.js'
   },
   {
     name: 'curry3',
@@ -4191,7 +7270,8 @@ export default [
           end: { line: 3, column: 51, offset: 75 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/curry3.js'
   },
   {
     name: 'curry4',
@@ -4306,7 +7386,8 @@ export default [
           end: { line: 3, column: 51, offset: 75 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/curry4.js'
   },
   {
     name: 'curry5',
@@ -4423,7 +7504,8 @@ export default [
           end: { line: 3, column: 51, offset: 75 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/curry5.js'
   },
   {
     name: 'curryArgs2',
@@ -4534,7 +7616,8 @@ export default [
           end: { line: 3, column: 52, offset: 150 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/curryArgs2.js'
   },
   {
     name: 'curryArgs3',
@@ -4647,7 +7730,8 @@ export default [
           end: { line: 3, column: 52, offset: 150 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/curryArgs3.js'
   },
   {
     name: 'curryArgs4',
@@ -4762,7 +7846,76 @@ export default [
           end: { line: 3, column: 52, offset: 150 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/curryArgs4.js'
+  },
+  {
+    name: '_curryArity',
+    synopsis: '```coffeescript [specscript]\n' +
+      '__ = Symbol(placeholder)\n' +
+      '\n' +
+      'var arity number,\n' +
+      '  func function,\n' +
+      '  args Array<__|any>,\n' +
+      '  curried function\n' +
+      '\n' +
+      '_curryArity(arity, func, args) -> curried|any\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: '_curryArity',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 12, offset: 11 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 12, offset: 11 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 12, offset: 11 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: '__ = Symbol(placeholder)\n' +
+              '\n' +
+              'var arity number,\n' +
+              '  func function,\n' +
+              '  args Array<__|any>,\n' +
+              '  curried function\n' +
+              '\n' +
+              '_curryArity(arity, func, args) -> curried|any',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 10, column: 4, offset: 181 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 10, column: 4, offset: 181 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/curryArity.js'
   },
   {
     name: 'curryArity',
@@ -4856,7 +8009,327 @@ export default [
           end: { line: 1, column: 61, offset: 60 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/curryArity.js'
+  },
+  {
+    name: 'deleteByPath',
+    synopsis: '```coffeescript [specscript]\n' +
+      'deleteByPath<\n' +
+      '  object any,\n' +
+      '  path string|number|Array<string|number>,\n' +
+      '>(value, path) -> ()\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'deleteByPath',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 13, offset: 12 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 13, offset: 12 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 13, offset: 12 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'deleteByPath<\n' +
+              '  object any,\n' +
+              '  path string|number|Array<string|number>,\n' +
+              '>(value, path) -> ()',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 6, column: 4, offset: 124 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 6, column: 4, offset: 124 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/deleteByPath.js'
+  },
+  {
+    name: 'equals',
+    synopsis: '```coffeescript [specscript]\nequals(left any, right any) -> boolean\n```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'equals',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 7, offset: 6 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 7, offset: 6 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 7, offset: 6 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'equals(left any, right any) -> boolean',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 71 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 71 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/equals.js'
+  },
+  {
+    name: 'funcAll',
+    synopsis: '```coffeescript [specscript]\n' +
+      'funcAll<args ...any>(\n' +
+      '  funcs Array<args=>Promise|any>\n' +
+      ') -> allFuncs args=>Promise|Array\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'funcAll',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 8, offset: 7 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 8, offset: 7 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 8, offset: 7 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'funcAll<args ...any>(\n' +
+              '  funcs Array<args=>Promise|any>\n' +
+              ') -> allFuncs args=>Promise|Array',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 5, column: 4, offset: 121 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 5, column: 4, offset: 121 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/funcAll.js'
+  },
+  {
+    name: 'asyncFuncAllSeries',
+    synopsis: '```coffeescript [specscript]\n' +
+      'asyncFuncAllSeries(\n' +
+      '  funcs Array<function>,\n' +
+      '  args Array,\n' +
+      '  result Array,\n' +
+      '  funcsIndex number,\n' +
+      ') -> result\n' +
+      '```',
+    TODO: 'benchmark vs regular promise handling',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'asyncFuncAllSeries',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 19, offset: 18 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 19, offset: 18 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 19, offset: 18 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'asyncFuncAllSeries(\n' +
+              '  funcs Array<function>,\n' +
+              '  args Array,\n' +
+              '  result Array,\n' +
+              '  funcsIndex number,\n' +
+              ') -> result',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 8, column: 4, offset: 140 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 8, column: 4, offset: 140 }
+        }
+      },
+      TODO: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'benchmark vs regular promise handling',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 38, offset: 37 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 38, offset: 37 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 38, offset: 37 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/funcAllSeries.js'
+  },
+  {
+    name: 'funcAllSeries',
+    synopsis: '```coffeescript [specscript]\n' +
+      'funcAllSeries<args ...any>(\n' +
+      '  funcs Array<...args=>any>,\n' +
+      ') -> allFuncsSeries ...args=>Promise|Array\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'funcAllSeries',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 14, offset: 13 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 14, offset: 13 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 14, offset: 13 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'funcAllSeries<args ...any>(\n' +
+              '  funcs Array<...args=>any>,\n' +
+              ') -> allFuncsSeries ...args=>Promise|Array',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 5, column: 4, offset: 132 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 5, column: 4, offset: 132 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/funcAllSeries.js'
   },
   {
     name: 'funcApply',
@@ -4942,7 +8415,8 @@ export default [
           end: { line: 1, column: 31, offset: 30 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/funcApply.js'
   },
   {
     name: 'funcCall',
@@ -5022,7 +8496,144 @@ export default [
           end: { line: 1, column: 31, offset: 30 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/funcCall.js'
+  },
+  {
+    name: 'funcConcat',
+    synopsis: '```coffeescript [specscript]\n' +
+      'funcConcat<\n' +
+      '  args ...any,\n' +
+      '  intermediate any,\n' +
+      '  result any,\n' +
+      '>(\n' +
+      '  funcA ...args=>Promise|intermediate,\n' +
+      '  funcB intermediate=>result\n' +
+      ') -> pipedFunction ...args=>Promise|result\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'funcConcat',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 11, offset: 10 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 11, offset: 10 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 11, offset: 10 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'funcConcat<\n' +
+              '  args ...any,\n' +
+              '  intermediate any,\n' +
+              '  result any,\n' +
+              '>(\n' +
+              '  funcA ...args=>Promise|intermediate,\n' +
+              '  funcB intermediate=>result\n' +
+              ') -> pipedFunction ...args=>Promise|result',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 10, column: 4, offset: 207 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 10, column: 4, offset: 207 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/funcConcat.js'
+  },
+  {
+    name: 'funcConcatSync',
+    synopsis: '```coffeescript [specscript]\n' +
+      'funcConcatSync<\n' +
+      '  args ...any,\n' +
+      '  intermediate any,\n' +
+      '  result any,\n' +
+      '>(\n' +
+      '  funcA ...args=>intermediate,\n' +
+      '  funcB intermediate=>result\n' +
+      ') -> pipedFunction ...args=>result\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'funcConcatSync',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 15, offset: 14 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 15, offset: 14 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 15, offset: 14 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'funcConcatSync<\n' +
+              '  args ...any,\n' +
+              '  intermediate any,\n' +
+              '  result any,\n' +
+              '>(\n' +
+              '  funcA ...args=>intermediate,\n' +
+              '  funcB intermediate=>result\n' +
+              ') -> pipedFunction ...args=>result',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 10, column: 4, offset: 195 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 10, column: 4, offset: 195 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/funcConcatSync.js'
   },
   {
     name: 'funcObjectAll',
@@ -5106,7 +8717,207 @@ export default [
           end: { line: 1, column: 117, offset: 116 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/funcObjectAll.js'
+  },
+  {
+    name: 'functionArrayAll',
+    synopsis: '```coffeescript [specscript]\n' +
+      'functionArrayAll(funcs Array<function>, args Array) -> Promise|Array\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'functionArrayAll',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 17, offset: 16 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 17, offset: 16 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 17, offset: 16 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'functionArrayAll(funcs Array<function>, args Array) -> Promise|Array',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 101 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 101 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/functionArrayAll.js'
+  },
+  {
+    name: 'asyncFunctionArrayAllSeries',
+    synopsis: '```coffeescript [specscript]\n' +
+      'asyncFunctionArrayAllSeries(\n' +
+      '  funcs Array<function>,\n' +
+      '  args Array,\n' +
+      '  result Array,\n' +
+      '  funcsIndex number\n' +
+      ') -> Promise|Array\n' +
+      '```',
+    TODO: 'benchmark vs regular promise handling',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'asyncFunctionArrayAllSeries',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 28, offset: 27 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 28, offset: 27 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 28, offset: 27 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'asyncFunctionArrayAllSeries(\n' +
+              '  funcs Array<function>,\n' +
+              '  args Array,\n' +
+              '  result Array,\n' +
+              '  funcsIndex number\n' +
+              ') -> Promise|Array',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 8, column: 4, offset: 155 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 8, column: 4, offset: 155 }
+        }
+      },
+      TODO: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'benchmark vs regular promise handling',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 38, offset: 37 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 38, offset: 37 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 38, offset: 37 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/functionArrayAllSeries.js'
+  },
+  {
+    name: 'functionArrayAllSeries',
+    synopsis: '```coffeescript [specscript]\n' +
+      'functionArrayAllSeries(funcs Array<function>, args Array) -> Promise|Array\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'functionArrayAllSeries',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 23, offset: 22 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 23, offset: 22 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 23, offset: 22 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'functionArrayAllSeries(funcs Array<function>, args Array) -> Promise|Array',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 107 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 107 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/functionArrayAllSeries.js'
   },
   {
     name: 'functionObjectAll',
@@ -5186,7 +8997,8 @@ export default [
           end: { line: 1, column: 117, offset: 116 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/functionObjectAll.js'
   },
   {
     name: 'generatorFunctionFilter',
@@ -5297,7 +9109,88 @@ export default [
           end: { line: 3, column: 52, offset: 94 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/generatorFunctionFilter.js'
+  },
+  {
+    name: 'generatorFunctionFlatMap',
+    synopsis: '```coffeescript [specscript]\n' +
+      'Stream<T> = { read: ()=>T, write: T=>() }\n' +
+      'Monad<T> = Array<T>|String<T>|Set<T>\n' +
+      '  |TypedArray<T>|Stream<T>|Iterator<Promise|T>\n' +
+      '  |{ chain: T=>Monad<T> }|{ flatMap: T=>Monad<T> }|Object<T>\n' +
+      'Reducer<T> = (any, T)=>Promise|any\n' +
+      'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: Reducer<T> }|Object<T>\n' +
+      '\n' +
+      'generatorFunctionFlatMap<\n' +
+      '  T any,\n' +
+      '  args ...any,\n' +
+      '  generatorFunction ...args=>Generator<Promise|T>,\n' +
+      '  flatMapper T=>Promise|Monad<T>|Foldable<T>|T,\n' +
+      '>(generatorFunction, flatMapper) ->\n' +
+      '  flatMappingGeneratorFunction ...args=>Generator<Promise|T>\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'generatorFunctionFlatMap',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 25, offset: 24 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 25, offset: 24 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 25, offset: 24 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'Stream<T> = { read: ()=>T, write: T=>() }\n' +
+              'Monad<T> = Array<T>|String<T>|Set<T>\n' +
+              '  |TypedArray<T>|Stream<T>|Iterator<Promise|T>\n' +
+              '  |{ chain: T=>Monad<T> }|{ flatMap: T=>Monad<T> }|Object<T>\n' +
+              'Reducer<T> = (any, T)=>Promise|any\n' +
+              'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: Reducer<T> }|Object<T>\n' +
+              '\n' +
+              'generatorFunctionFlatMap<\n' +
+              '  T any,\n' +
+              '  args ...any,\n' +
+              '  generatorFunction ...args=>Generator<Promise|T>,\n' +
+              '  flatMapper T=>Promise|Monad<T>|Foldable<T>|T,\n' +
+              '>(generatorFunction, flatMapper) ->\n' +
+              '  flatMappingGeneratorFunction ...args=>Generator<Promise|T>',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 16, column: 4, offset: 577 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 16, column: 4, offset: 577 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/generatorFunctionFlatMap.js'
   },
   {
     name: 'generatorFunctionForEach',
@@ -5385,7 +9278,8 @@ export default [
           end: { line: 1, column: 185, offset: 184 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/generatorFunctionForEach.js'
   },
   {
     name: 'generatorFunctionMap',
@@ -5502,7 +9396,8 @@ export default [
           end: { line: 1, column: 19, offset: 18 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/generatorFunctionMap.js'
   },
   {
     name: 'generatorFunctionReduce',
@@ -5596,7 +9491,118 @@ export default [
           end: { line: 1, column: 83, offset: 82 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/generatorFunctionReduce.js'
+  },
+  {
+    name: 'genericReduce',
+    synopsis: '```coffeescript [specscript]\n' +
+      'Foldable<T> = Iterable<T>|AsyncIterable<T>\n' +
+      '  |{ reduce: (any, T)=>any }|Object<T>\n' +
+      '\n' +
+      'genericReduce<T>(\n' +
+      '  collection Foldable<T>,\n' +
+      '  reducer (any, T)=>any,\n' +
+      '  result any?,\n' +
+      ') -> result\n' +
+      '```',
+    related: 'genericReduceConcurrent',
+    TODO: [
+      'genericReduceSync(collection, reducer, init) - performance optimization for some of these genericReduces that we know are synchronous',
+      'genericReducePool(poolSize, collection, reducer, init) - for some of these genericReduces that we want to race - result should not care about order of concatenations\n' +
+        'reduce.pool\n' +
+        'transform.pool\n' +
+        'flatMap.pool'
+    ],
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'genericReduce',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 14, offset: 13 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 14, offset: 13 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 14, offset: 13 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'Foldable<T> = Iterable<T>|AsyncIterable<T>\n' +
+              '  |{ reduce: (any, T)=>any }|Object<T>\n' +
+              '\n' +
+              'genericReduce<T>(\n' +
+              '  collection Foldable<T>,\n' +
+              '  reducer (any, T)=>any,\n' +
+              '  result any?,\n' +
+              ') -> result',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 10, column: 4, offset: 211 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 10, column: 4, offset: 211 }
+        }
+      },
+      related: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'genericReduceConcurrent',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 24, offset: 23 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 24, offset: 23 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 24, offset: 23 }
+        }
+      },
+      TODO: {
+        type: 'root',
+        children: [],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 1, offset: 0 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/genericReduce.js'
   },
   {
     name: 'identityTransform',
@@ -5606,10 +9612,10 @@ export default [
       'identityTransform<\n' +
       '  collection any,\n' +
       '  transducer Reducer=>Reducer,\n' +
-      '  result undefined|null,\n' +
-      '>(args, transducer, result) -> Promise|result\n' +
+      '  accum undefined|null,\n' +
+      '>(args, transducer, accum) -> Promise|accum\n' +
       '```',
-    description: 'Reduce a value, always returning the initial result',
+    description: 'Reduce a value, always returning the initial accum',
     mdast: {
       name: {
         type: 'root',
@@ -5649,17 +9655,17 @@ export default [
               'identityTransform<\n' +
               '  collection any,\n' +
               '  transducer Reducer=>Reducer,\n' +
-              '  result undefined|null,\n' +
-              '>(args, transducer, result) -> Promise|result',
+              '  accum undefined|null,\n' +
+              '>(args, transducer, accum) -> Promise|accum',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 9, column: 4, offset: 206 }
+              end: { line: 9, column: 4, offset: 203 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 9, column: 4, offset: 206 }
+          end: { line: 9, column: 4, offset: 203 }
         }
       },
       description: {
@@ -5670,25 +9676,215 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Reduce a value, always returning the initial result',
+                value: 'Reduce a value, always returning the initial accum',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 52, offset: 51 }
+                  end: { line: 1, column: 51, offset: 50 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 52, offset: 51 }
+              end: { line: 1, column: 51, offset: 50 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 1, column: 52, offset: 51 }
+          end: { line: 1, column: 51, offset: 50 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/genericTransform.js'
+  },
+  {
+    name: 'genericTransform',
+    synopsis: '```coffeescript [specscript]\n' +
+      'Reducer = (any, any)=>Promise|any\n' +
+      'Semigroup = Array|string|Set|TypedArray\n' +
+      '  |{ concat: function }|{ write: function }|Object\n' +
+      '\n' +
+      'genericTransform<\n' +
+      '  collection any,\n' +
+      '  transducer Reducer=>Reducer,\n' +
+      '  accum Semigroup|any,\n' +
+      '>(collection, transducer, accum) -> accum\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'genericTransform',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 17, offset: 16 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 17, offset: 16 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 17, offset: 16 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'Reducer = (any, any)=>Promise|any\n' +
+              'Semigroup = Array|string|Set|TypedArray\n' +
+              '  |{ concat: function }|{ write: function }|Object\n' +
+              '\n' +
+              'genericTransform<\n' +
+              '  collection any,\n' +
+              '  transducer Reducer=>Reducer,\n' +
+              '  accum Semigroup|any,\n' +
+              '>(collection, transducer, accum) -> accum',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 11, column: 4, offset: 290 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 11, column: 4, offset: 290 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/genericTransform.js'
+  },
+  {
+    name: 'getArg1',
+    synopsis: 'getArg1(arg0 any, arg1 any) -> arg1',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'getArg1',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 8, offset: 7 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 8, offset: 7 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 8, offset: 7 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'getArg1(arg0 any, arg1 any) -> arg1',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 36, offset: 35 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 36, offset: 35 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 36, offset: 35 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/getArg1.js'
+  },
+  {
+    name: 'getByPath',
+    synopsis: '```coffeescript [specscript]\n' +
+      'getByPath<\n' +
+      '  value any,\n' +
+      '  path string|number|Array<string|number>,\n' +
+      '>(value, path) -> valueAtPath any\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'getByPath',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 10, offset: 9 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 10, offset: 9 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 10, offset: 9 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'getByPath<\n' +
+              '  value any,\n' +
+              '  path string|number|Array<string|number>,\n' +
+              '>(value, path) -> valueAtPath any',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 6, column: 4, offset: 133 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 6, column: 4, offset: 133 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/getByPath.js'
   },
   {
     name: 'globalThisHasBuffer',
@@ -5781,7 +9977,116 @@ export default [
           end: { line: 1, column: 27, offset: 26 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/globalThisHasBuffer.js'
+  },
+  {
+    name: 'greaterThan',
+    synopsis: '```coffeescript [specscript]\n' +
+      'greaterThan(left any, right any) -> boolean\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'greaterThan',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 12, offset: 11 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 12, offset: 11 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 12, offset: 11 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'greaterThan(left any, right any) -> boolean',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 76 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 76 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/greaterThan.js'
+  },
+  {
+    name: 'greaterThanOrEqual',
+    synopsis: '```coffeescript [specscript]\n' +
+      'greaterThanOrEqual(left any, right any) -> boolean\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'greaterThanOrEqual',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 19, offset: 18 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 19, offset: 18 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 19, offset: 18 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'greaterThanOrEqual(left any, right any) -> boolean',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 83 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 83 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/greaterThanOrEqual.js'
   },
   {
     name: 'hasOwn',
@@ -5866,7 +10171,8 @@ export default [
           end: { line: 1, column: 39, offset: 38 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/hasOwn.js'
   },
   {
     name: 'identity',
@@ -5951,99 +10257,8 @@ export default [
           end: { line: 1, column: 27, offset: 26 }
         }
       }
-    }
-  },
-  {
-    name: 'identityTransform',
-    synopsis: '```coffeescript [specscript]\n' +
-      'Reducer = (any, any)=>Promise|any\n' +
-      '\n' +
-      'identityTransform<\n' +
-      '  collection any,\n' +
-      '  transducer Reducer=>Reducer,\n' +
-      '  accum undefined|null,\n' +
-      '>(args, transducer, accum) -> Promise|accum\n' +
-      '```',
-    description: 'Reduce a value, always returning the initial accum',
-    mdast: {
-      name: {
-        type: 'root',
-        children: [
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: 'identityTransform',
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 18, offset: 17 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 18, offset: 17 }
-            }
-          }
-        ],
-        position: {
-          start: { line: 1, column: 1, offset: 0 },
-          end: { line: 1, column: 18, offset: 17 }
-        }
-      },
-      synopsis: {
-        type: 'root',
-        children: [
-          {
-            type: 'code',
-            lang: 'coffeescript',
-            meta: '[specscript]',
-            value: 'Reducer = (any, any)=>Promise|any\n' +
-              '\n' +
-              'identityTransform<\n' +
-              '  collection any,\n' +
-              '  transducer Reducer=>Reducer,\n' +
-              '  accum undefined|null,\n' +
-              '>(args, transducer, accum) -> Promise|accum',
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 9, column: 4, offset: 203 }
-            }
-          }
-        ],
-        position: {
-          start: { line: 1, column: 1, offset: 0 },
-          end: { line: 9, column: 4, offset: 203 }
-        }
-      },
-      description: {
-        type: 'root',
-        children: [
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: 'Reduce a value, always returning the initial accum',
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 51, offset: 50 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 51, offset: 50 }
-            }
-          }
-        ],
-        position: {
-          start: { line: 1, column: 1, offset: 0 },
-          end: { line: 1, column: 51, offset: 50 }
-        }
-      }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/identity.js'
   },
   {
     name: 'isArray',
@@ -6128,7 +10343,8 @@ export default [
           end: { line: 1, column: 39, offset: 38 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/isArray.js'
   },
   {
     name: 'isArrayLike',
@@ -6222,7 +10438,8 @@ export default [
           end: { line: 1, column: 53, offset: 52 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/isArrayLike.js'
   },
   {
     name: 'isAsyncGeneratorFunction',
@@ -6307,7 +10524,8 @@ export default [
           end: { line: 1, column: 58, offset: 57 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/isAsyncGeneratorFunction.js'
   },
   {
     name: 'isBinary',
@@ -6440,7 +10658,8 @@ export default [
           end: { line: 1, column: 98, offset: 97 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/isBinary.js'
   },
   {
     name: 'isGeneratorFunction',
@@ -6525,7 +10744,8 @@ export default [
           end: { line: 1, column: 51, offset: 50 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/isGeneratorFunction.js'
   },
   {
     name: 'isNodeReadStream',
@@ -6610,7 +10830,8 @@ export default [
           end: { line: 1, column: 56, offset: 55 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/isNodeReadStream.js'
   },
   {
     name: 'isObject',
@@ -6695,7 +10916,8 @@ export default [
           end: { line: 1, column: 81, offset: 80 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/isObject.js'
   },
   {
     name: 'isPromise',
@@ -6780,7 +11002,8 @@ export default [
           end: { line: 1, column: 40, offset: 39 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/isPromise.js'
   },
   {
     name: 'iterationMap',
@@ -6898,7 +11121,281 @@ export default [
           end: { line: 1, column: 59, offset: 58 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/iterationMap.js'
+  },
+  {
+    name: 'iteratorEvery',
+    synopsis: '```coffeescript [specscript]\n' +
+      'iteratorEvery(iterator Iterator, predicate ...any=>boolean) -> boolean\n' +
+      '```',
+    TODO: 'use .next() calls',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'iteratorEvery',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 14, offset: 13 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 14, offset: 13 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 14, offset: 13 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'iteratorEvery(iterator Iterator, predicate ...any=>boolean) -> boolean',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 103 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 103 }
+        }
+      },
+      TODO: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'use .next() calls',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 18, offset: 17 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 18, offset: 17 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 18, offset: 17 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/iteratorEvery.js'
+  },
+  {
+    name: 'iteratorFindAsync',
+    synopsis: 'var T any,\n' +
+      '  iterator Iterator<T>,\n' +
+      '  predicate T=>Promise|boolean\n' +
+      '\n' +
+      'iteratorFindAsync(iterator, predicate) -> Promise<T|undefined>',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'iteratorFindAsync',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 18, offset: 17 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 18, offset: 17 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 18, offset: 17 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'var T any,\niterator Iterator',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 2, column: 20, offset: 30 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 2, column: 20, offset: 30 },
+                  end: { line: 2, column: 23, offset: 33 }
+                }
+              },
+              {
+                type: 'text',
+                value: ',\npredicate T=>Promise|boolean',
+                position: {
+                  start: { line: 2, column: 23, offset: 33 },
+                  end: { line: 3, column: 31, offset: 65 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 31, offset: 65 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'iteratorFindAsync(iterator, predicate) -> Promise<T|undefined>',
+                position: {
+                  start: { line: 5, column: 1, offset: 67 },
+                  end: { line: 5, column: 63, offset: 129 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 5, column: 1, offset: 67 },
+              end: { line: 5, column: 63, offset: 129 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 5, column: 63, offset: 129 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/iteratorFind.js'
+  },
+  {
+    name: 'iteratorFind',
+    synopsis: 'var T any,\n' +
+      '  iterator Iterator<T>,\n' +
+      '  predicate T=>Promise|boolean\n' +
+      '\n' +
+      'iteratorFind(iterator, predicate) -> Promise|T|undefined',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'iteratorFind',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 13, offset: 12 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 13, offset: 12 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 13, offset: 12 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'var T any,\niterator Iterator',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 2, column: 20, offset: 30 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 2, column: 20, offset: 30 },
+                  end: { line: 2, column: 23, offset: 33 }
+                }
+              },
+              {
+                type: 'text',
+                value: ',\npredicate T=>Promise|boolean',
+                position: {
+                  start: { line: 2, column: 23, offset: 33 },
+                  end: { line: 3, column: 31, offset: 65 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 31, offset: 65 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'iteratorFind(iterator, predicate) -> Promise|T|undefined',
+                position: {
+                  start: { line: 5, column: 1, offset: 67 },
+                  end: { line: 5, column: 57, offset: 123 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 5, column: 1, offset: 67 },
+              end: { line: 5, column: 57, offset: 123 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 5, column: 57, offset: 123 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/iteratorFind.js'
   },
   {
     name: 'iteratorForEach',
@@ -7005,7 +11502,8 @@ export default [
           end: { line: 3, column: 27, offset: 126 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/iteratorForEach.js'
   },
   {
     name: 'iteratorReduceAsync',
@@ -7095,7 +11593,8 @@ export default [
           end: { line: 1, column: 105, offset: 104 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/iteratorReduce.js'
   },
   {
     name: 'iteratorReduce',
@@ -7185,7 +11684,176 @@ export default [
           end: { line: 1, column: 74, offset: 73 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/iteratorReduce.js'
+  },
+  {
+    name: 'iteratorSome',
+    synopsis: '```coffeescript [specscript]\n' +
+      'iteratorSome(\n' +
+      '  iterator Iterator,\n' +
+      '  predicate any=>Promise|boolean,\n' +
+      ') -> boolean\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'iteratorSome',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 13, offset: 12 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 13, offset: 12 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 13, offset: 12 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'iteratorSome(\n' +
+              '  iterator Iterator,\n' +
+              '  predicate any=>Promise|boolean,\n' +
+              ') -> boolean',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 6, column: 4, offset: 114 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 6, column: 4, offset: 114 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/iteratorSome.js'
+  },
+  {
+    name: 'lessThan',
+    synopsis: '```coffeescript [specscript]\n' +
+      'lessThan(left any, right any) -> boolean\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'lessThan',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 9, offset: 8 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 9, offset: 8 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 9, offset: 8 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'lessThan(left any, right any) -> boolean',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 73 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 73 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/lessThan.js'
+  },
+  {
+    name: 'lessThanOrEqual',
+    synopsis: '```coffeescript [specscript]\n' +
+      'lessThanOrEqual(left any, right any) -> boolean\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'lessThanOrEqual',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 16, offset: 15 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 16, offset: 15 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 16, offset: 15 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'lessThanOrEqual(left any, right any) -> boolean',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 80 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 80 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/lessThanOrEqual.js'
   },
   {
     name: 'mapFilter',
@@ -7335,7 +12003,8 @@ export default [
           end: { line: 1, column: 67, offset: 66 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/mapFilter.js'
   },
   {
     name: 'mapFrom',
@@ -7413,7 +12082,8 @@ export default [
           end: { line: 1, column: 33, offset: 32 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/mapFrom.js'
   },
   {
     name: 'mapMap',
@@ -7515,7 +12185,248 @@ export default [
           end: { line: 1, column: 122, offset: 121 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/mapMap.js'
+  },
+  {
+    name: 'mapMapEntries',
+    synopsis: '```coffeescript [specscript]\n' +
+      'mapMapEntries(\n' +
+      '  source Map,\n' +
+      '  mapper ([key string, source any])=>Promise|[string, any],\n' +
+      ') -> Promise|Map\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'mapMapEntries',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 14, offset: 13 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 14, offset: 13 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 14, offset: 13 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'mapMapEntries(\n' +
+              '  source Map,\n' +
+              '  mapper ([key string, source any])=>Promise|[string, any],\n' +
+              ') -> Promise|Map',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 6, column: 4, offset: 138 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 6, column: 4, offset: 138 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/mapMapEntries.js'
+  },
+  {
+    name: 'mapReduceAsync',
+    synopsis: '```coffeescript [specscript]\n' +
+      'mapReduceAsync(\n' +
+      '  map Map,\n' +
+      '  reducer (result any, value any, key string, map)=>Promise|any,\n' +
+      '  result any,\n' +
+      '  mapEntriesIter Iterator<[key, value]>,\n' +
+      ') -> Promise<result>\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'mapReduceAsync',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 15, offset: 14 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 15, offset: 14 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 15, offset: 14 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'mapReduceAsync(\n' +
+              '  map Map,\n' +
+              '  reducer (result any, value any, key string, map)=>Promise|any,\n' +
+              '  result any,\n' +
+              '  mapEntriesIter Iterator<[key, value]>,\n' +
+              ') -> Promise<result>',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 8, column: 4, offset: 200 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 8, column: 4, offset: 200 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/mapReduce.js'
+  },
+  {
+    name: 'mapReduce',
+    synopsis: '```coffeescript [specscript]\n' +
+      'mapReduce(\n' +
+      '  map Map,\n' +
+      '  reducer (result any, value any, key string, map)=>Promise|any,\n' +
+      '  result any,\n' +
+      ') -> Promise|result\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'mapReduce',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 10, offset: 9 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 10, offset: 9 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 10, offset: 9 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'mapReduce(\n' +
+              '  map Map,\n' +
+              '  reducer (result any, value any, key string, map)=>Promise|any,\n' +
+              '  result any,\n' +
+              ') -> Promise|result',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 7, column: 4, offset: 153 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 7, column: 4, offset: 153 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/mapReduce.js'
+  },
+  {
+    name: 'mapSet',
+    synopsis: '```coffeescript [specscript]\n' +
+      'mapSet(source Map, key any, value any) -> source\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'mapSet',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 7, offset: 6 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 7, offset: 6 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 7, offset: 6 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'mapSet(source Map, key any, value any) -> source',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 81 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 81 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/mapSet.js'
   },
   {
     name: 'memoizeCappedUnary',
@@ -7622,7 +12533,62 @@ export default [
           end: { line: 1, column: 29, offset: 28 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/memoizeCappedUnary.js'
+  },
+  {
+    name: 'nonfunctionsConditional',
+    synopsis: '```coffeescript [specscript]\n' +
+      'nonfunctionsConditional(array Array<value>, index number) -> boolean\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'nonfunctionsConditional',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 24, offset: 23 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 24, offset: 23 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 24, offset: 23 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'nonfunctionsConditional(array Array<value>, index number) -> boolean',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 101 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 101 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/nonfunctionsConditional.js'
   },
   {
     name: 'noop',
@@ -7715,7 +12681,8 @@ export default [
           end: { line: 1, column: 35, offset: 34 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/noop.js'
   },
   {
     name: 'objectAssign',
@@ -7807,7 +12774,68 @@ export default [
           end: { line: 1, column: 29, offset: 28 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectAssign.js'
+  },
+  {
+    name: 'objectFilter',
+    synopsis: '```coffeescript [specscript]\n' +
+      'objectFilter<T>(\n' +
+      '  object Object<T>,\n' +
+      '  predicate T=>boolean,\n' +
+      ') -> result Object<T>\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'objectFilter',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 13, offset: 12 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 13, offset: 12 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 13, offset: 12 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'objectFilter<T>(\n' +
+              '  object Object<T>,\n' +
+              '  predicate T=>boolean,\n' +
+              ') -> result Object<T>',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 6, column: 4, offset: 115 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 6, column: 4, offset: 115 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectFilter.js'
   },
   {
     name: 'objectFlatMap',
@@ -7936,7 +12964,107 @@ export default [
           end: { line: 1, column: 63, offset: 62 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectFlatMap.js'
+  },
+  {
+    name: 'objectFlatten',
+    synopsis: '```coffeescript [specscript]\n' +
+      'Stream<T> = { read: ()=>T, write: T=>() }\n' +
+      'Monad<T> = Array<T>|String<T>|Set<T>\n' +
+      '  |TypedArray<T>|Stream<T>|Iterator<Promise|T>\n' +
+      '  |{ chain: T=>Monad<T> }|{ flatMap: T=>Monad<T> }|Object<T>\n' +
+      'Reducer<T> = (any, T)=>Promise|any\n' +
+      'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: Reducer<T> }|Object<T>\n' +
+      '\n' +
+      'objectFlatten<T>(\n' +
+      '  object Object<Monad<T>|Foldable<T>|T>,\n' +
+      ') -> Object<T>\n' +
+      '```',
+    TODO: 'change objectAssign to objectDeepAssign',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'objectFlatten',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 14, offset: 13 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 14, offset: 13 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 14, offset: 13 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'Stream<T> = { read: ()=>T, write: T=>() }\n' +
+              'Monad<T> = Array<T>|String<T>|Set<T>\n' +
+              '  |TypedArray<T>|Stream<T>|Iterator<Promise|T>\n' +
+              '  |{ chain: T=>Monad<T> }|{ flatMap: T=>Monad<T> }|Object<T>\n' +
+              'Reducer<T> = (any, T)=>Promise|any\n' +
+              'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: Reducer<T> }|Object<T>\n' +
+              '\n' +
+              'objectFlatten<T>(\n' +
+              '  object Object<Monad<T>|Foldable<T>|T>,\n' +
+              ') -> Object<T>',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 12, column: 4, offset: 405 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 12, column: 4, offset: 405 }
+        }
+      },
+      TODO: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'change objectAssign to objectDeepAssign',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 40, offset: 39 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 40, offset: 39 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 40, offset: 39 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectFlatten.js'
   },
   {
     name: 'objectForEach',
@@ -8024,7 +13152,121 @@ export default [
           end: { line: 1, column: 101, offset: 100 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectForEach.js'
+  },
+  {
+    name: 'objectGet',
+    synopsis: 'objectGet(object Object, key string) -> value any',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'objectGet',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 10, offset: 9 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 10, offset: 9 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 10, offset: 9 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'objectGet(object Object, key string) -> value any',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 50, offset: 49 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 50, offset: 49 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 50, offset: 49 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectGet.js'
+  },
+  {
+    name: 'objectGetFirstKey',
+    synopsis: '```coffeescript [specscript]\n' +
+      'objectGetFirstKey(object Object) -> firstKey string\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'objectGetFirstKey',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 18, offset: 17 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 18, offset: 17 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 18, offset: 17 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'objectGetFirstKey(object Object) -> firstKey string',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 84 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 84 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectGetFirstKey.js'
   },
   {
     name: 'objectKeys',
@@ -8157,7 +13399,62 @@ export default [
           end: { line: 1, column: 27, offset: 26 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectKeys.js'
+  },
+  {
+    name: 'objectKeysLength',
+    synopsis: '```coffeescript [specscript]\n' +
+      'objectKeysLength(object Object) -> number\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'objectKeysLength',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 17, offset: 16 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 17, offset: 16 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 17, offset: 16 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'objectKeysLength(object Object) -> number',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 74 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 74 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectKeysLength.js'
   },
   {
     name: 'objectMap',
@@ -8245,7 +13542,68 @@ export default [
           end: { line: 1, column: 116, offset: 115 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectMap.js'
+  },
+  {
+    name: 'objectMapEntries',
+    synopsis: '```coffeescript [specscript]\n' +
+      'objectMapEntries(\n' +
+      '  object Object,\n' +
+      '  mapper ([key string, value any])=>Promise|[string, any],\n' +
+      ') -> Promise|Object\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'objectMapEntries',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 17, offset: 16 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 17, offset: 16 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 17, offset: 16 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'objectMapEntries(\n' +
+              '  object Object,\n' +
+              '  mapper ([key string, value any])=>Promise|[string, any],\n' +
+              ') -> Promise|Object',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 6, column: 4, offset: 146 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 6, column: 4, offset: 146 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectMapEntries.js'
   },
   {
     name: 'objectMapOwn',
@@ -8335,7 +13693,258 @@ export default [
           end: { line: 2, column: 112, offset: 226 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectMapOwn.js'
+  },
+  {
+    name: 'objectReduceAsync',
+    synopsis: '```coffeescript [specscript]\n' +
+      'objectReduceAsync(\n' +
+      '  object Object,\n' +
+      '  reducer (any, item any, key string, object)=>Promise|any,\n' +
+      '  result any,\n' +
+      ') -> Promise<result>\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'objectReduceAsync',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 18, offset: 17 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 18, offset: 17 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 18, offset: 17 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'objectReduceAsync(\n' +
+              '  object Object,\n' +
+              '  reducer (any, item any, key string, object)=>Promise|any,\n' +
+              '  result any,\n' +
+              ') -> Promise<result>',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 7, column: 4, offset: 163 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 7, column: 4, offset: 163 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectReduce.js'
+  },
+  {
+    name: 'objectReduce',
+    synopsis: '```coffeescript [specscript]\n' +
+      'objectReduce(\n' +
+      '  object Object,\n' +
+      '  reducer (any, item any, key string, object)=>Promise|any,\n' +
+      '  result any,\n' +
+      ') -> Promise|result\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'objectReduce',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 13, offset: 12 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 13, offset: 12 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 13, offset: 12 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'objectReduce(\n' +
+              '  object Object,\n' +
+              '  reducer (any, item any, key string, object)=>Promise|any,\n' +
+              '  result any,\n' +
+              ') -> Promise|result',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 7, column: 4, offset: 157 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 7, column: 4, offset: 157 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectReduce.js'
+  },
+  {
+    name: 'objectSet',
+    synopsis: '```coffeescript [specscript]\n' +
+      'objectSet(\n' +
+      '  object Object,\n' +
+      '  property string,\n' +
+      '  value any,\n' +
+      ') -> object\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'objectSet',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 10, offset: 9 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 10, offset: 9 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 10, offset: 9 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'objectSet(\n' +
+              '  object Object,\n' +
+              '  property string,\n' +
+              '  value any,\n' +
+              ') -> object',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 7, column: 4, offset: 104 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 7, column: 4, offset: 104 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectSet.js'
+  },
+  {
+    name: 'objectSetIf',
+    synopsis: '```coffeescript [specscript]\n' +
+      'objectSetIf<\n' +
+      '  object Object,\n' +
+      '  key string,\n' +
+      '  value any,\n' +
+      '  condition boolean,\n' +
+      '>(object, key, value, condition) -> object\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'objectSetIf',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 12, offset: 11 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 12, offset: 11 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 12, offset: 11 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'objectSetIf<\n' +
+              '  object Object,\n' +
+              '  key string,\n' +
+              '  value any,\n' +
+              '  condition boolean,\n' +
+              '>(object, key, value, condition) -> object',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 8, column: 4, offset: 153 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 8, column: 4, offset: 153 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectSetIf.js'
   },
   {
     name: 'objectToString',
@@ -8420,7 +14029,8 @@ export default [
           end: { line: 1, column: 25, offset: 24 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectToString.js'
   },
   {
     name: 'objectValues',
@@ -8553,7 +14163,62 @@ export default [
           end: { line: 1, column: 29, offset: 28 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectValues.js'
+  },
+  {
+    name: 'once',
+    synopsis: '```coffeescript [specscript]\n' +
+      'once(func function) -> funcThatRunsOnce function\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'once',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 5, offset: 4 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 5, offset: 4 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 5, offset: 4 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'once(func function) -> funcThatRunsOnce function',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 81 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 81 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/once.js'
   },
   {
     name: 'promiseAll',
@@ -8646,7 +14311,62 @@ export default [
           end: { line: 1, column: 25, offset: 24 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/promiseAll.js'
+  },
+  {
+    name: 'promiseObjectAllExecutor',
+    synopsis: '```coffeescript [specscript]\n' +
+      'promiseObjectAllExecutor(resolve function) -> ()\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'promiseObjectAllExecutor',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 25, offset: 24 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 25, offset: 24 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 25, offset: 24 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'promiseObjectAllExecutor(resolve function) -> ()',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 81 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 81 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/promiseObjectAll.js'
   },
   {
     name: 'promiseObjectAll',
@@ -8742,7 +14462,8 @@ export default [
           end: { line: 1, column: 36, offset: 35 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/promiseObjectAll.js'
   },
   {
     name: 'promiseRace',
@@ -8827,7 +14548,438 @@ export default [
           end: { line: 1, column: 26, offset: 25 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/promiseRace.js'
+  },
+  {
+    name: 'parsePropertyPath',
+    synopsis: '```coffeescript [specscript]\n' +
+      'parsePropertyPath(pathString string) -> Array<string>\n' +
+      '```',
+    note: 'a[0].b.c\na.0.b[0][1].c',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'parsePropertyPath',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 18, offset: 17 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 18, offset: 17 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 18, offset: 17 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'parsePropertyPath(pathString string) -> Array<string>',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 86 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 86 }
+        }
+      },
+      note: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'a[0].b.c\na.0.b[0][1].c',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 2, column: 14, offset: 22 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 2, column: 14, offset: 22 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 2, column: 14, offset: 22 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/propertyPathToArray.js'
+  },
+  {
+    name: 'propertyPathToArray',
+    synopsis: '```coffeescript [specscript]\n' +
+      'propertyPathToArray(path string|number|Array<string|number>) -> Array\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'propertyPathToArray',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 20, offset: 19 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 20, offset: 19 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 20, offset: 19 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'propertyPathToArray(path string|number|Array<string|number>) -> Array',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 102 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 102 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/propertyPathToArray.js'
+  },
+  {
+    name: 'reducerAllSync',
+    synopsis: '```coffeescript [specscript]\n' +
+      'reducerAllSync(predicate any=> boolean, result boolean, item any) -> boolean\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'reducerAllSync',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 15, offset: 14 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 15, offset: 14 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 15, offset: 14 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'reducerAllSync(predicate any=> boolean, result boolean, item any) -> boolean',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 109 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 109 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/reducerAllSync.js'
+  },
+  {
+    name: 'reducerAnySync',
+    synopsis: '```coffeescript [specscript]\n' +
+      'reducerAnySync(predicate T=>boolean) -> anyReducer (any, any)=>any\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'reducerAnySync',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 15, offset: 14 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 15, offset: 14 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 15, offset: 14 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'reducerAnySync(predicate T=>boolean) -> anyReducer (any, any)=>any',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 99 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 99 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/reducerAnySync.js'
+  },
+  {
+    name: 'reducerConcat',
+    synopsis: '```coffeescript [specscript]\n' +
+      'reducerConcat<\n' +
+      '  T any,\n' +
+      '  intermediate any,\n' +
+      '  reducerA (any, T)=>Promise|intermediate,\n' +
+      '  reducerB (intermediate, T)=>Promise|any,\n' +
+      '>(reducerA, reducerB) -> pipedReducer (any, T)=>Promise|any\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'reducerConcat',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 14, offset: 13 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 14, offset: 13 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 14, offset: 13 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'reducerConcat<\n' +
+              '  T any,\n' +
+              '  intermediate any,\n' +
+              '  reducerA (any, T)=>Promise|intermediate,\n' +
+              '  reducerB (intermediate, T)=>Promise|any,\n' +
+              '>(reducerA, reducerB) -> pipedReducer (any, T)=>Promise|any',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 8, column: 4, offset: 222 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 8, column: 4, offset: 222 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/reducerConcat.js'
+  },
+  {
+    name: 'reducerConcatSync',
+    synopsis: 'reducerConcatSync(\n' +
+      '  reducerA (any, T)=>(intermediate any),\n' +
+      '  reducerB (intermediate, T)=>any,\n' +
+      ') -> pipedReducer (any, T)=>any',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'reducerConcatSync',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 18, offset: 17 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 18, offset: 17 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 18, offset: 17 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'reducerConcatSync(\n' +
+                  'reducerA (any, T)=>(intermediate any),\n' +
+                  'reducerB (intermediate, T)=>any,\n' +
+                  ') -> pipedReducer (any, T)=>any',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 4, column: 32, offset: 126 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 4, column: 32, offset: 126 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 4, column: 32, offset: 126 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/reducerConcatSync.js'
+  },
+  {
+    name: 'reducerEvery',
+    synopsis: '```coffeescript [specscript]\n' +
+      'reducerEvery(\n' +
+      '  predicate any=>boolean,\n' +
+      ') -> reducer(result boolean, item any)=>boolean\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'reducerEvery',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 13, offset: 12 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 13, offset: 12 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 13, offset: 12 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'reducerEvery(\n' +
+              '  predicate any=>boolean,\n' +
+              ') -> reducer(result boolean, item any)=>boolean',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 5, column: 4, offset: 120 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 5, column: 4, offset: 120 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/reducerEvery.js'
   },
   {
     name: 'reducerFilter',
@@ -8950,7 +15102,82 @@ export default [
           end: { line: 3, column: 127, offset: 214 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/reducerFilter.js'
+  },
+  {
+    name: 'reducerFlatMap',
+    synopsis: '```coffeescript [specscript]\n' +
+      'Stream<T> = { read: ()=>T, write: T=>() }\n' +
+      'Monad<T> = Array<T>|String<T>|Set<T>\n' +
+      '  |TypedArray<T>|Stream<T>|Iterator<Promise|T>\n' +
+      '  |{ chain: T=>Monad<T> }|{ flatMap: T=>Monad<T> }|Object<T>\n' +
+      'Reducer<T> = (any, T)=>Promise|any\n' +
+      'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: Reducer<T> }|Object<T>\n' +
+      '\n' +
+      'reducerFlatMap<T>(\n' +
+      '  reducer (any, T)=>Promise|any,\n' +
+      '  flatMapper T=>Promise|Monad<T>|Foldable<T>|T,\n' +
+      ') -> flatMappingReducer (any, T)=>Promise|any\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'reducerFlatMap',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 15, offset: 14 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 15, offset: 14 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 15, offset: 14 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'Stream<T> = { read: ()=>T, write: T=>() }\n' +
+              'Monad<T> = Array<T>|String<T>|Set<T>\n' +
+              '  |TypedArray<T>|Stream<T>|Iterator<Promise|T>\n' +
+              '  |{ chain: T=>Monad<T> }|{ flatMap: T=>Monad<T> }|Object<T>\n' +
+              'Reducer<T> = (any, T)=>Promise|any\n' +
+              'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: Reducer<T> }|Object<T>\n' +
+              '\n' +
+              'reducerFlatMap<T>(\n' +
+              '  reducer (any, T)=>Promise|any,\n' +
+              '  flatMapper T=>Promise|Monad<T>|Foldable<T>|T,\n' +
+              ') -> flatMappingReducer (any, T)=>Promise|any',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 13, column: 4, offset: 477 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 13, column: 4, offset: 477 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/reducerFlatMap.js'
   },
   {
     name: 'reducerFlatten',
@@ -9075,7 +15302,8 @@ export default [
           end: { line: 1, column: 21, offset: 20 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/reducerFlatten.js'
   },
   {
     name: 'reducerForEach',
@@ -9165,7 +15393,8 @@ export default [
           end: { line: 1, column: 96, offset: 95 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/reducerForEach.js'
   },
   {
     name: 'reducerMap',
@@ -9288,7 +15517,248 @@ export default [
           end: { line: 3, column: 122, offset: 204 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/reducerMap.js'
+  },
+  {
+    name: 'reducerSome',
+    synopsis: '```coffeescript [specscript]\n' +
+      'reducerSome(\n' +
+      '  predicate any=>boolean,\n' +
+      ') -> anyReducer (result boolean, item any)=>boolean\n' +
+      '```',
+    related: 'foldableAllReducer',
+    TODO: 'throw to break early?',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'reducerSome',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 12, offset: 11 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 12, offset: 11 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 12, offset: 11 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'reducerSome(\n' +
+              '  predicate any=>boolean,\n' +
+              ') -> anyReducer (result boolean, item any)=>boolean',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 5, column: 4, offset: 123 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 5, column: 4, offset: 123 }
+        }
+      },
+      related: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'foldableAllReducer',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 19, offset: 18 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 19, offset: 18 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 19, offset: 18 }
+        }
+      },
+      TODO: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'throw to break early?',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 22, offset: 21 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 22, offset: 21 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 22, offset: 21 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/reducerSome.js'
+  },
+  {
+    name: '_reducerTryCatchErrorHandler',
+    synopsis: '```coffeescript [specscript]\n' +
+      '_reducerTryCatchErrorHandler(\n' +
+      '  reducer function,\n' +
+      '  error Error,\n' +
+      '  accum any,\n' +
+      '  item any,\n' +
+      ') -> Promise|any\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: '_reducerTryCatchErrorHandler',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 29, offset: 28 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 29, offset: 28 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 29, offset: 28 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: '_reducerTryCatchErrorHandler(\n' +
+              '  reducer function,\n' +
+              '  error Error,\n' +
+              '  accum any,\n' +
+              '  item any,\n' +
+              ') -> Promise|any',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 8, column: 4, offset: 139 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 8, column: 4, offset: 139 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/reducerTryCatch.js'
+  },
+  {
+    name: 'reducerTryCatch',
+    synopsis: '```coffeescript [specscript]\n' +
+      'type Reducer = (accum any, item any)=>(nextAccumulator Promise|any)\n' +
+      '\n' +
+      'reducerTryCatch(\n' +
+      '  reducer function,\n' +
+      '  catcher function,\n' +
+      ') -> errorHandlingReducer function\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'reducerTryCatch',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 16, offset: 15 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 16, offset: 15 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 16, offset: 15 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'type Reducer = (accum any, item any)=>(nextAccumulator Promise|any)\n' +
+              '\n' +
+              'reducerTryCatch(\n' +
+              '  reducer function,\n' +
+              '  catcher function,\n' +
+              ') -> errorHandlingReducer function',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 8, column: 4, offset: 193 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 8, column: 4, offset: 193 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/reducerTryCatch.js'
   },
   {
     name: 'sameValueZero',
@@ -9395,7 +15865,149 @@ export default [
           end: { line: 1, column: 124, offset: 123 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/sameValueZero.js'
+  },
+  {
+    name: 'setByPath',
+    synopsis: '```coffeescript [specscript]\n' +
+      'setByPath<\n' +
+      '  obj any,\n' +
+      '  value any,\n' +
+      '  path string|number|Array<string|number>,\n' +
+      '>(obj, value, path) -> obj any\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'setByPath',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 10, offset: 9 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 10, offset: 9 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 10, offset: 9 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'setByPath<\n' +
+              '  obj any,\n' +
+              '  value any,\n' +
+              '  path string|number|Array<string|number>,\n' +
+              '>(obj, value, path) -> obj any',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 7, column: 4, offset: 141 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 7, column: 4, offset: 141 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/setByPath.js'
+  },
+  {
+    name: 'setExtend',
+    synopsis: '```coffeescript [specscript]\nsetExtend(set, values Set|any) -> set\n```',
+    related: 'arrayExtend',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'setExtend',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 10, offset: 9 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 10, offset: 9 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 10, offset: 9 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'setExtend(set, values Set|any) -> set',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 70 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 70 }
+        }
+      },
+      related: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'arrayExtend',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 12, offset: 11 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 12, offset: 11 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 12, offset: 11 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/setExtend.js'
   },
   {
     name: 'setFilter',
@@ -9497,7 +16109,156 @@ export default [
           end: { line: 1, column: 82, offset: 81 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/setFilter.js'
+  },
+  {
+    name: 'setFlatMap',
+    synopsis: '```coffeescript [specscript]\n' +
+      'Stream<T> = { read: ()=>T, write: T=>() }\n' +
+      'Monad<T> = Array<T>|String<T>|Set<T>\n' +
+      '  |TypedArray<T>|Stream<T>|Iterator<Promise|T>\n' +
+      '  |{ chain: T=>Monad<T> }|{ flatMap: T=>Monad<T> }|Object<T>\n' +
+      'Reducer<T> = (any, T)=>Promise|any\n' +
+      'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: Reducer<T> }|Object<T>\n' +
+      '\n' +
+      'setFlatMap<\n' +
+      '  T any,\n' +
+      '  set Set<T>,\n' +
+      '  flatMapper T=>Promise|Monad<T>|Foldable<T>|T,\n' +
+      '>(set, flatMapper) -> Promise|Set<T>\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'setFlatMap',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 11, offset: 10 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 11, offset: 10 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 11, offset: 10 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'Stream<T> = { read: ()=>T, write: T=>() }\n' +
+              'Monad<T> = Array<T>|String<T>|Set<T>\n' +
+              '  |TypedArray<T>|Stream<T>|Iterator<Promise|T>\n' +
+              '  |{ chain: T=>Monad<T> }|{ flatMap: T=>Monad<T> }|Object<T>\n' +
+              'Reducer<T> = (any, T)=>Promise|any\n' +
+              'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: Reducer<T> }|Object<T>\n' +
+              '\n' +
+              'setFlatMap<\n' +
+              '  T any,\n' +
+              '  set Set<T>,\n' +
+              '  flatMapper T=>Promise|Monad<T>|Foldable<T>|T,\n' +
+              '>(set, flatMapper) -> Promise|Set<T>',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 14, column: 4, offset: 451 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 14, column: 4, offset: 451 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/setFlatMap.js'
+  },
+  {
+    name: 'setFlatten',
+    synopsis: '```coffeescript [specscript]\n' +
+      'Stream<T> = { read: ()=>T, write: T=>() }\n' +
+      'Monad<T> = Array<T>|String<T>|Set<T>\n' +
+      '  |TypedArray<T>|Stream<T>|Iterator<Promise|T>\n' +
+      '  |{ chain: T=>Monad<T> }|{ flatMap: T=>Monad<T> }|Object<T>\n' +
+      'Reducer<T> = (any, T)=>Promise|any\n' +
+      'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: Reducer<T> }|Object<T>\n' +
+      '\n' +
+      'setFlatten<T>(\n' +
+      '  set Set<Monad<T>|Foldable<T>|T>,\n' +
+      ') -> flattened Set<T>\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'setFlatten',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 11, offset: 10 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 11, offset: 10 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 11, offset: 10 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'Stream<T> = { read: ()=>T, write: T=>() }\n' +
+              'Monad<T> = Array<T>|String<T>|Set<T>\n' +
+              '  |TypedArray<T>|Stream<T>|Iterator<Promise|T>\n' +
+              '  |{ chain: T=>Monad<T> }|{ flatMap: T=>Monad<T> }|Object<T>\n' +
+              'Reducer<T> = (any, T)=>Promise|any\n' +
+              'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: Reducer<T> }|Object<T>\n' +
+              '\n' +
+              'setFlatten<T>(\n' +
+              '  set Set<Monad<T>|Foldable<T>|T>,\n' +
+              ') -> flattened Set<T>',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 12, column: 4, offset: 403 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 12, column: 4, offset: 403 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/setFlatten.js'
   },
   {
     name: 'setMap',
@@ -9585,7 +16346,594 @@ export default [
           end: { line: 1, column: 79, offset: 78 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/setMap.js'
+  },
+  {
+    name: 'sleep',
+    synopsis: '```coffeescript [specscript]\n' +
+      'sleep(time number) -> promiseThatResolvesAfterTime Promise\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'sleep',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 6, offset: 5 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 6, offset: 5 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 6, offset: 5 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'sleep(time number) -> promiseThatResolvesAfterTime Promise',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 91 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 91 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/sleep.js'
+  },
+  {
+    name: 'spread2',
+    synopsis: '```coffeescript [specscript]\n' +
+      'spread2<\n' +
+      '  func function,\n' +
+      '  arg0 any,\n' +
+      '  arg1 any,\n' +
+      '>(func) -> spreading2 ([arg0, arg1])=>func(arg0, arg1)\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'spread2',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 8, offset: 7 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 8, offset: 7 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 8, offset: 7 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'spread2<\n' +
+              '  func function,\n' +
+              '  arg0 any,\n' +
+              '  arg1 any,\n' +
+              '>(func) -> spreading2 ([arg0, arg1])=>func(arg0, arg1)',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 7, column: 4, offset: 137 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 7, column: 4, offset: 137 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/spread2.js'
+  },
+  {
+    name: '__streamWrite',
+    synopsis: '```coffeescript [specscript]\n' +
+      '__streamWrite<\n' +
+      '  chunk string|Buffer|Uint8Array|any,\n' +
+      '  encoding string,\n' +
+      '  callback function,\n' +
+      '  stream { write: (chunk, encoding?, callback?)=>() }\n' +
+      '>(stream)(chunk, encoding?, callback?) -> stream\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: '__streamWrite',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 14, offset: 13 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 14, offset: 13 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 14, offset: 13 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: '__streamWrite<\n' +
+              '  chunk string|Buffer|Uint8Array|any,\n' +
+              '  encoding string,\n' +
+              '  callback function,\n' +
+              '  stream { write: (chunk, encoding?, callback?)=>() }\n' +
+              '>(stream)(chunk, encoding?, callback?) -> stream',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 8, column: 4, offset: 228 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 8, column: 4, offset: 228 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/streamExtend.js'
+  },
+  {
+    name: '_streamExtendExecutor',
+    synopsis: '```coffeescript [specscript]\n' +
+      'Stream = { read: function, write: function }\n' +
+      '\n' +
+      '_streamExtendExecutor<\n' +
+      '  resultStream Stream,\n' +
+      '  stream Stream,\n' +
+      '  resolve function,\n' +
+      '  reject function,\n' +
+      '>(resultStream, stream) -> executor (resolve, reject)=>()\n' +
+      '```',
+    note: 'optimizes function creation within _streamExtend',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: '_streamExtendExecutor',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 22, offset: 21 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 22, offset: 21 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 22, offset: 21 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'Stream = { read: function, write: function }\n' +
+              '\n' +
+              '_streamExtendExecutor<\n' +
+              '  resultStream Stream,\n' +
+              '  stream Stream,\n' +
+              '  resolve function,\n' +
+              '  reject function,\n' +
+              '>(resultStream, stream) -> executor (resolve, reject)=>()',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 10, column: 4, offset: 238 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 10, column: 4, offset: 238 }
+        }
+      },
+      note: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'optimizes function creation within _streamExtend',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 49, offset: 48 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 49, offset: 48 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 49, offset: 48 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/streamExtend.js'
+  },
+  {
+    name: '_streamExtend',
+    synopsis: '```coffeescript [specscript]\n' +
+      'Stream = { read: function, write: function }\n' +
+      '\n' +
+      '_streamExtend<\n' +
+      '  resultStream Stream,\n' +
+      '  stream Stream,\n' +
+      '>(resultStream, stream) -> Promise<resultStream>\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: '_streamExtend',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 14, offset: 13 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 14, offset: 13 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 14, offset: 13 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'Stream = { read: function, write: function }\n' +
+              '\n' +
+              '_streamExtend<\n' +
+              '  resultStream Stream,\n' +
+              '  stream Stream,\n' +
+              '>(resultStream, stream) -> Promise<resultStream>',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 8, column: 4, offset: 182 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 8, column: 4, offset: 182 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/streamExtend.js'
+  },
+  {
+    name: 'streamExtend',
+    synopsis: '```coffeescript [specscript]\n' +
+      'Stream = { read: function, write: function }\n' +
+      '\n' +
+      'streamExtend<\n' +
+      '  stream Stream,\n' +
+      '  values Stream|any,\n' +
+      '>(stream, values) -> Promise|stream\n' +
+      '```',
+    TODO: 'maybe support `.read`',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'streamExtend',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 13, offset: 12 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 13, offset: 12 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 13, offset: 12 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'Stream = { read: function, write: function }\n' +
+              '\n' +
+              'streamExtend<\n' +
+              '  stream Stream,\n' +
+              '  values Stream|any,\n' +
+              '>(stream, values) -> Promise|stream',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 8, column: 4, offset: 166 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 8, column: 4, offset: 166 }
+        }
+      },
+      TODO: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'maybe support ',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 15, offset: 14 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: '.read',
+                position: {
+                  start: { line: 1, column: 15, offset: 14 },
+                  end: { line: 1, column: 22, offset: 21 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 22, offset: 21 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 22, offset: 21 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/streamExtend.js'
+  },
+  {
+    name: 'streamFlatExtend',
+    synopsis: '```coffeescript [specscript]\n' +
+      'Stream<T> = { read: ()=>T, write: T=>() }\n' +
+      'Monad<T> = Array<T>|String<T>|Set<T>\n' +
+      '  |TypedArray<T>|Stream<T>|Iterator<Promise|T>\n' +
+      '  |{ chain: T=>Monad<T> }|{ flatMap: T=>Monad<T> }|Object<T>\n' +
+      'Reducer<T> = (any, T)=>Promise|any\n' +
+      'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: Reducer<T> }|Object<T>\n' +
+      '\n' +
+      'streamFlatExtend<T>(\n' +
+      '  stream Stream<T>,\n' +
+      '  item <Monad<T>|Foldable<T>|T>\n' +
+      ') -> stream\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'streamFlatExtend',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 17, offset: 16 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 17, offset: 16 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 17, offset: 16 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'Stream<T> = { read: ()=>T, write: T=>() }\n' +
+              'Monad<T> = Array<T>|String<T>|Set<T>\n' +
+              '  |TypedArray<T>|Stream<T>|Iterator<Promise|T>\n' +
+              '  |{ chain: T=>Monad<T> }|{ flatMap: T=>Monad<T> }|Object<T>\n' +
+              'Reducer<T> = (any, T)=>Promise|any\n' +
+              'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: Reducer<T> }|Object<T>\n' +
+              '\n' +
+              'streamFlatExtend<T>(\n' +
+              '  stream Stream<T>,\n' +
+              '  item <Monad<T>|Foldable<T>|T>\n' +
+              ') -> stream',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 13, column: 4, offset: 416 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 13, column: 4, offset: 416 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/streamFlatExtend.js'
+  },
+  {
+    name: 'streamFlatMap',
+    synopsis: '```coffeescript [specscript]\n' +
+      'Stream<T> = { read: ()=>T, write: T=>() }\n' +
+      'Monad<T> = Array<T>|String<T>|Set<T>\n' +
+      '  |TypedArray<T>|Stream<T>|Iterator<Promise|T>\n' +
+      '  |{ chain: T=>Monad<T> }|{ flatMap: T=>Monad<T> }|Object<T>\n' +
+      'Reducer<T> = (any, T)=>Promise|any\n' +
+      'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: Reducer<T> }|Object<T>\n' +
+      '\n' +
+      'streamFlatMap<T>(\n' +
+      '  stream Stream<T>,\n' +
+      '  flatMapper T=>Promise|Monad<T>|Foldable<T>|T,\n' +
+      ') -> Promise|Stream<T>\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'streamFlatMap',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 14, offset: 13 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 14, offset: 13 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 14, offset: 13 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'Stream<T> = { read: ()=>T, write: T=>() }\n' +
+              'Monad<T> = Array<T>|String<T>|Set<T>\n' +
+              '  |TypedArray<T>|Stream<T>|Iterator<Promise|T>\n' +
+              '  |{ chain: T=>Monad<T> }|{ flatMap: T=>Monad<T> }|Object<T>\n' +
+              'Reducer<T> = (any, T)=>Promise|any\n' +
+              'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: Reducer<T> }|Object<T>\n' +
+              '\n' +
+              'streamFlatMap<T>(\n' +
+              '  stream Stream<T>,\n' +
+              '  flatMapper T=>Promise|Monad<T>|Foldable<T>|T,\n' +
+              ') -> Promise|Stream<T>',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 13, column: 4, offset: 440 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 13, column: 4, offset: 440 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/streamFlatMap.js'
   },
   {
     name: 'streamWrite',
@@ -9691,7 +17039,60 @@ export default [
           end: { line: 1, column: 34, offset: 33 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/streamWrite.js'
+  },
+  {
+    name: 'strictEqual',
+    synopsis: '```coffeescript [specscript]\nstrictEqual(a any, b any) -> boolean\n```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'strictEqual',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 12, offset: 11 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 12, offset: 11 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 12, offset: 11 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'strictEqual(a any, b any) -> boolean',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 69 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 69 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/strictEqual.js'
   },
   {
     name: 'stringMap',
@@ -9779,7 +17180,181 @@ export default [
           end: { line: 1, column: 43, offset: 42 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/stringFilter.js'
+  },
+  {
+    name: 'arrayFlattenToString',
+    synopsis: '```coffeescript [specscript]\n' +
+      'Stream<T> = { read: ()=>T, write: T=>() }\n' +
+      'Monad<T> = Array<T>|String<T>|Set<T>\n' +
+      '  |TypedArray<T>|Stream<T>|Iterator<Promise|T>\n' +
+      '  |{ chain: T=>Monad<T> }|{ flatMap: T=>Monad<T> }|Object<T>\n' +
+      'Reducer<T> = (any, T)=>Promise|any\n' +
+      'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: Reducer<T> }|Object<T>\n' +
+      '\n' +
+      'arrayFlattenToString<T>(\n' +
+      '  array Array<Monad<T>|Foldable<T>|T>,\n' +
+      ') -> String<T>\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'arrayFlattenToString',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 21, offset: 20 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 21, offset: 20 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 21, offset: 20 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'Stream<T> = { read: ()=>T, write: T=>() }\n' +
+              'Monad<T> = Array<T>|String<T>|Set<T>\n' +
+              '  |TypedArray<T>|Stream<T>|Iterator<Promise|T>\n' +
+              '  |{ chain: T=>Monad<T> }|{ flatMap: T=>Monad<T> }|Object<T>\n' +
+              'Reducer<T> = (any, T)=>Promise|any\n' +
+              'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: Reducer<T> }|Object<T>\n' +
+              '\n' +
+              'arrayFlattenToString<T>(\n' +
+              '  array Array<Monad<T>|Foldable<T>|T>,\n' +
+              ') -> String<T>',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 12, column: 4, offset: 410 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 12, column: 4, offset: 410 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/stringFlatMap.js'
+  },
+  {
+    name: 'stringFlatMap',
+    synopsis: '```coffeescript [specscript]\n' +
+      'Stream<T> = { read: ()=>T, write: T=>() }\n' +
+      'Monad<T> = Array<T>|String<T>|Set<T>\n' +
+      '  |TypedArray<T>|Stream<T>|Iterator<Promise|T>\n' +
+      '  |{ chain: T=>Monad<T> }|{ flatMap: T=>Monad<T> }|Object<T>\n' +
+      'Reducer<T> = (any, T)=>Promise|any\n' +
+      'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: Reducer<T> }|Object<T>\n' +
+      '\n' +
+      'stringFlatMap<T>(\n' +
+      '  string String<T>,\n' +
+      '  flatMapper T=>Promise|Monad<T>|Foldable<T>|T,\n' +
+      ') -> Promise|String<T>\n' +
+      '```',
+    related: 'arrayFlatMap',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'stringFlatMap',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 14, offset: 13 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 14, offset: 13 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 14, offset: 13 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'Stream<T> = { read: ()=>T, write: T=>() }\n' +
+              'Monad<T> = Array<T>|String<T>|Set<T>\n' +
+              '  |TypedArray<T>|Stream<T>|Iterator<Promise|T>\n' +
+              '  |{ chain: T=>Monad<T> }|{ flatMap: T=>Monad<T> }|Object<T>\n' +
+              'Reducer<T> = (any, T)=>Promise|any\n' +
+              'Foldable<T> = Iterable<T>|AsyncIterable<T>|{ reduce: Reducer<T> }|Object<T>\n' +
+              '\n' +
+              'stringFlatMap<T>(\n' +
+              '  string String<T>,\n' +
+              '  flatMapper T=>Promise|Monad<T>|Foldable<T>|T,\n' +
+              ') -> Promise|String<T>',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 13, column: 4, offset: 440 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 13, column: 4, offset: 440 }
+        }
+      },
+      related: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'arrayFlatMap',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 13, offset: 12 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 13, offset: 12 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 13, offset: 12 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/stringFlatMap.js'
   },
   {
     name: 'stringMap',
@@ -9910,7 +17485,8 @@ export default [
           end: { line: 1, column: 14, offset: 13 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/stringMap.js'
   },
   {
     name: 'symbolAsyncIterator',
@@ -10003,7 +17579,8 @@ export default [
           end: { line: 1, column: 36, offset: 35 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/symbolAsyncIterator.js'
   },
   {
     name: 'symbolIterator',
@@ -10096,7 +17673,8 @@ export default [
           end: { line: 1, column: 31, offset: 30 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/symbolIterator.js'
   },
   {
     name: 'tapSync',
@@ -10182,7 +17760,8 @@ export default [
           end: { line: 1, column: 88, offset: 87 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/tapSync.js'
   },
   {
     name: 'thunkConditional',
@@ -10286,7 +17865,8 @@ export default [
           end: { line: 1, column: 58, offset: 57 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/thunkConditional.js'
   },
   {
     name: 'thunkify1',
@@ -10372,7 +17952,8 @@ export default [
           end: { line: 1, column: 49, offset: 48 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/thunkify1.js'
   },
   {
     name: 'thunkify2',
@@ -10460,7 +18041,8 @@ export default [
           end: { line: 1, column: 50, offset: 49 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/thunkify2.js'
   },
   {
     name: 'thunkify3',
@@ -10550,7 +18132,8 @@ export default [
           end: { line: 1, column: 52, offset: 51 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/thunkify3.js'
   },
   {
     name: 'thunkify4',
@@ -10642,7 +18225,8 @@ export default [
           end: { line: 1, column: 51, offset: 50 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/thunkify4.js'
   },
   {
     name: 'thunkify5',
@@ -10736,7 +18320,54 @@ export default [
           end: { line: 1, column: 51, offset: 50 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/thunkify5.js'
+  },
+  {
+    name: 'thunkifyArgs',
+    synopsis: [
+      '```coffeescript [specscript]\n' +
+        'thunkifyArgs(func function, args Array) -> ()=>func(...args)\n' +
+        '```',
+      'Create a thunk from a function and an arguments array.'
+    ],
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'thunkifyArgs',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 13, offset: 12 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 13, offset: 12 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 13, offset: 12 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 1, offset: 0 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/thunkifyArgs.js'
   },
   {
     name: 'timeInLoop',
@@ -10853,7 +18484,8 @@ export default [
           end: { line: 7, column: 80, offset: 236 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/timeInLoop.js'
   },
   {
     name: 'timeInLoopAsync',
@@ -10951,7 +18583,8 @@ export default [
           end: { line: 5, column: 4, offset: 143 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/timeInLoopAsync.js'
   },
   {
     name: 'all',
@@ -11199,7 +18832,8 @@ export default [
           end: { line: 1, column: 11, offset: 10 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/all.js'
   },
   {
     name: 'all.series',
@@ -11352,7 +18986,8 @@ export default [
           end: { line: 1, column: 7, offset: 6 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/all.js'
   },
   {
     name: 'always',
@@ -11452,7 +19087,124 @@ export default [
           end: { line: 9, column: 4, offset: 214 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/always.js'
+  },
+  {
+    name: 'areAllValuesTruthy',
+    synopsis: '```coffeescript [specscript]\n' +
+      'areAllValuesTruthy(predicates Array<value>) -> Promise|boolean\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'areAllValuesTruthy',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 19, offset: 18 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 19, offset: 18 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 19, offset: 18 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'areAllValuesTruthy(predicates Array<value>) -> Promise|boolean',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 95 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 95 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/and.js'
+  },
+  {
+    name: 'asyncArePredicatesAllTruthy',
+    synopsis: '```coffeescript [specscript]\n' +
+      'asyncArePredicatesAllTruthy(\n' +
+      '  predicates Array<value=>Promise|boolean>\n' +
+      '  args Array,\n' +
+      '  index number,\n' +
+      ') -> allTruthy boolean\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'asyncArePredicatesAllTruthy',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 28, offset: 27 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 28, offset: 27 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 28, offset: 27 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'asyncArePredicatesAllTruthy(\n' +
+              '  predicates Array<value=>Promise|boolean>\n' +
+              '  args Array,\n' +
+              '  index number,\n' +
+              ') -> allTruthy boolean',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 7, column: 4, offset: 157 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 7, column: 4, offset: 157 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/and.js'
   },
   {
     name: 'and',
@@ -11685,171 +19437,8 @@ export default [
           end: { line: 1, column: 49, offset: 48 }
         }
       }
-    }
-  },
-  {
-    name: '_Promise',
-    synopsis: '```coffeescript [specscript]\nnew _Promise() -> _Promise\n```',
-    description: 'Internal _Promise. Does not conform to spec.',
-    mdast: {
-      name: {
-        type: 'root',
-        children: [
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: '_Promise',
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 9, offset: 8 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 9, offset: 8 }
-            }
-          }
-        ],
-        position: {
-          start: { line: 1, column: 1, offset: 0 },
-          end: { line: 1, column: 9, offset: 8 }
-        }
-      },
-      synopsis: {
-        type: 'root',
-        children: [
-          {
-            type: 'code',
-            lang: 'coffeescript',
-            meta: '[specscript]',
-            value: 'new _Promise() -> _Promise',
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 3, column: 4, offset: 59 }
-            }
-          }
-        ],
-        position: {
-          start: { line: 1, column: 1, offset: 0 },
-          end: { line: 3, column: 4, offset: 59 }
-        }
-      },
-      description: {
-        type: 'root',
-        children: [
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: 'Internal _Promise. Does not conform to spec.',
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 45, offset: 44 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 45, offset: 44 }
-            }
-          }
-        ],
-        position: {
-          start: { line: 1, column: 1, offset: 0 },
-          end: { line: 1, column: 45, offset: 44 }
-        }
-      }
-    }
-  },
-  {
-    name: 'arrayMap',
-    synopsis: '```coffeescript [specscript]\n' +
-      'arrayMap(\n' +
-      '  array Array,\n' +
-      '  mapper (item any, index number, array Array)=>Promise|any,\n' +
-      ') -> Promise|Array\n' +
-      '```',
-    description: 'Apply a mapper to each item of an array, returning an array. Mapper may be asynchronous.',
-    mdast: {
-      name: {
-        type: 'root',
-        children: [
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: 'arrayMap',
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 9, offset: 8 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 9, offset: 8 }
-            }
-          }
-        ],
-        position: {
-          start: { line: 1, column: 1, offset: 0 },
-          end: { line: 1, column: 9, offset: 8 }
-        }
-      },
-      synopsis: {
-        type: 'root',
-        children: [
-          {
-            type: 'code',
-            lang: 'coffeescript',
-            meta: '[specscript]',
-            value: 'arrayMap(\n' +
-              '  array Array,\n' +
-              '  mapper (item any, index number, array Array)=>Promise|any,\n' +
-              ') -> Promise|Array',
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 6, column: 4, offset: 137 }
-            }
-          }
-        ],
-        position: {
-          start: { line: 1, column: 1, offset: 0 },
-          end: { line: 6, column: 4, offset: 137 }
-        }
-      },
-      description: {
-        type: 'root',
-        children: [
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: 'Apply a mapper to each item of an array, returning an array. Mapper may be asynchronous.',
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 89, offset: 88 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 89, offset: 88 }
-            }
-          }
-        ],
-        position: {
-          start: { line: 1, column: 1, offset: 0 },
-          end: { line: 1, column: 89, offset: 88 }
-        }
-      }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/and.js'
   },
   {
     name: 'assign',
@@ -12045,7 +19634,8 @@ export default [
           end: { line: 1, column: 11, offset: 10 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/assign.js'
   },
   {
     name: 'compose',
@@ -12187,7 +19777,8 @@ export default [
           end: { line: 11, column: 4, offset: 613 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/compose.js'
   },
   {
     name: 'curry',
@@ -12339,7 +19930,8 @@ export default [
           end: { line: 15, column: 4, offset: 645 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/curry.js'
   },
   {
     name: 'curry.arity',
@@ -12469,7 +20061,1072 @@ export default [
           end: { line: 7, column: 4, offset: 212 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/curry.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/Transducer.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/Transducer.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/Transducer.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/Transducer.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/__.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/__.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/__.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/__.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/all.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/all.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/all.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/all.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/always.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/always.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/always.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/always.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/and.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/and.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/and.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/and.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/assign.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/assign.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/assign.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/assign.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/compose.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/compose.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/compose.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/compose.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/curry.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/curry.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/curry.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/curry.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/eq.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/eq.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/eq.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/eq.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/every.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/every.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/every.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/every.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/filter.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/filter.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/filter.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/filter.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/flatMap.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/flatMap.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/flatMap.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/flatMap.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/forEach.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/forEach.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/forEach.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/forEach.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/get.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/get.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/get.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/get.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/gt.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/gt.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/gt.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/gt.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/gte.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/gte.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/gte.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/gte.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/lt.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/lt.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/lt.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/lt.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/lte.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/lte.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/lte.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/lte.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/map.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/map.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/map.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/map.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/not.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/not.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/not.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/not.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/omit.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/omit.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/omit.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/omit.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/or.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/or.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/or.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/or.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/pick.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/pick.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/pick.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/pick.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/pipe.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/pipe.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/pipe.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/pipe.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/reduce.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/reduce.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/reduce.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/reduce.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/rubico.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/rubico.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/rubico.global.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/rubico.global.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/rubico.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/rubico.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/set.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/set.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/set.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/set.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/some.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/some.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/some.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/some.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/switchCase.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/switchCase.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/switchCase.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/switchCase.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/tap.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/tap.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/tap.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/tap.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/thunkify.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/thunkify.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/thunkify.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/thunkify.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/transform.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/transform.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/transform.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/transform.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/tryCatch.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/tryCatch.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/tryCatch.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/tryCatch.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/append.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/append.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/append.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/append.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/callProp.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/callProp.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/callProp.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/callProp.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/defaultsDeep.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/defaultsDeep.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/defaultsDeep.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/defaultsDeep.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/differenceWith.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/differenceWith.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/differenceWith.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/differenceWith.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/filterOut.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/filterOut.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/filterOut.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/filterOut.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/find.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/find.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/find.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/find.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/findIndex.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/findIndex.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/findIndex.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/findIndex.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/first.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/first.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/first.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/first.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/flatten.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/flatten.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/flatten.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/flatten.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/groupBy.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/groupBy.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/groupBy.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/groupBy.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/has.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/has.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/has.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/has.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/identity.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/identity.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/identity.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/identity.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/includes.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/includes.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/includes.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/includes.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isDeepEqual.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isDeepEqual.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isDeepEqual.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isDeepEqual.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isEmpty.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isEmpty.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isEmpty.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isEmpty.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isEqual.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isEqual.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isEqual.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isEqual.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isFunction.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isFunction.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isFunction.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isFunction.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isIn.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isIn.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isIn.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isIn.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isObject.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isObject.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isObject.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isObject.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isString.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isString.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isString.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isString.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/keys.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/keys.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/keys.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/keys.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/last.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/last.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/last.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/last.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/maxBy.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/maxBy.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/maxBy.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/maxBy.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/noop.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/noop.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/noop.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/noop.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/pluck.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/pluck.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/pluck.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/pluck.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/prepend.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/prepend.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/prepend.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/prepend.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/size.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/size.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/size.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/size.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/trace.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/trace.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/trace.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/trace.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/unionWith.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/unionWith.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/unionWith.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/unionWith.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/uniq.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/uniq.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/uniq.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/uniq.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/unless.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/unless.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/unless.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/unless.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/values.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/values.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/values.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/values.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/when.es.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/when.es.min.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/when.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/when.min.js'
   },
   {
     name: 'eq',
@@ -12503,6 +21160,15 @@ export default [
       'if (personIsGeorge(person)) {\n' +
       "  console.log('The person is george')\n" +
       '}\n' +
+      '```\n' +
+      '\n' +
+      '`eq` supports a tacit API for composability.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      "pipe({ name: 'George' }, [\n" +
+      "  eq('George', get('name')),\n" +
+      '  console.log, // true\n' +
+      '])\n' +
       '```',
     execution: 'concurrent',
     mdast: {
@@ -12683,11 +21349,49 @@ export default [
               start: { line: 11, column: 1, offset: 378 },
               end: { line: 19, column: 4, offset: 581 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'inlineCode',
+                value: 'eq',
+                position: {
+                  start: { line: 21, column: 1, offset: 583 },
+                  end: { line: 21, column: 5, offset: 587 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' supports a tacit API for composability.',
+                position: {
+                  start: { line: 21, column: 5, offset: 587 },
+                  end: { line: 21, column: 45, offset: 627 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 21, column: 1, offset: 583 },
+              end: { line: 21, column: 45, offset: 627 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: "pipe({ name: 'George' }, [\n" +
+              "  eq('George', get('name')),\n" +
+              '  console.log, // true\n' +
+              '])',
+            position: {
+              start: { line: 23, column: 1, offset: 629 },
+              end: { line: 28, column: 4, offset: 741 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 19, column: 4, offset: 581 }
+          end: { line: 28, column: 4, offset: 741 }
         }
       },
       execution: {
@@ -12716,7 +21420,12 @@ export default [
           end: { line: 1, column: 11, offset: 10 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/eq.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/es.js'
   },
   {
     name: 'every',
@@ -12733,11 +21442,11 @@ export default [
       'const isOdd = number => number % 2 == 1\n' +
       '\n' +
       'console.log(\n' +
-      '  every(isOdd)([1, 2, 3, 4, 5]),\n' +
+      '  every([1, 2, 3, 4, 5], isOdd),\n' +
       ') // false\n' +
       '\n' +
       'console.log(\n' +
-      '  every(isOdd)([1, 3, 5]),\n' +
+      '  every([1, 3, 5], isOdd),\n' +
       ') // true\n' +
       '```\n' +
       '\n' +
@@ -12748,7 +21457,16 @@ export default [
       '  yield 1; yield 2; yield 3; yield 4; yield 5\n' +
       '}\n' +
       '\n' +
-      'every(async number => number < 6)(asyncNumbers()).then(console.log) // true\n' +
+      'every(asyncNumbers(), async number => number < 6).then(console.log) // true\n' +
+      '```\n' +
+      '\n' +
+      '`every` supports a tacit API for composability.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'pipe([1, 2, 3], [\n' +
+      '  every(number => number < 5),\n' +
+      '  console.log, // true\n' +
+      '])\n' +
       '```',
     execution: 'concurrent',
     muxing: '',
@@ -12829,11 +21547,11 @@ export default [
             value: 'const isOdd = number => number % 2 == 1\n' +
               '\n' +
               'console.log(\n' +
-              '  every(isOdd)([1, 2, 3, 4, 5]),\n' +
+              '  every([1, 2, 3, 4, 5], isOdd),\n' +
               ') // false\n' +
               '\n' +
               'console.log(\n' +
-              '  every(isOdd)([1, 3, 5]),\n' +
+              '  every([1, 3, 5], isOdd),\n' +
               ') // true',
             position: {
               start: { line: 3, column: 1, offset: 112 },
@@ -12881,16 +21599,54 @@ export default [
               '  yield 1; yield 2; yield 3; yield 4; yield 5\n' +
               '}\n' +
               '\n' +
-              'every(async number => number < 6)(asyncNumbers()).then(console.log) // true',
+              'every(asyncNumbers(), async number => number < 6).then(console.log) // true',
             position: {
               start: { line: 17, column: 1, offset: 463 },
               end: { line: 23, column: 4, offset: 660 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'inlineCode',
+                value: 'every',
+                position: {
+                  start: { line: 25, column: 1, offset: 662 },
+                  end: { line: 25, column: 8, offset: 669 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' supports a tacit API for composability.',
+                position: {
+                  start: { line: 25, column: 8, offset: 669 },
+                  end: { line: 25, column: 48, offset: 709 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 25, column: 1, offset: 662 },
+              end: { line: 25, column: 48, offset: 709 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'pipe([1, 2, 3], [\n' +
+              '  every(number => number < 5),\n' +
+              '  console.log, // true\n' +
+              '])',
+            position: {
+              start: { line: 27, column: 1, offset: 711 },
+              end: { line: 32, column: 4, offset: 816 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 23, column: 4, offset: 660 }
+          end: { line: 32, column: 4, offset: 816 }
         }
       },
       execution: {
@@ -12927,25 +21683,142 @@ export default [
           end: { line: 1, column: 1, offset: 0 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/every.js'
+  },
+  {
+    name: '_filter',
+    synopsis: '```coffeescript [specscript]\n' +
+      '_filter(\n' +
+      '  array Array,\n' +
+      '  arrayPredicate (value any, index number, array Array)=>Promise|boolean\n' +
+      ') -> filteredArray Promise|Array\n' +
+      '\n' +
+      '_filter(\n' +
+      '  object Object,\n' +
+      '  objectPredicate (value any, key string, object Object)=>Promise|boolean\n' +
+      ') -> filteredObject Promise|Object\n' +
+      '\n' +
+      '_filter(\n' +
+      '  set Set,\n' +
+      '  setPredicate (value any, value, set Set)=>Promise|boolean\n' +
+      ') -> filteredSet Promise|Set\n' +
+      '\n' +
+      '_filter(\n' +
+      '  map Map,\n' +
+      '  mapPredicate (value any, key any, map Map)=>Promise|boolean\n' +
+      ') -> filteredMap Promise|Map\n' +
+      '\n' +
+      '_filter(\n' +
+      '  generatorFunction GeneratorFunction,\n' +
+      '  predicate (value any)=>Promise|boolean\n' +
+      ') -> filteringGeneratorFunction GeneratorFunction\n' +
+      '\n' +
+      '_filter(\n' +
+      '  asyncGeneratorFunction AsyncGeneratorFunction,\n' +
+      '  predicate (value any)=>Promise|boolean\n' +
+      ') -> filteringAsyncGeneratorFunction AsyncGeneratorFunction\n' +
+      '\n' +
+      '_filter(\n' +
+      '  reducer Reducer,\n' +
+      '  predicate (value any)=>Promise|boolean\n' +
+      ') -> filteringReducer Reducer\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: '_filter',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 8, offset: 7 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 8, offset: 7 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 8, offset: 7 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: '_filter(\n' +
+              '  array Array,\n' +
+              '  arrayPredicate (value any, index number, array Array)=>Promise|boolean\n' +
+              ') -> filteredArray Promise|Array\n' +
+              '\n' +
+              '_filter(\n' +
+              '  object Object,\n' +
+              '  objectPredicate (value any, key string, object Object)=>Promise|boolean\n' +
+              ') -> filteredObject Promise|Object\n' +
+              '\n' +
+              '_filter(\n' +
+              '  set Set,\n' +
+              '  setPredicate (value any, value, set Set)=>Promise|boolean\n' +
+              ') -> filteredSet Promise|Set\n' +
+              '\n' +
+              '_filter(\n' +
+              '  map Map,\n' +
+              '  mapPredicate (value any, key any, map Map)=>Promise|boolean\n' +
+              ') -> filteredMap Promise|Map\n' +
+              '\n' +
+              '_filter(\n' +
+              '  generatorFunction GeneratorFunction,\n' +
+              '  predicate (value any)=>Promise|boolean\n' +
+              ') -> filteringGeneratorFunction GeneratorFunction\n' +
+              '\n' +
+              '_filter(\n' +
+              '  asyncGeneratorFunction AsyncGeneratorFunction,\n' +
+              '  predicate (value any)=>Promise|boolean\n' +
+              ') -> filteringAsyncGeneratorFunction AsyncGeneratorFunction\n' +
+              '\n' +
+              '_filter(\n' +
+              '  reducer Reducer,\n' +
+              '  predicate (value any)=>Promise|boolean\n' +
+              ') -> filteringReducer Reducer',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 36, column: 4, offset: 920 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 36, column: 4, offset: 920 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/filter.js'
   },
   {
     name: 'filter',
     synopsis: '```coffeescript [specscript]\n' +
       'type Filterable = Array|Object|Set|Map|Iterator|AsyncIterator\n' +
+      '\n' +
       'type Predicate = (\n' +
       '  value any,\n' +
       '  indexOrKey? number|string,\n' +
       '  collection? Filterable,\n' +
       ')=>boolean\n' +
       '\n' +
-      'filter(\n' +
-      '  collection Filterable,\n' +
-      '  predicate Predicate\n' +
-      ') -> result Promise|Filterable\n' +
-      '\n' +
-      'filter(predicate Predicate)(collection Filterable)\n' +
-      '  -> result Promise|Filterable\n' +
+      'filter(collection Filterable, predicate Predicate) -> result Promise|Filterable\n' +
+      'filter(predicate Predicate)(collection Filterable) -> result Promise|Filterable\n' +
       '```',
     description: 'Filter out items from a collection based on the results of their concurrent executions with a synchronous or asynchronous predicate function. `filter` accepts the following collections:\n' +
       '\n' +
@@ -13107,28 +21980,24 @@ export default [
             lang: 'coffeescript',
             meta: '[specscript]',
             value: 'type Filterable = Array|Object|Set|Map|Iterator|AsyncIterator\n' +
+              '\n' +
               'type Predicate = (\n' +
               '  value any,\n' +
               '  indexOrKey? number|string,\n' +
               '  collection? Filterable,\n' +
               ')=>boolean\n' +
               '\n' +
-              'filter(\n' +
-              '  collection Filterable,\n' +
-              '  predicate Predicate\n' +
-              ') -> result Promise|Filterable\n' +
-              '\n' +
-              'filter(predicate Predicate)(collection Filterable)\n' +
-              '  -> result Promise|Filterable',
+              'filter(collection Filterable, predicate Predicate) -> result Promise|Filterable\n' +
+              'filter(predicate Predicate)(collection Filterable) -> result Promise|Filterable',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 16, column: 4, offset: 362 }
+              end: { line: 12, column: 4, offset: 354 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 16, column: 4, offset: 362 }
+          end: { line: 12, column: 4, offset: 354 }
         }
       },
       description: {
@@ -13884,7 +22753,74 @@ export default [
           end: { line: 1, column: 1, offset: 0 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/filter.js'
+  },
+  {
+    name: '_flatMap',
+    synopsis: '```coffeescript [specscript]\n' +
+      'type FlatMappable = Array|String|Set|Iterator|AsyncIterator\n' +
+      'type Iterable = Iterable|AsyncIterable|Object<value any>\n' +
+      '\n' +
+      '_flatMap(\n' +
+      '  value FlatMappable,\n' +
+      '  flatMapper (item any)=>Promise|Iterable,\n' +
+      ') -> result Promise|FlatMappable\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: '_flatMap',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 9, offset: 8 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 9, offset: 8 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 9, offset: 8 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'type FlatMappable = Array|String|Set|Iterator|AsyncIterator\n' +
+              'type Iterable = Iterable|AsyncIterable|Object<value any>\n' +
+              '\n' +
+              '_flatMap(\n' +
+              '  value FlatMappable,\n' +
+              '  flatMapper (item any)=>Promise|Iterable,\n' +
+              ') -> result Promise|FlatMappable',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 9, column: 4, offset: 258 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 9, column: 4, offset: 258 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/flatMap.js'
   },
   {
     name: 'flatMap',
@@ -13892,13 +22828,14 @@ export default [
       'type FlatMappable = Array|String|Set|Iterator|AsyncIterator\n' +
       'type Iterable = Iterable|AsyncIterable|Object<value any>\n' +
       '\n' +
-      'flatMap(\n' +
-      '  collection FlatMappable,\n' +
-      '  flatMapper (item any)=>Promise|Iterable,\n' +
-      ') -> result Promise|FlatMappable\n' +
+      'type FlatMapper = (\n' +
+      '  item any,\n' +
+      '  indexOrKey string,\n' +
+      '  collection FlatMappable\n' +
+      ')=>Promise|FlatMappable\n' +
       '\n' +
-      'flatMap(flatMapper (item any)=>Promise|Iterable)(collection FlatMappable)\n' +
-      '  -> result Promise|FlatMappable\n' +
+      'flatMap(collection FlatMappable, flatMapper FlatMapper) -> result Promise|FlatMappable\n' +
+      'flatMap(flatMapper FlatMapper)(collection FlatMappable) -> result Promise|FlatMappable\n' +
       '```',
     description: 'Applies a flatMapper function concurrently to each item of a collection, creating a new collection of the same type. A flatMapping operation iterates through each item of a collection and applies the flatMapper function to each item, flattening the result of the execution into the result collection. The result of an individual execution can be any iterable, async iterable, or object values iterable collection. The flatMapper function may be asynchronous.\n' +
       '\n' +
@@ -14019,22 +22956,23 @@ export default [
             value: 'type FlatMappable = Array|String|Set|Iterator|AsyncIterator\n' +
               'type Iterable = Iterable|AsyncIterable|Object<value any>\n' +
               '\n' +
-              'flatMap(\n' +
-              '  collection FlatMappable,\n' +
-              '  flatMapper (item any)=>Promise|Iterable,\n' +
-              ') -> result Promise|FlatMappable\n' +
+              'type FlatMapper = (\n' +
+              '  item any,\n' +
+              '  indexOrKey string,\n' +
+              '  collection FlatMappable\n' +
+              ')=>Promise|FlatMappable\n' +
               '\n' +
-              'flatMap(flatMapper (item any)=>Promise|Iterable)(collection FlatMappable)\n' +
-              '  -> result Promise|FlatMappable',
+              'flatMap(collection FlatMappable, flatMapper FlatMapper) -> result Promise|FlatMappable\n' +
+              'flatMap(flatMapper FlatMapper)(collection FlatMappable) -> result Promise|FlatMappable',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 12, column: 4, offset: 370 }
+              end: { line: 13, column: 4, offset: 428 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 12, column: 4, offset: 370 }
+          end: { line: 13, column: 4, offset: 428 }
         }
       },
       description: {
@@ -14760,7 +23698,8 @@ export default [
           end: { line: 3, column: 240, offset: 629 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/flatMap.js'
   },
   {
     name: 'forEach',
@@ -14911,11 +23850,18 @@ export default [
           end: { line: 19, column: 4, offset: 499 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/forEach.js'
   },
   {
     name: 'get',
     synopsis: '```coffeescript [specscript]\n' +
+      'get(\n' +
+      '  object Promise|Object,\n' +
+      '  path string|number|Array<string|number>,\n' +
+      '  defaultValue? function|any\n' +
+      ') -> result Promise|Object\n' +
+      '\n' +
       'get(\n' +
       '  path string|number|Array<string|number>,\n' +
       '  defaultValue? function|any\n' +
@@ -14924,6 +23870,16 @@ export default [
     description: 'Accesses a property of an object given a path denoted by a string, number, or an array of string or numbers.\n' +
       '\n' +
       '```javascript [playground]\n' +
+      "const obj = { hello: 'world' }\n" +
+      '\n' +
+      "console.log(get(obj, 'hello')) // world\n" +
+      '```\n' +
+      '\n' +
+      '`get` supports a tacit API for composability\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      "const obj = { hello: 'world' }\n" +
+      '\n' +
       "const getHello = get('hello')\n" +
       '\n' +
       "console.log(getHello({ hello: 'world' })) // world\n" +
@@ -14995,18 +23951,24 @@ export default [
             lang: 'coffeescript',
             meta: '[specscript]',
             value: 'get(\n' +
+              '  object Promise|Object,\n' +
+              '  path string|number|Array<string|number>,\n' +
+              '  defaultValue? function|any\n' +
+              ') -> result Promise|Object\n' +
+              '\n' +
+              'get(\n' +
               '  path string|number|Array<string|number>,\n' +
               '  defaultValue? function|any\n' +
               ')(object Object) -> result Promise|Object',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 6, column: 4, offset: 151 }
+              end: { line: 12, column: 4, offset: 281 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 6, column: 4, offset: 151 }
+          end: { line: 12, column: 4, offset: 281 }
         }
       },
       description: {
@@ -15033,12 +23995,51 @@ export default [
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: "const getHello = get('hello')\n" +
+            value: "const obj = { hello: 'world' }\n" +
+              '\n' +
+              "console.log(get(obj, 'hello')) // world",
+            position: {
+              start: { line: 3, column: 1, offset: 110 },
+              end: { line: 7, column: 4, offset: 212 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'inlineCode',
+                value: 'get',
+                position: {
+                  start: { line: 9, column: 1, offset: 214 },
+                  end: { line: 9, column: 6, offset: 219 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' supports a tacit API for composability',
+                position: {
+                  start: { line: 9, column: 6, offset: 219 },
+                  end: { line: 9, column: 45, offset: 258 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 9, column: 1, offset: 214 },
+              end: { line: 9, column: 45, offset: 258 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: "const obj = { hello: 'world' }\n" +
+              '\n' +
+              "const getHello = get('hello')\n" +
               '\n' +
               "console.log(getHello({ hello: 'world' })) // world",
             position: {
-              start: { line: 3, column: 1, offset: 110 },
-              end: { line: 7, column: 4, offset: 222 }
+              start: { line: 11, column: 1, offset: 260 },
+              end: { line: 17, column: 4, offset: 404 }
             }
           },
           {
@@ -15048,30 +24049,30 @@ export default [
                 type: 'text',
                 value: 'If the value at the end of the path is not found on the object, returns an optional default value. The default value can be a function resolver that takes the object as an argument. If no default value is provided, returns ',
                 position: {
-                  start: { line: 9, column: 1, offset: 224 },
-                  end: { line: 9, column: 224, offset: 447 }
+                  start: { line: 19, column: 1, offset: 406 },
+                  end: { line: 19, column: 224, offset: 629 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'undefined',
                 position: {
-                  start: { line: 9, column: 224, offset: 447 },
-                  end: { line: 9, column: 235, offset: 458 }
+                  start: { line: 19, column: 224, offset: 629 },
+                  end: { line: 19, column: 235, offset: 640 }
                 }
               },
               {
                 type: 'text',
                 value: '. The function resolver may be asynchronous (returns a promise).',
                 position: {
-                  start: { line: 9, column: 235, offset: 458 },
-                  end: { line: 9, column: 299, offset: 522 }
+                  start: { line: 19, column: 235, offset: 640 },
+                  end: { line: 19, column: 299, offset: 704 }
                 }
               }
             ],
             position: {
-              start: { line: 9, column: 1, offset: 224 },
-              end: { line: 9, column: 299, offset: 522 }
+              start: { line: 19, column: 1, offset: 406 },
+              end: { line: 19, column: 299, offset: 704 }
             }
           },
           {
@@ -15086,8 +24087,8 @@ export default [
               '\n' +
               "console.log(getHelloWithDefaultResolver({ foo: 'bar' })) // bar",
             position: {
-              start: { line: 11, column: 1, offset: 524 },
-              end: { line: 19, column: 4, offset: 814 }
+              start: { line: 21, column: 1, offset: 706 },
+              end: { line: 29, column: 4, offset: 996 }
             }
           },
           {
@@ -15097,22 +24098,22 @@ export default [
                 type: 'inlineCode',
                 value: 'get',
                 position: {
-                  start: { line: 21, column: 1, offset: 816 },
-                  end: { line: 21, column: 6, offset: 821 }
+                  start: { line: 31, column: 1, offset: 998 },
+                  end: { line: 31, column: 6, offset: 1003 }
                 }
               },
               {
                 type: 'text',
                 value: ' supports three types of path patterns for nested property access.',
                 position: {
-                  start: { line: 21, column: 6, offset: 821 },
-                  end: { line: 21, column: 72, offset: 887 }
+                  start: { line: 31, column: 6, offset: 1003 },
+                  end: { line: 31, column: 72, offset: 1069 }
                 }
               }
             ],
             position: {
-              start: { line: 21, column: 1, offset: 816 },
-              end: { line: 21, column: 72, offset: 887 }
+              start: { line: 31, column: 1, offset: 998 },
+              end: { line: 31, column: 72, offset: 1069 }
             }
           },
           {
@@ -15133,28 +24134,28 @@ export default [
                         type: 'text',
                         value: 'dot delimited - ',
                         position: {
-                          start: { line: 23, column: 4, offset: 892 },
-                          end: { line: 23, column: 20, offset: 908 }
+                          start: { line: 33, column: 4, offset: 1074 },
+                          end: { line: 33, column: 20, offset: 1090 }
                         }
                       },
                       {
                         type: 'inlineCode',
                         value: "'a.b.c'",
                         position: {
-                          start: { line: 23, column: 20, offset: 908 },
-                          end: { line: 23, column: 29, offset: 917 }
+                          start: { line: 33, column: 20, offset: 1090 },
+                          end: { line: 33, column: 29, offset: 1099 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 23, column: 4, offset: 892 },
-                      end: { line: 23, column: 29, offset: 917 }
+                      start: { line: 33, column: 4, offset: 1074 },
+                      end: { line: 33, column: 29, offset: 1099 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 23, column: 2, offset: 890 },
-                  end: { line: 23, column: 29, offset: 917 }
+                  start: { line: 33, column: 2, offset: 1072 },
+                  end: { line: 33, column: 29, offset: 1099 }
                 }
               },
               {
@@ -15169,28 +24170,28 @@ export default [
                         type: 'text',
                         value: 'bracket notation - ',
                         position: {
-                          start: { line: 24, column: 4, offset: 921 },
-                          end: { line: 24, column: 23, offset: 940 }
+                          start: { line: 34, column: 4, offset: 1103 },
+                          end: { line: 34, column: 23, offset: 1122 }
                         }
                       },
                       {
                         type: 'inlineCode',
                         value: "'a[0].value'",
                         position: {
-                          start: { line: 24, column: 23, offset: 940 },
-                          end: { line: 24, column: 37, offset: 954 }
+                          start: { line: 34, column: 23, offset: 1122 },
+                          end: { line: 34, column: 37, offset: 1136 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 24, column: 4, offset: 921 },
-                      end: { line: 24, column: 37, offset: 954 }
+                      start: { line: 34, column: 4, offset: 1103 },
+                      end: { line: 34, column: 37, offset: 1136 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 24, column: 2, offset: 919 },
-                  end: { line: 24, column: 37, offset: 954 }
+                  start: { line: 34, column: 2, offset: 1101 },
+                  end: { line: 34, column: 37, offset: 1136 }
                 }
               },
               {
@@ -15205,34 +24206,34 @@ export default [
                         type: 'text',
                         value: 'an array of keys or indices - ',
                         position: {
-                          start: { line: 25, column: 4, offset: 958 },
-                          end: { line: 25, column: 34, offset: 988 }
+                          start: { line: 35, column: 4, offset: 1140 },
+                          end: { line: 35, column: 34, offset: 1170 }
                         }
                       },
                       {
                         type: 'inlineCode',
                         value: "['a', 0, 'value']",
                         position: {
-                          start: { line: 25, column: 34, offset: 988 },
-                          end: { line: 25, column: 53, offset: 1007 }
+                          start: { line: 35, column: 34, offset: 1170 },
+                          end: { line: 35, column: 53, offset: 1189 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 25, column: 4, offset: 958 },
-                      end: { line: 25, column: 53, offset: 1007 }
+                      start: { line: 35, column: 4, offset: 1140 },
+                      end: { line: 35, column: 53, offset: 1189 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 25, column: 2, offset: 956 },
-                  end: { line: 25, column: 53, offset: 1007 }
+                  start: { line: 35, column: 2, offset: 1138 },
+                  end: { line: 35, column: 53, offset: 1189 }
                 }
               }
             ],
             position: {
-              start: { line: 23, column: 2, offset: 890 },
-              end: { line: 25, column: 53, offset: 1007 }
+              start: { line: 33, column: 2, offset: 1072 },
+              end: { line: 35, column: 53, offset: 1189 }
             }
           },
           {
@@ -15251,17 +24252,18 @@ export default [
               "console.log(get00000BracketNotation([[[[['foo']]]]])) // foo\n" +
               "console.log(get00000ArrayNotation([[[[['foo']]]]])) // foo",
             position: {
-              start: { line: 27, column: 1, offset: 1009 },
-              end: { line: 39, column: 4, offset: 1464 }
+              start: { line: 37, column: 1, offset: 1191 },
+              end: { line: 49, column: 4, offset: 1646 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 39, column: 4, offset: 1464 }
+          end: { line: 49, column: 4, offset: 1646 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/get.js'
   },
   {
     name: 'gt',
@@ -15295,6 +24297,15 @@ export default [
       'const juvenile = { age: 16 }\n' +
       '\n' +
       'console.log(isOfLegalAge(juvenile)) // false\n' +
+      '```\n' +
+      '\n' +
+      '`gt` supports a tacit API for composability.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'pipe({ value: 1 }, [\n' +
+      "  gt(5, get('value')),\n" +
+      '  console.log, // true\n' +
+      '])\n' +
       '```',
     mdast: {
       name: {
@@ -15447,14 +24458,53 @@ export default [
               start: { line: 13, column: 1, offset: 315 },
               end: { line: 19, column: 4, offset: 461 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'inlineCode',
+                value: 'gt',
+                position: {
+                  start: { line: 21, column: 1, offset: 463 },
+                  end: { line: 21, column: 5, offset: 467 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' supports a tacit API for composability.',
+                position: {
+                  start: { line: 21, column: 5, offset: 467 },
+                  end: { line: 21, column: 45, offset: 507 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 21, column: 1, offset: 463 },
+              end: { line: 21, column: 45, offset: 507 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'pipe({ value: 1 }, [\n' +
+              "  gt(5, get('value')),\n" +
+              '  console.log, // true\n' +
+              '])',
+            position: {
+              start: { line: 23, column: 1, offset: 509 },
+              end: { line: 28, column: 4, offset: 609 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 19, column: 4, offset: 461 }
+          end: { line: 28, column: 4, offset: 609 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/gt.js'
   },
   {
     name: 'gte',
@@ -15490,6 +24540,15 @@ export default [
       'console.log(isAtLeast100(99)) // false\n' +
       'console.log(isAtLeast100(100)) // true\n' +
       'console.log(isAtLeast100(101)) // true\n' +
+      '```\n' +
+      '\n' +
+      '`gte` supports a tacit API for composability.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'pipe({ value: 1 }, [\n' +
+      "  gte(1, get('value')),\n" +
+      '  console.log, // true\n' +
+      '])\n' +
       '```',
     mdast: {
       name: {
@@ -15644,14 +24703,57 @@ export default [
               start: { line: 13, column: 1, offset: 314 },
               end: { line: 21, column: 4, offset: 535 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'inlineCode',
+                value: 'gte',
+                position: {
+                  start: { line: 23, column: 1, offset: 537 },
+                  end: { line: 23, column: 6, offset: 542 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' supports a tacit API for composability.',
+                position: {
+                  start: { line: 23, column: 6, offset: 542 },
+                  end: { line: 23, column: 46, offset: 582 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 23, column: 1, offset: 537 },
+              end: { line: 23, column: 46, offset: 582 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'pipe({ value: 1 }, [\n' +
+              "  gte(1, get('value')),\n" +
+              '  console.log, // true\n' +
+              '])',
+            position: {
+              start: { line: 25, column: 1, offset: 584 },
+              end: { line: 30, column: 4, offset: 685 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 21, column: 4, offset: 535 }
+          end: { line: 30, column: 4, offset: 685 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/gte.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/index.js'
   },
   {
     name: 'lt',
@@ -15685,6 +24787,15 @@ export default [
       'console.log(isLessThan3(1)) // true\n' +
       'console.log(isLessThan3(3)) // false\n' +
       'console.log(isLessThan3(5)) // false\n' +
+      '```\n' +
+      '\n' +
+      '`lt` supports a tacit API for composability.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'pipe({ value: 1 }, [\n' +
+      "  lt(0, get('value')),\n" +
+      '  console.log, // true\n' +
+      '])\n' +
       '```',
     mdast: {
       name: {
@@ -15837,14 +24948,53 @@ export default [
               start: { line: 11, column: 1, offset: 308 },
               end: { line: 19, column: 4, offset: 518 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'inlineCode',
+                value: 'lt',
+                position: {
+                  start: { line: 21, column: 1, offset: 520 },
+                  end: { line: 21, column: 5, offset: 524 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' supports a tacit API for composability.',
+                position: {
+                  start: { line: 21, column: 5, offset: 524 },
+                  end: { line: 21, column: 45, offset: 564 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 21, column: 1, offset: 520 },
+              end: { line: 21, column: 45, offset: 564 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'pipe({ value: 1 }, [\n' +
+              "  lt(0, get('value')),\n" +
+              '  console.log, // true\n' +
+              '])',
+            position: {
+              start: { line: 23, column: 1, offset: 566 },
+              end: { line: 28, column: 4, offset: 666 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 19, column: 4, offset: 518 }
+          end: { line: 28, column: 4, offset: 666 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/lt.js'
   },
   {
     name: 'lte',
@@ -15878,6 +25028,15 @@ export default [
       'console.log(isLessThanOrEqualTo3(1), true)\n' +
       'console.log(isLessThanOrEqualTo3(3), true)\n' +
       'console.log(isLessThanOrEqualTo3(5), false)\n' +
+      '```\n' +
+      '\n' +
+      '`lte` supports a tacit API for composability.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'pipe({ value: 1 }, [\n' +
+      "  lte(1, get('value')),\n" +
+      '  console.log, // true\n' +
+      '])\n' +
       '```',
     mdast: {
       name: {
@@ -16030,49 +25189,201 @@ export default [
               start: { line: 11, column: 1, offset: 324 },
               end: { line: 19, column: 4, offset: 564 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'inlineCode',
+                value: 'lte',
+                position: {
+                  start: { line: 21, column: 1, offset: 566 },
+                  end: { line: 21, column: 6, offset: 571 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' supports a tacit API for composability.',
+                position: {
+                  start: { line: 21, column: 6, offset: 571 },
+                  end: { line: 21, column: 46, offset: 611 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 21, column: 1, offset: 566 },
+              end: { line: 21, column: 46, offset: 611 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'pipe({ value: 1 }, [\n' +
+              "  lte(1, get('value')),\n" +
+              '  console.log, // true\n' +
+              '])',
+            position: {
+              start: { line: 23, column: 1, offset: 613 },
+              end: { line: 28, column: 4, offset: 714 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 19, column: 4, offset: 564 }
+          end: { line: 28, column: 4, offset: 714 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/lte.js'
+  },
+  {
+    name: '_map',
+    synopsis: '```coffeescript [specscript]\n' +
+      '_map(\n' +
+      '  array Array,\n' +
+      '  arrayMapper (value any, index number, array Array)=>Promise|any\n' +
+      ') -> mappedArray Promise|Array\n' +
+      '\n' +
+      '_map(\n' +
+      '  object Object,\n' +
+      '  objectMapper (value any, key string, object Object)=>Promise|any\n' +
+      ') -> mappedObject Promise|Array\n' +
+      '\n' +
+      '_map(\n' +
+      '  set Set,\n' +
+      '  setMapper (value any, value, set Set)=>Promise|any\n' +
+      ') -> mappedSet Promise|Set\n' +
+      '\n' +
+      '_map(\n' +
+      '  originalMap Map,\n' +
+      '  mapMapper (value any, key any, originalMap Map)=>Promise|any\n' +
+      ') -> mappedMap Promise|Map\n' +
+      '\n' +
+      '_map(\n' +
+      '  generatorFunction ...args=>Generator,\n' +
+      '  syncMapper (value any)=>any,\n' +
+      ') -> mappingGeneratorFunction ...args=>Generator\n' +
+      '\n' +
+      '_map(\n' +
+      '  asyncGeneratorFunction ...args=>AsyncGenerator,\n' +
+      '  mapper (value any)=>Promise|any\n' +
+      ') -> mappingAsyncGeneratorFunction ...args=>AsyncGenerator\n' +
+      '\n' +
+      '_map(\n' +
+      '  originalReducer Reducer,\n' +
+      '  mapper (value any)=>Promise|any,\n' +
+      ') -> mappingReducer Reducer\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: '_map',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 5, offset: 4 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 5, offset: 4 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 5, offset: 4 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: '_map(\n' +
+              '  array Array,\n' +
+              '  arrayMapper (value any, index number, array Array)=>Promise|any\n' +
+              ') -> mappedArray Promise|Array\n' +
+              '\n' +
+              '_map(\n' +
+              '  object Object,\n' +
+              '  objectMapper (value any, key string, object Object)=>Promise|any\n' +
+              ') -> mappedObject Promise|Array\n' +
+              '\n' +
+              '_map(\n' +
+              '  set Set,\n' +
+              '  setMapper (value any, value, set Set)=>Promise|any\n' +
+              ') -> mappedSet Promise|Set\n' +
+              '\n' +
+              '_map(\n' +
+              '  originalMap Map,\n' +
+              '  mapMapper (value any, key any, originalMap Map)=>Promise|any\n' +
+              ') -> mappedMap Promise|Map\n' +
+              '\n' +
+              '_map(\n' +
+              '  generatorFunction ...args=>Generator,\n' +
+              '  syncMapper (value any)=>any,\n' +
+              ') -> mappingGeneratorFunction ...args=>Generator\n' +
+              '\n' +
+              '_map(\n' +
+              '  asyncGeneratorFunction ...args=>AsyncGenerator,\n' +
+              '  mapper (value any)=>Promise|any\n' +
+              ') -> mappingAsyncGeneratorFunction ...args=>AsyncGenerator\n' +
+              '\n' +
+              '_map(\n' +
+              '  originalReducer Reducer,\n' +
+              '  mapper (value any)=>Promise|any,\n' +
+              ') -> mappingReducer Reducer',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 36, column: 4, offset: 861 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 36, column: 4, offset: 861 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/map.js'
   },
   {
     name: 'map',
     synopsis: '```coffeescript [specscript]\n' +
       'arrayMapperFunc (value any, index number, array Array)=>Promise|any\n' +
+      'objectMapperFunc (value any, key string, object Object)=>Promise|any\n' +
+      'setMapperFunc (value any, value, set Set)=>Promise|any\n' +
+      'mapMapperFunc (value any, key any, originalMap Map)=>Promise|any\n' +
+      'iteratorMapperFunc (value any)=>any\n' +
+      'asyncIteratorMapperFunc (value any)=>Promise|any\n' +
       '\n' +
       'map(arrayMapperFunc)(value Array) -> result Promise|Array\n' +
       'map(value Array, arrayMapperFunc) -> result Promise|Array\n' +
       '\n' +
-      'objectMapperFunc (value any, key string, object Object)=>Promise|any\n' +
-      '\n' +
       'map(objectMapperFunc)(value Object) -> result Promise|Array\n' +
       'map(value Object, objectMapperFunc) -> result Promise|Array\n' +
-      '\n' +
-      'setMapperFunc (value any, value, set Set)=>Promise|any\n' +
       '\n' +
       'map(setMapperFunc)(value Set) -> result Promise|Set\n' +
       'map(value Set, setMapperFunc) -> result Promise|Set\n' +
       '\n' +
-      'mapMapperFunc (value any, key any, originalMap Map)=>Promise|any\n' +
-      '\n' +
       'map(mapMapperFunc)(value Map) -> result Promise|Map\n' +
       'map(value Map, mapMapperFunc) -> result Promise|Map\n' +
-      '\n' +
-      'iteratorMapperFunc (value any)=>any\n' +
       '\n' +
       'map(iteratorMapperFunc)(value Iterator|Generator) -> result Iterator\n' +
       'map(value Iterator|Generator, iteratorMapperFunc) -> result Iterator\n' +
       '\n' +
-      'asyncIteratorMapperFunc (value any)=>Promise|any\n' +
-      '\n' +
-      'map(asyncIteratorMapperFunc)(value AsyncIterator|AsyncGenerator)\n' +
-      '  -> result AsyncIterator\n' +
-      'map(value AsyncIterator|AsyncGenerator, asyncIteratorMapperFunc)\n' +
-      '  -> result AsyncIterator\n' +
+      'map(asyncIteratorMapperFunc)(value AsyncIterator) -> result AsyncIterator\n' +
+      'map(value AsyncIterator, asyncIteratorMapperFunc) -> result AsyncIterator\n' +
       '```',
     description: 'Applies a synchronous or asynchronous mapper function concurrently to each item of a collection, returning the results in a new collection of the same type. If order is implied by the collection, it is maintained in the result. `map` accepts the following collections:\n' +
       '\n' +
@@ -16240,45 +25551,38 @@ export default [
             lang: 'coffeescript',
             meta: '[specscript]',
             value: 'arrayMapperFunc (value any, index number, array Array)=>Promise|any\n' +
+              'objectMapperFunc (value any, key string, object Object)=>Promise|any\n' +
+              'setMapperFunc (value any, value, set Set)=>Promise|any\n' +
+              'mapMapperFunc (value any, key any, originalMap Map)=>Promise|any\n' +
+              'iteratorMapperFunc (value any)=>any\n' +
+              'asyncIteratorMapperFunc (value any)=>Promise|any\n' +
               '\n' +
               'map(arrayMapperFunc)(value Array) -> result Promise|Array\n' +
               'map(value Array, arrayMapperFunc) -> result Promise|Array\n' +
               '\n' +
-              'objectMapperFunc (value any, key string, object Object)=>Promise|any\n' +
-              '\n' +
               'map(objectMapperFunc)(value Object) -> result Promise|Array\n' +
               'map(value Object, objectMapperFunc) -> result Promise|Array\n' +
-              '\n' +
-              'setMapperFunc (value any, value, set Set)=>Promise|any\n' +
               '\n' +
               'map(setMapperFunc)(value Set) -> result Promise|Set\n' +
               'map(value Set, setMapperFunc) -> result Promise|Set\n' +
               '\n' +
-              'mapMapperFunc (value any, key any, originalMap Map)=>Promise|any\n' +
-              '\n' +
               'map(mapMapperFunc)(value Map) -> result Promise|Map\n' +
               'map(value Map, mapMapperFunc) -> result Promise|Map\n' +
-              '\n' +
-              'iteratorMapperFunc (value any)=>any\n' +
               '\n' +
               'map(iteratorMapperFunc)(value Iterator|Generator) -> result Iterator\n' +
               'map(value Iterator|Generator, iteratorMapperFunc) -> result Iterator\n' +
               '\n' +
-              'asyncIteratorMapperFunc (value any)=>Promise|any\n' +
-              '\n' +
-              'map(asyncIteratorMapperFunc)(value AsyncIterator|AsyncGenerator)\n' +
-              '  -> result AsyncIterator\n' +
-              'map(value AsyncIterator|AsyncGenerator, asyncIteratorMapperFunc)\n' +
-              '  -> result AsyncIterator',
+              'map(asyncIteratorMapperFunc)(value AsyncIterator) -> result AsyncIterator\n' +
+              'map(value AsyncIterator, asyncIteratorMapperFunc) -> result AsyncIterator',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 33, column: 4, offset: 1149 }
+              end: { line: 26, column: 4, offset: 1110 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 33, column: 4, offset: 1149 }
+          end: { line: 26, column: 4, offset: 1110 }
         }
       },
       description: {
@@ -17058,7 +26362,8 @@ export default [
           end: { line: 1, column: 10, offset: 9 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/map.js'
   },
   {
     name: 'map.entries',
@@ -17237,7 +26542,8 @@ export default [
           end: { line: 1, column: 7, offset: 6 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/map.js'
   },
   {
     name: 'map.series',
@@ -17386,7 +26692,8 @@ export default [
           end: { line: 1, column: 7, offset: 6 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/map.js'
   },
   {
     name: 'map.pool',
@@ -17572,7 +26879,8 @@ export default [
           end: { line: 1, column: 11, offset: 10 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/map.js'
   },
   {
     name: 'BrokenPromise',
@@ -17723,7 +27031,8 @@ export default [
           end: { line: 5, column: 4, offset: 196 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/BrokenPromise.js'
   },
   {
     name: 'BrokenPromise.prototype.then',
@@ -17939,7 +27248,295 @@ export default [
           end: { line: 5, column: 4, offset: 378 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/BrokenPromise.js'
+  },
+  {
+    name: 'BrokenPromise.prototype.resolve',
+    catchphrase: 'manually resolve a broken promise',
+    synopsis: 'const brokenPromise = new BrokenPromise().then(\n' +
+      "  () => console.log('only reachable by .resolve'))\n" +
+      '\n' +
+      'brokenPromise.resolve()\n' +
+      '// only reachable by .resolve',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'BrokenPromise.prototype.resolve',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 32, offset: 31 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 32, offset: 31 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 32, offset: 31 }
+        }
+      },
+      catchphrase: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'manually resolve a broken promise',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 34, offset: 33 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 34, offset: 33 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 34, offset: 33 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'const brokenPromise = new BrokenPromise().then(\n' +
+                  "() => console.log('only reachable by .resolve'))",
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 2, column: 51, offset: 98 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 2, column: 51, offset: 98 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'brokenPromise.resolve()\n// only reachable by .resolve',
+                position: {
+                  start: { line: 4, column: 1, offset: 100 },
+                  end: { line: 5, column: 30, offset: 153 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 4, column: 1, offset: 100 },
+              end: { line: 5, column: 30, offset: 153 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 5, column: 30, offset: 153 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/BrokenPromise.js'
+  },
+  {
+    name: 'CancelToken',
+    synopsis: 'new CancelToken() -> CancelToken {}',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'CancelToken',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 12, offset: 11 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 12, offset: 11 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 12, offset: 11 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'new CancelToken() -> CancelToken {}',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 36, offset: 35 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 36, offset: 35 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 36, offset: 35 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Cancellable.js'
+  },
+  {
+    name: 'CancelToken.prototype.cancel',
+    synopsis: 'new CancelToken().cancel(value Error|any) -> CancelToken {}',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'CancelToken.prototype.cancel',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 29, offset: 28 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 29, offset: 28 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 29, offset: 28 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'new CancelToken().cancel(value Error|any) -> CancelToken {}',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 60, offset: 59 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 60, offset: 59 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 60, offset: 59 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Cancellable.js'
+  },
+  {
+    name: 'CancellablePromise',
+    synopsis: 'CancellablePromise(value Promise|any)\n' +
+      '  -> result Promise { cancel: Error|any=>this }',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'CancellablePromise',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 19, offset: 18 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 19, offset: 18 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 19, offset: 18 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'CancellablePromise(value Promise|any)\n' +
+                  '-> result Promise { cancel: Error|any=>this }',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 2, column: 48, offset: 85 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 2, column: 48, offset: 85 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 2, column: 48, offset: 85 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Cancellable.js'
   },
   {
     name: 'Cancellable',
@@ -18135,7 +27732,737 @@ export default [
           end: { line: 12, column: 4, offset: 465 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Cancellable.js'
+  },
+  {
+    name: 'Cancellable',
+    memoryUsage: 'new BrokenPromise(): 5e+5: { "max": "86.89 MiB", "avg": "46.11 MiB" }\n' +
+      'Cancellable(() => new BrokenPromise())().cancel(Error): 5e+5: { "max": "20.18 MiB", "avg": "11.64 MiB" }\n' +
+      'Cancellable(() => new BrokenPromise())().cancel(Error).catch: 5e+5: { "max": "19.93 MiB", "avg": "11.90 MiB" }\n' +
+      'Cancellable(reduce(add, 0)).cancel(Error): 5e+5: { "max": "12.11 MiB", "avg": "6.55 MiB" }',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Cancellable',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 12, offset: 11 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 12, offset: 11 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 12, offset: 11 }
+        }
+      },
+      memoryUsage: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'new BrokenPromise(): 5e+5: { "max": "86.89 MiB", "avg": "46.11 MiB" }\n' +
+                  'Cancellable(() => new BrokenPromise())().cancel(Error): 5e+5: { "max": "20.18 MiB", "avg": "11.64 MiB" }\n' +
+                  'Cancellable(() => new BrokenPromise())().cancel(Error).catch: 5e+5: { "max": "19.93 MiB", "avg": "11.90 MiB" }\n' +
+                  'Cancellable(reduce(add, 0)).cancel(Error): 5e+5: { "max": "12.11 MiB", "avg": "6.55 MiB" }',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 4, column: 91, offset: 376 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 4, column: 91, offset: 376 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 4, column: 91, offset: 376 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Cancellable.memoryUsage.js'
+  },
+  {
+    name: 'Instance.prototype.map',
+    synopsis: '<A any, B any>new Instance(value A).map(func A=>B) -> Instance<B>\n' +
+      'Instance.prototype.map = function(func) {\n' +
+      'return new Instance(func(this.value))\n' +
+      '}',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Instance.prototype.map',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 23, offset: 22 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 23, offset: 22 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 23, offset: 22 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: '<A any, B any>new Instance(value A).map(func A=>B) -> Instance',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 63, offset: 62 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<B>',
+                position: {
+                  start: { line: 1, column: 63, offset: 62 },
+                  end: { line: 1, column: 66, offset: 65 }
+                }
+              },
+              {
+                type: 'text',
+                value: '\n' +
+                  'Instance.prototype.map = function(func) {\n' +
+                  'return new Instance(func(this.value))\n' +
+                  '}',
+                position: {
+                  start: { line: 1, column: 66, offset: 65 },
+                  end: { line: 4, column: 2, offset: 147 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 4, column: 2, offset: 147 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 4, column: 2, offset: 147 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Instance.js'
+  },
+  {
+    name: 'Instance.prototype.join',
+    synopsis: '<T any>new Instance(Instance<T>).join() -> Instance<T>\n' +
+      '\n' +
+      '<T any>new Instance(value T).join() -> value T\n' +
+      'Instance.prototype.join = function() {\n' +
+      'return this.value\n' +
+      '}',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Instance.prototype.join',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 24, offset: 23 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 24, offset: 23 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 24, offset: 23 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'html',
+                value: '<T any>',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 8, offset: 7 }
+                }
+              },
+              {
+                type: 'text',
+                value: 'new Instance(Instance',
+                position: {
+                  start: { line: 1, column: 8, offset: 7 },
+                  end: { line: 1, column: 29, offset: 28 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 1, column: 29, offset: 28 },
+                  end: { line: 1, column: 32, offset: 31 }
+                }
+              },
+              {
+                type: 'text',
+                value: ').join() -> Instance',
+                position: {
+                  start: { line: 1, column: 32, offset: 31 },
+                  end: { line: 1, column: 52, offset: 51 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 1, column: 52, offset: 51 },
+                  end: { line: 1, column: 55, offset: 54 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 55, offset: 54 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'html',
+                value: '<T any>',
+                position: {
+                  start: { line: 3, column: 1, offset: 56 },
+                  end: { line: 3, column: 8, offset: 63 }
+                }
+              },
+              {
+                type: 'text',
+                value: 'new Instance(value T).join() -> value T\n' +
+                  'Instance.prototype.join = function() {\n' +
+                  'return this.value\n' +
+                  '}',
+                position: {
+                  start: { line: 3, column: 8, offset: 63 },
+                  end: { line: 6, column: 2, offset: 161 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 3, column: 1, offset: 56 },
+              end: { line: 6, column: 2, offset: 161 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 6, column: 2, offset: 161 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Instance.js'
+  },
+  {
+    name: 'Instance.prototype.chain',
+    synopsis: '<A any, B any>new Instance(x A).chain(f A=>Instance<B>) -> Instance<B>',
+    catchphrase: 'For associativity',
+    example: 'const inst = new Instance(3)\n' +
+      'console.log(\n' +
+      '  inst.chain(number => new Instance(number ** 2))\n' +
+      ') // Instance { 9 }',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Instance.prototype.chain',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 25, offset: 24 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 25, offset: 24 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 25, offset: 24 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: '<A any, B any>new Instance(x A).chain(f A=>Instance',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 52, offset: 51 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<B>',
+                position: {
+                  start: { line: 1, column: 52, offset: 51 },
+                  end: { line: 1, column: 55, offset: 54 }
+                }
+              },
+              {
+                type: 'text',
+                value: ') -> Instance',
+                position: {
+                  start: { line: 1, column: 55, offset: 54 },
+                  end: { line: 1, column: 68, offset: 67 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<B>',
+                position: {
+                  start: { line: 1, column: 68, offset: 67 },
+                  end: { line: 1, column: 71, offset: 70 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 71, offset: 70 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 71, offset: 70 }
+        }
+      },
+      catchphrase: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'For associativity',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 18, offset: 17 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 18, offset: 17 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 18, offset: 17 }
+        }
+      },
+      example: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'const inst = new Instance(3)\n' +
+                  'console.log(\n' +
+                  'inst.chain(number => new Instance(number ** 2))\n' +
+                  ') // Instance { 9 }',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 4, column: 20, offset: 111 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 4, column: 20, offset: 111 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 4, column: 20, offset: 111 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Instance.js'
+  },
+  {
+    name: 'Mux.flatten',
+    benchmark: 'Mux.flatten(nested): 1e+5: 25.588ms\n_.flatten(nested): 1e+5: 28.935ms',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Mux.flatten',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 12, offset: 11 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 12, offset: 11 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 12, offset: 11 }
+        }
+      },
+      benchmark: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Mux.flatten(nested): 1e+5: 25.588ms\n' +
+                  '_.flatten(nested): 1e+5: 28.935ms',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 2, column: 34, offset: 69 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 2, column: 34, offset: 69 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 2, column: 34, offset: 69 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.benchmark.js'
+  },
+  {
+    synopsis: 'isGeneratorFunction(value !null) -> boolean',
+    mdast: {
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'isGeneratorFunction(value !null) -> boolean',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 44, offset: 43 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 44, offset: 43 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 44, offset: 43 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
+  },
+  {
+    synopsis: 'isSequence(value any) -> boolean',
+    mdast: {
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'isSequence(value any) -> boolean',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 33, offset: 32 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 33, offset: 32 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 33, offset: 32 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
+  },
+  {
+    synopsis: 'isAsyncSequence(value any) -> boolean',
+    mdast: {
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'isAsyncSequence(value any) -> boolean',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 38, offset: 37 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 38, offset: 37 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 38, offset: 37 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
+  },
+  {
+    name: 'Mux',
+    synopsis: 'Iterable|GeneratorFunction -> SyncSequence\n' +
+      'AsyncIterable|AsyncGeneratorFunction -> AsyncSequence\n' +
+      'SyncSequence|AsyncSequence -> Sequence\n' +
+      '\n' +
+      '<T any>new Mux(Sequence<Sequence<T>|T>|T) -> Mux',
+    catchphrase: 'Multiplexing for Sequences of Sequences',
+    WARNING: "Iterators have defined a self-referencing Symbol.iterator, which means they'll check out as Iterables but will deplete prematurely. Supplying a direct Iterator as the top level sequence in any capacity to Mux will cause undesirable behavior.",
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Mux',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 4, offset: 3 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 4, offset: 3 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 4, offset: 3 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Iterable|GeneratorFunction -> SyncSequence\n' +
+                  'AsyncIterable|AsyncGeneratorFunction -> AsyncSequence\n' +
+                  'SyncSequence|AsyncSequence -> Sequence',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 3, column: 39, offset: 135 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 39, offset: 135 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'html',
+                value: '<T any>',
+                position: {
+                  start: { line: 5, column: 1, offset: 137 },
+                  end: { line: 5, column: 8, offset: 144 }
+                }
+              },
+              {
+                type: 'text',
+                value: 'new Mux(Sequence<Sequence',
+                position: {
+                  start: { line: 5, column: 8, offset: 144 },
+                  end: { line: 5, column: 33, offset: 169 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 5, column: 33, offset: 169 },
+                  end: { line: 5, column: 36, offset: 172 }
+                }
+              },
+              {
+                type: 'text',
+                value: '|T>|T) -> Mux',
+                position: {
+                  start: { line: 5, column: 36, offset: 172 },
+                  end: { line: 5, column: 49, offset: 185 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 5, column: 1, offset: 137 },
+              end: { line: 5, column: 49, offset: 185 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 5, column: 49, offset: 185 }
+        }
+      },
+      catchphrase: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Multiplexing for Sequences of Sequences',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 40, offset: 39 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 40, offset: 39 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 40, offset: 39 }
+        }
+      },
+      WARNING: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: "Iterators have defined a self-referencing Symbol.iterator, which means they'll check out as Iterables but will deplete prematurely. Supplying a direct Iterator as the top level sequence in any capacity to Mux will cause undesirable behavior.",
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 242, offset: 241 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 242, offset: 241 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 242, offset: 241 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
   },
   {
     name: 'Mux.isSequence',
@@ -18274,7 +28601,715 @@ export default [
           end: { line: 3, column: 10, offset: 57 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
+  },
+  {
+    name: 'iteratorOf',
+    synopsis: '<T any>iteratorOf(x T) -> Iterator<T>',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'iteratorOf',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 11, offset: 10 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 11, offset: 10 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 11, offset: 10 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'html',
+                value: '<T any>',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 8, offset: 7 }
+                }
+              },
+              {
+                type: 'text',
+                value: 'iteratorOf(x T) -> Iterator',
+                position: {
+                  start: { line: 1, column: 8, offset: 7 },
+                  end: { line: 1, column: 35, offset: 34 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 1, column: 35, offset: 34 },
+                  end: { line: 1, column: 38, offset: 37 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 38, offset: 37 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 38, offset: 37 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
+  },
+  {
+    name: 'getSyncIterator',
+    synopsis: 'Iterable|GeneratorFunction -> SyncSequence\n' +
+      '\n' +
+      '<T any>getSyncIterator(x SyncSequence<T>|T) -> Iterator<T>',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'getSyncIterator',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 16, offset: 15 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 16, offset: 15 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 16, offset: 15 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Iterable|GeneratorFunction -> SyncSequence',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 43, offset: 42 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 43, offset: 42 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'html',
+                value: '<T any>',
+                position: {
+                  start: { line: 3, column: 1, offset: 44 },
+                  end: { line: 3, column: 8, offset: 51 }
+                }
+              },
+              {
+                type: 'text',
+                value: 'getSyncIterator(x SyncSequence',
+                position: {
+                  start: { line: 3, column: 8, offset: 51 },
+                  end: { line: 3, column: 38, offset: 81 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 3, column: 38, offset: 81 },
+                  end: { line: 3, column: 41, offset: 84 }
+                }
+              },
+              {
+                type: 'text',
+                value: '|T) -> Iterator',
+                position: {
+                  start: { line: 3, column: 41, offset: 84 },
+                  end: { line: 3, column: 56, offset: 99 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 3, column: 56, offset: 99 },
+                  end: { line: 3, column: 59, offset: 102 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 3, column: 1, offset: 44 },
+              end: { line: 3, column: 59, offset: 102 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 59, offset: 102 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
+  },
+  {
+    name: 'getIterator',
+    synopsis: 'Iterable|GeneratorFunction\n' +
+      '  |AsyncIterable|AsyncGeneratorFunction -> Sequence\n' +
+      '\n' +
+      '<T any>getIterator(x Sequence<T>|T) -> Iterator<T>|AsyncIterator<T>',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'getIterator',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 12, offset: 11 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 12, offset: 11 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 12, offset: 11 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Iterable|GeneratorFunction\n' +
+                  '|AsyncIterable|AsyncGeneratorFunction -> Sequence',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 2, column: 52, offset: 78 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 2, column: 52, offset: 78 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'html',
+                value: '<T any>',
+                position: {
+                  start: { line: 4, column: 1, offset: 80 },
+                  end: { line: 4, column: 8, offset: 87 }
+                }
+              },
+              {
+                type: 'text',
+                value: 'getIterator(x Sequence',
+                position: {
+                  start: { line: 4, column: 8, offset: 87 },
+                  end: { line: 4, column: 30, offset: 109 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 4, column: 30, offset: 109 },
+                  end: { line: 4, column: 33, offset: 112 }
+                }
+              },
+              {
+                type: 'text',
+                value: '|T) -> Iterator',
+                position: {
+                  start: { line: 4, column: 33, offset: 112 },
+                  end: { line: 4, column: 48, offset: 127 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 4, column: 48, offset: 127 },
+                  end: { line: 4, column: 51, offset: 130 }
+                }
+              },
+              {
+                type: 'text',
+                value: '|AsyncIterator',
+                position: {
+                  start: { line: 4, column: 51, offset: 130 },
+                  end: { line: 4, column: 65, offset: 144 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 4, column: 65, offset: 144 },
+                  end: { line: 4, column: 68, offset: 147 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 4, column: 1, offset: 80 },
+              end: { line: 4, column: 68, offset: 147 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 4, column: 68, offset: 147 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
+  },
+  {
+    name: 'sequenceIsAsync',
+    synopsis: 'Iterable|GeneratorFunction\n' +
+      '  |AsyncIterable|AsyncGeneratorFunction -> Sequence\n' +
+      '\n' +
+      'sequenceIsAsync(x Sequence) -> boolean',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'sequenceIsAsync',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 16, offset: 15 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 16, offset: 15 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 16, offset: 15 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Iterable|GeneratorFunction\n' +
+                  '|AsyncIterable|AsyncGeneratorFunction -> Sequence',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 2, column: 52, offset: 78 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 2, column: 52, offset: 78 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'sequenceIsAsync(x Sequence) -> boolean',
+                position: {
+                  start: { line: 4, column: 1, offset: 80 },
+                  end: { line: 4, column: 39, offset: 118 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 4, column: 1, offset: 80 },
+              end: { line: 4, column: 39, offset: 118 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 4, column: 39, offset: 118 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
+  },
+  {
+    name: 'muxIsSync',
+    synopsis: 'Iterable|GeneratorFunction\n' +
+      '  |AsyncIterable|AsyncGeneratorFunction -> Sequence\n' +
+      '\n' +
+      '<T any>muxIsSync(x Sequence<Sequence<T>|T>) -> boolean',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'muxIsSync',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 10, offset: 9 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 10, offset: 9 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 10, offset: 9 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Iterable|GeneratorFunction\n' +
+                  '|AsyncIterable|AsyncGeneratorFunction -> Sequence',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 2, column: 52, offset: 78 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 2, column: 52, offset: 78 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'html',
+                value: '<T any>',
+                position: {
+                  start: { line: 4, column: 1, offset: 80 },
+                  end: { line: 4, column: 8, offset: 87 }
+                }
+              },
+              {
+                type: 'text',
+                value: 'muxIsSync(x Sequence<Sequence',
+                position: {
+                  start: { line: 4, column: 8, offset: 87 },
+                  end: { line: 4, column: 37, offset: 116 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 4, column: 37, offset: 116 },
+                  end: { line: 4, column: 40, offset: 119 }
+                }
+              },
+              {
+                type: 'text',
+                value: '|T>) -> boolean',
+                position: {
+                  start: { line: 4, column: 40, offset: 119 },
+                  end: { line: 4, column: 55, offset: 134 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 4, column: 1, offset: 80 },
+              end: { line: 4, column: 55, offset: 134 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 4, column: 55, offset: 134 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
+  },
+  {
+    name: 'muxZipSync',
+    synopsis: 'Iterable|GeneratorFunction -> SyncSequence\n' +
+      '\n' +
+      '<T any>muxZipSync(\n' +
+      '  x SyncSequence<SyncSequence<T>|T>|T,\n' +
+      ') -> Iterator<Array<T|undefined>>',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'muxZipSync',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 11, offset: 10 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 11, offset: 10 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 11, offset: 10 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Iterable|GeneratorFunction -> SyncSequence',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 43, offset: 42 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 43, offset: 42 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'html',
+                value: '<T any>',
+                position: {
+                  start: { line: 3, column: 1, offset: 44 },
+                  end: { line: 3, column: 8, offset: 51 }
+                }
+              },
+              {
+                type: 'text',
+                value: 'muxZipSync(\nx SyncSequence<SyncSequence',
+                position: {
+                  start: { line: 3, column: 8, offset: 51 },
+                  end: { line: 4, column: 30, offset: 92 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 4, column: 30, offset: 92 },
+                  end: { line: 4, column: 33, offset: 95 }
+                }
+              },
+              {
+                type: 'text',
+                value: '|T>|T,\n) -> Iterator<Array<T|undefined>>',
+                position: {
+                  start: { line: 4, column: 33, offset: 95 },
+                  end: { line: 5, column: 34, offset: 135 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 3, column: 1, offset: 44 },
+              end: { line: 5, column: 34, offset: 135 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 5, column: 34, offset: 135 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
+  },
+  {
+    name: 'muxZipAsync',
+    synopsis: 'Iterable|GeneratorFunction\n' +
+      '  |AsyncIterable|AsyncGeneratorFunction -> Sequence\n' +
+      '\n' +
+      '<T any>muxZipAsync(\n' +
+      '  x Sequence<Sequence<T>|T>|T,\n' +
+      ') -> AsyncIterator<Array<T|undefined>>',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'muxZipAsync',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 12, offset: 11 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 12, offset: 11 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 12, offset: 11 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Iterable|GeneratorFunction\n' +
+                  '|AsyncIterable|AsyncGeneratorFunction -> Sequence',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 2, column: 52, offset: 78 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 2, column: 52, offset: 78 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'html',
+                value: '<T any>',
+                position: {
+                  start: { line: 4, column: 1, offset: 80 },
+                  end: { line: 4, column: 8, offset: 87 }
+                }
+              },
+              {
+                type: 'text',
+                value: 'muxZipAsync(\nx Sequence<Sequence',
+                position: {
+                  start: { line: 4, column: 8, offset: 87 },
+                  end: { line: 5, column: 22, offset: 121 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 5, column: 22, offset: 121 },
+                  end: { line: 5, column: 25, offset: 124 }
+                }
+              },
+              {
+                type: 'text',
+                value: '|T>|T,\n) -> AsyncIterator<Array<T|undefined>>',
+                position: {
+                  start: { line: 5, column: 25, offset: 124 },
+                  end: { line: 6, column: 39, offset: 169 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 4, column: 1, offset: 80 },
+              end: { line: 6, column: 39, offset: 169 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 6, column: 39, offset: 169 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
   },
   {
     name: 'Mux.zip',
@@ -18534,7 +29569,236 @@ export default [
           end: { line: 7, column: 2, offset: 184 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
+  },
+  {
+    name: 'muxConcatSync',
+    synopsis: 'Iterable|GeneratorFunction -> SyncSequence\n' +
+      '\n' +
+      '<T any>muxConcatSync(\n' +
+      '  x SyncSequence<SyncSequence<T>|T>|T,\n' +
+      ') -> Iterator<T>',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'muxConcatSync',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 14, offset: 13 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 14, offset: 13 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 14, offset: 13 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Iterable|GeneratorFunction -> SyncSequence',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 43, offset: 42 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 43, offset: 42 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'html',
+                value: '<T any>',
+                position: {
+                  start: { line: 3, column: 1, offset: 44 },
+                  end: { line: 3, column: 8, offset: 51 }
+                }
+              },
+              {
+                type: 'text',
+                value: 'muxConcatSync(\nx SyncSequence<SyncSequence',
+                position: {
+                  start: { line: 3, column: 8, offset: 51 },
+                  end: { line: 4, column: 30, offset: 95 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 4, column: 30, offset: 95 },
+                  end: { line: 4, column: 33, offset: 98 }
+                }
+              },
+              {
+                type: 'text',
+                value: '|T>|T,\n) -> Iterator',
+                position: {
+                  start: { line: 4, column: 33, offset: 98 },
+                  end: { line: 5, column: 14, offset: 118 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 5, column: 14, offset: 118 },
+                  end: { line: 5, column: 17, offset: 121 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 3, column: 1, offset: 44 },
+              end: { line: 5, column: 17, offset: 121 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 5, column: 17, offset: 121 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
+  },
+  {
+    name: 'muxConcatAsync',
+    synopsis: 'Iterable|GeneratorFunction -> SyncSequence\n' +
+      'AsyncIterable|AsyncGeneratorFunction -> AsyncSequence\n' +
+      'SyncSequence|AsyncSequence -> Sequence\n' +
+      '\n' +
+      '<T any>muxConcatAsync(\n' +
+      '  x Sequence<Sequence<T>|T>|T,\n' +
+      ') -> AsyncIterator<T>',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'muxConcatAsync',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 15, offset: 14 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 15, offset: 14 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 15, offset: 14 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Iterable|GeneratorFunction -> SyncSequence\n' +
+                  'AsyncIterable|AsyncGeneratorFunction -> AsyncSequence\n' +
+                  'SyncSequence|AsyncSequence -> Sequence',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 3, column: 39, offset: 135 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 39, offset: 135 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'html',
+                value: '<T any>',
+                position: {
+                  start: { line: 5, column: 1, offset: 137 },
+                  end: { line: 5, column: 8, offset: 144 }
+                }
+              },
+              {
+                type: 'text',
+                value: 'muxConcatAsync(\nx Sequence<Sequence',
+                position: {
+                  start: { line: 5, column: 8, offset: 144 },
+                  end: { line: 6, column: 22, offset: 181 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 6, column: 22, offset: 181 },
+                  end: { line: 6, column: 25, offset: 184 }
+                }
+              },
+              {
+                type: 'text',
+                value: '|T>|T,\n) -> AsyncIterator',
+                position: {
+                  start: { line: 6, column: 25, offset: 184 },
+                  end: { line: 7, column: 19, offset: 209 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 7, column: 19, offset: 209 },
+                  end: { line: 7, column: 22, offset: 212 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 5, column: 1, offset: 137 },
+              end: { line: 7, column: 22, offset: 212 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 7, column: 22, offset: 212 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
   },
   {
     name: 'Mux.concat',
@@ -18814,7 +30078,217 @@ export default [
           end: { line: 9, column: 2, offset: 142 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
+  },
+  {
+    name: 'muxSwitchSync',
+    synopsis: '<T any>muxSwitchSync(\n' +
+      '  x SyncSequence<SyncSequence<T>|T>|T,\n' +
+      ') -> Iterator<T>',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'muxSwitchSync',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 14, offset: 13 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 14, offset: 13 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 14, offset: 13 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'html',
+                value: '<T any>',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 8, offset: 7 }
+                }
+              },
+              {
+                type: 'text',
+                value: 'muxSwitchSync(\nx SyncSequence<SyncSequence',
+                position: {
+                  start: { line: 1, column: 8, offset: 7 },
+                  end: { line: 2, column: 30, offset: 51 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 2, column: 30, offset: 51 },
+                  end: { line: 2, column: 33, offset: 54 }
+                }
+              },
+              {
+                type: 'text',
+                value: '|T>|T,\n) -> Iterator',
+                position: {
+                  start: { line: 2, column: 33, offset: 54 },
+                  end: { line: 3, column: 14, offset: 74 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 3, column: 14, offset: 74 },
+                  end: { line: 3, column: 17, offset: 77 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 17, offset: 77 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 17, offset: 77 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
+  },
+  {
+    name: 'muxSwitchAsync',
+    synopsis: 'Iterable|GeneratorFunction -> SyncSequence\n' +
+      'AsyncIterable|AsyncGeneratorFunction -> AsyncSequence\n' +
+      'SyncSequence|AsyncSequence -> Sequence\n' +
+      '\n' +
+      '<T any>muxSwitchAsync(\n' +
+      '  x Sequence<Sequence<T>|T>|T,\n' +
+      ') -> AsyncIterator<T>',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'muxSwitchAsync',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 15, offset: 14 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 15, offset: 14 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 15, offset: 14 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Iterable|GeneratorFunction -> SyncSequence\n' +
+                  'AsyncIterable|AsyncGeneratorFunction -> AsyncSequence\n' +
+                  'SyncSequence|AsyncSequence -> Sequence',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 3, column: 39, offset: 135 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 39, offset: 135 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'html',
+                value: '<T any>',
+                position: {
+                  start: { line: 5, column: 1, offset: 137 },
+                  end: { line: 5, column: 8, offset: 144 }
+                }
+              },
+              {
+                type: 'text',
+                value: 'muxSwitchAsync(\nx Sequence<Sequence',
+                position: {
+                  start: { line: 5, column: 8, offset: 144 },
+                  end: { line: 6, column: 22, offset: 181 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 6, column: 22, offset: 181 },
+                  end: { line: 6, column: 25, offset: 184 }
+                }
+              },
+              {
+                type: 'text',
+                value: '|T>|T,\n) -> AsyncIterator',
+                position: {
+                  start: { line: 6, column: 25, offset: 184 },
+                  end: { line: 7, column: 19, offset: 209 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 7, column: 19, offset: 209 },
+                  end: { line: 7, column: 22, offset: 212 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 5, column: 1, offset: 137 },
+              end: { line: 7, column: 22, offset: 212 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 7, column: 22, offset: 212 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
   },
   {
     name: 'Mux.switch',
@@ -19077,7 +30551,99 @@ export default [
           end: { line: 8, column: 2, offset: 141 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
+  },
+  {
+    name: 'muxRaceAsync',
+    synopsis: '<T any>muxRaceAsync(x Sequence<Sequence<T>|T>|T) -> AsyncIterator<T>',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'muxRaceAsync',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 13, offset: 12 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 13, offset: 12 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 13, offset: 12 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'html',
+                value: '<T any>',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 8, offset: 7 }
+                }
+              },
+              {
+                type: 'text',
+                value: 'muxRaceAsync(x Sequence<Sequence',
+                position: {
+                  start: { line: 1, column: 8, offset: 7 },
+                  end: { line: 1, column: 40, offset: 39 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 1, column: 40, offset: 39 },
+                  end: { line: 1, column: 43, offset: 42 }
+                }
+              },
+              {
+                type: 'text',
+                value: '|T>|T) -> AsyncIterator',
+                position: {
+                  start: { line: 1, column: 43, offset: 42 },
+                  end: { line: 1, column: 66, offset: 65 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 1, column: 66, offset: 65 },
+                  end: { line: 1, column: 69, offset: 68 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 69, offset: 68 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 69, offset: 68 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
   },
   {
     name: 'Mux.race',
@@ -19370,7 +30936,217 @@ export default [
           end: { line: 8, column: 2, offset: 260 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
+  },
+  {
+    name: 'arrayPushArray',
+    synopsis: 'arrayPushArray(x Array, array Array) -> undefined',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'arrayPushArray',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 15, offset: 14 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 15, offset: 14 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 15, offset: 14 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'arrayPushArray(x Array, array Array) -> undefined',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 50, offset: 49 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 50, offset: 49 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 50, offset: 49 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
+  },
+  {
+    name: 'arrayPushIterable',
+    synopsis: 'arrayPushIterable(x Array, array Array) -> undefined',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'arrayPushIterable',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 18, offset: 17 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 18, offset: 17 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 18, offset: 17 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'arrayPushIterable(x Array, array Array) -> undefined',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 53, offset: 52 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 53, offset: 52 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 53, offset: 52 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
+  },
+  {
+    name: 'arrayFlatten',
+    synopsis: '<T any>arrayFlatten(Array<Array<T>|T>) -> Array<T>',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'arrayFlatten',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 13, offset: 12 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 13, offset: 12 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 13, offset: 12 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'html',
+                value: '<T any>',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 8, offset: 7 }
+                }
+              },
+              {
+                type: 'text',
+                value: 'arrayFlatten(Array<Array',
+                position: {
+                  start: { line: 1, column: 8, offset: 7 },
+                  end: { line: 1, column: 32, offset: 31 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 1, column: 32, offset: 31 },
+                  end: { line: 1, column: 35, offset: 34 }
+                }
+              },
+              {
+                type: 'text',
+                value: '|T>) -> Array',
+                position: {
+                  start: { line: 1, column: 35, offset: 34 },
+                  end: { line: 1, column: 48, offset: 47 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 1, column: 48, offset: 47 },
+                  end: { line: 1, column: 51, offset: 50 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 51, offset: 50 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 51, offset: 50 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
   },
   {
     name: [ 'Mux.flatten', 'Mux.flatten' ],
@@ -19492,7 +31268,2889 @@ export default [
           end: { line: 3, column: 21, offset: 71 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
+  },
+  {
+    name: 'PossiblePromise.then',
+    benchmark: 'square(3): 1e+7: 13.162ms\n' +
+      'square_PossiblePromiseThen(3): 1e+7: 15.374ms\n' +
+      '\n' +
+      'square_promiseThen: 1e+5: 27.686ms\n' +
+      'square_PossiblePromiseThen(p5): 1e+5: 28.596ms',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'PossiblePromise.then',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 21, offset: 20 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 21, offset: 20 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 21, offset: 20 }
+        }
+      },
+      benchmark: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'square(3): 1e+7: 13.162ms\n' +
+                  'square_PossiblePromiseThen(3): 1e+7: 15.374ms',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 2, column: 46, offset: 71 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 2, column: 46, offset: 71 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'square_promiseThen: 1e+5: 27.686ms\n' +
+                  'square_PossiblePromiseThen(p5): 1e+5: 28.596ms',
+                position: {
+                  start: { line: 4, column: 1, offset: 73 },
+                  end: { line: 5, column: 47, offset: 154 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 4, column: 1, offset: 73 },
+              end: { line: 5, column: 47, offset: 154 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 5, column: 47, offset: 154 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/PossiblePromise.benchmark.js'
+  },
+  {
+    name: 'PossiblePromise.all',
+    benchmark: 'promiseAll([resolvedPromise]): 1e+5: 150.068ms\n' +
+      'possiblePromiseAll([resolvedPromise]): 1e+5: 154.41ms\n' +
+      '\n' +
+      'sum([1, 2, 3]): 1e+6: 11.096ms\n' +
+      'possiblePromiseAll([1, 2, 3]).then([sum]): 1e+6: 17.291ms',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'PossiblePromise.all',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 20, offset: 19 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 20, offset: 19 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 20, offset: 19 }
+        }
+      },
+      benchmark: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'promiseAll([resolvedPromise]): 1e+5: 150.068ms\n' +
+                  'possiblePromiseAll([resolvedPromise]): 1e+5: 154.41ms',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 2, column: 54, offset: 100 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 2, column: 54, offset: 100 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'sum([1, 2, 3]): 1e+6: 11.096ms\n' +
+                  'possiblePromiseAll([1, 2, 3]).then([sum]): 1e+6: 17.291ms',
+                position: {
+                  start: { line: 4, column: 1, offset: 102 },
+                  end: { line: 5, column: 58, offset: 190 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 4, column: 1, offset: 102 },
+              end: { line: 5, column: 58, offset: 190 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 5, column: 58, offset: 190 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/PossiblePromise.benchmark.js'
+  },
+  {
+    name: 'PossiblePromise.args',
+    benchmark: 'add(1, 2): 1e+6: 4.012ms\n' +
+      'PossiblePromise.argsSome(add)(1, 2): 1e+6: 11.062ms\n' +
+      'PossiblePromise.argsSomeApply(add)(1, 2): 1e+6: 11.33ms\n' +
+      'PossiblePromise.argumentsLoop(add)(1, 2): 1e+6: 17.076ms\n' +
+      'PossiblePromise.argsLoop(add)(1, 2): 1e+6: 47.844ms',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'PossiblePromise.args',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 21, offset: 20 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 21, offset: 20 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 21, offset: 20 }
+        }
+      },
+      benchmark: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'add(1, 2): 1e+6: 4.012ms\n' +
+                  'PossiblePromise.argsSome(add)(1, 2): 1e+6: 11.062ms\n' +
+                  'PossiblePromise.argsSomeApply(add)(1, 2): 1e+6: 11.33ms\n' +
+                  'PossiblePromise.argumentsLoop(add)(1, 2): 1e+6: 17.076ms\n' +
+                  'PossiblePromise.argsLoop(add)(1, 2): 1e+6: 47.844ms',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 5, column: 52, offset: 241 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 5, column: 52, offset: 241 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 5, column: 52, offset: 241 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/PossiblePromise.benchmark.js'
+  },
+  {
+    name: 'PossiblePromise',
+    synopsis: 'new PossiblePromise(value Promise|any) -> PossiblePromise',
+    catchphrase: 'Possibly a Promise',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'PossiblePromise',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 16, offset: 15 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 16, offset: 15 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 16, offset: 15 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'new PossiblePromise(value Promise|any) -> PossiblePromise',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 58, offset: 57 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 58, offset: 57 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 58, offset: 57 }
+        }
+      },
+      catchphrase: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Possibly a Promise',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 19, offset: 18 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 19, offset: 18 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 19, offset: 18 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/PossiblePromise.js'
+  },
+  {
+    name: 'PossiblePromise.prototype.then',
+    synopsis: 'new PossiblePromise(value Promise|any).then(func function) -> Promise|any',
+    catchphrase: '.then if internal Promise, else call',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'PossiblePromise.prototype.then',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 31, offset: 30 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 31, offset: 30 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 31, offset: 30 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'new PossiblePromise(value Promise|any).then(func function) -> Promise|any',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 74, offset: 73 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 74, offset: 73 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 74, offset: 73 }
+        }
+      },
+      catchphrase: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: '.then if internal Promise, else call',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 37, offset: 36 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 37, offset: 36 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 37, offset: 36 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/PossiblePromise.js'
+  },
+  {
+    name: 'PossiblePromise.then',
+    synopsis: 'PossiblePromise.then(value Promise|any, func function) -> Promise|any',
+    catchphrase: '.then if passed a Promise, else call',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'PossiblePromise.then',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 21, offset: 20 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 21, offset: 20 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 21, offset: 20 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'PossiblePromise.then(value Promise|any, func function) -> Promise|any',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 70, offset: 69 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 70, offset: 69 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 70, offset: 69 }
+        }
+      },
+      catchphrase: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: '.then if passed a Promise, else call',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 37, offset: 36 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 37, offset: 36 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 37, offset: 36 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/PossiblePromise.js'
+  },
+  {
+    name: 'PossiblePromise.catch',
+    synopsis: 'PossiblePromise.catch(\n' +
+      '  value Promise|any,\n' +
+      '  func any=>Promise|any,\n' +
+      ') -> Promise|any',
+    catchphrase: '.catch if passed a Promise, else noop',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'PossiblePromise.catch',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 22, offset: 21 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 22, offset: 21 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 22, offset: 21 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'PossiblePromise.catch(\n' +
+                  'value Promise|any,\n' +
+                  'func any=>Promise|any,\n' +
+                  ') -> Promise|any',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 4, column: 17, offset: 85 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 4, column: 17, offset: 85 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 4, column: 17, offset: 85 }
+        }
+      },
+      catchphrase: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: '.catch if passed a Promise, else noop',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 38, offset: 37 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 38, offset: 37 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 38, offset: 37 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/PossiblePromise.js'
+  },
+  {
+    name: 'SyncThenable',
+    synopsis: 'new SyncThenable(value any) -> SyncThenable',
+    catchphrase: 'A synchronous Promise-like structure',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'SyncThenable',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 13, offset: 12 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 13, offset: 12 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 13, offset: 12 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'new SyncThenable(value any) -> SyncThenable',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 44, offset: 43 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 44, offset: 43 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 44, offset: 43 }
+        }
+      },
+      catchphrase: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'A synchronous Promise-like structure',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 37, offset: 36 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 37, offset: 36 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 37, offset: 36 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/PossiblePromise.js'
+  },
+  {
+    name: 'SyncThenable.prototype.then',
+    synopsis: 'new SyncThenable(value any).then(func function) -> any',
+    catchphrase: '.then as a function call',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'SyncThenable.prototype.then',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 28, offset: 27 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 28, offset: 27 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 28, offset: 27 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'new SyncThenable(value any).then(func function) -> any',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 55, offset: 54 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 55, offset: 54 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 55, offset: 54 }
+        }
+      },
+      catchphrase: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: '.then as a function call',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 25, offset: 24 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 25, offset: 24 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 25, offset: 24 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/PossiblePromise.js'
+  },
+  {
+    name: 'PossiblePromise.all',
+    synopsis: 'PossiblePromise.all(\n' +
+      '  values Array<Promise>|Array,\n' +
+      ') -> Promise<Array>|PossiblePromise<Array>',
+    catchphrase: 'Always returns a thenable of an Array',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'PossiblePromise.all',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 20, offset: 19 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 20, offset: 19 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 20, offset: 19 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'PossiblePromise.all(\nvalues Array',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 2, column: 15, offset: 35 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<Promise>',
+                position: {
+                  start: { line: 2, column: 15, offset: 35 },
+                  end: { line: 2, column: 24, offset: 44 }
+                }
+              },
+              {
+                type: 'text',
+                value: '|Array,\n) -> Promise',
+                position: {
+                  start: { line: 2, column: 24, offset: 44 },
+                  end: { line: 3, column: 13, offset: 64 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<Array>',
+                position: {
+                  start: { line: 3, column: 13, offset: 64 },
+                  end: { line: 3, column: 20, offset: 71 }
+                }
+              },
+              {
+                type: 'text',
+                value: '|PossiblePromise',
+                position: {
+                  start: { line: 3, column: 20, offset: 71 },
+                  end: { line: 3, column: 36, offset: 87 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<Array>',
+                position: {
+                  start: { line: 3, column: 36, offset: 87 },
+                  end: { line: 3, column: 43, offset: 94 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 43, offset: 94 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 43, offset: 94 }
+        }
+      },
+      catchphrase: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Always returns a thenable of an Array',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 38, offset: 37 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 38, offset: 37 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 38, offset: 37 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/PossiblePromise.js'
+  },
+  {
+    name: 'PossiblePromise.args',
+    synopsis: 'PossiblePromise.args(func function)(args ...any) -> Promise|any',
+    catchphrase: 'Resolves any Promises supplied as arguments to a function',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'PossiblePromise.args',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 21, offset: 20 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 21, offset: 20 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 21, offset: 20 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'PossiblePromise.args(func function)(args ...any) -> Promise|any',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 64, offset: 63 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 64, offset: 63 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 64, offset: 63 }
+        }
+      },
+      catchphrase: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Resolves any Promises supplied as arguments to a function',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 58, offset: 57 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 58, offset: 57 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 58, offset: 57 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/PossiblePromise.js'
+  },
+  {
+    name: 'Struct.get',
+    benchmark: 'structGet(arr, 0): 1e+7: 13.472ms\n' +
+      'structGetTernary(arr, 0): 1e+7: 13.414ms',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Struct.get',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 11, offset: 10 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 11, offset: 10 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 11, offset: 10 }
+        }
+      },
+      benchmark: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'structGet(arr, 0): 1e+7: 13.472ms\n' +
+                  'structGetTernary(arr, 0): 1e+7: 13.414ms',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 2, column: 41, offset: 74 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 2, column: 41, offset: 74 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 2, column: 41, offset: 74 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Struct.benchmark.js'
+  },
+  {
+    name: 'Struct.set',
+    benchmark: 'arr[5] = 6: 1e+7: 12.785ms\n' +
+      'structSet(arr, 6, 5): 1e+7: 13.989ms\n' +
+      '\n' +
+      "obj['f'] = 6: 1e+7: 12.857ms\n" +
+      "structSet(obj, 6, 'f'): 1e+7: 14.154ms\n" +
+      '\n' +
+      'set.add(6): 1e+7: 95.934ms\n' +
+      'structSet(set, 6): 1e+7: 97.659ms\n' +
+      '\n' +
+      "map.set('f', 6): 1e+7: 138.455ms\n" +
+      "structSet(map, 6, 'f'): 1e+7: 139.162ms",
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Struct.set',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 11, offset: 10 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 11, offset: 10 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 11, offset: 10 }
+        }
+      },
+      benchmark: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'arr[5] = 6: 1e+7: 12.785ms\n' +
+                  'structSet(arr, 6, 5): 1e+7: 13.989ms',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 2, column: 37, offset: 63 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 2, column: 37, offset: 63 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: "obj['f'] = 6: 1e+7: 12.857ms\n" +
+                  "structSet(obj, 6, 'f'): 1e+7: 14.154ms",
+                position: {
+                  start: { line: 4, column: 1, offset: 65 },
+                  end: { line: 5, column: 39, offset: 132 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 4, column: 1, offset: 65 },
+              end: { line: 5, column: 39, offset: 132 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'set.add(6): 1e+7: 95.934ms\nstructSet(set, 6): 1e+7: 97.659ms',
+                position: {
+                  start: { line: 7, column: 1, offset: 134 },
+                  end: { line: 8, column: 34, offset: 194 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 7, column: 1, offset: 134 },
+              end: { line: 8, column: 34, offset: 194 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: "map.set('f', 6): 1e+7: 138.455ms\n" +
+                  "structSet(map, 6, 'f'): 1e+7: 139.162ms",
+                position: {
+                  start: { line: 10, column: 1, offset: 196 },
+                  end: { line: 11, column: 40, offset: 268 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 10, column: 1, offset: 196 },
+              end: { line: 11, column: 40, offset: 268 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 11, column: 40, offset: 268 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Struct.benchmark.js'
+  },
+  {
+    name: 'Struct.size',
+    benchmark: 'structSize(arr): 1e+7: 14.043ms\n' +
+      '_.size(arr): 1e+7: 583.972ms\n' +
+      '\n' +
+      'structSize(obj): 1e+7: 117.314ms\n' +
+      'structSizeObjectKeys(obj): 1e+7: 213.629ms\n' +
+      '_.size(obj): 1e+7: 664.905ms',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Struct.size',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 12, offset: 11 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 12, offset: 11 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 12, offset: 11 }
+        }
+      },
+      benchmark: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'structSize(arr): 1e+7: 14.043ms\n_.size(arr): 1e+7: 583.972ms',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 2, column: 29, offset: 60 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 2, column: 29, offset: 60 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'structSize(obj): 1e+7: 117.314ms\n' +
+                  'structSizeObjectKeys(obj): 1e+7: 213.629ms\n' +
+                  '_.size(obj): 1e+7: 664.905ms',
+                position: {
+                  start: { line: 4, column: 1, offset: 62 },
+                  end: { line: 6, column: 29, offset: 166 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 4, column: 1, offset: 62 },
+              end: { line: 6, column: 29, offset: 166 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 6, column: 29, offset: 166 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Struct.benchmark.js'
+  },
+  {
+    name: 'Struct.copy',
+    benchmark: 'arr.slice(): 1e+6: 18.674ms\n' +
+      'Array.from(arr): 1e+6: 28.472ms\n' +
+      '[...arr]: 1e+6: 24.933ms\n' +
+      'Struct.copy(arr): 1e+6: 19.488ms\n' +
+      '\n' +
+      '({ ...obj }): 1e+6: 40.274ms\n' +
+      'Object.assign({}, obj): 1e+6: 164.081ms\n' +
+      'Struct.copy(obj): 1e+6: 46.345ms\n' +
+      '\n' +
+      'new Set(set): 1e+6: 812.338ms\n' +
+      'Struct.copy(set): 1e+6: 569.508ms\n' +
+      '\n' +
+      'new Map(map): 1e+6: 303.057ms\n' +
+      'Struct.copy(map): 1e+6: 186.628ms',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Struct.copy',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 12, offset: 11 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 12, offset: 11 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 12, offset: 11 }
+        }
+      },
+      benchmark: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'arr.slice(): 1e+6: 18.674ms\n' +
+                  'Array.from(arr): 1e+6: 28.472ms\n' +
+                  '[...arr]: 1e+6: 24.933ms\n' +
+                  'Struct.copy(arr): 1e+6: 19.488ms',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 4, column: 33, offset: 117 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 4, column: 33, offset: 117 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: '({ ...obj }): 1e+6: 40.274ms\n' +
+                  'Object.assign({}, obj): 1e+6: 164.081ms\n' +
+                  'Struct.copy(obj): 1e+6: 46.345ms',
+                position: {
+                  start: { line: 6, column: 1, offset: 119 },
+                  end: { line: 8, column: 33, offset: 220 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 6, column: 1, offset: 119 },
+              end: { line: 8, column: 33, offset: 220 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'new Set(set): 1e+6: 812.338ms\n' +
+                  'Struct.copy(set): 1e+6: 569.508ms',
+                position: {
+                  start: { line: 10, column: 1, offset: 222 },
+                  end: { line: 11, column: 34, offset: 285 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 10, column: 1, offset: 222 },
+              end: { line: 11, column: 34, offset: 285 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'new Map(map): 1e+6: 303.057ms\n' +
+                  'Struct.copy(map): 1e+6: 186.628ms',
+                position: {
+                  start: { line: 13, column: 1, offset: 287 },
+                  end: { line: 14, column: 34, offset: 350 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 13, column: 1, offset: 287 },
+              end: { line: 14, column: 34, offset: 350 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 14, column: 34, offset: 350 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Struct.benchmark.js'
+  },
+  {
+    synopsis: 'isStruct(x any) -> boolean',
+    mdast: {
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'isStruct(x any) -> boolean',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 27, offset: 26 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 27, offset: 26 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 27, offset: 26 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Struct.js'
+  },
+  {
+    name: 'Struct',
+    synopsis: 'new Struct(x Array|Object|Set|Map) -> Struct',
+    catchphrase: 'Finite data structure',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Struct',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 7, offset: 6 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 7, offset: 6 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 7, offset: 6 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'new Struct(x Array|Object|Set|Map) -> Struct',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 45, offset: 44 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 45, offset: 44 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 45, offset: 44 }
+        }
+      },
+      catchphrase: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Finite data structure',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 22, offset: 21 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 22, offset: 21 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 22, offset: 21 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Struct.js'
+  },
+  {
+    name: 'Struct.isStruct',
+    synopsis: 'Struct.isStruct(x any) -> boolean',
+    catchphrase: 'Tell if struct',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Struct.isStruct',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 16, offset: 15 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 16, offset: 15 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 16, offset: 15 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Struct.isStruct(x any) -> boolean',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 34, offset: 33 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 34, offset: 33 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 34, offset: 33 }
+        }
+      },
+      catchphrase: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Tell if struct',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 15, offset: 14 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 15, offset: 14 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 15, offset: 14 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Struct.js'
+  },
+  {
+    synopsis: '<T>objectEntriesGenerator(x Object<T>) -> Iterator<[key string, T]>',
+    mdast: {
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 4, offset: 3 }
+                }
+              },
+              {
+                type: 'text',
+                value: 'objectEntriesGenerator(x Object',
+                position: {
+                  start: { line: 1, column: 4, offset: 3 },
+                  end: { line: 1, column: 35, offset: 34 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 1, column: 35, offset: 34 },
+                  end: { line: 1, column: 38, offset: 37 }
+                }
+              },
+              {
+                type: 'text',
+                value: ') -> Iterator<[key string, T]>',
+                position: {
+                  start: { line: 1, column: 38, offset: 37 },
+                  end: { line: 1, column: 68, offset: 67 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 68, offset: 67 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 68, offset: 67 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Struct.js'
+  },
+  {
+    name: 'Struct.entries',
+    synopsis: '<T any>Struct.entries(x Array<T>) -> Iterator<[index number, T]>\n' +
+      '\n' +
+      '<T any>Struct.entries(x Object<T>) -> Iterator<[key string, T]>\n' +
+      '\n' +
+      '<T any>Struct.entries(x Set<T>) -> Iterator<[T, T]>\n' +
+      '\n' +
+      '<A any, B any>Struct.entries(x Map<A, B>) -> Iterator<[A, B]>',
+    catchphrase: 'Get an iterator of key value pairs',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Struct.entries',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 15, offset: 14 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 15, offset: 14 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 15, offset: 14 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'html',
+                value: '<T any>',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 8, offset: 7 }
+                }
+              },
+              {
+                type: 'text',
+                value: 'Struct.entries(x Array',
+                position: {
+                  start: { line: 1, column: 8, offset: 7 },
+                  end: { line: 1, column: 30, offset: 29 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 1, column: 30, offset: 29 },
+                  end: { line: 1, column: 33, offset: 32 }
+                }
+              },
+              {
+                type: 'text',
+                value: ') -> Iterator<[index number, T]>',
+                position: {
+                  start: { line: 1, column: 33, offset: 32 },
+                  end: { line: 1, column: 65, offset: 64 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 65, offset: 64 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'html',
+                value: '<T any>',
+                position: {
+                  start: { line: 3, column: 1, offset: 66 },
+                  end: { line: 3, column: 8, offset: 73 }
+                }
+              },
+              {
+                type: 'text',
+                value: 'Struct.entries(x Object',
+                position: {
+                  start: { line: 3, column: 8, offset: 73 },
+                  end: { line: 3, column: 31, offset: 96 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 3, column: 31, offset: 96 },
+                  end: { line: 3, column: 34, offset: 99 }
+                }
+              },
+              {
+                type: 'text',
+                value: ') -> Iterator<[key string, T]>',
+                position: {
+                  start: { line: 3, column: 34, offset: 99 },
+                  end: { line: 3, column: 64, offset: 129 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 3, column: 1, offset: 66 },
+              end: { line: 3, column: 64, offset: 129 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'html',
+                value: '<T any>',
+                position: {
+                  start: { line: 5, column: 1, offset: 131 },
+                  end: { line: 5, column: 8, offset: 138 }
+                }
+              },
+              {
+                type: 'text',
+                value: 'Struct.entries(x Set',
+                position: {
+                  start: { line: 5, column: 8, offset: 138 },
+                  end: { line: 5, column: 28, offset: 158 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 5, column: 28, offset: 158 },
+                  end: { line: 5, column: 31, offset: 161 }
+                }
+              },
+              {
+                type: 'text',
+                value: ') -> Iterator<[T, T]>',
+                position: {
+                  start: { line: 5, column: 31, offset: 161 },
+                  end: { line: 5, column: 52, offset: 182 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 5, column: 1, offset: 131 },
+              end: { line: 5, column: 52, offset: 182 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: '<A any, B any>Struct.entries(x Map<A, B>) -> Iterator<[A, B]>',
+                position: {
+                  start: { line: 7, column: 1, offset: 184 },
+                  end: { line: 7, column: 62, offset: 245 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 7, column: 1, offset: 184 },
+              end: { line: 7, column: 62, offset: 245 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 7, column: 62, offset: 245 }
+        }
+      },
+      catchphrase: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Get an iterator of key value pairs',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 35, offset: 34 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 35, offset: 34 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 35, offset: 34 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Struct.js'
+  },
+  {
+    synopsis: '<T>objectValuesGenerator(x Object<T>) -> Iterator<T>',
+    mdast: {
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 4, offset: 3 }
+                }
+              },
+              {
+                type: 'text',
+                value: 'objectValuesGenerator(x Object',
+                position: {
+                  start: { line: 1, column: 4, offset: 3 },
+                  end: { line: 1, column: 34, offset: 33 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 1, column: 34, offset: 33 },
+                  end: { line: 1, column: 37, offset: 36 }
+                }
+              },
+              {
+                type: 'text',
+                value: ') -> Iterator',
+                position: {
+                  start: { line: 1, column: 37, offset: 36 },
+                  end: { line: 1, column: 50, offset: 49 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 1, column: 50, offset: 49 },
+                  end: { line: 1, column: 53, offset: 52 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 53, offset: 52 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 53, offset: 52 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Struct.js'
+  },
+  {
+    name: 'Struct.values',
+    synopsis: '<T any>Struct.values(\n' +
+      '  x Array<T>|Object<T>|Set<T>|Map<any, T>\n' +
+      ') -> Iterator<T>',
+    catchphrase: 'Get an iterator of values',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Struct.values',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 14, offset: 13 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 14, offset: 13 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 14, offset: 13 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'html',
+                value: '<T any>',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 8, offset: 7 }
+                }
+              },
+              {
+                type: 'text',
+                value: 'Struct.values(\nx Array',
+                position: {
+                  start: { line: 1, column: 8, offset: 7 },
+                  end: { line: 2, column: 10, offset: 31 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 2, column: 10, offset: 31 },
+                  end: { line: 2, column: 13, offset: 34 }
+                }
+              },
+              {
+                type: 'text',
+                value: '|Object',
+                position: {
+                  start: { line: 2, column: 13, offset: 34 },
+                  end: { line: 2, column: 20, offset: 41 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 2, column: 20, offset: 41 },
+                  end: { line: 2, column: 23, offset: 44 }
+                }
+              },
+              {
+                type: 'text',
+                value: '|Set',
+                position: {
+                  start: { line: 2, column: 23, offset: 44 },
+                  end: { line: 2, column: 27, offset: 48 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 2, column: 27, offset: 48 },
+                  end: { line: 2, column: 30, offset: 51 }
+                }
+              },
+              {
+                type: 'text',
+                value: '|Map<any, T>\n) -> Iterator',
+                position: {
+                  start: { line: 2, column: 30, offset: 51 },
+                  end: { line: 3, column: 14, offset: 77 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 3, column: 14, offset: 77 },
+                  end: { line: 3, column: 17, offset: 80 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 17, offset: 80 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 17, offset: 80 }
+        }
+      },
+      catchphrase: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Get an iterator of values',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 26, offset: 25 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 26, offset: 25 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 26, offset: 25 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Struct.js'
+  },
+  {
+    name: 'Struct.get',
+    synopsis: '<T any>Struct.get(x Array<T>, index number) -> T|undefined\n' +
+      '\n' +
+      '<T any>Struct.get(x Object<T>, index string) -> T|undefined\n' +
+      '\n' +
+      '<T any>Struct.get(x Set<T>, index T) -> T|undefined\n' +
+      '\n' +
+      '<A any, B any>Struct.get(x Map<A, B>, index A) -> B|undefined',
+    catchphrase: 'Get an item by index',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Struct.get',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 11, offset: 10 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 11, offset: 10 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 11, offset: 10 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'html',
+                value: '<T any>',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 8, offset: 7 }
+                }
+              },
+              {
+                type: 'text',
+                value: 'Struct.get(x Array',
+                position: {
+                  start: { line: 1, column: 8, offset: 7 },
+                  end: { line: 1, column: 26, offset: 25 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 1, column: 26, offset: 25 },
+                  end: { line: 1, column: 29, offset: 28 }
+                }
+              },
+              {
+                type: 'text',
+                value: ', index number) -> T|undefined',
+                position: {
+                  start: { line: 1, column: 29, offset: 28 },
+                  end: { line: 1, column: 59, offset: 58 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 59, offset: 58 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'html',
+                value: '<T any>',
+                position: {
+                  start: { line: 3, column: 1, offset: 60 },
+                  end: { line: 3, column: 8, offset: 67 }
+                }
+              },
+              {
+                type: 'text',
+                value: 'Struct.get(x Object',
+                position: {
+                  start: { line: 3, column: 8, offset: 67 },
+                  end: { line: 3, column: 27, offset: 86 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 3, column: 27, offset: 86 },
+                  end: { line: 3, column: 30, offset: 89 }
+                }
+              },
+              {
+                type: 'text',
+                value: ', index string) -> T|undefined',
+                position: {
+                  start: { line: 3, column: 30, offset: 89 },
+                  end: { line: 3, column: 60, offset: 119 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 3, column: 1, offset: 60 },
+              end: { line: 3, column: 60, offset: 119 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'html',
+                value: '<T any>',
+                position: {
+                  start: { line: 5, column: 1, offset: 121 },
+                  end: { line: 5, column: 8, offset: 128 }
+                }
+              },
+              {
+                type: 'text',
+                value: 'Struct.get(x Set',
+                position: {
+                  start: { line: 5, column: 8, offset: 128 },
+                  end: { line: 5, column: 24, offset: 144 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<T>',
+                position: {
+                  start: { line: 5, column: 24, offset: 144 },
+                  end: { line: 5, column: 27, offset: 147 }
+                }
+              },
+              {
+                type: 'text',
+                value: ', index T) -> T|undefined',
+                position: {
+                  start: { line: 5, column: 27, offset: 147 },
+                  end: { line: 5, column: 52, offset: 172 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 5, column: 1, offset: 121 },
+              end: { line: 5, column: 52, offset: 172 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: '<A any, B any>Struct.get(x Map<A, B>, index A) -> B|undefined',
+                position: {
+                  start: { line: 7, column: 1, offset: 174 },
+                  end: { line: 7, column: 62, offset: 235 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 7, column: 1, offset: 174 },
+              end: { line: 7, column: 62, offset: 235 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 7, column: 62, offset: 235 }
+        }
+      },
+      catchphrase: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Get an item by index',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 21, offset: 20 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 21, offset: 20 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 21, offset: 20 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Struct.js'
+  },
+  {
+    name: 'Struct.set',
+    synopsis: 'Struct.set(x Array, value any, index number) -> mutated Array\n' +
+      '\n' +
+      'Struct.set(x Object, value any, index string) -> mutated Object\n' +
+      '\n' +
+      'Struct.set(x Set, value any) -> mutated Set\n' +
+      '\n' +
+      'Struct.set(x Map, value any, index any) -> mutated Map',
+    catchphrase: 'Set a value',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Struct.set',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 11, offset: 10 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 11, offset: 10 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 11, offset: 10 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Struct.set(x Array, value any, index number) -> mutated Array',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 62, offset: 61 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 62, offset: 61 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Struct.set(x Object, value any, index string) -> mutated Object',
+                position: {
+                  start: { line: 3, column: 1, offset: 63 },
+                  end: { line: 3, column: 64, offset: 126 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 3, column: 1, offset: 63 },
+              end: { line: 3, column: 64, offset: 126 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Struct.set(x Set, value any) -> mutated Set',
+                position: {
+                  start: { line: 5, column: 1, offset: 128 },
+                  end: { line: 5, column: 44, offset: 171 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 5, column: 1, offset: 128 },
+              end: { line: 5, column: 44, offset: 171 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Struct.set(x Map, value any, index any) -> mutated Map',
+                position: {
+                  start: { line: 7, column: 1, offset: 173 },
+                  end: { line: 7, column: 55, offset: 227 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 7, column: 1, offset: 173 },
+              end: { line: 7, column: 55, offset: 227 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 7, column: 55, offset: 227 }
+        }
+      },
+      catchphrase: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Set a value',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 12, offset: 11 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 12, offset: 11 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 12, offset: 11 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Struct.js'
+  },
+  {
+    synopsis: 'objectKeysCount(obj object) -> ct number',
+    mdast: {
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'objectKeysCount(obj object) -> ct number',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 41, offset: 40 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 41, offset: 40 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 41, offset: 40 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Struct.js'
+  },
+  {
+    name: 'Struct.size',
+    synopsis: 'Struct.size(x Array|Object|Set|Map) -> number',
+    catchphrase: 'Count values',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Struct.size',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 12, offset: 11 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 12, offset: 11 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 12, offset: 11 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Struct.size(x Array|Object|Set|Map) -> number',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 46, offset: 45 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 46, offset: 45 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 46, offset: 45 }
+        }
+      },
+      catchphrase: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Count values',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 13, offset: 12 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 13, offset: 12 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 13, offset: 12 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Struct.js'
+  },
+  {
+    synopsis: 'copySet(x Set) -> y Set',
+    mdast: {
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'copySet(x Set) -> y Set',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 24, offset: 23 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 24, offset: 23 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 24, offset: 23 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Struct.js'
+  },
+  {
+    synopsis: 'copyMap(x Map) -> y Map',
+    mdast: {
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'copyMap(x Map) -> y Map',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 24, offset: 23 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 24, offset: 23 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 24, offset: 23 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Struct.js'
+  },
+  {
+    name: 'Struct.copy',
+    synopsis: 'Struct.copy(x Array) -> copied Array\n' +
+      '\n' +
+      'Struct.copy(x Object) -> copied Object\n' +
+      '\n' +
+      'Struct.copy(x Set) -> copied Set\n' +
+      '\n' +
+      'Struct.copy(x Map) -> copied Map',
+    catchphrase: 'Shallow copy a struct',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Struct.copy',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 12, offset: 11 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 12, offset: 11 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 12, offset: 11 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Struct.copy(x Array) -> copied Array',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 37, offset: 36 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 37, offset: 36 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Struct.copy(x Object) -> copied Object',
+                position: {
+                  start: { line: 3, column: 1, offset: 38 },
+                  end: { line: 3, column: 39, offset: 76 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 3, column: 1, offset: 38 },
+              end: { line: 3, column: 39, offset: 76 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Struct.copy(x Set) -> copied Set',
+                position: {
+                  start: { line: 5, column: 1, offset: 78 },
+                  end: { line: 5, column: 33, offset: 110 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 5, column: 1, offset: 78 },
+              end: { line: 5, column: 33, offset: 110 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Struct.copy(x Map) -> copied Map',
+                position: {
+                  start: { line: 7, column: 1, offset: 112 },
+                  end: { line: 7, column: 33, offset: 144 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 7, column: 1, offset: 112 },
+              end: { line: 7, column: 33, offset: 144 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 7, column: 33, offset: 144 }
+        }
+      },
+      catchphrase: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Shallow copy a struct',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 22, offset: 21 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 22, offset: 21 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 22, offset: 21 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Struct.js'
+  },
+  {
+    name: 'Struct.copyDeep',
+    synopsis: 'Struct.copyDeep(x Array) -> deeplyCopied Array\n' +
+      '\n' +
+      'Struct.copyDeep(x Object) -> deeplyCopied Object\n' +
+      '\n' +
+      'Struct.copyDeep(x Set) -> deeplyCopied Set\n' +
+      '\n' +
+      'Struct.copyDeep(x Map) -> deeplyCopied Map',
+    catchphrase: 'Deep copy a struct',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Struct.copyDeep',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 16, offset: 15 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 16, offset: 15 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 16, offset: 15 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Struct.copyDeep(x Array) -> deeplyCopied Array',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 47, offset: 46 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 47, offset: 46 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Struct.copyDeep(x Object) -> deeplyCopied Object',
+                position: {
+                  start: { line: 3, column: 1, offset: 48 },
+                  end: { line: 3, column: 49, offset: 96 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 3, column: 1, offset: 48 },
+              end: { line: 3, column: 49, offset: 96 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Struct.copyDeep(x Set) -> deeplyCopied Set',
+                position: {
+                  start: { line: 5, column: 1, offset: 98 },
+                  end: { line: 5, column: 43, offset: 140 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 5, column: 1, offset: 98 },
+              end: { line: 5, column: 43, offset: 140 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Struct.copyDeep(x Map) -> deeplyCopied Map',
+                position: {
+                  start: { line: 7, column: 1, offset: 142 },
+                  end: { line: 7, column: 43, offset: 184 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 7, column: 1, offset: 142 },
+              end: { line: 7, column: 43, offset: 184 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 7, column: 43, offset: 184 }
+        }
+      },
+      catchphrase: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Deep copy a struct',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 19, offset: 18 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 19, offset: 18 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 19, offset: 18 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Struct.js'
   },
   {
     name: 'not',
@@ -19700,7 +34358,8 @@ export default [
           end: { line: 18, column: 4, offset: 550 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/not.js'
   },
   {
     name: 'omit',
@@ -20058,7 +34717,124 @@ export default [
           end: { line: 36, column: 4, offset: 751 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/omit.js'
+  },
+  {
+    name: 'areAnyNonfunctionsTruthy',
+    synopsis: '```coffeescript [specscript]\n' +
+      'areAnyNonfunctionsTruthy(predicates Array<value>) -> Promise|boolean\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'areAnyNonfunctionsTruthy',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 25, offset: 24 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 25, offset: 24 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 25, offset: 24 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'areAnyNonfunctionsTruthy(predicates Array<value>) -> Promise|boolean',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 101 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 101 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/or.js'
+  },
+  {
+    name: 'asyncAreAnyPredicatesTruthy',
+    synopsis: '```coffeescript [specscript]\n' +
+      'asyncAreAnyPredicatesTruthy(\n' +
+      '  args Array,\n' +
+      '  predicates Array<predicate function|nonfunction>,\n' +
+      '  index number,\n' +
+      ') -> allTruthy boolean\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'asyncAreAnyPredicatesTruthy',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 28, offset: 27 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 28, offset: 27 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 28, offset: 27 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'asyncAreAnyPredicatesTruthy(\n' +
+              '  args Array,\n' +
+              '  predicates Array<predicate function|nonfunction>,\n' +
+              '  index number,\n' +
+              ') -> allTruthy boolean',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 7, column: 4, offset: 166 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 7, column: 4, offset: 166 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/or.js'
   },
   {
     name: 'or',
@@ -20287,7 +35063,8 @@ export default [
           end: { line: 1, column: 49, offset: 48 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/or.js'
   },
   {
     name: 'pick',
@@ -20631,7 +35408,8 @@ export default [
           end: { line: 29, column: 4, offset: 833 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/pick.js'
   },
   {
     name: 'pipe',
@@ -20877,12 +35655,14 @@ export default [
           end: { line: 1, column: 6, offset: 5 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/pipe.js'
   },
   {
     name: 'reduce',
     synopsis: '```coffeescript [specscript]\n' +
       'type Foldable = Array|Object|Map|Iterator|AsyncIterator\n' +
+      '\n' +
       'type Reducer = (\n' +
       '  accumulator any,\n' +
       '  value any,\n' +
@@ -21065,6 +35845,7 @@ export default [
             lang: 'coffeescript',
             meta: '[specscript]',
             value: 'type Foldable = Array|Object|Map|Iterator|AsyncIterator\n' +
+              '\n' +
               'type Reducer = (\n' +
               '  accumulator any,\n' +
               '  value any,\n' +
@@ -21084,13 +35865,13 @@ export default [
               ')(collection Foldable) -> result Promise|any',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 20, column: 4, offset: 429 }
+              end: { line: 21, column: 4, offset: 430 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 20, column: 4, offset: 429 }
+          end: { line: 21, column: 4, offset: 430 }
         }
       },
       description: {
@@ -21899,13 +36680,80 @@ export default [
           end: { line: 1, column: 1, offset: 0 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/reduce.js'
+  },
+  {
+    mdast: {},
+    fileName: '/home/richard/code/rubico.land/../rubico/rubico.js'
+  },
+  {
+    name: '_set',
+    synopsis: '```coffeescript [specscript]\n' +
+      '_set(\n' +
+      '  obj Object,\n' +
+      '  path string|Array<string|number>,\n' +
+      '  value function|any,\n' +
+      ') -> result Promise|Object\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: '_set',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 5, offset: 4 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 5, offset: 4 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 5, offset: 4 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: '_set(\n' +
+              '  obj Object,\n' +
+              '  path string|Array<string|number>,\n' +
+              '  value function|any,\n' +
+              ') -> result Promise|Object',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 7, column: 4, offset: 137 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 7, column: 4, offset: 137 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/set.js'
   },
   {
     name: 'set',
     synopsis: '```coffeescript [specscript]\n' +
       'set(\n' +
-      '  object Object,\n' +
+      '  object Promise|Object,\n' +
       '  path string|Array<string|number>,\n' +
       '  value function|any,\n' +
       ') -> result Promise|Object\n' +
@@ -21924,15 +36772,15 @@ export default [
       " * an array of keys or indices - `['a', 0, 'value']`\n" +
       '\n' +
       '```javascript [playground]\n' +
-      "console.log(set('a', 1)({ b: 2 })) // { a: 1, b: 2 }\n" +
+      "console.log(set({ b: 2 }, 'a', 1)) // { a: 1, b: 2 }\n" +
       '\n' +
       'const nestedAC2 = { a: { c: 2 } }\n' +
       '\n' +
-      "console.log(set('a.b', 1)(nestedAC2)) // { a : { b: 1, c: 2 }}\n" +
+      "console.log(set(nestedAC2, 'a.b', 1)) // { a : { b: 1, c: 2 }}\n" +
       '\n' +
       'const nestedA0BC3 = { a: [{ b: { c: 3 } }] }\n' +
       '\n' +
-      "console.log(set('a[0].b.c', 4)(nestedA0BC3)) // { a: [{ b: { c: 4 } }] }\n" +
+      "console.log(set(nestedA0BC3, 'a[0].b.c', 4)) // { a: [{ b: { c: 4 } }] }\n" +
       '```\n' +
       '\n' +
       'The property value may be a function, in which case it is treated as a resolver and provided the argument object to resolve the value to set.\n' +
@@ -21943,6 +36791,15 @@ export default [
       "const myNewObj = set('b', obj => obj.a + 2)(myObj)\n" +
       '\n' +
       'console.log(myNewObj) // { a: 1, b: 3 }\n' +
+      '```\n' +
+      '\n' +
+      '`set` supports a tacit API for composability.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'pipe({ a: 1 }, [\n' +
+      "  set('b', 2),\n" +
+      '  console.log, // { a: 1, b: 2 }\n' +
+      '])\n' +
       '```',
     since: '1.7.0',
     mdast: {
@@ -21980,7 +36837,7 @@ export default [
             lang: 'coffeescript',
             meta: '[specscript]',
             value: 'set(\n' +
-              '  object Object,\n' +
+              '  object Promise|Object,\n' +
               '  path string|Array<string|number>,\n' +
               '  value function|any,\n' +
               ') -> result Promise|Object\n' +
@@ -21991,13 +36848,13 @@ export default [
               ')(object Object) -> result Promise|Object',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 12, column: 4, offset: 245 }
+              end: { line: 12, column: 4, offset: 253 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 12, column: 4, offset: 245 }
+          end: { line: 12, column: 4, offset: 253 }
         }
       },
       description: {
@@ -22169,15 +37026,15 @@ export default [
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: "console.log(set('a', 1)({ b: 2 })) // { a: 1, b: 2 }\n" +
+            value: "console.log(set({ b: 2 }, 'a', 1)) // { a: 1, b: 2 }\n" +
               '\n' +
               'const nestedAC2 = { a: { c: 2 } }\n' +
               '\n' +
-              "console.log(set('a.b', 1)(nestedAC2)) // { a : { b: 1, c: 2 }}\n" +
+              "console.log(set(nestedAC2, 'a.b', 1)) // { a : { b: 1, c: 2 }}\n" +
               '\n' +
               'const nestedA0BC3 = { a: [{ b: { c: 3 } }] }\n' +
               '\n' +
-              "console.log(set('a[0].b.c', 4)(nestedA0BC3)) // { a: [{ b: { c: 4 } }] }",
+              "console.log(set(nestedA0BC3, 'a[0].b.c', 4)) // { a: [{ b: { c: 4 } }] }",
             position: {
               start: { line: 9, column: 1, offset: 342 },
               end: { line: 19, column: 4, offset: 644 }
@@ -22213,11 +37070,49 @@ export default [
               start: { line: 23, column: 1, offset: 789 },
               end: { line: 29, column: 4, offset: 935 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'inlineCode',
+                value: 'set',
+                position: {
+                  start: { line: 31, column: 1, offset: 937 },
+                  end: { line: 31, column: 6, offset: 942 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' supports a tacit API for composability.',
+                position: {
+                  start: { line: 31, column: 6, offset: 942 },
+                  end: { line: 31, column: 46, offset: 982 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 31, column: 1, offset: 937 },
+              end: { line: 31, column: 46, offset: 982 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'pipe({ a: 1 }, [\n' +
+              "  set('b', 2),\n" +
+              '  console.log, // { a: 1, b: 2 }\n' +
+              '])',
+            position: {
+              start: { line: 33, column: 1, offset: 984 },
+              end: { line: 38, column: 4, offset: 1082 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 29, column: 4, offset: 935 }
+          end: { line: 38, column: 4, offset: 1082 }
         }
       },
       since: {
@@ -22246,7 +37141,8 @@ export default [
           end: { line: 1, column: 6, offset: 5 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/set.js'
   },
   {
     name: 'some',
@@ -22284,10 +37180,21 @@ export default [
       '  yield 1; yield 2; yield 3; yield 4; yield 5\n' +
       '}\n' +
       '\n' +
-      'some(pipe([\n' +
-      '  fetchTodo,\n' +
-      "  todo => todo.title.startsWith('fugiat'),\n" +
-      ']))(todoIDsGenerator()).then(console.log) // true\n' +
+      'const promise = some(todoIDsGenerator(), async id => {\n' +
+      '  const todo = await fetchTodo(id)\n' +
+      "  return todo.title.startsWith('fugiat')\n" +
+      '})\n' +
+      '\n' +
+      'promise.then(console.log) // true\n' +
+      '```\n' +
+      '\n' +
+      '`some` supports a tacit API for composability.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'pipe([1, 2, 3], [\n' +
+      '  some(number => number < 5),\n' +
+      '  console.log, // true\n' +
+      '])\n' +
       '```',
     execution: 'concurrent',
     muxing: '',
@@ -22427,19 +37334,59 @@ export default [
               '  yield 1; yield 2; yield 3; yield 4; yield 5\n' +
               '}\n' +
               '\n' +
-              'some(pipe([\n' +
-              '  fetchTodo,\n' +
-              "  todo => todo.title.startsWith('fugiat'),\n" +
-              ']))(todoIDsGenerator()).then(console.log) // true',
+              'const promise = some(todoIDsGenerator(), async id => {\n' +
+              '  const todo = await fetchTodo(id)\n' +
+              "  return todo.title.startsWith('fugiat')\n" +
+              '})\n' +
+              '\n' +
+              'promise.then(console.log) // true',
             position: {
               start: { line: 13, column: 1, offset: 410 },
-              end: { line: 32, column: 4, offset: 848 }
+              end: { line: 34, column: 4, offset: 899 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'inlineCode',
+                value: 'some',
+                position: {
+                  start: { line: 36, column: 1, offset: 901 },
+                  end: { line: 36, column: 7, offset: 907 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' supports a tacit API for composability.',
+                position: {
+                  start: { line: 36, column: 7, offset: 907 },
+                  end: { line: 36, column: 47, offset: 947 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 36, column: 1, offset: 901 },
+              end: { line: 36, column: 47, offset: 947 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'pipe([1, 2, 3], [\n' +
+              '  some(number => number < 5),\n' +
+              '  console.log, // true\n' +
+              '])',
+            position: {
+              start: { line: 38, column: 1, offset: 949 },
+              end: { line: 43, column: 4, offset: 1053 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 32, column: 4, offset: 848 }
+          end: { line: 43, column: 4, offset: 1053 }
         }
       },
       execution: {
@@ -22502,7 +37449,8 @@ export default [
           end: { line: 1, column: 3, offset: 2 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/some.js'
   },
   {
     name: 'switchCase',
@@ -22510,10 +37458,29 @@ export default [
       'switchCase(conditionalValues Array<boolean|any>) -> Promise|any\n' +
       '\n' +
       'switchCase(\n' +
+      '  ...args,\n' +
+      '  conditionalFuncsOrValues Array<function|boolean|any>\n' +
+      ') -> Promise|any\n' +
+      '\n' +
+      'switchCase(\n' +
       '  conditionalFuncsOrValues Array<function|boolean|any>\n' +
       ')(...args) -> Promise|any\n' +
       '```',
-    description: 'Functional equivalent to the [Conditional (ternary) operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator). Accepts an array of conditional functions that specifies cases as pairings of `predicate` and `resolver` functions with the exception of the last, default resolver. All functions are provided with the same arguments and executed in series. The result of a `switchCase` execution is either the result of the execution the last default resolver, or the result of the execution of the first resolver where the associated predicate tested truthy.\n' +
+    description: 'Functional equivalent to the [Conditional (ternary) operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator). Accepts an array of conditional functions that specifies cases as pairings of `predicate` and `resolver` functions with the exception of the last, default resolver. All functions are provided with the same arguments and executed in series. The result of a `switchCase` operation is either the result of the execution the last default resolver, or the result of the execution of the first resolver where the associated predicate tested true.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      "const fruitIsYellow = fruit => fruit.color == 'yellow'\n" +
+      '\n' +
+      'console.log(\n' +
+      "  switchCase({ name: 'plantain', color: 'yellow' }, [\n" +
+      '    fruitIsYellow,\n' +
+      "    fruit => fruit.name + ' is possibly a banana',\n" +
+      "    fruit => fruit.name + ' is probably not a banana',\n" +
+      '  ])\n' +
+      ') // plantain is possibly a banana\n' +
+      '```\n' +
+      '\n' +
+      'For composability `switchCase` supports a tacit API.\n' +
       '\n' +
       '```javascript [playground]\n' +
       "const fruitIsYellow = fruit => fruit.color == 'yellow'\n" +
@@ -22531,7 +37498,7 @@ export default [
       '// apple is probably not a banana\n' +
       '```\n' +
       '\n' +
-      'Any function can be replaced with a nonfunction (object or primitive) value so that the value is treated as an already resolved value.\n' +
+      'Any function can be replaced with a nonfunction (object or primitive) value to be used directly in the operation.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'switchCase([\n' +
@@ -22590,17 +37557,22 @@ export default [
             value: 'switchCase(conditionalValues Array<boolean|any>) -> Promise|any\n' +
               '\n' +
               'switchCase(\n' +
+              '  ...args,\n' +
+              '  conditionalFuncsOrValues Array<function|boolean|any>\n' +
+              ') -> Promise|any\n' +
+              '\n' +
+              'switchCase(\n' +
               '  conditionalFuncsOrValues Array<function|boolean|any>\n' +
               ')(...args) -> Promise|any',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 7, column: 4, offset: 190 }
+              end: { line: 12, column: 4, offset: 286 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 7, column: 4, offset: 190 }
+          end: { line: 12, column: 4, offset: 286 }
         }
       },
       description: {
@@ -22686,16 +37658,67 @@ export default [
               },
               {
                 type: 'text',
-                value: ' execution is either the result of the execution the last default resolver, or the result of the execution of the first resolver where the associated predicate tested truthy.',
+                value: ' operation is either the result of the execution the last default resolver, or the result of the execution of the first resolver where the associated predicate tested true.',
                 position: {
                   start: { line: 1, column: 430, offset: 429 },
-                  end: { line: 1, column: 604, offset: 603 }
+                  end: { line: 1, column: 602, offset: 601 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 604, offset: 603 }
+              end: { line: 1, column: 602, offset: 601 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: "const fruitIsYellow = fruit => fruit.color == 'yellow'\n" +
+              '\n' +
+              'console.log(\n' +
+              "  switchCase({ name: 'plantain', color: 'yellow' }, [\n" +
+              '    fruitIsYellow,\n' +
+              "    fruit => fruit.name + ' is possibly a banana',\n" +
+              "    fruit => fruit.name + ' is probably not a banana',\n" +
+              '  ])\n' +
+              ') // plantain is possibly a banana',
+            position: {
+              start: { line: 3, column: 1, offset: 603 },
+              end: { line: 13, column: 4, offset: 921 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'For composability ',
+                position: {
+                  start: { line: 15, column: 1, offset: 923 },
+                  end: { line: 15, column: 19, offset: 941 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'switchCase',
+                position: {
+                  start: { line: 15, column: 19, offset: 941 },
+                  end: { line: 15, column: 31, offset: 953 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' supports a tacit API.',
+                position: {
+                  start: { line: 15, column: 31, offset: 953 },
+                  end: { line: 15, column: 53, offset: 975 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 15, column: 1, offset: 923 },
+              end: { line: 15, column: 53, offset: 975 }
             }
           },
           {
@@ -22716,8 +37739,8 @@ export default [
               "console.log(fruitsGuesser({ name: 'apple', color: 'red' }))\n" +
               '// apple is probably not a banana',
             position: {
-              start: { line: 3, column: 1, offset: 605 },
-              end: { line: 17, column: 4, offset: 1043 }
+              start: { line: 17, column: 1, offset: 977 },
+              end: { line: 31, column: 4, offset: 1415 }
             }
           },
           {
@@ -22725,16 +37748,16 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Any function can be replaced with a nonfunction (object or primitive) value so that the value is treated as an already resolved value.',
+                value: 'Any function can be replaced with a nonfunction (object or primitive) value to be used directly in the operation.',
                 position: {
-                  start: { line: 19, column: 1, offset: 1045 },
-                  end: { line: 19, column: 135, offset: 1179 }
+                  start: { line: 33, column: 1, offset: 1417 },
+                  end: { line: 33, column: 114, offset: 1530 }
                 }
               }
             ],
             position: {
-              start: { line: 19, column: 1, offset: 1045 },
-              end: { line: 19, column: 135, offset: 1179 }
+              start: { line: 33, column: 1, offset: 1417 },
+              end: { line: 33, column: 114, offset: 1530 }
             }
           },
           {
@@ -22749,8 +37772,8 @@ export default [
               "  'default',\n" +
               '])(false).then(console.log) // default',
             position: {
-              start: { line: 21, column: 1, offset: 1181 },
-              end: { line: 29, column: 4, offset: 1353 }
+              start: { line: 35, column: 1, offset: 1532 },
+              end: { line: 43, column: 4, offset: 1704 }
             }
           },
           {
@@ -22760,30 +37783,30 @@ export default [
                 type: 'text',
                 value: 'If every item in the conditional array is a nonfunction value, ',
                 position: {
-                  start: { line: 31, column: 1, offset: 1355 },
-                  end: { line: 31, column: 64, offset: 1418 }
+                  start: { line: 45, column: 1, offset: 1706 },
+                  end: { line: 45, column: 64, offset: 1769 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'switchCase',
                 position: {
-                  start: { line: 31, column: 64, offset: 1418 },
-                  end: { line: 31, column: 76, offset: 1430 }
+                  start: { line: 45, column: 64, offset: 1769 },
+                  end: { line: 45, column: 76, offset: 1781 }
                 }
               },
               {
                 type: 'text',
                 value: ' executes eagerly.',
                 position: {
-                  start: { line: 31, column: 76, offset: 1430 },
-                  end: { line: 31, column: 94, offset: 1448 }
+                  start: { line: 45, column: 76, offset: 1781 },
+                  end: { line: 45, column: 94, offset: 1799 }
                 }
               }
             ],
             position: {
-              start: { line: 31, column: 1, offset: 1355 },
-              end: { line: 31, column: 94, offset: 1448 }
+              start: { line: 45, column: 1, offset: 1706 },
+              end: { line: 45, column: 94, offset: 1799 }
             }
           },
           {
@@ -22796,14 +37819,14 @@ export default [
               '\n' +
               'console.log(myDrink) // Beer',
             position: {
-              start: { line: 33, column: 1, offset: 1450 },
-              end: { line: 39, column: 4, offset: 1583 }
+              start: { line: 47, column: 1, offset: 1801 },
+              end: { line: 53, column: 4, offset: 1934 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 39, column: 4, offset: 1583 }
+          end: { line: 53, column: 4, offset: 1934 }
         }
       },
       execution: {
@@ -22832,11 +37855,13 @@ export default [
           end: { line: 1, column: 7, offset: 6 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/switchCase.js'
   },
   {
     name: 'tap',
     synopsis: '```coffeescript [specscript]\n' +
+      'tap(...args, func function) -> Promise|args[0]\n' +
       'tap(func function)(...args) -> Promise|args[0]\n' +
       '```',
     description: 'Call a function with any number of arguments, returning the first argument. Promises created by the tapper are resolved before returning the value.\n' +
@@ -22886,16 +37911,17 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'tap(func function)(...args) -> Promise|args[0]',
+            value: 'tap(...args, func function) -> Promise|args[0]\n' +
+              'tap(func function)(...args) -> Promise|args[0]',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 3, column: 4, offset: 79 }
+              end: { line: 4, column: 4, offset: 126 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 3, column: 4, offset: 79 }
+          end: { line: 4, column: 4, offset: 126 }
         }
       },
       description: {
@@ -22942,7 +37968,8 @@ export default [
           end: { line: 13, column: 4, offset: 418 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/tap.js'
   },
   {
     name: 'tap.if',
@@ -23068,7 +38095,8 @@ export default [
           end: { line: 13, column: 4, offset: 457 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/tap.js'
   },
   {
     name: 'thunkify',
@@ -23170,7 +38198,8 @@ export default [
           end: { line: 9, column: 4, offset: 366 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/thunkify.js'
   },
   {
     name: 'transform',
@@ -23179,8 +38208,6 @@ export default [
       'type Transducer = Reducer=>Reducer\n' +
       'type Transformable = Array|String|Set|TypedArray|{ concat: function }|{ write: function }|Object\n' +
       'type Foldable = Iterable|AsyncIterable|Object<value any>\n' +
-      '\n' +
-      'initialValue Transformable|((foldable Foldable)=>Promise|Transformable)\n' +
       '\n' +
       'transform(\n' +
       '  foldable Foldable,\n' +
@@ -23210,9 +38237,9 @@ export default [
       '\n' +
       'const isOdd = number => number % 2 == 1\n' +
       '\n' +
-      'const squaredOdds = pipe([\n' +
-      '  filter(isOdd),\n' +
-      '  map(square),\n' +
+      'const squaredOdds = compose([\n' +
+      '  Transducer.filter(isOdd),\n' +
+      '  Transducer.map(square),\n' +
       '])\n' +
       '\n' +
       '// transform arrays into arrays\n' +
@@ -23248,7 +38275,7 @@ export default [
       '  },\n' +
       '}\n' +
       '\n' +
-      'transform(map(square), Stdout)([1, 2, 3, 4, 5])\n' +
+      'transform(Transducer.map(square), Stdout)([1, 2, 3, 4, 5])\n' +
       '// 1\n' +
       '// 4\n' +
       '// 9\n' +
@@ -23276,8 +38303,10 @@ export default [
       '}\n' +
       '\n' +
       'transform(\n' +
-      '  map(pipe([square, toString])), process.stdout,\n' +
-      ')(streamRandomInts()) // 9216576529289484980147613249169774446246768649...\n' +
+      '  streamRandomInts(),\n' +
+      '  Transducer.map(pipe([square, toString])),\n' +
+      '  process.stdout,\n' +
+      ') // 9216576529289484980147613249169774446246768649...\n' +
       '```',
     execution: 'series',
     transducing: 'TODO explore Semigroup = Iterator|AsyncIterator',
@@ -23320,8 +38349,6 @@ export default [
               'type Transformable = Array|String|Set|TypedArray|{ concat: function }|{ write: function }|Object\n' +
               'type Foldable = Iterable|AsyncIterable|Object<value any>\n' +
               '\n' +
-              'initialValue Transformable|((foldable Foldable)=>Promise|Transformable)\n' +
-              '\n' +
               'transform(\n' +
               '  foldable Foldable,\n' +
               '  transducer Transducer,\n' +
@@ -23334,13 +38361,13 @@ export default [
               ')(foldable Foldable) -> result Promise|Transformable',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 19, column: 4, offset: 658 }
+              end: { line: 17, column: 4, offset: 585 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 19, column: 4, offset: 658 }
+          end: { line: 17, column: 4, offset: 585 }
         }
       },
       description: {
@@ -23732,9 +38759,9 @@ export default [
               '\n' +
               'const isOdd = number => number % 2 == 1\n' +
               '\n' +
-              'const squaredOdds = pipe([\n' +
-              '  filter(isOdd),\n' +
-              '  map(square),\n' +
+              'const squaredOdds = compose([\n' +
+              '  Transducer.filter(isOdd),\n' +
+              '  Transducer.map(square),\n' +
               '])\n' +
               '\n' +
               '// transform arrays into arrays\n' +
@@ -23758,7 +38785,7 @@ export default [
               ') // Uint8Array(3) [ 1, 9, 25 ]',
             position: {
               start: { line: 13, column: 1, offset: 933 },
-              end: { line: 42, column: 4, offset: 1585 }
+              end: { line: 42, column: 4, offset: 1610 }
             }
           },
           {
@@ -23768,38 +38795,38 @@ export default [
                 type: 'inlineCode',
                 value: 'transform',
                 position: {
-                  start: { line: 44, column: 1, offset: 1587 },
-                  end: { line: 44, column: 12, offset: 1598 }
+                  start: { line: 44, column: 1, offset: 1612 },
+                  end: { line: 44, column: 12, offset: 1623 }
                 }
               },
               {
                 type: 'text',
                 value: ' arrays into objects that implement ',
                 position: {
-                  start: { line: 44, column: 12, offset: 1598 },
-                  end: { line: 44, column: 48, offset: 1634 }
+                  start: { line: 44, column: 12, offset: 1623 },
+                  end: { line: 44, column: 48, offset: 1659 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: '.concat',
                 position: {
-                  start: { line: 44, column: 48, offset: 1634 },
-                  end: { line: 44, column: 57, offset: 1643 }
+                  start: { line: 44, column: 48, offset: 1659 },
+                  end: { line: 44, column: 57, offset: 1668 }
                 }
               },
               {
                 type: 'text',
                 value: '.',
                 position: {
-                  start: { line: 44, column: 57, offset: 1643 },
-                  end: { line: 44, column: 58, offset: 1644 }
+                  start: { line: 44, column: 57, offset: 1668 },
+                  end: { line: 44, column: 58, offset: 1669 }
                 }
               }
             ],
             position: {
-              start: { line: 44, column: 1, offset: 1587 },
-              end: { line: 44, column: 58, offset: 1644 }
+              start: { line: 44, column: 1, offset: 1612 },
+              end: { line: 44, column: 58, offset: 1669 }
             }
           },
           {
@@ -23815,15 +38842,15 @@ export default [
               '  },\n' +
               '}\n' +
               '\n' +
-              'transform(map(square), Stdout)([1, 2, 3, 4, 5])\n' +
+              'transform(Transducer.map(square), Stdout)([1, 2, 3, 4, 5])\n' +
               '// 1\n' +
               '// 4\n' +
               '// 9\n' +
               '// 16\n' +
               '// 25',
             position: {
-              start: { line: 46, column: 1, offset: 1646 },
-              end: { line: 62, column: 4, offset: 1875 }
+              start: { line: 46, column: 1, offset: 1671 },
+              end: { line: 62, column: 4, offset: 1911 }
             }
           },
           {
@@ -23833,54 +38860,54 @@ export default [
                 type: 'inlineCode',
                 value: 'transform',
                 position: {
-                  start: { line: 64, column: 1, offset: 1877 },
-                  end: { line: 64, column: 12, offset: 1888 }
+                  start: { line: 64, column: 1, offset: 1913 },
+                  end: { line: 64, column: 12, offset: 1924 }
                 }
               },
               {
                 type: 'text',
                 value: ' an async generator into ',
                 position: {
-                  start: { line: 64, column: 12, offset: 1888 },
-                  end: { line: 64, column: 37, offset: 1913 }
+                  start: { line: 64, column: 12, offset: 1924 },
+                  end: { line: 64, column: 37, offset: 1949 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'process.stdout',
                 position: {
-                  start: { line: 64, column: 37, offset: 1913 },
-                  end: { line: 64, column: 53, offset: 1929 }
+                  start: { line: 64, column: 37, offset: 1949 },
+                  end: { line: 64, column: 53, offset: 1965 }
                 }
               },
               {
                 type: 'text',
                 value: ', a Node.js writable stream that implements ',
                 position: {
-                  start: { line: 64, column: 53, offset: 1929 },
-                  end: { line: 64, column: 97, offset: 1973 }
+                  start: { line: 64, column: 53, offset: 1965 },
+                  end: { line: 64, column: 97, offset: 2009 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: '.write',
                 position: {
-                  start: { line: 64, column: 97, offset: 1973 },
-                  end: { line: 64, column: 105, offset: 1981 }
+                  start: { line: 64, column: 97, offset: 2009 },
+                  end: { line: 64, column: 105, offset: 2017 }
                 }
               },
               {
                 type: 'text',
                 value: '.',
                 position: {
-                  start: { line: 64, column: 105, offset: 1981 },
-                  end: { line: 64, column: 106, offset: 1982 }
+                  start: { line: 64, column: 105, offset: 2017 },
+                  end: { line: 64, column: 106, offset: 2018 }
                 }
               }
             ],
             position: {
-              start: { line: 64, column: 1, offset: 1877 },
-              end: { line: 64, column: 106, offset: 1982 }
+              start: { line: 64, column: 1, offset: 1913 },
+              end: { line: 64, column: 106, offset: 2018 }
             }
           },
           {
@@ -23904,17 +38931,19 @@ export default [
               '}\n' +
               '\n' +
               'transform(\n' +
-              '  map(pipe([square, toString])), process.stdout,\n' +
-              ')(streamRandomInts()) // 9216576529289484980147613249169774446246768649...',
+              '  streamRandomInts(),\n' +
+              '  Transducer.map(pipe([square, toString])),\n' +
+              '  process.stdout,\n' +
+              ') // 9216576529289484980147613249169774446246768649...',
             position: {
-              start: { line: 66, column: 1, offset: 1984 },
-              end: { line: 86, column: 4, offset: 2504 }
+              start: { line: 66, column: 1, offset: 2020 },
+              end: { line: 88, column: 4, offset: 2555 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 86, column: 4, offset: 2504 }
+          end: { line: 88, column: 4, offset: 2555 }
         }
       },
       execution: {
@@ -23969,7 +38998,8 @@ export default [
           end: { line: 1, column: 48, offset: 47 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/transform.js'
   },
   {
     name: 'tryCatch',
@@ -24327,7 +39357,8 @@ export default [
           end: { line: 33, column: 4, offset: 1392 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/tryCatch.js'
   },
   {
     name: 'append',
@@ -24486,7 +39517,8 @@ export default [
           end: { line: 1, column: 6, offset: 5 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/append.js'
   },
   {
     name: 'callProp',
@@ -24586,7 +39618,128 @@ export default [
           end: { line: 8, column: 4, offset: 264 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/callProp.js'
+  },
+  {
+    name: 'arrayDefaultsDeepFromArray',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var array Array<Array|Object|any>,\n' +
+      '  defaultArray Array<Array|Object|any>,\n' +
+      '\n' +
+      'arrayDefaultsDeepFromArray(array, defaultArray) -> Array\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'arrayDefaultsDeepFromArray',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 27, offset: 26 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 27, offset: 26 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 27, offset: 26 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'var array Array<Array|Object|any>,\n' +
+              '  defaultArray Array<Array|Object|any>,\n' +
+              '\n' +
+              'arrayDefaultsDeepFromArray(array, defaultArray) -> Array',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 6, column: 4, offset: 165 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 6, column: 4, offset: 165 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/defaultsDeep.js'
+  },
+  {
+    name: 'objectDefaultsDeepFromObject',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var object Object<Array|Object|any>,\n' +
+      '  defaultObject Object<Array|Object|any>\n' +
+      '\n' +
+      'objectDefaultsDeepFromObject(object, defaultObject) -> Object\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'objectDefaultsDeepFromObject',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 29, offset: 28 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 29, offset: 28 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 29, offset: 28 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'var object Object<Array|Object|any>,\n' +
+              '  defaultObject Object<Array|Object|any>\n' +
+              '\n' +
+              'objectDefaultsDeepFromObject(object, defaultObject) -> Object',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 6, column: 4, offset: 173 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 6, column: 4, offset: 173 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/defaultsDeep.js'
   },
   {
     name: 'defaultsDeep',
@@ -24730,7 +39883,196 @@ export default [
           end: { line: 27, column: 4, offset: 817 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/defaultsDeep.js'
+  },
+  {
+    name: 'differenceWith-race',
+    benchmark: 'rubico.differenceWith: 1e+5: 45.083ms\n_.differenceWith: 1e+5: 79.651ms',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'differenceWith-race',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 20, offset: 19 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 20, offset: 19 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 20, offset: 19 }
+        }
+      },
+      benchmark: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'rubico.differenceWith: 1e+5: 45.083ms\n' +
+                  '_.differenceWith: 1e+5: 79.651ms',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 2, column: 33, offset: 70 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 2, column: 33, offset: 70 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 2, column: 33, offset: 70 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/differenceWith.benchmark.js'
+  },
+  {
+    name: 'differenceWithArrayAsync',
+    synopsis: '```coffeescript [specscript]\n' +
+      'differenceWithArrayAsync(\n' +
+      '  comparator (any, any)=>Promise|boolean,\n' +
+      '  allValues Array,\n' +
+      '  array Array,\n' +
+      '  result Array,\n' +
+      '  index number,\n' +
+      ') -> result Promise<Array>\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'differenceWithArrayAsync',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 25, offset: 24 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 25, offset: 24 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 25, offset: 24 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'differenceWithArrayAsync(\n' +
+              '  comparator (any, any)=>Promise|boolean,\n' +
+              '  allValues Array,\n' +
+              '  array Array,\n' +
+              '  result Array,\n' +
+              '  index number,\n' +
+              ') -> result Promise<Array>',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 9, column: 4, offset: 193 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 9, column: 4, offset: 193 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/differenceWith.js'
+  },
+  {
+    name: 'differenceWithArray',
+    synopsis: '```coffeescript [specscript]\n' +
+      'differenceWithArray(\n' +
+      '  comparator (any, any)=>Promise|boolean,\n' +
+      '  allValues Array,\n' +
+      '  array Array,\n' +
+      ') -> someOrAllValues Promise|Array\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'differenceWithArray',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 20, offset: 19 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 20, offset: 19 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 20, offset: 19 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'differenceWithArray(\n' +
+              '  comparator (any, any)=>Promise|boolean,\n' +
+              '  allValues Array,\n' +
+              '  array Array,\n' +
+              ') -> someOrAllValues Promise|Array',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 7, column: 4, offset: 164 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 7, column: 4, offset: 164 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/differenceWith.js'
   },
   {
     name: 'differenceWith',
@@ -24840,7 +40182,8 @@ export default [
           end: { line: 10, column: 4, offset: 409 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/differenceWith.js'
   },
   {
     name: 'filterOut',
@@ -24988,7 +40331,71 @@ export default [
           end: { line: 1, column: 97, offset: 96 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/filterOut.js'
+  },
+  {
+    name: 'find',
+    benchmark: 'find(gt0)(array): 1e+6: 13.627ms\n' +
+      'R.find(gt0, array): 1e+6: 94.086ms\n' +
+      'gt0_findLodashHappyPath: 1e+6: 80.071ms',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'find',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 5, offset: 4 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 5, offset: 4 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 5, offset: 4 }
+        }
+      },
+      benchmark: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'find(gt0)(array): 1e+6: 13.627ms\n' +
+                  'R.find(gt0, array): 1e+6: 94.086ms\n' +
+                  'gt0_findLodashHappyPath: 1e+6: 80.071ms',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 3, column: 40, offset: 107 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 40, offset: 107 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 40, offset: 107 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/find.benchmark.js'
   },
   {
     name: 'find',
@@ -25116,7 +40523,70 @@ export default [
           end: { line: 15, column: 4, offset: 356 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/find.js'
+  },
+  {
+    name: 'findIndexAsync',
+    synopsis: '```coffeescript [specscript]\n' +
+      'findIndexAsync(\n' +
+      '  predicate function,\n' +
+      '  array Array,\n' +
+      '  index number\n' +
+      ') -> index Promise<number>\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'findIndexAsync',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 15, offset: 14 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 15, offset: 14 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 15, offset: 14 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'findIndexAsync(\n' +
+              '  predicate function,\n' +
+              '  array Array,\n' +
+              '  index number\n' +
+              ') -> index Promise<number>',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 7, column: 4, offset: 127 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 7, column: 4, offset: 127 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/findIndex.js'
   },
   {
     name: 'findIndex',
@@ -25249,7 +40719,71 @@ export default [
           end: { line: 1, column: 7, offset: 6 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/findIndex.js'
+  },
+  {
+    name: 'first',
+    benchmark: 'first(arr): 1e+7: 12.698ms\n' +
+      '_.head(arr): 1e+7: 23.017ms\n' +
+      'R.first(arr): 1e+7: 1.903s',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'first',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 6, offset: 5 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 6, offset: 5 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 6, offset: 5 }
+        }
+      },
+      benchmark: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'first(arr): 1e+7: 12.698ms\n' +
+                  '_.head(arr): 1e+7: 23.017ms\n' +
+                  'R.first(arr): 1e+7: 1.903s',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 3, column: 27, offset: 81 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 27, offset: 81 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 27, offset: 81 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/first.benchmark.js'
   },
   {
     name: 'first',
@@ -25353,7 +40887,98 @@ export default [
           end: { line: 9, column: 4, offset: 235 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/first.js'
+  },
+  {
+    name: 'flatten',
+    benchmark: '[...].flat(1): 1e+5: 118.53ms\n' +
+      'flatten: 1e+5: 25.87ms\n' +
+      'R.unnest: 1e+5: 147.448ms\n' +
+      '_.flatten: 1e+5: 27.811ms\n' +
+      '\n' +
+      'richytong 2020-10-01\n' +
+      'flatten: 1e+5: 19.306ms\n' +
+      'R.unnest: 1e+5: 145.089ms\n' +
+      '_.flatten: 1e+5: 27.995ms',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'flatten',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 8, offset: 7 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 8, offset: 7 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 8, offset: 7 }
+        }
+      },
+      benchmark: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: '[...].flat(1): 1e+5: 118.53ms\n' +
+                  'flatten: 1e+5: 25.87ms\n' +
+                  'R.unnest: 1e+5: 147.448ms\n' +
+                  '_.flatten: 1e+5: 27.811ms',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 4, column: 26, offset: 104 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 4, column: 26, offset: 104 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'richytong 2020-10-01\n' +
+                  'flatten: 1e+5: 19.306ms\n' +
+                  'R.unnest: 1e+5: 145.089ms\n' +
+                  '_.flatten: 1e+5: 27.995ms',
+                position: {
+                  start: { line: 6, column: 1, offset: 106 },
+                  end: { line: 9, column: 26, offset: 202 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 6, column: 1, offset: 106 },
+              end: { line: 9, column: 26, offset: 202 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 9, column: 26, offset: 202 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/flatten.benchmark.js'
   },
   {
     name: 'flatten',
@@ -25550,7 +41175,71 @@ export default [
           end: { line: 1, column: 22, offset: 21 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/flatten.js'
+  },
+  {
+    name: 'groupByRaceProperty',
+    benchmark: 'rubicoGroupBy: 1e+6: 365.717ms\n' +
+      'ramdaGroupBy: 1e+6: 1.875s\n' +
+      '_groupBy: 1e+6: 570.417ms',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'groupByRaceProperty',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 20, offset: 19 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 20, offset: 19 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 20, offset: 19 }
+        }
+      },
+      benchmark: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'rubicoGroupBy: 1e+6: 365.717ms\n' +
+                  'ramdaGroupBy: 1e+6: 1.875s\n' +
+                  '_groupBy: 1e+6: 570.417ms',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 3, column: 26, offset: 83 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 26, offset: 83 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 26, offset: 83 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/groupBy.benchmark.js'
   },
   {
     name: 'groupBy',
@@ -25731,7 +41420,8 @@ export default [
           end: { line: 29, column: 4, offset: 805 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/groupBy.js'
   },
   {
     name: 'has',
@@ -25841,7 +41531,67 @@ export default [
           end: { line: 13, column: 4, offset: 223 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/has.js'
+  },
+  {
+    name: 'bytesToMiB',
+    synopsis: 'bytesToMiB(bytes number) -> MiB string',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'bytesToMiB',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 11, offset: 10 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 11, offset: 10 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 11, offset: 10 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'bytesToMiB(bytes number) -> MiB string',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 39, offset: 38 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 39, offset: 38 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 39, offset: 38 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/heapUsedInLoop.js'
   },
   {
     name: 'heapUsedInLoop',
@@ -26089,7 +41839,75 @@ export default [
           end: { line: 1, column: 1, offset: 0 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/heapUsedInLoop.js'
+  },
+  {
+    name: 'heapUsedInLoop.async',
+    synopsis: 'heapUsedInLoop.async(\n' +
+      '  desc string,\n' +
+      '  loopCount number,\n' +
+      '  func (loop number)=>Promise|any\n' +
+      ') -> ()',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'heapUsedInLoop.async',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 21, offset: 20 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 21, offset: 20 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 21, offset: 20 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'heapUsedInLoop.async(\n' +
+                  'desc string,\n' +
+                  'loopCount number,\n' +
+                  'func (loop number)=>Promise|any\n' +
+                  ') -> ()',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 5, column: 8, offset: 98 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 5, column: 8, offset: 98 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 5, column: 8, offset: 98 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/heapUsedInLoop.js'
   },
   {
     name: 'identity',
@@ -26189,7 +42007,67 @@ export default [
           end: { line: 9, column: 4, offset: 183 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/identity.js'
+  },
+  {
+    name: 'arrayIncludes',
+    benchmark: 'arrayIncludes: 1e+6: 15.412ms',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'arrayIncludes',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 14, offset: 13 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 14, offset: 13 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 14, offset: 13 }
+        }
+      },
+      benchmark: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'arrayIncludes: 1e+6: 15.412ms',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 30, offset: 29 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 30, offset: 29 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 30, offset: 29 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/includes.benchmark.js'
   },
   {
     name: 'includes',
@@ -26326,7 +42204,370 @@ export default [
           end: { line: 13, column: 4, offset: 334 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/includes.js'
+  },
+  {
+    name: 'isDeepEqual',
+    benchmark: 'isDeepEqual(arr, arrCopy): 1e+5: 101.307ms\n' +
+      '_.isEqual(arr, arrCopy): 1e+5: 149.487ms\n' +
+      'R.equals(arr, arrCopy): 1e+5: 1.538s\n' +
+      'isDeepEqual(arr, arrDiff): 1e+5: 22.642ms\n' +
+      '_.isEqual(arr, arrDiff): 1e+5: 76.985ms\n' +
+      'R.equals(arr, arrDiff): 1e+5: 456.832ms\n' +
+      '\n' +
+      'richytong [2020-10-01]\n' +
+      'isDeepEqual(arr, arrCopy): 1e+5: 28.929ms\n' +
+      '_.isEqual(arr, arrCopy): 1e+5: 151.338ms\n' +
+      'R.equals(arr, arrCopy): 1e+5: 1.579s\n' +
+      'isDeepEqual(arr, arrDiff): 1e+5: 12.552ms\n' +
+      '_.isEqual(arr, arrDiff): 1e+5: 76.846ms\n' +
+      'R.equals(arr, arrDiff): 1e+5: 467.502ms\n' +
+      '\n' +
+      'richytong [2020-11-12]\n' +
+      'isDeepEqual(arr, arrCopy): 1e+5: 23.445ms\n' +
+      '_.isEqual(arr, arrCopy): 1e+5: 140.304ms\n' +
+      'R.equals(arr, arrCopy): 1e+5: 1.607s\n' +
+      'isDeepEqual(arr, arrDiff): 1e+5: 10.757ms\n' +
+      '_.isEqual(arr, arrDiff): 1e+5: 75.698ms\n' +
+      'R.equals(arr, arrDiff): 1e+5: 466.476ms',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'isDeepEqual',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 12, offset: 11 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 12, offset: 11 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 12, offset: 11 }
+        }
+      },
+      benchmark: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'isDeepEqual(arr, arrCopy): 1e+5: 101.307ms\n' +
+                  '_.isEqual(arr, arrCopy): 1e+5: 149.487ms\n' +
+                  'R.equals(arr, arrCopy): 1e+5: 1.538s\n' +
+                  'isDeepEqual(arr, arrDiff): 1e+5: 22.642ms\n' +
+                  '_.isEqual(arr, arrDiff): 1e+5: 76.985ms\n' +
+                  'R.equals(arr, arrDiff): 1e+5: 456.832ms',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 6, column: 40, offset: 242 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 6, column: 40, offset: 242 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'richytong [2020-10-01]\n' +
+                  'isDeepEqual(arr, arrCopy): 1e+5: 28.929ms\n' +
+                  '_.isEqual(arr, arrCopy): 1e+5: 151.338ms\n' +
+                  'R.equals(arr, arrCopy): 1e+5: 1.579s\n' +
+                  'isDeepEqual(arr, arrDiff): 1e+5: 12.552ms\n' +
+                  '_.isEqual(arr, arrDiff): 1e+5: 76.846ms\n' +
+                  'R.equals(arr, arrDiff): 1e+5: 467.502ms',
+                position: {
+                  start: { line: 8, column: 1, offset: 244 },
+                  end: { line: 14, column: 40, offset: 508 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 8, column: 1, offset: 244 },
+              end: { line: 14, column: 40, offset: 508 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'richytong [2020-11-12]\n' +
+                  'isDeepEqual(arr, arrCopy): 1e+5: 23.445ms\n' +
+                  '_.isEqual(arr, arrCopy): 1e+5: 140.304ms\n' +
+                  'R.equals(arr, arrCopy): 1e+5: 1.607s\n' +
+                  'isDeepEqual(arr, arrDiff): 1e+5: 10.757ms\n' +
+                  '_.isEqual(arr, arrDiff): 1e+5: 75.698ms\n' +
+                  'R.equals(arr, arrDiff): 1e+5: 466.476ms',
+                position: {
+                  start: { line: 16, column: 1, offset: 510 },
+                  end: { line: 22, column: 40, offset: 774 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 16, column: 1, offset: 510 },
+              end: { line: 22, column: 40, offset: 774 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 22, column: 40, offset: 774 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/isDeepEqual.benchmark.js'
+  },
+  {
+    name: 'areIteratorsDeepEqual',
+    synopsis: 'areIteratorsDeepEqual(left Iterator, right Iterator) -> boolean',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'areIteratorsDeepEqual',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 22, offset: 21 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 22, offset: 21 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 22, offset: 21 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'areIteratorsDeepEqual(left Iterator, right Iterator) -> boolean',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 64, offset: 63 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 64, offset: 63 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 64, offset: 63 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/isDeepEqual.js'
+  },
+  {
+    name: 'areObjectsDeepEqual',
+    synopsis: 'areObjectsDeepEqual(left Object, right Object) -> boolean',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'areObjectsDeepEqual',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 20, offset: 19 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 20, offset: 19 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 20, offset: 19 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'areObjectsDeepEqual(left Object, right Object) -> boolean',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 58, offset: 57 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 58, offset: 57 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 58, offset: 57 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/isDeepEqual.js'
+  },
+  {
+    name: 'areArraysDeepEqual',
+    synopsis: 'areArraysDeepEqual(left Array, right Array) -> boolean',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'areArraysDeepEqual',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 19, offset: 18 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 19, offset: 18 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 19, offset: 18 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'areArraysDeepEqual(left Array, right Array) -> boolean',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 55, offset: 54 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 55, offset: 54 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 55, offset: 54 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/isDeepEqual.js'
+  },
+  {
+    name: 'areValuesDeepEqual',
+    synopsis: '```coffeescript [specscript]\n' +
+      'areValuesDeepEqual(left any, right any) -> boolean\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'areValuesDeepEqual',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 19, offset: 18 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 19, offset: 18 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 19, offset: 18 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'areValuesDeepEqual(left any, right any) -> boolean',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 83 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 83 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/isDeepEqual.js'
   },
   {
     name: 'isDeepEqual',
@@ -26518,7 +42759,96 @@ export default [
           end: { line: 25, column: 4, offset: 855 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/isDeepEqual.js'
+  },
+  {
+    name: 'isEmpty',
+    benchmark: '_.isEmpty([]): 1e+6: 71.697ms\n' +
+      'isEmpty([]): 1e+6: 9.229ms\n' +
+      'R.isEmpty([]): 1e+6: 3.314s\n' +
+      '\n' +
+      '2020-10-01 richytong\n' +
+      '_.isEmpty([]): 1e+6: 71.369ms\n' +
+      'isEmpty([]): 1e+6: 4.438ms\n' +
+      'R.isEmpty([]): 1e+6: 3.497s',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'isEmpty',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 8, offset: 7 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 8, offset: 7 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 8, offset: 7 }
+        }
+      },
+      benchmark: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: '_.isEmpty([]): 1e+6: 71.697ms\n' +
+                  'isEmpty([]): 1e+6: 9.229ms\n' +
+                  'R.isEmpty([]): 1e+6: 3.314s',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 3, column: 28, offset: 84 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 28, offset: 84 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: '2020-10-01 richytong\n' +
+                  '_.isEmpty([]): 1e+6: 71.369ms\n' +
+                  'isEmpty([]): 1e+6: 4.438ms\n' +
+                  'R.isEmpty([]): 1e+6: 3.497s',
+                position: {
+                  start: { line: 5, column: 1, offset: 86 },
+                  end: { line: 8, column: 28, offset: 191 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 5, column: 1, offset: 86 },
+              end: { line: 8, column: 28, offset: 191 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 8, column: 28, offset: 191 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/isEmpty.benchmark.js'
   },
   {
     name: 'isEmpty',
@@ -26624,7 +42954,147 @@ export default [
           end: { line: 12, column: 4, offset: 434 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/isEmpty.js'
+  },
+  {
+    name: 'isEqual',
+    benchmark: 'isEqual(1, 1): 1e+6: 4.253ms\n' +
+      '_.isEqual(1, 1): 1e+6: 5.162ms\n' +
+      '\n' +
+      'isEqual(1, 2): 1e+6: 4.183ms\n' +
+      '_.isEqual(1, 2): 1e+6: 5.894ms',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'isEqual',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 8, offset: 7 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 8, offset: 7 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 8, offset: 7 }
+        }
+      },
+      benchmark: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'isEqual(1, 1): 1e+6: 4.253ms\n_.isEqual(1, 1): 1e+6: 5.162ms',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 2, column: 31, offset: 59 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 2, column: 31, offset: 59 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'isEqual(1, 2): 1e+6: 4.183ms\n_.isEqual(1, 2): 1e+6: 5.894ms',
+                position: {
+                  start: { line: 4, column: 1, offset: 61 },
+                  end: { line: 5, column: 31, offset: 120 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 4, column: 1, offset: 61 },
+              end: { line: 5, column: 31, offset: 120 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 5, column: 31, offset: 120 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/isEqual.benchmark.js'
+  },
+  {
+    name: 'isFunction',
+    benchmark: 'isFunction(f): 1e+7: 12.667ms\n_isFunction(f): 1e+7: 12.677ms',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'isFunction',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 11, offset: 10 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 11, offset: 10 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 11, offset: 10 }
+        }
+      },
+      benchmark: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'isFunction(f): 1e+7: 12.667ms\n_isFunction(f): 1e+7: 12.677ms',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 2, column: 31, offset: 60 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 2, column: 31, offset: 60 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 2, column: 31, offset: 60 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/isFunction.benchmark.js'
   },
   {
     name: 'isFunction',
@@ -26728,7 +43198,8 @@ export default [
           end: { line: 11, column: 4, offset: 218 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/isFunction.js'
   },
   {
     name: '_isIn',
@@ -26910,7 +43381,8 @@ export default [
           end: { line: 49, column: 4, offset: 722 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/isIn.js'
   },
   {
     name: 'isIn',
@@ -27092,7 +43564,91 @@ export default [
           end: { line: 49, column: 4, offset: 720 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/isIn.js'
+  },
+  {
+    name: 'isObject',
+    benchmark: 'isObject({}): 1e+7: 14.796ms\n' +
+      '_.isObject({}): 1e+7: 14.601ms\n' +
+      '\n' +
+      'richytong 2020-10-01\n' +
+      'isObject({}): 1e+7: 14.69ms\n' +
+      '_.isObject({}): 1e+7: 14.536ms',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'isObject',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 9, offset: 8 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 9, offset: 8 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 9, offset: 8 }
+        }
+      },
+      benchmark: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'isObject({}): 1e+7: 14.796ms\n_.isObject({}): 1e+7: 14.601ms',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 2, column: 31, offset: 59 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 2, column: 31, offset: 59 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'richytong 2020-10-01\n' +
+                  'isObject({}): 1e+7: 14.69ms\n' +
+                  '_.isObject({}): 1e+7: 14.536ms',
+                position: {
+                  start: { line: 4, column: 1, offset: 61 },
+                  end: { line: 6, column: 31, offset: 140 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 4, column: 1, offset: 61 },
+              end: { line: 6, column: 31, offset: 140 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 6, column: 31, offset: 140 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/isObject.benchmark.js'
   },
   {
     name: 'isObject',
@@ -27251,7 +43807,81 @@ export default [
           end: { line: 17, column: 4, offset: 401 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/isObject.js'
+  },
+  {
+    name: 'isString',
+    benchmark: 'isString({}): 1e+7: 15.017ms\n' +
+      '_.isString({}): 1e+7: 418.155ms\n' +
+      'isString([]): 1e+7: 14.653ms\n' +
+      '_.isString([]): 1e+7: 15.373ms\n' +
+      "isString('hey'): 1e+7: 12.794ms\n" +
+      "_.isString('hey'): 1e+7: 12.904ms\n" +
+      'isString(null): 1e+7: 13.342ms\n' +
+      '_.isString(null): 1e+7: 13.878ms',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'isString',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 9, offset: 8 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 9, offset: 8 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 9, offset: 8 }
+        }
+      },
+      benchmark: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'isString({}): 1e+7: 15.017ms\n' +
+                  '_.isString({}): 1e+7: 418.155ms\n' +
+                  'isString([]): 1e+7: 14.653ms\n' +
+                  '_.isString([]): 1e+7: 15.373ms\n' +
+                  "isString('hey'): 1e+7: 12.794ms\n" +
+                  "_.isString('hey'): 1e+7: 12.904ms\n" +
+                  'isString(null): 1e+7: 13.342ms\n' +
+                  '_.isString(null): 1e+7: 13.878ms',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 8, column: 33, offset: 250 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 8, column: 33, offset: 250 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 8, column: 33, offset: 250 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/isString.benchmarks.js'
   },
   {
     name: 'isString',
@@ -27351,7 +43981,8 @@ export default [
           end: { line: 9, column: 4, offset: 183 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/isString.js'
   },
   {
     name: 'keys',
@@ -27480,7 +44111,163 @@ export default [
           end: { line: 1, column: 7, offset: 6 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/keys.js'
+  },
+  {
+    name: 'last',
+    benchmark: 'last(arr): 1e+6: 5.154ms\n' +
+      '_.last(arr): 1e+6: 5.191ms\n' +
+      'R.last(arr): 1e+6: 518.671ms\n' +
+      '\n' +
+      'last([]): 1e+6: 5.204ms\n' +
+      '_.last([]): 1e+6: 5.468ms\n' +
+      'R.last([]): 1e+6: 498.638ms\n' +
+      '\n' +
+      "last('hey'): 1e+6: 5.776ms\n" +
+      "_.last('hey'): 1e+6: 6.1ms\n" +
+      "R.last('hey'): 1e+6: 813.653ms\n" +
+      '\n' +
+      "last(''): 1e+6: 3.975ms\n" +
+      "_.last(''): 1e+6: 4.306ms\n" +
+      "R.last(''): 1e+6: 785.416ms\n" +
+      '\n' +
+      'last(null): 1e+6: 3.626ms\n' +
+      '_.last(null): 1e+6: 4.121ms\n' +
+      'R.last(null): TypeError',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'last',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 5, offset: 4 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 5, offset: 4 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 5, offset: 4 }
+        }
+      },
+      benchmark: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'last(arr): 1e+6: 5.154ms\n' +
+                  '_.last(arr): 1e+6: 5.191ms\n' +
+                  'R.last(arr): 1e+6: 518.671ms',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 3, column: 29, offset: 80 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 29, offset: 80 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'last([]): 1e+6: 5.204ms\n' +
+                  '_.last([]): 1e+6: 5.468ms\n' +
+                  'R.last([]): 1e+6: 498.638ms',
+                position: {
+                  start: { line: 5, column: 1, offset: 82 },
+                  end: { line: 7, column: 28, offset: 159 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 5, column: 1, offset: 82 },
+              end: { line: 7, column: 28, offset: 159 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: "last('hey'): 1e+6: 5.776ms\n" +
+                  "_.last('hey'): 1e+6: 6.1ms\n" +
+                  "R.last('hey'): 1e+6: 813.653ms",
+                position: {
+                  start: { line: 9, column: 1, offset: 161 },
+                  end: { line: 11, column: 31, offset: 245 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 9, column: 1, offset: 161 },
+              end: { line: 11, column: 31, offset: 245 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: "last(''): 1e+6: 3.975ms\n" +
+                  "_.last(''): 1e+6: 4.306ms\n" +
+                  "R.last(''): 1e+6: 785.416ms",
+                position: {
+                  start: { line: 13, column: 1, offset: 247 },
+                  end: { line: 15, column: 28, offset: 324 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 13, column: 1, offset: 247 },
+              end: { line: 15, column: 28, offset: 324 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'last(null): 1e+6: 3.626ms\n' +
+                  '_.last(null): 1e+6: 4.121ms\n' +
+                  'R.last(null): TypeError',
+                position: {
+                  start: { line: 17, column: 1, offset: 326 },
+                  end: { line: 19, column: 24, offset: 403 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 17, column: 1, offset: 326 },
+              end: { line: 19, column: 24, offset: 403 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 19, column: 24, offset: 403 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/last.benchmark.js'
   },
   {
     name: 'last',
@@ -27582,7 +44369,62 @@ export default [
           end: { line: 8, column: 4, offset: 197 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/last.js'
+  },
+  {
+    name: '_maxBy',
+    synopsis: '```coffeescript [specscript]\n' +
+      '_maxBy(array Array, path string) -> maxItemByPath any\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: '_maxBy',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 7, offset: 6 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 7, offset: 6 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 7, offset: 6 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: '_maxBy(array Array, path string) -> maxItemByPath any',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 86 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 86 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/maxBy.js'
   },
   {
     name: 'maxBy',
@@ -27753,7 +44595,8 @@ export default [
           end: { line: 27, column: 4, offset: 612 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/maxBy.js'
   },
   {
     name: 'noop',
@@ -27853,7 +44696,8 @@ export default [
           end: { line: 9, column: 4, offset: 153 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/noop.js'
   },
   {
     name: 'pluck',
@@ -28122,7 +44966,8 @@ export default [
           end: { line: 21, column: 4, offset: 566 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/pluck.js'
   },
   {
     name: 'prepend',
@@ -28281,7 +45126,73 @@ export default [
           end: { line: 1, column: 6, offset: 5 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/prepend.js'
+  },
+  {
+    name: 'size',
+    benchmark: 'array.length: 1e+7: 12.207ms\n' +
+      'size(array): 1e+7: 12.931ms\n' +
+      '_.size(array): 1e+7: 581.128ms\n' +
+      'R.length(array): 1e+7: 1.887s',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'size',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 5, offset: 4 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 5, offset: 4 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 5, offset: 4 }
+        }
+      },
+      benchmark: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'array.length: 1e+7: 12.207ms\n' +
+                  'size(array): 1e+7: 12.931ms\n' +
+                  '_.size(array): 1e+7: 581.128ms\n' +
+                  'R.length(array): 1e+7: 1.887s',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 4, column: 30, offset: 117 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 4, column: 30, offset: 117 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 4, column: 30, offset: 117 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/size.benchmark.js'
   },
   {
     name: 'size',
@@ -28381,7 +45292,8 @@ export default [
           end: { line: 9, column: 4, offset: 236 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/size.js'
   },
   {
     name: 'timeInLoop',
@@ -28499,7 +45411,8 @@ export default [
           end: { line: 7, column: 80, offset: 259 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/timeInLoop.js'
   },
   {
     name: 'timeInLoop.async',
@@ -28598,7 +45511,8 @@ export default [
           end: { line: 5, column: 4, offset: 166 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/timeInLoop.js'
   },
   {
     name: 'trace',
@@ -28718,7 +45632,348 @@ export default [
           end: { line: 12, column: 4, offset: 324 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/trace.js'
+  },
+  {
+    name: 'tracef',
+    DEPRECATED: '',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'tracef',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 7, offset: 6 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 7, offset: 6 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 7, offset: 6 }
+        }
+      },
+      DEPRECATED: {
+        type: 'root',
+        children: [],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 1, offset: 0 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/tracef.js'
+  },
+  {
+    name: 'unionWith',
+    benchmark: 'unionWith((a, b) => a.a == b.a)(nestedObjects): 1e+5: 95.553ms\n' +
+      '_.unionWith((a, b) => a.a == b.a)(nestedObjects): 1e+5: 100.701ms\n' +
+      '\n' +
+      'richytong 2020-10-01:\n' +
+      'unionWith((a, b) => a.a == b.a)(nestedObjects): 1e+5: 38.952ms\n' +
+      '_.unionWith((a, b) => a.a == b.a)(nestedObjects): 1e+5: 101.171ms',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'unionWith',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 10, offset: 9 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 10, offset: 9 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 10, offset: 9 }
+        }
+      },
+      benchmark: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'unionWith((a, b) => a.a == b.a)(nestedObjects): 1e+5: 95.553ms\n' +
+                  '_.unionWith((a, b) => a.a == b.a)(nestedObjects): 1e+5: 100.701ms',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 2, column: 66, offset: 128 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 2, column: 66, offset: 128 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'richytong 2020-10-01:\n' +
+                  'unionWith((a, b) => a.a == b.a)(nestedObjects): 1e+5: 38.952ms\n' +
+                  '_.unionWith((a, b) => a.a == b.a)(nestedObjects): 1e+5: 101.171ms',
+                position: {
+                  start: { line: 4, column: 1, offset: 130 },
+                  end: { line: 6, column: 66, offset: 280 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 4, column: 1, offset: 130 },
+              end: { line: 6, column: 66, offset: 280 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 6, column: 66, offset: 280 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/unionWith.benchmark.js'
+  },
+  {
+    name: 'arrayIncludesWith',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var T any,\n' +
+      '  array Array<T>,\n' +
+      '  value T,\n' +
+      '  comparator (T, T)=>boolean\n' +
+      '\n' +
+      'arrayIncludesWith\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'arrayIncludesWith',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 18, offset: 17 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 18, offset: 17 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 18, offset: 17 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'var T any,\n' +
+              '  array Array<T>,\n' +
+              '  value T,\n' +
+              '  comparator (T, T)=>boolean\n' +
+              '\n' +
+              'arrayIncludesWith',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 8, column: 4, offset: 120 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 8, column: 4, offset: 120 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/unionWith.js'
+  },
+  {
+    name: 'arrayUniqWithAsync',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var T any,\n' +
+      '  array Array<T>,\n' +
+      '  comparator (T, T)=>Promise|boolean\n' +
+      '\n' +
+      'arrayUniqWithAsync(array, comparator) -> Promise<Array<T>>\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'arrayUniqWithAsync',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 19, offset: 18 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 19, offset: 18 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 19, offset: 18 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'var T any,\n' +
+              '  array Array<T>,\n' +
+              '  comparator (T, T)=>Promise|boolean\n' +
+              '\n' +
+              'arrayUniqWithAsync(array, comparator) -> Promise<Array<T>>',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 7, column: 4, offset: 158 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 7, column: 4, offset: 158 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/unionWith.js'
+  },
+  {
+    name: 'arrayUniqWith',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var T any,\n' +
+      '  array Array<T>,\n' +
+      '  comparator (T, T)=>Promise|boolean\n' +
+      '\n' +
+      'arrayUniqWith(array, comparator) -> Promise|Array<T>\n' +
+      '```',
+    TODO: 'rubico/x/uniqWith',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'arrayUniqWith',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 14, offset: 13 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 14, offset: 13 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 14, offset: 13 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'var T any,\n' +
+              '  array Array<T>,\n' +
+              '  comparator (T, T)=>Promise|boolean\n' +
+              '\n' +
+              'arrayUniqWith(array, comparator) -> Promise|Array<T>',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 7, column: 4, offset: 152 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 7, column: 4, offset: 152 }
+        }
+      },
+      TODO: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'rubico/x/uniqWith',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 18, offset: 17 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 18, offset: 17 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 18, offset: 17 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/unionWith.js'
   },
   {
     name: 'unionWith',
@@ -28879,7 +46134,140 @@ export default [
           end: { line: 1, column: 13, offset: 12 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/unionWith.js'
+  },
+  {
+    name: 'uniq',
+    benchmark: 'uniq - original(1000, scatter: 10): 1e+5: 1.947s\n' +
+      'uniq - lodash(1000), scatter: 10: 1e+5: 1.767s\n' +
+      'uniq - new(1000), scatter: 10: 1e+5: 1.728s\n' +
+      '\n' +
+      'uniq - original(1000, scatter: 10): 1e+5: 1.947s\n' +
+      'uniq - lodash(1000), scatter: 10: 1e+5: 1.767s\n' +
+      'uniq - new(1000), scatter: 10: 1e+5: 1.728s\n' +
+      '\n' +
+      'uniq - original(100, scatter: 10): 1e+6: 2.291s\n' +
+      'uniq - lodash(100), scatter: 10: 1e+6: 664.204ms\n' +
+      'uniq - new(100), scatter: 10: 1e+6: 1.581s\n' +
+      '\n' +
+      'uniq - original(100, scatter: 100): 1e+6: 11.730s\n' +
+      'uniq - lodash(100), scatter: 100: 1e+6: 3.411s\n' +
+      'uniq - new(100), scatter: 100: 1e+6: 2.789s',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'uniq',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 5, offset: 4 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 5, offset: 4 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 5, offset: 4 }
+        }
+      },
+      benchmark: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'uniq - original(1000, scatter: 10): 1e+5: 1.947s\n' +
+                  'uniq - lodash(1000), scatter: 10: 1e+5: 1.767s\n' +
+                  'uniq - new(1000), scatter: 10: 1e+5: 1.728s',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 3, column: 44, offset: 139 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 44, offset: 139 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'uniq - original(1000, scatter: 10): 1e+5: 1.947s\n' +
+                  'uniq - lodash(1000), scatter: 10: 1e+5: 1.767s\n' +
+                  'uniq - new(1000), scatter: 10: 1e+5: 1.728s',
+                position: {
+                  start: { line: 5, column: 1, offset: 141 },
+                  end: { line: 7, column: 44, offset: 280 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 5, column: 1, offset: 141 },
+              end: { line: 7, column: 44, offset: 280 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'uniq - original(100, scatter: 10): 1e+6: 2.291s\n' +
+                  'uniq - lodash(100), scatter: 10: 1e+6: 664.204ms\n' +
+                  'uniq - new(100), scatter: 10: 1e+6: 1.581s',
+                position: {
+                  start: { line: 9, column: 1, offset: 282 },
+                  end: { line: 11, column: 43, offset: 421 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 9, column: 1, offset: 282 },
+              end: { line: 11, column: 43, offset: 421 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'uniq - original(100, scatter: 100): 1e+6: 11.730s\n' +
+                  'uniq - lodash(100), scatter: 100: 1e+6: 3.411s\n' +
+                  'uniq - new(100), scatter: 100: 1e+6: 2.789s',
+                position: {
+                  start: { line: 13, column: 1, offset: 423 },
+                  end: { line: 15, column: 44, offset: 563 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 13, column: 1, offset: 423 },
+              end: { line: 15, column: 44, offset: 563 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 15, column: 44, offset: 563 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/uniq.benchmark.js'
   },
   {
     name: 'uniq',
@@ -28984,7 +46372,8 @@ export default [
           end: { line: 9, column: 4, offset: 189 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/uniq.js'
   },
   {
     name: 'unless',
@@ -29123,7 +46512,71 @@ export default [
           end: { line: 1, column: 6, offset: 5 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/unless.js'
+  },
+  {
+    name: 'valuesRace',
+    benchmark: 'rubicoValues: 1e+6: 53.064ms\n' +
+      'ramdaValues: 1e+6: 544.009ms\n' +
+      '_values: 1e+6: 125.737ms',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'valuesRace',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 11, offset: 10 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 11, offset: 10 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 11, offset: 10 }
+        }
+      },
+      benchmark: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'rubicoValues: 1e+6: 53.064ms\n' +
+                  'ramdaValues: 1e+6: 544.009ms\n' +
+                  '_values: 1e+6: 125.737ms',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 3, column: 25, offset: 82 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 25, offset: 82 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 25, offset: 82 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/values.benchmark.js'
   },
   {
     name: 'values',
@@ -29229,7 +46682,8 @@ export default [
           end: { line: 9, column: 4, offset: 321 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/values.js'
   },
   {
     name: 'when',
@@ -29368,6 +46822,7 @@ export default [
           end: { line: 1, column: 6, offset: 5 }
         }
       }
-    }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/when.js'
   }
 ]

@@ -22,11 +22,16 @@ export default ${inspect(data, { depth: Infinity, maxArrayLength: null })}
 }
 
 const createCronistFile = async function (source, dest, options = {}) {
-  const { requiredKeys } = options
+  const { requiredKeys, ignoreDirs } = options
   await pipe(source, [
-    walkPathForJSFilePaths,
-    map(readFileUtf8),
-    flatMap(curry(cronist, __, requiredKeys)),
+    curry.arity(2, walkPathForJSFilePaths, __, { ignoreDirs }),
+
+    flatMap(async fileName => pipe(fileName, [
+      readFileUtf8,
+      cronist,
+      map(assign({ fileName: always(fileName) })),
+    ])),
+
     data => fs.promises.writeFile(dest, `
 export default ${inspect(data, { depth: Infinity, maxArrayLength: null })}
   `.trim()),
@@ -44,6 +49,7 @@ const createMdast = async function () {
   console.log('Creating mdast/readme.js')
   await createMdastFile(
     `${__dirname}/node_modules/rubico/README.md`,
+    // `${__dirname}/../rubico/README.md`, // uncomment for local changes
     `${__dirname}/public/mdast/readme.js`,
   )
 
@@ -64,8 +70,12 @@ const createMdast = async function () {
   console.log(`Creating cronist/rubico-v${rubicoMajorVersion}.js`)
   await createCronistFile(
     `${__dirname}/node_modules/rubico`,
+    // `${__dirname}/../rubico`, // uncomment for local changes
     `${__dirname}/public/cronist/rubico-v${rubicoMajorVersion}.js`,
-    { requiredKeys: ['name', 'synopsis', 'description'] },
+    {
+      requiredKeys: ['name', 'synopsis', 'description'],
+      ignoreDirs: ['node_modules', 'archive'],
+    },
   )
 }
 

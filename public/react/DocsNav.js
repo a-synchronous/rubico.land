@@ -1,3 +1,4 @@
+import useRubicoVersion from './useRubicoVersion.js'
 import useDocsViewerFuncName from './useDocsViewerFuncName.js'
 
 /**
@@ -13,6 +14,7 @@ import useDocsViewerFuncName from './useDocsViewerFuncName.js'
 const DocsNav = ReactElement(props => {
   const { goto } = props
 
+  const [rubicoVersion] = useRubicoVersion('v2')
   const [docsViewerFuncName, setDocsViewerFuncName] = useDocsViewerFuncName('pipe')
 
   const CoreDocsNavItem = name => {
@@ -29,6 +31,87 @@ const DocsNav = ReactElement(props => {
     ])
   }
 
+  if (rubicoVersion == 'v1') {
+    return Nav([
+      Section([
+        H4('Create pipelines'),
+        CoreDocsNavItem('pipe'),
+        CoreDocsNavItem('pipe.sync'),
+        CoreDocsNavItem('tap'),
+        CoreDocsNavItem('tap.sync'),
+        CoreDocsNavItem('tap.if'),
+      ]),
+
+      Section([
+        H4('Control flow'),
+        CoreDocsNavItem('switchCase'),
+      ]),
+
+      Section([
+        H4('Handle errors'),
+        CoreDocsNavItem('tryCatch'),
+      ]),
+
+      Section([
+        H4('Compose objects'),
+        CoreDocsNavItem('fork'),
+        CoreDocsNavItem('fork.series'),
+        CoreDocsNavItem('assign'),
+        CoreDocsNavItem('get'),
+        CoreDocsNavItem('set'),
+        CoreDocsNavItem('pick'),
+        CoreDocsNavItem('omit'),
+      ]),
+
+      Section([
+        H4('Transform data'),
+        CoreDocsNavItem('map'),
+        CoreDocsNavItem('map.entries'),
+        CoreDocsNavItem('map.series'),
+        CoreDocsNavItem('map.pool'),
+        CoreDocsNavItem('map.withIndex'),
+        CoreDocsNavItem('map.own'),
+        CoreDocsNavItem('filter'),
+        CoreDocsNavItem('filter.withIndex'),
+        CoreDocsNavItem('reduce'),
+        CoreDocsNavItem('transform'),
+        CoreDocsNavItem('flatMap'),
+      ]),
+
+      Section([
+        H4('Compose predicates'),
+        CoreDocsNavItem('and'),
+        CoreDocsNavItem('or'),
+        CoreDocsNavItem('not'),
+        CoreDocsNavItem('not.sync'),
+      ]),
+
+      Section([
+        H4('Aggregate predicates'),
+        CoreDocsNavItem('some'),
+        CoreDocsNavItem('every'),
+      ]),
+
+      Section([
+        H4('Comparison'),
+        CoreDocsNavItem('eq'),
+        CoreDocsNavItem('gt'),
+        CoreDocsNavItem('lt'),
+        CoreDocsNavItem('gte'),
+        CoreDocsNavItem('lte'),
+      ]),
+
+      Section([
+        H4('Partial application'),
+        CoreDocsNavItem('thunkify'),
+        CoreDocsNavItem('always'),
+        CoreDocsNavItem('curry'),
+        CoreDocsNavItem('curry.arity'),
+        CoreDocsNavItem('__'),
+      ]),
+    ])
+  }
+
   return Nav([
     Section([
       H4('Compose functions'),
@@ -39,6 +122,7 @@ const DocsNav = ReactElement(props => {
     Section([
       H4('Compose effects'),
       CoreDocsNavItem('tap'),
+      CoreDocsNavItem('tap.if'),
       CoreDocsNavItem('forEach'),
     ]),
 
@@ -65,6 +149,9 @@ const DocsNav = ReactElement(props => {
     Section([
       H4('Transform data'),
       CoreDocsNavItem('map'),
+      CoreDocsNavItem('map.entries'),
+      CoreDocsNavItem('map.series'),
+      CoreDocsNavItem('map.pool'),
       CoreDocsNavItem('filter'),
       CoreDocsNavItem('reduce'),
       CoreDocsNavItem('transform'),
@@ -94,6 +181,7 @@ const DocsNav = ReactElement(props => {
       CoreDocsNavItem('thunkify'),
       CoreDocsNavItem('always'),
       CoreDocsNavItem('curry'),
+      CoreDocsNavItem('curry.arity'),
       CoreDocsNavItem('__'),
     ]),
   ])

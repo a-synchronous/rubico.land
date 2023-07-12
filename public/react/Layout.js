@@ -49,8 +49,8 @@ const Layout = ReactElement(props => {
             setRubicoVersion(event.target.value)
           },
         }, [
-          Option({ value: 'v2', selected: rubicoVersion == 'v2' }, 'v2'),
           Option({ value: 'v1', selected: rubicoVersion == 'v1' }, 'v1'),
+          Option({ value: 'v2', selected: rubicoVersion == 'v2' }, 'v2'),
         ]),
 
         Div({ class: 'links' }, [
