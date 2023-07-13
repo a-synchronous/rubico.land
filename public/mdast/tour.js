@@ -1499,7 +1499,7 @@ export default {
         {
           type: 'link',
           title: null,
-          url: '/blog/2020/10/02/transducers-crash-course',
+          url: '/blog/transducers-crash-course-v1',
           children: [
             {
               type: 'text',
@@ -1512,21 +1512,21 @@ export default {
           ],
           position: {
             start: { line: 165, column: 203, offset: 5109 },
-            end: { line: 165, column: 252, offset: 5158 }
+            end: { line: 165, column: 244, offset: 5150 }
           }
         },
         {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 165, column: 252, offset: 5158 },
-            end: { line: 165, column: 253, offset: 5159 }
+            start: { line: 165, column: 244, offset: 5150 },
+            end: { line: 165, column: 245, offset: 5151 }
           }
         }
       ],
       position: {
         start: { line: 165, column: 1, offset: 4907 },
-        end: { line: 165, column: 253, offset: 5159 }
+        end: { line: 165, column: 245, offset: 5151 }
       }
     },
     {
@@ -1558,8 +1558,8 @@ export default {
         '\n' +
         'console.log(notes) // CCGGAAGFFEEDDCGGFFEEDGGFFEEDCCGGAAGFFEEDDC',
       position: {
-        start: { line: 167, column: 1, offset: 5161 },
-        end: { line: 192, column: 4, offset: 5825 }
+        start: { line: 167, column: 1, offset: 5153 },
+        end: { line: 192, column: 4, offset: 5817 }
       }
     },
     {
@@ -1569,8 +1569,8 @@ export default {
           type: 'text',
           value: "You've arrived at the end of the tour. From here, you could get started with rubico in a project (",
           position: {
-            start: { line: 194, column: 1, offset: 5827 },
-            end: { line: 194, column: 99, offset: 5925 }
+            start: { line: 194, column: 1, offset: 5819 },
+            end: { line: 194, column: 99, offset: 5917 }
           }
         },
         {
@@ -1582,22 +1582,22 @@ export default {
               type: 'text',
               value: 'installation',
               position: {
-                start: { line: 194, column: 100, offset: 5926 },
-                end: { line: 194, column: 112, offset: 5938 }
+                start: { line: 194, column: 100, offset: 5918 },
+                end: { line: 194, column: 112, offset: 5930 }
               }
             }
           ],
           position: {
-            start: { line: 194, column: 99, offset: 5925 },
-            end: { line: 194, column: 129, offset: 5955 }
+            start: { line: 194, column: 99, offset: 5917 },
+            end: { line: 194, column: 129, offset: 5947 }
           }
         },
         {
           type: 'text',
           value: ') or read more at the ',
           position: {
-            start: { line: 194, column: 129, offset: 5955 },
-            end: { line: 194, column: 151, offset: 5977 }
+            start: { line: 194, column: 129, offset: 5947 },
+            end: { line: 194, column: 151, offset: 5969 }
           }
         },
         {
@@ -1609,33 +1609,33 @@ export default {
               type: 'text',
               value: 'docs',
               position: {
-                start: { line: 194, column: 152, offset: 5978 },
-                end: { line: 194, column: 156, offset: 5982 }
+                start: { line: 194, column: 152, offset: 5970 },
+                end: { line: 194, column: 156, offset: 5974 }
               }
             }
           ],
           position: {
-            start: { line: 194, column: 151, offset: 5977 },
-            end: { line: 194, column: 164, offset: 5990 }
+            start: { line: 194, column: 151, offset: 5969 },
+            end: { line: 194, column: 164, offset: 5982 }
           }
         },
         {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 194, column: 164, offset: 5990 },
-            end: { line: 194, column: 165, offset: 5991 }
+            start: { line: 194, column: 164, offset: 5982 },
+            end: { line: 194, column: 165, offset: 5983 }
           }
         }
       ],
       position: {
-        start: { line: 194, column: 1, offset: 5827 },
-        end: { line: 194, column: 165, offset: 5991 }
+        start: { line: 194, column: 1, offset: 5819 },
+        end: { line: 194, column: 165, offset: 5983 }
       }
     }
   ],
   position: {
     start: { line: 1, column: 1, offset: 0 },
-    end: { line: 195, column: 1, offset: 5992 }
+    end: { line: 195, column: 1, offset: 5984 }
   }
 }

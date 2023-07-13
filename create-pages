@@ -94,12 +94,30 @@ const main = async function (options) {
     }))
   }
 
-  console.log('Creating blog/2020/10/02/transducers-crash-course')
-  await publicFs.writeFile('blog/2020/10/02/transducers-crash-course', IndexHtml({
-    path: '/blog/2020/10/02/transducers-crash-course',
-    title: 'Transducers Crash Course - rubico',
-    description: 'Transducers enable composable and memory efficient wrangling of very large or even infinite sets of data',
-  }))
+  const articlesFs = new FileSystem({ cwd: `${__dirname}/articles` })
+
+  for (const filename of await articlesFs.find('.')) {
+    const content = await articlesFs.cat(filename)
+    const parts = content.split('---')
+
+    // skip articles without metadata
+    if (parts.length == 1) {
+      continue
+    }
+
+    const metadata = pipe(parts, [
+      get(1),
+      x.callProp('trim'),
+      x.callProp('split', '\n'),
+      map(x.callProp('split', ': ')),
+      Object.fromEntries,
+    ])
+
+    const { path, title, description } = metadata
+
+    console.log('Creating', path)
+    await publicFs.writeFile(path, IndexHtml({ path, title, description }))
+  }
 }
 
 if (require.main == module) {

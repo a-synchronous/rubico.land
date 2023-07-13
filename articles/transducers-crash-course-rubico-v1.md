@@ -1,11 +1,10 @@
 ---
-title: Transducers Crash Course
+title: Transducers Crash Course for rubico V1
 author: Richard Tong
 date: 2020-10-02
-path: /blog/2020/10/02/transducers-crash-course
+path: /blog/transducers-crash-course-rubico-v1
+description: A crash course in rubico v1 transducers
 ---
-
-## Transducers Crash Course
 
 Transducers enable composable and memory efficient wrangling of very large or even infinite sets of data. Say you wanted to square the odd numbers from one to one thousand.
 
