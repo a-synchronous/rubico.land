@@ -26,11 +26,11 @@ const defaultDocsViewerFuncName = 'pipe'
 const Docs = ReactElement(props => {
   const { path, goto } = props
 
-  console.log('Docs', { path })
-
   const [rubicoVersion] = useRubicoVersion()
   const [mdastMap, setMdastMap] = useState(defaultMdastMap)
   const [docsViewerFuncName, setDocsViewerFuncName] = useDocsViewerFuncName('')
+
+  console.log('Docs', docsViewerFuncName)
 
   useEffect(function updatePathToDefaultViewerFunc() {
     if (path == '/docs') {
@@ -39,7 +39,10 @@ const Docs = ReactElement(props => {
   }, [path])
 
   useEffect(function updateDocsViewerFuncNameFromPath() {
-    const funcName = path.replace('/docs/', '')
+    let funcName = path.replace('/docs/', '')
+    if (funcName.startsWith('x')) {
+      funcName = funcName.replace('x/', '')
+    }
     setDocsViewerFuncName(funcName)
   }, [path])
 

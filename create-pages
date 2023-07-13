@@ -85,7 +85,7 @@ const main = async function (options) {
 
   const xFunctionNames = FunctionNames(x)
 
-  for (const functionName of coreFunctionNames) {
+  for (const functionName of xFunctionNames) {
     console.log(`Creating docs/x/${functionName}`)
     await publicFs.writeFile(`docs/x/${functionName}/index.html`, IndexHtml({
       path: `/docs/x/${functionName}`,
