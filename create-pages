@@ -68,6 +68,8 @@ const main = async function (options) {
   const deprecatedFunctionNames = [
     'pipe.sync',
     'tap.sync',
+    'fork',
+    'fork.series',
     'map.withIndex',
     'map.own',
     'filter.withIndex',

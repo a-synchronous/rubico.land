@@ -21,7 +21,7 @@ const {
 
   thunkify, always, curry, __,
 
-} = rubico // available globally
+} = rubico
 ```
 
 # Table of Contents

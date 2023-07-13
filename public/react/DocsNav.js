@@ -14,7 +14,7 @@ import useDocsViewerFuncName from './useDocsViewerFuncName.js'
 const DocsNav = ReactElement(props => {
   const { goto } = props
 
-  const [rubicoVersion] = useRubicoVersion('v2')
+  const [rubicoVersion] = useRubicoVersion()
   const [docsViewerFuncName, setDocsViewerFuncName] = useDocsViewerFuncName('pipe')
 
   const CoreDocsNavItem = name => {

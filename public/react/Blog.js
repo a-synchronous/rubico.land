@@ -4,15 +4,12 @@ import Layout from './Layout.js'
 import BlogItem from './BlogItem.js'
 import MdastBlogMetadata from './MdastBlogMetadata.js'
 
-// transducersContent ReactElement
-const transducersContent = ReactElementFromMdast(transducersMdast)
-
 const CURRENT_PATH = '/blog/transducers-crash-course-rubico-v1'
 
 // ReactElement
 const BlogTransducers = BlogItem({
   ...MdastBlogMetadata(transducersMdast),
-  content: transducersContent,
+  content: ReactElementFromMdast({ mdast: transducersMdast }),
 })
 
 // { state, goto } => ReactElement

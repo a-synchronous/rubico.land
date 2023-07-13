@@ -27,6 +27,9 @@ const {
   thunkify, always, curry, __,
 } = rubico
 
+// deprecated methods from v1
+const { fork } = rubico
+
 const inspect = ${inspect.toString()}
 
 const codeArea = document.createElement('code')
