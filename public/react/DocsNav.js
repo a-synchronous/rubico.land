@@ -31,6 +31,20 @@ const DocsNav = ReactElement(props => {
     ])
   }
 
+  const XDocsNavItem = name => {
+    const href = `/docs/x/${name}`
+    return Div({ class: 'docs-nav-item' }, [
+      A({
+        href,
+        onClick(event) {
+          event.preventDefault()
+          setDocsViewerFuncName(name)
+          goto(href)
+        },
+      }, name)
+    ])
+  }
+
   if (rubicoVersion == 'v1') {
     return Nav([
       Section([
@@ -109,6 +123,43 @@ const DocsNav = ReactElement(props => {
         CoreDocsNavItem('curry.arity'),
         CoreDocsNavItem('__'),
       ]),
+
+      Section([
+        H4('x/'),
+        XDocsNavItem('append'),
+        XDocsNavItem('callProp'),
+        XDocsNavItem('defaultsDeep'),
+        XDocsNavItem('differenceWith'),
+        XDocsNavItem('filterOut'),
+        XDocsNavItem('find'),
+        XDocsNavItem('findIndex'),
+        XDocsNavItem('first'),
+        XDocsNavItem('flatten'),
+        XDocsNavItem('forEach'),
+        XDocsNavItem('groupBy'),
+        XDocsNavItem('has'),
+        XDocsNavItem('identity'),
+        XDocsNavItem('includes'),
+        XDocsNavItem('isDeepEqual'),
+        XDocsNavItem('isEmpty'),
+        XDocsNavItem('isFunction'),
+        XDocsNavItem('isIn'),
+        XDocsNavItem('isObject'),
+        XDocsNavItem('isString'),
+        XDocsNavItem('keys'),
+        XDocsNavItem('last'),
+        XDocsNavItem('maxBy'),
+        XDocsNavItem('noop'),
+        XDocsNavItem('pluck'),
+        XDocsNavItem('prepend'),
+        XDocsNavItem('size'),
+        XDocsNavItem('trace'),
+        XDocsNavItem('unionWith'),
+        XDocsNavItem('uniq'),
+        XDocsNavItem('unless'),
+        XDocsNavItem('values'),
+        XDocsNavItem('when'),
+      ]),
     ])
   }
 
@@ -183,6 +234,43 @@ const DocsNav = ReactElement(props => {
       CoreDocsNavItem('curry'),
       CoreDocsNavItem('curry.arity'),
       CoreDocsNavItem('__'),
+    ]),
+
+    Section([
+      H4('x/'),
+      XDocsNavItem('append'),
+      XDocsNavItem('callProp'),
+      XDocsNavItem('defaultsDeep'),
+      XDocsNavItem('differenceWith'),
+      XDocsNavItem('filterOut'),
+      XDocsNavItem('find'),
+      XDocsNavItem('findIndex'),
+      XDocsNavItem('first'),
+      XDocsNavItem('flatten'),
+      XDocsNavItem('forEach'),
+      XDocsNavItem('groupBy'),
+      XDocsNavItem('has'),
+      XDocsNavItem('identity'),
+      XDocsNavItem('includes'),
+      XDocsNavItem('isDeepEqual'),
+      XDocsNavItem('isEmpty'),
+      XDocsNavItem('isFunction'),
+      XDocsNavItem('isIn'),
+      XDocsNavItem('isObject'),
+      XDocsNavItem('isString'),
+      XDocsNavItem('keys'),
+      XDocsNavItem('last'),
+      XDocsNavItem('maxBy'),
+      XDocsNavItem('noop'),
+      XDocsNavItem('pluck'),
+      XDocsNavItem('prepend'),
+      XDocsNavItem('size'),
+      XDocsNavItem('trace'),
+      XDocsNavItem('unionWith'),
+      XDocsNavItem('uniq'),
+      XDocsNavItem('unless'),
+      XDocsNavItem('values'),
+      XDocsNavItem('when'),
     ]),
   ])
 })
