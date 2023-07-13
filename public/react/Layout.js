@@ -1,9 +1,10 @@
-import useMediaQuery from './useMediaQuery.js'
-import useRubicoVersion from './useRubicoVersion.js'
 import NavLink from './NavLink.js'
 import Slider from './Slider.js'
 import GithubMark from './GithubMark.js'
 import HamburgerMenuIcon from './HamburgerMenuIcon.js'
+import setCookie from './setCookie.js'
+import useMediaQuery from './useMediaQuery.js'
+import useRubicoVersion from './useRubicoVersion.js'
 
 /**
  * @name Layout
@@ -46,6 +47,7 @@ const Layout = ReactElement(props => {
 
         Select({
           onChange(event) {
+            setCookie('rubicoVersion', event.target.value)
             setRubicoVersion(event.target.value)
           },
         }, [

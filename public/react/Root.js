@@ -4,6 +4,8 @@ import Docs from './Docs.js'
 import Blog from './Blog.js'
 import NotFound from './NotFound.js'
 import Analytics from './Analytics.js'
+import useRubicoVersion from './useRubicoVersion.js'
+import getCookie from './getCookie.js'
 
 // Tour Docs Blog
 const tabAnchors = [...document.querySelectorAll('header > nav > a')]
@@ -54,6 +56,16 @@ const Root = ReactElement(props => {
       window.removeEventListener('popstate', updatePathWithLocation)
     }
   }, [])
+
+  {
+    const [_, setRubicoVersion] = useRubicoVersion()
+    useEffect(function restoreRubicoVersionFromCookie() {
+      const cookieVersion = getCookie('rubicoVersion')
+      if (cookieVersion != null) {
+        setRubicoVersion(cookieVersion)
+      }
+    }, [])
+  }
 
   const childProps = { ...appState, goto }
 
