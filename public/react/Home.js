@@ -11,7 +11,7 @@ const { Div, Button, A } = ReactElement
 readmeMdast.children.splice(0, 2)
 
 // readmeContent ReactElement
-const readmeContent = ReactElementFromMdast(readmeMdast)
+const readmeContent = ReactElementFromMdast({ mdast: readmeMdast })
 
 // () -> Home ReactElement
 const Home = ReactElement(props => {

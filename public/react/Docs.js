@@ -10,7 +10,7 @@ const defaultMdastMap = new Map()
 cronistRubico.forEach(item => {
   defaultMdastMap.set(item.name, item.mdast)
 })
-defaultMdastMap.version = 'v2'
+defaultMdastMap.version = defaultRubicoVersion
 
 const defaultDocsViewerFuncName = 'pipe'
 
@@ -26,11 +26,9 @@ const defaultDocsViewerFuncName = 'pipe'
 const Docs = ReactElement(props => {
   const { path, goto } = props
 
-  const [rubicoVersion] = useRubicoVersion()
+  const [rubicoVersion, setRubicoVersion] = useRubicoVersion()
   const [mdastMap, setMdastMap] = useState(defaultMdastMap)
   const [docsViewerFuncName, setDocsViewerFuncName] = useDocsViewerFuncName('')
-
-  console.log('Docs', docsViewerFuncName)
 
   useEffect(function updatePathToDefaultViewerFunc() {
     if (path == '/docs') {
@@ -44,6 +42,12 @@ const Docs = ReactElement(props => {
       funcName = funcName.replace('x/', '')
     }
     setDocsViewerFuncName(funcName)
+  }, [path])
+
+  useEffect(function updateRubicoVersionV1ForDeprecatedMethods() {
+    if (path == '/docs/fork' || path == '/docs/fork.series') {
+      setRubicoVersion('v1')
+    }
   }, [path])
 
   useEffect(function updateMdastMap() {
@@ -75,14 +79,22 @@ const Docs = ReactElement(props => {
           }, H1(docsViewerFuncName)),
 
           Div({ class: 'synopsis' }, [
-            ReactElementFromMdast(docsViewerMdast.synopsis)
+            ReactElementFromMdast({ mdast: docsViewerMdast.synopsis })
           ]),
 
           Div({ class: 'description' }, [
-            ReactElementFromMdast(docsViewerMdast.description)
+            ReactElementFromMdast({ mdast: docsViewerMdast.description })
           ]),
         ]),
-      ] : [],
+      ] : [
+        Div({ class: 'viewer' }, [
+          A({
+            href: path,
+          }, H1(docsViewerFuncName)),
+
+          P(`Not supported in rubico ${rubicoVersion}`),
+        ]),
+      ],
     ]),
   ])
 })
