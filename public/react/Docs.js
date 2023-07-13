@@ -44,12 +44,6 @@ const Docs = ReactElement(props => {
     setDocsViewerFuncName(funcName)
   }, [path])
 
-  useEffect(function updateRubicoVersionV1ForDeprecatedMethods() {
-    if (path == '/docs/fork' || path == '/docs/fork.series') {
-      setRubicoVersion('v1')
-    }
-  }, [path])
-
   useEffect(function updateMdastMap() {
     if (rubicoVersion != mdastMap.version) {
       import(`../cronist/rubico-${rubicoVersion}.js`).then(module => {
