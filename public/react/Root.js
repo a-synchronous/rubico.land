@@ -57,16 +57,6 @@ const Root = ReactElement(props => {
     }
   }, [])
 
-  {
-    const [_, setRubicoVersion] = useRubicoVersion()
-    useEffect(function restoreRubicoVersionFromCookie() {
-      const cookieVersion = getCookie('rubicoVersion')
-      if (cookieVersion != null) {
-        setRubicoVersion(cookieVersion)
-      }
-    }, [])
-  }
-
   const childProps = { ...appState, goto }
 
   const { path } = appState
