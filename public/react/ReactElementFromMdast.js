@@ -1,6 +1,5 @@
 import CodeRunner from './CodeRunner.js'
 import CodeViewer from './CodeViewer.js'
-import useRubicoVersion from './useRubicoVersion.js'
 
 const isArray = Array.isArray
 
@@ -26,7 +25,7 @@ const anchorHashFromMdast = function (mdast) {
 }
 
 // mdast -> ReactElement
-const ReactElementFromMdastRecurse = function (mdast, props = {}) {
+const ReactElementFromMdastRecurse = function (mdast) {
   return isArray(mdast.children)
     ? mdast.children.map(mdast => ReactElementFromMdast({ mdast }))
     : mdast.value
@@ -57,7 +56,6 @@ const codeSpliceImports = function (code) {
 // )) -> ReactElement
 const ReactElementFromMdast = ReactElement(props => {
   const { mdast } = props
-  const [rubicoVersion] = useRubicoVersion()
 
   switch (mdast.type) {
     case 'yaml': {
@@ -74,7 +72,7 @@ const ReactElementFromMdast = ReactElement(props => {
           return Span()
       }
     case 'root':
-      return Article(props, ReactElementFromMdastRecurse(mdast, props))
+      return Article(ReactElementFromMdastRecurse(mdast))
     case 'heading':
       switch (mdast.depth) {
         case 1:
@@ -130,13 +128,7 @@ const ReactElementFromMdast = ReactElement(props => {
             code,
             mode: mdast.lang,
             theme: 'rubico',
-            imports: {
-              ...imports,
-              rubico: `https://unpkg.com/rubico@${rubicoVersion}/dist/rubico.es.min.js`,
-              ...rubicoVersion == 'v1' ? {} : {
-                Transducer: `https://unpkg.com/rubico@${rubicoVersion}/dist/Transducer.es.min.js`,
-              },
-            },
+            imports,
           })
         case '[node]':
           return CodeViewer({

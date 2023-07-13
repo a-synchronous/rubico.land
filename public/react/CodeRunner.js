@@ -1,3 +1,4 @@
+import useRubicoVersion from './useRubicoVersion.js'
 import inspect from './inspect.js'
 
 const templateCodeSandbox = ({ code, imports }) => `
@@ -93,7 +94,7 @@ const codeMirrors = new Map()
 // { code } -> codeRunner React.Element
 const CodeRunner = ReactElement(({
   code,
-  imports,
+  imports: propsImports,
   theme = 'rubico',
   lineWrapping = true,
   lineNumbers = true,
@@ -101,11 +102,13 @@ const CodeRunner = ReactElement(({
   const codeAreaRef = useRef(null)
   const outputAreaRef = useRef(null)
   const [outputAreaSrc, setOutputAreaSrc] = useState(null)
+
   useEffect(() => {
     if (!codeMirrors.has(codeAreaRef)) return
     codeMirrors.get(codeAreaRef).getDoc().setValue(code)
     setOutputAreaSrc(null)
   }, [code])
+
   useEffect(() => {
     const cm = CodeMirror(codeAreaRef.current, {
       value: code,
@@ -119,6 +122,23 @@ const CodeRunner = ReactElement(({
       codeMirrors.delete(codeAreaRef)
     }
   }, [])
+
+  const [rubicoVersion] = useRubicoVersion()
+
+  const createImports = rubicoVersion => rubicoVersion == 'v1' ? ({
+    ...propsImports,
+    rubico: `https://unpkg.com/rubico@${rubicoVersion}/dist/rubico.es.min.js`,
+  }) : ({
+    ...propsImports,
+    rubico: `https://unpkg.com/rubico@${rubicoVersion}/dist/rubico.es.min.js`,
+    Transducer: `https://unpkg.com/rubico@${rubicoVersion}/dist/Transducer.es.min.js`,
+  })
+
+  const [imports, setImports] = useState(createImports(rubicoVersion))
+
+  useEffect(function updateImports() {
+    setImports(createImports(rubicoVersion))
+  }, [rubicoVersion])
 
   return Div([
     Div({ ref: codeAreaRef }),

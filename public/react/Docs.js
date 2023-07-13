@@ -1,16 +1,8 @@
 import Layout from './Layout.js'
-import Docs_1_9_7 from './Docs_1_9_7.js'
 import DocsNav from './DocsNav.js'
-import cronistRubico from '../cronist/rubico-v2.js'
 import useRubicoVersion from './useRubicoVersion.js'
 import useDocsViewerFuncName from './useDocsViewerFuncName.js'
 import ReactElementFromMdast from './ReactElementFromMdast.js'
-
-const defaultMdastMap = new Map()
-cronistRubico.forEach(item => {
-  defaultMdastMap.set(item.name, item.mdast)
-})
-defaultMdastMap.version = defaultRubicoVersion
 
 const defaultDocsViewerFuncName = 'pipe'
 
@@ -27,7 +19,7 @@ const Docs = ReactElement(props => {
   const { path, goto } = props
 
   const [rubicoVersion, setRubicoVersion] = useRubicoVersion()
-  const [mdastMap, setMdastMap] = useState(defaultMdastMap)
+  const [mdastMap, setMdastMap] = useState(new Map())
   const [docsViewerFuncName, setDocsViewerFuncName] = useDocsViewerFuncName('')
 
   useEffect(function updatePathToDefaultViewerFunc() {
@@ -62,11 +54,11 @@ const Docs = ReactElement(props => {
   const docsViewerMdast = mdastMap.get(docsViewerFuncName)
 
   return Layout(props, [
-    // Docs_1_9_7(props),
     Div({ id: 'docs' }, [
       DocsNav(props),
 
-      mdastMap.has(docsViewerFuncName) ? [
+      mdastMap.size == 0 ? []
+      : mdastMap.has(docsViewerFuncName) ? [
         Div({ class: 'viewer' }, [
           A({
             href: path,
@@ -80,7 +72,8 @@ const Docs = ReactElement(props => {
             ReactElementFromMdast({ mdast: docsViewerMdast.description })
           ]),
         ]),
-      ] : [
+      ]
+      : [
         Div({ class: 'viewer' }, [
           A({
             href: path,
