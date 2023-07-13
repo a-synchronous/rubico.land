@@ -162,7 +162,7 @@ myApp({ userId: 1 }) // doing stuff with userId 1
 ```
 
 # Transducers
-**Wrangle large or infinite streams of data**. Easily express complex transformations in a memory efficient way with rubico's `Trasnducer` module and `compose` method. Read more on rubico's transducers [here](/blog/2020/10/02/transducers-crash-course).
+**Wrangle large or infinite streams of data**. Easily express complex transformations in a memory efficient way with rubico's `Trasnducer` module and `compose` method. Read more on rubico's transducers [here](/blog/transducers-crash-course-v1).
 
 ```javascript [playground]
 const toBinaryString = value => value.toString(2)

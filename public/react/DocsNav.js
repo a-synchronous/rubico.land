@@ -171,7 +171,7 @@ const DocsNav = ReactElement(props => {
     ]),
 
     Section([
-      H4('Compose effects'),
+      H4('Handle effects'),
       CoreDocsNavItem('tap'),
       CoreDocsNavItem('tap.if'),
       CoreDocsNavItem('forEach'),

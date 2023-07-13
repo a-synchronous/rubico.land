@@ -21813,8 +21813,8 @@ export default [
       '\n' +
       'type Predicate = (\n' +
       '  value any,\n' +
-      '  indexOrKey? number|string,\n' +
-      '  collection? Filterable,\n' +
+      '  indexOrKey number|string,\n' +
+      '  collection Filterable,\n' +
       ')=>boolean\n' +
       '\n' +
       'filter(collection Filterable, predicate Predicate) -> result Promise|Filterable\n' +
@@ -21983,21 +21983,21 @@ export default [
               '\n' +
               'type Predicate = (\n' +
               '  value any,\n' +
-              '  indexOrKey? number|string,\n' +
-              '  collection? Filterable,\n' +
+              '  indexOrKey number|string,\n' +
+              '  collection Filterable,\n' +
               ')=>boolean\n' +
               '\n' +
               'filter(collection Filterable, predicate Predicate) -> result Promise|Filterable\n' +
               'filter(predicate Predicate)(collection Filterable) -> result Promise|Filterable',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 12, column: 4, offset: 354 }
+              end: { line: 12, column: 4, offset: 352 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 12, column: 4, offset: 354 }
+          end: { line: 12, column: 4, offset: 352 }
         }
       },
       description: {
@@ -22826,6 +22826,7 @@ export default [
     name: 'flatMap',
     synopsis: '```coffeescript [specscript]\n' +
       'type FlatMappable = Array|String|Set|Iterator|AsyncIterator\n' +
+      '\n' +
       'type Iterable = Iterable|AsyncIterable|Object<value any>\n' +
       '\n' +
       'type FlatMapper = (\n' +
@@ -22954,6 +22955,7 @@ export default [
             lang: 'coffeescript',
             meta: '[specscript]',
             value: 'type FlatMappable = Array|String|Set|Iterator|AsyncIterator\n' +
+              '\n' +
               'type Iterable = Iterable|AsyncIterable|Object<value any>\n' +
               '\n' +
               'type FlatMapper = (\n' +
@@ -22966,13 +22968,13 @@ export default [
               'flatMap(flatMapper FlatMapper)(collection FlatMappable) -> result Promise|FlatMappable',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 13, column: 4, offset: 428 }
+              end: { line: 14, column: 4, offset: 429 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 13, column: 4, offset: 428 }
+          end: { line: 14, column: 4, offset: 429 }
         }
       },
       description: {
@@ -25360,30 +25362,16 @@ export default [
   {
     name: 'map',
     synopsis: '```coffeescript [specscript]\n' +
-      'arrayMapperFunc (value any, index number, array Array)=>Promise|any\n' +
-      'objectMapperFunc (value any, key string, object Object)=>Promise|any\n' +
-      'setMapperFunc (value any, value, set Set)=>Promise|any\n' +
-      'mapMapperFunc (value any, key any, originalMap Map)=>Promise|any\n' +
-      'iteratorMapperFunc (value any)=>any\n' +
-      'asyncIteratorMapperFunc (value any)=>Promise|any\n' +
+      'type Mappable = Array|Object|Set|Map|Iterator|AsyncIterator\n' +
       '\n' +
-      'map(arrayMapperFunc)(value Array) -> result Promise|Array\n' +
-      'map(value Array, arrayMapperFunc) -> result Promise|Array\n' +
+      'type Mapper = (\n' +
+      '  value any,\n' +
+      '  indexOrKey number|string,\n' +
+      '  collection Mappable\n' +
+      ')=>(mappedItem Promise|any)\n' +
       '\n' +
-      'map(objectMapperFunc)(value Object) -> result Promise|Array\n' +
-      'map(value Object, objectMapperFunc) -> result Promise|Array\n' +
-      '\n' +
-      'map(setMapperFunc)(value Set) -> result Promise|Set\n' +
-      'map(value Set, setMapperFunc) -> result Promise|Set\n' +
-      '\n' +
-      'map(mapMapperFunc)(value Map) -> result Promise|Map\n' +
-      'map(value Map, mapMapperFunc) -> result Promise|Map\n' +
-      '\n' +
-      'map(iteratorMapperFunc)(value Iterator|Generator) -> result Iterator\n' +
-      'map(value Iterator|Generator, iteratorMapperFunc) -> result Iterator\n' +
-      '\n' +
-      'map(asyncIteratorMapperFunc)(value AsyncIterator) -> result AsyncIterator\n' +
-      'map(value AsyncIterator, asyncIteratorMapperFunc) -> result AsyncIterator\n' +
+      'map(value Mappable, mapper Mapper) -> result Promise|Mappable\n' +
+      'map(mapper Mapper)(value Mappable) -> result Promise|Mappable\n' +
       '```',
     description: 'Applies a synchronous or asynchronous mapper function concurrently to each item of a collection, returning the results in a new collection of the same type. If order is implied by the collection, it is maintained in the result. `map` accepts the following collections:\n' +
       '\n' +
@@ -25550,39 +25538,25 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'arrayMapperFunc (value any, index number, array Array)=>Promise|any\n' +
-              'objectMapperFunc (value any, key string, object Object)=>Promise|any\n' +
-              'setMapperFunc (value any, value, set Set)=>Promise|any\n' +
-              'mapMapperFunc (value any, key any, originalMap Map)=>Promise|any\n' +
-              'iteratorMapperFunc (value any)=>any\n' +
-              'asyncIteratorMapperFunc (value any)=>Promise|any\n' +
+            value: 'type Mappable = Array|Object|Set|Map|Iterator|AsyncIterator\n' +
               '\n' +
-              'map(arrayMapperFunc)(value Array) -> result Promise|Array\n' +
-              'map(value Array, arrayMapperFunc) -> result Promise|Array\n' +
+              'type Mapper = (\n' +
+              '  value any,\n' +
+              '  indexOrKey number|string,\n' +
+              '  collection Mappable\n' +
+              ')=>(mappedItem Promise|any)\n' +
               '\n' +
-              'map(objectMapperFunc)(value Object) -> result Promise|Array\n' +
-              'map(value Object, objectMapperFunc) -> result Promise|Array\n' +
-              '\n' +
-              'map(setMapperFunc)(value Set) -> result Promise|Set\n' +
-              'map(value Set, setMapperFunc) -> result Promise|Set\n' +
-              '\n' +
-              'map(mapMapperFunc)(value Map) -> result Promise|Map\n' +
-              'map(value Map, mapMapperFunc) -> result Promise|Map\n' +
-              '\n' +
-              'map(iteratorMapperFunc)(value Iterator|Generator) -> result Iterator\n' +
-              'map(value Iterator|Generator, iteratorMapperFunc) -> result Iterator\n' +
-              '\n' +
-              'map(asyncIteratorMapperFunc)(value AsyncIterator) -> result AsyncIterator\n' +
-              'map(value AsyncIterator, asyncIteratorMapperFunc) -> result AsyncIterator',
+              'map(value Mappable, mapper Mapper) -> result Promise|Mappable\n' +
+              'map(mapper Mapper)(value Mappable) -> result Promise|Mappable',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 26, column: 4, offset: 1110 }
+              end: { line: 12, column: 4, offset: 325 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 26, column: 4, offset: 1110 }
+          end: { line: 12, column: 4, offset: 325 }
         }
       },
       description: {
@@ -35670,15 +35644,17 @@ export default [
       '  collection? Foldable,\n' +
       ')=>(nextAccumulator Promise|any)\n' +
       '\n' +
+      'type Resolver = (collection Foldable)=>Promise|any\n' +
+      '\n' +
       'reduce(\n' +
       '  collection Foldable,\n' +
       '  reducer Reducer,\n' +
-      '  initialValue? function|any\n' +
+      '  initialValue? Resolver|any\n' +
       ') -> result Promise|any\n' +
       '\n' +
       'reduce(\n' +
       '  reducer Reducer,\n' +
-      '  initialValue? function|any\n' +
+      '  initialValue? Resolver|any\n' +
       ')(collection Foldable) -> result Promise|any\n' +
       '```',
     description: 'Transforms a collection based on a reducer function and optional initial value. In a reducing operation, the result is defined in the beginning as either the initial value if supplied or the first item of the collection. The reducing operation then iterates through the remaining items in the collection, executing the reducer at each iteration to return the result to be used in the next iteration. The final result is the result of the execution of the reducer at the last item of the iteration. `reduce` accepts the following collections:\n' +
@@ -35853,25 +35829,27 @@ export default [
               '  collection? Foldable,\n' +
               ')=>(nextAccumulator Promise|any)\n' +
               '\n' +
+              'type Resolver = (collection Foldable)=>Promise|any\n' +
+              '\n' +
               'reduce(\n' +
               '  collection Foldable,\n' +
               '  reducer Reducer,\n' +
-              '  initialValue? function|any\n' +
+              '  initialValue? Resolver|any\n' +
               ') -> result Promise|any\n' +
               '\n' +
               'reduce(\n' +
               '  reducer Reducer,\n' +
-              '  initialValue? function|any\n' +
+              '  initialValue? Resolver|any\n' +
               ')(collection Foldable) -> result Promise|any',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 21, column: 4, offset: 430 }
+              end: { line: 23, column: 4, offset: 482 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 21, column: 4, offset: 430 }
+          end: { line: 23, column: 4, offset: 482 }
         }
       },
       description: {
@@ -38204,21 +38182,32 @@ export default [
   {
     name: 'transform',
     synopsis: '```coffeescript [specscript]\n' +
-      'type Reducer = (result any, item any)=>(result any)\n' +
-      'type Transducer = Reducer=>Reducer\n' +
-      'type Transformable = Array|String|Set|TypedArray|{ concat: function }|{ write: function }|Object\n' +
       'type Foldable = Iterable|AsyncIterable|Object<value any>\n' +
       '\n' +
+      'type Reducer = (\n' +
+      '  accumulator any,\n' +
+      '  value any,\n' +
+      '  indexOrKey? number|string,\n' +
+      '  collection? Foldable,\n' +
+      ')=>(nextAccumulator Promise|any)\n' +
+      '\n' +
+      'type Transducer = Reducer=>Reducer\n' +
+      '\n' +
+      'type Transformable =\n' +
+      '  Array|String|Set|TypedArray|{ concat: function }|{ write: function }|Object\n' +
+      '\n' +
+      'type TransformableResolver = (collection Foldable)=>Promise|Transformable\n' +
+      '\n' +
       'transform(\n' +
-      '  foldable Foldable,\n' +
+      '  collection Foldable,\n' +
       '  transducer Transducer,\n' +
-      '  initialValue? Transformable|(Foldable=>Promise|Transformable),\n' +
+      '  initialValue? Transformable|TransformableResolver,\n' +
       ') -> result Promise|Transformable\n' +
       '\n' +
       'transform(\n' +
       '  transducer Transducer,\n' +
-      '  initialValue? Transformable|(Foldable=>Promise|Transformable),\n' +
-      ')(foldable Foldable) -> result Promise|Transformable\n' +
+      '  initialValue? Transformable|TransformableResolver,\n' +
+      ')(collection Foldable) -> result Promise|Transformable\n' +
       '```',
     description: 'Transforms a transformable collection into any other transformable collection. The type of transformation depends on the collection provided by the initial value. If the initial is a function it is used as a resolver for the provided collection. `transform` accepts transformable collections, or collections that support a concatenation operation:\n' +
       '\n' +
@@ -38344,30 +38333,41 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'type Reducer = (result any, item any)=>(result any)\n' +
+            value: 'type Foldable = Iterable|AsyncIterable|Object<value any>\n' +
+              '\n' +
+              'type Reducer = (\n' +
+              '  accumulator any,\n' +
+              '  value any,\n' +
+              '  indexOrKey? number|string,\n' +
+              '  collection? Foldable,\n' +
+              ')=>(nextAccumulator Promise|any)\n' +
+              '\n' +
               'type Transducer = Reducer=>Reducer\n' +
-              'type Transformable = Array|String|Set|TypedArray|{ concat: function }|{ write: function }|Object\n' +
-              'type Foldable = Iterable|AsyncIterable|Object<value any>\n' +
+              '\n' +
+              'type Transformable =\n' +
+              '  Array|String|Set|TypedArray|{ concat: function }|{ write: function }|Object\n' +
+              '\n' +
+              'type TransformableResolver = (collection Foldable)=>Promise|Transformable\n' +
               '\n' +
               'transform(\n' +
-              '  foldable Foldable,\n' +
+              '  collection Foldable,\n' +
               '  transducer Transducer,\n' +
-              '  initialValue? Transformable|(Foldable=>Promise|Transformable),\n' +
+              '  initialValue? Transformable|TransformableResolver,\n' +
               ') -> result Promise|Transformable\n' +
               '\n' +
               'transform(\n' +
               '  transducer Transducer,\n' +
-              '  initialValue? Transformable|(Foldable=>Promise|Transformable),\n' +
-              ')(foldable Foldable) -> result Promise|Transformable',
+              '  initialValue? Transformable|TransformableResolver,\n' +
+              ')(collection Foldable) -> result Promise|Transformable',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 17, column: 4, offset: 585 }
+              end: { line: 28, column: 4, offset: 728 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 17, column: 4, offset: 585 }
+          end: { line: 28, column: 4, offset: 728 }
         }
       },
       description: {

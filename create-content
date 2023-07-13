@@ -41,15 +41,11 @@ export default ${inspect(data, { depth: Infinity, maxArrayLength: null })}
 // createMdast() -> Promise<>
 const createMdast = async function () {
   const publicFs = new FileSystem({ cwd: `${__dirname}/public` })
-  await publicFs.rmrf('/mdast')
-  await publicFs.mkdirp('/mdast')
-  await publicFs.rmrf('/cronist')
-  await publicFs.mkdirp('/cronist')
 
   console.log('Creating mdast/readme.js')
   await createMdastFile(
-    `${__dirname}/node_modules/rubico/README.md`,
-    // `${__dirname}/../rubico/README.md`, // uncomment for local changes
+    // `${__dirname}/node_modules/rubico/README.md`,
+    `${__dirname}/../rubico/README.md`, // uncomment for local changes
     `${__dirname}/public/mdast/readme.js`,
   )
 
@@ -59,18 +55,31 @@ const createMdast = async function () {
     `${__dirname}/public/mdast/tour.js`,
   )
 
+  /*
   console.log('Creating mdast/transducers-v1.js')
   await createMdastFile(
     `${__dirname}/articles/transducers-v1.md`,
     `${__dirname}/public/mdast/transducers-v1.js`,
   )
+  */
+
+  const articlesFs = new FileSystem({ cwd: `${__dirname}/articles` })
+  for (const path of await articlesFs.find('.')) {
+    const filename = path.replace(articlesFs.cwd, '').replace(/^[/.]+/g, '')
+    const mdastPath = `mdast/${filename.replace('.md', '.js')}`
+    console.log('Creating', mdastPath)
+    await createMdastFile(
+      `${__dirname}/articles/${filename}`,
+      `${__dirname}/public/${mdastPath}`,
+    )
+  }
 
   const rubicoVersion = require('rubico/package').version
   const rubicoMajorVersion = rubicoVersion.split('.')[0]
   console.log(`Creating cronist/rubico-v${rubicoMajorVersion}.js`)
   await createCronistFile(
-    `${__dirname}/node_modules/rubico`,
-    // `${__dirname}/../rubico`, // uncomment for local changes
+    // `${__dirname}/node_modules/rubico`,
+    `${__dirname}/../rubico`, // uncomment for local changes
     `${__dirname}/public/cronist/rubico-v${rubicoMajorVersion}.js`,
     {
       requiredKeys: ['name', 'synopsis', 'description'],
