@@ -115,20 +115,18 @@ export default [
   {
     name: 'Transducer.map',
     synopsis: '```coffeescript [specscript]\n' +
-      'type Reducer = (accumulator any, item any)=>(nextAccumulator Promise|any)\n' +
+      'type Reducer = (\n' +
+      '  accumulator any,\n' +
+      '  value any,\n' +
+      '  indexOrKey? number|string,\n' +
+      '  collection? Foldable,\n' +
+      ')=>(nextAccumulator Promise|any)\n' +
+      '\n' +
       'type Transducer = Reducer=>Reducer\n' +
       '\n' +
       'Transducer.map(mapperFunc function) -> mappingTransducer Transducer\n' +
       '```',
-    description: 'Creates a mapping transducer with a provided reducer. A reducer is a variadic function that depicts a relationship between an accumulator and any number of arguments. A transducer is a function that accepts a reducer as an argument and returns another reducer.\n' +
-      '\n' +
-      '```coffeescript [specscript]\n' +
-      'type Reducer = (accumulator any, item any)=>(nextAccumulator Promise|any)\n' +
-      '\n' +
-      'type Transducer = Reducer=>Reducer\n' +
-      '```\n' +
-      '\n' +
-      'The transducer signature enables chaining functionality for reducers. `map` is core to this mechanism, and provides a way via transducers to transform the items of reducers.\n' +
+    description: 'Creates a mapping transducer. Items in the final reducing operation are transformed by the mapper function. It is possible to use an asynchronous mapper, however the reducing operation must support asynchronous execution. This library provides such implementations as [reduce](/docs/reduce) and [transform](/docs/transform).\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const square = number => number ** 2\n' +
@@ -143,25 +141,21 @@ export default [
       '// is a reducer with chained functionality square and concat\n' +
       '\n' +
       'console.log(\n' +
-      '  [1, 2, 3, 4, 5].reduce(squareConcatReducer, []),\n' +
+      '  reduce([1, 2, 3, 4, 5], squareConcatReducer, [])\n' +
       ') // [1, 4, 9, 16, 25]\n' +
       '\n' +
+      '// the same squareConcatReducer is consumable with vanilla JavaScript\n' +
       'console.log(\n' +
-      "  [1, 2, 3, 4, 5].reduce(squareConcatReducer, ''),\n" +
-      ") // '1491625'\n" +
+      '  [1, 2, 3, 4, 5].reduce(squareConcatReducer, [])\n' +
+      ') // [1, 4, 9, 16, 25]\n' +
+      '\n' +
+      '// concat is implicit when transforming into arrays\n' +
+      'console.log(\n' +
+      '  transform([1, 2, 3, 4, 5], Transducer.map(square), [])\n' +
+      ') // [1, 4, 9, 16, 25]\n' +
       '```\n' +
       '\n' +
-      'Create reducers with chained functionality by using the `Transducer.map` eager API.\n' +
-      '\n' +
-      '```javascript [playground]\n' +
-      'const square = number => number ** 2\n' +
-      '\n' +
-      'const concat = (array, item) => array.concat(item)\n' +
-      '\n' +
-      'const squareConcatReducer = Transducer.map(concat, square)\n' +
-      '// now mapSquare is passed the reducer function concat; squareConcatReducer\n' +
-      '// is a reducer with chained functionality square and concat\n' +
-      '```',
+      'Read more on transducers [here](/blog/transducers-crash-course-rubico-v2).',
     mdast: {
       name: {
         type: 'root',
@@ -196,19 +190,25 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'type Reducer = (accumulator any, item any)=>(nextAccumulator Promise|any)\n' +
+            value: 'type Reducer = (\n' +
+              '  accumulator any,\n' +
+              '  value any,\n' +
+              '  indexOrKey? number|string,\n' +
+              '  collection? Foldable,\n' +
+              ')=>(nextAccumulator Promise|any)\n' +
+              '\n' +
               'type Transducer = Reducer=>Reducer\n' +
               '\n' +
               'Transducer.map(mapperFunc function) -> mappingTransducer Transducer',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 6, column: 4, offset: 210 }
+              end: { line: 12, column: 4, offset: 272 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 6, column: 4, offset: 210 }
+          end: { line: 12, column: 4, offset: 272 }
         }
       },
       description: {
@@ -219,61 +219,70 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Creates a mapping transducer with a provided reducer. A reducer is a variadic function that depicts a relationship between an accumulator and any number of arguments. A transducer is a function that accepts a reducer as an argument and returns another reducer.',
+                value: 'Creates a mapping transducer. Items in the final reducing operation are transformed by the mapper function. It is possible to use an asynchronous mapper, however the reducing operation must support asynchronous execution. This library provides such implementations as ',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 261, offset: 260 }
+                  end: { line: 1, column: 269, offset: 268 }
+                }
+              },
+              {
+                type: 'link',
+                title: null,
+                url: '/docs/reduce',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'reduce',
+                    position: {
+                      start: { line: 1, column: 270, offset: 269 },
+                      end: { line: 1, column: 276, offset: 275 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 269, offset: 268 },
+                  end: { line: 1, column: 291, offset: 290 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' and ',
+                position: {
+                  start: { line: 1, column: 291, offset: 290 },
+                  end: { line: 1, column: 296, offset: 295 }
+                }
+              },
+              {
+                type: 'link',
+                title: null,
+                url: '/docs/transform',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'transform',
+                    position: {
+                      start: { line: 1, column: 297, offset: 296 },
+                      end: { line: 1, column: 306, offset: 305 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 296, offset: 295 },
+                  end: { line: 1, column: 324, offset: 323 }
+                }
+              },
+              {
+                type: 'text',
+                value: '.',
+                position: {
+                  start: { line: 1, column: 324, offset: 323 },
+                  end: { line: 1, column: 325, offset: 324 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 261, offset: 260 }
-            }
-          },
-          {
-            type: 'code',
-            lang: 'coffeescript',
-            meta: '[specscript]',
-            value: 'type Reducer = (accumulator any, item any)=>(nextAccumulator Promise|any)\n' +
-              '\n' +
-              'type Transducer = Reducer=>Reducer',
-            position: {
-              start: { line: 3, column: 1, offset: 262 },
-              end: { line: 7, column: 4, offset: 404 }
-            }
-          },
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: 'The transducer signature enables chaining functionality for reducers. ',
-                position: {
-                  start: { line: 9, column: 1, offset: 406 },
-                  end: { line: 9, column: 71, offset: 476 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'map',
-                position: {
-                  start: { line: 9, column: 71, offset: 476 },
-                  end: { line: 9, column: 76, offset: 481 }
-                }
-              },
-              {
-                type: 'text',
-                value: ' is core to this mechanism, and provides a way via transducers to transform the items of reducers.',
-                position: {
-                  start: { line: 9, column: 76, offset: 481 },
-                  end: { line: 9, column: 174, offset: 579 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 9, column: 1, offset: 406 },
-              end: { line: 9, column: 174, offset: 579 }
+              end: { line: 1, column: 325, offset: 324 }
             }
           },
           {
@@ -292,15 +301,21 @@ export default [
               '// is a reducer with chained functionality square and concat\n' +
               '\n' +
               'console.log(\n' +
-              '  [1, 2, 3, 4, 5].reduce(squareConcatReducer, []),\n' +
+              '  reduce([1, 2, 3, 4, 5], squareConcatReducer, [])\n' +
               ') // [1, 4, 9, 16, 25]\n' +
               '\n' +
+              '// the same squareConcatReducer is consumable with vanilla JavaScript\n' +
               'console.log(\n' +
-              "  [1, 2, 3, 4, 5].reduce(squareConcatReducer, ''),\n" +
-              ") // '1491625'",
+              '  [1, 2, 3, 4, 5].reduce(squareConcatReducer, [])\n' +
+              ') // [1, 4, 9, 16, 25]\n' +
+              '\n' +
+              '// concat is implicit when transforming into arrays\n' +
+              'console.log(\n' +
+              '  transform([1, 2, 3, 4, 5], Transducer.map(square), [])\n' +
+              ') // [1, 4, 9, 16, 25]',
             position: {
-              start: { line: 11, column: 1, offset: 581 },
-              end: { line: 30, column: 4, offset: 1123 }
+              start: { line: 3, column: 1, offset: 326 },
+              end: { line: 28, column: 4, offset: 1091 }
             }
           },
           {
@@ -308,54 +323,49 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Create reducers with chained functionality by using the ',
+                value: 'Read more on transducers ',
                 position: {
-                  start: { line: 32, column: 1, offset: 1125 },
-                  end: { line: 32, column: 57, offset: 1181 }
+                  start: { line: 30, column: 1, offset: 1093 },
+                  end: { line: 30, column: 26, offset: 1118 }
                 }
               },
               {
-                type: 'inlineCode',
-                value: 'Transducer.map',
+                type: 'link',
+                title: null,
+                url: '/blog/transducers-crash-course-rubico-v2',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'here',
+                    position: {
+                      start: { line: 30, column: 27, offset: 1119 },
+                      end: { line: 30, column: 31, offset: 1123 }
+                    }
+                  }
+                ],
                 position: {
-                  start: { line: 32, column: 57, offset: 1181 },
-                  end: { line: 32, column: 73, offset: 1197 }
+                  start: { line: 30, column: 26, offset: 1118 },
+                  end: { line: 30, column: 74, offset: 1166 }
                 }
               },
               {
                 type: 'text',
-                value: ' eager API.',
+                value: '.',
                 position: {
-                  start: { line: 32, column: 73, offset: 1197 },
-                  end: { line: 32, column: 84, offset: 1208 }
+                  start: { line: 30, column: 74, offset: 1166 },
+                  end: { line: 30, column: 75, offset: 1167 }
                 }
               }
             ],
             position: {
-              start: { line: 32, column: 1, offset: 1125 },
-              end: { line: 32, column: 84, offset: 1208 }
-            }
-          },
-          {
-            type: 'code',
-            lang: 'javascript',
-            meta: '[playground]',
-            value: 'const square = number => number ** 2\n' +
-              '\n' +
-              'const concat = (array, item) => array.concat(item)\n' +
-              '\n' +
-              'const squareConcatReducer = Transducer.map(concat, square)\n' +
-              '// now mapSquare is passed the reducer function concat; squareConcatReducer\n' +
-              '// is a reducer with chained functionality square and concat',
-            position: {
-              start: { line: 34, column: 1, offset: 1210 },
-              end: { line: 42, column: 4, offset: 1526 }
+              start: { line: 30, column: 1, offset: 1093 },
+              end: { line: 30, column: 75, offset: 1167 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 42, column: 4, offset: 1526 }
+          end: { line: 30, column: 75, offset: 1167 }
         }
       }
     },
@@ -364,12 +374,18 @@ export default [
   {
     name: 'Transducer.filter',
     synopsis: '```coffeescript [specscript]\n' +
-      'type Reducer = (accumulator any, item any)=>(nextAccumulator Promise|any)\n' +
+      'type Reducer = (\n' +
+      '  accumulator any,\n' +
+      '  value any,\n' +
+      '  indexOrKey? number|string,\n' +
+      '  collection? Foldable,\n' +
+      ')=>(nextAccumulator Promise|any)\n' +
+      '\n' +
       'type Transducer = Reducer=>Reducer\n' +
       '\n' +
       'Transducer.filter(predicate function) -> filteringTransducer Transducer\n' +
       '```',
-    description: "A reducer in filterable position creates a filtering reducer - one that skips items of the reducer's reducing operation if they test falsy by the predicate. It is possible to use an asynchronous predicate when filtering a reducer, however the implementation of `reduce` must support asynchronous operations. This library provides such an implementation as `reduce`.\n" +
+    description: 'Creates a filtering transducer. A filtering reducer skips items of reducing operation if they test falsy by the predicate. It is possible to use an asynchronous predicate, however the reducing operation must support asynchronous execution. This library provides such implementations as [reduce](/docs/reduce) and [transform](/docs/transform).\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const isOdd = number => number % 2 == 1\n' +
@@ -416,19 +432,25 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'type Reducer = (accumulator any, item any)=>(nextAccumulator Promise|any)\n' +
+            value: 'type Reducer = (\n' +
+              '  accumulator any,\n' +
+              '  value any,\n' +
+              '  indexOrKey? number|string,\n' +
+              '  collection? Foldable,\n' +
+              ')=>(nextAccumulator Promise|any)\n' +
+              '\n' +
               'type Transducer = Reducer=>Reducer\n' +
               '\n' +
               'Transducer.filter(predicate function) -> filteringTransducer Transducer',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 6, column: 4, offset: 214 }
+              end: { line: 12, column: 4, offset: 276 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 6, column: 4, offset: 214 }
+          end: { line: 12, column: 4, offset: 276 }
         }
       },
       description: {
@@ -439,48 +461,70 @@ export default [
             children: [
               {
                 type: 'text',
-                value: "A reducer in filterable position creates a filtering reducer - one that skips items of the reducer's reducing operation if they test falsy by the predicate. It is possible to use an asynchronous predicate when filtering a reducer, however the implementation of ",
+                value: 'Creates a filtering transducer. A filtering reducer skips items of reducing operation if they test falsy by the predicate. It is possible to use an asynchronous predicate, however the reducing operation must support asynchronous execution. This library provides such implementations as ',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 262, offset: 261 }
+                  end: { line: 1, column: 287, offset: 286 }
                 }
               },
               {
-                type: 'inlineCode',
-                value: 'reduce',
+                type: 'link',
+                title: null,
+                url: '/docs/reduce',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'reduce',
+                    position: {
+                      start: { line: 1, column: 288, offset: 287 },
+                      end: { line: 1, column: 294, offset: 293 }
+                    }
+                  }
+                ],
                 position: {
-                  start: { line: 1, column: 262, offset: 261 },
-                  end: { line: 1, column: 270, offset: 269 }
+                  start: { line: 1, column: 287, offset: 286 },
+                  end: { line: 1, column: 309, offset: 308 }
                 }
               },
               {
                 type: 'text',
-                value: ' must support asynchronous operations. This library provides such an implementation as ',
+                value: ' and ',
                 position: {
-                  start: { line: 1, column: 270, offset: 269 },
-                  end: { line: 1, column: 357, offset: 356 }
+                  start: { line: 1, column: 309, offset: 308 },
+                  end: { line: 1, column: 314, offset: 313 }
                 }
               },
               {
-                type: 'inlineCode',
-                value: 'reduce',
+                type: 'link',
+                title: null,
+                url: '/docs/transform',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'transform',
+                    position: {
+                      start: { line: 1, column: 315, offset: 314 },
+                      end: { line: 1, column: 324, offset: 323 }
+                    }
+                  }
+                ],
                 position: {
-                  start: { line: 1, column: 357, offset: 356 },
-                  end: { line: 1, column: 365, offset: 364 }
+                  start: { line: 1, column: 314, offset: 313 },
+                  end: { line: 1, column: 342, offset: 341 }
                 }
               },
               {
                 type: 'text',
                 value: '.',
                 position: {
-                  start: { line: 1, column: 365, offset: 364 },
-                  end: { line: 1, column: 366, offset: 365 }
+                  start: { line: 1, column: 342, offset: 341 },
+                  end: { line: 1, column: 343, offset: 342 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 366, offset: 365 }
+              end: { line: 1, column: 343, offset: 342 }
             }
           },
           {
@@ -497,14 +541,14 @@ export default [
               '  [1, 2, 3, 4, 5].reduce(concatOddNumbers, []),\n' +
               ') // [1, 3, 5]',
             position: {
-              start: { line: 3, column: 1, offset: 367 },
-              end: { line: 13, column: 4, offset: 614 }
+              start: { line: 3, column: 1, offset: 344 },
+              end: { line: 13, column: 4, offset: 591 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 13, column: 4, offset: 614 }
+          end: { line: 13, column: 4, offset: 591 }
         }
       }
     },
@@ -513,31 +557,30 @@ export default [
   {
     name: 'Transducer.flatMap',
     synopsis: '```coffeescript [specscript]\n' +
-      'type Reducer = (accumulator any, item any)=>(nextAccumulator Promise|any)\n' +
+      'type Reducer = (\n' +
+      '  accumulator any,\n' +
+      '  value any,\n' +
+      '  indexOrKey? number|string,\n' +
+      '  collection? Foldable,\n' +
+      ')=>(nextAccumulator Promise|any)\n' +
+      '\n' +
       'type Transducer = Reducer=>Reducer\n' +
       '\n' +
       'Transducer.flatMap(flatMapper) -> flatMappingTransducer Transducer\n' +
       '```',
-    description: "Additionally, `flatMap` is a powerful option when working with transducers. A flatMapping transducer applies a flatMapper to each item of a reducer's reducing operation, calling each item of each execution with the reducer.\n" +
+    description: 'Creates a flatMapping transducer. A flatMapping transducer applies the flatMapping function to each item of the reducing operation, concatenating the results of the flatMapper execution into the final result. It is possible to use an asynchronous flatMapper, however the reducing operation must support asynchronous execution. This library provides such implementations as [reduce](/docs/reduce) and [transform](/docs/transform).\n' +
       '\n' +
       '```javascript [playground]\n' +
-      'const isOdd = number => number % 2 == 1\n' +
-      '\n' +
       'const powers = number => [number, number ** 2, number ** 3]\n' +
       '\n' +
-      'const oddPowers = pipe([\n' +
-      '  filter(isOdd),\n' +
-      '  flatMap(powers),\n' +
-      '])\n' +
-      '\n' +
-      'const arrayConcat = (array, value) => array.concat(value)\n' +
+      'const numbers = [1, 2, 3, 4, 5]\n' +
       '\n' +
       'console.log(\n' +
-      '  reduce(oddPowers(arrayConcat), [])([1, 2, 3, 4, 5]),\n' +
-      ') // [1, 1, 1, 3, 9, 27, 5, 25, 125]\n' +
+      '  transform(numbers, Transducer.flatMap(powers), [])\n' +
+      ') // [1, 1, 1, 2, 4, 8, 3, 9, 27, 4, 16, 64, 5, 25, 125]\n' +
       '```\n' +
       '\n' +
-      'In the case above, each item of the array of numbers returned by `powers` is called with the reducer `arrayConcat` for flattening into the final result.',
+      'Read more on transducers [here](/blog/transducers-crash-course-rubico-v2).',
     mdast: {
       name: {
         type: 'root',
@@ -572,19 +615,25 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'type Reducer = (accumulator any, item any)=>(nextAccumulator Promise|any)\n' +
+            value: 'type Reducer = (\n' +
+              '  accumulator any,\n' +
+              '  value any,\n' +
+              '  indexOrKey? number|string,\n' +
+              '  collection? Foldable,\n' +
+              ')=>(nextAccumulator Promise|any)\n' +
+              '\n' +
               'type Transducer = Reducer=>Reducer\n' +
               '\n' +
               'Transducer.flatMap(flatMapper) -> flatMappingTransducer Transducer',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 6, column: 4, offset: 209 }
+              end: { line: 12, column: 4, offset: 271 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 6, column: 4, offset: 209 }
+          end: { line: 12, column: 4, offset: 271 }
         }
       },
       description: {
@@ -595,55 +644,86 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Additionally, ',
+                value: 'Creates a flatMapping transducer. A flatMapping transducer applies the flatMapping function to each item of the reducing operation, concatenating the results of the flatMapper execution into the final result. It is possible to use an asynchronous flatMapper, however the reducing operation must support asynchronous execution. This library provides such implementations as ',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 15, offset: 14 }
+                  end: { line: 1, column: 374, offset: 373 }
                 }
               },
               {
-                type: 'inlineCode',
-                value: 'flatMap',
+                type: 'link',
+                title: null,
+                url: '/docs/reduce',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'reduce',
+                    position: {
+                      start: { line: 1, column: 375, offset: 374 },
+                      end: { line: 1, column: 381, offset: 380 }
+                    }
+                  }
+                ],
                 position: {
-                  start: { line: 1, column: 15, offset: 14 },
-                  end: { line: 1, column: 24, offset: 23 }
+                  start: { line: 1, column: 374, offset: 373 },
+                  end: { line: 1, column: 396, offset: 395 }
                 }
               },
               {
                 type: 'text',
-                value: " is a powerful option when working with transducers. A flatMapping transducer applies a flatMapper to each item of a reducer's reducing operation, calling each item of each execution with the reducer.",
+                value: ' and ',
                 position: {
-                  start: { line: 1, column: 24, offset: 23 },
-                  end: { line: 1, column: 224, offset: 223 }
+                  start: { line: 1, column: 396, offset: 395 },
+                  end: { line: 1, column: 401, offset: 400 }
+                }
+              },
+              {
+                type: 'link',
+                title: null,
+                url: '/docs/transform',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'transform',
+                    position: {
+                      start: { line: 1, column: 402, offset: 401 },
+                      end: { line: 1, column: 411, offset: 410 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 401, offset: 400 },
+                  end: { line: 1, column: 429, offset: 428 }
+                }
+              },
+              {
+                type: 'text',
+                value: '.',
+                position: {
+                  start: { line: 1, column: 429, offset: 428 },
+                  end: { line: 1, column: 430, offset: 429 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 224, offset: 223 }
+              end: { line: 1, column: 430, offset: 429 }
             }
           },
           {
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: 'const isOdd = number => number % 2 == 1\n' +
+            value: 'const powers = number => [number, number ** 2, number ** 3]\n' +
               '\n' +
-              'const powers = number => [number, number ** 2, number ** 3]\n' +
-              '\n' +
-              'const oddPowers = pipe([\n' +
-              '  filter(isOdd),\n' +
-              '  flatMap(powers),\n' +
-              '])\n' +
-              '\n' +
-              'const arrayConcat = (array, value) => array.concat(value)\n' +
+              'const numbers = [1, 2, 3, 4, 5]\n' +
               '\n' +
               'console.log(\n' +
-              '  reduce(oddPowers(arrayConcat), [])([1, 2, 3, 4, 5]),\n' +
-              ') // [1, 1, 1, 3, 9, 27, 5, 25, 125]',
+              '  transform(numbers, Transducer.flatMap(powers), [])\n' +
+              ') // [1, 1, 1, 2, 4, 8, 3, 9, 27, 4, 16, 64, 5, 25, 125]',
             position: {
-              start: { line: 3, column: 1, offset: 225 },
-              end: { line: 18, column: 4, offset: 586 }
+              start: { line: 3, column: 1, offset: 431 },
+              end: { line: 11, column: 4, offset: 678 }
             }
           },
           {
@@ -651,54 +731,49 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'In the case above, each item of the array of numbers returned by ',
+                value: 'Read more on transducers ',
                 position: {
-                  start: { line: 20, column: 1, offset: 588 },
-                  end: { line: 20, column: 66, offset: 653 }
+                  start: { line: 13, column: 1, offset: 680 },
+                  end: { line: 13, column: 26, offset: 705 }
                 }
               },
               {
-                type: 'inlineCode',
-                value: 'powers',
+                type: 'link',
+                title: null,
+                url: '/blog/transducers-crash-course-rubico-v2',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'here',
+                    position: {
+                      start: { line: 13, column: 27, offset: 706 },
+                      end: { line: 13, column: 31, offset: 710 }
+                    }
+                  }
+                ],
                 position: {
-                  start: { line: 20, column: 66, offset: 653 },
-                  end: { line: 20, column: 74, offset: 661 }
-                }
-              },
-              {
-                type: 'text',
-                value: ' is called with the reducer ',
-                position: {
-                  start: { line: 20, column: 74, offset: 661 },
-                  end: { line: 20, column: 102, offset: 689 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'arrayConcat',
-                position: {
-                  start: { line: 20, column: 102, offset: 689 },
-                  end: { line: 20, column: 115, offset: 702 }
+                  start: { line: 13, column: 26, offset: 705 },
+                  end: { line: 13, column: 74, offset: 753 }
                 }
               },
               {
                 type: 'text',
-                value: ' for flattening into the final result.',
+                value: '.',
                 position: {
-                  start: { line: 20, column: 115, offset: 702 },
-                  end: { line: 20, column: 153, offset: 740 }
+                  start: { line: 13, column: 74, offset: 753 },
+                  end: { line: 13, column: 75, offset: 754 }
                 }
               }
             ],
             position: {
-              start: { line: 20, column: 1, offset: 588 },
-              end: { line: 20, column: 153, offset: 740 }
+              start: { line: 13, column: 1, offset: 680 },
+              end: { line: 13, column: 75, offset: 754 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 20, column: 153, offset: 740 }
+          end: { line: 13, column: 75, offset: 754 }
         }
       }
     },
@@ -707,10 +782,25 @@ export default [
   {
     name: 'Transducer.forEach',
     synopsis: '```coffeescript [specscript]\n' +
-      'type Reducer = (accumulator any, item any)=>(nextAccumulator Promise|any)\n' +
+      'type Reducer = (\n' +
+      '  accumulator any,\n' +
+      '  value any,\n' +
+      '  indexOrKey? number|string,\n' +
+      '  collection? Foldable,\n' +
+      ')=>(nextAccumulator Promise|any)\n' +
+      '\n' +
       'type Transducer = Reducer=>Reducer\n' +
       '\n' +
       'Transducer.forEach(func function) -> forEachTransducer Transducer\n' +
+      '```',
+    description: 'Creates an effectful pasthrough transducer. The effectful passthrough transducer applies the effectful function to each item of the reducing operation, leaving the reducing operation unchanged. It is possible to use an asynchronous effectful function, however the reducing operation must support asynchronous execution. This library provides such implementations as [reduce](/docs/reduce) and [transform](/docs/transform).\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const numbers = [1, 2, 3, 4, 5]\n' +
+      'transform(numbers, compose([\n' +
+      '  Transducer.map(number => number ** 2),\n' +
+      '  Transducer.forEach(console.log), // 1 4 9 16 25\n' +
+      ']), null)\n' +
       '```',
     mdast: {
       name: {
@@ -746,19 +836,119 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'type Reducer = (accumulator any, item any)=>(nextAccumulator Promise|any)\n' +
+            value: 'type Reducer = (\n' +
+              '  accumulator any,\n' +
+              '  value any,\n' +
+              '  indexOrKey? number|string,\n' +
+              '  collection? Foldable,\n' +
+              ')=>(nextAccumulator Promise|any)\n' +
+              '\n' +
               'type Transducer = Reducer=>Reducer\n' +
               '\n' +
               'Transducer.forEach(func function) -> forEachTransducer Transducer',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 6, column: 4, offset: 208 }
+              end: { line: 12, column: 4, offset: 270 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 6, column: 4, offset: 208 }
+          end: { line: 12, column: 4, offset: 270 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Creates an effectful pasthrough transducer. The effectful passthrough transducer applies the effectful function to each item of the reducing operation, leaving the reducing operation unchanged. It is possible to use an asynchronous effectful function, however the reducing operation must support asynchronous execution. This library provides such implementations as ',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 367, offset: 366 }
+                }
+              },
+              {
+                type: 'link',
+                title: null,
+                url: '/docs/reduce',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'reduce',
+                    position: {
+                      start: { line: 1, column: 368, offset: 367 },
+                      end: { line: 1, column: 374, offset: 373 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 367, offset: 366 },
+                  end: { line: 1, column: 389, offset: 388 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' and ',
+                position: {
+                  start: { line: 1, column: 389, offset: 388 },
+                  end: { line: 1, column: 394, offset: 393 }
+                }
+              },
+              {
+                type: 'link',
+                title: null,
+                url: '/docs/transform',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'transform',
+                    position: {
+                      start: { line: 1, column: 395, offset: 394 },
+                      end: { line: 1, column: 404, offset: 403 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 394, offset: 393 },
+                  end: { line: 1, column: 422, offset: 421 }
+                }
+              },
+              {
+                type: 'text',
+                value: '.',
+                position: {
+                  start: { line: 1, column: 422, offset: 421 },
+                  end: { line: 1, column: 423, offset: 422 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 423, offset: 422 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'const numbers = [1, 2, 3, 4, 5]\n' +
+              'transform(numbers, compose([\n' +
+              '  Transducer.map(number => number ** 2),\n' +
+              '  Transducer.forEach(console.log), // 1 4 9 16 25\n' +
+              ']), null)',
+            position: {
+              start: { line: 3, column: 1, offset: 424 },
+              end: { line: 9, column: 4, offset: 616 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 9, column: 4, offset: 616 }
         }
       }
     },
@@ -767,10 +957,30 @@ export default [
   {
     name: 'Transducer.passthrough',
     synopsis: '```coffeescript [specscript]\n' +
-      'type Reducer = (accumulator any, item any)=>(nextAccumulator Promise|any)\n' +
+      'type Reducer = (\n' +
+      '  accumulator any,\n' +
+      '  value any,\n' +
+      '  indexOrKey? number|string,\n' +
+      '  collection? Foldable,\n' +
+      ')=>(nextAccumulator Promise|any)\n' +
+      '\n' +
       'type Transducer = Reducer=>Reducer\n' +
       '\n' +
       'Transducer.passthrough(func function) -> passthroughTransducer Transducer\n' +
+      '```',
+    description: 'Creates a pasthrough transducer. The passthrough transducer passes each item of the reducing operation through, leaving the reducing operation unchanged.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const createAsyncNumbers = async function* () {\n' +
+      '  let number = 0\n' +
+      '  while (number < 10) {\n' +
+      '    yield number\n' +
+      '    number += 1\n' +
+      '  }\n' +
+      '}\n' +
+      '\n' +
+      'transform(createAsyncNumbers(), Transducer.passthrough, [])\n' +
+      '  .then(console.log) // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\n' +
       '```',
     mdast: {
       name: {
@@ -806,19 +1016,70 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'type Reducer = (accumulator any, item any)=>(nextAccumulator Promise|any)\n' +
+            value: 'type Reducer = (\n' +
+              '  accumulator any,\n' +
+              '  value any,\n' +
+              '  indexOrKey? number|string,\n' +
+              '  collection? Foldable,\n' +
+              ')=>(nextAccumulator Promise|any)\n' +
+              '\n' +
               'type Transducer = Reducer=>Reducer\n' +
               '\n' +
               'Transducer.passthrough(func function) -> passthroughTransducer Transducer',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 6, column: 4, offset: 216 }
+              end: { line: 12, column: 4, offset: 278 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 6, column: 4, offset: 216 }
+          end: { line: 12, column: 4, offset: 278 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Creates a pasthrough transducer. The passthrough transducer passes each item of the reducing operation through, leaving the reducing operation unchanged.',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 154, offset: 153 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 154, offset: 153 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'const createAsyncNumbers = async function* () {\n' +
+              '  let number = 0\n' +
+              '  while (number < 10) {\n' +
+              '    yield number\n' +
+              '    number += 1\n' +
+              '  }\n' +
+              '}\n' +
+              '\n' +
+              'transform(createAsyncNumbers(), Transducer.passthrough, [])\n' +
+              '  .then(console.log) // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]',
+            position: {
+              start: { line: 3, column: 1, offset: 155 },
+              end: { line: 14, column: 4, offset: 429 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 14, column: 4, offset: 429 }
         }
       }
     },
@@ -827,10 +1088,47 @@ export default [
   {
     name: 'Transducer.tryCatch',
     synopsis: '```coffeescript [specscript]\n' +
-      'type Reducer = (accumulator any, item any)=>(nextAccumulator Promise|any)\n' +
+      'type Reducer = (\n' +
+      '  accumulator any,\n' +
+      '  item any,\n' +
+      '  indexOrKey? number|string,\n' +
+      '  collection? Foldable,\n' +
+      ')=>(nextAccumulator Promise|any)\n' +
+      '\n' +
       'type Transducer = Reducer=>Reducer\n' +
       '\n' +
-      'Transducer.tryCatch(func function) -> tryCatchTransducer Transducer\n' +
+      'Transducer.tryCatch(\n' +
+      '  transducerTryer Transducer,\n' +
+      '  catcher (error Error, item any)=>Promise|any,\n' +
+      ') -> tryCatchTransducer Transducer\n' +
+      '```',
+    description: 'Creates an error handling transducer. The error handling transducer wraps a transducer and catches any errors thrown by the transducer with the catcher function. The catcher function is provided the error as well as the original item (before any processing by the transducer) for which the error was thrown. It is possible for either the transducer or the catcher to be asynchronous, however the reducing operation must support asynchronous execution. This library provides such implementations as [reduce](/docs/reduce) and [transform](/docs/transform).\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const db = new Map()\n' +
+      "db.set('a', { id: 'a', name: 'George' })\n" +
+      "db.set('b', { id: 'b', name: 'Jane' })\n" +
+      "db.set('c', { id: 'c', name: 'Jill' })\n" +
+      "db.set('e', { id: 'e', name: 'Jim' })\n" +
+      '\n' +
+      "const userIds = ['a', 'b', 'c', 'd', 'e']\n" +
+      '\n' +
+      'transform(userIds, Transducer.tryCatch(compose([\n' +
+      '  Transducer.map(async userId => {\n' +
+      '    if (db.has(userId)) {\n' +
+      '      return db.get(userId)\n' +
+      '    }\n' +
+      '    throw new Error(`user ${userId} not found`)\n' +
+      '  }),\n' +
+      '\n' +
+      '  Transducer.forEach(user => {\n' +
+      "    console.log('Found', user.name)\n" +
+      '  })\n' +
+      ']), (error, userId) => {\n' +
+      '  console.error(error)\n' +
+      "  console.log('userId in catcher:', userId)\n" +
+      '  // original userId for which the error was thrown is provided\n' +
+      '}), null)\n' +
       '```',
     mdast: {
       name: {
@@ -866,19 +1164,141 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'type Reducer = (accumulator any, item any)=>(nextAccumulator Promise|any)\n' +
+            value: 'type Reducer = (\n' +
+              '  accumulator any,\n' +
+              '  item any,\n' +
+              '  indexOrKey? number|string,\n' +
+              '  collection? Foldable,\n' +
+              ')=>(nextAccumulator Promise|any)\n' +
+              '\n' +
               'type Transducer = Reducer=>Reducer\n' +
               '\n' +
-              'Transducer.tryCatch(func function) -> tryCatchTransducer Transducer',
+              'Transducer.tryCatch(\n' +
+              '  transducerTryer Transducer,\n' +
+              '  catcher (error Error, item any)=>Promise|any,\n' +
+              ') -> tryCatchTransducer Transducer',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 6, column: 4, offset: 210 }
+              end: { line: 15, column: 4, offset: 337 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 6, column: 4, offset: 210 }
+          end: { line: 15, column: 4, offset: 337 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Creates an error handling transducer. The error handling transducer wraps a transducer and catches any errors thrown by the transducer with the catcher function. The catcher function is provided the error as well as the original item (before any processing by the transducer) for which the error was thrown. It is possible for either the transducer or the catcher to be asynchronous, however the reducing operation must support asynchronous execution. This library provides such implementations as ',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 499, offset: 498 }
+                }
+              },
+              {
+                type: 'link',
+                title: null,
+                url: '/docs/reduce',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'reduce',
+                    position: {
+                      start: { line: 1, column: 500, offset: 499 },
+                      end: { line: 1, column: 506, offset: 505 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 499, offset: 498 },
+                  end: { line: 1, column: 521, offset: 520 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' and ',
+                position: {
+                  start: { line: 1, column: 521, offset: 520 },
+                  end: { line: 1, column: 526, offset: 525 }
+                }
+              },
+              {
+                type: 'link',
+                title: null,
+                url: '/docs/transform',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'transform',
+                    position: {
+                      start: { line: 1, column: 527, offset: 526 },
+                      end: { line: 1, column: 536, offset: 535 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 526, offset: 525 },
+                  end: { line: 1, column: 554, offset: 553 }
+                }
+              },
+              {
+                type: 'text',
+                value: '.',
+                position: {
+                  start: { line: 1, column: 554, offset: 553 },
+                  end: { line: 1, column: 555, offset: 554 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 555, offset: 554 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'const db = new Map()\n' +
+              "db.set('a', { id: 'a', name: 'George' })\n" +
+              "db.set('b', { id: 'b', name: 'Jane' })\n" +
+              "db.set('c', { id: 'c', name: 'Jill' })\n" +
+              "db.set('e', { id: 'e', name: 'Jim' })\n" +
+              '\n' +
+              "const userIds = ['a', 'b', 'c', 'd', 'e']\n" +
+              '\n' +
+              'transform(userIds, Transducer.tryCatch(compose([\n' +
+              '  Transducer.map(async userId => {\n' +
+              '    if (db.has(userId)) {\n' +
+              '      return db.get(userId)\n' +
+              '    }\n' +
+              '    throw new Error(`user ${userId} not found`)\n' +
+              '  }),\n' +
+              '\n' +
+              '  Transducer.forEach(user => {\n' +
+              "    console.log('Found', user.name)\n" +
+              '  })\n' +
+              ']), (error, userId) => {\n' +
+              '  console.error(error)\n' +
+              "  console.log('userId in catcher:', userId)\n" +
+              '  // original userId for which the error was thrown is provided\n' +
+              '}), null)',
+            position: {
+              start: { line: 3, column: 1, offset: 556 },
+              end: { line: 28, column: 4, offset: 1245 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 28, column: 4, offset: 1245 }
         }
       }
     },

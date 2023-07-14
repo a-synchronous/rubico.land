@@ -2,6 +2,7 @@
 
 require('rubico/global')
 const rubico = require('rubico')
+const Transducer = require('rubico/Transducer')
 const x = require('rubico/x')
 const IndexHtml = require('./internal/IndexHtml')
 const FileSystem = require('./internal/FileSystem')
@@ -75,13 +76,26 @@ const main = async function (options) {
     'filter.withIndex',
     'not.sync',
   ]
+  const transducerFunctionNames = FunctionNames(Transducer)
 
-  for (const functionName of [...coreFunctionNames, ...deprecatedFunctionNames]) {
+  for (const functionName of [
+    coreFunctionNames,
+    deprecatedFunctionNames,
+  ].flat(1)) {
     console.log(`Creating docs/${functionName}`)
     await publicFs.writeFile(`docs/${functionName}.html`, IndexHtml({
       path: `/docs/${functionName}`,
       title: `${functionName} - rubico documentation`,
       description: `Reference for ${functionName}`,
+    }))
+  }
+
+  for (const functionName of transducerFunctionNames) {
+    console.log(`Creating docs/${functionName}`)
+    await publicFs.writeFile(`docs/Transducer.${functionName}.html`, IndexHtml({
+      path: `/docs/Transducer.${functionName}`,
+      title: `Transducer.${functionName} - rubico documentation`,
+      description: `Reference for Transducer.${functionName}`,
     }))
   }
 
