@@ -1,10 +1,12 @@
 import NavLink from './NavLink.js'
 import Slider from './Slider.js'
 import GithubMark from './GithubMark.js'
+import HamburgerMenu from './HamburgerMenu.js'
 import HamburgerMenuIcon from './HamburgerMenuIcon.js'
 import setCookie from './setCookie.js'
 import useMediaQuery from './useMediaQuery.js'
 import useRubicoVersion from './useRubicoVersion.js'
+import useIsHamburgerMenuActive from './useIsHamburgerMenuActive.js'
 
 /**
  * @name Layout
@@ -23,7 +25,9 @@ const Layout = ReactElement(props => {
 
   const [mediaQuery] = useMediaQuery('(max-width: 768px)')
   const [rubicoVersion, setRubicoVersion] = useRubicoVersion()
-  const [isHamburgerMenuActive, setIsHamburgerMenuActive] = useState(false)
+  const [
+    isHamburgerMenuActive, setIsHamburgerMenuActive,
+  ] = useIsHamburgerMenuActive()
 
   useEffect(function resetHamburgerMenu() {
     if (!mediaQuery.matches && isHamburgerMenuActive) {
@@ -92,17 +96,7 @@ const Layout = ReactElement(props => {
       translateOffset: '10%',
     }, [
       Main([children]),
-      Div({ id: 'hamburger-menu' }, [
-        Nav([
-          NavLink({ ...props, href: '/' }, 'Home'),
-          Hr(),
-          NavLink({ ...props, href: '/tour' }, 'Tour'),
-          Hr(),
-          NavLink({ ...props, href: '/docs' }, 'Docs'),
-          Hr(),
-          NavLink({ ...props, href: '/blog' }, 'Blog'),
-        ]),
-      ]),
+      HamburgerMenu(props),
     ]),
 
     Footer([

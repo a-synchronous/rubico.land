@@ -2,7 +2,6 @@
 const BlogItem = ({
   title, author, published, path: blogItemPath, content, back = '/blog',
 }) => {
-  console.log('BlogItem', { blogItemPath })
   return ReactElement(props => {
     const { goto, path, children } = props,
       isExpanded = path.endsWith('/')

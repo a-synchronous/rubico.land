@@ -6,6 +6,7 @@ import NotFound from './NotFound.js'
 import Analytics from './Analytics.js'
 import PathTitle from './PathTitle.js'
 import useRubicoVersion from './useRubicoVersion.js'
+import useIsHamburgerMenuActive from './useIsHamburgerMenuActive.js'
 import getCookie from './getCookie.js'
 
 // Tour Docs Blog
@@ -31,10 +32,13 @@ const Root = ReactElement(props => {
     dispatch({ type: 'SET_PATH', path: window.location.pathname })
   }
 
+  const [_, setIsHamburgerMenuActive] = useIsHamburgerMenuActive()
+
   const goto = path => {
     history.pushState({ path }, '', path)
     dispatch({ type: 'SET_PATH', path })
     document.title = PathTitle(path)
+    setIsHamburgerMenuActive(false)
     setTimeout(() => {
       const active = document.querySelector('#active-spacer')
       if (active != null) {
