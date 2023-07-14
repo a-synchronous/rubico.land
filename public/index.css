@@ -93,9 +93,9 @@ h4 {
 #layout main {
   border-radius: 10px;
   background-color: #fff;
-  padding: 5px 3%;
+  padding: 5px 2%;
   padding-bottom: 25px;
-  width: 90%;
+  width: 94%;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   margin: 25px auto;
 }
@@ -120,6 +120,17 @@ h4 {
     padding-top: 0px;
   }
 }
+
+#hamburger-menu {
+  display: none;
+}
+#hamburger-menu.active {
+  display: block;
+}
+/*
+@media only screen and (max-width: 768px) {
+}
+*/
 
 .slider {
   position: relative;
@@ -151,6 +162,7 @@ h4 {
   overflow-y: hidden;
   cursor: pointer;
   border: none;
+  outline: none;
   padding: 0;
   position: absolute;
   left: -50px;
@@ -180,7 +192,7 @@ h4 {
 #hamburger-menu nav > .nav-link {
   display: block;
   font-size: 28px;
-  padding: 15px 3%;
+  padding: 5px 3%;
 }
 #hamburger-menu nav > hr {
   position: relative;
@@ -192,6 +204,23 @@ h4 {
 }
 #hamburger-menu nav > .nav-link.active {
   text-decoration: none;
+}
+
+#hamburger-menu .docs-nav nav {
+  padding-top: 10px;
+  padding-right: 2%;
+  border-right: 1px solid #e4e4e4;
+}
+#hamburger-menu .docs-nav nav section {
+  margin-bottom: 10px;
+}
+#hamburger-menu .docs-nav nav h4 {
+  font-size: 1.5rem;
+  padding: 3px 0px;
+}
+#hamburger-menu .docs-nav nav .docs-nav-item {
+  font-size: 1.2rem;
+  padding: 1px 0px;
 }
 
 #layout > nav > .home {
@@ -229,6 +258,7 @@ h4 {
   position: relative;
   top: 3px;
   border: none;
+  outline: none;
   padding: 6px 5px;
   border-radius: 5px;
   margin-left: 5px;
@@ -350,31 +380,44 @@ h4 {
   display: flex;
 }
 
-#docs > nav {
+#docs .sidebar {
+}
+@media only screen and (max-width: 768px) {
+  #docs .sidebar {
+    display: none;
+  }
+}
+
+#docs .sidebar nav {
   padding-top: 10px;
   padding-right: 2%;
   border-right: 1px solid #e4e4e4;
 }
-#docs > nav section {
+#docs .sidebar nav section {
   margin-bottom: 10px;
 }
-#docs > nav h4 {
+#docs .sidebar nav h4 {
   font-size: 18px;
   padding: 3px 0px;
 }
-#docs > nav .docs-nav-item {
+#docs .sidebar nav .docs-nav-item {
   padding: 1px 0px;
 }
 
-#docs > .viewer {
+#docs .viewer {
   width: 90%;
   padding-left: 2%;
 }
 
-#docs > .viewer h1 {
+#docs .viewer h1 {
   font-size: 42px;
   margin: 12px 0px;
   color: #65799B;
+}
+@media only screen and (max-width: 768px) {
+  #docs .viewer h1 {
+    font-size: 2rem;
+  }
 }
 
 #retractor-header:after {

@@ -55,7 +55,9 @@ const Docs = ReactElement(props => {
 
   return Layout(props, [
     Div({ id: 'docs' }, [
-      DocsNav(props),
+      Div({ class: 'sidebar' }, [
+        DocsNav(props),
+      ]),
 
       mdastMap.size == 0 ? []
       : mdastMap.has(docsViewerFuncName) ? [
