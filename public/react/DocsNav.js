@@ -210,16 +210,6 @@ const DocsNav = ReactElement(props => {
     ]),
 
     Section([
-      H4('Create transducers'),
-      CoreDocsNavItem('Transducer.map'),
-      CoreDocsNavItem('Transducer.filter'),
-      CoreDocsNavItem('Transducer.flatMap'),
-      CoreDocsNavItem('Transducer.forEach'),
-      CoreDocsNavItem('Transducer.passthrough'),
-      CoreDocsNavItem('Transducer.tryCatch'),
-    ]),
-
-    Section([
       H4('Compose predicates'),
       CoreDocsNavItem('and'),
       CoreDocsNavItem('or'),
@@ -244,6 +234,16 @@ const DocsNav = ReactElement(props => {
       CoreDocsNavItem('curry'),
       CoreDocsNavItem('curry.arity'),
       CoreDocsNavItem('__'),
+    ]),
+
+    Section([
+      H4('Create transducers'),
+      CoreDocsNavItem('Transducer.map'),
+      CoreDocsNavItem('Transducer.filter'),
+      CoreDocsNavItem('Transducer.flatMap'),
+      CoreDocsNavItem('Transducer.forEach'),
+      CoreDocsNavItem('Transducer.passthrough'),
+      CoreDocsNavItem('Transducer.tryCatch'),
     ]),
 
     Section([
