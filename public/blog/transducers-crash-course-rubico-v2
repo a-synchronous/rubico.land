@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Transducers Crash Course for rubico V1</title>
+  <title>Transducers Crash Course for rubico V2</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width">
-  <meta name="description" content="A crash course in rubico v1 transducers. Transducers enable composable and memory efficient wrangling of very large or even infinite sets of data." />
+  <meta name="description" content="A crash course in rubico v2 transducers. Transducers enable composable and memory efficient wrangling of very large or even infinite sets of data." />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Transducers Crash Course for rubico V1" />
-  <meta name="twitter:description" content="A crash course in rubico v1 transducers. Transducers enable composable and memory efficient wrangling of very large or even infinite sets of data." />
+  <meta name="twitter:title" content="Transducers Crash Course for rubico V2" />
+  <meta name="twitter:description" content="A crash course in rubico v2 transducers. Transducers enable composable and memory efficient wrangling of very large or even infinite sets of data." />
   <meta name="twitter:image" content="/assets/android-chrome-192x192.png" />
-  <meta property="og:title" content="Transducers Crash Course for rubico V1" />
+  <meta property="og:title" content="Transducers Crash Course for rubico V2" />
   <meta property="og:type" content="object" />
   <meta property="og:image" content="/assets/android-chrome-192x192.png" />
-  <meta property="og:url" content="https://rubico.land/blog/transducers-crash-course-rubico-v1" />
-  <meta property="og:description" content="A crash course in rubico v1 transducers. Transducers enable composable and memory efficient wrangling of very large or even infinite sets of data." />
+  <meta property="og:url" content="https://rubico.land/blog/transducers-crash-course-rubico-v2" />
+  <meta property="og:description" content="A crash course in rubico v2 transducers. Transducers enable composable and memory efficient wrangling of very large or even infinite sets of data." />
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="canonical" href="https://rubico.land/blog/transducers-crash-course-rubico-v1">
+  <link rel="canonical" href="https://rubico.land/blog/transducers-crash-course-rubico-v2">
 
   <script src="https://unpkg.com/rubico@2.0.1/dist/rubico.min.js" crossorigin></script>
   <script src="https://unpkg.com/rubico@2.0.1/dist/Transducer.min.js" crossorigin></script>

@@ -75,6 +75,10 @@ h4 {
   margin: 0;
 }
 
+.image {
+  display: inline;
+}
+
 .nav-spacer {
   width: 100%;
 }
@@ -98,10 +102,11 @@ h4 {
   width: 94%;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   margin: 25px auto;
+  min-height: 100vh;
 }
 @media only screen and (max-width: 768px) {
   #layout main {
-    width: 94%;
+    width: 96%;
   }
 }
 #layout > nav {
@@ -208,10 +213,10 @@ h4 {
 
 #hamburger-menu .docs-nav nav {
   padding-top: 10px;
-  padding-right: 2%;
-  border-right: 1px solid #e4e4e4;
+  padding-bottom: 10px;
 }
 #hamburger-menu .docs-nav nav section {
+  padding-left: 10px;
   margin-bottom: 10px;
 }
 #hamburger-menu .docs-nav nav h4 {
@@ -314,6 +319,12 @@ h4 {
 #react-root {}
 
 #home {
+  padding: 0px 15%;
+}
+@media only screen and (max-width: 618px) {
+  #home {
+    padding: 0;
+  }
 }
 #home .cta-links {
   display: flex;
@@ -357,6 +368,14 @@ h4 {
   background-color: #f6f8fa
 }
 
+#tour {
+  padding: 0px 15%;
+}
+@media only screen and (max-width: 768px) {
+  #tour {
+    padding: 0;
+  }
+}
 
 #back-to-top {
   border: none;
@@ -381,6 +400,9 @@ h4 {
 }
 
 #docs .sidebar {
+  padding-top: 10px;
+  padding-right: 2%;
+  border-right: 1px solid #e4e4e4;
 }
 @media only screen and (max-width: 768px) {
   #docs .sidebar {
@@ -389,9 +411,6 @@ h4 {
 }
 
 #docs .sidebar nav {
-  padding-top: 10px;
-  padding-right: 2%;
-  border-right: 1px solid #e4e4e4;
 }
 #docs .sidebar nav section {
   margin-bottom: 10px;
@@ -529,6 +548,14 @@ h4 {
   opacity: 1;
 }
 
+#blog {
+  padding: 0px 15%;
+}
+@media only screen and (max-width: 768px) {
+  #blog {
+    padding: 0px;
+  }
+}
 #blog > article > p > img {
   width: 100%;
   max-width: 650px;
@@ -545,20 +572,64 @@ h4 {
   color: grey;
 }
 
-.blog-item > p {
+.blog-post {
+  margin-bottom: 25px;
+}
+.blog-post.inactive {
+  display: none;
+}
+
+.blog-post > p {
   margin-right: 18px;
-  margin-bottom: 36px;
+  margin-bottom: 15px;
+  margin-top: 0px;
   color: grey;
   opacity: 1;
   transition-property: opacity;
   transition-duration: 0.28s;
   transition-timing-function: ease;
 }
-.blog-item > p.inactive {
+
+.blog-post .cover {
+  text-align: center;
+  margin-bottom: 15px;
+}
+.blog-post .cover > img {
+  width: 42%;
+}
+@media only screen and (max-width: 768px) {
+  .blog-post .cover > img {
+    width: 85%;
+  }
+}
+
+.blog-post > h3 {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+.blog-post > button.read-more {
+  border: none;
+  background-color: #65799b;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 10px;
+  font-weight: 650;
+  cursor: pointer;
+  transition: background-color 0.18s ease;
+  outline: none;
+}
+.blog-post > button.read-more:hover {
+  background-color: #5a6c8b;
+}
+.blog-post > p.inactive {
   opacity: 0;
   margin: 0;
 }
-.blog-item > a {
+.blog-post > a {
   display: flex;
   font-size: 16px;
   align-items: center;
@@ -567,29 +638,55 @@ h4 {
   transition-duration: 0.28s, 0.28s;
   transition-timing-function: ease, ease;
 }
-.blog-item > a > img {
+.blog-post > a > img {
   filter: grayscale(100%);
 }
-.blog-item > a:hover {
-  text-decoration: underline;
+.blog-post > a:hover {
 }
-.blog-item > a.active {
-  font-size: 18px;
+.blog-post > a.active {
   color: black;
   text-decoration: none;
 }
-.blog-item article > p > img {
-  width: 85%;
+.blog-post article > p > .image {
+  display: block;
+  text-align: center;
+}
+.blog-post article > p > .image > img {
+  width: 42%;
+}
+@media only screen and (max-width: 768px) {
+  .blog-post article > p > .image > img {
+    width: 85%;
+  }
 }
 
-.expander-arrow {
+.blog-post > a > .down-arrow-svg {
   position: relative;
   margin-left: 18px;
-  width: 26px;
-  transition: transform 0.12s;
+  width: 35px;
+  transition: transform 0.12s, opacity 0.42s;
+  max-width: 6vw;
+  height: 20px;
+  opacity: 0;
+  transform: rotate(-90deg);
 }
-.expander-arrow:hover {
-  transform: rotate(180deg);
+@media only screen and (max-width: 768px) {
+  .blog-post > a > .down-arrow-svg {
+    width: 100%;
+  }
+}
+
+.blog-post > a.active > .down-arrow-svg {
+  transform: rotate(0deg);
+  opacity: 1;
+}
+
+.blog-post > a > .down-arrow-svg > rect {
+  fill: #65799b;
+}
+.blog-post > a.active > .down-arrow-svg > rect {
+  fill: #000;
+  transition: fill 0.25s;
 }
 
 .next-arrow {

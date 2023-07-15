@@ -1,3 +1,5 @@
+import useActiveBlogPostHref from './useActiveBlogPostHref.js'
+
 /**
  * @name NavLink
  *
@@ -22,11 +24,14 @@ const NavLink = ReactElement(props => {
     isActive = true
   }
 
+  const [activeBlogPostHref, setActiveBlogPostHref] = useActiveBlogPostHref()
+
   return A({
     href,
     class: isActive ? 'nav-link active' : 'nav-link',
     onClick(event) {
       event.preventDefault()
+      setActiveBlogPostHref(null)
       goto(href)
     },
   }, children)

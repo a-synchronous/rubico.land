@@ -1,4 +1,3 @@
-// (path string, content ReactElement) => ReactElement
 const BlogItem = ({
   title, author, published, path: blogItemPath, content, back = '/blog',
 }) => {
