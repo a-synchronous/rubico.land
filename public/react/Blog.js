@@ -1,36 +1,22 @@
-import transducersMdast from '../mdast/transducers-crash-course-rubico-v1.js'
-import ReactElementFromMdast from './ReactElementFromMdast.js'
+import transducersMdastV2 from '../mdast/transducers-crash-course-rubico-v2.js'
+import transducersMdastV1 from '../mdast/transducers-crash-course-rubico-v1.js'
 import Layout from './Layout.js'
-import BlogItem from './BlogItem.js'
-import MdastBlogMetadata from './MdastBlogMetadata.js'
+import MdastBlogPost from './MdastBlogPost.js'
+import useActiveBlogPostHref from './useActiveBlogPostHref.js'
 
-const CURRENT_PATH = '/blog/transducers-crash-course-rubico-v1'
-
-// ReactElement
-const BlogTransducers = BlogItem({
-  ...MdastBlogMetadata(transducersMdast),
-  content: ReactElementFromMdast({ mdast: transducersMdast }),
-})
+const mdastList = [
+  transducersMdastV2,
+  transducersMdastV1,
+]
 
 // { state, goto } => ReactElement
 const Blog = ReactElement(props => {
   const { path, goto } = props
   const isBlogHome = path.replace(/\/g/, '') == '/blog'
 
-  useEffect(() => {
-    if (isBlogHome) {
-      goto(CURRENT_PATH)
-    }
-  }, [])
-
   return Layout(props, [
     Div({ id: 'blog' }, [
-      /*
-      isBlogHome ? [
-        P('This is a blog about the rubico library, JavaScript, and functional programming.'),
-      ] : [],
-      */
-      BlogTransducers(props),
+      mdastList.map(mdast => MdastBlogPost({ ...props, mdast })),
     ]),
   ])
 })

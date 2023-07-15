@@ -138,7 +138,7 @@ const CodeRunner = ReactElement(({
 
   useEffect(function updateImports() {
     setImports(createImports(rubicoVersion))
-  }, [rubicoVersion])
+  }, [rubicoVersion, propsImports])
 
   return Div([
     Div({ ref: codeAreaRef }),

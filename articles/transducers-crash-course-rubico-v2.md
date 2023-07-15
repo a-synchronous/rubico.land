@@ -1,12 +1,14 @@
 ---
 title: Transducers Crash Course for rubico V2
 author: Richard Tong
-date: 2020-10-02
+date: 2023-07-15
 path: /blog/transducers-crash-course-rubico-v2
-description: A crash course in rubico v2 transducers
+description: A crash course in rubico v2 transducers. Transducers enable composable and memory efficient wrangling of very large or even infinite sets of data.
 ---
 
-Transducers enable composable and memory efficient wrangling of very large or even infinite sets of data. Say you wanted to square the odd numbers from one to one thousand.
+Transducers enable composable and memory efficient wrangling of very large or even infinite sets of data. With transducers, each item of the data is transformed by all operations in a single pass, as opposed to the data having to go through batch transformations one operation at a time.
+
+The following example depicts numbers going through two batch transformations, one with `.filter` and one with `.map`.
 
 ```javascript [playground]
 const isOdd = number => number % 2 == 1
@@ -24,9 +26,9 @@ console.log(
 
 <br />
 
-Above, `manyNumbers` goes through two batch transformations from `.filter` and `.map`. This is not so memory efficient.
+With transducers, you could express the above transformation as a single pass. An item in the transformation would be both filtered and mapped before the next item in the reducing operation. Batch transformations must create an intermediate array between each operation; transducers do not have this requirement and so do not incur the memory penalty.
 
-With transducers, you could express the above transformation as a single pass without incurring a memory penalty. An item in the transducer transformation would be both filtered and mapped before the next item in the reducing operation.
+The next example takes the above example and converts it to use rubico transducers.
 
 <br />
 
@@ -47,6 +49,8 @@ console.log(
 ) // [1, 9, 25, 36, 49, ...]
 ```
 
+Now the numbers are transformed in a single pass, avoiding the memory penalty 🎉. Transducers offer many benefits and expressive power, but they can be confusing to anyone picking them up for the first time. I have found it easiest to build intuition for transducers by starting with reducers.
+
 ```coffeescript [specscript]
 type Reducer = (
   accumulator any,
@@ -58,13 +62,13 @@ type Reducer = (
 type Transducer = Reducer=>Reducer
 ```
 
-A `Reducer` is a function that defines a relationship between an accumulator and an item in a transformation, and must be used in a reducing operation, such as with `Array.prototype.reduce`.
+A `Reducer` is a function that defines a relationship between an accumulator and an item in a transformation, and can be used in a reducing operation, such as with [Array.prototype.reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce).
 
-A `Transducer` is a function that takes a `Reducer` and returns another `Reducer`. Transducers enable function chains with reducers - pass a reducer to a pipe of transducers to create a reducer with chained functionality. Imagine dominos falling over.
+A `Transducer` is a function that takes a `Reducer` and returns another `Reducer`. Transducers enable function chains with reducers - pass a reducer to a transducer to create a reducer with chained functionality. Imagine dominos falling over.
 
-![dominoes.png](https://www.pngkit.com/png/detail/220-2206099_junior-alex-berlaga-helps-set-dominoes-world-records.png)
+![dominoes.png](/assets/dominoes.png)
 
-The `Transducer` module of rubico offers the core building blocks for rubico's transducer API.
+It's a good exercise to try to implement transducers yourself. You could also use transducers through rubico. The `Transducer` module offers the core building blocks for rubico's transducer API.
 
  * [Transducer.map](/docs/Transducer.map)
  * [Transducer.filter](/docs/Transducer.filter)
@@ -138,7 +142,6 @@ setTimeout(async function () {
 ```
 
 Transducers are useful for creating memory efficient data transformations, and are easy to use with rubico. You can get started with transducers at the [docs](/docs/Transducer.map).
-
 
 Further reading:
  * https://tgvashworth.com/2014/08/31/csp-and-transducers.html

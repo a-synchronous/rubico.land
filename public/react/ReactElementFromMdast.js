@@ -93,7 +93,9 @@ const ReactElementFromMdast = ReactElement(props => {
       }
 
     case 'image':
-      return Img({ src: mdast.url, alt: mdast.alt })
+      return Div({ class: 'image' }, [
+        Img({ src: mdast.url, alt: mdast.alt })
+      ])
     case 'blockquote':
       return Blockquote(ReactElementFromMdastRecurse(mdast))
     case 'paragraph':

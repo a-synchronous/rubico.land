@@ -39,12 +39,6 @@ const Root = ReactElement(props => {
     dispatch({ type: 'SET_PATH', path })
     document.title = PathTitle(path)
     setIsHamburgerMenuActive(false)
-    setTimeout(() => {
-      const active = document.querySelector('#active-spacer')
-      if (active != null) {
-        active.scrollIntoView({ behavior: 'smooth' })
-      }
-    }, 325)
     Analytics.goto(path)
   }
 
@@ -67,7 +61,7 @@ const Root = ReactElement(props => {
 
   const { path } = appState
 
-  // console.log('Root:', { path })
+  console.log('Root:', { path })
 
   if (path.startsWith('/tour')) {
     return Tour(childProps)

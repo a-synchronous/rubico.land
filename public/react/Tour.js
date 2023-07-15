@@ -21,7 +21,9 @@ const Tour = ReactElement(props => {
   }, [rubicoVersion])
 
   return Layout(props, [
-    Div([ReactElementFromMdast({ mdast: tourMdast })]),
+    Div({ id: 'tour' }, [
+      ReactElementFromMdast({ mdast: tourMdast })
+    ]),
   ])
 })
 
