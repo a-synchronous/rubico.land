@@ -1,19 +1,7 @@
 import rubicoV1 from 'https://unpkg.com/rubico@1/dist/rubico.es.min.js'
 import rubicoV2 from 'https://unpkg.com/rubico@2/dist/rubico.es.min.js'
 import Transducer from 'https://unpkg.com/rubico@2/dist/Transducer.es.min.js'
-
-// FunctionNames() -> names Array<string>
-const FunctionNames = function (lib) {
-  const result = []
-  for (const name in lib) {
-    result.push(name)
-    const fn = lib[name]
-    for (const subName in fn) {
-      result.push(`${name}.${subName}`)
-    }
-  }
-  return result
-}
+import FunctionNames from './FunctionNames.js'
 
 const pathPageMap = new Map()
 const m = pathPageMap

@@ -187,10 +187,11 @@ h4 {
 #hamburger-menu {
 }
 #hamburger-menu nav {
-  width: 84%;
+  width: 70%;
+  padding-right: 5%;
+  padding-left: 2%;
   background-color: #fff;
-  padding: 0px 3%;
-  margin: 10px 5%;
+  margin: 10px 3%;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 10px;
 }
@@ -212,8 +213,8 @@ h4 {
 }
 
 #hamburger-menu .docs-nav nav {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 #hamburger-menu .docs-nav nav section {
   padding-left: 10px;
@@ -401,8 +402,9 @@ h4 {
 
 #docs .sidebar {
   padding-top: 10px;
-  padding-right: 2%;
   border-right: 1px solid #e4e4e4;
+  width: 20%;
+  padding-right: 2%;
 }
 @media only screen and (max-width: 768px) {
   #docs .sidebar {
@@ -424,8 +426,13 @@ h4 {
 }
 
 #docs .viewer {
-  width: 90%;
+  width: 75%;
   padding-left: 2%;
+}
+@media only screen and (max-width: 768px) {
+  #docs .viewer {
+    width: 100%;
+  }
 }
 
 #docs .viewer h1 {
@@ -437,6 +444,16 @@ h4 {
   #docs .viewer h1 {
     font-size: 2rem;
   }
+}
+
+#docs-search input {
+  background: url('https://yrcdn.net/assets/search-solid-gray-small.png') no-repeat 98% 5px;
+  background-size: 15px;
+  padding: 5px 3%;
+  width: calc(94% - 5px);
+  padding-right: 15px;
+  border: 1px solid #e4e4e4;
+  border-radius: 5px;
 }
 
 #retractor-header:after {
