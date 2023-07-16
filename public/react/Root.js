@@ -25,16 +25,13 @@ const Root = ReactElement(props => {
         return state
     }
   }, {
-    path: window.location.pathname,
+    path: window.location.pathname.replace(/\/$/g, ''),
   })
-
-  const updatePathWithLocation = () => {
-    dispatch({ type: 'SET_PATH', path: window.location.pathname })
-  }
 
   const [_, setIsHamburgerMenuActive] = useIsHamburgerMenuActive()
 
   const goto = path => {
+    path = path.replace(/\/$/g, '')
     history.pushState({ path }, '', path)
     dispatch({ type: 'SET_PATH', path })
     document.title = PathTitle(path)
@@ -47,6 +44,10 @@ const Root = ReactElement(props => {
     useEffect(function scrollToTopOnPathChange() {
       scrollTo(0, 0)
     }, [path])
+  }
+
+  const updatePathWithLocation = () => {
+    goto(window.location.pathname)
   }
 
   useEffect(() => {

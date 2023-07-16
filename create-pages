@@ -83,7 +83,7 @@ const main = async function (options) {
     deprecatedFunctionNames,
   ].flat(1)) {
     console.log(`Creating docs/${functionName}`)
-    await publicFs.writeFile(`docs/${functionName}.html`, IndexHtml({
+    await publicFs.writeFile(`docs/${functionName}/index.html`, IndexHtml({
       path: `/docs/${functionName}`,
       title: `${functionName} - rubico documentation`,
       description: `Reference for ${functionName}`,
@@ -92,7 +92,7 @@ const main = async function (options) {
 
   for (const functionName of transducerFunctionNames) {
     console.log(`Creating docs/${functionName}`)
-    await publicFs.writeFile(`docs/Transducer.${functionName}.html`, IndexHtml({
+    await publicFs.writeFile(`docs/Transducer.${functionName}/index.html`, IndexHtml({
       path: `/docs/Transducer.${functionName}`,
       title: `Transducer.${functionName} - rubico documentation`,
       description: `Reference for Transducer.${functionName}`,
