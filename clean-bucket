@@ -1,0 +1,23 @@
+#!/usr/bin/env node
+
+require('rubico/global')
+const S3Bucket = require('presidium/S3Bucket')
+
+const cleanBucket = async function () {
+  const awsCreds = {
+    accessKeyId: process.env['AWS_ACCESS_KEY_ID'],
+    secretAccessKey: process.env['AWS_SECRET_ACCESS_KEY'],
+  }
+
+  awsCreds.region = 'us-east-1'
+
+  const websiteBucket = new S3Bucket({
+    name: 'rubico.land',
+    ...awsCreds,
+  })
+  await websiteBucket.ready
+
+  await websiteBucket.deleteAllObjects()
+}
+
+cleanBucket()

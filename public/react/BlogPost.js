@@ -1,4 +1,3 @@
-import useActiveBlogPostHref from './useActiveBlogPostHref.js'
 import DownArrowSvg from './DownArrowSvg.js'
 
 /**
@@ -16,12 +15,22 @@ import DownArrowSvg from './DownArrowSvg.js'
  *   },
  *   path: string,
  *   goto: function,
+ *   activeBlogPostHref: string,
+ *   setActiveBlogPostHref: function,
  *   backHref?: string,
  * }, children Array) -> ReactElement
  * ```
  */
 const BlogPost = ReactElement(props => {
-  const { metadata, path, goto, backHref = '/blog', children } = props
+  const {
+    metadata,
+    path,
+    goto,
+    activeBlogPostHref,
+    setActiveBlogPostHref,
+    backHref = '/blog',
+    children,
+  } = props
 
   const {
     title,
@@ -45,7 +54,7 @@ const BlogPost = ReactElement(props => {
     }
   }, [isActive])
 
-  const [activeBlogPostHref, setActiveBlogPostHref] = useActiveBlogPostHref()
+  console.log('BlogPost', { activeBlogPostHref })
 
   const onLinkClick = () => {
     if (isActive) {

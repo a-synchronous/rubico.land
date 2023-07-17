@@ -8,6 +8,7 @@ import PathTitle from './PathTitle.js'
 import useRubicoVersion from './useRubicoVersion.js'
 import useIsHamburgerMenuActive from './useIsHamburgerMenuActive.js'
 import getCookie from './getCookie.js'
+import cleanPath from './cleanPath.js'
 
 // Tour Docs Blog
 const tabAnchors = [...document.querySelectorAll('header > nav > a')]
@@ -21,22 +22,28 @@ const Root = ReactElement(props => {
     switch (action.type) {
       case 'SET_PATH':
         return { ...state, path: action.path }
+      case 'SET_ACTIVE_BLOG_POST_HREF':
+        return { ...state, activeBlogPostHref: action.activeBlogPostHref }
       default:
         return state
     }
   }, {
-    path: window.location.pathname.replace(/\/$/g, ''),
+    path: cleanPath(window.location.pathname),
+    activeBlogPostHref: null,
   })
 
   const [_, setIsHamburgerMenuActive] = useIsHamburgerMenuActive()
 
   const goto = path => {
-    path = path.replace(/\/$/g, '')
     history.pushState({ path }, '', path)
     dispatch({ type: 'SET_PATH', path })
     document.title = PathTitle(path)
     setIsHamburgerMenuActive(false)
     Analytics.goto(path)
+  }
+
+  const setActiveBlogPostHref = activeBlogPostHref => {
+    dispatch({ type: 'SET_ACTIVE_BLOG_POST_HREF', activeBlogPostHref })
   }
 
   {
@@ -47,7 +54,7 @@ const Root = ReactElement(props => {
   }
 
   const updatePathWithLocation = () => {
-    goto(window.location.pathname)
+    goto(cleanPath(window.location.pathname))
   }
 
   useEffect(() => {
@@ -58,7 +65,7 @@ const Root = ReactElement(props => {
     }
   }, [])
 
-  const childProps = { ...appState, goto }
+  const childProps = { ...appState, goto, setActiveBlogPostHref }
 
   const { path } = appState
 

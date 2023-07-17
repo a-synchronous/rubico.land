@@ -102,12 +102,9 @@ const DocsNav = ReactElement(props => {
     setDocsSearchCandidates(newCandidates)
   }, [rubicoVersion])
 
-  console.log('DocsNav', { docsSearchCandidates })
-
   const DocsSearchQueryNavItems = ({
     docsSearchQuery, docsSearchCandidates,
   }) => {
-    console.log('DocsSearchQueryNavItems', { docsSearchQuery, docsSearchCandidates })
     return docsSearchCandidates
     .filter(funcName => (
       funcName.includes(docsSearchQuery)

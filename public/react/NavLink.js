@@ -1,5 +1,3 @@
-import useActiveBlogPostHref from './useActiveBlogPostHref.js'
-
 /**
  * @name NavLink
  *
@@ -9,12 +7,13 @@ import useActiveBlogPostHref from './useActiveBlogPostHref.js'
  *   path: string,
  *   href: string,
  *   goto: function,
+ *   setActiveBlogPostHref: function,
  *   children: Array<ReactElement>|ReactElement|string,
  * }) -> ReactElement
  * ```
  */
 const NavLink = ReactElement(props => {
-  const { path, href, goto, children } = props
+  const { path, href, goto, setActiveBlogPostHref, children } = props
   let isActive = false
   if (href == '/') {
     if (href == path) {
@@ -23,8 +22,6 @@ const NavLink = ReactElement(props => {
   } else if (path.startsWith(href)) {
     isActive = true
   }
-
-  const [activeBlogPostHref, setActiveBlogPostHref] = useActiveBlogPostHref()
 
   return A({
     href,

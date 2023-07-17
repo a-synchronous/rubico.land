@@ -2,7 +2,6 @@ import transducersMdastV2 from '../mdast/transducers-crash-course-rubico-v2.js'
 import transducersMdastV1 from '../mdast/transducers-crash-course-rubico-v1.js'
 import Layout from './Layout.js'
 import MdastBlogPost from './MdastBlogPost.js'
-import useActiveBlogPostHref from './useActiveBlogPostHref.js'
 
 const mdastList = [
   transducersMdastV2,
