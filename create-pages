@@ -46,21 +46,21 @@ const main = async function (options) {
 
   console.log('Creating tour/index.html')
   await publicFs.writeFile('tour/index.html', IndexHtml({
-    path: '/tour',
+    path: '/tour/',
     title: 'A tour of rubico',
     description: 'An overview of the rubico library',
   }))
 
   console.log('Creating docs/index.html')
   await publicFs.writeFile('docs/index.html', IndexHtml({
-    path: '/docs',
+    path: '/docs/',
     title: 'rubico documentation',
     description: 'A reference for the rubico library',
   }))
 
   console.log('Creating blog/index.html')
   await publicFs.writeFile('blog/index.html', IndexHtml({
-    path: '/blog',
+    path: '/blog/',
     title: 'rubico blog',
     description: 'A blog about the rubico library, JavaScript, and functional programming',
   }))
