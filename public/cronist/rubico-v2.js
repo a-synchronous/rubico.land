@@ -21582,7 +21582,7 @@ export default [
       '}\n' +
       '```\n' +
       '\n' +
-      '`eq` supports a tacit API for composability.\n' +
+      '`eq` supports a lazy API for composability.\n' +
       '\n' +
       '```javascript [playground]\n' +
       "pipe({ name: 'George' }, [\n" +
@@ -21783,16 +21783,16 @@ export default [
               },
               {
                 type: 'text',
-                value: ' supports a tacit API for composability.',
+                value: ' supports a lazy API for composability.',
                 position: {
                   start: { line: 21, column: 5, offset: 587 },
-                  end: { line: 21, column: 45, offset: 627 }
+                  end: { line: 21, column: 44, offset: 626 }
                 }
               }
             ],
             position: {
               start: { line: 21, column: 1, offset: 583 },
-              end: { line: 21, column: 45, offset: 627 }
+              end: { line: 21, column: 44, offset: 626 }
             }
           },
           {
@@ -21804,14 +21804,14 @@ export default [
               '  console.log, // true\n' +
               '])',
             position: {
-              start: { line: 23, column: 1, offset: 629 },
-              end: { line: 28, column: 4, offset: 741 }
+              start: { line: 23, column: 1, offset: 628 },
+              end: { line: 28, column: 4, offset: 740 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 28, column: 4, offset: 741 }
+          end: { line: 28, column: 4, offset: 740 }
         }
       },
       execution: {
@@ -36272,7 +36272,7 @@ export default [
       "console.log(pick(['a.b.c.d'])(nested)) // { a: { b: { c: { d: 1 } } } }\n" +
       '```\n' +
       '\n' +
-      'Compose `pick` inside a `pipe` with its tacit API.\n' +
+      'Compose `pick` inside a `pipe` with its lazy API.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'pipe({ a: 1, b: 2, c: 3 }, [\n' +
@@ -36555,16 +36555,16 @@ export default [
               },
               {
                 type: 'text',
-                value: ' with its tacit API.',
+                value: ' with its lazy API.',
                 position: {
                   start: { line: 21, column: 31, offset: 666 },
-                  end: { line: 21, column: 51, offset: 686 }
+                  end: { line: 21, column: 50, offset: 685 }
                 }
               }
             ],
             position: {
               start: { line: 21, column: 1, offset: 636 },
-              end: { line: 21, column: 51, offset: 686 }
+              end: { line: 21, column: 50, offset: 685 }
             }
           },
           {
@@ -36577,14 +36577,14 @@ export default [
               '  console.log, // { a: 1, c: 9 }\n' +
               '])',
             position: {
-              start: { line: 23, column: 1, offset: 688 },
-              end: { line: 29, column: 4, offset: 833 }
+              start: { line: 23, column: 1, offset: 687 },
+              end: { line: 29, column: 4, offset: 832 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 29, column: 4, offset: 833 }
+          end: { line: 29, column: 4, offset: 832 }
         }
       }
     },
