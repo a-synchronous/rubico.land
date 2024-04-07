@@ -1589,10 +1589,185 @@ export default {
         start: { line: 248, column: 2, offset: 8609 },
         end: { line: 252, column: 32, offset: 8759 }
       }
+    },
+    {
+      type: 'heading',
+      depth: 1,
+      children: [
+        {
+          type: 'text',
+          value: 'Awesome Resources',
+          position: {
+            start: { line: 254, column: 3, offset: 8763 },
+            end: { line: 254, column: 20, offset: 8780 }
+          }
+        }
+      ],
+      position: {
+        start: { line: 254, column: 1, offset: 8761 },
+        end: { line: 254, column: 20, offset: 8780 }
+      }
+    },
+    {
+      type: 'paragraph',
+      children: [
+        {
+          type: 'link',
+          title: null,
+          url: 'https://dev.to/richytong/rubico-a-synchrnous-functional-syntax-motivation-20hf',
+          children: [
+            {
+              type: 'text',
+              value: 'rubico simplifies asynchronous code',
+              position: {
+                start: { line: 255, column: 2, offset: 8782 },
+                end: { line: 255, column: 37, offset: 8817 }
+              }
+            }
+          ],
+          position: {
+            start: { line: 255, column: 1, offset: 8781 },
+            end: { line: 255, column: 118, offset: 8898 }
+          }
+        },
+        {
+          type: 'text',
+          value: '\n',
+          position: {
+            start: { line: 255, column: 118, offset: 8898 },
+            end: { line: 256, column: 1, offset: 8899 }
+          }
+        },
+        {
+          type: 'html',
+          value: '<br>',
+          position: {
+            start: { line: 256, column: 1, offset: 8899 },
+            end: { line: 256, column: 5, offset: 8903 }
+          }
+        },
+        {
+          type: 'text',
+          value: '\n',
+          position: {
+            start: { line: 256, column: 5, offset: 8903 },
+            end: { line: 257, column: 1, offset: 8904 }
+          }
+        },
+        {
+          type: 'link',
+          title: null,
+          url: 'https://dev.to/richytong/practical-functional-programming-in-javascript-error-handling-8g5',
+          children: [
+            {
+              type: 'text',
+              value: 'Practical Functional Programming in JavaScript - Error Handling',
+              position: {
+                start: { line: 257, column: 2, offset: 8905 },
+                end: { line: 257, column: 65, offset: 8968 }
+              }
+            }
+          ],
+          position: {
+            start: { line: 257, column: 1, offset: 8904 },
+            end: { line: 257, column: 158, offset: 9061 }
+          }
+        },
+        {
+          type: 'text',
+          value: '\n',
+          position: {
+            start: { line: 257, column: 158, offset: 9061 },
+            end: { line: 258, column: 1, offset: 9062 }
+          }
+        },
+        {
+          type: 'html',
+          value: '<br>',
+          position: {
+            start: { line: 258, column: 1, offset: 9062 },
+            end: { line: 258, column: 5, offset: 9066 }
+          }
+        },
+        {
+          type: 'text',
+          value: '\n',
+          position: {
+            start: { line: 258, column: 5, offset: 9066 },
+            end: { line: 259, column: 1, offset: 9067 }
+          }
+        },
+        {
+          type: 'link',
+          title: null,
+          url: 'https://dev.to/richytong/practical-functional-programming-in-javascript-techniques-for-composing-data-c39',
+          children: [
+            {
+              type: 'text',
+              value: 'Practical Functional Programming in JavaScript - Techniques for Composing Data',
+              position: {
+                start: { line: 259, column: 2, offset: 9068 },
+                end: { line: 259, column: 80, offset: 9146 }
+              }
+            }
+          ],
+          position: {
+            start: { line: 259, column: 1, offset: 9067 },
+            end: { line: 259, column: 188, offset: 9254 }
+          }
+        },
+        {
+          type: 'text',
+          value: '\n',
+          position: {
+            start: { line: 259, column: 188, offset: 9254 },
+            end: { line: 260, column: 1, offset: 9255 }
+          }
+        },
+        {
+          type: 'html',
+          value: '<br>',
+          position: {
+            start: { line: 260, column: 1, offset: 9255 },
+            end: { line: 260, column: 5, offset: 9259 }
+          }
+        },
+        {
+          type: 'text',
+          value: '\n',
+          position: {
+            start: { line: 260, column: 5, offset: 9259 },
+            end: { line: 261, column: 1, offset: 9260 }
+          }
+        },
+        {
+          type: 'link',
+          title: null,
+          url: 'https://dev.to/richytong/practical-functional-programming-in-javascript-side-effects-and-purity-revised-420h',
+          children: [
+            {
+              type: 'text',
+              value: 'Practical Functional Programming in JavaScript - Side Effects and Purity',
+              position: {
+                start: { line: 261, column: 2, offset: 9261 },
+                end: { line: 261, column: 74, offset: 9333 }
+              }
+            }
+          ],
+          position: {
+            start: { line: 261, column: 1, offset: 9260 },
+            end: { line: 261, column: 185, offset: 9444 }
+          }
+        }
+      ],
+      position: {
+        start: { line: 255, column: 1, offset: 8781 },
+        end: { line: 261, column: 185, offset: 9444 }
+      }
     }
   ],
   position: {
     start: { line: 1, column: 1, offset: 0 },
-    end: { line: 253, column: 1, offset: 8760 }
+    end: { line: 262, column: 1, offset: 9445 }
   }
 }

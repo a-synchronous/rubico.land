@@ -4643,7 +4643,7 @@ export default [
       'arrayMapSeriesAsync<\n' +
       '  T any,\n' +
       '  array Array<T>,\n' +
-      '  mapper T=>Promise|any,\n' +
+      '  mapper (T,index)=>Promise|any,\n' +
       '  result Array,\n' +
       '  index number,\n' +
       '>(array, mapper, result Array, index) -> Promise|result\n' +
@@ -4686,19 +4686,19 @@ export default [
             value: 'arrayMapSeriesAsync<\n' +
               '  T any,\n' +
               '  array Array<T>,\n' +
-              '  mapper T=>Promise|any,\n' +
+              '  mapper (T,index)=>Promise|any,\n' +
               '  result Array,\n' +
               '  index number,\n' +
               '>(array, mapper, result Array, index) -> Promise|result',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 9, column: 4, offset: 193 }
+              end: { line: 9, column: 4, offset: 201 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 9, column: 4, offset: 193 }
+          end: { line: 9, column: 4, offset: 201 }
         }
       },
       description: {
@@ -4752,7 +4752,7 @@ export default [
       'arrayMapSeries<\n' +
       '  T any,\n' +
       '  array Array<T>,\n' +
-      '  mapper T=>Promise|any,\n' +
+      '  mapper (T,index)=>Promise|any,\n' +
       '>(array, mapper) -> mappedInSeries Promise|Array\n' +
       '```',
     description: 'Apply a mapper in series to each item of an array, returning an array of results.',
@@ -4793,17 +4793,17 @@ export default [
             value: 'arrayMapSeries<\n' +
               '  T any,\n' +
               '  array Array<T>,\n' +
-              '  mapper T=>Promise|any,\n' +
+              '  mapper (T,index)=>Promise|any,\n' +
               '>(array, mapper) -> mappedInSeries Promise|Array',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 7, column: 4, offset: 149 }
+              end: { line: 7, column: 4, offset: 157 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 7, column: 4, offset: 149 }
+          end: { line: 7, column: 4, offset: 157 }
         }
       },
       description: {
@@ -21880,7 +21880,7 @@ export default [
       'every(asyncNumbers(), async number => number < 6).then(console.log) // true\n' +
       '```\n' +
       '\n' +
-      '`every` supports a tacit API for composability.\n' +
+      '`every` supports a lazy API for composability.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'pipe([1, 2, 3], [\n' +
@@ -22038,16 +22038,16 @@ export default [
               },
               {
                 type: 'text',
-                value: ' supports a tacit API for composability.',
+                value: ' supports a lazy API for composability.',
                 position: {
                   start: { line: 25, column: 8, offset: 669 },
-                  end: { line: 25, column: 48, offset: 709 }
+                  end: { line: 25, column: 47, offset: 708 }
                 }
               }
             ],
             position: {
               start: { line: 25, column: 1, offset: 662 },
-              end: { line: 25, column: 48, offset: 709 }
+              end: { line: 25, column: 47, offset: 708 }
             }
           },
           {
@@ -22059,14 +22059,14 @@ export default [
               '  console.log, // true\n' +
               '])',
             position: {
-              start: { line: 27, column: 1, offset: 711 },
-              end: { line: 32, column: 4, offset: 816 }
+              start: { line: 27, column: 1, offset: 710 },
+              end: { line: 32, column: 4, offset: 815 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 32, column: 4, offset: 816 }
+          end: { line: 32, column: 4, offset: 815 }
         }
       },
       execution: {
@@ -24297,7 +24297,7 @@ export default [
       "console.log(get(obj, 'hello')) // world\n" +
       '```\n' +
       '\n' +
-      '`get` supports a tacit API for composability\n' +
+      '`get` supports a lazy API for composability\n' +
       '\n' +
       '```javascript [playground]\n' +
       "const obj = { hello: 'world' }\n" +
@@ -24438,16 +24438,16 @@ export default [
               },
               {
                 type: 'text',
-                value: ' supports a tacit API for composability',
+                value: ' supports a lazy API for composability',
                 position: {
                   start: { line: 9, column: 6, offset: 219 },
-                  end: { line: 9, column: 45, offset: 258 }
+                  end: { line: 9, column: 44, offset: 257 }
                 }
               }
             ],
             position: {
               start: { line: 9, column: 1, offset: 214 },
-              end: { line: 9, column: 45, offset: 258 }
+              end: { line: 9, column: 44, offset: 257 }
             }
           },
           {
@@ -24460,8 +24460,8 @@ export default [
               '\n' +
               "console.log(getHello({ hello: 'world' })) // world",
             position: {
-              start: { line: 11, column: 1, offset: 260 },
-              end: { line: 17, column: 4, offset: 404 }
+              start: { line: 11, column: 1, offset: 259 },
+              end: { line: 17, column: 4, offset: 403 }
             }
           },
           {
@@ -24471,30 +24471,30 @@ export default [
                 type: 'text',
                 value: 'If the value at the end of the path is not found on the object, returns an optional default value. The default value can be a function resolver that takes the object as an argument. If no default value is provided, returns ',
                 position: {
-                  start: { line: 19, column: 1, offset: 406 },
-                  end: { line: 19, column: 224, offset: 629 }
+                  start: { line: 19, column: 1, offset: 405 },
+                  end: { line: 19, column: 224, offset: 628 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'undefined',
                 position: {
-                  start: { line: 19, column: 224, offset: 629 },
-                  end: { line: 19, column: 235, offset: 640 }
+                  start: { line: 19, column: 224, offset: 628 },
+                  end: { line: 19, column: 235, offset: 639 }
                 }
               },
               {
                 type: 'text',
                 value: '. The function resolver may be asynchronous (returns a promise).',
                 position: {
-                  start: { line: 19, column: 235, offset: 640 },
-                  end: { line: 19, column: 299, offset: 704 }
+                  start: { line: 19, column: 235, offset: 639 },
+                  end: { line: 19, column: 299, offset: 703 }
                 }
               }
             ],
             position: {
-              start: { line: 19, column: 1, offset: 406 },
-              end: { line: 19, column: 299, offset: 704 }
+              start: { line: 19, column: 1, offset: 405 },
+              end: { line: 19, column: 299, offset: 703 }
             }
           },
           {
@@ -24509,8 +24509,8 @@ export default [
               '\n' +
               "console.log(getHelloWithDefaultResolver({ foo: 'bar' })) // bar",
             position: {
-              start: { line: 21, column: 1, offset: 706 },
-              end: { line: 29, column: 4, offset: 996 }
+              start: { line: 21, column: 1, offset: 705 },
+              end: { line: 29, column: 4, offset: 995 }
             }
           },
           {
@@ -24520,22 +24520,22 @@ export default [
                 type: 'inlineCode',
                 value: 'get',
                 position: {
-                  start: { line: 31, column: 1, offset: 998 },
-                  end: { line: 31, column: 6, offset: 1003 }
+                  start: { line: 31, column: 1, offset: 997 },
+                  end: { line: 31, column: 6, offset: 1002 }
                 }
               },
               {
                 type: 'text',
                 value: ' supports three types of path patterns for nested property access.',
                 position: {
-                  start: { line: 31, column: 6, offset: 1003 },
-                  end: { line: 31, column: 72, offset: 1069 }
+                  start: { line: 31, column: 6, offset: 1002 },
+                  end: { line: 31, column: 72, offset: 1068 }
                 }
               }
             ],
             position: {
-              start: { line: 31, column: 1, offset: 998 },
-              end: { line: 31, column: 72, offset: 1069 }
+              start: { line: 31, column: 1, offset: 997 },
+              end: { line: 31, column: 72, offset: 1068 }
             }
           },
           {
@@ -24556,28 +24556,28 @@ export default [
                         type: 'text',
                         value: 'dot delimited - ',
                         position: {
-                          start: { line: 33, column: 4, offset: 1074 },
-                          end: { line: 33, column: 20, offset: 1090 }
+                          start: { line: 33, column: 4, offset: 1073 },
+                          end: { line: 33, column: 20, offset: 1089 }
                         }
                       },
                       {
                         type: 'inlineCode',
                         value: "'a.b.c'",
                         position: {
-                          start: { line: 33, column: 20, offset: 1090 },
-                          end: { line: 33, column: 29, offset: 1099 }
+                          start: { line: 33, column: 20, offset: 1089 },
+                          end: { line: 33, column: 29, offset: 1098 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 33, column: 4, offset: 1074 },
-                      end: { line: 33, column: 29, offset: 1099 }
+                      start: { line: 33, column: 4, offset: 1073 },
+                      end: { line: 33, column: 29, offset: 1098 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 33, column: 2, offset: 1072 },
-                  end: { line: 33, column: 29, offset: 1099 }
+                  start: { line: 33, column: 2, offset: 1071 },
+                  end: { line: 33, column: 29, offset: 1098 }
                 }
               },
               {
@@ -24592,28 +24592,28 @@ export default [
                         type: 'text',
                         value: 'bracket notation - ',
                         position: {
-                          start: { line: 34, column: 4, offset: 1103 },
-                          end: { line: 34, column: 23, offset: 1122 }
+                          start: { line: 34, column: 4, offset: 1102 },
+                          end: { line: 34, column: 23, offset: 1121 }
                         }
                       },
                       {
                         type: 'inlineCode',
                         value: "'a[0].value'",
                         position: {
-                          start: { line: 34, column: 23, offset: 1122 },
-                          end: { line: 34, column: 37, offset: 1136 }
+                          start: { line: 34, column: 23, offset: 1121 },
+                          end: { line: 34, column: 37, offset: 1135 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 34, column: 4, offset: 1103 },
-                      end: { line: 34, column: 37, offset: 1136 }
+                      start: { line: 34, column: 4, offset: 1102 },
+                      end: { line: 34, column: 37, offset: 1135 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 34, column: 2, offset: 1101 },
-                  end: { line: 34, column: 37, offset: 1136 }
+                  start: { line: 34, column: 2, offset: 1100 },
+                  end: { line: 34, column: 37, offset: 1135 }
                 }
               },
               {
@@ -24628,34 +24628,34 @@ export default [
                         type: 'text',
                         value: 'an array of keys or indices - ',
                         position: {
-                          start: { line: 35, column: 4, offset: 1140 },
-                          end: { line: 35, column: 34, offset: 1170 }
+                          start: { line: 35, column: 4, offset: 1139 },
+                          end: { line: 35, column: 34, offset: 1169 }
                         }
                       },
                       {
                         type: 'inlineCode',
                         value: "['a', 0, 'value']",
                         position: {
-                          start: { line: 35, column: 34, offset: 1170 },
-                          end: { line: 35, column: 53, offset: 1189 }
+                          start: { line: 35, column: 34, offset: 1169 },
+                          end: { line: 35, column: 53, offset: 1188 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 35, column: 4, offset: 1140 },
-                      end: { line: 35, column: 53, offset: 1189 }
+                      start: { line: 35, column: 4, offset: 1139 },
+                      end: { line: 35, column: 53, offset: 1188 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 35, column: 2, offset: 1138 },
-                  end: { line: 35, column: 53, offset: 1189 }
+                  start: { line: 35, column: 2, offset: 1137 },
+                  end: { line: 35, column: 53, offset: 1188 }
                 }
               }
             ],
             position: {
-              start: { line: 33, column: 2, offset: 1072 },
-              end: { line: 35, column: 53, offset: 1189 }
+              start: { line: 33, column: 2, offset: 1071 },
+              end: { line: 35, column: 53, offset: 1188 }
             }
           },
           {
@@ -24674,14 +24674,14 @@ export default [
               "console.log(get00000BracketNotation([[[[['foo']]]]])) // foo\n" +
               "console.log(get00000ArrayNotation([[[[['foo']]]]])) // foo",
             position: {
-              start: { line: 37, column: 1, offset: 1191 },
-              end: { line: 49, column: 4, offset: 1646 }
+              start: { line: 37, column: 1, offset: 1190 },
+              end: { line: 49, column: 4, offset: 1645 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 49, column: 4, offset: 1646 }
+          end: { line: 49, column: 4, offset: 1645 }
         }
       }
     },
@@ -24721,7 +24721,7 @@ export default [
       'console.log(isOfLegalAge(juvenile)) // false\n' +
       '```\n' +
       '\n' +
-      '`gt` supports a tacit API for composability.\n' +
+      '`gt` supports a lazy API for composability.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'pipe({ value: 1 }, [\n' +
@@ -24894,16 +24894,16 @@ export default [
               },
               {
                 type: 'text',
-                value: ' supports a tacit API for composability.',
+                value: ' supports a lazy API for composability.',
                 position: {
                   start: { line: 21, column: 5, offset: 467 },
-                  end: { line: 21, column: 45, offset: 507 }
+                  end: { line: 21, column: 44, offset: 506 }
                 }
               }
             ],
             position: {
               start: { line: 21, column: 1, offset: 463 },
-              end: { line: 21, column: 45, offset: 507 }
+              end: { line: 21, column: 44, offset: 506 }
             }
           },
           {
@@ -24915,14 +24915,14 @@ export default [
               '  console.log, // true\n' +
               '])',
             position: {
-              start: { line: 23, column: 1, offset: 509 },
-              end: { line: 28, column: 4, offset: 609 }
+              start: { line: 23, column: 1, offset: 508 },
+              end: { line: 28, column: 4, offset: 608 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 28, column: 4, offset: 609 }
+          end: { line: 28, column: 4, offset: 608 }
         }
       }
     },
@@ -24964,7 +24964,7 @@ export default [
       'console.log(isAtLeast100(101)) // true\n' +
       '```\n' +
       '\n' +
-      '`gte` supports a tacit API for composability.\n' +
+      '`gte` supports a lazy API for composability.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'pipe({ value: 1 }, [\n' +
@@ -25139,16 +25139,16 @@ export default [
               },
               {
                 type: 'text',
-                value: ' supports a tacit API for composability.',
+                value: ' supports a lazy API for composability.',
                 position: {
                   start: { line: 23, column: 6, offset: 542 },
-                  end: { line: 23, column: 46, offset: 582 }
+                  end: { line: 23, column: 45, offset: 581 }
                 }
               }
             ],
             position: {
               start: { line: 23, column: 1, offset: 537 },
-              end: { line: 23, column: 46, offset: 582 }
+              end: { line: 23, column: 45, offset: 581 }
             }
           },
           {
@@ -25160,14 +25160,14 @@ export default [
               '  console.log, // true\n' +
               '])',
             position: {
-              start: { line: 25, column: 1, offset: 584 },
-              end: { line: 30, column: 4, offset: 685 }
+              start: { line: 25, column: 1, offset: 583 },
+              end: { line: 30, column: 4, offset: 684 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 30, column: 4, offset: 685 }
+          end: { line: 30, column: 4, offset: 684 }
         }
       }
     },
@@ -25211,7 +25211,7 @@ export default [
       'console.log(isLessThan3(5)) // false\n' +
       '```\n' +
       '\n' +
-      '`lt` supports a tacit API for composability.\n' +
+      '`lt` supports a lazy API for composability.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'pipe({ value: 1 }, [\n' +
@@ -25384,16 +25384,16 @@ export default [
               },
               {
                 type: 'text',
-                value: ' supports a tacit API for composability.',
+                value: ' supports a lazy API for composability.',
                 position: {
                   start: { line: 21, column: 5, offset: 524 },
-                  end: { line: 21, column: 45, offset: 564 }
+                  end: { line: 21, column: 44, offset: 563 }
                 }
               }
             ],
             position: {
               start: { line: 21, column: 1, offset: 520 },
-              end: { line: 21, column: 45, offset: 564 }
+              end: { line: 21, column: 44, offset: 563 }
             }
           },
           {
@@ -25405,14 +25405,14 @@ export default [
               '  console.log, // true\n' +
               '])',
             position: {
-              start: { line: 23, column: 1, offset: 566 },
-              end: { line: 28, column: 4, offset: 666 }
+              start: { line: 23, column: 1, offset: 565 },
+              end: { line: 28, column: 4, offset: 665 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 28, column: 4, offset: 666 }
+          end: { line: 28, column: 4, offset: 665 }
         }
       }
     },
@@ -25452,7 +25452,7 @@ export default [
       'console.log(isLessThanOrEqualTo3(5), false)\n' +
       '```\n' +
       '\n' +
-      '`lte` supports a tacit API for composability.\n' +
+      '`lte` supports a lazy API for composability.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'pipe({ value: 1 }, [\n' +
@@ -25625,16 +25625,16 @@ export default [
               },
               {
                 type: 'text',
-                value: ' supports a tacit API for composability.',
+                value: ' supports a lazy API for composability.',
                 position: {
                   start: { line: 21, column: 6, offset: 571 },
-                  end: { line: 21, column: 46, offset: 611 }
+                  end: { line: 21, column: 45, offset: 610 }
                 }
               }
             ],
             position: {
               start: { line: 21, column: 1, offset: 566 },
-              end: { line: 21, column: 46, offset: 611 }
+              end: { line: 21, column: 45, offset: 610 }
             }
           },
           {
@@ -25646,14 +25646,14 @@ export default [
               '  console.log, // true\n' +
               '])',
             position: {
-              start: { line: 23, column: 1, offset: 613 },
-              end: { line: 28, column: 4, offset: 714 }
+              start: { line: 23, column: 1, offset: 612 },
+              end: { line: 28, column: 4, offset: 713 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 28, column: 4, offset: 714 }
+          end: { line: 28, column: 4, offset: 713 }
         }
       }
     },
@@ -28195,11 +28195,9 @@ export default [
     fileName: '/home/richard/code/rubico.land/../rubico/monad/Cancellable.memoryUsage.js'
   },
   {
-    name: 'Instance.prototype.map',
-    synopsis: '<A any, B any>new Instance(value A).map(func A=>B) -> Instance<B>\n' +
-      'Instance.prototype.map = function(func) {\n' +
-      'return new Instance(func(this.value))\n' +
-      '}',
+    name: 'Instance',
+    synopsis: 'new Instance(value any) -> Instance',
+    catchphrase: 'Type checking',
     mdast: {
       name: {
         type: 'root',
@@ -28209,22 +28207,22 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Instance.prototype.map',
+                value: 'Instance',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 23, offset: 22 }
+                  end: { line: 1, column: 9, offset: 8 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 23, offset: 22 }
+              end: { line: 1, column: 9, offset: 8 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 1, column: 23, offset: 22 }
+          end: { line: 1, column: 9, offset: 8 }
         }
       },
       synopsis: {
@@ -28235,165 +28233,48 @@ export default [
             children: [
               {
                 type: 'text',
-                value: '<A any, B any>new Instance(value A).map(func A=>B) -> Instance',
+                value: 'new Instance(value any) -> Instance',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 63, offset: 62 }
-                }
-              },
-              {
-                type: 'html',
-                value: '<B>',
-                position: {
-                  start: { line: 1, column: 63, offset: 62 },
-                  end: { line: 1, column: 66, offset: 65 }
-                }
-              },
-              {
-                type: 'text',
-                value: '\n' +
-                  'Instance.prototype.map = function(func) {\n' +
-                  'return new Instance(func(this.value))\n' +
-                  '}',
-                position: {
-                  start: { line: 1, column: 66, offset: 65 },
-                  end: { line: 4, column: 2, offset: 147 }
+                  end: { line: 1, column: 36, offset: 35 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 4, column: 2, offset: 147 }
+              end: { line: 1, column: 36, offset: 35 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 4, column: 2, offset: 147 }
-        }
-      }
-    },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Instance.js'
-  },
-  {
-    name: 'Instance.prototype.join',
-    synopsis: '<T any>new Instance(Instance<T>).join() -> Instance<T>\n' +
-      '\n' +
-      '<T any>new Instance(value T).join() -> value T\n' +
-      'Instance.prototype.join = function() {\n' +
-      'return this.value\n' +
-      '}',
-    mdast: {
-      name: {
-        type: 'root',
-        children: [
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: 'Instance.prototype.join',
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 24, offset: 23 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 24, offset: 23 }
-            }
-          }
-        ],
-        position: {
-          start: { line: 1, column: 1, offset: 0 },
-          end: { line: 1, column: 24, offset: 23 }
+          end: { line: 1, column: 36, offset: 35 }
         }
       },
-      synopsis: {
+      catchphrase: {
         type: 'root',
         children: [
           {
             type: 'paragraph',
             children: [
               {
-                type: 'html',
-                value: '<T any>',
+                type: 'text',
+                value: 'Type checking',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 8, offset: 7 }
-                }
-              },
-              {
-                type: 'text',
-                value: 'new Instance(Instance',
-                position: {
-                  start: { line: 1, column: 8, offset: 7 },
-                  end: { line: 1, column: 29, offset: 28 }
-                }
-              },
-              {
-                type: 'html',
-                value: '<T>',
-                position: {
-                  start: { line: 1, column: 29, offset: 28 },
-                  end: { line: 1, column: 32, offset: 31 }
-                }
-              },
-              {
-                type: 'text',
-                value: ').join() -> Instance',
-                position: {
-                  start: { line: 1, column: 32, offset: 31 },
-                  end: { line: 1, column: 52, offset: 51 }
-                }
-              },
-              {
-                type: 'html',
-                value: '<T>',
-                position: {
-                  start: { line: 1, column: 52, offset: 51 },
-                  end: { line: 1, column: 55, offset: 54 }
+                  end: { line: 1, column: 14, offset: 13 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 55, offset: 54 }
-            }
-          },
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'html',
-                value: '<T any>',
-                position: {
-                  start: { line: 3, column: 1, offset: 56 },
-                  end: { line: 3, column: 8, offset: 63 }
-                }
-              },
-              {
-                type: 'text',
-                value: 'new Instance(value T).join() -> value T\n' +
-                  'Instance.prototype.join = function() {\n' +
-                  'return this.value\n' +
-                  '}',
-                position: {
-                  start: { line: 3, column: 8, offset: 63 },
-                  end: { line: 6, column: 2, offset: 161 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 3, column: 1, offset: 56 },
-              end: { line: 6, column: 2, offset: 161 }
+              end: { line: 1, column: 14, offset: 13 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 6, column: 2, offset: 161 }
+          end: { line: 1, column: 14, offset: 13 }
         }
       }
     },
@@ -28402,7 +28283,7 @@ export default [
   {
     name: 'Instance.prototype.chain',
     synopsis: '<A any, B any>new Instance(x A).chain(f A=>Instance<B>) -> Instance<B>',
-    catchphrase: 'For associativity',
+    description: 'For associativity',
     example: 'const inst = new Instance(3)\n' +
       'console.log(\n' +
       '  inst.chain(number => new Instance(number ** 2))\n' +
@@ -28484,7 +28365,7 @@ export default [
           end: { line: 1, column: 71, offset: 70 }
         }
       },
-      catchphrase: {
+      description: {
         type: 'root',
         children: [
           {
@@ -28537,6 +28418,910 @@ export default [
         position: {
           start: { line: 1, column: 1, offset: 0 },
           end: { line: 4, column: 20, offset: 111 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Instance.js'
+  },
+  {
+    name: 'Instance.prototype.map',
+    synopsis: '<A any, B any>new Instance(value A).map(func A=>B) -> Instance<B>\n' +
+      'map(func) {\n' +
+      'return new Instance(func(this.value))\n' +
+      '}',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Instance.prototype.map',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 23, offset: 22 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 23, offset: 22 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 23, offset: 22 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: '<A any, B any>new Instance(value A).map(func A=>B) -> Instance',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 63, offset: 62 }
+                }
+              },
+              {
+                type: 'html',
+                value: '<B>',
+                position: {
+                  start: { line: 1, column: 63, offset: 62 },
+                  end: { line: 1, column: 66, offset: 65 }
+                }
+              },
+              {
+                type: 'text',
+                value: '\nmap(func) {\nreturn new Instance(func(this.value))\n}',
+                position: {
+                  start: { line: 1, column: 66, offset: 65 },
+                  end: { line: 4, column: 2, offset: 117 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 4, column: 2, offset: 117 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 4, column: 2, offset: 117 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Instance.js'
+  },
+  {
+    name: 'Instance.prototype.is',
+    synopsis: 'new Instance(x any).is(ctor function) -> boolean',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Instance.prototype.is',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 22, offset: 21 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 22, offset: 21 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 22, offset: 21 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'new Instance(x any).is(ctor function) -> boolean',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 49, offset: 48 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 49, offset: 48 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 49, offset: 48 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Instance.js'
+  },
+  {
+    name: 'Instance.prototype.isString',
+    synopsis: 'new Instance(x any).isString() -> boolean',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Instance.prototype.isString',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 28, offset: 27 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 28, offset: 27 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 28, offset: 27 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'new Instance(x any).isString() -> boolean',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 42, offset: 41 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 42, offset: 41 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 42, offset: 41 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Instance.js'
+  },
+  {
+    name: 'Instance.prototype.isNumber',
+    synopsis: 'new Instance(x any).isNumber() -> boolean',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Instance.prototype.isNumber',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 28, offset: 27 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 28, offset: 27 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 28, offset: 27 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'new Instance(x any).isNumber() -> boolean',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 42, offset: 41 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 42, offset: 41 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 42, offset: 41 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Instance.js'
+  },
+  {
+    name: 'Instance.prototype.isArray',
+    synopsis: 'new Instance(x any).isArray() -> boolean',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Instance.prototype.isArray',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 27, offset: 26 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 27, offset: 26 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 27, offset: 26 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'new Instance(x any).isArray() -> boolean',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 41, offset: 40 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 41, offset: 40 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 41, offset: 40 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Instance.js'
+  },
+  {
+    name: 'Instance.prototype.isObject',
+    synopsis: 'new Instance(x any).isObject() -> boolean',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Instance.prototype.isObject',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 28, offset: 27 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 28, offset: 27 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 28, offset: 27 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'new Instance(x any).isObject() -> boolean',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 42, offset: 41 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 42, offset: 41 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 42, offset: 41 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Instance.js'
+  },
+  {
+    name: 'Instance.prototype.isSet',
+    synopsis: 'new Instance(x any).isSet() -> boolean',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Instance.prototype.isSet',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 25, offset: 24 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 25, offset: 24 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 25, offset: 24 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'new Instance(x any).isSet() -> boolean',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 39, offset: 38 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 39, offset: 38 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 39, offset: 38 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Instance.js'
+  },
+  {
+    name: 'Instance.prototype.isMap',
+    synopsis: 'new Instance(x any).isMap() -> boolean',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Instance.prototype.isMap',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 25, offset: 24 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 25, offset: 24 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 25, offset: 24 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'new Instance(x any).isMap() -> boolean',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 39, offset: 38 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 39, offset: 38 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 39, offset: 38 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Instance.js'
+  },
+  {
+    name: 'Instance.prototype.isIterable',
+    synopsis: 'new Instance(value any).isIterable() -> boolean',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Instance.prototype.isIterable',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 30, offset: 29 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 30, offset: 29 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 30, offset: 29 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'new Instance(value any).isIterable() -> boolean',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 48, offset: 47 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 48, offset: 47 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 48, offset: 47 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Instance.js'
+  },
+  {
+    name: 'Instance.prototype.isAsyncIterable',
+    synopsis: 'new Instance(value any).isAsyncIterable() -> boolean',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Instance.prototype.isAsyncIterable',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 35, offset: 34 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 35, offset: 34 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 35, offset: 34 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'new Instance(value any).isAsyncIterable() -> boolean',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 53, offset: 52 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 53, offset: 52 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 53, offset: 52 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Instance.js'
+  },
+  {
+    name: 'Instance.prototype.isFunction',
+    synopsis: 'new Instance(x any).isFunction() -> boolean',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Instance.prototype.isFunction',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 30, offset: 29 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 30, offset: 29 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 30, offset: 29 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'new Instance(x any).isFunction() -> boolean',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 44, offset: 43 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 44, offset: 43 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 44, offset: 43 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Instance.js'
+  },
+  {
+    name: 'Instance.prototype.isReadable',
+    synopsis: 'new Instance(x any).isReadable() -> boolean',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Instance.prototype.isReadable',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 30, offset: 29 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 30, offset: 29 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 30, offset: 29 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'new Instance(x any).isReadable() -> boolean',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 44, offset: 43 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 44, offset: 43 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 44, offset: 43 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Instance.js'
+  },
+  {
+    name: 'Instance.prototype.isWritable',
+    synopsis: 'new Instance(x any).isWritable() -> boolean',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Instance.prototype.isWritable',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 30, offset: 29 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 30, offset: 29 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 30, offset: 29 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'new Instance(x any).isWritable() -> boolean',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 44, offset: 43 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 44, offset: 43 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 44, offset: 43 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Instance.js'
+  },
+  {
+    name: 'Instance.prototype.isPromise',
+    synopsis: 'new Instance(x any).isPromise() -> boolean',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Instance.prototype.isPromise',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 29, offset: 28 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 29, offset: 28 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 29, offset: 28 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'new Instance(x any).isPromise() -> boolean',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 43, offset: 42 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 43, offset: 42 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 43, offset: 42 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/monad/Instance.js'
+  },
+  {
+    name: 'Instance.prototype.isTypedArray',
+    synopsis: 'new Instance(x any).isTypedArray() -> boolean',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Instance.prototype.isTypedArray',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 32, offset: 31 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 32, offset: 31 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 32, offset: 31 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'new Instance(x any).isTypedArray() -> boolean',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 46, offset: 45 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 46, offset: 45 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 46, offset: 45 }
         }
       }
     },
@@ -34789,7 +35574,7 @@ export default [
       ") // { a: { b: { c: 'hello' } } }\n" +
       '```\n' +
       '\n' +
-      'Compose `omit` inside a `pipe` with its tacit API\n' +
+      'Compose `omit` inside a `pipe` with its lazy API\n' +
       '\n' +
       '```javascript [playground]\n' +
       'pipe({ a: 1, b: 2, c: 3 }, [\n' +
@@ -35079,16 +35864,16 @@ export default [
               },
               {
                 type: 'text',
-                value: ' with its tacit API',
+                value: ' with its lazy API',
                 position: {
                   start: { line: 28, column: 31, offset: 591 },
-                  end: { line: 28, column: 50, offset: 610 }
+                  end: { line: 28, column: 49, offset: 609 }
                 }
               }
             ],
             position: {
               start: { line: 28, column: 1, offset: 561 },
-              end: { line: 28, column: 50, offset: 610 }
+              end: { line: 28, column: 49, offset: 609 }
             }
           },
           {
@@ -35101,14 +35886,14 @@ export default [
               '  console.log, // { c: 9 }\n' +
               '])',
             position: {
-              start: { line: 30, column: 1, offset: 612 },
-              end: { line: 36, column: 4, offset: 751 }
+              start: { line: 30, column: 1, offset: 611 },
+              end: { line: 36, column: 4, offset: 750 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 36, column: 4, offset: 751 }
+          end: { line: 36, column: 4, offset: 750 }
         }
       }
     },
@@ -37191,7 +37976,7 @@ export default [
       'console.log(myNewObj) // { a: 1, b: 3 }\n' +
       '```\n' +
       '\n' +
-      '`set` supports a tacit API for composability.\n' +
+      '`set` supports a lazy API for composability.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'pipe({ a: 1 }, [\n' +
@@ -37482,16 +38267,16 @@ export default [
               },
               {
                 type: 'text',
-                value: ' supports a tacit API for composability.',
+                value: ' supports a lazy API for composability.',
                 position: {
                   start: { line: 31, column: 6, offset: 942 },
-                  end: { line: 31, column: 46, offset: 982 }
+                  end: { line: 31, column: 45, offset: 981 }
                 }
               }
             ],
             position: {
               start: { line: 31, column: 1, offset: 937 },
-              end: { line: 31, column: 46, offset: 982 }
+              end: { line: 31, column: 45, offset: 981 }
             }
           },
           {
@@ -37503,14 +38288,14 @@ export default [
               '  console.log, // { a: 1, b: 2 }\n' +
               '])',
             position: {
-              start: { line: 33, column: 1, offset: 984 },
-              end: { line: 38, column: 4, offset: 1082 }
+              start: { line: 33, column: 1, offset: 983 },
+              end: { line: 38, column: 4, offset: 1081 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 38, column: 4, offset: 1082 }
+          end: { line: 38, column: 4, offset: 1081 }
         }
       },
       since: {
@@ -37586,7 +38371,7 @@ export default [
       'promise.then(console.log) // true\n' +
       '```\n' +
       '\n' +
-      '`some` supports a tacit API for composability.\n' +
+      '`some` supports a lazy API for composability.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'pipe([1, 2, 3], [\n' +
@@ -37756,16 +38541,16 @@ export default [
               },
               {
                 type: 'text',
-                value: ' supports a tacit API for composability.',
+                value: ' supports a lazy API for composability.',
                 position: {
                   start: { line: 36, column: 7, offset: 907 },
-                  end: { line: 36, column: 47, offset: 947 }
+                  end: { line: 36, column: 46, offset: 946 }
                 }
               }
             ],
             position: {
               start: { line: 36, column: 1, offset: 901 },
-              end: { line: 36, column: 47, offset: 947 }
+              end: { line: 36, column: 46, offset: 946 }
             }
           },
           {
@@ -37777,14 +38562,14 @@ export default [
               '  console.log, // true\n' +
               '])',
             position: {
-              start: { line: 38, column: 1, offset: 949 },
-              end: { line: 43, column: 4, offset: 1053 }
+              start: { line: 38, column: 1, offset: 948 },
+              end: { line: 43, column: 4, offset: 1052 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 43, column: 4, offset: 1053 }
+          end: { line: 43, column: 4, offset: 1052 }
         }
       },
       execution: {
@@ -37878,7 +38663,7 @@ export default [
       ') // plantain is possibly a banana\n' +
       '```\n' +
       '\n' +
-      'For composability `switchCase` supports a tacit API.\n' +
+      'For composability `switchCase` supports a lazy API.\n' +
       '\n' +
       '```javascript [playground]\n' +
       "const fruitIsYellow = fruit => fruit.color == 'yellow'\n" +
@@ -38107,16 +38892,16 @@ export default [
               },
               {
                 type: 'text',
-                value: ' supports a tacit API.',
+                value: ' supports a lazy API.',
                 position: {
                   start: { line: 15, column: 31, offset: 953 },
-                  end: { line: 15, column: 53, offset: 975 }
+                  end: { line: 15, column: 52, offset: 974 }
                 }
               }
             ],
             position: {
               start: { line: 15, column: 1, offset: 923 },
-              end: { line: 15, column: 53, offset: 975 }
+              end: { line: 15, column: 52, offset: 974 }
             }
           },
           {
@@ -38137,8 +38922,8 @@ export default [
               "console.log(fruitsGuesser({ name: 'apple', color: 'red' }))\n" +
               '// apple is probably not a banana',
             position: {
-              start: { line: 17, column: 1, offset: 977 },
-              end: { line: 31, column: 4, offset: 1415 }
+              start: { line: 17, column: 1, offset: 976 },
+              end: { line: 31, column: 4, offset: 1414 }
             }
           },
           {
@@ -38148,14 +38933,14 @@ export default [
                 type: 'text',
                 value: 'Any function can be replaced with a nonfunction (object or primitive) value to be used directly in the operation.',
                 position: {
-                  start: { line: 33, column: 1, offset: 1417 },
-                  end: { line: 33, column: 114, offset: 1530 }
+                  start: { line: 33, column: 1, offset: 1416 },
+                  end: { line: 33, column: 114, offset: 1529 }
                 }
               }
             ],
             position: {
-              start: { line: 33, column: 1, offset: 1417 },
-              end: { line: 33, column: 114, offset: 1530 }
+              start: { line: 33, column: 1, offset: 1416 },
+              end: { line: 33, column: 114, offset: 1529 }
             }
           },
           {
@@ -38170,8 +38955,8 @@ export default [
               "  'default',\n" +
               '])(false).then(console.log) // default',
             position: {
-              start: { line: 35, column: 1, offset: 1532 },
-              end: { line: 43, column: 4, offset: 1704 }
+              start: { line: 35, column: 1, offset: 1531 },
+              end: { line: 43, column: 4, offset: 1703 }
             }
           },
           {
@@ -38181,30 +38966,30 @@ export default [
                 type: 'text',
                 value: 'If every item in the conditional array is a nonfunction value, ',
                 position: {
-                  start: { line: 45, column: 1, offset: 1706 },
-                  end: { line: 45, column: 64, offset: 1769 }
+                  start: { line: 45, column: 1, offset: 1705 },
+                  end: { line: 45, column: 64, offset: 1768 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'switchCase',
                 position: {
-                  start: { line: 45, column: 64, offset: 1769 },
-                  end: { line: 45, column: 76, offset: 1781 }
+                  start: { line: 45, column: 64, offset: 1768 },
+                  end: { line: 45, column: 76, offset: 1780 }
                 }
               },
               {
                 type: 'text',
                 value: ' executes eagerly.',
                 position: {
-                  start: { line: 45, column: 76, offset: 1781 },
-                  end: { line: 45, column: 94, offset: 1799 }
+                  start: { line: 45, column: 76, offset: 1780 },
+                  end: { line: 45, column: 94, offset: 1798 }
                 }
               }
             ],
             position: {
-              start: { line: 45, column: 1, offset: 1706 },
-              end: { line: 45, column: 94, offset: 1799 }
+              start: { line: 45, column: 1, offset: 1705 },
+              end: { line: 45, column: 94, offset: 1798 }
             }
           },
           {
@@ -38217,14 +39002,14 @@ export default [
               '\n' +
               'console.log(myDrink) // Beer',
             position: {
-              start: { line: 47, column: 1, offset: 1801 },
-              end: { line: 53, column: 4, offset: 1934 }
+              start: { line: 47, column: 1, offset: 1800 },
+              end: { line: 53, column: 4, offset: 1933 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 53, column: 4, offset: 1934 }
+          end: { line: 53, column: 4, offset: 1933 }
         }
       },
       execution: {
@@ -44865,7 +45650,7 @@ export default [
       'console.log(maxItem) // { a: 3 }\n' +
       '```\n' +
       '\n' +
-      '`maxBy` composes in a pointfree way.\n' +
+      '`maxBy` composes in a lazy way.\n' +
       '\n' +
       '```javascript [playground]\n' +
       "import maxBy from 'https://unpkg.com/rubico/dist/x/maxBy.es.js'\n" +
@@ -44977,16 +45762,16 @@ export default [
               },
               {
                 type: 'text',
-                value: ' composes in a pointfree way.',
+                value: ' composes in a lazy way.',
                 position: {
                   start: { line: 13, column: 8, offset: 281 },
-                  end: { line: 13, column: 37, offset: 310 }
+                  end: { line: 13, column: 32, offset: 305 }
                 }
               }
             ],
             position: {
               start: { line: 13, column: 1, offset: 274 },
-              end: { line: 13, column: 37, offset: 310 }
+              end: { line: 13, column: 32, offset: 305 }
             }
           },
           {
@@ -45005,14 +45790,14 @@ export default [
               '\n' +
               'console.log(maxItem) // { a: { b: { c: 9 } } }',
             position: {
-              start: { line: 15, column: 1, offset: 312 },
-              end: { line: 27, column: 4, offset: 612 }
+              start: { line: 15, column: 1, offset: 307 },
+              end: { line: 27, column: 4, offset: 607 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 27, column: 4, offset: 612 }
+          end: { line: 27, column: 4, offset: 607 }
         }
       }
     },
