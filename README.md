@@ -3,5 +3,5 @@ Home page for [rubico](https://rubico.land/) - [a]synchronous functional program
 
 ## deployment
 ```sh
-$ ./deploy rubico.land .
+./deploy rubico.land .
 ```
