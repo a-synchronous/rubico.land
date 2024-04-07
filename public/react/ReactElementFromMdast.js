@@ -151,7 +151,7 @@ const ReactElementFromMdast = ReactElement(props => {
     case 'linkReference':
       return Span([Span('['), ReactElementFromMdastRecurse(mdast), Span(']')])
     case 'html':
-      if (mdast.value == '<br />') {
+      if (mdast.value == '<br />' || mdast.value == '<br>') {
         return Br()
       }
       return Span('')

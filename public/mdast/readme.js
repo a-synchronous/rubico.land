@@ -1657,44 +1657,44 @@ export default {
         {
           type: 'link',
           title: null,
-          url: 'https://dev.to/richytong/practical-functional-programming-in-javascript-error-handling-8g5',
+          url: 'https://dev.to/richytong/practical-functional-programming-in-javascript-side-effects-and-purity-revised-420h',
           children: [
             {
               type: 'text',
-              value: 'Practical Functional Programming in JavaScript - Error Handling',
+              value: 'Practical Functional Programming in JavaScript - Side Effects and Purity',
               position: {
                 start: { line: 257, column: 2, offset: 8902 },
-                end: { line: 257, column: 65, offset: 8965 }
+                end: { line: 257, column: 74, offset: 8974 }
               }
             }
           ],
           position: {
             start: { line: 257, column: 1, offset: 8901 },
-            end: { line: 257, column: 158, offset: 9058 }
+            end: { line: 257, column: 185, offset: 9085 }
           }
         },
         {
           type: 'text',
           value: '\n',
           position: {
-            start: { line: 257, column: 158, offset: 9058 },
-            end: { line: 258, column: 1, offset: 9059 }
+            start: { line: 257, column: 185, offset: 9085 },
+            end: { line: 258, column: 1, offset: 9086 }
           }
         },
         {
           type: 'html',
           value: '<br>',
           position: {
-            start: { line: 258, column: 1, offset: 9059 },
-            end: { line: 258, column: 5, offset: 9063 }
+            start: { line: 258, column: 1, offset: 9086 },
+            end: { line: 258, column: 5, offset: 9090 }
           }
         },
         {
           type: 'text',
           value: '\n',
           position: {
-            start: { line: 258, column: 5, offset: 9063 },
-            end: { line: 259, column: 1, offset: 9064 }
+            start: { line: 258, column: 5, offset: 9090 },
+            end: { line: 259, column: 1, offset: 9091 }
           }
         },
         {
@@ -1706,63 +1706,63 @@ export default {
               type: 'text',
               value: 'Practical Functional Programming in JavaScript - Techniques for Composing Data',
               position: {
-                start: { line: 259, column: 2, offset: 9065 },
-                end: { line: 259, column: 80, offset: 9143 }
+                start: { line: 259, column: 2, offset: 9092 },
+                end: { line: 259, column: 80, offset: 9170 }
               }
             }
           ],
           position: {
-            start: { line: 259, column: 1, offset: 9064 },
-            end: { line: 259, column: 188, offset: 9251 }
+            start: { line: 259, column: 1, offset: 9091 },
+            end: { line: 259, column: 188, offset: 9278 }
           }
         },
         {
           type: 'text',
           value: '\n',
           position: {
-            start: { line: 259, column: 188, offset: 9251 },
-            end: { line: 260, column: 1, offset: 9252 }
+            start: { line: 259, column: 188, offset: 9278 },
+            end: { line: 260, column: 1, offset: 9279 }
           }
         },
         {
           type: 'html',
           value: '<br>',
           position: {
-            start: { line: 260, column: 1, offset: 9252 },
-            end: { line: 260, column: 5, offset: 9256 }
+            start: { line: 260, column: 1, offset: 9279 },
+            end: { line: 260, column: 5, offset: 9283 }
           }
         },
         {
           type: 'text',
           value: '\n',
           position: {
-            start: { line: 260, column: 5, offset: 9256 },
-            end: { line: 261, column: 1, offset: 9257 }
+            start: { line: 260, column: 5, offset: 9283 },
+            end: { line: 261, column: 1, offset: 9284 }
           }
         },
         {
           type: 'link',
           title: null,
-          url: 'https://dev.to/richytong/practical-functional-programming-in-javascript-side-effects-and-purity-revised-420h',
+          url: 'https://dev.to/richytong/practical-functional-programming-in-javascript-error-handling-8g5',
           children: [
             {
               type: 'text',
-              value: 'Practical Functional Programming in JavaScript - Side Effects and Purity',
+              value: 'Practical Functional Programming in JavaScript - Error Handling',
               position: {
-                start: { line: 261, column: 2, offset: 9258 },
-                end: { line: 261, column: 74, offset: 9330 }
+                start: { line: 261, column: 2, offset: 9285 },
+                end: { line: 261, column: 65, offset: 9348 }
               }
             }
           ],
           position: {
-            start: { line: 261, column: 1, offset: 9257 },
-            end: { line: 261, column: 185, offset: 9441 }
+            start: { line: 261, column: 1, offset: 9284 },
+            end: { line: 261, column: 158, offset: 9441 }
           }
         }
       ],
       position: {
         start: { line: 255, column: 1, offset: 8778 },
-        end: { line: 261, column: 185, offset: 9441 }
+        end: { line: 261, column: 158, offset: 9441 }
       }
     }
   ],
