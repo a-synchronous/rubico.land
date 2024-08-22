@@ -102,7 +102,7 @@ const Layout = ReactElement(props => {
     Footer([
       P({
         style: { fontSize: '12px', color: 'grey' },
-      }, '© 2023 Richard Tong'),
+      }, `© ${new Date().getFullYear()} Richard Tong`),
     ]),
   ])
 })
