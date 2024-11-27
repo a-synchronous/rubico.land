@@ -14,8 +14,7 @@ import BlogPost from './BlogPost.js'
  */
 const MdastBlogPost = ReactElement(props => {
   const { mdast } = props
-  const metadata = MdastBlogMetadata(mdast)
-  return BlogPost({ ...props, metadata }, [
+  return BlogPost(props, [
     ReactElementFromMdast({ mdast }),
   ])
 })

@@ -1,4 +1,5 @@
 import DownArrowSvg from './DownArrowSvg.js'
+import useGlobalState from './useGlobalState.js'
 
 /**
  * @name BlogPost
@@ -38,12 +39,13 @@ const BlogPost = ReactElement(props => {
     datePublished,
     href,
     description,
-    coverImageUrl,
+    image,
   } = metadata
 
   const isActive = path == href
 
-  const [transition, setTransition] = useState('none')
+  const [transition, setTransition] =
+    useGlobalState('BlogPost:transition', 'none')
 
   useEffect(() => {
     if (isActive) {
@@ -53,8 +55,6 @@ const BlogPost = ReactElement(props => {
       }, 360)
     }
   }, [isActive])
-
-  console.log('BlogPost', { activeBlogPostHref })
 
   const onLinkClick = () => {
     if (isActive) {
@@ -70,7 +70,7 @@ const BlogPost = ReactElement(props => {
   return Div({
     key: href,
     class: (
-      activeBlogPostHref == null ? 'blog-post'
+      activeBlogPostHref == null ? 'blog-post inactive'
       : isActive ? 'blog-post active'
       : 'blog-post inactive'
     ),
@@ -89,12 +89,21 @@ const BlogPost = ReactElement(props => {
 
     P(`${datePublished} by ${author}`),
 
-    isActive ? [] : [
-      ...coverImageUrl == null ? [] : [
+    isActive ? [
+      ...image == null ? [] : [
         Div({ class: 'cover' }, [
           Img({
-            src: coverImageUrl,
-            alt: coverImageUrl,
+            src: image,
+            alt: image,
+          }),
+        ]),
+      ],
+    ] : [
+      ...image == null ? [] : [
+        Div({ class: 'cover' }, [
+          Img({
+            src: image,
+            alt: image,
           }),
         ]),
       ],

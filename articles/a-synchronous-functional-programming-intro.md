@@ -4,6 +4,7 @@ author: Richard Tong, CTO and Co-Founder of Claimyr Inc.
 date: 2024-11-26
 path: /blog/a-synchronous-functional-programming-intro
 description: An introduction to the [A]synchronous Functional Programming paradigm
+image: https://rubico.land/assets/rubico-logo-large.png
 ---
 
 Hello, welcome to my series on a new paradigm built on top of the [Functional Programming](https://en.wikipedia.org/wiki/Functional_programming) paradigm: **[A]synchronous Functional Programming**. The [A]synchronous Functional Programming paradigm generally follows the Functional Programming paradigm and is founded on the following principles:

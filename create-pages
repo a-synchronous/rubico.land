@@ -129,10 +129,10 @@ const main = async function (options) {
       Object.fromEntries,
     ])
 
-    const { path, title, description } = metadata
+    const { path, title, description, image } = metadata
 
     console.log('Creating', path)
-    await publicFs.writeFile(path, IndexHtml({ path, title, description }))
+    await publicFs.writeFile(path, IndexHtml({ path, title, description, image }))
   }
 }
 

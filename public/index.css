@@ -593,7 +593,6 @@ h4 {
   margin-bottom: 25px;
 }
 .blog-post.inactive {
-  display: none;
 }
 
 .blog-post > p {
@@ -612,12 +611,16 @@ h4 {
   margin-bottom: 15px;
 }
 .blog-post .cover > img {
-  width: 42%;
+  width: 85%;
 }
 @media only screen and (max-width: 768px) {
   .blog-post .cover > img {
     width: 85%;
   }
+}
+
+.blog-post.inactive .cover > img {
+  width: 45%;
 }
 
 .blog-post > h3 {

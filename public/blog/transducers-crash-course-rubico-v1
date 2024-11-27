@@ -4,16 +4,16 @@
   <title>Transducers Crash Course for rubico V1</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width">
-  <meta name="description" content="A crash course in rubico v1 transducers. Transducers enable composable and memory efficient wrangling of very large or even infinite sets of data." />
+  <meta name="description" content="A crash course in transducers for rubico v1" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Transducers Crash Course for rubico V1" />
-  <meta name="twitter:description" content="A crash course in rubico v1 transducers. Transducers enable composable and memory efficient wrangling of very large or even infinite sets of data." />
-  <meta name="twitter:image" content="/assets/android-chrome-192x192.png" />
+  <meta name="twitter:description" content="A crash course in transducers for rubico v1" />
   <meta property="og:title" content="Transducers Crash Course for rubico V1" />
   <meta property="og:type" content="object" />
-  <meta property="og:image" content="/assets/android-chrome-192x192.png" />
   <meta property="og:url" content="https://rubico.land/blog/transducers-crash-course-rubico-v1" />
-  <meta property="og:description" content="A crash course in rubico v1 transducers. Transducers enable composable and memory efficient wrangling of very large or even infinite sets of data." />
+  <meta property="og:description" content="A crash course in transducers for rubico v1" />
+
+  
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">

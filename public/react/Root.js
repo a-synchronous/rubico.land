@@ -9,6 +9,10 @@ import useRubicoVersion from './useRubicoVersion.js'
 import useIsHamburgerMenuActive from './useIsHamburgerMenuActive.js'
 import getCookie from './getCookie.js'
 import cleanPath from './cleanPath.js'
+import useGlobalState from './useGlobalState.js'
+import blogPostList from './blogPostList.js'
+
+const blogUrls = blogPostList.map(get('metadata.href'))
 
 // Tour Docs Blog
 const tabAnchors = [...document.querySelectorAll('header > nav > a')]
@@ -27,9 +31,12 @@ const Root = ReactElement(props => {
       default:
         return state
     }
-  }, {
-    path: cleanPath(window.location.pathname),
-    activeBlogPostHref: null,
+  }, {}, () => {
+    const path = cleanPath(window.location.pathname)
+    return {
+      path,
+      activeBlogPostHref: blogUrls.find(href => href == path),
+    }
   })
 
   const [_, setIsHamburgerMenuActive] = useIsHamburgerMenuActive()
@@ -53,23 +60,31 @@ const Root = ReactElement(props => {
     }, [path])
   }
 
-  const updatePathWithLocation = () => {
-    goto(cleanPath(window.location.pathname))
-  }
+
+  const [transition, setTransition] =
+    useGlobalState('BlogPost:transition', 'none')
 
   useEffect(() => {
-    window.addEventListener('popstate', updatePathWithLocation)
+    const handlePopState = e => {
+      const { path } = e.state
+      if (blogUrls.includes(path)) {
+        setActiveBlogPostHref(path)
+      } else {
+        setTransition('none')
+      }
+      dispatch({ type: 'SET_PATH', path })
+    }
+
+    window.addEventListener('popstate', handlePopState)
 
     return () => {
-      window.removeEventListener('popstate', updatePathWithLocation)
+      window.removeEventListener('popstate', handlePopState)
     }
   }, [])
 
   const childProps = { ...appState, goto, setActiveBlogPostHref }
 
   const { path } = appState
-
-  console.log('Root:', { path })
 
   if (path.startsWith('/tour')) {
     return Tour(childProps)

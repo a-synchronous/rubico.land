@@ -43,7 +43,7 @@ const Layout = ReactElement(props => {
           href: '/',
         }, [
           Img({
-            src: 'https://raw.githubusercontent.com/a-synchronous/assets/master/rubico-logo.png',
+            src: '/assets/rubico-logo.png',
             alt: 'rubico-national-park',
           }),
           Span({ class: 'text1' }, 'rubico'),

@@ -8,12 +8,12 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="map - rubico documentation" />
   <meta name="twitter:description" content="Reference for map" />
-  <meta name="twitter:image" content="/assets/android-chrome-192x192.png" />
   <meta property="og:title" content="map - rubico documentation" />
   <meta property="og:type" content="object" />
-  <meta property="og:image" content="/assets/android-chrome-192x192.png" />
   <meta property="og:url" content="https://rubico.land/docs/map" />
   <meta property="og:description" content="Reference for map" />
+
+  
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">

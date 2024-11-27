@@ -11,7 +11,12 @@
  * ```
  */
 const IndexHtml = function (options) {
-  const { title, description, path } = options
+  const {
+    title,
+    description,
+    path,
+    image,
+  } = options
 
   const url = `https://rubico.land${path}`
 
@@ -26,12 +31,16 @@ const IndexHtml = function (options) {
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="${title}" />
   <meta name="twitter:description" content="${description}" />
-  <meta name="twitter:image" content="/assets/android-chrome-192x192.png" />
   <meta property="og:title" content="${title}" />
   <meta property="og:type" content="object" />
-  <meta property="og:image" content="/assets/android-chrome-192x192.png" />
   <meta property="og:url" content="${url}" />
   <meta property="og:description" content="${description}" />
+
+  ${image == null ? '' : `
+  <meta name="image" content="${image}" />
+  <meta property="og:image" content="${image}" />
+  <meta name="twitter:image" content="${image}" />
+  `}
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">

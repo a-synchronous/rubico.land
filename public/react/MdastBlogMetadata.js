@@ -16,6 +16,7 @@ const MdastBlogMetadata = function (mdast) {
     author: data.author,
     coverImageUrl: data.coverImageUrl,
     description: data.description,
+    image: data.image,
   }
   return data
 }
