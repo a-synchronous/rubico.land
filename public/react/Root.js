@@ -42,7 +42,6 @@ const Root = ReactElement(props => {
   const [_, setIsHamburgerMenuActive] = useIsHamburgerMenuActive()
 
   const goto = path => {
-    console.log('goto', { path })
     history.pushState({ path }, null, path)
     dispatch({ type: 'SET_PATH', path })
     document.title = PathTitle(path)
@@ -68,9 +67,9 @@ const Root = ReactElement(props => {
   useEffect(() => {
     const handlePopState = e => {
       console.log('popstate', e)
-      const { path } = e.state
+      const { path } = e.state ?? {}
       if (blogUrls.includes(path)) {
-        setActiveBlogPostHref(path)
+        setActiveBlogPostHref(path ?? window.location.pathname)
       } else {
         setTransition('none')
       }
