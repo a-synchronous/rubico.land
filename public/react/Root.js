@@ -43,7 +43,7 @@ const Root = ReactElement(props => {
 
   const goto = path => {
     console.log('goto', { path })
-    history.pushState({ path }, '', path)
+    history.pushState({ path }, null, path)
     dispatch({ type: 'SET_PATH', path })
     document.title = PathTitle(path)
     setIsHamburgerMenuActive(false)
