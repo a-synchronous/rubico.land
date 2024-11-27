@@ -42,6 +42,7 @@ const Root = ReactElement(props => {
   const [_, setIsHamburgerMenuActive] = useIsHamburgerMenuActive()
 
   const goto = path => {
+    console.log('goto', { path })
     history.pushState({ path }, '', path)
     dispatch({ type: 'SET_PATH', path })
     document.title = PathTitle(path)
