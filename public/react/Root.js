@@ -67,9 +67,9 @@ const Root = ReactElement(props => {
   useEffect(() => {
     const handlePopState = e => {
       console.log('popstate', e)
-      const { path } = e.state ?? {}
+      const { path = window.location.pathname } = e.state ?? {}
       if (blogUrls.includes(path)) {
-        setActiveBlogPostHref(path ?? window.location.pathname)
+        setActiveBlogPostHref(path)
       } else {
         setTransition('none')
       }
