@@ -30,7 +30,7 @@ Here are some examples of first class functions in JavaScript:
  * **.forEach(firstClassFunction)**: `firstClassFunction` is a first class function
  * **.map(firstClassFunction)**: `firstClassFunction` is a first class function
 
-You could even write your own higher-order functions, for example, the function `logArgs` takes a function `f` and logs the arguments to `f` every time `f` is called.
+You could even write your own higher-order functions, for example, the function `logArgs` takes the first class function `f` and logs the arguments to `f` every time `f` is called.
 
 ```javascript [playground]
 function logArgs(f) {
