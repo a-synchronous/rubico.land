@@ -1,9 +1,9 @@
 ---
 title: Transducers Crash Course for rubico V1
-author: Richard Tong
+author: Richard Tong, CTO and Co-Founder of Claimyr Inc.
 date: 2020-10-02
 path: /blog/transducers-crash-course-rubico-v1
-description: A crash course in rubico v1 transducers. Transducers enable composable and memory efficient wrangling of very large or even infinite sets of data.
+description: A crash course in transducers for rubico v1
 ---
 
 Transducers enable composable and memory efficient wrangling of very large or even infinite sets of data. With transducers, each item of the data is transformed by all operations in a single pass, as opposed to the data having to go through batch transformations one operation at a time.

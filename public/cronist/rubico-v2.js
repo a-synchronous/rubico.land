@@ -26763,6 +26763,11 @@ export default [
     name: 'map.entries',
     synopsis: '```coffeescript [specscript]\n' +
       'map.entries(\n' +
+      '  value Map|Object|Promise<Map|Object>,\n' +
+      '  mapper ([key any, value any])=>Promise|[any, any],\n' +
+      ') -> Promise|Map|Object\n' +
+      '\n' +
+      'map.entries(\n' +
       '  mapper ([key any, value any])=>Promise|[any, any],\n' +
       ')(value Map|Object) -> Promise|Map|Object\n' +
       '```',
@@ -26814,17 +26819,22 @@ export default [
             lang: 'coffeescript',
             meta: '[specscript]',
             value: 'map.entries(\n' +
+              '  value Map|Object|Promise<Map|Object>,\n' +
+              '  mapper ([key any, value any])=>Promise|[any, any],\n' +
+              ') -> Promise|Map|Object\n' +
+              '\n' +
+              'map.entries(\n' +
               '  mapper ([key any, value any])=>Promise|[any, any],\n' +
               ')(value Map|Object) -> Promise|Map|Object',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 140 }
+              end: { line: 10, column: 4, offset: 271 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 5, column: 4, offset: 140 }
+          end: { line: 10, column: 4, offset: 271 }
         }
       },
       description: {
