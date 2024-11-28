@@ -4266,6 +4266,95 @@ export default [
     fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayForEach.js'
   },
   {
+    name: 'arrayForEachSeries',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var T any,\n' +
+      '  array Array<T>,\n' +
+      '  callback T=>()\n' +
+      '\n' +
+      'arrayForEachSeries(array Array, callback function) -> array|Promise\n' +
+      '```',
+    description: 'Call a callback for each item of an array in series. Return a promise if any executions are asynchronous.',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'arrayForEachSeries',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 19, offset: 18 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 19, offset: 18 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 19, offset: 18 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'var T any,\n' +
+              '  array Array<T>,\n' +
+              '  callback T=>()\n' +
+              '\n' +
+              'arrayForEachSeries(array Array, callback function) -> array|Promise',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 7, column: 4, offset: 147 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 7, column: 4, offset: 147 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Call a callback for each item of an array in series. Return a promise if any executions are asynchronous.',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 106, offset: 105 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 106, offset: 105 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 106, offset: 105 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayForEachSeries.js'
+  },
+  {
     name: 'arrayJoin',
     synopsis: '```coffeescript [specscript]\n' +
       'arrayJoin(array Array, delimiter string) -> string\n' +
@@ -6186,6 +6275,95 @@ export default [
       }
     },
     fileName: '/home/richard/code/rubico.land/../rubico/_internal/asyncIteratorForEach.js'
+  },
+  {
+    name: 'asyncIteratorForEachSeries',
+    synopsis: '```coffeescript [specscript]\n' +
+      'var T any,\n' +
+      '  asyncIterator AsyncIterator<T>,\n' +
+      '  callback T=>()\n' +
+      '\n' +
+      'asyncIteratorForEachSeries(asyncIterator, callback) -> Promise<>\n' +
+      '```',
+    description: 'Execute a callback function for each item of an async iterator in series.',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'asyncIteratorForEachSeries',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 27, offset: 26 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 27, offset: 26 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 27, offset: 26 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'var T any,\n' +
+              '  asyncIterator AsyncIterator<T>,\n' +
+              '  callback T=>()\n' +
+              '\n' +
+              'asyncIteratorForEachSeries(asyncIterator, callback) -> Promise<>',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 7, column: 4, offset: 160 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 7, column: 4, offset: 160 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Execute a callback function for each item of an async iterator in series.',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 74, offset: 73 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 74, offset: 73 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 74, offset: 73 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/asyncIteratorForEachSeries.js'
   },
   {
     name: 'asyncIteratorReduce',
@@ -11926,6 +12104,106 @@ export default [
     fileName: '/home/richard/code/rubico.land/../rubico/_internal/iteratorForEach.js'
   },
   {
+    name: 'iteratorForEachSeries',
+    synopsis: '```coffeescript [specscript]\n' +
+      'iteratorForEachSeries(iterator Iterator, callback function) -> iterator\n' +
+      '```',
+    description: 'Call a callback for each item of an iterator. Return a promise if any executions are asynchronous.\n' +
+      '\n' +
+      'Note: iterator is consumed',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'iteratorForEachSeries',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 22, offset: 21 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 22, offset: 21 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 22, offset: 21 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'iteratorForEachSeries(iterator Iterator, callback function) -> iterator',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 104 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 104 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Call a callback for each item of an iterator. Return a promise if any executions are asynchronous.',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 99, offset: 98 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 99, offset: 98 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Note: iterator is consumed',
+                position: {
+                  start: { line: 3, column: 1, offset: 100 },
+                  end: { line: 3, column: 27, offset: 126 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 3, column: 1, offset: 100 },
+              end: { line: 3, column: 27, offset: 126 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 27, offset: 126 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/iteratorForEachSeries.js'
+  },
+  {
     name: 'iteratorReduceAsync',
     synopsis: '```coffeescript [specscript]\n' +
       'var T any,\n' +
@@ -13574,6 +13852,87 @@ export default [
       }
     },
     fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectForEach.js'
+  },
+  {
+    name: 'objectForEachSeries',
+    synopsis: '```coffeescript [specscript]\n' +
+      'objectForEachSeries(object Object, callback function) -> Promise|object\n' +
+      '```',
+    description: 'Execute a callback for each value of an object. Return a promise if any executions are asynchronous.',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'objectForEachSeries',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 20, offset: 19 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 20, offset: 19 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 20, offset: 19 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'objectForEachSeries(object Object, callback function) -> Promise|object',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 104 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 104 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Execute a callback for each value of an object. Return a promise if any executions are asynchronous.',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 101, offset: 100 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 101, offset: 100 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 101, offset: 100 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectForEachSeries.js'
   },
   {
     name: 'objectGet',
@@ -24128,14 +24487,14 @@ export default [
     synopsis: '```coffeescript [specscript]\n' +
       'type Collection = Array|Iterable|AsyncIterable|{ forEach: function }|Object\n' +
       '\n' +
-      'forEach(collection Collection, callback function) -> collection Collection\n' +
+      'forEach(collection Collection, callback function) -> collection Promise|Collection\n' +
       '\n' +
-      'forEach(callback function)(collection Collection) -> collection Collection\n' +
+      'forEach(callback function)(collection Collection) -> collection Promise|Collection\n' +
       '```',
-    description: 'Execute a callback for each item of a collection, returning a Promise if the execution is asynchronous.\n' +
+    description: 'Execute a callback for each item of a collection, returning a Promise if the execution is asynchronous. Asynchronous execution happens concurrently.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      'forEach([1, 2, 3, 4, 5l], console.log) // 1 2 3 4 5\n' +
+      'forEach([1, 2, 3, 4, 5], console.log) // 1 2 3 4 5\n' +
       '\n' +
       'forEach({ a: 1, b: 2, c: 3 }, console.log) // 1 2 3\n' +
       '```\n' +
@@ -24187,18 +24546,18 @@ export default [
             meta: '[specscript]',
             value: 'type Collection = Array|Iterable|AsyncIterable|{ forEach: function }|Object\n' +
               '\n' +
-              'forEach(collection Collection, callback function) -> collection Collection\n' +
+              'forEach(collection Collection, callback function) -> collection Promise|Collection\n' +
               '\n' +
-              'forEach(callback function)(collection Collection) -> collection Collection',
+              'forEach(callback function)(collection Collection) -> collection Promise|Collection',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 7, column: 4, offset: 260 }
+              end: { line: 7, column: 4, offset: 276 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 7, column: 4, offset: 260 }
+          end: { line: 7, column: 4, offset: 276 }
         }
       },
       description: {
@@ -24209,28 +24568,28 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Execute a callback for each item of a collection, returning a Promise if the execution is asynchronous.',
+                value: 'Execute a callback for each item of a collection, returning a Promise if the execution is asynchronous. Asynchronous execution happens concurrently.',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 104, offset: 103 }
+                  end: { line: 1, column: 149, offset: 148 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 104, offset: 103 }
+              end: { line: 1, column: 149, offset: 148 }
             }
           },
           {
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: 'forEach([1, 2, 3, 4, 5l], console.log) // 1 2 3 4 5\n' +
+            value: 'forEach([1, 2, 3, 4, 5], console.log) // 1 2 3 4 5\n' +
               '\n' +
               'forEach({ a: 1, b: 2, c: 3 }, console.log) // 1 2 3',
             position: {
-              start: { line: 3, column: 1, offset: 105 },
-              end: { line: 7, column: 4, offset: 240 }
+              start: { line: 3, column: 1, offset: 150 },
+              end: { line: 7, column: 4, offset: 284 }
             }
           },
           {
@@ -24240,14 +24599,14 @@ export default [
                 type: 'text',
                 value: 'Omit the data argument for a composable API',
                 position: {
-                  start: { line: 9, column: 1, offset: 242 },
-                  end: { line: 9, column: 44, offset: 285 }
+                  start: { line: 9, column: 1, offset: 286 },
+                  end: { line: 9, column: 44, offset: 329 }
                 }
               }
             ],
             position: {
-              start: { line: 9, column: 1, offset: 242 },
-              end: { line: 9, column: 44, offset: 285 }
+              start: { line: 9, column: 1, offset: 286 },
+              end: { line: 9, column: 44, offset: 329 }
             }
           },
           {
@@ -24262,14 +24621,179 @@ export default [
               '                        // 25\n' +
               '])',
             position: {
-              start: { line: 11, column: 1, offset: 287 },
-              end: { line: 19, column: 4, offset: 499 }
+              start: { line: 11, column: 1, offset: 331 },
+              end: { line: 19, column: 4, offset: 543 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 19, column: 4, offset: 499 }
+          end: { line: 19, column: 4, offset: 543 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/forEach.js'
+  },
+  {
+    name: '_forEachSeries',
+    synopsis: '```coffeescript [specscript]\n' +
+      'type Collection = Array|Iterable|AsyncIterable|{ forEach: function }|Object\n' +
+      '\n' +
+      '_forEachSeries(collection Collection, callback function) -> collection Promise|Collection\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: '_forEachSeries',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 15, offset: 14 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 15, offset: 14 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 15, offset: 14 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'type Collection = Array|Iterable|AsyncIterable|{ forEach: function }|Object\n' +
+              '\n' +
+              '_forEachSeries(collection Collection, callback function) -> collection Promise|Collection',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 5, column: 4, offset: 199 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 5, column: 4, offset: 199 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/forEach.js'
+  },
+  {
+    name: 'forEach.series',
+    synopsis: '```coffeescript [specscript]\n' +
+      'type Collection = Array|Iterable|AsyncIterable|{ forEach: function }|Object\n' +
+      '\n' +
+      'forEach.series(collection Collection, callback function) -> collection Promise|Collection\n' +
+      '\n' +
+      'forEach.series(callback function)(collection Collection) -> collection Promise|Collection\n' +
+      '```',
+    description: 'Execute a callback for each item of a collection, returning a Promise if the execution is asynchronous. Asynchronous execution happens in series.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'forEach.series([1, 2, 3, 4, 5], console.log) // 1 2 3 4 5\n' +
+      '\n' +
+      'forEach.series({ a: 1, b: 2, c: 3 }, console.log) // 1 2 3\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'forEach.series',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 15, offset: 14 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 15, offset: 14 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 15, offset: 14 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'type Collection = Array|Iterable|AsyncIterable|{ forEach: function }|Object\n' +
+              '\n' +
+              'forEach.series(collection Collection, callback function) -> collection Promise|Collection\n' +
+              '\n' +
+              'forEach.series(callback function)(collection Collection) -> collection Promise|Collection',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 7, column: 4, offset: 290 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 7, column: 4, offset: 290 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Execute a callback for each item of a collection, returning a Promise if the execution is asynchronous. Asynchronous execution happens in series.',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 146, offset: 145 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 146, offset: 145 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'forEach.series([1, 2, 3, 4, 5], console.log) // 1 2 3 4 5\n' +
+              '\n' +
+              'forEach.series({ a: 1, b: 2, c: 3 }, console.log) // 1 2 3',
+            position: {
+              start: { line: 3, column: 1, offset: 147 },
+              end: { line: 7, column: 4, offset: 295 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 7, column: 4, offset: 295 }
         }
       }
     },
@@ -39057,7 +39581,7 @@ export default [
       'tap(...args, func function) -> Promise|args[0]\n' +
       'tap(func function)(...args) -> Promise|args[0]\n' +
       '```',
-    description: 'Call a function with any number of arguments, returning the first argument. Promises created by the tapper are resolved before returning the value.\n' +
+    description: 'Call a function with provided arguments, returning the first argument. The return value of the function call is discarded.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const pipeline = pipe([\n' +
@@ -39125,16 +39649,16 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Call a function with any number of arguments, returning the first argument. Promises created by the tapper are resolved before returning the value.',
+                value: 'Call a function with provided arguments, returning the first argument. The return value of the function call is discarded.',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 148, offset: 147 }
+                  end: { line: 1, column: 123, offset: 122 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 148, offset: 147 }
+              end: { line: 1, column: 123, offset: 122 }
             }
           },
           {
@@ -39151,14 +39675,14 @@ export default [
               "                // 'foobar'\n" +
               "                // 'foobarbaz'",
             position: {
-              start: { line: 3, column: 1, offset: 149 },
-              end: { line: 13, column: 4, offset: 418 }
+              start: { line: 3, column: 1, offset: 124 },
+              end: { line: 13, column: 4, offset: 393 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 13, column: 4, offset: 418 }
+          end: { line: 13, column: 4, offset: 393 }
         }
       }
     },

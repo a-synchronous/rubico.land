@@ -254,13 +254,8 @@ const DocsNav = ReactElement(props => {
         H4('Compose functions'),
         CoreDocsNavItem('pipe'),
         CoreDocsNavItem('compose'),
-      ]),
-
-      Section([
-        H4('Handle effects'),
         CoreDocsNavItem('tap'),
         CoreDocsNavItem('tap.if'),
-        CoreDocsNavItem('forEach'),
       ]),
 
       Section([
@@ -274,13 +269,19 @@ const DocsNav = ReactElement(props => {
       ]),
 
       Section([
-        H4('Handle objects'),
+        H4('Compose data'),
         CoreDocsNavItem('all'),
         CoreDocsNavItem('assign'),
         CoreDocsNavItem('get'),
         CoreDocsNavItem('set'),
         CoreDocsNavItem('pick'),
         CoreDocsNavItem('omit'),
+      ]),
+
+      Section([
+        H4('Iterate'),
+        CoreDocsNavItem('forEach'),
+        CoreDocsNavItem('forEach.series'),
       ]),
 
       Section([
@@ -305,7 +306,7 @@ const DocsNav = ReactElement(props => {
       ]),
 
       Section([
-        H4('Comparison'),
+        H4('Comparison operators'),
         CoreDocsNavItem('eq'),
         CoreDocsNavItem('gt'),
         CoreDocsNavItem('lt'),
