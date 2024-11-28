@@ -2,6 +2,7 @@ import rubicoV1 from 'https://unpkg.com/rubico@1/dist/rubico.es.min.js'
 import rubicoV2 from 'https://unpkg.com/rubico@2/dist/rubico.es.min.js'
 import Transducer from 'https://unpkg.com/rubico@2/dist/Transducer.es.min.js'
 import FunctionNames from './FunctionNames.js'
+import blogPostList from './blogPostList.js'
 
 const pathPageMap = new Map()
 const m = pathPageMap
@@ -47,6 +48,12 @@ FunctionNames(Transducer).forEach(funcName => {
     title: `Transducer.${funcName} - rubico documentation`,
     description: `Reference for Transducer.${funcName}`,
   })
+})
+
+blogPostList.forEach(blogPost => {
+  const { metadata } = blogPost
+  const { href, title, description } = metadata
+  m.set(href, { path: href, title, description })
 })
 
 /* TODO x function names
