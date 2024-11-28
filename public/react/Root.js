@@ -4,7 +4,6 @@ import Docs from './Docs.js'
 import Blog from './Blog.js'
 import NotFound from './NotFound.js'
 import Analytics from './Analytics.js'
-import PathTitle from './PathTitle.js'
 import useRubicoVersion from './useRubicoVersion.js'
 import useIsHamburgerMenuActive from './useIsHamburgerMenuActive.js'
 import getCookie from './getCookie.js'
@@ -44,7 +43,6 @@ const Root = ReactElement(props => {
   const goto = path => {
     history.pushState({ path }, null, path)
     dispatch({ type: 'SET_PATH', path })
-    document.title = PathTitle(path)
     setIsHamburgerMenuActive(false)
     Analytics.goto(path)
   }

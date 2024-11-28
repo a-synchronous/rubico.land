@@ -62,7 +62,7 @@ const main = async function (options) {
   await publicFs.writeFile('blog/index.html', IndexHtml({
     path: '/blog/',
     title: 'rubico blog',
-    description: 'A blog about the rubico library, JavaScript, and functional programming',
+    description: 'A blog about rubico, JavaScript, and [A]synchronous Functional Programming',
   }))
 
   const coreFunctionNames = FunctionNames(rubico)
