@@ -1836,10 +1836,64 @@ export default {
         start: { line: 261, column: 1, offset: 9039 },
         end: { line: 267, column: 158, offset: 9702 }
       }
+    },
+    {
+      type: 'heading',
+      depth: 1,
+      children: [
+        {
+          type: 'text',
+          value: 'Blog',
+          position: {
+            start: { line: 269, column: 3, offset: 9706 },
+            end: { line: 269, column: 7, offset: 9710 }
+          }
+        }
+      ],
+      position: {
+        start: { line: 269, column: 1, offset: 9704 },
+        end: { line: 269, column: 7, offset: 9710 }
+      }
+    },
+    {
+      type: 'paragraph',
+      children: [
+        {
+          type: 'text',
+          value: 'Check out the rubico blog at ',
+          position: {
+            start: { line: 270, column: 1, offset: 9711 },
+            end: { line: 270, column: 30, offset: 9740 }
+          }
+        },
+        {
+          type: 'link',
+          title: null,
+          url: 'https://rubico.land/blog',
+          children: [
+            {
+              type: 'text',
+              value: 'https://rubico.land/blog',
+              position: {
+                start: { line: 270, column: 31, offset: 9741 },
+                end: { line: 270, column: 55, offset: 9765 }
+              }
+            }
+          ],
+          position: {
+            start: { line: 270, column: 30, offset: 9740 },
+            end: { line: 270, column: 82, offset: 9792 }
+          }
+        }
+      ],
+      position: {
+        start: { line: 270, column: 1, offset: 9711 },
+        end: { line: 270, column: 82, offset: 9792 }
+      }
     }
   ],
   position: {
     start: { line: 1, column: 1, offset: 0 },
-    end: { line: 268, column: 1, offset: 9703 }
+    end: { line: 271, column: 1, offset: 9793 }
   }
 }

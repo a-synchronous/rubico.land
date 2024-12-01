@@ -12947,6 +12947,99 @@ export default [
     fileName: '/home/richard/code/rubico.land/../rubico/_internal/mapMapEntries.js'
   },
   {
+    name: 'mapMapSeries',
+    synopsis: '```coffeescript [specscript]\n' +
+      'type MapMapper = (\n' +
+      '  value any,\n' +
+      '  key any,\n' +
+      '  map Map\n' +
+      ')=>(resultItem Promise|any)\n' +
+      '\n' +
+      'mapMapSeries(map Map, f MapMapper) -> Promise|Map\n' +
+      '```',
+    description: 'Apply a mapper in series to each value of a Map, returning a new Map of mapped items. Mapper may be asynchronous.',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'mapMapSeries',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 13, offset: 12 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 13, offset: 12 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 13, offset: 12 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'type MapMapper = (\n' +
+              '  value any,\n' +
+              '  key any,\n' +
+              '  map Map\n' +
+              ')=>(resultItem Promise|any)\n' +
+              '\n' +
+              'mapMapSeries(map Map, f MapMapper) -> Promise|Map',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 9, column: 4, offset: 164 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 9, column: 4, offset: 164 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Apply a mapper in series to each value of a Map, returning a new Map of mapped items. Mapper may be asynchronous.',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 114, offset: 113 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 114, offset: 113 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 114, offset: 113 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/mapMapSeries.js'
+  },
+  {
     name: 'mapReduceAsync',
     synopsis: '```coffeescript [specscript]\n' +
       'mapReduceAsync(\n' +
@@ -14474,6 +14567,131 @@ export default [
       }
     },
     fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectMapOwn.js'
+  },
+  {
+    name: 'objectMapSeries',
+    synopsis: '```coffeescript [specscript]\n' +
+      'type ObjectMapper = (\n' +
+      '  value any,\n' +
+      '  key string,\n' +
+      '  collection Object\n' +
+      ')=>(resultItem Promise|any)\n' +
+      '\n' +
+      'objectMapSeries(object Object, f ObjectMapper) -> Promise|Object\n' +
+      '```',
+    description: 'Apply a function `f` in series to each value of an object, returning an object of results. `f` may be asynchronous.',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'objectMapSeries',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 16, offset: 15 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 16, offset: 15 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 16, offset: 15 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'type ObjectMapper = (\n' +
+              '  value any,\n' +
+              '  key string,\n' +
+              '  collection Object\n' +
+              ')=>(resultItem Promise|any)\n' +
+              '\n' +
+              'objectMapSeries(object Object, f ObjectMapper) -> Promise|Object',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 9, column: 4, offset: 195 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 9, column: 4, offset: 195 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Apply a function ',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 18, offset: 17 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'f',
+                position: {
+                  start: { line: 1, column: 18, offset: 17 },
+                  end: { line: 1, column: 21, offset: 20 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' in series to each value of an object, returning an object of results. ',
+                position: {
+                  start: { line: 1, column: 21, offset: 20 },
+                  end: { line: 1, column: 92, offset: 91 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'f',
+                position: {
+                  start: { line: 1, column: 92, offset: 91 },
+                  end: { line: 1, column: 95, offset: 94 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' may be asynchronous.',
+                position: {
+                  start: { line: 1, column: 95, offset: 94 },
+                  end: { line: 1, column: 116, offset: 115 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 116, offset: 115 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 116, offset: 115 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectMapSeries.js'
   },
   {
     name: 'objectReduceAsync',
@@ -16648,6 +16866,58 @@ export default [
     fileName: '/home/richard/code/rubico.land/../rubico/_internal/sameValueZero.js'
   },
   {
+    name: 'setAdd',
+    synopsis: '```coffeescript [specscript]\nsetAdd(set Set, value any) -> set\n```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'setAdd',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 7, offset: 6 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 7, offset: 6 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 7, offset: 6 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'setAdd(set Set, value any) -> set',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 66 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 66 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/setAdd.js'
+  },
+  {
     name: 'setByPath',
     synopsis: '```coffeescript [specscript]\n' +
       'setByPath<\n' +
@@ -17127,6 +17397,99 @@ export default [
       }
     },
     fileName: '/home/richard/code/rubico.land/../rubico/_internal/setMap.js'
+  },
+  {
+    name: 'setMapSeries',
+    synopsis: '```coffeescript [specscript]\n' +
+      'type SetMapper = (\n' +
+      '  value any,\n' +
+      '  key any,\n' +
+      '  collection Set\n' +
+      ')=>(resultItem Promise|any)\n' +
+      '\n' +
+      'setMapSeries(set Set, f SetMapper) -> Promise|Set\n' +
+      '```',
+    description: 'Apply a mapper in series to each value of a set, returning a new set of mapped items. Mapper may be asynchronous.',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'setMapSeries',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 13, offset: 12 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 13, offset: 12 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 13, offset: 12 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'type SetMapper = (\n' +
+              '  value any,\n' +
+              '  key any,\n' +
+              '  collection Set\n' +
+              ')=>(resultItem Promise|any)\n' +
+              '\n' +
+              'setMapSeries(set Set, f SetMapper) -> Promise|Set',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 9, column: 4, offset: 171 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 9, column: 4, offset: 171 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Apply a mapper in series to each value of a set, returning a new set of mapped items. Mapper may be asynchronous.',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 114, offset: 113 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 114, offset: 113 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 114, offset: 113 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/setMapSeries.js'
   },
   {
     name: 'sleep',
@@ -18144,7 +18507,7 @@ export default [
       '  mapper character=>Promise|string|any,\n' +
       '>(str, mapper) -> stringWithCharactersMapped string\n' +
       '```',
-    description: 'Apply a mapper concurrently to each character of a string, returning a string result. `mapper` may be asynchronous.',
+    description: 'Apply a mapper concurrently to each character of a string, returning a string result. mapper function may be asynchronous.',
     related: 'stringFlatMap',
     mdast: {
       name: {
@@ -18204,38 +18567,22 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Apply a mapper concurrently to each character of a string, returning a string result. ',
+                value: 'Apply a mapper concurrently to each character of a string, returning a string result. mapper function may be asynchronous.',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 87, offset: 86 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'mapper',
-                position: {
-                  start: { line: 1, column: 87, offset: 86 },
-                  end: { line: 1, column: 95, offset: 94 }
-                }
-              },
-              {
-                type: 'text',
-                value: ' may be asynchronous.',
-                position: {
-                  start: { line: 1, column: 95, offset: 94 },
-                  end: { line: 1, column: 116, offset: 115 }
+                  end: { line: 1, column: 123, offset: 122 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 116, offset: 115 }
+              end: { line: 1, column: 123, offset: 122 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 1, column: 116, offset: 115 }
+          end: { line: 1, column: 123, offset: 122 }
         }
       },
       related: {
@@ -18266,6 +18613,122 @@ export default [
       }
     },
     fileName: '/home/richard/code/rubico.land/../rubico/_internal/stringMap.js'
+  },
+  {
+    name: 'stringMapSeries',
+    synopsis: '```coffeescript [specscript]\n' +
+      'stringMapSeries<\n' +
+      '  character string,\n' +
+      '  str String<character>,\n' +
+      '  mapper character=>Promise|string|any,\n' +
+      '>(str, mapper) -> stringWithCharactersMapped string\n' +
+      '```',
+    description: 'Apply a mapper function in series to each character of a string, returning a string result. mapper function may be asynchronous.',
+    related: 'stringFlatMap',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'stringMapSeries',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 16, offset: 15 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 16, offset: 15 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 16, offset: 15 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'stringMapSeries<\n' +
+              '  character string,\n' +
+              '  str String<character>,\n' +
+              '  mapper character=>Promise|string|any,\n' +
+              '>(str, mapper) -> stringWithCharactersMapped string',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 7, column: 4, offset: 186 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 7, column: 4, offset: 186 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Apply a mapper function in series to each character of a string, returning a string result. mapper function may be asynchronous.',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 129, offset: 128 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 129, offset: 128 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 129, offset: 128 }
+        }
+      },
+      related: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'stringFlatMap',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 14, offset: 13 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 14, offset: 13 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 14, offset: 13 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/stringMapSeries.js'
   },
   {
     name: 'symbolAsyncIterator',
@@ -26310,12 +26773,12 @@ export default [
       '\n' +
       'type Mapper = (\n' +
       '  value any,\n' +
-      '  indexOrKey number|string,\n' +
+      '  indexOrKey number|string|any,\n' +
       '  collection Mappable\n' +
-      ')=>(mappedItem Promise|any)\n' +
+      ')=>(resultItem Promise|any)\n' +
       '\n' +
-      'map(value Mappable, mapper Mapper) -> result Promise|Mappable\n' +
-      'map(mapper Mapper)(value Mappable) -> result Promise|Mappable\n' +
+      'map(collection Mappable, f Mapper) -> result Promise|Mappable\n' +
+      'map(f Mapper)(collection Mappable) -> result Promise|Mappable\n' +
       '```',
     description: 'Applies a synchronous or asynchronous mapper function concurrently to each item of a collection, returning the results in a new collection of the same type. If order is implied by the collection, it is maintained in the result. `map` accepts the following collections:\n' +
       '\n' +
@@ -26486,21 +26949,21 @@ export default [
               '\n' +
               'type Mapper = (\n' +
               '  value any,\n' +
-              '  indexOrKey number|string,\n' +
+              '  indexOrKey number|string|any,\n' +
               '  collection Mappable\n' +
-              ')=>(mappedItem Promise|any)\n' +
+              ')=>(resultItem Promise|any)\n' +
               '\n' +
-              'map(value Mappable, mapper Mapper) -> result Promise|Mappable\n' +
-              'map(mapper Mapper)(value Mappable) -> result Promise|Mappable',
+              'map(collection Mappable, f Mapper) -> result Promise|Mappable\n' +
+              'map(f Mapper)(collection Mappable) -> result Promise|Mappable',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 12, column: 4, offset: 325 }
+              end: { line: 12, column: 4, offset: 329 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 12, column: 4, offset: 325 }
+          end: { line: 12, column: 4, offset: 329 }
         }
       },
       description: {
@@ -27286,14 +27749,19 @@ export default [
   {
     name: 'map.entries',
     synopsis: '```coffeescript [specscript]\n' +
-      'map.entries(\n' +
-      '  value Map|Object|Promise<Map|Object>,\n' +
-      '  mapper ([key any, value any])=>Promise|[any, any],\n' +
-      ') -> Promise|Map|Object\n' +
+      'type EntriesMappable = Object|Map\n' +
       '\n' +
-      'map.entries(\n' +
-      '  mapper ([key any, value any])=>Promise|[any, any],\n' +
-      ')(value Map|Object) -> Promise|Map|Object\n' +
+      'type Mapper = (\n' +
+      '  value any,\n' +
+      '  key string|any,\n' +
+      '  collection EntriesMappable\n' +
+      ')=>(resultItem Promise|any)\n' +
+      '\n' +
+      'map.entries(value Promise|EntriesMappable, mapper Mapper)\n' +
+      '  -> Promise|EntriesMappable\n' +
+      '\n' +
+      'map.entries(mapper Mapper)(value EntriesMappable)\n' +
+      '  -> Promise|EntriesMappable\n' +
       '```',
     description: '`map` over the entries rather than the values of a collection. Accepts collections of type `Map` or `Object`.\n' +
       '\n' +
@@ -27342,23 +27810,28 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'map.entries(\n' +
-              '  value Map|Object|Promise<Map|Object>,\n' +
-              '  mapper ([key any, value any])=>Promise|[any, any],\n' +
-              ') -> Promise|Map|Object\n' +
+            value: 'type EntriesMappable = Object|Map\n' +
               '\n' +
-              'map.entries(\n' +
-              '  mapper ([key any, value any])=>Promise|[any, any],\n' +
-              ')(value Map|Object) -> Promise|Map|Object',
+              'type Mapper = (\n' +
+              '  value any,\n' +
+              '  key string|any,\n' +
+              '  collection EntriesMappable\n' +
+              ')=>(resultItem Promise|any)\n' +
+              '\n' +
+              'map.entries(value Promise|EntriesMappable, mapper Mapper)\n' +
+              '  -> Promise|EntriesMappable\n' +
+              '\n' +
+              'map.entries(mapper Mapper)(value EntriesMappable)\n' +
+              '  -> Promise|EntriesMappable',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 10, column: 4, offset: 271 }
+              end: { line: 15, column: 4, offset: 339 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 10, column: 4, offset: 271 }
+          end: { line: 15, column: 4, offset: 339 }
         }
       },
       description: {
@@ -27474,13 +27947,90 @@ export default [
     fileName: '/home/richard/code/rubico.land/../rubico/map.js'
   },
   {
+    name: '_mapSeries',
+    synopsis: '```coffeescript [specscript]\n' +
+      'type Mappable = Array|Object|Set|Map|Iterator|AsyncIterator\n' +
+      '\n' +
+      'type Mapper = (\n' +
+      '  value any,\n' +
+      '  indexOrKey number|string|any,\n' +
+      '  collection Mappable\n' +
+      ')=>(mappedItem Promise|any)\n' +
+      '\n' +
+      '_mapSeries(collection Mappable, f Mapper) -> result Promise|Mappable\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: '_mapSeries',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 11, offset: 10 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 11, offset: 10 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 11, offset: 10 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'type Mappable = Array|Object|Set|Map|Iterator|AsyncIterator\n' +
+              '\n' +
+              'type Mapper = (\n' +
+              '  value any,\n' +
+              '  indexOrKey number|string|any,\n' +
+              '  collection Mappable\n' +
+              ')=>(mappedItem Promise|any)\n' +
+              '\n' +
+              '_mapSeries(collection Mappable, f Mapper) -> result Promise|Mappable',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 11, column: 4, offset: 274 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 11, column: 4, offset: 274 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/map.js'
+  },
+  {
     name: 'map.series',
     synopsis: '```coffeescript [specscript]\n' +
-      'map.series(\n' +
-      '  mapperFunc (value any)=>Promise|any,\n' +
-      ')(array Array) -> Promise|Array\n' +
+      'type Mappable = Array|Object|Set|Map\n' +
+      '\n' +
+      'type Mapper = (\n' +
+      '  value any,\n' +
+      '  indexOrKey number|string|any,\n' +
+      '  collection Mappable\n' +
+      ')=>(mappedItem Promise|any)\n' +
+      '\n' +
+      'map.series(collection Promise|Mappable, f Mapper) -> result Mappable\n' +
+      'map.series(f Mapper)(collection Mappable) -> result Mappable\n' +
       '```',
-    description: '`map` with serial execution.\n' +
+    description: '[map](/docs/map) with serial execution.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const delayedLog = number => new Promise(function (resolve) {\n' +
@@ -27491,7 +28041,7 @@ export default [
       '})\n' +
       '\n' +
       "console.log('start')\n" +
-      'map.series(delayedLog)([1, 2, 3, 4, 5])\n' +
+      'map.series([1, 2, 3, 4, 5], delayedLog)\n' +
       '```',
     execution: 'series',
     mdast: {
@@ -27528,18 +28078,25 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'map.series(\n' +
-              '  mapperFunc (value any)=>Promise|any,\n' +
-              ')(array Array) -> Promise|Array',
+            value: 'type Mappable = Array|Object|Set|Map\n' +
+              '\n' +
+              'type Mapper = (\n' +
+              '  value any,\n' +
+              '  indexOrKey number|string|any,\n' +
+              '  collection Mappable\n' +
+              ')=>(mappedItem Promise|any)\n' +
+              '\n' +
+              'map.series(collection Promise|Mappable, f Mapper) -> result Mappable\n' +
+              'map.series(f Mapper)(collection Mappable) -> result Mappable',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 115 }
+              end: { line: 12, column: 4, offset: 312 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 5, column: 4, offset: 115 }
+          end: { line: 12, column: 4, offset: 312 }
         }
       },
       description: {
@@ -27549,25 +28106,36 @@ export default [
             type: 'paragraph',
             children: [
               {
-                type: 'inlineCode',
-                value: 'map',
+                type: 'link',
+                title: null,
+                url: '/docs/map',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'map',
+                    position: {
+                      start: { line: 1, column: 2, offset: 1 },
+                      end: { line: 1, column: 5, offset: 4 }
+                    }
+                  }
+                ],
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 6, offset: 5 }
+                  end: { line: 1, column: 17, offset: 16 }
                 }
               },
               {
                 type: 'text',
                 value: ' with serial execution.',
                 position: {
-                  start: { line: 1, column: 6, offset: 5 },
-                  end: { line: 1, column: 29, offset: 28 }
+                  start: { line: 1, column: 17, offset: 16 },
+                  end: { line: 1, column: 40, offset: 39 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 29, offset: 28 }
+              end: { line: 1, column: 40, offset: 39 }
             }
           },
           {
@@ -27582,16 +28150,16 @@ export default [
               '})\n' +
               '\n' +
               "console.log('start')\n" +
-              'map.series(delayedLog)([1, 2, 3, 4, 5])',
+              'map.series([1, 2, 3, 4, 5], delayedLog)',
             position: {
-              start: { line: 3, column: 1, offset: 30 },
-              end: { line: 13, column: 4, offset: 263 }
+              start: { line: 3, column: 1, offset: 41 },
+              end: { line: 13, column: 4, offset: 274 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 13, column: 4, offset: 263 }
+          end: { line: 13, column: 4, offset: 274 }
         }
       },
       execution: {
