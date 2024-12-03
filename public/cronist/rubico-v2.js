@@ -19839,7 +19839,7 @@ export default [
       '\n' +
       'all(funcsObject Object<function>)(...args) -> result Promise|Object\n' +
       '```',
-    description: 'Function executor and composer. Accepts either an array of functions or an object of functions as the values. Calls each function of the provided array or object in parallel with the provided arguments. Returns either an array or object of the results of the function executions.\n' +
+    description: 'Function executor and composer. Accepts either an array of functions or an object of functions. Calls each function of the provided array or object in parallel with the provided arguments. Returns either an array or object of the execution results.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const createArrayOfGreetingsFor = all([\n' +
@@ -19886,6 +19886,11 @@ export default [
       '])\n' +
       '\n' +
       `getAndLogUserById('1') // Got user {"_id":1,"name":"George"} by id 1\n` +
+      '```\n' +
+      '\n' +
+      'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
       '```',
     execution: 'concurrent',
     mdast: {
@@ -19948,16 +19953,16 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Function executor and composer. Accepts either an array of functions or an object of functions as the values. Calls each function of the provided array or object in parallel with the provided arguments. Returns either an array or object of the results of the function executions.',
+                value: 'Function executor and composer. Accepts either an array of functions or an object of functions. Calls each function of the provided array or object in parallel with the provided arguments. Returns either an array or object of the execution results.',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 280, offset: 279 }
+                  end: { line: 1, column: 249, offset: 248 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 280, offset: 279 }
+              end: { line: 1, column: 249, offset: 248 }
             }
           },
           {
@@ -19986,8 +19991,8 @@ export default [
               'console.log(objectOfGreetingsForJane)\n' +
               "// { hi: 'Hi Jane', hey: 'Hey Jane', hello: 'Hello Jane' }",
             position: {
-              start: { line: 3, column: 1, offset: 281 },
-              end: { line: 25, column: 4, offset: 880 }
+              start: { line: 3, column: 1, offset: 250 },
+              end: { line: 25, column: 4, offset: 849 }
             }
           },
           {
@@ -19997,22 +20002,22 @@ export default [
                 type: 'inlineCode',
                 value: 'all',
                 position: {
-                  start: { line: 27, column: 1, offset: 882 },
-                  end: { line: 27, column: 6, offset: 887 }
+                  start: { line: 27, column: 1, offset: 851 },
+                  end: { line: 27, column: 6, offset: 856 }
                 }
               },
               {
                 type: 'text',
                 value: ' can simultaneously compose objects and handle promises.',
                 position: {
-                  start: { line: 27, column: 6, offset: 887 },
-                  end: { line: 27, column: 62, offset: 943 }
+                  start: { line: 27, column: 6, offset: 856 },
+                  end: { line: 27, column: 62, offset: 912 }
                 }
               }
             ],
             position: {
-              start: { line: 27, column: 1, offset: 882 },
-              end: { line: 27, column: 62, offset: 943 }
+              start: { line: 27, column: 1, offset: 851 },
+              end: { line: 27, column: 62, offset: 912 }
             }
           },
           {
@@ -20038,14 +20043,41 @@ export default [
               '\n' +
               `getAndLogUserById('1') // Got user {"_id":1,"name":"George"} by id 1`,
             position: {
-              start: { line: 29, column: 1, offset: 945 },
-              end: { line: 48, column: 4, offset: 1389 }
+              start: { line: 29, column: 1, offset: 914 },
+              end: { line: 48, column: 4, offset: 1358 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
+                position: {
+                  start: { line: 50, column: 1, offset: 1360 },
+                  end: { line: 50, column: 148, offset: 1507 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 50, column: 1, offset: 1360 },
+              end: { line: 50, column: 148, offset: 1507 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: '',
+            position: {
+              start: { line: 52, column: 1, offset: 1509 },
+              end: { line: 53, column: 4, offset: 1539 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 48, column: 4, offset: 1389 }
+          end: { line: 53, column: 4, offset: 1539 }
         }
       },
       execution: {
@@ -20896,6 +20928,14 @@ export default [
       'console.log(\n' +
       '  compose(5, [f, g]),\n' +
       ') // 16\n' +
+      '```\n' +
+      '\n' +
+      'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'compose(Promise.resolve(1), 2, Promise.resolve(3), [\n' +
+      '  console.log, // [1, 2, 3]\n' +
+      '])\n' +
       '```',
     mdast: {
       name: {
@@ -21012,11 +21052,40 @@ export default [
               start: { line: 3, column: 1, offset: 476 },
               end: { line: 11, column: 4, offset: 613 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
+                position: {
+                  start: { line: 13, column: 1, offset: 615 },
+                  end: { line: 13, column: 148, offset: 762 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 13, column: 1, offset: 615 },
+              end: { line: 13, column: 148, offset: 762 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'compose(Promise.resolve(1), 2, Promise.resolve(3), [\n' +
+              '  console.log, // [1, 2, 3]\n' +
+              '])',
+            position: {
+              start: { line: 15, column: 1, offset: 764 },
+              end: { line: 19, column: 4, offset: 878 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 11, column: 4, offset: 613 }
+          end: { line: 19, column: 4, offset: 878 }
         }
       }
     },
@@ -26777,7 +26846,7 @@ export default [
       '  collection Mappable\n' +
       ')=>(resultItem Promise|any)\n' +
       '\n' +
-      'map(collection Mappable, f Mapper) -> result Promise|Mappable\n' +
+      'map(collection Promise|Mappable, f Mapper) -> result Promise|Mappable\n' +
       'map(f Mapper)(collection Mappable) -> result Promise|Mappable\n' +
       '```',
     description: 'Applies a synchronous or asynchronous mapper function concurrently to each item of a collection, returning the results in a new collection of the same type. If order is implied by the collection, it is maintained in the result. `map` accepts the following collections:\n' +
@@ -26953,17 +27022,17 @@ export default [
               '  collection Mappable\n' +
               ')=>(resultItem Promise|any)\n' +
               '\n' +
-              'map(collection Mappable, f Mapper) -> result Promise|Mappable\n' +
+              'map(collection Promise|Mappable, f Mapper) -> result Promise|Mappable\n' +
               'map(f Mapper)(collection Mappable) -> result Promise|Mappable',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 12, column: 4, offset: 329 }
+              end: { line: 12, column: 4, offset: 337 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 12, column: 4, offset: 329 }
+          end: { line: 12, column: 4, offset: 337 }
         }
       },
       description: {
@@ -37727,6 +37796,14 @@ export default [
       '  map(number => number * 3),\n' +
       '  console.log, // [3, 6, 9]\n' +
       '])\n' +
+      '```\n' +
+      '\n' +
+      'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'pipe(Promise.resolve(1), 2, Promise.resolve(3), [\n' +
+      '  console.log, // [1, 2, 3]\n' +
+      '])\n' +
       '```',
     execution: 'series',
     transducing: '',
@@ -37869,11 +37946,40 @@ export default [
               start: { line: 23, column: 1, offset: 909 },
               end: { line: 29, column: 4, offset: 1027 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
+                position: {
+                  start: { line: 31, column: 1, offset: 1029 },
+                  end: { line: 31, column: 148, offset: 1176 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 31, column: 1, offset: 1029 },
+              end: { line: 31, column: 148, offset: 1176 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'pipe(Promise.resolve(1), 2, Promise.resolve(3), [\n' +
+              '  console.log, // [1, 2, 3]\n' +
+              '])',
+            position: {
+              start: { line: 33, column: 1, offset: 1178 },
+              end: { line: 37, column: 4, offset: 1289 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 29, column: 4, offset: 1027 }
+          end: { line: 37, column: 4, offset: 1289 }
         }
       },
       execution: {
@@ -39803,6 +39909,18 @@ export default [
       "const myDrink = switchCase([age >= 21, 'Beer', 'Juice'])\n" +
       '\n' +
       'console.log(myDrink) // Beer\n' +
+      '```\n' +
+      '\n' +
+      'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'switchCase(Promise.resolve(1), 2, Promise.resolve(3), [\n' +
+      '  function doValuesAddUpTo6(a, b, c) {\n' +
+      '    return a + b + c == 6\n' +
+      '  },\n' +
+      '  (a, b, c) => console.log(`${a} + ${b} + ${c} == 6`),\n' +
+      '  (a, b, c) => console.log(`${a} + ${b} + ${c} != 6`),\n' +
+      ']) // 1 + 2 + 3 == 6\n' +
       '```',
     execution: 'series',
     mdast: {
@@ -40107,11 +40225,44 @@ export default [
               start: { line: 47, column: 1, offset: 1800 },
               end: { line: 53, column: 4, offset: 1933 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
+                position: {
+                  start: { line: 55, column: 1, offset: 1935 },
+                  end: { line: 55, column: 148, offset: 2082 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 55, column: 1, offset: 1935 },
+              end: { line: 55, column: 148, offset: 2082 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'switchCase(Promise.resolve(1), 2, Promise.resolve(3), [\n' +
+              '  function doValuesAddUpTo6(a, b, c) {\n' +
+              '    return a + b + c == 6\n' +
+              '  },\n' +
+              '  (a, b, c) => console.log(`${a} + ${b} + ${c} == 6`),\n' +
+              '  (a, b, c) => console.log(`${a} + ${b} + ${c} != 6`),\n' +
+              ']) // 1 + 2 + 3 == 6',
+            position: {
+              start: { line: 57, column: 1, offset: 2084 },
+              end: { line: 65, column: 4, offset: 2371 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 53, column: 4, offset: 1933 }
+          end: { line: 65, column: 4, offset: 2371 }
         }
       },
       execution: {
@@ -40581,10 +40732,8 @@ export default [
       '\n' +
       '`transform` an async generator into `process.stdout`, a Node.js writable stream that implements `.write`.\n' +
       '\n' +
-      '```javascript [node]\n' +
-      '// this example is duplicated in rubico/examples/transformStreamRandomInts.js\n' +
-      '\n' +
-      "const { pipe, map, transform } = require('rubico')\n" +
+      '```javascript [playground]\n' +
+      'const { pipe, compose, map, transform } = rubico\n' +
       '\n' +
       'const square = number => number ** 2\n' +
       '\n' +
@@ -40593,15 +40742,27 @@ export default [
       'const randomInt = () => Math.ceil(Math.random() * 100)\n' +
       '\n' +
       'const streamRandomInts = async function* () {\n' +
-      '  while (true) {\n' +
+      '  let ct = 0\n' +
+      '  while (ct < 1000) {\n' +
+      '    ct += 1\n' +
       '    yield randomInt()\n' +
       '  }\n' +
       '}\n' +
       '\n' +
+      'const Stdout = {\n' +
+      '  concat(...args) {\n' +
+      '    console.log(...args)\n' +
+      '    return this\n' +
+      '  },\n' +
+      '}\n' +
+      '\n' +
       'transform(\n' +
       '  streamRandomInts(),\n' +
-      '  Transducer.map(pipe([square, toString])),\n' +
-      '  process.stdout,\n' +
+      '  compose([\n' +
+      '    Transducer.map(square),\n' +
+      '    Transducer.map(toString),\n' +
+      '  ]),\n' +
+      '  Stdout,\n' +
       ') // 9216576529289484980147613249169774446246768649...\n' +
       '```',
     execution: 'series',
@@ -41220,10 +41381,8 @@ export default [
           {
             type: 'code',
             lang: 'javascript',
-            meta: '[node]',
-            value: '// this example is duplicated in rubico/examples/transformStreamRandomInts.js\n' +
-              '\n' +
-              "const { pipe, map, transform } = require('rubico')\n" +
+            meta: '[playground]',
+            value: 'const { pipe, compose, map, transform } = rubico\n' +
               '\n' +
               'const square = number => number ** 2\n' +
               '\n' +
@@ -41232,25 +41391,37 @@ export default [
               'const randomInt = () => Math.ceil(Math.random() * 100)\n' +
               '\n' +
               'const streamRandomInts = async function* () {\n' +
-              '  while (true) {\n' +
+              '  let ct = 0\n' +
+              '  while (ct < 1000) {\n' +
+              '    ct += 1\n' +
               '    yield randomInt()\n' +
               '  }\n' +
               '}\n' +
               '\n' +
+              'const Stdout = {\n' +
+              '  concat(...args) {\n' +
+              '    console.log(...args)\n' +
+              '    return this\n' +
+              '  },\n' +
+              '}\n' +
+              '\n' +
               'transform(\n' +
               '  streamRandomInts(),\n' +
-              '  Transducer.map(pipe([square, toString])),\n' +
-              '  process.stdout,\n' +
+              '  compose([\n' +
+              '    Transducer.map(square),\n' +
+              '    Transducer.map(toString),\n' +
+              '  ]),\n' +
+              '  Stdout,\n' +
               ') // 9216576529289484980147613249169774446246768649...',
             position: {
               start: { line: 66, column: 1, offset: 2020 },
-              end: { line: 88, column: 4, offset: 2555 }
+              end: { line: 98, column: 4, offset: 2620 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 88, column: 4, offset: 2555 }
+          end: { line: 98, column: 4, offset: 2620 }
         }
       },
       execution: {
@@ -41346,6 +41517,20 @@ export default [
       '  throw new Error(`the sum is ${sum}`)\n' +
       '}, function logErrorMessage(error) {\n' +
       '  console.error(error.message) // the sum is 6\n' +
+      '})\n' +
+      '```\n' +
+      '\n' +
+      'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'tryCatch(Promise.resolve(1), 2, Promise.resolve(3), (a, b, c) => {\n' +
+      '  const sum = a + b + c\n' +
+      '  if (sum > 5) {\n' +
+      "    throw new Error('limit exceeded')\n" +
+      '  }\n' +
+      "  console.log('sum:', sum)\n" +
+      '}, (error, a, b, c) => {\n' +
+      '  console.error(`${a} + ${b} + ${c}: ${error.message}`)\n' +
       '})\n' +
       '```',
     mdast: {
@@ -41657,11 +41842,46 @@ export default [
               start: { line: 24, column: 1, offset: 1123 },
               end: { line: 33, column: 4, offset: 1392 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
+                position: {
+                  start: { line: 35, column: 1, offset: 1394 },
+                  end: { line: 35, column: 148, offset: 1541 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 35, column: 1, offset: 1394 },
+              end: { line: 35, column: 148, offset: 1541 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'tryCatch(Promise.resolve(1), 2, Promise.resolve(3), (a, b, c) => {\n' +
+              '  const sum = a + b + c\n' +
+              '  if (sum > 5) {\n' +
+              "    throw new Error('limit exceeded')\n" +
+              '  }\n' +
+              "  console.log('sum:', sum)\n" +
+              '}, (error, a, b, c) => {\n' +
+              '  console.error(`${a} + ${b} + ${c}: ${error.message}`)\n' +
+              '})',
+            position: {
+              start: { line: 37, column: 1, offset: 1543 },
+              end: { line: 47, column: 4, offset: 1834 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 33, column: 4, offset: 1392 }
+          end: { line: 47, column: 4, offset: 1834 }
         }
       }
     },
