@@ -40733,7 +40733,8 @@ export default [
       '`transform` an async generator into `process.stdout`, a Node.js writable stream that implements `.write`.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      'const { pipe, compose, map, transform } = rubico\n' +
+      'const { pipe, compose, transform } = rubico\n' +
+      '// global Transducer\n' +
       '\n' +
       'const square = number => number ** 2\n' +
       '\n' +
@@ -41389,7 +41390,8 @@ export default [
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: 'const { pipe, compose, map, transform } = rubico\n' +
+            value: 'const { pipe, compose, transform } = rubico\n' +
+              '// global Transducer\n' +
               '\n' +
               'const square = number => number ** 2\n' +
               '\n' +
@@ -41429,13 +41431,13 @@ export default [
               '// ...',
             position: {
               start: { line: 66, column: 1, offset: 2020 },
-              end: { line: 105, column: 4, offset: 2622 }
+              end: { line: 106, column: 4, offset: 2638 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 105, column: 4, offset: 2622 }
+          end: { line: 106, column: 4, offset: 2638 }
         }
       },
       execution: {
