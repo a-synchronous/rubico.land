@@ -40741,9 +40741,9 @@ export default [
       '\n' +
       'const randomInt = () => Math.ceil(Math.random() * 100)\n' +
       '\n' +
-      'const streamRandomInts = async function* () {\n' +
+      'const streamRandomInts = async function* (n) {\n' +
       '  let ct = 0\n' +
-      '  while (ct < 1000) {\n' +
+      '  while (ct < n) {\n' +
       '    ct += 1\n' +
       '    yield randomInt()\n' +
       '  }\n' +
@@ -40757,13 +40757,20 @@ export default [
       '}\n' +
       '\n' +
       'transform(\n' +
-      '  streamRandomInts(),\n' +
+      '  streamRandomInts(10),\n' +
       '  compose([\n' +
       '    Transducer.map(square),\n' +
       '    Transducer.map(toString),\n' +
       '  ]),\n' +
       '  Stdout,\n' +
-      ') // 9216576529289484980147613249169774446246768649...\n' +
+      ')\n' +
+      '// 8281\n' +
+      '// 8836\n' +
+      '// 1156\n' +
+      '// 8649\n' +
+      '// 5625\n' +
+      '// 2500\n' +
+      '// ...\n' +
       '```',
     execution: 'series',
     transducing: 'TODO explore Semigroup = Iterator|AsyncIterator',
@@ -41390,9 +41397,9 @@ export default [
               '\n' +
               'const randomInt = () => Math.ceil(Math.random() * 100)\n' +
               '\n' +
-              'const streamRandomInts = async function* () {\n' +
+              'const streamRandomInts = async function* (n) {\n' +
               '  let ct = 0\n' +
-              '  while (ct < 1000) {\n' +
+              '  while (ct < n) {\n' +
               '    ct += 1\n' +
               '    yield randomInt()\n' +
               '  }\n' +
@@ -41406,22 +41413,29 @@ export default [
               '}\n' +
               '\n' +
               'transform(\n' +
-              '  streamRandomInts(),\n' +
+              '  streamRandomInts(10),\n' +
               '  compose([\n' +
               '    Transducer.map(square),\n' +
               '    Transducer.map(toString),\n' +
               '  ]),\n' +
               '  Stdout,\n' +
-              ') // 9216576529289484980147613249169774446246768649...',
+              ')\n' +
+              '// 8281\n' +
+              '// 8836\n' +
+              '// 1156\n' +
+              '// 8649\n' +
+              '// 5625\n' +
+              '// 2500\n' +
+              '// ...',
             position: {
               start: { line: 66, column: 1, offset: 2020 },
-              end: { line: 98, column: 4, offset: 2620 }
+              end: { line: 105, column: 4, offset: 2622 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 98, column: 4, offset: 2620 }
+          end: { line: 105, column: 4, offset: 2622 }
         }
       },
       execution: {
