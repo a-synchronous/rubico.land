@@ -2773,6 +2773,7 @@ export default [
     name: 'areAllValuesNonfunctions',
     synopsis: '```coffeescript [specscript]\n' +
       'areAllValuesNonfunctions(values Array<function|value>) -> boolean\n' +
+      'areAllValuesNonfunctions(values Object<function|value>) -> boolean\n' +
       '```',
     mdast: {
       name: {
@@ -2808,16 +2809,17 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'areAllValuesNonfunctions(values Array<function|value>) -> boolean',
+            value: 'areAllValuesNonfunctions(values Array<function|value>) -> boolean\n' +
+              'areAllValuesNonfunctions(values Object<function|value>) -> boolean',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 3, column: 4, offset: 98 }
+              end: { line: 4, column: 4, offset: 165 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 3, column: 4, offset: 98 }
+          end: { line: 4, column: 4, offset: 165 }
         }
       }
     },
@@ -2827,6 +2829,7 @@ export default [
     name: 'areAnyValuesPromises',
     synopsis: '```coffeescript [specscript]\n' +
       'areAnyValuesPromises(values Array) -> boolean\n' +
+      'areAnyValuesPromises(values Object) -> boolean\n' +
       '```',
     mdast: {
       name: {
@@ -2862,16 +2865,17 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'areAnyValuesPromises(values Array) -> boolean',
+            value: 'areAnyValuesPromises(values Array) -> boolean\n' +
+              'areAnyValuesPromises(values Object) -> boolean',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 3, column: 4, offset: 78 }
+              end: { line: 4, column: 4, offset: 125 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 3, column: 4, offset: 78 }
+          end: { line: 4, column: 4, offset: 125 }
         }
       }
     },
@@ -20330,17 +20334,86 @@ export default [
     fileName: '/home/richard/code/rubico.land/../rubico/_internal/timeInLoopAsync.js'
   },
   {
+    name: '_allValues',
+    synopsis: '```coffeescript [specscript]\n' +
+      '_allValues(values Array<Promise|any>) -> Promise<Array>\n' +
+      '_allValues(values Object<Promise|any>) -> Promise<Object>\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: '_allValues',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 11, offset: 10 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 11, offset: 10 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 11, offset: 10 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: '_allValues(values Array<Promise|any>) -> Promise<Array>\n' +
+              '_allValues(values Object<Promise|any>) -> Promise<Object>',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 4, column: 4, offset: 146 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 4, column: 4, offset: 146 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/all.js'
+  },
+  {
     name: 'all',
     synopsis: '```coffeescript [specscript]\n' +
-      'all(...args, funcsArray Array<function>) -> result Promise|Array\n' +
+      'all(values Promise|Array<Promise|any>) -> result Promise|Array\n' +
+      'all(values Promise|Object<Promise|any>) -> result Promise|Object\n' +
       '\n' +
-      'all(funcsArray Array<function>)(...args) -> result Promise|Array\n' +
+      'all(\n' +
+      '  ...args,\n' +
+      '  resolversOrValues Array<function|Promise|any>\n' +
+      ') -> result Promise|Array\n' +
       '\n' +
-      'all(...args, funcsObject Object<function>) -> result Promise|Object\n' +
+      'all(\n' +
+      '  resolversOrValues Array<function|Promise|any>\n' +
+      ')(...args) -> result Promise|Array\n' +
       '\n' +
-      'all(funcsObject Object<function>)(...args) -> result Promise|Object\n' +
+      'all(\n' +
+      '  ...args,\n' +
+      '  resolversOrValues Object<function|Promise|any>\n' +
+      ') -> result Promise|Object\n' +
+      '\n' +
+      'all(\n' +
+      '  resolversOrValues Object<function|Promise|any>\n' +
+      ')(...args) -> result Promise|Object\n' +
       '```',
-    description: 'Function executor and composer. Accepts either an array of functions or an object of functions. Calls each function of the provided array or object in parallel with the provided arguments. Returns either an array or object of the execution results.\n' +
+    description: 'Calls an array or object of resolver functions or values `resolversOrValues` with provided arguments.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const createArrayOfGreetingsFor = all([\n' +
@@ -20349,24 +20422,29 @@ export default [
       '  name => `Hello ${name}`,\n' +
       '])\n' +
       '\n' +
-      "const arrayOfGreetingsForFred = createArrayOfGreetingsFor('Fred')\n" +
+      "const arrayOfGreetingsFor1 = createArrayOfGreetingsFor('1')\n" +
       '\n' +
-      'console.log(arrayOfGreetingsForFred)\n' +
-      "// ['Hi Fred', 'Hey Fred', 'Hello Fred']\n" +
-      '\n' +
-      'const createObjectOfGreetingsFor = all({\n' +
-      '  hi: name => `Hi ${name}`,\n' +
-      '  hey: name => `Hey ${name}`,\n' +
-      '  hello: name => `Hello ${name}`,\n' +
-      '})\n' +
-      '\n' +
-      "const objectOfGreetingsForJane = createObjectOfGreetingsFor('Jane')\n" +
-      '\n' +
-      'console.log(objectOfGreetingsForJane)\n' +
-      "// { hi: 'Hi Jane', hey: 'Hey Jane', hello: 'Hello Jane' }\n" +
+      'console.log(arrayOfGreetingsFor1)\n' +
+      "// ['Hi 1', 'Hey 1', 'Hello 1']\n" +
       '```\n' +
       '\n' +
-      '`all` can simultaneously compose objects and handle promises.\n' +
+      'If provided only values for `resolversOrValues`, returns an array or object with the same shape as `resolversOrValues` with any Promises resolved.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'all([\n' +
+      '  Promise.resolve(1),\n' +
+      '  Promise.resolve(2),\n' +
+      '  3,\n' +
+      ']).then(console.log) // [1, 2, 3]\n' +
+      '\n' +
+      'all({\n' +
+      '  a: Promise.resolve(1),\n' +
+      '  b: Promise.resolve(2),\n' +
+      '  c: 3,\n' +
+      '}).then(console.log) // { a: 1, b: 2, c: 3 }\n' +
+      '```\n' +
+      '\n' +
+      '`all` can be used in a pipeline to compose and manpulate data.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const identity = value => value\n' +
@@ -20387,6 +20465,24 @@ export default [
       '])\n' +
       '\n' +
       `getAndLogUserById('1') // Got user {"_id":1,"name":"George"} by id 1\n` +
+      '```\n' +
+      '\n' +
+      'Values may be provided along with functions, in which case they are set on the result object or array directly. If any of these values are promises, they are resolved for their values before being set on the result object or array.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'all({}, {\n' +
+      '  a: Promise.resolve(1),\n' +
+      '  b: 2,\n' +
+      '  c: () => 3,\n' +
+      '  d: async () => 4,\n' +
+      '}).then(console.log) // { a: 1, b: 2, c: 3, d: 4 }\n' +
+      '\n' +
+      'all([], [\n' +
+      '  Promise.resolve(1),\n' +
+      '  2,\n' +
+      '  () => 3,\n' +
+      '  async () => 4,\n' +
+      ']).then(console.log) // [1, 2, 3, 4]\n' +
       '```\n' +
       '\n' +
       'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
@@ -20433,22 +20529,35 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'all(...args, funcsArray Array<function>) -> result Promise|Array\n' +
+            value: 'all(values Promise|Array<Promise|any>) -> result Promise|Array\n' +
+              'all(values Promise|Object<Promise|any>) -> result Promise|Object\n' +
               '\n' +
-              'all(funcsArray Array<function>)(...args) -> result Promise|Array\n' +
+              'all(\n' +
+              '  ...args,\n' +
+              '  resolversOrValues Array<function|Promise|any>\n' +
+              ') -> result Promise|Array\n' +
               '\n' +
-              'all(...args, funcsObject Object<function>) -> result Promise|Object\n' +
+              'all(\n' +
+              '  resolversOrValues Array<function|Promise|any>\n' +
+              ')(...args) -> result Promise|Array\n' +
               '\n' +
-              'all(funcsObject Object<function>)(...args) -> result Promise|Object',
+              'all(\n' +
+              '  ...args,\n' +
+              '  resolversOrValues Object<function|Promise|any>\n' +
+              ') -> result Promise|Object\n' +
+              '\n' +
+              'all(\n' +
+              '  resolversOrValues Object<function|Promise|any>\n' +
+              ')(...args) -> result Promise|Object',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 9, column: 4, offset: 301 }
+              end: { line: 22, column: 4, offset: 524 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 9, column: 4, offset: 301 }
+          end: { line: 22, column: 4, offset: 524 }
         }
       },
       description: {
@@ -20459,16 +20568,32 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Function executor and composer. Accepts either an array of functions or an object of functions. Calls each function of the provided array or object in parallel with the provided arguments. Returns either an array or object of the execution results.',
+                value: 'Calls an array or object of resolver functions or values ',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 249, offset: 248 }
+                  end: { line: 1, column: 58, offset: 57 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'resolversOrValues',
+                position: {
+                  start: { line: 1, column: 58, offset: 57 },
+                  end: { line: 1, column: 77, offset: 76 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' with provided arguments.',
+                position: {
+                  start: { line: 1, column: 77, offset: 76 },
+                  end: { line: 1, column: 102, offset: 101 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 249, offset: 248 }
+              end: { line: 1, column: 102, offset: 101 }
             }
           },
           {
@@ -20481,24 +20606,82 @@ export default [
               '  name => `Hello ${name}`,\n' +
               '])\n' +
               '\n' +
-              "const arrayOfGreetingsForFred = createArrayOfGreetingsFor('Fred')\n" +
+              "const arrayOfGreetingsFor1 = createArrayOfGreetingsFor('1')\n" +
               '\n' +
-              'console.log(arrayOfGreetingsForFred)\n' +
-              "// ['Hi Fred', 'Hey Fred', 'Hello Fred']\n" +
-              '\n' +
-              'const createObjectOfGreetingsFor = all({\n' +
-              '  hi: name => `Hi ${name}`,\n' +
-              '  hey: name => `Hey ${name}`,\n' +
-              '  hello: name => `Hello ${name}`,\n' +
-              '})\n' +
-              '\n' +
-              "const objectOfGreetingsForJane = createObjectOfGreetingsFor('Jane')\n" +
-              '\n' +
-              'console.log(objectOfGreetingsForJane)\n' +
-              "// { hi: 'Hi Jane', hey: 'Hey Jane', hello: 'Hello Jane' }",
+              'console.log(arrayOfGreetingsFor1)\n' +
+              "// ['Hi 1', 'Hey 1', 'Hello 1']",
             position: {
-              start: { line: 3, column: 1, offset: 250 },
-              end: { line: 25, column: 4, offset: 849 }
+              start: { line: 3, column: 1, offset: 103 },
+              end: { line: 14, column: 4, offset: 380 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If provided only values for ',
+                position: {
+                  start: { line: 16, column: 1, offset: 382 },
+                  end: { line: 16, column: 29, offset: 410 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'resolversOrValues',
+                position: {
+                  start: { line: 16, column: 29, offset: 410 },
+                  end: { line: 16, column: 48, offset: 429 }
+                }
+              },
+              {
+                type: 'text',
+                value: ', returns an array or object with the same shape as ',
+                position: {
+                  start: { line: 16, column: 48, offset: 429 },
+                  end: { line: 16, column: 100, offset: 481 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'resolversOrValues',
+                position: {
+                  start: { line: 16, column: 100, offset: 481 },
+                  end: { line: 16, column: 119, offset: 500 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' with any Promises resolved.',
+                position: {
+                  start: { line: 16, column: 119, offset: 500 },
+                  end: { line: 16, column: 147, offset: 528 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 16, column: 1, offset: 382 },
+              end: { line: 16, column: 147, offset: 528 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'all([\n' +
+              '  Promise.resolve(1),\n' +
+              '  Promise.resolve(2),\n' +
+              '  3,\n' +
+              ']).then(console.log) // [1, 2, 3]\n' +
+              '\n' +
+              'all({\n' +
+              '  a: Promise.resolve(1),\n' +
+              '  b: Promise.resolve(2),\n' +
+              '  c: 3,\n' +
+              '}).then(console.log) // { a: 1, b: 2, c: 3 }',
+            position: {
+              start: { line: 18, column: 1, offset: 530 },
+              end: { line: 30, column: 4, offset: 759 }
             }
           },
           {
@@ -20508,22 +20691,22 @@ export default [
                 type: 'inlineCode',
                 value: 'all',
                 position: {
-                  start: { line: 27, column: 1, offset: 851 },
-                  end: { line: 27, column: 6, offset: 856 }
+                  start: { line: 32, column: 1, offset: 761 },
+                  end: { line: 32, column: 6, offset: 766 }
                 }
               },
               {
                 type: 'text',
-                value: ' can simultaneously compose objects and handle promises.',
+                value: ' can be used in a pipeline to compose and manpulate data.',
                 position: {
-                  start: { line: 27, column: 6, offset: 856 },
-                  end: { line: 27, column: 62, offset: 912 }
+                  start: { line: 32, column: 6, offset: 766 },
+                  end: { line: 32, column: 63, offset: 823 }
                 }
               }
             ],
             position: {
-              start: { line: 27, column: 1, offset: 851 },
-              end: { line: 27, column: 62, offset: 912 }
+              start: { line: 32, column: 1, offset: 761 },
+              end: { line: 32, column: 63, offset: 823 }
             }
           },
           {
@@ -20549,8 +20732,47 @@ export default [
               '\n' +
               `getAndLogUserById('1') // Got user {"_id":1,"name":"George"} by id 1`,
             position: {
-              start: { line: 29, column: 1, offset: 914 },
-              end: { line: 48, column: 4, offset: 1358 }
+              start: { line: 34, column: 1, offset: 825 },
+              end: { line: 53, column: 4, offset: 1269 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Values may be provided along with functions, in which case they are set on the result object or array directly. If any of these values are promises, they are resolved for their values before being set on the result object or array.',
+                position: {
+                  start: { line: 55, column: 1, offset: 1271 },
+                  end: { line: 55, column: 232, offset: 1502 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 55, column: 1, offset: 1271 },
+              end: { line: 55, column: 232, offset: 1502 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'all({}, {\n' +
+              '  a: Promise.resolve(1),\n' +
+              '  b: 2,\n' +
+              '  c: () => 3,\n' +
+              '  d: async () => 4,\n' +
+              '}).then(console.log) // { a: 1, b: 2, c: 3, d: 4 }\n' +
+              '\n' +
+              'all([], [\n' +
+              '  Promise.resolve(1),\n' +
+              '  2,\n' +
+              '  () => 3,\n' +
+              '  async () => 4,\n' +
+              ']).then(console.log) // [1, 2, 3, 4]',
+            position: {
+              start: { line: 57, column: 1, offset: 1504 },
+              end: { line: 71, column: 4, offset: 1765 }
             }
           },
           {
@@ -20560,14 +20782,14 @@ export default [
                 type: 'text',
                 value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
                 position: {
-                  start: { line: 50, column: 1, offset: 1360 },
-                  end: { line: 50, column: 148, offset: 1507 }
+                  start: { line: 73, column: 1, offset: 1767 },
+                  end: { line: 73, column: 148, offset: 1914 }
                 }
               }
             ],
             position: {
-              start: { line: 50, column: 1, offset: 1360 },
-              end: { line: 50, column: 148, offset: 1507 }
+              start: { line: 73, column: 1, offset: 1767 },
+              end: { line: 73, column: 148, offset: 1914 }
             }
           },
           {
@@ -20580,14 +20802,14 @@ export default [
               '  obj => obj.a + 3,\n' +
               ']).then(console.log) // [2, 3, 4]',
             position: {
-              start: { line: 52, column: 1, offset: 1509 },
-              end: { line: 58, column: 4, offset: 1666 }
+              start: { line: 75, column: 1, offset: 1916 },
+              end: { line: 81, column: 4, offset: 2073 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 58, column: 4, offset: 1666 }
+          end: { line: 81, column: 4, offset: 2073 }
         }
       },
       execution: {
@@ -21266,11 +21488,16 @@ export default [
   {
     name: 'assign',
     synopsis: '```coffeescript [specscript]\n' +
-      'assign(object Promise|Object, resolvers Object<function>) -> result Promise|Object\n' +
+      'assign(\n' +
+      '  o Promise|Object,\n' +
+      '  resolversOrValues Object<function|Promise|any>\n' +
+      ') -> result Promise|Object\n' +
       '\n' +
-      'assign(resolvers Object<function>)(object Object) -> result Promise|Object\n' +
+      'assign(\n' +
+      '  resolversOrValues Object<function|Promise|any>\n' +
+      ')(o Object) -> result Promise|Object\n' +
       '```',
-    description: 'Function executor and composer. Accepts an object of resolver functions and an argument object. Creates a result object from the argument object, evaluates each resolver with the argument object, and assigns to the result object the evaluations at the corresponding resolver keys.\n' +
+    description: 'Function executor and composer. Accepts an object of resolver functions or values and an object `o`. Creates a result object from the argument object, evaluates each resolver with the argument object, and assigns to the result object the evaluations at the corresponding resolver keys.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const assignSquaredAndCubed = assign({\n' +
@@ -21299,6 +21526,17 @@ export default [
       '\n' +
       'asyncAssignTotal({ numbers: [1, 2, 3, 4, 5] }).then(console.log)\n' +
       '// { numbers: [1, 2, 3, 4, 5], total: 15 }\n' +
+      '```\n' +
+      '\n' +
+      'Values passed in resolver position are set on the result object directly. If any of these values are promises, they are resolved for their values before being set on the result object.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'assign({}, {\n' +
+      '  a: 1,\n' +
+      '  b: Promise.resolve(2),\n' +
+      '  c: () => 3,\n' +
+      '  d: async o => Object.keys(o).length,\n' +
+      '}).then(console.log) // { a: 1, b: 2, c: 3, d: 0 }\n' +
       '```\n' +
       '\n' +
       'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
@@ -21348,18 +21586,23 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'assign(object Promise|Object, resolvers Object<function>) -> result Promise|Object\n' +
+            value: 'assign(\n' +
+              '  o Promise|Object,\n' +
+              '  resolversOrValues Object<function|Promise|any>\n' +
+              ') -> result Promise|Object\n' +
               '\n' +
-              'assign(resolvers Object<function>)(object Object) -> result Promise|Object',
+              'assign(\n' +
+              '  resolversOrValues Object<function|Promise|any>\n' +
+              ')(o Object) -> result Promise|Object',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 191 }
+              end: { line: 10, column: 4, offset: 231 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 5, column: 4, offset: 191 }
+          end: { line: 10, column: 4, offset: 231 }
         }
       },
       description: {
@@ -21370,16 +21613,32 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Function executor and composer. Accepts an object of resolver functions and an argument object. Creates a result object from the argument object, evaluates each resolver with the argument object, and assigns to the result object the evaluations at the corresponding resolver keys.',
+                value: 'Function executor and composer. Accepts an object of resolver functions or values and an object ',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 281, offset: 280 }
+                  end: { line: 1, column: 97, offset: 96 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'o',
+                position: {
+                  start: { line: 1, column: 97, offset: 96 },
+                  end: { line: 1, column: 100, offset: 99 }
+                }
+              },
+              {
+                type: 'text',
+                value: '. Creates a result object from the argument object, evaluates each resolver with the argument object, and assigns to the result object the evaluations at the corresponding resolver keys.',
+                position: {
+                  start: { line: 1, column: 100, offset: 99 },
+                  end: { line: 1, column: 286, offset: 285 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 281, offset: 280 }
+              end: { line: 1, column: 286, offset: 285 }
             }
           },
           {
@@ -21397,8 +21656,8 @@ export default [
               'console.log(assignSquaredAndCubed({ number: 3 }))\n' +
               '// { number: 3, squared: 9, cubed: 27 }',
             position: {
-              start: { line: 3, column: 1, offset: 282 },
-              end: { line: 14, column: 4, offset: 613 }
+              start: { line: 3, column: 1, offset: 287 },
+              end: { line: 14, column: 4, offset: 618 }
             }
           },
           {
@@ -21408,14 +21667,14 @@ export default [
                 type: 'text',
                 value: 'Any of the resolvers may be asynchronous and return Promises.',
                 position: {
-                  start: { line: 16, column: 1, offset: 615 },
-                  end: { line: 16, column: 62, offset: 676 }
+                  start: { line: 16, column: 1, offset: 620 },
+                  end: { line: 16, column: 62, offset: 681 }
                 }
               }
             ],
             position: {
-              start: { line: 16, column: 1, offset: 615 },
-              end: { line: 16, column: 62, offset: 676 }
+              start: { line: 16, column: 1, offset: 620 },
+              end: { line: 16, column: 62, offset: 681 }
             }
           },
           {
@@ -21434,8 +21693,40 @@ export default [
               'asyncAssignTotal({ numbers: [1, 2, 3, 4, 5] }).then(console.log)\n' +
               '// { numbers: [1, 2, 3, 4, 5], total: 15 }',
             position: {
-              start: { line: 18, column: 1, offset: 678 },
-              end: { line: 30, column: 4, offset: 1021 }
+              start: { line: 18, column: 1, offset: 683 },
+              end: { line: 30, column: 4, offset: 1026 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Values passed in resolver position are set on the result object directly. If any of these values are promises, they are resolved for their values before being set on the result object.',
+                position: {
+                  start: { line: 32, column: 1, offset: 1028 },
+                  end: { line: 32, column: 185, offset: 1212 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 32, column: 1, offset: 1028 },
+              end: { line: 32, column: 185, offset: 1212 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'assign({}, {\n' +
+              '  a: 1,\n' +
+              '  b: Promise.resolve(2),\n' +
+              '  c: () => 3,\n' +
+              '  d: async o => Object.keys(o).length,\n' +
+              '}).then(console.log) // { a: 1, b: 2, c: 3, d: 0 }',
+            position: {
+              start: { line: 34, column: 1, offset: 1214 },
+              end: { line: 41, column: 4, offset: 1394 }
             }
           },
           {
@@ -21445,14 +21736,14 @@ export default [
                 type: 'text',
                 value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
                 position: {
-                  start: { line: 32, column: 1, offset: 1023 },
-                  end: { line: 32, column: 148, offset: 1170 }
+                  start: { line: 43, column: 1, offset: 1396 },
+                  end: { line: 43, column: 148, offset: 1543 }
                 }
               }
             ],
             position: {
-              start: { line: 32, column: 1, offset: 1023 },
-              end: { line: 32, column: 148, offset: 1170 }
+              start: { line: 43, column: 1, offset: 1396 },
+              end: { line: 43, column: 148, offset: 1543 }
             }
           },
           {
@@ -21468,14 +21759,14 @@ export default [
               '  },\n' +
               '}).then(console.log)',
             position: {
-              start: { line: 34, column: 1, offset: 1172 },
-              end: { line: 43, column: 4, offset: 1305 }
+              start: { line: 45, column: 1, offset: 1545 },
+              end: { line: 54, column: 4, offset: 1678 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 43, column: 4, offset: 1305 }
+          end: { line: 54, column: 4, offset: 1678 }
         }
       },
       execution: {
