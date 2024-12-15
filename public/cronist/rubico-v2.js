@@ -41785,7 +41785,7 @@ export default [
       '\n' +
       'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
       '```javascript [playground]\n' +
-      'tap(Promise.resolve(1), Promise.resolve(2), 3, console.log) // 1, 2, 3\n' +
+      'tap(Promise.resolve(1), Promise.resolve(2), 3, console.log) // 1 2 3\n' +
       '```',
     mdast: {
       name: {
@@ -41893,16 +41893,16 @@ export default [
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: 'tap(Promise.resolve(1), Promise.resolve(2), 3, console.log) // 1, 2, 3',
+            value: 'tap(Promise.resolve(1), Promise.resolve(2), 3, console.log) // 1 2 3',
             position: {
               start: { line: 16, column: 1, offset: 543 },
-              end: { line: 18, column: 4, offset: 644 }
+              end: { line: 18, column: 4, offset: 642 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 18, column: 4, offset: 644 }
+          end: { line: 18, column: 4, offset: 642 }
         }
       }
     },
