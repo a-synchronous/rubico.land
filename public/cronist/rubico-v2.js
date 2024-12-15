@@ -41766,8 +41766,8 @@ export default [
   {
     name: 'tap',
     synopsis: '```coffeescript [specscript]\n' +
-      'tap(...args, func function) -> Promise|args[0]\n' +
-      'tap(func function)(...args) -> Promise|args[0]\n' +
+      'tap(...args, f function) -> Promise|args[0]\n' +
+      'tap(f function)(...args) -> Promise|args[0]\n' +
       '```',
     description: 'Call a function with provided arguments, returning the first argument. The return value of the function call is discarded.\n' +
       '\n' +
@@ -41784,6 +41784,7 @@ export default [
       '```\n' +
       '\n' +
       'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
+      '\n' +
       '```javascript [playground]\n' +
       'tap(Promise.resolve(1), Promise.resolve(2), 3, console.log) // 1 2 3\n' +
       '```',
@@ -41821,17 +41822,17 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'tap(...args, func function) -> Promise|args[0]\n' +
-              'tap(func function)(...args) -> Promise|args[0]',
+            value: 'tap(...args, f function) -> Promise|args[0]\n' +
+              'tap(f function)(...args) -> Promise|args[0]',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 4, column: 4, offset: 126 }
+              end: { line: 4, column: 4, offset: 120 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 4, column: 4, offset: 126 }
+          end: { line: 4, column: 4, offset: 120 }
         }
       },
       description: {
@@ -41895,14 +41896,76 @@ export default [
             meta: '[playground]',
             value: 'tap(Promise.resolve(1), Promise.resolve(2), 3, console.log) // 1 2 3',
             position: {
-              start: { line: 16, column: 1, offset: 543 },
-              end: { line: 18, column: 4, offset: 642 }
+              start: { line: 17, column: 1, offset: 544 },
+              end: { line: 19, column: 4, offset: 643 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 18, column: 4, offset: 642 }
+          end: { line: 19, column: 4, offset: 643 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/tap.js'
+  },
+  {
+    name: '_tapIf',
+    synopsis: '```coffeescript [specscript]\n' +
+      '_tapIf(\n' +
+      '  predicate function,\n' +
+      '  f function,\n' +
+      '  args Array,\n' +
+      ') -> Promise|args[0]\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: '_tapIf',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 7, offset: 6 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 7, offset: 6 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 7, offset: 6 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: '_tapIf(\n' +
+              '  predicate function,\n' +
+              '  f function,\n' +
+              '  args Array,\n' +
+              ') -> Promise|args[0]',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 7, column: 4, offset: 111 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 7, column: 4, offset: 111 }
         }
       }
     },
@@ -41911,20 +41974,25 @@ export default [
   {
     name: 'tap.if',
     synopsis: '```coffeescript [specscript]\n' +
-      'tap.if(predicate function, func function)(...args) -> Promise|args[0]\n' +
+      'tap.if(...args, predicate function, f function) -> Promise|args[0]\n' +
+      'tap.if(predicate function, f function)(...args) -> Promise|args[0]\n' +
       '```',
-    description: 'A version of `tap` that accepts a predicate function (a function that returns a boolean value) before the function to execute. Only executes the function if the predicate function tests true for the same arguments provided to the execution function.\n' +
+    description: 'A version of `tap` that accepts a predicate function (a function that returns a boolean value) before the function `f` to execute. Only executes `f` if the predicate function tests true. The arguments are the same to both the predicate function and the function to execute `f`.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const isOdd = number => number % 2 == 1\n' +
       '\n' +
-      'const logIfOdd = tap.if(\n' +
-      '  isOdd,\n' +
-      "  number => console.log(number, 'is an odd number')\n" +
-      ')\n' +
+      'const logIfOdd = tap.if(isOdd, console.log)\n' +
       '\n' +
       'logIfOdd(2)\n' +
-      'logIfOdd(3) // 3 is an odd number\n' +
+      'logIfOdd(3) // 3\n' +
+      '```\n' +
+      '\n' +
+      'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'tap.if(Promise.resolve(1), n => n < 5, console.log) // 1\n' +
+      'tap.if(Promise.resolve(6), n => n < 5, console.log)\n' +
       '```',
     mdast: {
       name: {
@@ -41960,16 +42028,17 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'tap.if(predicate function, func function)(...args) -> Promise|args[0]',
+            value: 'tap.if(...args, predicate function, f function) -> Promise|args[0]\n' +
+              'tap.if(predicate function, f function)(...args) -> Promise|args[0]',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 3, column: 4, offset: 102 }
+              end: { line: 4, column: 4, offset: 166 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 3, column: 4, offset: 102 }
+          end: { line: 4, column: 4, offset: 166 }
         }
       },
       description: {
@@ -41996,16 +42065,64 @@ export default [
               },
               {
                 type: 'text',
-                value: ' that accepts a predicate function (a function that returns a boolean value) before the function to execute. Only executes the function if the predicate function tests true for the same arguments provided to the execution function.',
+                value: ' that accepts a predicate function (a function that returns a boolean value) before the function ',
                 position: {
                   start: { line: 1, column: 19, offset: 18 },
-                  end: { line: 1, column: 250, offset: 249 }
+                  end: { line: 1, column: 116, offset: 115 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'f',
+                position: {
+                  start: { line: 1, column: 116, offset: 115 },
+                  end: { line: 1, column: 119, offset: 118 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' to execute. Only executes ',
+                position: {
+                  start: { line: 1, column: 119, offset: 118 },
+                  end: { line: 1, column: 146, offset: 145 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'f',
+                position: {
+                  start: { line: 1, column: 146, offset: 145 },
+                  end: { line: 1, column: 149, offset: 148 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' if the predicate function tests true. The arguments are the same to both the predicate function and the function to execute ',
+                position: {
+                  start: { line: 1, column: 149, offset: 148 },
+                  end: { line: 1, column: 274, offset: 273 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'f',
+                position: {
+                  start: { line: 1, column: 274, offset: 273 },
+                  end: { line: 1, column: 277, offset: 276 }
+                }
+              },
+              {
+                type: 'text',
+                value: '.',
+                position: {
+                  start: { line: 1, column: 277, offset: 276 },
+                  end: { line: 1, column: 278, offset: 277 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 250, offset: 249 }
+              end: { line: 1, column: 278, offset: 277 }
             }
           },
           {
@@ -42014,22 +42131,47 @@ export default [
             meta: '[playground]',
             value: 'const isOdd = number => number % 2 == 1\n' +
               '\n' +
-              'const logIfOdd = tap.if(\n' +
-              '  isOdd,\n' +
-              "  number => console.log(number, 'is an odd number')\n" +
-              ')\n' +
+              'const logIfOdd = tap.if(isOdd, console.log)\n' +
               '\n' +
               'logIfOdd(2)\n' +
-              'logIfOdd(3) // 3 is an odd number',
+              'logIfOdd(3) // 3',
             position: {
-              start: { line: 3, column: 1, offset: 251 },
-              end: { line: 13, column: 4, offset: 457 }
+              start: { line: 3, column: 1, offset: 279 },
+              end: { line: 10, column: 4, offset: 424 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
+                position: {
+                  start: { line: 12, column: 1, offset: 426 },
+                  end: { line: 12, column: 148, offset: 573 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 12, column: 1, offset: 426 },
+              end: { line: 12, column: 148, offset: 573 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'tap.if(Promise.resolve(1), n => n < 5, console.log) // 1\n' +
+              'tap.if(Promise.resolve(6), n => n < 5, console.log)',
+            position: {
+              start: { line: 14, column: 1, offset: 575 },
+              end: { line: 17, column: 4, offset: 714 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 13, column: 4, offset: 457 }
+          end: { line: 17, column: 4, offset: 714 }
         }
       }
     },
