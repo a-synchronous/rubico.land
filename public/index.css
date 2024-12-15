@@ -573,6 +573,11 @@ h4 {
     padding: 0px;
   }
 }
+
+#home > article > a > #blog {
+  padding: 0;
+}
+
 #blog > article > p > img {
   width: 100%;
   max-width: 650px;
