@@ -4544,14 +4544,14 @@ export default [
       'arrayMapPoolAsync<\n' +
       '  T any,\n' +
       '  array Array<T>,\n' +
-      '  mapper T=>Promise|any,\n' +
+      '  f T=>Promise|any,\n' +
       '  concurrencyLimit number,\n' +
       '  result Array,\n' +
       '  index number,\n' +
       '  promises Set<Promise>,\n' +
-      '>(array, mapper, concurrencyLimit, result, index, promises) -> result\n' +
+      '>(array, f, concurrencyLimit, result, index, promises) -> result\n' +
       '```',
-    description: 'Apply a mapper with limited concurrency to each item of an array, returning a Promise of an array of results.',
+    description: 'Apply a function `f` with limited concurrency to each item of an array, returning a Promise of an array of results.',
     mdast: {
       name: {
         type: 'root',
@@ -4589,21 +4589,21 @@ export default [
             value: 'arrayMapPoolAsync<\n' +
               '  T any,\n' +
               '  array Array<T>,\n' +
-              '  mapper T=>Promise|any,\n' +
+              '  f T=>Promise|any,\n' +
               '  concurrencyLimit number,\n' +
               '  result Array,\n' +
               '  index number,\n' +
               '  promises Set<Promise>,\n' +
-              '>(array, mapper, concurrencyLimit, result, index, promises) -> result',
+              '>(array, f, concurrencyLimit, result, index, promises) -> result',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 11, column: 4, offset: 257 }
+              end: { line: 11, column: 4, offset: 247 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 11, column: 4, offset: 257 }
+          end: { line: 11, column: 4, offset: 247 }
         }
       },
       description: {
@@ -4614,22 +4614,38 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Apply a mapper with limited concurrency to each item of an array, returning a Promise of an array of results.',
+                value: 'Apply a function ',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 110, offset: 109 }
+                  end: { line: 1, column: 18, offset: 17 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'f',
+                position: {
+                  start: { line: 1, column: 18, offset: 17 },
+                  end: { line: 1, column: 21, offset: 20 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' with limited concurrency to each item of an array, returning a Promise of an array of results.',
+                position: {
+                  start: { line: 1, column: 21, offset: 20 },
+                  end: { line: 1, column: 116, offset: 115 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 110, offset: 109 }
+              end: { line: 1, column: 116, offset: 115 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 1, column: 110, offset: 109 }
+          end: { line: 1, column: 116, offset: 115 }
         }
       }
     },
@@ -4638,14 +4654,9 @@ export default [
   {
     name: 'arrayMapPool',
     synopsis: '```coffeescript [specscript]\n' +
-      'arrayMapPool<\n' +
-      '  T any,\n' +
-      '  array Array<T>\n' +
-      '  mapper T=>Promise|any,\n' +
-      '  concurrentLimit number,\n' +
-      '>(array, mapper, concurrentLimit) -> Promise|Array\n' +
+      'arrayMapPool(array Array, concurrency number, f function) -> Promise|string\n' +
       '```',
-    description: 'Apply a mapper with limited concurrency to each item of an array, returning an array of results.',
+    description: 'Apply a function `f` with limited concurrency to each item of an array, returning an array of results.',
     mdast: {
       name: {
         type: 'root',
@@ -4680,21 +4691,16 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'arrayMapPool<\n' +
-              '  T any,\n' +
-              '  array Array<T>\n' +
-              '  mapper T=>Promise|any,\n' +
-              '  concurrentLimit number,\n' +
-              '>(array, mapper, concurrentLimit) -> Promise|Array',
+            value: 'arrayMapPool(array Array, concurrency number, f function) -> Promise|string',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 8, column: 4, offset: 174 }
+              end: { line: 3, column: 4, offset: 108 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 8, column: 4, offset: 174 }
+          end: { line: 3, column: 4, offset: 108 }
         }
       },
       description: {
@@ -4705,22 +4711,38 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Apply a mapper with limited concurrency to each item of an array, returning an array of results.',
+                value: 'Apply a function ',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 97, offset: 96 }
+                  end: { line: 1, column: 18, offset: 17 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'f',
+                position: {
+                  start: { line: 1, column: 18, offset: 17 },
+                  end: { line: 1, column: 21, offset: 20 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' with limited concurrency to each item of an array, returning an array of results.',
+                position: {
+                  start: { line: 1, column: 21, offset: 20 },
+                  end: { line: 1, column: 103, offset: 102 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 97, offset: 96 }
+              end: { line: 1, column: 103, offset: 102 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 1, column: 97, offset: 96 }
+          end: { line: 1, column: 103, offset: 102 }
         }
       }
     },
@@ -12947,6 +12969,128 @@ export default [
     fileName: '/home/richard/code/rubico.land/../rubico/_internal/mapMapEntries.js'
   },
   {
+    name: '_mapMapPoolAsync',
+    synopsis: '```coffeescript [specscript]\n' +
+      '_mapMapPoolAsync(\n' +
+      '  m Map,\n' +
+      '  iterator Iterator,\n' +
+      '  concurrency number,\n' +
+      '  f function,\n' +
+      '  result Map,\n' +
+      '  promises Set,\n' +
+      ') -> Promise<Map>\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: '_mapMapPoolAsync',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 17, offset: 16 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 17, offset: 16 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 17, offset: 16 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: '_mapMapPoolAsync(\n' +
+              '  m Map,\n' +
+              '  iterator Iterator,\n' +
+              '  concurrency number,\n' +
+              '  f function,\n' +
+              '  result Map,\n' +
+              '  promises Set,\n' +
+              ') -> Promise<Map>',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 10, column: 4, offset: 164 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 10, column: 4, offset: 164 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/mapMapPool.js'
+  },
+  {
+    name: 'mapMapPool',
+    synopsis: '```coffeescript [specscript]\n' +
+      'mapMapPool(m Map, concurrency number, f function) -> Promise|Map\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'mapMapPool',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 11, offset: 10 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 11, offset: 10 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 11, offset: 10 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'mapMapPool(m Map, concurrency number, f function) -> Promise|Map',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 97 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 97 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/mapMapPool.js'
+  },
+  {
     name: 'mapMapSeries',
     synopsis: '```coffeescript [specscript]\n' +
       'type MapMapper = (\n' +
@@ -14567,6 +14711,128 @@ export default [
       }
     },
     fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectMapOwn.js'
+  },
+  {
+    name: '_objectMapPoolAsync',
+    synopsis: '```coffeescript [specscript]\n' +
+      '_objectMapPoolAsync(\n' +
+      '  o Object,\n' +
+      '  concurrency number,\n' +
+      '  f function,\n' +
+      '  result Object,\n' +
+      '  doneKeys Object,\n' +
+      '  promises Set,\n' +
+      ') -> result Promise|Object\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: '_objectMapPoolAsync',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 20, offset: 19 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 20, offset: 19 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 20, offset: 19 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: '_objectMapPoolAsync(\n' +
+              '  o Object,\n' +
+              '  concurrency number,\n' +
+              '  f function,\n' +
+              '  result Object,\n' +
+              '  doneKeys Object,\n' +
+              '  promises Set,\n' +
+              ') -> result Promise|Object',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 10, column: 4, offset: 180 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 10, column: 4, offset: 180 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectMapPool.js'
+  },
+  {
+    name: 'objectMapPool',
+    synopsis: '```coffeescript [specscript]\n' +
+      'objectMapPool(o Object, concurrency number, f function) -> Promise|Object\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'objectMapPool',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 14, offset: 13 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 14, offset: 13 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 14, offset: 13 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'objectMapPool(o Object, concurrency number, f function) -> Promise|Object',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 106 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 106 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectMapPool.js'
   },
   {
     name: 'objectMapSeries',
@@ -17399,6 +17665,187 @@ export default [
     fileName: '/home/richard/code/rubico.land/../rubico/_internal/setMap.js'
   },
   {
+    name: '_setMapPoolAsync',
+    synopsis: '```coffeescript [specscript]\n' +
+      '_setMapPoolAsync(\n' +
+      '  s Set,\n' +
+      '  iterator Iterator,\n' +
+      '  concurrency number,\n' +
+      '  f function,\n' +
+      '  result Set,\n' +
+      '  promises Set,\n' +
+      ') -> result Promise<Set>\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: '_setMapPoolAsync',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 17, offset: 16 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 17, offset: 16 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 17, offset: 16 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: '_setMapPoolAsync(\n' +
+              '  s Set,\n' +
+              '  iterator Iterator,\n' +
+              '  concurrency number,\n' +
+              '  f function,\n' +
+              '  result Set,\n' +
+              '  promises Set,\n' +
+              ') -> result Promise<Set>',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 10, column: 4, offset: 171 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 10, column: 4, offset: 171 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/setMapPool.js'
+  },
+  {
+    name: 'setMapPool',
+    synopsis: '```coffeescript [specscript]\n' +
+      'setMapPool(s Set, concurrency number, f function) -> Promise|Set\n' +
+      '```',
+    description: 'Apply a function `f` with limited concurrency to each item of a set `s`, returning an array of results.',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'setMapPool',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 11, offset: 10 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 11, offset: 10 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 11, offset: 10 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'setMapPool(s Set, concurrency number, f function) -> Promise|Set',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 97 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 97 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Apply a function ',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 18, offset: 17 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'f',
+                position: {
+                  start: { line: 1, column: 18, offset: 17 },
+                  end: { line: 1, column: 21, offset: 20 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' with limited concurrency to each item of a set ',
+                position: {
+                  start: { line: 1, column: 21, offset: 20 },
+                  end: { line: 1, column: 69, offset: 68 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 's',
+                position: {
+                  start: { line: 1, column: 69, offset: 68 },
+                  end: { line: 1, column: 72, offset: 71 }
+                }
+              },
+              {
+                type: 'text',
+                value: ', returning an array of results.',
+                position: {
+                  start: { line: 1, column: 72, offset: 71 },
+                  end: { line: 1, column: 104, offset: 103 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 104, offset: 103 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 104, offset: 103 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/setMapPool.js'
+  },
+  {
     name: 'setMapSeries',
     synopsis: '```coffeescript [specscript]\n' +
       'type SetMapper = (\n' +
@@ -18613,6 +19060,60 @@ export default [
       }
     },
     fileName: '/home/richard/code/rubico.land/../rubico/_internal/stringMap.js'
+  },
+  {
+    name: 'stringMapPool',
+    synopsis: '```coffeescript [specscript]\n' +
+      'stringMapPool(s string, concurrency number, f function) -> Promise|string\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'stringMapPool',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 14, offset: 13 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 14, offset: 13 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 14, offset: 13 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'stringMapPool(s string, concurrency number, f function) -> Promise|string',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 106 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 106 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/stringMapPool.js'
   },
   {
     name: 'stringMapSeries',
@@ -19891,6 +20392,11 @@ export default [
       'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
       '\n' +
       '```javascript [playground]\n' +
+      'all(Promise.resolve({ a: 1 }), [\n' +
+      '  obj => obj.a + 1,\n' +
+      '  obj => obj.a + 2,\n' +
+      '  obj => obj.a + 3,\n' +
+      ']).then(console.log) // [2, 3, 4]\n' +
       '```',
     execution: 'concurrent',
     mdast: {
@@ -20068,16 +20574,20 @@ export default [
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: '',
+            value: 'all(Promise.resolve({ a: 1 }), [\n' +
+              '  obj => obj.a + 1,\n' +
+              '  obj => obj.a + 2,\n' +
+              '  obj => obj.a + 3,\n' +
+              ']).then(console.log) // [2, 3, 4]',
             position: {
               start: { line: 52, column: 1, offset: 1509 },
-              end: { line: 53, column: 4, offset: 1539 }
+              end: { line: 58, column: 4, offset: 1666 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 53, column: 4, offset: 1539 }
+          end: { line: 58, column: 4, offset: 1666 }
         }
       },
       execution: {
@@ -20513,6 +21023,15 @@ export default [
       'console.log(\n' +
       '  and([isOdd, isPositive, isLessThan3])(1),\n' +
       ') // true\n' +
+      '```\n' +
+      '\n' +
+      'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'and(Promise.resolve(5), [\n' +
+      '  n => n > 0,\n' +
+      '  n => n < 10,\n' +
+      ']).then(console.log) // true\n' +
       '```',
     execution: 'series',
     note: '...args slows down here by an order of magnitude',
@@ -20652,11 +21171,41 @@ export default [
               start: { line: 15, column: 1, offset: 565 },
               end: { line: 25, column: 4, offset: 786 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
+                position: {
+                  start: { line: 27, column: 1, offset: 788 },
+                  end: { line: 27, column: 148, offset: 935 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 27, column: 1, offset: 788 },
+              end: { line: 27, column: 148, offset: 935 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'and(Promise.resolve(5), [\n' +
+              '  n => n > 0,\n' +
+              '  n => n < 10,\n' +
+              ']).then(console.log) // true',
+            position: {
+              start: { line: 29, column: 1, offset: 937 },
+              end: { line: 34, column: 4, offset: 1051 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 25, column: 4, offset: 786 }
+          end: { line: 34, column: 4, offset: 1051 }
         }
       },
       execution: {
@@ -20717,7 +21266,7 @@ export default [
   {
     name: 'assign',
     synopsis: '```coffeescript [specscript]\n' +
-      'assign(object Object, resolvers Object<function>) -> result Promise|Object\n' +
+      'assign(object Promise|Object, resolvers Object<function>) -> result Promise|Object\n' +
       '\n' +
       'assign(resolvers Object<function>)(object Object) -> result Promise|Object\n' +
       '```',
@@ -20750,6 +21299,19 @@ export default [
       '\n' +
       'asyncAssignTotal({ numbers: [1, 2, 3, 4, 5] }).then(console.log)\n' +
       '// { numbers: [1, 2, 3, 4, 5], total: 15 }\n' +
+      '```\n' +
+      '\n' +
+      'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'assign(Promise.resolve({}), {\n' +
+      '  a() {\n' +
+      '    return 1\n' +
+      '  },\n' +
+      '  b() {\n' +
+      '    return 2\n' +
+      '  },\n' +
+      '}).then(console.log)\n' +
       '```',
     execution: 'concurrent',
     mdast: {
@@ -20786,18 +21348,18 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'assign(object Object, resolvers Object<function>) -> result Promise|Object\n' +
+            value: 'assign(object Promise|Object, resolvers Object<function>) -> result Promise|Object\n' +
               '\n' +
               'assign(resolvers Object<function>)(object Object) -> result Promise|Object',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 183 }
+              end: { line: 5, column: 4, offset: 191 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 5, column: 4, offset: 183 }
+          end: { line: 5, column: 4, offset: 191 }
         }
       },
       description: {
@@ -20875,11 +21437,45 @@ export default [
               start: { line: 18, column: 1, offset: 678 },
               end: { line: 30, column: 4, offset: 1021 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
+                position: {
+                  start: { line: 32, column: 1, offset: 1023 },
+                  end: { line: 32, column: 148, offset: 1170 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 32, column: 1, offset: 1023 },
+              end: { line: 32, column: 148, offset: 1170 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'assign(Promise.resolve({}), {\n' +
+              '  a() {\n' +
+              '    return 1\n' +
+              '  },\n' +
+              '  b() {\n' +
+              '    return 2\n' +
+              '  },\n' +
+              '}).then(console.log)',
+            position: {
+              start: { line: 34, column: 1, offset: 1172 },
+              end: { line: 43, column: 4, offset: 1305 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 30, column: 4, offset: 1021 }
+          end: { line: 43, column: 4, offset: 1305 }
         }
       },
       execution: {
@@ -22480,6 +23076,12 @@ export default [
       "  eq('George', get('name')),\n" +
       '  console.log, // true\n' +
       '])\n' +
+      '```\n' +
+      '\n' +
+      'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      "eq(Promise.resolve({ a: 1, b: 1 }), get('a'), get('b')).then(console.log) // true\n" +
       '```',
     execution: 'concurrent',
     mdast: {
@@ -22698,11 +23300,38 @@ export default [
               start: { line: 23, column: 1, offset: 628 },
               end: { line: 28, column: 4, offset: 740 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
+                position: {
+                  start: { line: 30, column: 1, offset: 742 },
+                  end: { line: 30, column: 148, offset: 889 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 30, column: 1, offset: 742 },
+              end: { line: 30, column: 148, offset: 889 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: "eq(Promise.resolve({ a: 1, b: 1 }), get('a'), get('b')).then(console.log) // true",
+            position: {
+              start: { line: 32, column: 1, offset: 891 },
+              end: { line: 34, column: 4, offset: 1003 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 28, column: 4, offset: 740 }
+          end: { line: 34, column: 4, offset: 1003 }
         }
       },
       execution: {
@@ -22778,6 +23407,12 @@ export default [
       '  every(number => number < 5),\n' +
       '  console.log, // true\n' +
       '])\n' +
+      '```\n' +
+      '\n' +
+      'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'every(Promise.resolve([1, 2, 3, 4, 5]), n => n < 6).then(console.log) // true\n' +
       '```',
     execution: 'concurrent',
     muxing: '',
@@ -22953,11 +23588,38 @@ export default [
               start: { line: 27, column: 1, offset: 710 },
               end: { line: 32, column: 4, offset: 815 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
+                position: {
+                  start: { line: 34, column: 1, offset: 817 },
+                  end: { line: 34, column: 148, offset: 964 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 34, column: 1, offset: 817 },
+              end: { line: 34, column: 148, offset: 964 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'every(Promise.resolve([1, 2, 3, 4, 5]), n => n < 6).then(console.log) // true',
+            position: {
+              start: { line: 36, column: 1, offset: 966 },
+              end: { line: 38, column: 4, offset: 1074 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 32, column: 4, offset: 815 }
+          end: { line: 38, column: 4, offset: 1074 }
         }
       },
       execution: {
@@ -23253,6 +23915,15 @@ export default [
       '                      // 3\n' +
       '                      // 5\n' +
       '}\n' +
+      '```\n' +
+      '\n' +
+      'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const isOdd = number => number % 2 == 1\n' +
+      '\n' +
+      'filter(Promise.resolve([1, 2, 3, 4, 5]), isOdd).then(console.log)\n' +
+      '// [1, 3, 5]\n' +
       '```',
     execution: 'concurrent',
     transducing: '',
@@ -24023,11 +24694,41 @@ export default [
               start: { line: 91, column: 1, offset: 4086 },
               end: { line: 123, column: 4, offset: 4980 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
+                position: {
+                  start: { line: 125, column: 1, offset: 4982 },
+                  end: { line: 125, column: 148, offset: 5129 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 125, column: 1, offset: 4982 },
+              end: { line: 125, column: 148, offset: 5129 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'const isOdd = number => number % 2 == 1\n' +
+              '\n' +
+              'filter(Promise.resolve([1, 2, 3, 4, 5]), isOdd).then(console.log)\n' +
+              '// [1, 3, 5]',
+            position: {
+              start: { line: 127, column: 1, offset: 5131 },
+              end: { line: 132, column: 4, offset: 5281 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 123, column: 4, offset: 4980 }
+          end: { line: 132, column: 4, offset: 5281 }
         }
       },
       execution: {
@@ -24225,6 +24926,13 @@ export default [
       'console.log(\n' +
       '  flatMap(new Set([1, 2, 3, 4, 5]), pairPlus100)\n' +
       ') // Set(10) { 1, 101, 2, 102, 3, 103, 4, 104, 5, 105 }\n' +
+      '```\n' +
+      '\n' +
+      'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'flatMap(Promise.resolve([1, 2, 3, 4, 5]), n => [n, n]).then(console.log)\n' +
+      '// [1, 1, 2, 2, 3, 3, 4, 4, 5, 5]\n' +
       '```',
     execution: 'concurrent',
     transducing: '',
@@ -24748,11 +25456,39 @@ export default [
               start: { line: 71, column: 1, offset: 2889 },
               end: { line: 77, column: 4, offset: 3088 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
+                position: {
+                  start: { line: 79, column: 1, offset: 3090 },
+                  end: { line: 79, column: 148, offset: 3237 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 79, column: 1, offset: 3090 },
+              end: { line: 79, column: 148, offset: 3237 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'flatMap(Promise.resolve([1, 2, 3, 4, 5]), n => [n, n]).then(console.log)\n' +
+              '// [1, 1, 2, 2, 3, 3, 4, 4, 5, 5]',
+            position: {
+              start: { line: 81, column: 1, offset: 3239 },
+              end: { line: 84, column: 4, offset: 3376 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 77, column: 4, offset: 3088 }
+          end: { line: 84, column: 4, offset: 3376 }
         }
       },
       execution: {
@@ -25041,6 +25777,15 @@ export default [
       '                        // 9\n' +
       '                        // 25\n' +
       '])\n' +
+      '```\n' +
+      '\n' +
+      'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'forEach(Promise.resolve([1, 2, 3]), console.log)\n' +
+      '// 1\n' +
+      '// 2\n' +
+      '// 3\n' +
       '```',
     mdast: {
       name: {
@@ -25156,11 +25901,38 @@ export default [
               start: { line: 11, column: 1, offset: 331 },
               end: { line: 19, column: 4, offset: 543 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
+                position: {
+                  start: { line: 21, column: 1, offset: 545 },
+                  end: { line: 21, column: 148, offset: 692 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 21, column: 1, offset: 545 },
+              end: { line: 21, column: 148, offset: 692 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'forEach(Promise.resolve([1, 2, 3]), console.log)\n// 1\n// 2\n// 3',
+            position: {
+              start: { line: 23, column: 1, offset: 694 },
+              end: { line: 28, column: 4, offset: 788 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 19, column: 4, offset: 543 }
+          end: { line: 28, column: 4, offset: 788 }
         }
       }
     },
@@ -25239,6 +26011,15 @@ export default [
       'forEach.series([1, 2, 3, 4, 5], console.log) // 1 2 3 4 5\n' +
       '\n' +
       'forEach.series({ a: 1, b: 2, c: 3 }, console.log) // 1 2 3\n' +
+      '```\n' +
+      '\n' +
+      'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'forEach.series(Promise.resolve([1, 2, 3]), console.log)\n' +
+      '// 1\n' +
+      '// 2\n' +
+      '// 3\n' +
       '```',
     mdast: {
       name: {
@@ -25321,11 +26102,41 @@ export default [
               start: { line: 3, column: 1, offset: 147 },
               end: { line: 7, column: 4, offset: 295 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
+                position: {
+                  start: { line: 9, column: 1, offset: 297 },
+                  end: { line: 9, column: 148, offset: 444 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 9, column: 1, offset: 297 },
+              end: { line: 9, column: 148, offset: 444 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'forEach.series(Promise.resolve([1, 2, 3]), console.log)\n' +
+              '// 1\n' +
+              '// 2\n' +
+              '// 3',
+            position: {
+              start: { line: 11, column: 1, offset: 446 },
+              end: { line: 16, column: 4, offset: 547 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 7, column: 4, offset: 295 }
+          end: { line: 16, column: 4, offset: 547 }
         }
       }
     },
@@ -25393,6 +26204,12 @@ export default [
       "console.log(get00000DotNotation([[[[['foo']]]]])) // foo\n" +
       "console.log(get00000BracketNotation([[[[['foo']]]]])) // foo\n" +
       "console.log(get00000ArrayNotation([[[[['foo']]]]])) // foo\n" +
+      '```\n' +
+      '\n' +
+      'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      "get(Promise.resolve({ a: 1 }), 'a').then(console.log) // 1\n" +
       '```',
     mdast: {
       name: {
@@ -25733,11 +26550,38 @@ export default [
               start: { line: 37, column: 1, offset: 1190 },
               end: { line: 49, column: 4, offset: 1645 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
+                position: {
+                  start: { line: 51, column: 1, offset: 1647 },
+                  end: { line: 51, column: 148, offset: 1794 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 51, column: 1, offset: 1647 },
+              end: { line: 51, column: 148, offset: 1794 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: "get(Promise.resolve({ a: 1 }), 'a').then(console.log) // 1",
+            position: {
+              start: { line: 53, column: 1, offset: 1796 },
+              end: { line: 55, column: 4, offset: 1885 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 49, column: 4, offset: 1645 }
+          end: { line: 55, column: 4, offset: 1885 }
         }
       }
     },
@@ -25784,6 +26628,12 @@ export default [
       "  gt(5, get('value')),\n" +
       '  console.log, // true\n' +
       '])\n' +
+      '```\n' +
+      '\n' +
+      'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      "gt(Promise.resolve({ a: 2, b: 1 }), get('a'), get('b')).then(console.log) // true\n" +
       '```',
     mdast: {
       name: {
@@ -25974,11 +26824,38 @@ export default [
               start: { line: 23, column: 1, offset: 508 },
               end: { line: 28, column: 4, offset: 608 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
+                position: {
+                  start: { line: 30, column: 1, offset: 610 },
+                  end: { line: 30, column: 148, offset: 757 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 30, column: 1, offset: 610 },
+              end: { line: 30, column: 148, offset: 757 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: "gt(Promise.resolve({ a: 2, b: 1 }), get('a'), get('b')).then(console.log) // true",
+            position: {
+              start: { line: 32, column: 1, offset: 759 },
+              end: { line: 34, column: 4, offset: 871 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 28, column: 4, offset: 608 }
+          end: { line: 34, column: 4, offset: 871 }
         }
       }
     },
@@ -26027,6 +26904,12 @@ export default [
       "  gte(1, get('value')),\n" +
       '  console.log, // true\n' +
       '])\n' +
+      '```\n' +
+      '\n' +
+      'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      "gte(Promise.resolve({ a: 1, b: 1 }), get('a'), get('b')).then(console.log) // true\n" +
       '```',
     mdast: {
       name: {
@@ -26219,11 +27102,38 @@ export default [
               start: { line: 25, column: 1, offset: 583 },
               end: { line: 30, column: 4, offset: 684 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
+                position: {
+                  start: { line: 32, column: 1, offset: 686 },
+                  end: { line: 32, column: 148, offset: 833 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 32, column: 1, offset: 686 },
+              end: { line: 32, column: 148, offset: 833 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: "gte(Promise.resolve({ a: 1, b: 1 }), get('a'), get('b')).then(console.log) // true",
+            position: {
+              start: { line: 34, column: 1, offset: 835 },
+              end: { line: 36, column: 4, offset: 948 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 30, column: 4, offset: 684 }
+          end: { line: 36, column: 4, offset: 948 }
         }
       }
     },
@@ -26274,6 +27184,12 @@ export default [
       "  lt(0, get('value')),\n" +
       '  console.log, // true\n' +
       '])\n' +
+      '```\n' +
+      '\n' +
+      'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      "lt(Promise.resolve({ a: 1, b: 2 }), get('a'), get('b')).then(console.log) // true\n" +
       '```',
     mdast: {
       name: {
@@ -26464,11 +27380,38 @@ export default [
               start: { line: 23, column: 1, offset: 565 },
               end: { line: 28, column: 4, offset: 665 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
+                position: {
+                  start: { line: 30, column: 1, offset: 667 },
+                  end: { line: 30, column: 148, offset: 814 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 30, column: 1, offset: 667 },
+              end: { line: 30, column: 148, offset: 814 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: "lt(Promise.resolve({ a: 1, b: 2 }), get('a'), get('b')).then(console.log) // true",
+            position: {
+              start: { line: 32, column: 1, offset: 816 },
+              end: { line: 34, column: 4, offset: 928 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 28, column: 4, offset: 665 }
+          end: { line: 34, column: 4, offset: 928 }
         }
       }
     },
@@ -26515,6 +27458,12 @@ export default [
       "  lte(1, get('value')),\n" +
       '  console.log, // true\n' +
       '])\n' +
+      '```\n' +
+      '\n' +
+      'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      "lte(Promise.resolve({ a: 1, b: 1 }), get('a'), get('b')).then(console.log) // true\n" +
       '```',
     mdast: {
       name: {
@@ -26705,11 +27654,38 @@ export default [
               start: { line: 23, column: 1, offset: 612 },
               end: { line: 28, column: 4, offset: 713 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
+                position: {
+                  start: { line: 30, column: 1, offset: 715 },
+                  end: { line: 30, column: 148, offset: 862 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 30, column: 1, offset: 715 },
+              end: { line: 30, column: 148, offset: 862 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: "lte(Promise.resolve({ a: 1, b: 1 }), get('a'), get('b')).then(console.log) // true",
+            position: {
+              start: { line: 32, column: 1, offset: 864 },
+              end: { line: 34, column: 4, offset: 977 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 28, column: 4, offset: 713 }
+          end: { line: 34, column: 4, offset: 977 }
         }
       }
     },
@@ -26737,21 +27713,6 @@ export default [
       '  originalMap Map,\n' +
       '  mapMapper (value any, key any, originalMap Map)=>Promise|any\n' +
       ') -> mappedMap Promise|Map\n' +
-      '\n' +
-      '_map(\n' +
-      '  generatorFunction ...args=>Generator,\n' +
-      '  syncMapper (value any)=>any,\n' +
-      ') -> mappingGeneratorFunction ...args=>Generator\n' +
-      '\n' +
-      '_map(\n' +
-      '  asyncGeneratorFunction ...args=>AsyncGenerator,\n' +
-      '  mapper (value any)=>Promise|any\n' +
-      ') -> mappingAsyncGeneratorFunction ...args=>AsyncGenerator\n' +
-      '\n' +
-      '_map(\n' +
-      '  originalReducer Reducer,\n' +
-      '  mapper (value any)=>Promise|any,\n' +
-      ') -> mappingReducer Reducer\n' +
       '```',
     mdast: {
       name: {
@@ -26805,31 +27766,16 @@ export default [
               '_map(\n' +
               '  originalMap Map,\n' +
               '  mapMapper (value any, key any, originalMap Map)=>Promise|any\n' +
-              ') -> mappedMap Promise|Map\n' +
-              '\n' +
-              '_map(\n' +
-              '  generatorFunction ...args=>Generator,\n' +
-              '  syncMapper (value any)=>any,\n' +
-              ') -> mappingGeneratorFunction ...args=>Generator\n' +
-              '\n' +
-              '_map(\n' +
-              '  asyncGeneratorFunction ...args=>AsyncGenerator,\n' +
-              '  mapper (value any)=>Promise|any\n' +
-              ') -> mappingAsyncGeneratorFunction ...args=>AsyncGenerator\n' +
-              '\n' +
-              '_map(\n' +
-              '  originalReducer Reducer,\n' +
-              '  mapper (value any)=>Promise|any,\n' +
-              ') -> mappingReducer Reducer',
+              ') -> mappedMap Promise|Map',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 36, column: 4, offset: 861 }
+              end: { line: 21, column: 4, offset: 487 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 36, column: 4, offset: 861 }
+          end: { line: 21, column: 4, offset: 487 }
         }
       }
     },
@@ -26977,6 +27923,15 @@ export default [
       '    // C\n' +
       '  }\n' +
       '})()\n' +
+      '```\n' +
+      '\n' +
+      'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const asyncSquare = async n => n ** 2\n' +
+      '\n' +
+      'map(Promise.resolve([1, 2, 3, 4, 5]), asyncSquare).then(console.log)\n' +
+      '// [1, 4, 9, 16, 25]\n' +
       '```',
     execution: 'concurrent',
     TODO: 'streamMap',
@@ -27753,11 +28708,41 @@ export default [
               start: { line: 96, column: 1, offset: 3013 },
               end: { line: 129, column: 4, offset: 3693 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
+                position: {
+                  start: { line: 131, column: 1, offset: 3695 },
+                  end: { line: 131, column: 148, offset: 3842 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 131, column: 1, offset: 3695 },
+              end: { line: 131, column: 148, offset: 3842 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'const asyncSquare = async n => n ** 2\n' +
+              '\n' +
+              'map(Promise.resolve([1, 2, 3, 4, 5]), asyncSquare).then(console.log)\n' +
+              '// [1, 4, 9, 16, 25]',
+            position: {
+              start: { line: 133, column: 1, offset: 3844 },
+              end: { line: 138, column: 4, offset: 4003 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 129, column: 4, offset: 3693 }
+          end: { line: 138, column: 4, offset: 4003 }
         }
       },
       execution: {
@@ -27843,6 +28828,18 @@ export default [
       '\n' +
       "console.log(upperCaseKeysAndSquareValues(new Map([['a', 1], ['b', 2], ['c', 3]])))\n" +
       "// Map(3) { 'A' => 1, 'B' => 4, 'C' => 9 }\n" +
+      '```\n' +
+      '\n' +
+      'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const asyncSquareEntries = async ([k, v]) => [k, v ** 2]\n' +
+      '\n' +
+      'map.entries(\n' +
+      '  Promise.resolve({ a: 1, b: 2, c: 3 }),\n' +
+      '  asyncSquareEntries,\n' +
+      ').then(console.log)\n' +
+      '// { a: 1, b: 4, c: 9 }\n' +
       '```',
     since: 'v1.7.0',
     mdast: {
@@ -27979,11 +28976,44 @@ export default [
               start: { line: 3, column: 1, offset: 111 },
               end: { line: 12, column: 4, offset: 459 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
+                position: {
+                  start: { line: 14, column: 1, offset: 461 },
+                  end: { line: 14, column: 148, offset: 608 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 14, column: 1, offset: 461 },
+              end: { line: 14, column: 148, offset: 608 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'const asyncSquareEntries = async ([k, v]) => [k, v ** 2]\n' +
+              '\n' +
+              'map.entries(\n' +
+              '  Promise.resolve({ a: 1, b: 2, c: 3 }),\n' +
+              '  asyncSquareEntries,\n' +
+              ').then(console.log)\n' +
+              '// { a: 1, b: 4, c: 9 }',
+            position: {
+              start: { line: 16, column: 1, offset: 610 },
+              end: { line: 24, column: 4, offset: 818 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 12, column: 4, offset: 459 }
+          end: { line: 24, column: 4, offset: 818 }
         }
       },
       since: {
@@ -28018,7 +29048,7 @@ export default [
   {
     name: '_mapSeries',
     synopsis: '```coffeescript [specscript]\n' +
-      'type Mappable = Array|Object|Set|Map|Iterator|AsyncIterator\n' +
+      'type Mappable = Array|Object|Set|Map\n' +
       '\n' +
       'type Mapper = (\n' +
       '  value any,\n' +
@@ -28062,7 +29092,7 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'type Mappable = Array|Object|Set|Map|Iterator|AsyncIterator\n' +
+            value: 'type Mappable = Array|Object|Set|Map\n' +
               '\n' +
               'type Mapper = (\n' +
               '  value any,\n' +
@@ -28073,13 +29103,13 @@ export default [
               '_mapSeries(collection Mappable, f Mapper) -> result Promise|Mappable',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 11, column: 4, offset: 274 }
+              end: { line: 11, column: 4, offset: 251 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 11, column: 4, offset: 274 }
+          end: { line: 11, column: 4, offset: 251 }
         }
       }
     },
@@ -28111,6 +29141,15 @@ export default [
       '\n' +
       "console.log('start')\n" +
       'map.series([1, 2, 3, 4, 5], delayedLog)\n' +
+      '```\n' +
+      '\n' +
+      'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const asyncSquare = async n => n ** 2\n' +
+      '\n' +
+      'map.series(Promise.resolve([1, 2, 3, 4, 5]), asyncSquare).then(console.log)\n' +
+      '// [1, 4, 9, 16, 25]\n' +
       '```',
     execution: 'series',
     mdast: {
@@ -28224,11 +29263,41 @@ export default [
               start: { line: 3, column: 1, offset: 41 },
               end: { line: 13, column: 4, offset: 274 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
+                position: {
+                  start: { line: 15, column: 1, offset: 276 },
+                  end: { line: 15, column: 148, offset: 423 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 15, column: 1, offset: 276 },
+              end: { line: 15, column: 148, offset: 423 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'const asyncSquare = async n => n ** 2\n' +
+              '\n' +
+              'map.series(Promise.resolve([1, 2, 3, 4, 5]), asyncSquare).then(console.log)\n' +
+              '// [1, 4, 9, 16, 25]',
+            position: {
+              start: { line: 17, column: 1, offset: 425 },
+              end: { line: 22, column: 4, offset: 591 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 13, column: 4, offset: 274 }
+          end: { line: 22, column: 4, offset: 591 }
         }
       },
       execution: {
@@ -28261,14 +29330,80 @@ export default [
     fileName: '/home/richard/code/rubico.land/../rubico/map.js'
   },
   {
+    name: '_mapPool',
+    synopsis: '```coffeescript [specscript]\n' +
+      'type Mappable = Array|Object|Set|Map\n' +
+      '\n' +
+      '_mapPool(collection Mappable, concurrency number, f function) -> result Promise|Mappable\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: '_mapPool',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 9, offset: 8 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 9, offset: 8 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 9, offset: 8 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'type Mappable = Array|Object|Set|Map\n' +
+              '\n' +
+              '_mapPool(collection Mappable, concurrency number, f function) -> result Promise|Mappable',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 5, column: 4, offset: 159 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 5, column: 4, offset: 159 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/map.js'
+  },
+  {
     name: 'map.pool',
     synopsis: '```coffeescript [specscript]\n' +
+      'type Mappable = Array|Object|Set|Map\n' +
+      '\n' +
       'map.pool(\n' +
-      '  maxConcurrency number,\n' +
+      '  concurrency number,\n' +
       '  mapper (value any)=>Promise|any,\n' +
-      ')(array Array) -> result Promise|Array\n' +
+      ')(collection Mappable) -> result Promise|Array\n' +
+      '\n' +
+      'map.pool(\n' +
+      '  collection Mappable,\n' +
+      '  concurrency number,\n' +
+      '  mapper (value any)=>Promise|any,\n' +
+      ') -> result Promise|Array\n' +
       '```',
-    description: '`map` that specifies the maximum concurrency (number of ongoing promises at any time) of the execution. Only works for arrays.\n' +
+    description: '[map](/docs/map) with limited [concurrency](https://web.mit.edu/6.005/www/fa14/classes/17-concurrency/).\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const ids = [1, 2, 3, 4, 5]\n' +
@@ -28284,6 +29419,15 @@ export default [
       '  delayedIdentity,\n' +
       '  console.log,\n' +
       ']))(ids)\n' +
+      '```\n' +
+      '\n' +
+      'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const asyncSquare = async n => n ** 2\n' +
+      '\n' +
+      'map.pool(Promise.resolve([1, 2, 3, 4, 5]), 5, asyncSquare).then(console.log)\n' +
+      '// [1, 4, 9, 16, 25]\n' +
       '```',
     TODO: 'objectMapPool',
     execution: 'concurrent',
@@ -28321,19 +29465,27 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'map.pool(\n' +
-              '  maxConcurrency number,\n' +
+            value: 'type Mappable = Array|Object|Set|Map\n' +
+              '\n' +
+              'map.pool(\n' +
+              '  concurrency number,\n' +
               '  mapper (value any)=>Promise|any,\n' +
-              ')(array Array) -> result Promise|Array',
+              ')(collection Mappable) -> result Promise|Array\n' +
+              '\n' +
+              'map.pool(\n' +
+              '  collection Mappable,\n' +
+              '  concurrency number,\n' +
+              '  mapper (value any)=>Promise|any,\n' +
+              ') -> result Promise|Array',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 6, column: 4, offset: 141 }
+              end: { line: 14, column: 4, offset: 301 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 6, column: 4, offset: 141 }
+          end: { line: 14, column: 4, offset: 301 }
         }
       },
       description: {
@@ -28343,25 +29495,63 @@ export default [
             type: 'paragraph',
             children: [
               {
-                type: 'inlineCode',
-                value: 'map',
+                type: 'link',
+                title: null,
+                url: '/docs/map',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'map',
+                    position: {
+                      start: { line: 1, column: 2, offset: 1 },
+                      end: { line: 1, column: 5, offset: 4 }
+                    }
+                  }
+                ],
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 6, offset: 5 }
+                  end: { line: 1, column: 17, offset: 16 }
                 }
               },
               {
                 type: 'text',
-                value: ' that specifies the maximum concurrency (number of ongoing promises at any time) of the execution. Only works for arrays.',
+                value: ' with limited ',
                 position: {
-                  start: { line: 1, column: 6, offset: 5 },
-                  end: { line: 1, column: 127, offset: 126 }
+                  start: { line: 1, column: 17, offset: 16 },
+                  end: { line: 1, column: 31, offset: 30 }
+                }
+              },
+              {
+                type: 'link',
+                title: null,
+                url: 'https://web.mit.edu/6.005/www/fa14/classes/17-concurrency/',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'concurrency',
+                    position: {
+                      start: { line: 1, column: 32, offset: 31 },
+                      end: { line: 1, column: 43, offset: 42 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 31, offset: 30 },
+                  end: { line: 1, column: 104, offset: 103 }
+                }
+              },
+              {
+                type: 'text',
+                value: '.',
+                position: {
+                  start: { line: 1, column: 104, offset: 103 },
+                  end: { line: 1, column: 105, offset: 104 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 127, offset: 126 }
+              end: { line: 1, column: 105, offset: 104 }
             }
           },
           {
@@ -28382,14 +29572,44 @@ export default [
               '  console.log,\n' +
               ']))(ids)',
             position: {
-              start: { line: 3, column: 1, offset: 128 },
-              end: { line: 17, column: 4, offset: 397 }
+              start: { line: 3, column: 1, offset: 106 },
+              end: { line: 17, column: 4, offset: 375 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
+                position: {
+                  start: { line: 19, column: 1, offset: 377 },
+                  end: { line: 19, column: 148, offset: 524 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 19, column: 1, offset: 377 },
+              end: { line: 19, column: 148, offset: 524 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'const asyncSquare = async n => n ** 2\n' +
+              '\n' +
+              'map.pool(Promise.resolve([1, 2, 3, 4, 5]), 5, asyncSquare).then(console.log)\n' +
+              '// [1, 4, 9, 16, 25]',
+            position: {
+              start: { line: 21, column: 1, offset: 526 },
+              end: { line: 26, column: 4, offset: 693 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 17, column: 4, offset: 397 }
+          end: { line: 26, column: 4, offset: 693 }
         }
       },
       TODO: {
@@ -36528,6 +37748,14 @@ export default [
       'console.log(\n' +
       '  not(isOdd)(3),\n' +
       ') // false\n' +
+      '```\n' +
+      '\n' +
+      'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const isOdd = number => number % 2 == 1\n' +
+      '\n' +
+      'not(Promise.resolve(3), isOdd).then(console.log) // false\n' +
       '```',
     mdast: {
       name: {
@@ -36701,11 +37929,40 @@ export default [
               start: { line: 12, column: 1, offset: 438 },
               end: { line: 18, column: 4, offset: 550 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
+                position: {
+                  start: { line: 20, column: 1, offset: 552 },
+                  end: { line: 20, column: 148, offset: 699 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 20, column: 1, offset: 552 },
+              end: { line: 20, column: 148, offset: 699 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'const isOdd = number => number % 2 == 1\n' +
+              '\n' +
+              'not(Promise.resolve(3), isOdd).then(console.log) // false',
+            position: {
+              start: { line: 22, column: 1, offset: 701 },
+              end: { line: 26, column: 4, offset: 830 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 18, column: 4, offset: 550 }
+          end: { line: 26, column: 4, offset: 830 }
         }
       }
     },
@@ -36753,6 +38010,13 @@ export default [
       "  omit(['a', 'b']),\n" +
       '  console.log, // { c: 9 }\n' +
       '])\n' +
+      '```\n' +
+      '\n' +
+      'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      "omit(Promise.resolve({ a: 1, b: 2, c: 3 }), ['a', 'b']).then(console.log)\n" +
+      '// { c: 3 }\n' +
       '```',
     mdast: {
       name: {
@@ -37060,11 +38324,39 @@ export default [
               start: { line: 30, column: 1, offset: 611 },
               end: { line: 36, column: 4, offset: 750 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
+                position: {
+                  start: { line: 38, column: 1, offset: 752 },
+                  end: { line: 38, column: 148, offset: 899 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 38, column: 1, offset: 752 },
+              end: { line: 38, column: 148, offset: 899 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: "omit(Promise.resolve({ a: 1, b: 2, c: 3 }), ['a', 'b']).then(console.log)\n" +
+              '// { c: 3 }',
+            position: {
+              start: { line: 40, column: 1, offset: 901 },
+              end: { line: 43, column: 4, offset: 1017 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 36, column: 4, offset: 750 }
+          end: { line: 43, column: 4, offset: 1017 }
         }
       }
     },
@@ -37217,6 +38509,15 @@ export default [
       'console.log(\n' +
       '  or([isOdd, isEven])(0),\n' +
       ') // true\n' +
+      '```\n' +
+      '\n' +
+      'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      "or(Promise.resolve('aaa'), [\n" +
+      "  s => s.startsWith('b'),\n" +
+      "  s => s.endsWith('a'),\n" +
+      ']).then(console.log) // true\n' +
       '```',
     execution: 'series',
     note: '...args slows down here by an order of magnitude',
@@ -37354,11 +38655,41 @@ export default [
               start: { line: 15, column: 1, offset: 567 },
               end: { line: 23, column: 4, offset: 729 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
+                position: {
+                  start: { line: 25, column: 1, offset: 731 },
+                  end: { line: 25, column: 148, offset: 878 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 25, column: 1, offset: 731 },
+              end: { line: 25, column: 148, offset: 878 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: "or(Promise.resolve('aaa'), [\n" +
+              "  s => s.startsWith('b'),\n" +
+              "  s => s.endsWith('a'),\n" +
+              ']).then(console.log) // true',
+            position: {
+              start: { line: 27, column: 1, offset: 880 },
+              end: { line: 32, column: 4, offset: 1018 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 23, column: 4, offset: 729 }
+          end: { line: 32, column: 4, offset: 1018 }
         }
       },
       execution: {
@@ -37451,6 +38782,13 @@ export default [
       "  pick(['a', 'c']),\n" +
       '  console.log, // { a: 1, c: 9 }\n' +
       '])\n' +
+      '```\n' +
+      '\n' +
+      'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      "pick(Promise.resolve({ a: 1, b: 2, c: 3 }), ['a', 'b']).then(console.log)\n" +
+      '// { a: 1, b: 2 }\n' +
       '```',
     mdast: {
       name: {
@@ -37751,11 +39089,39 @@ export default [
               start: { line: 23, column: 1, offset: 687 },
               end: { line: 29, column: 4, offset: 832 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
+                position: {
+                  start: { line: 31, column: 1, offset: 834 },
+                  end: { line: 31, column: 148, offset: 981 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 31, column: 1, offset: 834 },
+              end: { line: 31, column: 148, offset: 981 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: "pick(Promise.resolve({ a: 1, b: 2, c: 3 }), ['a', 'b']).then(console.log)\n" +
+              '// { a: 1, b: 2 }',
+            position: {
+              start: { line: 33, column: 1, offset: 983 },
+              end: { line: 36, column: 4, offset: 1105 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 29, column: 4, offset: 832 }
+          end: { line: 36, column: 4, offset: 1105 }
         }
       }
     },
@@ -38195,6 +39561,14 @@ export default [
       'reduce(asyncGenerate12345(), asyncAdd).then(console.log) // 15\n' +
       '\n' +
       'reduce(asyncAdd)(asyncGenerate12345()).then(console.log) // 15\n' +
+      '```\n' +
+      '\n' +
+      'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const add = (a, b) => a + b\n' +
+      '\n' +
+      'reduce(Promise.resolve([1, 2, 3, 4, 5]), add, 0).then(console.log) // 15\n' +
       '```',
     execution: 'series',
     transducing: '',
@@ -39022,11 +40396,40 @@ export default [
               start: { line: 116, column: 1, offset: 4107 },
               end: { line: 126, column: 4, offset: 4401 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
+                position: {
+                  start: { line: 128, column: 1, offset: 4403 },
+                  end: { line: 128, column: 148, offset: 4550 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 128, column: 1, offset: 4403 },
+              end: { line: 128, column: 148, offset: 4550 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'const add = (a, b) => a + b\n' +
+              '\n' +
+              'reduce(Promise.resolve([1, 2, 3, 4, 5]), add, 0).then(console.log) // 15',
+            position: {
+              start: { line: 130, column: 1, offset: 4552 },
+              end: { line: 134, column: 4, offset: 4684 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 126, column: 4, offset: 4401 }
+          end: { line: 134, column: 4, offset: 4684 }
         }
       },
       execution: {
@@ -39191,6 +40594,12 @@ export default [
       "  set('b', 2),\n" +
       '  console.log, // { a: 1, b: 2 }\n' +
       '])\n' +
+      '```\n' +
+      '\n' +
+      'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      "set(Promise.resolve({}), 'a', 1).then(console.log) // { a: 1 }\n" +
       '```',
     since: '1.7.0',
     mdast: {
@@ -39499,11 +40908,38 @@ export default [
               start: { line: 33, column: 1, offset: 983 },
               end: { line: 38, column: 4, offset: 1081 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
+                position: {
+                  start: { line: 40, column: 1, offset: 1083 },
+                  end: { line: 40, column: 148, offset: 1230 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 40, column: 1, offset: 1083 },
+              end: { line: 40, column: 148, offset: 1230 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: "set(Promise.resolve({}), 'a', 1).then(console.log) // { a: 1 }",
+            position: {
+              start: { line: 42, column: 1, offset: 1232 },
+              end: { line: 44, column: 4, offset: 1325 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 38, column: 4, offset: 1081 }
+          end: { line: 44, column: 4, offset: 1325 }
         }
       },
       since: {
@@ -39586,6 +41022,12 @@ export default [
       '  some(number => number < 5),\n' +
       '  console.log, // true\n' +
       '])\n' +
+      '```\n' +
+      '\n' +
+      'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'some(Promise.resolve([1, 2, 3, 4, 5]), n => n > 6).then(console.log) // false\n' +
       '```',
     execution: 'concurrent',
     muxing: '',
@@ -39773,11 +41215,38 @@ export default [
               start: { line: 38, column: 1, offset: 948 },
               end: { line: 43, column: 4, offset: 1052 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
+                position: {
+                  start: { line: 45, column: 1, offset: 1054 },
+                  end: { line: 45, column: 148, offset: 1201 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 45, column: 1, offset: 1054 },
+              end: { line: 45, column: 148, offset: 1201 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'some(Promise.resolve([1, 2, 3, 4, 5]), n => n > 6).then(console.log) // false',
+            position: {
+              start: { line: 47, column: 1, offset: 1203 },
+              end: { line: 49, column: 4, offset: 1311 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 43, column: 4, offset: 1052 }
+          end: { line: 49, column: 4, offset: 1311 }
         }
       },
       execution: {
@@ -40312,6 +41781,11 @@ export default [
       "pipeline('foo') // 'foo'\n" +
       "                // 'foobar'\n" +
       "                // 'foobarbaz'\n" +
+      '```\n' +
+      '\n' +
+      'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
+      '```javascript [playground]\n' +
+      'tap(Promise.resolve(1), Promise.resolve(2), 3, console.log) // 1, 2, 3\n' +
       '```',
     mdast: {
       name: {
@@ -40397,11 +41871,38 @@ export default [
               start: { line: 3, column: 1, offset: 124 },
               end: { line: 13, column: 4, offset: 393 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
+                position: {
+                  start: { line: 15, column: 1, offset: 395 },
+                  end: { line: 15, column: 148, offset: 542 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 15, column: 1, offset: 395 },
+              end: { line: 15, column: 148, offset: 542 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'tap(Promise.resolve(1), Promise.resolve(2), 3, console.log) // 1, 2, 3',
+            position: {
+              start: { line: 16, column: 1, offset: 543 },
+              end: { line: 18, column: 4, offset: 644 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 13, column: 4, offset: 393 }
+          end: { line: 18, column: 4, offset: 644 }
         }
       }
     },
@@ -40772,6 +42273,16 @@ export default [
       '// 5625\n' +
       '// 2500\n' +
       '// ...\n' +
+      '```\n' +
+      '\n' +
+      'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'transform(\n' +
+      '  Promise.resolve([1, 2, 3, 4, 5]),\n' +
+      '  Transducer.map(n => n ** 2),\n' +
+      '  [],\n' +
+      ').then(console.log) // [1, 4, 9, 16, 25]\n' +
       '```',
     execution: 'series',
     transducing: 'TODO explore Semigroup = Iterator|AsyncIterator',
@@ -41433,11 +42944,42 @@ export default [
               start: { line: 66, column: 1, offset: 2020 },
               end: { line: 106, column: 4, offset: 2638 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
+                position: {
+                  start: { line: 108, column: 1, offset: 2640 },
+                  end: { line: 108, column: 148, offset: 2787 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 108, column: 1, offset: 2640 },
+              end: { line: 108, column: 148, offset: 2787 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'transform(\n' +
+              '  Promise.resolve([1, 2, 3, 4, 5]),\n' +
+              '  Transducer.map(n => n ** 2),\n' +
+              '  [],\n' +
+              ').then(console.log) // [1, 4, 9, 16, 25]',
+            position: {
+              start: { line: 110, column: 1, offset: 2789 },
+              end: { line: 116, column: 4, offset: 2944 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 106, column: 4, offset: 2638 }
+          end: { line: 116, column: 4, offset: 2944 }
         }
       },
       execution: {
