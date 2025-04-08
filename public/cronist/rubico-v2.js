@@ -4658,7 +4658,7 @@ export default [
   {
     name: 'arrayMapPool',
     synopsis: '```coffeescript [specscript]\n' +
-      'arrayMapPool(array Array, concurrency number, f function) -> Promise|string\n' +
+      'arrayMapPool(array Array, concurrency number, f function) -> Promise|array\n' +
       '```',
     description: 'Apply a function `f` with limited concurrency to each item of an array, returning an array of results.',
     mdast: {
@@ -4695,16 +4695,16 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'arrayMapPool(array Array, concurrency number, f function) -> Promise|string',
+            value: 'arrayMapPool(array Array, concurrency number, f function) -> Promise|array',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 3, column: 4, offset: 108 }
+              end: { line: 3, column: 4, offset: 107 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 3, column: 4, offset: 108 }
+          end: { line: 3, column: 4, offset: 107 }
         }
       },
       description: {
@@ -4751,6 +4751,122 @@ export default [
       }
     },
     fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayMapPool.js'
+  },
+  {
+    name: 'arrayMapRate',
+    synopsis: '```coffeescript [specscript]\n' +
+      'arrayMapRate(\n' +
+      '  array Array,\n' +
+      '  rate number,\n' +
+      '  f function,\n' +
+      ') -> Promise<Array>\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'arrayMapRate',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 13, offset: 12 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 13, offset: 12 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 13, offset: 12 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'arrayMapRate(\n' +
+              '  array Array,\n' +
+              '  rate number,\n' +
+              '  f function,\n' +
+              ') -> Promise<Array>',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 7, column: 4, offset: 110 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 7, column: 4, offset: 110 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayMapRate.js'
+  },
+  {
+    name: 'range',
+    synopsis: '```coffeescript [specscript]\n' +
+      'range(lower number, upper number) -> numbers Array<number>\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'range',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 6, offset: 5 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 6, offset: 5 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 6, offset: 5 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'range(lower number, upper number) -> numbers Array<number>',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 91 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 91 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayMapRate.js'
   },
   {
     name: 'arrayMapSeriesAsync',
@@ -28086,7 +28202,7 @@ export default [
       'map(collection Promise|Mappable, f Mapper) -> result Promise|Mappable\n' +
       'map(f Mapper)(collection Mappable) -> result Promise|Mappable\n' +
       '```',
-    description: 'Applies a synchronous or asynchronous mapper function concurrently to each item of a collection, returning the results in a new collection of the same type. If order is implied by the collection, it is maintained in the result. `map` accepts the following collections:\n' +
+    description: 'Applies a synchronous or asynchronous mapper function `f` concurrently to each item of a collection, returning the results in a new collection of the same type. If order is implied by the collection, it is maintained in the result. `map` accepts the following collections:\n' +
       '\n' +
       ' * `Array`\n' +
       ' * `Object`\n' +
@@ -28095,7 +28211,7 @@ export default [
       ' * `Iterator`/`Generator`\n' +
       ' * `AsyncIterator`/`AsyncGenerator`\n' +
       '\n' +
-      'With arrays (type `Array`), `map` applies the mapper function to each item of the array, returning the transformed results in a new array ordered the same as the original array.\n' +
+      'With arrays (type `Array`), `map` applies the mapper function `f` to each item of the array, returning the transformed results in a new array ordered the same as the original array.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const square = number => number ** 2\n' +
@@ -28111,7 +28227,7 @@ export default [
       ') // [1, 4, 9, 16, 25]\n' +
       '```\n' +
       '\n' +
-      'With objects (type `Object`), `map` applies the mapper function to each value of the object, returning the transformed results as values in a new object ordered by the keys of the original object\n' +
+      'With objects (type `Object`), `map` applies the mapper function `f` to each value of the object, returning the transformed results as values in a new object ordered by the keys of the original object\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const square = number => number ** 2\n' +
@@ -28127,7 +28243,7 @@ export default [
       ') // { a: 1, b: 4, c: 9, d: 16, e: 25 }\n' +
       '```\n' +
       '\n' +
-      'With sets (type `Set`), `map` applies the mapper function to each value of the set, returning the transformed results unordered in a new set.\n' +
+      'With sets (type `Set`), `map` applies the mapper function `f` to each value of the set, returning the transformed results unordered in a new set.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const square = number => number ** 2\n' +
@@ -28143,7 +28259,7 @@ export default [
       ') // [1, 4, 9, 16, 25]\n' +
       '```\n' +
       '\n' +
-      'With maps (type `Map`), `map` applies the mapper function to each value of the map, returning the results at the same keys in a new map. The entries of the resulting map are in the same order as those of the original map\n' +
+      'With maps (type `Map`), `map` applies the mapper function `f` to each value of the map, returning the results at the same keys in a new map. The entries of the resulting map are in the same order as those of the original map\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const square = number => number ** 2\n' +
@@ -28159,7 +28275,7 @@ export default [
       ") // Map { 'a' => 1, 'b' => 4, 'c' => 9, 'd' => 16, 'e' => 25 }\n" +
       '```\n' +
       '\n' +
-      'With iterators (type `Iterator`) or generators (type `Generator`), `map` applies the mapper function lazily to each value of the iterator/generator, creating a new iterator with transformed iterations.\n' +
+      'With iterators (type `Iterator`) or generators (type `Generator`), `map` applies the mapper function `f` lazily to each value of the iterator/generator, creating a new iterator with transformed iterations.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const capitalize = string => string.toUpperCase()\n' +
@@ -28179,7 +28295,7 @@ export default [
       "console.log([...ABCGenerator2]) // ['A', 'B', 'C']\n" +
       '```\n' +
       '\n' +
-      'With asyncIterators (type `AsyncIterator`, or `AsyncGenerator`), `map` applies the mapper function lazily to each value of the asyncIterator, creating a new asyncIterator with transformed iterations\n' +
+      'With asyncIterators (type `AsyncIterator`, or `AsyncGenerator`), `map` applies the mapper function `f` lazily to each value of the asyncIterator, creating a new asyncIterator with transformed iterations\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const capitalize = string => string.toUpperCase()\n' +
@@ -28289,32 +28405,48 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Applies a synchronous or asynchronous mapper function concurrently to each item of a collection, returning the results in a new collection of the same type. If order is implied by the collection, it is maintained in the result. ',
+                value: 'Applies a synchronous or asynchronous mapper function ',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 229, offset: 228 }
+                  end: { line: 1, column: 55, offset: 54 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'f',
+                position: {
+                  start: { line: 1, column: 55, offset: 54 },
+                  end: { line: 1, column: 58, offset: 57 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' concurrently to each item of a collection, returning the results in a new collection of the same type. If order is implied by the collection, it is maintained in the result. ',
+                position: {
+                  start: { line: 1, column: 58, offset: 57 },
+                  end: { line: 1, column: 233, offset: 232 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'map',
                 position: {
-                  start: { line: 1, column: 229, offset: 228 },
-                  end: { line: 1, column: 234, offset: 233 }
+                  start: { line: 1, column: 233, offset: 232 },
+                  end: { line: 1, column: 238, offset: 237 }
                 }
               },
               {
                 type: 'text',
                 value: ' accepts the following collections:',
                 position: {
-                  start: { line: 1, column: 234, offset: 233 },
-                  end: { line: 1, column: 269, offset: 268 }
+                  start: { line: 1, column: 238, offset: 237 },
+                  end: { line: 1, column: 273, offset: 272 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 269, offset: 268 }
+              end: { line: 1, column: 273, offset: 272 }
             }
           },
           {
@@ -28335,20 +28467,20 @@ export default [
                         type: 'inlineCode',
                         value: 'Array',
                         position: {
-                          start: { line: 3, column: 4, offset: 273 },
-                          end: { line: 3, column: 11, offset: 280 }
+                          start: { line: 3, column: 4, offset: 277 },
+                          end: { line: 3, column: 11, offset: 284 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 3, column: 4, offset: 273 },
-                      end: { line: 3, column: 11, offset: 280 }
+                      start: { line: 3, column: 4, offset: 277 },
+                      end: { line: 3, column: 11, offset: 284 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 3, column: 2, offset: 271 },
-                  end: { line: 3, column: 11, offset: 280 }
+                  start: { line: 3, column: 2, offset: 275 },
+                  end: { line: 3, column: 11, offset: 284 }
                 }
               },
               {
@@ -28363,20 +28495,20 @@ export default [
                         type: 'inlineCode',
                         value: 'Object',
                         position: {
-                          start: { line: 4, column: 4, offset: 284 },
-                          end: { line: 4, column: 12, offset: 292 }
+                          start: { line: 4, column: 4, offset: 288 },
+                          end: { line: 4, column: 12, offset: 296 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 4, column: 4, offset: 284 },
-                      end: { line: 4, column: 12, offset: 292 }
+                      start: { line: 4, column: 4, offset: 288 },
+                      end: { line: 4, column: 12, offset: 296 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 4, column: 2, offset: 282 },
-                  end: { line: 4, column: 12, offset: 292 }
+                  start: { line: 4, column: 2, offset: 286 },
+                  end: { line: 4, column: 12, offset: 296 }
                 }
               },
               {
@@ -28391,20 +28523,20 @@ export default [
                         type: 'inlineCode',
                         value: 'Set',
                         position: {
-                          start: { line: 5, column: 4, offset: 296 },
-                          end: { line: 5, column: 9, offset: 301 }
+                          start: { line: 5, column: 4, offset: 300 },
+                          end: { line: 5, column: 9, offset: 305 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 5, column: 4, offset: 296 },
-                      end: { line: 5, column: 9, offset: 301 }
+                      start: { line: 5, column: 4, offset: 300 },
+                      end: { line: 5, column: 9, offset: 305 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 5, column: 2, offset: 294 },
-                  end: { line: 5, column: 9, offset: 301 }
+                  start: { line: 5, column: 2, offset: 298 },
+                  end: { line: 5, column: 9, offset: 305 }
                 }
               },
               {
@@ -28419,20 +28551,20 @@ export default [
                         type: 'inlineCode',
                         value: 'Map',
                         position: {
-                          start: { line: 6, column: 4, offset: 305 },
-                          end: { line: 6, column: 9, offset: 310 }
+                          start: { line: 6, column: 4, offset: 309 },
+                          end: { line: 6, column: 9, offset: 314 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 6, column: 4, offset: 305 },
-                      end: { line: 6, column: 9, offset: 310 }
+                      start: { line: 6, column: 4, offset: 309 },
+                      end: { line: 6, column: 9, offset: 314 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 6, column: 2, offset: 303 },
-                  end: { line: 6, column: 9, offset: 310 }
+                  start: { line: 6, column: 2, offset: 307 },
+                  end: { line: 6, column: 9, offset: 314 }
                 }
               },
               {
@@ -28447,36 +28579,36 @@ export default [
                         type: 'inlineCode',
                         value: 'Iterator',
                         position: {
-                          start: { line: 7, column: 4, offset: 314 },
-                          end: { line: 7, column: 14, offset: 324 }
+                          start: { line: 7, column: 4, offset: 318 },
+                          end: { line: 7, column: 14, offset: 328 }
                         }
                       },
                       {
                         type: 'text',
                         value: '/',
                         position: {
-                          start: { line: 7, column: 14, offset: 324 },
-                          end: { line: 7, column: 15, offset: 325 }
+                          start: { line: 7, column: 14, offset: 328 },
+                          end: { line: 7, column: 15, offset: 329 }
                         }
                       },
                       {
                         type: 'inlineCode',
                         value: 'Generator',
                         position: {
-                          start: { line: 7, column: 15, offset: 325 },
-                          end: { line: 7, column: 26, offset: 336 }
+                          start: { line: 7, column: 15, offset: 329 },
+                          end: { line: 7, column: 26, offset: 340 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 7, column: 4, offset: 314 },
-                      end: { line: 7, column: 26, offset: 336 }
+                      start: { line: 7, column: 4, offset: 318 },
+                      end: { line: 7, column: 26, offset: 340 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 7, column: 2, offset: 312 },
-                  end: { line: 7, column: 26, offset: 336 }
+                  start: { line: 7, column: 2, offset: 316 },
+                  end: { line: 7, column: 26, offset: 340 }
                 }
               },
               {
@@ -28491,42 +28623,42 @@ export default [
                         type: 'inlineCode',
                         value: 'AsyncIterator',
                         position: {
-                          start: { line: 8, column: 4, offset: 340 },
-                          end: { line: 8, column: 19, offset: 355 }
+                          start: { line: 8, column: 4, offset: 344 },
+                          end: { line: 8, column: 19, offset: 359 }
                         }
                       },
                       {
                         type: 'text',
                         value: '/',
                         position: {
-                          start: { line: 8, column: 19, offset: 355 },
-                          end: { line: 8, column: 20, offset: 356 }
+                          start: { line: 8, column: 19, offset: 359 },
+                          end: { line: 8, column: 20, offset: 360 }
                         }
                       },
                       {
                         type: 'inlineCode',
                         value: 'AsyncGenerator',
                         position: {
-                          start: { line: 8, column: 20, offset: 356 },
-                          end: { line: 8, column: 36, offset: 372 }
+                          start: { line: 8, column: 20, offset: 360 },
+                          end: { line: 8, column: 36, offset: 376 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 8, column: 4, offset: 340 },
-                      end: { line: 8, column: 36, offset: 372 }
+                      start: { line: 8, column: 4, offset: 344 },
+                      end: { line: 8, column: 36, offset: 376 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 8, column: 2, offset: 338 },
-                  end: { line: 8, column: 36, offset: 372 }
+                  start: { line: 8, column: 2, offset: 342 },
+                  end: { line: 8, column: 36, offset: 376 }
                 }
               }
             ],
             position: {
-              start: { line: 3, column: 2, offset: 271 },
-              end: { line: 8, column: 36, offset: 372 }
+              start: { line: 3, column: 2, offset: 275 },
+              end: { line: 8, column: 36, offset: 376 }
             }
           },
           {
@@ -28536,46 +28668,62 @@ export default [
                 type: 'text',
                 value: 'With arrays (type ',
                 position: {
-                  start: { line: 10, column: 1, offset: 374 },
-                  end: { line: 10, column: 19, offset: 392 }
+                  start: { line: 10, column: 1, offset: 378 },
+                  end: { line: 10, column: 19, offset: 396 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'Array',
                 position: {
-                  start: { line: 10, column: 19, offset: 392 },
-                  end: { line: 10, column: 26, offset: 399 }
+                  start: { line: 10, column: 19, offset: 396 },
+                  end: { line: 10, column: 26, offset: 403 }
                 }
               },
               {
                 type: 'text',
                 value: '), ',
                 position: {
-                  start: { line: 10, column: 26, offset: 399 },
-                  end: { line: 10, column: 29, offset: 402 }
+                  start: { line: 10, column: 26, offset: 403 },
+                  end: { line: 10, column: 29, offset: 406 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'map',
                 position: {
-                  start: { line: 10, column: 29, offset: 402 },
-                  end: { line: 10, column: 34, offset: 407 }
+                  start: { line: 10, column: 29, offset: 406 },
+                  end: { line: 10, column: 34, offset: 411 }
                 }
               },
               {
                 type: 'text',
-                value: ' applies the mapper function to each item of the array, returning the transformed results in a new array ordered the same as the original array.',
+                value: ' applies the mapper function ',
                 position: {
-                  start: { line: 10, column: 34, offset: 407 },
-                  end: { line: 10, column: 178, offset: 551 }
+                  start: { line: 10, column: 34, offset: 411 },
+                  end: { line: 10, column: 63, offset: 440 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'f',
+                position: {
+                  start: { line: 10, column: 63, offset: 440 },
+                  end: { line: 10, column: 66, offset: 443 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' to each item of the array, returning the transformed results in a new array ordered the same as the original array.',
+                position: {
+                  start: { line: 10, column: 66, offset: 443 },
+                  end: { line: 10, column: 182, offset: 559 }
                 }
               }
             ],
             position: {
-              start: { line: 10, column: 1, offset: 374 },
-              end: { line: 10, column: 178, offset: 551 }
+              start: { line: 10, column: 1, offset: 378 },
+              end: { line: 10, column: 182, offset: 559 }
             }
           },
           {
@@ -28594,8 +28742,8 @@ export default [
               '  map(square)(array)\n' +
               ') // [1, 4, 9, 16, 25]',
             position: {
-              start: { line: 12, column: 1, offset: 553 },
-              end: { line: 24, column: 4, offset: 767 }
+              start: { line: 12, column: 1, offset: 561 },
+              end: { line: 24, column: 4, offset: 775 }
             }
           },
           {
@@ -28605,46 +28753,62 @@ export default [
                 type: 'text',
                 value: 'With objects (type ',
                 position: {
-                  start: { line: 26, column: 1, offset: 769 },
-                  end: { line: 26, column: 20, offset: 788 }
+                  start: { line: 26, column: 1, offset: 777 },
+                  end: { line: 26, column: 20, offset: 796 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'Object',
                 position: {
-                  start: { line: 26, column: 20, offset: 788 },
-                  end: { line: 26, column: 28, offset: 796 }
+                  start: { line: 26, column: 20, offset: 796 },
+                  end: { line: 26, column: 28, offset: 804 }
                 }
               },
               {
                 type: 'text',
                 value: '), ',
                 position: {
-                  start: { line: 26, column: 28, offset: 796 },
-                  end: { line: 26, column: 31, offset: 799 }
+                  start: { line: 26, column: 28, offset: 804 },
+                  end: { line: 26, column: 31, offset: 807 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'map',
                 position: {
-                  start: { line: 26, column: 31, offset: 799 },
-                  end: { line: 26, column: 36, offset: 804 }
+                  start: { line: 26, column: 31, offset: 807 },
+                  end: { line: 26, column: 36, offset: 812 }
                 }
               },
               {
                 type: 'text',
-                value: ' applies the mapper function to each value of the object, returning the transformed results as values in a new object ordered by the keys of the original object',
+                value: ' applies the mapper function ',
                 position: {
-                  start: { line: 26, column: 36, offset: 804 },
-                  end: { line: 26, column: 196, offset: 964 }
+                  start: { line: 26, column: 36, offset: 812 },
+                  end: { line: 26, column: 65, offset: 841 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'f',
+                position: {
+                  start: { line: 26, column: 65, offset: 841 },
+                  end: { line: 26, column: 68, offset: 844 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' to each value of the object, returning the transformed results as values in a new object ordered by the keys of the original object',
+                position: {
+                  start: { line: 26, column: 68, offset: 844 },
+                  end: { line: 26, column: 200, offset: 976 }
                 }
               }
             ],
             position: {
-              start: { line: 26, column: 1, offset: 769 },
-              end: { line: 26, column: 196, offset: 964 }
+              start: { line: 26, column: 1, offset: 777 },
+              end: { line: 26, column: 200, offset: 976 }
             }
           },
           {
@@ -28663,8 +28827,8 @@ export default [
               '  map(obj, square)\n' +
               ') // { a: 1, b: 4, c: 9, d: 16, e: 25 }',
             position: {
-              start: { line: 28, column: 1, offset: 966 },
-              end: { line: 40, column: 4, offset: 1225 }
+              start: { line: 28, column: 1, offset: 978 },
+              end: { line: 40, column: 4, offset: 1237 }
             }
           },
           {
@@ -28674,46 +28838,62 @@ export default [
                 type: 'text',
                 value: 'With sets (type ',
                 position: {
-                  start: { line: 42, column: 1, offset: 1227 },
-                  end: { line: 42, column: 17, offset: 1243 }
+                  start: { line: 42, column: 1, offset: 1239 },
+                  end: { line: 42, column: 17, offset: 1255 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'Set',
                 position: {
-                  start: { line: 42, column: 17, offset: 1243 },
-                  end: { line: 42, column: 22, offset: 1248 }
+                  start: { line: 42, column: 17, offset: 1255 },
+                  end: { line: 42, column: 22, offset: 1260 }
                 }
               },
               {
                 type: 'text',
                 value: '), ',
                 position: {
-                  start: { line: 42, column: 22, offset: 1248 },
-                  end: { line: 42, column: 25, offset: 1251 }
+                  start: { line: 42, column: 22, offset: 1260 },
+                  end: { line: 42, column: 25, offset: 1263 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'map',
                 position: {
-                  start: { line: 42, column: 25, offset: 1251 },
-                  end: { line: 42, column: 30, offset: 1256 }
+                  start: { line: 42, column: 25, offset: 1263 },
+                  end: { line: 42, column: 30, offset: 1268 }
                 }
               },
               {
                 type: 'text',
-                value: ' applies the mapper function to each value of the set, returning the transformed results unordered in a new set.',
+                value: ' applies the mapper function ',
                 position: {
-                  start: { line: 42, column: 30, offset: 1256 },
-                  end: { line: 42, column: 142, offset: 1368 }
+                  start: { line: 42, column: 30, offset: 1268 },
+                  end: { line: 42, column: 59, offset: 1297 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'f',
+                position: {
+                  start: { line: 42, column: 59, offset: 1297 },
+                  end: { line: 42, column: 62, offset: 1300 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' to each value of the set, returning the transformed results unordered in a new set.',
+                position: {
+                  start: { line: 42, column: 62, offset: 1300 },
+                  end: { line: 42, column: 146, offset: 1384 }
                 }
               }
             ],
             position: {
-              start: { line: 42, column: 1, offset: 1227 },
-              end: { line: 42, column: 142, offset: 1368 }
+              start: { line: 42, column: 1, offset: 1239 },
+              end: { line: 42, column: 146, offset: 1384 }
             }
           },
           {
@@ -28732,8 +28912,8 @@ export default [
               '  map(square)(set)\n' +
               ') // [1, 4, 9, 16, 25]',
             position: {
-              start: { line: 44, column: 1, offset: 1370 },
-              end: { line: 56, column: 4, offset: 1587 }
+              start: { line: 44, column: 1, offset: 1386 },
+              end: { line: 56, column: 4, offset: 1603 }
             }
           },
           {
@@ -28743,46 +28923,62 @@ export default [
                 type: 'text',
                 value: 'With maps (type ',
                 position: {
-                  start: { line: 58, column: 1, offset: 1589 },
-                  end: { line: 58, column: 17, offset: 1605 }
+                  start: { line: 58, column: 1, offset: 1605 },
+                  end: { line: 58, column: 17, offset: 1621 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'Map',
                 position: {
-                  start: { line: 58, column: 17, offset: 1605 },
-                  end: { line: 58, column: 22, offset: 1610 }
+                  start: { line: 58, column: 17, offset: 1621 },
+                  end: { line: 58, column: 22, offset: 1626 }
                 }
               },
               {
                 type: 'text',
                 value: '), ',
                 position: {
-                  start: { line: 58, column: 22, offset: 1610 },
-                  end: { line: 58, column: 25, offset: 1613 }
+                  start: { line: 58, column: 22, offset: 1626 },
+                  end: { line: 58, column: 25, offset: 1629 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'map',
                 position: {
-                  start: { line: 58, column: 25, offset: 1613 },
-                  end: { line: 58, column: 30, offset: 1618 }
+                  start: { line: 58, column: 25, offset: 1629 },
+                  end: { line: 58, column: 30, offset: 1634 }
                 }
               },
               {
                 type: 'text',
-                value: ' applies the mapper function to each value of the map, returning the results at the same keys in a new map. The entries of the resulting map are in the same order as those of the original map',
+                value: ' applies the mapper function ',
                 position: {
-                  start: { line: 58, column: 30, offset: 1618 },
-                  end: { line: 58, column: 221, offset: 1809 }
+                  start: { line: 58, column: 30, offset: 1634 },
+                  end: { line: 58, column: 59, offset: 1663 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'f',
+                position: {
+                  start: { line: 58, column: 59, offset: 1663 },
+                  end: { line: 58, column: 62, offset: 1666 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' to each value of the map, returning the results at the same keys in a new map. The entries of the resulting map are in the same order as those of the original map',
+                position: {
+                  start: { line: 58, column: 62, offset: 1666 },
+                  end: { line: 58, column: 225, offset: 1829 }
                 }
               }
             ],
             position: {
-              start: { line: 58, column: 1, offset: 1589 },
-              end: { line: 58, column: 221, offset: 1809 }
+              start: { line: 58, column: 1, offset: 1605 },
+              end: { line: 58, column: 225, offset: 1829 }
             }
           },
           {
@@ -28801,8 +28997,8 @@ export default [
               '  map(m, square)\n' +
               ") // Map { 'a' => 1, 'b' => 4, 'c' => 9, 'd' => 16, 'e' => 25 }",
             position: {
-              start: { line: 60, column: 1, offset: 1811 },
-              end: { line: 72, column: 4, offset: 2139 }
+              start: { line: 60, column: 1, offset: 1831 },
+              end: { line: 72, column: 4, offset: 2159 }
             }
           },
           {
@@ -28812,62 +29008,78 @@ export default [
                 type: 'text',
                 value: 'With iterators (type ',
                 position: {
-                  start: { line: 74, column: 1, offset: 2141 },
-                  end: { line: 74, column: 22, offset: 2162 }
+                  start: { line: 74, column: 1, offset: 2161 },
+                  end: { line: 74, column: 22, offset: 2182 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'Iterator',
                 position: {
-                  start: { line: 74, column: 22, offset: 2162 },
-                  end: { line: 74, column: 32, offset: 2172 }
+                  start: { line: 74, column: 22, offset: 2182 },
+                  end: { line: 74, column: 32, offset: 2192 }
                 }
               },
               {
                 type: 'text',
                 value: ') or generators (type ',
                 position: {
-                  start: { line: 74, column: 32, offset: 2172 },
-                  end: { line: 74, column: 54, offset: 2194 }
+                  start: { line: 74, column: 32, offset: 2192 },
+                  end: { line: 74, column: 54, offset: 2214 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'Generator',
                 position: {
-                  start: { line: 74, column: 54, offset: 2194 },
-                  end: { line: 74, column: 65, offset: 2205 }
+                  start: { line: 74, column: 54, offset: 2214 },
+                  end: { line: 74, column: 65, offset: 2225 }
                 }
               },
               {
                 type: 'text',
                 value: '), ',
                 position: {
-                  start: { line: 74, column: 65, offset: 2205 },
-                  end: { line: 74, column: 68, offset: 2208 }
+                  start: { line: 74, column: 65, offset: 2225 },
+                  end: { line: 74, column: 68, offset: 2228 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'map',
                 position: {
-                  start: { line: 74, column: 68, offset: 2208 },
-                  end: { line: 74, column: 73, offset: 2213 }
+                  start: { line: 74, column: 68, offset: 2228 },
+                  end: { line: 74, column: 73, offset: 2233 }
                 }
               },
               {
                 type: 'text',
-                value: ' applies the mapper function lazily to each value of the iterator/generator, creating a new iterator with transformed iterations.',
+                value: ' applies the mapper function ',
                 position: {
-                  start: { line: 74, column: 73, offset: 2213 },
-                  end: { line: 74, column: 202, offset: 2342 }
+                  start: { line: 74, column: 73, offset: 2233 },
+                  end: { line: 74, column: 102, offset: 2262 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'f',
+                position: {
+                  start: { line: 74, column: 102, offset: 2262 },
+                  end: { line: 74, column: 105, offset: 2265 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' lazily to each value of the iterator/generator, creating a new iterator with transformed iterations.',
+                position: {
+                  start: { line: 74, column: 105, offset: 2265 },
+                  end: { line: 74, column: 206, offset: 2366 }
                 }
               }
             ],
             position: {
-              start: { line: 74, column: 1, offset: 2141 },
-              end: { line: 74, column: 202, offset: 2342 }
+              start: { line: 74, column: 1, offset: 2161 },
+              end: { line: 74, column: 206, offset: 2366 }
             }
           },
           {
@@ -28890,8 +29102,8 @@ export default [
               '\n' +
               "console.log([...ABCGenerator2]) // ['A', 'B', 'C']",
             position: {
-              start: { line: 76, column: 1, offset: 2344 },
-              end: { line: 92, column: 4, offset: 2811 }
+              start: { line: 76, column: 1, offset: 2368 },
+              end: { line: 92, column: 4, offset: 2835 }
             }
           },
           {
@@ -28901,62 +29113,78 @@ export default [
                 type: 'text',
                 value: 'With asyncIterators (type ',
                 position: {
-                  start: { line: 94, column: 1, offset: 2813 },
-                  end: { line: 94, column: 27, offset: 2839 }
+                  start: { line: 94, column: 1, offset: 2837 },
+                  end: { line: 94, column: 27, offset: 2863 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'AsyncIterator',
                 position: {
-                  start: { line: 94, column: 27, offset: 2839 },
-                  end: { line: 94, column: 42, offset: 2854 }
+                  start: { line: 94, column: 27, offset: 2863 },
+                  end: { line: 94, column: 42, offset: 2878 }
                 }
               },
               {
                 type: 'text',
                 value: ', or ',
                 position: {
-                  start: { line: 94, column: 42, offset: 2854 },
-                  end: { line: 94, column: 47, offset: 2859 }
+                  start: { line: 94, column: 42, offset: 2878 },
+                  end: { line: 94, column: 47, offset: 2883 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'AsyncGenerator',
                 position: {
-                  start: { line: 94, column: 47, offset: 2859 },
-                  end: { line: 94, column: 63, offset: 2875 }
+                  start: { line: 94, column: 47, offset: 2883 },
+                  end: { line: 94, column: 63, offset: 2899 }
                 }
               },
               {
                 type: 'text',
                 value: '), ',
                 position: {
-                  start: { line: 94, column: 63, offset: 2875 },
-                  end: { line: 94, column: 66, offset: 2878 }
+                  start: { line: 94, column: 63, offset: 2899 },
+                  end: { line: 94, column: 66, offset: 2902 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'map',
                 position: {
-                  start: { line: 94, column: 66, offset: 2878 },
-                  end: { line: 94, column: 71, offset: 2883 }
+                  start: { line: 94, column: 66, offset: 2902 },
+                  end: { line: 94, column: 71, offset: 2907 }
                 }
               },
               {
                 type: 'text',
-                value: ' applies the mapper function lazily to each value of the asyncIterator, creating a new asyncIterator with transformed iterations',
+                value: ' applies the mapper function ',
                 position: {
-                  start: { line: 94, column: 71, offset: 2883 },
-                  end: { line: 94, column: 199, offset: 3011 }
+                  start: { line: 94, column: 71, offset: 2907 },
+                  end: { line: 94, column: 100, offset: 2936 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'f',
+                position: {
+                  start: { line: 94, column: 100, offset: 2936 },
+                  end: { line: 94, column: 103, offset: 2939 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' lazily to each value of the asyncIterator, creating a new asyncIterator with transformed iterations',
+                position: {
+                  start: { line: 94, column: 103, offset: 2939 },
+                  end: { line: 94, column: 203, offset: 3039 }
                 }
               }
             ],
             position: {
-              start: { line: 94, column: 1, offset: 2813 },
-              end: { line: 94, column: 199, offset: 3011 }
+              start: { line: 94, column: 1, offset: 2837 },
+              end: { line: 94, column: 203, offset: 3039 }
             }
           },
           {
@@ -28996,8 +29224,8 @@ export default [
               '  }\n' +
               '})()',
             position: {
-              start: { line: 96, column: 1, offset: 3013 },
-              end: { line: 129, column: 4, offset: 3693 }
+              start: { line: 96, column: 1, offset: 3041 },
+              end: { line: 129, column: 4, offset: 3721 }
             }
           },
           {
@@ -29007,14 +29235,14 @@ export default [
                 type: 'text',
                 value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
                 position: {
-                  start: { line: 131, column: 1, offset: 3695 },
-                  end: { line: 131, column: 148, offset: 3842 }
+                  start: { line: 131, column: 1, offset: 3723 },
+                  end: { line: 131, column: 148, offset: 3870 }
                 }
               }
             ],
             position: {
-              start: { line: 131, column: 1, offset: 3695 },
-              end: { line: 131, column: 148, offset: 3842 }
+              start: { line: 131, column: 1, offset: 3723 },
+              end: { line: 131, column: 148, offset: 3870 }
             }
           },
           {
@@ -29026,14 +29254,14 @@ export default [
               'map(Promise.resolve([1, 2, 3, 4, 5]), asyncSquare).then(console.log)\n' +
               '// [1, 4, 9, 16, 25]',
             position: {
-              start: { line: 133, column: 1, offset: 3844 },
-              end: { line: 138, column: 4, offset: 4003 }
+              start: { line: 133, column: 1, offset: 3872 },
+              end: { line: 138, column: 4, offset: 4031 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 138, column: 4, offset: 4003 }
+          end: { line: 138, column: 4, offset: 4031 }
         }
       },
       execution: {
@@ -29102,10 +29330,10 @@ export default [
       '  collection EntriesMappable\n' +
       ')=>(resultItem Promise|any)\n' +
       '\n' +
-      'map.entries(value Promise|EntriesMappable, mapper Mapper)\n' +
+      'map.entries(value Promise|EntriesMappable, f Mapper)\n' +
       '  -> Promise|EntriesMappable\n' +
       '\n' +
-      'map.entries(mapper Mapper)(value EntriesMappable)\n' +
+      'map.entries(f Mapper)(value EntriesMappable)\n' +
       '  -> Promise|EntriesMappable\n' +
       '```',
     description: '`map` over the entries rather than the values of a collection. Accepts collections of type `Map` or `Object`.\n' +
@@ -29175,20 +29403,20 @@ export default [
               '  collection EntriesMappable\n' +
               ')=>(resultItem Promise|any)\n' +
               '\n' +
-              'map.entries(value Promise|EntriesMappable, mapper Mapper)\n' +
+              'map.entries(value Promise|EntriesMappable, f Mapper)\n' +
               '  -> Promise|EntriesMappable\n' +
               '\n' +
-              'map.entries(mapper Mapper)(value EntriesMappable)\n' +
+              'map.entries(f Mapper)(value EntriesMappable)\n' +
               '  -> Promise|EntriesMappable',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 15, column: 4, offset: 339 }
+              end: { line: 15, column: 4, offset: 329 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 15, column: 4, offset: 339 }
+          end: { line: 15, column: 4, offset: 329 }
         }
       },
       description: {
@@ -29953,6 +30181,82 @@ export default [
         position: {
           start: { line: 1, column: 1, offset: 0 },
           end: { line: 1, column: 11, offset: 10 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/map.js'
+  },
+  {
+    name: 'map.rate',
+    synopsis: '```coffeescript [specscript]\n' +
+      'type Mappable = Array|Object|Set|Map\n' +
+      '\n' +
+      'map.rate(\n' +
+      '  rate number,\n' +
+      '  f (value any)=>Promise|any,\n' +
+      ')(collection Mappable) -> result Promise|Array\n' +
+      '\n' +
+      'map.rate(\n' +
+      '  collection Mappable,\n' +
+      '  rate number,\n' +
+      '  f (value any)=>Promise|any,\n' +
+      ') -> result Promise|Array\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'map.rate',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 9, offset: 8 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 9, offset: 8 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 9, offset: 8 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'type Mappable = Array|Object|Set|Map\n' +
+              '\n' +
+              'map.rate(\n' +
+              '  rate number,\n' +
+              '  f (value any)=>Promise|any,\n' +
+              ')(collection Mappable) -> result Promise|Array\n' +
+              '\n' +
+              'map.rate(\n' +
+              '  collection Mappable,\n' +
+              '  rate number,\n' +
+              '  f (value any)=>Promise|any,\n' +
+              ') -> result Promise|Array',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 14, column: 4, offset: 277 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 14, column: 4, offset: 277 }
         }
       }
     },
