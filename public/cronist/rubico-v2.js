@@ -42970,7 +42970,7 @@ export default [
       '\n' +
       '`transform` an async generator into `process.stdout`, a Node.js writable stream that implements `.write`.\n' +
       '\n' +
-      '```javascript [playground]\n' +
+      '```javascript\n' +
       'const { pipe, compose, transform } = rubico\n' +
       '// global Transducer\n' +
       '\n' +
@@ -42988,28 +42988,14 @@ export default [
       '  }\n' +
       '}\n' +
       '\n' +
-      'const Stdout = {\n' +
-      '  concat(...args) {\n' +
-      '    console.log(...args)\n' +
-      '    return this\n' +
-      '  },\n' +
-      '}\n' +
-      '\n' +
       'transform(\n' +
       '  streamRandomInts(10),\n' +
       '  compose([\n' +
       '    Transducer.map(square),\n' +
       '    Transducer.map(toString),\n' +
       '  ]),\n' +
-      '  Stdout,\n' +
+      '  process.stdout // 2893600784289441449001600409684644624324923044411225\n' +
       ')\n' +
-      '// 8281\n' +
-      '// 8836\n' +
-      '// 1156\n' +
-      '// 8649\n' +
-      '// 5625\n' +
-      '// 2500\n' +
-      '// ...\n' +
       '```\n' +
       '\n' +
       'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
@@ -43637,7 +43623,7 @@ export default [
           {
             type: 'code',
             lang: 'javascript',
-            meta: '[playground]',
+            meta: null,
             value: 'const { pipe, compose, transform } = rubico\n' +
               '// global Transducer\n' +
               '\n' +
@@ -43655,31 +43641,17 @@ export default [
               '  }\n' +
               '}\n' +
               '\n' +
-              'const Stdout = {\n' +
-              '  concat(...args) {\n' +
-              '    console.log(...args)\n' +
-              '    return this\n' +
-              '  },\n' +
-              '}\n' +
-              '\n' +
               'transform(\n' +
               '  streamRandomInts(10),\n' +
               '  compose([\n' +
               '    Transducer.map(square),\n' +
               '    Transducer.map(toString),\n' +
               '  ]),\n' +
-              '  Stdout,\n' +
-              ')\n' +
-              '// 8281\n' +
-              '// 8836\n' +
-              '// 1156\n' +
-              '// 8649\n' +
-              '// 5625\n' +
-              '// 2500\n' +
-              '// ...',
+              '  process.stdout // 2893600784289441449001600409684644624324923044411225\n' +
+              ')',
             position: {
               start: { line: 66, column: 1, offset: 2020 },
-              end: { line: 106, column: 4, offset: 2638 }
+              end: { line: 92, column: 4, offset: 2547 }
             }
           },
           {
@@ -43689,14 +43661,14 @@ export default [
                 type: 'text',
                 value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
                 position: {
-                  start: { line: 108, column: 1, offset: 2640 },
-                  end: { line: 108, column: 148, offset: 2787 }
+                  start: { line: 94, column: 1, offset: 2549 },
+                  end: { line: 94, column: 148, offset: 2696 }
                 }
               }
             ],
             position: {
-              start: { line: 108, column: 1, offset: 2640 },
-              end: { line: 108, column: 148, offset: 2787 }
+              start: { line: 94, column: 1, offset: 2549 },
+              end: { line: 94, column: 148, offset: 2696 }
             }
           },
           {
@@ -43709,14 +43681,14 @@ export default [
               '  [],\n' +
               ').then(console.log) // [1, 4, 9, 16, 25]',
             position: {
-              start: { line: 110, column: 1, offset: 2789 },
-              end: { line: 116, column: 4, offset: 2944 }
+              start: { line: 96, column: 1, offset: 2698 },
+              end: { line: 102, column: 4, offset: 2853 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 116, column: 4, offset: 2944 }
+          end: { line: 102, column: 4, offset: 2853 }
         }
       },
       execution: {
