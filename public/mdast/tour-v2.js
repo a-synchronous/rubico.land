@@ -87,7 +87,7 @@ export default {
                   children: [
                     {
                       type: 'text',
-                      value: '[a]synchrony',
+                      value: '[A]synchrony',
                       position: {
                         start: { line: 29, column: 6, offset: 476 },
                         end: { line: 29, column: 18, offset: 488 }
@@ -318,7 +318,7 @@ export default {
       children: [
         {
           type: 'text',
-          value: '[a]synchrony',
+          value: '[A]synchrony',
           position: {
             start: { line: 36, column: 3, offset: 677 },
             end: { line: 36, column: 15, offset: 689 }

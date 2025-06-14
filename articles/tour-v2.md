@@ -26,14 +26,14 @@ const {
 
 # Table of Contents
 
- 1. [[a]synchrony](#a-synchrony)
+ 1. [[A]synchrony](#a-synchrony)
  2. [Composition](#composition)
  3. [Polymorphism](#polymorphism)
  4. [Control Flow](#control-flow)
  5. [Error Handling](#error-handling)
  6. [Transducers](#transducers)
 
-# [a]synchrony
+# [A]synchrony
 **Stop worrying about async**. Pass synchronous or asynchronous functions to any rubico operator - all promises are resolved for their promised value before continuing. Run things in parallel without having to call `Promise.all` on `someArray.map(...)`. For more on this behavior, see this [blog post](https://dev.to/richytong/rubico-a-synchrnous-functional-syntax-motivation-20hf).
 
 ```javascript [playground]
