@@ -705,6 +705,7 @@ assert.equivalent(
   3. Associativity: the order of execution of chaining operations on a monad does not affect the final result.
 
 ```javascript
+// f and g are functions that return a monad
 assert.equivalent(
   myMonad.flatMap(f).flatMap(g),
   myMonad.flatMap(x => f(x).flatMap(g))
