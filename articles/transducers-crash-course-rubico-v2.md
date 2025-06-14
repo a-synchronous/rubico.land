@@ -55,8 +55,6 @@ Now the numbers are transformed in a single pass, avoiding the memory penalty ðŸ
 type Reducer = (
   accumulator any,
   value any,
-  indexOrKey? number|string,
-  collection? Foldable,
 )=>(nextAccumulator Promise|any)
 
 type Transducer = Reducer=>Reducer

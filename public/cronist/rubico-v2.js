@@ -118,8 +118,6 @@ export default [
       'type Reducer = (\n' +
       '  accumulator any,\n' +
       '  value any,\n' +
-      '  indexOrKey? number|string,\n' +
-      '  collection? Foldable,\n' +
       ')=>(nextAccumulator Promise|any)\n' +
       '\n' +
       'type Transducer = Reducer=>Reducer\n' +
@@ -193,8 +191,6 @@ export default [
             value: 'type Reducer = (\n' +
               '  accumulator any,\n' +
               '  value any,\n' +
-              '  indexOrKey? number|string,\n' +
-              '  collection? Foldable,\n' +
               ')=>(nextAccumulator Promise|any)\n' +
               '\n' +
               'type Transducer = Reducer=>Reducer\n' +
@@ -202,13 +198,13 @@ export default [
               'Transducer.map(mapperFunc function) -> mappingTransducer Transducer',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 12, column: 4, offset: 272 }
+              end: { line: 10, column: 4, offset: 219 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 12, column: 4, offset: 272 }
+          end: { line: 10, column: 4, offset: 219 }
         }
       },
       description: {
@@ -377,8 +373,6 @@ export default [
       'type Reducer = (\n' +
       '  accumulator any,\n' +
       '  value any,\n' +
-      '  indexOrKey? number|string,\n' +
-      '  collection? Foldable,\n' +
       ')=>(nextAccumulator Promise|any)\n' +
       '\n' +
       'type Transducer = Reducer=>Reducer\n' +
@@ -435,8 +429,6 @@ export default [
             value: 'type Reducer = (\n' +
               '  accumulator any,\n' +
               '  value any,\n' +
-              '  indexOrKey? number|string,\n' +
-              '  collection? Foldable,\n' +
               ')=>(nextAccumulator Promise|any)\n' +
               '\n' +
               'type Transducer = Reducer=>Reducer\n' +
@@ -444,13 +436,13 @@ export default [
               'Transducer.filter(predicate function) -> filteringTransducer Transducer',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 12, column: 4, offset: 276 }
+              end: { line: 10, column: 4, offset: 223 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 12, column: 4, offset: 276 }
+          end: { line: 10, column: 4, offset: 223 }
         }
       },
       description: {
@@ -560,8 +552,6 @@ export default [
       'type Reducer = (\n' +
       '  accumulator any,\n' +
       '  value any,\n' +
-      '  indexOrKey? number|string,\n' +
-      '  collection? Foldable,\n' +
       ')=>(nextAccumulator Promise|any)\n' +
       '\n' +
       'type Transducer = Reducer=>Reducer\n' +
@@ -618,8 +608,6 @@ export default [
             value: 'type Reducer = (\n' +
               '  accumulator any,\n' +
               '  value any,\n' +
-              '  indexOrKey? number|string,\n' +
-              '  collection? Foldable,\n' +
               ')=>(nextAccumulator Promise|any)\n' +
               '\n' +
               'type Transducer = Reducer=>Reducer\n' +
@@ -627,13 +615,13 @@ export default [
               'Transducer.flatMap(flatMapper) -> flatMappingTransducer Transducer',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 12, column: 4, offset: 271 }
+              end: { line: 10, column: 4, offset: 218 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 12, column: 4, offset: 271 }
+          end: { line: 10, column: 4, offset: 218 }
         }
       },
       description: {
@@ -785,8 +773,6 @@ export default [
       'type Reducer = (\n' +
       '  accumulator any,\n' +
       '  value any,\n' +
-      '  indexOrKey? number|string,\n' +
-      '  collection? Foldable,\n' +
       ')=>(nextAccumulator Promise|any)\n' +
       '\n' +
       'type Transducer = Reducer=>Reducer\n' +
@@ -839,8 +825,6 @@ export default [
             value: 'type Reducer = (\n' +
               '  accumulator any,\n' +
               '  value any,\n' +
-              '  indexOrKey? number|string,\n' +
-              '  collection? Foldable,\n' +
               ')=>(nextAccumulator Promise|any)\n' +
               '\n' +
               'type Transducer = Reducer=>Reducer\n' +
@@ -848,13 +832,13 @@ export default [
               'Transducer.forEach(func function) -> forEachTransducer Transducer',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 12, column: 4, offset: 270 }
+              end: { line: 10, column: 4, offset: 217 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 12, column: 4, offset: 270 }
+          end: { line: 10, column: 4, offset: 217 }
         }
       },
       description: {
@@ -960,8 +944,6 @@ export default [
       'type Reducer = (\n' +
       '  accumulator any,\n' +
       '  value any,\n' +
-      '  indexOrKey? number|string,\n' +
-      '  collection? Foldable,\n' +
       ')=>(nextAccumulator Promise|any)\n' +
       '\n' +
       'type Transducer = Reducer=>Reducer\n' +
@@ -1019,8 +1001,6 @@ export default [
             value: 'type Reducer = (\n' +
               '  accumulator any,\n' +
               '  value any,\n' +
-              '  indexOrKey? number|string,\n' +
-              '  collection? Foldable,\n' +
               ')=>(nextAccumulator Promise|any)\n' +
               '\n' +
               'type Transducer = Reducer=>Reducer\n' +
@@ -1028,13 +1008,13 @@ export default [
               'Transducer.passthrough(func function) -> passthroughTransducer Transducer',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 12, column: 4, offset: 278 }
+              end: { line: 10, column: 4, offset: 225 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 12, column: 4, offset: 278 }
+          end: { line: 10, column: 4, offset: 225 }
         }
       },
       description: {
@@ -1091,8 +1071,6 @@ export default [
       'type Reducer = (\n' +
       '  accumulator any,\n' +
       '  item any,\n' +
-      '  indexOrKey? number|string,\n' +
-      '  collection? Foldable,\n' +
       ')=>(nextAccumulator Promise|any)\n' +
       '\n' +
       'type Transducer = Reducer=>Reducer\n' +
@@ -1106,7 +1084,7 @@ export default [
       '\n' +
       '```javascript [playground]\n' +
       'const db = new Map()\n' +
-      "db.set('a', { id: 'a', name: 'George' })\n" +
+      "db.set('a', { id: 'a', name: 'John' })\n" +
       "db.set('b', { id: 'b', name: 'Jane' })\n" +
       "db.set('c', { id: 'c', name: 'Jill' })\n" +
       "db.set('e', { id: 'e', name: 'Jim' })\n" +
@@ -1167,8 +1145,6 @@ export default [
             value: 'type Reducer = (\n' +
               '  accumulator any,\n' +
               '  item any,\n' +
-              '  indexOrKey? number|string,\n' +
-              '  collection? Foldable,\n' +
               ')=>(nextAccumulator Promise|any)\n' +
               '\n' +
               'type Transducer = Reducer=>Reducer\n' +
@@ -1179,13 +1155,13 @@ export default [
               ') -> tryCatchTransducer Transducer',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 15, column: 4, offset: 337 }
+              end: { line: 13, column: 4, offset: 284 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 15, column: 4, offset: 337 }
+          end: { line: 13, column: 4, offset: 284 }
         }
       },
       description: {
@@ -1267,7 +1243,7 @@ export default [
             lang: 'javascript',
             meta: '[playground]',
             value: 'const db = new Map()\n' +
-              "db.set('a', { id: 'a', name: 'George' })\n" +
+              "db.set('a', { id: 'a', name: 'John' })\n" +
               "db.set('b', { id: 'b', name: 'Jane' })\n" +
               "db.set('c', { id: 'c', name: 'Jill' })\n" +
               "db.set('e', { id: 'e', name: 'Jim' })\n" +
@@ -1292,13 +1268,13 @@ export default [
               '}), null)',
             position: {
               start: { line: 3, column: 1, offset: 556 },
-              end: { line: 28, column: 4, offset: 1245 }
+              end: { line: 28, column: 4, offset: 1243 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 28, column: 4, offset: 1245 }
+          end: { line: 28, column: 4, offset: 1243 }
         }
       }
     },
@@ -20566,7 +20542,7 @@ export default [
       'const identity = value => value\n' +
       '\n' +
       'const userbase = new Map()\n' +
-      "userbase.set('1', { _id: 1, name: 'George' })\n" +
+      "userbase.set('1', { _id: 1, name: 'John' })\n" +
       '\n' +
       'const getUserByID = async id => userbase.get(id)\n' +
       '\n' +
@@ -20580,7 +20556,7 @@ export default [
       '  }),\n' +
       '])\n' +
       '\n' +
-      `getAndLogUserById('1') // Got user {"_id":1,"name":"George"} by id 1\n` +
+      `getAndLogUserById('1') // Got user {"_id":1,"name":"John"} by id 1\n` +
       '```\n' +
       '\n' +
       'Values may be provided along with functions, in which case they are set on the result object or array directly. If any of these values are promises, they are resolved for their values before being set on the result object or array.\n' +
@@ -20832,7 +20808,7 @@ export default [
             value: 'const identity = value => value\n' +
               '\n' +
               'const userbase = new Map()\n' +
-              "userbase.set('1', { _id: 1, name: 'George' })\n" +
+              "userbase.set('1', { _id: 1, name: 'John' })\n" +
               '\n' +
               'const getUserByID = async id => userbase.get(id)\n' +
               '\n' +
@@ -20846,10 +20822,10 @@ export default [
               '  }),\n' +
               '])\n' +
               '\n' +
-              `getAndLogUserById('1') // Got user {"_id":1,"name":"George"} by id 1`,
+              `getAndLogUserById('1') // Got user {"_id":1,"name":"John"} by id 1`,
             position: {
               start: { line: 34, column: 1, offset: 825 },
-              end: { line: 53, column: 4, offset: 1269 }
+              end: { line: 53, column: 4, offset: 1265 }
             }
           },
           {
@@ -20859,14 +20835,14 @@ export default [
                 type: 'text',
                 value: 'Values may be provided along with functions, in which case they are set on the result object or array directly. If any of these values are promises, they are resolved for their values before being set on the result object or array.',
                 position: {
-                  start: { line: 55, column: 1, offset: 1271 },
-                  end: { line: 55, column: 232, offset: 1502 }
+                  start: { line: 55, column: 1, offset: 1267 },
+                  end: { line: 55, column: 232, offset: 1498 }
                 }
               }
             ],
             position: {
-              start: { line: 55, column: 1, offset: 1271 },
-              end: { line: 55, column: 232, offset: 1502 }
+              start: { line: 55, column: 1, offset: 1267 },
+              end: { line: 55, column: 232, offset: 1498 }
             }
           },
           {
@@ -20887,8 +20863,8 @@ export default [
               '  async () => 4,\n' +
               ']).then(console.log) // [1, 2, 3, 4]',
             position: {
-              start: { line: 57, column: 1, offset: 1504 },
-              end: { line: 71, column: 4, offset: 1765 }
+              start: { line: 57, column: 1, offset: 1500 },
+              end: { line: 71, column: 4, offset: 1761 }
             }
           },
           {
@@ -20898,14 +20874,14 @@ export default [
                 type: 'text',
                 value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
                 position: {
-                  start: { line: 73, column: 1, offset: 1767 },
-                  end: { line: 73, column: 148, offset: 1914 }
+                  start: { line: 73, column: 1, offset: 1763 },
+                  end: { line: 73, column: 148, offset: 1910 }
                 }
               }
             ],
             position: {
-              start: { line: 73, column: 1, offset: 1767 },
-              end: { line: 73, column: 148, offset: 1914 }
+              start: { line: 73, column: 1, offset: 1763 },
+              end: { line: 73, column: 148, offset: 1910 }
             }
           },
           {
@@ -20918,14 +20894,14 @@ export default [
               '  obj => obj.a + 3,\n' +
               ']).then(console.log) // [2, 3, 4]',
             position: {
-              start: { line: 75, column: 1, offset: 1916 },
-              end: { line: 81, column: 4, offset: 2073 }
+              start: { line: 75, column: 1, offset: 1912 },
+              end: { line: 81, column: 4, offset: 2069 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 81, column: 4, offset: 2073 }
+          end: { line: 81, column: 4, offset: 2069 }
         }
       },
       execution: {
@@ -23459,7 +23435,7 @@ export default [
     description: 'Test for [equality (`==`)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Equality) between two values.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      "const areNamesEqual = eq('Ted', 'George')\n" +
+      "const areNamesEqual = eq('Ted', 'John')\n" +
       '\n' +
       'console.log(areNamesEqual) // false\n' +
       '```\n' +
@@ -23467,11 +23443,11 @@ export default [
       'If either of the two values are resolver functions, `eq` returns a function that resolves the values to compare from its arguments.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      "const personIsGeorge = eq(get('name'), 'George')\n" +
+      "const personIsJohn = eq(get('name'), 'John')\n" +
       '\n' +
-      "const person = { name: 'George', likes: 'bananas' }\n" +
+      "const person = { name: 'John', likes: 'bananas' }\n" +
       '\n' +
-      'if (personIsGeorge(person)) {\n' +
+      'if (personIsJohn(person)) {\n' +
       "  console.log('The person is george')\n" +
       '}\n' +
       '```\n' +
@@ -23479,8 +23455,8 @@ export default [
       '`eq` supports a lazy API for composability.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      "pipe({ name: 'George' }, [\n" +
-      "  eq('George', get('name')),\n" +
+      "pipe({ name: 'John' }, [\n" +
+      "  eq('John', get('name')),\n" +
       '  console.log, // true\n' +
       '])\n' +
       '```\n' +
@@ -23613,12 +23589,12 @@ export default [
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: "const areNamesEqual = eq('Ted', 'George')\n" +
+            value: "const areNamesEqual = eq('Ted', 'John')\n" +
               '\n' +
               'console.log(areNamesEqual) // false',
             position: {
               start: { line: 3, column: 1, offset: 134 },
-              end: { line: 7, column: 4, offset: 243 }
+              end: { line: 7, column: 4, offset: 241 }
             }
           },
           {
@@ -23628,46 +23604,46 @@ export default [
                 type: 'text',
                 value: 'If either of the two values are resolver functions, ',
                 position: {
-                  start: { line: 9, column: 1, offset: 245 },
-                  end: { line: 9, column: 53, offset: 297 }
+                  start: { line: 9, column: 1, offset: 243 },
+                  end: { line: 9, column: 53, offset: 295 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'eq',
                 position: {
-                  start: { line: 9, column: 53, offset: 297 },
-                  end: { line: 9, column: 57, offset: 301 }
+                  start: { line: 9, column: 53, offset: 295 },
+                  end: { line: 9, column: 57, offset: 299 }
                 }
               },
               {
                 type: 'text',
                 value: ' returns a function that resolves the values to compare from its arguments.',
                 position: {
-                  start: { line: 9, column: 57, offset: 301 },
-                  end: { line: 9, column: 132, offset: 376 }
+                  start: { line: 9, column: 57, offset: 299 },
+                  end: { line: 9, column: 132, offset: 374 }
                 }
               }
             ],
             position: {
-              start: { line: 9, column: 1, offset: 245 },
-              end: { line: 9, column: 132, offset: 376 }
+              start: { line: 9, column: 1, offset: 243 },
+              end: { line: 9, column: 132, offset: 374 }
             }
           },
           {
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: "const personIsGeorge = eq(get('name'), 'George')\n" +
+            value: "const personIsJohn = eq(get('name'), 'John')\n" +
               '\n' +
-              "const person = { name: 'George', likes: 'bananas' }\n" +
+              "const person = { name: 'John', likes: 'bananas' }\n" +
               '\n' +
-              'if (personIsGeorge(person)) {\n' +
+              'if (personIsJohn(person)) {\n' +
               "  console.log('The person is george')\n" +
               '}',
             position: {
-              start: { line: 11, column: 1, offset: 378 },
-              end: { line: 19, column: 4, offset: 581 }
+              start: { line: 11, column: 1, offset: 376 },
+              end: { line: 19, column: 4, offset: 571 }
             }
           },
           {
@@ -23677,35 +23653,35 @@ export default [
                 type: 'inlineCode',
                 value: 'eq',
                 position: {
-                  start: { line: 21, column: 1, offset: 583 },
-                  end: { line: 21, column: 5, offset: 587 }
+                  start: { line: 21, column: 1, offset: 573 },
+                  end: { line: 21, column: 5, offset: 577 }
                 }
               },
               {
                 type: 'text',
                 value: ' supports a lazy API for composability.',
                 position: {
-                  start: { line: 21, column: 5, offset: 587 },
-                  end: { line: 21, column: 44, offset: 626 }
+                  start: { line: 21, column: 5, offset: 577 },
+                  end: { line: 21, column: 44, offset: 616 }
                 }
               }
             ],
             position: {
-              start: { line: 21, column: 1, offset: 583 },
-              end: { line: 21, column: 44, offset: 626 }
+              start: { line: 21, column: 1, offset: 573 },
+              end: { line: 21, column: 44, offset: 616 }
             }
           },
           {
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: "pipe({ name: 'George' }, [\n" +
-              "  eq('George', get('name')),\n" +
+            value: "pipe({ name: 'John' }, [\n" +
+              "  eq('John', get('name')),\n" +
               '  console.log, // true\n' +
               '])',
             position: {
-              start: { line: 23, column: 1, offset: 628 },
-              end: { line: 28, column: 4, offset: 740 }
+              start: { line: 23, column: 1, offset: 618 },
+              end: { line: 28, column: 4, offset: 726 }
             }
           },
           {
@@ -23715,14 +23691,14 @@ export default [
                 type: 'text',
                 value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
                 position: {
-                  start: { line: 30, column: 1, offset: 742 },
-                  end: { line: 30, column: 148, offset: 889 }
+                  start: { line: 30, column: 1, offset: 728 },
+                  end: { line: 30, column: 148, offset: 875 }
                 }
               }
             ],
             position: {
-              start: { line: 30, column: 1, offset: 742 },
-              end: { line: 30, column: 148, offset: 889 }
+              start: { line: 30, column: 1, offset: 728 },
+              end: { line: 30, column: 148, offset: 875 }
             }
           },
           {
@@ -23731,14 +23707,14 @@ export default [
             meta: '[playground]',
             value: "eq(Promise.resolve({ a: 1, b: 1 }), get('a'), get('b')).then(console.log) // true",
             position: {
-              start: { line: 32, column: 1, offset: 891 },
-              end: { line: 34, column: 4, offset: 1003 }
+              start: { line: 32, column: 1, offset: 877 },
+              end: { line: 34, column: 4, offset: 989 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 34, column: 4, offset: 1003 }
+          end: { line: 34, column: 4, offset: 989 }
         }
       },
       execution: {
@@ -24189,72 +24165,116 @@ export default [
   {
     name: 'filter',
     synopsis: '```coffeescript [specscript]\n' +
-      'type Filterable = Array|Object|Set|Map|Iterator|AsyncIterator\n' +
+      'type Filterable = Array|Set|Map|Generator|AsyncGenerator|{ filter: function }|Object\n' +
       '\n' +
       'type Predicate = (\n' +
       '  value any,\n' +
-      '  indexOrKey number|string,\n' +
-      '  collection Filterable,\n' +
+      '  indexOrKey number|string|any,\n' +
+      '  filt Filterable,\n' +
       ')=>boolean\n' +
       '\n' +
-      'filter(collection Filterable, predicate Predicate) -> result Promise|Filterable\n' +
-      'filter(predicate Predicate)(collection Filterable) -> result Promise|Filterable\n' +
+      'filter(filt Filterable, predicate Predicate) -> result Promise|Filterable\n' +
+      'filter(predicate Predicate)(filt Filterable) -> result Promise|Filterable\n' +
       '```',
-    description: 'Filter out items from a collection based on the results of their concurrent executions with a synchronous or asynchronous predicate function. `filter` accepts the following collections:\n' +
+    description: 'Filters out items from a filterable. Returns a filterable of the same type. The order of the items in the filterable is preserved.\n' +
       '\n' +
-      ' * `Array`\n' +
-      ' * `Object`\n' +
-      ' * `Set`\n' +
-      ' * `Map`\n' +
-      ' * `Iterator`/`Generator`\n' +
-      ' * `AsyncIterator`/`AsyncGenerator`\n' +
+      'The following data types are considered to be filterables:\n' +
+      ' * `array`\n' +
+      ' * `set`\n' +
+      ' * `map`\n' +
+      ' * `generator`\n' +
+      ' * `async generator`\n' +
+      ' * `object with .filter method`\n' +
+      ' * `object`\n' +
       '\n' +
-      'For arrays (type `Array`), `filter` applies the predicate function to each item of the array, returning a new array containing only the items that tested truthy by the predicate. The order of the items is preserved. On each iteration, the predicate is passed the item, the index of the item, and a reference to the array.\n' +
+      'The filtering operation is defined by a given predicate function. The predicate function dictates whether a given item from the filterable should be included in the returned filterable.\n' +
+      '\n' +
+      '```javascript\n' +
+      'const predicate = function (item) {\n' +
+      '  // condition is the boolean result of the predicate test on item\n' +
+      '  return condition\n' +
+      '}\n' +
+      '```\n' +
+      '\n' +
+      'The predicate function signature changes depending on the provided filterable.\n' +
+      '\n' +
+      'If the filterable is an array:\n' +
+      '```coffeescript [specscript]\n' +
+      'predicate(item any, index number, filt Array) -> condition Promise|boolean|any\n' +
+      '```\n' +
+      '\n' +
+      'If the filterable is a set:\n' +
+      '```coffeescript [specscript]\n' +
+      'predicate(item any, item any, filt Set) -> condition Promise|boolean|any\n' +
+      '```\n' +
+      '\n' +
+      'If the filterable is a map:\n' +
+      '```coffeescript [specscript]\n' +
+      'predicate(item any, key any, filt Map) -> condition Promise|boolean|any\n' +
+      '```\n' +
+      '\n' +
+      'If the filterable is a generator:\n' +
+      '```coffeescript [specscript]\n' +
+      'predicate(item any) -> condition Promise|boolean|any\n' +
+      '```\n' +
+      '\n' +
+      'If the filterable is an async generator:\n' +
+      '```coffeescript [specscript]\n' +
+      'predicate(item any) -> condition Promise|boolean|any\n' +
+      '```\n' +
+      '\n' +
+      'If the filterable is an object with a `.filter` method, the predicate function signature is defined externally.\n' +
+      '\n' +
+      'If the filterable is a plain object:\n' +
+      '```coffeescript [specscript]\n' +
+      'predicate(item any, key string, filt Object) -> condition Promise|boolean|any\n' +
+      '```\n' +
+      '\n' +
+      '`filter` works for arrays.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const isOdd = number => number % 2 == 1\n' +
       '\n' +
       'const array = [1, 2, 3, 4, 5]\n' +
       '\n' +
-      'console.log(filter(isOdd)(array)) // [1, 3, 5]\n' +
-      'console.log(filter(array, isOdd)) // [1, 3, 5]\n' +
+      'const result = filter(array, isOdd)\n' +
+      'console.log(result) // [1, 3, 5]\n' +
       '```\n' +
       '\n' +
-      'For objects (type `Object`), `filter` applies the predicate function to each value of the object, returning a new object containing only the values that tested truthy by the predicate. On each iteration, the predicate is passed the object value, the key of the object value, and a reference to the object.\n' +
+      'If the predicate is asynchronous, the returned promise is concurrently resolved for its boolean condition before continuing with the filtering operation.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const asyncIsOdd = async number => number % 2 == 1\n' +
+      '\n' +
+      'const array = [1, 2, 3, 4, 5]\n' +
+      '\n' +
+      'const promise = filter(array, asyncIsOdd)\n' +
+      'promise.then(console.log) // [1, 3, 5]\n' +
+      '```\n' +
+      '\n' +
+      '`filter` applies the predicate function to just the values of an object.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const isOdd = number => number % 2 == 1\n' +
       '\n' +
       'const obj = { a: 1, b: 2, c: 3, d: 4, e: 5 }\n' +
       '\n' +
-      'console.log(filter(isOdd)(obj)) // { a: 1, c: 3, e: 5 }\n' +
-      'console.log(filter(obj, isOdd)) // { a: 1, c: 3, e: 5 }\n' +
+      'const result = filter(obj, isOdd)\n' +
+      'console.log(result) // { a: 1, c: 3, e: 5 }\n' +
       '```\n' +
       '\n' +
-      'For sets (type `Set`), `filter` applies the predicate function to each item in the set, returning a new set containing only the items that tested truthy by the predicate. On each iteration, the predicate is passed the item, the same item as the key argument, and a reference to the set.\n' +
+      '`filter` applies the predicate to the values of the entries of a map.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const isOdd = number => number % 2 == 1\n' +
       '\n' +
-      'const set = new Set([1, 2, 3, 4, 5])\n' +
+      "const myMap = new Map([['a', 1], ['b', 2], ['c', 3], ['d', 4], ['e', 5]])\n" +
       '\n' +
-      'console.log(filter(isOdd)(set)) // Set { 1, 3, 5 }\n' +
-      'console.log(filter(set, isOdd)) // Set { 1, 3, 5 }\n' +
+      'const result = filter(myMap, isOdd)\n' +
+      "console.log(result) // Map(3) { 'a' => 1, 'c' => 3, 'e' => 5 }\n" +
       '```\n' +
       '\n' +
-      'For maps (type `Map`), `filter` applies the predicate function to the value of each entry of the map, returning a new map containing only the entries where the values tested truthy by the predicate. The order of the entries are preserved. On each iteration, the predicate is passed the map value, the key of the value, and a reference to the map.\n' +
-      '\n' +
-      '```javascript [playground]\n' +
-      'const isOdd = number => number % 2 == 1\n' +
-      '\n' +
-      'const obj = { a: 1, b: 2, c: 3, d: 4, e: 5 }\n' +
-      "const m = new Map([['a', 1], ['b', 2], ['c', 3], ['d', 4], ['e', 5]])\n" +
-      '\n' +
-      "console.log(filter(isOdd)(m)) // Map(3) { 'a' => 1, 'c' => 3, 'e' => 5 }\n" +
-      "console.log(filter(m, isOdd)) // Map(3) { 'a' => 1, 'c' => 3, 'e' => 5 }\n" +
-      '```\n' +
-      '\n' +
-      'For iterators (type `Iterator`) or generators (type `Generator`), `filter` returns a lazily filtered iterator/generator; all values that are normally yielded by the iterator/generator that test falsy by the predicate function are skipped by the lazily filtered iterator/generator. On each iteration, the predicate is passed the iteration value only.\n' +
+      'For generators, `filter` returns a lazily filtered generator. All values that are normally yielded by the generator that test false by the predicate are excluded from the returned generator.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const isOdd = number => number % 2 == 1\n' +
@@ -24265,7 +24285,6 @@ export default [
       '\n' +
       'const numbersGenerator = numbersGeneratorFunction()\n' +
       'const oddNumbersGenerator = filter(numbersGeneratorFunction(), isOdd)\n' +
-      'const oddNumbersGenerator2 = filter(isOdd)(numbersGeneratorFunction())\n' +
       '\n' +
       'for (const number of numbersGenerator) {\n' +
       '  console.log(number) // 1\n' +
@@ -24280,15 +24299,9 @@ export default [
       '                      // 3\n' +
       '                      // 5\n' +
       '}\n' +
-      '\n' +
-      'for (const number of oddNumbersGenerator2) {\n' +
-      '  console.log(number) // 1\n' +
-      '                      // 3\n' +
-      '                      // 5\n' +
-      '}\n' +
       '```\n' +
       '\n' +
-      'With asyncIterators (type `AsyncIterator`) or asyncGenerators (type `AsyncGenerator`), `filter` returns a lazily filtered asyncIterator/asyncGenerator; all values that are normally yielded by the asyncIterator/asyncGenerator that test falsy by the predicate function are skipped by the lazily filtered asyncIterator/asyncGenerator. On each iteration, the predicate is passed the iteration value only.\n' +
+      'For async generators, `filter` returns a lazily filtered async generator. All values that are normally yielded by the async generator that test falsy by the predicate are excluded from the returned async generator.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const asyncIsOdd = async number => number % 2 == 1\n' +
@@ -24301,8 +24314,6 @@ export default [
       '\n' +
       'const asyncOddNumbersGenerator = filter(asyncNumbersGeneratorFunction(), asyncIsOdd)\n' +
       '\n' +
-      'const asyncOddNumbersGenerator2 = filter(asyncIsOdd)(asyncNumbersGeneratorFunction())\n' +
-      '\n' +
       'for await (const number of asyncNumbersGenerator) {\n' +
       '  console.log(number) // 1\n' +
       '                      // 2\n' +
@@ -24312,12 +24323,6 @@ export default [
       '}\n' +
       '\n' +
       'for await (const number of asyncOddNumbersGenerator) {\n' +
-      '  console.log(number) // 1\n' +
-      '                      // 3\n' +
-      '                      // 5\n' +
-      '}\n' +
-      '\n' +
-      'for await (const number of asyncOddNumbersGenerator2) {\n' +
       '  console.log(number) // 1\n' +
       '                      // 3\n' +
       '                      // 5\n' +
@@ -24368,25 +24373,25 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'type Filterable = Array|Object|Set|Map|Iterator|AsyncIterator\n' +
+            value: 'type Filterable = Array|Set|Map|Generator|AsyncGenerator|{ filter: function }|Object\n' +
               '\n' +
               'type Predicate = (\n' +
               '  value any,\n' +
-              '  indexOrKey number|string,\n' +
-              '  collection Filterable,\n' +
+              '  indexOrKey number|string|any,\n' +
+              '  filt Filterable,\n' +
               ')=>boolean\n' +
               '\n' +
-              'filter(collection Filterable, predicate Predicate) -> result Promise|Filterable\n' +
-              'filter(predicate Predicate)(collection Filterable) -> result Promise|Filterable',
+              'filter(filt Filterable, predicate Predicate) -> result Promise|Filterable\n' +
+              'filter(predicate Predicate)(filt Filterable) -> result Promise|Filterable',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 12, column: 4, offset: 352 }
+              end: { line: 12, column: 4, offset: 361 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 12, column: 4, offset: 352 }
+          end: { line: 12, column: 4, offset: 361 }
         }
       },
       description: {
@@ -24397,32 +24402,33 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Filter out items from a collection based on the results of their concurrent executions with a synchronous or asynchronous predicate function. ',
+                value: 'Filters out items from a filterable. Returns a filterable of the same type. The order of the items in the filterable is preserved.',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 143, offset: 142 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'filter',
-                position: {
-                  start: { line: 1, column: 143, offset: 142 },
-                  end: { line: 1, column: 151, offset: 150 }
-                }
-              },
-              {
-                type: 'text',
-                value: ' accepts the following collections:',
-                position: {
-                  start: { line: 1, column: 151, offset: 150 },
-                  end: { line: 1, column: 186, offset: 185 }
+                  end: { line: 1, column: 131, offset: 130 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 186, offset: 185 }
+              end: { line: 1, column: 131, offset: 130 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'The following data types are considered to be filterables:',
+                position: {
+                  start: { line: 3, column: 1, offset: 132 },
+                  end: { line: 3, column: 59, offset: 190 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 3, column: 1, offset: 132 },
+              end: { line: 3, column: 59, offset: 190 }
             }
           },
           {
@@ -24441,22 +24447,22 @@ export default [
                     children: [
                       {
                         type: 'inlineCode',
-                        value: 'Array',
+                        value: 'array',
                         position: {
-                          start: { line: 3, column: 4, offset: 190 },
-                          end: { line: 3, column: 11, offset: 197 }
+                          start: { line: 4, column: 4, offset: 194 },
+                          end: { line: 4, column: 11, offset: 201 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 3, column: 4, offset: 190 },
-                      end: { line: 3, column: 11, offset: 197 }
+                      start: { line: 4, column: 4, offset: 194 },
+                      end: { line: 4, column: 11, offset: 201 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 3, column: 2, offset: 188 },
-                  end: { line: 3, column: 11, offset: 197 }
+                  start: { line: 4, column: 2, offset: 192 },
+                  end: { line: 4, column: 11, offset: 201 }
                 }
               },
               {
@@ -24469,22 +24475,22 @@ export default [
                     children: [
                       {
                         type: 'inlineCode',
-                        value: 'Object',
+                        value: 'set',
                         position: {
-                          start: { line: 4, column: 4, offset: 201 },
-                          end: { line: 4, column: 12, offset: 209 }
+                          start: { line: 5, column: 4, offset: 205 },
+                          end: { line: 5, column: 9, offset: 210 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 4, column: 4, offset: 201 },
-                      end: { line: 4, column: 12, offset: 209 }
+                      start: { line: 5, column: 4, offset: 205 },
+                      end: { line: 5, column: 9, offset: 210 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 4, column: 2, offset: 199 },
-                  end: { line: 4, column: 12, offset: 209 }
+                  start: { line: 5, column: 2, offset: 203 },
+                  end: { line: 5, column: 9, offset: 210 }
                 }
               },
               {
@@ -24497,22 +24503,22 @@ export default [
                     children: [
                       {
                         type: 'inlineCode',
-                        value: 'Set',
+                        value: 'map',
                         position: {
-                          start: { line: 5, column: 4, offset: 213 },
-                          end: { line: 5, column: 9, offset: 218 }
+                          start: { line: 6, column: 4, offset: 214 },
+                          end: { line: 6, column: 9, offset: 219 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 5, column: 4, offset: 213 },
-                      end: { line: 5, column: 9, offset: 218 }
+                      start: { line: 6, column: 4, offset: 214 },
+                      end: { line: 6, column: 9, offset: 219 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 5, column: 2, offset: 211 },
-                  end: { line: 5, column: 9, offset: 218 }
+                  start: { line: 6, column: 2, offset: 212 },
+                  end: { line: 6, column: 9, offset: 219 }
                 }
               },
               {
@@ -24525,22 +24531,22 @@ export default [
                     children: [
                       {
                         type: 'inlineCode',
-                        value: 'Map',
+                        value: 'generator',
                         position: {
-                          start: { line: 6, column: 4, offset: 222 },
-                          end: { line: 6, column: 9, offset: 227 }
+                          start: { line: 7, column: 4, offset: 223 },
+                          end: { line: 7, column: 15, offset: 234 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 6, column: 4, offset: 222 },
-                      end: { line: 6, column: 9, offset: 227 }
+                      start: { line: 7, column: 4, offset: 223 },
+                      end: { line: 7, column: 15, offset: 234 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 6, column: 2, offset: 220 },
-                  end: { line: 6, column: 9, offset: 227 }
+                  start: { line: 7, column: 2, offset: 221 },
+                  end: { line: 7, column: 15, offset: 234 }
                 }
               },
               {
@@ -24553,38 +24559,22 @@ export default [
                     children: [
                       {
                         type: 'inlineCode',
-                        value: 'Iterator',
+                        value: 'async generator',
                         position: {
-                          start: { line: 7, column: 4, offset: 231 },
-                          end: { line: 7, column: 14, offset: 241 }
-                        }
-                      },
-                      {
-                        type: 'text',
-                        value: '/',
-                        position: {
-                          start: { line: 7, column: 14, offset: 241 },
-                          end: { line: 7, column: 15, offset: 242 }
-                        }
-                      },
-                      {
-                        type: 'inlineCode',
-                        value: 'Generator',
-                        position: {
-                          start: { line: 7, column: 15, offset: 242 },
-                          end: { line: 7, column: 26, offset: 253 }
+                          start: { line: 8, column: 4, offset: 238 },
+                          end: { line: 8, column: 21, offset: 255 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 7, column: 4, offset: 231 },
-                      end: { line: 7, column: 26, offset: 253 }
+                      start: { line: 8, column: 4, offset: 238 },
+                      end: { line: 8, column: 21, offset: 255 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 7, column: 2, offset: 229 },
-                  end: { line: 7, column: 26, offset: 253 }
+                  start: { line: 8, column: 2, offset: 236 },
+                  end: { line: 8, column: 21, offset: 255 }
                 }
               },
               {
@@ -24597,44 +24587,56 @@ export default [
                     children: [
                       {
                         type: 'inlineCode',
-                        value: 'AsyncIterator',
+                        value: 'object with .filter method',
                         position: {
-                          start: { line: 8, column: 4, offset: 257 },
-                          end: { line: 8, column: 19, offset: 272 }
-                        }
-                      },
-                      {
-                        type: 'text',
-                        value: '/',
-                        position: {
-                          start: { line: 8, column: 19, offset: 272 },
-                          end: { line: 8, column: 20, offset: 273 }
-                        }
-                      },
-                      {
-                        type: 'inlineCode',
-                        value: 'AsyncGenerator',
-                        position: {
-                          start: { line: 8, column: 20, offset: 273 },
-                          end: { line: 8, column: 36, offset: 289 }
+                          start: { line: 9, column: 4, offset: 259 },
+                          end: { line: 9, column: 32, offset: 287 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 8, column: 4, offset: 257 },
-                      end: { line: 8, column: 36, offset: 289 }
+                      start: { line: 9, column: 4, offset: 259 },
+                      end: { line: 9, column: 32, offset: 287 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 8, column: 2, offset: 255 },
-                  end: { line: 8, column: 36, offset: 289 }
+                  start: { line: 9, column: 2, offset: 257 },
+                  end: { line: 9, column: 32, offset: 287 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'object',
+                        position: {
+                          start: { line: 10, column: 4, offset: 291 },
+                          end: { line: 10, column: 12, offset: 299 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 10, column: 4, offset: 291 },
+                      end: { line: 10, column: 12, offset: 299 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 10, column: 2, offset: 289 },
+                  end: { line: 10, column: 12, offset: 299 }
                 }
               }
             ],
             position: {
-              start: { line: 3, column: 2, offset: 188 },
-              end: { line: 8, column: 36, offset: 289 }
+              start: { line: 4, column: 2, offset: 192 },
+              end: { line: 10, column: 12, offset: 299 }
             }
           },
           {
@@ -24642,48 +24644,266 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'For arrays (type ',
+                value: 'The filtering operation is defined by a given predicate function. The predicate function dictates whether a given item from the filterable should be included in the returned filterable.',
                 position: {
-                  start: { line: 10, column: 1, offset: 291 },
-                  end: { line: 10, column: 18, offset: 308 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'Array',
-                position: {
-                  start: { line: 10, column: 18, offset: 308 },
-                  end: { line: 10, column: 25, offset: 315 }
-                }
-              },
-              {
-                type: 'text',
-                value: '), ',
-                position: {
-                  start: { line: 10, column: 25, offset: 315 },
-                  end: { line: 10, column: 28, offset: 318 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'filter',
-                position: {
-                  start: { line: 10, column: 28, offset: 318 },
-                  end: { line: 10, column: 36, offset: 326 }
-                }
-              },
-              {
-                type: 'text',
-                value: ' applies the predicate function to each item of the array, returning a new array containing only the items that tested truthy by the predicate. The order of the items is preserved. On each iteration, the predicate is passed the item, the index of the item, and a reference to the array.',
-                position: {
-                  start: { line: 10, column: 36, offset: 326 },
-                  end: { line: 10, column: 322, offset: 612 }
+                  start: { line: 12, column: 1, offset: 301 },
+                  end: { line: 12, column: 186, offset: 486 }
                 }
               }
             ],
             position: {
-              start: { line: 10, column: 1, offset: 291 },
-              end: { line: 10, column: 322, offset: 612 }
+              start: { line: 12, column: 1, offset: 301 },
+              end: { line: 12, column: 186, offset: 486 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: null,
+            value: 'const predicate = function (item) {\n' +
+              '  // condition is the boolean result of the predicate test on item\n' +
+              '  return condition\n' +
+              '}',
+            position: {
+              start: { line: 14, column: 1, offset: 488 },
+              end: { line: 19, column: 4, offset: 629 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'The predicate function signature changes depending on the provided filterable.',
+                position: {
+                  start: { line: 21, column: 1, offset: 631 },
+                  end: { line: 21, column: 79, offset: 709 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 21, column: 1, offset: 631 },
+              end: { line: 21, column: 79, offset: 709 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If the filterable is an array:',
+                position: {
+                  start: { line: 23, column: 1, offset: 711 },
+                  end: { line: 23, column: 31, offset: 741 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 23, column: 1, offset: 711 },
+              end: { line: 23, column: 31, offset: 741 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'predicate(item any, index number, filt Array) -> condition Promise|boolean|any',
+            position: {
+              start: { line: 24, column: 1, offset: 742 },
+              end: { line: 26, column: 4, offset: 853 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If the filterable is a set:',
+                position: {
+                  start: { line: 28, column: 1, offset: 855 },
+                  end: { line: 28, column: 28, offset: 882 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 28, column: 1, offset: 855 },
+              end: { line: 28, column: 28, offset: 882 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'predicate(item any, item any, filt Set) -> condition Promise|boolean|any',
+            position: {
+              start: { line: 29, column: 1, offset: 883 },
+              end: { line: 31, column: 4, offset: 988 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If the filterable is a map:',
+                position: {
+                  start: { line: 33, column: 1, offset: 990 },
+                  end: { line: 33, column: 28, offset: 1017 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 33, column: 1, offset: 990 },
+              end: { line: 33, column: 28, offset: 1017 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'predicate(item any, key any, filt Map) -> condition Promise|boolean|any',
+            position: {
+              start: { line: 34, column: 1, offset: 1018 },
+              end: { line: 36, column: 4, offset: 1122 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If the filterable is a generator:',
+                position: {
+                  start: { line: 38, column: 1, offset: 1124 },
+                  end: { line: 38, column: 34, offset: 1157 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 38, column: 1, offset: 1124 },
+              end: { line: 38, column: 34, offset: 1157 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'predicate(item any) -> condition Promise|boolean|any',
+            position: {
+              start: { line: 39, column: 1, offset: 1158 },
+              end: { line: 41, column: 4, offset: 1243 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If the filterable is an async generator:',
+                position: {
+                  start: { line: 43, column: 1, offset: 1245 },
+                  end: { line: 43, column: 41, offset: 1285 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 43, column: 1, offset: 1245 },
+              end: { line: 43, column: 41, offset: 1285 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'predicate(item any) -> condition Promise|boolean|any',
+            position: {
+              start: { line: 44, column: 1, offset: 1286 },
+              end: { line: 46, column: 4, offset: 1371 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If the filterable is an object with a ',
+                position: {
+                  start: { line: 48, column: 1, offset: 1373 },
+                  end: { line: 48, column: 39, offset: 1411 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: '.filter',
+                position: {
+                  start: { line: 48, column: 39, offset: 1411 },
+                  end: { line: 48, column: 48, offset: 1420 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' method, the predicate function signature is defined externally.',
+                position: {
+                  start: { line: 48, column: 48, offset: 1420 },
+                  end: { line: 48, column: 112, offset: 1484 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 48, column: 1, offset: 1373 },
+              end: { line: 48, column: 112, offset: 1484 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If the filterable is a plain object:',
+                position: {
+                  start: { line: 50, column: 1, offset: 1486 },
+                  end: { line: 50, column: 37, offset: 1522 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 50, column: 1, offset: 1486 },
+              end: { line: 50, column: 37, offset: 1522 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'predicate(item any, key string, filt Object) -> condition Promise|boolean|any',
+            position: {
+              start: { line: 51, column: 1, offset: 1523 },
+              end: { line: 53, column: 4, offset: 1633 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'inlineCode',
+                value: 'filter',
+                position: {
+                  start: { line: 55, column: 1, offset: 1635 },
+                  end: { line: 55, column: 9, offset: 1643 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' works for arrays.',
+                position: {
+                  start: { line: 55, column: 9, offset: 1643 },
+                  end: { line: 55, column: 27, offset: 1661 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 55, column: 1, offset: 1635 },
+              end: { line: 55, column: 27, offset: 1661 }
             }
           },
           {
@@ -24694,11 +24914,11 @@ export default [
               '\n' +
               'const array = [1, 2, 3, 4, 5]\n' +
               '\n' +
-              'console.log(filter(isOdd)(array)) // [1, 3, 5]\n' +
-              'console.log(filter(array, isOdd)) // [1, 3, 5]',
+              'const result = filter(array, isOdd)\n' +
+              'console.log(result) // [1, 3, 5]',
             position: {
-              start: { line: 12, column: 1, offset: 614 },
-              end: { line: 19, column: 4, offset: 810 }
+              start: { line: 57, column: 1, offset: 1663 },
+              end: { line: 64, column: 4, offset: 1834 }
             }
           },
           {
@@ -24706,48 +24926,56 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'For objects (type ',
+                value: 'If the predicate is asynchronous, the returned promise is concurrently resolved for its boolean condition before continuing with the filtering operation.',
                 position: {
-                  start: { line: 21, column: 1, offset: 812 },
-                  end: { line: 21, column: 19, offset: 830 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'Object',
-                position: {
-                  start: { line: 21, column: 19, offset: 830 },
-                  end: { line: 21, column: 27, offset: 838 }
-                }
-              },
-              {
-                type: 'text',
-                value: '), ',
-                position: {
-                  start: { line: 21, column: 27, offset: 838 },
-                  end: { line: 21, column: 30, offset: 841 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'filter',
-                position: {
-                  start: { line: 21, column: 30, offset: 841 },
-                  end: { line: 21, column: 38, offset: 849 }
-                }
-              },
-              {
-                type: 'text',
-                value: ' applies the predicate function to each value of the object, returning a new object containing only the values that tested truthy by the predicate. On each iteration, the predicate is passed the object value, the key of the object value, and a reference to the object.',
-                position: {
-                  start: { line: 21, column: 38, offset: 849 },
-                  end: { line: 21, column: 306, offset: 1117 }
+                  start: { line: 66, column: 1, offset: 1836 },
+                  end: { line: 66, column: 154, offset: 1989 }
                 }
               }
             ],
             position: {
-              start: { line: 21, column: 1, offset: 812 },
-              end: { line: 21, column: 306, offset: 1117 }
+              start: { line: 66, column: 1, offset: 1836 },
+              end: { line: 66, column: 154, offset: 1989 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'const asyncIsOdd = async number => number % 2 == 1\n' +
+              '\n' +
+              'const array = [1, 2, 3, 4, 5]\n' +
+              '\n' +
+              'const promise = filter(array, asyncIsOdd)\n' +
+              'promise.then(console.log) // [1, 3, 5]',
+            position: {
+              start: { line: 68, column: 1, offset: 1991 },
+              end: { line: 75, column: 4, offset: 2185 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'inlineCode',
+                value: 'filter',
+                position: {
+                  start: { line: 77, column: 1, offset: 2187 },
+                  end: { line: 77, column: 9, offset: 2195 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' applies the predicate function to just the values of an object.',
+                position: {
+                  start: { line: 77, column: 9, offset: 2195 },
+                  end: { line: 77, column: 73, offset: 2259 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 77, column: 1, offset: 2187 },
+              end: { line: 77, column: 73, offset: 2259 }
             }
           },
           {
@@ -24758,60 +24986,36 @@ export default [
               '\n' +
               'const obj = { a: 1, b: 2, c: 3, d: 4, e: 5 }\n' +
               '\n' +
-              'console.log(filter(isOdd)(obj)) // { a: 1, c: 3, e: 5 }\n' +
-              'console.log(filter(obj, isOdd)) // { a: 1, c: 3, e: 5 }',
+              'const result = filter(obj, isOdd)\n' +
+              'console.log(result) // { a: 1, c: 3, e: 5 }',
             position: {
-              start: { line: 23, column: 1, offset: 1119 },
-              end: { line: 30, column: 4, offset: 1348 }
+              start: { line: 79, column: 1, offset: 2261 },
+              end: { line: 86, column: 4, offset: 2456 }
             }
           },
           {
             type: 'paragraph',
             children: [
               {
-                type: 'text',
-                value: 'For sets (type ',
-                position: {
-                  start: { line: 32, column: 1, offset: 1350 },
-                  end: { line: 32, column: 16, offset: 1365 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'Set',
-                position: {
-                  start: { line: 32, column: 16, offset: 1365 },
-                  end: { line: 32, column: 21, offset: 1370 }
-                }
-              },
-              {
-                type: 'text',
-                value: '), ',
-                position: {
-                  start: { line: 32, column: 21, offset: 1370 },
-                  end: { line: 32, column: 24, offset: 1373 }
-                }
-              },
-              {
                 type: 'inlineCode',
                 value: 'filter',
                 position: {
-                  start: { line: 32, column: 24, offset: 1373 },
-                  end: { line: 32, column: 32, offset: 1381 }
+                  start: { line: 88, column: 1, offset: 2458 },
+                  end: { line: 88, column: 9, offset: 2466 }
                 }
               },
               {
                 type: 'text',
-                value: ' applies the predicate function to each item in the set, returning a new set containing only the items that tested truthy by the predicate. On each iteration, the predicate is passed the item, the same item as the key argument, and a reference to the set.',
+                value: ' applies the predicate to the values of the entries of a map.',
                 position: {
-                  start: { line: 32, column: 32, offset: 1381 },
-                  end: { line: 32, column: 287, offset: 1636 }
+                  start: { line: 88, column: 9, offset: 2466 },
+                  end: { line: 88, column: 70, offset: 2527 }
                 }
               }
             ],
             position: {
-              start: { line: 32, column: 1, offset: 1350 },
-              end: { line: 32, column: 287, offset: 1636 }
+              start: { line: 88, column: 1, offset: 2458 },
+              end: { line: 88, column: 70, offset: 2527 }
             }
           },
           {
@@ -24820,13 +25024,13 @@ export default [
             meta: '[playground]',
             value: 'const isOdd = number => number % 2 == 1\n' +
               '\n' +
-              'const set = new Set([1, 2, 3, 4, 5])\n' +
+              "const myMap = new Map([['a', 1], ['b', 2], ['c', 3], ['d', 4], ['e', 5]])\n" +
               '\n' +
-              'console.log(filter(isOdd)(set)) // Set { 1, 3, 5 }\n' +
-              'console.log(filter(set, isOdd)) // Set { 1, 3, 5 }',
+              'const result = filter(myMap, isOdd)\n' +
+              "console.log(result) // Map(3) { 'a' => 1, 'c' => 3, 'e' => 5 }",
             position: {
-              start: { line: 34, column: 1, offset: 1638 },
-              end: { line: 41, column: 4, offset: 1849 }
+              start: { line: 90, column: 1, offset: 2529 },
+              end: { line: 97, column: 4, offset: 2774 }
             }
           },
           {
@@ -24834,129 +25038,32 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'For maps (type ',
+                value: 'For generators, ',
                 position: {
-                  start: { line: 43, column: 1, offset: 1851 },
-                  end: { line: 43, column: 16, offset: 1866 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'Map',
-                position: {
-                  start: { line: 43, column: 16, offset: 1866 },
-                  end: { line: 43, column: 21, offset: 1871 }
-                }
-              },
-              {
-                type: 'text',
-                value: '), ',
-                position: {
-                  start: { line: 43, column: 21, offset: 1871 },
-                  end: { line: 43, column: 24, offset: 1874 }
+                  start: { line: 99, column: 1, offset: 2776 },
+                  end: { line: 99, column: 17, offset: 2792 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'filter',
                 position: {
-                  start: { line: 43, column: 24, offset: 1874 },
-                  end: { line: 43, column: 32, offset: 1882 }
+                  start: { line: 99, column: 17, offset: 2792 },
+                  end: { line: 99, column: 25, offset: 2800 }
                 }
               },
               {
                 type: 'text',
-                value: ' applies the predicate function to the value of each entry of the map, returning a new map containing only the entries where the values tested truthy by the predicate. The order of the entries are preserved. On each iteration, the predicate is passed the map value, the key of the value, and a reference to the map.',
+                value: ' returns a lazily filtered generator. All values that are normally yielded by the generator that test false by the predicate are excluded from the returned generator.',
                 position: {
-                  start: { line: 43, column: 32, offset: 1882 },
-                  end: { line: 43, column: 347, offset: 2197 }
+                  start: { line: 99, column: 25, offset: 2800 },
+                  end: { line: 99, column: 191, offset: 2966 }
                 }
               }
             ],
             position: {
-              start: { line: 43, column: 1, offset: 1851 },
-              end: { line: 43, column: 347, offset: 2197 }
-            }
-          },
-          {
-            type: 'code',
-            lang: 'javascript',
-            meta: '[playground]',
-            value: 'const isOdd = number => number % 2 == 1\n' +
-              '\n' +
-              'const obj = { a: 1, b: 2, c: 3, d: 4, e: 5 }\n' +
-              "const m = new Map([['a', 1], ['b', 2], ['c', 3], ['d', 4], ['e', 5]])\n" +
-              '\n' +
-              "console.log(filter(isOdd)(m)) // Map(3) { 'a' => 1, 'c' => 3, 'e' => 5 }\n" +
-              "console.log(filter(m, isOdd)) // Map(3) { 'a' => 1, 'c' => 3, 'e' => 5 }",
-            position: {
-              start: { line: 45, column: 1, offset: 2199 },
-              end: { line: 53, column: 4, offset: 2532 }
-            }
-          },
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: 'For iterators (type ',
-                position: {
-                  start: { line: 55, column: 1, offset: 2534 },
-                  end: { line: 55, column: 21, offset: 2554 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'Iterator',
-                position: {
-                  start: { line: 55, column: 21, offset: 2554 },
-                  end: { line: 55, column: 31, offset: 2564 }
-                }
-              },
-              {
-                type: 'text',
-                value: ') or generators (type ',
-                position: {
-                  start: { line: 55, column: 31, offset: 2564 },
-                  end: { line: 55, column: 53, offset: 2586 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'Generator',
-                position: {
-                  start: { line: 55, column: 53, offset: 2586 },
-                  end: { line: 55, column: 64, offset: 2597 }
-                }
-              },
-              {
-                type: 'text',
-                value: '), ',
-                position: {
-                  start: { line: 55, column: 64, offset: 2597 },
-                  end: { line: 55, column: 67, offset: 2600 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'filter',
-                position: {
-                  start: { line: 55, column: 67, offset: 2600 },
-                  end: { line: 55, column: 75, offset: 2608 }
-                }
-              },
-              {
-                type: 'text',
-                value: ' returns a lazily filtered iterator/generator; all values that are normally yielded by the iterator/generator that test falsy by the predicate function are skipped by the lazily filtered iterator/generator. On each iteration, the predicate is passed the iteration value only.',
-                position: {
-                  start: { line: 55, column: 75, offset: 2608 },
-                  end: { line: 55, column: 350, offset: 2883 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 55, column: 1, offset: 2534 },
-              end: { line: 55, column: 350, offset: 2883 }
+              start: { line: 99, column: 1, offset: 2776 },
+              end: { line: 99, column: 191, offset: 2966 }
             }
           },
           {
@@ -24971,7 +25078,6 @@ export default [
               '\n' +
               'const numbersGenerator = numbersGeneratorFunction()\n' +
               'const oddNumbersGenerator = filter(numbersGeneratorFunction(), isOdd)\n' +
-              'const oddNumbersGenerator2 = filter(isOdd)(numbersGeneratorFunction())\n' +
               '\n' +
               'for (const number of numbersGenerator) {\n' +
               '  console.log(number) // 1\n' +
@@ -24985,16 +25091,10 @@ export default [
               '  console.log(number) // 1\n' +
               '                      // 3\n' +
               '                      // 5\n' +
-              '}\n' +
-              '\n' +
-              'for (const number of oddNumbersGenerator2) {\n' +
-              '  console.log(number) // 1\n' +
-              '                      // 3\n' +
-              '                      // 5\n' +
               '}',
             position: {
-              start: { line: 57, column: 1, offset: 2885 },
-              end: { line: 87, column: 4, offset: 3682 }
+              start: { line: 101, column: 1, offset: 2968 },
+              end: { line: 124, column: 4, offset: 3565 }
             }
           },
           {
@@ -25002,64 +25102,32 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'With asyncIterators (type ',
+                value: 'For async generators, ',
                 position: {
-                  start: { line: 89, column: 1, offset: 3684 },
-                  end: { line: 89, column: 27, offset: 3710 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'AsyncIterator',
-                position: {
-                  start: { line: 89, column: 27, offset: 3710 },
-                  end: { line: 89, column: 42, offset: 3725 }
-                }
-              },
-              {
-                type: 'text',
-                value: ') or asyncGenerators (type ',
-                position: {
-                  start: { line: 89, column: 42, offset: 3725 },
-                  end: { line: 89, column: 69, offset: 3752 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'AsyncGenerator',
-                position: {
-                  start: { line: 89, column: 69, offset: 3752 },
-                  end: { line: 89, column: 85, offset: 3768 }
-                }
-              },
-              {
-                type: 'text',
-                value: '), ',
-                position: {
-                  start: { line: 89, column: 85, offset: 3768 },
-                  end: { line: 89, column: 88, offset: 3771 }
+                  start: { line: 126, column: 1, offset: 3567 },
+                  end: { line: 126, column: 23, offset: 3589 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'filter',
                 position: {
-                  start: { line: 89, column: 88, offset: 3771 },
-                  end: { line: 89, column: 96, offset: 3779 }
+                  start: { line: 126, column: 23, offset: 3589 },
+                  end: { line: 126, column: 31, offset: 3597 }
                 }
               },
               {
                 type: 'text',
-                value: ' returns a lazily filtered asyncIterator/asyncGenerator; all values that are normally yielded by the asyncIterator/asyncGenerator that test falsy by the predicate function are skipped by the lazily filtered asyncIterator/asyncGenerator. On each iteration, the predicate is passed the iteration value only.',
+                value: ' returns a lazily filtered async generator. All values that are normally yielded by the async generator that test falsy by the predicate are excluded from the returned async generator.',
                 position: {
-                  start: { line: 89, column: 96, offset: 3779 },
-                  end: { line: 89, column: 401, offset: 4084 }
+                  start: { line: 126, column: 31, offset: 3597 },
+                  end: { line: 126, column: 215, offset: 3781 }
                 }
               }
             ],
             position: {
-              start: { line: 89, column: 1, offset: 3684 },
-              end: { line: 89, column: 401, offset: 4084 }
+              start: { line: 126, column: 1, offset: 3567 },
+              end: { line: 126, column: 215, offset: 3781 }
             }
           },
           {
@@ -25076,8 +25144,6 @@ export default [
               '\n' +
               'const asyncOddNumbersGenerator = filter(asyncNumbersGeneratorFunction(), asyncIsOdd)\n' +
               '\n' +
-              'const asyncOddNumbersGenerator2 = filter(asyncIsOdd)(asyncNumbersGeneratorFunction())\n' +
-              '\n' +
               'for await (const number of asyncNumbersGenerator) {\n' +
               '  console.log(number) // 1\n' +
               '                      // 2\n' +
@@ -25090,16 +25156,10 @@ export default [
               '  console.log(number) // 1\n' +
               '                      // 3\n' +
               '                      // 5\n' +
-              '}\n' +
-              '\n' +
-              'for await (const number of asyncOddNumbersGenerator2) {\n' +
-              '  console.log(number) // 1\n' +
-              '                      // 3\n' +
-              '                      // 5\n' +
               '}',
             position: {
-              start: { line: 91, column: 1, offset: 4086 },
-              end: { line: 123, column: 4, offset: 4980 }
+              start: { line: 128, column: 1, offset: 3783 },
+              end: { line: 152, column: 4, offset: 4450 }
             }
           },
           {
@@ -25109,14 +25169,14 @@ export default [
                 type: 'text',
                 value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
                 position: {
-                  start: { line: 125, column: 1, offset: 4982 },
-                  end: { line: 125, column: 148, offset: 5129 }
+                  start: { line: 154, column: 1, offset: 4452 },
+                  end: { line: 154, column: 148, offset: 4599 }
                 }
               }
             ],
             position: {
-              start: { line: 125, column: 1, offset: 4982 },
-              end: { line: 125, column: 148, offset: 5129 }
+              start: { line: 154, column: 1, offset: 4452 },
+              end: { line: 154, column: 148, offset: 4599 }
             }
           },
           {
@@ -25128,14 +25188,14 @@ export default [
               'filter(Promise.resolve([1, 2, 3, 4, 5]), isOdd).then(console.log)\n' +
               '// [1, 3, 5]',
             position: {
-              start: { line: 127, column: 1, offset: 5131 },
-              end: { line: 132, column: 4, offset: 5281 }
+              start: { line: 156, column: 1, offset: 4601 },
+              end: { line: 161, column: 4, offset: 4751 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 132, column: 4, offset: 5281 }
+          end: { line: 161, column: 4, offset: 4751 }
         }
       },
       execution: {
@@ -25178,13 +25238,13 @@ export default [
   {
     name: '_flatMap',
     synopsis: '```coffeescript [specscript]\n' +
-      'type FlatMappable = Array|String|Set|Iterator|AsyncIterator\n' +
+      'type Monad = Array|String|Set|Generator|AsyncGenerator\n' +
       'type Iterable = Iterable|AsyncIterable|Object<value any>\n' +
       '\n' +
       '_flatMap(\n' +
-      '  value FlatMappable,\n' +
+      '  m Monad,\n' +
       '  flatMapper (item any)=>Promise|Iterable,\n' +
-      ') -> result Promise|FlatMappable\n' +
+      ') -> result Promise|Monad\n' +
       '```',
     mdast: {
       name: {
@@ -25220,22 +25280,22 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'type FlatMappable = Array|String|Set|Iterator|AsyncIterator\n' +
+            value: 'type Monad = Array|String|Set|Generator|AsyncGenerator\n' +
               'type Iterable = Iterable|AsyncIterable|Object<value any>\n' +
               '\n' +
               '_flatMap(\n' +
-              '  value FlatMappable,\n' +
+              '  m Monad,\n' +
               '  flatMapper (item any)=>Promise|Iterable,\n' +
-              ') -> result Promise|FlatMappable',
+              ') -> result Promise|Monad',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 9, column: 4, offset: 258 }
+              end: { line: 9, column: 4, offset: 235 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 9, column: 4, offset: 258 }
+          end: { line: 9, column: 4, offset: 235 }
         }
       }
     },
@@ -25244,26 +25304,34 @@ export default [
   {
     name: 'flatMap',
     synopsis: '```coffeescript [specscript]\n' +
-      'type FlatMappable = Array|String|Set|Iterator|AsyncIterator\n' +
-      '\n' +
-      'type Iterable = Iterable|AsyncIterable|Object<value any>\n' +
+      'type Monad = Array|String|Set|Generator|AsyncGenerator|{ flatMap: string }|{ chain: string }|Object\n' +
       '\n' +
       'type FlatMapper = (\n' +
       '  item any,\n' +
-      '  indexOrKey string,\n' +
-      '  collection FlatMappable\n' +
-      ')=>Promise|FlatMappable\n' +
+      '  indexOrKey number|string|any,\n' +
+      '  mon Monad\n' +
+      ')=>Promise|Monad|any\n' +
       '\n' +
-      'flatMap(collection FlatMappable, flatMapper FlatMapper) -> result Promise|FlatMappable\n' +
-      'flatMap(flatMapper FlatMapper)(collection FlatMappable) -> result Promise|FlatMappable\n' +
+      'flatMap(mon Monad, flatMapper FlatMapper) -> result Promise|Monad\n' +
+      'flatMap(flatMapper FlatMapper)(mon Monad) -> result Promise|Monad\n' +
       '```',
-    description: 'Applies a flatMapper function concurrently to each item of a collection, creating a new collection of the same type. A flatMapping operation iterates through each item of a collection and applies the flatMapper function to each item, flattening the result of the execution into the result collection. The result of an individual execution can be any iterable, async iterable, or object values iterable collection. The flatMapper function may be asynchronous.\n' +
+    description: 'Applies a flatMapper function to each item of a monad, returning a monad of the same type.\n' +
       '\n' +
-      ' * `Iterable` - the execution result is iterated and each item is added to the result collection\n' +
-      ' * `AsyncIterable` - the execution result is asynchronously iterated and each item is added to the result collection\n' +
-      ' * `Object` - the execution result values are added to the result collection\n' +
+      'A flatMapping operation iterates through each item of a monad and applies the flatMapper function to each item, flattening the result of the execution into the returned monad.\n' +
       '\n' +
-      'The following example demonstrates various execution results being flattened into the same array.\n' +
+      'If the flatMapper is asynchronous, it is executed concurrently. The execution result may be asynchronously iterable, in which case it is muxed into the returned monad.\n' +
+      '\n' +
+      'The following data types are considered to be monads, all are flattenable into other monads:\n' +
+      ' * `array`\n' +
+      ' * `string`\n' +
+      ' * `set`\n' +
+      ' * `genreator`\n' +
+      ' * `async generator`\n' +
+      ' * `object with .flatMap method`\n' +
+      ' * `object with .chain method`\n' +
+      ' * `object`\n' +
+      '\n' +
+      '`flatMap` flattens various data types.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const identity = value => value\n' +
@@ -25271,15 +25339,15 @@ export default [
       'flatMap(identity)([\n' +
       '  [1, 1], // array\n' +
       '  new Set([2, 2]), // set\n' +
-      '  (function* () { yield 3; yield 3 })(), // generator\n' +
-      '  (async function* () { yield 7; yield 7 })(), // asyncGenerator\n' +
+      '  (function* () { yield 3; yield 3 })(),\n' +
+      '  (async function* () { yield 7; yield 7 })(),\n' +
       '  { a: 5, b: 5 }, // object\n' +
       '  new Uint8Array([8]), // typedArray\n' +
       ']).then(console.log)\n' +
       '// [1, 1, 2, 3, 3, 5, 5, 8, 7, 7]\n' +
       '```\n' +
       '\n' +
-      'A flatMapping operation concatenates onto the resulting collection synchronous values and muxes any asynchronous values. Muxing, or asynchronously "mixing", is the process of combining multiple asynchronous sources into one source, with order determined by the asynchronous resolution of the individual items.\n' +
+      'Values from async generators are muxed. Muxing, or asynchronously "mixing", is the process of combining multiple asynchronous sources into one source, with order determined by the asynchronous resolution of the individual items.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))\n' +
@@ -25300,12 +25368,12 @@ export default [
       '  yield message\n' +
       '}\n' +
       '\n' +
-      '// async is muxed\n' +
+      '// values from async generators are muxed\n' +
       "flatMap(['foo', 'bar', 'baz'], asyncRepeat3).then(console.log)\n" +
       "// ['foo', 'bar', 'baz', 'foo', 'bar', 'baz', 'foo', 'bar', 'baz']\n" +
       '```\n' +
       '\n' +
-      'For arrays (type `Array`), `flatMap` applies the flatMapper function to each item, pushing (`.push`) the items of each execution into a new array.\n' +
+      '`flatMap` applies the flatMapper function to each item of an array, flattening the results into a new array.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const duplicate = value => [value, value]\n' +
@@ -25315,7 +25383,7 @@ export default [
       ') // [1, 1, 2, 2, 3, 3, 4, 4, 5, 5]\n' +
       '```\n' +
       '\n' +
-      'For strings (type `String`), `flatMap` applies the flatMapper function to each character, adding (`+`) the items of each execution into a new string\n' +
+      '`flatMap` acts on each character of a string.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const duplicate = value => [value, value]\n' +
@@ -25323,16 +25391,6 @@ export default [
       'console.log(\n' +
       "  flatMap('12345', duplicate)\n" +
       ') // 1122334455\n' +
-      '```\n' +
-      '\n' +
-      'For sets (type `Set`), `flatMap` applies the flatMapper function to each item, adding (`.add`) the items of each execution into a new set\n' +
-      '\n' +
-      '```javascript [playground]\n' +
-      'const pairPlus100 = value => [value, value + 100]\n' +
-      '\n' +
-      'console.log(\n' +
-      '  flatMap(new Set([1, 2, 3, 4, 5]), pairPlus100)\n' +
-      ') // Set(10) { 1, 101, 2, 102, 3, 103, 4, 104, 5, 105 }\n' +
       '```\n' +
       '\n' +
       'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
@@ -25380,27 +25438,25 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'type FlatMappable = Array|String|Set|Iterator|AsyncIterator\n' +
-              '\n' +
-              'type Iterable = Iterable|AsyncIterable|Object<value any>\n' +
+            value: 'type Monad = Array|String|Set|Generator|AsyncGenerator|{ flatMap: string }|{ chain: string }|Object\n' +
               '\n' +
               'type FlatMapper = (\n' +
               '  item any,\n' +
-              '  indexOrKey string,\n' +
-              '  collection FlatMappable\n' +
-              ')=>Promise|FlatMappable\n' +
+              '  indexOrKey number|string|any,\n' +
+              '  mon Monad\n' +
+              ')=>Promise|Monad|any\n' +
               '\n' +
-              'flatMap(collection FlatMappable, flatMapper FlatMapper) -> result Promise|FlatMappable\n' +
-              'flatMap(flatMapper FlatMapper)(collection FlatMappable) -> result Promise|FlatMappable',
+              'flatMap(mon Monad, flatMapper FlatMapper) -> result Promise|Monad\n' +
+              'flatMap(flatMapper FlatMapper)(mon Monad) -> result Promise|Monad',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 14, column: 4, offset: 429 }
+              end: { line: 12, column: 4, offset: 363 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 14, column: 4, offset: 429 }
+          end: { line: 12, column: 4, offset: 363 }
         }
       },
       description: {
@@ -25411,16 +25467,67 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Applies a flatMapper function concurrently to each item of a collection, creating a new collection of the same type. A flatMapping operation iterates through each item of a collection and applies the flatMapper function to each item, flattening the result of the execution into the result collection. The result of an individual execution can be any iterable, async iterable, or object values iterable collection. The flatMapper function may be asynchronous.',
+                value: 'Applies a flatMapper function to each item of a monad, returning a monad of the same type.',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 459, offset: 458 }
+                  end: { line: 1, column: 91, offset: 90 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 459, offset: 458 }
+              end: { line: 1, column: 91, offset: 90 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'A flatMapping operation iterates through each item of a monad and applies the flatMapper function to each item, flattening the result of the execution into the returned monad.',
+                position: {
+                  start: { line: 3, column: 1, offset: 92 },
+                  end: { line: 3, column: 176, offset: 267 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 3, column: 1, offset: 92 },
+              end: { line: 3, column: 176, offset: 267 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If the flatMapper is asynchronous, it is executed concurrently. The execution result may be asynchronously iterable, in which case it is muxed into the returned monad.',
+                position: {
+                  start: { line: 5, column: 1, offset: 269 },
+                  end: { line: 5, column: 168, offset: 436 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 5, column: 1, offset: 269 },
+              end: { line: 5, column: 168, offset: 436 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'The following data types are considered to be monads, all are flattenable into other monads:',
+                position: {
+                  start: { line: 7, column: 1, offset: 438 },
+                  end: { line: 7, column: 93, offset: 530 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 7, column: 1, offset: 438 },
+              end: { line: 7, column: 93, offset: 530 }
             }
           },
           {
@@ -25439,30 +25546,22 @@ export default [
                     children: [
                       {
                         type: 'inlineCode',
-                        value: 'Iterable',
+                        value: 'array',
                         position: {
-                          start: { line: 3, column: 4, offset: 463 },
-                          end: { line: 3, column: 14, offset: 473 }
-                        }
-                      },
-                      {
-                        type: 'text',
-                        value: ' - the execution result is iterated and each item is added to the result collection',
-                        position: {
-                          start: { line: 3, column: 14, offset: 473 },
-                          end: { line: 3, column: 97, offset: 556 }
+                          start: { line: 8, column: 4, offset: 534 },
+                          end: { line: 8, column: 11, offset: 541 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 3, column: 4, offset: 463 },
-                      end: { line: 3, column: 97, offset: 556 }
+                      start: { line: 8, column: 4, offset: 534 },
+                      end: { line: 8, column: 11, offset: 541 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 3, column: 2, offset: 461 },
-                  end: { line: 3, column: 97, offset: 556 }
+                  start: { line: 8, column: 2, offset: 532 },
+                  end: { line: 8, column: 11, offset: 541 }
                 }
               },
               {
@@ -25475,30 +25574,22 @@ export default [
                     children: [
                       {
                         type: 'inlineCode',
-                        value: 'AsyncIterable',
+                        value: 'string',
                         position: {
-                          start: { line: 4, column: 4, offset: 560 },
-                          end: { line: 4, column: 19, offset: 575 }
-                        }
-                      },
-                      {
-                        type: 'text',
-                        value: ' - the execution result is asynchronously iterated and each item is added to the result collection',
-                        position: {
-                          start: { line: 4, column: 19, offset: 575 },
-                          end: { line: 4, column: 117, offset: 673 }
+                          start: { line: 9, column: 4, offset: 545 },
+                          end: { line: 9, column: 12, offset: 553 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 4, column: 4, offset: 560 },
-                      end: { line: 4, column: 117, offset: 673 }
+                      start: { line: 9, column: 4, offset: 545 },
+                      end: { line: 9, column: 12, offset: 553 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 4, column: 2, offset: 558 },
-                  end: { line: 4, column: 117, offset: 673 }
+                  start: { line: 9, column: 2, offset: 543 },
+                  end: { line: 9, column: 12, offset: 553 }
                 }
               },
               {
@@ -25511,53 +25602,193 @@ export default [
                     children: [
                       {
                         type: 'inlineCode',
-                        value: 'Object',
+                        value: 'set',
                         position: {
-                          start: { line: 5, column: 4, offset: 677 },
-                          end: { line: 5, column: 12, offset: 685 }
-                        }
-                      },
-                      {
-                        type: 'text',
-                        value: ' - the execution result values are added to the result collection',
-                        position: {
-                          start: { line: 5, column: 12, offset: 685 },
-                          end: { line: 5, column: 77, offset: 750 }
+                          start: { line: 10, column: 4, offset: 557 },
+                          end: { line: 10, column: 9, offset: 562 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 5, column: 4, offset: 677 },
-                      end: { line: 5, column: 77, offset: 750 }
+                      start: { line: 10, column: 4, offset: 557 },
+                      end: { line: 10, column: 9, offset: 562 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 5, column: 2, offset: 675 },
-                  end: { line: 5, column: 77, offset: 750 }
+                  start: { line: 10, column: 2, offset: 555 },
+                  end: { line: 10, column: 9, offset: 562 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'genreator',
+                        position: {
+                          start: { line: 11, column: 4, offset: 566 },
+                          end: { line: 11, column: 15, offset: 577 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 11, column: 4, offset: 566 },
+                      end: { line: 11, column: 15, offset: 577 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 11, column: 2, offset: 564 },
+                  end: { line: 11, column: 15, offset: 577 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'async generator',
+                        position: {
+                          start: { line: 12, column: 4, offset: 581 },
+                          end: { line: 12, column: 21, offset: 598 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 12, column: 4, offset: 581 },
+                      end: { line: 12, column: 21, offset: 598 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 12, column: 2, offset: 579 },
+                  end: { line: 12, column: 21, offset: 598 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'object with .flatMap method',
+                        position: {
+                          start: { line: 13, column: 4, offset: 602 },
+                          end: { line: 13, column: 33, offset: 631 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 13, column: 4, offset: 602 },
+                      end: { line: 13, column: 33, offset: 631 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 13, column: 2, offset: 600 },
+                  end: { line: 13, column: 33, offset: 631 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'object with .chain method',
+                        position: {
+                          start: { line: 14, column: 4, offset: 635 },
+                          end: { line: 14, column: 31, offset: 662 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 14, column: 4, offset: 635 },
+                      end: { line: 14, column: 31, offset: 662 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 14, column: 2, offset: 633 },
+                  end: { line: 14, column: 31, offset: 662 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'object',
+                        position: {
+                          start: { line: 15, column: 4, offset: 666 },
+                          end: { line: 15, column: 12, offset: 674 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 15, column: 4, offset: 666 },
+                      end: { line: 15, column: 12, offset: 674 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 15, column: 2, offset: 664 },
+                  end: { line: 15, column: 12, offset: 674 }
                 }
               }
             ],
             position: {
-              start: { line: 3, column: 2, offset: 461 },
-              end: { line: 5, column: 77, offset: 750 }
+              start: { line: 8, column: 2, offset: 532 },
+              end: { line: 15, column: 12, offset: 674 }
             }
           },
           {
             type: 'paragraph',
             children: [
               {
-                type: 'text',
-                value: 'The following example demonstrates various execution results being flattened into the same array.',
+                type: 'inlineCode',
+                value: 'flatMap',
                 position: {
-                  start: { line: 7, column: 1, offset: 752 },
-                  end: { line: 7, column: 98, offset: 849 }
+                  start: { line: 17, column: 1, offset: 676 },
+                  end: { line: 17, column: 10, offset: 685 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' flattens various data types.',
+                position: {
+                  start: { line: 17, column: 10, offset: 685 },
+                  end: { line: 17, column: 39, offset: 714 }
                 }
               }
             ],
             position: {
-              start: { line: 7, column: 1, offset: 752 },
-              end: { line: 7, column: 98, offset: 849 }
+              start: { line: 17, column: 1, offset: 676 },
+              end: { line: 17, column: 39, offset: 714 }
             }
           },
           {
@@ -25569,15 +25800,15 @@ export default [
               'flatMap(identity)([\n' +
               '  [1, 1], // array\n' +
               '  new Set([2, 2]), // set\n' +
-              '  (function* () { yield 3; yield 3 })(), // generator\n' +
-              '  (async function* () { yield 7; yield 7 })(), // asyncGenerator\n' +
+              '  (function* () { yield 3; yield 3 })(),\n' +
+              '  (async function* () { yield 7; yield 7 })(),\n' +
               '  { a: 5, b: 5 }, // object\n' +
               '  new Uint8Array([8]), // typedArray\n' +
               ']).then(console.log)\n' +
               '// [1, 1, 2, 3, 3, 5, 5, 8, 7, 7]',
             position: {
-              start: { line: 9, column: 1, offset: 851 },
-              end: { line: 21, column: 4, offset: 1218 }
+              start: { line: 19, column: 1, offset: 716 },
+              end: { line: 31, column: 4, offset: 1052 }
             }
           },
           {
@@ -25585,16 +25816,16 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'A flatMapping operation concatenates onto the resulting collection synchronous values and muxes any asynchronous values. Muxing, or asynchronously "mixing", is the process of combining multiple asynchronous sources into one source, with order determined by the asynchronous resolution of the individual items.',
+                value: 'Values from async generators are muxed. Muxing, or asynchronously "mixing", is the process of combining multiple asynchronous sources into one source, with order determined by the asynchronous resolution of the individual items.',
                 position: {
-                  start: { line: 23, column: 1, offset: 1220 },
-                  end: { line: 23, column: 310, offset: 1529 }
+                  start: { line: 33, column: 1, offset: 1054 },
+                  end: { line: 33, column: 229, offset: 1282 }
                 }
               }
             ],
             position: {
-              start: { line: 23, column: 1, offset: 1220 },
-              end: { line: 23, column: 310, offset: 1529 }
+              start: { line: 33, column: 1, offset: 1054 },
+              end: { line: 33, column: 229, offset: 1282 }
             }
           },
           {
@@ -25619,77 +25850,37 @@ export default [
               '  yield message\n' +
               '}\n' +
               '\n' +
-              '// async is muxed\n' +
+              '// values from async generators are muxed\n' +
               "flatMap(['foo', 'bar', 'baz'], asyncRepeat3).then(console.log)\n" +
               "// ['foo', 'bar', 'baz', 'foo', 'bar', 'baz', 'foo', 'bar', 'baz']",
             position: {
-              start: { line: 25, column: 1, offset: 1531 },
-              end: { line: 47, column: 4, offset: 2154 }
+              start: { line: 35, column: 1, offset: 1284 },
+              end: { line: 57, column: 4, offset: 1931 }
             }
           },
           {
             type: 'paragraph',
             children: [
               {
-                type: 'text',
-                value: 'For arrays (type ',
-                position: {
-                  start: { line: 49, column: 1, offset: 2156 },
-                  end: { line: 49, column: 18, offset: 2173 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'Array',
-                position: {
-                  start: { line: 49, column: 18, offset: 2173 },
-                  end: { line: 49, column: 25, offset: 2180 }
-                }
-              },
-              {
-                type: 'text',
-                value: '), ',
-                position: {
-                  start: { line: 49, column: 25, offset: 2180 },
-                  end: { line: 49, column: 28, offset: 2183 }
-                }
-              },
-              {
                 type: 'inlineCode',
                 value: 'flatMap',
                 position: {
-                  start: { line: 49, column: 28, offset: 2183 },
-                  end: { line: 49, column: 37, offset: 2192 }
+                  start: { line: 59, column: 1, offset: 1933 },
+                  end: { line: 59, column: 10, offset: 1942 }
                 }
               },
               {
                 type: 'text',
-                value: ' applies the flatMapper function to each item, pushing (',
+                value: ' applies the flatMapper function to each item of an array, flattening the results into a new array.',
                 position: {
-                  start: { line: 49, column: 37, offset: 2192 },
-                  end: { line: 49, column: 93, offset: 2248 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: '.push',
-                position: {
-                  start: { line: 49, column: 93, offset: 2248 },
-                  end: { line: 49, column: 100, offset: 2255 }
-                }
-              },
-              {
-                type: 'text',
-                value: ') the items of each execution into a new array.',
-                position: {
-                  start: { line: 49, column: 100, offset: 2255 },
-                  end: { line: 49, column: 147, offset: 2302 }
+                  start: { line: 59, column: 10, offset: 1942 },
+                  end: { line: 59, column: 109, offset: 2041 }
                 }
               }
             ],
             position: {
-              start: { line: 49, column: 1, offset: 2156 },
-              end: { line: 49, column: 147, offset: 2302 }
+              start: { line: 59, column: 1, offset: 1933 },
+              end: { line: 59, column: 109, offset: 2041 }
             }
           },
           {
@@ -25702,73 +25893,33 @@ export default [
               '  flatMap([1, 2, 3, 4, 5], duplicate)\n' +
               ') // [1, 1, 2, 2, 3, 3, 4, 4, 5, 5]',
             position: {
-              start: { line: 51, column: 1, offset: 2304 },
-              end: { line: 57, column: 4, offset: 2464 }
+              start: { line: 61, column: 1, offset: 2043 },
+              end: { line: 67, column: 4, offset: 2203 }
             }
           },
           {
             type: 'paragraph',
             children: [
               {
-                type: 'text',
-                value: 'For strings (type ',
-                position: {
-                  start: { line: 59, column: 1, offset: 2466 },
-                  end: { line: 59, column: 19, offset: 2484 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'String',
-                position: {
-                  start: { line: 59, column: 19, offset: 2484 },
-                  end: { line: 59, column: 27, offset: 2492 }
-                }
-              },
-              {
-                type: 'text',
-                value: '), ',
-                position: {
-                  start: { line: 59, column: 27, offset: 2492 },
-                  end: { line: 59, column: 30, offset: 2495 }
-                }
-              },
-              {
                 type: 'inlineCode',
                 value: 'flatMap',
                 position: {
-                  start: { line: 59, column: 30, offset: 2495 },
-                  end: { line: 59, column: 39, offset: 2504 }
+                  start: { line: 69, column: 1, offset: 2205 },
+                  end: { line: 69, column: 10, offset: 2214 }
                 }
               },
               {
                 type: 'text',
-                value: ' applies the flatMapper function to each character, adding (',
+                value: ' acts on each character of a string.',
                 position: {
-                  start: { line: 59, column: 39, offset: 2504 },
-                  end: { line: 59, column: 99, offset: 2564 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: '+',
-                position: {
-                  start: { line: 59, column: 99, offset: 2564 },
-                  end: { line: 59, column: 102, offset: 2567 }
-                }
-              },
-              {
-                type: 'text',
-                value: ') the items of each execution into a new string',
-                position: {
-                  start: { line: 59, column: 102, offset: 2567 },
-                  end: { line: 59, column: 149, offset: 2614 }
+                  start: { line: 69, column: 10, offset: 2214 },
+                  end: { line: 69, column: 46, offset: 2250 }
                 }
               }
             ],
             position: {
-              start: { line: 59, column: 1, offset: 2466 },
-              end: { line: 59, column: 149, offset: 2614 }
+              start: { line: 69, column: 1, offset: 2205 },
+              end: { line: 69, column: 46, offset: 2250 }
             }
           },
           {
@@ -25781,87 +25932,8 @@ export default [
               "  flatMap('12345', duplicate)\n" +
               ') // 1122334455',
             position: {
-              start: { line: 61, column: 1, offset: 2616 },
-              end: { line: 67, column: 4, offset: 2748 }
-            }
-          },
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: 'For sets (type ',
-                position: {
-                  start: { line: 69, column: 1, offset: 2750 },
-                  end: { line: 69, column: 16, offset: 2765 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'Set',
-                position: {
-                  start: { line: 69, column: 16, offset: 2765 },
-                  end: { line: 69, column: 21, offset: 2770 }
-                }
-              },
-              {
-                type: 'text',
-                value: '), ',
-                position: {
-                  start: { line: 69, column: 21, offset: 2770 },
-                  end: { line: 69, column: 24, offset: 2773 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'flatMap',
-                position: {
-                  start: { line: 69, column: 24, offset: 2773 },
-                  end: { line: 69, column: 33, offset: 2782 }
-                }
-              },
-              {
-                type: 'text',
-                value: ' applies the flatMapper function to each item, adding (',
-                position: {
-                  start: { line: 69, column: 33, offset: 2782 },
-                  end: { line: 69, column: 88, offset: 2837 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: '.add',
-                position: {
-                  start: { line: 69, column: 88, offset: 2837 },
-                  end: { line: 69, column: 94, offset: 2843 }
-                }
-              },
-              {
-                type: 'text',
-                value: ') the items of each execution into a new set',
-                position: {
-                  start: { line: 69, column: 94, offset: 2843 },
-                  end: { line: 69, column: 138, offset: 2887 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 69, column: 1, offset: 2750 },
-              end: { line: 69, column: 138, offset: 2887 }
-            }
-          },
-          {
-            type: 'code',
-            lang: 'javascript',
-            meta: '[playground]',
-            value: 'const pairPlus100 = value => [value, value + 100]\n' +
-              '\n' +
-              'console.log(\n' +
-              '  flatMap(new Set([1, 2, 3, 4, 5]), pairPlus100)\n' +
-              ') // Set(10) { 1, 101, 2, 102, 3, 103, 4, 104, 5, 105 }',
-            position: {
-              start: { line: 71, column: 1, offset: 2889 },
-              end: { line: 77, column: 4, offset: 3088 }
+              start: { line: 71, column: 1, offset: 2252 },
+              end: { line: 77, column: 4, offset: 2384 }
             }
           },
           {
@@ -25871,14 +25943,14 @@ export default [
                 type: 'text',
                 value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
                 position: {
-                  start: { line: 79, column: 1, offset: 3090 },
-                  end: { line: 79, column: 148, offset: 3237 }
+                  start: { line: 79, column: 1, offset: 2386 },
+                  end: { line: 79, column: 148, offset: 2533 }
                 }
               }
             ],
             position: {
-              start: { line: 79, column: 1, offset: 3090 },
-              end: { line: 79, column: 148, offset: 3237 }
+              start: { line: 79, column: 1, offset: 2386 },
+              end: { line: 79, column: 148, offset: 2533 }
             }
           },
           {
@@ -25888,14 +25960,14 @@ export default [
             value: 'flatMap(Promise.resolve([1, 2, 3, 4, 5]), n => [n, n]).then(console.log)\n' +
               '// [1, 1, 2, 2, 3, 3, 4, 4, 5, 5]',
             position: {
-              start: { line: 81, column: 1, offset: 3239 },
-              end: { line: 84, column: 4, offset: 3376 }
+              start: { line: 81, column: 1, offset: 2535 },
+              end: { line: 84, column: 4, offset: 2672 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 84, column: 4, offset: 3376 }
+          end: { line: 84, column: 4, offset: 2672 }
         }
       },
       execution: {
@@ -26160,18 +26232,84 @@ export default [
   {
     name: 'forEach',
     synopsis: '```coffeescript [specscript]\n' +
-      'type Collection = Array|Iterable|AsyncIterable|{ forEach: function }|Object\n' +
+      'type Iterable = Array|Set|Map|Generator|AsyncGenerator|{ forEach: function }|Object\n' +
       '\n' +
-      'forEach(collection Collection, callback function) -> collection Promise|Collection\n' +
+      'type Callback = (\n' +
+      '  item any,\n' +
+      '  indexOrKey number|string|any,\n' +
+      '  iter Iterable\n' +
+      ')=>Promise|undefined\n' +
       '\n' +
-      'forEach(callback function)(collection Collection) -> collection Promise|Collection\n' +
+      'forEach(iter Iterable, cb Callback) -> iter Promise|Iterable\n' +
+      '\n' +
+      'forEach(cb Callback)(iter Iterable) -> iter Promise|Iterable\n' +
       '```',
-    description: 'Execute a callback for each item of a collection, returning a Promise if the execution is asynchronous. Asynchronous execution happens concurrently.\n' +
+    description: 'Execute a callback function for each item of an iterable, returning the original iterable unmodified.\n' +
+      '\n' +
+      'The following data types are considered to be iterables:\n' +
+      ' * `array`\n' +
+      ' * `set`\n' +
+      ' * `map`\n' +
+      ' * `generator`\n' +
+      ' * `async generator`\n' +
+      ' * `object with .forEach method`\n' +
+      ' * `object`\n' +
+      '\n' +
+      'The callback function signature changes depending on the provided iterable.\n' +
+      '\n' +
+      'If the iterable is an array:\n' +
+      '```coffeescript [specscript]\n' +
+      'callback(item any, index number, iter Array) -> Promise|undefined\n' +
+      '```\n' +
+      '\n' +
+      'If the iterable is a set:\n' +
+      '```coffeescript [specscript]\n' +
+      'callback(item any, key any, iter Set) -> Promise|undefined\n' +
+      '```\n' +
+      '\n' +
+      'If the iterable is a map:\n' +
+      '```coffeescript [specscript]\n' +
+      'callback(item any, key any, filt Map) -> Promise|undefined\n' +
+      '```\n' +
+      '\n' +
+      'If the iterable is a generator:\n' +
+      '```coffeescript [specscript]\n' +
+      'callback(item any) -> Promise|undefined\n' +
+      '```\n' +
+      '\n' +
+      'If the iterable is an async generator:\n' +
+      '```coffeescript [specscript]\n' +
+      'callback(item any) -> Promise|undefined\n' +
+      '```\n' +
+      '\n' +
+      'If the iterable is an object with a `.forEach` method, the callback function signature is defined externally.\n' +
+      '\n' +
+      'If the iterable is a plain object:\n' +
+      '```coffeescript [specscript]\n' +
+      'callback(item any, key string, iter Object) -> Promise|undefined\n' +
+      '```\n' +
+      '\n' +
+      'If the callback function is asynchronous, it is executed concurrently.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      'forEach([1, 2, 3, 4, 5], console.log) // 1 2 3 4 5\n' +
+      'forEach([1, 2, 3, 4, 5], async number => {\n' +
+      '  await new Promise(resolve => {\n' +
+      '    setTimeout(resolve, 1000)\n' +
+      '  })\n' +
+      '  console.log(number)\n' +
+      '})\n' +
+      '```\n' +
       '\n' +
-      'forEach({ a: 1, b: 2, c: 3 }, console.log) // 1 2 3\n' +
+      '`forEach` works for arrays.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'forEach([1, 2, 3, 4, 5], num => console.log(num)) // 1 2 3 4 5\n' +
+      '```\n' +
+      '\n' +
+      '`forEach` works for objects.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'forEach({ a: 1, b: 2, c: 3 }, num => console.log(num)) // 1 2 3\n' +
       '```\n' +
       '\n' +
       'Omit the data argument for a composable API\n' +
@@ -26228,20 +26366,26 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'type Collection = Array|Iterable|AsyncIterable|{ forEach: function }|Object\n' +
+            value: 'type Iterable = Array|Set|Map|Generator|AsyncGenerator|{ forEach: function }|Object\n' +
               '\n' +
-              'forEach(collection Collection, callback function) -> collection Promise|Collection\n' +
+              'type Callback = (\n' +
+              '  item any,\n' +
+              '  indexOrKey number|string|any,\n' +
+              '  iter Iterable\n' +
+              ')=>Promise|undefined\n' +
               '\n' +
-              'forEach(callback function)(collection Collection) -> collection Promise|Collection',
+              'forEach(iter Iterable, cb Callback) -> iter Promise|Iterable\n' +
+              '\n' +
+              'forEach(cb Callback)(iter Iterable) -> iter Promise|Iterable',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 7, column: 4, offset: 276 }
+              end: { line: 13, column: 4, offset: 340 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 7, column: 4, offset: 276 }
+          end: { line: 13, column: 4, offset: 340 }
         }
       },
       description: {
@@ -26252,28 +26396,555 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Execute a callback for each item of a collection, returning a Promise if the execution is asynchronous. Asynchronous execution happens concurrently.',
+                value: 'Execute a callback function for each item of an iterable, returning the original iterable unmodified.',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 149, offset: 148 }
+                  end: { line: 1, column: 102, offset: 101 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 149, offset: 148 }
+              end: { line: 1, column: 102, offset: 101 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'The following data types are considered to be iterables:',
+                position: {
+                  start: { line: 3, column: 1, offset: 103 },
+                  end: { line: 3, column: 57, offset: 159 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 3, column: 1, offset: 103 },
+              end: { line: 3, column: 57, offset: 159 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'array',
+                        position: {
+                          start: { line: 4, column: 4, offset: 163 },
+                          end: { line: 4, column: 11, offset: 170 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 4, column: 4, offset: 163 },
+                      end: { line: 4, column: 11, offset: 170 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 4, column: 2, offset: 161 },
+                  end: { line: 4, column: 11, offset: 170 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'set',
+                        position: {
+                          start: { line: 5, column: 4, offset: 174 },
+                          end: { line: 5, column: 9, offset: 179 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 5, column: 4, offset: 174 },
+                      end: { line: 5, column: 9, offset: 179 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 5, column: 2, offset: 172 },
+                  end: { line: 5, column: 9, offset: 179 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'map',
+                        position: {
+                          start: { line: 6, column: 4, offset: 183 },
+                          end: { line: 6, column: 9, offset: 188 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 6, column: 4, offset: 183 },
+                      end: { line: 6, column: 9, offset: 188 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 6, column: 2, offset: 181 },
+                  end: { line: 6, column: 9, offset: 188 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'generator',
+                        position: {
+                          start: { line: 7, column: 4, offset: 192 },
+                          end: { line: 7, column: 15, offset: 203 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 7, column: 4, offset: 192 },
+                      end: { line: 7, column: 15, offset: 203 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 7, column: 2, offset: 190 },
+                  end: { line: 7, column: 15, offset: 203 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'async generator',
+                        position: {
+                          start: { line: 8, column: 4, offset: 207 },
+                          end: { line: 8, column: 21, offset: 224 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 8, column: 4, offset: 207 },
+                      end: { line: 8, column: 21, offset: 224 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 8, column: 2, offset: 205 },
+                  end: { line: 8, column: 21, offset: 224 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'object with .forEach method',
+                        position: {
+                          start: { line: 9, column: 4, offset: 228 },
+                          end: { line: 9, column: 33, offset: 257 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 9, column: 4, offset: 228 },
+                      end: { line: 9, column: 33, offset: 257 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 9, column: 2, offset: 226 },
+                  end: { line: 9, column: 33, offset: 257 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'object',
+                        position: {
+                          start: { line: 10, column: 4, offset: 261 },
+                          end: { line: 10, column: 12, offset: 269 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 10, column: 4, offset: 261 },
+                      end: { line: 10, column: 12, offset: 269 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 10, column: 2, offset: 259 },
+                  end: { line: 10, column: 12, offset: 269 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 4, column: 2, offset: 161 },
+              end: { line: 10, column: 12, offset: 269 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'The callback function signature changes depending on the provided iterable.',
+                position: {
+                  start: { line: 12, column: 1, offset: 271 },
+                  end: { line: 12, column: 76, offset: 346 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 12, column: 1, offset: 271 },
+              end: { line: 12, column: 76, offset: 346 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If the iterable is an array:',
+                position: {
+                  start: { line: 14, column: 1, offset: 348 },
+                  end: { line: 14, column: 29, offset: 376 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 14, column: 1, offset: 348 },
+              end: { line: 14, column: 29, offset: 376 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'callback(item any, index number, iter Array) -> Promise|undefined',
+            position: {
+              start: { line: 15, column: 1, offset: 377 },
+              end: { line: 17, column: 4, offset: 475 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If the iterable is a set:',
+                position: {
+                  start: { line: 19, column: 1, offset: 477 },
+                  end: { line: 19, column: 26, offset: 502 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 19, column: 1, offset: 477 },
+              end: { line: 19, column: 26, offset: 502 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'callback(item any, key any, iter Set) -> Promise|undefined',
+            position: {
+              start: { line: 20, column: 1, offset: 503 },
+              end: { line: 22, column: 4, offset: 594 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If the iterable is a map:',
+                position: {
+                  start: { line: 24, column: 1, offset: 596 },
+                  end: { line: 24, column: 26, offset: 621 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 24, column: 1, offset: 596 },
+              end: { line: 24, column: 26, offset: 621 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'callback(item any, key any, filt Map) -> Promise|undefined',
+            position: {
+              start: { line: 25, column: 1, offset: 622 },
+              end: { line: 27, column: 4, offset: 713 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If the iterable is a generator:',
+                position: {
+                  start: { line: 29, column: 1, offset: 715 },
+                  end: { line: 29, column: 32, offset: 746 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 29, column: 1, offset: 715 },
+              end: { line: 29, column: 32, offset: 746 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'callback(item any) -> Promise|undefined',
+            position: {
+              start: { line: 30, column: 1, offset: 747 },
+              end: { line: 32, column: 4, offset: 819 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If the iterable is an async generator:',
+                position: {
+                  start: { line: 34, column: 1, offset: 821 },
+                  end: { line: 34, column: 39, offset: 859 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 34, column: 1, offset: 821 },
+              end: { line: 34, column: 39, offset: 859 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'callback(item any) -> Promise|undefined',
+            position: {
+              start: { line: 35, column: 1, offset: 860 },
+              end: { line: 37, column: 4, offset: 932 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If the iterable is an object with a ',
+                position: {
+                  start: { line: 39, column: 1, offset: 934 },
+                  end: { line: 39, column: 37, offset: 970 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: '.forEach',
+                position: {
+                  start: { line: 39, column: 37, offset: 970 },
+                  end: { line: 39, column: 47, offset: 980 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' method, the callback function signature is defined externally.',
+                position: {
+                  start: { line: 39, column: 47, offset: 980 },
+                  end: { line: 39, column: 110, offset: 1043 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 39, column: 1, offset: 934 },
+              end: { line: 39, column: 110, offset: 1043 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If the iterable is a plain object:',
+                position: {
+                  start: { line: 41, column: 1, offset: 1045 },
+                  end: { line: 41, column: 35, offset: 1079 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 41, column: 1, offset: 1045 },
+              end: { line: 41, column: 35, offset: 1079 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'callback(item any, key string, iter Object) -> Promise|undefined',
+            position: {
+              start: { line: 42, column: 1, offset: 1080 },
+              end: { line: 44, column: 4, offset: 1177 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If the callback function is asynchronous, it is executed concurrently.',
+                position: {
+                  start: { line: 46, column: 1, offset: 1179 },
+                  end: { line: 46, column: 71, offset: 1249 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 46, column: 1, offset: 1179 },
+              end: { line: 46, column: 71, offset: 1249 }
             }
           },
           {
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: 'forEach([1, 2, 3, 4, 5], console.log) // 1 2 3 4 5\n' +
-              '\n' +
-              'forEach({ a: 1, b: 2, c: 3 }, console.log) // 1 2 3',
+            value: 'forEach([1, 2, 3, 4, 5], async number => {\n' +
+              '  await new Promise(resolve => {\n' +
+              '    setTimeout(resolve, 1000)\n' +
+              '  })\n' +
+              '  console.log(number)\n' +
+              '})',
             position: {
-              start: { line: 3, column: 1, offset: 150 },
-              end: { line: 7, column: 4, offset: 284 }
+              start: { line: 48, column: 1, offset: 1251 },
+              end: { line: 55, column: 4, offset: 1417 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'inlineCode',
+                value: 'forEach',
+                position: {
+                  start: { line: 57, column: 1, offset: 1419 },
+                  end: { line: 57, column: 10, offset: 1428 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' works for arrays.',
+                position: {
+                  start: { line: 57, column: 10, offset: 1428 },
+                  end: { line: 57, column: 28, offset: 1446 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 57, column: 1, offset: 1419 },
+              end: { line: 57, column: 28, offset: 1446 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'forEach([1, 2, 3, 4, 5], num => console.log(num)) // 1 2 3 4 5',
+            position: {
+              start: { line: 59, column: 1, offset: 1448 },
+              end: { line: 61, column: 4, offset: 1541 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'inlineCode',
+                value: 'forEach',
+                position: {
+                  start: { line: 63, column: 1, offset: 1543 },
+                  end: { line: 63, column: 10, offset: 1552 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' works for objects.',
+                position: {
+                  start: { line: 63, column: 10, offset: 1552 },
+                  end: { line: 63, column: 29, offset: 1571 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 63, column: 1, offset: 1543 },
+              end: { line: 63, column: 29, offset: 1571 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'forEach({ a: 1, b: 2, c: 3 }, num => console.log(num)) // 1 2 3',
+            position: {
+              start: { line: 65, column: 1, offset: 1573 },
+              end: { line: 67, column: 4, offset: 1667 }
             }
           },
           {
@@ -26283,14 +26954,14 @@ export default [
                 type: 'text',
                 value: 'Omit the data argument for a composable API',
                 position: {
-                  start: { line: 9, column: 1, offset: 286 },
-                  end: { line: 9, column: 44, offset: 329 }
+                  start: { line: 69, column: 1, offset: 1669 },
+                  end: { line: 69, column: 44, offset: 1712 }
                 }
               }
             ],
             position: {
-              start: { line: 9, column: 1, offset: 286 },
-              end: { line: 9, column: 44, offset: 329 }
+              start: { line: 69, column: 1, offset: 1669 },
+              end: { line: 69, column: 44, offset: 1712 }
             }
           },
           {
@@ -26305,8 +26976,8 @@ export default [
               '                        // 25\n' +
               '])',
             position: {
-              start: { line: 11, column: 1, offset: 331 },
-              end: { line: 19, column: 4, offset: 543 }
+              start: { line: 71, column: 1, offset: 1714 },
+              end: { line: 79, column: 4, offset: 1926 }
             }
           },
           {
@@ -26316,14 +26987,14 @@ export default [
                 type: 'text',
                 value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
                 position: {
-                  start: { line: 21, column: 1, offset: 545 },
-                  end: { line: 21, column: 148, offset: 692 }
+                  start: { line: 81, column: 1, offset: 1928 },
+                  end: { line: 81, column: 148, offset: 2075 }
                 }
               }
             ],
             position: {
-              start: { line: 21, column: 1, offset: 545 },
-              end: { line: 21, column: 148, offset: 692 }
+              start: { line: 81, column: 1, offset: 1928 },
+              end: { line: 81, column: 148, offset: 2075 }
             }
           },
           {
@@ -26332,14 +27003,14 @@ export default [
             meta: '[playground]',
             value: 'forEach(Promise.resolve([1, 2, 3]), console.log)\n// 1\n// 2\n// 3',
             position: {
-              start: { line: 23, column: 1, offset: 694 },
-              end: { line: 28, column: 4, offset: 788 }
+              start: { line: 83, column: 1, offset: 2077 },
+              end: { line: 88, column: 4, offset: 2171 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 28, column: 4, offset: 788 }
+          end: { line: 88, column: 4, offset: 2171 }
         }
       }
     },
@@ -26406,18 +27077,32 @@ export default [
   {
     name: 'forEach.series',
     synopsis: '```coffeescript [specscript]\n' +
-      'type Collection = Array|Iterable|AsyncIterable|{ forEach: function }|Object\n' +
+      'type Iterable = Array|Set|Map|Generator|AsyncGenerator|{ forEach: function }|Object\n' +
       '\n' +
-      'forEach.series(collection Collection, callback function) -> collection Promise|Collection\n' +
+      'type Callback = (\n' +
+      '  item any,\n' +
+      '  indexOrKey number|string|any,\n' +
+      '  iter Iterable\n' +
+      ')=>Promise|undefined\n' +
       '\n' +
-      'forEach.series(callback function)(collection Collection) -> collection Promise|Collection\n' +
+      'forEach(iter Iterable, cb Callback) -> iter Promise|Iterable\n' +
+      '\n' +
+      'forEach(cb Callback)(iter Iterable) -> iter Promise|Iterable\n' +
       '```',
-    description: 'Execute a callback for each item of a collection, returning a Promise if the execution is asynchronous. Asynchronous execution happens in series.\n' +
+    description: '[forEach](/docs/forEach) with serial execution.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      'forEach.series([1, 2, 3, 4, 5], console.log) // 1 2 3 4 5\n' +
-      '\n' +
-      'forEach.series({ a: 1, b: 2, c: 3 }, console.log) // 1 2 3\n' +
+      'forEach.series([1, 2, 3, 4, 5], async number => {\n' +
+      '  await new Promise(resolve => {\n' +
+      '    setTimeout(resolve, 1000)\n' +
+      '  })\n' +
+      '  console.log(number)\n' +
+      '  // 1\n' +
+      '  // 2\n' +
+      '  // 3\n' +
+      '  // 4\n' +
+      '  // 5\n' +
+      '})\n' +
       '```\n' +
       '\n' +
       'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
@@ -26462,20 +27147,26 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'type Collection = Array|Iterable|AsyncIterable|{ forEach: function }|Object\n' +
+            value: 'type Iterable = Array|Set|Map|Generator|AsyncGenerator|{ forEach: function }|Object\n' +
               '\n' +
-              'forEach.series(collection Collection, callback function) -> collection Promise|Collection\n' +
+              'type Callback = (\n' +
+              '  item any,\n' +
+              '  indexOrKey number|string|any,\n' +
+              '  iter Iterable\n' +
+              ')=>Promise|undefined\n' +
               '\n' +
-              'forEach.series(callback function)(collection Collection) -> collection Promise|Collection',
+              'forEach(iter Iterable, cb Callback) -> iter Promise|Iterable\n' +
+              '\n' +
+              'forEach(cb Callback)(iter Iterable) -> iter Promise|Iterable',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 7, column: 4, offset: 290 }
+              end: { line: 13, column: 4, offset: 340 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 7, column: 4, offset: 290 }
+          end: { line: 13, column: 4, offset: 340 }
         }
       },
       description: {
@@ -26485,29 +27176,56 @@ export default [
             type: 'paragraph',
             children: [
               {
-                type: 'text',
-                value: 'Execute a callback for each item of a collection, returning a Promise if the execution is asynchronous. Asynchronous execution happens in series.',
+                type: 'link',
+                title: null,
+                url: '/docs/forEach',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'forEach',
+                    position: {
+                      start: { line: 1, column: 2, offset: 1 },
+                      end: { line: 1, column: 9, offset: 8 }
+                    }
+                  }
+                ],
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 146, offset: 145 }
+                  end: { line: 1, column: 25, offset: 24 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' with serial execution.',
+                position: {
+                  start: { line: 1, column: 25, offset: 24 },
+                  end: { line: 1, column: 48, offset: 47 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 146, offset: 145 }
+              end: { line: 1, column: 48, offset: 47 }
             }
           },
           {
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: 'forEach.series([1, 2, 3, 4, 5], console.log) // 1 2 3 4 5\n' +
-              '\n' +
-              'forEach.series({ a: 1, b: 2, c: 3 }, console.log) // 1 2 3',
+            value: 'forEach.series([1, 2, 3, 4, 5], async number => {\n' +
+              '  await new Promise(resolve => {\n' +
+              '    setTimeout(resolve, 1000)\n' +
+              '  })\n' +
+              '  console.log(number)\n' +
+              '  // 1\n' +
+              '  // 2\n' +
+              '  // 3\n' +
+              '  // 4\n' +
+              '  // 5\n' +
+              '})',
             position: {
-              start: { line: 3, column: 1, offset: 147 },
-              end: { line: 7, column: 4, offset: 295 }
+              start: { line: 3, column: 1, offset: 49 },
+              end: { line: 15, column: 4, offset: 257 }
             }
           },
           {
@@ -26517,14 +27235,14 @@ export default [
                 type: 'text',
                 value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
                 position: {
-                  start: { line: 9, column: 1, offset: 297 },
-                  end: { line: 9, column: 148, offset: 444 }
+                  start: { line: 17, column: 1, offset: 259 },
+                  end: { line: 17, column: 148, offset: 406 }
                 }
               }
             ],
             position: {
-              start: { line: 9, column: 1, offset: 297 },
-              end: { line: 9, column: 148, offset: 444 }
+              start: { line: 17, column: 1, offset: 259 },
+              end: { line: 17, column: 148, offset: 406 }
             }
           },
           {
@@ -26536,14 +27254,14 @@ export default [
               '// 2\n' +
               '// 3',
             position: {
-              start: { line: 11, column: 1, offset: 446 },
-              end: { line: 16, column: 4, offset: 547 }
+              start: { line: 19, column: 1, offset: 408 },
+              end: { line: 24, column: 4, offset: 509 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 16, column: 4, offset: 547 }
+          end: { line: 24, column: 4, offset: 509 }
         }
       }
     },
@@ -28191,91 +28909,116 @@ export default [
   {
     name: 'map',
     synopsis: '```coffeescript [specscript]\n' +
-      'type Mappable = Array|Object|Set|Map|Iterator|AsyncIterator\n' +
+      'type Functor = Array|Set|Map|Generator|AsyncGenerator|{ map: function }|Object\n' +
       '\n' +
       'type Mapper = (\n' +
-      '  value any,\n' +
+      '  item any,\n' +
       '  indexOrKey number|string|any,\n' +
-      '  collection Mappable\n' +
+      '  ftor Functor\n' +
       ')=>(resultItem Promise|any)\n' +
       '\n' +
-      'map(collection Promise|Mappable, f Mapper) -> result Promise|Mappable\n' +
-      'map(f Mapper)(collection Mappable) -> result Promise|Mappable\n' +
+      'map(ftor Promise|Functor, mapper Mapper) -> result Promise|Functor\n' +
+      'map(mapper Mapper)(ftor Functor) -> result Promise|Functor\n' +
       '```',
-    description: 'Applies a synchronous or asynchronous mapper function `f` concurrently to each item of a collection, returning the results in a new collection of the same type. If order is implied by the collection, it is maintained in the result. `map` accepts the following collections:\n' +
+    description: 'Applies a mapper function to each item of a functor, returning a functor of the same type with the mapped items. The order of the items is maintained.\n' +
       '\n' +
-      ' * `Array`\n' +
-      ' * `Object`\n' +
-      ' * `Set`\n' +
-      ' * `Map`\n' +
-      ' * `Iterator`/`Generator`\n' +
-      ' * `AsyncIterator`/`AsyncGenerator`\n' +
+      'The following data types are considered to be functors:\n' +
+      ' * `array`\n' +
+      ' * `set`\n' +
+      ' * `map`\n' +
+      ' * `generator`\n' +
+      ' * `async generator`\n' +
+      ' * `object with .map method`\n' +
+      ' * `object`\n' +
       '\n' +
-      'With arrays (type `Array`), `map` applies the mapper function `f` to each item of the array, returning the transformed results in a new array ordered the same as the original array.\n' +
+      'The mapper function defines a mapping between a given item in the functor to a resulting item in the returned functor.\n' +
+      '\n' +
+      '```javascript\n' +
+      'const mapper = function (item) {\n' +
+      '  // resultItem is the result of a mapping from item\n' +
+      '  return resultItem\n' +
+      '}\n' +
+      '```\n' +
+      '\n' +
+      'The mapper function signature changes depending on the provided functor.\n' +
+      '\n' +
+      'If the functor is an array:\n' +
+      '```coffeescript [specscript]\n' +
+      'mapper(item any, index number, ftor Array) -> resultItem Promise|any\n' +
+      '```\n' +
+      '\n' +
+      'If the functor is a set:\n' +
+      '```coffeescript [specscript]\n' +
+      'mapper(item any, item any, ftor Set) -> resultItem Promise|any\n' +
+      '```\n' +
+      '\n' +
+      'If the functor is a map:\n' +
+      '```coffeescript [specscript]\n' +
+      'mapper(item any, key any, ftor Map) -> resultItem Promise|any\n' +
+      '```\n' +
+      '\n' +
+      'If the functor is a generator:\n' +
+      '```coffeescript [specscript]\n' +
+      'mapper(item any) -> resultItem Promise|any\n' +
+      '```\n' +
+      '\n' +
+      'If the functor is an async generator:\n' +
+      '```coffeescript [specscript]\n' +
+      'mapper(item any) -> resultItem Promise|any\n' +
+      '```\n' +
+      '\n' +
+      'If the functor is an object with a `.map` method, the mapper function signature is defined externally.\n' +
+      '\n' +
+      'If the functor is a plain object:\n' +
+      '```coffeescript [specscript]\n' +
+      'mapper(item any, key string, ftor Object) -> resultItem Promise|any\n' +
+      '```\n' +
+      '\n' +
+      '`map` works for arrays.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const square = number => number ** 2\n' +
       '\n' +
       'const array = [1, 2, 3, 4, 5]\n' +
       '\n' +
-      'console.log(\n' +
-      '  map(array, square)\n' +
-      ') // [1, 4, 9, 16, 25]\n' +
-      '\n' +
-      'console.log(\n' +
-      '  map(square)(array)\n' +
-      ') // [1, 4, 9, 16, 25]\n' +
+      'const result = map(array, square)\n' +
+      'console.log(result) // [1, 4, 9, 16, 25]\n' +
       '```\n' +
       '\n' +
-      'With objects (type `Object`), `map` applies the mapper function `f` to each value of the object, returning the transformed results as values in a new object ordered by the keys of the original object\n' +
+      'The mapper function may be asynchronous, in which case it is applied concurrently.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const asyncSquare = async number => number ** 2\n' +
+      '\n' +
+      'const array = [1, 2, 3, 4, 5]\n' +
+      '\n' +
+      'const promise = map(array, asyncSquare)\n' +
+      'promise.then(console.log) // [1, 4, 9, 16, 25]\n' +
+      '```\n' +
+      '\n' +
+      '`map` applies the mapper function to just the values of an object.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const square = number => number ** 2\n' +
       '\n' +
       'const obj = { a: 1, b: 2, c: 3, d: 4, e: 5 }\n' +
       '\n' +
-      'console.log(\n' +
-      '  map(square)(obj)\n' +
-      ') // { a: 1, b: 4, c: 9, d: 16, e: 25 }\n' +
-      '\n' +
-      'console.log(\n' +
-      '  map(obj, square)\n' +
-      ') // { a: 1, b: 4, c: 9, d: 16, e: 25 }\n' +
+      'const result = map(obj, square)\n' +
+      'console.log(result) // { a: 1, b: 4, c: 9, d: 16, e: 25 }\n' +
       '```\n' +
       '\n' +
-      'With sets (type `Set`), `map` applies the mapper function `f` to each value of the set, returning the transformed results unordered in a new set.\n' +
-      '\n' +
-      '```javascript [playground]\n' +
-      'const square = number => number ** 2\n' +
-      '\n' +
-      'const set = new Set([1, 2, 3, 4, 5])\n' +
-      '\n' +
-      'console.log(\n' +
-      '  map(set, square)\n' +
-      ') // [1, 4, 9, 16, 25]\n' +
-      '\n' +
-      'console.log(\n' +
-      '  map(square)(set)\n' +
-      ') // [1, 4, 9, 16, 25]\n' +
-      '```\n' +
-      '\n' +
-      'With maps (type `Map`), `map` applies the mapper function `f` to each value of the map, returning the results at the same keys in a new map. The entries of the resulting map are in the same order as those of the original map\n' +
+      '`map` applies the mapper function to the values of the entries of a map.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const square = number => number ** 2\n' +
       '\n' +
       "const m = new Map([['a', 1], ['b', 2], ['c', 3], ['d', 4], ['e', 5]])\n" +
       '\n' +
-      'console.log(\n' +
-      '  map(square)(m)\n' +
-      ") // Map { 'a' => 1, 'b' => 4, 'c' => 9, 'd' => 16, 'e' => 25 }\n" +
-      '\n' +
-      'console.log(\n' +
-      '  map(m, square)\n' +
-      ") // Map { 'a' => 1, 'b' => 4, 'c' => 9, 'd' => 16, 'e' => 25 }\n" +
+      'const result = map(m, square)\n' +
+      "console.log(result) // Map { 'a' => 1, 'b' => 4, 'c' => 9, 'd' => 16, 'e' => 25 }\n" +
       '```\n' +
       '\n' +
-      'With iterators (type `Iterator`) or generators (type `Generator`), `map` applies the mapper function `f` lazily to each value of the iterator/generator, creating a new iterator with transformed iterations.\n' +
+      '`map` applies the mapper function lazily to each value of a generator, creating a new generator with mapped items.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const capitalize = string => string.toUpperCase()\n' +
@@ -28286,16 +29029,13 @@ export default [
       '\n' +
       'const abcGenerator = abcGeneratorFunc()\n' +
       'const ABCGenerator = map(abcGeneratorFunc(), capitalize)\n' +
-      'const ABCGenerator2 = map(capitalize)(abcGeneratorFunc())\n' +
       '\n' +
       "console.log([...abcGenerator]) // ['a', 'b', 'c']\n" +
       '\n' +
       "console.log([...ABCGenerator]) // ['A', 'B', 'C']\n" +
-      '\n' +
-      "console.log([...ABCGenerator2]) // ['A', 'B', 'C']\n" +
       '```\n' +
       '\n' +
-      'With asyncIterators (type `AsyncIterator`, or `AsyncGenerator`), `map` applies the mapper function `f` lazily to each value of the asyncIterator, creating a new asyncIterator with transformed iterations\n' +
+      '`map` applies the mapper function lazily to each value of an async generator, creating a new async generator with mapped items.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const capitalize = string => string.toUpperCase()\n' +
@@ -28306,7 +29046,6 @@ export default [
       '\n' +
       'const abcAsyncGenerator = abcAsyncGeneratorFunc()\n' +
       'const ABCGenerator = map(abcAsyncGeneratorFunc(), capitalize)\n' +
-      'const ABCGenerator2 = map(capitalize)(abcAsyncGeneratorFunc())\n' +
       '\n' +
       ';(async function () {\n' +
       '  for await (const letter of abcAsyncGenerator) {\n' +
@@ -28317,13 +29056,6 @@ export default [
       '  }\n' +
       '\n' +
       '  for await (const letter of ABCGenerator) {\n' +
-      '    console.log(letter)\n' +
-      '    // A\n' +
-      '    // B\n' +
-      '    // C\n' +
-      '  }\n' +
-      '\n' +
-      '  for await (const letter of ABCGenerator2) {\n' +
       '    console.log(letter)\n' +
       '    // A\n' +
       '    // B\n' +
@@ -28376,25 +29108,25 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'type Mappable = Array|Object|Set|Map|Iterator|AsyncIterator\n' +
+            value: 'type Functor = Array|Set|Map|Generator|AsyncGenerator|{ map: function }|Object\n' +
               '\n' +
               'type Mapper = (\n' +
-              '  value any,\n' +
+              '  item any,\n' +
               '  indexOrKey number|string|any,\n' +
-              '  collection Mappable\n' +
+              '  ftor Functor\n' +
               ')=>(resultItem Promise|any)\n' +
               '\n' +
-              'map(collection Promise|Mappable, f Mapper) -> result Promise|Mappable\n' +
-              'map(f Mapper)(collection Mappable) -> result Promise|Mappable',
+              'map(ftor Promise|Functor, mapper Mapper) -> result Promise|Functor\n' +
+              'map(mapper Mapper)(ftor Functor) -> result Promise|Functor',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 12, column: 4, offset: 337 }
+              end: { line: 12, column: 4, offset: 342 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 12, column: 4, offset: 337 }
+          end: { line: 12, column: 4, offset: 342 }
         }
       },
       description: {
@@ -28405,48 +29137,33 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Applies a synchronous or asynchronous mapper function ',
+                value: 'Applies a mapper function to each item of a functor, returning a functor of the same type with the mapped items. The order of the items is maintained.',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 55, offset: 54 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'f',
-                position: {
-                  start: { line: 1, column: 55, offset: 54 },
-                  end: { line: 1, column: 58, offset: 57 }
-                }
-              },
-              {
-                type: 'text',
-                value: ' concurrently to each item of a collection, returning the results in a new collection of the same type. If order is implied by the collection, it is maintained in the result. ',
-                position: {
-                  start: { line: 1, column: 58, offset: 57 },
-                  end: { line: 1, column: 233, offset: 232 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'map',
-                position: {
-                  start: { line: 1, column: 233, offset: 232 },
-                  end: { line: 1, column: 238, offset: 237 }
-                }
-              },
-              {
-                type: 'text',
-                value: ' accepts the following collections:',
-                position: {
-                  start: { line: 1, column: 238, offset: 237 },
-                  end: { line: 1, column: 273, offset: 272 }
+                  end: { line: 1, column: 151, offset: 150 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 273, offset: 272 }
+              end: { line: 1, column: 151, offset: 150 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'The following data types are considered to be functors:',
+                position: {
+                  start: { line: 3, column: 1, offset: 152 },
+                  end: { line: 3, column: 56, offset: 207 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 3, column: 1, offset: 152 },
+              end: { line: 3, column: 56, offset: 207 }
             }
           },
           {
@@ -28465,22 +29182,22 @@ export default [
                     children: [
                       {
                         type: 'inlineCode',
-                        value: 'Array',
+                        value: 'array',
                         position: {
-                          start: { line: 3, column: 4, offset: 277 },
-                          end: { line: 3, column: 11, offset: 284 }
+                          start: { line: 4, column: 4, offset: 211 },
+                          end: { line: 4, column: 11, offset: 218 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 3, column: 4, offset: 277 },
-                      end: { line: 3, column: 11, offset: 284 }
+                      start: { line: 4, column: 4, offset: 211 },
+                      end: { line: 4, column: 11, offset: 218 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 3, column: 2, offset: 275 },
-                  end: { line: 3, column: 11, offset: 284 }
+                  start: { line: 4, column: 2, offset: 209 },
+                  end: { line: 4, column: 11, offset: 218 }
                 }
               },
               {
@@ -28493,22 +29210,22 @@ export default [
                     children: [
                       {
                         type: 'inlineCode',
-                        value: 'Object',
+                        value: 'set',
                         position: {
-                          start: { line: 4, column: 4, offset: 288 },
-                          end: { line: 4, column: 12, offset: 296 }
+                          start: { line: 5, column: 4, offset: 222 },
+                          end: { line: 5, column: 9, offset: 227 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 4, column: 4, offset: 288 },
-                      end: { line: 4, column: 12, offset: 296 }
+                      start: { line: 5, column: 4, offset: 222 },
+                      end: { line: 5, column: 9, offset: 227 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 4, column: 2, offset: 286 },
-                  end: { line: 4, column: 12, offset: 296 }
+                  start: { line: 5, column: 2, offset: 220 },
+                  end: { line: 5, column: 9, offset: 227 }
                 }
               },
               {
@@ -28521,22 +29238,22 @@ export default [
                     children: [
                       {
                         type: 'inlineCode',
-                        value: 'Set',
+                        value: 'map',
                         position: {
-                          start: { line: 5, column: 4, offset: 300 },
-                          end: { line: 5, column: 9, offset: 305 }
+                          start: { line: 6, column: 4, offset: 231 },
+                          end: { line: 6, column: 9, offset: 236 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 5, column: 4, offset: 300 },
-                      end: { line: 5, column: 9, offset: 305 }
+                      start: { line: 6, column: 4, offset: 231 },
+                      end: { line: 6, column: 9, offset: 236 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 5, column: 2, offset: 298 },
-                  end: { line: 5, column: 9, offset: 305 }
+                  start: { line: 6, column: 2, offset: 229 },
+                  end: { line: 6, column: 9, offset: 236 }
                 }
               },
               {
@@ -28549,22 +29266,22 @@ export default [
                     children: [
                       {
                         type: 'inlineCode',
-                        value: 'Map',
+                        value: 'generator',
                         position: {
-                          start: { line: 6, column: 4, offset: 309 },
-                          end: { line: 6, column: 9, offset: 314 }
+                          start: { line: 7, column: 4, offset: 240 },
+                          end: { line: 7, column: 15, offset: 251 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 6, column: 4, offset: 309 },
-                      end: { line: 6, column: 9, offset: 314 }
+                      start: { line: 7, column: 4, offset: 240 },
+                      end: { line: 7, column: 15, offset: 251 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 6, column: 2, offset: 307 },
-                  end: { line: 6, column: 9, offset: 314 }
+                  start: { line: 7, column: 2, offset: 238 },
+                  end: { line: 7, column: 15, offset: 251 }
                 }
               },
               {
@@ -28577,38 +29294,22 @@ export default [
                     children: [
                       {
                         type: 'inlineCode',
-                        value: 'Iterator',
+                        value: 'async generator',
                         position: {
-                          start: { line: 7, column: 4, offset: 318 },
-                          end: { line: 7, column: 14, offset: 328 }
-                        }
-                      },
-                      {
-                        type: 'text',
-                        value: '/',
-                        position: {
-                          start: { line: 7, column: 14, offset: 328 },
-                          end: { line: 7, column: 15, offset: 329 }
-                        }
-                      },
-                      {
-                        type: 'inlineCode',
-                        value: 'Generator',
-                        position: {
-                          start: { line: 7, column: 15, offset: 329 },
-                          end: { line: 7, column: 26, offset: 340 }
+                          start: { line: 8, column: 4, offset: 255 },
+                          end: { line: 8, column: 21, offset: 272 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 7, column: 4, offset: 318 },
-                      end: { line: 7, column: 26, offset: 340 }
+                      start: { line: 8, column: 4, offset: 255 },
+                      end: { line: 8, column: 21, offset: 272 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 7, column: 2, offset: 316 },
-                  end: { line: 7, column: 26, offset: 340 }
+                  start: { line: 8, column: 2, offset: 253 },
+                  end: { line: 8, column: 21, offset: 272 }
                 }
               },
               {
@@ -28621,44 +29322,56 @@ export default [
                     children: [
                       {
                         type: 'inlineCode',
-                        value: 'AsyncIterator',
+                        value: 'object with .map method',
                         position: {
-                          start: { line: 8, column: 4, offset: 344 },
-                          end: { line: 8, column: 19, offset: 359 }
-                        }
-                      },
-                      {
-                        type: 'text',
-                        value: '/',
-                        position: {
-                          start: { line: 8, column: 19, offset: 359 },
-                          end: { line: 8, column: 20, offset: 360 }
-                        }
-                      },
-                      {
-                        type: 'inlineCode',
-                        value: 'AsyncGenerator',
-                        position: {
-                          start: { line: 8, column: 20, offset: 360 },
-                          end: { line: 8, column: 36, offset: 376 }
+                          start: { line: 9, column: 4, offset: 276 },
+                          end: { line: 9, column: 29, offset: 301 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 8, column: 4, offset: 344 },
-                      end: { line: 8, column: 36, offset: 376 }
+                      start: { line: 9, column: 4, offset: 276 },
+                      end: { line: 9, column: 29, offset: 301 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 8, column: 2, offset: 342 },
-                  end: { line: 8, column: 36, offset: 376 }
+                  start: { line: 9, column: 2, offset: 274 },
+                  end: { line: 9, column: 29, offset: 301 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'object',
+                        position: {
+                          start: { line: 10, column: 4, offset: 305 },
+                          end: { line: 10, column: 12, offset: 313 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 10, column: 4, offset: 305 },
+                      end: { line: 10, column: 12, offset: 313 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 10, column: 2, offset: 303 },
+                  end: { line: 10, column: 12, offset: 313 }
                 }
               }
             ],
             position: {
-              start: { line: 3, column: 2, offset: 275 },
-              end: { line: 8, column: 36, offset: 376 }
+              start: { line: 4, column: 2, offset: 209 },
+              end: { line: 10, column: 12, offset: 313 }
             }
           },
           {
@@ -28666,64 +29379,266 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'With arrays (type ',
+                value: 'The mapper function defines a mapping between a given item in the functor to a resulting item in the returned functor.',
                 position: {
-                  start: { line: 10, column: 1, offset: 378 },
-                  end: { line: 10, column: 19, offset: 396 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'Array',
-                position: {
-                  start: { line: 10, column: 19, offset: 396 },
-                  end: { line: 10, column: 26, offset: 403 }
-                }
-              },
-              {
-                type: 'text',
-                value: '), ',
-                position: {
-                  start: { line: 10, column: 26, offset: 403 },
-                  end: { line: 10, column: 29, offset: 406 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'map',
-                position: {
-                  start: { line: 10, column: 29, offset: 406 },
-                  end: { line: 10, column: 34, offset: 411 }
-                }
-              },
-              {
-                type: 'text',
-                value: ' applies the mapper function ',
-                position: {
-                  start: { line: 10, column: 34, offset: 411 },
-                  end: { line: 10, column: 63, offset: 440 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'f',
-                position: {
-                  start: { line: 10, column: 63, offset: 440 },
-                  end: { line: 10, column: 66, offset: 443 }
-                }
-              },
-              {
-                type: 'text',
-                value: ' to each item of the array, returning the transformed results in a new array ordered the same as the original array.',
-                position: {
-                  start: { line: 10, column: 66, offset: 443 },
-                  end: { line: 10, column: 182, offset: 559 }
+                  start: { line: 12, column: 1, offset: 315 },
+                  end: { line: 12, column: 119, offset: 433 }
                 }
               }
             ],
             position: {
-              start: { line: 10, column: 1, offset: 378 },
-              end: { line: 10, column: 182, offset: 559 }
+              start: { line: 12, column: 1, offset: 315 },
+              end: { line: 12, column: 119, offset: 433 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: null,
+            value: 'const mapper = function (item) {\n' +
+              '  // resultItem is the result of a mapping from item\n' +
+              '  return resultItem\n' +
+              '}',
+            position: {
+              start: { line: 14, column: 1, offset: 435 },
+              end: { line: 19, column: 4, offset: 560 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'The mapper function signature changes depending on the provided functor.',
+                position: {
+                  start: { line: 21, column: 1, offset: 562 },
+                  end: { line: 21, column: 73, offset: 634 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 21, column: 1, offset: 562 },
+              end: { line: 21, column: 73, offset: 634 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If the functor is an array:',
+                position: {
+                  start: { line: 23, column: 1, offset: 636 },
+                  end: { line: 23, column: 28, offset: 663 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 23, column: 1, offset: 636 },
+              end: { line: 23, column: 28, offset: 663 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'mapper(item any, index number, ftor Array) -> resultItem Promise|any',
+            position: {
+              start: { line: 24, column: 1, offset: 664 },
+              end: { line: 26, column: 4, offset: 765 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If the functor is a set:',
+                position: {
+                  start: { line: 28, column: 1, offset: 767 },
+                  end: { line: 28, column: 25, offset: 791 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 28, column: 1, offset: 767 },
+              end: { line: 28, column: 25, offset: 791 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'mapper(item any, item any, ftor Set) -> resultItem Promise|any',
+            position: {
+              start: { line: 29, column: 1, offset: 792 },
+              end: { line: 31, column: 4, offset: 887 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If the functor is a map:',
+                position: {
+                  start: { line: 33, column: 1, offset: 889 },
+                  end: { line: 33, column: 25, offset: 913 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 33, column: 1, offset: 889 },
+              end: { line: 33, column: 25, offset: 913 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'mapper(item any, key any, ftor Map) -> resultItem Promise|any',
+            position: {
+              start: { line: 34, column: 1, offset: 914 },
+              end: { line: 36, column: 4, offset: 1008 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If the functor is a generator:',
+                position: {
+                  start: { line: 38, column: 1, offset: 1010 },
+                  end: { line: 38, column: 31, offset: 1040 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 38, column: 1, offset: 1010 },
+              end: { line: 38, column: 31, offset: 1040 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'mapper(item any) -> resultItem Promise|any',
+            position: {
+              start: { line: 39, column: 1, offset: 1041 },
+              end: { line: 41, column: 4, offset: 1116 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If the functor is an async generator:',
+                position: {
+                  start: { line: 43, column: 1, offset: 1118 },
+                  end: { line: 43, column: 38, offset: 1155 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 43, column: 1, offset: 1118 },
+              end: { line: 43, column: 38, offset: 1155 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'mapper(item any) -> resultItem Promise|any',
+            position: {
+              start: { line: 44, column: 1, offset: 1156 },
+              end: { line: 46, column: 4, offset: 1231 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If the functor is an object with a ',
+                position: {
+                  start: { line: 48, column: 1, offset: 1233 },
+                  end: { line: 48, column: 36, offset: 1268 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: '.map',
+                position: {
+                  start: { line: 48, column: 36, offset: 1268 },
+                  end: { line: 48, column: 42, offset: 1274 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' method, the mapper function signature is defined externally.',
+                position: {
+                  start: { line: 48, column: 42, offset: 1274 },
+                  end: { line: 48, column: 103, offset: 1335 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 48, column: 1, offset: 1233 },
+              end: { line: 48, column: 103, offset: 1335 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If the functor is a plain object:',
+                position: {
+                  start: { line: 50, column: 1, offset: 1337 },
+                  end: { line: 50, column: 34, offset: 1370 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 50, column: 1, offset: 1337 },
+              end: { line: 50, column: 34, offset: 1370 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'mapper(item any, key string, ftor Object) -> resultItem Promise|any',
+            position: {
+              start: { line: 51, column: 1, offset: 1371 },
+              end: { line: 53, column: 4, offset: 1471 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'inlineCode',
+                value: 'map',
+                position: {
+                  start: { line: 55, column: 1, offset: 1473 },
+                  end: { line: 55, column: 6, offset: 1478 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' works for arrays.',
+                position: {
+                  start: { line: 55, column: 6, offset: 1478 },
+                  end: { line: 55, column: 24, offset: 1496 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 55, column: 1, offset: 1473 },
+              end: { line: 55, column: 24, offset: 1496 }
             }
           },
           {
@@ -28734,16 +29649,11 @@ export default [
               '\n' +
               'const array = [1, 2, 3, 4, 5]\n' +
               '\n' +
-              'console.log(\n' +
-              '  map(array, square)\n' +
-              ') // [1, 4, 9, 16, 25]\n' +
-              '\n' +
-              'console.log(\n' +
-              '  map(square)(array)\n' +
-              ') // [1, 4, 9, 16, 25]',
+              'const result = map(array, square)\n' +
+              'console.log(result) // [1, 4, 9, 16, 25]',
             position: {
-              start: { line: 12, column: 1, offset: 561 },
-              end: { line: 24, column: 4, offset: 775 }
+              start: { line: 57, column: 1, offset: 1498 },
+              end: { line: 64, column: 4, offset: 1672 }
             }
           },
           {
@@ -28751,64 +29661,56 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'With objects (type ',
+                value: 'The mapper function may be asynchronous, in which case it is applied concurrently.',
                 position: {
-                  start: { line: 26, column: 1, offset: 777 },
-                  end: { line: 26, column: 20, offset: 796 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'Object',
-                position: {
-                  start: { line: 26, column: 20, offset: 796 },
-                  end: { line: 26, column: 28, offset: 804 }
-                }
-              },
-              {
-                type: 'text',
-                value: '), ',
-                position: {
-                  start: { line: 26, column: 28, offset: 804 },
-                  end: { line: 26, column: 31, offset: 807 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'map',
-                position: {
-                  start: { line: 26, column: 31, offset: 807 },
-                  end: { line: 26, column: 36, offset: 812 }
-                }
-              },
-              {
-                type: 'text',
-                value: ' applies the mapper function ',
-                position: {
-                  start: { line: 26, column: 36, offset: 812 },
-                  end: { line: 26, column: 65, offset: 841 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'f',
-                position: {
-                  start: { line: 26, column: 65, offset: 841 },
-                  end: { line: 26, column: 68, offset: 844 }
-                }
-              },
-              {
-                type: 'text',
-                value: ' to each value of the object, returning the transformed results as values in a new object ordered by the keys of the original object',
-                position: {
-                  start: { line: 26, column: 68, offset: 844 },
-                  end: { line: 26, column: 200, offset: 976 }
+                  start: { line: 66, column: 1, offset: 1674 },
+                  end: { line: 66, column: 83, offset: 1756 }
                 }
               }
             ],
             position: {
-              start: { line: 26, column: 1, offset: 777 },
-              end: { line: 26, column: 200, offset: 976 }
+              start: { line: 66, column: 1, offset: 1674 },
+              end: { line: 66, column: 83, offset: 1756 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'const asyncSquare = async number => number ** 2\n' +
+              '\n' +
+              'const array = [1, 2, 3, 4, 5]\n' +
+              '\n' +
+              'const promise = map(array, asyncSquare)\n' +
+              'promise.then(console.log) // [1, 4, 9, 16, 25]',
+            position: {
+              start: { line: 68, column: 1, offset: 1758 },
+              end: { line: 75, column: 4, offset: 1955 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'inlineCode',
+                value: 'map',
+                position: {
+                  start: { line: 77, column: 1, offset: 1957 },
+                  end: { line: 77, column: 6, offset: 1962 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' applies the mapper function to just the values of an object.',
+                position: {
+                  start: { line: 77, column: 6, offset: 1962 },
+                  end: { line: 77, column: 67, offset: 2023 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 77, column: 1, offset: 1957 },
+              end: { line: 77, column: 67, offset: 2023 }
             }
           },
           {
@@ -28819,166 +29721,36 @@ export default [
               '\n' +
               'const obj = { a: 1, b: 2, c: 3, d: 4, e: 5 }\n' +
               '\n' +
-              'console.log(\n' +
-              '  map(square)(obj)\n' +
-              ') // { a: 1, b: 4, c: 9, d: 16, e: 25 }\n' +
-              '\n' +
-              'console.log(\n' +
-              '  map(obj, square)\n' +
-              ') // { a: 1, b: 4, c: 9, d: 16, e: 25 }',
+              'const result = map(obj, square)\n' +
+              'console.log(result) // { a: 1, b: 4, c: 9, d: 16, e: 25 }',
             position: {
-              start: { line: 28, column: 1, offset: 978 },
-              end: { line: 40, column: 4, offset: 1237 }
+              start: { line: 79, column: 1, offset: 2025 },
+              end: { line: 86, column: 4, offset: 2229 }
             }
           },
           {
             type: 'paragraph',
             children: [
               {
-                type: 'text',
-                value: 'With sets (type ',
-                position: {
-                  start: { line: 42, column: 1, offset: 1239 },
-                  end: { line: 42, column: 17, offset: 1255 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'Set',
-                position: {
-                  start: { line: 42, column: 17, offset: 1255 },
-                  end: { line: 42, column: 22, offset: 1260 }
-                }
-              },
-              {
-                type: 'text',
-                value: '), ',
-                position: {
-                  start: { line: 42, column: 22, offset: 1260 },
-                  end: { line: 42, column: 25, offset: 1263 }
-                }
-              },
-              {
                 type: 'inlineCode',
                 value: 'map',
                 position: {
-                  start: { line: 42, column: 25, offset: 1263 },
-                  end: { line: 42, column: 30, offset: 1268 }
+                  start: { line: 88, column: 1, offset: 2231 },
+                  end: { line: 88, column: 6, offset: 2236 }
                 }
               },
               {
                 type: 'text',
-                value: ' applies the mapper function ',
+                value: ' applies the mapper function to the values of the entries of a map.',
                 position: {
-                  start: { line: 42, column: 30, offset: 1268 },
-                  end: { line: 42, column: 59, offset: 1297 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'f',
-                position: {
-                  start: { line: 42, column: 59, offset: 1297 },
-                  end: { line: 42, column: 62, offset: 1300 }
-                }
-              },
-              {
-                type: 'text',
-                value: ' to each value of the set, returning the transformed results unordered in a new set.',
-                position: {
-                  start: { line: 42, column: 62, offset: 1300 },
-                  end: { line: 42, column: 146, offset: 1384 }
+                  start: { line: 88, column: 6, offset: 2236 },
+                  end: { line: 88, column: 73, offset: 2303 }
                 }
               }
             ],
             position: {
-              start: { line: 42, column: 1, offset: 1239 },
-              end: { line: 42, column: 146, offset: 1384 }
-            }
-          },
-          {
-            type: 'code',
-            lang: 'javascript',
-            meta: '[playground]',
-            value: 'const square = number => number ** 2\n' +
-              '\n' +
-              'const set = new Set([1, 2, 3, 4, 5])\n' +
-              '\n' +
-              'console.log(\n' +
-              '  map(set, square)\n' +
-              ') // [1, 4, 9, 16, 25]\n' +
-              '\n' +
-              'console.log(\n' +
-              '  map(square)(set)\n' +
-              ') // [1, 4, 9, 16, 25]',
-            position: {
-              start: { line: 44, column: 1, offset: 1386 },
-              end: { line: 56, column: 4, offset: 1603 }
-            }
-          },
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: 'With maps (type ',
-                position: {
-                  start: { line: 58, column: 1, offset: 1605 },
-                  end: { line: 58, column: 17, offset: 1621 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'Map',
-                position: {
-                  start: { line: 58, column: 17, offset: 1621 },
-                  end: { line: 58, column: 22, offset: 1626 }
-                }
-              },
-              {
-                type: 'text',
-                value: '), ',
-                position: {
-                  start: { line: 58, column: 22, offset: 1626 },
-                  end: { line: 58, column: 25, offset: 1629 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'map',
-                position: {
-                  start: { line: 58, column: 25, offset: 1629 },
-                  end: { line: 58, column: 30, offset: 1634 }
-                }
-              },
-              {
-                type: 'text',
-                value: ' applies the mapper function ',
-                position: {
-                  start: { line: 58, column: 30, offset: 1634 },
-                  end: { line: 58, column: 59, offset: 1663 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'f',
-                position: {
-                  start: { line: 58, column: 59, offset: 1663 },
-                  end: { line: 58, column: 62, offset: 1666 }
-                }
-              },
-              {
-                type: 'text',
-                value: ' to each value of the map, returning the results at the same keys in a new map. The entries of the resulting map are in the same order as those of the original map',
-                position: {
-                  start: { line: 58, column: 62, offset: 1666 },
-                  end: { line: 58, column: 225, offset: 1829 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 58, column: 1, offset: 1605 },
-              end: { line: 58, column: 225, offset: 1829 }
+              start: { line: 88, column: 1, offset: 2231 },
+              end: { line: 88, column: 73, offset: 2303 }
             }
           },
           {
@@ -28989,97 +29761,36 @@ export default [
               '\n' +
               "const m = new Map([['a', 1], ['b', 2], ['c', 3], ['d', 4], ['e', 5]])\n" +
               '\n' +
-              'console.log(\n' +
-              '  map(square)(m)\n' +
-              ") // Map { 'a' => 1, 'b' => 4, 'c' => 9, 'd' => 16, 'e' => 25 }\n" +
-              '\n' +
-              'console.log(\n' +
-              '  map(m, square)\n' +
-              ") // Map { 'a' => 1, 'b' => 4, 'c' => 9, 'd' => 16, 'e' => 25 }",
+              'const result = map(m, square)\n' +
+              "console.log(result) // Map { 'a' => 1, 'b' => 4, 'c' => 9, 'd' => 16, 'e' => 25 }",
             position: {
-              start: { line: 60, column: 1, offset: 1831 },
-              end: { line: 72, column: 4, offset: 2159 }
+              start: { line: 90, column: 1, offset: 2305 },
+              end: { line: 97, column: 4, offset: 2556 }
             }
           },
           {
             type: 'paragraph',
             children: [
               {
-                type: 'text',
-                value: 'With iterators (type ',
-                position: {
-                  start: { line: 74, column: 1, offset: 2161 },
-                  end: { line: 74, column: 22, offset: 2182 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'Iterator',
-                position: {
-                  start: { line: 74, column: 22, offset: 2182 },
-                  end: { line: 74, column: 32, offset: 2192 }
-                }
-              },
-              {
-                type: 'text',
-                value: ') or generators (type ',
-                position: {
-                  start: { line: 74, column: 32, offset: 2192 },
-                  end: { line: 74, column: 54, offset: 2214 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'Generator',
-                position: {
-                  start: { line: 74, column: 54, offset: 2214 },
-                  end: { line: 74, column: 65, offset: 2225 }
-                }
-              },
-              {
-                type: 'text',
-                value: '), ',
-                position: {
-                  start: { line: 74, column: 65, offset: 2225 },
-                  end: { line: 74, column: 68, offset: 2228 }
-                }
-              },
-              {
                 type: 'inlineCode',
                 value: 'map',
                 position: {
-                  start: { line: 74, column: 68, offset: 2228 },
-                  end: { line: 74, column: 73, offset: 2233 }
+                  start: { line: 99, column: 1, offset: 2558 },
+                  end: { line: 99, column: 6, offset: 2563 }
                 }
               },
               {
                 type: 'text',
-                value: ' applies the mapper function ',
+                value: ' applies the mapper function lazily to each value of a generator, creating a new generator with mapped items.',
                 position: {
-                  start: { line: 74, column: 73, offset: 2233 },
-                  end: { line: 74, column: 102, offset: 2262 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'f',
-                position: {
-                  start: { line: 74, column: 102, offset: 2262 },
-                  end: { line: 74, column: 105, offset: 2265 }
-                }
-              },
-              {
-                type: 'text',
-                value: ' lazily to each value of the iterator/generator, creating a new iterator with transformed iterations.',
-                position: {
-                  start: { line: 74, column: 105, offset: 2265 },
-                  end: { line: 74, column: 206, offset: 2366 }
+                  start: { line: 99, column: 6, offset: 2563 },
+                  end: { line: 99, column: 115, offset: 2672 }
                 }
               }
             ],
             position: {
-              start: { line: 74, column: 1, offset: 2161 },
-              end: { line: 74, column: 206, offset: 2366 }
+              start: { line: 99, column: 1, offset: 2558 },
+              end: { line: 99, column: 115, offset: 2672 }
             }
           },
           {
@@ -29094,97 +29805,38 @@ export default [
               '\n' +
               'const abcGenerator = abcGeneratorFunc()\n' +
               'const ABCGenerator = map(abcGeneratorFunc(), capitalize)\n' +
-              'const ABCGenerator2 = map(capitalize)(abcGeneratorFunc())\n' +
               '\n' +
               "console.log([...abcGenerator]) // ['a', 'b', 'c']\n" +
               '\n' +
-              "console.log([...ABCGenerator]) // ['A', 'B', 'C']\n" +
-              '\n' +
-              "console.log([...ABCGenerator2]) // ['A', 'B', 'C']",
+              "console.log([...ABCGenerator]) // ['A', 'B', 'C']",
             position: {
-              start: { line: 76, column: 1, offset: 2368 },
-              end: { line: 92, column: 4, offset: 2835 }
+              start: { line: 101, column: 1, offset: 2674 },
+              end: { line: 114, column: 4, offset: 3031 }
             }
           },
           {
             type: 'paragraph',
             children: [
               {
-                type: 'text',
-                value: 'With asyncIterators (type ',
-                position: {
-                  start: { line: 94, column: 1, offset: 2837 },
-                  end: { line: 94, column: 27, offset: 2863 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'AsyncIterator',
-                position: {
-                  start: { line: 94, column: 27, offset: 2863 },
-                  end: { line: 94, column: 42, offset: 2878 }
-                }
-              },
-              {
-                type: 'text',
-                value: ', or ',
-                position: {
-                  start: { line: 94, column: 42, offset: 2878 },
-                  end: { line: 94, column: 47, offset: 2883 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'AsyncGenerator',
-                position: {
-                  start: { line: 94, column: 47, offset: 2883 },
-                  end: { line: 94, column: 63, offset: 2899 }
-                }
-              },
-              {
-                type: 'text',
-                value: '), ',
-                position: {
-                  start: { line: 94, column: 63, offset: 2899 },
-                  end: { line: 94, column: 66, offset: 2902 }
-                }
-              },
-              {
                 type: 'inlineCode',
                 value: 'map',
                 position: {
-                  start: { line: 94, column: 66, offset: 2902 },
-                  end: { line: 94, column: 71, offset: 2907 }
+                  start: { line: 116, column: 1, offset: 3033 },
+                  end: { line: 116, column: 6, offset: 3038 }
                 }
               },
               {
                 type: 'text',
-                value: ' applies the mapper function ',
+                value: ' applies the mapper function lazily to each value of an async generator, creating a new async generator with mapped items.',
                 position: {
-                  start: { line: 94, column: 71, offset: 2907 },
-                  end: { line: 94, column: 100, offset: 2936 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'f',
-                position: {
-                  start: { line: 94, column: 100, offset: 2936 },
-                  end: { line: 94, column: 103, offset: 2939 }
-                }
-              },
-              {
-                type: 'text',
-                value: ' lazily to each value of the asyncIterator, creating a new asyncIterator with transformed iterations',
-                position: {
-                  start: { line: 94, column: 103, offset: 2939 },
-                  end: { line: 94, column: 203, offset: 3039 }
+                  start: { line: 116, column: 6, offset: 3038 },
+                  end: { line: 116, column: 128, offset: 3160 }
                 }
               }
             ],
             position: {
-              start: { line: 94, column: 1, offset: 2837 },
-              end: { line: 94, column: 203, offset: 3039 }
+              start: { line: 116, column: 1, offset: 3033 },
+              end: { line: 116, column: 128, offset: 3160 }
             }
           },
           {
@@ -29199,7 +29851,6 @@ export default [
               '\n' +
               'const abcAsyncGenerator = abcAsyncGeneratorFunc()\n' +
               'const ABCGenerator = map(abcAsyncGeneratorFunc(), capitalize)\n' +
-              'const ABCGenerator2 = map(capitalize)(abcAsyncGeneratorFunc())\n' +
               '\n' +
               ';(async function () {\n' +
               '  for await (const letter of abcAsyncGenerator) {\n' +
@@ -29215,17 +29866,10 @@ export default [
               '    // B\n' +
               '    // C\n' +
               '  }\n' +
-              '\n' +
-              '  for await (const letter of ABCGenerator2) {\n' +
-              '    console.log(letter)\n' +
-              '    // A\n' +
-              '    // B\n' +
-              '    // C\n' +
-              '  }\n' +
               '})()',
             position: {
-              start: { line: 96, column: 1, offset: 3041 },
-              end: { line: 129, column: 4, offset: 3721 }
+              start: { line: 118, column: 1, offset: 3162 },
+              end: { line: 143, column: 4, offset: 3677 }
             }
           },
           {
@@ -29235,14 +29879,14 @@ export default [
                 type: 'text',
                 value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
                 position: {
-                  start: { line: 131, column: 1, offset: 3723 },
-                  end: { line: 131, column: 148, offset: 3870 }
+                  start: { line: 145, column: 1, offset: 3679 },
+                  end: { line: 145, column: 148, offset: 3826 }
                 }
               }
             ],
             position: {
-              start: { line: 131, column: 1, offset: 3723 },
-              end: { line: 131, column: 148, offset: 3870 }
+              start: { line: 145, column: 1, offset: 3679 },
+              end: { line: 145, column: 148, offset: 3826 }
             }
           },
           {
@@ -29254,14 +29898,14 @@ export default [
               'map(Promise.resolve([1, 2, 3, 4, 5]), asyncSquare).then(console.log)\n' +
               '// [1, 4, 9, 16, 25]',
             position: {
-              start: { line: 133, column: 1, offset: 3872 },
-              end: { line: 138, column: 4, offset: 4031 }
+              start: { line: 147, column: 1, offset: 3828 },
+              end: { line: 152, column: 4, offset: 3987 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 138, column: 4, offset: 4031 }
+          end: { line: 152, column: 4, offset: 3987 }
         }
       },
       execution: {
@@ -29567,15 +30211,15 @@ export default [
   {
     name: '_mapSeries',
     synopsis: '```coffeescript [specscript]\n' +
-      'type Mappable = Array|Object|Set|Map\n' +
+      'type Functor = Array|Object|Set|Map\n' +
       '\n' +
       'type Mapper = (\n' +
       '  value any,\n' +
       '  indexOrKey number|string|any,\n' +
-      '  collection Mappable\n' +
+      '  f Functor\n' +
       ')=>(mappedItem Promise|any)\n' +
       '\n' +
-      '_mapSeries(collection Mappable, f Mapper) -> result Promise|Mappable\n' +
+      '_mapSeries(f Functor, f Mapper) -> result Promise|Functor\n' +
       '```',
     mdast: {
       name: {
@@ -29611,24 +30255,24 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'type Mappable = Array|Object|Set|Map\n' +
+            value: 'type Functor = Array|Object|Set|Map\n' +
               '\n' +
               'type Mapper = (\n' +
               '  value any,\n' +
               '  indexOrKey number|string|any,\n' +
-              '  collection Mappable\n' +
+              '  f Functor\n' +
               ')=>(mappedItem Promise|any)\n' +
               '\n' +
-              '_mapSeries(collection Mappable, f Mapper) -> result Promise|Mappable',
+              '_mapSeries(f Functor, f Mapper) -> result Promise|Functor',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 11, column: 4, offset: 251 }
+              end: { line: 11, column: 4, offset: 229 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 11, column: 4, offset: 251 }
+          end: { line: 11, column: 4, offset: 229 }
         }
       }
     },
@@ -29637,16 +30281,21 @@ export default [
   {
     name: 'map.series',
     synopsis: '```coffeescript [specscript]\n' +
-      'type Mappable = Array|Object|Set|Map\n' +
+      'type MapSeriesFunctor = Array|Object|Set|Map\n' +
       '\n' +
       'type Mapper = (\n' +
       '  value any,\n' +
       '  indexOrKey number|string|any,\n' +
-      '  collection Mappable\n' +
+      '  ftor MapSeriesFunctor,\n' +
       ')=>(mappedItem Promise|any)\n' +
       '\n' +
-      'map.series(collection Promise|Mappable, f Mapper) -> result Mappable\n' +
-      'map.series(f Mapper)(collection Mappable) -> result Mappable\n' +
+      'map.series(\n' +
+      '  ftor Promise|MapSeriesFunctor,\n' +
+      '  mapper Mapper\n' +
+      ') -> result MapSeriesFunctor\n' +
+      '\n' +
+      'map.series(mapper Mapper)(ftor MapSeriesFunctor)\n' +
+      '  -> result MapSeriesFunctor\n' +
       '```',
     description: '[map](/docs/map) with serial execution.\n' +
       '\n' +
@@ -29705,25 +30354,30 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'type Mappable = Array|Object|Set|Map\n' +
+            value: 'type MapSeriesFunctor = Array|Object|Set|Map\n' +
               '\n' +
               'type Mapper = (\n' +
               '  value any,\n' +
               '  indexOrKey number|string|any,\n' +
-              '  collection Mappable\n' +
+              '  ftor MapSeriesFunctor,\n' +
               ')=>(mappedItem Promise|any)\n' +
               '\n' +
-              'map.series(collection Promise|Mappable, f Mapper) -> result Mappable\n' +
-              'map.series(f Mapper)(collection Mappable) -> result Mappable',
+              'map.series(\n' +
+              '  ftor Promise|MapSeriesFunctor,\n' +
+              '  mapper Mapper\n' +
+              ') -> result MapSeriesFunctor\n' +
+              '\n' +
+              'map.series(mapper Mapper)(ftor MapSeriesFunctor)\n' +
+              '  -> result MapSeriesFunctor',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 12, column: 4, offset: 312 }
+              end: { line: 17, column: 4, offset: 362 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 12, column: 4, offset: 312 }
+          end: { line: 17, column: 4, offset: 362 }
         }
       },
       description: {
@@ -29851,9 +30505,9 @@ export default [
   {
     name: '_mapPool',
     synopsis: '```coffeescript [specscript]\n' +
-      'type Mappable = Array|Object|Set|Map\n' +
+      'type Functor = Array|Object|Set|Map\n' +
       '\n' +
-      '_mapPool(collection Mappable, concurrency number, f function) -> result Promise|Mappable\n' +
+      '_mapPool(f Functor, concurrency number, mapper function) -> result Promise|Functor\n' +
       '```',
     mdast: {
       name: {
@@ -29889,18 +30543,18 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'type Mappable = Array|Object|Set|Map\n' +
+            value: 'type Functor = Array|Object|Set|Map\n' +
               '\n' +
-              '_mapPool(collection Mappable, concurrency number, f function) -> result Promise|Mappable',
+              '_mapPool(f Functor, concurrency number, mapper function) -> result Promise|Functor',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 159 }
+              end: { line: 5, column: 4, offset: 152 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 5, column: 4, offset: 159 }
+          end: { line: 5, column: 4, offset: 152 }
         }
       }
     },
@@ -29909,18 +30563,24 @@ export default [
   {
     name: 'map.pool',
     synopsis: '```coffeescript [specscript]\n' +
-      'type Mappable = Array|Object|Set|Map\n' +
+      'type MapPoolFunctor = Array|Object|Set|Map\n' +
+      '\n' +
+      'type Mapper = (\n' +
+      '  item any,\n' +
+      '  indexOrKey number|string|any,\n' +
+      '  ftor Functor\n' +
+      ')=>(resultItem Promise|any)\n' +
       '\n' +
       'map.pool(\n' +
+      '  ftor MapPoolFunctor,\n' +
       '  concurrency number,\n' +
-      '  mapper (value any)=>Promise|any,\n' +
-      ')(collection Mappable) -> result Promise|Array\n' +
-      '\n' +
-      'map.pool(\n' +
-      '  collection Mappable,\n' +
-      '  concurrency number,\n' +
-      '  mapper (value any)=>Promise|any,\n' +
+      '  mapper Mapper\n' +
       ') -> result Promise|Array\n' +
+      '\n' +
+      'map.pool(\n' +
+      '  concurrency number,\n' +
+      '  mapper Mapper\n' +
+      ')(ftor MapPoolFunctor) -> result Promise|Array\n' +
       '```',
     description: '[map](/docs/map) with limited [concurrency](https://web.mit.edu/6.005/www/fa14/classes/17-concurrency/).\n' +
       '\n' +
@@ -29984,27 +30644,33 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'type Mappable = Array|Object|Set|Map\n' +
+            value: 'type MapPoolFunctor = Array|Object|Set|Map\n' +
+              '\n' +
+              'type Mapper = (\n' +
+              '  item any,\n' +
+              '  indexOrKey number|string|any,\n' +
+              '  ftor Functor\n' +
+              ')=>(resultItem Promise|any)\n' +
+              '\n' +
+              'map.pool(\n' +
+              '  ftor MapPoolFunctor,\n' +
+              '  concurrency number,\n' +
+              '  mapper Mapper\n' +
+              ') -> result Promise|Array\n' +
               '\n' +
               'map.pool(\n' +
               '  concurrency number,\n' +
-              '  mapper (value any)=>Promise|any,\n' +
-              ')(collection Mappable) -> result Promise|Array\n' +
-              '\n' +
-              'map.pool(\n' +
-              '  collection Mappable,\n' +
-              '  concurrency number,\n' +
-              '  mapper (value any)=>Promise|any,\n' +
-              ') -> result Promise|Array',
+              '  mapper Mapper\n' +
+              ')(ftor MapPoolFunctor) -> result Promise|Array',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 14, column: 4, offset: 301 }
+              end: { line: 20, column: 4, offset: 373 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 14, column: 4, offset: 301 }
+          end: { line: 20, column: 4, offset: 373 }
         }
       },
       description: {
@@ -30189,15 +30855,15 @@ export default [
   {
     name: 'map.rate',
     synopsis: '```coffeescript [specscript]\n' +
-      'type Mappable = Array|Object|Set|Map\n' +
+      'type Functor = Array|Object|Set|Map\n' +
       '\n' +
       'map.rate(\n' +
       '  rate number,\n' +
       '  f (value any)=>Promise|any,\n' +
-      ')(collection Mappable) -> result Promise|Array\n' +
+      ')(f Functor) -> result Promise|Array\n' +
       '\n' +
       'map.rate(\n' +
-      '  collection Mappable,\n' +
+      '  f Functor,\n' +
       '  rate number,\n' +
       '  f (value any)=>Promise|any,\n' +
       ') -> result Promise|Array\n' +
@@ -30236,27 +30902,27 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'type Mappable = Array|Object|Set|Map\n' +
+            value: 'type Functor = Array|Object|Set|Map\n' +
               '\n' +
               'map.rate(\n' +
               '  rate number,\n' +
               '  f (value any)=>Promise|any,\n' +
-              ')(collection Mappable) -> result Promise|Array\n' +
+              ')(f Functor) -> result Promise|Array\n' +
               '\n' +
               'map.rate(\n' +
-              '  collection Mappable,\n' +
+              '  f Functor,\n' +
               '  rate number,\n' +
               '  f (value any)=>Promise|any,\n' +
               ') -> result Promise|Array',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 14, column: 4, offset: 277 }
+              end: { line: 14, column: 4, offset: 256 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 14, column: 4, offset: 277 }
+          end: { line: 14, column: 4, offset: 256 }
         }
       }
     },
@@ -38574,8 +39240,8 @@ export default [
       '\n' +
       '```javascript [playground]\n' +
       'console.log(\n' +
-      "  omit({ _id: '1', name: 'George' }, ['_id']),\n" +
-      ") // { name: 'George' }\n" +
+      "  omit({ _id: '1', name: 'John' }, ['_id']),\n" +
+      ") // { name: 'John' }\n" +
       '```\n' +
       '\n' +
       '`omit` supports three types of path patterns for nested property access\n' +
@@ -38686,11 +39352,11 @@ export default [
             lang: 'javascript',
             meta: '[playground]',
             value: 'console.log(\n' +
-              "  omit({ _id: '1', name: 'George' }, ['_id']),\n" +
-              ") // { name: 'George' }",
+              "  omit({ _id: '1', name: 'John' }, ['_id']),\n" +
+              ") // { name: 'John' }",
             position: {
               start: { line: 3, column: 1, offset: 69 },
-              end: { line: 7, column: 4, offset: 183 }
+              end: { line: 7, column: 4, offset: 179 }
             }
           },
           {
@@ -38700,22 +39366,22 @@ export default [
                 type: 'inlineCode',
                 value: 'omit',
                 position: {
-                  start: { line: 9, column: 1, offset: 185 },
-                  end: { line: 9, column: 7, offset: 191 }
+                  start: { line: 9, column: 1, offset: 181 },
+                  end: { line: 9, column: 7, offset: 187 }
                 }
               },
               {
                 type: 'text',
                 value: ' supports three types of path patterns for nested property access',
                 position: {
-                  start: { line: 9, column: 7, offset: 191 },
-                  end: { line: 9, column: 72, offset: 256 }
+                  start: { line: 9, column: 7, offset: 187 },
+                  end: { line: 9, column: 72, offset: 252 }
                 }
               }
             ],
             position: {
-              start: { line: 9, column: 1, offset: 185 },
-              end: { line: 9, column: 72, offset: 256 }
+              start: { line: 9, column: 1, offset: 181 },
+              end: { line: 9, column: 72, offset: 252 }
             }
           },
           {
@@ -38736,28 +39402,28 @@ export default [
                         type: 'text',
                         value: 'dot delimited - ',
                         position: {
-                          start: { line: 11, column: 4, offset: 261 },
-                          end: { line: 11, column: 20, offset: 277 }
+                          start: { line: 11, column: 4, offset: 257 },
+                          end: { line: 11, column: 20, offset: 273 }
                         }
                       },
                       {
                         type: 'inlineCode',
                         value: "'a.b.c'",
                         position: {
-                          start: { line: 11, column: 20, offset: 277 },
-                          end: { line: 11, column: 29, offset: 286 }
+                          start: { line: 11, column: 20, offset: 273 },
+                          end: { line: 11, column: 29, offset: 282 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 11, column: 4, offset: 261 },
-                      end: { line: 11, column: 29, offset: 286 }
+                      start: { line: 11, column: 4, offset: 257 },
+                      end: { line: 11, column: 29, offset: 282 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 11, column: 2, offset: 259 },
-                  end: { line: 11, column: 29, offset: 286 }
+                  start: { line: 11, column: 2, offset: 255 },
+                  end: { line: 11, column: 29, offset: 282 }
                 }
               },
               {
@@ -38772,28 +39438,28 @@ export default [
                         type: 'text',
                         value: 'bracket notation - ',
                         position: {
-                          start: { line: 12, column: 4, offset: 290 },
-                          end: { line: 12, column: 23, offset: 309 }
+                          start: { line: 12, column: 4, offset: 286 },
+                          end: { line: 12, column: 23, offset: 305 }
                         }
                       },
                       {
                         type: 'inlineCode',
                         value: "'a[0].value'",
                         position: {
-                          start: { line: 12, column: 23, offset: 309 },
-                          end: { line: 12, column: 37, offset: 323 }
+                          start: { line: 12, column: 23, offset: 305 },
+                          end: { line: 12, column: 37, offset: 319 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 12, column: 4, offset: 290 },
-                      end: { line: 12, column: 37, offset: 323 }
+                      start: { line: 12, column: 4, offset: 286 },
+                      end: { line: 12, column: 37, offset: 319 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 12, column: 2, offset: 288 },
-                  end: { line: 12, column: 37, offset: 323 }
+                  start: { line: 12, column: 2, offset: 284 },
+                  end: { line: 12, column: 37, offset: 319 }
                 }
               },
               {
@@ -38808,34 +39474,34 @@ export default [
                         type: 'text',
                         value: 'an array of keys or indices - ',
                         position: {
-                          start: { line: 13, column: 4, offset: 327 },
-                          end: { line: 13, column: 34, offset: 357 }
+                          start: { line: 13, column: 4, offset: 323 },
+                          end: { line: 13, column: 34, offset: 353 }
                         }
                       },
                       {
                         type: 'inlineCode',
                         value: "['a', 0, 'value']",
                         position: {
-                          start: { line: 13, column: 34, offset: 357 },
-                          end: { line: 13, column: 53, offset: 376 }
+                          start: { line: 13, column: 34, offset: 353 },
+                          end: { line: 13, column: 53, offset: 372 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 13, column: 4, offset: 327 },
-                      end: { line: 13, column: 53, offset: 376 }
+                      start: { line: 13, column: 4, offset: 323 },
+                      end: { line: 13, column: 53, offset: 372 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 13, column: 2, offset: 325 },
-                  end: { line: 13, column: 53, offset: 376 }
+                  start: { line: 13, column: 2, offset: 321 },
+                  end: { line: 13, column: 53, offset: 372 }
                 }
               }
             ],
             position: {
-              start: { line: 11, column: 2, offset: 259 },
-              end: { line: 13, column: 53, offset: 376 }
+              start: { line: 11, column: 2, offset: 255 },
+              end: { line: 13, column: 53, offset: 372 }
             }
           },
           {
@@ -38853,8 +39519,8 @@ export default [
               '  }),\n' +
               ") // { a: { b: { c: 'hello' } } }",
             position: {
-              start: { line: 15, column: 1, offset: 378 },
-              end: { line: 26, column: 4, offset: 559 }
+              start: { line: 15, column: 1, offset: 374 },
+              end: { line: 26, column: 4, offset: 555 }
             }
           },
           {
@@ -38864,46 +39530,46 @@ export default [
                 type: 'text',
                 value: 'Compose ',
                 position: {
-                  start: { line: 28, column: 1, offset: 561 },
-                  end: { line: 28, column: 9, offset: 569 }
+                  start: { line: 28, column: 1, offset: 557 },
+                  end: { line: 28, column: 9, offset: 565 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'omit',
                 position: {
-                  start: { line: 28, column: 9, offset: 569 },
-                  end: { line: 28, column: 15, offset: 575 }
+                  start: { line: 28, column: 9, offset: 565 },
+                  end: { line: 28, column: 15, offset: 571 }
                 }
               },
               {
                 type: 'text',
                 value: ' inside a ',
                 position: {
-                  start: { line: 28, column: 15, offset: 575 },
-                  end: { line: 28, column: 25, offset: 585 }
+                  start: { line: 28, column: 15, offset: 571 },
+                  end: { line: 28, column: 25, offset: 581 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'pipe',
                 position: {
-                  start: { line: 28, column: 25, offset: 585 },
-                  end: { line: 28, column: 31, offset: 591 }
+                  start: { line: 28, column: 25, offset: 581 },
+                  end: { line: 28, column: 31, offset: 587 }
                 }
               },
               {
                 type: 'text',
                 value: ' with its lazy API',
                 position: {
-                  start: { line: 28, column: 31, offset: 591 },
-                  end: { line: 28, column: 49, offset: 609 }
+                  start: { line: 28, column: 31, offset: 587 },
+                  end: { line: 28, column: 49, offset: 605 }
                 }
               }
             ],
             position: {
-              start: { line: 28, column: 1, offset: 561 },
-              end: { line: 28, column: 49, offset: 609 }
+              start: { line: 28, column: 1, offset: 557 },
+              end: { line: 28, column: 49, offset: 605 }
             }
           },
           {
@@ -38916,8 +39582,8 @@ export default [
               '  console.log, // { c: 9 }\n' +
               '])',
             position: {
-              start: { line: 30, column: 1, offset: 611 },
-              end: { line: 36, column: 4, offset: 750 }
+              start: { line: 30, column: 1, offset: 607 },
+              end: { line: 36, column: 4, offset: 746 }
             }
           },
           {
@@ -38927,14 +39593,14 @@ export default [
                 type: 'text',
                 value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
                 position: {
-                  start: { line: 38, column: 1, offset: 752 },
-                  end: { line: 38, column: 148, offset: 899 }
+                  start: { line: 38, column: 1, offset: 748 },
+                  end: { line: 38, column: 148, offset: 895 }
                 }
               }
             ],
             position: {
-              start: { line: 38, column: 1, offset: 752 },
-              end: { line: 38, column: 148, offset: 899 }
+              start: { line: 38, column: 1, offset: 748 },
+              end: { line: 38, column: 148, offset: 895 }
             }
           },
           {
@@ -38944,14 +39610,14 @@ export default [
             value: "omit(Promise.resolve({ a: 1, b: 2, c: 3 }), ['a', 'b']).then(console.log)\n" +
               '// { c: 3 }',
             position: {
-              start: { line: 40, column: 1, offset: 901 },
-              end: { line: 43, column: 4, offset: 1017 }
+              start: { line: 40, column: 1, offset: 897 },
+              end: { line: 43, column: 4, offset: 1013 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 43, column: 4, offset: 1017 }
+          end: { line: 43, column: 4, offset: 1013 }
         }
       }
     },
@@ -40009,61 +40675,135 @@ export default [
   {
     name: 'reduce',
     synopsis: '```coffeescript [specscript]\n' +
-      'type Foldable = Array|Object|Map|Iterator|AsyncIterator\n' +
+      'type Foldable = Array|Set|Map|Generator|AsyncGenerator|{ reduce: function }|Object\n' +
       '\n' +
       'type Reducer = (\n' +
       '  accumulator any,\n' +
-      '  value any,\n' +
-      '  indexOrKey? number|string,\n' +
-      '  collection? Foldable,\n' +
+      '  item any,\n' +
+      '  indexOrKey number|string|any,\n' +
+      '  fold Foldable\n' +
       ')=>(nextAccumulator Promise|any)\n' +
       '\n' +
-      'type Resolver = (collection Foldable)=>Promise|any\n' +
+      'type Resolver = (fold Foldable)=>Promise|any\n' +
       '\n' +
       'reduce(\n' +
-      '  collection Foldable,\n' +
+      '  fold Foldable,\n' +
       '  reducer Reducer,\n' +
-      '  initialValue? Resolver|any\n' +
+      '  initial? Resolver|any\n' +
       ') -> result Promise|any\n' +
       '\n' +
       'reduce(\n' +
       '  reducer Reducer,\n' +
-      '  initialValue? Resolver|any\n' +
-      ')(collection Foldable) -> result Promise|any\n' +
+      '  initial? Resolver|any\n' +
+      ')(fold Foldable) -> result Promise|any\n' +
       '```',
-    description: 'Transforms a collection based on a reducer function and optional initial value. In a reducing operation, the result is defined in the beginning as either the initial value if supplied or the first item of the collection. The reducing operation then iterates through the remaining items in the collection, executing the reducer at each iteration to return the result to be used in the next iteration. The final result is the result of the execution of the reducer at the last item of the iteration. `reduce` accepts the following collections:\n' +
+    description: 'Reduces a foldable to a single value.\n' +
       '\n' +
-      ' * `Array`\n' +
-      ' * `Object`\n' +
-      ' * `Set`\n' +
-      ' * `Map`\n' +
-      ' * `Iterator`/`Generator`\n' +
-      ' * `AsyncIterator`/`AsyncGenerator`\n' +
+      'The following data types are considered to be foldables:\n' +
+      ' * `array`\n' +
+      ' * `set`\n' +
+      ' * `map`\n' +
+      ' * `generator`\n' +
+      ' * `async generator`\n' +
+      ' * `object with .reduce method`\n' +
+      ' * `object`\n' +
       '\n' +
-      'For arrays (type `Array`), `reduce` executes the reducer function for each item of the array in order, returning a new result at each execution to be used in the next execution. On each iteration, the reducer is passed the accumulator, the item of the iteration, the index of the item in the array, and a reference to the original array.\n' +
+      'The reducing operation is dictated by a provided reducer function, which defines a transformation between the accumulator and a given item of the foldable.\n' +
+      '\n' +
+      '```javascript\n' +
+      'const reducer = function (accumulator, item) {\n' +
+      '  // nextAccumulator is the result of some operation between accumulator and item\n' +
+      '  // and becomes the accumulator for the next iteration and invocation of the reducer\n' +
+      '  return nextAccumulator\n' +
+      '}\n' +
+      '```\n' +
+      '\n' +
+      'The reducer function signature changes depending on the provided foldable.\n' +
+      '\n' +
+      'If the foldable is an array:\n' +
+      '```coffeescript [specscript]\n' +
+      'reducer(\n' +
+      '  accumulator any,\n' +
+      '  item any,\n' +
+      '  index number,\n' +
+      '  fold Array\n' +
+      ') -> nextAccumulator Promise|any\n' +
+      '```\n' +
+      '\n' +
+      'If the foldable is a set:\n' +
+      '```coffeescript [specscript]\n' +
+      'reducer(\n' +
+      '  accumulator any,\n' +
+      '  item any\n' +
+      ') -> nextAccumulator Promise|any\n' +
+      '```\n' +
+      '\n' +
+      'If the foldable is a map:\n' +
+      '```coffeescript [specscript]\n' +
+      'reducer(\n' +
+      '  accumulator any,\n' +
+      '  item any,\n' +
+      '  key any,\n' +
+      '  fold Map\n' +
+      ') -> nextAccumulator Promise|any\n' +
+      '```\n' +
+      '\n' +
+      'If the foldable is a generator:\n' +
+      '```coffeescript [specscript]\n' +
+      'reducer(\n' +
+      '  accumulator any,\n' +
+      '  item any\n' +
+      ') -> nextAccumulator Promise|any\n' +
+      '```\n' +
+      '\n' +
+      'If the foldable is a async generator:\n' +
+      '```coffeescript [specscript]\n' +
+      'reducer(\n' +
+      '  accumulator any,\n' +
+      '  item any\n' +
+      ') -> nextAccumulator Promise|any\n' +
+      '```\n' +
+      '\n' +
+      'If the foldable is an object with a `.reduce` method, the reducer function signature is defined externally.\n' +
+      '\n' +
+      'If the foldable is a plain object:\n' +
+      '```coffeescript [specscript]\n' +
+      'reducer(\n' +
+      '  accumulator any,\n' +
+      '  item any,\n' +
+      '  key string,\n' +
+      '  fold Object\n' +
+      ') -> nextAccumulator Promise|any\n' +
+      '```\n' +
+      '\n' +
+      '`reduce` executes a reducer function for each item of the array in order. If no initial value is provided, `reduce` uses the first item of the foldable as the initial value and starts iterating from the second item of the foldable.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const max = (a, b) => a > b ? a : b\n' +
       '\n' +
-      'console.log(\n' +
-      '  reduce([1, 3, 5, 4, 2], max)\n' +
-      ') // 5\n' +
-      '\n' +
-      'console.log(\n' +
-      '  reduce(max)([1, 3, 5, 4, 2])\n' +
-      ') // 5\n' +
+      'const result = reduce([1, 3, 5, 4, 2], max)\n' +
+      'console.log(result) // 5\n' +
       '```\n' +
       '\n' +
-      'If an optional initial value is provided, the result starts as the provided initial value rather than the first item of the collection.\n' +
+      'If an initial value is provided, the accumulator starts as the initial value rather than the first item of the foldable.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const add = (a, b) => a + b\n' +
       '\n' +
-      'console.log(reduce([1, 2, 3, 4, 5], add, 0)) // 15\n' +
-      'console.log(reduce(add, 0)([1, 2, 3, 4, 5])) // 15\n' +
+      'const result = reduce([1, 2, 3, 4, 5], add, 0)\n' +
+      'console.log(result) // 15\n' +
       '```\n' +
       '\n' +
-      'If the initialization parameter is a function, it is treated as a resolver and called with the arguments to resolve the initial value.\n' +
+      'If the reducer is asynchronous, all promises created by the reducer are resolved before continuing with the reducing operation.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const asyncAdd = async (a, b) => a + b\n' +
+      '\n' +
+      'const promise = reduce([1, 2, 3, 4, 5], asyncAdd, 0)\n' +
+      'promise.then(console.log) // 15\n' +
+      '```\n' +
+      '\n' +
+      'If the initialization parameter is a function, it is treated as a resolver of the initial value and called with the foldable.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const concatSquares = (array, value) => array.concat(value ** 2)\n' +
@@ -40072,90 +40812,42 @@ export default [
       '\n' +
       'const array = [1, 2, 3, 4, 5]\n' +
       '\n' +
-      'console.log(reduce(concatSquares, contrivedInitializer)(array))\n' +
-      "// ['initial length 5', 1, 4, 9, 16, 25]\n" +
       'console.log(reduce(array, concatSquares, contrivedInitializer))\n' +
       "// ['initial length 5', 1, 4, 9, 16, 25]\n" +
       '```\n' +
       '\n' +
-      'For objects (type `Object`), `reduce` executes the reducer function for each value of the object. On each iteration, the reducer is passed the accumulator, the object value, the key of the object value, and a reference to the original object.\n' +
+      'For objects, `reduce` iterates over just the values.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const add = (a, b) => a + b\n' +
       '\n' +
       'const obj = { a: 1, b: 2, c: 3, d: 4, e: 5 }\n' +
       '\n' +
-      'console.log(\n' +
-      '  reduce(obj, add)\n' +
-      ') // 15\n' +
-      '\n' +
-      'console.log(\n' +
-      '  reduce(add)(obj)\n' +
-      ') // 15\n' +
+      'const result = reduce(obj, add)\n' +
+      'console.log(result) // 15\n' +
       '```\n' +
       '\n' +
-      'For sets (type `Set`), `reduce` executes the reducer function for each item of the set. On each iteration, the reducer is passed the accumulator and item of the set.\n' +
-      '\n' +
-      '```javascript [playground]\n' +
-      'const add = (a, b) => a + b\n' +
-      '\n' +
-      'const set = new Set([1, 2, 3, 4, 5])\n' +
-      '\n' +
-      'console.log(\n' +
-      '  reduce(set, add)\n' +
-      ') // 15\n' +
-      '\n' +
-      'console.log(\n' +
-      '  reduce(add)(set)\n' +
-      ') // 15\n' +
-      '```\n' +
-      '\n' +
-      'For maps (type `Map`), `reduce` executes the reducer function for each value of each entry of the map. On each iteration, the reducer is passed the accumulator, the map item, the key of the map item, and a reference to the original map.\n' +
+      'For maps, `reduce` iterates over the values of the entries.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const add = (a, b) => a + b\n' +
       '\n' +
       "const m = new Map([['a', 1], ['b', 2], ['c', 3], ['d', 4], ['e', 5]])\n" +
       '\n' +
-      'console.log(\n' +
-      '  reduce(m, add)\n' +
-      ') // 15\n' +
-      '\n' +
-      'console.log(\n' +
-      '  reduce(add)(m)\n' +
-      ') // 15\n' +
+      'const result = reduce(m, add)\n' +
+      'console.log(result) // 15\n' +
       '```\n' +
       '\n' +
-      'For iterators (type `Iterator`) and generators (type `Generator`), `reduce` executes the reducer function for each value of the iterator/generator. On each iteration, the reducer is passed the accumulator and the item of the iteration. The iterator/generator is consumed in the process.\n' +
-      '\n' +
-      '```javascript [playground]\n' +
-      'const add = (a, b) => a + b\n' +
-      '\n' +
-      'const generate12345 = function* () {\n' +
-      '  yield 1; yield 2; yield 3; yield 4; yield 5\n' +
-      '}\n' +
-      '\n' +
-      'console.log(\n' +
-      '  reduce(generate12345(), add)\n' +
-      ') // 15\n' +
-      '\n' +
-      'console.log(\n' +
-      '  reduce(add)(generate12345())\n' +
-      ') // 15\n' +
-      '```\n' +
-      '\n' +
-      'For asyncIterators (type `AsyncIterator`) and asyncGenerators (type `AsyncGenerator`), `reduce` executes the reducer function for each value of the asyncIterator/asyncGenerator. On each iteration, the reducer is passed the accumulator and the item of the async iteration. The asyncIterator/asyncGenerator is consumed in the process.\n' +
+      '`reduce` works for async generators.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const asyncAdd = async (a, b) => a + b\n' +
       '\n' +
-      'const asyncGenerate12345 = async function* () {\n' +
+      'const asyncGenerate = async function* () {\n' +
       '  yield 1; yield 2; yield 3; yield 4; yield 5\n' +
       '}\n' +
       '\n' +
-      'reduce(asyncGenerate12345(), asyncAdd).then(console.log) // 15\n' +
-      '\n' +
-      'reduce(asyncAdd)(asyncGenerate12345()).then(console.log) // 15\n' +
+      'reduce(asyncGenerate(), asyncAdd).then(console.log) // 15\n' +
       '```\n' +
       '\n' +
       'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
@@ -40164,6 +40856,15 @@ export default [
       'const add = (a, b) => a + b\n' +
       '\n' +
       'reduce(Promise.resolve([1, 2, 3, 4, 5]), add, 0).then(console.log) // 15\n' +
+      '```\n' +
+      '\n' +
+      'Any promises passed for the initial value are also resolved before further execution.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const add = (a, b) => a + b\n' +
+      '\n' +
+      'const promise = reduce([1, 2, 3, 4, 5], add, Promise.resolve(0))\n' +
+      'promise.then(console.log) // 15\n' +
       '```',
     execution: 'series',
     transducing: '',
@@ -40202,36 +40903,36 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'type Foldable = Array|Object|Map|Iterator|AsyncIterator\n' +
+            value: 'type Foldable = Array|Set|Map|Generator|AsyncGenerator|{ reduce: function }|Object\n' +
               '\n' +
               'type Reducer = (\n' +
               '  accumulator any,\n' +
-              '  value any,\n' +
-              '  indexOrKey? number|string,\n' +
-              '  collection? Foldable,\n' +
+              '  item any,\n' +
+              '  indexOrKey number|string|any,\n' +
+              '  fold Foldable\n' +
               ')=>(nextAccumulator Promise|any)\n' +
               '\n' +
-              'type Resolver = (collection Foldable)=>Promise|any\n' +
+              'type Resolver = (fold Foldable)=>Promise|any\n' +
               '\n' +
               'reduce(\n' +
-              '  collection Foldable,\n' +
+              '  fold Foldable,\n' +
               '  reducer Reducer,\n' +
-              '  initialValue? Resolver|any\n' +
+              '  initial? Resolver|any\n' +
               ') -> result Promise|any\n' +
               '\n' +
               'reduce(\n' +
               '  reducer Reducer,\n' +
-              '  initialValue? Resolver|any\n' +
-              ')(collection Foldable) -> result Promise|any',
+              '  initial? Resolver|any\n' +
+              ')(fold Foldable) -> result Promise|any',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 23, column: 4, offset: 482 }
+              end: { line: 23, column: 4, offset: 475 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 23, column: 4, offset: 482 }
+          end: { line: 23, column: 4, offset: 475 }
         }
       },
       description: {
@@ -40242,32 +40943,33 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Transforms a collection based on a reducer function and optional initial value. In a reducing operation, the result is defined in the beginning as either the initial value if supplied or the first item of the collection. The reducing operation then iterates through the remaining items in the collection, executing the reducer at each iteration to return the result to be used in the next iteration. The final result is the result of the execution of the reducer at the last item of the iteration. ',
+                value: 'Reduces a foldable to a single value.',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 499, offset: 498 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'reduce',
-                position: {
-                  start: { line: 1, column: 499, offset: 498 },
-                  end: { line: 1, column: 507, offset: 506 }
-                }
-              },
-              {
-                type: 'text',
-                value: ' accepts the following collections:',
-                position: {
-                  start: { line: 1, column: 507, offset: 506 },
-                  end: { line: 1, column: 542, offset: 541 }
+                  end: { line: 1, column: 38, offset: 37 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 542, offset: 541 }
+              end: { line: 1, column: 38, offset: 37 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'The following data types are considered to be foldables:',
+                position: {
+                  start: { line: 3, column: 1, offset: 39 },
+                  end: { line: 3, column: 57, offset: 95 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 3, column: 1, offset: 39 },
+              end: { line: 3, column: 57, offset: 95 }
             }
           },
           {
@@ -40286,22 +40988,22 @@ export default [
                     children: [
                       {
                         type: 'inlineCode',
-                        value: 'Array',
+                        value: 'array',
                         position: {
-                          start: { line: 3, column: 4, offset: 546 },
-                          end: { line: 3, column: 11, offset: 553 }
+                          start: { line: 4, column: 4, offset: 99 },
+                          end: { line: 4, column: 11, offset: 106 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 3, column: 4, offset: 546 },
-                      end: { line: 3, column: 11, offset: 553 }
+                      start: { line: 4, column: 4, offset: 99 },
+                      end: { line: 4, column: 11, offset: 106 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 3, column: 2, offset: 544 },
-                  end: { line: 3, column: 11, offset: 553 }
+                  start: { line: 4, column: 2, offset: 97 },
+                  end: { line: 4, column: 11, offset: 106 }
                 }
               },
               {
@@ -40314,22 +41016,22 @@ export default [
                     children: [
                       {
                         type: 'inlineCode',
-                        value: 'Object',
+                        value: 'set',
                         position: {
-                          start: { line: 4, column: 4, offset: 557 },
-                          end: { line: 4, column: 12, offset: 565 }
+                          start: { line: 5, column: 4, offset: 110 },
+                          end: { line: 5, column: 9, offset: 115 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 4, column: 4, offset: 557 },
-                      end: { line: 4, column: 12, offset: 565 }
+                      start: { line: 5, column: 4, offset: 110 },
+                      end: { line: 5, column: 9, offset: 115 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 4, column: 2, offset: 555 },
-                  end: { line: 4, column: 12, offset: 565 }
+                  start: { line: 5, column: 2, offset: 108 },
+                  end: { line: 5, column: 9, offset: 115 }
                 }
               },
               {
@@ -40342,22 +41044,22 @@ export default [
                     children: [
                       {
                         type: 'inlineCode',
-                        value: 'Set',
+                        value: 'map',
                         position: {
-                          start: { line: 5, column: 4, offset: 569 },
-                          end: { line: 5, column: 9, offset: 574 }
+                          start: { line: 6, column: 4, offset: 119 },
+                          end: { line: 6, column: 9, offset: 124 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 5, column: 4, offset: 569 },
-                      end: { line: 5, column: 9, offset: 574 }
+                      start: { line: 6, column: 4, offset: 119 },
+                      end: { line: 6, column: 9, offset: 124 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 5, column: 2, offset: 567 },
-                  end: { line: 5, column: 9, offset: 574 }
+                  start: { line: 6, column: 2, offset: 117 },
+                  end: { line: 6, column: 9, offset: 124 }
                 }
               },
               {
@@ -40370,22 +41072,22 @@ export default [
                     children: [
                       {
                         type: 'inlineCode',
-                        value: 'Map',
+                        value: 'generator',
                         position: {
-                          start: { line: 6, column: 4, offset: 578 },
-                          end: { line: 6, column: 9, offset: 583 }
+                          start: { line: 7, column: 4, offset: 128 },
+                          end: { line: 7, column: 15, offset: 139 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 6, column: 4, offset: 578 },
-                      end: { line: 6, column: 9, offset: 583 }
+                      start: { line: 7, column: 4, offset: 128 },
+                      end: { line: 7, column: 15, offset: 139 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 6, column: 2, offset: 576 },
-                  end: { line: 6, column: 9, offset: 583 }
+                  start: { line: 7, column: 2, offset: 126 },
+                  end: { line: 7, column: 15, offset: 139 }
                 }
               },
               {
@@ -40398,38 +41100,22 @@ export default [
                     children: [
                       {
                         type: 'inlineCode',
-                        value: 'Iterator',
+                        value: 'async generator',
                         position: {
-                          start: { line: 7, column: 4, offset: 587 },
-                          end: { line: 7, column: 14, offset: 597 }
-                        }
-                      },
-                      {
-                        type: 'text',
-                        value: '/',
-                        position: {
-                          start: { line: 7, column: 14, offset: 597 },
-                          end: { line: 7, column: 15, offset: 598 }
-                        }
-                      },
-                      {
-                        type: 'inlineCode',
-                        value: 'Generator',
-                        position: {
-                          start: { line: 7, column: 15, offset: 598 },
-                          end: { line: 7, column: 26, offset: 609 }
+                          start: { line: 8, column: 4, offset: 143 },
+                          end: { line: 8, column: 21, offset: 160 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 7, column: 4, offset: 587 },
-                      end: { line: 7, column: 26, offset: 609 }
+                      start: { line: 8, column: 4, offset: 143 },
+                      end: { line: 8, column: 21, offset: 160 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 7, column: 2, offset: 585 },
-                  end: { line: 7, column: 26, offset: 609 }
+                  start: { line: 8, column: 2, offset: 141 },
+                  end: { line: 8, column: 21, offset: 160 }
                 }
               },
               {
@@ -40442,44 +41128,56 @@ export default [
                     children: [
                       {
                         type: 'inlineCode',
-                        value: 'AsyncIterator',
+                        value: 'object with .reduce method',
                         position: {
-                          start: { line: 8, column: 4, offset: 613 },
-                          end: { line: 8, column: 19, offset: 628 }
-                        }
-                      },
-                      {
-                        type: 'text',
-                        value: '/',
-                        position: {
-                          start: { line: 8, column: 19, offset: 628 },
-                          end: { line: 8, column: 20, offset: 629 }
-                        }
-                      },
-                      {
-                        type: 'inlineCode',
-                        value: 'AsyncGenerator',
-                        position: {
-                          start: { line: 8, column: 20, offset: 629 },
-                          end: { line: 8, column: 36, offset: 645 }
+                          start: { line: 9, column: 4, offset: 164 },
+                          end: { line: 9, column: 32, offset: 192 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 8, column: 4, offset: 613 },
-                      end: { line: 8, column: 36, offset: 645 }
+                      start: { line: 9, column: 4, offset: 164 },
+                      end: { line: 9, column: 32, offset: 192 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 8, column: 2, offset: 611 },
-                  end: { line: 8, column: 36, offset: 645 }
+                  start: { line: 9, column: 2, offset: 162 },
+                  end: { line: 9, column: 32, offset: 192 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'object',
+                        position: {
+                          start: { line: 10, column: 4, offset: 196 },
+                          end: { line: 10, column: 12, offset: 204 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 10, column: 4, offset: 196 },
+                      end: { line: 10, column: 12, offset: 204 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 10, column: 2, offset: 194 },
+                  end: { line: 10, column: 12, offset: 204 }
                 }
               }
             ],
             position: {
-              start: { line: 3, column: 2, offset: 544 },
-              end: { line: 8, column: 36, offset: 645 }
+              start: { line: 4, column: 2, offset: 97 },
+              end: { line: 10, column: 12, offset: 204 }
             }
           },
           {
@@ -40487,48 +41185,307 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'For arrays (type ',
+                value: 'The reducing operation is dictated by a provided reducer function, which defines a transformation between the accumulator and a given item of the foldable.',
                 position: {
-                  start: { line: 10, column: 1, offset: 647 },
-                  end: { line: 10, column: 18, offset: 664 }
+                  start: { line: 12, column: 1, offset: 206 },
+                  end: { line: 12, column: 156, offset: 361 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 12, column: 1, offset: 206 },
+              end: { line: 12, column: 156, offset: 361 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: null,
+            value: 'const reducer = function (accumulator, item) {\n' +
+              '  // nextAccumulator is the result of some operation between accumulator and item\n' +
+              '  // and becomes the accumulator for the next iteration and invocation of the reducer\n' +
+              '  return nextAccumulator\n' +
+              '}',
+            position: {
+              start: { line: 14, column: 1, offset: 363 },
+              end: { line: 20, column: 4, offset: 622 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'The reducer function signature changes depending on the provided foldable.',
+                position: {
+                  start: { line: 22, column: 1, offset: 624 },
+                  end: { line: 22, column: 75, offset: 698 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 22, column: 1, offset: 624 },
+              end: { line: 22, column: 75, offset: 698 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If the foldable is an array:',
+                position: {
+                  start: { line: 24, column: 1, offset: 700 },
+                  end: { line: 24, column: 29, offset: 728 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 24, column: 1, offset: 700 },
+              end: { line: 24, column: 29, offset: 728 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'reducer(\n' +
+              '  accumulator any,\n' +
+              '  item any,\n' +
+              '  index number,\n' +
+              '  fold Array\n' +
+              ') -> nextAccumulator Promise|any',
+            position: {
+              start: { line: 25, column: 1, offset: 729 },
+              end: { line: 32, column: 4, offset: 863 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If the foldable is a set:',
+                position: {
+                  start: { line: 34, column: 1, offset: 865 },
+                  end: { line: 34, column: 26, offset: 890 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 34, column: 1, offset: 865 },
+              end: { line: 34, column: 26, offset: 890 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'reducer(\n' +
+              '  accumulator any,\n' +
+              '  item any\n' +
+              ') -> nextAccumulator Promise|any',
+            position: {
+              start: { line: 35, column: 1, offset: 891 },
+              end: { line: 40, column: 4, offset: 995 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If the foldable is a map:',
+                position: {
+                  start: { line: 42, column: 1, offset: 997 },
+                  end: { line: 42, column: 26, offset: 1022 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 42, column: 1, offset: 997 },
+              end: { line: 42, column: 26, offset: 1022 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'reducer(\n' +
+              '  accumulator any,\n' +
+              '  item any,\n' +
+              '  key any,\n' +
+              '  fold Map\n' +
+              ') -> nextAccumulator Promise|any',
+            position: {
+              start: { line: 43, column: 1, offset: 1023 },
+              end: { line: 50, column: 4, offset: 1150 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If the foldable is a generator:',
+                position: {
+                  start: { line: 52, column: 1, offset: 1152 },
+                  end: { line: 52, column: 32, offset: 1183 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 52, column: 1, offset: 1152 },
+              end: { line: 52, column: 32, offset: 1183 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'reducer(\n' +
+              '  accumulator any,\n' +
+              '  item any\n' +
+              ') -> nextAccumulator Promise|any',
+            position: {
+              start: { line: 53, column: 1, offset: 1184 },
+              end: { line: 58, column: 4, offset: 1288 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If the foldable is a async generator:',
+                position: {
+                  start: { line: 60, column: 1, offset: 1290 },
+                  end: { line: 60, column: 38, offset: 1327 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 60, column: 1, offset: 1290 },
+              end: { line: 60, column: 38, offset: 1327 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'reducer(\n' +
+              '  accumulator any,\n' +
+              '  item any\n' +
+              ') -> nextAccumulator Promise|any',
+            position: {
+              start: { line: 61, column: 1, offset: 1328 },
+              end: { line: 66, column: 4, offset: 1432 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If the foldable is an object with a ',
+                position: {
+                  start: { line: 68, column: 1, offset: 1434 },
+                  end: { line: 68, column: 37, offset: 1470 }
                 }
               },
               {
                 type: 'inlineCode',
-                value: 'Array',
+                value: '.reduce',
                 position: {
-                  start: { line: 10, column: 18, offset: 664 },
-                  end: { line: 10, column: 25, offset: 671 }
+                  start: { line: 68, column: 37, offset: 1470 },
+                  end: { line: 68, column: 46, offset: 1479 }
                 }
               },
               {
                 type: 'text',
-                value: '), ',
+                value: ' method, the reducer function signature is defined externally.',
                 position: {
-                  start: { line: 10, column: 25, offset: 671 },
-                  end: { line: 10, column: 28, offset: 674 }
+                  start: { line: 68, column: 46, offset: 1479 },
+                  end: { line: 68, column: 108, offset: 1541 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 68, column: 1, offset: 1434 },
+              end: { line: 68, column: 108, offset: 1541 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If the foldable is a plain object:',
+                position: {
+                  start: { line: 70, column: 1, offset: 1543 },
+                  end: { line: 70, column: 35, offset: 1577 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 70, column: 1, offset: 1543 },
+              end: { line: 70, column: 35, offset: 1577 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'reducer(\n' +
+              '  accumulator any,\n' +
+              '  item any,\n' +
+              '  key string,\n' +
+              '  fold Object\n' +
+              ') -> nextAccumulator Promise|any',
+            position: {
+              start: { line: 71, column: 1, offset: 1578 },
+              end: { line: 78, column: 4, offset: 1711 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'inlineCode',
+                value: 'reduce',
+                position: {
+                  start: { line: 80, column: 1, offset: 1713 },
+                  end: { line: 80, column: 9, offset: 1721 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' executes a reducer function for each item of the array in order. If no initial value is provided, ',
+                position: {
+                  start: { line: 80, column: 9, offset: 1721 },
+                  end: { line: 80, column: 108, offset: 1820 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'reduce',
                 position: {
-                  start: { line: 10, column: 28, offset: 674 },
-                  end: { line: 10, column: 36, offset: 682 }
+                  start: { line: 80, column: 108, offset: 1820 },
+                  end: { line: 80, column: 116, offset: 1828 }
                 }
               },
               {
                 type: 'text',
-                value: ' executes the reducer function for each item of the array in order, returning a new result at each execution to be used in the next execution. On each iteration, the reducer is passed the accumulator, the item of the iteration, the index of the item in the array, and a reference to the original array.',
+                value: ' uses the first item of the foldable as the initial value and starts iterating from the second item of the foldable.',
                 position: {
-                  start: { line: 10, column: 36, offset: 682 },
-                  end: { line: 10, column: 338, offset: 984 }
+                  start: { line: 80, column: 116, offset: 1828 },
+                  end: { line: 80, column: 232, offset: 1944 }
                 }
               }
             ],
             position: {
-              start: { line: 10, column: 1, offset: 647 },
-              end: { line: 10, column: 338, offset: 984 }
+              start: { line: 80, column: 1, offset: 1713 },
+              end: { line: 80, column: 232, offset: 1944 }
             }
           },
           {
@@ -40537,16 +41494,11 @@ export default [
             meta: '[playground]',
             value: 'const max = (a, b) => a > b ? a : b\n' +
               '\n' +
-              'console.log(\n' +
-              '  reduce([1, 3, 5, 4, 2], max)\n' +
-              ') // 5\n' +
-              '\n' +
-              'console.log(\n' +
-              '  reduce(max)([1, 3, 5, 4, 2])\n' +
-              ') // 5',
+              'const result = reduce([1, 3, 5, 4, 2], max)\n' +
+              'console.log(result) // 5',
             position: {
-              start: { line: 12, column: 1, offset: 986 },
-              end: { line: 22, column: 4, offset: 1156 }
+              start: { line: 82, column: 1, offset: 1946 },
+              end: { line: 87, column: 4, offset: 2082 }
             }
           },
           {
@@ -40554,16 +41506,16 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'If an optional initial value is provided, the result starts as the provided initial value rather than the first item of the collection.',
+                value: 'If an initial value is provided, the accumulator starts as the initial value rather than the first item of the foldable.',
                 position: {
-                  start: { line: 24, column: 1, offset: 1158 },
-                  end: { line: 24, column: 136, offset: 1293 }
+                  start: { line: 89, column: 1, offset: 2084 },
+                  end: { line: 89, column: 121, offset: 2204 }
                 }
               }
             ],
             position: {
-              start: { line: 24, column: 1, offset: 1158 },
-              end: { line: 24, column: 136, offset: 1293 }
+              start: { line: 89, column: 1, offset: 2084 },
+              end: { line: 89, column: 121, offset: 2204 }
             }
           },
           {
@@ -40572,11 +41524,11 @@ export default [
             meta: '[playground]',
             value: 'const add = (a, b) => a + b\n' +
               '\n' +
-              'console.log(reduce([1, 2, 3, 4, 5], add, 0)) // 15\n' +
-              'console.log(reduce(add, 0)([1, 2, 3, 4, 5])) // 15',
+              'const result = reduce([1, 2, 3, 4, 5], add, 0)\n' +
+              'console.log(result) // 15',
             position: {
-              start: { line: 26, column: 1, offset: 1295 },
-              end: { line: 31, column: 4, offset: 1456 }
+              start: { line: 91, column: 1, offset: 2206 },
+              end: { line: 96, column: 4, offset: 2338 }
             }
           },
           {
@@ -40584,16 +41536,46 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'If the initialization parameter is a function, it is treated as a resolver and called with the arguments to resolve the initial value.',
+                value: 'If the reducer is asynchronous, all promises created by the reducer are resolved before continuing with the reducing operation.',
                 position: {
-                  start: { line: 33, column: 1, offset: 1458 },
-                  end: { line: 33, column: 135, offset: 1592 }
+                  start: { line: 98, column: 1, offset: 2340 },
+                  end: { line: 98, column: 128, offset: 2467 }
                 }
               }
             ],
             position: {
-              start: { line: 33, column: 1, offset: 1458 },
-              end: { line: 33, column: 135, offset: 1592 }
+              start: { line: 98, column: 1, offset: 2340 },
+              end: { line: 98, column: 128, offset: 2467 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'const asyncAdd = async (a, b) => a + b\n' +
+              '\n' +
+              'const promise = reduce([1, 2, 3, 4, 5], asyncAdd, 0)\n' +
+              'promise.then(console.log) // 15',
+            position: {
+              start: { line: 100, column: 1, offset: 2469 },
+              end: { line: 105, column: 4, offset: 2624 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If the initialization parameter is a function, it is treated as a resolver of the initial value and called with the foldable.',
+                position: {
+                  start: { line: 107, column: 1, offset: 2626 },
+                  end: { line: 107, column: 126, offset: 2751 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 107, column: 1, offset: 2626 },
+              end: { line: 107, column: 126, offset: 2751 }
             }
           },
           {
@@ -40606,13 +41588,11 @@ export default [
               '\n' +
               'const array = [1, 2, 3, 4, 5]\n' +
               '\n' +
-              'console.log(reduce(concatSquares, contrivedInitializer)(array))\n' +
-              "// ['initial length 5', 1, 4, 9, 16, 25]\n" +
               'console.log(reduce(array, concatSquares, contrivedInitializer))\n' +
               "// ['initial length 5', 1, 4, 9, 16, 25]",
             position: {
-              start: { line: 35, column: 1, offset: 1594 },
-              end: { line: 46, column: 4, offset: 2005 }
+              start: { line: 109, column: 1, offset: 2753 },
+              end: { line: 118, column: 4, offset: 3059 }
             }
           },
           {
@@ -40620,48 +41600,32 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'For objects (type ',
+                value: 'For objects, ',
                 position: {
-                  start: { line: 48, column: 1, offset: 2007 },
-                  end: { line: 48, column: 19, offset: 2025 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'Object',
-                position: {
-                  start: { line: 48, column: 19, offset: 2025 },
-                  end: { line: 48, column: 27, offset: 2033 }
-                }
-              },
-              {
-                type: 'text',
-                value: '), ',
-                position: {
-                  start: { line: 48, column: 27, offset: 2033 },
-                  end: { line: 48, column: 30, offset: 2036 }
+                  start: { line: 120, column: 1, offset: 3061 },
+                  end: { line: 120, column: 14, offset: 3074 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'reduce',
                 position: {
-                  start: { line: 48, column: 30, offset: 2036 },
-                  end: { line: 48, column: 38, offset: 2044 }
+                  start: { line: 120, column: 14, offset: 3074 },
+                  end: { line: 120, column: 22, offset: 3082 }
                 }
               },
               {
                 type: 'text',
-                value: ' executes the reducer function for each value of the object. On each iteration, the reducer is passed the accumulator, the object value, the key of the object value, and a reference to the original object.',
+                value: ' iterates over just the values.',
                 position: {
-                  start: { line: 48, column: 38, offset: 2044 },
-                  end: { line: 48, column: 243, offset: 2249 }
+                  start: { line: 120, column: 22, offset: 3082 },
+                  end: { line: 120, column: 53, offset: 3113 }
                 }
               }
             ],
             position: {
-              start: { line: 48, column: 1, offset: 2007 },
-              end: { line: 48, column: 243, offset: 2249 }
+              start: { line: 120, column: 1, offset: 3061 },
+              end: { line: 120, column: 53, offset: 3113 }
             }
           },
           {
@@ -40672,16 +41636,11 @@ export default [
               '\n' +
               'const obj = { a: 1, b: 2, c: 3, d: 4, e: 5 }\n' +
               '\n' +
-              'console.log(\n' +
-              '  reduce(obj, add)\n' +
-              ') // 15\n' +
-              '\n' +
-              'console.log(\n' +
-              '  reduce(add)(obj)\n' +
-              ') // 15',
+              'const result = reduce(obj, add)\n' +
+              'console.log(result) // 15',
             position: {
-              start: { line: 50, column: 1, offset: 2251 },
-              end: { line: 62, column: 4, offset: 2437 }
+              start: { line: 122, column: 1, offset: 3115 },
+              end: { line: 129, column: 4, offset: 3278 }
             }
           },
           {
@@ -40689,117 +41648,32 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'For sets (type ',
+                value: 'For maps, ',
                 position: {
-                  start: { line: 64, column: 1, offset: 2439 },
-                  end: { line: 64, column: 16, offset: 2454 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'Set',
-                position: {
-                  start: { line: 64, column: 16, offset: 2454 },
-                  end: { line: 64, column: 21, offset: 2459 }
-                }
-              },
-              {
-                type: 'text',
-                value: '), ',
-                position: {
-                  start: { line: 64, column: 21, offset: 2459 },
-                  end: { line: 64, column: 24, offset: 2462 }
+                  start: { line: 131, column: 1, offset: 3280 },
+                  end: { line: 131, column: 11, offset: 3290 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'reduce',
                 position: {
-                  start: { line: 64, column: 24, offset: 2462 },
-                  end: { line: 64, column: 32, offset: 2470 }
+                  start: { line: 131, column: 11, offset: 3290 },
+                  end: { line: 131, column: 19, offset: 3298 }
                 }
               },
               {
                 type: 'text',
-                value: ' executes the reducer function for each item of the set. On each iteration, the reducer is passed the accumulator and item of the set.',
+                value: ' iterates over the values of the entries.',
                 position: {
-                  start: { line: 64, column: 32, offset: 2470 },
-                  end: { line: 64, column: 166, offset: 2604 }
+                  start: { line: 131, column: 19, offset: 3298 },
+                  end: { line: 131, column: 60, offset: 3339 }
                 }
               }
             ],
             position: {
-              start: { line: 64, column: 1, offset: 2439 },
-              end: { line: 64, column: 166, offset: 2604 }
-            }
-          },
-          {
-            type: 'code',
-            lang: 'javascript',
-            meta: '[playground]',
-            value: 'const add = (a, b) => a + b\n' +
-              '\n' +
-              'const set = new Set([1, 2, 3, 4, 5])\n' +
-              '\n' +
-              'console.log(\n' +
-              '  reduce(set, add)\n' +
-              ') // 15\n' +
-              '\n' +
-              'console.log(\n' +
-              '  reduce(add)(set)\n' +
-              ') // 15',
-            position: {
-              start: { line: 66, column: 1, offset: 2606 },
-              end: { line: 78, column: 4, offset: 2784 }
-            }
-          },
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: 'For maps (type ',
-                position: {
-                  start: { line: 80, column: 1, offset: 2786 },
-                  end: { line: 80, column: 16, offset: 2801 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'Map',
-                position: {
-                  start: { line: 80, column: 16, offset: 2801 },
-                  end: { line: 80, column: 21, offset: 2806 }
-                }
-              },
-              {
-                type: 'text',
-                value: '), ',
-                position: {
-                  start: { line: 80, column: 21, offset: 2806 },
-                  end: { line: 80, column: 24, offset: 2809 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'reduce',
-                position: {
-                  start: { line: 80, column: 24, offset: 2809 },
-                  end: { line: 80, column: 32, offset: 2817 }
-                }
-              },
-              {
-                type: 'text',
-                value: ' executes the reducer function for each value of each entry of the map. On each iteration, the reducer is passed the accumulator, the map item, the key of the map item, and a reference to the original map.',
-                position: {
-                  start: { line: 80, column: 32, offset: 2817 },
-                  end: { line: 80, column: 237, offset: 3022 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 80, column: 1, offset: 2786 },
-              end: { line: 80, column: 237, offset: 3022 }
+              start: { line: 131, column: 1, offset: 3280 },
+              end: { line: 131, column: 60, offset: 3339 }
             }
           },
           {
@@ -40810,168 +41684,36 @@ export default [
               '\n' +
               "const m = new Map([['a', 1], ['b', 2], ['c', 3], ['d', 4], ['e', 5]])\n" +
               '\n' +
-              'console.log(\n' +
-              '  reduce(m, add)\n' +
-              ') // 15\n' +
-              '\n' +
-              'console.log(\n' +
-              '  reduce(add)(m)\n' +
-              ') // 15',
+              'const result = reduce(m, add)\n' +
+              'console.log(result) // 15',
             position: {
-              start: { line: 82, column: 1, offset: 3024 },
-              end: { line: 94, column: 4, offset: 3231 }
+              start: { line: 133, column: 1, offset: 3341 },
+              end: { line: 140, column: 4, offset: 3527 }
             }
           },
           {
             type: 'paragraph',
             children: [
               {
-                type: 'text',
-                value: 'For iterators (type ',
-                position: {
-                  start: { line: 96, column: 1, offset: 3233 },
-                  end: { line: 96, column: 21, offset: 3253 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'Iterator',
-                position: {
-                  start: { line: 96, column: 21, offset: 3253 },
-                  end: { line: 96, column: 31, offset: 3263 }
-                }
-              },
-              {
-                type: 'text',
-                value: ') and generators (type ',
-                position: {
-                  start: { line: 96, column: 31, offset: 3263 },
-                  end: { line: 96, column: 54, offset: 3286 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'Generator',
-                position: {
-                  start: { line: 96, column: 54, offset: 3286 },
-                  end: { line: 96, column: 65, offset: 3297 }
-                }
-              },
-              {
-                type: 'text',
-                value: '), ',
-                position: {
-                  start: { line: 96, column: 65, offset: 3297 },
-                  end: { line: 96, column: 68, offset: 3300 }
-                }
-              },
-              {
                 type: 'inlineCode',
                 value: 'reduce',
                 position: {
-                  start: { line: 96, column: 68, offset: 3300 },
-                  end: { line: 96, column: 76, offset: 3308 }
+                  start: { line: 142, column: 1, offset: 3529 },
+                  end: { line: 142, column: 9, offset: 3537 }
                 }
               },
               {
                 type: 'text',
-                value: ' executes the reducer function for each value of the iterator/generator. On each iteration, the reducer is passed the accumulator and the item of the iteration. The iterator/generator is consumed in the process.',
+                value: ' works for async generators.',
                 position: {
-                  start: { line: 96, column: 76, offset: 3308 },
-                  end: { line: 96, column: 287, offset: 3519 }
+                  start: { line: 142, column: 9, offset: 3537 },
+                  end: { line: 142, column: 37, offset: 3565 }
                 }
               }
             ],
             position: {
-              start: { line: 96, column: 1, offset: 3233 },
-              end: { line: 96, column: 287, offset: 3519 }
-            }
-          },
-          {
-            type: 'code',
-            lang: 'javascript',
-            meta: '[playground]',
-            value: 'const add = (a, b) => a + b\n' +
-              '\n' +
-              'const generate12345 = function* () {\n' +
-              '  yield 1; yield 2; yield 3; yield 4; yield 5\n' +
-              '}\n' +
-              '\n' +
-              'console.log(\n' +
-              '  reduce(generate12345(), add)\n' +
-              ') // 15\n' +
-              '\n' +
-              'console.log(\n' +
-              '  reduce(add)(generate12345())\n' +
-              ') // 15',
-            position: {
-              start: { line: 98, column: 1, offset: 3521 },
-              end: { line: 112, column: 4, offset: 3771 }
-            }
-          },
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: 'For asyncIterators (type ',
-                position: {
-                  start: { line: 114, column: 1, offset: 3773 },
-                  end: { line: 114, column: 26, offset: 3798 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'AsyncIterator',
-                position: {
-                  start: { line: 114, column: 26, offset: 3798 },
-                  end: { line: 114, column: 41, offset: 3813 }
-                }
-              },
-              {
-                type: 'text',
-                value: ') and asyncGenerators (type ',
-                position: {
-                  start: { line: 114, column: 41, offset: 3813 },
-                  end: { line: 114, column: 69, offset: 3841 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'AsyncGenerator',
-                position: {
-                  start: { line: 114, column: 69, offset: 3841 },
-                  end: { line: 114, column: 85, offset: 3857 }
-                }
-              },
-              {
-                type: 'text',
-                value: '), ',
-                position: {
-                  start: { line: 114, column: 85, offset: 3857 },
-                  end: { line: 114, column: 88, offset: 3860 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'reduce',
-                position: {
-                  start: { line: 114, column: 88, offset: 3860 },
-                  end: { line: 114, column: 96, offset: 3868 }
-                }
-              },
-              {
-                type: 'text',
-                value: ' executes the reducer function for each value of the asyncIterator/asyncGenerator. On each iteration, the reducer is passed the accumulator and the item of the async iteration. The asyncIterator/asyncGenerator is consumed in the process.',
-                position: {
-                  start: { line: 114, column: 96, offset: 3868 },
-                  end: { line: 114, column: 333, offset: 4105 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 114, column: 1, offset: 3773 },
-              end: { line: 114, column: 333, offset: 4105 }
+              start: { line: 142, column: 1, offset: 3529 },
+              end: { line: 142, column: 37, offset: 3565 }
             }
           },
           {
@@ -40980,16 +41722,14 @@ export default [
             meta: '[playground]',
             value: 'const asyncAdd = async (a, b) => a + b\n' +
               '\n' +
-              'const asyncGenerate12345 = async function* () {\n' +
+              'const asyncGenerate = async function* () {\n' +
               '  yield 1; yield 2; yield 3; yield 4; yield 5\n' +
               '}\n' +
               '\n' +
-              'reduce(asyncGenerate12345(), asyncAdd).then(console.log) // 15\n' +
-              '\n' +
-              'reduce(asyncAdd)(asyncGenerate12345()).then(console.log) // 15',
+              'reduce(asyncGenerate(), asyncAdd).then(console.log) // 15',
             position: {
-              start: { line: 116, column: 1, offset: 4107 },
-              end: { line: 126, column: 4, offset: 4401 }
+              start: { line: 144, column: 1, offset: 3567 },
+              end: { line: 152, column: 4, offset: 3787 }
             }
           },
           {
@@ -40999,14 +41739,14 @@ export default [
                 type: 'text',
                 value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
                 position: {
-                  start: { line: 128, column: 1, offset: 4403 },
-                  end: { line: 128, column: 148, offset: 4550 }
+                  start: { line: 154, column: 1, offset: 3789 },
+                  end: { line: 154, column: 148, offset: 3936 }
                 }
               }
             ],
             position: {
-              start: { line: 128, column: 1, offset: 4403 },
-              end: { line: 128, column: 148, offset: 4550 }
+              start: { line: 154, column: 1, offset: 3789 },
+              end: { line: 154, column: 148, offset: 3936 }
             }
           },
           {
@@ -41017,14 +41757,44 @@ export default [
               '\n' +
               'reduce(Promise.resolve([1, 2, 3, 4, 5]), add, 0).then(console.log) // 15',
             position: {
-              start: { line: 130, column: 1, offset: 4552 },
-              end: { line: 134, column: 4, offset: 4684 }
+              start: { line: 156, column: 1, offset: 3938 },
+              end: { line: 160, column: 4, offset: 4070 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Any promises passed for the initial value are also resolved before further execution.',
+                position: {
+                  start: { line: 162, column: 1, offset: 4072 },
+                  end: { line: 162, column: 86, offset: 4157 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 162, column: 1, offset: 4072 },
+              end: { line: 162, column: 86, offset: 4157 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'const add = (a, b) => a + b\n' +
+              '\n' +
+              'const promise = reduce([1, 2, 3, 4, 5], add, Promise.resolve(0))\n' +
+              'promise.then(console.log) // 15',
+            position: {
+              start: { line: 164, column: 1, offset: 4159 },
+              end: { line: 169, column: 4, offset: 4315 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 134, column: 4, offset: 4684 }
+          end: { line: 169, column: 4, offset: 4315 }
         }
       },
       execution: {
@@ -42878,44 +43648,104 @@ export default [
   {
     name: 'transform',
     synopsis: '```coffeescript [specscript]\n' +
-      'type Foldable = Iterable|AsyncIterable|Object<value any>\n' +
+      'type Foldable = Array|Set|Map|Generator|AsyncGenerator|{ reduce: function }|Object\n' +
       '\n' +
       'type Reducer = (\n' +
       '  accumulator any,\n' +
       '  value any,\n' +
-      '  indexOrKey? number|string,\n' +
-      '  collection? Foldable,\n' +
       ')=>(nextAccumulator Promise|any)\n' +
       '\n' +
       'type Transducer = Reducer=>Reducer\n' +
       '\n' +
-      'type Transformable =\n' +
+      'type Semigroup =\n' +
       '  Array|String|Set|TypedArray|{ concat: function }|{ write: function }|Object\n' +
       '\n' +
-      'type TransformableResolver = (collection Foldable)=>Promise|Transformable\n' +
+      'type SemigroupResolver = (fold Foldable)=>Promise|Semigroup\n' +
       '\n' +
       'transform(\n' +
-      '  collection Foldable,\n' +
+      '  fold Foldable,\n' +
       '  transducer Transducer,\n' +
-      '  initialValue? Transformable|TransformableResolver,\n' +
-      ') -> result Promise|Transformable\n' +
+      '  initial? Semigroup|SemigroupResolver,\n' +
+      ') -> result Promise|Semigroup\n' +
       '\n' +
       'transform(\n' +
       '  transducer Transducer,\n' +
-      '  initialValue? Transformable|TransformableResolver,\n' +
-      ')(collection Foldable) -> result Promise|Transformable\n' +
+      '  initial? Semigroup|SemigroupResolver,\n' +
+      ')(fold Foldable) -> result Promise|Semigroup\n' +
       '```',
-    description: 'Transforms a transformable collection into any other transformable collection. The type of transformation depends on the collection provided by the initial value. If the initial is a function it is used as a resolver for the provided collection. `transform` accepts transformable collections, or collections that support a concatenation operation:\n' +
+    description: 'Transforms a foldable with [transducers](https://rubico.land/blog/transducers-crash-course-rubico-v2) into a semigroup.\n' +
       '\n' +
-      ' * `Array`; concatenation defined by `result.concat(values)`\n' +
-      ' * `string`; concatenation defined by `result + values`\n' +
-      ' * `Set`; concatenation defined by `result.add(...values)`\n' +
-      ' * `TypedArray`; concatenation defined by `result.set(prevResult); result.set(values, offset)`\n' +
-      ' * `{ concat: function }`; concatenation defined by `result.concat(values)`\n' +
-      ' * `{ write: function }`; concatenation defined by `result.write(item)`\n' +
-      ' * `Object`; concatenation defined by `({ ...result, ...values })`\n' +
+      'The following data types are considered to be foldables:\n' +
+      ' * `array`\n' +
+      ' * `set`\n' +
+      ' * `map`\n' +
+      ' * `generator`\n' +
+      ' * `async generator`\n' +
+      ' * `object with .reduce method`\n' +
+      ' * `object`\n' +
       '\n' +
-      '`transform` can transform any of the above collections into any of the other above collections.\n' +
+      "Transducers, due to their lazy nature, don't have knowledge of the foldable they are transforming. As such, the transducer signature for all foldables is the same:\n" +
+      '\n' +
+      '```coffeescript [specscript]\n' +
+      'type Reducer = (\n' +
+      '  accumulator any,\n' +
+      '  value any,\n' +
+      ')=>(nextAccumulator Promise|any)\n' +
+      '\n' +
+      'type Transducer = Reducer=>Reducer\n' +
+      '```\n' +
+      '\n' +
+      'The following data types are considered to be semigroups:\n' +
+      ' * `array`\n' +
+      ' * `string`\n' +
+      ' * `set`\n' +
+      ' * `binary`\n' +
+      ' * `{ concat: function }`\n' +
+      ' * `{ write: function }`\n' +
+      ' * `object`\n' +
+      '\n' +
+      'The concatenation operation changes depending on the provided semigroup:\n' +
+      '\n' +
+      'If the semigroup is an array, concatenation is defined as:\n' +
+      '```javascript\n' +
+      'nextAccumulator = accumulator.concat(values)\n' +
+      '```\n' +
+      '\n' +
+      'If the semigroup is a string, concatenation is defined as:\n' +
+      '```javascript\n' +
+      'nextAccumulator = accumulator + values\n' +
+      '```\n' +
+      '\n' +
+      'If the semigroup is a set, concatenation is defined as:\n' +
+      '```javascript\n' +
+      'nextAccumulator = accumulator.add(...values)\n' +
+      '```\n' +
+      '\n' +
+      'If the semigroup is binary, concatenation is defined as:\n' +
+      '```javascript\n' +
+      'nextAccumulator = new accumulator.constructor(accumulator.length + values.length)\n' +
+      'nextAccumulator.set(accumulator)\n' +
+      'nextAccumulator.set(values, accumulator.length)\n' +
+      '```\n' +
+      '\n' +
+      'If the semigroup is an object with a `.concat` method, concatenation is defined as:\n' +
+      '```javascript\n' +
+      'nextAccumulator = accumulator\n' +
+      'accumulator.concat(values)\n' +
+      '```\n' +
+      '\n' +
+      'If the semigroup is an object with a `.write` method, concatenation is defined as:\n' +
+      '```javascript\n' +
+      'nextAccumulator = accumulator\n' +
+      'accumulator.write(values)\n' +
+      '```\n' +
+      '\n' +
+      'If the semigroup is a plain object, concatenation is defined as:\n' +
+      '```javascript\n' +
+      'nextAccumulator = ({ ...accumulator, ...values })\n' +
+      '```\n' +
+      '\n' +
+      '`transform` transforms numbers from an array into another array.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const square = number => number ** 2\n' +
@@ -42929,26 +43759,26 @@ export default [
       '\n' +
       '// transform arrays into arrays\n' +
       'console.log(\n' +
-      '  transform(squaredOdds, [])([1, 2, 3, 4, 5])\n' +
+      '  transform([1, 2, 3, 4, 5], squaredOdds, [])\n' +
       ') // [1, 9, 25]\n' +
       '\n' +
       '// transform arrays into strings\n' +
       'console.log(\n' +
-      "  transform(squaredOdds, '')([1, 2, 3, 4, 5])\n" +
+      "  transform([1, 2, 3, 4, 5], squaredOdds, '')\n" +
       ") // '1925'\n" +
       '\n' +
       '// transform arrays into sets\n' +
       'console.log(\n' +
-      '  transform(squaredOdds, new Set())([1, 2, 3, 4, 5])\n' +
+      '  transform([1, 2, 3, 4, 5], squaredOdds, new Set())\n' +
       ') // Set (3) { 1, 9, 25 }\n' +
       '\n' +
       '// transform arrays into typed arrays\n' +
       'console.log(\n' +
-      '  transform(squaredOdds, new Uint8Array())([1, 2, 3, 4, 5]),\n' +
+      '  transform([1, 2, 3, 4, 5], squaredOdds, new Uint8Array()),\n' +
       ') // Uint8Array(3) [ 1, 9, 25 ]\n' +
       '```\n' +
       '\n' +
-      '`transform` arrays into objects that implement `.concat`.\n' +
+      '`transform` transforms arrays into objects that implement `.concat`.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const square = number => number ** 2\n' +
@@ -42960,7 +43790,7 @@ export default [
       '  },\n' +
       '}\n' +
       '\n' +
-      'transform(Transducer.map(square), Stdout)([1, 2, 3, 4, 5])\n' +
+      'transform([1, 2, 3, 4, 5], Transducer.map(square), Stdout)\n' +
       '// 1\n' +
       '// 4\n' +
       '// 9\n' +
@@ -42968,7 +43798,7 @@ export default [
       '// 25\n' +
       '```\n' +
       '\n' +
-      '`transform` an async generator into `process.stdout`, a Node.js writable stream that implements `.write`.\n' +
+      '`transform` transforms an async generator into `process.stdout`, a Node.js writable stream that implements `.write`.\n' +
       '\n' +
       '```javascript\n' +
       'const { pipe, compose, transform } = rubico\n' +
@@ -42998,14 +43828,28 @@ export default [
       ')\n' +
       '```\n' +
       '\n' +
+      'If the initial value is a function it is treated as a resolver of the semigroup. The resolver may be asynchronous.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const promise = transform(\n' +
+      '  [1, 2, 3, 4, 5],\n' +
+      '  Transducer.map(number => number ** 2),\n' +
+      "  async () => ['a'],\n" +
+      ')\n' +
+      '\n' +
+      'promise.then(console.log)\n' +
+      '```\n' +
+      '\n' +
       'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      'transform(\n' +
+      'const promise = transform(\n' +
       '  Promise.resolve([1, 2, 3, 4, 5]),\n' +
       '  Transducer.map(n => n ** 2),\n' +
       '  [],\n' +
-      ').then(console.log) // [1, 4, 9, 16, 25]\n' +
+      ')\n' +
+      '\n' +
+      'promise.then(console.log) // [1, 4, 9, 16, 25]\n' +
       '```',
     execution: 'series',
     transducing: 'TODO explore Semigroup = Iterator|AsyncIterator',
@@ -43043,41 +43887,39 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'type Foldable = Iterable|AsyncIterable|Object<value any>\n' +
+            value: 'type Foldable = Array|Set|Map|Generator|AsyncGenerator|{ reduce: function }|Object\n' +
               '\n' +
               'type Reducer = (\n' +
               '  accumulator any,\n' +
               '  value any,\n' +
-              '  indexOrKey? number|string,\n' +
-              '  collection? Foldable,\n' +
               ')=>(nextAccumulator Promise|any)\n' +
               '\n' +
               'type Transducer = Reducer=>Reducer\n' +
               '\n' +
-              'type Transformable =\n' +
+              'type Semigroup =\n' +
               '  Array|String|Set|TypedArray|{ concat: function }|{ write: function }|Object\n' +
               '\n' +
-              'type TransformableResolver = (collection Foldable)=>Promise|Transformable\n' +
+              'type SemigroupResolver = (fold Foldable)=>Promise|Semigroup\n' +
               '\n' +
               'transform(\n' +
-              '  collection Foldable,\n' +
+              '  fold Foldable,\n' +
               '  transducer Transducer,\n' +
-              '  initialValue? Transformable|TransformableResolver,\n' +
-              ') -> result Promise|Transformable\n' +
+              '  initial? Semigroup|SemigroupResolver,\n' +
+              ') -> result Promise|Semigroup\n' +
               '\n' +
               'transform(\n' +
               '  transducer Transducer,\n' +
-              '  initialValue? Transformable|TransformableResolver,\n' +
-              ')(collection Foldable) -> result Promise|Transformable',
+              '  initial? Semigroup|SemigroupResolver,\n' +
+              ')(fold Foldable) -> result Promise|Semigroup',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 28, column: 4, offset: 728 }
+              end: { line: 26, column: 4, offset: 637 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 28, column: 4, offset: 728 }
+          end: { line: 26, column: 4, offset: 637 }
         }
       },
       description: {
@@ -43088,32 +43930,60 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Transforms a transformable collection into any other transformable collection. The type of transformation depends on the collection provided by the initial value. If the initial is a function it is used as a resolver for the provided collection. ',
+                value: 'Transforms a foldable with ',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 247, offset: 246 }
+                  end: { line: 1, column: 28, offset: 27 }
                 }
               },
               {
-                type: 'inlineCode',
-                value: 'transform',
+                type: 'link',
+                title: null,
+                url: 'https://rubico.land/blog/transducers-crash-course-rubico-v2',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'transducers',
+                    position: {
+                      start: { line: 1, column: 29, offset: 28 },
+                      end: { line: 1, column: 40, offset: 39 }
+                    }
+                  }
+                ],
                 position: {
-                  start: { line: 1, column: 247, offset: 246 },
-                  end: { line: 1, column: 258, offset: 257 }
+                  start: { line: 1, column: 28, offset: 27 },
+                  end: { line: 1, column: 102, offset: 101 }
                 }
               },
               {
                 type: 'text',
-                value: ' accepts transformable collections, or collections that support a concatenation operation:',
+                value: ' into a semigroup.',
                 position: {
-                  start: { line: 1, column: 258, offset: 257 },
-                  end: { line: 1, column: 348, offset: 347 }
+                  start: { line: 1, column: 102, offset: 101 },
+                  end: { line: 1, column: 120, offset: 119 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 348, offset: 347 }
+              end: { line: 1, column: 120, offset: 119 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'The following data types are considered to be foldables:',
+                position: {
+                  start: { line: 3, column: 1, offset: 121 },
+                  end: { line: 3, column: 57, offset: 177 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 3, column: 1, offset: 121 },
+              end: { line: 3, column: 57, offset: 177 }
             }
           },
           {
@@ -43132,38 +44002,279 @@ export default [
                     children: [
                       {
                         type: 'inlineCode',
-                        value: 'Array',
+                        value: 'array',
                         position: {
-                          start: { line: 3, column: 4, offset: 352 },
-                          end: { line: 3, column: 11, offset: 359 }
-                        }
-                      },
-                      {
-                        type: 'text',
-                        value: '; concatenation defined by ',
-                        position: {
-                          start: { line: 3, column: 11, offset: 359 },
-                          end: { line: 3, column: 38, offset: 386 }
-                        }
-                      },
-                      {
-                        type: 'inlineCode',
-                        value: 'result.concat(values)',
-                        position: {
-                          start: { line: 3, column: 38, offset: 386 },
-                          end: { line: 3, column: 61, offset: 409 }
+                          start: { line: 4, column: 4, offset: 181 },
+                          end: { line: 4, column: 11, offset: 188 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 3, column: 4, offset: 352 },
-                      end: { line: 3, column: 61, offset: 409 }
+                      start: { line: 4, column: 4, offset: 181 },
+                      end: { line: 4, column: 11, offset: 188 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 3, column: 2, offset: 350 },
-                  end: { line: 3, column: 61, offset: 409 }
+                  start: { line: 4, column: 2, offset: 179 },
+                  end: { line: 4, column: 11, offset: 188 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'set',
+                        position: {
+                          start: { line: 5, column: 4, offset: 192 },
+                          end: { line: 5, column: 9, offset: 197 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 5, column: 4, offset: 192 },
+                      end: { line: 5, column: 9, offset: 197 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 5, column: 2, offset: 190 },
+                  end: { line: 5, column: 9, offset: 197 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'map',
+                        position: {
+                          start: { line: 6, column: 4, offset: 201 },
+                          end: { line: 6, column: 9, offset: 206 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 6, column: 4, offset: 201 },
+                      end: { line: 6, column: 9, offset: 206 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 6, column: 2, offset: 199 },
+                  end: { line: 6, column: 9, offset: 206 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'generator',
+                        position: {
+                          start: { line: 7, column: 4, offset: 210 },
+                          end: { line: 7, column: 15, offset: 221 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 7, column: 4, offset: 210 },
+                      end: { line: 7, column: 15, offset: 221 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 7, column: 2, offset: 208 },
+                  end: { line: 7, column: 15, offset: 221 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'async generator',
+                        position: {
+                          start: { line: 8, column: 4, offset: 225 },
+                          end: { line: 8, column: 21, offset: 242 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 8, column: 4, offset: 225 },
+                      end: { line: 8, column: 21, offset: 242 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 8, column: 2, offset: 223 },
+                  end: { line: 8, column: 21, offset: 242 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'object with .reduce method',
+                        position: {
+                          start: { line: 9, column: 4, offset: 246 },
+                          end: { line: 9, column: 32, offset: 274 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 9, column: 4, offset: 246 },
+                      end: { line: 9, column: 32, offset: 274 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 9, column: 2, offset: 244 },
+                  end: { line: 9, column: 32, offset: 274 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'object',
+                        position: {
+                          start: { line: 10, column: 4, offset: 278 },
+                          end: { line: 10, column: 12, offset: 286 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 10, column: 4, offset: 278 },
+                      end: { line: 10, column: 12, offset: 286 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 10, column: 2, offset: 276 },
+                  end: { line: 10, column: 12, offset: 286 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 4, column: 2, offset: 179 },
+              end: { line: 10, column: 12, offset: 286 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: "Transducers, due to their lazy nature, don't have knowledge of the foldable they are transforming. As such, the transducer signature for all foldables is the same:",
+                position: {
+                  start: { line: 12, column: 1, offset: 288 },
+                  end: { line: 12, column: 164, offset: 451 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 12, column: 1, offset: 288 },
+              end: { line: 12, column: 164, offset: 451 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'type Reducer = (\n' +
+              '  accumulator any,\n' +
+              '  value any,\n' +
+              ')=>(nextAccumulator Promise|any)\n' +
+              '\n' +
+              'type Transducer = Reducer=>Reducer',
+            position: {
+              start: { line: 14, column: 1, offset: 453 },
+              end: { line: 21, column: 4, offset: 603 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'The following data types are considered to be semigroups:',
+                position: {
+                  start: { line: 23, column: 1, offset: 605 },
+                  end: { line: 23, column: 58, offset: 662 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 23, column: 1, offset: 605 },
+              end: { line: 23, column: 58, offset: 662 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'array',
+                        position: {
+                          start: { line: 24, column: 4, offset: 666 },
+                          end: { line: 24, column: 11, offset: 673 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 24, column: 4, offset: 666 },
+                      end: { line: 24, column: 11, offset: 673 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 24, column: 2, offset: 664 },
+                  end: { line: 24, column: 11, offset: 673 }
                 }
               },
               {
@@ -43178,36 +44289,20 @@ export default [
                         type: 'inlineCode',
                         value: 'string',
                         position: {
-                          start: { line: 4, column: 4, offset: 413 },
-                          end: { line: 4, column: 12, offset: 421 }
-                        }
-                      },
-                      {
-                        type: 'text',
-                        value: '; concatenation defined by ',
-                        position: {
-                          start: { line: 4, column: 12, offset: 421 },
-                          end: { line: 4, column: 39, offset: 448 }
-                        }
-                      },
-                      {
-                        type: 'inlineCode',
-                        value: 'result + values',
-                        position: {
-                          start: { line: 4, column: 39, offset: 448 },
-                          end: { line: 4, column: 56, offset: 465 }
+                          start: { line: 25, column: 4, offset: 677 },
+                          end: { line: 25, column: 12, offset: 685 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 4, column: 4, offset: 413 },
-                      end: { line: 4, column: 56, offset: 465 }
+                      start: { line: 25, column: 4, offset: 677 },
+                      end: { line: 25, column: 12, offset: 685 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 4, column: 2, offset: 411 },
-                  end: { line: 4, column: 56, offset: 465 }
+                  start: { line: 25, column: 2, offset: 675 },
+                  end: { line: 25, column: 12, offset: 685 }
                 }
               },
               {
@@ -43220,38 +44315,22 @@ export default [
                     children: [
                       {
                         type: 'inlineCode',
-                        value: 'Set',
+                        value: 'set',
                         position: {
-                          start: { line: 5, column: 4, offset: 469 },
-                          end: { line: 5, column: 9, offset: 474 }
-                        }
-                      },
-                      {
-                        type: 'text',
-                        value: '; concatenation defined by ',
-                        position: {
-                          start: { line: 5, column: 9, offset: 474 },
-                          end: { line: 5, column: 36, offset: 501 }
-                        }
-                      },
-                      {
-                        type: 'inlineCode',
-                        value: 'result.add(...values)',
-                        position: {
-                          start: { line: 5, column: 36, offset: 501 },
-                          end: { line: 5, column: 59, offset: 524 }
+                          start: { line: 26, column: 4, offset: 689 },
+                          end: { line: 26, column: 9, offset: 694 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 5, column: 4, offset: 469 },
-                      end: { line: 5, column: 59, offset: 524 }
+                      start: { line: 26, column: 4, offset: 689 },
+                      end: { line: 26, column: 9, offset: 694 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 5, column: 2, offset: 467 },
-                  end: { line: 5, column: 59, offset: 524 }
+                  start: { line: 26, column: 2, offset: 687 },
+                  end: { line: 26, column: 9, offset: 694 }
                 }
               },
               {
@@ -43264,38 +44343,22 @@ export default [
                     children: [
                       {
                         type: 'inlineCode',
-                        value: 'TypedArray',
+                        value: 'binary',
                         position: {
-                          start: { line: 6, column: 4, offset: 528 },
-                          end: { line: 6, column: 16, offset: 540 }
-                        }
-                      },
-                      {
-                        type: 'text',
-                        value: '; concatenation defined by ',
-                        position: {
-                          start: { line: 6, column: 16, offset: 540 },
-                          end: { line: 6, column: 43, offset: 567 }
-                        }
-                      },
-                      {
-                        type: 'inlineCode',
-                        value: 'result.set(prevResult); result.set(values, offset)',
-                        position: {
-                          start: { line: 6, column: 43, offset: 567 },
-                          end: { line: 6, column: 95, offset: 619 }
+                          start: { line: 27, column: 4, offset: 698 },
+                          end: { line: 27, column: 12, offset: 706 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 6, column: 4, offset: 528 },
-                      end: { line: 6, column: 95, offset: 619 }
+                      start: { line: 27, column: 4, offset: 698 },
+                      end: { line: 27, column: 12, offset: 706 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 6, column: 2, offset: 526 },
-                  end: { line: 6, column: 95, offset: 619 }
+                  start: { line: 27, column: 2, offset: 696 },
+                  end: { line: 27, column: 12, offset: 706 }
                 }
               },
               {
@@ -43310,36 +44373,20 @@ export default [
                         type: 'inlineCode',
                         value: '{ concat: function }',
                         position: {
-                          start: { line: 7, column: 4, offset: 623 },
-                          end: { line: 7, column: 26, offset: 645 }
-                        }
-                      },
-                      {
-                        type: 'text',
-                        value: '; concatenation defined by ',
-                        position: {
-                          start: { line: 7, column: 26, offset: 645 },
-                          end: { line: 7, column: 53, offset: 672 }
-                        }
-                      },
-                      {
-                        type: 'inlineCode',
-                        value: 'result.concat(values)',
-                        position: {
-                          start: { line: 7, column: 53, offset: 672 },
-                          end: { line: 7, column: 76, offset: 695 }
+                          start: { line: 28, column: 4, offset: 710 },
+                          end: { line: 28, column: 26, offset: 732 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 7, column: 4, offset: 623 },
-                      end: { line: 7, column: 76, offset: 695 }
+                      start: { line: 28, column: 4, offset: 710 },
+                      end: { line: 28, column: 26, offset: 732 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 7, column: 2, offset: 621 },
-                  end: { line: 7, column: 76, offset: 695 }
+                  start: { line: 28, column: 2, offset: 708 },
+                  end: { line: 28, column: 26, offset: 732 }
                 }
               },
               {
@@ -43354,36 +44401,20 @@ export default [
                         type: 'inlineCode',
                         value: '{ write: function }',
                         position: {
-                          start: { line: 8, column: 4, offset: 699 },
-                          end: { line: 8, column: 25, offset: 720 }
-                        }
-                      },
-                      {
-                        type: 'text',
-                        value: '; concatenation defined by ',
-                        position: {
-                          start: { line: 8, column: 25, offset: 720 },
-                          end: { line: 8, column: 52, offset: 747 }
-                        }
-                      },
-                      {
-                        type: 'inlineCode',
-                        value: 'result.write(item)',
-                        position: {
-                          start: { line: 8, column: 52, offset: 747 },
-                          end: { line: 8, column: 72, offset: 767 }
+                          start: { line: 29, column: 4, offset: 736 },
+                          end: { line: 29, column: 25, offset: 757 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 8, column: 4, offset: 699 },
-                      end: { line: 8, column: 72, offset: 767 }
+                      start: { line: 29, column: 4, offset: 736 },
+                      end: { line: 29, column: 25, offset: 757 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 8, column: 2, offset: 697 },
-                  end: { line: 8, column: 72, offset: 767 }
+                  start: { line: 29, column: 2, offset: 734 },
+                  end: { line: 29, column: 25, offset: 757 }
                 }
               },
               {
@@ -43396,44 +44427,268 @@ export default [
                     children: [
                       {
                         type: 'inlineCode',
-                        value: 'Object',
+                        value: 'object',
                         position: {
-                          start: { line: 9, column: 4, offset: 771 },
-                          end: { line: 9, column: 12, offset: 779 }
-                        }
-                      },
-                      {
-                        type: 'text',
-                        value: '; concatenation defined by ',
-                        position: {
-                          start: { line: 9, column: 12, offset: 779 },
-                          end: { line: 9, column: 39, offset: 806 }
-                        }
-                      },
-                      {
-                        type: 'inlineCode',
-                        value: '({ ...result, ...values })',
-                        position: {
-                          start: { line: 9, column: 39, offset: 806 },
-                          end: { line: 9, column: 67, offset: 834 }
+                          start: { line: 30, column: 4, offset: 761 },
+                          end: { line: 30, column: 12, offset: 769 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 9, column: 4, offset: 771 },
-                      end: { line: 9, column: 67, offset: 834 }
+                      start: { line: 30, column: 4, offset: 761 },
+                      end: { line: 30, column: 12, offset: 769 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 9, column: 2, offset: 769 },
-                  end: { line: 9, column: 67, offset: 834 }
+                  start: { line: 30, column: 2, offset: 759 },
+                  end: { line: 30, column: 12, offset: 769 }
                 }
               }
             ],
             position: {
-              start: { line: 3, column: 2, offset: 350 },
-              end: { line: 9, column: 67, offset: 834 }
+              start: { line: 24, column: 2, offset: 664 },
+              end: { line: 30, column: 12, offset: 769 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'The concatenation operation changes depending on the provided semigroup:',
+                position: {
+                  start: { line: 32, column: 1, offset: 771 },
+                  end: { line: 32, column: 73, offset: 843 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 32, column: 1, offset: 771 },
+              end: { line: 32, column: 73, offset: 843 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If the semigroup is an array, concatenation is defined as:',
+                position: {
+                  start: { line: 34, column: 1, offset: 845 },
+                  end: { line: 34, column: 59, offset: 903 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 34, column: 1, offset: 845 },
+              end: { line: 34, column: 59, offset: 903 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: null,
+            value: 'nextAccumulator = accumulator.concat(values)',
+            position: {
+              start: { line: 35, column: 1, offset: 904 },
+              end: { line: 37, column: 4, offset: 966 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If the semigroup is a string, concatenation is defined as:',
+                position: {
+                  start: { line: 39, column: 1, offset: 968 },
+                  end: { line: 39, column: 59, offset: 1026 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 39, column: 1, offset: 968 },
+              end: { line: 39, column: 59, offset: 1026 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: null,
+            value: 'nextAccumulator = accumulator + values',
+            position: {
+              start: { line: 40, column: 1, offset: 1027 },
+              end: { line: 42, column: 4, offset: 1083 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If the semigroup is a set, concatenation is defined as:',
+                position: {
+                  start: { line: 44, column: 1, offset: 1085 },
+                  end: { line: 44, column: 56, offset: 1140 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 44, column: 1, offset: 1085 },
+              end: { line: 44, column: 56, offset: 1140 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: null,
+            value: 'nextAccumulator = accumulator.add(...values)',
+            position: {
+              start: { line: 45, column: 1, offset: 1141 },
+              end: { line: 47, column: 4, offset: 1203 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If the semigroup is binary, concatenation is defined as:',
+                position: {
+                  start: { line: 49, column: 1, offset: 1205 },
+                  end: { line: 49, column: 57, offset: 1261 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 49, column: 1, offset: 1205 },
+              end: { line: 49, column: 57, offset: 1261 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: null,
+            value: 'nextAccumulator = new accumulator.constructor(accumulator.length + values.length)\n' +
+              'nextAccumulator.set(accumulator)\n' +
+              'nextAccumulator.set(values, accumulator.length)',
+            position: {
+              start: { line: 50, column: 1, offset: 1262 },
+              end: { line: 54, column: 4, offset: 1442 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If the semigroup is an object with a ',
+                position: {
+                  start: { line: 56, column: 1, offset: 1444 },
+                  end: { line: 56, column: 38, offset: 1481 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: '.concat',
+                position: {
+                  start: { line: 56, column: 38, offset: 1481 },
+                  end: { line: 56, column: 47, offset: 1490 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' method, concatenation is defined as:',
+                position: {
+                  start: { line: 56, column: 47, offset: 1490 },
+                  end: { line: 56, column: 84, offset: 1527 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 56, column: 1, offset: 1444 },
+              end: { line: 56, column: 84, offset: 1527 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: null,
+            value: 'nextAccumulator = accumulator\naccumulator.concat(values)',
+            position: {
+              start: { line: 57, column: 1, offset: 1528 },
+              end: { line: 60, column: 4, offset: 1602 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If the semigroup is an object with a ',
+                position: {
+                  start: { line: 62, column: 1, offset: 1604 },
+                  end: { line: 62, column: 38, offset: 1641 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: '.write',
+                position: {
+                  start: { line: 62, column: 38, offset: 1641 },
+                  end: { line: 62, column: 46, offset: 1649 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' method, concatenation is defined as:',
+                position: {
+                  start: { line: 62, column: 46, offset: 1649 },
+                  end: { line: 62, column: 83, offset: 1686 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 62, column: 1, offset: 1604 },
+              end: { line: 62, column: 83, offset: 1686 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: null,
+            value: 'nextAccumulator = accumulator\naccumulator.write(values)',
+            position: {
+              start: { line: 63, column: 1, offset: 1687 },
+              end: { line: 66, column: 4, offset: 1760 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If the semigroup is a plain object, concatenation is defined as:',
+                position: {
+                  start: { line: 68, column: 1, offset: 1762 },
+                  end: { line: 68, column: 65, offset: 1826 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 68, column: 1, offset: 1762 },
+              end: { line: 68, column: 65, offset: 1826 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: null,
+            value: 'nextAccumulator = ({ ...accumulator, ...values })',
+            position: {
+              start: { line: 69, column: 1, offset: 1827 },
+              end: { line: 71, column: 4, offset: 1894 }
             }
           },
           {
@@ -43443,22 +44698,22 @@ export default [
                 type: 'inlineCode',
                 value: 'transform',
                 position: {
-                  start: { line: 11, column: 1, offset: 836 },
-                  end: { line: 11, column: 12, offset: 847 }
+                  start: { line: 73, column: 1, offset: 1896 },
+                  end: { line: 73, column: 12, offset: 1907 }
                 }
               },
               {
                 type: 'text',
-                value: ' can transform any of the above collections into any of the other above collections.',
+                value: ' transforms numbers from an array into another array.',
                 position: {
-                  start: { line: 11, column: 12, offset: 847 },
-                  end: { line: 11, column: 96, offset: 931 }
+                  start: { line: 73, column: 12, offset: 1907 },
+                  end: { line: 73, column: 65, offset: 1960 }
                 }
               }
             ],
             position: {
-              start: { line: 11, column: 1, offset: 836 },
-              end: { line: 11, column: 96, offset: 931 }
+              start: { line: 73, column: 1, offset: 1896 },
+              end: { line: 73, column: 65, offset: 1960 }
             }
           },
           {
@@ -43476,26 +44731,26 @@ export default [
               '\n' +
               '// transform arrays into arrays\n' +
               'console.log(\n' +
-              '  transform(squaredOdds, [])([1, 2, 3, 4, 5])\n' +
+              '  transform([1, 2, 3, 4, 5], squaredOdds, [])\n' +
               ') // [1, 9, 25]\n' +
               '\n' +
               '// transform arrays into strings\n' +
               'console.log(\n' +
-              "  transform(squaredOdds, '')([1, 2, 3, 4, 5])\n" +
+              "  transform([1, 2, 3, 4, 5], squaredOdds, '')\n" +
               ") // '1925'\n" +
               '\n' +
               '// transform arrays into sets\n' +
               'console.log(\n' +
-              '  transform(squaredOdds, new Set())([1, 2, 3, 4, 5])\n' +
+              '  transform([1, 2, 3, 4, 5], squaredOdds, new Set())\n' +
               ') // Set (3) { 1, 9, 25 }\n' +
               '\n' +
               '// transform arrays into typed arrays\n' +
               'console.log(\n' +
-              '  transform(squaredOdds, new Uint8Array())([1, 2, 3, 4, 5]),\n' +
+              '  transform([1, 2, 3, 4, 5], squaredOdds, new Uint8Array()),\n' +
               ') // Uint8Array(3) [ 1, 9, 25 ]',
             position: {
-              start: { line: 13, column: 1, offset: 933 },
-              end: { line: 42, column: 4, offset: 1610 }
+              start: { line: 75, column: 1, offset: 1962 },
+              end: { line: 104, column: 4, offset: 2639 }
             }
           },
           {
@@ -43505,38 +44760,38 @@ export default [
                 type: 'inlineCode',
                 value: 'transform',
                 position: {
-                  start: { line: 44, column: 1, offset: 1612 },
-                  end: { line: 44, column: 12, offset: 1623 }
+                  start: { line: 106, column: 1, offset: 2641 },
+                  end: { line: 106, column: 12, offset: 2652 }
                 }
               },
               {
                 type: 'text',
-                value: ' arrays into objects that implement ',
+                value: ' transforms arrays into objects that implement ',
                 position: {
-                  start: { line: 44, column: 12, offset: 1623 },
-                  end: { line: 44, column: 48, offset: 1659 }
+                  start: { line: 106, column: 12, offset: 2652 },
+                  end: { line: 106, column: 59, offset: 2699 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: '.concat',
                 position: {
-                  start: { line: 44, column: 48, offset: 1659 },
-                  end: { line: 44, column: 57, offset: 1668 }
+                  start: { line: 106, column: 59, offset: 2699 },
+                  end: { line: 106, column: 68, offset: 2708 }
                 }
               },
               {
                 type: 'text',
                 value: '.',
                 position: {
-                  start: { line: 44, column: 57, offset: 1668 },
-                  end: { line: 44, column: 58, offset: 1669 }
+                  start: { line: 106, column: 68, offset: 2708 },
+                  end: { line: 106, column: 69, offset: 2709 }
                 }
               }
             ],
             position: {
-              start: { line: 44, column: 1, offset: 1612 },
-              end: { line: 44, column: 58, offset: 1669 }
+              start: { line: 106, column: 1, offset: 2641 },
+              end: { line: 106, column: 69, offset: 2709 }
             }
           },
           {
@@ -43552,15 +44807,15 @@ export default [
               '  },\n' +
               '}\n' +
               '\n' +
-              'transform(Transducer.map(square), Stdout)([1, 2, 3, 4, 5])\n' +
+              'transform([1, 2, 3, 4, 5], Transducer.map(square), Stdout)\n' +
               '// 1\n' +
               '// 4\n' +
               '// 9\n' +
               '// 16\n' +
               '// 25',
             position: {
-              start: { line: 46, column: 1, offset: 1671 },
-              end: { line: 62, column: 4, offset: 1911 }
+              start: { line: 108, column: 1, offset: 2711 },
+              end: { line: 124, column: 4, offset: 2951 }
             }
           },
           {
@@ -43570,54 +44825,54 @@ export default [
                 type: 'inlineCode',
                 value: 'transform',
                 position: {
-                  start: { line: 64, column: 1, offset: 1913 },
-                  end: { line: 64, column: 12, offset: 1924 }
+                  start: { line: 126, column: 1, offset: 2953 },
+                  end: { line: 126, column: 12, offset: 2964 }
                 }
               },
               {
                 type: 'text',
-                value: ' an async generator into ',
+                value: ' transforms an async generator into ',
                 position: {
-                  start: { line: 64, column: 12, offset: 1924 },
-                  end: { line: 64, column: 37, offset: 1949 }
+                  start: { line: 126, column: 12, offset: 2964 },
+                  end: { line: 126, column: 48, offset: 3000 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'process.stdout',
                 position: {
-                  start: { line: 64, column: 37, offset: 1949 },
-                  end: { line: 64, column: 53, offset: 1965 }
+                  start: { line: 126, column: 48, offset: 3000 },
+                  end: { line: 126, column: 64, offset: 3016 }
                 }
               },
               {
                 type: 'text',
                 value: ', a Node.js writable stream that implements ',
                 position: {
-                  start: { line: 64, column: 53, offset: 1965 },
-                  end: { line: 64, column: 97, offset: 2009 }
+                  start: { line: 126, column: 64, offset: 3016 },
+                  end: { line: 126, column: 108, offset: 3060 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: '.write',
                 position: {
-                  start: { line: 64, column: 97, offset: 2009 },
-                  end: { line: 64, column: 105, offset: 2017 }
+                  start: { line: 126, column: 108, offset: 3060 },
+                  end: { line: 126, column: 116, offset: 3068 }
                 }
               },
               {
                 type: 'text',
                 value: '.',
                 position: {
-                  start: { line: 64, column: 105, offset: 2017 },
-                  end: { line: 64, column: 106, offset: 2018 }
+                  start: { line: 126, column: 116, offset: 3068 },
+                  end: { line: 126, column: 117, offset: 3069 }
                 }
               }
             ],
             position: {
-              start: { line: 64, column: 1, offset: 1913 },
-              end: { line: 64, column: 106, offset: 2018 }
+              start: { line: 126, column: 1, offset: 2953 },
+              end: { line: 126, column: 117, offset: 3069 }
             }
           },
           {
@@ -43650,8 +44905,41 @@ export default [
               '  process.stdout // 2893600784289441449001600409684644624324923044411225\n' +
               ')',
             position: {
-              start: { line: 66, column: 1, offset: 2020 },
-              end: { line: 92, column: 4, offset: 2547 }
+              start: { line: 128, column: 1, offset: 3071 },
+              end: { line: 154, column: 4, offset: 3598 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If the initial value is a function it is treated as a resolver of the semigroup. The resolver may be asynchronous.',
+                position: {
+                  start: { line: 156, column: 1, offset: 3600 },
+                  end: { line: 156, column: 115, offset: 3714 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 156, column: 1, offset: 3600 },
+              end: { line: 156, column: 115, offset: 3714 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'const promise = transform(\n' +
+              '  [1, 2, 3, 4, 5],\n' +
+              '  Transducer.map(number => number ** 2),\n' +
+              "  async () => ['a'],\n" +
+              ')\n' +
+              '\n' +
+              'promise.then(console.log)',
+            position: {
+              start: { line: 158, column: 1, offset: 3716 },
+              end: { line: 166, column: 4, offset: 3883 }
             }
           },
           {
@@ -43661,34 +44949,36 @@ export default [
                 type: 'text',
                 value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
                 position: {
-                  start: { line: 94, column: 1, offset: 2549 },
-                  end: { line: 94, column: 148, offset: 2696 }
+                  start: { line: 168, column: 1, offset: 3885 },
+                  end: { line: 168, column: 148, offset: 4032 }
                 }
               }
             ],
             position: {
-              start: { line: 94, column: 1, offset: 2549 },
-              end: { line: 94, column: 148, offset: 2696 }
+              start: { line: 168, column: 1, offset: 3885 },
+              end: { line: 168, column: 148, offset: 4032 }
             }
           },
           {
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: 'transform(\n' +
+            value: 'const promise = transform(\n' +
               '  Promise.resolve([1, 2, 3, 4, 5]),\n' +
               '  Transducer.map(n => n ** 2),\n' +
               '  [],\n' +
-              ').then(console.log) // [1, 4, 9, 16, 25]',
+              ')\n' +
+              '\n' +
+              'promise.then(console.log) // [1, 4, 9, 16, 25]',
             position: {
-              start: { line: 96, column: 1, offset: 2698 },
-              end: { line: 102, column: 4, offset: 2853 }
+              start: { line: 170, column: 1, offset: 4034 },
+              end: { line: 178, column: 4, offset: 4214 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 102, column: 4, offset: 2853 }
+          end: { line: 178, column: 4, offset: 4214 }
         }
       },
       execution: {
@@ -44558,11 +45848,11 @@ export default [
       '})\n' +
       '\n' +
       'console.log(defaultUser({\n' +
-      "  name: 'George',\n" +
+      "  name: 'John',\n" +
       "  images: [{ url: 'https://via.placeholder.com/150/0000FF/808080%20?Text=Digital.com' }],\n" +
       '}))\n' +
       '// {\n' +
-      "//   name: 'George',\n" +
+      "//   name: 'John',\n" +
       '//   images: [\n' +
       "//    { url: 'https://via.placeholder.com/150/0000FF/808080%20?Text=Digital.com' },\n" +
       "//    { url: 'https://via.placeholder.com/150' },\n" +
@@ -44655,11 +45945,11 @@ export default [
               '})\n' +
               '\n' +
               'console.log(defaultUser({\n' +
-              "  name: 'George',\n" +
+              "  name: 'John',\n" +
               "  images: [{ url: 'https://via.placeholder.com/150/0000FF/808080%20?Text=Digital.com' }],\n" +
               '}))\n' +
               '// {\n' +
-              "//   name: 'George',\n" +
+              "//   name: 'John',\n" +
               '//   images: [\n' +
               "//    { url: 'https://via.placeholder.com/150/0000FF/808080%20?Text=Digital.com' },\n" +
               "//    { url: 'https://via.placeholder.com/150' },\n" +
@@ -44668,13 +45958,13 @@ export default [
               '// }',
             position: {
               start: { line: 3, column: 1, offset: 109 },
-              end: { line: 27, column: 4, offset: 817 }
+              end: { line: 27, column: 4, offset: 813 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 27, column: 4, offset: 817 }
+          end: { line: 27, column: 4, offset: 813 }
         }
       }
     },
@@ -45211,12 +46501,12 @@ export default [
       'const users = [\n' +
       "  { name: 'John', age: 16 },\n" +
       "  { name: 'Jill', age: 32 },\n" +
-      "  { name: 'George', age: 51 },\n" +
+      "  { name: 'John', age: 51 },\n" +
       ']\n' +
       '\n' +
       'console.log(\n' +
       '  find(user => user.age > 50)(users),\n' +
-      ") // { name: 'George', age: 51 }\n" +
+      ") // { name: 'John', age: 51 }\n" +
       '```',
     mdast: {
       name: {
@@ -45300,21 +46590,21 @@ export default [
               'const users = [\n' +
               "  { name: 'John', age: 16 },\n" +
               "  { name: 'Jill', age: 32 },\n" +
-              "  { name: 'George', age: 51 },\n" +
+              "  { name: 'John', age: 51 },\n" +
               ']\n' +
               '\n' +
               'console.log(\n' +
               '  find(user => user.age > 50)(users),\n' +
-              ") // { name: 'George', age: 51 }",
+              ") // { name: 'John', age: 51 }",
             position: {
               start: { line: 3, column: 1, offset: 71 },
-              end: { line: 15, column: 4, offset: 356 }
+              end: { line: 15, column: 4, offset: 352 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 15, column: 4, offset: 356 }
+          end: { line: 15, column: 4, offset: 352 }
         }
       }
     },
@@ -46056,13 +47346,13 @@ export default [
       '\n' +
       'console.log(\n' +
       "  groupBy('age')([\n" +
-      "    { name: 'George', age: 22 },\n" +
+      "    { name: 'John', age: 22 },\n" +
       "    { name: 'Jane', age: 22 },\n" +
       "    { name: 'Henry', age: 23 },\n" +
       '  ]),\n' +
       ')\n' +
       '// Map {\n' +
-      "//   22 => [{ name: 'George', age: 22 }, { name: 'Jane', age: 22 }],\n" +
+      "//   22 => [{ name: 'John', age: 22 }, { name: 'Jane', age: 22 }],\n" +
       "//   23 => [{ name: 'Henry', age: 23 }],\n" +
       '// }\n' +
       '```\n' +
@@ -46161,18 +47451,18 @@ export default [
               '\n' +
               'console.log(\n' +
               "  groupBy('age')([\n" +
-              "    { name: 'George', age: 22 },\n" +
+              "    { name: 'John', age: 22 },\n" +
               "    { name: 'Jane', age: 22 },\n" +
               "    { name: 'Henry', age: 23 },\n" +
               '  ]),\n' +
               ')\n' +
               '// Map {\n' +
-              "//   22 => [{ name: 'George', age: 22 }, { name: 'Jane', age: 22 }],\n" +
+              "//   22 => [{ name: 'John', age: 22 }, { name: 'Jane', age: 22 }],\n" +
               "//   23 => [{ name: 'Henry', age: 23 }],\n" +
               '// }',
             position: {
               start: { line: 3, column: 1, offset: 89 },
-              end: { line: 17, column: 4, offset: 448 }
+              end: { line: 17, column: 4, offset: 444 }
             }
           },
           {
@@ -46182,14 +47472,14 @@ export default [
                 type: 'text',
                 value: 'Additionally, pass a resolver in property position to resolve a value for group membership for each item.',
                 position: {
-                  start: { line: 19, column: 1, offset: 450 },
-                  end: { line: 19, column: 106, offset: 555 }
+                  start: { line: 19, column: 1, offset: 446 },
+                  end: { line: 19, column: 106, offset: 551 }
                 }
               }
             ],
             position: {
-              start: { line: 19, column: 1, offset: 450 },
-              end: { line: 19, column: 106, offset: 555 }
+              start: { line: 19, column: 1, offset: 446 },
+              end: { line: 19, column: 106, offset: 551 }
             }
           },
           {
@@ -46204,14 +47494,14 @@ export default [
               "  )(['Hello', 'hello', 'Hey']),\n" +
               ") // Map { 'hello' => ['Hello', 'hello'], 'hey' => ['Hey'] }",
             position: {
-              start: { line: 21, column: 1, offset: 557 },
-              end: { line: 29, column: 4, offset: 805 }
+              start: { line: 21, column: 1, offset: 553 },
+              end: { line: 29, column: 4, offset: 801 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 29, column: 4, offset: 805 }
+          end: { line: 29, column: 4, offset: 801 }
         }
       }
     },
@@ -49512,14 +50802,14 @@ export default [
       "import pluck from 'https://unpkg.com/rubico/dist/x/pluck.es.js'\n" +
       '\n' +
       'const users = [\n' +
-      "  { name: 'George', age: 33 },\n" +
+      "  { name: 'John', age: 33 },\n" +
       "  { name: 'Jane', age: 51 },\n" +
       "  { name: 'Jim', age: 22 },\n" +
       ']\n' +
       '\n' +
       "const usernames = pluck(users, 'name')\n" +
       '\n' +
-      "console.log(usernames) // ['George', 'Jane', 'Jim']\n" +
+      "console.log(usernames) // ['John', 'Jane', 'Jim']\n" +
       '```',
     mdast: {
       name: {
@@ -49741,23 +51031,23 @@ export default [
             value: "import pluck from 'https://unpkg.com/rubico/dist/x/pluck.es.js'\n" +
               '\n' +
               'const users = [\n' +
-              "  { name: 'George', age: 33 },\n" +
+              "  { name: 'John', age: 33 },\n" +
               "  { name: 'Jane', age: 51 },\n" +
               "  { name: 'Jim', age: 22 },\n" +
               ']\n' +
               '\n' +
               "const usernames = pluck(users, 'name')\n" +
               '\n' +
-              "console.log(usernames) // ['George', 'Jane', 'Jim']",
+              "console.log(usernames) // ['John', 'Jane', 'Jim']",
             position: {
               start: { line: 9, column: 1, offset: 272 },
-              end: { line: 21, column: 4, offset: 566 }
+              end: { line: 21, column: 4, offset: 562 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 21, column: 4, offset: 566 }
+          end: { line: 21, column: 4, offset: 562 }
         }
       }
     },

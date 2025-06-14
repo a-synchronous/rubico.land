@@ -196,14 +196,12 @@ export default {
       value: 'type Reducer = (\n' +
         '  accumulator any,\n' +
         '  value any,\n' +
-        '  indexOrKey? number|string,\n' +
-        '  collection? Foldable,\n' +
         ')=>(nextAccumulator Promise|any)\n' +
         '\n' +
         'type Transducer = Reducer=>Reducer',
       position: {
         start: { line: 54, column: 1, offset: 2004 },
-        end: { line: 63, column: 4, offset: 2207 }
+        end: { line: 61, column: 4, offset: 2154 }
       }
     },
     {
@@ -213,24 +211,24 @@ export default {
           type: 'text',
           value: 'A ',
           position: {
-            start: { line: 65, column: 1, offset: 2209 },
-            end: { line: 65, column: 3, offset: 2211 }
+            start: { line: 63, column: 1, offset: 2156 },
+            end: { line: 63, column: 3, offset: 2158 }
           }
         },
         {
           type: 'inlineCode',
           value: 'Reducer',
           position: {
-            start: { line: 65, column: 3, offset: 2211 },
-            end: { line: 65, column: 12, offset: 2220 }
+            start: { line: 63, column: 3, offset: 2158 },
+            end: { line: 63, column: 12, offset: 2167 }
           }
         },
         {
           type: 'text',
           value: ' is a function that defines a relationship between an accumulator and an item in a transformation, and can be used in a reducing operation, such as with ',
           position: {
-            start: { line: 65, column: 12, offset: 2220 },
-            end: { line: 65, column: 165, offset: 2373 }
+            start: { line: 63, column: 12, offset: 2167 },
+            end: { line: 63, column: 165, offset: 2320 }
           }
         },
         {
@@ -242,28 +240,28 @@ export default {
               type: 'text',
               value: 'Array.prototype.reduce',
               position: {
-                start: { line: 65, column: 166, offset: 2374 },
-                end: { line: 65, column: 188, offset: 2396 }
+                start: { line: 63, column: 166, offset: 2321 },
+                end: { line: 63, column: 188, offset: 2343 }
               }
             }
           ],
           position: {
-            start: { line: 65, column: 165, offset: 2373 },
-            end: { line: 65, column: 284, offset: 2492 }
+            start: { line: 63, column: 165, offset: 2320 },
+            end: { line: 63, column: 284, offset: 2439 }
           }
         },
         {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 65, column: 284, offset: 2492 },
-            end: { line: 65, column: 285, offset: 2493 }
+            start: { line: 63, column: 284, offset: 2439 },
+            end: { line: 63, column: 285, offset: 2440 }
           }
         }
       ],
       position: {
-        start: { line: 65, column: 1, offset: 2209 },
-        end: { line: 65, column: 285, offset: 2493 }
+        start: { line: 63, column: 1, offset: 2156 },
+        end: { line: 63, column: 285, offset: 2440 }
       }
     },
     {
@@ -273,62 +271,62 @@ export default {
           type: 'text',
           value: 'A ',
           position: {
-            start: { line: 67, column: 1, offset: 2495 },
-            end: { line: 67, column: 3, offset: 2497 }
+            start: { line: 65, column: 1, offset: 2442 },
+            end: { line: 65, column: 3, offset: 2444 }
           }
         },
         {
           type: 'inlineCode',
           value: 'Transducer',
           position: {
-            start: { line: 67, column: 3, offset: 2497 },
-            end: { line: 67, column: 15, offset: 2509 }
+            start: { line: 65, column: 3, offset: 2444 },
+            end: { line: 65, column: 15, offset: 2456 }
           }
         },
         {
           type: 'text',
           value: ' is a function that takes a ',
           position: {
-            start: { line: 67, column: 15, offset: 2509 },
-            end: { line: 67, column: 43, offset: 2537 }
+            start: { line: 65, column: 15, offset: 2456 },
+            end: { line: 65, column: 43, offset: 2484 }
           }
         },
         {
           type: 'inlineCode',
           value: 'Reducer',
           position: {
-            start: { line: 67, column: 43, offset: 2537 },
-            end: { line: 67, column: 52, offset: 2546 }
+            start: { line: 65, column: 43, offset: 2484 },
+            end: { line: 65, column: 52, offset: 2493 }
           }
         },
         {
           type: 'text',
           value: ' and returns another ',
           position: {
-            start: { line: 67, column: 52, offset: 2546 },
-            end: { line: 67, column: 73, offset: 2567 }
+            start: { line: 65, column: 52, offset: 2493 },
+            end: { line: 65, column: 73, offset: 2514 }
           }
         },
         {
           type: 'inlineCode',
           value: 'Reducer',
           position: {
-            start: { line: 67, column: 73, offset: 2567 },
-            end: { line: 67, column: 82, offset: 2576 }
+            start: { line: 65, column: 73, offset: 2514 },
+            end: { line: 65, column: 82, offset: 2523 }
           }
         },
         {
           type: 'text',
           value: '. Transducers enable function chains with reducers - pass a reducer to a transducer to create a reducer with chained functionality. Imagine dominos falling over.',
           position: {
-            start: { line: 67, column: 82, offset: 2576 },
-            end: { line: 67, column: 243, offset: 2737 }
+            start: { line: 65, column: 82, offset: 2523 },
+            end: { line: 65, column: 243, offset: 2684 }
           }
         }
       ],
       position: {
-        start: { line: 67, column: 1, offset: 2495 },
-        end: { line: 67, column: 243, offset: 2737 }
+        start: { line: 65, column: 1, offset: 2442 },
+        end: { line: 65, column: 243, offset: 2684 }
       }
     },
     {
@@ -340,14 +338,14 @@ export default {
           url: '/assets/dominoes.png',
           alt: 'dominoes.png',
           position: {
-            start: { line: 69, column: 1, offset: 2739 },
-            end: { line: 69, column: 38, offset: 2776 }
+            start: { line: 67, column: 1, offset: 2686 },
+            end: { line: 67, column: 38, offset: 2723 }
           }
         }
       ],
       position: {
-        start: { line: 69, column: 1, offset: 2739 },
-        end: { line: 69, column: 38, offset: 2776 }
+        start: { line: 67, column: 1, offset: 2686 },
+        end: { line: 67, column: 38, offset: 2723 }
       }
     },
     {
@@ -357,30 +355,30 @@ export default {
           type: 'text',
           value: "It's a good exercise to try to implement transducers yourself. You could also use transducers through rubico. The ",
           position: {
-            start: { line: 71, column: 1, offset: 2778 },
-            end: { line: 71, column: 115, offset: 2892 }
+            start: { line: 69, column: 1, offset: 2725 },
+            end: { line: 69, column: 115, offset: 2839 }
           }
         },
         {
           type: 'inlineCode',
           value: 'Transducer',
           position: {
-            start: { line: 71, column: 115, offset: 2892 },
-            end: { line: 71, column: 127, offset: 2904 }
+            start: { line: 69, column: 115, offset: 2839 },
+            end: { line: 69, column: 127, offset: 2851 }
           }
         },
         {
           type: 'text',
           value: " module offers the core building blocks for rubico's transducer API.",
           position: {
-            start: { line: 71, column: 127, offset: 2904 },
-            end: { line: 71, column: 195, offset: 2972 }
+            start: { line: 69, column: 127, offset: 2851 },
+            end: { line: 69, column: 195, offset: 2919 }
           }
         }
       ],
       position: {
-        start: { line: 71, column: 1, offset: 2778 },
-        end: { line: 71, column: 195, offset: 2972 }
+        start: { line: 69, column: 1, offset: 2725 },
+        end: { line: 69, column: 195, offset: 2919 }
       }
     },
     {
@@ -406,26 +404,26 @@ export default {
                       type: 'text',
                       value: 'Transducer.map',
                       position: {
-                        start: { line: 73, column: 5, offset: 2978 },
-                        end: { line: 73, column: 19, offset: 2992 }
+                        start: { line: 71, column: 5, offset: 2925 },
+                        end: { line: 71, column: 19, offset: 2939 }
                       }
                     }
                   ],
                   position: {
-                    start: { line: 73, column: 4, offset: 2977 },
-                    end: { line: 73, column: 42, offset: 3015 }
+                    start: { line: 71, column: 4, offset: 2924 },
+                    end: { line: 71, column: 42, offset: 2962 }
                   }
                 }
               ],
               position: {
-                start: { line: 73, column: 4, offset: 2977 },
-                end: { line: 73, column: 42, offset: 3015 }
+                start: { line: 71, column: 4, offset: 2924 },
+                end: { line: 71, column: 42, offset: 2962 }
               }
             }
           ],
           position: {
-            start: { line: 73, column: 2, offset: 2975 },
-            end: { line: 73, column: 42, offset: 3015 }
+            start: { line: 71, column: 2, offset: 2922 },
+            end: { line: 71, column: 42, offset: 2962 }
           }
         },
         {
@@ -445,26 +443,26 @@ export default {
                       type: 'text',
                       value: 'Transducer.filter',
                       position: {
-                        start: { line: 74, column: 5, offset: 3020 },
-                        end: { line: 74, column: 22, offset: 3037 }
+                        start: { line: 72, column: 5, offset: 2967 },
+                        end: { line: 72, column: 22, offset: 2984 }
                       }
                     }
                   ],
                   position: {
-                    start: { line: 74, column: 4, offset: 3019 },
-                    end: { line: 74, column: 48, offset: 3063 }
+                    start: { line: 72, column: 4, offset: 2966 },
+                    end: { line: 72, column: 48, offset: 3010 }
                   }
                 }
               ],
               position: {
-                start: { line: 74, column: 4, offset: 3019 },
-                end: { line: 74, column: 48, offset: 3063 }
+                start: { line: 72, column: 4, offset: 2966 },
+                end: { line: 72, column: 48, offset: 3010 }
               }
             }
           ],
           position: {
-            start: { line: 74, column: 2, offset: 3017 },
-            end: { line: 74, column: 48, offset: 3063 }
+            start: { line: 72, column: 2, offset: 2964 },
+            end: { line: 72, column: 48, offset: 3010 }
           }
         },
         {
@@ -484,26 +482,26 @@ export default {
                       type: 'text',
                       value: 'Transducer.flatMap',
                       position: {
-                        start: { line: 75, column: 5, offset: 3068 },
-                        end: { line: 75, column: 23, offset: 3086 }
+                        start: { line: 73, column: 5, offset: 3015 },
+                        end: { line: 73, column: 23, offset: 3033 }
                       }
                     }
                   ],
                   position: {
-                    start: { line: 75, column: 4, offset: 3067 },
-                    end: { line: 75, column: 50, offset: 3113 }
+                    start: { line: 73, column: 4, offset: 3014 },
+                    end: { line: 73, column: 50, offset: 3060 }
                   }
                 }
               ],
               position: {
-                start: { line: 75, column: 4, offset: 3067 },
-                end: { line: 75, column: 50, offset: 3113 }
+                start: { line: 73, column: 4, offset: 3014 },
+                end: { line: 73, column: 50, offset: 3060 }
               }
             }
           ],
           position: {
-            start: { line: 75, column: 2, offset: 3065 },
-            end: { line: 75, column: 50, offset: 3113 }
+            start: { line: 73, column: 2, offset: 3012 },
+            end: { line: 73, column: 50, offset: 3060 }
           }
         },
         {
@@ -523,26 +521,26 @@ export default {
                       type: 'text',
                       value: 'Transducer.forEach',
                       position: {
-                        start: { line: 76, column: 5, offset: 3118 },
-                        end: { line: 76, column: 23, offset: 3136 }
+                        start: { line: 74, column: 5, offset: 3065 },
+                        end: { line: 74, column: 23, offset: 3083 }
                       }
                     }
                   ],
                   position: {
-                    start: { line: 76, column: 4, offset: 3117 },
-                    end: { line: 76, column: 50, offset: 3163 }
+                    start: { line: 74, column: 4, offset: 3064 },
+                    end: { line: 74, column: 50, offset: 3110 }
                   }
                 }
               ],
               position: {
-                start: { line: 76, column: 4, offset: 3117 },
-                end: { line: 76, column: 50, offset: 3163 }
+                start: { line: 74, column: 4, offset: 3064 },
+                end: { line: 74, column: 50, offset: 3110 }
               }
             }
           ],
           position: {
-            start: { line: 76, column: 2, offset: 3115 },
-            end: { line: 76, column: 50, offset: 3163 }
+            start: { line: 74, column: 2, offset: 3062 },
+            end: { line: 74, column: 50, offset: 3110 }
           }
         },
         {
@@ -562,26 +560,26 @@ export default {
                       type: 'text',
                       value: 'Transducer.passthrough',
                       position: {
-                        start: { line: 77, column: 5, offset: 3168 },
-                        end: { line: 77, column: 27, offset: 3190 }
+                        start: { line: 75, column: 5, offset: 3115 },
+                        end: { line: 75, column: 27, offset: 3137 }
                       }
                     }
                   ],
                   position: {
-                    start: { line: 77, column: 4, offset: 3167 },
-                    end: { line: 77, column: 58, offset: 3221 }
+                    start: { line: 75, column: 4, offset: 3114 },
+                    end: { line: 75, column: 58, offset: 3168 }
                   }
                 }
               ],
               position: {
-                start: { line: 77, column: 4, offset: 3167 },
-                end: { line: 77, column: 58, offset: 3221 }
+                start: { line: 75, column: 4, offset: 3114 },
+                end: { line: 75, column: 58, offset: 3168 }
               }
             }
           ],
           position: {
-            start: { line: 77, column: 2, offset: 3165 },
-            end: { line: 77, column: 58, offset: 3221 }
+            start: { line: 75, column: 2, offset: 3112 },
+            end: { line: 75, column: 58, offset: 3168 }
           }
         },
         {
@@ -601,32 +599,32 @@ export default {
                       type: 'text',
                       value: 'Transducer.tryCatch',
                       position: {
-                        start: { line: 78, column: 5, offset: 3226 },
-                        end: { line: 78, column: 24, offset: 3245 }
+                        start: { line: 76, column: 5, offset: 3173 },
+                        end: { line: 76, column: 24, offset: 3192 }
                       }
                     }
                   ],
                   position: {
-                    start: { line: 78, column: 4, offset: 3225 },
-                    end: { line: 78, column: 52, offset: 3273 }
+                    start: { line: 76, column: 4, offset: 3172 },
+                    end: { line: 76, column: 52, offset: 3220 }
                   }
                 }
               ],
               position: {
-                start: { line: 78, column: 4, offset: 3225 },
-                end: { line: 78, column: 52, offset: 3273 }
+                start: { line: 76, column: 4, offset: 3172 },
+                end: { line: 76, column: 52, offset: 3220 }
               }
             }
           ],
           position: {
-            start: { line: 78, column: 2, offset: 3223 },
-            end: { line: 78, column: 52, offset: 3273 }
+            start: { line: 76, column: 2, offset: 3170 },
+            end: { line: 76, column: 52, offset: 3220 }
           }
         }
       ],
       position: {
-        start: { line: 73, column: 2, offset: 2975 },
-        end: { line: 78, column: 52, offset: 3273 }
+        start: { line: 71, column: 2, offset: 2922 },
+        end: { line: 76, column: 52, offset: 3220 }
       }
     },
     {
@@ -636,62 +634,62 @@ export default {
           type: 'text',
           value: 'A transducer must be used with a reducing implementation to have a transducing effect. This library provides async-capable implementations as ',
           position: {
-            start: { line: 80, column: 1, offset: 3275 },
-            end: { line: 80, column: 143, offset: 3417 }
+            start: { line: 78, column: 1, offset: 3222 },
+            end: { line: 78, column: 143, offset: 3364 }
           }
         },
         {
           type: 'inlineCode',
           value: 'transform',
           position: {
-            start: { line: 80, column: 143, offset: 3417 },
-            end: { line: 80, column: 154, offset: 3428 }
+            start: { line: 78, column: 143, offset: 3364 },
+            end: { line: 78, column: 154, offset: 3375 }
           }
         },
         {
           type: 'text',
           value: ' and ',
           position: {
-            start: { line: 80, column: 154, offset: 3428 },
-            end: { line: 80, column: 159, offset: 3433 }
+            start: { line: 78, column: 154, offset: 3375 },
+            end: { line: 78, column: 159, offset: 3380 }
           }
         },
         {
           type: 'inlineCode',
           value: 'reduce',
           position: {
-            start: { line: 80, column: 159, offset: 3433 },
-            end: { line: 80, column: 167, offset: 3441 }
+            start: { line: 78, column: 159, offset: 3380 },
+            end: { line: 78, column: 167, offset: 3388 }
           }
         },
         {
           type: 'text',
           value: ", and it's also possible to execute a synchronous transducer with vanilla JavaScript ",
           position: {
-            start: { line: 80, column: 167, offset: 3441 },
-            end: { line: 80, column: 252, offset: 3526 }
+            start: { line: 78, column: 167, offset: 3388 },
+            end: { line: 78, column: 252, offset: 3473 }
           }
         },
         {
           type: 'inlineCode',
           value: 'Array.prototype.reduce',
           position: {
-            start: { line: 80, column: 252, offset: 3526 },
-            end: { line: 80, column: 276, offset: 3550 }
+            start: { line: 78, column: 252, offset: 3473 },
+            end: { line: 78, column: 276, offset: 3497 }
           }
         },
         {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 80, column: 276, offset: 3550 },
-            end: { line: 80, column: 277, offset: 3551 }
+            start: { line: 78, column: 276, offset: 3497 },
+            end: { line: 78, column: 277, offset: 3498 }
           }
         }
       ],
       position: {
-        start: { line: 80, column: 1, offset: 3275 },
-        end: { line: 80, column: 277, offset: 3551 }
+        start: { line: 78, column: 1, offset: 3222 },
+        end: { line: 78, column: 277, offset: 3498 }
       }
     },
     {
@@ -701,30 +699,30 @@ export default {
           type: 'text',
           value: 'The following example shows the function pipeline ',
           position: {
-            start: { line: 82, column: 1, offset: 3553 },
-            end: { line: 82, column: 51, offset: 3603 }
+            start: { line: 80, column: 1, offset: 3500 },
+            end: { line: 80, column: 51, offset: 3550 }
           }
         },
         {
           type: 'inlineCode',
           value: 'squaredOdds',
           position: {
-            start: { line: 82, column: 51, offset: 3603 },
-            end: { line: 82, column: 64, offset: 3616 }
+            start: { line: 80, column: 51, offset: 3550 },
+            end: { line: 80, column: 64, offset: 3563 }
           }
         },
         {
           type: 'text',
           value: ' used as a transducer.',
           position: {
-            start: { line: 82, column: 64, offset: 3616 },
-            end: { line: 82, column: 86, offset: 3638 }
+            start: { line: 80, column: 64, offset: 3563 },
+            end: { line: 80, column: 86, offset: 3585 }
           }
         }
       ],
       position: {
-        start: { line: 82, column: 1, offset: 3553 },
-        end: { line: 82, column: 86, offset: 3638 }
+        start: { line: 80, column: 1, offset: 3500 },
+        end: { line: 80, column: 86, offset: 3585 }
       }
     },
     {
@@ -754,8 +752,8 @@ export default {
         '  manyNumbers.reduce(squaredOdds(arrayConcat), []),\n' +
         ') // [1, 9, 25, 36, 49, ...]',
       position: {
-        start: { line: 84, column: 1, offset: 3640 },
-        end: { line: 107, column: 4, offset: 4262 }
+        start: { line: 82, column: 1, offset: 3587 },
+        end: { line: 105, column: 4, offset: 4209 }
       }
     },
     {
@@ -765,14 +763,14 @@ export default {
           type: 'text',
           value: "With rubico's transducers, it is possible to transform asynchronous sources.",
           position: {
-            start: { line: 109, column: 1, offset: 4264 },
-            end: { line: 109, column: 77, offset: 4340 }
+            start: { line: 107, column: 1, offset: 4211 },
+            end: { line: 107, column: 77, offset: 4287 }
           }
         }
       ],
       position: {
-        start: { line: 109, column: 1, offset: 4264 },
-        end: { line: 109, column: 77, offset: 4340 }
+        start: { line: 107, column: 1, offset: 4211 },
+        end: { line: 107, column: 77, offset: 4287 }
       }
     },
     {
@@ -790,8 +788,8 @@ export default {
         'transform(myAsyncSource(), Transducer.passthrough, [])\n' +
         '  .then(console.log) // [1, 2, 3, 4, 5, ...]',
       position: {
-        start: { line: 111, column: 1, offset: 4342 },
-        end: { line: 122, column: 4, offset: 4598 }
+        start: { line: 109, column: 1, offset: 4289 },
+        end: { line: 120, column: 4, offset: 4545 }
       }
     },
     {
@@ -801,30 +799,30 @@ export default {
           type: 'text',
           value: 'This is powerful in comparison to the vanilla JavaScript ',
           position: {
-            start: { line: 124, column: 1, offset: 4600 },
-            end: { line: 124, column: 58, offset: 4657 }
+            start: { line: 122, column: 1, offset: 4547 },
+            end: { line: 122, column: 58, offset: 4604 }
           }
         },
         {
           type: 'inlineCode',
           value: 'for await',
           position: {
-            start: { line: 124, column: 58, offset: 4657 },
-            end: { line: 124, column: 69, offset: 4668 }
+            start: { line: 122, column: 58, offset: 4604 },
+            end: { line: 122, column: 69, offset: 4615 }
           }
         },
         {
           type: 'text',
           value: ', where it takes more lines to express the same operation.',
           position: {
-            start: { line: 124, column: 69, offset: 4668 },
-            end: { line: 124, column: 127, offset: 4726 }
+            start: { line: 122, column: 69, offset: 4615 },
+            end: { line: 122, column: 127, offset: 4673 }
           }
         }
       ],
       position: {
-        start: { line: 124, column: 1, offset: 4600 },
-        end: { line: 124, column: 127, offset: 4726 }
+        start: { line: 122, column: 1, offset: 4547 },
+        end: { line: 122, column: 127, offset: 4673 }
       }
     },
     {
@@ -847,8 +845,8 @@ export default {
         '  console.log(array) // [1, 2, 3, 4, 5, ...]\n' +
         '}, 0)',
       position: {
-        start: { line: 126, column: 1, offset: 4728 },
-        end: { line: 142, column: 4, offset: 5060 }
+        start: { line: 124, column: 1, offset: 4675 },
+        end: { line: 140, column: 4, offset: 5007 }
       }
     },
     {
@@ -858,8 +856,8 @@ export default {
           type: 'text',
           value: 'Transducers are useful for creating memory efficient data transformations, and are easy to use with rubico. You can get started with transducers at the ',
           position: {
-            start: { line: 144, column: 1, offset: 5062 },
-            end: { line: 144, column: 153, offset: 5214 }
+            start: { line: 142, column: 1, offset: 5009 },
+            end: { line: 142, column: 153, offset: 5161 }
           }
         },
         {
@@ -871,28 +869,28 @@ export default {
               type: 'text',
               value: 'docs',
               position: {
-                start: { line: 144, column: 154, offset: 5215 },
-                end: { line: 144, column: 158, offset: 5219 }
+                start: { line: 142, column: 154, offset: 5162 },
+                end: { line: 142, column: 158, offset: 5166 }
               }
             }
           ],
           position: {
-            start: { line: 144, column: 153, offset: 5214 },
-            end: { line: 144, column: 181, offset: 5242 }
+            start: { line: 142, column: 153, offset: 5161 },
+            end: { line: 142, column: 181, offset: 5189 }
           }
         },
         {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 144, column: 181, offset: 5242 },
-            end: { line: 144, column: 182, offset: 5243 }
+            start: { line: 142, column: 181, offset: 5189 },
+            end: { line: 142, column: 182, offset: 5190 }
           }
         }
       ],
       position: {
-        start: { line: 144, column: 1, offset: 5062 },
-        end: { line: 144, column: 182, offset: 5243 }
+        start: { line: 142, column: 1, offset: 5009 },
+        end: { line: 142, column: 182, offset: 5190 }
       }
     },
     {
@@ -902,14 +900,14 @@ export default {
           type: 'text',
           value: 'Further reading:',
           position: {
-            start: { line: 146, column: 1, offset: 5245 },
-            end: { line: 146, column: 17, offset: 5261 }
+            start: { line: 144, column: 1, offset: 5192 },
+            end: { line: 144, column: 17, offset: 5208 }
           }
         }
       ],
       position: {
-        start: { line: 146, column: 1, offset: 5245 },
-        end: { line: 146, column: 17, offset: 5261 }
+        start: { line: 144, column: 1, offset: 5192 },
+        end: { line: 144, column: 17, offset: 5208 }
       }
     },
     {
@@ -930,26 +928,26 @@ export default {
                   type: 'text',
                   value: 'https://tgvashworth.com/2014/08/31/csp-and-transducers.html',
                   position: {
-                    start: { line: 147, column: 4, offset: 5265 },
-                    end: { line: 147, column: 63, offset: 5324 }
+                    start: { line: 145, column: 4, offset: 5212 },
+                    end: { line: 145, column: 63, offset: 5271 }
                   }
                 }
               ],
               position: {
-                start: { line: 147, column: 4, offset: 5265 },
-                end: { line: 147, column: 63, offset: 5324 }
+                start: { line: 145, column: 4, offset: 5212 },
+                end: { line: 145, column: 63, offset: 5271 }
               }
             }
           ],
           position: {
-            start: { line: 147, column: 2, offset: 5263 },
-            end: { line: 147, column: 63, offset: 5324 }
+            start: { line: 145, column: 2, offset: 5210 },
+            end: { line: 145, column: 63, offset: 5271 }
           }
         }
       ],
       position: {
-        start: { line: 147, column: 2, offset: 5263 },
-        end: { line: 147, column: 63, offset: 5324 }
+        start: { line: 145, column: 2, offset: 5210 },
+        end: { line: 145, column: 63, offset: 5271 }
       }
     },
     {
@@ -959,14 +957,14 @@ export default {
           type: 'text',
           value: 'Photo credits:',
           position: {
-            start: { line: 149, column: 1, offset: 5326 },
-            end: { line: 149, column: 15, offset: 5340 }
+            start: { line: 147, column: 1, offset: 5273 },
+            end: { line: 147, column: 15, offset: 5287 }
           }
         }
       ],
       position: {
-        start: { line: 149, column: 1, offset: 5326 },
-        end: { line: 149, column: 15, offset: 5340 }
+        start: { line: 147, column: 1, offset: 5273 },
+        end: { line: 147, column: 15, offset: 5287 }
       }
     },
     {
@@ -987,31 +985,31 @@ export default {
                   type: 'text',
                   value: 'https://www.pngkit.com/view/u2w7e6u2y3o0o0y3_junior-alex-berlaga-helps-set-dominoes-world-records/',
                   position: {
-                    start: { line: 150, column: 4, offset: 5344 },
-                    end: { line: 150, column: 102, offset: 5442 }
+                    start: { line: 148, column: 4, offset: 5291 },
+                    end: { line: 148, column: 102, offset: 5389 }
                   }
                 }
               ],
               position: {
-                start: { line: 150, column: 4, offset: 5344 },
-                end: { line: 150, column: 102, offset: 5442 }
+                start: { line: 148, column: 4, offset: 5291 },
+                end: { line: 148, column: 102, offset: 5389 }
               }
             }
           ],
           position: {
-            start: { line: 150, column: 2, offset: 5342 },
-            end: { line: 150, column: 102, offset: 5442 }
+            start: { line: 148, column: 2, offset: 5289 },
+            end: { line: 148, column: 102, offset: 5389 }
           }
         }
       ],
       position: {
-        start: { line: 150, column: 2, offset: 5342 },
-        end: { line: 150, column: 102, offset: 5442 }
+        start: { line: 148, column: 2, offset: 5289 },
+        end: { line: 148, column: 102, offset: 5389 }
       }
     }
   ],
   position: {
     start: { line: 1, column: 1, offset: 0 },
-    end: { line: 151, column: 1, offset: 5443 }
+    end: { line: 149, column: 1, offset: 5390 }
   }
 }
