@@ -580,7 +580,7 @@ Algebraic structures are special classes of data types that are identified by th
 
 The functor algebraic structure identifies data types with the `.map` method. Data types implementing `.map` must conform to the functor laws:
 
-  1. Identity Law: applying the identity function `a => a` to a functor is equivalent to not having applied a function.
+ * Identity Law: applying the identity function `a => a` to a functor is equivalent to not having applied a function.
 
 ```javascript
 assert.equivalent(
@@ -589,13 +589,32 @@ assert.equivalent(
 )
 ```
 
-  2. Composition Law: applying two functions in sequence using `.map` is equivalent to applying their composition in a single `.map` operation.
+```javascript [playground]
+const myArray = [1, 2, 3, 4, 5]
+
+const identity = a => a
+
+console.log(myArray.map(identity))
+console.log(myArray)
+```
+
+ * Composition Law: applying two functions in sequence using `.map` is equivalent to applying their composition in a single `.map` operation.
 
 ```javascript
 assert.equivalent(
   myFunctor.map(f).map(g),
   myFunctor.map(compose([g, f]))
 )
+```
+
+```javascript [playground]
+const myArray = [1, 2, 3, 4, 5]
+
+const f = x => x + 1
+const g = x => x * 2
+
+console.log(myArray.map(f).map(g))
+console.log(myArray.map(compose([g, f])))
 ```
 
 The following built-in data types are considered to be functors:
@@ -608,7 +627,7 @@ The following built-in data types are considered to be functors:
 
 The filterable algebraic structure identifies data types with the `.filter` method. Data types implementing `.filter` must conform to the following laws:
 
-  1. Distributivity Law: applying two predicate functions in sequence using consecutive calls to `.filter` is equivalent to executing both predicate functions in a logical AND expression with a single call to `.filter`.
+ * Distributivity Law: applying two predicate functions in sequence using consecutive calls to `.filter` is equivalent to executing both predicate functions in a logical AND expression with a single call to `.filter`.
 
 ```javascript
 assert.equivalent(
@@ -617,7 +636,17 @@ assert.equivalent(
 )
 ```
 
-  2. Identity Law: applying a predicate function that always returns true is equivalent to not having applied a function.
+```javascript [playground]
+const myArray = [1, 2, 3, 4, 5]
+
+const f = n => n > 2
+const g = n => n % 2 == 1
+
+console.log(myArray.filter(x => f(x) && g(x)))
+console.log(myArray.filter(f).filter(g))
+```
+
+ * Identity Law: applying a predicate function that always returns true is equivalent to not having applied a function.
 
 ```javascript
 assert.equivalent(
@@ -626,13 +655,28 @@ assert.equivalent(
 )
 ```
 
-  3. Annihilation Law: given two distinct filterables, applying a predicate function that always returns false to both filterables produces equivalent results.
+```javascript [playground]
+const myArray = [1, 2, 3, 4, 5]
+
+console.log(myArray.filter(() => true))
+console.log(myArray)
+```
+
+ * Annihilation Law: given two distinct filterables, applying a predicate function that always returns false to both filterables produces equivalent results.
 
 ```javascript
 assert.equivalent(
   myFilterableA.filter(() => false),
   myFilterableB.filter(() => false)
 )
+```
+
+```javascript [playground]
+const myArrayA = [1, 2, 3, 4, 5]
+const myArrayB = ['a', 'b', 'c']
+
+console.log(myArrayA.filter(() => false))
+console.log(myArrayB.filter(() => false))
 ```
 
 The following built-in data types are considered to be filterables:
@@ -645,7 +689,7 @@ The following built-in data types are considered to be filterables:
 
 The foldable algebraic structure identifies data types with the `.reduce` method. Data types implementing `.reduce` must conform to the following law: 
 
-  1. A given reducing operation is equivalent to two chained reducing operations with `.reduce` where the first reduce concatenates every item in the foldable onto an array and the second reduce takes the array and performs the given reducing operation.
+ * A given reducing operation is equivalent to two chained reducing operations with `.reduce` where the first reduce concatenates every item in the foldable onto an array and the second reduce takes the array and performs the given reducing operation.
 
 ```javascript
 assert.equivalent(
@@ -653,6 +697,18 @@ assert.equivalent(
   myFoldable
     .reduce((accumulator, item) => accumulator.concat([item]) , [])
     .reduce(reducer)
+)
+```
+
+```javascript [playground]
+const myArray = [1, 2, 3, 4, 5]
+const add = (a, b) => a + b
+
+console.log(myArray.reduce(add))
+console.log(
+  myArray
+    .reduce((accumulator, item) => accumulator.concat([item]) , [])
+    .reduce(add)
 )
 ```
 
@@ -666,13 +722,18 @@ The following built-in data types are considered to be foldables:
 
 The semigroup algebraic structure identifies data types with the `.concat` method. Data types implementing `.concat` must conform to the following laws:
 
-  1. Associativity: when concatenating three elements, concatenating the first and then the last two is the same as concatenating the first two and then the last.
+ * Associativity: when concatenating three elements, concatenating the first and then the last two is the same as concatenating the first two and then the last.
 
 ```javascript
 assert.equivalent(
   mySemigroup.concat(a).concat(b, c),
   mySemigroup.concat(a, b).concat(c),
 )
+```
+
+```javascript [playground]
+console.log([0].concat(1).concat(2, 3))
+console.log([0].concat(1, 2).concat(3))
 ```
 
 The following built-in data types are considered to be semigroups:
@@ -684,7 +745,7 @@ The following built-in data types are considered to be semigroups:
 
 The monad algebraic structure identifies data types with the `.flatMap` or `.chain` methods. Data types implementing `.flatMap` or `.chain` must conform to the monad laws:
 
-  1. Left Identity: wrapping a value in a monad and then calling the monad's `.flatMap` or `.chain` with a function is equivalent to directly applying the function to the value.
+ * Left Identity: wrapping a value in a monad and then calling the monad's `.flatMap` or `.chain` with a function is equivalent to directly applying the function to the value.
 
 ```javascript
 assert.equivalent(
@@ -693,7 +754,17 @@ assert.equivalent(
 )
 ```
 
-  2. Right Identity: given a monad, chaining a function that wraps a value in a monad should result in the given monad.
+```javascript [playground]
+const ArrayOf = curry.arity(1, Array.of)
+
+const f = x => [x ** 2]
+const a = 9
+
+console.log(ArrayOf(a).flatMap(f))
+console.log(f(a))
+```
+
+ * Right Identity: given a monad, chaining a function that wraps a value in a monad should result in the given monad.
 
 ```javascript
 assert.equivalent(
@@ -702,7 +773,16 @@ assert.equivalent(
 )
 ```
 
-  3. Associativity: the order of execution of chaining operations on a monad does not affect the final result.
+```javascript [playground]
+const myArray = [1, 2, 3, 4, 5]
+
+const ArrayOf = curry.arity(1, Array.of)
+
+console.log(myArray.flatMap(ArrayOf))
+console.log(myArray)
+```
+
+ * Associativity: the order of execution of chaining monadic operations on a monad does not affect the final result.
 
 ```javascript
 // f and g are functions that return a monad
@@ -710,6 +790,16 @@ assert.equivalent(
   myMonad.flatMap(f).flatMap(g),
   myMonad.flatMap(x => f(x).flatMap(g))
 )
+```
+
+```javascript [playground]
+const f = x => [x ** 2]
+const g = x => x % 2 == 0 ? [] : [x ** 2]
+
+const myArray = [1, 2, 3, 4, 5]
+
+console.log(myArray.flatMap(f).flatMap(g))
+console.log(myArray.flatMap(x => f(x).flatMap(g)))
 ```
 
 The following built-in data types are considered to be monads:
