@@ -1,10 +1,10 @@
 ---
 title: [A]synchronous Functional Programming - Data Types
 author: Richard Tong, CTO and Co-Founder of Claimyr Inc.
-date: 2025-06-09
+date: 2025-06-13
 path: /blog/a-synchronous-functional-programming-data-types
 description: Data types used for the [A]synchronous Functional Programming paradigm
-image: https://cdn.cloutsworld.com/assets/tmp/monad.png
+image: /assets/monad.png
 ---
 
 Welcome to [A]synchronous Functional Programming Data Types. In this article we will discuss the data types used for the [A]synchronous Functional Programming paradigm in JavaScript.
