@@ -153,7 +153,15 @@ export default [
       ') // [1, 4, 9, 16, 25]\n' +
       '```\n' +
       '\n' +
-      'Read more on transducers [here](/blog/transducers-crash-course-rubico-v2).',
+      'Read more on [transducers](/blog/transducers-crash-course-rubico-v2).\n' +
+      '\n' +
+      'See also:\n' +
+      ' * [thunkify](/docs/thunkify)\n' +
+      ' * [Transducer.filter](/docs/Transducer.filter)\n' +
+      ' * [Transducer.flatMap](/docs/Transducer.flatMap)\n' +
+      ' * [Transducer.forEach](/docs/Transducer.forEach)\n' +
+      ' * [Transducer.passthrough](/docs/Transducer.passthrough)\n' +
+      ' * [Transducer.tryCatch](/docs/Transducer.tryCatch)',
     mdast: {
       name: {
         type: 'root',
@@ -319,10 +327,10 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Read more on transducers ',
+                value: 'Read more on ',
                 position: {
                   start: { line: 30, column: 1, offset: 1093 },
-                  end: { line: 30, column: 26, offset: 1118 }
+                  end: { line: 30, column: 14, offset: 1106 }
                 }
               },
               {
@@ -332,36 +340,299 @@ export default [
                 children: [
                   {
                     type: 'text',
-                    value: 'here',
+                    value: 'transducers',
                     position: {
-                      start: { line: 30, column: 27, offset: 1119 },
-                      end: { line: 30, column: 31, offset: 1123 }
+                      start: { line: 30, column: 15, offset: 1107 },
+                      end: { line: 30, column: 26, offset: 1118 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 30, column: 26, offset: 1118 },
-                  end: { line: 30, column: 74, offset: 1166 }
+                  start: { line: 30, column: 14, offset: 1106 },
+                  end: { line: 30, column: 69, offset: 1161 }
                 }
               },
               {
                 type: 'text',
                 value: '.',
                 position: {
-                  start: { line: 30, column: 74, offset: 1166 },
-                  end: { line: 30, column: 75, offset: 1167 }
+                  start: { line: 30, column: 69, offset: 1161 },
+                  end: { line: 30, column: 70, offset: 1162 }
                 }
               }
             ],
             position: {
               start: { line: 30, column: 1, offset: 1093 },
-              end: { line: 30, column: 75, offset: 1167 }
+              end: { line: 30, column: 70, offset: 1162 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'See also:',
+                position: {
+                  start: { line: 32, column: 1, offset: 1164 },
+                  end: { line: 32, column: 10, offset: 1173 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 32, column: 1, offset: 1164 },
+              end: { line: 32, column: 10, offset: 1173 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/thunkify',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'thunkify',
+                            position: {
+                              start: { line: 33, column: 5, offset: 1178 },
+                              end: { line: 33, column: 13, offset: 1186 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 33, column: 4, offset: 1177 },
+                          end: { line: 33, column: 30, offset: 1203 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 33, column: 4, offset: 1177 },
+                      end: { line: 33, column: 30, offset: 1203 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 33, column: 2, offset: 1175 },
+                  end: { line: 33, column: 30, offset: 1203 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/Transducer.filter',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'Transducer.filter',
+                            position: {
+                              start: { line: 34, column: 5, offset: 1208 },
+                              end: { line: 34, column: 22, offset: 1225 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 34, column: 4, offset: 1207 },
+                          end: { line: 34, column: 48, offset: 1251 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 34, column: 4, offset: 1207 },
+                      end: { line: 34, column: 48, offset: 1251 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 34, column: 2, offset: 1205 },
+                  end: { line: 34, column: 48, offset: 1251 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/Transducer.flatMap',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'Transducer.flatMap',
+                            position: {
+                              start: { line: 35, column: 5, offset: 1256 },
+                              end: { line: 35, column: 23, offset: 1274 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 35, column: 4, offset: 1255 },
+                          end: { line: 35, column: 50, offset: 1301 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 35, column: 4, offset: 1255 },
+                      end: { line: 35, column: 50, offset: 1301 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 35, column: 2, offset: 1253 },
+                  end: { line: 35, column: 50, offset: 1301 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/Transducer.forEach',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'Transducer.forEach',
+                            position: {
+                              start: { line: 36, column: 5, offset: 1306 },
+                              end: { line: 36, column: 23, offset: 1324 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 36, column: 4, offset: 1305 },
+                          end: { line: 36, column: 50, offset: 1351 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 36, column: 4, offset: 1305 },
+                      end: { line: 36, column: 50, offset: 1351 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 36, column: 2, offset: 1303 },
+                  end: { line: 36, column: 50, offset: 1351 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/Transducer.passthrough',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'Transducer.passthrough',
+                            position: {
+                              start: { line: 37, column: 5, offset: 1356 },
+                              end: { line: 37, column: 27, offset: 1378 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 37, column: 4, offset: 1355 },
+                          end: { line: 37, column: 58, offset: 1409 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 37, column: 4, offset: 1355 },
+                      end: { line: 37, column: 58, offset: 1409 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 37, column: 2, offset: 1353 },
+                  end: { line: 37, column: 58, offset: 1409 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/Transducer.tryCatch',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'Transducer.tryCatch',
+                            position: {
+                              start: { line: 38, column: 5, offset: 1414 },
+                              end: { line: 38, column: 24, offset: 1433 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 38, column: 4, offset: 1413 },
+                          end: { line: 38, column: 52, offset: 1461 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 38, column: 4, offset: 1413 },
+                      end: { line: 38, column: 52, offset: 1461 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 38, column: 2, offset: 1411 },
+                  end: { line: 38, column: 52, offset: 1461 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 33, column: 2, offset: 1175 },
+              end: { line: 38, column: 52, offset: 1461 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 30, column: 75, offset: 1167 }
+          end: { line: 38, column: 52, offset: 1461 }
         }
       }
     },
@@ -391,7 +662,17 @@ export default [
       'console.log(\n' +
       '  [1, 2, 3, 4, 5].reduce(concatOddNumbers, []),\n' +
       ') // [1, 3, 5]\n' +
-      '```',
+      '```\n' +
+      '\n' +
+      'Read more on [transducers](/blog/transducers-crash-course-rubico-v2).\n' +
+      '\n' +
+      'See also:\n' +
+      ' * [thunkify](/docs/thunkify)\n' +
+      ' * [Transducer.map](/docs/Transducer.map)\n' +
+      ' * [Transducer.flatMap](/docs/Transducer.flatMap)\n' +
+      ' * [Transducer.forEach](/docs/Transducer.forEach)\n' +
+      ' * [Transducer.passthrough](/docs/Transducer.passthrough)\n' +
+      ' * [Transducer.tryCatch](/docs/Transducer.tryCatch)',
     mdast: {
       name: {
         type: 'root',
@@ -536,11 +817,318 @@ export default [
               start: { line: 3, column: 1, offset: 344 },
               end: { line: 13, column: 4, offset: 591 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Read more on ',
+                position: {
+                  start: { line: 15, column: 1, offset: 593 },
+                  end: { line: 15, column: 14, offset: 606 }
+                }
+              },
+              {
+                type: 'link',
+                title: null,
+                url: '/blog/transducers-crash-course-rubico-v2',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'transducers',
+                    position: {
+                      start: { line: 15, column: 15, offset: 607 },
+                      end: { line: 15, column: 26, offset: 618 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 15, column: 14, offset: 606 },
+                  end: { line: 15, column: 69, offset: 661 }
+                }
+              },
+              {
+                type: 'text',
+                value: '.',
+                position: {
+                  start: { line: 15, column: 69, offset: 661 },
+                  end: { line: 15, column: 70, offset: 662 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 15, column: 1, offset: 593 },
+              end: { line: 15, column: 70, offset: 662 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'See also:',
+                position: {
+                  start: { line: 17, column: 1, offset: 664 },
+                  end: { line: 17, column: 10, offset: 673 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 17, column: 1, offset: 664 },
+              end: { line: 17, column: 10, offset: 673 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/thunkify',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'thunkify',
+                            position: {
+                              start: { line: 18, column: 5, offset: 678 },
+                              end: { line: 18, column: 13, offset: 686 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 18, column: 4, offset: 677 },
+                          end: { line: 18, column: 30, offset: 703 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 18, column: 4, offset: 677 },
+                      end: { line: 18, column: 30, offset: 703 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 18, column: 2, offset: 675 },
+                  end: { line: 18, column: 30, offset: 703 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/Transducer.map',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'Transducer.map',
+                            position: {
+                              start: { line: 19, column: 5, offset: 708 },
+                              end: { line: 19, column: 19, offset: 722 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 19, column: 4, offset: 707 },
+                          end: { line: 19, column: 42, offset: 745 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 19, column: 4, offset: 707 },
+                      end: { line: 19, column: 42, offset: 745 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 19, column: 2, offset: 705 },
+                  end: { line: 19, column: 42, offset: 745 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/Transducer.flatMap',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'Transducer.flatMap',
+                            position: {
+                              start: { line: 20, column: 5, offset: 750 },
+                              end: { line: 20, column: 23, offset: 768 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 20, column: 4, offset: 749 },
+                          end: { line: 20, column: 50, offset: 795 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 20, column: 4, offset: 749 },
+                      end: { line: 20, column: 50, offset: 795 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 20, column: 2, offset: 747 },
+                  end: { line: 20, column: 50, offset: 795 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/Transducer.forEach',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'Transducer.forEach',
+                            position: {
+                              start: { line: 21, column: 5, offset: 800 },
+                              end: { line: 21, column: 23, offset: 818 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 21, column: 4, offset: 799 },
+                          end: { line: 21, column: 50, offset: 845 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 21, column: 4, offset: 799 },
+                      end: { line: 21, column: 50, offset: 845 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 21, column: 2, offset: 797 },
+                  end: { line: 21, column: 50, offset: 845 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/Transducer.passthrough',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'Transducer.passthrough',
+                            position: {
+                              start: { line: 22, column: 5, offset: 850 },
+                              end: { line: 22, column: 27, offset: 872 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 22, column: 4, offset: 849 },
+                          end: { line: 22, column: 58, offset: 903 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 22, column: 4, offset: 849 },
+                      end: { line: 22, column: 58, offset: 903 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 22, column: 2, offset: 847 },
+                  end: { line: 22, column: 58, offset: 903 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/Transducer.tryCatch',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'Transducer.tryCatch',
+                            position: {
+                              start: { line: 23, column: 5, offset: 908 },
+                              end: { line: 23, column: 24, offset: 927 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 23, column: 4, offset: 907 },
+                          end: { line: 23, column: 52, offset: 955 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 23, column: 4, offset: 907 },
+                      end: { line: 23, column: 52, offset: 955 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 23, column: 2, offset: 905 },
+                  end: { line: 23, column: 52, offset: 955 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 18, column: 2, offset: 675 },
+              end: { line: 23, column: 52, offset: 955 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 13, column: 4, offset: 591 }
+          end: { line: 23, column: 52, offset: 955 }
         }
       }
     },
@@ -570,7 +1158,15 @@ export default [
       ') // [1, 1, 1, 2, 4, 8, 3, 9, 27, 4, 16, 64, 5, 25, 125]\n' +
       '```\n' +
       '\n' +
-      'Read more on transducers [here](/blog/transducers-crash-course-rubico-v2).',
+      'Read more on [transducers](/blog/transducers-crash-course-rubico-v2).\n' +
+      '\n' +
+      'See also:\n' +
+      ' * [thunkify](/docs/thunkify)\n' +
+      ' * [Transducer.map](/docs/Transducer.map)\n' +
+      ' * [Transducer.filter](/docs/Transducer.filter)\n' +
+      ' * [Transducer.forEach](/docs/Transducer.forEach)\n' +
+      ' * [Transducer.passthrough](/docs/Transducer.passthrough)\n' +
+      ' * [Transducer.tryCatch](/docs/Transducer.tryCatch)',
     mdast: {
       name: {
         type: 'root',
@@ -719,10 +1315,10 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Read more on transducers ',
+                value: 'Read more on ',
                 position: {
                   start: { line: 13, column: 1, offset: 680 },
-                  end: { line: 13, column: 26, offset: 705 }
+                  end: { line: 13, column: 14, offset: 693 }
                 }
               },
               {
@@ -732,36 +1328,299 @@ export default [
                 children: [
                   {
                     type: 'text',
-                    value: 'here',
+                    value: 'transducers',
                     position: {
-                      start: { line: 13, column: 27, offset: 706 },
-                      end: { line: 13, column: 31, offset: 710 }
+                      start: { line: 13, column: 15, offset: 694 },
+                      end: { line: 13, column: 26, offset: 705 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 13, column: 26, offset: 705 },
-                  end: { line: 13, column: 74, offset: 753 }
+                  start: { line: 13, column: 14, offset: 693 },
+                  end: { line: 13, column: 69, offset: 748 }
                 }
               },
               {
                 type: 'text',
                 value: '.',
                 position: {
-                  start: { line: 13, column: 74, offset: 753 },
-                  end: { line: 13, column: 75, offset: 754 }
+                  start: { line: 13, column: 69, offset: 748 },
+                  end: { line: 13, column: 70, offset: 749 }
                 }
               }
             ],
             position: {
               start: { line: 13, column: 1, offset: 680 },
-              end: { line: 13, column: 75, offset: 754 }
+              end: { line: 13, column: 70, offset: 749 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'See also:',
+                position: {
+                  start: { line: 15, column: 1, offset: 751 },
+                  end: { line: 15, column: 10, offset: 760 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 15, column: 1, offset: 751 },
+              end: { line: 15, column: 10, offset: 760 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/thunkify',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'thunkify',
+                            position: {
+                              start: { line: 16, column: 5, offset: 765 },
+                              end: { line: 16, column: 13, offset: 773 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 16, column: 4, offset: 764 },
+                          end: { line: 16, column: 30, offset: 790 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 16, column: 4, offset: 764 },
+                      end: { line: 16, column: 30, offset: 790 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 16, column: 2, offset: 762 },
+                  end: { line: 16, column: 30, offset: 790 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/Transducer.map',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'Transducer.map',
+                            position: {
+                              start: { line: 17, column: 5, offset: 795 },
+                              end: { line: 17, column: 19, offset: 809 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 17, column: 4, offset: 794 },
+                          end: { line: 17, column: 42, offset: 832 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 17, column: 4, offset: 794 },
+                      end: { line: 17, column: 42, offset: 832 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 17, column: 2, offset: 792 },
+                  end: { line: 17, column: 42, offset: 832 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/Transducer.filter',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'Transducer.filter',
+                            position: {
+                              start: { line: 18, column: 5, offset: 837 },
+                              end: { line: 18, column: 22, offset: 854 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 18, column: 4, offset: 836 },
+                          end: { line: 18, column: 48, offset: 880 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 18, column: 4, offset: 836 },
+                      end: { line: 18, column: 48, offset: 880 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 18, column: 2, offset: 834 },
+                  end: { line: 18, column: 48, offset: 880 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/Transducer.forEach',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'Transducer.forEach',
+                            position: {
+                              start: { line: 19, column: 5, offset: 885 },
+                              end: { line: 19, column: 23, offset: 903 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 19, column: 4, offset: 884 },
+                          end: { line: 19, column: 50, offset: 930 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 19, column: 4, offset: 884 },
+                      end: { line: 19, column: 50, offset: 930 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 19, column: 2, offset: 882 },
+                  end: { line: 19, column: 50, offset: 930 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/Transducer.passthrough',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'Transducer.passthrough',
+                            position: {
+                              start: { line: 20, column: 5, offset: 935 },
+                              end: { line: 20, column: 27, offset: 957 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 20, column: 4, offset: 934 },
+                          end: { line: 20, column: 58, offset: 988 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 20, column: 4, offset: 934 },
+                      end: { line: 20, column: 58, offset: 988 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 20, column: 2, offset: 932 },
+                  end: { line: 20, column: 58, offset: 988 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/Transducer.tryCatch',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'Transducer.tryCatch',
+                            position: {
+                              start: { line: 21, column: 5, offset: 993 },
+                              end: { line: 21, column: 24, offset: 1012 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 21, column: 4, offset: 992 },
+                          end: { line: 21, column: 52, offset: 1040 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 21, column: 4, offset: 992 },
+                      end: { line: 21, column: 52, offset: 1040 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 21, column: 2, offset: 990 },
+                  end: { line: 21, column: 52, offset: 1040 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 16, column: 2, offset: 762 },
+              end: { line: 21, column: 52, offset: 1040 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 13, column: 75, offset: 754 }
+          end: { line: 21, column: 52, offset: 1040 }
         }
       }
     },
@@ -787,7 +1646,17 @@ export default [
       '  Transducer.map(number => number ** 2),\n' +
       '  Transducer.forEach(console.log), // 1 4 9 16 25\n' +
       ']), null)\n' +
-      '```',
+      '```\n' +
+      '\n' +
+      'Read more on [transducers](/blog/transducers-crash-course-rubico-v2).\n' +
+      '\n' +
+      'See also:\n' +
+      ' * [thunkify](/docs/thunkify)\n' +
+      ' * [Transducer.map](/docs/Transducer.map)\n' +
+      ' * [Transducer.filter](/docs/Transducer.filter)\n' +
+      ' * [Transducer.flatMap](/docs/Transducer.flatMap)\n' +
+      ' * [Transducer.passthrough](/docs/Transducer.passthrough)\n' +
+      ' * [Transducer.tryCatch](/docs/Transducer.tryCatch)',
     mdast: {
       name: {
         type: 'root',
@@ -928,11 +1797,318 @@ export default [
               start: { line: 3, column: 1, offset: 424 },
               end: { line: 9, column: 4, offset: 616 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Read more on ',
+                position: {
+                  start: { line: 11, column: 1, offset: 618 },
+                  end: { line: 11, column: 14, offset: 631 }
+                }
+              },
+              {
+                type: 'link',
+                title: null,
+                url: '/blog/transducers-crash-course-rubico-v2',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'transducers',
+                    position: {
+                      start: { line: 11, column: 15, offset: 632 },
+                      end: { line: 11, column: 26, offset: 643 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 11, column: 14, offset: 631 },
+                  end: { line: 11, column: 69, offset: 686 }
+                }
+              },
+              {
+                type: 'text',
+                value: '.',
+                position: {
+                  start: { line: 11, column: 69, offset: 686 },
+                  end: { line: 11, column: 70, offset: 687 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 11, column: 1, offset: 618 },
+              end: { line: 11, column: 70, offset: 687 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'See also:',
+                position: {
+                  start: { line: 13, column: 1, offset: 689 },
+                  end: { line: 13, column: 10, offset: 698 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 13, column: 1, offset: 689 },
+              end: { line: 13, column: 10, offset: 698 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/thunkify',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'thunkify',
+                            position: {
+                              start: { line: 14, column: 5, offset: 703 },
+                              end: { line: 14, column: 13, offset: 711 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 14, column: 4, offset: 702 },
+                          end: { line: 14, column: 30, offset: 728 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 14, column: 4, offset: 702 },
+                      end: { line: 14, column: 30, offset: 728 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 14, column: 2, offset: 700 },
+                  end: { line: 14, column: 30, offset: 728 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/Transducer.map',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'Transducer.map',
+                            position: {
+                              start: { line: 15, column: 5, offset: 733 },
+                              end: { line: 15, column: 19, offset: 747 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 15, column: 4, offset: 732 },
+                          end: { line: 15, column: 42, offset: 770 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 15, column: 4, offset: 732 },
+                      end: { line: 15, column: 42, offset: 770 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 15, column: 2, offset: 730 },
+                  end: { line: 15, column: 42, offset: 770 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/Transducer.filter',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'Transducer.filter',
+                            position: {
+                              start: { line: 16, column: 5, offset: 775 },
+                              end: { line: 16, column: 22, offset: 792 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 16, column: 4, offset: 774 },
+                          end: { line: 16, column: 48, offset: 818 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 16, column: 4, offset: 774 },
+                      end: { line: 16, column: 48, offset: 818 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 16, column: 2, offset: 772 },
+                  end: { line: 16, column: 48, offset: 818 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/Transducer.flatMap',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'Transducer.flatMap',
+                            position: {
+                              start: { line: 17, column: 5, offset: 823 },
+                              end: { line: 17, column: 23, offset: 841 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 17, column: 4, offset: 822 },
+                          end: { line: 17, column: 50, offset: 868 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 17, column: 4, offset: 822 },
+                      end: { line: 17, column: 50, offset: 868 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 17, column: 2, offset: 820 },
+                  end: { line: 17, column: 50, offset: 868 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/Transducer.passthrough',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'Transducer.passthrough',
+                            position: {
+                              start: { line: 18, column: 5, offset: 873 },
+                              end: { line: 18, column: 27, offset: 895 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 18, column: 4, offset: 872 },
+                          end: { line: 18, column: 58, offset: 926 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 18, column: 4, offset: 872 },
+                      end: { line: 18, column: 58, offset: 926 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 18, column: 2, offset: 870 },
+                  end: { line: 18, column: 58, offset: 926 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/Transducer.tryCatch',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'Transducer.tryCatch',
+                            position: {
+                              start: { line: 19, column: 5, offset: 931 },
+                              end: { line: 19, column: 24, offset: 950 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 19, column: 4, offset: 930 },
+                          end: { line: 19, column: 52, offset: 978 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 19, column: 4, offset: 930 },
+                      end: { line: 19, column: 52, offset: 978 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 19, column: 2, offset: 928 },
+                  end: { line: 19, column: 52, offset: 978 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 14, column: 2, offset: 700 },
+              end: { line: 19, column: 52, offset: 978 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 9, column: 4, offset: 616 }
+          end: { line: 19, column: 52, offset: 978 }
         }
       }
     },
@@ -963,7 +2139,17 @@ export default [
       '\n' +
       'transform(createAsyncNumbers(), Transducer.passthrough, [])\n' +
       '  .then(console.log) // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\n' +
-      '```',
+      '```\n' +
+      '\n' +
+      'Read more on [transducers](/blog/transducers-crash-course-rubico-v2).\n' +
+      '\n' +
+      'See also:\n' +
+      ' * [thunkify](/docs/thunkify)\n' +
+      ' * [Transducer.map](/docs/Transducer.map)\n' +
+      ' * [Transducer.filter](/docs/Transducer.filter)\n' +
+      ' * [Transducer.flatMap](/docs/Transducer.flatMap)\n' +
+      ' * [Transducer.forEach](/docs/Transducer.forEach)\n' +
+      ' * [Transducer.tryCatch](/docs/Transducer.tryCatch)',
     mdast: {
       name: {
         type: 'root',
@@ -1055,11 +2241,318 @@ export default [
               start: { line: 3, column: 1, offset: 155 },
               end: { line: 14, column: 4, offset: 429 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Read more on ',
+                position: {
+                  start: { line: 16, column: 1, offset: 431 },
+                  end: { line: 16, column: 14, offset: 444 }
+                }
+              },
+              {
+                type: 'link',
+                title: null,
+                url: '/blog/transducers-crash-course-rubico-v2',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'transducers',
+                    position: {
+                      start: { line: 16, column: 15, offset: 445 },
+                      end: { line: 16, column: 26, offset: 456 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 16, column: 14, offset: 444 },
+                  end: { line: 16, column: 69, offset: 499 }
+                }
+              },
+              {
+                type: 'text',
+                value: '.',
+                position: {
+                  start: { line: 16, column: 69, offset: 499 },
+                  end: { line: 16, column: 70, offset: 500 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 16, column: 1, offset: 431 },
+              end: { line: 16, column: 70, offset: 500 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'See also:',
+                position: {
+                  start: { line: 18, column: 1, offset: 502 },
+                  end: { line: 18, column: 10, offset: 511 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 18, column: 1, offset: 502 },
+              end: { line: 18, column: 10, offset: 511 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/thunkify',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'thunkify',
+                            position: {
+                              start: { line: 19, column: 5, offset: 516 },
+                              end: { line: 19, column: 13, offset: 524 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 19, column: 4, offset: 515 },
+                          end: { line: 19, column: 30, offset: 541 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 19, column: 4, offset: 515 },
+                      end: { line: 19, column: 30, offset: 541 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 19, column: 2, offset: 513 },
+                  end: { line: 19, column: 30, offset: 541 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/Transducer.map',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'Transducer.map',
+                            position: {
+                              start: { line: 20, column: 5, offset: 546 },
+                              end: { line: 20, column: 19, offset: 560 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 20, column: 4, offset: 545 },
+                          end: { line: 20, column: 42, offset: 583 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 20, column: 4, offset: 545 },
+                      end: { line: 20, column: 42, offset: 583 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 20, column: 2, offset: 543 },
+                  end: { line: 20, column: 42, offset: 583 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/Transducer.filter',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'Transducer.filter',
+                            position: {
+                              start: { line: 21, column: 5, offset: 588 },
+                              end: { line: 21, column: 22, offset: 605 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 21, column: 4, offset: 587 },
+                          end: { line: 21, column: 48, offset: 631 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 21, column: 4, offset: 587 },
+                      end: { line: 21, column: 48, offset: 631 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 21, column: 2, offset: 585 },
+                  end: { line: 21, column: 48, offset: 631 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/Transducer.flatMap',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'Transducer.flatMap',
+                            position: {
+                              start: { line: 22, column: 5, offset: 636 },
+                              end: { line: 22, column: 23, offset: 654 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 22, column: 4, offset: 635 },
+                          end: { line: 22, column: 50, offset: 681 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 22, column: 4, offset: 635 },
+                      end: { line: 22, column: 50, offset: 681 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 22, column: 2, offset: 633 },
+                  end: { line: 22, column: 50, offset: 681 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/Transducer.forEach',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'Transducer.forEach',
+                            position: {
+                              start: { line: 23, column: 5, offset: 686 },
+                              end: { line: 23, column: 23, offset: 704 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 23, column: 4, offset: 685 },
+                          end: { line: 23, column: 50, offset: 731 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 23, column: 4, offset: 685 },
+                      end: { line: 23, column: 50, offset: 731 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 23, column: 2, offset: 683 },
+                  end: { line: 23, column: 50, offset: 731 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/Transducer.tryCatch',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'Transducer.tryCatch',
+                            position: {
+                              start: { line: 24, column: 5, offset: 736 },
+                              end: { line: 24, column: 24, offset: 755 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 24, column: 4, offset: 735 },
+                          end: { line: 24, column: 52, offset: 783 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 24, column: 4, offset: 735 },
+                      end: { line: 24, column: 52, offset: 783 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 24, column: 2, offset: 733 },
+                  end: { line: 24, column: 52, offset: 783 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 19, column: 2, offset: 513 },
+              end: { line: 24, column: 52, offset: 783 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 14, column: 4, offset: 429 }
+          end: { line: 24, column: 52, offset: 783 }
         }
       }
     },
@@ -1107,7 +2600,17 @@ export default [
       "  console.log('userId in catcher:', userId)\n" +
       '  // original userId for which the error was thrown is provided\n' +
       '}), null)\n' +
-      '```',
+      '```\n' +
+      '\n' +
+      'Read more on [transducers](/blog/transducers-crash-course-rubico-v2).\n' +
+      '\n' +
+      'See also:\n' +
+      ' * [thunkify](/docs/thunkify)\n' +
+      ' * [Transducer.map](/docs/Transducer.map)\n' +
+      ' * [Transducer.filter](/docs/Transducer.filter)\n' +
+      ' * [Transducer.flatMap](/docs/Transducer.flatMap)\n' +
+      ' * [Transducer.forEach](/docs/Transducer.forEach)\n' +
+      ' * [Transducer.passthrough](/docs/Transducer.passthrough)',
     mdast: {
       name: {
         type: 'root',
@@ -1270,11 +2773,318 @@ export default [
               start: { line: 3, column: 1, offset: 556 },
               end: { line: 28, column: 4, offset: 1243 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Read more on ',
+                position: {
+                  start: { line: 30, column: 1, offset: 1245 },
+                  end: { line: 30, column: 14, offset: 1258 }
+                }
+              },
+              {
+                type: 'link',
+                title: null,
+                url: '/blog/transducers-crash-course-rubico-v2',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'transducers',
+                    position: {
+                      start: { line: 30, column: 15, offset: 1259 },
+                      end: { line: 30, column: 26, offset: 1270 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 30, column: 14, offset: 1258 },
+                  end: { line: 30, column: 69, offset: 1313 }
+                }
+              },
+              {
+                type: 'text',
+                value: '.',
+                position: {
+                  start: { line: 30, column: 69, offset: 1313 },
+                  end: { line: 30, column: 70, offset: 1314 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 30, column: 1, offset: 1245 },
+              end: { line: 30, column: 70, offset: 1314 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'See also:',
+                position: {
+                  start: { line: 32, column: 1, offset: 1316 },
+                  end: { line: 32, column: 10, offset: 1325 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 32, column: 1, offset: 1316 },
+              end: { line: 32, column: 10, offset: 1325 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/thunkify',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'thunkify',
+                            position: {
+                              start: { line: 33, column: 5, offset: 1330 },
+                              end: { line: 33, column: 13, offset: 1338 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 33, column: 4, offset: 1329 },
+                          end: { line: 33, column: 30, offset: 1355 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 33, column: 4, offset: 1329 },
+                      end: { line: 33, column: 30, offset: 1355 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 33, column: 2, offset: 1327 },
+                  end: { line: 33, column: 30, offset: 1355 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/Transducer.map',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'Transducer.map',
+                            position: {
+                              start: { line: 34, column: 5, offset: 1360 },
+                              end: { line: 34, column: 19, offset: 1374 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 34, column: 4, offset: 1359 },
+                          end: { line: 34, column: 42, offset: 1397 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 34, column: 4, offset: 1359 },
+                      end: { line: 34, column: 42, offset: 1397 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 34, column: 2, offset: 1357 },
+                  end: { line: 34, column: 42, offset: 1397 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/Transducer.filter',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'Transducer.filter',
+                            position: {
+                              start: { line: 35, column: 5, offset: 1402 },
+                              end: { line: 35, column: 22, offset: 1419 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 35, column: 4, offset: 1401 },
+                          end: { line: 35, column: 48, offset: 1445 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 35, column: 4, offset: 1401 },
+                      end: { line: 35, column: 48, offset: 1445 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 35, column: 2, offset: 1399 },
+                  end: { line: 35, column: 48, offset: 1445 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/Transducer.flatMap',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'Transducer.flatMap',
+                            position: {
+                              start: { line: 36, column: 5, offset: 1450 },
+                              end: { line: 36, column: 23, offset: 1468 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 36, column: 4, offset: 1449 },
+                          end: { line: 36, column: 50, offset: 1495 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 36, column: 4, offset: 1449 },
+                      end: { line: 36, column: 50, offset: 1495 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 36, column: 2, offset: 1447 },
+                  end: { line: 36, column: 50, offset: 1495 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/Transducer.forEach',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'Transducer.forEach',
+                            position: {
+                              start: { line: 37, column: 5, offset: 1500 },
+                              end: { line: 37, column: 23, offset: 1518 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 37, column: 4, offset: 1499 },
+                          end: { line: 37, column: 50, offset: 1545 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 37, column: 4, offset: 1499 },
+                      end: { line: 37, column: 50, offset: 1545 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 37, column: 2, offset: 1497 },
+                  end: { line: 37, column: 50, offset: 1545 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/Transducer.passthrough',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'Transducer.passthrough',
+                            position: {
+                              start: { line: 38, column: 5, offset: 1550 },
+                              end: { line: 38, column: 27, offset: 1572 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 38, column: 4, offset: 1549 },
+                          end: { line: 38, column: 58, offset: 1603 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 38, column: 4, offset: 1549 },
+                      end: { line: 38, column: 58, offset: 1603 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 38, column: 2, offset: 1547 },
+                  end: { line: 38, column: 58, offset: 1603 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 33, column: 2, offset: 1327 },
+              end: { line: 38, column: 58, offset: 1603 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 28, column: 4, offset: 1243 }
+          end: { line: 38, column: 58, offset: 1603 }
         }
       }
     },
@@ -1289,7 +3099,15 @@ export default [
       'console.log(\n' +
       '  curry.arity(3, Array.of, __, 2, 3)(1),\n' +
       ') // [1, 2, 3]\n' +
-      '```',
+      '```\n' +
+      '\n' +
+      'See also:\n' +
+      ' * [eq](/docs/eq)\n' +
+      ' * [thunkify](/docs/thunkify)\n' +
+      ' * [always](/docs/always)\n' +
+      ' * [curry](/docs/curry)\n' +
+      ' * [curry.arity](/docs/curry.arity)\n' +
+      ' * [Transducer.map](/docs/Transducer.map)',
     mdast: {
       name: {
         type: 'root',
@@ -1383,11 +3201,274 @@ export default [
               start: { line: 3, column: 1, offset: 116 },
               end: { line: 7, column: 4, offset: 215 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'See also:',
+                position: {
+                  start: { line: 9, column: 1, offset: 217 },
+                  end: { line: 9, column: 10, offset: 226 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 9, column: 1, offset: 217 },
+              end: { line: 9, column: 10, offset: 226 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/eq',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'eq',
+                            position: {
+                              start: { line: 10, column: 5, offset: 231 },
+                              end: { line: 10, column: 7, offset: 233 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 10, column: 4, offset: 230 },
+                          end: { line: 10, column: 18, offset: 244 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 10, column: 4, offset: 230 },
+                      end: { line: 10, column: 18, offset: 244 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 10, column: 2, offset: 228 },
+                  end: { line: 10, column: 18, offset: 244 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/thunkify',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'thunkify',
+                            position: {
+                              start: { line: 11, column: 5, offset: 249 },
+                              end: { line: 11, column: 13, offset: 257 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 11, column: 4, offset: 248 },
+                          end: { line: 11, column: 30, offset: 274 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 11, column: 4, offset: 248 },
+                      end: { line: 11, column: 30, offset: 274 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 11, column: 2, offset: 246 },
+                  end: { line: 11, column: 30, offset: 274 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/always',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'always',
+                            position: {
+                              start: { line: 12, column: 5, offset: 279 },
+                              end: { line: 12, column: 11, offset: 285 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 12, column: 4, offset: 278 },
+                          end: { line: 12, column: 26, offset: 300 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 12, column: 4, offset: 278 },
+                      end: { line: 12, column: 26, offset: 300 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 12, column: 2, offset: 276 },
+                  end: { line: 12, column: 26, offset: 300 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/curry',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'curry',
+                            position: {
+                              start: { line: 13, column: 5, offset: 305 },
+                              end: { line: 13, column: 10, offset: 310 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 13, column: 4, offset: 304 },
+                          end: { line: 13, column: 24, offset: 324 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 13, column: 4, offset: 304 },
+                      end: { line: 13, column: 24, offset: 324 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 13, column: 2, offset: 302 },
+                  end: { line: 13, column: 24, offset: 324 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/curry.arity',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'curry.arity',
+                            position: {
+                              start: { line: 14, column: 5, offset: 329 },
+                              end: { line: 14, column: 16, offset: 340 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 14, column: 4, offset: 328 },
+                          end: { line: 14, column: 36, offset: 360 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 14, column: 4, offset: 328 },
+                      end: { line: 14, column: 36, offset: 360 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 14, column: 2, offset: 326 },
+                  end: { line: 14, column: 36, offset: 360 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/Transducer.map',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'Transducer.map',
+                            position: {
+                              start: { line: 15, column: 5, offset: 365 },
+                              end: { line: 15, column: 19, offset: 379 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 15, column: 4, offset: 364 },
+                          end: { line: 15, column: 42, offset: 402 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 15, column: 4, offset: 364 },
+                      end: { line: 15, column: 42, offset: 402 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 15, column: 2, offset: 362 },
+                  end: { line: 15, column: 42, offset: 402 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 10, column: 2, offset: 228 },
+              end: { line: 15, column: 42, offset: 402 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 7, column: 4, offset: 215 }
+          end: { line: 15, column: 42, offset: 402 }
         }
       }
     },
@@ -20585,7 +22666,16 @@ export default [
       '  obj => obj.a + 2,\n' +
       '  obj => obj.a + 3,\n' +
       ']).then(console.log) // [2, 3, 4]\n' +
-      '```',
+      '```\n' +
+      '\n' +
+      'See also:\n' +
+      ' * [pipe](/docs/pipe)\n' +
+      ' * [assign](/docs/assign)\n' +
+      ' * [get](/docs/get)\n' +
+      ' * [set](/docs/set)\n' +
+      ' * [pick](/docs/pick)\n' +
+      ' * [omit](/docs/omit)\n' +
+      ' * [forEach](/docs/forEach)',
     execution: 'concurrent',
     mdast: {
       name: {
@@ -20897,11 +22987,313 @@ export default [
               start: { line: 75, column: 1, offset: 1912 },
               end: { line: 81, column: 4, offset: 2069 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'See also:',
+                position: {
+                  start: { line: 83, column: 1, offset: 2071 },
+                  end: { line: 83, column: 10, offset: 2080 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 83, column: 1, offset: 2071 },
+              end: { line: 83, column: 10, offset: 2080 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/pipe',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'pipe',
+                            position: {
+                              start: { line: 84, column: 5, offset: 2085 },
+                              end: { line: 84, column: 9, offset: 2089 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 84, column: 4, offset: 2084 },
+                          end: { line: 84, column: 22, offset: 2102 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 84, column: 4, offset: 2084 },
+                      end: { line: 84, column: 22, offset: 2102 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 84, column: 2, offset: 2082 },
+                  end: { line: 84, column: 22, offset: 2102 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/assign',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'assign',
+                            position: {
+                              start: { line: 85, column: 5, offset: 2107 },
+                              end: { line: 85, column: 11, offset: 2113 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 85, column: 4, offset: 2106 },
+                          end: { line: 85, column: 26, offset: 2128 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 85, column: 4, offset: 2106 },
+                      end: { line: 85, column: 26, offset: 2128 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 85, column: 2, offset: 2104 },
+                  end: { line: 85, column: 26, offset: 2128 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/get',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'get',
+                            position: {
+                              start: { line: 86, column: 5, offset: 2133 },
+                              end: { line: 86, column: 8, offset: 2136 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 86, column: 4, offset: 2132 },
+                          end: { line: 86, column: 20, offset: 2148 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 86, column: 4, offset: 2132 },
+                      end: { line: 86, column: 20, offset: 2148 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 86, column: 2, offset: 2130 },
+                  end: { line: 86, column: 20, offset: 2148 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/set',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'set',
+                            position: {
+                              start: { line: 87, column: 5, offset: 2153 },
+                              end: { line: 87, column: 8, offset: 2156 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 87, column: 4, offset: 2152 },
+                          end: { line: 87, column: 20, offset: 2168 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 87, column: 4, offset: 2152 },
+                      end: { line: 87, column: 20, offset: 2168 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 87, column: 2, offset: 2150 },
+                  end: { line: 87, column: 20, offset: 2168 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/pick',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'pick',
+                            position: {
+                              start: { line: 88, column: 5, offset: 2173 },
+                              end: { line: 88, column: 9, offset: 2177 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 88, column: 4, offset: 2172 },
+                          end: { line: 88, column: 22, offset: 2190 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 88, column: 4, offset: 2172 },
+                      end: { line: 88, column: 22, offset: 2190 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 88, column: 2, offset: 2170 },
+                  end: { line: 88, column: 22, offset: 2190 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/omit',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'omit',
+                            position: {
+                              start: { line: 89, column: 5, offset: 2195 },
+                              end: { line: 89, column: 9, offset: 2199 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 89, column: 4, offset: 2194 },
+                          end: { line: 89, column: 22, offset: 2212 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 89, column: 4, offset: 2194 },
+                      end: { line: 89, column: 22, offset: 2212 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 89, column: 2, offset: 2192 },
+                  end: { line: 89, column: 22, offset: 2212 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/forEach',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'forEach',
+                            position: {
+                              start: { line: 90, column: 5, offset: 2217 },
+                              end: { line: 90, column: 12, offset: 2224 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 90, column: 4, offset: 2216 },
+                          end: { line: 90, column: 28, offset: 2240 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 90, column: 4, offset: 2216 },
+                      end: { line: 90, column: 28, offset: 2240 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 90, column: 2, offset: 2214 },
+                  end: { line: 90, column: 28, offset: 2240 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 84, column: 2, offset: 2082 },
+              end: { line: 90, column: 28, offset: 2240 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 81, column: 4, offset: 2069 }
+          end: { line: 90, column: 28, offset: 2240 }
         }
       },
       execution: {
@@ -21098,7 +23490,14 @@ export default [
       'console.log(always5()) // 5\n' +
       'console.log(always5()) // 5\n' +
       'console.log(always5()) // 5\n' +
-      '```',
+      '```\n' +
+      '\n' +
+      'See also:\n' +
+      ' * [eq](/docs/eq)\n' +
+      ' * [thunkify](/docs/thunkify)\n' +
+      ' * [curry](/docs/curry)\n' +
+      ' * [__](/docs/__)\n' +
+      ' * [Transducer.map](/docs/Transducer.map)',
     mdast: {
       name: {
         type: 'root',
@@ -21178,11 +23577,235 @@ export default [
               start: { line: 3, column: 1, offset: 73 },
               end: { line: 9, column: 4, offset: 214 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'See also:',
+                position: {
+                  start: { line: 11, column: 1, offset: 216 },
+                  end: { line: 11, column: 10, offset: 225 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 11, column: 1, offset: 216 },
+              end: { line: 11, column: 10, offset: 225 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/eq',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'eq',
+                            position: {
+                              start: { line: 12, column: 5, offset: 230 },
+                              end: { line: 12, column: 7, offset: 232 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 12, column: 4, offset: 229 },
+                          end: { line: 12, column: 18, offset: 243 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 12, column: 4, offset: 229 },
+                      end: { line: 12, column: 18, offset: 243 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 12, column: 2, offset: 227 },
+                  end: { line: 12, column: 18, offset: 243 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/thunkify',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'thunkify',
+                            position: {
+                              start: { line: 13, column: 5, offset: 248 },
+                              end: { line: 13, column: 13, offset: 256 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 13, column: 4, offset: 247 },
+                          end: { line: 13, column: 30, offset: 273 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 13, column: 4, offset: 247 },
+                      end: { line: 13, column: 30, offset: 273 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 13, column: 2, offset: 245 },
+                  end: { line: 13, column: 30, offset: 273 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/curry',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'curry',
+                            position: {
+                              start: { line: 14, column: 5, offset: 278 },
+                              end: { line: 14, column: 10, offset: 283 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 14, column: 4, offset: 277 },
+                          end: { line: 14, column: 24, offset: 297 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 14, column: 4, offset: 277 },
+                      end: { line: 14, column: 24, offset: 297 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 14, column: 2, offset: 275 },
+                  end: { line: 14, column: 24, offset: 297 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/__',
+                        children: [
+                          {
+                            type: 'text',
+                            value: '__',
+                            position: {
+                              start: { line: 15, column: 5, offset: 302 },
+                              end: { line: 15, column: 7, offset: 304 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 15, column: 4, offset: 301 },
+                          end: { line: 15, column: 18, offset: 315 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 15, column: 4, offset: 301 },
+                      end: { line: 15, column: 18, offset: 315 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 15, column: 2, offset: 299 },
+                  end: { line: 15, column: 18, offset: 315 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/Transducer.map',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'Transducer.map',
+                            position: {
+                              start: { line: 16, column: 5, offset: 320 },
+                              end: { line: 16, column: 19, offset: 334 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 16, column: 4, offset: 319 },
+                          end: { line: 16, column: 42, offset: 357 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 16, column: 4, offset: 319 },
+                      end: { line: 16, column: 42, offset: 357 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 16, column: 2, offset: 317 },
+                  end: { line: 16, column: 42, offset: 357 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 12, column: 2, offset: 227 },
+              end: { line: 16, column: 42, offset: 357 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 9, column: 4, offset: 214 }
+          end: { line: 16, column: 42, offset: 357 }
         }
       }
     },
@@ -21346,7 +23969,13 @@ export default [
       '  n => n > 0,\n' +
       '  n => n < 10,\n' +
       ']).then(console.log) // true\n' +
-      '```',
+      '```\n' +
+      '\n' +
+      'See also:\n' +
+      ' * [some](/docs/some)\n' +
+      ' * [or](/docs/or)\n' +
+      ' * [not](/docs/not)\n' +
+      ' * [eq](/docs/eq)',
     execution: 'series',
     note: '...args slows down here by an order of magnitude',
     mdast: {
@@ -21515,11 +24144,196 @@ export default [
               start: { line: 29, column: 1, offset: 937 },
               end: { line: 34, column: 4, offset: 1051 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'See also:',
+                position: {
+                  start: { line: 36, column: 1, offset: 1053 },
+                  end: { line: 36, column: 10, offset: 1062 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 36, column: 1, offset: 1053 },
+              end: { line: 36, column: 10, offset: 1062 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/some',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'some',
+                            position: {
+                              start: { line: 37, column: 5, offset: 1067 },
+                              end: { line: 37, column: 9, offset: 1071 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 37, column: 4, offset: 1066 },
+                          end: { line: 37, column: 22, offset: 1084 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 37, column: 4, offset: 1066 },
+                      end: { line: 37, column: 22, offset: 1084 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 37, column: 2, offset: 1064 },
+                  end: { line: 37, column: 22, offset: 1084 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/or',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'or',
+                            position: {
+                              start: { line: 38, column: 5, offset: 1089 },
+                              end: { line: 38, column: 7, offset: 1091 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 38, column: 4, offset: 1088 },
+                          end: { line: 38, column: 18, offset: 1102 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 38, column: 4, offset: 1088 },
+                      end: { line: 38, column: 18, offset: 1102 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 38, column: 2, offset: 1086 },
+                  end: { line: 38, column: 18, offset: 1102 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/not',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'not',
+                            position: {
+                              start: { line: 39, column: 5, offset: 1107 },
+                              end: { line: 39, column: 8, offset: 1110 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 39, column: 4, offset: 1106 },
+                          end: { line: 39, column: 20, offset: 1122 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 39, column: 4, offset: 1106 },
+                      end: { line: 39, column: 20, offset: 1122 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 39, column: 2, offset: 1104 },
+                  end: { line: 39, column: 20, offset: 1122 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/eq',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'eq',
+                            position: {
+                              start: { line: 40, column: 5, offset: 1127 },
+                              end: { line: 40, column: 7, offset: 1129 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 40, column: 4, offset: 1126 },
+                          end: { line: 40, column: 18, offset: 1140 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 40, column: 4, offset: 1126 },
+                      end: { line: 40, column: 18, offset: 1140 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 40, column: 2, offset: 1124 },
+                  end: { line: 40, column: 18, offset: 1140 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 37, column: 2, offset: 1064 },
+              end: { line: 40, column: 18, offset: 1140 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 34, column: 4, offset: 1051 }
+          end: { line: 40, column: 18, offset: 1140 }
         }
       },
       execution: {
@@ -21642,7 +24456,16 @@ export default [
       '    return 2\n' +
       '  },\n' +
       '}).then(console.log)\n' +
-      '```',
+      '```\n' +
+      '\n' +
+      'See also:\n' +
+      ' * [pipe](/docs/pipe)\n' +
+      ' * [all](/docs/all)\n' +
+      ' * [get](/docs/get)\n' +
+      ' * [set](/docs/set)\n' +
+      ' * [pick](/docs/pick)\n' +
+      ' * [omit](/docs/omit)\n' +
+      ' * [forEach](/docs/forEach)',
     execution: 'concurrent',
     mdast: {
       name: {
@@ -21854,11 +24677,313 @@ export default [
               start: { line: 45, column: 1, offset: 1545 },
               end: { line: 54, column: 4, offset: 1678 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'See also:',
+                position: {
+                  start: { line: 56, column: 1, offset: 1680 },
+                  end: { line: 56, column: 10, offset: 1689 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 56, column: 1, offset: 1680 },
+              end: { line: 56, column: 10, offset: 1689 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/pipe',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'pipe',
+                            position: {
+                              start: { line: 57, column: 5, offset: 1694 },
+                              end: { line: 57, column: 9, offset: 1698 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 57, column: 4, offset: 1693 },
+                          end: { line: 57, column: 22, offset: 1711 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 57, column: 4, offset: 1693 },
+                      end: { line: 57, column: 22, offset: 1711 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 57, column: 2, offset: 1691 },
+                  end: { line: 57, column: 22, offset: 1711 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/all',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'all',
+                            position: {
+                              start: { line: 58, column: 5, offset: 1716 },
+                              end: { line: 58, column: 8, offset: 1719 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 58, column: 4, offset: 1715 },
+                          end: { line: 58, column: 20, offset: 1731 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 58, column: 4, offset: 1715 },
+                      end: { line: 58, column: 20, offset: 1731 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 58, column: 2, offset: 1713 },
+                  end: { line: 58, column: 20, offset: 1731 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/get',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'get',
+                            position: {
+                              start: { line: 59, column: 5, offset: 1736 },
+                              end: { line: 59, column: 8, offset: 1739 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 59, column: 4, offset: 1735 },
+                          end: { line: 59, column: 20, offset: 1751 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 59, column: 4, offset: 1735 },
+                      end: { line: 59, column: 20, offset: 1751 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 59, column: 2, offset: 1733 },
+                  end: { line: 59, column: 20, offset: 1751 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/set',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'set',
+                            position: {
+                              start: { line: 60, column: 5, offset: 1756 },
+                              end: { line: 60, column: 8, offset: 1759 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 60, column: 4, offset: 1755 },
+                          end: { line: 60, column: 20, offset: 1771 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 60, column: 4, offset: 1755 },
+                      end: { line: 60, column: 20, offset: 1771 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 60, column: 2, offset: 1753 },
+                  end: { line: 60, column: 20, offset: 1771 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/pick',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'pick',
+                            position: {
+                              start: { line: 61, column: 5, offset: 1776 },
+                              end: { line: 61, column: 9, offset: 1780 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 61, column: 4, offset: 1775 },
+                          end: { line: 61, column: 22, offset: 1793 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 61, column: 4, offset: 1775 },
+                      end: { line: 61, column: 22, offset: 1793 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 61, column: 2, offset: 1773 },
+                  end: { line: 61, column: 22, offset: 1793 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/omit',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'omit',
+                            position: {
+                              start: { line: 62, column: 5, offset: 1798 },
+                              end: { line: 62, column: 9, offset: 1802 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 62, column: 4, offset: 1797 },
+                          end: { line: 62, column: 22, offset: 1815 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 62, column: 4, offset: 1797 },
+                      end: { line: 62, column: 22, offset: 1815 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 62, column: 2, offset: 1795 },
+                  end: { line: 62, column: 22, offset: 1815 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/forEach',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'forEach',
+                            position: {
+                              start: { line: 63, column: 5, offset: 1820 },
+                              end: { line: 63, column: 12, offset: 1827 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 63, column: 4, offset: 1819 },
+                          end: { line: 63, column: 28, offset: 1843 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 63, column: 4, offset: 1819 },
+                      end: { line: 63, column: 28, offset: 1843 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 63, column: 2, offset: 1817 },
+                  end: { line: 63, column: 28, offset: 1843 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 57, column: 2, offset: 1691 },
+              end: { line: 63, column: 28, offset: 1843 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 54, column: 4, offset: 1678 }
+          end: { line: 63, column: 28, offset: 1843 }
         }
       },
       execution: {
@@ -21915,7 +25040,13 @@ export default [
       'compose(Promise.resolve(1), 2, Promise.resolve(3), [\n' +
       '  console.log, // [1, 2, 3]\n' +
       '])\n' +
-      '```',
+      '```\n' +
+      '\n' +
+      'See also:\n' +
+      ' * [pipe](/docs/pipe)\n' +
+      ' * [tap](/docs/tap)\n' +
+      ' * [switchCase](/docs/switchCase)\n' +
+      ' * [tryCatch](/docs/tryCatch)',
     mdast: {
       name: {
         type: 'root',
@@ -22060,11 +25191,196 @@ export default [
               start: { line: 15, column: 1, offset: 764 },
               end: { line: 19, column: 4, offset: 878 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'See also:',
+                position: {
+                  start: { line: 21, column: 1, offset: 880 },
+                  end: { line: 21, column: 10, offset: 889 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 21, column: 1, offset: 880 },
+              end: { line: 21, column: 10, offset: 889 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/pipe',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'pipe',
+                            position: {
+                              start: { line: 22, column: 5, offset: 894 },
+                              end: { line: 22, column: 9, offset: 898 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 22, column: 4, offset: 893 },
+                          end: { line: 22, column: 22, offset: 911 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 22, column: 4, offset: 893 },
+                      end: { line: 22, column: 22, offset: 911 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 22, column: 2, offset: 891 },
+                  end: { line: 22, column: 22, offset: 911 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/tap',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'tap',
+                            position: {
+                              start: { line: 23, column: 5, offset: 916 },
+                              end: { line: 23, column: 8, offset: 919 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 23, column: 4, offset: 915 },
+                          end: { line: 23, column: 20, offset: 931 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 23, column: 4, offset: 915 },
+                      end: { line: 23, column: 20, offset: 931 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 23, column: 2, offset: 913 },
+                  end: { line: 23, column: 20, offset: 931 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/switchCase',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'switchCase',
+                            position: {
+                              start: { line: 24, column: 5, offset: 936 },
+                              end: { line: 24, column: 15, offset: 946 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 24, column: 4, offset: 935 },
+                          end: { line: 24, column: 34, offset: 965 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 24, column: 4, offset: 935 },
+                      end: { line: 24, column: 34, offset: 965 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 24, column: 2, offset: 933 },
+                  end: { line: 24, column: 34, offset: 965 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/tryCatch',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'tryCatch',
+                            position: {
+                              start: { line: 25, column: 5, offset: 970 },
+                              end: { line: 25, column: 13, offset: 978 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 25, column: 4, offset: 969 },
+                          end: { line: 25, column: 30, offset: 995 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 25, column: 4, offset: 969 },
+                      end: { line: 25, column: 30, offset: 995 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 25, column: 2, offset: 967 },
+                  end: { line: 25, column: 30, offset: 995 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 22, column: 2, offset: 891 },
+              end: { line: 25, column: 30, offset: 995 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 19, column: 4, offset: 878 }
+          end: { line: 25, column: 30, offset: 995 }
         }
       }
     },
@@ -22100,7 +25416,15 @@ export default [
       "console.log(curry(add, __, 'b', 'c')('a')) // abc\n" +
       "console.log(curry(add, __, __, 'c')('a', 'b')) // abc\n" +
       "console.log(curry(add, __, __, 'c')(__, 'b')('a')) // abc\n" +
-      '```',
+      '```\n' +
+      '\n' +
+      'See also:\n' +
+      ' * [eq](/docs/eq)\n' +
+      ' * [thunkify](/docs/thunkify)\n' +
+      ' * [always](/docs/always)\n' +
+      ' * [curry.arity](/docs/curry.arity)\n' +
+      ' * [__](/docs/__)\n' +
+      ' * [Transducer.map](/docs/Transducer.map)',
     mdast: {
       name: {
         type: 'root',
@@ -22213,11 +25537,274 @@ export default [
               start: { line: 3, column: 1, offset: 176 },
               end: { line: 15, column: 4, offset: 645 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'See also:',
+                position: {
+                  start: { line: 17, column: 1, offset: 647 },
+                  end: { line: 17, column: 10, offset: 656 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 17, column: 1, offset: 647 },
+              end: { line: 17, column: 10, offset: 656 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/eq',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'eq',
+                            position: {
+                              start: { line: 18, column: 5, offset: 661 },
+                              end: { line: 18, column: 7, offset: 663 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 18, column: 4, offset: 660 },
+                          end: { line: 18, column: 18, offset: 674 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 18, column: 4, offset: 660 },
+                      end: { line: 18, column: 18, offset: 674 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 18, column: 2, offset: 658 },
+                  end: { line: 18, column: 18, offset: 674 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/thunkify',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'thunkify',
+                            position: {
+                              start: { line: 19, column: 5, offset: 679 },
+                              end: { line: 19, column: 13, offset: 687 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 19, column: 4, offset: 678 },
+                          end: { line: 19, column: 30, offset: 704 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 19, column: 4, offset: 678 },
+                      end: { line: 19, column: 30, offset: 704 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 19, column: 2, offset: 676 },
+                  end: { line: 19, column: 30, offset: 704 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/always',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'always',
+                            position: {
+                              start: { line: 20, column: 5, offset: 709 },
+                              end: { line: 20, column: 11, offset: 715 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 20, column: 4, offset: 708 },
+                          end: { line: 20, column: 26, offset: 730 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 20, column: 4, offset: 708 },
+                      end: { line: 20, column: 26, offset: 730 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 20, column: 2, offset: 706 },
+                  end: { line: 20, column: 26, offset: 730 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/curry.arity',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'curry.arity',
+                            position: {
+                              start: { line: 21, column: 5, offset: 735 },
+                              end: { line: 21, column: 16, offset: 746 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 21, column: 4, offset: 734 },
+                          end: { line: 21, column: 36, offset: 766 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 21, column: 4, offset: 734 },
+                      end: { line: 21, column: 36, offset: 766 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 21, column: 2, offset: 732 },
+                  end: { line: 21, column: 36, offset: 766 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/__',
+                        children: [
+                          {
+                            type: 'text',
+                            value: '__',
+                            position: {
+                              start: { line: 22, column: 5, offset: 771 },
+                              end: { line: 22, column: 7, offset: 773 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 22, column: 4, offset: 770 },
+                          end: { line: 22, column: 18, offset: 784 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 22, column: 4, offset: 770 },
+                      end: { line: 22, column: 18, offset: 784 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 22, column: 2, offset: 768 },
+                  end: { line: 22, column: 18, offset: 784 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/Transducer.map',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'Transducer.map',
+                            position: {
+                              start: { line: 23, column: 5, offset: 789 },
+                              end: { line: 23, column: 19, offset: 803 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 23, column: 4, offset: 788 },
+                          end: { line: 23, column: 42, offset: 826 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 23, column: 4, offset: 788 },
+                      end: { line: 23, column: 42, offset: 826 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 23, column: 2, offset: 786 },
+                  end: { line: 23, column: 42, offset: 826 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 18, column: 2, offset: 658 },
+              end: { line: 23, column: 42, offset: 826 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 15, column: 4, offset: 645 }
+          end: { line: 23, column: 42, offset: 826 }
         }
       }
     },
@@ -22246,7 +25833,15 @@ export default [
       'const add = (a, b, c = 0) => a + b + c\n' +
       '\n' +
       'console.log(curry.arity(2, add, 1, 2)) // 3\n' +
-      '```',
+      '```\n' +
+      '\n' +
+      'See also:\n' +
+      ' * [eq](/docs/eq)\n' +
+      ' * [thunkify](/docs/thunkify)\n' +
+      ' * [always](/docs/always)\n' +
+      ' * [curry](/docs/curry)\n' +
+      ' * [__](/docs/__)\n' +
+      ' * [Transducer.map](/docs/Transducer.map)',
     mdast: {
       name: {
         type: 'root',
@@ -22344,11 +25939,274 @@ export default [
               start: { line: 3, column: 1, offset: 98 },
               end: { line: 7, column: 4, offset: 212 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'See also:',
+                position: {
+                  start: { line: 9, column: 1, offset: 214 },
+                  end: { line: 9, column: 10, offset: 223 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 9, column: 1, offset: 214 },
+              end: { line: 9, column: 10, offset: 223 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/eq',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'eq',
+                            position: {
+                              start: { line: 10, column: 5, offset: 228 },
+                              end: { line: 10, column: 7, offset: 230 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 10, column: 4, offset: 227 },
+                          end: { line: 10, column: 18, offset: 241 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 10, column: 4, offset: 227 },
+                      end: { line: 10, column: 18, offset: 241 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 10, column: 2, offset: 225 },
+                  end: { line: 10, column: 18, offset: 241 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/thunkify',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'thunkify',
+                            position: {
+                              start: { line: 11, column: 5, offset: 246 },
+                              end: { line: 11, column: 13, offset: 254 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 11, column: 4, offset: 245 },
+                          end: { line: 11, column: 30, offset: 271 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 11, column: 4, offset: 245 },
+                      end: { line: 11, column: 30, offset: 271 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 11, column: 2, offset: 243 },
+                  end: { line: 11, column: 30, offset: 271 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/always',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'always',
+                            position: {
+                              start: { line: 12, column: 5, offset: 276 },
+                              end: { line: 12, column: 11, offset: 282 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 12, column: 4, offset: 275 },
+                          end: { line: 12, column: 26, offset: 297 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 12, column: 4, offset: 275 },
+                      end: { line: 12, column: 26, offset: 297 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 12, column: 2, offset: 273 },
+                  end: { line: 12, column: 26, offset: 297 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/curry',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'curry',
+                            position: {
+                              start: { line: 13, column: 5, offset: 302 },
+                              end: { line: 13, column: 10, offset: 307 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 13, column: 4, offset: 301 },
+                          end: { line: 13, column: 24, offset: 321 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 13, column: 4, offset: 301 },
+                      end: { line: 13, column: 24, offset: 321 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 13, column: 2, offset: 299 },
+                  end: { line: 13, column: 24, offset: 321 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/__',
+                        children: [
+                          {
+                            type: 'text',
+                            value: '__',
+                            position: {
+                              start: { line: 14, column: 5, offset: 326 },
+                              end: { line: 14, column: 7, offset: 328 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 14, column: 4, offset: 325 },
+                          end: { line: 14, column: 18, offset: 339 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 14, column: 4, offset: 325 },
+                      end: { line: 14, column: 18, offset: 339 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 14, column: 2, offset: 323 },
+                  end: { line: 14, column: 18, offset: 339 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/Transducer.map',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'Transducer.map',
+                            position: {
+                              start: { line: 15, column: 5, offset: 344 },
+                              end: { line: 15, column: 19, offset: 358 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 15, column: 4, offset: 343 },
+                          end: { line: 15, column: 42, offset: 381 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 15, column: 4, offset: 343 },
+                      end: { line: 15, column: 42, offset: 381 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 15, column: 2, offset: 341 },
+                  end: { line: 15, column: 42, offset: 381 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 10, column: 2, offset: 225 },
+              end: { line: 15, column: 42, offset: 381 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 7, column: 4, offset: 212 }
+          end: { line: 15, column: 42, offset: 381 }
         }
       }
     },
@@ -23465,7 +27323,15 @@ export default [
       '\n' +
       '```javascript [playground]\n' +
       "eq(Promise.resolve({ a: 1, b: 1 }), get('a'), get('b')).then(console.log) // true\n" +
-      '```',
+      '```\n' +
+      '\n' +
+      'See also:\n' +
+      ' * [and](/docs/and)\n' +
+      ' * [gt](/docs/gt)\n' +
+      ' * [lt](/docs/lt)\n' +
+      ' * [gte](/docs/gte)\n' +
+      ' * [lte](/docs/lte)\n' +
+      ' * [thunkify](/docs/thunkify)',
     execution: 'concurrent',
     mdast: {
       name: {
@@ -23710,11 +27576,274 @@ export default [
               start: { line: 32, column: 1, offset: 877 },
               end: { line: 34, column: 4, offset: 989 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'See also:',
+                position: {
+                  start: { line: 36, column: 1, offset: 991 },
+                  end: { line: 36, column: 10, offset: 1000 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 36, column: 1, offset: 991 },
+              end: { line: 36, column: 10, offset: 1000 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/and',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'and',
+                            position: {
+                              start: { line: 37, column: 5, offset: 1005 },
+                              end: { line: 37, column: 8, offset: 1008 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 37, column: 4, offset: 1004 },
+                          end: { line: 37, column: 20, offset: 1020 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 37, column: 4, offset: 1004 },
+                      end: { line: 37, column: 20, offset: 1020 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 37, column: 2, offset: 1002 },
+                  end: { line: 37, column: 20, offset: 1020 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/gt',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'gt',
+                            position: {
+                              start: { line: 38, column: 5, offset: 1025 },
+                              end: { line: 38, column: 7, offset: 1027 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 38, column: 4, offset: 1024 },
+                          end: { line: 38, column: 18, offset: 1038 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 38, column: 4, offset: 1024 },
+                      end: { line: 38, column: 18, offset: 1038 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 38, column: 2, offset: 1022 },
+                  end: { line: 38, column: 18, offset: 1038 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/lt',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'lt',
+                            position: {
+                              start: { line: 39, column: 5, offset: 1043 },
+                              end: { line: 39, column: 7, offset: 1045 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 39, column: 4, offset: 1042 },
+                          end: { line: 39, column: 18, offset: 1056 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 39, column: 4, offset: 1042 },
+                      end: { line: 39, column: 18, offset: 1056 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 39, column: 2, offset: 1040 },
+                  end: { line: 39, column: 18, offset: 1056 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/gte',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'gte',
+                            position: {
+                              start: { line: 40, column: 5, offset: 1061 },
+                              end: { line: 40, column: 8, offset: 1064 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 40, column: 4, offset: 1060 },
+                          end: { line: 40, column: 20, offset: 1076 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 40, column: 4, offset: 1060 },
+                      end: { line: 40, column: 20, offset: 1076 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 40, column: 2, offset: 1058 },
+                  end: { line: 40, column: 20, offset: 1076 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/lte',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'lte',
+                            position: {
+                              start: { line: 41, column: 5, offset: 1081 },
+                              end: { line: 41, column: 8, offset: 1084 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 41, column: 4, offset: 1080 },
+                          end: { line: 41, column: 20, offset: 1096 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 41, column: 4, offset: 1080 },
+                      end: { line: 41, column: 20, offset: 1096 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 41, column: 2, offset: 1078 },
+                  end: { line: 41, column: 20, offset: 1096 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/thunkify',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'thunkify',
+                            position: {
+                              start: { line: 42, column: 5, offset: 1101 },
+                              end: { line: 42, column: 13, offset: 1109 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 42, column: 4, offset: 1100 },
+                          end: { line: 42, column: 30, offset: 1126 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 42, column: 4, offset: 1100 },
+                      end: { line: 42, column: 30, offset: 1126 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 42, column: 2, offset: 1098 },
+                  end: { line: 42, column: 30, offset: 1126 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 37, column: 2, offset: 1002 },
+              end: { line: 42, column: 30, offset: 1126 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 34, column: 4, offset: 989 }
+          end: { line: 42, column: 30, offset: 1126 }
         }
       },
       execution: {
@@ -23753,13 +27882,13 @@ export default [
   {
     name: 'every',
     synopsis: '```coffeescript [specscript]\n' +
-      'type Foldable = Array|Iterable|AsyncIterable|{ reduce: function }|Object\n' +
+      'type Foldable = Array|Set|Map|Generator|AsyncGenerator|{ reduce: function }|Object\n' +
       '\n' +
-      'every(collection Foldable, predicate function) -> result Promise|boolean\n' +
+      'every(fold Foldable, predicate function) -> result Promise|boolean\n' +
       '\n' +
-      'every(predicate function)(collection Foldable) -> result Promise|boolean\n' +
+      'every(predicate function)(fold Foldable) -> result Promise|boolean\n' +
       '```',
-    description: 'Test a predicate concurrently across all items of a collection, returning true if all predications are truthy.\n' +
+    description: 'Test a predicate concurrently across all items of a foldable, returning true if all executions return true.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const isOdd = number => number % 2 == 1\n' +
@@ -23773,7 +27902,16 @@ export default [
       ') // true\n' +
       '```\n' +
       '\n' +
-      'The collection can be any iterable, async iterable, or object values iterable collection. Below is an example of `every` accepting an async generator as the collection.\n' +
+      'The following data types are considered to be foldables:\n' +
+      ' * `array`\n' +
+      ' * `set`\n' +
+      ' * `map`\n' +
+      ' * `generator`\n' +
+      ' * `async generator`\n' +
+      ' * `object with .reduce method`\n' +
+      ' * `object`\n' +
+      '\n' +
+      '`every` works for async generators.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const asyncNumbers = async function* () {\n' +
@@ -23796,7 +27934,12 @@ export default [
       '\n' +
       '```javascript [playground]\n' +
       'every(Promise.resolve([1, 2, 3, 4, 5]), n => n < 6).then(console.log) // true\n' +
-      '```',
+      '```\n' +
+      '\n' +
+      'See also:\n' +
+      ' * [map](/docs/map)\n' +
+      ' * [some](/docs/some)\n' +
+      ' * [and](/docs/and)',
     execution: 'concurrent',
     muxing: '',
     mdast: {
@@ -23833,20 +27976,20 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'type Foldable = Array|Iterable|AsyncIterable|{ reduce: function }|Object\n' +
+            value: 'type Foldable = Array|Set|Map|Generator|AsyncGenerator|{ reduce: function }|Object\n' +
               '\n' +
-              'every(collection Foldable, predicate function) -> result Promise|boolean\n' +
+              'every(fold Foldable, predicate function) -> result Promise|boolean\n' +
               '\n' +
-              'every(predicate function)(collection Foldable) -> result Promise|boolean',
+              'every(predicate function)(fold Foldable) -> result Promise|boolean',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 7, column: 4, offset: 253 }
+              end: { line: 7, column: 4, offset: 251 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 7, column: 4, offset: 253 }
+          end: { line: 7, column: 4, offset: 251 }
         }
       },
       description: {
@@ -23857,16 +28000,16 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Test a predicate concurrently across all items of a collection, returning true if all predications are truthy.',
+                value: 'Test a predicate concurrently across all items of a foldable, returning true if all executions return true.',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 111, offset: 110 }
+                  end: { line: 1, column: 108, offset: 107 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 111, offset: 110 }
+              end: { line: 1, column: 108, offset: 107 }
             }
           },
           {
@@ -23883,8 +28026,8 @@ export default [
               '  every([1, 3, 5], isOdd),\n' +
               ') // true',
             position: {
-              start: { line: 3, column: 1, offset: 112 },
-              end: { line: 13, column: 4, offset: 291 }
+              start: { line: 3, column: 1, offset: 109 },
+              end: { line: 13, column: 4, offset: 288 }
             }
           },
           {
@@ -23892,32 +28035,249 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'The collection can be any iterable, async iterable, or object values iterable collection. Below is an example of ',
+                value: 'The following data types are considered to be foldables:',
                 position: {
-                  start: { line: 15, column: 1, offset: 293 },
-                  end: { line: 15, column: 114, offset: 406 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'every',
-                position: {
-                  start: { line: 15, column: 114, offset: 406 },
-                  end: { line: 15, column: 121, offset: 413 }
-                }
-              },
-              {
-                type: 'text',
-                value: ' accepting an async generator as the collection.',
-                position: {
-                  start: { line: 15, column: 121, offset: 413 },
-                  end: { line: 15, column: 169, offset: 461 }
+                  start: { line: 15, column: 1, offset: 290 },
+                  end: { line: 15, column: 57, offset: 346 }
                 }
               }
             ],
             position: {
-              start: { line: 15, column: 1, offset: 293 },
-              end: { line: 15, column: 169, offset: 461 }
+              start: { line: 15, column: 1, offset: 290 },
+              end: { line: 15, column: 57, offset: 346 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'array',
+                        position: {
+                          start: { line: 16, column: 4, offset: 350 },
+                          end: { line: 16, column: 11, offset: 357 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 16, column: 4, offset: 350 },
+                      end: { line: 16, column: 11, offset: 357 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 16, column: 2, offset: 348 },
+                  end: { line: 16, column: 11, offset: 357 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'set',
+                        position: {
+                          start: { line: 17, column: 4, offset: 361 },
+                          end: { line: 17, column: 9, offset: 366 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 17, column: 4, offset: 361 },
+                      end: { line: 17, column: 9, offset: 366 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 17, column: 2, offset: 359 },
+                  end: { line: 17, column: 9, offset: 366 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'map',
+                        position: {
+                          start: { line: 18, column: 4, offset: 370 },
+                          end: { line: 18, column: 9, offset: 375 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 18, column: 4, offset: 370 },
+                      end: { line: 18, column: 9, offset: 375 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 18, column: 2, offset: 368 },
+                  end: { line: 18, column: 9, offset: 375 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'generator',
+                        position: {
+                          start: { line: 19, column: 4, offset: 379 },
+                          end: { line: 19, column: 15, offset: 390 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 19, column: 4, offset: 379 },
+                      end: { line: 19, column: 15, offset: 390 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 19, column: 2, offset: 377 },
+                  end: { line: 19, column: 15, offset: 390 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'async generator',
+                        position: {
+                          start: { line: 20, column: 4, offset: 394 },
+                          end: { line: 20, column: 21, offset: 411 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 20, column: 4, offset: 394 },
+                      end: { line: 20, column: 21, offset: 411 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 20, column: 2, offset: 392 },
+                  end: { line: 20, column: 21, offset: 411 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'object with .reduce method',
+                        position: {
+                          start: { line: 21, column: 4, offset: 415 },
+                          end: { line: 21, column: 32, offset: 443 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 21, column: 4, offset: 415 },
+                      end: { line: 21, column: 32, offset: 443 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 21, column: 2, offset: 413 },
+                  end: { line: 21, column: 32, offset: 443 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'object',
+                        position: {
+                          start: { line: 22, column: 4, offset: 447 },
+                          end: { line: 22, column: 12, offset: 455 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 22, column: 4, offset: 447 },
+                      end: { line: 22, column: 12, offset: 455 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 22, column: 2, offset: 445 },
+                  end: { line: 22, column: 12, offset: 455 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 16, column: 2, offset: 348 },
+              end: { line: 22, column: 12, offset: 455 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'inlineCode',
+                value: 'every',
+                position: {
+                  start: { line: 24, column: 1, offset: 457 },
+                  end: { line: 24, column: 8, offset: 464 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' works for async generators.',
+                position: {
+                  start: { line: 24, column: 8, offset: 464 },
+                  end: { line: 24, column: 36, offset: 492 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 24, column: 1, offset: 457 },
+              end: { line: 24, column: 36, offset: 492 }
             }
           },
           {
@@ -23930,8 +28290,8 @@ export default [
               '\n' +
               'every(asyncNumbers(), async number => number < 6).then(console.log) // true',
             position: {
-              start: { line: 17, column: 1, offset: 463 },
-              end: { line: 23, column: 4, offset: 660 }
+              start: { line: 26, column: 1, offset: 494 },
+              end: { line: 32, column: 4, offset: 691 }
             }
           },
           {
@@ -23941,22 +28301,22 @@ export default [
                 type: 'inlineCode',
                 value: 'every',
                 position: {
-                  start: { line: 25, column: 1, offset: 662 },
-                  end: { line: 25, column: 8, offset: 669 }
+                  start: { line: 34, column: 1, offset: 693 },
+                  end: { line: 34, column: 8, offset: 700 }
                 }
               },
               {
                 type: 'text',
                 value: ' supports a lazy API for composability.',
                 position: {
-                  start: { line: 25, column: 8, offset: 669 },
-                  end: { line: 25, column: 47, offset: 708 }
+                  start: { line: 34, column: 8, offset: 700 },
+                  end: { line: 34, column: 47, offset: 739 }
                 }
               }
             ],
             position: {
-              start: { line: 25, column: 1, offset: 662 },
-              end: { line: 25, column: 47, offset: 708 }
+              start: { line: 34, column: 1, offset: 693 },
+              end: { line: 34, column: 47, offset: 739 }
             }
           },
           {
@@ -23968,8 +28328,8 @@ export default [
               '  console.log, // true\n' +
               '])',
             position: {
-              start: { line: 27, column: 1, offset: 710 },
-              end: { line: 32, column: 4, offset: 815 }
+              start: { line: 36, column: 1, offset: 741 },
+              end: { line: 41, column: 4, offset: 846 }
             }
           },
           {
@@ -23979,14 +28339,14 @@ export default [
                 type: 'text',
                 value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
                 position: {
-                  start: { line: 34, column: 1, offset: 817 },
-                  end: { line: 34, column: 148, offset: 964 }
+                  start: { line: 43, column: 1, offset: 848 },
+                  end: { line: 43, column: 148, offset: 995 }
                 }
               }
             ],
             position: {
-              start: { line: 34, column: 1, offset: 817 },
-              end: { line: 34, column: 148, offset: 964 }
+              start: { line: 43, column: 1, offset: 848 },
+              end: { line: 43, column: 148, offset: 995 }
             }
           },
           {
@@ -23995,14 +28355,160 @@ export default [
             meta: '[playground]',
             value: 'every(Promise.resolve([1, 2, 3, 4, 5]), n => n < 6).then(console.log) // true',
             position: {
-              start: { line: 36, column: 1, offset: 966 },
-              end: { line: 38, column: 4, offset: 1074 }
+              start: { line: 45, column: 1, offset: 997 },
+              end: { line: 47, column: 4, offset: 1105 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'See also:',
+                position: {
+                  start: { line: 49, column: 1, offset: 1107 },
+                  end: { line: 49, column: 10, offset: 1116 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 49, column: 1, offset: 1107 },
+              end: { line: 49, column: 10, offset: 1116 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/map',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'map',
+                            position: {
+                              start: { line: 50, column: 5, offset: 1121 },
+                              end: { line: 50, column: 8, offset: 1124 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 50, column: 4, offset: 1120 },
+                          end: { line: 50, column: 20, offset: 1136 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 50, column: 4, offset: 1120 },
+                      end: { line: 50, column: 20, offset: 1136 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 50, column: 2, offset: 1118 },
+                  end: { line: 50, column: 20, offset: 1136 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/some',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'some',
+                            position: {
+                              start: { line: 51, column: 5, offset: 1141 },
+                              end: { line: 51, column: 9, offset: 1145 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 51, column: 4, offset: 1140 },
+                          end: { line: 51, column: 22, offset: 1158 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 51, column: 4, offset: 1140 },
+                      end: { line: 51, column: 22, offset: 1158 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 51, column: 2, offset: 1138 },
+                  end: { line: 51, column: 22, offset: 1158 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/and',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'and',
+                            position: {
+                              start: { line: 52, column: 5, offset: 1163 },
+                              end: { line: 52, column: 8, offset: 1166 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 52, column: 4, offset: 1162 },
+                          end: { line: 52, column: 20, offset: 1178 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 52, column: 4, offset: 1162 },
+                      end: { line: 52, column: 20, offset: 1178 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 52, column: 2, offset: 1160 },
+                  end: { line: 52, column: 20, offset: 1178 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 50, column: 2, offset: 1118 },
+              end: { line: 52, column: 20, offset: 1178 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 38, column: 4, offset: 1074 }
+          end: { line: 52, column: 20, offset: 1178 }
         }
       },
       execution: {
@@ -24336,7 +28842,15 @@ export default [
       '\n' +
       'filter(Promise.resolve([1, 2, 3, 4, 5]), isOdd).then(console.log)\n' +
       '// [1, 3, 5]\n' +
-      '```',
+      '```\n' +
+      '\n' +
+      'See also:\n' +
+      ' * [forEach](/docs/forEach)\n' +
+      ' * [map](/docs/map)\n' +
+      ' * [reduce](/docs/reduce)\n' +
+      ' * [transform](/docs/transform)\n' +
+      ' * [flatMap](/docs/flatMap)\n' +
+      ' * [some](/docs/some)',
     execution: 'concurrent',
     transducing: '',
     mdast: {
@@ -25191,11 +29705,274 @@ export default [
               start: { line: 156, column: 1, offset: 4601 },
               end: { line: 161, column: 4, offset: 4751 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'See also:',
+                position: {
+                  start: { line: 163, column: 1, offset: 4753 },
+                  end: { line: 163, column: 10, offset: 4762 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 163, column: 1, offset: 4753 },
+              end: { line: 163, column: 10, offset: 4762 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/forEach',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'forEach',
+                            position: {
+                              start: { line: 164, column: 5, offset: 4767 },
+                              end: { line: 164, column: 12, offset: 4774 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 164, column: 4, offset: 4766 },
+                          end: { line: 164, column: 28, offset: 4790 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 164, column: 4, offset: 4766 },
+                      end: { line: 164, column: 28, offset: 4790 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 164, column: 2, offset: 4764 },
+                  end: { line: 164, column: 28, offset: 4790 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/map',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'map',
+                            position: {
+                              start: { line: 165, column: 5, offset: 4795 },
+                              end: { line: 165, column: 8, offset: 4798 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 165, column: 4, offset: 4794 },
+                          end: { line: 165, column: 20, offset: 4810 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 165, column: 4, offset: 4794 },
+                      end: { line: 165, column: 20, offset: 4810 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 165, column: 2, offset: 4792 },
+                  end: { line: 165, column: 20, offset: 4810 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/reduce',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'reduce',
+                            position: {
+                              start: { line: 166, column: 5, offset: 4815 },
+                              end: { line: 166, column: 11, offset: 4821 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 166, column: 4, offset: 4814 },
+                          end: { line: 166, column: 26, offset: 4836 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 166, column: 4, offset: 4814 },
+                      end: { line: 166, column: 26, offset: 4836 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 166, column: 2, offset: 4812 },
+                  end: { line: 166, column: 26, offset: 4836 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/transform',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'transform',
+                            position: {
+                              start: { line: 167, column: 5, offset: 4841 },
+                              end: { line: 167, column: 14, offset: 4850 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 167, column: 4, offset: 4840 },
+                          end: { line: 167, column: 32, offset: 4868 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 167, column: 4, offset: 4840 },
+                      end: { line: 167, column: 32, offset: 4868 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 167, column: 2, offset: 4838 },
+                  end: { line: 167, column: 32, offset: 4868 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/flatMap',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'flatMap',
+                            position: {
+                              start: { line: 168, column: 5, offset: 4873 },
+                              end: { line: 168, column: 12, offset: 4880 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 168, column: 4, offset: 4872 },
+                          end: { line: 168, column: 28, offset: 4896 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 168, column: 4, offset: 4872 },
+                      end: { line: 168, column: 28, offset: 4896 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 168, column: 2, offset: 4870 },
+                  end: { line: 168, column: 28, offset: 4896 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/some',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'some',
+                            position: {
+                              start: { line: 169, column: 5, offset: 4901 },
+                              end: { line: 169, column: 9, offset: 4905 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 169, column: 4, offset: 4900 },
+                          end: { line: 169, column: 22, offset: 4918 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 169, column: 4, offset: 4900 },
+                      end: { line: 169, column: 22, offset: 4918 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 169, column: 2, offset: 4898 },
+                  end: { line: 169, column: 22, offset: 4918 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 164, column: 2, offset: 4764 },
+              end: { line: 169, column: 22, offset: 4918 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 161, column: 4, offset: 4751 }
+          end: { line: 169, column: 22, offset: 4918 }
         }
       },
       execution: {
@@ -25398,7 +30175,15 @@ export default [
       '```javascript [playground]\n' +
       'flatMap(Promise.resolve([1, 2, 3, 4, 5]), n => [n, n]).then(console.log)\n' +
       '// [1, 1, 2, 2, 3, 3, 4, 4, 5, 5]\n' +
-      '```',
+      '```\n' +
+      '\n' +
+      'See also:\n' +
+      ' * [forEach](/docs/forEach)\n' +
+      ' * [map](/docs/map)\n' +
+      ' * [filter](/docs/filter)\n' +
+      ' * [reduce](/docs/reduce)\n' +
+      ' * [transform](/docs/transform)\n' +
+      ' * [some](/docs/some)',
     execution: 'concurrent',
     transducing: '',
     archive: '* For typed arrays (type [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray#typedarray_objects)) and Node.js buffers (type [`Buffer`](https://nodejs.org/api/buffer.html)), `flatMap` applies a flatMapper function to each value of the typed array/buffer, joining the result of each execution with `.set` into the resulting typed array\n' +
@@ -25963,11 +30748,274 @@ export default [
               start: { line: 81, column: 1, offset: 2535 },
               end: { line: 84, column: 4, offset: 2672 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'See also:',
+                position: {
+                  start: { line: 86, column: 1, offset: 2674 },
+                  end: { line: 86, column: 10, offset: 2683 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 86, column: 1, offset: 2674 },
+              end: { line: 86, column: 10, offset: 2683 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/forEach',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'forEach',
+                            position: {
+                              start: { line: 87, column: 5, offset: 2688 },
+                              end: { line: 87, column: 12, offset: 2695 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 87, column: 4, offset: 2687 },
+                          end: { line: 87, column: 28, offset: 2711 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 87, column: 4, offset: 2687 },
+                      end: { line: 87, column: 28, offset: 2711 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 87, column: 2, offset: 2685 },
+                  end: { line: 87, column: 28, offset: 2711 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/map',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'map',
+                            position: {
+                              start: { line: 88, column: 5, offset: 2716 },
+                              end: { line: 88, column: 8, offset: 2719 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 88, column: 4, offset: 2715 },
+                          end: { line: 88, column: 20, offset: 2731 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 88, column: 4, offset: 2715 },
+                      end: { line: 88, column: 20, offset: 2731 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 88, column: 2, offset: 2713 },
+                  end: { line: 88, column: 20, offset: 2731 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/filter',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'filter',
+                            position: {
+                              start: { line: 89, column: 5, offset: 2736 },
+                              end: { line: 89, column: 11, offset: 2742 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 89, column: 4, offset: 2735 },
+                          end: { line: 89, column: 26, offset: 2757 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 89, column: 4, offset: 2735 },
+                      end: { line: 89, column: 26, offset: 2757 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 89, column: 2, offset: 2733 },
+                  end: { line: 89, column: 26, offset: 2757 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/reduce',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'reduce',
+                            position: {
+                              start: { line: 90, column: 5, offset: 2762 },
+                              end: { line: 90, column: 11, offset: 2768 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 90, column: 4, offset: 2761 },
+                          end: { line: 90, column: 26, offset: 2783 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 90, column: 4, offset: 2761 },
+                      end: { line: 90, column: 26, offset: 2783 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 90, column: 2, offset: 2759 },
+                  end: { line: 90, column: 26, offset: 2783 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/transform',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'transform',
+                            position: {
+                              start: { line: 91, column: 5, offset: 2788 },
+                              end: { line: 91, column: 14, offset: 2797 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 91, column: 4, offset: 2787 },
+                          end: { line: 91, column: 32, offset: 2815 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 91, column: 4, offset: 2787 },
+                      end: { line: 91, column: 32, offset: 2815 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 91, column: 2, offset: 2785 },
+                  end: { line: 91, column: 32, offset: 2815 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/some',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'some',
+                            position: {
+                              start: { line: 92, column: 5, offset: 2820 },
+                              end: { line: 92, column: 9, offset: 2824 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 92, column: 4, offset: 2819 },
+                          end: { line: 92, column: 22, offset: 2837 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 92, column: 4, offset: 2819 },
+                      end: { line: 92, column: 22, offset: 2837 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 92, column: 2, offset: 2817 },
+                  end: { line: 92, column: 22, offset: 2837 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 87, column: 2, offset: 2685 },
+              end: { line: 92, column: 22, offset: 2837 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 84, column: 4, offset: 2672 }
+          end: { line: 92, column: 22, offset: 2837 }
         }
       },
       execution: {
@@ -26331,7 +31379,14 @@ export default [
       '// 1\n' +
       '// 2\n' +
       '// 3\n' +
-      '```',
+      '```\n' +
+      '\n' +
+      'See also:\n' +
+      ' * [pipe](/docs/pipe)\n' +
+      ' * [tap](/docs/tap)\n' +
+      ' * [all](/docs/all)\n' +
+      ' * [forEach.series](/docs/forEach.series)\n' +
+      ' * [map](/docs/map)',
     mdast: {
       name: {
         type: 'root',
@@ -27006,11 +32061,235 @@ export default [
               start: { line: 83, column: 1, offset: 2077 },
               end: { line: 88, column: 4, offset: 2171 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'See also:',
+                position: {
+                  start: { line: 90, column: 1, offset: 2173 },
+                  end: { line: 90, column: 10, offset: 2182 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 90, column: 1, offset: 2173 },
+              end: { line: 90, column: 10, offset: 2182 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/pipe',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'pipe',
+                            position: {
+                              start: { line: 91, column: 5, offset: 2187 },
+                              end: { line: 91, column: 9, offset: 2191 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 91, column: 4, offset: 2186 },
+                          end: { line: 91, column: 22, offset: 2204 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 91, column: 4, offset: 2186 },
+                      end: { line: 91, column: 22, offset: 2204 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 91, column: 2, offset: 2184 },
+                  end: { line: 91, column: 22, offset: 2204 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/tap',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'tap',
+                            position: {
+                              start: { line: 92, column: 5, offset: 2209 },
+                              end: { line: 92, column: 8, offset: 2212 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 92, column: 4, offset: 2208 },
+                          end: { line: 92, column: 20, offset: 2224 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 92, column: 4, offset: 2208 },
+                      end: { line: 92, column: 20, offset: 2224 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 92, column: 2, offset: 2206 },
+                  end: { line: 92, column: 20, offset: 2224 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/all',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'all',
+                            position: {
+                              start: { line: 93, column: 5, offset: 2229 },
+                              end: { line: 93, column: 8, offset: 2232 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 93, column: 4, offset: 2228 },
+                          end: { line: 93, column: 20, offset: 2244 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 93, column: 4, offset: 2228 },
+                      end: { line: 93, column: 20, offset: 2244 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 93, column: 2, offset: 2226 },
+                  end: { line: 93, column: 20, offset: 2244 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/forEach.series',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'forEach.series',
+                            position: {
+                              start: { line: 94, column: 5, offset: 2249 },
+                              end: { line: 94, column: 19, offset: 2263 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 94, column: 4, offset: 2248 },
+                          end: { line: 94, column: 42, offset: 2286 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 94, column: 4, offset: 2248 },
+                      end: { line: 94, column: 42, offset: 2286 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 94, column: 2, offset: 2246 },
+                  end: { line: 94, column: 42, offset: 2286 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/map',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'map',
+                            position: {
+                              start: { line: 95, column: 5, offset: 2291 },
+                              end: { line: 95, column: 8, offset: 2294 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 95, column: 4, offset: 2290 },
+                          end: { line: 95, column: 20, offset: 2306 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 95, column: 4, offset: 2290 },
+                      end: { line: 95, column: 20, offset: 2306 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 95, column: 2, offset: 2288 },
+                  end: { line: 95, column: 20, offset: 2306 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 91, column: 2, offset: 2184 },
+              end: { line: 95, column: 20, offset: 2306 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 88, column: 4, offset: 2171 }
+          end: { line: 95, column: 20, offset: 2306 }
         }
       }
     },
@@ -27112,7 +32391,14 @@ export default [
       '// 1\n' +
       '// 2\n' +
       '// 3\n' +
-      '```',
+      '```\n' +
+      '\n' +
+      'See also:\n' +
+      ' * [pipe](/docs/pipe)\n' +
+      ' * [tap](/docs/tap)\n' +
+      ' * [all](/docs/all)\n' +
+      ' * [forEach](/docs/forEach)\n' +
+      ' * [map](/docs/map)',
     mdast: {
       name: {
         type: 'root',
@@ -27257,11 +32543,235 @@ export default [
               start: { line: 19, column: 1, offset: 408 },
               end: { line: 24, column: 4, offset: 509 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'See also:',
+                position: {
+                  start: { line: 26, column: 1, offset: 511 },
+                  end: { line: 26, column: 10, offset: 520 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 26, column: 1, offset: 511 },
+              end: { line: 26, column: 10, offset: 520 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/pipe',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'pipe',
+                            position: {
+                              start: { line: 27, column: 5, offset: 525 },
+                              end: { line: 27, column: 9, offset: 529 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 27, column: 4, offset: 524 },
+                          end: { line: 27, column: 22, offset: 542 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 27, column: 4, offset: 524 },
+                      end: { line: 27, column: 22, offset: 542 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 27, column: 2, offset: 522 },
+                  end: { line: 27, column: 22, offset: 542 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/tap',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'tap',
+                            position: {
+                              start: { line: 28, column: 5, offset: 547 },
+                              end: { line: 28, column: 8, offset: 550 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 28, column: 4, offset: 546 },
+                          end: { line: 28, column: 20, offset: 562 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 28, column: 4, offset: 546 },
+                      end: { line: 28, column: 20, offset: 562 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 28, column: 2, offset: 544 },
+                  end: { line: 28, column: 20, offset: 562 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/all',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'all',
+                            position: {
+                              start: { line: 29, column: 5, offset: 567 },
+                              end: { line: 29, column: 8, offset: 570 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 29, column: 4, offset: 566 },
+                          end: { line: 29, column: 20, offset: 582 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 29, column: 4, offset: 566 },
+                      end: { line: 29, column: 20, offset: 582 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 29, column: 2, offset: 564 },
+                  end: { line: 29, column: 20, offset: 582 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/forEach',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'forEach',
+                            position: {
+                              start: { line: 30, column: 5, offset: 587 },
+                              end: { line: 30, column: 12, offset: 594 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 30, column: 4, offset: 586 },
+                          end: { line: 30, column: 28, offset: 610 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 30, column: 4, offset: 586 },
+                      end: { line: 30, column: 28, offset: 610 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 30, column: 2, offset: 584 },
+                  end: { line: 30, column: 28, offset: 610 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/map',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'map',
+                            position: {
+                              start: { line: 31, column: 5, offset: 615 },
+                              end: { line: 31, column: 8, offset: 618 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 31, column: 4, offset: 614 },
+                          end: { line: 31, column: 20, offset: 630 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 31, column: 4, offset: 614 },
+                      end: { line: 31, column: 20, offset: 630 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 31, column: 2, offset: 612 },
+                  end: { line: 31, column: 20, offset: 630 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 27, column: 2, offset: 522 },
+              end: { line: 31, column: 20, offset: 630 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 24, column: 4, offset: 509 }
+          end: { line: 31, column: 20, offset: 630 }
         }
       }
     },
@@ -27335,7 +32845,16 @@ export default [
       '\n' +
       '```javascript [playground]\n' +
       "get(Promise.resolve({ a: 1 }), 'a').then(console.log) // 1\n" +
-      '```',
+      '```\n' +
+      '\n' +
+      'See also:\n' +
+      ' * [pipe](/docs/pipe)\n' +
+      ' * [all](/docs/all)\n' +
+      ' * [assign](/docs/assign)\n' +
+      ' * [set](/docs/set)\n' +
+      ' * [pick](/docs/pick)\n' +
+      ' * [omit](/docs/omit)\n' +
+      ' * [forEach](/docs/forEach)',
     mdast: {
       name: {
         type: 'root',
@@ -27702,11 +33221,313 @@ export default [
               start: { line: 53, column: 1, offset: 1796 },
               end: { line: 55, column: 4, offset: 1885 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'See also:',
+                position: {
+                  start: { line: 57, column: 1, offset: 1887 },
+                  end: { line: 57, column: 10, offset: 1896 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 57, column: 1, offset: 1887 },
+              end: { line: 57, column: 10, offset: 1896 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/pipe',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'pipe',
+                            position: {
+                              start: { line: 58, column: 5, offset: 1901 },
+                              end: { line: 58, column: 9, offset: 1905 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 58, column: 4, offset: 1900 },
+                          end: { line: 58, column: 22, offset: 1918 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 58, column: 4, offset: 1900 },
+                      end: { line: 58, column: 22, offset: 1918 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 58, column: 2, offset: 1898 },
+                  end: { line: 58, column: 22, offset: 1918 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/all',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'all',
+                            position: {
+                              start: { line: 59, column: 5, offset: 1923 },
+                              end: { line: 59, column: 8, offset: 1926 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 59, column: 4, offset: 1922 },
+                          end: { line: 59, column: 20, offset: 1938 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 59, column: 4, offset: 1922 },
+                      end: { line: 59, column: 20, offset: 1938 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 59, column: 2, offset: 1920 },
+                  end: { line: 59, column: 20, offset: 1938 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/assign',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'assign',
+                            position: {
+                              start: { line: 60, column: 5, offset: 1943 },
+                              end: { line: 60, column: 11, offset: 1949 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 60, column: 4, offset: 1942 },
+                          end: { line: 60, column: 26, offset: 1964 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 60, column: 4, offset: 1942 },
+                      end: { line: 60, column: 26, offset: 1964 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 60, column: 2, offset: 1940 },
+                  end: { line: 60, column: 26, offset: 1964 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/set',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'set',
+                            position: {
+                              start: { line: 61, column: 5, offset: 1969 },
+                              end: { line: 61, column: 8, offset: 1972 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 61, column: 4, offset: 1968 },
+                          end: { line: 61, column: 20, offset: 1984 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 61, column: 4, offset: 1968 },
+                      end: { line: 61, column: 20, offset: 1984 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 61, column: 2, offset: 1966 },
+                  end: { line: 61, column: 20, offset: 1984 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/pick',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'pick',
+                            position: {
+                              start: { line: 62, column: 5, offset: 1989 },
+                              end: { line: 62, column: 9, offset: 1993 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 62, column: 4, offset: 1988 },
+                          end: { line: 62, column: 22, offset: 2006 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 62, column: 4, offset: 1988 },
+                      end: { line: 62, column: 22, offset: 2006 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 62, column: 2, offset: 1986 },
+                  end: { line: 62, column: 22, offset: 2006 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/omit',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'omit',
+                            position: {
+                              start: { line: 63, column: 5, offset: 2011 },
+                              end: { line: 63, column: 9, offset: 2015 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 63, column: 4, offset: 2010 },
+                          end: { line: 63, column: 22, offset: 2028 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 63, column: 4, offset: 2010 },
+                      end: { line: 63, column: 22, offset: 2028 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 63, column: 2, offset: 2008 },
+                  end: { line: 63, column: 22, offset: 2028 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/forEach',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'forEach',
+                            position: {
+                              start: { line: 64, column: 5, offset: 2033 },
+                              end: { line: 64, column: 12, offset: 2040 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 64, column: 4, offset: 2032 },
+                          end: { line: 64, column: 28, offset: 2056 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 64, column: 4, offset: 2032 },
+                      end: { line: 64, column: 28, offset: 2056 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 64, column: 2, offset: 2030 },
+                  end: { line: 64, column: 28, offset: 2056 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 58, column: 2, offset: 1898 },
+              end: { line: 64, column: 28, offset: 2056 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 55, column: 4, offset: 1885 }
+          end: { line: 64, column: 28, offset: 2056 }
         }
       }
     },
@@ -27759,7 +33580,15 @@ export default [
       '\n' +
       '```javascript [playground]\n' +
       "gt(Promise.resolve({ a: 2, b: 1 }), get('a'), get('b')).then(console.log) // true\n" +
-      '```',
+      '```\n' +
+      '\n' +
+      'See also:\n' +
+      ' * [and](/docs/and)\n' +
+      ' * [eq](/docs/eq)\n' +
+      ' * [lt](/docs/lt)\n' +
+      ' * [gte](/docs/gte)\n' +
+      ' * [lte](/docs/lte)\n' +
+      ' * [thunkify](/docs/thunkify)',
     mdast: {
       name: {
         type: 'root',
@@ -27976,11 +33805,274 @@ export default [
               start: { line: 32, column: 1, offset: 759 },
               end: { line: 34, column: 4, offset: 871 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'See also:',
+                position: {
+                  start: { line: 36, column: 1, offset: 873 },
+                  end: { line: 36, column: 10, offset: 882 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 36, column: 1, offset: 873 },
+              end: { line: 36, column: 10, offset: 882 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/and',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'and',
+                            position: {
+                              start: { line: 37, column: 5, offset: 887 },
+                              end: { line: 37, column: 8, offset: 890 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 37, column: 4, offset: 886 },
+                          end: { line: 37, column: 20, offset: 902 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 37, column: 4, offset: 886 },
+                      end: { line: 37, column: 20, offset: 902 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 37, column: 2, offset: 884 },
+                  end: { line: 37, column: 20, offset: 902 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/eq',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'eq',
+                            position: {
+                              start: { line: 38, column: 5, offset: 907 },
+                              end: { line: 38, column: 7, offset: 909 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 38, column: 4, offset: 906 },
+                          end: { line: 38, column: 18, offset: 920 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 38, column: 4, offset: 906 },
+                      end: { line: 38, column: 18, offset: 920 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 38, column: 2, offset: 904 },
+                  end: { line: 38, column: 18, offset: 920 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/lt',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'lt',
+                            position: {
+                              start: { line: 39, column: 5, offset: 925 },
+                              end: { line: 39, column: 7, offset: 927 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 39, column: 4, offset: 924 },
+                          end: { line: 39, column: 18, offset: 938 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 39, column: 4, offset: 924 },
+                      end: { line: 39, column: 18, offset: 938 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 39, column: 2, offset: 922 },
+                  end: { line: 39, column: 18, offset: 938 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/gte',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'gte',
+                            position: {
+                              start: { line: 40, column: 5, offset: 943 },
+                              end: { line: 40, column: 8, offset: 946 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 40, column: 4, offset: 942 },
+                          end: { line: 40, column: 20, offset: 958 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 40, column: 4, offset: 942 },
+                      end: { line: 40, column: 20, offset: 958 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 40, column: 2, offset: 940 },
+                  end: { line: 40, column: 20, offset: 958 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/lte',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'lte',
+                            position: {
+                              start: { line: 41, column: 5, offset: 963 },
+                              end: { line: 41, column: 8, offset: 966 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 41, column: 4, offset: 962 },
+                          end: { line: 41, column: 20, offset: 978 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 41, column: 4, offset: 962 },
+                      end: { line: 41, column: 20, offset: 978 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 41, column: 2, offset: 960 },
+                  end: { line: 41, column: 20, offset: 978 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/thunkify',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'thunkify',
+                            position: {
+                              start: { line: 42, column: 5, offset: 983 },
+                              end: { line: 42, column: 13, offset: 991 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 42, column: 4, offset: 982 },
+                          end: { line: 42, column: 30, offset: 1008 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 42, column: 4, offset: 982 },
+                      end: { line: 42, column: 30, offset: 1008 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 42, column: 2, offset: 980 },
+                  end: { line: 42, column: 30, offset: 1008 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 37, column: 2, offset: 884 },
+              end: { line: 42, column: 30, offset: 1008 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 34, column: 4, offset: 871 }
+          end: { line: 42, column: 30, offset: 1008 }
         }
       }
     },
@@ -28035,7 +34127,15 @@ export default [
       '\n' +
       '```javascript [playground]\n' +
       "gte(Promise.resolve({ a: 1, b: 1 }), get('a'), get('b')).then(console.log) // true\n" +
-      '```',
+      '```\n' +
+      '\n' +
+      'See also:\n' +
+      ' * [and](/docs/and)\n' +
+      ' * [eq](/docs/eq)\n' +
+      ' * [lt](/docs/lt)\n' +
+      ' * [gt](/docs/gt)\n' +
+      ' * [lte](/docs/lte)\n' +
+      ' * [thunkify](/docs/thunkify)',
     mdast: {
       name: {
         type: 'root',
@@ -28254,11 +34354,274 @@ export default [
               start: { line: 34, column: 1, offset: 835 },
               end: { line: 36, column: 4, offset: 948 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'See also:',
+                position: {
+                  start: { line: 38, column: 1, offset: 950 },
+                  end: { line: 38, column: 10, offset: 959 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 38, column: 1, offset: 950 },
+              end: { line: 38, column: 10, offset: 959 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/and',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'and',
+                            position: {
+                              start: { line: 39, column: 5, offset: 964 },
+                              end: { line: 39, column: 8, offset: 967 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 39, column: 4, offset: 963 },
+                          end: { line: 39, column: 20, offset: 979 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 39, column: 4, offset: 963 },
+                      end: { line: 39, column: 20, offset: 979 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 39, column: 2, offset: 961 },
+                  end: { line: 39, column: 20, offset: 979 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/eq',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'eq',
+                            position: {
+                              start: { line: 40, column: 5, offset: 984 },
+                              end: { line: 40, column: 7, offset: 986 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 40, column: 4, offset: 983 },
+                          end: { line: 40, column: 18, offset: 997 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 40, column: 4, offset: 983 },
+                      end: { line: 40, column: 18, offset: 997 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 40, column: 2, offset: 981 },
+                  end: { line: 40, column: 18, offset: 997 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/lt',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'lt',
+                            position: {
+                              start: { line: 41, column: 5, offset: 1002 },
+                              end: { line: 41, column: 7, offset: 1004 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 41, column: 4, offset: 1001 },
+                          end: { line: 41, column: 18, offset: 1015 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 41, column: 4, offset: 1001 },
+                      end: { line: 41, column: 18, offset: 1015 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 41, column: 2, offset: 999 },
+                  end: { line: 41, column: 18, offset: 1015 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/gt',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'gt',
+                            position: {
+                              start: { line: 42, column: 5, offset: 1020 },
+                              end: { line: 42, column: 7, offset: 1022 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 42, column: 4, offset: 1019 },
+                          end: { line: 42, column: 18, offset: 1033 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 42, column: 4, offset: 1019 },
+                      end: { line: 42, column: 18, offset: 1033 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 42, column: 2, offset: 1017 },
+                  end: { line: 42, column: 18, offset: 1033 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/lte',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'lte',
+                            position: {
+                              start: { line: 43, column: 5, offset: 1038 },
+                              end: { line: 43, column: 8, offset: 1041 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 43, column: 4, offset: 1037 },
+                          end: { line: 43, column: 20, offset: 1053 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 43, column: 4, offset: 1037 },
+                      end: { line: 43, column: 20, offset: 1053 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 43, column: 2, offset: 1035 },
+                  end: { line: 43, column: 20, offset: 1053 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/thunkify',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'thunkify',
+                            position: {
+                              start: { line: 44, column: 5, offset: 1058 },
+                              end: { line: 44, column: 13, offset: 1066 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 44, column: 4, offset: 1057 },
+                          end: { line: 44, column: 30, offset: 1083 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 44, column: 4, offset: 1057 },
+                      end: { line: 44, column: 30, offset: 1083 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 44, column: 2, offset: 1055 },
+                  end: { line: 44, column: 30, offset: 1083 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 39, column: 2, offset: 961 },
+              end: { line: 44, column: 30, offset: 1083 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 36, column: 4, offset: 948 }
+          end: { line: 44, column: 30, offset: 1083 }
         }
       }
     },
@@ -28589,7 +34952,15 @@ export default [
       '\n' +
       '```javascript [playground]\n' +
       "lte(Promise.resolve({ a: 1, b: 1 }), get('a'), get('b')).then(console.log) // true\n" +
-      '```',
+      '```\n' +
+      '\n' +
+      'See also:\n' +
+      ' * [and](/docs/and)\n' +
+      ' * [eq](/docs/eq)\n' +
+      ' * [lt](/docs/lt)\n' +
+      ' * [gt](/docs/gt)\n' +
+      ' * [gte](/docs/gte)\n' +
+      ' * [thunkify](/docs/thunkify)',
     mdast: {
       name: {
         type: 'root',
@@ -28806,11 +35177,274 @@ export default [
               start: { line: 32, column: 1, offset: 864 },
               end: { line: 34, column: 4, offset: 977 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'See also:',
+                position: {
+                  start: { line: 36, column: 1, offset: 979 },
+                  end: { line: 36, column: 10, offset: 988 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 36, column: 1, offset: 979 },
+              end: { line: 36, column: 10, offset: 988 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/and',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'and',
+                            position: {
+                              start: { line: 37, column: 5, offset: 993 },
+                              end: { line: 37, column: 8, offset: 996 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 37, column: 4, offset: 992 },
+                          end: { line: 37, column: 20, offset: 1008 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 37, column: 4, offset: 992 },
+                      end: { line: 37, column: 20, offset: 1008 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 37, column: 2, offset: 990 },
+                  end: { line: 37, column: 20, offset: 1008 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/eq',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'eq',
+                            position: {
+                              start: { line: 38, column: 5, offset: 1013 },
+                              end: { line: 38, column: 7, offset: 1015 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 38, column: 4, offset: 1012 },
+                          end: { line: 38, column: 18, offset: 1026 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 38, column: 4, offset: 1012 },
+                      end: { line: 38, column: 18, offset: 1026 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 38, column: 2, offset: 1010 },
+                  end: { line: 38, column: 18, offset: 1026 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/lt',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'lt',
+                            position: {
+                              start: { line: 39, column: 5, offset: 1031 },
+                              end: { line: 39, column: 7, offset: 1033 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 39, column: 4, offset: 1030 },
+                          end: { line: 39, column: 18, offset: 1044 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 39, column: 4, offset: 1030 },
+                      end: { line: 39, column: 18, offset: 1044 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 39, column: 2, offset: 1028 },
+                  end: { line: 39, column: 18, offset: 1044 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/gt',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'gt',
+                            position: {
+                              start: { line: 40, column: 5, offset: 1049 },
+                              end: { line: 40, column: 7, offset: 1051 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 40, column: 4, offset: 1048 },
+                          end: { line: 40, column: 18, offset: 1062 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 40, column: 4, offset: 1048 },
+                      end: { line: 40, column: 18, offset: 1062 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 40, column: 2, offset: 1046 },
+                  end: { line: 40, column: 18, offset: 1062 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/gte',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'gte',
+                            position: {
+                              start: { line: 41, column: 5, offset: 1067 },
+                              end: { line: 41, column: 8, offset: 1070 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 41, column: 4, offset: 1066 },
+                          end: { line: 41, column: 20, offset: 1082 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 41, column: 4, offset: 1066 },
+                      end: { line: 41, column: 20, offset: 1082 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 41, column: 2, offset: 1064 },
+                  end: { line: 41, column: 20, offset: 1082 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/thunkify',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'thunkify',
+                            position: {
+                              start: { line: 42, column: 5, offset: 1087 },
+                              end: { line: 42, column: 13, offset: 1095 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 42, column: 4, offset: 1086 },
+                          end: { line: 42, column: 30, offset: 1112 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 42, column: 4, offset: 1086 },
+                      end: { line: 42, column: 30, offset: 1112 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 42, column: 2, offset: 1084 },
+                  end: { line: 42, column: 30, offset: 1112 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 37, column: 2, offset: 990 },
+              end: { line: 42, column: 30, offset: 1112 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 34, column: 4, offset: 977 }
+          end: { line: 42, column: 30, offset: 1112 }
         }
       }
     },
@@ -29071,7 +35705,18 @@ export default [
       '\n' +
       'map(Promise.resolve([1, 2, 3, 4, 5]), asyncSquare).then(console.log)\n' +
       '// [1, 4, 9, 16, 25]\n' +
-      '```',
+      '```\n' +
+      '\n' +
+      'See also:\n' +
+      ' * [forEach](/docs/forEach)\n' +
+      ' * [map.entries](/docs/map.entries)\n' +
+      ' * [map.series](/docs/map.series)\n' +
+      ' * [map.pool](/docs/map.pool)\n' +
+      ' * [filter](/docs/filter)\n' +
+      ' * [reduce](/docs/reduce)\n' +
+      ' * [transform](/docs/transform)\n' +
+      ' * [flatMap](/docs/flatMap)\n' +
+      ' * [some](/docs/some)',
     execution: 'concurrent',
     TODO: 'streamMap',
     mdast: {
@@ -29901,11 +36546,391 @@ export default [
               start: { line: 147, column: 1, offset: 3828 },
               end: { line: 152, column: 4, offset: 3987 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'See also:',
+                position: {
+                  start: { line: 154, column: 1, offset: 3989 },
+                  end: { line: 154, column: 10, offset: 3998 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 154, column: 1, offset: 3989 },
+              end: { line: 154, column: 10, offset: 3998 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/forEach',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'forEach',
+                            position: {
+                              start: { line: 155, column: 5, offset: 4003 },
+                              end: { line: 155, column: 12, offset: 4010 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 155, column: 4, offset: 4002 },
+                          end: { line: 155, column: 28, offset: 4026 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 155, column: 4, offset: 4002 },
+                      end: { line: 155, column: 28, offset: 4026 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 155, column: 2, offset: 4000 },
+                  end: { line: 155, column: 28, offset: 4026 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/map.entries',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'map.entries',
+                            position: {
+                              start: { line: 156, column: 5, offset: 4031 },
+                              end: { line: 156, column: 16, offset: 4042 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 156, column: 4, offset: 4030 },
+                          end: { line: 156, column: 36, offset: 4062 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 156, column: 4, offset: 4030 },
+                      end: { line: 156, column: 36, offset: 4062 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 156, column: 2, offset: 4028 },
+                  end: { line: 156, column: 36, offset: 4062 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/map.series',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'map.series',
+                            position: {
+                              start: { line: 157, column: 5, offset: 4067 },
+                              end: { line: 157, column: 15, offset: 4077 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 157, column: 4, offset: 4066 },
+                          end: { line: 157, column: 34, offset: 4096 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 157, column: 4, offset: 4066 },
+                      end: { line: 157, column: 34, offset: 4096 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 157, column: 2, offset: 4064 },
+                  end: { line: 157, column: 34, offset: 4096 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/map.pool',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'map.pool',
+                            position: {
+                              start: { line: 158, column: 5, offset: 4101 },
+                              end: { line: 158, column: 13, offset: 4109 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 158, column: 4, offset: 4100 },
+                          end: { line: 158, column: 30, offset: 4126 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 158, column: 4, offset: 4100 },
+                      end: { line: 158, column: 30, offset: 4126 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 158, column: 2, offset: 4098 },
+                  end: { line: 158, column: 30, offset: 4126 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/filter',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'filter',
+                            position: {
+                              start: { line: 159, column: 5, offset: 4131 },
+                              end: { line: 159, column: 11, offset: 4137 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 159, column: 4, offset: 4130 },
+                          end: { line: 159, column: 26, offset: 4152 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 159, column: 4, offset: 4130 },
+                      end: { line: 159, column: 26, offset: 4152 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 159, column: 2, offset: 4128 },
+                  end: { line: 159, column: 26, offset: 4152 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/reduce',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'reduce',
+                            position: {
+                              start: { line: 160, column: 5, offset: 4157 },
+                              end: { line: 160, column: 11, offset: 4163 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 160, column: 4, offset: 4156 },
+                          end: { line: 160, column: 26, offset: 4178 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 160, column: 4, offset: 4156 },
+                      end: { line: 160, column: 26, offset: 4178 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 160, column: 2, offset: 4154 },
+                  end: { line: 160, column: 26, offset: 4178 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/transform',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'transform',
+                            position: {
+                              start: { line: 161, column: 5, offset: 4183 },
+                              end: { line: 161, column: 14, offset: 4192 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 161, column: 4, offset: 4182 },
+                          end: { line: 161, column: 32, offset: 4210 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 161, column: 4, offset: 4182 },
+                      end: { line: 161, column: 32, offset: 4210 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 161, column: 2, offset: 4180 },
+                  end: { line: 161, column: 32, offset: 4210 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/flatMap',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'flatMap',
+                            position: {
+                              start: { line: 162, column: 5, offset: 4215 },
+                              end: { line: 162, column: 12, offset: 4222 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 162, column: 4, offset: 4214 },
+                          end: { line: 162, column: 28, offset: 4238 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 162, column: 4, offset: 4214 },
+                      end: { line: 162, column: 28, offset: 4238 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 162, column: 2, offset: 4212 },
+                  end: { line: 162, column: 28, offset: 4238 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/some',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'some',
+                            position: {
+                              start: { line: 163, column: 5, offset: 4243 },
+                              end: { line: 163, column: 9, offset: 4247 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 163, column: 4, offset: 4242 },
+                          end: { line: 163, column: 22, offset: 4260 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 163, column: 4, offset: 4242 },
+                      end: { line: 163, column: 22, offset: 4260 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 163, column: 2, offset: 4240 },
+                  end: { line: 163, column: 22, offset: 4260 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 155, column: 2, offset: 4000 },
+              end: { line: 163, column: 22, offset: 4260 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 152, column: 4, offset: 3987 }
+          end: { line: 163, column: 22, offset: 4260 }
         }
       },
       execution: {
@@ -30003,7 +37028,18 @@ export default [
       '  asyncSquareEntries,\n' +
       ').then(console.log)\n' +
       '// { a: 1, b: 4, c: 9 }\n' +
-      '```',
+      '```\n' +
+      '\n' +
+      'See also:\n' +
+      ' * [forEach](/docs/forEach)\n' +
+      ' * [map](/docs/map)\n' +
+      ' * [map.series](/docs/map.series)\n' +
+      ' * [map.pool](/docs/map.pool)\n' +
+      ' * [filter](/docs/filter)\n' +
+      ' * [reduce](/docs/reduce)\n' +
+      ' * [transform](/docs/transform)\n' +
+      ' * [flatMap](/docs/flatMap)\n' +
+      ' * [some](/docs/some)',
     since: 'v1.7.0',
     mdast: {
       name: {
@@ -30172,11 +37208,391 @@ export default [
               start: { line: 16, column: 1, offset: 610 },
               end: { line: 24, column: 4, offset: 818 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'See also:',
+                position: {
+                  start: { line: 26, column: 1, offset: 820 },
+                  end: { line: 26, column: 10, offset: 829 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 26, column: 1, offset: 820 },
+              end: { line: 26, column: 10, offset: 829 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/forEach',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'forEach',
+                            position: {
+                              start: { line: 27, column: 5, offset: 834 },
+                              end: { line: 27, column: 12, offset: 841 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 27, column: 4, offset: 833 },
+                          end: { line: 27, column: 28, offset: 857 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 27, column: 4, offset: 833 },
+                      end: { line: 27, column: 28, offset: 857 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 27, column: 2, offset: 831 },
+                  end: { line: 27, column: 28, offset: 857 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/map',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'map',
+                            position: {
+                              start: { line: 28, column: 5, offset: 862 },
+                              end: { line: 28, column: 8, offset: 865 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 28, column: 4, offset: 861 },
+                          end: { line: 28, column: 20, offset: 877 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 28, column: 4, offset: 861 },
+                      end: { line: 28, column: 20, offset: 877 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 28, column: 2, offset: 859 },
+                  end: { line: 28, column: 20, offset: 877 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/map.series',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'map.series',
+                            position: {
+                              start: { line: 29, column: 5, offset: 882 },
+                              end: { line: 29, column: 15, offset: 892 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 29, column: 4, offset: 881 },
+                          end: { line: 29, column: 34, offset: 911 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 29, column: 4, offset: 881 },
+                      end: { line: 29, column: 34, offset: 911 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 29, column: 2, offset: 879 },
+                  end: { line: 29, column: 34, offset: 911 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/map.pool',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'map.pool',
+                            position: {
+                              start: { line: 30, column: 5, offset: 916 },
+                              end: { line: 30, column: 13, offset: 924 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 30, column: 4, offset: 915 },
+                          end: { line: 30, column: 30, offset: 941 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 30, column: 4, offset: 915 },
+                      end: { line: 30, column: 30, offset: 941 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 30, column: 2, offset: 913 },
+                  end: { line: 30, column: 30, offset: 941 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/filter',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'filter',
+                            position: {
+                              start: { line: 31, column: 5, offset: 946 },
+                              end: { line: 31, column: 11, offset: 952 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 31, column: 4, offset: 945 },
+                          end: { line: 31, column: 26, offset: 967 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 31, column: 4, offset: 945 },
+                      end: { line: 31, column: 26, offset: 967 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 31, column: 2, offset: 943 },
+                  end: { line: 31, column: 26, offset: 967 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/reduce',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'reduce',
+                            position: {
+                              start: { line: 32, column: 5, offset: 972 },
+                              end: { line: 32, column: 11, offset: 978 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 32, column: 4, offset: 971 },
+                          end: { line: 32, column: 26, offset: 993 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 32, column: 4, offset: 971 },
+                      end: { line: 32, column: 26, offset: 993 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 32, column: 2, offset: 969 },
+                  end: { line: 32, column: 26, offset: 993 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/transform',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'transform',
+                            position: {
+                              start: { line: 33, column: 5, offset: 998 },
+                              end: { line: 33, column: 14, offset: 1007 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 33, column: 4, offset: 997 },
+                          end: { line: 33, column: 32, offset: 1025 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 33, column: 4, offset: 997 },
+                      end: { line: 33, column: 32, offset: 1025 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 33, column: 2, offset: 995 },
+                  end: { line: 33, column: 32, offset: 1025 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/flatMap',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'flatMap',
+                            position: {
+                              start: { line: 34, column: 5, offset: 1030 },
+                              end: { line: 34, column: 12, offset: 1037 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 34, column: 4, offset: 1029 },
+                          end: { line: 34, column: 28, offset: 1053 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 34, column: 4, offset: 1029 },
+                      end: { line: 34, column: 28, offset: 1053 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 34, column: 2, offset: 1027 },
+                  end: { line: 34, column: 28, offset: 1053 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/some',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'some',
+                            position: {
+                              start: { line: 35, column: 5, offset: 1058 },
+                              end: { line: 35, column: 9, offset: 1062 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 35, column: 4, offset: 1057 },
+                          end: { line: 35, column: 22, offset: 1075 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 35, column: 4, offset: 1057 },
+                      end: { line: 35, column: 22, offset: 1075 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 35, column: 2, offset: 1055 },
+                  end: { line: 35, column: 22, offset: 1075 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 27, column: 2, offset: 831 },
+              end: { line: 35, column: 22, offset: 1075 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 24, column: 4, offset: 818 }
+          end: { line: 35, column: 22, offset: 1075 }
         }
       },
       since: {
@@ -30318,7 +37734,18 @@ export default [
       '\n' +
       'map.series(Promise.resolve([1, 2, 3, 4, 5]), asyncSquare).then(console.log)\n' +
       '// [1, 4, 9, 16, 25]\n' +
-      '```',
+      '```\n' +
+      '\n' +
+      'See also:\n' +
+      ' * [forEach](/docs/forEach)\n' +
+      ' * [map](/docs/map)\n' +
+      ' * [map.entries](/docs/map.entries)\n' +
+      ' * [map.pool](/docs/map.pool)\n' +
+      ' * [filter](/docs/filter)\n' +
+      ' * [reduce](/docs/reduce)\n' +
+      ' * [transform](/docs/transform)\n' +
+      ' * [flatMap](/docs/flatMap)\n' +
+      ' * [some](/docs/some)',
     execution: 'series',
     mdast: {
       name: {
@@ -30466,11 +37893,391 @@ export default [
               start: { line: 17, column: 1, offset: 425 },
               end: { line: 22, column: 4, offset: 591 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'See also:',
+                position: {
+                  start: { line: 24, column: 1, offset: 593 },
+                  end: { line: 24, column: 10, offset: 602 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 24, column: 1, offset: 593 },
+              end: { line: 24, column: 10, offset: 602 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/forEach',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'forEach',
+                            position: {
+                              start: { line: 25, column: 5, offset: 607 },
+                              end: { line: 25, column: 12, offset: 614 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 25, column: 4, offset: 606 },
+                          end: { line: 25, column: 28, offset: 630 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 25, column: 4, offset: 606 },
+                      end: { line: 25, column: 28, offset: 630 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 25, column: 2, offset: 604 },
+                  end: { line: 25, column: 28, offset: 630 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/map',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'map',
+                            position: {
+                              start: { line: 26, column: 5, offset: 635 },
+                              end: { line: 26, column: 8, offset: 638 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 26, column: 4, offset: 634 },
+                          end: { line: 26, column: 20, offset: 650 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 26, column: 4, offset: 634 },
+                      end: { line: 26, column: 20, offset: 650 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 26, column: 2, offset: 632 },
+                  end: { line: 26, column: 20, offset: 650 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/map.entries',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'map.entries',
+                            position: {
+                              start: { line: 27, column: 5, offset: 655 },
+                              end: { line: 27, column: 16, offset: 666 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 27, column: 4, offset: 654 },
+                          end: { line: 27, column: 36, offset: 686 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 27, column: 4, offset: 654 },
+                      end: { line: 27, column: 36, offset: 686 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 27, column: 2, offset: 652 },
+                  end: { line: 27, column: 36, offset: 686 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/map.pool',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'map.pool',
+                            position: {
+                              start: { line: 28, column: 5, offset: 691 },
+                              end: { line: 28, column: 13, offset: 699 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 28, column: 4, offset: 690 },
+                          end: { line: 28, column: 30, offset: 716 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 28, column: 4, offset: 690 },
+                      end: { line: 28, column: 30, offset: 716 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 28, column: 2, offset: 688 },
+                  end: { line: 28, column: 30, offset: 716 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/filter',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'filter',
+                            position: {
+                              start: { line: 29, column: 5, offset: 721 },
+                              end: { line: 29, column: 11, offset: 727 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 29, column: 4, offset: 720 },
+                          end: { line: 29, column: 26, offset: 742 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 29, column: 4, offset: 720 },
+                      end: { line: 29, column: 26, offset: 742 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 29, column: 2, offset: 718 },
+                  end: { line: 29, column: 26, offset: 742 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/reduce',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'reduce',
+                            position: {
+                              start: { line: 30, column: 5, offset: 747 },
+                              end: { line: 30, column: 11, offset: 753 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 30, column: 4, offset: 746 },
+                          end: { line: 30, column: 26, offset: 768 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 30, column: 4, offset: 746 },
+                      end: { line: 30, column: 26, offset: 768 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 30, column: 2, offset: 744 },
+                  end: { line: 30, column: 26, offset: 768 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/transform',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'transform',
+                            position: {
+                              start: { line: 31, column: 5, offset: 773 },
+                              end: { line: 31, column: 14, offset: 782 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 31, column: 4, offset: 772 },
+                          end: { line: 31, column: 32, offset: 800 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 31, column: 4, offset: 772 },
+                      end: { line: 31, column: 32, offset: 800 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 31, column: 2, offset: 770 },
+                  end: { line: 31, column: 32, offset: 800 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/flatMap',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'flatMap',
+                            position: {
+                              start: { line: 32, column: 5, offset: 805 },
+                              end: { line: 32, column: 12, offset: 812 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 32, column: 4, offset: 804 },
+                          end: { line: 32, column: 28, offset: 828 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 32, column: 4, offset: 804 },
+                      end: { line: 32, column: 28, offset: 828 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 32, column: 2, offset: 802 },
+                  end: { line: 32, column: 28, offset: 828 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/some',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'some',
+                            position: {
+                              start: { line: 33, column: 5, offset: 833 },
+                              end: { line: 33, column: 9, offset: 837 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 33, column: 4, offset: 832 },
+                          end: { line: 33, column: 22, offset: 850 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 33, column: 4, offset: 832 },
+                      end: { line: 33, column: 22, offset: 850 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 33, column: 2, offset: 830 },
+                  end: { line: 33, column: 22, offset: 850 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 25, column: 2, offset: 604 },
+              end: { line: 33, column: 22, offset: 850 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 22, column: 4, offset: 591 }
+          end: { line: 33, column: 22, offset: 850 }
         }
       },
       execution: {
@@ -30607,7 +38414,18 @@ export default [
       '\n' +
       'map.pool(Promise.resolve([1, 2, 3, 4, 5]), 5, asyncSquare).then(console.log)\n' +
       '// [1, 4, 9, 16, 25]\n' +
-      '```',
+      '```\n' +
+      '\n' +
+      'See also:\n' +
+      ' * [forEach](/docs/forEach)\n' +
+      ' * [map](/docs/map)\n' +
+      ' * [map.entries](/docs/map.entries)\n' +
+      ' * [map.series](/docs/map.series)\n' +
+      ' * [filter](/docs/filter)\n' +
+      ' * [reduce](/docs/reduce)\n' +
+      ' * [transform](/docs/transform)\n' +
+      ' * [flatMap](/docs/flatMap)\n' +
+      ' * [some](/docs/some)',
     TODO: 'objectMapPool',
     execution: 'concurrent',
     mdast: {
@@ -30790,11 +38608,391 @@ export default [
               start: { line: 21, column: 1, offset: 526 },
               end: { line: 26, column: 4, offset: 693 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'See also:',
+                position: {
+                  start: { line: 28, column: 1, offset: 695 },
+                  end: { line: 28, column: 10, offset: 704 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 28, column: 1, offset: 695 },
+              end: { line: 28, column: 10, offset: 704 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/forEach',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'forEach',
+                            position: {
+                              start: { line: 29, column: 5, offset: 709 },
+                              end: { line: 29, column: 12, offset: 716 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 29, column: 4, offset: 708 },
+                          end: { line: 29, column: 28, offset: 732 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 29, column: 4, offset: 708 },
+                      end: { line: 29, column: 28, offset: 732 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 29, column: 2, offset: 706 },
+                  end: { line: 29, column: 28, offset: 732 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/map',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'map',
+                            position: {
+                              start: { line: 30, column: 5, offset: 737 },
+                              end: { line: 30, column: 8, offset: 740 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 30, column: 4, offset: 736 },
+                          end: { line: 30, column: 20, offset: 752 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 30, column: 4, offset: 736 },
+                      end: { line: 30, column: 20, offset: 752 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 30, column: 2, offset: 734 },
+                  end: { line: 30, column: 20, offset: 752 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/map.entries',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'map.entries',
+                            position: {
+                              start: { line: 31, column: 5, offset: 757 },
+                              end: { line: 31, column: 16, offset: 768 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 31, column: 4, offset: 756 },
+                          end: { line: 31, column: 36, offset: 788 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 31, column: 4, offset: 756 },
+                      end: { line: 31, column: 36, offset: 788 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 31, column: 2, offset: 754 },
+                  end: { line: 31, column: 36, offset: 788 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/map.series',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'map.series',
+                            position: {
+                              start: { line: 32, column: 5, offset: 793 },
+                              end: { line: 32, column: 15, offset: 803 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 32, column: 4, offset: 792 },
+                          end: { line: 32, column: 34, offset: 822 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 32, column: 4, offset: 792 },
+                      end: { line: 32, column: 34, offset: 822 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 32, column: 2, offset: 790 },
+                  end: { line: 32, column: 34, offset: 822 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/filter',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'filter',
+                            position: {
+                              start: { line: 33, column: 5, offset: 827 },
+                              end: { line: 33, column: 11, offset: 833 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 33, column: 4, offset: 826 },
+                          end: { line: 33, column: 26, offset: 848 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 33, column: 4, offset: 826 },
+                      end: { line: 33, column: 26, offset: 848 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 33, column: 2, offset: 824 },
+                  end: { line: 33, column: 26, offset: 848 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/reduce',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'reduce',
+                            position: {
+                              start: { line: 34, column: 5, offset: 853 },
+                              end: { line: 34, column: 11, offset: 859 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 34, column: 4, offset: 852 },
+                          end: { line: 34, column: 26, offset: 874 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 34, column: 4, offset: 852 },
+                      end: { line: 34, column: 26, offset: 874 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 34, column: 2, offset: 850 },
+                  end: { line: 34, column: 26, offset: 874 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/transform',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'transform',
+                            position: {
+                              start: { line: 35, column: 5, offset: 879 },
+                              end: { line: 35, column: 14, offset: 888 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 35, column: 4, offset: 878 },
+                          end: { line: 35, column: 32, offset: 906 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 35, column: 4, offset: 878 },
+                      end: { line: 35, column: 32, offset: 906 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 35, column: 2, offset: 876 },
+                  end: { line: 35, column: 32, offset: 906 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/flatMap',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'flatMap',
+                            position: {
+                              start: { line: 36, column: 5, offset: 911 },
+                              end: { line: 36, column: 12, offset: 918 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 36, column: 4, offset: 910 },
+                          end: { line: 36, column: 28, offset: 934 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 36, column: 4, offset: 910 },
+                      end: { line: 36, column: 28, offset: 934 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 36, column: 2, offset: 908 },
+                  end: { line: 36, column: 28, offset: 934 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/some',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'some',
+                            position: {
+                              start: { line: 37, column: 5, offset: 939 },
+                              end: { line: 37, column: 9, offset: 943 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 37, column: 4, offset: 938 },
+                          end: { line: 37, column: 22, offset: 956 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 37, column: 4, offset: 938 },
+                      end: { line: 37, column: 22, offset: 956 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 37, column: 2, offset: 936 },
+                  end: { line: 37, column: 22, offset: 956 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 29, column: 2, offset: 706 },
+              end: { line: 37, column: 22, offset: 956 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 26, column: 4, offset: 693 }
+          end: { line: 37, column: 22, offset: 956 }
         }
       },
       TODO: {
@@ -39017,7 +47215,13 @@ export default [
       'const isOdd = number => number % 2 == 1\n' +
       '\n' +
       'not(Promise.resolve(3), isOdd).then(console.log) // false\n' +
-      '```',
+      '```\n' +
+      '\n' +
+      'See also:\n' +
+      ' * [some](/docs/some)\n' +
+      ' * [and](/docs/and)\n' +
+      ' * [or](/docs/or)\n' +
+      ' * [eq](/docs/eq)',
     mdast: {
       name: {
         type: 'root',
@@ -39219,11 +47423,196 @@ export default [
               start: { line: 22, column: 1, offset: 701 },
               end: { line: 26, column: 4, offset: 830 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'See also:',
+                position: {
+                  start: { line: 28, column: 1, offset: 832 },
+                  end: { line: 28, column: 10, offset: 841 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 28, column: 1, offset: 832 },
+              end: { line: 28, column: 10, offset: 841 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/some',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'some',
+                            position: {
+                              start: { line: 29, column: 5, offset: 846 },
+                              end: { line: 29, column: 9, offset: 850 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 29, column: 4, offset: 845 },
+                          end: { line: 29, column: 22, offset: 863 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 29, column: 4, offset: 845 },
+                      end: { line: 29, column: 22, offset: 863 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 29, column: 2, offset: 843 },
+                  end: { line: 29, column: 22, offset: 863 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/and',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'and',
+                            position: {
+                              start: { line: 30, column: 5, offset: 868 },
+                              end: { line: 30, column: 8, offset: 871 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 30, column: 4, offset: 867 },
+                          end: { line: 30, column: 20, offset: 883 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 30, column: 4, offset: 867 },
+                      end: { line: 30, column: 20, offset: 883 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 30, column: 2, offset: 865 },
+                  end: { line: 30, column: 20, offset: 883 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/or',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'or',
+                            position: {
+                              start: { line: 31, column: 5, offset: 888 },
+                              end: { line: 31, column: 7, offset: 890 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 31, column: 4, offset: 887 },
+                          end: { line: 31, column: 18, offset: 901 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 31, column: 4, offset: 887 },
+                      end: { line: 31, column: 18, offset: 901 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 31, column: 2, offset: 885 },
+                  end: { line: 31, column: 18, offset: 901 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/eq',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'eq',
+                            position: {
+                              start: { line: 32, column: 5, offset: 906 },
+                              end: { line: 32, column: 7, offset: 908 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 32, column: 4, offset: 905 },
+                          end: { line: 32, column: 18, offset: 919 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 32, column: 4, offset: 905 },
+                      end: { line: 32, column: 18, offset: 919 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 32, column: 2, offset: 903 },
+                  end: { line: 32, column: 18, offset: 919 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 29, column: 2, offset: 843 },
+              end: { line: 32, column: 18, offset: 919 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 26, column: 4, offset: 830 }
+          end: { line: 32, column: 18, offset: 919 }
         }
       }
     },
@@ -39278,7 +47667,16 @@ export default [
       '```javascript [playground]\n' +
       "omit(Promise.resolve({ a: 1, b: 2, c: 3 }), ['a', 'b']).then(console.log)\n" +
       '// { c: 3 }\n' +
-      '```',
+      '```\n' +
+      '\n' +
+      'See also:\n' +
+      ' * [pipe](/docs/pipe)\n' +
+      ' * [all](/docs/all)\n' +
+      ' * [assign](/docs/assign)\n' +
+      ' * [get](/docs/get)\n' +
+      ' * [set](/docs/set)\n' +
+      ' * [pick](/docs/pick)\n' +
+      ' * [forEach](/docs/forEach)',
     mdast: {
       name: {
         type: 'root',
@@ -39613,11 +48011,313 @@ export default [
               start: { line: 40, column: 1, offset: 897 },
               end: { line: 43, column: 4, offset: 1013 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'See also:',
+                position: {
+                  start: { line: 45, column: 1, offset: 1015 },
+                  end: { line: 45, column: 10, offset: 1024 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 45, column: 1, offset: 1015 },
+              end: { line: 45, column: 10, offset: 1024 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/pipe',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'pipe',
+                            position: {
+                              start: { line: 46, column: 5, offset: 1029 },
+                              end: { line: 46, column: 9, offset: 1033 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 46, column: 4, offset: 1028 },
+                          end: { line: 46, column: 22, offset: 1046 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 46, column: 4, offset: 1028 },
+                      end: { line: 46, column: 22, offset: 1046 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 46, column: 2, offset: 1026 },
+                  end: { line: 46, column: 22, offset: 1046 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/all',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'all',
+                            position: {
+                              start: { line: 47, column: 5, offset: 1051 },
+                              end: { line: 47, column: 8, offset: 1054 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 47, column: 4, offset: 1050 },
+                          end: { line: 47, column: 20, offset: 1066 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 47, column: 4, offset: 1050 },
+                      end: { line: 47, column: 20, offset: 1066 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 47, column: 2, offset: 1048 },
+                  end: { line: 47, column: 20, offset: 1066 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/assign',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'assign',
+                            position: {
+                              start: { line: 48, column: 5, offset: 1071 },
+                              end: { line: 48, column: 11, offset: 1077 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 48, column: 4, offset: 1070 },
+                          end: { line: 48, column: 26, offset: 1092 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 48, column: 4, offset: 1070 },
+                      end: { line: 48, column: 26, offset: 1092 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 48, column: 2, offset: 1068 },
+                  end: { line: 48, column: 26, offset: 1092 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/get',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'get',
+                            position: {
+                              start: { line: 49, column: 5, offset: 1097 },
+                              end: { line: 49, column: 8, offset: 1100 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 49, column: 4, offset: 1096 },
+                          end: { line: 49, column: 20, offset: 1112 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 49, column: 4, offset: 1096 },
+                      end: { line: 49, column: 20, offset: 1112 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 49, column: 2, offset: 1094 },
+                  end: { line: 49, column: 20, offset: 1112 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/set',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'set',
+                            position: {
+                              start: { line: 50, column: 5, offset: 1117 },
+                              end: { line: 50, column: 8, offset: 1120 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 50, column: 4, offset: 1116 },
+                          end: { line: 50, column: 20, offset: 1132 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 50, column: 4, offset: 1116 },
+                      end: { line: 50, column: 20, offset: 1132 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 50, column: 2, offset: 1114 },
+                  end: { line: 50, column: 20, offset: 1132 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/pick',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'pick',
+                            position: {
+                              start: { line: 51, column: 5, offset: 1137 },
+                              end: { line: 51, column: 9, offset: 1141 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 51, column: 4, offset: 1136 },
+                          end: { line: 51, column: 22, offset: 1154 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 51, column: 4, offset: 1136 },
+                      end: { line: 51, column: 22, offset: 1154 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 51, column: 2, offset: 1134 },
+                  end: { line: 51, column: 22, offset: 1154 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/forEach',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'forEach',
+                            position: {
+                              start: { line: 52, column: 5, offset: 1159 },
+                              end: { line: 52, column: 12, offset: 1166 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 52, column: 4, offset: 1158 },
+                          end: { line: 52, column: 28, offset: 1182 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 52, column: 4, offset: 1158 },
+                      end: { line: 52, column: 28, offset: 1182 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 52, column: 2, offset: 1156 },
+                  end: { line: 52, column: 28, offset: 1182 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 46, column: 2, offset: 1026 },
+              end: { line: 52, column: 28, offset: 1182 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 43, column: 4, offset: 1013 }
+          end: { line: 52, column: 28, offset: 1182 }
         }
       }
     },
@@ -39779,7 +48479,13 @@ export default [
       "  s => s.startsWith('b'),\n" +
       "  s => s.endsWith('a'),\n" +
       ']).then(console.log) // true\n' +
-      '```',
+      '```\n' +
+      '\n' +
+      'See also:\n' +
+      ' * [some](/docs/some)\n' +
+      ' * [and](/docs/and)\n' +
+      ' * [not](/docs/not)\n' +
+      ' * [eq](/docs/eq)',
     execution: 'series',
     note: '...args slows down here by an order of magnitude',
     mdast: {
@@ -39946,11 +48652,196 @@ export default [
               start: { line: 27, column: 1, offset: 880 },
               end: { line: 32, column: 4, offset: 1018 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'See also:',
+                position: {
+                  start: { line: 34, column: 1, offset: 1020 },
+                  end: { line: 34, column: 10, offset: 1029 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 34, column: 1, offset: 1020 },
+              end: { line: 34, column: 10, offset: 1029 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/some',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'some',
+                            position: {
+                              start: { line: 35, column: 5, offset: 1034 },
+                              end: { line: 35, column: 9, offset: 1038 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 35, column: 4, offset: 1033 },
+                          end: { line: 35, column: 22, offset: 1051 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 35, column: 4, offset: 1033 },
+                      end: { line: 35, column: 22, offset: 1051 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 35, column: 2, offset: 1031 },
+                  end: { line: 35, column: 22, offset: 1051 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/and',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'and',
+                            position: {
+                              start: { line: 36, column: 5, offset: 1056 },
+                              end: { line: 36, column: 8, offset: 1059 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 36, column: 4, offset: 1055 },
+                          end: { line: 36, column: 20, offset: 1071 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 36, column: 4, offset: 1055 },
+                      end: { line: 36, column: 20, offset: 1071 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 36, column: 2, offset: 1053 },
+                  end: { line: 36, column: 20, offset: 1071 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/not',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'not',
+                            position: {
+                              start: { line: 37, column: 5, offset: 1076 },
+                              end: { line: 37, column: 8, offset: 1079 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 37, column: 4, offset: 1075 },
+                          end: { line: 37, column: 20, offset: 1091 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 37, column: 4, offset: 1075 },
+                      end: { line: 37, column: 20, offset: 1091 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 37, column: 2, offset: 1073 },
+                  end: { line: 37, column: 20, offset: 1091 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/eq',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'eq',
+                            position: {
+                              start: { line: 38, column: 5, offset: 1096 },
+                              end: { line: 38, column: 7, offset: 1098 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 38, column: 4, offset: 1095 },
+                          end: { line: 38, column: 18, offset: 1109 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 38, column: 4, offset: 1095 },
+                      end: { line: 38, column: 18, offset: 1109 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 38, column: 2, offset: 1093 },
+                  end: { line: 38, column: 18, offset: 1109 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 35, column: 2, offset: 1031 },
+              end: { line: 38, column: 18, offset: 1109 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 32, column: 4, offset: 1018 }
+          end: { line: 38, column: 18, offset: 1109 }
         }
       },
       execution: {
@@ -40050,7 +48941,16 @@ export default [
       '```javascript [playground]\n' +
       "pick(Promise.resolve({ a: 1, b: 2, c: 3 }), ['a', 'b']).then(console.log)\n" +
       '// { a: 1, b: 2 }\n' +
-      '```',
+      '```\n' +
+      '\n' +
+      'See also:\n' +
+      ' * [pipe](/docs/pipe)\n' +
+      ' * [all](/docs/all)\n' +
+      ' * [assign](/docs/assign)\n' +
+      ' * [get](/docs/get)\n' +
+      ' * [set](/docs/set)\n' +
+      ' * [omit](/docs/omit)\n' +
+      ' * [forEach](/docs/forEach)',
     mdast: {
       name: {
         type: 'root',
@@ -40378,11 +49278,313 @@ export default [
               start: { line: 33, column: 1, offset: 983 },
               end: { line: 36, column: 4, offset: 1105 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'See also:',
+                position: {
+                  start: { line: 38, column: 1, offset: 1107 },
+                  end: { line: 38, column: 10, offset: 1116 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 38, column: 1, offset: 1107 },
+              end: { line: 38, column: 10, offset: 1116 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/pipe',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'pipe',
+                            position: {
+                              start: { line: 39, column: 5, offset: 1121 },
+                              end: { line: 39, column: 9, offset: 1125 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 39, column: 4, offset: 1120 },
+                          end: { line: 39, column: 22, offset: 1138 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 39, column: 4, offset: 1120 },
+                      end: { line: 39, column: 22, offset: 1138 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 39, column: 2, offset: 1118 },
+                  end: { line: 39, column: 22, offset: 1138 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/all',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'all',
+                            position: {
+                              start: { line: 40, column: 5, offset: 1143 },
+                              end: { line: 40, column: 8, offset: 1146 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 40, column: 4, offset: 1142 },
+                          end: { line: 40, column: 20, offset: 1158 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 40, column: 4, offset: 1142 },
+                      end: { line: 40, column: 20, offset: 1158 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 40, column: 2, offset: 1140 },
+                  end: { line: 40, column: 20, offset: 1158 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/assign',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'assign',
+                            position: {
+                              start: { line: 41, column: 5, offset: 1163 },
+                              end: { line: 41, column: 11, offset: 1169 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 41, column: 4, offset: 1162 },
+                          end: { line: 41, column: 26, offset: 1184 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 41, column: 4, offset: 1162 },
+                      end: { line: 41, column: 26, offset: 1184 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 41, column: 2, offset: 1160 },
+                  end: { line: 41, column: 26, offset: 1184 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/get',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'get',
+                            position: {
+                              start: { line: 42, column: 5, offset: 1189 },
+                              end: { line: 42, column: 8, offset: 1192 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 42, column: 4, offset: 1188 },
+                          end: { line: 42, column: 20, offset: 1204 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 42, column: 4, offset: 1188 },
+                      end: { line: 42, column: 20, offset: 1204 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 42, column: 2, offset: 1186 },
+                  end: { line: 42, column: 20, offset: 1204 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/set',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'set',
+                            position: {
+                              start: { line: 43, column: 5, offset: 1209 },
+                              end: { line: 43, column: 8, offset: 1212 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 43, column: 4, offset: 1208 },
+                          end: { line: 43, column: 20, offset: 1224 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 43, column: 4, offset: 1208 },
+                      end: { line: 43, column: 20, offset: 1224 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 43, column: 2, offset: 1206 },
+                  end: { line: 43, column: 20, offset: 1224 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/omit',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'omit',
+                            position: {
+                              start: { line: 44, column: 5, offset: 1229 },
+                              end: { line: 44, column: 9, offset: 1233 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 44, column: 4, offset: 1228 },
+                          end: { line: 44, column: 22, offset: 1246 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 44, column: 4, offset: 1228 },
+                      end: { line: 44, column: 22, offset: 1246 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 44, column: 2, offset: 1226 },
+                  end: { line: 44, column: 22, offset: 1246 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/forEach',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'forEach',
+                            position: {
+                              start: { line: 45, column: 5, offset: 1251 },
+                              end: { line: 45, column: 12, offset: 1258 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 45, column: 4, offset: 1250 },
+                          end: { line: 45, column: 28, offset: 1274 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 45, column: 4, offset: 1250 },
+                      end: { line: 45, column: 28, offset: 1274 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 45, column: 2, offset: 1248 },
+                  end: { line: 45, column: 28, offset: 1274 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 39, column: 2, offset: 1118 },
+              end: { line: 45, column: 28, offset: 1274 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 36, column: 4, offset: 1105 }
+          end: { line: 45, column: 28, offset: 1274 }
         }
       }
     },
@@ -40431,7 +49633,13 @@ export default [
       'pipe(Promise.resolve(1), 2, Promise.resolve(3), [\n' +
       '  console.log, // [1, 2, 3]\n' +
       '])\n' +
-      '```',
+      '```\n' +
+      '\n' +
+      'See also:\n' +
+      ' * [compose](/docs/compose)\n' +
+      ' * [tap](/docs/tap)\n' +
+      ' * [switchCase](/docs/switchCase)\n' +
+      ' * [tryCatch](/docs/tryCatch)',
     execution: 'series',
     transducing: '',
     since: '1.6.0',
@@ -40602,11 +49810,196 @@ export default [
               start: { line: 33, column: 1, offset: 1178 },
               end: { line: 37, column: 4, offset: 1289 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'See also:',
+                position: {
+                  start: { line: 39, column: 1, offset: 1291 },
+                  end: { line: 39, column: 10, offset: 1300 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 39, column: 1, offset: 1291 },
+              end: { line: 39, column: 10, offset: 1300 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/compose',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'compose',
+                            position: {
+                              start: { line: 40, column: 5, offset: 1305 },
+                              end: { line: 40, column: 12, offset: 1312 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 40, column: 4, offset: 1304 },
+                          end: { line: 40, column: 28, offset: 1328 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 40, column: 4, offset: 1304 },
+                      end: { line: 40, column: 28, offset: 1328 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 40, column: 2, offset: 1302 },
+                  end: { line: 40, column: 28, offset: 1328 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/tap',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'tap',
+                            position: {
+                              start: { line: 41, column: 5, offset: 1333 },
+                              end: { line: 41, column: 8, offset: 1336 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 41, column: 4, offset: 1332 },
+                          end: { line: 41, column: 20, offset: 1348 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 41, column: 4, offset: 1332 },
+                      end: { line: 41, column: 20, offset: 1348 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 41, column: 2, offset: 1330 },
+                  end: { line: 41, column: 20, offset: 1348 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/switchCase',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'switchCase',
+                            position: {
+                              start: { line: 42, column: 5, offset: 1353 },
+                              end: { line: 42, column: 15, offset: 1363 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 42, column: 4, offset: 1352 },
+                          end: { line: 42, column: 34, offset: 1382 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 42, column: 4, offset: 1352 },
+                      end: { line: 42, column: 34, offset: 1382 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 42, column: 2, offset: 1350 },
+                  end: { line: 42, column: 34, offset: 1382 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/tryCatch',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'tryCatch',
+                            position: {
+                              start: { line: 43, column: 5, offset: 1387 },
+                              end: { line: 43, column: 13, offset: 1395 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 43, column: 4, offset: 1386 },
+                          end: { line: 43, column: 30, offset: 1412 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 43, column: 4, offset: 1386 },
+                      end: { line: 43, column: 30, offset: 1412 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 43, column: 2, offset: 1384 },
+                  end: { line: 43, column: 30, offset: 1412 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 40, column: 2, offset: 1302 },
+              end: { line: 43, column: 30, offset: 1412 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 37, column: 4, offset: 1289 }
+          end: { line: 43, column: 30, offset: 1412 }
         }
       },
       execution: {
@@ -40865,7 +50258,15 @@ export default [
       '\n' +
       'const promise = reduce([1, 2, 3, 4, 5], add, Promise.resolve(0))\n' +
       'promise.then(console.log) // 15\n' +
-      '```',
+      '```\n' +
+      '\n' +
+      'See also:\n' +
+      ' * [forEach](/docs/forEach)\n' +
+      ' * [map](/docs/map)\n' +
+      ' * [filter](/docs/filter)\n' +
+      ' * [transform](/docs/transform)\n' +
+      ' * [flatMap](/docs/flatMap)\n' +
+      ' * [some](/docs/some)',
     execution: 'series',
     transducing: '',
     TODO: [ 'readerReduce', 'reduce.concurrent' ],
@@ -41790,11 +51191,274 @@ export default [
               start: { line: 164, column: 1, offset: 4159 },
               end: { line: 169, column: 4, offset: 4315 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'See also:',
+                position: {
+                  start: { line: 171, column: 1, offset: 4317 },
+                  end: { line: 171, column: 10, offset: 4326 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 171, column: 1, offset: 4317 },
+              end: { line: 171, column: 10, offset: 4326 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/forEach',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'forEach',
+                            position: {
+                              start: { line: 172, column: 5, offset: 4331 },
+                              end: { line: 172, column: 12, offset: 4338 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 172, column: 4, offset: 4330 },
+                          end: { line: 172, column: 28, offset: 4354 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 172, column: 4, offset: 4330 },
+                      end: { line: 172, column: 28, offset: 4354 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 172, column: 2, offset: 4328 },
+                  end: { line: 172, column: 28, offset: 4354 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/map',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'map',
+                            position: {
+                              start: { line: 173, column: 5, offset: 4359 },
+                              end: { line: 173, column: 8, offset: 4362 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 173, column: 4, offset: 4358 },
+                          end: { line: 173, column: 20, offset: 4374 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 173, column: 4, offset: 4358 },
+                      end: { line: 173, column: 20, offset: 4374 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 173, column: 2, offset: 4356 },
+                  end: { line: 173, column: 20, offset: 4374 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/filter',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'filter',
+                            position: {
+                              start: { line: 174, column: 5, offset: 4379 },
+                              end: { line: 174, column: 11, offset: 4385 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 174, column: 4, offset: 4378 },
+                          end: { line: 174, column: 26, offset: 4400 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 174, column: 4, offset: 4378 },
+                      end: { line: 174, column: 26, offset: 4400 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 174, column: 2, offset: 4376 },
+                  end: { line: 174, column: 26, offset: 4400 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/transform',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'transform',
+                            position: {
+                              start: { line: 175, column: 5, offset: 4405 },
+                              end: { line: 175, column: 14, offset: 4414 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 175, column: 4, offset: 4404 },
+                          end: { line: 175, column: 32, offset: 4432 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 175, column: 4, offset: 4404 },
+                      end: { line: 175, column: 32, offset: 4432 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 175, column: 2, offset: 4402 },
+                  end: { line: 175, column: 32, offset: 4432 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/flatMap',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'flatMap',
+                            position: {
+                              start: { line: 176, column: 5, offset: 4437 },
+                              end: { line: 176, column: 12, offset: 4444 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 176, column: 4, offset: 4436 },
+                          end: { line: 176, column: 28, offset: 4460 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 176, column: 4, offset: 4436 },
+                      end: { line: 176, column: 28, offset: 4460 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 176, column: 2, offset: 4434 },
+                  end: { line: 176, column: 28, offset: 4460 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/some',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'some',
+                            position: {
+                              start: { line: 177, column: 5, offset: 4465 },
+                              end: { line: 177, column: 9, offset: 4469 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 177, column: 4, offset: 4464 },
+                          end: { line: 177, column: 22, offset: 4482 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 177, column: 4, offset: 4464 },
+                      end: { line: 177, column: 22, offset: 4482 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 177, column: 2, offset: 4462 },
+                  end: { line: 177, column: 22, offset: 4482 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 172, column: 2, offset: 4328 },
+              end: { line: 177, column: 22, offset: 4482 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 169, column: 4, offset: 4315 }
+          end: { line: 177, column: 22, offset: 4482 }
         }
       },
       execution: {
@@ -41965,7 +51629,16 @@ export default [
       '\n' +
       '```javascript [playground]\n' +
       "set(Promise.resolve({}), 'a', 1).then(console.log) // { a: 1 }\n" +
-      '```',
+      '```\n' +
+      '\n' +
+      'See also:\n' +
+      ' * [pipe](/docs/pipe)\n' +
+      ' * [all](/docs/all)\n' +
+      ' * [assign](/docs/assign)\n' +
+      ' * [get](/docs/get)\n' +
+      ' * [pick](/docs/pick)\n' +
+      ' * [omit](/docs/omit)\n' +
+      ' * [forEach](/docs/forEach)',
     since: '1.7.0',
     mdast: {
       name: {
@@ -42300,11 +51973,313 @@ export default [
               start: { line: 42, column: 1, offset: 1232 },
               end: { line: 44, column: 4, offset: 1325 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'See also:',
+                position: {
+                  start: { line: 46, column: 1, offset: 1327 },
+                  end: { line: 46, column: 10, offset: 1336 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 46, column: 1, offset: 1327 },
+              end: { line: 46, column: 10, offset: 1336 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/pipe',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'pipe',
+                            position: {
+                              start: { line: 47, column: 5, offset: 1341 },
+                              end: { line: 47, column: 9, offset: 1345 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 47, column: 4, offset: 1340 },
+                          end: { line: 47, column: 22, offset: 1358 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 47, column: 4, offset: 1340 },
+                      end: { line: 47, column: 22, offset: 1358 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 47, column: 2, offset: 1338 },
+                  end: { line: 47, column: 22, offset: 1358 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/all',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'all',
+                            position: {
+                              start: { line: 48, column: 5, offset: 1363 },
+                              end: { line: 48, column: 8, offset: 1366 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 48, column: 4, offset: 1362 },
+                          end: { line: 48, column: 20, offset: 1378 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 48, column: 4, offset: 1362 },
+                      end: { line: 48, column: 20, offset: 1378 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 48, column: 2, offset: 1360 },
+                  end: { line: 48, column: 20, offset: 1378 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/assign',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'assign',
+                            position: {
+                              start: { line: 49, column: 5, offset: 1383 },
+                              end: { line: 49, column: 11, offset: 1389 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 49, column: 4, offset: 1382 },
+                          end: { line: 49, column: 26, offset: 1404 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 49, column: 4, offset: 1382 },
+                      end: { line: 49, column: 26, offset: 1404 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 49, column: 2, offset: 1380 },
+                  end: { line: 49, column: 26, offset: 1404 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/get',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'get',
+                            position: {
+                              start: { line: 50, column: 5, offset: 1409 },
+                              end: { line: 50, column: 8, offset: 1412 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 50, column: 4, offset: 1408 },
+                          end: { line: 50, column: 20, offset: 1424 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 50, column: 4, offset: 1408 },
+                      end: { line: 50, column: 20, offset: 1424 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 50, column: 2, offset: 1406 },
+                  end: { line: 50, column: 20, offset: 1424 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/pick',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'pick',
+                            position: {
+                              start: { line: 51, column: 5, offset: 1429 },
+                              end: { line: 51, column: 9, offset: 1433 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 51, column: 4, offset: 1428 },
+                          end: { line: 51, column: 22, offset: 1446 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 51, column: 4, offset: 1428 },
+                      end: { line: 51, column: 22, offset: 1446 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 51, column: 2, offset: 1426 },
+                  end: { line: 51, column: 22, offset: 1446 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/omit',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'omit',
+                            position: {
+                              start: { line: 52, column: 5, offset: 1451 },
+                              end: { line: 52, column: 9, offset: 1455 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 52, column: 4, offset: 1450 },
+                          end: { line: 52, column: 22, offset: 1468 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 52, column: 4, offset: 1450 },
+                      end: { line: 52, column: 22, offset: 1468 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 52, column: 2, offset: 1448 },
+                  end: { line: 52, column: 22, offset: 1468 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/forEach',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'forEach',
+                            position: {
+                              start: { line: 53, column: 5, offset: 1473 },
+                              end: { line: 53, column: 12, offset: 1480 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 53, column: 4, offset: 1472 },
+                          end: { line: 53, column: 28, offset: 1496 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 53, column: 4, offset: 1472 },
+                      end: { line: 53, column: 28, offset: 1496 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 53, column: 2, offset: 1470 },
+                  end: { line: 53, column: 28, offset: 1496 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 47, column: 2, offset: 1338 },
+              end: { line: 53, column: 28, offset: 1496 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 44, column: 4, offset: 1325 }
+          end: { line: 53, column: 28, offset: 1496 }
         }
       },
       since: {
@@ -42339,13 +52314,13 @@ export default [
   {
     name: 'some',
     synopsis: '```coffeescript [specscript]\n' +
-      'type Foldable = Array|Iterable|AsyncIterable|{ reduce: function }|Object\n' +
+      'type Foldable = Array|Set|Map|Generator|AsyncGenerator|{ reduce: function }|Object\n' +
       '\n' +
       'some(collection Foldable, predicate function) -> Promise|boolean\n' +
       '\n' +
       'some(predicate function)(collection Foldable) -> Promise|boolean\n' +
       '```',
-    description: 'Test a predicate concurrently across all items of a collection, returning true if any executions return truthy.\n' +
+    description: 'Test a predicate concurrently across all items of a foldable, returning true if any executions return true.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const isOdd = number => number % 2 == 1\n' +
@@ -42355,7 +52330,16 @@ export default [
       ') // true\n' +
       '```\n' +
       '\n' +
-      'The collection can be any iterable, async iterable, or object values iterable collection. Below is an example of `some` accepting an async generator as the collection.\n' +
+      'The following data types are considered to be foldables:\n' +
+      ' * `array`\n' +
+      ' * `set`\n' +
+      ' * `map`\n' +
+      ' * `generator`\n' +
+      ' * `async generator`\n' +
+      ' * `object with .reduce method`\n' +
+      ' * `object`\n' +
+      '\n' +
+      '`some` works for async generators.\n' +
       '\n' +
       '```javascript [playground]\n' +
       "const toTodosUrl = id => 'https://jsonplaceholder.typicode.com/todos/' + id\n" +
@@ -42393,7 +52377,12 @@ export default [
       '\n' +
       '```javascript [playground]\n' +
       'some(Promise.resolve([1, 2, 3, 4, 5]), n => n > 6).then(console.log) // false\n' +
-      '```',
+      '```\n' +
+      '\n' +
+      'See also:\n' +
+      ' * [map](/docs/map)\n' +
+      ' * [every](/docs/every)\n' +
+      ' * [and](/docs/and)',
     execution: 'concurrent',
     muxing: '',
     related: 'or',
@@ -42431,20 +52420,20 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'type Foldable = Array|Iterable|AsyncIterable|{ reduce: function }|Object\n' +
+            value: 'type Foldable = Array|Set|Map|Generator|AsyncGenerator|{ reduce: function }|Object\n' +
               '\n' +
               'some(collection Foldable, predicate function) -> Promise|boolean\n' +
               '\n' +
               'some(predicate function)(collection Foldable) -> Promise|boolean',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 7, column: 4, offset: 237 }
+              end: { line: 7, column: 4, offset: 247 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 7, column: 4, offset: 237 }
+          end: { line: 7, column: 4, offset: 247 }
         }
       },
       description: {
@@ -42455,16 +52444,16 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Test a predicate concurrently across all items of a collection, returning true if any executions return truthy.',
+                value: 'Test a predicate concurrently across all items of a foldable, returning true if any executions return true.',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 112, offset: 111 }
+                  end: { line: 1, column: 108, offset: 107 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 112, offset: 111 }
+              end: { line: 1, column: 108, offset: 107 }
             }
           },
           {
@@ -42477,8 +52466,8 @@ export default [
               '  some([1, 2, 3, 4, 5], isOdd),\n' +
               ') // true',
             position: {
-              start: { line: 3, column: 1, offset: 113 },
-              end: { line: 9, column: 4, offset: 239 }
+              start: { line: 3, column: 1, offset: 109 },
+              end: { line: 9, column: 4, offset: 235 }
             }
           },
           {
@@ -42486,32 +52475,249 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'The collection can be any iterable, async iterable, or object values iterable collection. Below is an example of ',
+                value: 'The following data types are considered to be foldables:',
                 position: {
-                  start: { line: 11, column: 1, offset: 241 },
-                  end: { line: 11, column: 114, offset: 354 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'some',
-                position: {
-                  start: { line: 11, column: 114, offset: 354 },
-                  end: { line: 11, column: 120, offset: 360 }
-                }
-              },
-              {
-                type: 'text',
-                value: ' accepting an async generator as the collection.',
-                position: {
-                  start: { line: 11, column: 120, offset: 360 },
-                  end: { line: 11, column: 168, offset: 408 }
+                  start: { line: 11, column: 1, offset: 237 },
+                  end: { line: 11, column: 57, offset: 293 }
                 }
               }
             ],
             position: {
-              start: { line: 11, column: 1, offset: 241 },
-              end: { line: 11, column: 168, offset: 408 }
+              start: { line: 11, column: 1, offset: 237 },
+              end: { line: 11, column: 57, offset: 293 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'array',
+                        position: {
+                          start: { line: 12, column: 4, offset: 297 },
+                          end: { line: 12, column: 11, offset: 304 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 12, column: 4, offset: 297 },
+                      end: { line: 12, column: 11, offset: 304 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 12, column: 2, offset: 295 },
+                  end: { line: 12, column: 11, offset: 304 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'set',
+                        position: {
+                          start: { line: 13, column: 4, offset: 308 },
+                          end: { line: 13, column: 9, offset: 313 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 13, column: 4, offset: 308 },
+                      end: { line: 13, column: 9, offset: 313 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 13, column: 2, offset: 306 },
+                  end: { line: 13, column: 9, offset: 313 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'map',
+                        position: {
+                          start: { line: 14, column: 4, offset: 317 },
+                          end: { line: 14, column: 9, offset: 322 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 14, column: 4, offset: 317 },
+                      end: { line: 14, column: 9, offset: 322 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 14, column: 2, offset: 315 },
+                  end: { line: 14, column: 9, offset: 322 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'generator',
+                        position: {
+                          start: { line: 15, column: 4, offset: 326 },
+                          end: { line: 15, column: 15, offset: 337 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 15, column: 4, offset: 326 },
+                      end: { line: 15, column: 15, offset: 337 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 15, column: 2, offset: 324 },
+                  end: { line: 15, column: 15, offset: 337 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'async generator',
+                        position: {
+                          start: { line: 16, column: 4, offset: 341 },
+                          end: { line: 16, column: 21, offset: 358 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 16, column: 4, offset: 341 },
+                      end: { line: 16, column: 21, offset: 358 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 16, column: 2, offset: 339 },
+                  end: { line: 16, column: 21, offset: 358 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'object with .reduce method',
+                        position: {
+                          start: { line: 17, column: 4, offset: 362 },
+                          end: { line: 17, column: 32, offset: 390 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 17, column: 4, offset: 362 },
+                      end: { line: 17, column: 32, offset: 390 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 17, column: 2, offset: 360 },
+                  end: { line: 17, column: 32, offset: 390 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'object',
+                        position: {
+                          start: { line: 18, column: 4, offset: 394 },
+                          end: { line: 18, column: 12, offset: 402 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 18, column: 4, offset: 394 },
+                      end: { line: 18, column: 12, offset: 402 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 18, column: 2, offset: 392 },
+                  end: { line: 18, column: 12, offset: 402 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 12, column: 2, offset: 295 },
+              end: { line: 18, column: 12, offset: 402 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'inlineCode',
+                value: 'some',
+                position: {
+                  start: { line: 20, column: 1, offset: 404 },
+                  end: { line: 20, column: 7, offset: 410 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' works for async generators.',
+                position: {
+                  start: { line: 20, column: 7, offset: 410 },
+                  end: { line: 20, column: 35, offset: 438 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 20, column: 1, offset: 404 },
+              end: { line: 20, column: 35, offset: 438 }
             }
           },
           {
@@ -42539,8 +52745,8 @@ export default [
               '\n' +
               'promise.then(console.log) // true',
             position: {
-              start: { line: 13, column: 1, offset: 410 },
-              end: { line: 34, column: 4, offset: 899 }
+              start: { line: 22, column: 1, offset: 440 },
+              end: { line: 43, column: 4, offset: 929 }
             }
           },
           {
@@ -42550,22 +52756,22 @@ export default [
                 type: 'inlineCode',
                 value: 'some',
                 position: {
-                  start: { line: 36, column: 1, offset: 901 },
-                  end: { line: 36, column: 7, offset: 907 }
+                  start: { line: 45, column: 1, offset: 931 },
+                  end: { line: 45, column: 7, offset: 937 }
                 }
               },
               {
                 type: 'text',
                 value: ' supports a lazy API for composability.',
                 position: {
-                  start: { line: 36, column: 7, offset: 907 },
-                  end: { line: 36, column: 46, offset: 946 }
+                  start: { line: 45, column: 7, offset: 937 },
+                  end: { line: 45, column: 46, offset: 976 }
                 }
               }
             ],
             position: {
-              start: { line: 36, column: 1, offset: 901 },
-              end: { line: 36, column: 46, offset: 946 }
+              start: { line: 45, column: 1, offset: 931 },
+              end: { line: 45, column: 46, offset: 976 }
             }
           },
           {
@@ -42577,8 +52783,8 @@ export default [
               '  console.log, // true\n' +
               '])',
             position: {
-              start: { line: 38, column: 1, offset: 948 },
-              end: { line: 43, column: 4, offset: 1052 }
+              start: { line: 47, column: 1, offset: 978 },
+              end: { line: 52, column: 4, offset: 1082 }
             }
           },
           {
@@ -42588,14 +52794,14 @@ export default [
                 type: 'text',
                 value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
                 position: {
-                  start: { line: 45, column: 1, offset: 1054 },
-                  end: { line: 45, column: 148, offset: 1201 }
+                  start: { line: 54, column: 1, offset: 1084 },
+                  end: { line: 54, column: 148, offset: 1231 }
                 }
               }
             ],
             position: {
-              start: { line: 45, column: 1, offset: 1054 },
-              end: { line: 45, column: 148, offset: 1201 }
+              start: { line: 54, column: 1, offset: 1084 },
+              end: { line: 54, column: 148, offset: 1231 }
             }
           },
           {
@@ -42604,14 +52810,160 @@ export default [
             meta: '[playground]',
             value: 'some(Promise.resolve([1, 2, 3, 4, 5]), n => n > 6).then(console.log) // false',
             position: {
-              start: { line: 47, column: 1, offset: 1203 },
-              end: { line: 49, column: 4, offset: 1311 }
+              start: { line: 56, column: 1, offset: 1233 },
+              end: { line: 58, column: 4, offset: 1341 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'See also:',
+                position: {
+                  start: { line: 60, column: 1, offset: 1343 },
+                  end: { line: 60, column: 10, offset: 1352 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 60, column: 1, offset: 1343 },
+              end: { line: 60, column: 10, offset: 1352 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/map',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'map',
+                            position: {
+                              start: { line: 61, column: 5, offset: 1357 },
+                              end: { line: 61, column: 8, offset: 1360 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 61, column: 4, offset: 1356 },
+                          end: { line: 61, column: 20, offset: 1372 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 61, column: 4, offset: 1356 },
+                      end: { line: 61, column: 20, offset: 1372 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 61, column: 2, offset: 1354 },
+                  end: { line: 61, column: 20, offset: 1372 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/every',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'every',
+                            position: {
+                              start: { line: 62, column: 5, offset: 1377 },
+                              end: { line: 62, column: 10, offset: 1382 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 62, column: 4, offset: 1376 },
+                          end: { line: 62, column: 24, offset: 1396 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 62, column: 4, offset: 1376 },
+                      end: { line: 62, column: 24, offset: 1396 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 62, column: 2, offset: 1374 },
+                  end: { line: 62, column: 24, offset: 1396 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/and',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'and',
+                            position: {
+                              start: { line: 63, column: 5, offset: 1401 },
+                              end: { line: 63, column: 8, offset: 1404 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 63, column: 4, offset: 1400 },
+                          end: { line: 63, column: 20, offset: 1416 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 63, column: 4, offset: 1400 },
+                      end: { line: 63, column: 20, offset: 1416 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 63, column: 2, offset: 1398 },
+                  end: { line: 63, column: 20, offset: 1416 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 61, column: 2, offset: 1354 },
+              end: { line: 63, column: 20, offset: 1416 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 49, column: 4, offset: 1311 }
+          end: { line: 63, column: 20, offset: 1416 }
         }
       },
       execution: {
@@ -42755,7 +53107,13 @@ export default [
       '  (a, b, c) => console.log(`${a} + ${b} + ${c} == 6`),\n' +
       '  (a, b, c) => console.log(`${a} + ${b} + ${c} != 6`),\n' +
       ']) // 1 + 2 + 3 == 6\n' +
-      '```',
+      '```\n' +
+      '\n' +
+      'See also:\n' +
+      ' * [pipe](/docs/pipe)\n' +
+      ' * [tap.if](/docs/tap.if)\n' +
+      ' * [tryCatch](/docs/tryCatch)\n' +
+      ' * [all](/docs/all)',
     execution: 'series',
     mdast: {
       name: {
@@ -43092,11 +53450,196 @@ export default [
               start: { line: 57, column: 1, offset: 2084 },
               end: { line: 65, column: 4, offset: 2371 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'See also:',
+                position: {
+                  start: { line: 67, column: 1, offset: 2373 },
+                  end: { line: 67, column: 10, offset: 2382 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 67, column: 1, offset: 2373 },
+              end: { line: 67, column: 10, offset: 2382 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/pipe',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'pipe',
+                            position: {
+                              start: { line: 68, column: 5, offset: 2387 },
+                              end: { line: 68, column: 9, offset: 2391 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 68, column: 4, offset: 2386 },
+                          end: { line: 68, column: 22, offset: 2404 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 68, column: 4, offset: 2386 },
+                      end: { line: 68, column: 22, offset: 2404 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 68, column: 2, offset: 2384 },
+                  end: { line: 68, column: 22, offset: 2404 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/tap.if',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'tap.if',
+                            position: {
+                              start: { line: 69, column: 5, offset: 2409 },
+                              end: { line: 69, column: 11, offset: 2415 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 69, column: 4, offset: 2408 },
+                          end: { line: 69, column: 26, offset: 2430 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 69, column: 4, offset: 2408 },
+                      end: { line: 69, column: 26, offset: 2430 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 69, column: 2, offset: 2406 },
+                  end: { line: 69, column: 26, offset: 2430 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/tryCatch',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'tryCatch',
+                            position: {
+                              start: { line: 70, column: 5, offset: 2435 },
+                              end: { line: 70, column: 13, offset: 2443 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 70, column: 4, offset: 2434 },
+                          end: { line: 70, column: 30, offset: 2460 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 70, column: 4, offset: 2434 },
+                      end: { line: 70, column: 30, offset: 2460 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 70, column: 2, offset: 2432 },
+                  end: { line: 70, column: 30, offset: 2460 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/all',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'all',
+                            position: {
+                              start: { line: 71, column: 5, offset: 2465 },
+                              end: { line: 71, column: 8, offset: 2468 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 71, column: 4, offset: 2464 },
+                          end: { line: 71, column: 20, offset: 2480 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 71, column: 4, offset: 2464 },
+                      end: { line: 71, column: 20, offset: 2480 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 71, column: 2, offset: 2462 },
+                  end: { line: 71, column: 20, offset: 2480 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 68, column: 2, offset: 2384 },
+              end: { line: 71, column: 20, offset: 2480 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 65, column: 4, offset: 2371 }
+          end: { line: 71, column: 20, offset: 2480 }
         }
       },
       execution: {
@@ -43152,7 +53695,14 @@ export default [
       '\n' +
       '```javascript [playground]\n' +
       'tap(Promise.resolve(1), Promise.resolve(2), 3, console.log) // 1 2 3\n' +
-      '```',
+      '```\n' +
+      '\n' +
+      'See also:\n' +
+      ' * [pipe](/docs/pipe)\n' +
+      ' * [compose](/docs/compose)\n' +
+      ' * [tap.if](/docs/tap.if)\n' +
+      ' * [switchCase](/docs/switchCase)\n' +
+      ' * [tryCatch](/docs/tryCatch)',
     mdast: {
       name: {
         type: 'root',
@@ -43264,11 +53814,235 @@ export default [
               start: { line: 17, column: 1, offset: 544 },
               end: { line: 19, column: 4, offset: 643 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'See also:',
+                position: {
+                  start: { line: 21, column: 1, offset: 645 },
+                  end: { line: 21, column: 10, offset: 654 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 21, column: 1, offset: 645 },
+              end: { line: 21, column: 10, offset: 654 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/pipe',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'pipe',
+                            position: {
+                              start: { line: 22, column: 5, offset: 659 },
+                              end: { line: 22, column: 9, offset: 663 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 22, column: 4, offset: 658 },
+                          end: { line: 22, column: 22, offset: 676 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 22, column: 4, offset: 658 },
+                      end: { line: 22, column: 22, offset: 676 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 22, column: 2, offset: 656 },
+                  end: { line: 22, column: 22, offset: 676 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/compose',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'compose',
+                            position: {
+                              start: { line: 23, column: 5, offset: 681 },
+                              end: { line: 23, column: 12, offset: 688 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 23, column: 4, offset: 680 },
+                          end: { line: 23, column: 28, offset: 704 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 23, column: 4, offset: 680 },
+                      end: { line: 23, column: 28, offset: 704 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 23, column: 2, offset: 678 },
+                  end: { line: 23, column: 28, offset: 704 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/tap.if',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'tap.if',
+                            position: {
+                              start: { line: 24, column: 5, offset: 709 },
+                              end: { line: 24, column: 11, offset: 715 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 24, column: 4, offset: 708 },
+                          end: { line: 24, column: 26, offset: 730 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 24, column: 4, offset: 708 },
+                      end: { line: 24, column: 26, offset: 730 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 24, column: 2, offset: 706 },
+                  end: { line: 24, column: 26, offset: 730 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/switchCase',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'switchCase',
+                            position: {
+                              start: { line: 25, column: 5, offset: 735 },
+                              end: { line: 25, column: 15, offset: 745 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 25, column: 4, offset: 734 },
+                          end: { line: 25, column: 34, offset: 764 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 25, column: 4, offset: 734 },
+                      end: { line: 25, column: 34, offset: 764 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 25, column: 2, offset: 732 },
+                  end: { line: 25, column: 34, offset: 764 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/tryCatch',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'tryCatch',
+                            position: {
+                              start: { line: 26, column: 5, offset: 769 },
+                              end: { line: 26, column: 13, offset: 777 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 26, column: 4, offset: 768 },
+                          end: { line: 26, column: 30, offset: 794 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 26, column: 4, offset: 768 },
+                      end: { line: 26, column: 30, offset: 794 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 26, column: 2, offset: 766 },
+                  end: { line: 26, column: 30, offset: 794 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 22, column: 2, offset: 656 },
+              end: { line: 26, column: 30, offset: 794 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 19, column: 4, offset: 643 }
+          end: { line: 26, column: 30, offset: 794 }
         }
       }
     },
@@ -43358,7 +54132,14 @@ export default [
       '```javascript [playground]\n' +
       'tap.if(Promise.resolve(1), n => n < 5, console.log) // 1\n' +
       'tap.if(Promise.resolve(6), n => n < 5, console.log)\n' +
-      '```',
+      '```\n' +
+      '\n' +
+      'See also:\n' +
+      ' * [pipe](/docs/pipe)\n' +
+      ' * [compose](/docs/compose)\n' +
+      ' * [tap](/docs/tap)\n' +
+      ' * [switchCase](/docs/switchCase)\n' +
+      ' * [tryCatch](/docs/tryCatch)',
     mdast: {
       name: {
         type: 'root',
@@ -43532,11 +54313,235 @@ export default [
               start: { line: 14, column: 1, offset: 575 },
               end: { line: 17, column: 4, offset: 714 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'See also:',
+                position: {
+                  start: { line: 19, column: 1, offset: 716 },
+                  end: { line: 19, column: 10, offset: 725 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 19, column: 1, offset: 716 },
+              end: { line: 19, column: 10, offset: 725 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/pipe',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'pipe',
+                            position: {
+                              start: { line: 20, column: 5, offset: 730 },
+                              end: { line: 20, column: 9, offset: 734 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 20, column: 4, offset: 729 },
+                          end: { line: 20, column: 22, offset: 747 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 20, column: 4, offset: 729 },
+                      end: { line: 20, column: 22, offset: 747 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 20, column: 2, offset: 727 },
+                  end: { line: 20, column: 22, offset: 747 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/compose',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'compose',
+                            position: {
+                              start: { line: 21, column: 5, offset: 752 },
+                              end: { line: 21, column: 12, offset: 759 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 21, column: 4, offset: 751 },
+                          end: { line: 21, column: 28, offset: 775 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 21, column: 4, offset: 751 },
+                      end: { line: 21, column: 28, offset: 775 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 21, column: 2, offset: 749 },
+                  end: { line: 21, column: 28, offset: 775 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/tap',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'tap',
+                            position: {
+                              start: { line: 22, column: 5, offset: 780 },
+                              end: { line: 22, column: 8, offset: 783 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 22, column: 4, offset: 779 },
+                          end: { line: 22, column: 20, offset: 795 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 22, column: 4, offset: 779 },
+                      end: { line: 22, column: 20, offset: 795 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 22, column: 2, offset: 777 },
+                  end: { line: 22, column: 20, offset: 795 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/switchCase',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'switchCase',
+                            position: {
+                              start: { line: 23, column: 5, offset: 800 },
+                              end: { line: 23, column: 15, offset: 810 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 23, column: 4, offset: 799 },
+                          end: { line: 23, column: 34, offset: 829 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 23, column: 4, offset: 799 },
+                      end: { line: 23, column: 34, offset: 829 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 23, column: 2, offset: 797 },
+                  end: { line: 23, column: 34, offset: 829 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/tryCatch',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'tryCatch',
+                            position: {
+                              start: { line: 24, column: 5, offset: 834 },
+                              end: { line: 24, column: 13, offset: 842 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 24, column: 4, offset: 833 },
+                          end: { line: 24, column: 30, offset: 859 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 24, column: 4, offset: 833 },
+                      end: { line: 24, column: 30, offset: 859 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 24, column: 2, offset: 831 },
+                  end: { line: 24, column: 30, offset: 859 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 20, column: 2, offset: 727 },
+              end: { line: 24, column: 30, offset: 859 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 17, column: 4, offset: 714 }
+          end: { line: 24, column: 30, offset: 859 }
         }
       }
     },
@@ -43555,7 +54560,14 @@ export default [
       'const thunkAdd12 = thunkify(add, 1, 2)\n' +
       '\n' +
       'console.log(thunkAdd12()) // 3\n' +
-      '```',
+      '```\n' +
+      '\n' +
+      'See also:\n' +
+      ' * [eq](/docs/eq)\n' +
+      ' * [always](/docs/always)\n' +
+      ' * [curry](/docs/curry)\n' +
+      ' * [__](/docs/__)\n' +
+      ' * [Transducer.map](/docs/Transducer.map)',
     mdast: {
       name: {
         type: 'root',
@@ -43635,11 +54647,235 @@ export default [
               start: { line: 3, column: 1, offset: 236 },
               end: { line: 9, column: 4, offset: 366 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'See also:',
+                position: {
+                  start: { line: 11, column: 1, offset: 368 },
+                  end: { line: 11, column: 10, offset: 377 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 11, column: 1, offset: 368 },
+              end: { line: 11, column: 10, offset: 377 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/eq',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'eq',
+                            position: {
+                              start: { line: 12, column: 5, offset: 382 },
+                              end: { line: 12, column: 7, offset: 384 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 12, column: 4, offset: 381 },
+                          end: { line: 12, column: 18, offset: 395 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 12, column: 4, offset: 381 },
+                      end: { line: 12, column: 18, offset: 395 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 12, column: 2, offset: 379 },
+                  end: { line: 12, column: 18, offset: 395 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/always',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'always',
+                            position: {
+                              start: { line: 13, column: 5, offset: 400 },
+                              end: { line: 13, column: 11, offset: 406 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 13, column: 4, offset: 399 },
+                          end: { line: 13, column: 26, offset: 421 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 13, column: 4, offset: 399 },
+                      end: { line: 13, column: 26, offset: 421 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 13, column: 2, offset: 397 },
+                  end: { line: 13, column: 26, offset: 421 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/curry',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'curry',
+                            position: {
+                              start: { line: 14, column: 5, offset: 426 },
+                              end: { line: 14, column: 10, offset: 431 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 14, column: 4, offset: 425 },
+                          end: { line: 14, column: 24, offset: 445 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 14, column: 4, offset: 425 },
+                      end: { line: 14, column: 24, offset: 445 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 14, column: 2, offset: 423 },
+                  end: { line: 14, column: 24, offset: 445 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/__',
+                        children: [
+                          {
+                            type: 'text',
+                            value: '__',
+                            position: {
+                              start: { line: 15, column: 5, offset: 450 },
+                              end: { line: 15, column: 7, offset: 452 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 15, column: 4, offset: 449 },
+                          end: { line: 15, column: 18, offset: 463 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 15, column: 4, offset: 449 },
+                      end: { line: 15, column: 18, offset: 463 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 15, column: 2, offset: 447 },
+                  end: { line: 15, column: 18, offset: 463 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/Transducer.map',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'Transducer.map',
+                            position: {
+                              start: { line: 16, column: 5, offset: 468 },
+                              end: { line: 16, column: 19, offset: 482 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 16, column: 4, offset: 467 },
+                          end: { line: 16, column: 42, offset: 505 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 16, column: 4, offset: 467 },
+                      end: { line: 16, column: 42, offset: 505 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 16, column: 2, offset: 465 },
+                  end: { line: 16, column: 42, offset: 505 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 12, column: 2, offset: 379 },
+              end: { line: 16, column: 42, offset: 505 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 9, column: 4, offset: 366 }
+          end: { line: 16, column: 42, offset: 505 }
         }
       }
     },
@@ -43850,7 +55086,15 @@ export default [
       ')\n' +
       '\n' +
       'promise.then(console.log) // [1, 4, 9, 16, 25]\n' +
-      '```',
+      '```\n' +
+      '\n' +
+      'See also:\n' +
+      ' * [forEach](/docs/forEach)\n' +
+      ' * [map](/docs/map)\n' +
+      ' * [filter](/docs/filter)\n' +
+      ' * [reduce](/docs/reduce)\n' +
+      ' * [flatMap](/docs/flatMap)\n' +
+      ' * [some](/docs/some)',
     execution: 'series',
     transducing: 'TODO explore Semigroup = Iterator|AsyncIterator',
     mdast: {
@@ -44974,11 +56218,274 @@ export default [
               start: { line: 170, column: 1, offset: 4034 },
               end: { line: 178, column: 4, offset: 4214 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'See also:',
+                position: {
+                  start: { line: 180, column: 1, offset: 4216 },
+                  end: { line: 180, column: 10, offset: 4225 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 180, column: 1, offset: 4216 },
+              end: { line: 180, column: 10, offset: 4225 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/forEach',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'forEach',
+                            position: {
+                              start: { line: 181, column: 5, offset: 4230 },
+                              end: { line: 181, column: 12, offset: 4237 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 181, column: 4, offset: 4229 },
+                          end: { line: 181, column: 28, offset: 4253 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 181, column: 4, offset: 4229 },
+                      end: { line: 181, column: 28, offset: 4253 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 181, column: 2, offset: 4227 },
+                  end: { line: 181, column: 28, offset: 4253 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/map',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'map',
+                            position: {
+                              start: { line: 182, column: 5, offset: 4258 },
+                              end: { line: 182, column: 8, offset: 4261 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 182, column: 4, offset: 4257 },
+                          end: { line: 182, column: 20, offset: 4273 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 182, column: 4, offset: 4257 },
+                      end: { line: 182, column: 20, offset: 4273 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 182, column: 2, offset: 4255 },
+                  end: { line: 182, column: 20, offset: 4273 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/filter',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'filter',
+                            position: {
+                              start: { line: 183, column: 5, offset: 4278 },
+                              end: { line: 183, column: 11, offset: 4284 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 183, column: 4, offset: 4277 },
+                          end: { line: 183, column: 26, offset: 4299 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 183, column: 4, offset: 4277 },
+                      end: { line: 183, column: 26, offset: 4299 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 183, column: 2, offset: 4275 },
+                  end: { line: 183, column: 26, offset: 4299 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/reduce',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'reduce',
+                            position: {
+                              start: { line: 184, column: 5, offset: 4304 },
+                              end: { line: 184, column: 11, offset: 4310 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 184, column: 4, offset: 4303 },
+                          end: { line: 184, column: 26, offset: 4325 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 184, column: 4, offset: 4303 },
+                      end: { line: 184, column: 26, offset: 4325 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 184, column: 2, offset: 4301 },
+                  end: { line: 184, column: 26, offset: 4325 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/flatMap',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'flatMap',
+                            position: {
+                              start: { line: 185, column: 5, offset: 4330 },
+                              end: { line: 185, column: 12, offset: 4337 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 185, column: 4, offset: 4329 },
+                          end: { line: 185, column: 28, offset: 4353 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 185, column: 4, offset: 4329 },
+                      end: { line: 185, column: 28, offset: 4353 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 185, column: 2, offset: 4327 },
+                  end: { line: 185, column: 28, offset: 4353 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/some',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'some',
+                            position: {
+                              start: { line: 186, column: 5, offset: 4358 },
+                              end: { line: 186, column: 9, offset: 4362 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 186, column: 4, offset: 4357 },
+                          end: { line: 186, column: 22, offset: 4375 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 186, column: 4, offset: 4357 },
+                      end: { line: 186, column: 22, offset: 4375 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 186, column: 2, offset: 4355 },
+                  end: { line: 186, column: 22, offset: 4375 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 181, column: 2, offset: 4227 },
+              end: { line: 186, column: 22, offset: 4375 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 178, column: 4, offset: 4214 }
+          end: { line: 186, column: 22, offset: 4375 }
         }
       },
       execution: {
@@ -45089,7 +56596,12 @@ export default [
       '}, (error, a, b, c) => {\n' +
       '  console.error(`${a} + ${b} + ${c}: ${error.message}`)\n' +
       '})\n' +
-      '```',
+      '```\n' +
+      '\n' +
+      'See also:\n' +
+      ' * [pipe](/docs/pipe)\n' +
+      ' * [switchCase](/docs/switchCase)\n' +
+      ' * [all](/docs/all)',
     mdast: {
       name: {
         type: 'root',
@@ -45434,11 +56946,157 @@ export default [
               start: { line: 37, column: 1, offset: 1543 },
               end: { line: 47, column: 4, offset: 1834 }
             }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'See also:',
+                position: {
+                  start: { line: 49, column: 1, offset: 1836 },
+                  end: { line: 49, column: 10, offset: 1845 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 49, column: 1, offset: 1836 },
+              end: { line: 49, column: 10, offset: 1845 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/pipe',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'pipe',
+                            position: {
+                              start: { line: 50, column: 5, offset: 1850 },
+                              end: { line: 50, column: 9, offset: 1854 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 50, column: 4, offset: 1849 },
+                          end: { line: 50, column: 22, offset: 1867 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 50, column: 4, offset: 1849 },
+                      end: { line: 50, column: 22, offset: 1867 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 50, column: 2, offset: 1847 },
+                  end: { line: 50, column: 22, offset: 1867 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/switchCase',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'switchCase',
+                            position: {
+                              start: { line: 51, column: 5, offset: 1872 },
+                              end: { line: 51, column: 15, offset: 1882 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 51, column: 4, offset: 1871 },
+                          end: { line: 51, column: 34, offset: 1901 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 51, column: 4, offset: 1871 },
+                      end: { line: 51, column: 34, offset: 1901 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 51, column: 2, offset: 1869 },
+                  end: { line: 51, column: 34, offset: 1901 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/all',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'all',
+                            position: {
+                              start: { line: 52, column: 5, offset: 1906 },
+                              end: { line: 52, column: 8, offset: 1909 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 52, column: 4, offset: 1905 },
+                          end: { line: 52, column: 20, offset: 1921 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 52, column: 4, offset: 1905 },
+                      end: { line: 52, column: 20, offset: 1921 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 52, column: 2, offset: 1903 },
+                  end: { line: 52, column: 20, offset: 1921 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 50, column: 2, offset: 1847 },
+              end: { line: 52, column: 20, offset: 1921 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 47, column: 4, offset: 1834 }
+          end: { line: 52, column: 20, offset: 1921 }
         }
       }
     },

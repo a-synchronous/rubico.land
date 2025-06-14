@@ -251,25 +251,25 @@ const DocsNav = ReactElement(props => {
 
     docsSearchQuery == '' ? [
       Section([
-        H4('Compose functions'),
+        H4('Function Composition'),
         CoreDocsNavItem('pipe'),
         CoreDocsNavItem('compose'),
         CoreDocsNavItem('tap'),
-        CoreDocsNavItem('tap.if'),
       ]),
 
       Section([
-        H4('Control flow'),
+        H4('Control Flow'),
+        CoreDocsNavItem('tap.if'),
         CoreDocsNavItem('switchCase'),
       ]),
 
       Section([
-        H4('Handle errors'),
+        H4('Error Handling'),
         CoreDocsNavItem('tryCatch'),
       ]),
 
       Section([
-        H4('Compose data'),
+        H4('Object Composition'),
         CoreDocsNavItem('all'),
         CoreDocsNavItem('assign'),
         CoreDocsNavItem('get'),
@@ -279,13 +279,13 @@ const DocsNav = ReactElement(props => {
       ]),
 
       Section([
-        H4('Iterate'),
+        H4('Iteration'),
         CoreDocsNavItem('forEach'),
         CoreDocsNavItem('forEach.series'),
       ]),
 
       Section([
-        H4('Transform data'),
+        H4('Data Transformation'),
         CoreDocsNavItem('map'),
         CoreDocsNavItem('map.entries'),
         CoreDocsNavItem('map.series'),
@@ -297,16 +297,20 @@ const DocsNav = ReactElement(props => {
       ]),
 
       Section([
-        H4('Compose predicates'),
-        CoreDocsNavItem('and'),
-        CoreDocsNavItem('or'),
-        CoreDocsNavItem('not'),
+        H4('Data Testing'),
         CoreDocsNavItem('some'),
         CoreDocsNavItem('every'),
       ]),
 
       Section([
-        H4('Comparison operators'),
+        H4('Logical Operators'),
+        CoreDocsNavItem('and'),
+        CoreDocsNavItem('or'),
+        CoreDocsNavItem('not'),
+      ]),
+
+      Section([
+        H4('Comparison Operators'),
         CoreDocsNavItem('eq'),
         CoreDocsNavItem('gt'),
         CoreDocsNavItem('lt'),
@@ -324,7 +328,7 @@ const DocsNav = ReactElement(props => {
       ]),
 
       Section([
-        H4('Create transducers'),
+        H4('Transducers'),
         CoreDocsNavItem('Transducer.map'),
         CoreDocsNavItem('Transducer.filter'),
         CoreDocsNavItem('Transducer.flatMap'),
