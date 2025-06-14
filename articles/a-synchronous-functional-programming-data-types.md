@@ -7,7 +7,7 @@ description: Data types in [A]synchronous Functional Programming
 image: /assets/monad.png
 ---
 
-Welcome to [A]synchronous Functional Programming Data Types. In this article we will discuss the data types used for the [A]synchronous Functional Programming paradigm in JavaScript.
+Welcome to Data Types in [A]synchronous Functional Programming. In this article we will discuss the data types used for the [A]synchronous Functional Programming paradigm in JavaScript.
 
 ## Primitive Data Types
 Primitive data types are fundamental, indivisible building blocks for data representation in all programming. For [A]synchronous Functional Programming, we will consider six primitive data types: number, string, boolean, binary, symbol, and nullish.
