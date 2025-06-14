@@ -2,6 +2,7 @@
 title: [A]synchronous Functional Programming - Data Types
 author: Richard Tong, CTO and Co-Founder of Claimyr Inc.
 date: 2025-06-13
+lastUpdated: 2025-06-14
 path: /blog/a-synchronous-functional-programming-data-types
 description: Data types in [A]synchronous Functional Programming
 image: /assets/monad.png
@@ -687,7 +688,7 @@ The monad algebraic structure identifies data types with the `.flatMap` or `.cha
 
 ```javascript
 assert.equivalent(
-  MyMonad.of(a).chain(f),
+  MyMonad.of(a).flatMap(f),
   f(a),
 )
 ```
@@ -696,7 +697,7 @@ assert.equivalent(
 
 ```javascript
 assert.equivalent(
-  myMonad.chain(MyMonad.of),
+  myMonad.flatMap(MyMonad.of),
   myMonad
 )
 ```
@@ -705,8 +706,8 @@ assert.equivalent(
 
 ```javascript
 assert.equivalent(
-  myMonad.chain(f).chain(g),
-  myMonad.chain(x => f(x).chain(g))
+  myMonad.flatMap(f).flatMap(g),
+  myMonad.flatMap(x => f(x).flatMap(g))
 )
 ```
 
