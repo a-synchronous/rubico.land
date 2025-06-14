@@ -36991,21 +36991,47 @@ export default [
   {
     name: 'map.entries',
     synopsis: '```coffeescript [specscript]\n' +
-      'type EntriesMappable = Object|Map\n' +
+      'type FunctorWithEntries = Map|Object\n' +
       '\n' +
-      'type Mapper = (\n' +
-      '  value any,\n' +
-      '  key string|any,\n' +
-      '  collection EntriesMappable\n' +
-      ')=>(resultItem Promise|any)\n' +
+      'type EntryMapper = (\n' +
+      '  entry [key string|any, value any],\n' +
+      ')=>(resultEntry Promise|[resultKey string|any, resultItem any])\n' +
       '\n' +
-      'map.entries(value Promise|EntriesMappable, f Mapper)\n' +
-      '  -> Promise|EntriesMappable\n' +
+      'map.entries(\n' +
+      '  value Promise|FunctorWithEntries,\n' +
+      '  mapper EntryMapper\n' +
+      ') -> Promise|FunctorWithEntries\n' +
       '\n' +
-      'map.entries(f Mapper)(value EntriesMappable)\n' +
-      '  -> Promise|EntriesMappable\n' +
+      'map.entries(mapper EntryMapper)(value FunctorWithEntries)\n' +
+      '  -> Promise|FunctorWithEntries\n' +
       '```',
-    description: '`map` over the entries rather than the values of a collection. Accepts collections of type `Map` or `Object`.\n' +
+    description: '`map` over the entries of a functor as opposed to the values.\n' +
+      '\n' +
+      'The following data types are considered to be functors with entries:\n' +
+      '  * `map`\n' +
+      '  * `object`\n' +
+      '\n' +
+      'The signature of the mapper function changes depending on the provided functor:\n' +
+      '\n' +
+      'If the functor is a map:\n' +
+      '\n' +
+      '```coffeescript [specscript]\n' +
+      'mapper(entry [key any, value any]) -> resultEntry Promise|[\n' +
+      '  resultKey any,\n' +
+      '  resultValue any,\n' +
+      ']\n' +
+      '```\n' +
+      '\n' +
+      'If the functor is an object:\n' +
+      '\n' +
+      '```coffeescript [specscript]\n' +
+      'mapper(entry [key string, value any]) -> resultEntry Promise|[\n' +
+      '  resultKey string,\n' +
+      '  resultValue any,\n' +
+      ']\n' +
+      '```\n' +
+      '\n' +
+      '`map.entries` works for objects and maps.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const upperCaseKeysAndSquareValues =\n' +
@@ -37075,28 +37101,28 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'type EntriesMappable = Object|Map\n' +
+            value: 'type FunctorWithEntries = Map|Object\n' +
               '\n' +
-              'type Mapper = (\n' +
-              '  value any,\n' +
-              '  key string|any,\n' +
-              '  collection EntriesMappable\n' +
-              ')=>(resultItem Promise|any)\n' +
+              'type EntryMapper = (\n' +
+              '  entry [key string|any, value any],\n' +
+              ')=>(resultEntry Promise|[resultKey string|any, resultItem any])\n' +
               '\n' +
-              'map.entries(value Promise|EntriesMappable, f Mapper)\n' +
-              '  -> Promise|EntriesMappable\n' +
+              'map.entries(\n' +
+              '  value Promise|FunctorWithEntries,\n' +
+              '  mapper EntryMapper\n' +
+              ') -> Promise|FunctorWithEntries\n' +
               '\n' +
-              'map.entries(f Mapper)(value EntriesMappable)\n' +
-              '  -> Promise|EntriesMappable',
+              'map.entries(mapper EntryMapper)(value FunctorWithEntries)\n' +
+              '  -> Promise|FunctorWithEntries',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 15, column: 4, offset: 329 }
+              end: { line: 15, column: 4, offset: 386 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 15, column: 4, offset: 329 }
+          end: { line: 15, column: 4, offset: 386 }
         }
       },
       description: {
@@ -37115,48 +37141,203 @@ export default [
               },
               {
                 type: 'text',
-                value: ' over the entries rather than the values of a collection. Accepts collections of type ',
+                value: ' over the entries of a functor as opposed to the values.',
                 position: {
                   start: { line: 1, column: 6, offset: 5 },
-                  end: { line: 1, column: 92, offset: 91 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'Map',
-                position: {
-                  start: { line: 1, column: 92, offset: 91 },
-                  end: { line: 1, column: 97, offset: 96 }
-                }
-              },
-              {
-                type: 'text',
-                value: ' or ',
-                position: {
-                  start: { line: 1, column: 97, offset: 96 },
-                  end: { line: 1, column: 101, offset: 100 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'Object',
-                position: {
-                  start: { line: 1, column: 101, offset: 100 },
-                  end: { line: 1, column: 109, offset: 108 }
-                }
-              },
-              {
-                type: 'text',
-                value: '.',
-                position: {
-                  start: { line: 1, column: 109, offset: 108 },
-                  end: { line: 1, column: 110, offset: 109 }
+                  end: { line: 1, column: 62, offset: 61 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 110, offset: 109 }
+              end: { line: 1, column: 62, offset: 61 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'The following data types are considered to be functors with entries:',
+                position: {
+                  start: { line: 3, column: 1, offset: 63 },
+                  end: { line: 3, column: 69, offset: 131 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 3, column: 1, offset: 63 },
+              end: { line: 3, column: 69, offset: 131 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'map',
+                        position: {
+                          start: { line: 4, column: 5, offset: 136 },
+                          end: { line: 4, column: 10, offset: 141 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 4, column: 5, offset: 136 },
+                      end: { line: 4, column: 10, offset: 141 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 4, column: 3, offset: 134 },
+                  end: { line: 4, column: 10, offset: 141 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'object',
+                        position: {
+                          start: { line: 5, column: 5, offset: 146 },
+                          end: { line: 5, column: 13, offset: 154 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 5, column: 5, offset: 146 },
+                      end: { line: 5, column: 13, offset: 154 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 5, column: 3, offset: 144 },
+                  end: { line: 5, column: 13, offset: 154 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 4, column: 3, offset: 134 },
+              end: { line: 5, column: 13, offset: 154 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'The signature of the mapper function changes depending on the provided functor:',
+                position: {
+                  start: { line: 7, column: 1, offset: 156 },
+                  end: { line: 7, column: 80, offset: 235 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 7, column: 1, offset: 156 },
+              end: { line: 7, column: 80, offset: 235 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If the functor is a map:',
+                position: {
+                  start: { line: 9, column: 1, offset: 237 },
+                  end: { line: 9, column: 25, offset: 261 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 9, column: 1, offset: 237 },
+              end: { line: 9, column: 25, offset: 261 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'mapper(entry [key any, value any]) -> resultEntry Promise|[\n' +
+              '  resultKey any,\n' +
+              '  resultValue any,\n' +
+              ']',
+            position: {
+              start: { line: 11, column: 1, offset: 263 },
+              end: { line: 16, column: 4, offset: 393 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If the functor is an object:',
+                position: {
+                  start: { line: 18, column: 1, offset: 395 },
+                  end: { line: 18, column: 29, offset: 423 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 18, column: 1, offset: 395 },
+              end: { line: 18, column: 29, offset: 423 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'mapper(entry [key string, value any]) -> resultEntry Promise|[\n' +
+              '  resultKey string,\n' +
+              '  resultValue any,\n' +
+              ']',
+            position: {
+              start: { line: 20, column: 1, offset: 425 },
+              end: { line: 25, column: 4, offset: 561 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'inlineCode',
+                value: 'map.entries',
+                position: {
+                  start: { line: 27, column: 1, offset: 563 },
+                  end: { line: 27, column: 14, offset: 576 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' works for objects and maps.',
+                position: {
+                  start: { line: 27, column: 14, offset: 576 },
+                  end: { line: 27, column: 42, offset: 604 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 27, column: 1, offset: 563 },
+              end: { line: 27, column: 42, offset: 604 }
             }
           },
           {
@@ -37172,8 +37353,8 @@ export default [
               "console.log(upperCaseKeysAndSquareValues(new Map([['a', 1], ['b', 2], ['c', 3]])))\n" +
               "// Map(3) { 'A' => 1, 'B' => 4, 'C' => 9 }",
             position: {
-              start: { line: 3, column: 1, offset: 111 },
-              end: { line: 12, column: 4, offset: 459 }
+              start: { line: 29, column: 1, offset: 606 },
+              end: { line: 38, column: 4, offset: 954 }
             }
           },
           {
@@ -37183,14 +37364,14 @@ export default [
                 type: 'text',
                 value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
                 position: {
-                  start: { line: 14, column: 1, offset: 461 },
-                  end: { line: 14, column: 148, offset: 608 }
+                  start: { line: 40, column: 1, offset: 956 },
+                  end: { line: 40, column: 148, offset: 1103 }
                 }
               }
             ],
             position: {
-              start: { line: 14, column: 1, offset: 461 },
-              end: { line: 14, column: 148, offset: 608 }
+              start: { line: 40, column: 1, offset: 956 },
+              end: { line: 40, column: 148, offset: 1103 }
             }
           },
           {
@@ -37205,8 +37386,8 @@ export default [
               ').then(console.log)\n' +
               '// { a: 1, b: 4, c: 9 }',
             position: {
-              start: { line: 16, column: 1, offset: 610 },
-              end: { line: 24, column: 4, offset: 818 }
+              start: { line: 42, column: 1, offset: 1105 },
+              end: { line: 50, column: 4, offset: 1313 }
             }
           },
           {
@@ -37216,14 +37397,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 26, column: 1, offset: 820 },
-                  end: { line: 26, column: 10, offset: 829 }
+                  start: { line: 52, column: 1, offset: 1315 },
+                  end: { line: 52, column: 10, offset: 1324 }
                 }
               }
             ],
             position: {
-              start: { line: 26, column: 1, offset: 820 },
-              end: { line: 26, column: 10, offset: 829 }
+              start: { line: 52, column: 1, offset: 1315 },
+              end: { line: 52, column: 10, offset: 1324 }
             }
           },
           {
@@ -37249,26 +37430,26 @@ export default [
                             type: 'text',
                             value: 'forEach',
                             position: {
-                              start: { line: 27, column: 5, offset: 834 },
-                              end: { line: 27, column: 12, offset: 841 }
+                              start: { line: 53, column: 5, offset: 1329 },
+                              end: { line: 53, column: 12, offset: 1336 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 27, column: 4, offset: 833 },
-                          end: { line: 27, column: 28, offset: 857 }
+                          start: { line: 53, column: 4, offset: 1328 },
+                          end: { line: 53, column: 28, offset: 1352 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 27, column: 4, offset: 833 },
-                      end: { line: 27, column: 28, offset: 857 }
+                      start: { line: 53, column: 4, offset: 1328 },
+                      end: { line: 53, column: 28, offset: 1352 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 27, column: 2, offset: 831 },
-                  end: { line: 27, column: 28, offset: 857 }
+                  start: { line: 53, column: 2, offset: 1326 },
+                  end: { line: 53, column: 28, offset: 1352 }
                 }
               },
               {
@@ -37288,26 +37469,26 @@ export default [
                             type: 'text',
                             value: 'map',
                             position: {
-                              start: { line: 28, column: 5, offset: 862 },
-                              end: { line: 28, column: 8, offset: 865 }
+                              start: { line: 54, column: 5, offset: 1357 },
+                              end: { line: 54, column: 8, offset: 1360 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 28, column: 4, offset: 861 },
-                          end: { line: 28, column: 20, offset: 877 }
+                          start: { line: 54, column: 4, offset: 1356 },
+                          end: { line: 54, column: 20, offset: 1372 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 28, column: 4, offset: 861 },
-                      end: { line: 28, column: 20, offset: 877 }
+                      start: { line: 54, column: 4, offset: 1356 },
+                      end: { line: 54, column: 20, offset: 1372 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 28, column: 2, offset: 859 },
-                  end: { line: 28, column: 20, offset: 877 }
+                  start: { line: 54, column: 2, offset: 1354 },
+                  end: { line: 54, column: 20, offset: 1372 }
                 }
               },
               {
@@ -37327,26 +37508,26 @@ export default [
                             type: 'text',
                             value: 'map.series',
                             position: {
-                              start: { line: 29, column: 5, offset: 882 },
-                              end: { line: 29, column: 15, offset: 892 }
+                              start: { line: 55, column: 5, offset: 1377 },
+                              end: { line: 55, column: 15, offset: 1387 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 29, column: 4, offset: 881 },
-                          end: { line: 29, column: 34, offset: 911 }
+                          start: { line: 55, column: 4, offset: 1376 },
+                          end: { line: 55, column: 34, offset: 1406 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 29, column: 4, offset: 881 },
-                      end: { line: 29, column: 34, offset: 911 }
+                      start: { line: 55, column: 4, offset: 1376 },
+                      end: { line: 55, column: 34, offset: 1406 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 29, column: 2, offset: 879 },
-                  end: { line: 29, column: 34, offset: 911 }
+                  start: { line: 55, column: 2, offset: 1374 },
+                  end: { line: 55, column: 34, offset: 1406 }
                 }
               },
               {
@@ -37366,26 +37547,26 @@ export default [
                             type: 'text',
                             value: 'map.pool',
                             position: {
-                              start: { line: 30, column: 5, offset: 916 },
-                              end: { line: 30, column: 13, offset: 924 }
+                              start: { line: 56, column: 5, offset: 1411 },
+                              end: { line: 56, column: 13, offset: 1419 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 30, column: 4, offset: 915 },
-                          end: { line: 30, column: 30, offset: 941 }
+                          start: { line: 56, column: 4, offset: 1410 },
+                          end: { line: 56, column: 30, offset: 1436 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 30, column: 4, offset: 915 },
-                      end: { line: 30, column: 30, offset: 941 }
+                      start: { line: 56, column: 4, offset: 1410 },
+                      end: { line: 56, column: 30, offset: 1436 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 30, column: 2, offset: 913 },
-                  end: { line: 30, column: 30, offset: 941 }
+                  start: { line: 56, column: 2, offset: 1408 },
+                  end: { line: 56, column: 30, offset: 1436 }
                 }
               },
               {
@@ -37405,26 +37586,26 @@ export default [
                             type: 'text',
                             value: 'filter',
                             position: {
-                              start: { line: 31, column: 5, offset: 946 },
-                              end: { line: 31, column: 11, offset: 952 }
+                              start: { line: 57, column: 5, offset: 1441 },
+                              end: { line: 57, column: 11, offset: 1447 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 31, column: 4, offset: 945 },
-                          end: { line: 31, column: 26, offset: 967 }
+                          start: { line: 57, column: 4, offset: 1440 },
+                          end: { line: 57, column: 26, offset: 1462 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 31, column: 4, offset: 945 },
-                      end: { line: 31, column: 26, offset: 967 }
+                      start: { line: 57, column: 4, offset: 1440 },
+                      end: { line: 57, column: 26, offset: 1462 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 31, column: 2, offset: 943 },
-                  end: { line: 31, column: 26, offset: 967 }
+                  start: { line: 57, column: 2, offset: 1438 },
+                  end: { line: 57, column: 26, offset: 1462 }
                 }
               },
               {
@@ -37444,26 +37625,26 @@ export default [
                             type: 'text',
                             value: 'reduce',
                             position: {
-                              start: { line: 32, column: 5, offset: 972 },
-                              end: { line: 32, column: 11, offset: 978 }
+                              start: { line: 58, column: 5, offset: 1467 },
+                              end: { line: 58, column: 11, offset: 1473 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 32, column: 4, offset: 971 },
-                          end: { line: 32, column: 26, offset: 993 }
+                          start: { line: 58, column: 4, offset: 1466 },
+                          end: { line: 58, column: 26, offset: 1488 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 32, column: 4, offset: 971 },
-                      end: { line: 32, column: 26, offset: 993 }
+                      start: { line: 58, column: 4, offset: 1466 },
+                      end: { line: 58, column: 26, offset: 1488 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 32, column: 2, offset: 969 },
-                  end: { line: 32, column: 26, offset: 993 }
+                  start: { line: 58, column: 2, offset: 1464 },
+                  end: { line: 58, column: 26, offset: 1488 }
                 }
               },
               {
@@ -37483,26 +37664,26 @@ export default [
                             type: 'text',
                             value: 'transform',
                             position: {
-                              start: { line: 33, column: 5, offset: 998 },
-                              end: { line: 33, column: 14, offset: 1007 }
+                              start: { line: 59, column: 5, offset: 1493 },
+                              end: { line: 59, column: 14, offset: 1502 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 33, column: 4, offset: 997 },
-                          end: { line: 33, column: 32, offset: 1025 }
+                          start: { line: 59, column: 4, offset: 1492 },
+                          end: { line: 59, column: 32, offset: 1520 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 33, column: 4, offset: 997 },
-                      end: { line: 33, column: 32, offset: 1025 }
+                      start: { line: 59, column: 4, offset: 1492 },
+                      end: { line: 59, column: 32, offset: 1520 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 33, column: 2, offset: 995 },
-                  end: { line: 33, column: 32, offset: 1025 }
+                  start: { line: 59, column: 2, offset: 1490 },
+                  end: { line: 59, column: 32, offset: 1520 }
                 }
               },
               {
@@ -37522,26 +37703,26 @@ export default [
                             type: 'text',
                             value: 'flatMap',
                             position: {
-                              start: { line: 34, column: 5, offset: 1030 },
-                              end: { line: 34, column: 12, offset: 1037 }
+                              start: { line: 60, column: 5, offset: 1525 },
+                              end: { line: 60, column: 12, offset: 1532 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 34, column: 4, offset: 1029 },
-                          end: { line: 34, column: 28, offset: 1053 }
+                          start: { line: 60, column: 4, offset: 1524 },
+                          end: { line: 60, column: 28, offset: 1548 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 34, column: 4, offset: 1029 },
-                      end: { line: 34, column: 28, offset: 1053 }
+                      start: { line: 60, column: 4, offset: 1524 },
+                      end: { line: 60, column: 28, offset: 1548 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 34, column: 2, offset: 1027 },
-                  end: { line: 34, column: 28, offset: 1053 }
+                  start: { line: 60, column: 2, offset: 1522 },
+                  end: { line: 60, column: 28, offset: 1548 }
                 }
               },
               {
@@ -37561,38 +37742,38 @@ export default [
                             type: 'text',
                             value: 'some',
                             position: {
-                              start: { line: 35, column: 5, offset: 1058 },
-                              end: { line: 35, column: 9, offset: 1062 }
+                              start: { line: 61, column: 5, offset: 1553 },
+                              end: { line: 61, column: 9, offset: 1557 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 35, column: 4, offset: 1057 },
-                          end: { line: 35, column: 22, offset: 1075 }
+                          start: { line: 61, column: 4, offset: 1552 },
+                          end: { line: 61, column: 22, offset: 1570 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 35, column: 4, offset: 1057 },
-                      end: { line: 35, column: 22, offset: 1075 }
+                      start: { line: 61, column: 4, offset: 1552 },
+                      end: { line: 61, column: 22, offset: 1570 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 35, column: 2, offset: 1055 },
-                  end: { line: 35, column: 22, offset: 1075 }
+                  start: { line: 61, column: 2, offset: 1550 },
+                  end: { line: 61, column: 22, offset: 1570 }
                 }
               }
             ],
             position: {
-              start: { line: 27, column: 2, offset: 831 },
-              end: { line: 35, column: 22, offset: 1075 }
+              start: { line: 53, column: 2, offset: 1326 },
+              end: { line: 61, column: 22, offset: 1570 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 35, column: 22, offset: 1075 }
+          end: { line: 61, column: 22, offset: 1570 }
         }
       },
       since: {
