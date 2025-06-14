@@ -3,7 +3,7 @@ title: [A]synchronous Functional Programming - Data Types
 author: Richard Tong, CTO and Co-Founder of Claimyr Inc.
 date: 2025-06-13
 path: /blog/a-synchronous-functional-programming-data-types
-description: Data types used for the [A]synchronous Functional Programming paradigm
+description: Data types in [A]synchronous Functional Programming
 image: /assets/monad.png
 ---
 
