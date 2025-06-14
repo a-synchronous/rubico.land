@@ -580,7 +580,7 @@ Algebraic structures are special classes of data types that are identified by th
 
 The functor algebraic structure identifies data types with the `.map` method. Data types implementing `.map` must conform to the functor laws:
 
- * Identity Law: applying the identity function `a => a` to a functor is equivalent to not having applied a function.
+ 1. Identity Law: applying the identity function `a => a` to a functor is equivalent to not having applied a function.
 
 ```javascript
 assert.equivalent(
@@ -598,7 +598,7 @@ console.log(myArray.map(identity))
 console.log(myArray)
 ```
 
- * Composition Law: applying two functions in sequence using `.map` is equivalent to applying their composition in a single `.map` operation.
+ 2. Composition Law: applying two functions in sequence using `.map` is equivalent to applying their composition in a single `.map` operation.
 
 ```javascript
 assert.equivalent(
@@ -627,7 +627,7 @@ The following built-in data types are considered to be functors:
 
 The filterable algebraic structure identifies data types with the `.filter` method. Data types implementing `.filter` must conform to the following laws:
 
- * Distributivity Law: applying two predicate functions in sequence using consecutive calls to `.filter` is equivalent to executing both predicate functions in a logical AND expression with a single call to `.filter`.
+ 1. Distributivity Law: applying two predicate functions in sequence using consecutive calls to `.filter` is equivalent to executing both predicate functions in a logical AND expression with a single call to `.filter`.
 
 ```javascript
 assert.equivalent(
@@ -646,7 +646,7 @@ console.log(myArray.filter(x => f(x) && g(x)))
 console.log(myArray.filter(f).filter(g))
 ```
 
- * Identity Law: applying a predicate function that always returns true is equivalent to not having applied a function.
+ 2. Identity Law: applying a predicate function that always returns true is equivalent to not having applied a function.
 
 ```javascript
 assert.equivalent(
@@ -662,7 +662,7 @@ console.log(myArray.filter(() => true))
 console.log(myArray)
 ```
 
- * Annihilation Law: given two distinct filterables, applying a predicate function that always returns false to both filterables produces equivalent results.
+ 3. Annihilation Law: given two distinct filterables, applying a predicate function that always returns false to both filterables produces equivalent results.
 
 ```javascript
 assert.equivalent(
@@ -689,7 +689,7 @@ The following built-in data types are considered to be filterables:
 
 The foldable algebraic structure identifies data types with the `.reduce` method. Data types implementing `.reduce` must conform to the following law: 
 
- * A given reducing operation is equivalent to two chained reducing operations with `.reduce` where the first reduce concatenates every item in the foldable onto an array and the second reduce takes the array and performs the given reducing operation.
+ 1. A given reducing operation is equivalent to two chained reducing operations with `.reduce` where the first reduce concatenates every item in the foldable onto an array and the second reduce takes the array and performs the given reducing operation.
 
 ```javascript
 assert.equivalent(
@@ -720,14 +720,14 @@ The following built-in data types are considered to be foldables:
  * `async generator`
  * `object`
 
-The semigroup algebraic structure identifies data types with the `.concat` method. Data types implementing `.concat` must conform to the following laws:
+The semigroup algebraic structure identifies data types with the `.concat` method. Data types implementing `.concat` must conform to the following law:
 
- * Associativity: when concatenating three elements, concatenating the first and then the last two is the same as concatenating the first two and then the last.
+ 1. Associativity: when concatenating three elements, concatenating the first and then the last two is the same as concatenating the first two and then the last.
 
 ```javascript
 assert.equivalent(
   mySemigroup.concat(a).concat(b, c),
-  mySemigroup.concat(a, b).concat(c),
+  mySemigroup.concat(a, b).concat(c)
 )
 ```
 
@@ -745,12 +745,12 @@ The following built-in data types are considered to be semigroups:
 
 The monad algebraic structure identifies data types with the `.flatMap` or `.chain` methods. Data types implementing `.flatMap` or `.chain` must conform to the monad laws:
 
- * Left Identity: wrapping a value in a monad and then calling the monad's `.flatMap` or `.chain` with a function is equivalent to directly applying the function to the value.
+ 1. Left Identity: wrapping a value in a monad and then calling the monad's `.flatMap` or `.chain` with a function is equivalent to directly applying the function to the value.
 
 ```javascript
 assert.equivalent(
   MyMonad.of(a).flatMap(f),
-  f(a),
+  f(a)
 )
 ```
 
@@ -764,7 +764,7 @@ console.log(ArrayOf(a).flatMap(f))
 console.log(f(a))
 ```
 
- * Right Identity: given a monad, chaining a function that wraps a value in a monad should result in the given monad.
+ 2. Right Identity: given a monad, chaining a function that wraps a value in a monad should result in the given monad.
 
 ```javascript
 assert.equivalent(
@@ -782,7 +782,7 @@ console.log(myArray.flatMap(ArrayOf))
 console.log(myArray)
 ```
 
- * Associativity: the order of execution of chaining monadic operations on a monad does not affect the final result.
+ 3. Associativity: the order of execution of chaining monadic operations on a monad does not affect the final result.
 
 ```javascript
 // f and g are functions that return a monad

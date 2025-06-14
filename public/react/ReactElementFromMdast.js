@@ -106,7 +106,7 @@ const ReactElementFromMdast = ReactElement(props => {
       return Span(ReactElementFromMdastRecurse(mdast))
     case 'list':
       return mdast.ordered
-        ? Ol(ReactElementFromMdastRecurse(mdast))
+        ? Ol({ start: mdast.start ?? 1 }, ReactElementFromMdastRecurse(mdast))
         : Ul(ReactElementFromMdastRecurse(mdast))
     case 'listItem':
       return Li(ReactElementFromMdastRecurse(mdast))
