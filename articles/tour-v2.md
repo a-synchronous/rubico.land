@@ -152,13 +152,13 @@ const myApp = tryCatch(pipe([
     }
   }),
   data => {
-    console.log('doing stuff with userId', data.userId)
+    console.log('validated user', data.userId)
   },
 ]), error => console.error(error))
 
 myApp({}) // Error: userId is required but not found
 
-myApp({ userId: 1 }) // doing stuff with userId 1
+myApp({ userId: 1 }) // validated user 1
 ```
 
 # Transducers
