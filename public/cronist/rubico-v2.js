@@ -31671,14 +31671,14 @@ export default [
     synopsis: '```coffeescript [specscript]\n' +
       'type Iterable = Array|Set|Map|Generator|AsyncGenerator|{ forEach: function }|Object\n' +
       '\n' +
-      'type Callback = (\n' +
+      'type SyncOrAsyncCallback = (\n' +
       '  element any,\n' +
       '  indexOrKey number|string|any,\n' +
       '  iter Iterable\n' +
       ')=>Promise|undefined\n' +
       '\n' +
       'iterable Iterable\n' +
-      'cb Callback\n' +
+      'cb SyncOrAsyncCallback\n' +
       '\n' +
       'forEach(iterable, cb) -> unmodifiedIterable Promise|Iterable\n' +
       'forEach(cb)(iterable) -> unmodifiedIterable Promise|Iterable\n' +
@@ -31814,26 +31814,26 @@ export default [
             meta: '[specscript]',
             value: 'type Iterable = Array|Set|Map|Generator|AsyncGenerator|{ forEach: function }|Object\n' +
               '\n' +
-              'type Callback = (\n' +
+              'type SyncOrAsyncCallback = (\n' +
               '  element any,\n' +
               '  indexOrKey number|string|any,\n' +
               '  iter Iterable\n' +
               ')=>Promise|undefined\n' +
               '\n' +
               'iterable Iterable\n' +
-              'cb Callback\n' +
+              'cb SyncOrAsyncCallback\n' +
               '\n' +
               'forEach(iterable, cb) -> unmodifiedIterable Promise|Iterable\n' +
               'forEach(cb)(iterable) -> unmodifiedIterable Promise|Iterable',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 15, column: 4, offset: 373 }
+              end: { line: 15, column: 4, offset: 395 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 15, column: 4, offset: 373 }
+          end: { line: 15, column: 4, offset: 395 }
         }
       },
       description: {
