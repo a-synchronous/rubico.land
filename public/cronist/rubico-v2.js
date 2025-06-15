@@ -117,7 +117,6 @@ export default [
     synopsis: '```coffeescript [specscript]\n' +
       'type SyncOrAsyncReducer = (accumulator any, value any)=>(nextAccumulator Promise|any)\n' +
       'type Transducer = SyncOrAsyncReducer=>SyncOrAsyncReducer\n' +
-      '\n' +
       'type UnarySyncOrAsyncMapper = (element any)=>(resultElement Promise|any)\n' +
       '\n' +
       'mapper UnarySyncOrAsyncMapper\n' +
@@ -198,7 +197,6 @@ export default [
             meta: '[specscript]',
             value: 'type SyncOrAsyncReducer = (accumulator any, value any)=>(nextAccumulator Promise|any)\n' +
               'type Transducer = SyncOrAsyncReducer=>SyncOrAsyncReducer\n' +
-              '\n' +
               'type UnarySyncOrAsyncMapper = (element any)=>(resultElement Promise|any)\n' +
               '\n' +
               'mapper UnarySyncOrAsyncMapper\n' +
@@ -206,13 +204,13 @@ export default [
               'Transducer.map(mapper) -> mappingTransducer Transducer',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 10, column: 4, offset: 336 }
+              end: { line: 9, column: 4, offset: 335 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 10, column: 4, offset: 336 }
+          end: { line: 9, column: 4, offset: 335 }
         }
       },
       description: {
