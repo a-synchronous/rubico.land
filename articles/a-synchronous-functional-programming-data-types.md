@@ -603,7 +603,7 @@ console.log(myArray)
 ```javascript
 assert.equivalent(
   myFunctor.map(f).map(g),
-  myFunctor.map(compose([g, f]))
+  myFunctor.map(compose(g, f))
 )
 ```
 
@@ -614,7 +614,7 @@ const f = x => x + 1
 const g = x => x * 2
 
 console.log(myArray.map(f).map(g))
-console.log(myArray.map(compose([g, f])))
+console.log(myArray.map(compose(g, f)))
 ```
 
 The following built-in data types are considered to be functors:
