@@ -34,7 +34,7 @@ const {
  6. [Transducers](#transducers)
 
 # [A]synchrony
-**Stop worrying about async**. Pass synchronous or asynchronous functions to any rubico operator - all promises are resolved for their promised value before continuing. Run things in parallel without having to call `Promise.all` on `someArray.map(...)`. For more on this behavior, see this [blog post](https://dev.to/richytong/rubico-a-synchrnous-functional-syntax-motivation-20hf).
+Pass **synchronous or asynchronous** functions to any rubico operator - all promises are resolved for their promised value before continuing. Run things in parallel without having to call `Promise.all` on `array.map`. For more on this behavior, see this [blog post](https://dev.to/richytong/rubico-a-synchrnous-functional-syntax-motivation-20hf).
 
 ```javascript [playground]
 const getTodo = id => fetch(`https://jsonplaceholder.typicode.com/todos/${id}`)
@@ -49,7 +49,7 @@ map([1, 2, 3, 4, 5], pipe([
 Press the `run` button to make five requests using `fetch`, parse five request bodies, and log five todos out to the console - all in parallel.
 
 # Composition
-**Reduce coupling and complexity**. Use rubico's operators to create compositions of small, reusable functions. Add functionality to your program by composing the desired function - rubico gives you the tools to make this as simple and seamless as possible.
+**Reduce coupling and complexity**. Use rubico's operators to create compositions of small, reusable functions. Add functionality to your program by composing the desired function - rubico gives you the tools to make this as simple and stress-free as possible.
 
 ```javascript [playground]
 const identity = value => value
@@ -73,15 +73,15 @@ console.log(doMathsWithLogs(3))
 // { number: 3, numberSquared: 9 }
 ```
 
-The `run` button above executes the pipeline `doMathsWithLogs` that logs a number out to the console, then parallelizes its identity operation and another pipeline into an object `{ number, numberSquared }`. The above example also introduces rubico's `curry` and placeholder `__`; use these to compose any function by creating a partially applied variant suited for the task at hand.
+The `run` button above executes the pipeline `doMathsWithLogs` that logs a number out to the console, then parallelizes an identity operation and another pipeline into an object `{ number, numberSquared }`. The above example also introduces rubico's `curry` and placeholder `__`; use these to compose any function by creating a partially applied variant suited for the task at hand.
 
 # Polymorphism
-**Expressive power at your fingertips**. Any rubico method should support data types beyond arrays such as async iterables, strings, sets, maps, binary arrays, and object values.
+**Expressive power at your fingertips**. All rubico methods support data types beyond arrays including generators, async generators, strings, sets, maps, binary, and plain objects where sensible.
 
 ```javascript [playground]
 const square = number => number ** 2
 
-const iterables = [
+const functors = [
   [1, 2, 3, 4, 5],
   '12345',
   new Set([1, 2, 3, 4, 5]),
@@ -90,7 +90,7 @@ const iterables = [
   new Map([['a', 1], ['b', 2], ['c', 3], ['d', 4], ['e', 5]]),
 ]
 
-forEach(iterables, pipe([
+forEach(functors, pipe([
   map(square),
   console.log,
 ]))
@@ -101,6 +101,8 @@ forEach(iterables, pipe([
 // { a: 1, b: 4, c: 9, d: 16, e: 25 }
 // Map { 'a' => 1, 'b' => 4, 'c' => 9, 'd' => 16, 'e' => 25 }
 ```
+
+In the above example, the rubico operator `map` acts on a multitude of [functor](/blog/a-synchronous-functional-programming-data-types#functor) data types, including an array `[1, 2, 3, 4, 5]`, a string `'12345'`, a set `new Set([1, 2, 3, 4, 5])`, binary `new Uint8Array([1, 2, 3, 4, 5])`, a plain object `{ a: 1, b: 2, c: 3, d: 4, e: 5 }`, and a map `new Map([['a', 1], ['b', 2], ['c', 3], ['d', 4], ['e', 5]])`.
 
 # Control Flow
 **Create declarative, SQL-esque logical expressions** by composing predicates with rubico's logical operators. Below depicts vanilla JavaScript operators and their rubico analogs.
@@ -141,8 +143,10 @@ cli(['--version']) // v0.0.0
 cli(['???']) // USAGE: ...
 ```
 
+The above example shows a declarative `cli` using the rubico `switchCase` and `or` operators.
+
 # Error Handling
-**Confidently throw errors**. rubico's `tryCatch` catches both errors and rejected Promises. Wrap your application pipeline in a `tryCatch` and never worry about uncaught errors or unhandled promise rejections again.
+**Confidently throw errors**. rubico's `tryCatch` operator catches both thrown errors and rejected Promises. Wrap your application pipeline in a `tryCatch` and never worry about uncaught errors or unhandled promise rejections again.
 
 ```javascript [playground]
 const myApp = tryCatch(pipe([
@@ -154,15 +158,19 @@ const myApp = tryCatch(pipe([
   data => {
     console.log('validated user', data.userId)
   },
-]), error => console.error(error))
+]), function errorHandler(error) {
+  console.error(error)
+})
 
 myApp({}) // Error: userId is required but not found
 
 myApp({ userId: 1 }) // validated user 1
 ```
 
+The example above depicts a rubico `tryCatch` operator wrapping a pipeline created by a `pipe` operator. The catcher function `errorHandler` catches the error thrown by the function `validate` when the `userId` of `data` is nullish.
+
 # Transducers
-**Wrangle large or infinite streams of data**. Easily express complex transformations in a memory efficient way with rubico's `Trasnducer` module and `compose` method. Read more on rubico's transducers [here](/blog/transducers-crash-course-v1).
+**Wrangle large or infinite streams of data**. Easily express complex transformations in a memory efficient way with rubico's `Trasnducer` module and `compose` operator. Read more on transducers [here](/blog/transducers-crash-course-rubico-v2).
 
 ```javascript [playground]
 const toBinaryString = value => value.toString(2)
@@ -179,10 +187,10 @@ const decimalsToNotes = pipe([
     }
   },
 
-  transform(compose([
+  transform(compose(
     Transducer.map(toBinaryInt),
     Transducer.map(String.fromCharCode),
-  ]), ''),
+  ), ''),
 ])
 
 const decimals = '16791573288892525934609440079317541905554393653557736896280802239551592289061061348368963'
@@ -191,4 +199,8 @@ const notes = decimalsToNotes(decimals)
 console.log(notes) // CCGGAAGFFEEDDCGGFFEEDGGFFEEDCCGGAAGFFEEDDC
 ```
 
-You've arrived at the end of the tour. From here, you could get started with rubico in a project ([installation](/#installation)) or read more at the [docs](/docs).
+Above we see a complex transformation made simple by the rubico `transform` operator. The operator transforms the generator of decimal segments created by `generateSegments` into the string `notes`.
+
+# Conclusion
+
+You've arrived at the end of the tour. From here, you could get started with rubico ([installation](/#installation)) or read more at the [docs](/docs).

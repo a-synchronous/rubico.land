@@ -83,6 +83,22 @@ const Root = ReactElement(props => {
     }
   }, [])
 
+  // handle anchor
+  useEffect(() => {
+    const anchor = window.location.hash
+    if (anchor) {
+      const id = anchor.slice(1)
+      setTimeout(() => {
+        const el = document.getElementById(id)
+        if (el) {
+          window.scrollTo(0, el.offsetTop + 50)
+        } else {
+          console.error(`element not found for id ${id} page ${window.location.pathname}`)
+        }
+      }, 100)
+    }
+  }, [])
+
   const childProps = { ...appState, goto, setActiveBlogPostHref }
 
   const { path } = appState

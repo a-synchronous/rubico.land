@@ -75,7 +75,7 @@ const ReactElementFromMdast = ReactElement(props => {
       return Article(ReactElementFromMdastRecurse(mdast))
     case 'heading':
       switch (mdast.depth) {
-        case 1:
+        case 1: {
           const anchorHash = pipe(mdast, [
             anchorHashFromMdast,
             anchorHashFormat,
@@ -85,8 +85,29 @@ const ReactElementFromMdast = ReactElement(props => {
             href: `#${anchorHash}`,
             style: { display: 'flex', placeItems: 'center' },
           }, [H1({ id: anchorHash }, ReactElementFromMdastRecurse(mdast))])
-        case 2: return H2(ReactElementFromMdastRecurse(mdast))
-        case 3: return H3(ReactElementFromMdastRecurse(mdast))
+        }
+        case 2: {
+          const anchorHash = pipe(mdast, [
+            anchorHashFromMdast,
+            anchorHashFormat,
+          ])
+          return A({
+            class: 'anchor-hash',
+            href: `#${anchorHash}`,
+            style: { display: 'flex', placeItems: 'center' },
+          }, [H2({ id: anchorHash }, ReactElementFromMdastRecurse(mdast))])
+        }
+        case 3: {
+          const anchorHash = pipe(mdast, [
+            anchorHashFromMdast,
+            anchorHashFormat,
+          ])
+          return A({
+            class: 'anchor-hash',
+            href: `#${anchorHash}`,
+            style: { display: 'flex', placeItems: 'center' },
+          }, [H3({ id: anchorHash }, ReactElementFromMdastRecurse(mdast))])
+        }
         case 4: return H4(ReactElementFromMdastRecurse(mdast))
         case 5: return H5(ReactElementFromMdastRecurse(mdast))
         default: return H6(ReactElementFromMdastRecurse(mdast))

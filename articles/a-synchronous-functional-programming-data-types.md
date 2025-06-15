@@ -13,6 +13,8 @@ Welcome to Data Types in [A]synchronous Functional Programming. In this article 
 ## Primitive Data Types
 Primitive data types are fundamental, indivisible building blocks for data representation in all programming. For [A]synchronous Functional Programming, we will consider six primitive data types: number, string, boolean, binary, symbol, and nullish.
 
+### Number
+
 The number primitive data type represents integer numbers like `1` and also floating-point numbers like `1.2`. To create a number in JavaScript you only need to write a number literal.
 
 ```javascript
@@ -25,6 +27,8 @@ You may also use the `Number` constructor to create a number. You can use the `N
 Number('3') // 3
 ```
 
+### String
+
 The string primitive data type represents strings like `'abc'` or `'Hello World!'`. Strings are useful for storing textual data, which is pretty much the entire internet aside from numbers. To create a string in JavaScript you can a string literal.
 
 ```javascript
@@ -36,6 +40,8 @@ You may also use the `String` constructor to create a string. You can use the `S
 ```javascript
 String(3) // '3'
 ```
+
+### Boolean
 
 The boolean primitive data type represents the logical values `true` or `false`. To create a boolean, you can write a boolean literal.
 
@@ -60,6 +66,8 @@ You can also use the `Boolean` constructor to create a boolean.
 Boolean(0) // false
 ```
 
+### Binary
+
 The binary primitive data type is useful for storing binary data. Some common forms of binary data are image data and video data. You can use one of the TypedArray constructors to create binary data types.
 
 ```javascript
@@ -76,6 +84,8 @@ fileReader.onload = function (event) {
 }
 fileReader.readAsArrayBuffer(myFile)
 ```
+
+### Symbol
 
 The symbol primitive data type represents unique and [immutable](https://developer.mozilla.org/en-US/docs/Glossary/Immutable) values, and are primarily used as identifiers for object properties.
 
@@ -101,6 +111,8 @@ for (const key in o) {
 
 Some useful built-in symbols are `Symbol.iterator` and `Symbol.asyncIterator`. These symbols, when used to define properties on objects, implement special protocols for iteration. See [iterable protocol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#the_iterable_protocol) and [async iterable protocol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#the_async_iterator_and_async_iterable_protocols)
 
+### Nullish
+
 Finally, the nullish data type represents the absence of a meaningful value and encopasses two values: `null` and `undefined`. Both of these values are very similar in that they both express the absence of a meaningful value, but they are used differently in practice. Generally, you would use `null` to express the intentional absence of an object value, while you wouldn't normally have to use `undefined`, though it is sometimes stylish to return `undefined` from a function.
 
 ```javascript
@@ -123,6 +135,8 @@ As a rule of thumb, anything that isn't a primitive data type is a reference dat
 
 ## Collection Data Types
 Collection data types are structures that can hold multiple values and multiple types of values, including primitives and other collection data types. The collection data types are fundamental to general programming as well as [A]synchronous Functional Programming, because we often need to think about data in terms of groups. For this article we will consider four essential collection data types: array, object, set, and map.
+
+### Array
 
 The array data type is an ordered collection of elements that can be accessed through a numerical index. You can create an array by writing an array literal, or by using the `Array` constructor.
 
@@ -187,6 +201,8 @@ for (const n of numbers) {
 }
 ```
 
+### Object
+
 The object data type is an unordered collection of elements that is accessed by string or symbol keys, as opposed to numerical indexes for arrays. You can create an object by writing an object literal.
 
 ```javascript
@@ -232,6 +248,8 @@ for (const key in o) {
   // c 3
 }
 ```
+
+### Set
 
 The set data type is a unique collection of elements that is ordered by insertion order. Value equality (what determines the elements' uniqueness) is determined by the [SameValueZero](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Equality_comparisons_and_sameness#same-value-zero_equality) algorithm. Although there isn't a way to access an element of a set like there is for arrays and objects, you can tell if a set has an element by using the set's `.has` method.
 
@@ -284,6 +302,8 @@ for (const num of mySet) {
   // 5
 }
 ```
+
+### Map
 
 The map data type is a collection of elements ordered by insertion order and can be accessed using keys of any data type. Maps are similar to objects in many regards but with a few crucial differences:
   * In scenarios involving frequent insertions and deletions of elements, maps are more performant than objects.
@@ -348,7 +368,7 @@ for (const [key, value] of myMap) {
 When thinking about which collection data structure to use for your data, always choose the data structure that most naturally models your data. Arrays are good for lists of data, while objects and maps are good for relational data. Use sets over arrays when you need to be able to easily remove an element from your data.
 
 ## Iterable Data Types
-Iterable data types are data types that can be iterated over. Specifically, all iterable data types implement the [iterable protocol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#the_iterable_protocol) using a method `[Symbol.iterator]` that, when called, returns an iterator object. The collection data types excluding object (array, map, and set) are all iterable data types that implement the `[Symbol.iterator]` method, and can be consumed with a `for...of` loop.
+Iterable data types are data types that can be iterated over. Specifically, all iterable data types implement the [iterable protocol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#the_iterable_protocol). The collection data types excluding object (array, map, and set) are all built-in data types that implement the iterable protocol. Iterables can be consumed with a `for...of` loop.
 
 ```javascript
 const myArray = [1, 2, 3]
@@ -370,7 +390,20 @@ for (const value of mySet) {
 }
 ```
 
-You can also implement the iterable protocol on your own classes and objects.
+### Iterable Protocol
+The iterable protocol is implemented on classes and objects under the method `[Symbol.iterator]()`. The method returns an object that conforms to the iterator protocol. An object implements the iterator protocol by implementing the synchronous method `next`.
+
+```coffeescript [specscript]
+type Iterator = {
+  next: (input? any)=>{ done: boolean, value: any }
+}
+
+type Iterable = {
+  [Symbol.iterator]: ()=>Iterator
+}
+```
+
+You can implement the iterable protocol on your own classes and objects.
 
 ```javascript [playground]
 class MyClass {
@@ -410,7 +443,8 @@ for (const item of myObject) {
 }
 ```
 
-A convenient way to create iterators is with generator functions using the `function* () {}` syntax and the `yield` keyword. Generator functions create generators, a kind of iterator.
+### Generators and Generator Functions
+You can use generator functions to create generators, a kind of iterator. Generator functions use the `function* () {}` syntax and the `yield` keyword.
 
 ```javascript [playground]
 function* myGeneratorFunction() {
@@ -432,8 +466,51 @@ for (const item of myGenerator) {
 }
 ```
 
+Generators implement the iterator protocol by default, so often it is simpler to use a generator function to implement the iterable protocol using the syntax `* [Symbol.iterator]()`.
+
+```javascript [playground]
+class MyClass {
+  constructor() {
+  }
+
+  * [Symbol.iterator]() {
+    yield 1
+    yield 2
+    yield 3
+  }
+}
+
+const myInstance = new MyClass()
+
+// myInstance created from MyClass is iterable
+for (const item of myInstance) {
+  console.log(item)
+  // 1
+  // 2
+  // 3
+}
+
+const myObject = {
+  * [Symbol.iterator]() {
+    yield 1
+    yield 2
+    yield 3
+  }
+}
+
+// myObject is iterable
+for await (const item of myObject) {
+  console.log(item)
+  // 1
+  // 2
+  // 3
+}
+```
+
 ## Asynchronous Data Types
 Asynchronous data types are data types that represent asynchronous operations. For [A]synchronous Functional Programming we will only consider one asynchronous data type: the promise.
+
+### Promise
 
 The promise data type represents an asynchronous operation that resolves to a single value, or rejects with an error. The way you can access the resolved value or rejected error of a promise is via the `.then` method of a promise instance.
 
@@ -507,7 +584,82 @@ promise.then(response => {
 ```
 
 ## Asynchronous Iterable Data Types
-Asynchronous iterable data types combine asynchronous data types with iterable data types. All asynchronous iterable data types implement the [async iterable protocol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#the_async_iterator_and_async_iterable_protocols) using a method `[Symbol.asyncIterator]` that, when called, returns an async iterator object that can be consumed with a `for await...of` loop. As of this article (2025), no built-in JavaScript data types currently implement the async iterable protocol. The only way to create async iterable data types is to implement the async iterable protocol yourself or by using an async generator function.
+Asynchronous iterable data types combine asynchronous data types with iterable data types. All asynchronous iterable data types implement the [async iterable protocol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#the_async_iterator_and_async_iterable_protocols). The only built-in data types that implement this protocol are `AsyncGenerators`. Async iterables are consumable with a `for await...of` loop.
+
+### Async Iterable Protocol
+The async iterable protocol is implemented on classes and objects under the method `[Symbol.asyncIterator]()`. The method returns an object that conforms to the async iterator protocol. An object implements the async iterator protocol by implementing the asynchronous method `next`.
+
+```coffeescript [specscript]
+type AsyncIterator = {
+  next: (input? any)=>Promise<{ done: boolean, value: any }>
+}
+
+type AsyncIterable = {
+  [Symbol.asyncIterator]: ()=>AsyncIterator
+}
+```
+
+You can implement the async iterable protocol on your own classes and objects.
+
+```javascript [playground]
+class MyAsyncIterable {
+  constructor() {
+  }
+
+  [Symbol.asyncIterator]() {
+    return {
+      count: 0,
+      async next() {
+        this.count += 1
+
+        if (this.count > 5) {
+          return { value: undefined, done: true }
+        }
+
+        return { value: this.count, done: false }
+      }
+    }
+  }
+}
+
+const myAsyncIterable = new MyAsyncIterable()
+
+for await (const number of myAsyncIterable) {
+  console.log(number)
+  // 1
+  // 2
+  // 3
+  // 4
+  // 5
+}
+```
+
+### Async Generators and Async Generator Functions
+Async generator functions use the `async function* () {}` syntax and `yield` keyword and always return an async iterable `AsyncGenerator` object.
+
+```javascript [playground]
+async function* myAsyncGeneratorFunction() {
+  yield 1
+  yield 2
+  yield 3
+}
+
+// the async generator function myAsyncGeneratorFunction creates an async generator myAsyncGenerator
+const myAsyncGenerator = myAsyncGeneratorFunction()
+
+// myAsyncGenerator is async iterable
+myAsyncGenerator[Symbol.asyncIterator]() // AsyncGenerator
+;(async () => {
+  for await (const item of myAsyncGenerator) {
+    console.log(item)
+    // 1
+    // 2
+    // 3
+  }
+})()
+```
+
+Async generators implement the async iterator protocol by default, so often it is simpler to use an async generator function to implement the async iterable protocol using the syntax `async * [Symbol.asyncIterator]()`.
 
 ```javascript [playground]
 class MyClass {
@@ -551,32 +703,10 @@ const myObject = {
 })()
 ```
 
-You can create async iterators is with async generator functions using the `async function* () {}` syntax and the `yield` keyword. Async generator functions create async generators, a kind of async iterator.
-
-```javascript [playground]
-async function* myAsyncGeneratorFunction() {
-  yield 1
-  yield 2
-  yield 3
-}
-
-// the async generator function myAsyncGeneratorFunction creates an async generator myAsyncGenerator
-const myAsyncGenerator = myAsyncGeneratorFunction()
-
-// myAsyncGenerator is async iterable
-myAsyncGenerator[Symbol.asyncIterator]() // AsyncGenerator
-;(async () => {
-  for await (const item of myAsyncGenerator) {
-    console.log(item)
-    // 1
-    // 2
-    // 3
-  }
-})()
-```
-
 ## Algebraic Structures
 Algebraic structures are special classes of data types that are identified by the presence of a specific method. For [A]synchronous Functional Programming, we will consider five algebraic structures: functor, filterable, foldable, semigroup, and monad.
+
+### Functor
 
 The functor algebraic structure identifies data types with the `.map` method. Data types implementing `.map` must conform to the functor laws:
 
@@ -624,6 +754,8 @@ The following built-in data types are considered to be functors:
  * `generator`
  * `async generator`
  * `object`
+
+### Filterable
 
 The filterable algebraic structure identifies data types with the `.filter` method. Data types implementing `.filter` must conform to the following laws:
 
@@ -687,6 +819,8 @@ The following built-in data types are considered to be filterables:
  * `async generator`
  * `object`
 
+### Foldable
+
 The foldable algebraic structure identifies data types with the `.reduce` method. Data types implementing `.reduce` must conform to the following law: 
 
  1. A given reducing operation is equivalent to two chained reducing operations with `.reduce` where the first reduce concatenates every item in the foldable onto an array and the second reduce takes the array and performs the given reducing operation.
@@ -720,6 +854,8 @@ The following built-in data types are considered to be foldables:
  * `async generator`
  * `object`
 
+### Semigroup
+
 The semigroup algebraic structure identifies data types with the `.concat` method. Data types implementing `.concat` must conform to the following law:
 
  1. Associativity: when concatenating three elements, concatenating the first and then the last two is the same as concatenating the first two and then the last.
@@ -742,6 +878,8 @@ The following built-in data types are considered to be semigroups:
  * `set`
  * `binary`
  * `object`
+
+### Monad
 
 The monad algebraic structure identifies data types with the `.flatMap` or `.chain` methods. Data types implementing `.flatMap` or `.chain` must conform to the monad laws:
 
