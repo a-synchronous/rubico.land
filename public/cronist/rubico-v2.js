@@ -118,12 +118,11 @@ export default [
       'type SyncOrAsyncReducer = (accumulator any, value any)=>(nextAccumulator Promise|any)\n' +
       'type Transducer = SyncOrAsyncReducer=>SyncOrAsyncReducer\n' +
       '\n' +
-      'type Mapper = (\n' +
-      '  element any,\n' +
-      '  index number,\n' +
-      ')=>(resultElement Promise|any)\n' +
+      'type UnarySyncOrAsyncMapper = (element any)=>(resultElement Promise|any)\n' +
       '\n' +
-      'Transducer.map(mapper Mapper) -> mappingTransducer Transducer\n' +
+      'mapper UnarySyncOrAsyncMapper\n' +
+      '\n' +
+      'Transducer.map(mapper) -> mappingTransducer Transducer\n' +
       '```',
     description: "Creates a mapping transducer. Elements of the transducer's reducing operation are transformed by the mapper function. It is possible to use an asynchronous mapper, however the reducing operation must support asynchronous execution. This library provides such implementations as [reduce](/docs/reduce) and [transform](/docs/transform).\n" +
       '\n' +
@@ -200,21 +199,20 @@ export default [
             value: 'type SyncOrAsyncReducer = (accumulator any, value any)=>(nextAccumulator Promise|any)\n' +
               'type Transducer = SyncOrAsyncReducer=>SyncOrAsyncReducer\n' +
               '\n' +
-              'type Mapper = (\n' +
-              '  element any,\n' +
-              '  index number,\n' +
-              ')=>(resultElement Promise|any)\n' +
+              'type UnarySyncOrAsyncMapper = (element any)=>(resultElement Promise|any)\n' +
               '\n' +
-              'Transducer.map(mapper Mapper) -> mappingTransducer Transducer',
+              'mapper UnarySyncOrAsyncMapper\n' +
+              '\n' +
+              'Transducer.map(mapper) -> mappingTransducer Transducer',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 11, column: 4, offset: 317 }
+              end: { line: 10, column: 4, offset: 336 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 11, column: 4, offset: 317 }
+          end: { line: 10, column: 4, offset: 336 }
         }
       },
       description: {
@@ -1148,9 +1146,11 @@ export default [
       'type SyncOrAsyncReducer = (accumulator any, value any)=>(nextAccumulator Promise|any)\n' +
       'type Transducer = SyncOrAsyncReducer=>SyncOrAsyncReducer\n' +
       'type Monad = Array|String|Set|Generator|AsyncGenerator|{ flatMap: string }|{ chain: string }|Object\n' +
-      'type FlatMapper = (element any)=>(monad Promise|Monad|any)\n' +
+      'type UnarySyncOrAsyncFlatMapper = (element any)=>(monad Promise|Monad|any)\n' +
       '\n' +
-      'Transducer.flatMap(flatMapper FlatMapper) -> flatMappingTransducer Transducer\n' +
+      'flatMapper UnarySyncOrAsyncFlatMapper\n' +
+      '\n' +
+      'Transducer.flatMap(flatMapper) -> flatMappingTransducer Transducer\n' +
       '```',
     description: 'Creates a flatMapping transducer. A flatMapping transducer applies the flatMapper function to each element of its reducing operation, concatenating the results of the flatMapper execution onto the accumulator. It is possible to use an asynchronous flatMapper, however the reducing operation must support asynchronous execution. This library provides such implementations as [reduce](/docs/reduce) and [transform](/docs/transform).\n' +
       '\n' +
@@ -1210,18 +1210,20 @@ export default [
             value: 'type SyncOrAsyncReducer = (accumulator any, value any)=>(nextAccumulator Promise|any)\n' +
               'type Transducer = SyncOrAsyncReducer=>SyncOrAsyncReducer\n' +
               'type Monad = Array|String|Set|Generator|AsyncGenerator|{ flatMap: string }|{ chain: string }|Object\n' +
-              'type FlatMapper = (element any)=>(monad Promise|Monad|any)\n' +
+              'type UnarySyncOrAsyncFlatMapper = (element any)=>(monad Promise|Monad|any)\n' +
               '\n' +
-              'Transducer.flatMap(flatMapper FlatMapper) -> flatMappingTransducer Transducer',
+              'flatMapper UnarySyncOrAsyncFlatMapper\n' +
+              '\n' +
+              'Transducer.flatMap(flatMapper) -> flatMappingTransducer Transducer',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 8, column: 4, offset: 413 }
+              end: { line: 10, column: 4, offset: 457 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 8, column: 4, offset: 413 }
+          end: { line: 10, column: 4, offset: 457 }
         }
       },
       description: {
@@ -1637,7 +1639,9 @@ export default [
       'type Transducer = SyncOrAsyncReducer=>SyncOrAsyncReducer\n' +
       'type UnarySyncOrAsyncCallback = (element any)=>Promise|undefined\n' +
       '\n' +
-      'Transducer.forEach(callback UnarySyncOrAsyncCallback) -> forEachTransducer Transducer\n' +
+      'callback UnarySyncOrAsyncCallback\n' +
+      '\n' +
+      'Transducer.forEach(callback) -> forEachTransducer Transducer\n' +
       '```',
     description: 'Executes a callback function for each element of a reducing operation, leaving the reducing operation unmodified. It is possible to use an asynchronous callback function, however the reducing operation must support asynchronous execution. This library provides such implementations as [reduce](/docs/reduce) and [transform](/docs/transform).\n' +
       '\n' +
@@ -1696,16 +1700,18 @@ export default [
               'type Transducer = SyncOrAsyncReducer=>SyncOrAsyncReducer\n' +
               'type UnarySyncOrAsyncCallback = (element any)=>Promise|undefined\n' +
               '\n' +
-              'Transducer.forEach(callback UnarySyncOrAsyncCallback) -> forEachTransducer Transducer',
+              'callback UnarySyncOrAsyncCallback\n' +
+              '\n' +
+              'Transducer.forEach(callback) -> forEachTransducer Transducer',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 7, column: 4, offset: 327 }
+              end: { line: 9, column: 4, offset: 337 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 7, column: 4, offset: 327 }
+          end: { line: 9, column: 4, offset: 337 }
         }
       },
       description: {
@@ -29058,14 +29064,14 @@ export default [
     synopsis: '```coffeescript [specscript]\n' +
       'type Filterable = Array|Set|Map|Generator|AsyncGenerator|{ filter: function }|Object\n' +
       '\n' +
-      'type Predicate = (\n' +
+      'type SyncOrAsyncPredicate = (\n' +
       '  value any,\n' +
       '  indexOrKey number|string|any,\n' +
       '  filterable Filterable,\n' +
       ')=>(condition Promise|boolean)\n' +
       '\n' +
-      'filter(filterable Promise|Filterable, predicate Predicate) -> result Promise|Filterable\n' +
-      'filter(predicate Predicate)(filterable Filterable) -> result Promise|Filterable\n' +
+      'filter(filterable Promise|Filterable, predicate SyncOrAsyncPredicate) -> result Promise|Filterable\n' +
+      'filter(predicate SyncOrAsyncPredicate)(filterable Filterable) -> result Promise|Filterable\n' +
       '```',
     description: 'Filters out elements from a filterable. Returns a filterable of the same type. The order of the elements in the filterable is preserved.\n' +
       '\n' +
@@ -29274,23 +29280,23 @@ export default [
             meta: '[specscript]',
             value: 'type Filterable = Array|Set|Map|Generator|AsyncGenerator|{ filter: function }|Object\n' +
               '\n' +
-              'type Predicate = (\n' +
+              'type SyncOrAsyncPredicate = (\n' +
               '  value any,\n' +
               '  indexOrKey number|string|any,\n' +
               '  filterable Filterable,\n' +
               ')=>(condition Promise|boolean)\n' +
               '\n' +
-              'filter(filterable Promise|Filterable, predicate Predicate) -> result Promise|Filterable\n' +
-              'filter(predicate Predicate)(filterable Filterable) -> result Promise|Filterable',
+              'filter(filterable Promise|Filterable, predicate SyncOrAsyncPredicate) -> result Promise|Filterable\n' +
+              'filter(predicate SyncOrAsyncPredicate)(filterable Filterable) -> result Promise|Filterable',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 12, column: 4, offset: 407 }
+              end: { line: 12, column: 4, offset: 440 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 12, column: 4, offset: 407 }
+          end: { line: 12, column: 4, offset: 440 }
         }
       },
       description: {
@@ -30468,13 +30474,13 @@ export default [
     synopsis: '```coffeescript [specscript]\n' +
       'type Monad = Array|String|Set|Generator|AsyncGenerator|{ flatMap: string }|{ chain: string }|Object\n' +
       '\n' +
-      'type FlatMapper = (\n' +
+      'type SyncOrAsyncFlatMapper = (\n' +
       '  element any,\n' +
       '  indexOrKey number|string|any,\n' +
       '  monad Monad\n' +
       ')=>Promise|Monad|any\n' +
       '\n' +
-      'flatMapper FlatMapper\n' +
+      'flatMapper SyncOrAsyncFlatMapper\n' +
       '\n' +
       'flatMap(monad Promise|Monad, flatMapper) -> result Promise|Monad\n' +
       'flatMap(flatMapper)(monad Monad) -> result Promise|Monad\n' +
@@ -30612,25 +30618,25 @@ export default [
             meta: '[specscript]',
             value: 'type Monad = Array|String|Set|Generator|AsyncGenerator|{ flatMap: string }|{ chain: string }|Object\n' +
               '\n' +
-              'type FlatMapper = (\n' +
+              'type SyncOrAsyncFlatMapper = (\n' +
               '  element any,\n' +
               '  indexOrKey number|string|any,\n' +
               '  monad Monad\n' +
               ')=>Promise|Monad|any\n' +
               '\n' +
-              'flatMapper FlatMapper\n' +
+              'flatMapper SyncOrAsyncFlatMapper\n' +
               '\n' +
               'flatMap(monad Promise|Monad, flatMapper) -> result Promise|Monad\n' +
               'flatMap(flatMapper)(monad Monad) -> result Promise|Monad',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 14, column: 4, offset: 381 }
+              end: { line: 14, column: 4, offset: 403 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 14, column: 4, offset: 381 }
+          end: { line: 14, column: 4, offset: 403 }
         }
       },
       description: {
@@ -36346,14 +36352,14 @@ export default [
     synopsis: '```coffeescript [specscript]\n' +
       'type Functor = Array|Set|Map|Generator|AsyncGenerator|{ map: function }|Object\n' +
       '\n' +
-      'type Mapper = (\n' +
+      'type SyncOrAsyncMapper = (\n' +
       '  element any,\n' +
       '  indexOrKey number|string|any,\n' +
       '  functor Functor\n' +
       ')=>(resultElement Promise|any)\n' +
       '\n' +
-      'map(functor Promise|Functor, mapper Mapper) -> result Promise|Functor\n' +
-      'map(mapper Mapper)(functor Functor) -> result Promise|Functor\n' +
+      'map(functor Promise|Functor, mapper SyncOrAsyncMapper) -> result Promise|Functor\n' +
+      'map(mapper SyncOrAsyncMapper)(functor Functor) -> result Promise|Functor\n' +
       '```',
     description: 'Applies a mapper function to each element of a functor, returning a functor of the same type with the mapped elements. The order of the elements is maintained.\n' +
       '\n' +
@@ -36556,23 +36562,23 @@ export default [
             meta: '[specscript]',
             value: 'type Functor = Array|Set|Map|Generator|AsyncGenerator|{ map: function }|Object\n' +
               '\n' +
-              'type Mapper = (\n' +
+              'type SyncOrAsyncMapper = (\n' +
               '  element any,\n' +
               '  indexOrKey number|string|any,\n' +
               '  functor Functor\n' +
               ')=>(resultElement Promise|any)\n' +
               '\n' +
-              'map(functor Promise|Functor, mapper Mapper) -> result Promise|Functor\n' +
-              'map(mapper Mapper)(functor Functor) -> result Promise|Functor',
+              'map(functor Promise|Functor, mapper SyncOrAsyncMapper) -> result Promise|Functor\n' +
+              'map(mapper SyncOrAsyncMapper)(functor Functor) -> result Promise|Functor',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 12, column: 4, offset: 357 }
+              end: { line: 12, column: 4, offset: 390 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 12, column: 4, offset: 357 }
+          end: { line: 12, column: 4, offset: 390 }
         }
       },
       description: {
@@ -38611,13 +38617,13 @@ export default [
     synopsis: '```coffeescript [specscript]\n' +
       'type Functor = Array|Object|Set|Map\n' +
       '\n' +
-      'type Mapper = (\n' +
+      'type SyncOrAsyncMapper = (\n' +
       '  value any,\n' +
       '  indexOrKey number|string|any,\n' +
       '  f Functor\n' +
       ')=>(mappedElement Promise|any)\n' +
       '\n' +
-      '_mapSeries(f Functor, f Mapper) -> result Promise|Functor\n' +
+      '_mapSeries(f Functor, f SyncOrAsyncMapper) -> result Promise|Functor\n' +
       '```',
     mdast: {
       name: {
@@ -38655,22 +38661,22 @@ export default [
             meta: '[specscript]',
             value: 'type Functor = Array|Object|Set|Map\n' +
               '\n' +
-              'type Mapper = (\n' +
+              'type SyncOrAsyncMapper = (\n' +
               '  value any,\n' +
               '  indexOrKey number|string|any,\n' +
               '  f Functor\n' +
               ')=>(mappedElement Promise|any)\n' +
               '\n' +
-              '_mapSeries(f Functor, f Mapper) -> result Promise|Functor',
+              '_mapSeries(f Functor, f SyncOrAsyncMapper) -> result Promise|Functor',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 11, column: 4, offset: 232 }
+              end: { line: 11, column: 4, offset: 254 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 11, column: 4, offset: 232 }
+          end: { line: 11, column: 4, offset: 254 }
         }
       }
     },
@@ -38681,7 +38687,7 @@ export default [
     synopsis: '```coffeescript [specscript]\n' +
       'type MapSeriesFunctor = Array|Object|Set|Map\n' +
       '\n' +
-      'type Mapper = (\n' +
+      'type SyncOrAsyncMapper = (\n' +
       '  value any,\n' +
       '  indexOrKey number|string|any,\n' +
       '  ftor MapSeriesFunctor,\n' +
@@ -38689,10 +38695,10 @@ export default [
       '\n' +
       'map.series(\n' +
       '  ftor Promise|MapSeriesFunctor,\n' +
-      '  mapper Mapper\n' +
+      '  mapper SyncOrAsyncMapper\n' +
       ') -> result MapSeriesFunctor\n' +
       '\n' +
-      'map.series(mapper Mapper)(ftor MapSeriesFunctor)\n' +
+      'map.series(mapper SyncOrAsyncMapper)(ftor MapSeriesFunctor)\n' +
       '  -> result MapSeriesFunctor\n' +
       '```',
     description: '[map](/docs/map) with serial execution.\n' +
@@ -38765,7 +38771,7 @@ export default [
             meta: '[specscript]',
             value: 'type MapSeriesFunctor = Array|Object|Set|Map\n' +
               '\n' +
-              'type Mapper = (\n' +
+              'type SyncOrAsyncMapper = (\n' +
               '  value any,\n' +
               '  indexOrKey number|string|any,\n' +
               '  ftor MapSeriesFunctor,\n' +
@@ -38773,20 +38779,20 @@ export default [
               '\n' +
               'map.series(\n' +
               '  ftor Promise|MapSeriesFunctor,\n' +
-              '  mapper Mapper\n' +
+              '  mapper SyncOrAsyncMapper\n' +
               ') -> result MapSeriesFunctor\n' +
               '\n' +
-              'map.series(mapper Mapper)(ftor MapSeriesFunctor)\n' +
+              'map.series(mapper SyncOrAsyncMapper)(ftor MapSeriesFunctor)\n' +
               '  -> result MapSeriesFunctor',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 17, column: 4, offset: 365 }
+              end: { line: 17, column: 4, offset: 398 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 17, column: 4, offset: 365 }
+          end: { line: 17, column: 4, offset: 398 }
         }
       },
       description: {
@@ -39354,7 +39360,7 @@ export default [
     synopsis: '```coffeescript [specscript]\n' +
       'type MapPoolFunctor = Array|Object|Set|Map\n' +
       '\n' +
-      'type Mapper = (\n' +
+      'type SyncOrAsyncMapper = (\n' +
       '  element any,\n' +
       '  indexOrKey number|string|any,\n' +
       '  ftor Functor\n' +
@@ -39363,12 +39369,12 @@ export default [
       'map.pool(\n' +
       '  ftor MapPoolFunctor,\n' +
       '  concurrency number,\n' +
-      '  mapper Mapper\n' +
+      '  mapper SyncOrAsyncMapper\n' +
       ') -> result Promise|Array\n' +
       '\n' +
       'map.pool(\n' +
       '  concurrency number,\n' +
-      '  mapper Mapper\n' +
+      '  mapper SyncOrAsyncMapper\n' +
       ')(ftor MapPoolFunctor) -> result Promise|Array\n' +
       '```',
     description: '[map](/docs/map) with limited [concurrency](https://web.mit.edu/6.005/www/fa14/classes/17-concurrency/).\n' +
@@ -39446,7 +39452,7 @@ export default [
             meta: '[specscript]',
             value: 'type MapPoolFunctor = Array|Object|Set|Map\n' +
               '\n' +
-              'type Mapper = (\n' +
+              'type SyncOrAsyncMapper = (\n' +
               '  element any,\n' +
               '  indexOrKey number|string|any,\n' +
               '  ftor Functor\n' +
@@ -39455,22 +39461,22 @@ export default [
               'map.pool(\n' +
               '  ftor MapPoolFunctor,\n' +
               '  concurrency number,\n' +
-              '  mapper Mapper\n' +
+              '  mapper SyncOrAsyncMapper\n' +
               ') -> result Promise|Array\n' +
               '\n' +
               'map.pool(\n' +
               '  concurrency number,\n' +
-              '  mapper Mapper\n' +
+              '  mapper SyncOrAsyncMapper\n' +
               ')(ftor MapPoolFunctor) -> result Promise|Array',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 20, column: 4, offset: 379 }
+              end: { line: 20, column: 4, offset: 412 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 20, column: 4, offset: 379 }
+          end: { line: 20, column: 4, offset: 412 }
         }
       },
       description: {
@@ -51203,7 +51209,7 @@ export default [
     synopsis: '```coffeescript [specscript]\n' +
       'type Foldable = Array|Set|Map|Generator|AsyncGenerator|{ reduce: function }|Object\n' +
       '\n' +
-      'type Reducer = (\n' +
+      'type SyncOrAsyncReducer = (\n' +
       '  accumulator any,\n' +
       '  element any,\n' +
       '  indexOrKey number|string|any,\n' +
@@ -51212,7 +51218,7 @@ export default [
       '\n' +
       'type UnarySyncOrAsyncResolver = any=>Promise|any\n' +
       '\n' +
-      'reducer Reducer\n' +
+      'reducer SyncOrAsyncReducer\n' +
       'initial UnarySyncOrAsyncResolver|any\n' +
       '\n' +
       'reduce(foldable Promise|Foldable, reducer, initial?) -> result Promise|any\n' +
@@ -51434,7 +51440,7 @@ export default [
             meta: '[specscript]',
             value: 'type Foldable = Array|Set|Map|Generator|AsyncGenerator|{ reduce: function }|Object\n' +
               '\n' +
-              'type Reducer = (\n' +
+              'type SyncOrAsyncReducer = (\n' +
               '  accumulator any,\n' +
               '  element any,\n' +
               '  indexOrKey number|string|any,\n' +
@@ -51443,20 +51449,20 @@ export default [
               '\n' +
               'type UnarySyncOrAsyncResolver = any=>Promise|any\n' +
               '\n' +
-              'reducer Reducer\n' +
+              'reducer SyncOrAsyncReducer\n' +
               'initial UnarySyncOrAsyncResolver|any\n' +
               '\n' +
               'reduce(foldable Promise|Foldable, reducer, initial?) -> result Promise|any\n' +
               'reduce(reducer, initial?)(foldable Foldable) -> result Promise|any',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 18, column: 4, offset: 499 }
+              end: { line: 18, column: 4, offset: 521 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 18, column: 4, offset: 499 }
+          end: { line: 18, column: 4, offset: 521 }
         }
       },
       description: {
