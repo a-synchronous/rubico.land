@@ -1994,10 +1994,10 @@ export default {
       children: [
         {
           type: 'text',
-          value: "You've arrived at the end of the tour. From here, you could get started with rubico in a project (",
+          value: "You've arrived at the end of the tour. From here, you could get started with rubico (",
           position: {
             start: { line: 206, column: 1, offset: 6780 },
-            end: { line: 206, column: 99, offset: 6878 }
+            end: { line: 206, column: 86, offset: 6865 }
           }
         },
         {
@@ -2009,22 +2009,22 @@ export default {
               type: 'text',
               value: 'installation',
               position: {
-                start: { line: 206, column: 100, offset: 6879 },
-                end: { line: 206, column: 112, offset: 6891 }
+                start: { line: 206, column: 87, offset: 6866 },
+                end: { line: 206, column: 99, offset: 6878 }
               }
             }
           ],
           position: {
-            start: { line: 206, column: 99, offset: 6878 },
-            end: { line: 206, column: 129, offset: 6908 }
+            start: { line: 206, column: 86, offset: 6865 },
+            end: { line: 206, column: 116, offset: 6895 }
           }
         },
         {
           type: 'text',
           value: ') or read more at the ',
           position: {
-            start: { line: 206, column: 129, offset: 6908 },
-            end: { line: 206, column: 151, offset: 6930 }
+            start: { line: 206, column: 116, offset: 6895 },
+            end: { line: 206, column: 138, offset: 6917 }
           }
         },
         {
@@ -2036,33 +2036,33 @@ export default {
               type: 'text',
               value: 'docs',
               position: {
-                start: { line: 206, column: 152, offset: 6931 },
-                end: { line: 206, column: 156, offset: 6935 }
+                start: { line: 206, column: 139, offset: 6918 },
+                end: { line: 206, column: 143, offset: 6922 }
               }
             }
           ],
           position: {
-            start: { line: 206, column: 151, offset: 6930 },
-            end: { line: 206, column: 164, offset: 6943 }
+            start: { line: 206, column: 138, offset: 6917 },
+            end: { line: 206, column: 151, offset: 6930 }
           }
         },
         {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 206, column: 164, offset: 6943 },
-            end: { line: 206, column: 165, offset: 6944 }
+            start: { line: 206, column: 151, offset: 6930 },
+            end: { line: 206, column: 152, offset: 6931 }
           }
         }
       ],
       position: {
         start: { line: 206, column: 1, offset: 6780 },
-        end: { line: 206, column: 165, offset: 6944 }
+        end: { line: 206, column: 152, offset: 6931 }
       }
     }
   ],
   position: {
     start: { line: 1, column: 1, offset: 0 },
-    end: { line: 207, column: 1, offset: 6945 }
+    end: { line: 207, column: 1, offset: 6932 }
   }
 }
