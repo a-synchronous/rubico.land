@@ -122,7 +122,12 @@ export default [
       '\n' +
       'type Transducer = Reducer=>Reducer\n' +
       '\n' +
-      'Transducer.map(mapperFunc function) -> mappingTransducer Transducer\n' +
+      'type Mapper = (\n' +
+      '  item any,\n' +
+      '  index number,\n' +
+      ')=>(resultItem Promise|any)\n' +
+      '\n' +
+      'Transducer.map(mapper Mapper) -> mappingTransducer Transducer\n' +
       '```',
     description: 'Creates a mapping transducer. Items in the final reducing operation are transformed by the mapper function. It is possible to use an asynchronous mapper, however the reducing operation must support asynchronous execution. This library provides such implementations as [reduce](/docs/reduce) and [transform](/docs/transform).\n' +
       '\n' +
@@ -203,16 +208,21 @@ export default [
               '\n' +
               'type Transducer = Reducer=>Reducer\n' +
               '\n' +
-              'Transducer.map(mapperFunc function) -> mappingTransducer Transducer',
+              'type Mapper = (\n' +
+              '  item any,\n' +
+              '  index number,\n' +
+              ')=>(resultItem Promise|any)\n' +
+              '\n' +
+              'Transducer.map(mapper Mapper) -> mappingTransducer Transducer',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 10, column: 4, offset: 219 }
+              end: { line: 15, column: 4, offset: 286 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 10, column: 4, offset: 219 }
+          end: { line: 15, column: 4, offset: 286 }
         }
       },
       description: {
@@ -648,7 +658,9 @@ export default [
       '\n' +
       'type Transducer = Reducer=>Reducer\n' +
       '\n' +
-      'Transducer.filter(predicate function) -> filteringTransducer Transducer\n' +
+      'type Predicate = (value any)=>(condition Promise|boolean)\n' +
+      '\n' +
+      'Transducer.filter(predicate Predicate) -> filteringTransducer Transducer\n' +
       '```',
     description: 'Creates a filtering transducer. A filtering reducer skips items of reducing operation if they test falsy by the predicate. It is possible to use an asynchronous predicate, however the reducing operation must support asynchronous execution. This library provides such implementations as [reduce](/docs/reduce) and [transform](/docs/transform).\n' +
       '\n' +
@@ -657,11 +669,15 @@ export default [
       '\n' +
       'const concat = (array, item) => array.concat(item)\n' +
       '\n' +
-      'const concatOddNumbers = filter(isOdd)(concat)\n' +
+      'const concatOddNumbers = Transducer.filter(isOdd)(concat)\n' +
       '\n' +
-      'console.log(\n' +
-      '  [1, 2, 3, 4, 5].reduce(concatOddNumbers, []),\n' +
-      ') // [1, 3, 5]\n' +
+      'const array = [1, 2, 3, 4, 5]\n' +
+      '\n' +
+      'const oddNumbers1 = array.reduce(concatOddNumbers, [])\n' +
+      'console.log(oddNumbers1) // [1, 3, 5]\n' +
+      '\n' +
+      'const oddNumbers2 = transform(array, Transducer.filter(isOdd), [])\n' +
+      'console.log(oddNumbers2) // [1, 3, 5]\n' +
       '```\n' +
       '\n' +
       'Read more on [transducers](/blog/transducers-crash-course-rubico-v2).\n' +
@@ -714,16 +730,18 @@ export default [
               '\n' +
               'type Transducer = Reducer=>Reducer\n' +
               '\n' +
-              'Transducer.filter(predicate function) -> filteringTransducer Transducer',
+              'type Predicate = (value any)=>(condition Promise|boolean)\n' +
+              '\n' +
+              'Transducer.filter(predicate Predicate) -> filteringTransducer Transducer',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 10, column: 4, offset: 223 }
+              end: { line: 12, column: 4, offset: 283 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 10, column: 4, offset: 223 }
+          end: { line: 12, column: 4, offset: 283 }
         }
       },
       description: {
@@ -808,14 +826,18 @@ export default [
               '\n' +
               'const concat = (array, item) => array.concat(item)\n' +
               '\n' +
-              'const concatOddNumbers = filter(isOdd)(concat)\n' +
+              'const concatOddNumbers = Transducer.filter(isOdd)(concat)\n' +
               '\n' +
-              'console.log(\n' +
-              '  [1, 2, 3, 4, 5].reduce(concatOddNumbers, []),\n' +
-              ') // [1, 3, 5]',
+              'const array = [1, 2, 3, 4, 5]\n' +
+              '\n' +
+              'const oddNumbers1 = array.reduce(concatOddNumbers, [])\n' +
+              'console.log(oddNumbers1) // [1, 3, 5]\n' +
+              '\n' +
+              'const oddNumbers2 = transform(array, Transducer.filter(isOdd), [])\n' +
+              'console.log(oddNumbers2) // [1, 3, 5]',
             position: {
               start: { line: 3, column: 1, offset: 344 },
-              end: { line: 13, column: 4, offset: 591 }
+              end: { line: 17, column: 4, offset: 756 }
             }
           },
           {
@@ -825,8 +847,8 @@ export default [
                 type: 'text',
                 value: 'Read more on ',
                 position: {
-                  start: { line: 15, column: 1, offset: 593 },
-                  end: { line: 15, column: 14, offset: 606 }
+                  start: { line: 19, column: 1, offset: 758 },
+                  end: { line: 19, column: 14, offset: 771 }
                 }
               },
               {
@@ -838,28 +860,28 @@ export default [
                     type: 'text',
                     value: 'transducers',
                     position: {
-                      start: { line: 15, column: 15, offset: 607 },
-                      end: { line: 15, column: 26, offset: 618 }
+                      start: { line: 19, column: 15, offset: 772 },
+                      end: { line: 19, column: 26, offset: 783 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 15, column: 14, offset: 606 },
-                  end: { line: 15, column: 69, offset: 661 }
+                  start: { line: 19, column: 14, offset: 771 },
+                  end: { line: 19, column: 69, offset: 826 }
                 }
               },
               {
                 type: 'text',
                 value: '.',
                 position: {
-                  start: { line: 15, column: 69, offset: 661 },
-                  end: { line: 15, column: 70, offset: 662 }
+                  start: { line: 19, column: 69, offset: 826 },
+                  end: { line: 19, column: 70, offset: 827 }
                 }
               }
             ],
             position: {
-              start: { line: 15, column: 1, offset: 593 },
-              end: { line: 15, column: 70, offset: 662 }
+              start: { line: 19, column: 1, offset: 758 },
+              end: { line: 19, column: 70, offset: 827 }
             }
           },
           {
@@ -869,14 +891,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 17, column: 1, offset: 664 },
-                  end: { line: 17, column: 10, offset: 673 }
+                  start: { line: 21, column: 1, offset: 829 },
+                  end: { line: 21, column: 10, offset: 838 }
                 }
               }
             ],
             position: {
-              start: { line: 17, column: 1, offset: 664 },
-              end: { line: 17, column: 10, offset: 673 }
+              start: { line: 21, column: 1, offset: 829 },
+              end: { line: 21, column: 10, offset: 838 }
             }
           },
           {
@@ -902,26 +924,26 @@ export default [
                             type: 'text',
                             value: 'thunkify',
                             position: {
-                              start: { line: 18, column: 5, offset: 678 },
-                              end: { line: 18, column: 13, offset: 686 }
+                              start: { line: 22, column: 5, offset: 843 },
+                              end: { line: 22, column: 13, offset: 851 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 18, column: 4, offset: 677 },
-                          end: { line: 18, column: 30, offset: 703 }
+                          start: { line: 22, column: 4, offset: 842 },
+                          end: { line: 22, column: 30, offset: 868 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 18, column: 4, offset: 677 },
-                      end: { line: 18, column: 30, offset: 703 }
+                      start: { line: 22, column: 4, offset: 842 },
+                      end: { line: 22, column: 30, offset: 868 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 18, column: 2, offset: 675 },
-                  end: { line: 18, column: 30, offset: 703 }
+                  start: { line: 22, column: 2, offset: 840 },
+                  end: { line: 22, column: 30, offset: 868 }
                 }
               },
               {
@@ -941,26 +963,26 @@ export default [
                             type: 'text',
                             value: 'Transducer.map',
                             position: {
-                              start: { line: 19, column: 5, offset: 708 },
-                              end: { line: 19, column: 19, offset: 722 }
+                              start: { line: 23, column: 5, offset: 873 },
+                              end: { line: 23, column: 19, offset: 887 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 19, column: 4, offset: 707 },
-                          end: { line: 19, column: 42, offset: 745 }
+                          start: { line: 23, column: 4, offset: 872 },
+                          end: { line: 23, column: 42, offset: 910 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 19, column: 4, offset: 707 },
-                      end: { line: 19, column: 42, offset: 745 }
+                      start: { line: 23, column: 4, offset: 872 },
+                      end: { line: 23, column: 42, offset: 910 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 19, column: 2, offset: 705 },
-                  end: { line: 19, column: 42, offset: 745 }
+                  start: { line: 23, column: 2, offset: 870 },
+                  end: { line: 23, column: 42, offset: 910 }
                 }
               },
               {
@@ -980,26 +1002,26 @@ export default [
                             type: 'text',
                             value: 'Transducer.flatMap',
                             position: {
-                              start: { line: 20, column: 5, offset: 750 },
-                              end: { line: 20, column: 23, offset: 768 }
+                              start: { line: 24, column: 5, offset: 915 },
+                              end: { line: 24, column: 23, offset: 933 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 20, column: 4, offset: 749 },
-                          end: { line: 20, column: 50, offset: 795 }
+                          start: { line: 24, column: 4, offset: 914 },
+                          end: { line: 24, column: 50, offset: 960 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 20, column: 4, offset: 749 },
-                      end: { line: 20, column: 50, offset: 795 }
+                      start: { line: 24, column: 4, offset: 914 },
+                      end: { line: 24, column: 50, offset: 960 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 20, column: 2, offset: 747 },
-                  end: { line: 20, column: 50, offset: 795 }
+                  start: { line: 24, column: 2, offset: 912 },
+                  end: { line: 24, column: 50, offset: 960 }
                 }
               },
               {
@@ -1019,26 +1041,26 @@ export default [
                             type: 'text',
                             value: 'Transducer.forEach',
                             position: {
-                              start: { line: 21, column: 5, offset: 800 },
-                              end: { line: 21, column: 23, offset: 818 }
+                              start: { line: 25, column: 5, offset: 965 },
+                              end: { line: 25, column: 23, offset: 983 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 21, column: 4, offset: 799 },
-                          end: { line: 21, column: 50, offset: 845 }
+                          start: { line: 25, column: 4, offset: 964 },
+                          end: { line: 25, column: 50, offset: 1010 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 21, column: 4, offset: 799 },
-                      end: { line: 21, column: 50, offset: 845 }
+                      start: { line: 25, column: 4, offset: 964 },
+                      end: { line: 25, column: 50, offset: 1010 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 21, column: 2, offset: 797 },
-                  end: { line: 21, column: 50, offset: 845 }
+                  start: { line: 25, column: 2, offset: 962 },
+                  end: { line: 25, column: 50, offset: 1010 }
                 }
               },
               {
@@ -1058,26 +1080,26 @@ export default [
                             type: 'text',
                             value: 'Transducer.passthrough',
                             position: {
-                              start: { line: 22, column: 5, offset: 850 },
-                              end: { line: 22, column: 27, offset: 872 }
+                              start: { line: 26, column: 5, offset: 1015 },
+                              end: { line: 26, column: 27, offset: 1037 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 22, column: 4, offset: 849 },
-                          end: { line: 22, column: 58, offset: 903 }
+                          start: { line: 26, column: 4, offset: 1014 },
+                          end: { line: 26, column: 58, offset: 1068 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 22, column: 4, offset: 849 },
-                      end: { line: 22, column: 58, offset: 903 }
+                      start: { line: 26, column: 4, offset: 1014 },
+                      end: { line: 26, column: 58, offset: 1068 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 22, column: 2, offset: 847 },
-                  end: { line: 22, column: 58, offset: 903 }
+                  start: { line: 26, column: 2, offset: 1012 },
+                  end: { line: 26, column: 58, offset: 1068 }
                 }
               },
               {
@@ -1097,38 +1119,38 @@ export default [
                             type: 'text',
                             value: 'Transducer.tryCatch',
                             position: {
-                              start: { line: 23, column: 5, offset: 908 },
-                              end: { line: 23, column: 24, offset: 927 }
+                              start: { line: 27, column: 5, offset: 1073 },
+                              end: { line: 27, column: 24, offset: 1092 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 23, column: 4, offset: 907 },
-                          end: { line: 23, column: 52, offset: 955 }
+                          start: { line: 27, column: 4, offset: 1072 },
+                          end: { line: 27, column: 52, offset: 1120 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 23, column: 4, offset: 907 },
-                      end: { line: 23, column: 52, offset: 955 }
+                      start: { line: 27, column: 4, offset: 1072 },
+                      end: { line: 27, column: 52, offset: 1120 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 23, column: 2, offset: 905 },
-                  end: { line: 23, column: 52, offset: 955 }
+                  start: { line: 27, column: 2, offset: 1070 },
+                  end: { line: 27, column: 52, offset: 1120 }
                 }
               }
             ],
             position: {
-              start: { line: 18, column: 2, offset: 675 },
-              end: { line: 23, column: 52, offset: 955 }
+              start: { line: 22, column: 2, offset: 840 },
+              end: { line: 27, column: 52, offset: 1120 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 23, column: 52, offset: 955 }
+          end: { line: 27, column: 52, offset: 1120 }
         }
       }
     },
@@ -1144,7 +1166,11 @@ export default [
       '\n' +
       'type Transducer = Reducer=>Reducer\n' +
       '\n' +
-      'Transducer.flatMap(flatMapper) -> flatMappingTransducer Transducer\n' +
+      'type Monad = Array|String|Set|Generator|AsyncGenerator|{ flatMap: string }|{ chain: string }|Object\n' +
+      '\n' +
+      'type FlatMapper = (item any)=>(monad Promise|Monad|any)\n' +
+      '\n' +
+      'Transducer.flatMap(flatMapper FlatMapper) -> flatMappingTransducer Transducer\n' +
       '```',
     description: 'Creates a flatMapping transducer. A flatMapping transducer applies the flatMapping function to each item of the reducing operation, concatenating the results of the flatMapper execution into the final result. It is possible to use an asynchronous flatMapper, however the reducing operation must support asynchronous execution. This library provides such implementations as [reduce](/docs/reduce) and [transform](/docs/transform).\n' +
       '\n' +
@@ -1208,16 +1234,20 @@ export default [
               '\n' +
               'type Transducer = Reducer=>Reducer\n' +
               '\n' +
-              'Transducer.flatMap(flatMapper) -> flatMappingTransducer Transducer',
+              'type Monad = Array|String|Set|Generator|AsyncGenerator|{ flatMap: string }|{ chain: string }|Object\n' +
+              '\n' +
+              'type FlatMapper = (item any)=>(monad Promise|Monad|any)\n' +
+              '\n' +
+              'Transducer.flatMap(flatMapper FlatMapper) -> flatMappingTransducer Transducer',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 10, column: 4, offset: 218 }
+              end: { line: 14, column: 4, offset: 387 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 10, column: 4, offset: 218 }
+          end: { line: 14, column: 4, offset: 387 }
         }
       },
       description: {
@@ -1636,7 +1666,9 @@ export default [
       '\n' +
       'type Transducer = Reducer=>Reducer\n' +
       '\n' +
-      'Transducer.forEach(func function) -> forEachTransducer Transducer\n' +
+      'type Callback = (item any)=>Promise|undefined\n' +
+      '\n' +
+      'Transducer.forEach(callback Callback) -> forEachTransducer Transducer\n' +
       '```',
     description: 'Creates an effectful pasthrough transducer. The effectful passthrough transducer applies the effectful function to each item of the reducing operation, leaving the reducing operation unchanged. It is possible to use an asynchronous effectful function, however the reducing operation must support asynchronous execution. This library provides such implementations as [reduce](/docs/reduce) and [transform](/docs/transform).\n' +
       '\n' +
@@ -1698,16 +1730,18 @@ export default [
               '\n' +
               'type Transducer = Reducer=>Reducer\n' +
               '\n' +
-              'Transducer.forEach(func function) -> forEachTransducer Transducer',
+              'type Callback = (item any)=>Promise|undefined\n' +
+              '\n' +
+              'Transducer.forEach(callback Callback) -> forEachTransducer Transducer',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 10, column: 4, offset: 217 }
+              end: { line: 12, column: 4, offset: 268 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 10, column: 4, offset: 217 }
+          end: { line: 12, column: 4, offset: 268 }
         }
       },
       description: {
@@ -2124,7 +2158,7 @@ export default [
       '\n' +
       'type Transducer = Reducer=>Reducer\n' +
       '\n' +
-      'Transducer.passthrough(func function) -> passthroughTransducer Transducer\n' +
+      'Transducer.passthrough Transducer\n' +
       '```',
     description: 'Creates a pasthrough transducer. The passthrough transducer passes each item of the reducing operation through, leaving the reducing operation unchanged.\n' +
       '\n' +
@@ -2191,16 +2225,16 @@ export default [
               '\n' +
               'type Transducer = Reducer=>Reducer\n' +
               '\n' +
-              'Transducer.passthrough(func function) -> passthroughTransducer Transducer',
+              'Transducer.passthrough Transducer',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 10, column: 4, offset: 225 }
+              end: { line: 10, column: 4, offset: 185 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 10, column: 4, offset: 225 }
+          end: { line: 10, column: 4, offset: 185 }
         }
       },
       description: {
@@ -2568,10 +2602,10 @@ export default [
       '\n' +
       'type Transducer = Reducer=>Reducer\n' +
       '\n' +
-      'Transducer.tryCatch(\n' +
-      '  transducerTryer Transducer,\n' +
-      '  catcher (error Error, item any)=>Promise|any,\n' +
-      ') -> tryCatchTransducer Transducer\n' +
+      'transducerTryer Transducer\n' +
+      'catcher (error Error, item any)=>Promise|any\n' +
+      '\n' +
+      'Transducer.tryCatch(transducerTryer, catcher) -> tryCatchTransducer Transducer\n' +
       '```',
     description: 'Creates an error handling transducer. The error handling transducer wraps a transducer and catches any errors thrown by the transducer with the catcher function. The catcher function is provided the error as well as the original item (before any processing by the transducer) for which the error was thrown. It is possible for either the transducer or the catcher to be asynchronous, however the reducing operation must support asynchronous execution. This library provides such implementations as [reduce](/docs/reduce) and [transform](/docs/transform).\n' +
       '\n' +
@@ -2652,19 +2686,19 @@ export default [
               '\n' +
               'type Transducer = Reducer=>Reducer\n' +
               '\n' +
-              'Transducer.tryCatch(\n' +
-              '  transducerTryer Transducer,\n' +
-              '  catcher (error Error, item any)=>Promise|any,\n' +
-              ') -> tryCatchTransducer Transducer',
+              'transducerTryer Transducer\n' +
+              'catcher (error Error, item any)=>Promise|any\n' +
+              '\n' +
+              'Transducer.tryCatch(transducerTryer, catcher) -> tryCatchTransducer Transducer',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 13, column: 4, offset: 284 }
+              end: { line: 13, column: 4, offset: 302 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 13, column: 4, offset: 284 }
+          end: { line: 13, column: 4, offset: 302 }
         }
       },
       description: {
@@ -3092,7 +3126,7 @@ export default [
   },
   {
     name: '__',
-    synopsis: '```coffeescript [specscript]\n__ = Symbol(placeholder)\n```',
+    synopsis: '```coffeescript [specscript]\n__ Symbol(placeholder)\n```',
     description: 'A special placeholder value `__` (two underscores) that denotes the position of an argument in a curried function.\n' +
       '\n' +
       '```javascript [playground]\n' +
@@ -3142,16 +3176,16 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: '__ = Symbol(placeholder)',
+            value: '__ Symbol(placeholder)',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 3, column: 4, offset: 57 }
+              end: { line: 3, column: 4, offset: 55 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 3, column: 4, offset: 57 }
+          end: { line: 3, column: 4, offset: 55 }
         }
       },
       description: {
@@ -22565,28 +22599,25 @@ export default [
   {
     name: 'all',
     synopsis: '```coffeescript [specscript]\n' +
-      'all(values Promise|Array<Promise|any>) -> result Promise|Array\n' +
-      'all(values Promise|Object<Promise|any>) -> result Promise|Object\n' +
+      'args Array<any>\n' +
+      'argsOrPromises Array<Promise|any>\n' +
       '\n' +
-      'all(\n' +
-      '  ...args,\n' +
-      '  resolversOrValues Array<function|Promise|any>\n' +
-      ') -> result Promise|Array\n' +
+      'type Resolver = (...args)=>Promise|any\n' +
       '\n' +
-      'all(\n' +
-      '  resolversOrValues Array<function|Promise|any>\n' +
-      ')(...args) -> result Promise|Array\n' +
+      'arrayResolversOrPromisesOrValues Array<Resolver|Promise|any>\n' +
+      'objectResolversOrPromisesOrValues Object<Resolver|Promise|any>\n' +
       '\n' +
-      'all(\n' +
-      '  ...args,\n' +
-      '  resolversOrValues Object<function|Promise|any>\n' +
-      ') -> result Promise|Object\n' +
+      'all(arrayValues Promise|Array<Promise|any>) -> arrayResult Promise|Array\n' +
+      'all(...argsOrPromises, arrayResolversOrPromisesOrValues) -> arrayResult Promise|Array\n' +
+      'all(arrayResolversOrPromisesOrValues)(...args) -> arrayResult Promise|Array\n' +
       '\n' +
-      'all(\n' +
-      '  resolversOrValues Object<function|Promise|any>\n' +
-      ')(...args) -> result Promise|Object\n' +
+      'all(objectValues Promise|Object<Promise|any>) -> objectResult Promise|Object\n' +
+      'all(...argsOrPromises, objectResolversOrPromisesOrValues) -> objectResult Promise|Object\n' +
+      'all(objectResolversOrPromisesOrValues)(...args) -> objectResult Promise|Object\n' +
       '```',
-    description: 'Calls an array or object of resolver functions or values `resolversOrValues` with provided arguments.\n' +
+    description: 'Constructs an array if provided an array of resolvers, promises, values, or a mix thereof. Constructs an object if provided an object of resolvers, promises, values, or a mix thereof. If provided any resolvers, `all` returns a function that constructs the array or object. Otherwise, if none of the provided values in the array or object are functions, `all` returns the constructed array or object directly.\n' +
+      '\n' +
+      '`all` constructs an array from resolvers.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const createArrayOfGreetingsFor = all([\n' +
@@ -22601,23 +22632,25 @@ export default [
       "// ['Hi 1', 'Hey 1', 'Hello 1']\n" +
       '```\n' +
       '\n' +
-      'If provided only values for `resolversOrValues`, returns an array or object with the same shape as `resolversOrValues` with any Promises resolved.\n' +
+      'If any provided values are promises, `all` returns a promise.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      'all([\n' +
+      'const promise1 = all([\n' +
       '  Promise.resolve(1),\n' +
       '  Promise.resolve(2),\n' +
       '  3,\n' +
-      ']).then(console.log) // [1, 2, 3]\n' +
+      '])\n' +
+      'promise1.then(console.log) // [1, 2, 3]\n' +
       '\n' +
-      'all({\n' +
-      '  a: Promise.resolve(1),\n' +
+      'const promise2 = all({\n' +
+      '  a: 1,\n' +
       '  b: Promise.resolve(2),\n' +
-      '  c: 3,\n' +
-      '}).then(console.log) // { a: 1, b: 2, c: 3 }\n' +
+      '  c: Promise.resolve(3),\n' +
+      '})\n' +
+      'promise2.then(console.log) // { a: 1, b: 2, c: 3 }\n' +
       '```\n' +
       '\n' +
-      '`all` can be used in a pipeline to compose and manpulate data.\n' +
+      'If any provided resolvers are asynchronous, `all` returns a promise. `all` can be used in a pipeline to compose and manpulate data.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const identity = value => value\n' +
@@ -22640,7 +22673,7 @@ export default [
       `getAndLogUserById('1') // Got user {"_id":1,"name":"John"} by id 1\n` +
       '```\n' +
       '\n' +
-      'Values may be provided along with functions, in which case they are set on the result object or array directly. If any of these values are promises, they are resolved for their values before being set on the result object or array.\n' +
+      'Provided no resolvers, `all` returns the constructed array or object.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'all({}, {\n' +
@@ -22711,35 +22744,30 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'all(values Promise|Array<Promise|any>) -> result Promise|Array\n' +
-              'all(values Promise|Object<Promise|any>) -> result Promise|Object\n' +
+            value: 'args Array<any>\n' +
+              'argsOrPromises Array<Promise|any>\n' +
               '\n' +
-              'all(\n' +
-              '  ...args,\n' +
-              '  resolversOrValues Array<function|Promise|any>\n' +
-              ') -> result Promise|Array\n' +
+              'type Resolver = (...args)=>Promise|any\n' +
               '\n' +
-              'all(\n' +
-              '  resolversOrValues Array<function|Promise|any>\n' +
-              ')(...args) -> result Promise|Array\n' +
+              'arrayResolversOrPromisesOrValues Array<Resolver|Promise|any>\n' +
+              'objectResolversOrPromisesOrValues Object<Resolver|Promise|any>\n' +
               '\n' +
-              'all(\n' +
-              '  ...args,\n' +
-              '  resolversOrValues Object<function|Promise|any>\n' +
-              ') -> result Promise|Object\n' +
+              'all(arrayValues Promise|Array<Promise|any>) -> arrayResult Promise|Array\n' +
+              'all(...argsOrPromises, arrayResolversOrPromisesOrValues) -> arrayResult Promise|Array\n' +
+              'all(arrayResolversOrPromisesOrValues)(...args) -> arrayResult Promise|Array\n' +
               '\n' +
-              'all(\n' +
-              '  resolversOrValues Object<function|Promise|any>\n' +
-              ')(...args) -> result Promise|Object',
+              'all(objectValues Promise|Object<Promise|any>) -> objectResult Promise|Object\n' +
+              'all(...argsOrPromises, objectResolversOrPromisesOrValues) -> objectResult Promise|Object\n' +
+              'all(objectResolversOrPromisesOrValues)(...args) -> objectResult Promise|Object',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 22, column: 4, offset: 524 }
+              end: { line: 17, column: 4, offset: 729 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 22, column: 4, offset: 524 }
+          end: { line: 17, column: 4, offset: 729 }
         }
       },
       description: {
@@ -22750,32 +22778,73 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Calls an array or object of resolver functions or values ',
+                value: 'Constructs an array if provided an array of resolvers, promises, values, or a mix thereof. Constructs an object if provided an object of resolvers, promises, values, or a mix thereof. If provided any resolvers, ',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 58, offset: 57 }
+                  end: { line: 1, column: 212, offset: 211 }
                 }
               },
               {
                 type: 'inlineCode',
-                value: 'resolversOrValues',
+                value: 'all',
                 position: {
-                  start: { line: 1, column: 58, offset: 57 },
-                  end: { line: 1, column: 77, offset: 76 }
+                  start: { line: 1, column: 212, offset: 211 },
+                  end: { line: 1, column: 217, offset: 216 }
                 }
               },
               {
                 type: 'text',
-                value: ' with provided arguments.',
+                value: ' returns a function that constructs the array or object. Otherwise, if none of the provided values in the array or object are functions, ',
                 position: {
-                  start: { line: 1, column: 77, offset: 76 },
-                  end: { line: 1, column: 102, offset: 101 }
+                  start: { line: 1, column: 217, offset: 216 },
+                  end: { line: 1, column: 354, offset: 353 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'all',
+                position: {
+                  start: { line: 1, column: 354, offset: 353 },
+                  end: { line: 1, column: 359, offset: 358 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' returns the constructed array or object directly.',
+                position: {
+                  start: { line: 1, column: 359, offset: 358 },
+                  end: { line: 1, column: 409, offset: 408 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 102, offset: 101 }
+              end: { line: 1, column: 409, offset: 408 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'inlineCode',
+                value: 'all',
+                position: {
+                  start: { line: 3, column: 1, offset: 410 },
+                  end: { line: 3, column: 6, offset: 415 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' constructs an array from resolvers.',
+                position: {
+                  start: { line: 3, column: 6, offset: 415 },
+                  end: { line: 3, column: 42, offset: 451 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 3, column: 1, offset: 410 },
+              end: { line: 3, column: 42, offset: 451 }
             }
           },
           {
@@ -22793,8 +22862,8 @@ export default [
               'console.log(arrayOfGreetingsFor1)\n' +
               "// ['Hi 1', 'Hey 1', 'Hello 1']",
             position: {
-              start: { line: 3, column: 1, offset: 103 },
-              end: { line: 14, column: 4, offset: 380 }
+              start: { line: 5, column: 1, offset: 453 },
+              end: { line: 16, column: 4, offset: 730 }
             }
           },
           {
@@ -22802,93 +22871,103 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'If provided only values for ',
+                value: 'If any provided values are promises, ',
                 position: {
-                  start: { line: 16, column: 1, offset: 382 },
-                  end: { line: 16, column: 29, offset: 410 }
+                  start: { line: 18, column: 1, offset: 732 },
+                  end: { line: 18, column: 38, offset: 769 }
                 }
               },
               {
                 type: 'inlineCode',
-                value: 'resolversOrValues',
+                value: 'all',
                 position: {
-                  start: { line: 16, column: 29, offset: 410 },
-                  end: { line: 16, column: 48, offset: 429 }
+                  start: { line: 18, column: 38, offset: 769 },
+                  end: { line: 18, column: 43, offset: 774 }
                 }
               },
               {
                 type: 'text',
-                value: ', returns an array or object with the same shape as ',
+                value: ' returns a promise.',
                 position: {
-                  start: { line: 16, column: 48, offset: 429 },
-                  end: { line: 16, column: 100, offset: 481 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'resolversOrValues',
-                position: {
-                  start: { line: 16, column: 100, offset: 481 },
-                  end: { line: 16, column: 119, offset: 500 }
-                }
-              },
-              {
-                type: 'text',
-                value: ' with any Promises resolved.',
-                position: {
-                  start: { line: 16, column: 119, offset: 500 },
-                  end: { line: 16, column: 147, offset: 528 }
+                  start: { line: 18, column: 43, offset: 774 },
+                  end: { line: 18, column: 62, offset: 793 }
                 }
               }
             ],
             position: {
-              start: { line: 16, column: 1, offset: 382 },
-              end: { line: 16, column: 147, offset: 528 }
+              start: { line: 18, column: 1, offset: 732 },
+              end: { line: 18, column: 62, offset: 793 }
             }
           },
           {
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: 'all([\n' +
+            value: 'const promise1 = all([\n' +
               '  Promise.resolve(1),\n' +
               '  Promise.resolve(2),\n' +
               '  3,\n' +
-              ']).then(console.log) // [1, 2, 3]\n' +
+              '])\n' +
+              'promise1.then(console.log) // [1, 2, 3]\n' +
               '\n' +
-              'all({\n' +
-              '  a: Promise.resolve(1),\n' +
+              'const promise2 = all({\n' +
+              '  a: 1,\n' +
               '  b: Promise.resolve(2),\n' +
-              '  c: 3,\n' +
-              '}).then(console.log) // { a: 1, b: 2, c: 3 }',
+              '  c: Promise.resolve(3),\n' +
+              '})\n' +
+              'promise2.then(console.log) // { a: 1, b: 2, c: 3 }',
             position: {
-              start: { line: 18, column: 1, offset: 530 },
-              end: { line: 30, column: 4, offset: 759 }
+              start: { line: 20, column: 1, offset: 795 },
+              end: { line: 34, column: 4, offset: 1076 }
             }
           },
           {
             type: 'paragraph',
             children: [
               {
+                type: 'text',
+                value: 'If any provided resolvers are asynchronous, ',
+                position: {
+                  start: { line: 36, column: 1, offset: 1078 },
+                  end: { line: 36, column: 45, offset: 1122 }
+                }
+              },
+              {
                 type: 'inlineCode',
                 value: 'all',
                 position: {
-                  start: { line: 32, column: 1, offset: 761 },
-                  end: { line: 32, column: 6, offset: 766 }
+                  start: { line: 36, column: 45, offset: 1122 },
+                  end: { line: 36, column: 50, offset: 1127 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' returns a promise. ',
+                position: {
+                  start: { line: 36, column: 50, offset: 1127 },
+                  end: { line: 36, column: 70, offset: 1147 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'all',
+                position: {
+                  start: { line: 36, column: 70, offset: 1147 },
+                  end: { line: 36, column: 75, offset: 1152 }
                 }
               },
               {
                 type: 'text',
                 value: ' can be used in a pipeline to compose and manpulate data.',
                 position: {
-                  start: { line: 32, column: 6, offset: 766 },
-                  end: { line: 32, column: 63, offset: 823 }
+                  start: { line: 36, column: 75, offset: 1152 },
+                  end: { line: 36, column: 132, offset: 1209 }
                 }
               }
             ],
             position: {
-              start: { line: 32, column: 1, offset: 761 },
-              end: { line: 32, column: 63, offset: 823 }
+              start: { line: 36, column: 1, offset: 1078 },
+              end: { line: 36, column: 132, offset: 1209 }
             }
           },
           {
@@ -22914,8 +22993,8 @@ export default [
               '\n' +
               `getAndLogUserById('1') // Got user {"_id":1,"name":"John"} by id 1`,
             position: {
-              start: { line: 34, column: 1, offset: 825 },
-              end: { line: 53, column: 4, offset: 1265 }
+              start: { line: 38, column: 1, offset: 1211 },
+              end: { line: 57, column: 4, offset: 1651 }
             }
           },
           {
@@ -22923,16 +23002,32 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Values may be provided along with functions, in which case they are set on the result object or array directly. If any of these values are promises, they are resolved for their values before being set on the result object or array.',
+                value: 'Provided no resolvers, ',
                 position: {
-                  start: { line: 55, column: 1, offset: 1267 },
-                  end: { line: 55, column: 232, offset: 1498 }
+                  start: { line: 59, column: 1, offset: 1653 },
+                  end: { line: 59, column: 24, offset: 1676 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'all',
+                position: {
+                  start: { line: 59, column: 24, offset: 1676 },
+                  end: { line: 59, column: 29, offset: 1681 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' returns the constructed array or object.',
+                position: {
+                  start: { line: 59, column: 29, offset: 1681 },
+                  end: { line: 59, column: 70, offset: 1722 }
                 }
               }
             ],
             position: {
-              start: { line: 55, column: 1, offset: 1267 },
-              end: { line: 55, column: 232, offset: 1498 }
+              start: { line: 59, column: 1, offset: 1653 },
+              end: { line: 59, column: 70, offset: 1722 }
             }
           },
           {
@@ -22953,8 +23048,8 @@ export default [
               '  async () => 4,\n' +
               ']).then(console.log) // [1, 2, 3, 4]',
             position: {
-              start: { line: 57, column: 1, offset: 1500 },
-              end: { line: 71, column: 4, offset: 1761 }
+              start: { line: 61, column: 1, offset: 1724 },
+              end: { line: 75, column: 4, offset: 1985 }
             }
           },
           {
@@ -22964,14 +23059,14 @@ export default [
                 type: 'text',
                 value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
                 position: {
-                  start: { line: 73, column: 1, offset: 1763 },
-                  end: { line: 73, column: 148, offset: 1910 }
+                  start: { line: 77, column: 1, offset: 1987 },
+                  end: { line: 77, column: 148, offset: 2134 }
                 }
               }
             ],
             position: {
-              start: { line: 73, column: 1, offset: 1763 },
-              end: { line: 73, column: 148, offset: 1910 }
+              start: { line: 77, column: 1, offset: 1987 },
+              end: { line: 77, column: 148, offset: 2134 }
             }
           },
           {
@@ -22984,8 +23079,8 @@ export default [
               '  obj => obj.a + 3,\n' +
               ']).then(console.log) // [2, 3, 4]',
             position: {
-              start: { line: 75, column: 1, offset: 1912 },
-              end: { line: 81, column: 4, offset: 2069 }
+              start: { line: 79, column: 1, offset: 2136 },
+              end: { line: 85, column: 4, offset: 2293 }
             }
           },
           {
@@ -22995,14 +23090,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 83, column: 1, offset: 2071 },
-                  end: { line: 83, column: 10, offset: 2080 }
+                  start: { line: 87, column: 1, offset: 2295 },
+                  end: { line: 87, column: 10, offset: 2304 }
                 }
               }
             ],
             position: {
-              start: { line: 83, column: 1, offset: 2071 },
-              end: { line: 83, column: 10, offset: 2080 }
+              start: { line: 87, column: 1, offset: 2295 },
+              end: { line: 87, column: 10, offset: 2304 }
             }
           },
           {
@@ -23028,26 +23123,26 @@ export default [
                             type: 'text',
                             value: 'pipe',
                             position: {
-                              start: { line: 84, column: 5, offset: 2085 },
-                              end: { line: 84, column: 9, offset: 2089 }
+                              start: { line: 88, column: 5, offset: 2309 },
+                              end: { line: 88, column: 9, offset: 2313 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 84, column: 4, offset: 2084 },
-                          end: { line: 84, column: 22, offset: 2102 }
+                          start: { line: 88, column: 4, offset: 2308 },
+                          end: { line: 88, column: 22, offset: 2326 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 84, column: 4, offset: 2084 },
-                      end: { line: 84, column: 22, offset: 2102 }
+                      start: { line: 88, column: 4, offset: 2308 },
+                      end: { line: 88, column: 22, offset: 2326 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 84, column: 2, offset: 2082 },
-                  end: { line: 84, column: 22, offset: 2102 }
+                  start: { line: 88, column: 2, offset: 2306 },
+                  end: { line: 88, column: 22, offset: 2326 }
                 }
               },
               {
@@ -23067,26 +23162,26 @@ export default [
                             type: 'text',
                             value: 'assign',
                             position: {
-                              start: { line: 85, column: 5, offset: 2107 },
-                              end: { line: 85, column: 11, offset: 2113 }
+                              start: { line: 89, column: 5, offset: 2331 },
+                              end: { line: 89, column: 11, offset: 2337 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 85, column: 4, offset: 2106 },
-                          end: { line: 85, column: 26, offset: 2128 }
+                          start: { line: 89, column: 4, offset: 2330 },
+                          end: { line: 89, column: 26, offset: 2352 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 85, column: 4, offset: 2106 },
-                      end: { line: 85, column: 26, offset: 2128 }
+                      start: { line: 89, column: 4, offset: 2330 },
+                      end: { line: 89, column: 26, offset: 2352 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 85, column: 2, offset: 2104 },
-                  end: { line: 85, column: 26, offset: 2128 }
+                  start: { line: 89, column: 2, offset: 2328 },
+                  end: { line: 89, column: 26, offset: 2352 }
                 }
               },
               {
@@ -23106,26 +23201,26 @@ export default [
                             type: 'text',
                             value: 'get',
                             position: {
-                              start: { line: 86, column: 5, offset: 2133 },
-                              end: { line: 86, column: 8, offset: 2136 }
+                              start: { line: 90, column: 5, offset: 2357 },
+                              end: { line: 90, column: 8, offset: 2360 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 86, column: 4, offset: 2132 },
-                          end: { line: 86, column: 20, offset: 2148 }
+                          start: { line: 90, column: 4, offset: 2356 },
+                          end: { line: 90, column: 20, offset: 2372 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 86, column: 4, offset: 2132 },
-                      end: { line: 86, column: 20, offset: 2148 }
+                      start: { line: 90, column: 4, offset: 2356 },
+                      end: { line: 90, column: 20, offset: 2372 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 86, column: 2, offset: 2130 },
-                  end: { line: 86, column: 20, offset: 2148 }
+                  start: { line: 90, column: 2, offset: 2354 },
+                  end: { line: 90, column: 20, offset: 2372 }
                 }
               },
               {
@@ -23145,26 +23240,26 @@ export default [
                             type: 'text',
                             value: 'set',
                             position: {
-                              start: { line: 87, column: 5, offset: 2153 },
-                              end: { line: 87, column: 8, offset: 2156 }
+                              start: { line: 91, column: 5, offset: 2377 },
+                              end: { line: 91, column: 8, offset: 2380 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 87, column: 4, offset: 2152 },
-                          end: { line: 87, column: 20, offset: 2168 }
+                          start: { line: 91, column: 4, offset: 2376 },
+                          end: { line: 91, column: 20, offset: 2392 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 87, column: 4, offset: 2152 },
-                      end: { line: 87, column: 20, offset: 2168 }
+                      start: { line: 91, column: 4, offset: 2376 },
+                      end: { line: 91, column: 20, offset: 2392 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 87, column: 2, offset: 2150 },
-                  end: { line: 87, column: 20, offset: 2168 }
+                  start: { line: 91, column: 2, offset: 2374 },
+                  end: { line: 91, column: 20, offset: 2392 }
                 }
               },
               {
@@ -23184,26 +23279,26 @@ export default [
                             type: 'text',
                             value: 'pick',
                             position: {
-                              start: { line: 88, column: 5, offset: 2173 },
-                              end: { line: 88, column: 9, offset: 2177 }
+                              start: { line: 92, column: 5, offset: 2397 },
+                              end: { line: 92, column: 9, offset: 2401 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 88, column: 4, offset: 2172 },
-                          end: { line: 88, column: 22, offset: 2190 }
+                          start: { line: 92, column: 4, offset: 2396 },
+                          end: { line: 92, column: 22, offset: 2414 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 88, column: 4, offset: 2172 },
-                      end: { line: 88, column: 22, offset: 2190 }
+                      start: { line: 92, column: 4, offset: 2396 },
+                      end: { line: 92, column: 22, offset: 2414 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 88, column: 2, offset: 2170 },
-                  end: { line: 88, column: 22, offset: 2190 }
+                  start: { line: 92, column: 2, offset: 2394 },
+                  end: { line: 92, column: 22, offset: 2414 }
                 }
               },
               {
@@ -23223,26 +23318,26 @@ export default [
                             type: 'text',
                             value: 'omit',
                             position: {
-                              start: { line: 89, column: 5, offset: 2195 },
-                              end: { line: 89, column: 9, offset: 2199 }
+                              start: { line: 93, column: 5, offset: 2419 },
+                              end: { line: 93, column: 9, offset: 2423 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 89, column: 4, offset: 2194 },
-                          end: { line: 89, column: 22, offset: 2212 }
+                          start: { line: 93, column: 4, offset: 2418 },
+                          end: { line: 93, column: 22, offset: 2436 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 89, column: 4, offset: 2194 },
-                      end: { line: 89, column: 22, offset: 2212 }
+                      start: { line: 93, column: 4, offset: 2418 },
+                      end: { line: 93, column: 22, offset: 2436 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 89, column: 2, offset: 2192 },
-                  end: { line: 89, column: 22, offset: 2212 }
+                  start: { line: 93, column: 2, offset: 2416 },
+                  end: { line: 93, column: 22, offset: 2436 }
                 }
               },
               {
@@ -23262,38 +23357,38 @@ export default [
                             type: 'text',
                             value: 'forEach',
                             position: {
-                              start: { line: 90, column: 5, offset: 2217 },
-                              end: { line: 90, column: 12, offset: 2224 }
+                              start: { line: 94, column: 5, offset: 2441 },
+                              end: { line: 94, column: 12, offset: 2448 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 90, column: 4, offset: 2216 },
-                          end: { line: 90, column: 28, offset: 2240 }
+                          start: { line: 94, column: 4, offset: 2440 },
+                          end: { line: 94, column: 28, offset: 2464 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 90, column: 4, offset: 2216 },
-                      end: { line: 90, column: 28, offset: 2240 }
+                      start: { line: 94, column: 4, offset: 2440 },
+                      end: { line: 94, column: 28, offset: 2464 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 90, column: 2, offset: 2214 },
-                  end: { line: 90, column: 28, offset: 2240 }
+                  start: { line: 94, column: 2, offset: 2438 },
+                  end: { line: 94, column: 28, offset: 2464 }
                 }
               }
             ],
             position: {
-              start: { line: 84, column: 2, offset: 2082 },
-              end: { line: 90, column: 28, offset: 2240 }
+              start: { line: 88, column: 2, offset: 2306 },
+              end: { line: 94, column: 28, offset: 2464 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 90, column: 28, offset: 2240 }
+          end: { line: 94, column: 28, offset: 2464 }
         }
       },
       execution: {
@@ -23930,36 +24025,47 @@ export default [
   {
     name: 'and',
     synopsis: '```coffeescript [specscript]\n' +
-      'and(values Array<boolean>) -> result boolean\n' +
+      'args Array<any>\n' +
+      'argsOrPromises Array<Promise|any>\n' +
+      'predicatesOrValues Array<function|boolean|any>\n' +
       '\n' +
-      'and(...args, predicatesOrValues Array<function|boolean>) -> Promise|boolean\n' +
-      '\n' +
-      'and(predicatesOrValues Array<function|boolean>)(...args) -> Promise|boolean\n' +
+      'and(values Array<boolean|any>) -> result boolean\n' +
+      'and(...argsOrPromises, predicatesOrValues) -> Promise|boolean\n' +
+      'and(predicatesOrValues)(...args) -> Promise|boolean\n' +
       '```',
-    description: 'Tests an array of boolean values, returning true if all boolean values are truthy.\n' +
+    description: 'Function equivalent to the [Logical AND](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND) operator. Tests an array of predicate functions, promises, values, or a mix thereof.\n' +
+      '\n' +
+      'If provided an array of boolean values, `and` returns true if all boolean values are true.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const oneIsLessThanThree = 1 < 3\n' +
       'const twoIsGreaterThanOne = 2 > 1\n' +
       'const threeIsEqualToThree = 3 === 3\n' +
       '\n' +
-      'console.log(\n' +
-      '  and([oneIsLessThanThree, twoIsGreaterThanOne, threeIsEqualToThree]),\n' +
-      ') // true\n' +
+      'const condition = and([\n' +
+      '  oneIsLessThanThree,\n' +
+      '  twoIsGreaterThanOne,\n' +
+      '  threeIsEqualToThree\n' +
+      '])\n' +
+      'console.log(condition) // true\n' +
       '```\n' +
       '\n' +
-      'If any values in the array are synchronous or asynchronous predicate functions, `and` takes another argument to test concurrently against the predicate functions, returning true if all array values and resolved values from the predicates are truthy.\n' +
+      'If any predicate functions are provided in the array, `and` returns an aggregate predicate function that returns true for a given set of arguments if all provided predicate functions test true. If any provided predicate functions are asynchronous, the aggregate predicate function becomes asynchronous.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const isOdd = number => number % 2 == 1\n' +
-      '\n' +
       'const isPositive = number => number > 0\n' +
+      'const asyncIsLessThan3 = async number => number < 3\n' +
       '\n' +
-      'const isLessThan3 = number => number < 3\n' +
+      'const aggregatePredicate = and([\n' +
+      '  true,\n' +
+      '  isOdd,\n' +
+      '  isPositive,\n' +
+      '  asyncIsLessThan3,\n' +
+      '])\n' +
       '\n' +
-      'console.log(\n' +
-      '  and([isOdd, isPositive, isLessThan3])(1),\n' +
-      ') // true\n' +
+      'const condition = await aggregatePredicate(1)\n' +
+      'console.log(condition) // true\n' +
       '```\n' +
       '\n' +
       'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
@@ -24012,20 +24118,22 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'and(values Array<boolean>) -> result boolean\n' +
+            value: 'args Array<any>\n' +
+              'argsOrPromises Array<Promise|any>\n' +
+              'predicatesOrValues Array<function|boolean|any>\n' +
               '\n' +
-              'and(...args, predicatesOrValues Array<function|boolean>) -> Promise|boolean\n' +
-              '\n' +
-              'and(predicatesOrValues Array<function|boolean>)(...args) -> Promise|boolean',
+              'and(values Array<boolean|any>) -> result boolean\n' +
+              'and(...argsOrPromises, predicatesOrValues) -> Promise|boolean\n' +
+              'and(predicatesOrValues)(...args) -> Promise|boolean',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 7, column: 4, offset: 231 }
+              end: { line: 9, column: 4, offset: 293 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 7, column: 4, offset: 231 }
+          end: { line: 9, column: 4, offset: 293 }
         }
       },
       description: {
@@ -24036,16 +24144,76 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Tests an array of boolean values, returning true if all boolean values are truthy.',
+                value: 'Function equivalent to the ',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 83, offset: 82 }
+                  end: { line: 1, column: 28, offset: 27 }
+                }
+              },
+              {
+                type: 'link',
+                title: null,
+                url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Logical AND',
+                    position: {
+                      start: { line: 1, column: 29, offset: 28 },
+                      end: { line: 1, column: 40, offset: 39 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 28, offset: 27 },
+                  end: { line: 1, column: 130, offset: 129 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' operator. Tests an array of predicate functions, promises, values, or a mix thereof.',
+                position: {
+                  start: { line: 1, column: 130, offset: 129 },
+                  end: { line: 1, column: 215, offset: 214 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 83, offset: 82 }
+              end: { line: 1, column: 215, offset: 214 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If provided an array of boolean values, ',
+                position: {
+                  start: { line: 3, column: 1, offset: 216 },
+                  end: { line: 3, column: 41, offset: 256 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'and',
+                position: {
+                  start: { line: 3, column: 41, offset: 256 },
+                  end: { line: 3, column: 46, offset: 261 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' returns true if all boolean values are true.',
+                position: {
+                  start: { line: 3, column: 46, offset: 261 },
+                  end: { line: 3, column: 91, offset: 306 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 3, column: 1, offset: 216 },
+              end: { line: 3, column: 91, offset: 306 }
             }
           },
           {
@@ -24056,12 +24224,15 @@ export default [
               'const twoIsGreaterThanOne = 2 > 1\n' +
               'const threeIsEqualToThree = 3 === 3\n' +
               '\n' +
-              'console.log(\n' +
-              '  and([oneIsLessThanThree, twoIsGreaterThanOne, threeIsEqualToThree]),\n' +
-              ') // true',
+              'const condition = and([\n' +
+              '  oneIsLessThanThree,\n' +
+              '  twoIsGreaterThanOne,\n' +
+              '  threeIsEqualToThree\n' +
+              '])\n' +
+              'console.log(condition) // true',
             position: {
-              start: { line: 3, column: 1, offset: 84 },
-              end: { line: 11, column: 4, offset: 312 }
+              start: { line: 5, column: 1, offset: 308 },
+              end: { line: 16, column: 4, offset: 567 }
             }
           },
           {
@@ -24069,32 +24240,32 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'If any values in the array are synchronous or asynchronous predicate functions, ',
+                value: 'If any predicate functions are provided in the array, ',
                 position: {
-                  start: { line: 13, column: 1, offset: 314 },
-                  end: { line: 13, column: 81, offset: 394 }
+                  start: { line: 18, column: 1, offset: 569 },
+                  end: { line: 18, column: 55, offset: 623 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'and',
                 position: {
-                  start: { line: 13, column: 81, offset: 394 },
-                  end: { line: 13, column: 86, offset: 399 }
+                  start: { line: 18, column: 55, offset: 623 },
+                  end: { line: 18, column: 60, offset: 628 }
                 }
               },
               {
                 type: 'text',
-                value: ' takes another argument to test concurrently against the predicate functions, returning true if all array values and resolved values from the predicates are truthy.',
+                value: ' returns an aggregate predicate function that returns true for a given set of arguments if all provided predicate functions test true. If any provided predicate functions are asynchronous, the aggregate predicate function becomes asynchronous.',
                 position: {
-                  start: { line: 13, column: 86, offset: 399 },
-                  end: { line: 13, column: 250, offset: 563 }
+                  start: { line: 18, column: 60, offset: 628 },
+                  end: { line: 18, column: 303, offset: 871 }
                 }
               }
             ],
             position: {
-              start: { line: 13, column: 1, offset: 314 },
-              end: { line: 13, column: 250, offset: 563 }
+              start: { line: 18, column: 1, offset: 569 },
+              end: { line: 18, column: 303, offset: 871 }
             }
           },
           {
@@ -24102,17 +24273,21 @@ export default [
             lang: 'javascript',
             meta: '[playground]',
             value: 'const isOdd = number => number % 2 == 1\n' +
-              '\n' +
               'const isPositive = number => number > 0\n' +
+              'const asyncIsLessThan3 = async number => number < 3\n' +
               '\n' +
-              'const isLessThan3 = number => number < 3\n' +
+              'const aggregatePredicate = and([\n' +
+              '  true,\n' +
+              '  isOdd,\n' +
+              '  isPositive,\n' +
+              '  asyncIsLessThan3,\n' +
+              '])\n' +
               '\n' +
-              'console.log(\n' +
-              '  and([isOdd, isPositive, isLessThan3])(1),\n' +
-              ') // true',
+              'const condition = await aggregatePredicate(1)\n' +
+              'console.log(condition) // true',
             position: {
-              start: { line: 15, column: 1, offset: 565 },
-              end: { line: 25, column: 4, offset: 786 }
+              start: { line: 20, column: 1, offset: 873 },
+              end: { line: 34, column: 4, offset: 1201 }
             }
           },
           {
@@ -24122,14 +24297,14 @@ export default [
                 type: 'text',
                 value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
                 position: {
-                  start: { line: 27, column: 1, offset: 788 },
-                  end: { line: 27, column: 148, offset: 935 }
+                  start: { line: 36, column: 1, offset: 1203 },
+                  end: { line: 36, column: 148, offset: 1350 }
                 }
               }
             ],
             position: {
-              start: { line: 27, column: 1, offset: 788 },
-              end: { line: 27, column: 148, offset: 935 }
+              start: { line: 36, column: 1, offset: 1203 },
+              end: { line: 36, column: 148, offset: 1350 }
             }
           },
           {
@@ -24141,8 +24316,8 @@ export default [
               '  n => n < 10,\n' +
               ']).then(console.log) // true',
             position: {
-              start: { line: 29, column: 1, offset: 937 },
-              end: { line: 34, column: 4, offset: 1051 }
+              start: { line: 38, column: 1, offset: 1352 },
+              end: { line: 43, column: 4, offset: 1466 }
             }
           },
           {
@@ -24152,14 +24327,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 36, column: 1, offset: 1053 },
-                  end: { line: 36, column: 10, offset: 1062 }
+                  start: { line: 45, column: 1, offset: 1468 },
+                  end: { line: 45, column: 10, offset: 1477 }
                 }
               }
             ],
             position: {
-              start: { line: 36, column: 1, offset: 1053 },
-              end: { line: 36, column: 10, offset: 1062 }
+              start: { line: 45, column: 1, offset: 1468 },
+              end: { line: 45, column: 10, offset: 1477 }
             }
           },
           {
@@ -24185,26 +24360,26 @@ export default [
                             type: 'text',
                             value: 'some',
                             position: {
-                              start: { line: 37, column: 5, offset: 1067 },
-                              end: { line: 37, column: 9, offset: 1071 }
+                              start: { line: 46, column: 5, offset: 1482 },
+                              end: { line: 46, column: 9, offset: 1486 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 37, column: 4, offset: 1066 },
-                          end: { line: 37, column: 22, offset: 1084 }
+                          start: { line: 46, column: 4, offset: 1481 },
+                          end: { line: 46, column: 22, offset: 1499 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 37, column: 4, offset: 1066 },
-                      end: { line: 37, column: 22, offset: 1084 }
+                      start: { line: 46, column: 4, offset: 1481 },
+                      end: { line: 46, column: 22, offset: 1499 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 37, column: 2, offset: 1064 },
-                  end: { line: 37, column: 22, offset: 1084 }
+                  start: { line: 46, column: 2, offset: 1479 },
+                  end: { line: 46, column: 22, offset: 1499 }
                 }
               },
               {
@@ -24224,26 +24399,26 @@ export default [
                             type: 'text',
                             value: 'or',
                             position: {
-                              start: { line: 38, column: 5, offset: 1089 },
-                              end: { line: 38, column: 7, offset: 1091 }
+                              start: { line: 47, column: 5, offset: 1504 },
+                              end: { line: 47, column: 7, offset: 1506 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 38, column: 4, offset: 1088 },
-                          end: { line: 38, column: 18, offset: 1102 }
+                          start: { line: 47, column: 4, offset: 1503 },
+                          end: { line: 47, column: 18, offset: 1517 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 38, column: 4, offset: 1088 },
-                      end: { line: 38, column: 18, offset: 1102 }
+                      start: { line: 47, column: 4, offset: 1503 },
+                      end: { line: 47, column: 18, offset: 1517 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 38, column: 2, offset: 1086 },
-                  end: { line: 38, column: 18, offset: 1102 }
+                  start: { line: 47, column: 2, offset: 1501 },
+                  end: { line: 47, column: 18, offset: 1517 }
                 }
               },
               {
@@ -24263,26 +24438,26 @@ export default [
                             type: 'text',
                             value: 'not',
                             position: {
-                              start: { line: 39, column: 5, offset: 1107 },
-                              end: { line: 39, column: 8, offset: 1110 }
+                              start: { line: 48, column: 5, offset: 1522 },
+                              end: { line: 48, column: 8, offset: 1525 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 39, column: 4, offset: 1106 },
-                          end: { line: 39, column: 20, offset: 1122 }
+                          start: { line: 48, column: 4, offset: 1521 },
+                          end: { line: 48, column: 20, offset: 1537 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 39, column: 4, offset: 1106 },
-                      end: { line: 39, column: 20, offset: 1122 }
+                      start: { line: 48, column: 4, offset: 1521 },
+                      end: { line: 48, column: 20, offset: 1537 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 39, column: 2, offset: 1104 },
-                  end: { line: 39, column: 20, offset: 1122 }
+                  start: { line: 48, column: 2, offset: 1519 },
+                  end: { line: 48, column: 20, offset: 1537 }
                 }
               },
               {
@@ -24302,38 +24477,38 @@ export default [
                             type: 'text',
                             value: 'eq',
                             position: {
-                              start: { line: 40, column: 5, offset: 1127 },
-                              end: { line: 40, column: 7, offset: 1129 }
+                              start: { line: 49, column: 5, offset: 1542 },
+                              end: { line: 49, column: 7, offset: 1544 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 40, column: 4, offset: 1126 },
-                          end: { line: 40, column: 18, offset: 1140 }
+                          start: { line: 49, column: 4, offset: 1541 },
+                          end: { line: 49, column: 18, offset: 1555 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 40, column: 4, offset: 1126 },
-                      end: { line: 40, column: 18, offset: 1140 }
+                      start: { line: 49, column: 4, offset: 1541 },
+                      end: { line: 49, column: 18, offset: 1555 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 40, column: 2, offset: 1124 },
-                  end: { line: 40, column: 18, offset: 1140 }
+                  start: { line: 49, column: 2, offset: 1539 },
+                  end: { line: 49, column: 18, offset: 1555 }
                 }
               }
             ],
             position: {
-              start: { line: 37, column: 2, offset: 1064 },
-              end: { line: 40, column: 18, offset: 1140 }
+              start: { line: 46, column: 2, offset: 1479 },
+              end: { line: 49, column: 18, offset: 1555 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 40, column: 18, offset: 1140 }
+          end: { line: 49, column: 18, offset: 1555 }
         }
       },
       execution: {
@@ -24394,31 +24569,34 @@ export default [
   {
     name: 'assign',
     synopsis: '```coffeescript [specscript]\n' +
-      'assign(\n' +
-      '  o Promise|Object,\n' +
-      '  resolversOrValues Object<function|Promise|any>\n' +
-      ') -> result Promise|Object\n' +
+      'args Array<any>\n' +
       '\n' +
-      'assign(\n' +
-      '  resolversOrValues Object<function|Promise|any>\n' +
-      ')(o Object) -> result Promise|Object\n' +
+      'type Resolver = (...args)=>Promise|any\n' +
+      '\n' +
+      'objectResolversOrPromisesOrValues Object<Resolver|Promise|any>\n' +
+      '\n' +
+      'assign(argumentObject Promise|Object, objectResolversOrPromisesOrValues) -> resultObject\n' +
+      'assign(objectResolversOrPromisesOrValues)(argumentObject Object) -> resultObject\n' +
       '```',
-    description: 'Function executor and composer. Accepts an object of resolver functions or values and an object `o`. Creates a result object from the argument object, evaluates each resolver with the argument object, and assigns to the result object the evaluations at the corresponding resolver keys.\n' +
+    description: 'Function equivalent to [Object.assign](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign). Constructs an object `result` from an object `objectResolversOrPromisesOrValues` of resolvers, promises, values, or a mix thereof and an argument object `argumentObject`.\n' +
+      '\n' +
+      'If any values of `objectResolversOrPromisesOrValues` are resolvers, `assign` provides the `argumentObject` to those resolvers to resolve the values for assignment in `resultObject`.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const assignSquaredAndCubed = assign({\n' +
       '  squared: ({ number }) => number ** 2,\n' +
       '  cubed: ({ number }) => number ** 3,\n' +
+      '  n: 1,\n' +
       '})\n' +
       '\n' +
       'console.log(assignSquaredAndCubed({ number: 2 }))\n' +
-      '// { number: 2, squared: 4, cubed: 8 }\n' +
+      '// { number: 2, squared: 4, cubed: 8, n: 1 }\n' +
       '\n' +
       'console.log(assignSquaredAndCubed({ number: 3 }))\n' +
-      '// { number: 3, squared: 9, cubed: 27 }\n' +
+      '// { number: 3, squared: 9, cubed: 27, n: 1 }\n' +
       '```\n' +
       '\n' +
-      'Any of the resolvers may be asynchronous and return Promises.\n' +
+      'If any of the resolvers in `objectResolversOrPromisesOrValues` are asynchronous, `assign` returns a promise of `resultObject`.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))\n' +
@@ -24432,17 +24610,6 @@ export default [
       '\n' +
       'asyncAssignTotal({ numbers: [1, 2, 3, 4, 5] }).then(console.log)\n' +
       '// { numbers: [1, 2, 3, 4, 5], total: 15 }\n' +
-      '```\n' +
-      '\n' +
-      'Values passed in resolver position are set on the result object directly. If any of these values are promises, they are resolved for their values before being set on the result object.\n' +
-      '\n' +
-      '```javascript [playground]\n' +
-      'assign({}, {\n' +
-      '  a: 1,\n' +
-      '  b: Promise.resolve(2),\n' +
-      '  c: () => 3,\n' +
-      '  d: async o => Object.keys(o).length,\n' +
-      '}).then(console.log) // { a: 1, b: 2, c: 3, d: 0 }\n' +
       '```\n' +
       '\n' +
       'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
@@ -24501,23 +24668,23 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'assign(\n' +
-              '  o Promise|Object,\n' +
-              '  resolversOrValues Object<function|Promise|any>\n' +
-              ') -> result Promise|Object\n' +
+            value: 'args Array<any>\n' +
               '\n' +
-              'assign(\n' +
-              '  resolversOrValues Object<function|Promise|any>\n' +
-              ')(o Object) -> result Promise|Object',
+              'type Resolver = (...args)=>Promise|any\n' +
+              '\n' +
+              'objectResolversOrPromisesOrValues Object<Resolver|Promise|any>\n' +
+              '\n' +
+              'assign(argumentObject Promise|Object, objectResolversOrPromisesOrValues) -> resultObject\n' +
+              'assign(objectResolversOrPromisesOrValues)(argumentObject Object) -> resultObject',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 10, column: 4, offset: 231 }
+              end: { line: 10, column: 4, offset: 323 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 10, column: 4, offset: 231 }
+          end: { line: 10, column: 4, offset: 323 }
         }
       },
       description: {
@@ -24528,32 +24695,172 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Function executor and composer. Accepts an object of resolver functions or values and an object ',
+                value: 'Function equivalent to ',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 97, offset: 96 }
+                  end: { line: 1, column: 24, offset: 23 }
                 }
               },
               {
-                type: 'inlineCode',
-                value: 'o',
+                type: 'link',
+                title: null,
+                url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Object.assign',
+                    position: {
+                      start: { line: 1, column: 25, offset: 24 },
+                      end: { line: 1, column: 38, offset: 37 }
+                    }
+                  }
+                ],
                 position: {
-                  start: { line: 1, column: 97, offset: 96 },
-                  end: { line: 1, column: 100, offset: 99 }
+                  start: { line: 1, column: 24, offset: 23 },
+                  end: { line: 1, column: 135, offset: 134 }
                 }
               },
               {
                 type: 'text',
-                value: '. Creates a result object from the argument object, evaluates each resolver with the argument object, and assigns to the result object the evaluations at the corresponding resolver keys.',
+                value: '. Constructs an object ',
                 position: {
-                  start: { line: 1, column: 100, offset: 99 },
-                  end: { line: 1, column: 286, offset: 285 }
+                  start: { line: 1, column: 135, offset: 134 },
+                  end: { line: 1, column: 158, offset: 157 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'result',
+                position: {
+                  start: { line: 1, column: 158, offset: 157 },
+                  end: { line: 1, column: 166, offset: 165 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' from an object ',
+                position: {
+                  start: { line: 1, column: 166, offset: 165 },
+                  end: { line: 1, column: 182, offset: 181 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'objectResolversOrPromisesOrValues',
+                position: {
+                  start: { line: 1, column: 182, offset: 181 },
+                  end: { line: 1, column: 217, offset: 216 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' of resolvers, promises, values, or a mix thereof and an argument object ',
+                position: {
+                  start: { line: 1, column: 217, offset: 216 },
+                  end: { line: 1, column: 290, offset: 289 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'argumentObject',
+                position: {
+                  start: { line: 1, column: 290, offset: 289 },
+                  end: { line: 1, column: 306, offset: 305 }
+                }
+              },
+              {
+                type: 'text',
+                value: '.',
+                position: {
+                  start: { line: 1, column: 306, offset: 305 },
+                  end: { line: 1, column: 307, offset: 306 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 286, offset: 285 }
+              end: { line: 1, column: 307, offset: 306 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If any values of ',
+                position: {
+                  start: { line: 3, column: 1, offset: 308 },
+                  end: { line: 3, column: 18, offset: 325 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'objectResolversOrPromisesOrValues',
+                position: {
+                  start: { line: 3, column: 18, offset: 325 },
+                  end: { line: 3, column: 53, offset: 360 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' are resolvers, ',
+                position: {
+                  start: { line: 3, column: 53, offset: 360 },
+                  end: { line: 3, column: 69, offset: 376 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'assign',
+                position: {
+                  start: { line: 3, column: 69, offset: 376 },
+                  end: { line: 3, column: 77, offset: 384 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' provides the ',
+                position: {
+                  start: { line: 3, column: 77, offset: 384 },
+                  end: { line: 3, column: 91, offset: 398 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'argumentObject',
+                position: {
+                  start: { line: 3, column: 91, offset: 398 },
+                  end: { line: 3, column: 107, offset: 414 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' to those resolvers to resolve the values for assignment in ',
+                position: {
+                  start: { line: 3, column: 107, offset: 414 },
+                  end: { line: 3, column: 167, offset: 474 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'resultObject',
+                position: {
+                  start: { line: 3, column: 167, offset: 474 },
+                  end: { line: 3, column: 181, offset: 488 }
+                }
+              },
+              {
+                type: 'text',
+                value: '.',
+                position: {
+                  start: { line: 3, column: 181, offset: 488 },
+                  end: { line: 3, column: 182, offset: 489 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 3, column: 1, offset: 308 },
+              end: { line: 3, column: 182, offset: 489 }
             }
           },
           {
@@ -24563,16 +24870,17 @@ export default [
             value: 'const assignSquaredAndCubed = assign({\n' +
               '  squared: ({ number }) => number ** 2,\n' +
               '  cubed: ({ number }) => number ** 3,\n' +
+              '  n: 1,\n' +
               '})\n' +
               '\n' +
               'console.log(assignSquaredAndCubed({ number: 2 }))\n' +
-              '// { number: 2, squared: 4, cubed: 8 }\n' +
+              '// { number: 2, squared: 4, cubed: 8, n: 1 }\n' +
               '\n' +
               'console.log(assignSquaredAndCubed({ number: 3 }))\n' +
-              '// { number: 3, squared: 9, cubed: 27 }',
+              '// { number: 3, squared: 9, cubed: 27, n: 1 }',
             position: {
-              start: { line: 3, column: 1, offset: 287 },
-              end: { line: 14, column: 4, offset: 618 }
+              start: { line: 5, column: 1, offset: 491 },
+              end: { line: 17, column: 4, offset: 842 }
             }
           },
           {
@@ -24580,16 +24888,64 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Any of the resolvers may be asynchronous and return Promises.',
+                value: 'If any of the resolvers in ',
                 position: {
-                  start: { line: 16, column: 1, offset: 620 },
-                  end: { line: 16, column: 62, offset: 681 }
+                  start: { line: 19, column: 1, offset: 844 },
+                  end: { line: 19, column: 28, offset: 871 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'objectResolversOrPromisesOrValues',
+                position: {
+                  start: { line: 19, column: 28, offset: 871 },
+                  end: { line: 19, column: 63, offset: 906 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' are asynchronous, ',
+                position: {
+                  start: { line: 19, column: 63, offset: 906 },
+                  end: { line: 19, column: 82, offset: 925 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'assign',
+                position: {
+                  start: { line: 19, column: 82, offset: 925 },
+                  end: { line: 19, column: 90, offset: 933 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' returns a promise of ',
+                position: {
+                  start: { line: 19, column: 90, offset: 933 },
+                  end: { line: 19, column: 112, offset: 955 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'resultObject',
+                position: {
+                  start: { line: 19, column: 112, offset: 955 },
+                  end: { line: 19, column: 126, offset: 969 }
+                }
+              },
+              {
+                type: 'text',
+                value: '.',
+                position: {
+                  start: { line: 19, column: 126, offset: 969 },
+                  end: { line: 19, column: 127, offset: 970 }
                 }
               }
             ],
             position: {
-              start: { line: 16, column: 1, offset: 620 },
-              end: { line: 16, column: 62, offset: 681 }
+              start: { line: 19, column: 1, offset: 844 },
+              end: { line: 19, column: 127, offset: 970 }
             }
           },
           {
@@ -24608,40 +24964,8 @@ export default [
               'asyncAssignTotal({ numbers: [1, 2, 3, 4, 5] }).then(console.log)\n' +
               '// { numbers: [1, 2, 3, 4, 5], total: 15 }',
             position: {
-              start: { line: 18, column: 1, offset: 683 },
-              end: { line: 30, column: 4, offset: 1026 }
-            }
-          },
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: 'Values passed in resolver position are set on the result object directly. If any of these values are promises, they are resolved for their values before being set on the result object.',
-                position: {
-                  start: { line: 32, column: 1, offset: 1028 },
-                  end: { line: 32, column: 185, offset: 1212 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 32, column: 1, offset: 1028 },
-              end: { line: 32, column: 185, offset: 1212 }
-            }
-          },
-          {
-            type: 'code',
-            lang: 'javascript',
-            meta: '[playground]',
-            value: 'assign({}, {\n' +
-              '  a: 1,\n' +
-              '  b: Promise.resolve(2),\n' +
-              '  c: () => 3,\n' +
-              '  d: async o => Object.keys(o).length,\n' +
-              '}).then(console.log) // { a: 1, b: 2, c: 3, d: 0 }',
-            position: {
-              start: { line: 34, column: 1, offset: 1214 },
-              end: { line: 41, column: 4, offset: 1394 }
+              start: { line: 21, column: 1, offset: 972 },
+              end: { line: 33, column: 4, offset: 1315 }
             }
           },
           {
@@ -24651,14 +24975,14 @@ export default [
                 type: 'text',
                 value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
                 position: {
-                  start: { line: 43, column: 1, offset: 1396 },
-                  end: { line: 43, column: 148, offset: 1543 }
+                  start: { line: 35, column: 1, offset: 1317 },
+                  end: { line: 35, column: 148, offset: 1464 }
                 }
               }
             ],
             position: {
-              start: { line: 43, column: 1, offset: 1396 },
-              end: { line: 43, column: 148, offset: 1543 }
+              start: { line: 35, column: 1, offset: 1317 },
+              end: { line: 35, column: 148, offset: 1464 }
             }
           },
           {
@@ -24674,8 +24998,8 @@ export default [
               '  },\n' +
               '}).then(console.log)',
             position: {
-              start: { line: 45, column: 1, offset: 1545 },
-              end: { line: 54, column: 4, offset: 1678 }
+              start: { line: 37, column: 1, offset: 1466 },
+              end: { line: 46, column: 4, offset: 1599 }
             }
           },
           {
@@ -24685,14 +25009,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 56, column: 1, offset: 1680 },
-                  end: { line: 56, column: 10, offset: 1689 }
+                  start: { line: 48, column: 1, offset: 1601 },
+                  end: { line: 48, column: 10, offset: 1610 }
                 }
               }
             ],
             position: {
-              start: { line: 56, column: 1, offset: 1680 },
-              end: { line: 56, column: 10, offset: 1689 }
+              start: { line: 48, column: 1, offset: 1601 },
+              end: { line: 48, column: 10, offset: 1610 }
             }
           },
           {
@@ -24718,26 +25042,26 @@ export default [
                             type: 'text',
                             value: 'pipe',
                             position: {
-                              start: { line: 57, column: 5, offset: 1694 },
-                              end: { line: 57, column: 9, offset: 1698 }
+                              start: { line: 49, column: 5, offset: 1615 },
+                              end: { line: 49, column: 9, offset: 1619 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 57, column: 4, offset: 1693 },
-                          end: { line: 57, column: 22, offset: 1711 }
+                          start: { line: 49, column: 4, offset: 1614 },
+                          end: { line: 49, column: 22, offset: 1632 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 57, column: 4, offset: 1693 },
-                      end: { line: 57, column: 22, offset: 1711 }
+                      start: { line: 49, column: 4, offset: 1614 },
+                      end: { line: 49, column: 22, offset: 1632 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 57, column: 2, offset: 1691 },
-                  end: { line: 57, column: 22, offset: 1711 }
+                  start: { line: 49, column: 2, offset: 1612 },
+                  end: { line: 49, column: 22, offset: 1632 }
                 }
               },
               {
@@ -24757,26 +25081,26 @@ export default [
                             type: 'text',
                             value: 'all',
                             position: {
-                              start: { line: 58, column: 5, offset: 1716 },
-                              end: { line: 58, column: 8, offset: 1719 }
+                              start: { line: 50, column: 5, offset: 1637 },
+                              end: { line: 50, column: 8, offset: 1640 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 58, column: 4, offset: 1715 },
-                          end: { line: 58, column: 20, offset: 1731 }
+                          start: { line: 50, column: 4, offset: 1636 },
+                          end: { line: 50, column: 20, offset: 1652 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 58, column: 4, offset: 1715 },
-                      end: { line: 58, column: 20, offset: 1731 }
+                      start: { line: 50, column: 4, offset: 1636 },
+                      end: { line: 50, column: 20, offset: 1652 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 58, column: 2, offset: 1713 },
-                  end: { line: 58, column: 20, offset: 1731 }
+                  start: { line: 50, column: 2, offset: 1634 },
+                  end: { line: 50, column: 20, offset: 1652 }
                 }
               },
               {
@@ -24796,26 +25120,26 @@ export default [
                             type: 'text',
                             value: 'get',
                             position: {
-                              start: { line: 59, column: 5, offset: 1736 },
-                              end: { line: 59, column: 8, offset: 1739 }
+                              start: { line: 51, column: 5, offset: 1657 },
+                              end: { line: 51, column: 8, offset: 1660 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 59, column: 4, offset: 1735 },
-                          end: { line: 59, column: 20, offset: 1751 }
+                          start: { line: 51, column: 4, offset: 1656 },
+                          end: { line: 51, column: 20, offset: 1672 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 59, column: 4, offset: 1735 },
-                      end: { line: 59, column: 20, offset: 1751 }
+                      start: { line: 51, column: 4, offset: 1656 },
+                      end: { line: 51, column: 20, offset: 1672 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 59, column: 2, offset: 1733 },
-                  end: { line: 59, column: 20, offset: 1751 }
+                  start: { line: 51, column: 2, offset: 1654 },
+                  end: { line: 51, column: 20, offset: 1672 }
                 }
               },
               {
@@ -24835,26 +25159,26 @@ export default [
                             type: 'text',
                             value: 'set',
                             position: {
-                              start: { line: 60, column: 5, offset: 1756 },
-                              end: { line: 60, column: 8, offset: 1759 }
+                              start: { line: 52, column: 5, offset: 1677 },
+                              end: { line: 52, column: 8, offset: 1680 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 60, column: 4, offset: 1755 },
-                          end: { line: 60, column: 20, offset: 1771 }
+                          start: { line: 52, column: 4, offset: 1676 },
+                          end: { line: 52, column: 20, offset: 1692 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 60, column: 4, offset: 1755 },
-                      end: { line: 60, column: 20, offset: 1771 }
+                      start: { line: 52, column: 4, offset: 1676 },
+                      end: { line: 52, column: 20, offset: 1692 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 60, column: 2, offset: 1753 },
-                  end: { line: 60, column: 20, offset: 1771 }
+                  start: { line: 52, column: 2, offset: 1674 },
+                  end: { line: 52, column: 20, offset: 1692 }
                 }
               },
               {
@@ -24874,26 +25198,26 @@ export default [
                             type: 'text',
                             value: 'pick',
                             position: {
-                              start: { line: 61, column: 5, offset: 1776 },
-                              end: { line: 61, column: 9, offset: 1780 }
+                              start: { line: 53, column: 5, offset: 1697 },
+                              end: { line: 53, column: 9, offset: 1701 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 61, column: 4, offset: 1775 },
-                          end: { line: 61, column: 22, offset: 1793 }
+                          start: { line: 53, column: 4, offset: 1696 },
+                          end: { line: 53, column: 22, offset: 1714 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 61, column: 4, offset: 1775 },
-                      end: { line: 61, column: 22, offset: 1793 }
+                      start: { line: 53, column: 4, offset: 1696 },
+                      end: { line: 53, column: 22, offset: 1714 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 61, column: 2, offset: 1773 },
-                  end: { line: 61, column: 22, offset: 1793 }
+                  start: { line: 53, column: 2, offset: 1694 },
+                  end: { line: 53, column: 22, offset: 1714 }
                 }
               },
               {
@@ -24913,26 +25237,26 @@ export default [
                             type: 'text',
                             value: 'omit',
                             position: {
-                              start: { line: 62, column: 5, offset: 1798 },
-                              end: { line: 62, column: 9, offset: 1802 }
+                              start: { line: 54, column: 5, offset: 1719 },
+                              end: { line: 54, column: 9, offset: 1723 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 62, column: 4, offset: 1797 },
-                          end: { line: 62, column: 22, offset: 1815 }
+                          start: { line: 54, column: 4, offset: 1718 },
+                          end: { line: 54, column: 22, offset: 1736 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 62, column: 4, offset: 1797 },
-                      end: { line: 62, column: 22, offset: 1815 }
+                      start: { line: 54, column: 4, offset: 1718 },
+                      end: { line: 54, column: 22, offset: 1736 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 62, column: 2, offset: 1795 },
-                  end: { line: 62, column: 22, offset: 1815 }
+                  start: { line: 54, column: 2, offset: 1716 },
+                  end: { line: 54, column: 22, offset: 1736 }
                 }
               },
               {
@@ -24952,38 +25276,38 @@ export default [
                             type: 'text',
                             value: 'forEach',
                             position: {
-                              start: { line: 63, column: 5, offset: 1820 },
-                              end: { line: 63, column: 12, offset: 1827 }
+                              start: { line: 55, column: 5, offset: 1741 },
+                              end: { line: 55, column: 12, offset: 1748 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 63, column: 4, offset: 1819 },
-                          end: { line: 63, column: 28, offset: 1843 }
+                          start: { line: 55, column: 4, offset: 1740 },
+                          end: { line: 55, column: 28, offset: 1764 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 63, column: 4, offset: 1819 },
-                      end: { line: 63, column: 28, offset: 1843 }
+                      start: { line: 55, column: 4, offset: 1740 },
+                      end: { line: 55, column: 28, offset: 1764 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 63, column: 2, offset: 1817 },
-                  end: { line: 63, column: 28, offset: 1843 }
+                  start: { line: 55, column: 2, offset: 1738 },
+                  end: { line: 55, column: 28, offset: 1764 }
                 }
               }
             ],
             position: {
-              start: { line: 57, column: 2, offset: 1691 },
-              end: { line: 63, column: 28, offset: 1843 }
+              start: { line: 49, column: 2, offset: 1612 },
+              end: { line: 55, column: 28, offset: 1764 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 63, column: 28, offset: 1843 }
+          end: { line: 55, column: 28, offset: 1764 }
         }
       },
       execution: {
@@ -25018,20 +25342,33 @@ export default [
   {
     name: 'compose',
     synopsis: '```coffeescript [specscript]\n' +
-      'compose(funcs Array<function>)(...args) -> result Promise|any\n' +
+      'funcs Array<function>\n' +
+      'args Array<any>\n' +
+      'argsOrPromises Array<Promise|any>\n' +
       '\n' +
-      'compose(...args, funcs Array<function>) -> result Promise|any\n' +
+      'compose(funcs)(...args) -> result Promise|any\n' +
+      'compose(...argsOrPromises, funcs) -> result Promise|any\n' +
+      'compose(...funcs)(...args) -> result Promise|any\n' +
       '```',
-    description: 'Creates a function composition from an array of functions, where each function passes its return value as a single argument to the previous function until all functions have executed. The last function is called with the arguments to the composition, while the result of a function composition is the return value of its first function. If any function of the composition is asynchronous, the result of the execution is a Promise. `compose` is effectively `pipe` in reverse.\n' +
+    description: 'Creates a function composition from multiple functions. Each function in the composition is evaluated starting from the last function in the composition in series, passing its return value as an argument to the previous function. The result of a composition execution is the return value of the first function in the composition. If any function in the composition is asynchronous, the result of the composition execution is a Promise.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      'const f = number => number * 2\n' +
+      'const f = x => x * 2\n' +
+      'const g = x => x + 3\n' +
       '\n' +
-      'const g = number => number + 3\n' +
+      'const result = compose(5, [f, g])\n' +
+      'console.log(result) // 16\n' +
+      '```\n' +
       '\n' +
-      'console.log(\n' +
-      '  compose(5, [f, g]),\n' +
-      ') // 16\n' +
+      '`compose` supports a mathematical API.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const f = x => x * 2\n' +
+      'const g = x => x + 1\n' +
+      '\n' +
+      'const composition = compose(f, g)\n' +
+      '\n' +
+      'console.log(composition(1)) // 4\n' +
       '```\n' +
       '\n' +
       'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
@@ -25081,18 +25418,22 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'compose(funcs Array<function>)(...args) -> result Promise|any\n' +
+            value: 'funcs Array<function>\n' +
+              'args Array<any>\n' +
+              'argsOrPromises Array<Promise|any>\n' +
               '\n' +
-              'compose(...args, funcs Array<function>) -> result Promise|any',
+              'compose(funcs)(...args) -> result Promise|any\n' +
+              'compose(...argsOrPromises, funcs) -> result Promise|any\n' +
+              'compose(...funcs)(...args) -> result Promise|any',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 157 }
+              end: { line: 9, column: 4, offset: 256 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 5, column: 4, offset: 157 }
+          end: { line: 9, column: 4, offset: 256 }
         }
       },
       description: {
@@ -25103,64 +25444,70 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Creates a function composition from an array of functions, where each function passes its return value as a single argument to the previous function until all functions have executed. The last function is called with the arguments to the composition, while the result of a function composition is the return value of its first function. If any function of the composition is asynchronous, the result of the execution is a Promise. ',
+                value: 'Creates a function composition from multiple functions. Each function in the composition is evaluated starting from the last function in the composition in series, passing its return value as an argument to the previous function. The result of a composition execution is the return value of the first function in the composition. If any function in the composition is asynchronous, the result of the composition execution is a Promise.',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 432, offset: 431 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'compose',
-                position: {
-                  start: { line: 1, column: 432, offset: 431 },
-                  end: { line: 1, column: 441, offset: 440 }
-                }
-              },
-              {
-                type: 'text',
-                value: ' is effectively ',
-                position: {
-                  start: { line: 1, column: 441, offset: 440 },
-                  end: { line: 1, column: 457, offset: 456 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'pipe',
-                position: {
-                  start: { line: 1, column: 457, offset: 456 },
-                  end: { line: 1, column: 463, offset: 462 }
-                }
-              },
-              {
-                type: 'text',
-                value: ' in reverse.',
-                position: {
-                  start: { line: 1, column: 463, offset: 462 },
-                  end: { line: 1, column: 475, offset: 474 }
+                  end: { line: 1, column: 436, offset: 435 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 475, offset: 474 }
+              end: { line: 1, column: 436, offset: 435 }
             }
           },
           {
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: 'const f = number => number * 2\n' +
+            value: 'const f = x => x * 2\n' +
+              'const g = x => x + 3\n' +
               '\n' +
-              'const g = number => number + 3\n' +
-              '\n' +
-              'console.log(\n' +
-              '  compose(5, [f, g]),\n' +
-              ') // 16',
+              'const result = compose(5, [f, g])\n' +
+              'console.log(result) // 16',
             position: {
-              start: { line: 3, column: 1, offset: 476 },
-              end: { line: 11, column: 4, offset: 613 }
+              start: { line: 3, column: 1, offset: 437 },
+              end: { line: 9, column: 4, offset: 570 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'inlineCode',
+                value: 'compose',
+                position: {
+                  start: { line: 11, column: 1, offset: 572 },
+                  end: { line: 11, column: 10, offset: 581 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' supports a mathematical API.',
+                position: {
+                  start: { line: 11, column: 10, offset: 581 },
+                  end: { line: 11, column: 39, offset: 610 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 11, column: 1, offset: 572 },
+              end: { line: 11, column: 39, offset: 610 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'const f = x => x * 2\n' +
+              'const g = x => x + 1\n' +
+              '\n' +
+              'const composition = compose(f, g)\n' +
+              '\n' +
+              'console.log(composition(1)) // 4',
+            position: {
+              start: { line: 13, column: 1, offset: 612 },
+              end: { line: 20, column: 4, offset: 753 }
             }
           },
           {
@@ -25170,14 +25517,14 @@ export default [
                 type: 'text',
                 value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
                 position: {
-                  start: { line: 13, column: 1, offset: 615 },
-                  end: { line: 13, column: 148, offset: 762 }
+                  start: { line: 22, column: 1, offset: 755 },
+                  end: { line: 22, column: 148, offset: 902 }
                 }
               }
             ],
             position: {
-              start: { line: 13, column: 1, offset: 615 },
-              end: { line: 13, column: 148, offset: 762 }
+              start: { line: 22, column: 1, offset: 755 },
+              end: { line: 22, column: 148, offset: 902 }
             }
           },
           {
@@ -25188,8 +25535,8 @@ export default [
               '  console.log, // [1, 2, 3]\n' +
               '])',
             position: {
-              start: { line: 15, column: 1, offset: 764 },
-              end: { line: 19, column: 4, offset: 878 }
+              start: { line: 24, column: 1, offset: 904 },
+              end: { line: 28, column: 4, offset: 1018 }
             }
           },
           {
@@ -25199,14 +25546,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 21, column: 1, offset: 880 },
-                  end: { line: 21, column: 10, offset: 889 }
+                  start: { line: 30, column: 1, offset: 1020 },
+                  end: { line: 30, column: 10, offset: 1029 }
                 }
               }
             ],
             position: {
-              start: { line: 21, column: 1, offset: 880 },
-              end: { line: 21, column: 10, offset: 889 }
+              start: { line: 30, column: 1, offset: 1020 },
+              end: { line: 30, column: 10, offset: 1029 }
             }
           },
           {
@@ -25232,26 +25579,26 @@ export default [
                             type: 'text',
                             value: 'pipe',
                             position: {
-                              start: { line: 22, column: 5, offset: 894 },
-                              end: { line: 22, column: 9, offset: 898 }
+                              start: { line: 31, column: 5, offset: 1034 },
+                              end: { line: 31, column: 9, offset: 1038 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 22, column: 4, offset: 893 },
-                          end: { line: 22, column: 22, offset: 911 }
+                          start: { line: 31, column: 4, offset: 1033 },
+                          end: { line: 31, column: 22, offset: 1051 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 22, column: 4, offset: 893 },
-                      end: { line: 22, column: 22, offset: 911 }
+                      start: { line: 31, column: 4, offset: 1033 },
+                      end: { line: 31, column: 22, offset: 1051 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 22, column: 2, offset: 891 },
-                  end: { line: 22, column: 22, offset: 911 }
+                  start: { line: 31, column: 2, offset: 1031 },
+                  end: { line: 31, column: 22, offset: 1051 }
                 }
               },
               {
@@ -25271,26 +25618,26 @@ export default [
                             type: 'text',
                             value: 'tap',
                             position: {
-                              start: { line: 23, column: 5, offset: 916 },
-                              end: { line: 23, column: 8, offset: 919 }
+                              start: { line: 32, column: 5, offset: 1056 },
+                              end: { line: 32, column: 8, offset: 1059 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 23, column: 4, offset: 915 },
-                          end: { line: 23, column: 20, offset: 931 }
+                          start: { line: 32, column: 4, offset: 1055 },
+                          end: { line: 32, column: 20, offset: 1071 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 23, column: 4, offset: 915 },
-                      end: { line: 23, column: 20, offset: 931 }
+                      start: { line: 32, column: 4, offset: 1055 },
+                      end: { line: 32, column: 20, offset: 1071 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 23, column: 2, offset: 913 },
-                  end: { line: 23, column: 20, offset: 931 }
+                  start: { line: 32, column: 2, offset: 1053 },
+                  end: { line: 32, column: 20, offset: 1071 }
                 }
               },
               {
@@ -25310,26 +25657,26 @@ export default [
                             type: 'text',
                             value: 'switchCase',
                             position: {
-                              start: { line: 24, column: 5, offset: 936 },
-                              end: { line: 24, column: 15, offset: 946 }
+                              start: { line: 33, column: 5, offset: 1076 },
+                              end: { line: 33, column: 15, offset: 1086 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 24, column: 4, offset: 935 },
-                          end: { line: 24, column: 34, offset: 965 }
+                          start: { line: 33, column: 4, offset: 1075 },
+                          end: { line: 33, column: 34, offset: 1105 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 24, column: 4, offset: 935 },
-                      end: { line: 24, column: 34, offset: 965 }
+                      start: { line: 33, column: 4, offset: 1075 },
+                      end: { line: 33, column: 34, offset: 1105 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 24, column: 2, offset: 933 },
-                  end: { line: 24, column: 34, offset: 965 }
+                  start: { line: 33, column: 2, offset: 1073 },
+                  end: { line: 33, column: 34, offset: 1105 }
                 }
               },
               {
@@ -25349,38 +25696,38 @@ export default [
                             type: 'text',
                             value: 'tryCatch',
                             position: {
-                              start: { line: 25, column: 5, offset: 970 },
-                              end: { line: 25, column: 13, offset: 978 }
+                              start: { line: 34, column: 5, offset: 1110 },
+                              end: { line: 34, column: 13, offset: 1118 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 25, column: 4, offset: 969 },
-                          end: { line: 25, column: 30, offset: 995 }
+                          start: { line: 34, column: 4, offset: 1109 },
+                          end: { line: 34, column: 30, offset: 1135 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 25, column: 4, offset: 969 },
-                      end: { line: 25, column: 30, offset: 995 }
+                      start: { line: 34, column: 4, offset: 1109 },
+                      end: { line: 34, column: 30, offset: 1135 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 25, column: 2, offset: 967 },
-                  end: { line: 25, column: 30, offset: 995 }
+                  start: { line: 34, column: 2, offset: 1107 },
+                  end: { line: 34, column: 30, offset: 1135 }
                 }
               }
             ],
             position: {
-              start: { line: 22, column: 2, offset: 891 },
-              end: { line: 25, column: 30, offset: 995 }
+              start: { line: 31, column: 2, offset: 1031 },
+              end: { line: 34, column: 30, offset: 1135 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 25, column: 30, offset: 995 }
+          end: { line: 34, column: 30, offset: 1135 }
         }
       }
     },
@@ -25389,17 +25736,14 @@ export default [
   {
     name: 'curry',
     synopsis: '```coffeescript [specscript]\n' +
-      'type __ = Symbol(placeholder)\n' +
+      '__ Symbol(placeholder)\n' +
+      '\n' +
       'type ArgsWithPlaceholder = Array<__|any>\n' +
       '\n' +
       'args ArgsWithPlaceholder\n' +
       'moreArgs ArgsWithPlaceholder\n' +
       '\n' +
-      'curry(\n' +
-      '  func function,\n' +
-      '  ...args\n' +
-      ') -> curriedFuncOrResult function|any\n' +
-      '\n' +
+      'curry(func function, ...args) -> curriedFuncOrResult function|any\n' +
       'curriedFuncOrResult(...moreArgs) -> anotherCurriedFuncOrResult function|any\n' +
       '```',
     description: "Enable partial application of a function's arguments in any order. Provide the placeholder value `__` to specify an argument to be resolved in the partially applied function.\n" +
@@ -25459,27 +25803,24 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'type __ = Symbol(placeholder)\n' +
+            value: '__ Symbol(placeholder)\n' +
+              '\n' +
               'type ArgsWithPlaceholder = Array<__|any>\n' +
               '\n' +
               'args ArgsWithPlaceholder\n' +
               'moreArgs ArgsWithPlaceholder\n' +
               '\n' +
-              'curry(\n' +
-              '  func function,\n' +
-              '  ...args\n' +
-              ') -> curriedFuncOrResult function|any\n' +
-              '\n' +
+              'curry(func function, ...args) -> curriedFuncOrResult function|any\n' +
               'curriedFuncOrResult(...moreArgs) -> anotherCurriedFuncOrResult function|any',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 14, column: 4, offset: 308 }
+              end: { line: 11, column: 4, offset: 295 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 14, column: 4, offset: 308 }
+          end: { line: 11, column: 4, offset: 295 }
         }
       },
       description: {
@@ -25816,15 +26157,11 @@ export default [
       'type __ = Symbol(placeholder)\n' +
       'type ArgsWithPlaceholder = Array<__|any>\n' +
       '\n' +
+      'n number\n' +
       'args ArgsWithPlaceholder\n' +
       'moreArgs ArgsWithPlaceholder\n' +
       '\n' +
-      'curry.arity(\n' +
-      '  arity number,\n' +
-      '  func function,\n' +
-      '  ...args\n' +
-      ') -> curriedFuncOrResult function|any\n' +
-      '\n' +
+      'curry.arity(n number, func function, ...args) -> curriedFuncOrResult function|any\n' +
       'curriedFuncOrResult(...moreArgs) -> anotherCurriedFuncOrResult function|any\n' +
       '```',
     description: '`curry` with specified arity (number of arguments taken by the function) as the first parameter.\n' +
@@ -25879,25 +26216,21 @@ export default [
             value: 'type __ = Symbol(placeholder)\n' +
               'type ArgsWithPlaceholder = Array<__|any>\n' +
               '\n' +
+              'n number\n' +
               'args ArgsWithPlaceholder\n' +
               'moreArgs ArgsWithPlaceholder\n' +
               '\n' +
-              'curry.arity(\n' +
-              '  arity number,\n' +
-              '  func function,\n' +
-              '  ...args\n' +
-              ') -> curriedFuncOrResult function|any\n' +
-              '\n' +
+              'curry.arity(n number, func function, ...args) -> curriedFuncOrResult function|any\n' +
               'curriedFuncOrResult(...moreArgs) -> anotherCurriedFuncOrResult function|any',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 15, column: 4, offset: 330 }
+              end: { line: 11, column: 4, offset: 326 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 15, column: 4, offset: 330 }
+          end: { line: 11, column: 4, offset: 326 }
         }
       },
       description: {
@@ -27279,18 +27612,26 @@ export default [
   {
     name: 'eq',
     synopsis: '```coffeescript [specscript]\n' +
-      'eq(leftValue Promise|any, rightValue Promise|any) -> boolean\n' +
+      'args Array<any>\n' +
+      'argsOrPromises Array<Promise|any>\n' +
       '\n' +
-      'eq(leftValue Promise|any, right function)(...args) -> Promise|boolean\n' +
-      'eq(...args, leftValue Promise|any, right function) -> Promise|boolean\n' +
+      'type Resolver = (...args)=>Promise|boolean\n' +
       '\n' +
-      'eq(left function, rightValue Promise|any)(...args) -> Promise|boolean\n' +
-      'eq(...args, left function, rightValue Promise|any) -> Promise|boolean\n' +
+      'leftValue Promise|any\n' +
+      'rightValue Promise|any\n' +
+      'leftResolver Resolver\n' +
+      'rightResolver Resolver\n' +
       '\n' +
-      'eq(left function, right function)(...args) -> Promise|boolean\n' +
-      'eq(...args, left function, right function) -> Promise|boolean\n' +
+      'eq(leftValue, rightValue) -> Promise|boolean\n' +
+      'eq(...argsOrPromises, leftResolver, rightValue) -> Promise|boolean\n' +
+      'eq(...argsOrPromises, leftValue, rightResolver) -> Promise|boolean\n' +
+      'eq(...argsOrPromises, leftResolver, rightResolver) -> Promise|boolean\n' +
+      'eq(leftResolver, rightValue)(...args) -> Promise|boolean\n' +
+      'eq(leftValue, rightResolver)(...args) -> Promise|boolean\n' +
+      'eq(leftResolver, rightResolver)(...args) -> Promise|boolean\n' +
+      '\n' +
       '```',
-    description: 'Test for [equality (`==`)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Equality) between two values.\n' +
+    description: 'Function equivalent to the [Equality (==)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Equality) operator. Tests for equality (`==`) between two values.\n' +
       '\n' +
       '```javascript [playground]\n' +
       "const areNamesEqual = eq('Ted', 'John')\n" +
@@ -27298,7 +27639,7 @@ export default [
       'console.log(areNamesEqual) // false\n' +
       '```\n' +
       '\n' +
-      'If either of the two values are resolver functions, `eq` returns a function that resolves the values to compare from its arguments.\n' +
+      'If either of the two values are resolver functions, `eq` returns a function that resolves the value(s) to compare.\n' +
       '\n' +
       '```javascript [playground]\n' +
       "const personIsJohn = eq(get('name'), 'John')\n" +
@@ -27306,8 +27647,22 @@ export default [
       "const person = { name: 'John', likes: 'bananas' }\n" +
       '\n' +
       'if (personIsJohn(person)) {\n' +
-      "  console.log('The person is george')\n" +
+      "  console.log('The person is John')\n" +
       '}\n' +
+      '```\n' +
+      '\n' +
+      'If either of the two resolver functions is asynchronous, `eq` returns an asynchronous function.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      "const asyncPersonIsJohn = eq(async person => person.name, 'John')\n" +
+      '\n' +
+      "const person = { name: 'John', likes: 'bananas' }\n" +
+      '\n' +
+      'asyncPersonIsJohn(person).then(condition => {\n' +
+      '  if (condition) {\n' +
+      "    console.log('The person is John')\n" +
+      '  }\n' +
+      '})\n' +
       '```\n' +
       '\n' +
       '`eq` supports a lazy API for composability.\n' +
@@ -27367,25 +27722,32 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'eq(leftValue Promise|any, rightValue Promise|any) -> boolean\n' +
+            value: 'args Array<any>\n' +
+              'argsOrPromises Array<Promise|any>\n' +
               '\n' +
-              'eq(leftValue Promise|any, right function)(...args) -> Promise|boolean\n' +
-              'eq(...args, leftValue Promise|any, right function) -> Promise|boolean\n' +
+              'type Resolver = (...args)=>Promise|boolean\n' +
               '\n' +
-              'eq(left function, rightValue Promise|any)(...args) -> Promise|boolean\n' +
-              'eq(...args, left function, rightValue Promise|any) -> Promise|boolean\n' +
+              'leftValue Promise|any\n' +
+              'rightValue Promise|any\n' +
+              'leftResolver Resolver\n' +
+              'rightResolver Resolver\n' +
               '\n' +
-              'eq(left function, right function)(...args) -> Promise|boolean\n' +
-              'eq(...args, left function, right function) -> Promise|boolean',
+              'eq(leftValue, rightValue) -> Promise|boolean\n' +
+              'eq(...argsOrPromises, leftResolver, rightValue) -> Promise|boolean\n' +
+              'eq(...argsOrPromises, leftValue, rightResolver) -> Promise|boolean\n' +
+              'eq(...argsOrPromises, leftResolver, rightResolver) -> Promise|boolean\n' +
+              'eq(leftResolver, rightValue)(...args) -> Promise|boolean\n' +
+              'eq(leftValue, rightResolver)(...args) -> Promise|boolean\n' +
+              'eq(leftResolver, rightResolver)(...args) -> Promise|boolean\n',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 12, column: 4, offset: 500 }
+              end: { line: 20, column: 4, offset: 642 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 12, column: 4, offset: 500 }
+          end: { line: 20, column: 4, offset: 642 }
         }
       },
       description: {
@@ -27396,10 +27758,10 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Test for ',
+                value: 'Function equivalent to the ',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 10, offset: 9 }
+                  end: { line: 1, column: 28, offset: 27 }
                 }
               },
               {
@@ -27409,46 +27771,46 @@ export default [
                 children: [
                   {
                     type: 'text',
-                    value: 'equality (',
+                    value: 'Equality (==)',
                     position: {
-                      start: { line: 1, column: 11, offset: 10 },
-                      end: { line: 1, column: 21, offset: 20 }
-                    }
-                  },
-                  {
-                    type: 'inlineCode',
-                    value: '==',
-                    position: {
-                      start: { line: 1, column: 21, offset: 20 },
-                      end: { line: 1, column: 25, offset: 24 }
-                    }
-                  },
-                  {
-                    type: 'text',
-                    value: ')',
-                    position: {
-                      start: { line: 1, column: 25, offset: 24 },
-                      end: { line: 1, column: 26, offset: 25 }
+                      start: { line: 1, column: 29, offset: 28 },
+                      end: { line: 1, column: 42, offset: 41 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 1, column: 10, offset: 9 },
-                  end: { line: 1, column: 113, offset: 112 }
+                  start: { line: 1, column: 28, offset: 27 },
+                  end: { line: 1, column: 129, offset: 128 }
                 }
               },
               {
                 type: 'text',
-                value: ' between two values.',
+                value: ' operator. Tests for equality (',
                 position: {
-                  start: { line: 1, column: 113, offset: 112 },
-                  end: { line: 1, column: 133, offset: 132 }
+                  start: { line: 1, column: 129, offset: 128 },
+                  end: { line: 1, column: 160, offset: 159 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: '==',
+                position: {
+                  start: { line: 1, column: 160, offset: 159 },
+                  end: { line: 1, column: 164, offset: 163 }
+                }
+              },
+              {
+                type: 'text',
+                value: ') between two values.',
+                position: {
+                  start: { line: 1, column: 164, offset: 163 },
+                  end: { line: 1, column: 185, offset: 184 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 133, offset: 132 }
+              end: { line: 1, column: 185, offset: 184 }
             }
           },
           {
@@ -27459,8 +27821,8 @@ export default [
               '\n' +
               'console.log(areNamesEqual) // false',
             position: {
-              start: { line: 3, column: 1, offset: 134 },
-              end: { line: 7, column: 4, offset: 241 }
+              start: { line: 3, column: 1, offset: 186 },
+              end: { line: 7, column: 4, offset: 293 }
             }
           },
           {
@@ -27470,30 +27832,30 @@ export default [
                 type: 'text',
                 value: 'If either of the two values are resolver functions, ',
                 position: {
-                  start: { line: 9, column: 1, offset: 243 },
-                  end: { line: 9, column: 53, offset: 295 }
+                  start: { line: 9, column: 1, offset: 295 },
+                  end: { line: 9, column: 53, offset: 347 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'eq',
                 position: {
-                  start: { line: 9, column: 53, offset: 295 },
-                  end: { line: 9, column: 57, offset: 299 }
+                  start: { line: 9, column: 53, offset: 347 },
+                  end: { line: 9, column: 57, offset: 351 }
                 }
               },
               {
                 type: 'text',
-                value: ' returns a function that resolves the values to compare from its arguments.',
+                value: ' returns a function that resolves the value(s) to compare.',
                 position: {
-                  start: { line: 9, column: 57, offset: 299 },
-                  end: { line: 9, column: 132, offset: 374 }
+                  start: { line: 9, column: 57, offset: 351 },
+                  end: { line: 9, column: 115, offset: 409 }
                 }
               }
             ],
             position: {
-              start: { line: 9, column: 1, offset: 243 },
-              end: { line: 9, column: 132, offset: 374 }
+              start: { line: 9, column: 1, offset: 295 },
+              end: { line: 9, column: 115, offset: 409 }
             }
           },
           {
@@ -27505,11 +27867,62 @@ export default [
               "const person = { name: 'John', likes: 'bananas' }\n" +
               '\n' +
               'if (personIsJohn(person)) {\n' +
-              "  console.log('The person is george')\n" +
+              "  console.log('The person is John')\n" +
               '}',
             position: {
-              start: { line: 11, column: 1, offset: 376 },
-              end: { line: 19, column: 4, offset: 571 }
+              start: { line: 11, column: 1, offset: 411 },
+              end: { line: 19, column: 4, offset: 604 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If either of the two resolver functions is asynchronous, ',
+                position: {
+                  start: { line: 21, column: 1, offset: 606 },
+                  end: { line: 21, column: 58, offset: 663 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'eq',
+                position: {
+                  start: { line: 21, column: 58, offset: 663 },
+                  end: { line: 21, column: 62, offset: 667 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' returns an asynchronous function.',
+                position: {
+                  start: { line: 21, column: 62, offset: 667 },
+                  end: { line: 21, column: 96, offset: 701 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 21, column: 1, offset: 606 },
+              end: { line: 21, column: 96, offset: 701 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: "const asyncPersonIsJohn = eq(async person => person.name, 'John')\n" +
+              '\n' +
+              "const person = { name: 'John', likes: 'bananas' }\n" +
+              '\n' +
+              'asyncPersonIsJohn(person).then(condition => {\n' +
+              '  if (condition) {\n' +
+              "    console.log('The person is John')\n" +
+              '  }\n' +
+              '})',
+            position: {
+              start: { line: 23, column: 1, offset: 703 },
+              end: { line: 33, column: 4, offset: 961 }
             }
           },
           {
@@ -27519,22 +27932,22 @@ export default [
                 type: 'inlineCode',
                 value: 'eq',
                 position: {
-                  start: { line: 21, column: 1, offset: 573 },
-                  end: { line: 21, column: 5, offset: 577 }
+                  start: { line: 35, column: 1, offset: 963 },
+                  end: { line: 35, column: 5, offset: 967 }
                 }
               },
               {
                 type: 'text',
                 value: ' supports a lazy API for composability.',
                 position: {
-                  start: { line: 21, column: 5, offset: 577 },
-                  end: { line: 21, column: 44, offset: 616 }
+                  start: { line: 35, column: 5, offset: 967 },
+                  end: { line: 35, column: 44, offset: 1006 }
                 }
               }
             ],
             position: {
-              start: { line: 21, column: 1, offset: 573 },
-              end: { line: 21, column: 44, offset: 616 }
+              start: { line: 35, column: 1, offset: 963 },
+              end: { line: 35, column: 44, offset: 1006 }
             }
           },
           {
@@ -27546,8 +27959,8 @@ export default [
               '  console.log, // true\n' +
               '])',
             position: {
-              start: { line: 23, column: 1, offset: 618 },
-              end: { line: 28, column: 4, offset: 726 }
+              start: { line: 37, column: 1, offset: 1008 },
+              end: { line: 42, column: 4, offset: 1116 }
             }
           },
           {
@@ -27557,14 +27970,14 @@ export default [
                 type: 'text',
                 value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
                 position: {
-                  start: { line: 30, column: 1, offset: 728 },
-                  end: { line: 30, column: 148, offset: 875 }
+                  start: { line: 44, column: 1, offset: 1118 },
+                  end: { line: 44, column: 148, offset: 1265 }
                 }
               }
             ],
             position: {
-              start: { line: 30, column: 1, offset: 728 },
-              end: { line: 30, column: 148, offset: 875 }
+              start: { line: 44, column: 1, offset: 1118 },
+              end: { line: 44, column: 148, offset: 1265 }
             }
           },
           {
@@ -27573,8 +27986,8 @@ export default [
             meta: '[playground]',
             value: "eq(Promise.resolve({ a: 1, b: 1 }), get('a'), get('b')).then(console.log) // true",
             position: {
-              start: { line: 32, column: 1, offset: 877 },
-              end: { line: 34, column: 4, offset: 989 }
+              start: { line: 46, column: 1, offset: 1267 },
+              end: { line: 48, column: 4, offset: 1379 }
             }
           },
           {
@@ -27584,14 +27997,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 36, column: 1, offset: 991 },
-                  end: { line: 36, column: 10, offset: 1000 }
+                  start: { line: 50, column: 1, offset: 1381 },
+                  end: { line: 50, column: 10, offset: 1390 }
                 }
               }
             ],
             position: {
-              start: { line: 36, column: 1, offset: 991 },
-              end: { line: 36, column: 10, offset: 1000 }
+              start: { line: 50, column: 1, offset: 1381 },
+              end: { line: 50, column: 10, offset: 1390 }
             }
           },
           {
@@ -27617,26 +28030,26 @@ export default [
                             type: 'text',
                             value: 'and',
                             position: {
-                              start: { line: 37, column: 5, offset: 1005 },
-                              end: { line: 37, column: 8, offset: 1008 }
+                              start: { line: 51, column: 5, offset: 1395 },
+                              end: { line: 51, column: 8, offset: 1398 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 37, column: 4, offset: 1004 },
-                          end: { line: 37, column: 20, offset: 1020 }
+                          start: { line: 51, column: 4, offset: 1394 },
+                          end: { line: 51, column: 20, offset: 1410 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 37, column: 4, offset: 1004 },
-                      end: { line: 37, column: 20, offset: 1020 }
+                      start: { line: 51, column: 4, offset: 1394 },
+                      end: { line: 51, column: 20, offset: 1410 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 37, column: 2, offset: 1002 },
-                  end: { line: 37, column: 20, offset: 1020 }
+                  start: { line: 51, column: 2, offset: 1392 },
+                  end: { line: 51, column: 20, offset: 1410 }
                 }
               },
               {
@@ -27656,26 +28069,26 @@ export default [
                             type: 'text',
                             value: 'gt',
                             position: {
-                              start: { line: 38, column: 5, offset: 1025 },
-                              end: { line: 38, column: 7, offset: 1027 }
+                              start: { line: 52, column: 5, offset: 1415 },
+                              end: { line: 52, column: 7, offset: 1417 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 38, column: 4, offset: 1024 },
-                          end: { line: 38, column: 18, offset: 1038 }
+                          start: { line: 52, column: 4, offset: 1414 },
+                          end: { line: 52, column: 18, offset: 1428 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 38, column: 4, offset: 1024 },
-                      end: { line: 38, column: 18, offset: 1038 }
+                      start: { line: 52, column: 4, offset: 1414 },
+                      end: { line: 52, column: 18, offset: 1428 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 38, column: 2, offset: 1022 },
-                  end: { line: 38, column: 18, offset: 1038 }
+                  start: { line: 52, column: 2, offset: 1412 },
+                  end: { line: 52, column: 18, offset: 1428 }
                 }
               },
               {
@@ -27695,26 +28108,26 @@ export default [
                             type: 'text',
                             value: 'lt',
                             position: {
-                              start: { line: 39, column: 5, offset: 1043 },
-                              end: { line: 39, column: 7, offset: 1045 }
+                              start: { line: 53, column: 5, offset: 1433 },
+                              end: { line: 53, column: 7, offset: 1435 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 39, column: 4, offset: 1042 },
-                          end: { line: 39, column: 18, offset: 1056 }
+                          start: { line: 53, column: 4, offset: 1432 },
+                          end: { line: 53, column: 18, offset: 1446 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 39, column: 4, offset: 1042 },
-                      end: { line: 39, column: 18, offset: 1056 }
+                      start: { line: 53, column: 4, offset: 1432 },
+                      end: { line: 53, column: 18, offset: 1446 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 39, column: 2, offset: 1040 },
-                  end: { line: 39, column: 18, offset: 1056 }
+                  start: { line: 53, column: 2, offset: 1430 },
+                  end: { line: 53, column: 18, offset: 1446 }
                 }
               },
               {
@@ -27734,26 +28147,26 @@ export default [
                             type: 'text',
                             value: 'gte',
                             position: {
-                              start: { line: 40, column: 5, offset: 1061 },
-                              end: { line: 40, column: 8, offset: 1064 }
+                              start: { line: 54, column: 5, offset: 1451 },
+                              end: { line: 54, column: 8, offset: 1454 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 40, column: 4, offset: 1060 },
-                          end: { line: 40, column: 20, offset: 1076 }
+                          start: { line: 54, column: 4, offset: 1450 },
+                          end: { line: 54, column: 20, offset: 1466 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 40, column: 4, offset: 1060 },
-                      end: { line: 40, column: 20, offset: 1076 }
+                      start: { line: 54, column: 4, offset: 1450 },
+                      end: { line: 54, column: 20, offset: 1466 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 40, column: 2, offset: 1058 },
-                  end: { line: 40, column: 20, offset: 1076 }
+                  start: { line: 54, column: 2, offset: 1448 },
+                  end: { line: 54, column: 20, offset: 1466 }
                 }
               },
               {
@@ -27773,26 +28186,26 @@ export default [
                             type: 'text',
                             value: 'lte',
                             position: {
-                              start: { line: 41, column: 5, offset: 1081 },
-                              end: { line: 41, column: 8, offset: 1084 }
+                              start: { line: 55, column: 5, offset: 1471 },
+                              end: { line: 55, column: 8, offset: 1474 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 41, column: 4, offset: 1080 },
-                          end: { line: 41, column: 20, offset: 1096 }
+                          start: { line: 55, column: 4, offset: 1470 },
+                          end: { line: 55, column: 20, offset: 1486 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 41, column: 4, offset: 1080 },
-                      end: { line: 41, column: 20, offset: 1096 }
+                      start: { line: 55, column: 4, offset: 1470 },
+                      end: { line: 55, column: 20, offset: 1486 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 41, column: 2, offset: 1078 },
-                  end: { line: 41, column: 20, offset: 1096 }
+                  start: { line: 55, column: 2, offset: 1468 },
+                  end: { line: 55, column: 20, offset: 1486 }
                 }
               },
               {
@@ -27812,38 +28225,38 @@ export default [
                             type: 'text',
                             value: 'thunkify',
                             position: {
-                              start: { line: 42, column: 5, offset: 1101 },
-                              end: { line: 42, column: 13, offset: 1109 }
+                              start: { line: 56, column: 5, offset: 1491 },
+                              end: { line: 56, column: 13, offset: 1499 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 42, column: 4, offset: 1100 },
-                          end: { line: 42, column: 30, offset: 1126 }
+                          start: { line: 56, column: 4, offset: 1490 },
+                          end: { line: 56, column: 30, offset: 1516 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 42, column: 4, offset: 1100 },
-                      end: { line: 42, column: 30, offset: 1126 }
+                      start: { line: 56, column: 4, offset: 1490 },
+                      end: { line: 56, column: 30, offset: 1516 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 42, column: 2, offset: 1098 },
-                  end: { line: 42, column: 30, offset: 1126 }
+                  start: { line: 56, column: 2, offset: 1488 },
+                  end: { line: 56, column: 30, offset: 1516 }
                 }
               }
             ],
             position: {
-              start: { line: 37, column: 2, offset: 1002 },
-              end: { line: 42, column: 30, offset: 1126 }
+              start: { line: 51, column: 2, offset: 1392 },
+              end: { line: 56, column: 30, offset: 1516 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 42, column: 30, offset: 1126 }
+          end: { line: 56, column: 30, offset: 1516 }
         }
       },
       execution: {
@@ -27884,9 +28297,8 @@ export default [
     synopsis: '```coffeescript [specscript]\n' +
       'type Foldable = Array|Set|Map|Generator|AsyncGenerator|{ reduce: function }|Object\n' +
       '\n' +
-      'every(fold Foldable, predicate function) -> result Promise|boolean\n' +
-      '\n' +
-      'every(predicate function)(fold Foldable) -> result Promise|boolean\n' +
+      'every(foldable Foldable, predicate function) -> result Promise|boolean\n' +
+      'every(predicate function)(foldable Foldable) -> result Promise|boolean\n' +
       '```',
     description: 'Test a predicate concurrently across all items of a foldable, returning true if all executions return true.\n' +
       '\n' +
@@ -27978,18 +28390,17 @@ export default [
             meta: '[specscript]',
             value: 'type Foldable = Array|Set|Map|Generator|AsyncGenerator|{ reduce: function }|Object\n' +
               '\n' +
-              'every(fold Foldable, predicate function) -> result Promise|boolean\n' +
-              '\n' +
-              'every(predicate function)(fold Foldable) -> result Promise|boolean',
+              'every(foldable Foldable, predicate function) -> result Promise|boolean\n' +
+              'every(predicate function)(foldable Foldable) -> result Promise|boolean',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 7, column: 4, offset: 251 }
+              end: { line: 6, column: 4, offset: 258 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 7, column: 4, offset: 251 }
+          end: { line: 6, column: 4, offset: 258 }
         }
       },
       description: {
@@ -28676,11 +29087,11 @@ export default [
       'type Predicate = (\n' +
       '  value any,\n' +
       '  indexOrKey number|string|any,\n' +
-      '  filt Filterable,\n' +
-      ')=>boolean\n' +
+      '  filterable Filterable,\n' +
+      ')=>(condition Promise|boolean)\n' +
       '\n' +
-      'filter(filt Filterable, predicate Predicate) -> result Promise|Filterable\n' +
-      'filter(predicate Predicate)(filt Filterable) -> result Promise|Filterable\n' +
+      'filter(filterable Promise|Filterable, predicate Predicate) -> result Promise|Filterable\n' +
+      'filter(predicate Predicate)(filterable Filterable) -> result Promise|Filterable\n' +
       '```',
     description: 'Filters out items from a filterable. Returns a filterable of the same type. The order of the items in the filterable is preserved.\n' +
       '\n' +
@@ -28892,20 +29303,20 @@ export default [
               'type Predicate = (\n' +
               '  value any,\n' +
               '  indexOrKey number|string|any,\n' +
-              '  filt Filterable,\n' +
-              ')=>boolean\n' +
+              '  filterable Filterable,\n' +
+              ')=>(condition Promise|boolean)\n' +
               '\n' +
-              'filter(filt Filterable, predicate Predicate) -> result Promise|Filterable\n' +
-              'filter(predicate Predicate)(filt Filterable) -> result Promise|Filterable',
+              'filter(filterable Promise|Filterable, predicate Predicate) -> result Promise|Filterable\n' +
+              'filter(predicate Predicate)(filterable Filterable) -> result Promise|Filterable',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 12, column: 4, offset: 361 }
+              end: { line: 12, column: 4, offset: 407 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 12, column: 4, offset: 361 }
+          end: { line: 12, column: 4, offset: 407 }
         }
       },
       description: {
@@ -30086,11 +30497,13 @@ export default [
       'type FlatMapper = (\n' +
       '  item any,\n' +
       '  indexOrKey number|string|any,\n' +
-      '  mon Monad\n' +
+      '  monad Monad\n' +
       ')=>Promise|Monad|any\n' +
       '\n' +
-      'flatMap(mon Monad, flatMapper FlatMapper) -> result Promise|Monad\n' +
-      'flatMap(flatMapper FlatMapper)(mon Monad) -> result Promise|Monad\n' +
+      'flatMapper FlatMapper\n' +
+      '\n' +
+      'flatMap(monad Promise|Monad, flatMapper) -> result Promise|Monad\n' +
+      'flatMap(flatMapper)(monad Monad) -> result Promise|Monad\n' +
       '```',
     description: 'Applies a flatMapper function to each item of a monad, returning a monad of the same type.\n' +
       '\n' +
@@ -30228,20 +30641,22 @@ export default [
               'type FlatMapper = (\n' +
               '  item any,\n' +
               '  indexOrKey number|string|any,\n' +
-              '  mon Monad\n' +
+              '  monad Monad\n' +
               ')=>Promise|Monad|any\n' +
               '\n' +
-              'flatMap(mon Monad, flatMapper FlatMapper) -> result Promise|Monad\n' +
-              'flatMap(flatMapper FlatMapper)(mon Monad) -> result Promise|Monad',
+              'flatMapper FlatMapper\n' +
+              '\n' +
+              'flatMap(monad Promise|Monad, flatMapper) -> result Promise|Monad\n' +
+              'flatMap(flatMapper)(monad Monad) -> result Promise|Monad',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 12, column: 4, offset: 363 }
+              end: { line: 14, column: 4, offset: 378 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 12, column: 4, offset: 363 }
+          end: { line: 14, column: 4, offset: 378 }
         }
       },
       description: {
@@ -33536,18 +33951,25 @@ export default [
   {
     name: 'gt',
     synopsis: '```coffeescript [specscript]\n' +
-      'gt(leftValue Promise|any, rightValue Promise|any) -> boolean\n' +
+      'args Array<any>\n' +
+      'argsOrPromises Array<Promise|any>\n' +
       '\n' +
-      'gt(leftValue Promise|any, right function)(...args) -> Promise|boolean\n' +
-      'gt(...args, leftValue Promise|any, right function) -> Promise|boolean\n' +
+      'type Resolver = (...args)=>Promise|boolean\n' +
       '\n' +
-      'gt(left function, rightValue Promise|any)(...args) -> Promise|boolean\n' +
-      'gt(...args, left function, rightValue Promise|any) -> Promise|boolean\n' +
+      'leftValue Promise|any\n' +
+      'rightValue Promise|any\n' +
+      'leftResolver Resolver\n' +
+      'rightResolver Resolver\n' +
       '\n' +
-      'gt(left function, right function)(...args) -> Promise|boolean\n' +
-      'gt(...args, left function, right function) -> Promise|boolean\n' +
+      'gt(leftValue, rightValue) -> Promise|boolean\n' +
+      'gt(...argsOrPromises, leftResolver, rightValue) -> Promise|boolean\n' +
+      'gt(...argsOrPromises, leftValue, rightResolver) -> Promise|boolean\n' +
+      'gt(...argsOrPromises, leftResolver, rightResolver) -> Promise|boolean\n' +
+      'gt(leftResolver, rightValue)(...args) -> Promise|boolean\n' +
+      'gt(leftValue, rightResolver)(...args) -> Promise|boolean\n' +
+      'gt(leftResolver, rightResolver)(...args) -> Promise|boolean\n' +
       '```',
-    description: 'Test if a value is greater than (`>`) another value.\n' +
+    description: 'Functional equivalent of the [Greater than (>)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Greater_than) operator. Tests if a value is greater than (`>`) another value.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const age = 40\n' +
@@ -33557,14 +33979,24 @@ export default [
       'console.log(isAgeGreaterThan21) // true\n' +
       '```\n' +
       '\n' +
-      'If either of the two values are resolver functions, `gt` returns a function that resolves the values to compare from its arguments.\n' +
+      'If either of the two values are resolver functions, `gt` returns a function that resolves the value(s) to compare.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      "const isOfLegalAge = gt(21, get('age'))\n" +
+      "const isOfLegalAge = gt(get('age'), 21)\n" +
       '\n' +
       'const juvenile = { age: 16 }\n' +
       '\n' +
       'console.log(isOfLegalAge(juvenile)) // false\n' +
+      '```\n' +
+      '\n' +
+      'If either of the resolver functions is asynchronous, `gt` returns an asynchronous function.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const asyncIsOfLegalAge = gt(async person => person.age, 21)\n' +
+      '\n' +
+      'const juvenile = { age: 16 }\n' +
+      '\n' +
+      'asyncIsOfLegalAge(juvenile).then(console.log) // false\n' +
       '```\n' +
       '\n' +
       '`gt` supports a lazy API for composability.\n' +
@@ -33623,25 +34055,32 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'gt(leftValue Promise|any, rightValue Promise|any) -> boolean\n' +
+            value: 'args Array<any>\n' +
+              'argsOrPromises Array<Promise|any>\n' +
               '\n' +
-              'gt(leftValue Promise|any, right function)(...args) -> Promise|boolean\n' +
-              'gt(...args, leftValue Promise|any, right function) -> Promise|boolean\n' +
+              'type Resolver = (...args)=>Promise|boolean\n' +
               '\n' +
-              'gt(left function, rightValue Promise|any)(...args) -> Promise|boolean\n' +
-              'gt(...args, left function, rightValue Promise|any) -> Promise|boolean\n' +
+              'leftValue Promise|any\n' +
+              'rightValue Promise|any\n' +
+              'leftResolver Resolver\n' +
+              'rightResolver Resolver\n' +
               '\n' +
-              'gt(left function, right function)(...args) -> Promise|boolean\n' +
-              'gt(...args, left function, right function) -> Promise|boolean',
+              'gt(leftValue, rightValue) -> Promise|boolean\n' +
+              'gt(...argsOrPromises, leftResolver, rightValue) -> Promise|boolean\n' +
+              'gt(...argsOrPromises, leftValue, rightResolver) -> Promise|boolean\n' +
+              'gt(...argsOrPromises, leftResolver, rightResolver) -> Promise|boolean\n' +
+              'gt(leftResolver, rightValue)(...args) -> Promise|boolean\n' +
+              'gt(leftValue, rightResolver)(...args) -> Promise|boolean\n' +
+              'gt(leftResolver, rightResolver)(...args) -> Promise|boolean',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 12, column: 4, offset: 500 }
+              end: { line: 19, column: 4, offset: 641 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 12, column: 4, offset: 500 }
+          end: { line: 19, column: 4, offset: 641 }
         }
       },
       description: {
@@ -33652,32 +34091,59 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Test if a value is greater than (',
+                value: 'Functional equivalent of the ',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 34, offset: 33 }
+                  end: { line: 1, column: 30, offset: 29 }
+                }
+              },
+              {
+                type: 'link',
+                title: null,
+                url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Greater_than',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Greater than (>)',
+                    position: {
+                      start: { line: 1, column: 31, offset: 30 },
+                      end: { line: 1, column: 47, offset: 46 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 30, offset: 29 },
+                  end: { line: 1, column: 138, offset: 137 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' operator. Tests if a value is greater than (',
+                position: {
+                  start: { line: 1, column: 138, offset: 137 },
+                  end: { line: 1, column: 183, offset: 182 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: '>',
                 position: {
-                  start: { line: 1, column: 34, offset: 33 },
-                  end: { line: 1, column: 37, offset: 36 }
+                  start: { line: 1, column: 183, offset: 182 },
+                  end: { line: 1, column: 186, offset: 185 }
                 }
               },
               {
                 type: 'text',
                 value: ') another value.',
                 position: {
-                  start: { line: 1, column: 37, offset: 36 },
-                  end: { line: 1, column: 53, offset: 52 }
+                  start: { line: 1, column: 186, offset: 185 },
+                  end: { line: 1, column: 202, offset: 201 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 53, offset: 52 }
+              end: { line: 1, column: 202, offset: 201 }
             }
           },
           {
@@ -33690,8 +34156,8 @@ export default [
               '\n' +
               'console.log(isAgeGreaterThan21) // true',
             position: {
-              start: { line: 3, column: 1, offset: 54 },
-              end: { line: 9, column: 4, offset: 180 }
+              start: { line: 3, column: 1, offset: 203 },
+              end: { line: 9, column: 4, offset: 329 }
             }
           },
           {
@@ -33701,44 +34167,91 @@ export default [
                 type: 'text',
                 value: 'If either of the two values are resolver functions, ',
                 position: {
-                  start: { line: 11, column: 1, offset: 182 },
-                  end: { line: 11, column: 53, offset: 234 }
+                  start: { line: 11, column: 1, offset: 331 },
+                  end: { line: 11, column: 53, offset: 383 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'gt',
                 position: {
-                  start: { line: 11, column: 53, offset: 234 },
-                  end: { line: 11, column: 57, offset: 238 }
+                  start: { line: 11, column: 53, offset: 383 },
+                  end: { line: 11, column: 57, offset: 387 }
                 }
               },
               {
                 type: 'text',
-                value: ' returns a function that resolves the values to compare from its arguments.',
+                value: ' returns a function that resolves the value(s) to compare.',
                 position: {
-                  start: { line: 11, column: 57, offset: 238 },
-                  end: { line: 11, column: 132, offset: 313 }
+                  start: { line: 11, column: 57, offset: 387 },
+                  end: { line: 11, column: 115, offset: 445 }
                 }
               }
             ],
             position: {
-              start: { line: 11, column: 1, offset: 182 },
-              end: { line: 11, column: 132, offset: 313 }
+              start: { line: 11, column: 1, offset: 331 },
+              end: { line: 11, column: 115, offset: 445 }
             }
           },
           {
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: "const isOfLegalAge = gt(21, get('age'))\n" +
+            value: "const isOfLegalAge = gt(get('age'), 21)\n" +
               '\n' +
               'const juvenile = { age: 16 }\n' +
               '\n' +
               'console.log(isOfLegalAge(juvenile)) // false',
             position: {
-              start: { line: 13, column: 1, offset: 315 },
-              end: { line: 19, column: 4, offset: 461 }
+              start: { line: 13, column: 1, offset: 447 },
+              end: { line: 19, column: 4, offset: 593 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If either of the resolver functions is asynchronous, ',
+                position: {
+                  start: { line: 21, column: 1, offset: 595 },
+                  end: { line: 21, column: 54, offset: 648 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'gt',
+                position: {
+                  start: { line: 21, column: 54, offset: 648 },
+                  end: { line: 21, column: 58, offset: 652 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' returns an asynchronous function.',
+                position: {
+                  start: { line: 21, column: 58, offset: 652 },
+                  end: { line: 21, column: 92, offset: 686 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 21, column: 1, offset: 595 },
+              end: { line: 21, column: 92, offset: 686 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'const asyncIsOfLegalAge = gt(async person => person.age, 21)\n' +
+              '\n' +
+              'const juvenile = { age: 16 }\n' +
+              '\n' +
+              'asyncIsOfLegalAge(juvenile).then(console.log) // false',
+            position: {
+              start: { line: 23, column: 1, offset: 688 },
+              end: { line: 29, column: 4, offset: 865 }
             }
           },
           {
@@ -33748,22 +34261,22 @@ export default [
                 type: 'inlineCode',
                 value: 'gt',
                 position: {
-                  start: { line: 21, column: 1, offset: 463 },
-                  end: { line: 21, column: 5, offset: 467 }
+                  start: { line: 31, column: 1, offset: 867 },
+                  end: { line: 31, column: 5, offset: 871 }
                 }
               },
               {
                 type: 'text',
                 value: ' supports a lazy API for composability.',
                 position: {
-                  start: { line: 21, column: 5, offset: 467 },
-                  end: { line: 21, column: 44, offset: 506 }
+                  start: { line: 31, column: 5, offset: 871 },
+                  end: { line: 31, column: 44, offset: 910 }
                 }
               }
             ],
             position: {
-              start: { line: 21, column: 1, offset: 463 },
-              end: { line: 21, column: 44, offset: 506 }
+              start: { line: 31, column: 1, offset: 867 },
+              end: { line: 31, column: 44, offset: 910 }
             }
           },
           {
@@ -33775,8 +34288,8 @@ export default [
               '  console.log, // true\n' +
               '])',
             position: {
-              start: { line: 23, column: 1, offset: 508 },
-              end: { line: 28, column: 4, offset: 608 }
+              start: { line: 33, column: 1, offset: 912 },
+              end: { line: 38, column: 4, offset: 1012 }
             }
           },
           {
@@ -33786,14 +34299,14 @@ export default [
                 type: 'text',
                 value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
                 position: {
-                  start: { line: 30, column: 1, offset: 610 },
-                  end: { line: 30, column: 148, offset: 757 }
+                  start: { line: 40, column: 1, offset: 1014 },
+                  end: { line: 40, column: 148, offset: 1161 }
                 }
               }
             ],
             position: {
-              start: { line: 30, column: 1, offset: 610 },
-              end: { line: 30, column: 148, offset: 757 }
+              start: { line: 40, column: 1, offset: 1014 },
+              end: { line: 40, column: 148, offset: 1161 }
             }
           },
           {
@@ -33802,8 +34315,8 @@ export default [
             meta: '[playground]',
             value: "gt(Promise.resolve({ a: 2, b: 1 }), get('a'), get('b')).then(console.log) // true",
             position: {
-              start: { line: 32, column: 1, offset: 759 },
-              end: { line: 34, column: 4, offset: 871 }
+              start: { line: 42, column: 1, offset: 1163 },
+              end: { line: 44, column: 4, offset: 1275 }
             }
           },
           {
@@ -33813,14 +34326,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 36, column: 1, offset: 873 },
-                  end: { line: 36, column: 10, offset: 882 }
+                  start: { line: 46, column: 1, offset: 1277 },
+                  end: { line: 46, column: 10, offset: 1286 }
                 }
               }
             ],
             position: {
-              start: { line: 36, column: 1, offset: 873 },
-              end: { line: 36, column: 10, offset: 882 }
+              start: { line: 46, column: 1, offset: 1277 },
+              end: { line: 46, column: 10, offset: 1286 }
             }
           },
           {
@@ -33846,26 +34359,26 @@ export default [
                             type: 'text',
                             value: 'and',
                             position: {
-                              start: { line: 37, column: 5, offset: 887 },
-                              end: { line: 37, column: 8, offset: 890 }
+                              start: { line: 47, column: 5, offset: 1291 },
+                              end: { line: 47, column: 8, offset: 1294 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 37, column: 4, offset: 886 },
-                          end: { line: 37, column: 20, offset: 902 }
+                          start: { line: 47, column: 4, offset: 1290 },
+                          end: { line: 47, column: 20, offset: 1306 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 37, column: 4, offset: 886 },
-                      end: { line: 37, column: 20, offset: 902 }
+                      start: { line: 47, column: 4, offset: 1290 },
+                      end: { line: 47, column: 20, offset: 1306 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 37, column: 2, offset: 884 },
-                  end: { line: 37, column: 20, offset: 902 }
+                  start: { line: 47, column: 2, offset: 1288 },
+                  end: { line: 47, column: 20, offset: 1306 }
                 }
               },
               {
@@ -33885,26 +34398,26 @@ export default [
                             type: 'text',
                             value: 'eq',
                             position: {
-                              start: { line: 38, column: 5, offset: 907 },
-                              end: { line: 38, column: 7, offset: 909 }
+                              start: { line: 48, column: 5, offset: 1311 },
+                              end: { line: 48, column: 7, offset: 1313 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 38, column: 4, offset: 906 },
-                          end: { line: 38, column: 18, offset: 920 }
+                          start: { line: 48, column: 4, offset: 1310 },
+                          end: { line: 48, column: 18, offset: 1324 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 38, column: 4, offset: 906 },
-                      end: { line: 38, column: 18, offset: 920 }
+                      start: { line: 48, column: 4, offset: 1310 },
+                      end: { line: 48, column: 18, offset: 1324 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 38, column: 2, offset: 904 },
-                  end: { line: 38, column: 18, offset: 920 }
+                  start: { line: 48, column: 2, offset: 1308 },
+                  end: { line: 48, column: 18, offset: 1324 }
                 }
               },
               {
@@ -33924,26 +34437,26 @@ export default [
                             type: 'text',
                             value: 'lt',
                             position: {
-                              start: { line: 39, column: 5, offset: 925 },
-                              end: { line: 39, column: 7, offset: 927 }
+                              start: { line: 49, column: 5, offset: 1329 },
+                              end: { line: 49, column: 7, offset: 1331 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 39, column: 4, offset: 924 },
-                          end: { line: 39, column: 18, offset: 938 }
+                          start: { line: 49, column: 4, offset: 1328 },
+                          end: { line: 49, column: 18, offset: 1342 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 39, column: 4, offset: 924 },
-                      end: { line: 39, column: 18, offset: 938 }
+                      start: { line: 49, column: 4, offset: 1328 },
+                      end: { line: 49, column: 18, offset: 1342 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 39, column: 2, offset: 922 },
-                  end: { line: 39, column: 18, offset: 938 }
+                  start: { line: 49, column: 2, offset: 1326 },
+                  end: { line: 49, column: 18, offset: 1342 }
                 }
               },
               {
@@ -33963,26 +34476,26 @@ export default [
                             type: 'text',
                             value: 'gte',
                             position: {
-                              start: { line: 40, column: 5, offset: 943 },
-                              end: { line: 40, column: 8, offset: 946 }
+                              start: { line: 50, column: 5, offset: 1347 },
+                              end: { line: 50, column: 8, offset: 1350 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 40, column: 4, offset: 942 },
-                          end: { line: 40, column: 20, offset: 958 }
+                          start: { line: 50, column: 4, offset: 1346 },
+                          end: { line: 50, column: 20, offset: 1362 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 40, column: 4, offset: 942 },
-                      end: { line: 40, column: 20, offset: 958 }
+                      start: { line: 50, column: 4, offset: 1346 },
+                      end: { line: 50, column: 20, offset: 1362 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 40, column: 2, offset: 940 },
-                  end: { line: 40, column: 20, offset: 958 }
+                  start: { line: 50, column: 2, offset: 1344 },
+                  end: { line: 50, column: 20, offset: 1362 }
                 }
               },
               {
@@ -34002,26 +34515,26 @@ export default [
                             type: 'text',
                             value: 'lte',
                             position: {
-                              start: { line: 41, column: 5, offset: 963 },
-                              end: { line: 41, column: 8, offset: 966 }
+                              start: { line: 51, column: 5, offset: 1367 },
+                              end: { line: 51, column: 8, offset: 1370 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 41, column: 4, offset: 962 },
-                          end: { line: 41, column: 20, offset: 978 }
+                          start: { line: 51, column: 4, offset: 1366 },
+                          end: { line: 51, column: 20, offset: 1382 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 41, column: 4, offset: 962 },
-                      end: { line: 41, column: 20, offset: 978 }
+                      start: { line: 51, column: 4, offset: 1366 },
+                      end: { line: 51, column: 20, offset: 1382 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 41, column: 2, offset: 960 },
-                  end: { line: 41, column: 20, offset: 978 }
+                  start: { line: 51, column: 2, offset: 1364 },
+                  end: { line: 51, column: 20, offset: 1382 }
                 }
               },
               {
@@ -34041,38 +34554,38 @@ export default [
                             type: 'text',
                             value: 'thunkify',
                             position: {
-                              start: { line: 42, column: 5, offset: 983 },
-                              end: { line: 42, column: 13, offset: 991 }
+                              start: { line: 52, column: 5, offset: 1387 },
+                              end: { line: 52, column: 13, offset: 1395 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 42, column: 4, offset: 982 },
-                          end: { line: 42, column: 30, offset: 1008 }
+                          start: { line: 52, column: 4, offset: 1386 },
+                          end: { line: 52, column: 30, offset: 1412 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 42, column: 4, offset: 982 },
-                      end: { line: 42, column: 30, offset: 1008 }
+                      start: { line: 52, column: 4, offset: 1386 },
+                      end: { line: 52, column: 30, offset: 1412 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 42, column: 2, offset: 980 },
-                  end: { line: 42, column: 30, offset: 1008 }
+                  start: { line: 52, column: 2, offset: 1384 },
+                  end: { line: 52, column: 30, offset: 1412 }
                 }
               }
             ],
             position: {
-              start: { line: 37, column: 2, offset: 884 },
-              end: { line: 42, column: 30, offset: 1008 }
+              start: { line: 47, column: 2, offset: 1288 },
+              end: { line: 52, column: 30, offset: 1412 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 42, column: 30, offset: 1008 }
+          end: { line: 52, column: 30, offset: 1412 }
         }
       }
     },
@@ -34081,18 +34594,25 @@ export default [
   {
     name: 'gte',
     synopsis: '```coffeescript [specscript]\n' +
-      'gte(leftValue Promise|any, rightValue Promise|any) -> boolean\n' +
+      'args Array<any>\n' +
+      'argsOrPromises Array<Promise|any>\n' +
       '\n' +
-      'gte(leftValue Promise|any, right function)(...args) -> Promise|boolean\n' +
-      'gte(...args, leftValue Promise|any, right function) -> Promise|boolean\n' +
+      'type Resolver = (...args)=>Promise|boolean\n' +
       '\n' +
-      'gte(left function, rightValue Promise|any)(...args) -> Promise|boolean\n' +
-      'gte(...args, left function, rightValue Promise|any) -> Promise|boolean\n' +
+      'leftValue Promise|any\n' +
+      'rightValue Promise|any\n' +
+      'leftResolver Resolver\n' +
+      'rightResolver Resolver\n' +
       '\n' +
-      'gte(left function, right function)(...args) -> Promise|boolean\n' +
-      'gte(...args, left function, right function) -> Promise|boolean\n' +
+      'gte(leftValue, rightValue) -> Promise|boolean\n' +
+      'gte(...argsOrPromises, leftResolver, rightValue) -> Promise|boolean\n' +
+      'gte(...argsOrPromises, leftValue, rightResolver) -> Promise|boolean\n' +
+      'gte(...argsOrPromises, leftResolver, rightResolver) -> Promise|boolean\n' +
+      'gte(leftResolver, rightValue)(...args) -> Promise|boolean\n' +
+      'gte(leftValue, rightResolver)(...args) -> Promise|boolean\n' +
+      'gte(leftResolver, rightResolver)(...args) -> Promise|boolean\n' +
       '```',
-    description: 'Test if a value is greater than or equal (`>=`) to another value.\n' +
+    description: 'Functional equivalent of the [Greater than or equal (>=)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Greater_than_or_equal) operator. Tests if a value is greater than or equal (`>=`) to another value.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const age = 20\n' +
@@ -34102,7 +34622,7 @@ export default [
       'console.log(isAdultAge) // true\n' +
       '```\n' +
       '\n' +
-      'If either of the two values are resolver functions, `gte` returns a function that resolves the values to compare from its arguments.\n' +
+      'If either of the two values are resolver functions, `gte` returns a function that resolves the value(s) to compare.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const identity = value => value\n' +
@@ -34112,6 +34632,18 @@ export default [
       'console.log(isAtLeast100(99)) // false\n' +
       'console.log(isAtLeast100(100)) // true\n' +
       'console.log(isAtLeast100(101)) // true\n' +
+      '```\n' +
+      '\n' +
+      'If either of the two resolver functions is asynchronous, `gte` returns an asynchronous function.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const asyncIdentity = async value => value\n' +
+      '\n' +
+      'const asyncIsAtLeast100 = gte(asyncIdentity, 100)\n' +
+      '\n' +
+      'asyncIsAtLeast100(99).then(console.log) // false\n' +
+      'asyncIsAtLeast100(100).then(console.log) // true\n' +
+      'asyncIsAtLeast100(101).then(console.log) // true\n' +
       '```\n' +
       '\n' +
       '`gte` supports a lazy API for composability.\n' +
@@ -34170,25 +34702,32 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'gte(leftValue Promise|any, rightValue Promise|any) -> boolean\n' +
+            value: 'args Array<any>\n' +
+              'argsOrPromises Array<Promise|any>\n' +
               '\n' +
-              'gte(leftValue Promise|any, right function)(...args) -> Promise|boolean\n' +
-              'gte(...args, leftValue Promise|any, right function) -> Promise|boolean\n' +
+              'type Resolver = (...args)=>Promise|boolean\n' +
               '\n' +
-              'gte(left function, rightValue Promise|any)(...args) -> Promise|boolean\n' +
-              'gte(...args, left function, rightValue Promise|any) -> Promise|boolean\n' +
+              'leftValue Promise|any\n' +
+              'rightValue Promise|any\n' +
+              'leftResolver Resolver\n' +
+              'rightResolver Resolver\n' +
               '\n' +
-              'gte(left function, right function)(...args) -> Promise|boolean\n' +
-              'gte(...args, left function, right function) -> Promise|boolean',
+              'gte(leftValue, rightValue) -> Promise|boolean\n' +
+              'gte(...argsOrPromises, leftResolver, rightValue) -> Promise|boolean\n' +
+              'gte(...argsOrPromises, leftValue, rightResolver) -> Promise|boolean\n' +
+              'gte(...argsOrPromises, leftResolver, rightResolver) -> Promise|boolean\n' +
+              'gte(leftResolver, rightValue)(...args) -> Promise|boolean\n' +
+              'gte(leftValue, rightResolver)(...args) -> Promise|boolean\n' +
+              'gte(leftResolver, rightResolver)(...args) -> Promise|boolean',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 12, column: 4, offset: 507 }
+              end: { line: 19, column: 4, offset: 648 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 12, column: 4, offset: 507 }
+          end: { line: 19, column: 4, offset: 648 }
         }
       },
       description: {
@@ -34199,32 +34738,59 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Test if a value is greater than or equal (',
+                value: 'Functional equivalent of the ',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 43, offset: 42 }
+                  end: { line: 1, column: 30, offset: 29 }
+                }
+              },
+              {
+                type: 'link',
+                title: null,
+                url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Greater_than_or_equal',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Greater than or equal (>=)',
+                    position: {
+                      start: { line: 1, column: 31, offset: 30 },
+                      end: { line: 1, column: 57, offset: 56 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 30, offset: 29 },
+                  end: { line: 1, column: 157, offset: 156 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' operator. Tests if a value is greater than or equal (',
+                position: {
+                  start: { line: 1, column: 157, offset: 156 },
+                  end: { line: 1, column: 211, offset: 210 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: '>=',
                 position: {
-                  start: { line: 1, column: 43, offset: 42 },
-                  end: { line: 1, column: 47, offset: 46 }
+                  start: { line: 1, column: 211, offset: 210 },
+                  end: { line: 1, column: 215, offset: 214 }
                 }
               },
               {
                 type: 'text',
                 value: ') to another value.',
                 position: {
-                  start: { line: 1, column: 47, offset: 46 },
-                  end: { line: 1, column: 66, offset: 65 }
+                  start: { line: 1, column: 215, offset: 214 },
+                  end: { line: 1, column: 234, offset: 233 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 66, offset: 65 }
+              end: { line: 1, column: 234, offset: 233 }
             }
           },
           {
@@ -34237,8 +34803,8 @@ export default [
               '\n' +
               'console.log(isAdultAge) // true',
             position: {
-              start: { line: 3, column: 1, offset: 67 },
-              end: { line: 9, column: 4, offset: 178 }
+              start: { line: 3, column: 1, offset: 235 },
+              end: { line: 9, column: 4, offset: 346 }
             }
           },
           {
@@ -34248,30 +34814,30 @@ export default [
                 type: 'text',
                 value: 'If either of the two values are resolver functions, ',
                 position: {
-                  start: { line: 11, column: 1, offset: 180 },
-                  end: { line: 11, column: 53, offset: 232 }
+                  start: { line: 11, column: 1, offset: 348 },
+                  end: { line: 11, column: 53, offset: 400 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'gte',
                 position: {
-                  start: { line: 11, column: 53, offset: 232 },
-                  end: { line: 11, column: 58, offset: 237 }
+                  start: { line: 11, column: 53, offset: 400 },
+                  end: { line: 11, column: 58, offset: 405 }
                 }
               },
               {
                 type: 'text',
-                value: ' returns a function that resolves the values to compare from its arguments.',
+                value: ' returns a function that resolves the value(s) to compare.',
                 position: {
-                  start: { line: 11, column: 58, offset: 237 },
-                  end: { line: 11, column: 133, offset: 312 }
+                  start: { line: 11, column: 58, offset: 405 },
+                  end: { line: 11, column: 116, offset: 463 }
                 }
               }
             ],
             position: {
-              start: { line: 11, column: 1, offset: 180 },
-              end: { line: 11, column: 133, offset: 312 }
+              start: { line: 11, column: 1, offset: 348 },
+              end: { line: 11, column: 116, offset: 463 }
             }
           },
           {
@@ -34286,8 +34852,57 @@ export default [
               'console.log(isAtLeast100(100)) // true\n' +
               'console.log(isAtLeast100(101)) // true',
             position: {
-              start: { line: 13, column: 1, offset: 314 },
-              end: { line: 21, column: 4, offset: 535 }
+              start: { line: 13, column: 1, offset: 465 },
+              end: { line: 21, column: 4, offset: 686 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If either of the two resolver functions is asynchronous, ',
+                position: {
+                  start: { line: 23, column: 1, offset: 688 },
+                  end: { line: 23, column: 58, offset: 745 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'gte',
+                position: {
+                  start: { line: 23, column: 58, offset: 745 },
+                  end: { line: 23, column: 63, offset: 750 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' returns an asynchronous function.',
+                position: {
+                  start: { line: 23, column: 63, offset: 750 },
+                  end: { line: 23, column: 97, offset: 784 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 23, column: 1, offset: 688 },
+              end: { line: 23, column: 97, offset: 784 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'const asyncIdentity = async value => value\n' +
+              '\n' +
+              'const asyncIsAtLeast100 = gte(asyncIdentity, 100)\n' +
+              '\n' +
+              'asyncIsAtLeast100(99).then(console.log) // false\n' +
+              'asyncIsAtLeast100(100).then(console.log) // true\n' +
+              'asyncIsAtLeast100(101).then(console.log) // true',
+            position: {
+              start: { line: 25, column: 1, offset: 786 },
+              end: { line: 33, column: 4, offset: 1058 }
             }
           },
           {
@@ -34297,22 +34912,22 @@ export default [
                 type: 'inlineCode',
                 value: 'gte',
                 position: {
-                  start: { line: 23, column: 1, offset: 537 },
-                  end: { line: 23, column: 6, offset: 542 }
+                  start: { line: 35, column: 1, offset: 1060 },
+                  end: { line: 35, column: 6, offset: 1065 }
                 }
               },
               {
                 type: 'text',
                 value: ' supports a lazy API for composability.',
                 position: {
-                  start: { line: 23, column: 6, offset: 542 },
-                  end: { line: 23, column: 45, offset: 581 }
+                  start: { line: 35, column: 6, offset: 1065 },
+                  end: { line: 35, column: 45, offset: 1104 }
                 }
               }
             ],
             position: {
-              start: { line: 23, column: 1, offset: 537 },
-              end: { line: 23, column: 45, offset: 581 }
+              start: { line: 35, column: 1, offset: 1060 },
+              end: { line: 35, column: 45, offset: 1104 }
             }
           },
           {
@@ -34324,8 +34939,8 @@ export default [
               '  console.log, // true\n' +
               '])',
             position: {
-              start: { line: 25, column: 1, offset: 583 },
-              end: { line: 30, column: 4, offset: 684 }
+              start: { line: 37, column: 1, offset: 1106 },
+              end: { line: 42, column: 4, offset: 1207 }
             }
           },
           {
@@ -34335,14 +34950,14 @@ export default [
                 type: 'text',
                 value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
                 position: {
-                  start: { line: 32, column: 1, offset: 686 },
-                  end: { line: 32, column: 148, offset: 833 }
+                  start: { line: 44, column: 1, offset: 1209 },
+                  end: { line: 44, column: 148, offset: 1356 }
                 }
               }
             ],
             position: {
-              start: { line: 32, column: 1, offset: 686 },
-              end: { line: 32, column: 148, offset: 833 }
+              start: { line: 44, column: 1, offset: 1209 },
+              end: { line: 44, column: 148, offset: 1356 }
             }
           },
           {
@@ -34351,8 +34966,8 @@ export default [
             meta: '[playground]',
             value: "gte(Promise.resolve({ a: 1, b: 1 }), get('a'), get('b')).then(console.log) // true",
             position: {
-              start: { line: 34, column: 1, offset: 835 },
-              end: { line: 36, column: 4, offset: 948 }
+              start: { line: 46, column: 1, offset: 1358 },
+              end: { line: 48, column: 4, offset: 1471 }
             }
           },
           {
@@ -34362,14 +34977,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 38, column: 1, offset: 950 },
-                  end: { line: 38, column: 10, offset: 959 }
+                  start: { line: 50, column: 1, offset: 1473 },
+                  end: { line: 50, column: 10, offset: 1482 }
                 }
               }
             ],
             position: {
-              start: { line: 38, column: 1, offset: 950 },
-              end: { line: 38, column: 10, offset: 959 }
+              start: { line: 50, column: 1, offset: 1473 },
+              end: { line: 50, column: 10, offset: 1482 }
             }
           },
           {
@@ -34395,26 +35010,26 @@ export default [
                             type: 'text',
                             value: 'and',
                             position: {
-                              start: { line: 39, column: 5, offset: 964 },
-                              end: { line: 39, column: 8, offset: 967 }
+                              start: { line: 51, column: 5, offset: 1487 },
+                              end: { line: 51, column: 8, offset: 1490 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 39, column: 4, offset: 963 },
-                          end: { line: 39, column: 20, offset: 979 }
+                          start: { line: 51, column: 4, offset: 1486 },
+                          end: { line: 51, column: 20, offset: 1502 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 39, column: 4, offset: 963 },
-                      end: { line: 39, column: 20, offset: 979 }
+                      start: { line: 51, column: 4, offset: 1486 },
+                      end: { line: 51, column: 20, offset: 1502 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 39, column: 2, offset: 961 },
-                  end: { line: 39, column: 20, offset: 979 }
+                  start: { line: 51, column: 2, offset: 1484 },
+                  end: { line: 51, column: 20, offset: 1502 }
                 }
               },
               {
@@ -34434,26 +35049,26 @@ export default [
                             type: 'text',
                             value: 'eq',
                             position: {
-                              start: { line: 40, column: 5, offset: 984 },
-                              end: { line: 40, column: 7, offset: 986 }
+                              start: { line: 52, column: 5, offset: 1507 },
+                              end: { line: 52, column: 7, offset: 1509 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 40, column: 4, offset: 983 },
-                          end: { line: 40, column: 18, offset: 997 }
+                          start: { line: 52, column: 4, offset: 1506 },
+                          end: { line: 52, column: 18, offset: 1520 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 40, column: 4, offset: 983 },
-                      end: { line: 40, column: 18, offset: 997 }
+                      start: { line: 52, column: 4, offset: 1506 },
+                      end: { line: 52, column: 18, offset: 1520 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 40, column: 2, offset: 981 },
-                  end: { line: 40, column: 18, offset: 997 }
+                  start: { line: 52, column: 2, offset: 1504 },
+                  end: { line: 52, column: 18, offset: 1520 }
                 }
               },
               {
@@ -34473,26 +35088,26 @@ export default [
                             type: 'text',
                             value: 'lt',
                             position: {
-                              start: { line: 41, column: 5, offset: 1002 },
-                              end: { line: 41, column: 7, offset: 1004 }
+                              start: { line: 53, column: 5, offset: 1525 },
+                              end: { line: 53, column: 7, offset: 1527 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 41, column: 4, offset: 1001 },
-                          end: { line: 41, column: 18, offset: 1015 }
+                          start: { line: 53, column: 4, offset: 1524 },
+                          end: { line: 53, column: 18, offset: 1538 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 41, column: 4, offset: 1001 },
-                      end: { line: 41, column: 18, offset: 1015 }
+                      start: { line: 53, column: 4, offset: 1524 },
+                      end: { line: 53, column: 18, offset: 1538 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 41, column: 2, offset: 999 },
-                  end: { line: 41, column: 18, offset: 1015 }
+                  start: { line: 53, column: 2, offset: 1522 },
+                  end: { line: 53, column: 18, offset: 1538 }
                 }
               },
               {
@@ -34512,26 +35127,26 @@ export default [
                             type: 'text',
                             value: 'gt',
                             position: {
-                              start: { line: 42, column: 5, offset: 1020 },
-                              end: { line: 42, column: 7, offset: 1022 }
+                              start: { line: 54, column: 5, offset: 1543 },
+                              end: { line: 54, column: 7, offset: 1545 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 42, column: 4, offset: 1019 },
-                          end: { line: 42, column: 18, offset: 1033 }
+                          start: { line: 54, column: 4, offset: 1542 },
+                          end: { line: 54, column: 18, offset: 1556 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 42, column: 4, offset: 1019 },
-                      end: { line: 42, column: 18, offset: 1033 }
+                      start: { line: 54, column: 4, offset: 1542 },
+                      end: { line: 54, column: 18, offset: 1556 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 42, column: 2, offset: 1017 },
-                  end: { line: 42, column: 18, offset: 1033 }
+                  start: { line: 54, column: 2, offset: 1540 },
+                  end: { line: 54, column: 18, offset: 1556 }
                 }
               },
               {
@@ -34551,26 +35166,26 @@ export default [
                             type: 'text',
                             value: 'lte',
                             position: {
-                              start: { line: 43, column: 5, offset: 1038 },
-                              end: { line: 43, column: 8, offset: 1041 }
+                              start: { line: 55, column: 5, offset: 1561 },
+                              end: { line: 55, column: 8, offset: 1564 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 43, column: 4, offset: 1037 },
-                          end: { line: 43, column: 20, offset: 1053 }
+                          start: { line: 55, column: 4, offset: 1560 },
+                          end: { line: 55, column: 20, offset: 1576 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 43, column: 4, offset: 1037 },
-                      end: { line: 43, column: 20, offset: 1053 }
+                      start: { line: 55, column: 4, offset: 1560 },
+                      end: { line: 55, column: 20, offset: 1576 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 43, column: 2, offset: 1035 },
-                  end: { line: 43, column: 20, offset: 1053 }
+                  start: { line: 55, column: 2, offset: 1558 },
+                  end: { line: 55, column: 20, offset: 1576 }
                 }
               },
               {
@@ -34590,38 +35205,38 @@ export default [
                             type: 'text',
                             value: 'thunkify',
                             position: {
-                              start: { line: 44, column: 5, offset: 1058 },
-                              end: { line: 44, column: 13, offset: 1066 }
+                              start: { line: 56, column: 5, offset: 1581 },
+                              end: { line: 56, column: 13, offset: 1589 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 44, column: 4, offset: 1057 },
-                          end: { line: 44, column: 30, offset: 1083 }
+                          start: { line: 56, column: 4, offset: 1580 },
+                          end: { line: 56, column: 30, offset: 1606 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 44, column: 4, offset: 1057 },
-                      end: { line: 44, column: 30, offset: 1083 }
+                      start: { line: 56, column: 4, offset: 1580 },
+                      end: { line: 56, column: 30, offset: 1606 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 44, column: 2, offset: 1055 },
-                  end: { line: 44, column: 30, offset: 1083 }
+                  start: { line: 56, column: 2, offset: 1578 },
+                  end: { line: 56, column: 30, offset: 1606 }
                 }
               }
             ],
             position: {
-              start: { line: 39, column: 2, offset: 961 },
-              end: { line: 44, column: 30, offset: 1083 }
+              start: { line: 51, column: 2, offset: 1484 },
+              end: { line: 56, column: 30, offset: 1606 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 44, column: 30, offset: 1083 }
+          end: { line: 56, column: 30, offset: 1606 }
         }
       }
     },
@@ -34634,18 +35249,25 @@ export default [
   {
     name: 'lt',
     synopsis: '```coffeescript [specscript]\n' +
-      'lt(leftValue Promise|any, rightValue Promise|any) -> boolean\n' +
+      'args Array<any>\n' +
+      'argsOrPromises Array<Promise|any>\n' +
       '\n' +
-      'lt(leftValue Promise|any, right function)(...args) -> Promise|boolean\n' +
-      'lt(...args, leftValue Promise|any, right function) -> Promise|boolean\n' +
+      'type Resolver = (...args)=>Promise|boolean\n' +
       '\n' +
-      'lt(left function, rightValue Promise|any)(...args) -> Promise|boolean\n' +
-      'lt(...args, left function, rightValue Promise|any) -> Promise|boolean\n' +
+      'leftValue Promise|any\n' +
+      'rightValue Promise|any\n' +
+      'leftResolver Resolver\n' +
+      'rightResolver Resolver\n' +
       '\n' +
-      'lt(left function, right function)(...args) -> Promise|boolean\n' +
-      'lt(...args, left function, right function) -> Promise|boolean\n' +
+      'lt(leftValue, rightValue) -> Promise|boolean\n' +
+      'lt(...argsOrPromises, leftResolver, rightValue) -> Promise|boolean\n' +
+      'lt(...argsOrPromises, leftValue, rightResolver) -> Promise|boolean\n' +
+      'lt(...argsOrPromises, leftResolver, rightResolver) -> Promise|boolean\n' +
+      'lt(leftResolver, rightValue)(...args) -> Promise|boolean\n' +
+      'lt(leftValue, rightResolver)(...args) -> Promise|boolean\n' +
+      'lt(leftResolver, rightResolver)(...args) -> Promise|boolean\n' +
       '```',
-    description: 'Test if a value is less than (`<`) another value.\n' +
+    description: 'Functional equivalent of the [Less than (<)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Less_than) operator. Tests if a value is less than (`<`) another value.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'console.log(lt(1, 3)) // true\n' +
@@ -34653,7 +35275,7 @@ export default [
       'console.log(lt(4, 3)) // false\n' +
       '```\n' +
       '\n' +
-      'If either of the two values are resolver functions, `lt` returns a function that resolves the values to compare from its arguments.\n' +
+      'If either of the two values are resolver functions, `lt` returns a function that resolves the value(s) to compare.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const identity = value => value\n' +
@@ -34663,6 +35285,18 @@ export default [
       'console.log(isLessThan3(1)) // true\n' +
       'console.log(isLessThan3(3)) // false\n' +
       'console.log(isLessThan3(5)) // false\n' +
+      '```\n' +
+      '\n' +
+      'If either of the resolver functions is asynchronous, `lt` returns an asynchronous function.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const asyncIdentity = async value => value\n' +
+      '\n' +
+      'const asyncIsLessThan3 = lt(asyncIdentity, 3)\n' +
+      '\n' +
+      'asyncIsLessThan3(1).then(console.log) // true\n' +
+      'asyncIsLessThan3(3).then(console.log) // false\n' +
+      'asyncIsLessThan3(5).then(console.log) // false\n' +
       '```\n' +
       '\n' +
       '`lt` supports a lazy API for composability.\n' +
@@ -34713,25 +35347,32 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'lt(leftValue Promise|any, rightValue Promise|any) -> boolean\n' +
+            value: 'args Array<any>\n' +
+              'argsOrPromises Array<Promise|any>\n' +
               '\n' +
-              'lt(leftValue Promise|any, right function)(...args) -> Promise|boolean\n' +
-              'lt(...args, leftValue Promise|any, right function) -> Promise|boolean\n' +
+              'type Resolver = (...args)=>Promise|boolean\n' +
               '\n' +
-              'lt(left function, rightValue Promise|any)(...args) -> Promise|boolean\n' +
-              'lt(...args, left function, rightValue Promise|any) -> Promise|boolean\n' +
+              'leftValue Promise|any\n' +
+              'rightValue Promise|any\n' +
+              'leftResolver Resolver\n' +
+              'rightResolver Resolver\n' +
               '\n' +
-              'lt(left function, right function)(...args) -> Promise|boolean\n' +
-              'lt(...args, left function, right function) -> Promise|boolean',
+              'lt(leftValue, rightValue) -> Promise|boolean\n' +
+              'lt(...argsOrPromises, leftResolver, rightValue) -> Promise|boolean\n' +
+              'lt(...argsOrPromises, leftValue, rightResolver) -> Promise|boolean\n' +
+              'lt(...argsOrPromises, leftResolver, rightResolver) -> Promise|boolean\n' +
+              'lt(leftResolver, rightValue)(...args) -> Promise|boolean\n' +
+              'lt(leftValue, rightResolver)(...args) -> Promise|boolean\n' +
+              'lt(leftResolver, rightResolver)(...args) -> Promise|boolean',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 12, column: 4, offset: 500 }
+              end: { line: 19, column: 4, offset: 641 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 12, column: 4, offset: 500 }
+          end: { line: 19, column: 4, offset: 641 }
         }
       },
       description: {
@@ -34742,32 +35383,59 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Test if a value is less than (',
+                value: 'Functional equivalent of the ',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 31, offset: 30 }
+                  end: { line: 1, column: 30, offset: 29 }
+                }
+              },
+              {
+                type: 'link',
+                title: null,
+                url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Less_than',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Less than (<)',
+                    position: {
+                      start: { line: 1, column: 31, offset: 30 },
+                      end: { line: 1, column: 44, offset: 43 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 30, offset: 29 },
+                  end: { line: 1, column: 132, offset: 131 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' operator. Tests if a value is less than (',
+                position: {
+                  start: { line: 1, column: 132, offset: 131 },
+                  end: { line: 1, column: 174, offset: 173 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: '<',
                 position: {
-                  start: { line: 1, column: 31, offset: 30 },
-                  end: { line: 1, column: 34, offset: 33 }
+                  start: { line: 1, column: 174, offset: 173 },
+                  end: { line: 1, column: 177, offset: 176 }
                 }
               },
               {
                 type: 'text',
                 value: ') another value.',
                 position: {
-                  start: { line: 1, column: 34, offset: 33 },
-                  end: { line: 1, column: 50, offset: 49 }
+                  start: { line: 1, column: 177, offset: 176 },
+                  end: { line: 1, column: 193, offset: 192 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 50, offset: 49 }
+              end: { line: 1, column: 193, offset: 192 }
             }
           },
           {
@@ -34778,8 +35446,8 @@ export default [
               'console.log(lt(3, 3)) // false\n' +
               'console.log(lt(4, 3)) // false',
             position: {
-              start: { line: 3, column: 1, offset: 51 },
-              end: { line: 7, column: 4, offset: 173 }
+              start: { line: 3, column: 1, offset: 194 },
+              end: { line: 7, column: 4, offset: 316 }
             }
           },
           {
@@ -34789,30 +35457,30 @@ export default [
                 type: 'text',
                 value: 'If either of the two values are resolver functions, ',
                 position: {
-                  start: { line: 9, column: 1, offset: 175 },
-                  end: { line: 9, column: 53, offset: 227 }
+                  start: { line: 9, column: 1, offset: 318 },
+                  end: { line: 9, column: 53, offset: 370 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'lt',
                 position: {
-                  start: { line: 9, column: 53, offset: 227 },
-                  end: { line: 9, column: 57, offset: 231 }
+                  start: { line: 9, column: 53, offset: 370 },
+                  end: { line: 9, column: 57, offset: 374 }
                 }
               },
               {
                 type: 'text',
-                value: ' returns a function that resolves the values to compare from its arguments.',
+                value: ' returns a function that resolves the value(s) to compare.',
                 position: {
-                  start: { line: 9, column: 57, offset: 231 },
-                  end: { line: 9, column: 132, offset: 306 }
+                  start: { line: 9, column: 57, offset: 374 },
+                  end: { line: 9, column: 115, offset: 432 }
                 }
               }
             ],
             position: {
-              start: { line: 9, column: 1, offset: 175 },
-              end: { line: 9, column: 132, offset: 306 }
+              start: { line: 9, column: 1, offset: 318 },
+              end: { line: 9, column: 115, offset: 432 }
             }
           },
           {
@@ -34827,8 +35495,57 @@ export default [
               'console.log(isLessThan3(3)) // false\n' +
               'console.log(isLessThan3(5)) // false',
             position: {
-              start: { line: 11, column: 1, offset: 308 },
-              end: { line: 19, column: 4, offset: 518 }
+              start: { line: 11, column: 1, offset: 434 },
+              end: { line: 19, column: 4, offset: 644 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If either of the resolver functions is asynchronous, ',
+                position: {
+                  start: { line: 21, column: 1, offset: 646 },
+                  end: { line: 21, column: 54, offset: 699 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'lt',
+                position: {
+                  start: { line: 21, column: 54, offset: 699 },
+                  end: { line: 21, column: 58, offset: 703 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' returns an asynchronous function.',
+                position: {
+                  start: { line: 21, column: 58, offset: 703 },
+                  end: { line: 21, column: 92, offset: 737 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 21, column: 1, offset: 646 },
+              end: { line: 21, column: 92, offset: 737 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'const asyncIdentity = async value => value\n' +
+              '\n' +
+              'const asyncIsLessThan3 = lt(asyncIdentity, 3)\n' +
+              '\n' +
+              'asyncIsLessThan3(1).then(console.log) // true\n' +
+              'asyncIsLessThan3(3).then(console.log) // false\n' +
+              'asyncIsLessThan3(5).then(console.log) // false',
+            position: {
+              start: { line: 23, column: 1, offset: 739 },
+              end: { line: 31, column: 4, offset: 1000 }
             }
           },
           {
@@ -34838,22 +35555,22 @@ export default [
                 type: 'inlineCode',
                 value: 'lt',
                 position: {
-                  start: { line: 21, column: 1, offset: 520 },
-                  end: { line: 21, column: 5, offset: 524 }
+                  start: { line: 33, column: 1, offset: 1002 },
+                  end: { line: 33, column: 5, offset: 1006 }
                 }
               },
               {
                 type: 'text',
                 value: ' supports a lazy API for composability.',
                 position: {
-                  start: { line: 21, column: 5, offset: 524 },
-                  end: { line: 21, column: 44, offset: 563 }
+                  start: { line: 33, column: 5, offset: 1006 },
+                  end: { line: 33, column: 44, offset: 1045 }
                 }
               }
             ],
             position: {
-              start: { line: 21, column: 1, offset: 520 },
-              end: { line: 21, column: 44, offset: 563 }
+              start: { line: 33, column: 1, offset: 1002 },
+              end: { line: 33, column: 44, offset: 1045 }
             }
           },
           {
@@ -34865,8 +35582,8 @@ export default [
               '  console.log, // true\n' +
               '])',
             position: {
-              start: { line: 23, column: 1, offset: 565 },
-              end: { line: 28, column: 4, offset: 665 }
+              start: { line: 35, column: 1, offset: 1047 },
+              end: { line: 40, column: 4, offset: 1147 }
             }
           },
           {
@@ -34876,14 +35593,14 @@ export default [
                 type: 'text',
                 value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
                 position: {
-                  start: { line: 30, column: 1, offset: 667 },
-                  end: { line: 30, column: 148, offset: 814 }
+                  start: { line: 42, column: 1, offset: 1149 },
+                  end: { line: 42, column: 148, offset: 1296 }
                 }
               }
             ],
             position: {
-              start: { line: 30, column: 1, offset: 667 },
-              end: { line: 30, column: 148, offset: 814 }
+              start: { line: 42, column: 1, offset: 1149 },
+              end: { line: 42, column: 148, offset: 1296 }
             }
           },
           {
@@ -34892,14 +35609,14 @@ export default [
             meta: '[playground]',
             value: "lt(Promise.resolve({ a: 1, b: 2 }), get('a'), get('b')).then(console.log) // true",
             position: {
-              start: { line: 32, column: 1, offset: 816 },
-              end: { line: 34, column: 4, offset: 928 }
+              start: { line: 44, column: 1, offset: 1298 },
+              end: { line: 46, column: 4, offset: 1410 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 34, column: 4, offset: 928 }
+          end: { line: 46, column: 4, offset: 1410 }
         }
       }
     },
@@ -34908,18 +35625,25 @@ export default [
   {
     name: 'lte',
     synopsis: '```coffeescript [specscript]\n' +
-      'lte(leftValue Promise|any, rightValue Promise|any) -> boolean\n' +
+      'args Array<any>\n' +
+      'argsOrPromises Array<Promise|any>\n' +
       '\n' +
-      'lte(leftValue Promise|any, right function)(...args) -> Promise|boolean\n' +
-      'lte(...args, leftValue Promise|any, right function) -> Promise|boolean\n' +
+      'type Resolver = (...args)=>Promise|boolean\n' +
       '\n' +
-      'lte(left function, rightValue Promise|any)(...args) -> Promise|boolean\n' +
-      'lte(...args, left function, rightValue Promise|any) -> Promise|boolean\n' +
+      'leftValue Promise|any\n' +
+      'rightValue Promise|any\n' +
+      'leftResolver Resolver\n' +
+      'rightResolver Resolver\n' +
       '\n' +
-      'lte(left function, right function)(...args) -> Promise|boolean\n' +
-      'lte(...args, left function, right function) -> Promise|boolean\n' +
+      'lte(leftValue, rightValue) -> Promise|boolean\n' +
+      'lte(...argsOrPromises, leftResolver, rightValue) -> Promise|boolean\n' +
+      'lte(...argsOrPromises, leftValue, rightResolver) -> Promise|boolean\n' +
+      'lte(...argsOrPromises, leftResolver, rightResolver) -> Promise|boolean\n' +
+      'lte(leftResolver, rightValue)(...args) -> Promise|boolean\n' +
+      'lte(leftValue, rightResolver)(...args) -> Promise|boolean\n' +
+      'lte(leftResolver, rightResolver)(...args) -> Promise|boolean\n' +
       '```',
-    description: 'Test if a value is less than or equal (`<=`) to another value.\n' +
+    description: 'Functional equivalent of the [Less than or equal (>=)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Less_than_or_equal) operator. Tests if a value is less than or equal (`<=`) to another value.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'console.log(lte(1, 3)) // true\n' +
@@ -34927,16 +35651,28 @@ export default [
       'console.log(lte(4, 3)) // false\n' +
       '```\n' +
       '\n' +
-      'If either of the two values are resolver functions, `lte` returns a function that resolves the values to compare from its arguments.\n' +
+      'If either of the two values are resolver functions, `lte` returns a function that resolves the value(s) to compare.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const identity = value => value\n' +
       '\n' +
       'const isLessThanOrEqualTo3 = lte(identity, 3)\n' +
       '\n' +
-      'console.log(isLessThanOrEqualTo3(1), true)\n' +
-      'console.log(isLessThanOrEqualTo3(3), true)\n' +
-      'console.log(isLessThanOrEqualTo3(5), false)\n' +
+      'console.log(isLessThanOrEqualTo3(1)) // true\n' +
+      'console.log(isLessThanOrEqualTo3(3)) // true\n' +
+      'console.log(isLessThanOrEqualTo3(5)) // false\n' +
+      '```\n' +
+      '\n' +
+      'If either of the two resolver functions is asynchronous, `lte` returns an asynchronous function.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const asyncIdentity = async value => value\n' +
+      '\n' +
+      'const asyncIsLessThanOrEqualTo3 = lte(asyncIdentity, 3)\n' +
+      '\n' +
+      'asyncIsLessThanOrEqualTo3(1).then(console.log) // true\n' +
+      'asyncIsLessThanOrEqualTo3(3).then(console.log) // true\n' +
+      'asyncIsLessThanOrEqualTo3(5).then(console.log) // false\n' +
       '```\n' +
       '\n' +
       '`lte` supports a lazy API for composability.\n' +
@@ -34995,25 +35731,32 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'lte(leftValue Promise|any, rightValue Promise|any) -> boolean\n' +
+            value: 'args Array<any>\n' +
+              'argsOrPromises Array<Promise|any>\n' +
               '\n' +
-              'lte(leftValue Promise|any, right function)(...args) -> Promise|boolean\n' +
-              'lte(...args, leftValue Promise|any, right function) -> Promise|boolean\n' +
+              'type Resolver = (...args)=>Promise|boolean\n' +
               '\n' +
-              'lte(left function, rightValue Promise|any)(...args) -> Promise|boolean\n' +
-              'lte(...args, left function, rightValue Promise|any) -> Promise|boolean\n' +
+              'leftValue Promise|any\n' +
+              'rightValue Promise|any\n' +
+              'leftResolver Resolver\n' +
+              'rightResolver Resolver\n' +
               '\n' +
-              'lte(left function, right function)(...args) -> Promise|boolean\n' +
-              'lte(...args, left function, right function) -> Promise|boolean',
+              'lte(leftValue, rightValue) -> Promise|boolean\n' +
+              'lte(...argsOrPromises, leftResolver, rightValue) -> Promise|boolean\n' +
+              'lte(...argsOrPromises, leftValue, rightResolver) -> Promise|boolean\n' +
+              'lte(...argsOrPromises, leftResolver, rightResolver) -> Promise|boolean\n' +
+              'lte(leftResolver, rightValue)(...args) -> Promise|boolean\n' +
+              'lte(leftValue, rightResolver)(...args) -> Promise|boolean\n' +
+              'lte(leftResolver, rightResolver)(...args) -> Promise|boolean',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 12, column: 4, offset: 507 }
+              end: { line: 19, column: 4, offset: 648 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 12, column: 4, offset: 507 }
+          end: { line: 19, column: 4, offset: 648 }
         }
       },
       description: {
@@ -35024,32 +35767,59 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Test if a value is less than or equal (',
+                value: 'Functional equivalent of the ',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 40, offset: 39 }
+                  end: { line: 1, column: 30, offset: 29 }
+                }
+              },
+              {
+                type: 'link',
+                title: null,
+                url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Less_than_or_equal',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Less than or equal (>=)',
+                    position: {
+                      start: { line: 1, column: 31, offset: 30 },
+                      end: { line: 1, column: 54, offset: 53 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 30, offset: 29 },
+                  end: { line: 1, column: 151, offset: 150 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' operator. Tests if a value is less than or equal (',
+                position: {
+                  start: { line: 1, column: 151, offset: 150 },
+                  end: { line: 1, column: 202, offset: 201 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: '<=',
                 position: {
-                  start: { line: 1, column: 40, offset: 39 },
-                  end: { line: 1, column: 44, offset: 43 }
+                  start: { line: 1, column: 202, offset: 201 },
+                  end: { line: 1, column: 206, offset: 205 }
                 }
               },
               {
                 type: 'text',
                 value: ') to another value.',
                 position: {
-                  start: { line: 1, column: 44, offset: 43 },
-                  end: { line: 1, column: 63, offset: 62 }
+                  start: { line: 1, column: 206, offset: 205 },
+                  end: { line: 1, column: 225, offset: 224 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 63, offset: 62 }
+              end: { line: 1, column: 225, offset: 224 }
             }
           },
           {
@@ -35060,8 +35830,8 @@ export default [
               'console.log(lte(3, 3)) // true\n' +
               'console.log(lte(4, 3)) // false',
             position: {
-              start: { line: 3, column: 1, offset: 64 },
-              end: { line: 7, column: 4, offset: 188 }
+              start: { line: 3, column: 1, offset: 226 },
+              end: { line: 7, column: 4, offset: 350 }
             }
           },
           {
@@ -35071,30 +35841,30 @@ export default [
                 type: 'text',
                 value: 'If either of the two values are resolver functions, ',
                 position: {
-                  start: { line: 9, column: 1, offset: 190 },
-                  end: { line: 9, column: 53, offset: 242 }
+                  start: { line: 9, column: 1, offset: 352 },
+                  end: { line: 9, column: 53, offset: 404 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'lte',
                 position: {
-                  start: { line: 9, column: 53, offset: 242 },
-                  end: { line: 9, column: 58, offset: 247 }
+                  start: { line: 9, column: 53, offset: 404 },
+                  end: { line: 9, column: 58, offset: 409 }
                 }
               },
               {
                 type: 'text',
-                value: ' returns a function that resolves the values to compare from its arguments.',
+                value: ' returns a function that resolves the value(s) to compare.',
                 position: {
-                  start: { line: 9, column: 58, offset: 247 },
-                  end: { line: 9, column: 133, offset: 322 }
+                  start: { line: 9, column: 58, offset: 409 },
+                  end: { line: 9, column: 116, offset: 467 }
                 }
               }
             ],
             position: {
-              start: { line: 9, column: 1, offset: 190 },
-              end: { line: 9, column: 133, offset: 322 }
+              start: { line: 9, column: 1, offset: 352 },
+              end: { line: 9, column: 116, offset: 467 }
             }
           },
           {
@@ -35105,12 +35875,61 @@ export default [
               '\n' +
               'const isLessThanOrEqualTo3 = lte(identity, 3)\n' +
               '\n' +
-              'console.log(isLessThanOrEqualTo3(1), true)\n' +
-              'console.log(isLessThanOrEqualTo3(3), true)\n' +
-              'console.log(isLessThanOrEqualTo3(5), false)',
+              'console.log(isLessThanOrEqualTo3(1)) // true\n' +
+              'console.log(isLessThanOrEqualTo3(3)) // true\n' +
+              'console.log(isLessThanOrEqualTo3(5)) // false',
             position: {
-              start: { line: 11, column: 1, offset: 324 },
-              end: { line: 19, column: 4, offset: 564 }
+              start: { line: 11, column: 1, offset: 469 },
+              end: { line: 19, column: 4, offset: 715 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If either of the two resolver functions is asynchronous, ',
+                position: {
+                  start: { line: 21, column: 1, offset: 717 },
+                  end: { line: 21, column: 58, offset: 774 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'lte',
+                position: {
+                  start: { line: 21, column: 58, offset: 774 },
+                  end: { line: 21, column: 63, offset: 779 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' returns an asynchronous function.',
+                position: {
+                  start: { line: 21, column: 63, offset: 779 },
+                  end: { line: 21, column: 97, offset: 813 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 21, column: 1, offset: 717 },
+              end: { line: 21, column: 97, offset: 813 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'const asyncIdentity = async value => value\n' +
+              '\n' +
+              'const asyncIsLessThanOrEqualTo3 = lte(asyncIdentity, 3)\n' +
+              '\n' +
+              'asyncIsLessThanOrEqualTo3(1).then(console.log) // true\n' +
+              'asyncIsLessThanOrEqualTo3(3).then(console.log) // true\n' +
+              'asyncIsLessThanOrEqualTo3(5).then(console.log) // false',
+            position: {
+              start: { line: 23, column: 1, offset: 815 },
+              end: { line: 31, column: 4, offset: 1112 }
             }
           },
           {
@@ -35120,22 +35939,22 @@ export default [
                 type: 'inlineCode',
                 value: 'lte',
                 position: {
-                  start: { line: 21, column: 1, offset: 566 },
-                  end: { line: 21, column: 6, offset: 571 }
+                  start: { line: 33, column: 1, offset: 1114 },
+                  end: { line: 33, column: 6, offset: 1119 }
                 }
               },
               {
                 type: 'text',
                 value: ' supports a lazy API for composability.',
                 position: {
-                  start: { line: 21, column: 6, offset: 571 },
-                  end: { line: 21, column: 45, offset: 610 }
+                  start: { line: 33, column: 6, offset: 1119 },
+                  end: { line: 33, column: 45, offset: 1158 }
                 }
               }
             ],
             position: {
-              start: { line: 21, column: 1, offset: 566 },
-              end: { line: 21, column: 45, offset: 610 }
+              start: { line: 33, column: 1, offset: 1114 },
+              end: { line: 33, column: 45, offset: 1158 }
             }
           },
           {
@@ -35147,8 +35966,8 @@ export default [
               '  console.log, // true\n' +
               '])',
             position: {
-              start: { line: 23, column: 1, offset: 612 },
-              end: { line: 28, column: 4, offset: 713 }
+              start: { line: 35, column: 1, offset: 1160 },
+              end: { line: 40, column: 4, offset: 1261 }
             }
           },
           {
@@ -35158,14 +35977,14 @@ export default [
                 type: 'text',
                 value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
                 position: {
-                  start: { line: 30, column: 1, offset: 715 },
-                  end: { line: 30, column: 148, offset: 862 }
+                  start: { line: 42, column: 1, offset: 1263 },
+                  end: { line: 42, column: 148, offset: 1410 }
                 }
               }
             ],
             position: {
-              start: { line: 30, column: 1, offset: 715 },
-              end: { line: 30, column: 148, offset: 862 }
+              start: { line: 42, column: 1, offset: 1263 },
+              end: { line: 42, column: 148, offset: 1410 }
             }
           },
           {
@@ -35174,8 +35993,8 @@ export default [
             meta: '[playground]',
             value: "lte(Promise.resolve({ a: 1, b: 1 }), get('a'), get('b')).then(console.log) // true",
             position: {
-              start: { line: 32, column: 1, offset: 864 },
-              end: { line: 34, column: 4, offset: 977 }
+              start: { line: 44, column: 1, offset: 1412 },
+              end: { line: 46, column: 4, offset: 1525 }
             }
           },
           {
@@ -35185,14 +36004,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 36, column: 1, offset: 979 },
-                  end: { line: 36, column: 10, offset: 988 }
+                  start: { line: 48, column: 1, offset: 1527 },
+                  end: { line: 48, column: 10, offset: 1536 }
                 }
               }
             ],
             position: {
-              start: { line: 36, column: 1, offset: 979 },
-              end: { line: 36, column: 10, offset: 988 }
+              start: { line: 48, column: 1, offset: 1527 },
+              end: { line: 48, column: 10, offset: 1536 }
             }
           },
           {
@@ -35218,26 +36037,26 @@ export default [
                             type: 'text',
                             value: 'and',
                             position: {
-                              start: { line: 37, column: 5, offset: 993 },
-                              end: { line: 37, column: 8, offset: 996 }
+                              start: { line: 49, column: 5, offset: 1541 },
+                              end: { line: 49, column: 8, offset: 1544 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 37, column: 4, offset: 992 },
-                          end: { line: 37, column: 20, offset: 1008 }
+                          start: { line: 49, column: 4, offset: 1540 },
+                          end: { line: 49, column: 20, offset: 1556 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 37, column: 4, offset: 992 },
-                      end: { line: 37, column: 20, offset: 1008 }
+                      start: { line: 49, column: 4, offset: 1540 },
+                      end: { line: 49, column: 20, offset: 1556 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 37, column: 2, offset: 990 },
-                  end: { line: 37, column: 20, offset: 1008 }
+                  start: { line: 49, column: 2, offset: 1538 },
+                  end: { line: 49, column: 20, offset: 1556 }
                 }
               },
               {
@@ -35257,26 +36076,26 @@ export default [
                             type: 'text',
                             value: 'eq',
                             position: {
-                              start: { line: 38, column: 5, offset: 1013 },
-                              end: { line: 38, column: 7, offset: 1015 }
+                              start: { line: 50, column: 5, offset: 1561 },
+                              end: { line: 50, column: 7, offset: 1563 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 38, column: 4, offset: 1012 },
-                          end: { line: 38, column: 18, offset: 1026 }
+                          start: { line: 50, column: 4, offset: 1560 },
+                          end: { line: 50, column: 18, offset: 1574 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 38, column: 4, offset: 1012 },
-                      end: { line: 38, column: 18, offset: 1026 }
+                      start: { line: 50, column: 4, offset: 1560 },
+                      end: { line: 50, column: 18, offset: 1574 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 38, column: 2, offset: 1010 },
-                  end: { line: 38, column: 18, offset: 1026 }
+                  start: { line: 50, column: 2, offset: 1558 },
+                  end: { line: 50, column: 18, offset: 1574 }
                 }
               },
               {
@@ -35296,26 +36115,26 @@ export default [
                             type: 'text',
                             value: 'lt',
                             position: {
-                              start: { line: 39, column: 5, offset: 1031 },
-                              end: { line: 39, column: 7, offset: 1033 }
+                              start: { line: 51, column: 5, offset: 1579 },
+                              end: { line: 51, column: 7, offset: 1581 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 39, column: 4, offset: 1030 },
-                          end: { line: 39, column: 18, offset: 1044 }
+                          start: { line: 51, column: 4, offset: 1578 },
+                          end: { line: 51, column: 18, offset: 1592 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 39, column: 4, offset: 1030 },
-                      end: { line: 39, column: 18, offset: 1044 }
+                      start: { line: 51, column: 4, offset: 1578 },
+                      end: { line: 51, column: 18, offset: 1592 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 39, column: 2, offset: 1028 },
-                  end: { line: 39, column: 18, offset: 1044 }
+                  start: { line: 51, column: 2, offset: 1576 },
+                  end: { line: 51, column: 18, offset: 1592 }
                 }
               },
               {
@@ -35335,26 +36154,26 @@ export default [
                             type: 'text',
                             value: 'gt',
                             position: {
-                              start: { line: 40, column: 5, offset: 1049 },
-                              end: { line: 40, column: 7, offset: 1051 }
+                              start: { line: 52, column: 5, offset: 1597 },
+                              end: { line: 52, column: 7, offset: 1599 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 40, column: 4, offset: 1048 },
-                          end: { line: 40, column: 18, offset: 1062 }
+                          start: { line: 52, column: 4, offset: 1596 },
+                          end: { line: 52, column: 18, offset: 1610 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 40, column: 4, offset: 1048 },
-                      end: { line: 40, column: 18, offset: 1062 }
+                      start: { line: 52, column: 4, offset: 1596 },
+                      end: { line: 52, column: 18, offset: 1610 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 40, column: 2, offset: 1046 },
-                  end: { line: 40, column: 18, offset: 1062 }
+                  start: { line: 52, column: 2, offset: 1594 },
+                  end: { line: 52, column: 18, offset: 1610 }
                 }
               },
               {
@@ -35374,26 +36193,26 @@ export default [
                             type: 'text',
                             value: 'gte',
                             position: {
-                              start: { line: 41, column: 5, offset: 1067 },
-                              end: { line: 41, column: 8, offset: 1070 }
+                              start: { line: 53, column: 5, offset: 1615 },
+                              end: { line: 53, column: 8, offset: 1618 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 41, column: 4, offset: 1066 },
-                          end: { line: 41, column: 20, offset: 1082 }
+                          start: { line: 53, column: 4, offset: 1614 },
+                          end: { line: 53, column: 20, offset: 1630 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 41, column: 4, offset: 1066 },
-                      end: { line: 41, column: 20, offset: 1082 }
+                      start: { line: 53, column: 4, offset: 1614 },
+                      end: { line: 53, column: 20, offset: 1630 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 41, column: 2, offset: 1064 },
-                  end: { line: 41, column: 20, offset: 1082 }
+                  start: { line: 53, column: 2, offset: 1612 },
+                  end: { line: 53, column: 20, offset: 1630 }
                 }
               },
               {
@@ -35413,38 +36232,38 @@ export default [
                             type: 'text',
                             value: 'thunkify',
                             position: {
-                              start: { line: 42, column: 5, offset: 1087 },
-                              end: { line: 42, column: 13, offset: 1095 }
+                              start: { line: 54, column: 5, offset: 1635 },
+                              end: { line: 54, column: 13, offset: 1643 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 42, column: 4, offset: 1086 },
-                          end: { line: 42, column: 30, offset: 1112 }
+                          start: { line: 54, column: 4, offset: 1634 },
+                          end: { line: 54, column: 30, offset: 1660 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 42, column: 4, offset: 1086 },
-                      end: { line: 42, column: 30, offset: 1112 }
+                      start: { line: 54, column: 4, offset: 1634 },
+                      end: { line: 54, column: 30, offset: 1660 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 42, column: 2, offset: 1084 },
-                  end: { line: 42, column: 30, offset: 1112 }
+                  start: { line: 54, column: 2, offset: 1632 },
+                  end: { line: 54, column: 30, offset: 1660 }
                 }
               }
             ],
             position: {
-              start: { line: 37, column: 2, offset: 990 },
-              end: { line: 42, column: 30, offset: 1112 }
+              start: { line: 49, column: 2, offset: 1538 },
+              end: { line: 54, column: 30, offset: 1660 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 42, column: 30, offset: 1112 }
+          end: { line: 54, column: 30, offset: 1660 }
         }
       }
     },
@@ -35548,11 +36367,11 @@ export default [
       'type Mapper = (\n' +
       '  item any,\n' +
       '  indexOrKey number|string|any,\n' +
-      '  ftor Functor\n' +
+      '  functor Functor\n' +
       ')=>(resultItem Promise|any)\n' +
       '\n' +
-      'map(ftor Promise|Functor, mapper Mapper) -> result Promise|Functor\n' +
-      'map(mapper Mapper)(ftor Functor) -> result Promise|Functor\n' +
+      'map(functor Promise|Functor, mapper Mapper) -> result Promise|Functor\n' +
+      'map(mapper Mapper)(functor Functor) -> result Promise|Functor\n' +
       '```',
     description: 'Applies a mapper function to each item of a functor, returning a functor of the same type with the mapped items. The order of the items is maintained.\n' +
       '\n' +
@@ -35758,20 +36577,20 @@ export default [
               'type Mapper = (\n' +
               '  item any,\n' +
               '  indexOrKey number|string|any,\n' +
-              '  ftor Functor\n' +
+              '  functor Functor\n' +
               ')=>(resultItem Promise|any)\n' +
               '\n' +
-              'map(ftor Promise|Functor, mapper Mapper) -> result Promise|Functor\n' +
-              'map(mapper Mapper)(ftor Functor) -> result Promise|Functor',
+              'map(functor Promise|Functor, mapper Mapper) -> result Promise|Functor\n' +
+              'map(mapper Mapper)(functor Functor) -> result Promise|Functor',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 12, column: 4, offset: 342 }
+              end: { line: 12, column: 4, offset: 351 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 12, column: 4, offset: 342 }
+          end: { line: 12, column: 4, offset: 351 }
         }
       },
       description: {
@@ -47365,13 +48184,18 @@ export default [
   {
     name: 'not',
     synopsis: '```coffeescript [specscript]\n' +
-      'not(value boolean) -> negated boolean\n' +
+      'args Array<any>\n' +
+      'argsOrPromises Array<Promise|any>\n' +
       '\n' +
-      'not(...args, predicate function) -> negated boolean\n' +
+      'type Predicate = (...args)=>Promise|boolean\n' +
       '\n' +
-      'not(predicate function)(...args) -> negated boolean\n' +
+      'predicate Predicate\n' +
+      '\n' +
+      'not(value Promise|boolean|any) -> negated Promise|boolean\n' +
+      'not(...argsOrPromises, predicate) -> negated Promise|boolean\n' +
+      'not(predicate)(...args) -> negated Promise|boolean\n' +
       '```',
-    description: 'Negate a value like the [logical NOT (`!`)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_NOT) operator.\n' +
+    description: 'Function equivalent to the [Logical NOT (`!`)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_NOT) operator. Negates a value.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const myObj = { a: 1 }\n' +
@@ -47385,9 +48209,17 @@ export default [
       '```javascript [playground]\n' +
       'const isOdd = number => number % 2 == 1\n' +
       '\n' +
-      'console.log(\n' +
-      '  not(isOdd)(3),\n' +
-      ') // false\n' +
+      'const isNotOdd = not(isOdd)\n' +
+      '\n' +
+      'console.log(isNotOdd(3)) // false\n' +
+      '```\n' +
+      '\n' +
+      '`not` negates the resolved value of a promise.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const promise = Promise.resolve(false)\n' +
+      '\n' +
+      'not(promise).then(console.log) // true\n' +
       '```\n' +
       '\n' +
       'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
@@ -47437,20 +48269,25 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'not(value boolean) -> negated boolean\n' +
+            value: 'args Array<any>\n' +
+              'argsOrPromises Array<Promise|any>\n' +
               '\n' +
-              'not(...args, predicate function) -> negated boolean\n' +
+              'type Predicate = (...args)=>Promise|boolean\n' +
               '\n' +
-              'not(predicate function)(...args) -> negated boolean',
+              'predicate Predicate\n' +
+              '\n' +
+              'not(value Promise|boolean|any) -> negated Promise|boolean\n' +
+              'not(...argsOrPromises, predicate) -> negated Promise|boolean\n' +
+              'not(predicate)(...args) -> negated Promise|boolean',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 7, column: 4, offset: 176 }
+              end: { line: 12, column: 4, offset: 319 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 7, column: 4, offset: 176 }
+          end: { line: 12, column: 4, offset: 319 }
         }
       },
       description: {
@@ -47461,10 +48298,10 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Negate a value like the ',
+                value: 'Function equivalent to the ',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 25, offset: 24 }
+                  end: { line: 1, column: 28, offset: 27 }
                 }
               },
               {
@@ -47474,46 +48311,46 @@ export default [
                 children: [
                   {
                     type: 'text',
-                    value: 'logical NOT (',
+                    value: 'Logical NOT (',
                     position: {
-                      start: { line: 1, column: 26, offset: 25 },
-                      end: { line: 1, column: 39, offset: 38 }
+                      start: { line: 1, column: 29, offset: 28 },
+                      end: { line: 1, column: 42, offset: 41 }
                     }
                   },
                   {
                     type: 'inlineCode',
                     value: '!',
                     position: {
-                      start: { line: 1, column: 39, offset: 38 },
-                      end: { line: 1, column: 42, offset: 41 }
+                      start: { line: 1, column: 42, offset: 41 },
+                      end: { line: 1, column: 45, offset: 44 }
                     }
                   },
                   {
                     type: 'text',
                     value: ')',
                     position: {
-                      start: { line: 1, column: 42, offset: 41 },
-                      end: { line: 1, column: 43, offset: 42 }
+                      start: { line: 1, column: 45, offset: 44 },
+                      end: { line: 1, column: 46, offset: 45 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 1, column: 25, offset: 24 },
-                  end: { line: 1, column: 133, offset: 132 }
+                  start: { line: 1, column: 28, offset: 27 },
+                  end: { line: 1, column: 136, offset: 135 }
                 }
               },
               {
                 type: 'text',
-                value: ' operator.',
+                value: ' operator. Negates a value.',
                 position: {
-                  start: { line: 1, column: 133, offset: 132 },
-                  end: { line: 1, column: 143, offset: 142 }
+                  start: { line: 1, column: 136, offset: 135 },
+                  end: { line: 1, column: 163, offset: 162 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 143, offset: 142 }
+              end: { line: 1, column: 163, offset: 162 }
             }
           },
           {
@@ -47525,8 +48362,8 @@ export default [
               "console.log(not('a' in myObj)) // false\n" +
               "console.log(not('b' in myObj)) // true",
             position: {
-              start: { line: 3, column: 1, offset: 144 },
-              end: { line: 8, column: 4, offset: 277 }
+              start: { line: 3, column: 1, offset: 164 },
+              end: { line: 8, column: 4, offset: 297 }
             }
           },
           {
@@ -47536,30 +48373,30 @@ export default [
                 type: 'text',
                 value: 'If provided a predicate function, ',
                 position: {
-                  start: { line: 10, column: 1, offset: 279 },
-                  end: { line: 10, column: 35, offset: 313 }
+                  start: { line: 10, column: 1, offset: 299 },
+                  end: { line: 10, column: 35, offset: 333 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'not',
                 position: {
-                  start: { line: 10, column: 35, offset: 313 },
-                  end: { line: 10, column: 40, offset: 318 }
+                  start: { line: 10, column: 35, offset: 333 },
+                  end: { line: 10, column: 40, offset: 338 }
                 }
               },
               {
                 type: 'text',
                 value: ' returns a logically inverted predicate that returns true everywhere the original predicate would have returned false.',
                 position: {
-                  start: { line: 10, column: 40, offset: 318 },
-                  end: { line: 10, column: 158, offset: 436 }
+                  start: { line: 10, column: 40, offset: 338 },
+                  end: { line: 10, column: 158, offset: 456 }
                 }
               }
             ],
             position: {
-              start: { line: 10, column: 1, offset: 279 },
-              end: { line: 10, column: 158, offset: 436 }
+              start: { line: 10, column: 1, offset: 299 },
+              end: { line: 10, column: 158, offset: 456 }
             }
           },
           {
@@ -47568,12 +48405,49 @@ export default [
             meta: '[playground]',
             value: 'const isOdd = number => number % 2 == 1\n' +
               '\n' +
-              'console.log(\n' +
-              '  not(isOdd)(3),\n' +
-              ') // false',
+              'const isNotOdd = not(isOdd)\n' +
+              '\n' +
+              'console.log(isNotOdd(3)) // false',
             position: {
-              start: { line: 12, column: 1, offset: 438 },
-              end: { line: 18, column: 4, offset: 550 }
+              start: { line: 12, column: 1, offset: 458 },
+              end: { line: 18, column: 4, offset: 592 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'inlineCode',
+                value: 'not',
+                position: {
+                  start: { line: 20, column: 1, offset: 594 },
+                  end: { line: 20, column: 6, offset: 599 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' negates the resolved value of a promise.',
+                position: {
+                  start: { line: 20, column: 6, offset: 599 },
+                  end: { line: 20, column: 47, offset: 640 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 20, column: 1, offset: 594 },
+              end: { line: 20, column: 47, offset: 640 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'const promise = Promise.resolve(false)\n' +
+              '\n' +
+              'not(promise).then(console.log) // true',
+            position: {
+              start: { line: 22, column: 1, offset: 642 },
+              end: { line: 26, column: 4, offset: 751 }
             }
           },
           {
@@ -47583,14 +48457,14 @@ export default [
                 type: 'text',
                 value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
                 position: {
-                  start: { line: 20, column: 1, offset: 552 },
-                  end: { line: 20, column: 148, offset: 699 }
+                  start: { line: 28, column: 1, offset: 753 },
+                  end: { line: 28, column: 148, offset: 900 }
                 }
               }
             ],
             position: {
-              start: { line: 20, column: 1, offset: 552 },
-              end: { line: 20, column: 148, offset: 699 }
+              start: { line: 28, column: 1, offset: 753 },
+              end: { line: 28, column: 148, offset: 900 }
             }
           },
           {
@@ -47601,8 +48475,8 @@ export default [
               '\n' +
               'not(Promise.resolve(3), isOdd).then(console.log) // false',
             position: {
-              start: { line: 22, column: 1, offset: 701 },
-              end: { line: 26, column: 4, offset: 830 }
+              start: { line: 30, column: 1, offset: 902 },
+              end: { line: 34, column: 4, offset: 1031 }
             }
           },
           {
@@ -47612,14 +48486,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 28, column: 1, offset: 832 },
-                  end: { line: 28, column: 10, offset: 841 }
+                  start: { line: 36, column: 1, offset: 1033 },
+                  end: { line: 36, column: 10, offset: 1042 }
                 }
               }
             ],
             position: {
-              start: { line: 28, column: 1, offset: 832 },
-              end: { line: 28, column: 10, offset: 841 }
+              start: { line: 36, column: 1, offset: 1033 },
+              end: { line: 36, column: 10, offset: 1042 }
             }
           },
           {
@@ -47645,26 +48519,26 @@ export default [
                             type: 'text',
                             value: 'some',
                             position: {
-                              start: { line: 29, column: 5, offset: 846 },
-                              end: { line: 29, column: 9, offset: 850 }
+                              start: { line: 37, column: 5, offset: 1047 },
+                              end: { line: 37, column: 9, offset: 1051 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 29, column: 4, offset: 845 },
-                          end: { line: 29, column: 22, offset: 863 }
+                          start: { line: 37, column: 4, offset: 1046 },
+                          end: { line: 37, column: 22, offset: 1064 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 29, column: 4, offset: 845 },
-                      end: { line: 29, column: 22, offset: 863 }
+                      start: { line: 37, column: 4, offset: 1046 },
+                      end: { line: 37, column: 22, offset: 1064 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 29, column: 2, offset: 843 },
-                  end: { line: 29, column: 22, offset: 863 }
+                  start: { line: 37, column: 2, offset: 1044 },
+                  end: { line: 37, column: 22, offset: 1064 }
                 }
               },
               {
@@ -47684,26 +48558,26 @@ export default [
                             type: 'text',
                             value: 'and',
                             position: {
-                              start: { line: 30, column: 5, offset: 868 },
-                              end: { line: 30, column: 8, offset: 871 }
+                              start: { line: 38, column: 5, offset: 1069 },
+                              end: { line: 38, column: 8, offset: 1072 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 30, column: 4, offset: 867 },
-                          end: { line: 30, column: 20, offset: 883 }
+                          start: { line: 38, column: 4, offset: 1068 },
+                          end: { line: 38, column: 20, offset: 1084 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 30, column: 4, offset: 867 },
-                      end: { line: 30, column: 20, offset: 883 }
+                      start: { line: 38, column: 4, offset: 1068 },
+                      end: { line: 38, column: 20, offset: 1084 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 30, column: 2, offset: 865 },
-                  end: { line: 30, column: 20, offset: 883 }
+                  start: { line: 38, column: 2, offset: 1066 },
+                  end: { line: 38, column: 20, offset: 1084 }
                 }
               },
               {
@@ -47723,26 +48597,26 @@ export default [
                             type: 'text',
                             value: 'or',
                             position: {
-                              start: { line: 31, column: 5, offset: 888 },
-                              end: { line: 31, column: 7, offset: 890 }
+                              start: { line: 39, column: 5, offset: 1089 },
+                              end: { line: 39, column: 7, offset: 1091 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 31, column: 4, offset: 887 },
-                          end: { line: 31, column: 18, offset: 901 }
+                          start: { line: 39, column: 4, offset: 1088 },
+                          end: { line: 39, column: 18, offset: 1102 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 31, column: 4, offset: 887 },
-                      end: { line: 31, column: 18, offset: 901 }
+                      start: { line: 39, column: 4, offset: 1088 },
+                      end: { line: 39, column: 18, offset: 1102 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 31, column: 2, offset: 885 },
-                  end: { line: 31, column: 18, offset: 901 }
+                  start: { line: 39, column: 2, offset: 1086 },
+                  end: { line: 39, column: 18, offset: 1102 }
                 }
               },
               {
@@ -47762,38 +48636,38 @@ export default [
                             type: 'text',
                             value: 'eq',
                             position: {
-                              start: { line: 32, column: 5, offset: 906 },
-                              end: { line: 32, column: 7, offset: 908 }
+                              start: { line: 40, column: 5, offset: 1107 },
+                              end: { line: 40, column: 7, offset: 1109 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 32, column: 4, offset: 905 },
-                          end: { line: 32, column: 18, offset: 919 }
+                          start: { line: 40, column: 4, offset: 1106 },
+                          end: { line: 40, column: 18, offset: 1120 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 32, column: 4, offset: 905 },
-                      end: { line: 32, column: 18, offset: 919 }
+                      start: { line: 40, column: 4, offset: 1106 },
+                      end: { line: 40, column: 18, offset: 1120 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 32, column: 2, offset: 903 },
-                  end: { line: 32, column: 18, offset: 919 }
+                  start: { line: 40, column: 2, offset: 1104 },
+                  end: { line: 40, column: 18, offset: 1120 }
                 }
               }
             ],
             position: {
-              start: { line: 29, column: 2, offset: 843 },
-              end: { line: 32, column: 18, offset: 919 }
+              start: { line: 37, column: 2, offset: 1044 },
+              end: { line: 40, column: 18, offset: 1120 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 32, column: 18, offset: 919 }
+          end: { line: 40, column: 18, offset: 1120 }
         }
       }
     },
@@ -47802,9 +48676,8 @@ export default [
   {
     name: 'omit',
     synopsis: '```coffeescript [specscript]\n' +
-      'omit(paths Array<string>)(source Object) -> omitted Object\n' +
-      '\n' +
-      'omit(source Object, paths Array<string>) -> omitted Object\n' +
+      'omit(source Promise|Object, paths Array<string>) -> result Object\n' +
+      'omit(paths Array<string>)(source Object) -> result Object\n' +
       '```',
     description: 'Create a new object by excluding provided paths on a source object.\n' +
       '\n' +
@@ -47892,18 +48765,17 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'omit(paths Array<string>)(source Object) -> omitted Object\n' +
-              '\n' +
-              'omit(source Object, paths Array<string>) -> omitted Object',
+            value: 'omit(source Promise|Object, paths Array<string>) -> result Object\n' +
+              'omit(paths Array<string>)(source Object) -> result Object',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 151 }
+              end: { line: 4, column: 4, offset: 156 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 5, column: 4, offset: 151 }
+          end: { line: 4, column: 4, offset: 156 }
         }
       },
       description: {
@@ -48623,34 +49495,47 @@ export default [
   {
     name: 'or',
     synopsis: '```coffeescript [specscript]\n' +
-      'or(values Array<boolean>) -> result boolean\n' +
+      'args Array<any>\n' +
+      'argsOrPromises Array<Promise|any>\n' +
+      'predicatesOrValues Array<function|boolean|any>\n' +
       '\n' +
-      'or(...args, predicatesOrValues Array<function|boolean>) -> Promise|boolean\n' +
-      '\n' +
-      'or(predicatesOrValues Array<function|boolean>)(...args) -> Promise|boolean\n' +
+      'or(values Array<boolean|any>) -> result boolean\n' +
+      'or(...argsOrPromises, predicatesOrValues) -> Promise|boolean\n' +
+      'or(predicatesOrValues)(...args) -> Promise|boolean\n' +
       '```',
-    description: 'Tests an array of boolean values, returning true if any boolean values are truthy.\n' +
+    description: 'Function equivalent to the [Logical OR](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_OR) operator. Tests arrays of predicate functions, promises, values, or a mix thereof.\n' +
+      '\n' +
+      'If provided an array of boolean values, `or` returns true if any boolean values are truthy.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const oneIsLessThanZero = 1 < 0\n' +
       'const oneIsGreaterThanTwo = 1 > 2\n' +
       'const threeIsNotEqualToThree = 3 !== 3\n' +
       '\n' +
-      'console.log(\n' +
-      '  or([oneIsLessThanZero, oneIsGreaterThanTwo, threeIsNotEqualToThree]),\n' +
-      ') // false\n' +
+      'const condition = or([\n' +
+      '  oneIsLessThanZero,\n' +
+      '  oneIsGreaterThanTwo,\n' +
+      '  threeIsNotEqualToThree\n' +
+      '])\n' +
+      'console.log(condition) // false\n' +
       '```\n' +
       '\n' +
-      'If any values in the array are synchronous or asynchronous predicate functions, `or` takes another argument to test concurrently against the predicate functions, returning true if any array values or resolved values from the predicates are truthy.\n' +
+      'If any predicate functions are provided in the array, `or` returns an aggregate predicate function that returns true for a given set of arguments if any provided predicate functions test true. If any provided predicate functions are asynchronous, the aggregate predicate function becomes asynchronous.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const isOdd = number => number % 2 == 1\n' +
+      'const isNegative = number => number < 0\n' +
+      'const asyncIsGreaterThan3 = async number => number > 3\n' +
       '\n' +
-      'const isEven = number => number % 2 == 0\n' +
+      'const aggregatePredicate = or([\n' +
+      '  false,\n' +
+      '  isOdd,\n' +
+      '  isNegative,\n' +
+      '  asyncIsGreaterThan3,\n' +
+      '])\n' +
       '\n' +
-      'console.log(\n' +
-      '  or([isOdd, isEven])(0),\n' +
-      ') // true\n' +
+      'const condition = await aggregatePredicate(2)\n' +
+      'console.log(condition) // false\n' +
       '```\n' +
       '\n' +
       'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.\n' +
@@ -48703,20 +49588,22 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'or(values Array<boolean>) -> result boolean\n' +
+            value: 'args Array<any>\n' +
+              'argsOrPromises Array<Promise|any>\n' +
+              'predicatesOrValues Array<function|boolean|any>\n' +
               '\n' +
-              'or(...args, predicatesOrValues Array<function|boolean>) -> Promise|boolean\n' +
-              '\n' +
-              'or(predicatesOrValues Array<function|boolean>)(...args) -> Promise|boolean',
+              'or(values Array<boolean|any>) -> result boolean\n' +
+              'or(...argsOrPromises, predicatesOrValues) -> Promise|boolean\n' +
+              'or(predicatesOrValues)(...args) -> Promise|boolean',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 7, column: 4, offset: 228 }
+              end: { line: 9, column: 4, offset: 290 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 7, column: 4, offset: 228 }
+          end: { line: 9, column: 4, offset: 290 }
         }
       },
       description: {
@@ -48727,16 +49614,76 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Tests an array of boolean values, returning true if any boolean values are truthy.',
+                value: 'Function equivalent to the ',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 83, offset: 82 }
+                  end: { line: 1, column: 28, offset: 27 }
+                }
+              },
+              {
+                type: 'link',
+                title: null,
+                url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_OR',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Logical OR',
+                    position: {
+                      start: { line: 1, column: 29, offset: 28 },
+                      end: { line: 1, column: 39, offset: 38 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 28, offset: 27 },
+                  end: { line: 1, column: 128, offset: 127 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' operator. Tests arrays of predicate functions, promises, values, or a mix thereof.',
+                position: {
+                  start: { line: 1, column: 128, offset: 127 },
+                  end: { line: 1, column: 211, offset: 210 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 83, offset: 82 }
+              end: { line: 1, column: 211, offset: 210 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'If provided an array of boolean values, ',
+                position: {
+                  start: { line: 3, column: 1, offset: 212 },
+                  end: { line: 3, column: 41, offset: 252 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'or',
+                position: {
+                  start: { line: 3, column: 41, offset: 252 },
+                  end: { line: 3, column: 45, offset: 256 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' returns true if any boolean values are truthy.',
+                position: {
+                  start: { line: 3, column: 45, offset: 256 },
+                  end: { line: 3, column: 92, offset: 303 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 3, column: 1, offset: 212 },
+              end: { line: 3, column: 92, offset: 303 }
             }
           },
           {
@@ -48747,12 +49694,15 @@ export default [
               'const oneIsGreaterThanTwo = 1 > 2\n' +
               'const threeIsNotEqualToThree = 3 !== 3\n' +
               '\n' +
-              'console.log(\n' +
-              '  or([oneIsLessThanZero, oneIsGreaterThanTwo, threeIsNotEqualToThree]),\n' +
-              ') // false',
+              'const condition = or([\n' +
+              '  oneIsLessThanZero,\n' +
+              '  oneIsGreaterThanTwo,\n' +
+              '  threeIsNotEqualToThree\n' +
+              '])\n' +
+              'console.log(condition) // false',
             position: {
-              start: { line: 3, column: 1, offset: 84 },
-              end: { line: 11, column: 4, offset: 316 }
+              start: { line: 5, column: 1, offset: 305 },
+              end: { line: 16, column: 4, offset: 568 }
             }
           },
           {
@@ -48760,32 +49710,32 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'If any values in the array are synchronous or asynchronous predicate functions, ',
+                value: 'If any predicate functions are provided in the array, ',
                 position: {
-                  start: { line: 13, column: 1, offset: 318 },
-                  end: { line: 13, column: 81, offset: 398 }
+                  start: { line: 18, column: 1, offset: 570 },
+                  end: { line: 18, column: 55, offset: 624 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'or',
                 position: {
-                  start: { line: 13, column: 81, offset: 398 },
-                  end: { line: 13, column: 85, offset: 402 }
+                  start: { line: 18, column: 55, offset: 624 },
+                  end: { line: 18, column: 59, offset: 628 }
                 }
               },
               {
                 type: 'text',
-                value: ' takes another argument to test concurrently against the predicate functions, returning true if any array values or resolved values from the predicates are truthy.',
+                value: ' returns an aggregate predicate function that returns true for a given set of arguments if any provided predicate functions test true. If any provided predicate functions are asynchronous, the aggregate predicate function becomes asynchronous.',
                 position: {
-                  start: { line: 13, column: 85, offset: 402 },
-                  end: { line: 13, column: 248, offset: 565 }
+                  start: { line: 18, column: 59, offset: 628 },
+                  end: { line: 18, column: 302, offset: 871 }
                 }
               }
             ],
             position: {
-              start: { line: 13, column: 1, offset: 318 },
-              end: { line: 13, column: 248, offset: 565 }
+              start: { line: 18, column: 1, offset: 570 },
+              end: { line: 18, column: 302, offset: 871 }
             }
           },
           {
@@ -48793,15 +49743,21 @@ export default [
             lang: 'javascript',
             meta: '[playground]',
             value: 'const isOdd = number => number % 2 == 1\n' +
+              'const isNegative = number => number < 0\n' +
+              'const asyncIsGreaterThan3 = async number => number > 3\n' +
               '\n' +
-              'const isEven = number => number % 2 == 0\n' +
+              'const aggregatePredicate = or([\n' +
+              '  false,\n' +
+              '  isOdd,\n' +
+              '  isNegative,\n' +
+              '  asyncIsGreaterThan3,\n' +
+              '])\n' +
               '\n' +
-              'console.log(\n' +
-              '  or([isOdd, isEven])(0),\n' +
-              ') // true',
+              'const condition = await aggregatePredicate(2)\n' +
+              'console.log(condition) // false',
             position: {
-              start: { line: 15, column: 1, offset: 567 },
-              end: { line: 23, column: 4, offset: 729 }
+              start: { line: 20, column: 1, offset: 873 },
+              end: { line: 34, column: 4, offset: 1208 }
             }
           },
           {
@@ -48811,14 +49767,14 @@ export default [
                 type: 'text',
                 value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
                 position: {
-                  start: { line: 25, column: 1, offset: 731 },
-                  end: { line: 25, column: 148, offset: 878 }
+                  start: { line: 36, column: 1, offset: 1210 },
+                  end: { line: 36, column: 148, offset: 1357 }
                 }
               }
             ],
             position: {
-              start: { line: 25, column: 1, offset: 731 },
-              end: { line: 25, column: 148, offset: 878 }
+              start: { line: 36, column: 1, offset: 1210 },
+              end: { line: 36, column: 148, offset: 1357 }
             }
           },
           {
@@ -48830,8 +49786,8 @@ export default [
               "  s => s.endsWith('a'),\n" +
               ']).then(console.log) // true',
             position: {
-              start: { line: 27, column: 1, offset: 880 },
-              end: { line: 32, column: 4, offset: 1018 }
+              start: { line: 38, column: 1, offset: 1359 },
+              end: { line: 43, column: 4, offset: 1497 }
             }
           },
           {
@@ -48841,14 +49797,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 34, column: 1, offset: 1020 },
-                  end: { line: 34, column: 10, offset: 1029 }
+                  start: { line: 45, column: 1, offset: 1499 },
+                  end: { line: 45, column: 10, offset: 1508 }
                 }
               }
             ],
             position: {
-              start: { line: 34, column: 1, offset: 1020 },
-              end: { line: 34, column: 10, offset: 1029 }
+              start: { line: 45, column: 1, offset: 1499 },
+              end: { line: 45, column: 10, offset: 1508 }
             }
           },
           {
@@ -48874,26 +49830,26 @@ export default [
                             type: 'text',
                             value: 'some',
                             position: {
-                              start: { line: 35, column: 5, offset: 1034 },
-                              end: { line: 35, column: 9, offset: 1038 }
+                              start: { line: 46, column: 5, offset: 1513 },
+                              end: { line: 46, column: 9, offset: 1517 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 35, column: 4, offset: 1033 },
-                          end: { line: 35, column: 22, offset: 1051 }
+                          start: { line: 46, column: 4, offset: 1512 },
+                          end: { line: 46, column: 22, offset: 1530 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 35, column: 4, offset: 1033 },
-                      end: { line: 35, column: 22, offset: 1051 }
+                      start: { line: 46, column: 4, offset: 1512 },
+                      end: { line: 46, column: 22, offset: 1530 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 35, column: 2, offset: 1031 },
-                  end: { line: 35, column: 22, offset: 1051 }
+                  start: { line: 46, column: 2, offset: 1510 },
+                  end: { line: 46, column: 22, offset: 1530 }
                 }
               },
               {
@@ -48913,26 +49869,26 @@ export default [
                             type: 'text',
                             value: 'and',
                             position: {
-                              start: { line: 36, column: 5, offset: 1056 },
-                              end: { line: 36, column: 8, offset: 1059 }
+                              start: { line: 47, column: 5, offset: 1535 },
+                              end: { line: 47, column: 8, offset: 1538 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 36, column: 4, offset: 1055 },
-                          end: { line: 36, column: 20, offset: 1071 }
+                          start: { line: 47, column: 4, offset: 1534 },
+                          end: { line: 47, column: 20, offset: 1550 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 36, column: 4, offset: 1055 },
-                      end: { line: 36, column: 20, offset: 1071 }
+                      start: { line: 47, column: 4, offset: 1534 },
+                      end: { line: 47, column: 20, offset: 1550 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 36, column: 2, offset: 1053 },
-                  end: { line: 36, column: 20, offset: 1071 }
+                  start: { line: 47, column: 2, offset: 1532 },
+                  end: { line: 47, column: 20, offset: 1550 }
                 }
               },
               {
@@ -48952,26 +49908,26 @@ export default [
                             type: 'text',
                             value: 'not',
                             position: {
-                              start: { line: 37, column: 5, offset: 1076 },
-                              end: { line: 37, column: 8, offset: 1079 }
+                              start: { line: 48, column: 5, offset: 1555 },
+                              end: { line: 48, column: 8, offset: 1558 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 37, column: 4, offset: 1075 },
-                          end: { line: 37, column: 20, offset: 1091 }
+                          start: { line: 48, column: 4, offset: 1554 },
+                          end: { line: 48, column: 20, offset: 1570 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 37, column: 4, offset: 1075 },
-                      end: { line: 37, column: 20, offset: 1091 }
+                      start: { line: 48, column: 4, offset: 1554 },
+                      end: { line: 48, column: 20, offset: 1570 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 37, column: 2, offset: 1073 },
-                  end: { line: 37, column: 20, offset: 1091 }
+                  start: { line: 48, column: 2, offset: 1552 },
+                  end: { line: 48, column: 20, offset: 1570 }
                 }
               },
               {
@@ -48991,38 +49947,38 @@ export default [
                             type: 'text',
                             value: 'eq',
                             position: {
-                              start: { line: 38, column: 5, offset: 1096 },
-                              end: { line: 38, column: 7, offset: 1098 }
+                              start: { line: 49, column: 5, offset: 1575 },
+                              end: { line: 49, column: 7, offset: 1577 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 38, column: 4, offset: 1095 },
-                          end: { line: 38, column: 18, offset: 1109 }
+                          start: { line: 49, column: 4, offset: 1574 },
+                          end: { line: 49, column: 18, offset: 1588 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 38, column: 4, offset: 1095 },
-                      end: { line: 38, column: 18, offset: 1109 }
+                      start: { line: 49, column: 4, offset: 1574 },
+                      end: { line: 49, column: 18, offset: 1588 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 38, column: 2, offset: 1093 },
-                  end: { line: 38, column: 18, offset: 1109 }
+                  start: { line: 49, column: 2, offset: 1572 },
+                  end: { line: 49, column: 18, offset: 1588 }
                 }
               }
             ],
             position: {
-              start: { line: 35, column: 2, offset: 1031 },
-              end: { line: 38, column: 18, offset: 1109 }
+              start: { line: 46, column: 2, offset: 1510 },
+              end: { line: 49, column: 18, offset: 1588 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 38, column: 18, offset: 1109 }
+          end: { line: 49, column: 18, offset: 1588 }
         }
       },
       execution: {
@@ -49083,9 +50039,8 @@ export default [
   {
     name: 'pick',
     synopsis: '```coffeescript [specscript]\n' +
-      'pick(object Object, keys Array<string>) -> result Object\n' +
-      '\n' +
-      'pick(keys Array<string>)(object Object) -> result Object\n' +
+      'pick(source Promise|Object, keys Array<string>) -> result Object\n' +
+      'pick(keys Array<string>)(source Object) -> result Object\n' +
       '```',
     description: 'Creates a new object from a source object by selecting provided keys. If a provided key does not exist on the source object, excludes it from the resulting object.\n' +
       '\n' +
@@ -49166,18 +50121,17 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'pick(object Object, keys Array<string>) -> result Object\n' +
-              '\n' +
-              'pick(keys Array<string>)(object Object) -> result Object',
+            value: 'pick(source Promise|Object, keys Array<string>) -> result Object\n' +
+              'pick(keys Array<string>)(source Object) -> result Object',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 147 }
+              end: { line: 4, column: 4, offset: 154 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 5, column: 4, offset: 147 }
+          end: { line: 4, column: 4, offset: 154 }
         }
       },
       description: {
@@ -49774,11 +50728,15 @@ export default [
   {
     name: 'pipe',
     synopsis: '```coffeescript [specscript]\n' +
-      'pipe(funcs Array<function>)(...args) -> result Promise|any\n' +
+      'funcs Array<function>\n' +
+      'args Array<any>\n' +
+      'argsOrPromises Array<Promise|any>\n' +
       '\n' +
-      'pipe(...args, funcs Array<function>) -> result Promise|any\n' +
+      'pipe(funcs)(...args) -> result Promise|any\n' +
+      'pipe(...argsOrPromises, funcs Array<function>) -> result Promise|any\n' +
+      'pipe(...funcs)(...args) -> result Promise|any\n' +
       '```',
-    description: 'Creates a function pipeline from an array of functions, where each function passes its return value as a single argument to the next function until all functions have executed. The first function is called with the arguments to the pipeline, while the result of the pipeline execution is the return of its last function. If any function of the pipeline is asynchronous, the result of the execution is a Promise.\n' +
+    description: 'Creates a function pipeline from multiple functions. Each function in the pipeline is evaluated in series, passing its return value as an argument to the next function. The result of a pipeline execution is the return value of the last function in the pipeline. If any function in the pipeline is asynchronous, the result of the pipeline execution is a Promise.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const syncAdd123 = pipe([\n' +
@@ -49796,6 +50754,17 @@ export default [
       '])\n' +
       '\n' +
       'asyncAdd123(5).then(console.log) // 11\n' +
+      '```\n' +
+      '\n' +
+      '`pipe` supports a mathematical API.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      "const appendB = x => x + 'b'\n" +
+      "const appendC = x => x + 'c'\n" +
+      '\n' +
+      'const appendBC = pipe(appendB, appendC)\n' +
+      '\n' +
+      "console.log(appendBC('a')) // 'abc'\n" +
       '```\n' +
       '\n' +
       'When passed any amount of arguments before the array of functions, `pipe` executes eagerly; the array of functions is immediately invoked with the supplied arguments.\n' +
@@ -49858,18 +50827,22 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'pipe(funcs Array<function>)(...args) -> result Promise|any\n' +
+            value: 'funcs Array<function>\n' +
+              'args Array<any>\n' +
+              'argsOrPromises Array<Promise|any>\n' +
               '\n' +
-              'pipe(...args, funcs Array<function>) -> result Promise|any',
+              'pipe(funcs)(...args) -> result Promise|any\n' +
+              'pipe(...argsOrPromises, funcs Array<function>) -> result Promise|any\n' +
+              'pipe(...funcs)(...args) -> result Promise|any',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 151 }
+              end: { line: 9, column: 4, offset: 263 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 5, column: 4, offset: 151 }
+          end: { line: 9, column: 4, offset: 263 }
         }
       },
       description: {
@@ -49880,16 +50853,16 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Creates a function pipeline from an array of functions, where each function passes its return value as a single argument to the next function until all functions have executed. The first function is called with the arguments to the pipeline, while the result of the pipeline execution is the return of its last function. If any function of the pipeline is asynchronous, the result of the execution is a Promise.',
+                value: 'Creates a function pipeline from multiple functions. Each function in the pipeline is evaluated in series, passing its return value as an argument to the next function. The result of a pipeline execution is the return value of the last function in the pipeline. If any function in the pipeline is asynchronous, the result of the pipeline execution is a Promise.',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 412, offset: 411 }
+                  end: { line: 1, column: 362, offset: 361 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 412, offset: 411 }
+              end: { line: 1, column: 362, offset: 361 }
             }
           },
           {
@@ -49912,8 +50885,48 @@ export default [
               '\n' +
               'asyncAdd123(5).then(console.log) // 11',
             position: {
-              start: { line: 3, column: 1, offset: 413 },
-              end: { line: 19, column: 4, offset: 739 }
+              start: { line: 3, column: 1, offset: 363 },
+              end: { line: 19, column: 4, offset: 689 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'inlineCode',
+                value: 'pipe',
+                position: {
+                  start: { line: 21, column: 1, offset: 691 },
+                  end: { line: 21, column: 7, offset: 697 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' supports a mathematical API.',
+                position: {
+                  start: { line: 21, column: 7, offset: 697 },
+                  end: { line: 21, column: 36, offset: 726 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 21, column: 1, offset: 691 },
+              end: { line: 21, column: 36, offset: 726 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: "const appendB = x => x + 'b'\n" +
+              "const appendC = x => x + 'c'\n" +
+              '\n' +
+              'const appendBC = pipe(appendB, appendC)\n' +
+              '\n' +
+              "console.log(appendBC('a')) // 'abc'",
+            position: {
+              start: { line: 23, column: 1, offset: 728 },
+              end: { line: 30, column: 4, offset: 894 }
             }
           },
           {
@@ -49923,30 +50936,30 @@ export default [
                 type: 'text',
                 value: 'When passed any amount of arguments before the array of functions, ',
                 position: {
-                  start: { line: 21, column: 1, offset: 741 },
-                  end: { line: 21, column: 68, offset: 808 }
+                  start: { line: 32, column: 1, offset: 896 },
+                  end: { line: 32, column: 68, offset: 963 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'pipe',
                 position: {
-                  start: { line: 21, column: 68, offset: 808 },
-                  end: { line: 21, column: 74, offset: 814 }
+                  start: { line: 32, column: 68, offset: 963 },
+                  end: { line: 32, column: 74, offset: 969 }
                 }
               },
               {
                 type: 'text',
                 value: ' executes eagerly; the array of functions is immediately invoked with the supplied arguments.',
                 position: {
-                  start: { line: 21, column: 74, offset: 814 },
-                  end: { line: 21, column: 167, offset: 907 }
+                  start: { line: 32, column: 74, offset: 969 },
+                  end: { line: 32, column: 167, offset: 1062 }
                 }
               }
             ],
             position: {
-              start: { line: 21, column: 1, offset: 741 },
-              end: { line: 21, column: 167, offset: 907 }
+              start: { line: 32, column: 1, offset: 896 },
+              end: { line: 32, column: 167, offset: 1062 }
             }
           },
           {
@@ -49959,8 +50972,8 @@ export default [
               '  console.log, // [3, 6, 9]\n' +
               '])',
             position: {
-              start: { line: 23, column: 1, offset: 909 },
-              end: { line: 29, column: 4, offset: 1027 }
+              start: { line: 34, column: 1, offset: 1064 },
+              end: { line: 40, column: 4, offset: 1182 }
             }
           },
           {
@@ -49970,14 +50983,14 @@ export default [
                 type: 'text',
                 value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
                 position: {
-                  start: { line: 31, column: 1, offset: 1029 },
-                  end: { line: 31, column: 148, offset: 1176 }
+                  start: { line: 42, column: 1, offset: 1184 },
+                  end: { line: 42, column: 148, offset: 1331 }
                 }
               }
             ],
             position: {
-              start: { line: 31, column: 1, offset: 1029 },
-              end: { line: 31, column: 148, offset: 1176 }
+              start: { line: 42, column: 1, offset: 1184 },
+              end: { line: 42, column: 148, offset: 1331 }
             }
           },
           {
@@ -49988,8 +51001,8 @@ export default [
               '  console.log, // [1, 2, 3]\n' +
               '])',
             position: {
-              start: { line: 33, column: 1, offset: 1178 },
-              end: { line: 37, column: 4, offset: 1289 }
+              start: { line: 44, column: 1, offset: 1333 },
+              end: { line: 48, column: 4, offset: 1444 }
             }
           },
           {
@@ -49999,14 +51012,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 39, column: 1, offset: 1291 },
-                  end: { line: 39, column: 10, offset: 1300 }
+                  start: { line: 50, column: 1, offset: 1446 },
+                  end: { line: 50, column: 10, offset: 1455 }
                 }
               }
             ],
             position: {
-              start: { line: 39, column: 1, offset: 1291 },
-              end: { line: 39, column: 10, offset: 1300 }
+              start: { line: 50, column: 1, offset: 1446 },
+              end: { line: 50, column: 10, offset: 1455 }
             }
           },
           {
@@ -50032,26 +51045,26 @@ export default [
                             type: 'text',
                             value: 'compose',
                             position: {
-                              start: { line: 40, column: 5, offset: 1305 },
-                              end: { line: 40, column: 12, offset: 1312 }
+                              start: { line: 51, column: 5, offset: 1460 },
+                              end: { line: 51, column: 12, offset: 1467 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 40, column: 4, offset: 1304 },
-                          end: { line: 40, column: 28, offset: 1328 }
+                          start: { line: 51, column: 4, offset: 1459 },
+                          end: { line: 51, column: 28, offset: 1483 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 40, column: 4, offset: 1304 },
-                      end: { line: 40, column: 28, offset: 1328 }
+                      start: { line: 51, column: 4, offset: 1459 },
+                      end: { line: 51, column: 28, offset: 1483 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 40, column: 2, offset: 1302 },
-                  end: { line: 40, column: 28, offset: 1328 }
+                  start: { line: 51, column: 2, offset: 1457 },
+                  end: { line: 51, column: 28, offset: 1483 }
                 }
               },
               {
@@ -50071,26 +51084,26 @@ export default [
                             type: 'text',
                             value: 'tap',
                             position: {
-                              start: { line: 41, column: 5, offset: 1333 },
-                              end: { line: 41, column: 8, offset: 1336 }
+                              start: { line: 52, column: 5, offset: 1488 },
+                              end: { line: 52, column: 8, offset: 1491 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 41, column: 4, offset: 1332 },
-                          end: { line: 41, column: 20, offset: 1348 }
+                          start: { line: 52, column: 4, offset: 1487 },
+                          end: { line: 52, column: 20, offset: 1503 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 41, column: 4, offset: 1332 },
-                      end: { line: 41, column: 20, offset: 1348 }
+                      start: { line: 52, column: 4, offset: 1487 },
+                      end: { line: 52, column: 20, offset: 1503 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 41, column: 2, offset: 1330 },
-                  end: { line: 41, column: 20, offset: 1348 }
+                  start: { line: 52, column: 2, offset: 1485 },
+                  end: { line: 52, column: 20, offset: 1503 }
                 }
               },
               {
@@ -50110,26 +51123,26 @@ export default [
                             type: 'text',
                             value: 'switchCase',
                             position: {
-                              start: { line: 42, column: 5, offset: 1353 },
-                              end: { line: 42, column: 15, offset: 1363 }
+                              start: { line: 53, column: 5, offset: 1508 },
+                              end: { line: 53, column: 15, offset: 1518 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 42, column: 4, offset: 1352 },
-                          end: { line: 42, column: 34, offset: 1382 }
+                          start: { line: 53, column: 4, offset: 1507 },
+                          end: { line: 53, column: 34, offset: 1537 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 42, column: 4, offset: 1352 },
-                      end: { line: 42, column: 34, offset: 1382 }
+                      start: { line: 53, column: 4, offset: 1507 },
+                      end: { line: 53, column: 34, offset: 1537 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 42, column: 2, offset: 1350 },
-                  end: { line: 42, column: 34, offset: 1382 }
+                  start: { line: 53, column: 2, offset: 1505 },
+                  end: { line: 53, column: 34, offset: 1537 }
                 }
               },
               {
@@ -50149,38 +51162,38 @@ export default [
                             type: 'text',
                             value: 'tryCatch',
                             position: {
-                              start: { line: 43, column: 5, offset: 1387 },
-                              end: { line: 43, column: 13, offset: 1395 }
+                              start: { line: 54, column: 5, offset: 1542 },
+                              end: { line: 54, column: 13, offset: 1550 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 43, column: 4, offset: 1386 },
-                          end: { line: 43, column: 30, offset: 1412 }
+                          start: { line: 54, column: 4, offset: 1541 },
+                          end: { line: 54, column: 30, offset: 1567 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 43, column: 4, offset: 1386 },
-                      end: { line: 43, column: 30, offset: 1412 }
+                      start: { line: 54, column: 4, offset: 1541 },
+                      end: { line: 54, column: 30, offset: 1567 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 43, column: 2, offset: 1384 },
-                  end: { line: 43, column: 30, offset: 1412 }
+                  start: { line: 54, column: 2, offset: 1539 },
+                  end: { line: 54, column: 30, offset: 1567 }
                 }
               }
             ],
             position: {
-              start: { line: 40, column: 2, offset: 1302 },
-              end: { line: 43, column: 30, offset: 1412 }
+              start: { line: 51, column: 2, offset: 1457 },
+              end: { line: 54, column: 30, offset: 1567 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 43, column: 30, offset: 1412 }
+          end: { line: 54, column: 30, offset: 1567 }
         }
       },
       execution: {
@@ -50255,21 +51268,16 @@ export default [
       '  accumulator any,\n' +
       '  item any,\n' +
       '  indexOrKey number|string|any,\n' +
-      '  fold Foldable\n' +
+      '  foldable Foldable\n' +
       ')=>(nextAccumulator Promise|any)\n' +
       '\n' +
-      'type Resolver = (fold Foldable)=>Promise|any\n' +
+      'type Resolver = (foldable Foldable)=>Promise|any\n' +
       '\n' +
-      'reduce(\n' +
-      '  fold Foldable,\n' +
-      '  reducer Reducer,\n' +
-      '  initial? Resolver|any\n' +
-      ') -> result Promise|any\n' +
+      'reducer Reducer\n' +
+      'initial Resolver|any\n' +
       '\n' +
-      'reduce(\n' +
-      '  reducer Reducer,\n' +
-      '  initial? Resolver|any\n' +
-      ')(fold Foldable) -> result Promise|any\n' +
+      'reduce(foldable Promise|Foldable, reducer, initial?) -> result Promise|any\n' +
+      'reduce(reducer, initial?)(foldable Foldable) -> result Promise|any\n' +
       '```',
     description: 'Reduces a foldable to a single value.\n' +
       '\n' +
@@ -50491,30 +51499,25 @@ export default [
               '  accumulator any,\n' +
               '  item any,\n' +
               '  indexOrKey number|string|any,\n' +
-              '  fold Foldable\n' +
+              '  foldable Foldable\n' +
               ')=>(nextAccumulator Promise|any)\n' +
               '\n' +
-              'type Resolver = (fold Foldable)=>Promise|any\n' +
+              'type Resolver = (foldable Foldable)=>Promise|any\n' +
               '\n' +
-              'reduce(\n' +
-              '  fold Foldable,\n' +
-              '  reducer Reducer,\n' +
-              '  initial? Resolver|any\n' +
-              ') -> result Promise|any\n' +
+              'reducer Reducer\n' +
+              'initial Resolver|any\n' +
               '\n' +
-              'reduce(\n' +
-              '  reducer Reducer,\n' +
-              '  initial? Resolver|any\n' +
-              ')(fold Foldable) -> result Promise|any',
+              'reduce(foldable Promise|Foldable, reducer, initial?) -> result Promise|any\n' +
+              'reduce(reducer, initial?)(foldable Foldable) -> result Promise|any',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 23, column: 4, offset: 475 }
+              end: { line: 18, column: 4, offset: 480 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 23, column: 4, offset: 475 }
+          end: { line: 18, column: 4, offset: 480 }
         }
       },
       description: {
@@ -52497,9 +53500,8 @@ export default [
     synopsis: '```coffeescript [specscript]\n' +
       'type Foldable = Array|Set|Map|Generator|AsyncGenerator|{ reduce: function }|Object\n' +
       '\n' +
-      'some(collection Foldable, predicate function) -> Promise|boolean\n' +
-      '\n' +
-      'some(predicate function)(collection Foldable) -> Promise|boolean\n' +
+      'some(foldable Foldable, predicate function) -> Promise|boolean\n' +
+      'some(predicate function)(foldable Foldable) -> Promise|boolean\n' +
       '```',
     description: 'Test a predicate concurrently across all items of a foldable, returning true if any executions return true.\n' +
       '\n' +
@@ -52603,18 +53605,17 @@ export default [
             meta: '[specscript]',
             value: 'type Foldable = Array|Set|Map|Generator|AsyncGenerator|{ reduce: function }|Object\n' +
               '\n' +
-              'some(collection Foldable, predicate function) -> Promise|boolean\n' +
-              '\n' +
-              'some(predicate function)(collection Foldable) -> Promise|boolean',
+              'some(foldable Foldable, predicate function) -> Promise|boolean\n' +
+              'some(predicate function)(foldable Foldable) -> Promise|boolean',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 7, column: 4, offset: 247 }
+              end: { line: 6, column: 4, offset: 242 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 7, column: 4, offset: 247 }
+          end: { line: 6, column: 4, offset: 242 }
         }
       },
       description: {
@@ -53213,18 +54214,16 @@ export default [
   {
     name: 'switchCase',
     synopsis: '```coffeescript [specscript]\n' +
-      'switchCase(conditionalValues Array<boolean|any>) -> Promise|any\n' +
+      'args Array<any>\n' +
+      'argsOrPromises Array<Promise|any>\n' +
+      'conditionalPromisesOrValues Array<Promise|boolean|any>\n' +
+      'conditionalFuncsOrPromisesOrValues Array<function|Promise|boolean|any>\n' +
       '\n' +
-      'switchCase(\n' +
-      '  ...args,\n' +
-      '  conditionalFuncsOrValues Array<function|boolean|any>\n' +
-      ') -> Promise|any\n' +
-      '\n' +
-      'switchCase(\n' +
-      '  conditionalFuncsOrValues Array<function|boolean|any>\n' +
-      ')(...args) -> Promise|any\n' +
+      'switchCase(conditionalPromisesOrValues) -> Promise|any\n' +
+      'switchCase(...argsOrPromises, conditionalFuncsOrPromisesOrValues) -> Promise|any\n' +
+      'switchCase(conditionalFuncsOrPromisesOrValues)(...args) -> Promise|any\n' +
       '```',
-    description: 'Functional equivalent to the [Conditional (ternary) operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator). Accepts an array of conditional functions that specifies cases as pairings of `predicate` and `resolver` functions with the exception of the last, default resolver. All functions are provided with the same arguments and executed in series. The result of a `switchCase` operation is either the result of the execution the last default resolver, or the result of the execution of the first resolver where the associated predicate tested true.\n' +
+    description: 'Function equivalent to the [Conditional (ternary) operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator). Accepts an array of conditional functions that specifies cases as pairings of `predicate` and `resolver` functions with the exception of the last, default resolver. All functions are provided with the same arguments and executed in series. The result of a `switchCase` operation is either the result of the execution the last default resolver, or the result of the execution of the first resolver where the associated predicate tested true.\n' +
       '\n' +
       '```javascript [playground]\n' +
       "const fruitIsYellow = fruit => fruit.color == 'yellow'\n" +
@@ -53330,25 +54329,23 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'switchCase(conditionalValues Array<boolean|any>) -> Promise|any\n' +
+            value: 'args Array<any>\n' +
+              'argsOrPromises Array<Promise|any>\n' +
+              'conditionalPromisesOrValues Array<Promise|boolean|any>\n' +
+              'conditionalFuncsOrPromisesOrValues Array<function|Promise|boolean|any>\n' +
               '\n' +
-              'switchCase(\n' +
-              '  ...args,\n' +
-              '  conditionalFuncsOrValues Array<function|boolean|any>\n' +
-              ') -> Promise|any\n' +
-              '\n' +
-              'switchCase(\n' +
-              '  conditionalFuncsOrValues Array<function|boolean|any>\n' +
-              ')(...args) -> Promise|any',
+              'switchCase(conditionalPromisesOrValues) -> Promise|any\n' +
+              'switchCase(...argsOrPromises, conditionalFuncsOrPromisesOrValues) -> Promise|any\n' +
+              'switchCase(conditionalFuncsOrPromisesOrValues)(...args) -> Promise|any',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 12, column: 4, offset: 286 }
+              end: { line: 10, column: 4, offset: 416 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 12, column: 4, offset: 286 }
+          end: { line: 10, column: 4, offset: 416 }
         }
       },
       description: {
@@ -53359,10 +54356,10 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Functional equivalent to the ',
+                value: 'Function equivalent to the ',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 30, offset: 29 }
+                  end: { line: 1, column: 28, offset: 27 }
                 }
               },
               {
@@ -53374,76 +54371,76 @@ export default [
                     type: 'text',
                     value: 'Conditional (ternary) operator',
                     position: {
-                      start: { line: 1, column: 31, offset: 30 },
-                      end: { line: 1, column: 61, offset: 60 }
+                      start: { line: 1, column: 29, offset: 28 },
+                      end: { line: 1, column: 59, offset: 58 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 1, column: 30, offset: 29 },
-                  end: { line: 1, column: 160, offset: 159 }
+                  start: { line: 1, column: 28, offset: 27 },
+                  end: { line: 1, column: 158, offset: 157 }
                 }
               },
               {
                 type: 'text',
                 value: '. Accepts an array of conditional functions that specifies cases as pairings of ',
                 position: {
-                  start: { line: 1, column: 160, offset: 159 },
-                  end: { line: 1, column: 240, offset: 239 }
+                  start: { line: 1, column: 158, offset: 157 },
+                  end: { line: 1, column: 238, offset: 237 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'predicate',
                 position: {
-                  start: { line: 1, column: 240, offset: 239 },
-                  end: { line: 1, column: 251, offset: 250 }
+                  start: { line: 1, column: 238, offset: 237 },
+                  end: { line: 1, column: 249, offset: 248 }
                 }
               },
               {
                 type: 'text',
                 value: ' and ',
                 position: {
-                  start: { line: 1, column: 251, offset: 250 },
-                  end: { line: 1, column: 256, offset: 255 }
+                  start: { line: 1, column: 249, offset: 248 },
+                  end: { line: 1, column: 254, offset: 253 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'resolver',
                 position: {
-                  start: { line: 1, column: 256, offset: 255 },
-                  end: { line: 1, column: 266, offset: 265 }
+                  start: { line: 1, column: 254, offset: 253 },
+                  end: { line: 1, column: 264, offset: 263 }
                 }
               },
               {
                 type: 'text',
                 value: ' functions with the exception of the last, default resolver. All functions are provided with the same arguments and executed in series. The result of a ',
                 position: {
-                  start: { line: 1, column: 266, offset: 265 },
-                  end: { line: 1, column: 418, offset: 417 }
+                  start: { line: 1, column: 264, offset: 263 },
+                  end: { line: 1, column: 416, offset: 415 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'switchCase',
                 position: {
-                  start: { line: 1, column: 418, offset: 417 },
-                  end: { line: 1, column: 430, offset: 429 }
+                  start: { line: 1, column: 416, offset: 415 },
+                  end: { line: 1, column: 428, offset: 427 }
                 }
               },
               {
                 type: 'text',
                 value: ' operation is either the result of the execution the last default resolver, or the result of the execution of the first resolver where the associated predicate tested true.',
                 position: {
-                  start: { line: 1, column: 430, offset: 429 },
-                  end: { line: 1, column: 602, offset: 601 }
+                  start: { line: 1, column: 428, offset: 427 },
+                  end: { line: 1, column: 600, offset: 599 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 602, offset: 601 }
+              end: { line: 1, column: 600, offset: 599 }
             }
           },
           {
@@ -53460,8 +54457,8 @@ export default [
               '  ])\n' +
               ') // plantain is possibly a banana',
             position: {
-              start: { line: 3, column: 1, offset: 603 },
-              end: { line: 13, column: 4, offset: 921 }
+              start: { line: 3, column: 1, offset: 601 },
+              end: { line: 13, column: 4, offset: 919 }
             }
           },
           {
@@ -53471,30 +54468,30 @@ export default [
                 type: 'text',
                 value: 'For composability ',
                 position: {
-                  start: { line: 15, column: 1, offset: 923 },
-                  end: { line: 15, column: 19, offset: 941 }
+                  start: { line: 15, column: 1, offset: 921 },
+                  end: { line: 15, column: 19, offset: 939 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'switchCase',
                 position: {
-                  start: { line: 15, column: 19, offset: 941 },
-                  end: { line: 15, column: 31, offset: 953 }
+                  start: { line: 15, column: 19, offset: 939 },
+                  end: { line: 15, column: 31, offset: 951 }
                 }
               },
               {
                 type: 'text',
                 value: ' supports a lazy API.',
                 position: {
-                  start: { line: 15, column: 31, offset: 953 },
-                  end: { line: 15, column: 52, offset: 974 }
+                  start: { line: 15, column: 31, offset: 951 },
+                  end: { line: 15, column: 52, offset: 972 }
                 }
               }
             ],
             position: {
-              start: { line: 15, column: 1, offset: 923 },
-              end: { line: 15, column: 52, offset: 974 }
+              start: { line: 15, column: 1, offset: 921 },
+              end: { line: 15, column: 52, offset: 972 }
             }
           },
           {
@@ -53515,8 +54512,8 @@ export default [
               "console.log(fruitsGuesser({ name: 'apple', color: 'red' }))\n" +
               '// apple is probably not a banana',
             position: {
-              start: { line: 17, column: 1, offset: 976 },
-              end: { line: 31, column: 4, offset: 1414 }
+              start: { line: 17, column: 1, offset: 974 },
+              end: { line: 31, column: 4, offset: 1412 }
             }
           },
           {
@@ -53526,14 +54523,14 @@ export default [
                 type: 'text',
                 value: 'Any function can be replaced with a nonfunction (object or primitive) value to be used directly in the operation.',
                 position: {
-                  start: { line: 33, column: 1, offset: 1416 },
-                  end: { line: 33, column: 114, offset: 1529 }
+                  start: { line: 33, column: 1, offset: 1414 },
+                  end: { line: 33, column: 114, offset: 1527 }
                 }
               }
             ],
             position: {
-              start: { line: 33, column: 1, offset: 1416 },
-              end: { line: 33, column: 114, offset: 1529 }
+              start: { line: 33, column: 1, offset: 1414 },
+              end: { line: 33, column: 114, offset: 1527 }
             }
           },
           {
@@ -53548,8 +54545,8 @@ export default [
               "  'default',\n" +
               '])(false).then(console.log) // default',
             position: {
-              start: { line: 35, column: 1, offset: 1531 },
-              end: { line: 43, column: 4, offset: 1703 }
+              start: { line: 35, column: 1, offset: 1529 },
+              end: { line: 43, column: 4, offset: 1701 }
             }
           },
           {
@@ -53559,30 +54556,30 @@ export default [
                 type: 'text',
                 value: 'If every item in the conditional array is a nonfunction value, ',
                 position: {
-                  start: { line: 45, column: 1, offset: 1705 },
-                  end: { line: 45, column: 64, offset: 1768 }
+                  start: { line: 45, column: 1, offset: 1703 },
+                  end: { line: 45, column: 64, offset: 1766 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'switchCase',
                 position: {
-                  start: { line: 45, column: 64, offset: 1768 },
-                  end: { line: 45, column: 76, offset: 1780 }
+                  start: { line: 45, column: 64, offset: 1766 },
+                  end: { line: 45, column: 76, offset: 1778 }
                 }
               },
               {
                 type: 'text',
                 value: ' executes eagerly.',
                 position: {
-                  start: { line: 45, column: 76, offset: 1780 },
-                  end: { line: 45, column: 94, offset: 1798 }
+                  start: { line: 45, column: 76, offset: 1778 },
+                  end: { line: 45, column: 94, offset: 1796 }
                 }
               }
             ],
             position: {
-              start: { line: 45, column: 1, offset: 1705 },
-              end: { line: 45, column: 94, offset: 1798 }
+              start: { line: 45, column: 1, offset: 1703 },
+              end: { line: 45, column: 94, offset: 1796 }
             }
           },
           {
@@ -53595,8 +54592,8 @@ export default [
               '\n' +
               'console.log(myDrink) // Beer',
             position: {
-              start: { line: 47, column: 1, offset: 1800 },
-              end: { line: 53, column: 4, offset: 1933 }
+              start: { line: 47, column: 1, offset: 1798 },
+              end: { line: 53, column: 4, offset: 1931 }
             }
           },
           {
@@ -53606,14 +54603,14 @@ export default [
                 type: 'text',
                 value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
                 position: {
-                  start: { line: 55, column: 1, offset: 1935 },
-                  end: { line: 55, column: 148, offset: 2082 }
+                  start: { line: 55, column: 1, offset: 1933 },
+                  end: { line: 55, column: 148, offset: 2080 }
                 }
               }
             ],
             position: {
-              start: { line: 55, column: 1, offset: 1935 },
-              end: { line: 55, column: 148, offset: 2082 }
+              start: { line: 55, column: 1, offset: 1933 },
+              end: { line: 55, column: 148, offset: 2080 }
             }
           },
           {
@@ -53628,8 +54625,8 @@ export default [
               '  (a, b, c) => console.log(`${a} + ${b} + ${c} != 6`),\n' +
               ']) // 1 + 2 + 3 == 6',
             position: {
-              start: { line: 57, column: 1, offset: 2084 },
-              end: { line: 65, column: 4, offset: 2371 }
+              start: { line: 57, column: 1, offset: 2082 },
+              end: { line: 65, column: 4, offset: 2369 }
             }
           },
           {
@@ -53639,14 +54636,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 67, column: 1, offset: 2373 },
-                  end: { line: 67, column: 10, offset: 2382 }
+                  start: { line: 67, column: 1, offset: 2371 },
+                  end: { line: 67, column: 10, offset: 2380 }
                 }
               }
             ],
             position: {
-              start: { line: 67, column: 1, offset: 2373 },
-              end: { line: 67, column: 10, offset: 2382 }
+              start: { line: 67, column: 1, offset: 2371 },
+              end: { line: 67, column: 10, offset: 2380 }
             }
           },
           {
@@ -53672,26 +54669,26 @@ export default [
                             type: 'text',
                             value: 'pipe',
                             position: {
-                              start: { line: 68, column: 5, offset: 2387 },
-                              end: { line: 68, column: 9, offset: 2391 }
+                              start: { line: 68, column: 5, offset: 2385 },
+                              end: { line: 68, column: 9, offset: 2389 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 68, column: 4, offset: 2386 },
-                          end: { line: 68, column: 22, offset: 2404 }
+                          start: { line: 68, column: 4, offset: 2384 },
+                          end: { line: 68, column: 22, offset: 2402 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 68, column: 4, offset: 2386 },
-                      end: { line: 68, column: 22, offset: 2404 }
+                      start: { line: 68, column: 4, offset: 2384 },
+                      end: { line: 68, column: 22, offset: 2402 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 68, column: 2, offset: 2384 },
-                  end: { line: 68, column: 22, offset: 2404 }
+                  start: { line: 68, column: 2, offset: 2382 },
+                  end: { line: 68, column: 22, offset: 2402 }
                 }
               },
               {
@@ -53711,26 +54708,26 @@ export default [
                             type: 'text',
                             value: 'tap.if',
                             position: {
-                              start: { line: 69, column: 5, offset: 2409 },
-                              end: { line: 69, column: 11, offset: 2415 }
+                              start: { line: 69, column: 5, offset: 2407 },
+                              end: { line: 69, column: 11, offset: 2413 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 69, column: 4, offset: 2408 },
-                          end: { line: 69, column: 26, offset: 2430 }
+                          start: { line: 69, column: 4, offset: 2406 },
+                          end: { line: 69, column: 26, offset: 2428 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 69, column: 4, offset: 2408 },
-                      end: { line: 69, column: 26, offset: 2430 }
+                      start: { line: 69, column: 4, offset: 2406 },
+                      end: { line: 69, column: 26, offset: 2428 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 69, column: 2, offset: 2406 },
-                  end: { line: 69, column: 26, offset: 2430 }
+                  start: { line: 69, column: 2, offset: 2404 },
+                  end: { line: 69, column: 26, offset: 2428 }
                 }
               },
               {
@@ -53750,26 +54747,26 @@ export default [
                             type: 'text',
                             value: 'tryCatch',
                             position: {
-                              start: { line: 70, column: 5, offset: 2435 },
-                              end: { line: 70, column: 13, offset: 2443 }
+                              start: { line: 70, column: 5, offset: 2433 },
+                              end: { line: 70, column: 13, offset: 2441 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 70, column: 4, offset: 2434 },
-                          end: { line: 70, column: 30, offset: 2460 }
+                          start: { line: 70, column: 4, offset: 2432 },
+                          end: { line: 70, column: 30, offset: 2458 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 70, column: 4, offset: 2434 },
-                      end: { line: 70, column: 30, offset: 2460 }
+                      start: { line: 70, column: 4, offset: 2432 },
+                      end: { line: 70, column: 30, offset: 2458 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 70, column: 2, offset: 2432 },
-                  end: { line: 70, column: 30, offset: 2460 }
+                  start: { line: 70, column: 2, offset: 2430 },
+                  end: { line: 70, column: 30, offset: 2458 }
                 }
               },
               {
@@ -53789,38 +54786,38 @@ export default [
                             type: 'text',
                             value: 'all',
                             position: {
-                              start: { line: 71, column: 5, offset: 2465 },
-                              end: { line: 71, column: 8, offset: 2468 }
+                              start: { line: 71, column: 5, offset: 2463 },
+                              end: { line: 71, column: 8, offset: 2466 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 71, column: 4, offset: 2464 },
-                          end: { line: 71, column: 20, offset: 2480 }
+                          start: { line: 71, column: 4, offset: 2462 },
+                          end: { line: 71, column: 20, offset: 2478 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 71, column: 4, offset: 2464 },
-                      end: { line: 71, column: 20, offset: 2480 }
+                      start: { line: 71, column: 4, offset: 2462 },
+                      end: { line: 71, column: 20, offset: 2478 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 71, column: 2, offset: 2462 },
-                  end: { line: 71, column: 20, offset: 2480 }
+                  start: { line: 71, column: 2, offset: 2460 },
+                  end: { line: 71, column: 20, offset: 2478 }
                 }
               }
             ],
             position: {
-              start: { line: 68, column: 2, offset: 2384 },
-              end: { line: 71, column: 20, offset: 2480 }
+              start: { line: 68, column: 2, offset: 2382 },
+              end: { line: 71, column: 20, offset: 2478 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 71, column: 20, offset: 2480 }
+          end: { line: 71, column: 20, offset: 2478 }
         }
       },
       execution: {
@@ -53855,7 +54852,10 @@ export default [
   {
     name: 'tap',
     synopsis: '```coffeescript [specscript]\n' +
-      'tap(...args, f function) -> Promise|args[0]\n' +
+      'args Array<any>\n' +
+      'argsOrPromises Array<Promise|any>\n' +
+      '\n' +
+      'tap(...argsOrPromises, f function) -> Promise|args[0]\n' +
       'tap(f function)(...args) -> Promise|args[0]\n' +
       '```',
     description: 'Call a function with provided arguments, returning the first argument. The return value of the function call is discarded.\n' +
@@ -53918,17 +54918,20 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'tap(...args, f function) -> Promise|args[0]\n' +
+            value: 'args Array<any>\n' +
+              'argsOrPromises Array<Promise|any>\n' +
+              '\n' +
+              'tap(...argsOrPromises, f function) -> Promise|args[0]\n' +
               'tap(f function)(...args) -> Promise|args[0]',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 4, column: 4, offset: 120 }
+              end: { line: 7, column: 4, offset: 181 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 4, column: 4, offset: 120 }
+          end: { line: 7, column: 4, offset: 181 }
         }
       },
       description: {
@@ -54294,7 +55297,10 @@ export default [
   {
     name: 'tap.if',
     synopsis: '```coffeescript [specscript]\n' +
-      'tap.if(...args, predicate function, f function) -> Promise|args[0]\n' +
+      'args Array<any>\n' +
+      'argsOrPromises Array<Promise|any>\n' +
+      '\n' +
+      'tap.if(...argsOrPromises, predicate function, f function) -> Promise|args[0]\n' +
       'tap.if(predicate function, f function)(...args) -> Promise|args[0]\n' +
       '```',
     description: 'A version of `tap` that accepts a predicate function (a function that returns a boolean value) before the function `f` to execute. Only executes `f` if the predicate function tests true. The arguments are the same to both the predicate function and the function to execute `f`.\n' +
@@ -54355,17 +55361,20 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'tap.if(...args, predicate function, f function) -> Promise|args[0]\n' +
+            value: 'args Array<any>\n' +
+              'argsOrPromises Array<Promise|any>\n' +
+              '\n' +
+              'tap.if(...argsOrPromises, predicate function, f function) -> Promise|args[0]\n' +
               'tap.if(predicate function, f function)(...args) -> Promise|args[0]',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 4, column: 4, offset: 166 }
+              end: { line: 7, column: 4, offset: 227 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 4, column: 4, offset: 166 }
+          end: { line: 7, column: 4, offset: 227 }
         }
       },
       description: {
@@ -54731,6 +55740,8 @@ export default [
   {
     name: 'thunkify',
     synopsis: '```coffeescript [specscript]\n' +
+      'args Array<any>\n' +
+      '\n' +
       'thunkify(func function, ...args) -> thunk ()=>func(...args)\n' +
       '```',
     description: 'Create a thunk function from another function and any number of arguments. The thunk function takes no arguments, and when called, executes the other function with the provided arguments. The other function is said to be "thunkified".\n' +
@@ -54783,16 +55794,18 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'thunkify(func function, ...args) -> thunk ()=>func(...args)',
+            value: 'args Array<any>\n' +
+              '\n' +
+              'thunkify(func function, ...args) -> thunk ()=>func(...args)',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 3, column: 4, offset: 92 }
+              end: { line: 5, column: 4, offset: 109 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 3, column: 4, offset: 92 }
+          end: { line: 5, column: 4, offset: 109 }
         }
       },
       description: {
@@ -55077,18 +56090,13 @@ export default [
       'type Semigroup =\n' +
       '  Array|String|Set|TypedArray|{ concat: function }|{ write: function }|Object\n' +
       '\n' +
-      'type SemigroupResolver = (fold Foldable)=>Promise|Semigroup\n' +
+      'type SemigroupResolver = (foldable Foldable)=>Promise|Semigroup\n' +
       '\n' +
-      'transform(\n' +
-      '  fold Foldable,\n' +
-      '  transducer Transducer,\n' +
-      '  initial? Semigroup|SemigroupResolver,\n' +
-      ') -> result Promise|Semigroup\n' +
+      'transducer Transducer\n' +
+      'initial Semigroup|SemigroupResolver\n' +
       '\n' +
-      'transform(\n' +
-      '  transducer Transducer,\n' +
-      '  initial? Semigroup|SemigroupResolver,\n' +
-      ')(fold Foldable) -> result Promise|Semigroup\n' +
+      'transform(foldable Promise|Foldable, transducer, initial?) -> result Promise|Semigroup\n' +
+      'transform(transducer, initial?)(foldable Foldable) -> result Promise|Semigroup\n' +
       '```',
     description: 'Transforms a foldable with [transducers](https://rubico.land/blog/transducers-crash-course-rubico-v2) into a semigroup.\n' +
       '\n' +
@@ -55324,27 +56332,22 @@ export default [
               'type Semigroup =\n' +
               '  Array|String|Set|TypedArray|{ concat: function }|{ write: function }|Object\n' +
               '\n' +
-              'type SemigroupResolver = (fold Foldable)=>Promise|Semigroup\n' +
+              'type SemigroupResolver = (foldable Foldable)=>Promise|Semigroup\n' +
               '\n' +
-              'transform(\n' +
-              '  fold Foldable,\n' +
-              '  transducer Transducer,\n' +
-              '  initial? Semigroup|SemigroupResolver,\n' +
-              ') -> result Promise|Semigroup\n' +
+              'transducer Transducer\n' +
+              'initial Semigroup|SemigroupResolver\n' +
               '\n' +
-              'transform(\n' +
-              '  transducer Transducer,\n' +
-              '  initial? Semigroup|SemigroupResolver,\n' +
-              ')(fold Foldable) -> result Promise|Semigroup',
+              'transform(foldable Promise|Foldable, transducer, initial?) -> result Promise|Semigroup\n' +
+              'transform(transducer, initial?)(foldable Foldable) -> result Promise|Semigroup',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 26, column: 4, offset: 637 }
+              end: { line: 21, column: 4, offset: 621 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 26, column: 4, offset: 637 }
+          end: { line: 21, column: 4, offset: 621 }
         }
       },
       description: {
@@ -56727,11 +57730,13 @@ export default [
   {
     name: 'tryCatch',
     synopsis: '```coffeescript [specscript]\n' +
-      'tryCatch(tryer function, catcher function)(...args) -> Promise|any\n' +
+      'args Array<any>\n' +
+      'argsOrPromises Array<Promise|any>\n' +
       '\n' +
-      'tryCatch(...args, tryer function, catcher function) -> Promise|any\n' +
+      'tryCatch(tryer function, catcher function)(...args) -> Promise|any\n' +
+      'tryCatch(...argsOrPromises, tryer function, catcher function) -> Promise|any\n' +
       '```',
-    description: 'Handles errors with a `tryer` and a `catcher` function. Calls the `tryer` function with the provided arguments and catches any errors thrown by the `tryer` function with the `catcher` function. If the `tryer` function is asynchronous and returns a rejected promise, the `catcher` function will execute with the value of the rejected promise. The `catcher` function is called with the error and all arguments supplied to the `tryer` function.\n' +
+    description: 'Function equivalent to the [try...catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) statement. Accepts two functions: a `tryer` function and a `catcher` function. Calls the `tryer` function and catches any errors thrown by the `tryer` function with the `catcher` function.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const throwsIfOdd = number => {\n' +
@@ -56741,18 +57746,43 @@ export default [
       "  console.log('did not throw for', number)\n" +
       '}\n' +
       '\n' +
-      'const errorHandler = tryCatch(throwsIfOdd, (error, number) => {\n' +
+      'const errorHandler = (error, number) => {\n' +
       "  console.log('caught error from number', number)\n" +
       '  console.log(error)\n' +
-      '})\n' +
+      '}\n' +
       '\n' +
-      'errorHandler(2) // did not throw for 2\n' +
-      'errorHandler(3) // caught error from number 3\n' +
+      'const handler = tryCatch(throwsIfOdd, errorHandler)\n' +
+      '\n' +
+      'handler(2) // did not throw for 2\n' +
+      'handler(3) // caught error from number 3\n' +
+      '           // Error: 3 is odd\n' +
+      '\n' +
+      '```\n' +
+      '\n' +
+      'If the `tryer` function is asynchronous and throws an error, the `catcher` function will catch the rejected promise.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const rejectsIfOdd = async number => {\n' +
+      '  if (number % 2 == 1) {\n' +
+      '    throw new Error(`${number} is odd`)\n' +
+      '  }\n' +
+      "  console.log('did not throw for', number)\n" +
+      '}\n' +
+      '\n' +
+      'const errorHandler = (error, number) => {\n' +
+      "  console.log('caught error from number', number)\n" +
+      '  console.log(error)\n' +
+      '}\n' +
+      '\n' +
+      'const asyncHandler = tryCatch(rejectsIfOdd, errorHandler)\n' +
+      '\n' +
+      'asyncHandler(2) // did not throw for 2\n' +
+      'asyncHandler(3) // caught error from number 3\n' +
       '                // Error: 3 is odd\n' +
       '\n' +
       '```\n' +
       '\n' +
-      '`tryCatch` behaves eagerly (executes immediately with a single call and not with multiple calls like a higher order function) when passed any amount of nonfunction (primitive or object) arguments before the `tryer` and `catcher` functions.\n' +
+      'When provided any number of arguments before the tryer and catcher functions, `tryCatch` executes immediately.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const add = (a, b) => a + b\n' +
@@ -56817,18 +57847,20 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'tryCatch(tryer function, catcher function)(...args) -> Promise|any\n' +
+            value: 'args Array<any>\n' +
+              'argsOrPromises Array<Promise|any>\n' +
               '\n' +
-              'tryCatch(...args, tryer function, catcher function) -> Promise|any',
+              'tryCatch(tryer function, catcher function)(...args) -> Promise|any\n' +
+              'tryCatch(...argsOrPromises, tryer function, catcher function) -> Promise|any',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 167 }
+              end: { line: 7, column: 4, offset: 227 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 5, column: 4, offset: 167 }
+          end: { line: 7, column: 4, offset: 227 }
         }
       },
       description: {
@@ -56839,160 +57871,123 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Handles errors with a ',
+                value: 'Function equivalent to the ',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 23, offset: 22 }
+                  end: { line: 1, column: 28, offset: 27 }
+                }
+              },
+              {
+                type: 'link',
+                title: null,
+                url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'try...catch',
+                    position: {
+                      start: { line: 1, column: 29, offset: 28 },
+                      end: { line: 1, column: 40, offset: 39 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 28, offset: 27 },
+                  end: { line: 1, column: 131, offset: 130 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' statement. Accepts two functions: a ',
+                position: {
+                  start: { line: 1, column: 131, offset: 130 },
+                  end: { line: 1, column: 168, offset: 167 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'tryer',
                 position: {
-                  start: { line: 1, column: 23, offset: 22 },
-                  end: { line: 1, column: 30, offset: 29 }
+                  start: { line: 1, column: 168, offset: 167 },
+                  end: { line: 1, column: 175, offset: 174 }
                 }
               },
               {
                 type: 'text',
-                value: ' and a ',
+                value: ' function and a ',
                 position: {
-                  start: { line: 1, column: 30, offset: 29 },
-                  end: { line: 1, column: 37, offset: 36 }
+                  start: { line: 1, column: 175, offset: 174 },
+                  end: { line: 1, column: 191, offset: 190 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'catcher',
                 position: {
-                  start: { line: 1, column: 37, offset: 36 },
-                  end: { line: 1, column: 46, offset: 45 }
+                  start: { line: 1, column: 191, offset: 190 },
+                  end: { line: 1, column: 200, offset: 199 }
                 }
               },
               {
                 type: 'text',
                 value: ' function. Calls the ',
                 position: {
-                  start: { line: 1, column: 46, offset: 45 },
-                  end: { line: 1, column: 67, offset: 66 }
+                  start: { line: 1, column: 200, offset: 199 },
+                  end: { line: 1, column: 221, offset: 220 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'tryer',
                 position: {
-                  start: { line: 1, column: 67, offset: 66 },
-                  end: { line: 1, column: 74, offset: 73 }
+                  start: { line: 1, column: 221, offset: 220 },
+                  end: { line: 1, column: 228, offset: 227 }
                 }
               },
               {
                 type: 'text',
-                value: ' function with the provided arguments and catches any errors thrown by the ',
+                value: ' function and catches any errors thrown by the ',
                 position: {
-                  start: { line: 1, column: 74, offset: 73 },
-                  end: { line: 1, column: 149, offset: 148 }
+                  start: { line: 1, column: 228, offset: 227 },
+                  end: { line: 1, column: 275, offset: 274 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'tryer',
                 position: {
-                  start: { line: 1, column: 149, offset: 148 },
-                  end: { line: 1, column: 156, offset: 155 }
+                  start: { line: 1, column: 275, offset: 274 },
+                  end: { line: 1, column: 282, offset: 281 }
                 }
               },
               {
                 type: 'text',
                 value: ' function with the ',
                 position: {
-                  start: { line: 1, column: 156, offset: 155 },
-                  end: { line: 1, column: 175, offset: 174 }
+                  start: { line: 1, column: 282, offset: 281 },
+                  end: { line: 1, column: 301, offset: 300 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'catcher',
                 position: {
-                  start: { line: 1, column: 175, offset: 174 },
-                  end: { line: 1, column: 184, offset: 183 }
-                }
-              },
-              {
-                type: 'text',
-                value: ' function. If the ',
-                position: {
-                  start: { line: 1, column: 184, offset: 183 },
-                  end: { line: 1, column: 202, offset: 201 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'tryer',
-                position: {
-                  start: { line: 1, column: 202, offset: 201 },
-                  end: { line: 1, column: 209, offset: 208 }
-                }
-              },
-              {
-                type: 'text',
-                value: ' function is asynchronous and returns a rejected promise, the ',
-                position: {
-                  start: { line: 1, column: 209, offset: 208 },
-                  end: { line: 1, column: 271, offset: 270 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'catcher',
-                position: {
-                  start: { line: 1, column: 271, offset: 270 },
-                  end: { line: 1, column: 280, offset: 279 }
-                }
-              },
-              {
-                type: 'text',
-                value: ' function will execute with the value of the rejected promise. The ',
-                position: {
-                  start: { line: 1, column: 280, offset: 279 },
-                  end: { line: 1, column: 347, offset: 346 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'catcher',
-                position: {
-                  start: { line: 1, column: 347, offset: 346 },
-                  end: { line: 1, column: 356, offset: 355 }
-                }
-              },
-              {
-                type: 'text',
-                value: ' function is called with the error and all arguments supplied to the ',
-                position: {
-                  start: { line: 1, column: 356, offset: 355 },
-                  end: { line: 1, column: 425, offset: 424 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'tryer',
-                position: {
-                  start: { line: 1, column: 425, offset: 424 },
-                  end: { line: 1, column: 432, offset: 431 }
+                  start: { line: 1, column: 301, offset: 300 },
+                  end: { line: 1, column: 310, offset: 309 }
                 }
               },
               {
                 type: 'text',
                 value: ' function.',
                 position: {
-                  start: { line: 1, column: 432, offset: 431 },
-                  end: { line: 1, column: 442, offset: 441 }
+                  start: { line: 1, column: 310, offset: 309 },
+                  end: { line: 1, column: 320, offset: 319 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 442, offset: 441 }
+              end: { line: 1, column: 320, offset: 319 }
             }
           },
           {
@@ -57006,74 +58001,127 @@ export default [
               "  console.log('did not throw for', number)\n" +
               '}\n' +
               '\n' +
-              'const errorHandler = tryCatch(throwsIfOdd, (error, number) => {\n' +
+              'const errorHandler = (error, number) => {\n' +
               "  console.log('caught error from number', number)\n" +
               '  console.log(error)\n' +
-              '})\n' +
+              '}\n' +
               '\n' +
-              'errorHandler(2) // did not throw for 2\n' +
-              'errorHandler(3) // caught error from number 3\n' +
-              '                // Error: 3 is odd\n',
+              'const handler = tryCatch(throwsIfOdd, errorHandler)\n' +
+              '\n' +
+              'handler(2) // did not throw for 2\n' +
+              'handler(3) // caught error from number 3\n' +
+              '           // Error: 3 is odd\n',
             position: {
-              start: { line: 3, column: 1, offset: 443 },
-              end: { line: 20, column: 4, offset: 880 }
+              start: { line: 3, column: 1, offset: 321 },
+              end: { line: 22, column: 4, offset: 773 }
             }
           },
           {
             type: 'paragraph',
             children: [
               {
-                type: 'inlineCode',
-                value: 'tryCatch',
-                position: {
-                  start: { line: 22, column: 1, offset: 882 },
-                  end: { line: 22, column: 11, offset: 892 }
-                }
-              },
-              {
                 type: 'text',
-                value: ' behaves eagerly (executes immediately with a single call and not with multiple calls like a higher order function) when passed any amount of nonfunction (primitive or object) arguments before the ',
+                value: 'If the ',
                 position: {
-                  start: { line: 22, column: 11, offset: 892 },
-                  end: { line: 22, column: 208, offset: 1089 }
+                  start: { line: 24, column: 1, offset: 775 },
+                  end: { line: 24, column: 8, offset: 782 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'tryer',
                 position: {
-                  start: { line: 22, column: 208, offset: 1089 },
-                  end: { line: 22, column: 215, offset: 1096 }
+                  start: { line: 24, column: 8, offset: 782 },
+                  end: { line: 24, column: 15, offset: 789 }
                 }
               },
               {
                 type: 'text',
-                value: ' and ',
+                value: ' function is asynchronous and throws an error, the ',
                 position: {
-                  start: { line: 22, column: 215, offset: 1096 },
-                  end: { line: 22, column: 220, offset: 1101 }
+                  start: { line: 24, column: 15, offset: 789 },
+                  end: { line: 24, column: 66, offset: 840 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'catcher',
                 position: {
-                  start: { line: 22, column: 220, offset: 1101 },
-                  end: { line: 22, column: 229, offset: 1110 }
+                  start: { line: 24, column: 66, offset: 840 },
+                  end: { line: 24, column: 75, offset: 849 }
                 }
               },
               {
                 type: 'text',
-                value: ' functions.',
+                value: ' function will catch the rejected promise.',
                 position: {
-                  start: { line: 22, column: 229, offset: 1110 },
-                  end: { line: 22, column: 240, offset: 1121 }
+                  start: { line: 24, column: 75, offset: 849 },
+                  end: { line: 24, column: 117, offset: 891 }
                 }
               }
             ],
             position: {
-              start: { line: 22, column: 1, offset: 882 },
-              end: { line: 22, column: 240, offset: 1121 }
+              start: { line: 24, column: 1, offset: 775 },
+              end: { line: 24, column: 117, offset: 891 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'const rejectsIfOdd = async number => {\n' +
+              '  if (number % 2 == 1) {\n' +
+              '    throw new Error(`${number} is odd`)\n' +
+              '  }\n' +
+              "  console.log('did not throw for', number)\n" +
+              '}\n' +
+              '\n' +
+              'const errorHandler = (error, number) => {\n' +
+              "  console.log('caught error from number', number)\n" +
+              '  console.log(error)\n' +
+              '}\n' +
+              '\n' +
+              'const asyncHandler = tryCatch(rejectsIfOdd, errorHandler)\n' +
+              '\n' +
+              'asyncHandler(2) // did not throw for 2\n' +
+              'asyncHandler(3) // caught error from number 3\n' +
+              '                // Error: 3 is odd\n',
+            position: {
+              start: { line: 26, column: 1, offset: 893 },
+              end: { line: 45, column: 4, offset: 1373 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'When provided any number of arguments before the tryer and catcher functions, ',
+                position: {
+                  start: { line: 47, column: 1, offset: 1375 },
+                  end: { line: 47, column: 79, offset: 1453 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'tryCatch',
+                position: {
+                  start: { line: 47, column: 79, offset: 1453 },
+                  end: { line: 47, column: 89, offset: 1463 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' executes immediately.',
+                position: {
+                  start: { line: 47, column: 89, offset: 1463 },
+                  end: { line: 47, column: 111, offset: 1485 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 47, column: 1, offset: 1375 },
+              end: { line: 47, column: 111, offset: 1485 }
             }
           },
           {
@@ -57089,8 +58137,8 @@ export default [
               '  console.error(error.message) // the sum is 6\n' +
               '})',
             position: {
-              start: { line: 24, column: 1, offset: 1123 },
-              end: { line: 33, column: 4, offset: 1392 }
+              start: { line: 49, column: 1, offset: 1487 },
+              end: { line: 58, column: 4, offset: 1756 }
             }
           },
           {
@@ -57100,14 +58148,14 @@ export default [
                 type: 'text',
                 value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
                 position: {
-                  start: { line: 35, column: 1, offset: 1394 },
-                  end: { line: 35, column: 148, offset: 1541 }
+                  start: { line: 60, column: 1, offset: 1758 },
+                  end: { line: 60, column: 148, offset: 1905 }
                 }
               }
             ],
             position: {
-              start: { line: 35, column: 1, offset: 1394 },
-              end: { line: 35, column: 148, offset: 1541 }
+              start: { line: 60, column: 1, offset: 1758 },
+              end: { line: 60, column: 148, offset: 1905 }
             }
           },
           {
@@ -57124,8 +58172,8 @@ export default [
               '  console.error(`${a} + ${b} + ${c}: ${error.message}`)\n' +
               '})',
             position: {
-              start: { line: 37, column: 1, offset: 1543 },
-              end: { line: 47, column: 4, offset: 1834 }
+              start: { line: 62, column: 1, offset: 1907 },
+              end: { line: 72, column: 4, offset: 2198 }
             }
           },
           {
@@ -57135,14 +58183,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 49, column: 1, offset: 1836 },
-                  end: { line: 49, column: 10, offset: 1845 }
+                  start: { line: 74, column: 1, offset: 2200 },
+                  end: { line: 74, column: 10, offset: 2209 }
                 }
               }
             ],
             position: {
-              start: { line: 49, column: 1, offset: 1836 },
-              end: { line: 49, column: 10, offset: 1845 }
+              start: { line: 74, column: 1, offset: 2200 },
+              end: { line: 74, column: 10, offset: 2209 }
             }
           },
           {
@@ -57168,26 +58216,26 @@ export default [
                             type: 'text',
                             value: 'pipe',
                             position: {
-                              start: { line: 50, column: 5, offset: 1850 },
-                              end: { line: 50, column: 9, offset: 1854 }
+                              start: { line: 75, column: 5, offset: 2214 },
+                              end: { line: 75, column: 9, offset: 2218 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 50, column: 4, offset: 1849 },
-                          end: { line: 50, column: 22, offset: 1867 }
+                          start: { line: 75, column: 4, offset: 2213 },
+                          end: { line: 75, column: 22, offset: 2231 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 50, column: 4, offset: 1849 },
-                      end: { line: 50, column: 22, offset: 1867 }
+                      start: { line: 75, column: 4, offset: 2213 },
+                      end: { line: 75, column: 22, offset: 2231 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 50, column: 2, offset: 1847 },
-                  end: { line: 50, column: 22, offset: 1867 }
+                  start: { line: 75, column: 2, offset: 2211 },
+                  end: { line: 75, column: 22, offset: 2231 }
                 }
               },
               {
@@ -57207,26 +58255,26 @@ export default [
                             type: 'text',
                             value: 'switchCase',
                             position: {
-                              start: { line: 51, column: 5, offset: 1872 },
-                              end: { line: 51, column: 15, offset: 1882 }
+                              start: { line: 76, column: 5, offset: 2236 },
+                              end: { line: 76, column: 15, offset: 2246 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 51, column: 4, offset: 1871 },
-                          end: { line: 51, column: 34, offset: 1901 }
+                          start: { line: 76, column: 4, offset: 2235 },
+                          end: { line: 76, column: 34, offset: 2265 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 51, column: 4, offset: 1871 },
-                      end: { line: 51, column: 34, offset: 1901 }
+                      start: { line: 76, column: 4, offset: 2235 },
+                      end: { line: 76, column: 34, offset: 2265 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 51, column: 2, offset: 1869 },
-                  end: { line: 51, column: 34, offset: 1901 }
+                  start: { line: 76, column: 2, offset: 2233 },
+                  end: { line: 76, column: 34, offset: 2265 }
                 }
               },
               {
@@ -57246,38 +58294,38 @@ export default [
                             type: 'text',
                             value: 'all',
                             position: {
-                              start: { line: 52, column: 5, offset: 1906 },
-                              end: { line: 52, column: 8, offset: 1909 }
+                              start: { line: 77, column: 5, offset: 2270 },
+                              end: { line: 77, column: 8, offset: 2273 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 52, column: 4, offset: 1905 },
-                          end: { line: 52, column: 20, offset: 1921 }
+                          start: { line: 77, column: 4, offset: 2269 },
+                          end: { line: 77, column: 20, offset: 2285 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 52, column: 4, offset: 1905 },
-                      end: { line: 52, column: 20, offset: 1921 }
+                      start: { line: 77, column: 4, offset: 2269 },
+                      end: { line: 77, column: 20, offset: 2285 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 52, column: 2, offset: 1903 },
-                  end: { line: 52, column: 20, offset: 1921 }
+                  start: { line: 77, column: 2, offset: 2267 },
+                  end: { line: 77, column: 20, offset: 2285 }
                 }
               }
             ],
             position: {
-              start: { line: 50, column: 2, offset: 1847 },
-              end: { line: 52, column: 20, offset: 1921 }
+              start: { line: 75, column: 2, offset: 2211 },
+              end: { line: 77, column: 20, offset: 2285 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 52, column: 20, offset: 1921 }
+          end: { line: 77, column: 20, offset: 2285 }
         }
       }
     },
