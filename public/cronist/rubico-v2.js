@@ -1635,9 +1635,9 @@ export default [
     synopsis: '```coffeescript [specscript]\n' +
       'type SyncOrAsyncReducer = (accumulator any, value any)=>(nextAccumulator Promise|any)\n' +
       'type Transducer = SyncOrAsyncReducer=>SyncOrAsyncReducer\n' +
-      'type SyncOrAsyncCallback = (element any)=>Promise|undefined\n' +
+      'type UnarySyncOrAsyncCallback = (element any)=>Promise|undefined\n' +
       '\n' +
-      'Transducer.forEach(callback SyncOrAsyncCallback) -> forEachTransducer Transducer\n' +
+      'Transducer.forEach(callback UnarySyncOrAsyncCallback) -> forEachTransducer Transducer\n' +
       '```',
     description: 'Executes a callback function for each element of a reducing operation, leaving the reducing operation unmodified. It is possible to use an asynchronous callback function, however the reducing operation must support asynchronous execution. This library provides such implementations as [reduce](/docs/reduce) and [transform](/docs/transform).\n' +
       '\n' +
@@ -1694,18 +1694,18 @@ export default [
             meta: '[specscript]',
             value: 'type SyncOrAsyncReducer = (accumulator any, value any)=>(nextAccumulator Promise|any)\n' +
               'type Transducer = SyncOrAsyncReducer=>SyncOrAsyncReducer\n' +
-              'type SyncOrAsyncCallback = (element any)=>Promise|undefined\n' +
+              'type UnarySyncOrAsyncCallback = (element any)=>Promise|undefined\n' +
               '\n' +
-              'Transducer.forEach(callback SyncOrAsyncCallback) -> forEachTransducer Transducer',
+              'Transducer.forEach(callback UnarySyncOrAsyncCallback) -> forEachTransducer Transducer',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 7, column: 4, offset: 317 }
+              end: { line: 7, column: 4, offset: 327 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 7, column: 4, offset: 317 }
+          end: { line: 7, column: 4, offset: 327 }
         }
       },
       description: {
