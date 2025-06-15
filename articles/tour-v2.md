@@ -1,4 +1,4 @@
-Welcome to the rubico tour. This tour covers high level concepts and provides runnable and editable code examples. All code areas have the rubico core methods imported globally.
+Welcome to the rubico tour. This tour covers high level concepts and provides runnable and editable code examples. All code areas have the rubico core methods and Transducer module imported globally.
 
 ```javascript
 const {
