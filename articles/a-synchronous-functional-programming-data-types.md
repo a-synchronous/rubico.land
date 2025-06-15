@@ -520,7 +520,7 @@ Asynchronous data types are data types that represent asynchronous operations. F
 
 ### Promise
 
-The promise data type represents an asynchronous operation that resolves to a single value, or rejects with an error. Promise instances have a `.then` and a `.catch` method.
+The promise data type represents an asynchronous operation that resolves to a single value or rejects with an error. Promise instances have a `.then` and a `.catch` method.
 
 ```coffeescript [specscript]
 type SyncOrAsyncResolver = any=>Promise|any

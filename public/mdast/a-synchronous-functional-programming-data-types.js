@@ -2902,48 +2902,48 @@ export default {
       children: [
         {
           type: 'text',
-          value: 'The promise data type represents an asynchronous operation that resolves to a single value, or rejects with an error. Promise instances have a ',
+          value: 'The promise data type represents an asynchronous operation that resolves to a single value or rejects with an error. Promise instances have a ',
           position: {
             start: { line: 523, column: 1, offset: 15393 },
-            end: { line: 523, column: 144, offset: 15536 }
+            end: { line: 523, column: 143, offset: 15535 }
           }
         },
         {
           type: 'inlineCode',
           value: '.then',
           position: {
-            start: { line: 523, column: 144, offset: 15536 },
-            end: { line: 523, column: 151, offset: 15543 }
+            start: { line: 523, column: 143, offset: 15535 },
+            end: { line: 523, column: 150, offset: 15542 }
           }
         },
         {
           type: 'text',
           value: ' and a ',
           position: {
-            start: { line: 523, column: 151, offset: 15543 },
-            end: { line: 523, column: 158, offset: 15550 }
+            start: { line: 523, column: 150, offset: 15542 },
+            end: { line: 523, column: 157, offset: 15549 }
           }
         },
         {
           type: 'inlineCode',
           value: '.catch',
           position: {
-            start: { line: 523, column: 158, offset: 15550 },
-            end: { line: 523, column: 166, offset: 15558 }
+            start: { line: 523, column: 157, offset: 15549 },
+            end: { line: 523, column: 165, offset: 15557 }
           }
         },
         {
           type: 'text',
           value: ' method.',
           position: {
-            start: { line: 523, column: 166, offset: 15558 },
-            end: { line: 523, column: 174, offset: 15566 }
+            start: { line: 523, column: 165, offset: 15557 },
+            end: { line: 523, column: 173, offset: 15565 }
           }
         }
       ],
       position: {
         start: { line: 523, column: 1, offset: 15393 },
-        end: { line: 523, column: 174, offset: 15566 }
+        end: { line: 523, column: 173, offset: 15565 }
       }
     },
     {
@@ -2958,8 +2958,8 @@ export default {
         '  catch: (onRejected SyncOrAsyncErrorResolver)=>Promise\n' +
         '}',
       position: {
-        start: { line: 525, column: 1, offset: 15568 },
-        end: { line: 533, column: 4, offset: 15866 }
+        start: { line: 525, column: 1, offset: 15567 },
+        end: { line: 533, column: 4, offset: 15865 }
       }
     },
     {
@@ -2969,46 +2969,46 @@ export default {
           type: 'text',
           value: "The promise's ",
           position: {
-            start: { line: 535, column: 1, offset: 15868 },
-            end: { line: 535, column: 15, offset: 15882 }
+            start: { line: 535, column: 1, offset: 15867 },
+            end: { line: 535, column: 15, offset: 15881 }
           }
         },
         {
           type: 'inlineCode',
           value: '.then',
           position: {
-            start: { line: 535, column: 15, offset: 15882 },
-            end: { line: 535, column: 22, offset: 15889 }
+            start: { line: 535, column: 15, offset: 15881 },
+            end: { line: 535, column: 22, offset: 15888 }
           }
         },
         {
           type: 'text',
           value: " method resolves the promise's resolved value and catches any errors rejected from the promise. Either of the resolvers provided to a promise's ",
           position: {
-            start: { line: 535, column: 22, offset: 15889 },
-            end: { line: 535, column: 166, offset: 16033 }
+            start: { line: 535, column: 22, offset: 15888 },
+            end: { line: 535, column: 166, offset: 16032 }
           }
         },
         {
           type: 'inlineCode',
           value: '.then',
           position: {
-            start: { line: 535, column: 166, offset: 16033 },
-            end: { line: 535, column: 173, offset: 16040 }
+            start: { line: 535, column: 166, offset: 16032 },
+            end: { line: 535, column: 173, offset: 16039 }
           }
         },
         {
           type: 'text',
           value: ' method may be asynchronous and return a promise.',
           position: {
-            start: { line: 535, column: 173, offset: 16040 },
-            end: { line: 535, column: 222, offset: 16089 }
+            start: { line: 535, column: 173, offset: 16039 },
+            end: { line: 535, column: 222, offset: 16088 }
           }
         }
       ],
       position: {
-        start: { line: 535, column: 1, offset: 15868 },
-        end: { line: 535, column: 222, offset: 16089 }
+        start: { line: 535, column: 1, offset: 15867 },
+        end: { line: 535, column: 222, offset: 16088 }
       }
     },
     {
@@ -3027,8 +3027,8 @@ export default {
         '\n' +
         '// promise2 is a promise returned from promise1.then(...)',
       position: {
-        start: { line: 537, column: 1, offset: 16091 },
-        end: { line: 549, column: 4, offset: 16396 }
+        start: { line: 537, column: 1, offset: 16090 },
+        end: { line: 549, column: 4, offset: 16395 }
       }
     },
     {
@@ -3038,30 +3038,30 @@ export default {
           type: 'text',
           value: "The promise's ",
           position: {
-            start: { line: 551, column: 1, offset: 16398 },
-            end: { line: 551, column: 15, offset: 16412 }
+            start: { line: 551, column: 1, offset: 16397 },
+            end: { line: 551, column: 15, offset: 16411 }
           }
         },
         {
           type: 'inlineCode',
           value: '.catch',
           position: {
-            start: { line: 551, column: 15, offset: 16412 },
-            end: { line: 551, column: 23, offset: 16420 }
+            start: { line: 551, column: 15, offset: 16411 },
+            end: { line: 551, column: 23, offset: 16419 }
           }
         },
         {
           type: 'text',
           value: ' method catches any errors rejected from a promise.',
           position: {
-            start: { line: 551, column: 23, offset: 16420 },
-            end: { line: 551, column: 74, offset: 16471 }
+            start: { line: 551, column: 23, offset: 16419 },
+            end: { line: 551, column: 74, offset: 16470 }
           }
         }
       ],
       position: {
-        start: { line: 551, column: 1, offset: 16398 },
-        end: { line: 551, column: 74, offset: 16471 }
+        start: { line: 551, column: 1, offset: 16397 },
+        end: { line: 551, column: 74, offset: 16470 }
       }
     },
     {
@@ -3070,8 +3070,8 @@ export default {
       meta: null,
       value: 'myPromise.catch(error => {\n  // error is rejected from myPromise\n})',
       position: {
-        start: { line: 553, column: 1, offset: 16473 },
-        end: { line: 557, column: 4, offset: 16558 }
+        start: { line: 553, column: 1, offset: 16472 },
+        end: { line: 557, column: 4, offset: 16557 }
       }
     },
     {
@@ -3081,30 +3081,30 @@ export default {
           type: 'text',
           value: 'To create a promise, you can use the ',
           position: {
-            start: { line: 559, column: 1, offset: 16560 },
-            end: { line: 559, column: 38, offset: 16597 }
+            start: { line: 559, column: 1, offset: 16559 },
+            end: { line: 559, column: 38, offset: 16596 }
           }
         },
         {
           type: 'inlineCode',
           value: 'Promise',
           position: {
-            start: { line: 559, column: 38, offset: 16597 },
-            end: { line: 559, column: 47, offset: 16606 }
+            start: { line: 559, column: 38, offset: 16596 },
+            end: { line: 559, column: 47, offset: 16605 }
           }
         },
         {
           type: 'text',
           value: ' constructor.',
           position: {
-            start: { line: 559, column: 47, offset: 16606 },
-            end: { line: 559, column: 60, offset: 16619 }
+            start: { line: 559, column: 47, offset: 16605 },
+            end: { line: 559, column: 60, offset: 16618 }
           }
         }
       ],
       position: {
-        start: { line: 559, column: 1, offset: 16560 },
-        end: { line: 559, column: 60, offset: 16619 }
+        start: { line: 559, column: 1, offset: 16559 },
+        end: { line: 559, column: 60, offset: 16618 }
       }
     },
     {
@@ -3131,8 +3131,8 @@ export default {
         '  console.error(error) // Error: rejected\n' +
         '})',
       position: {
-        start: { line: 561, column: 1, offset: 16621 },
-        end: { line: 581, column: 4, offset: 17038 }
+        start: { line: 561, column: 1, offset: 16620 },
+        end: { line: 581, column: 4, offset: 17037 }
       }
     },
     {
@@ -3142,62 +3142,62 @@ export default {
           type: 'text',
           value: 'You can also use the ',
           position: {
-            start: { line: 583, column: 1, offset: 17040 },
-            end: { line: 583, column: 22, offset: 17061 }
+            start: { line: 583, column: 1, offset: 17039 },
+            end: { line: 583, column: 22, offset: 17060 }
           }
         },
         {
           type: 'inlineCode',
           value: '.resolve',
           position: {
-            start: { line: 583, column: 22, offset: 17061 },
-            end: { line: 583, column: 32, offset: 17071 }
+            start: { line: 583, column: 22, offset: 17060 },
+            end: { line: 583, column: 32, offset: 17070 }
           }
         },
         {
           type: 'text',
           value: ' and ',
           position: {
-            start: { line: 583, column: 32, offset: 17071 },
-            end: { line: 583, column: 37, offset: 17076 }
+            start: { line: 583, column: 32, offset: 17070 },
+            end: { line: 583, column: 37, offset: 17075 }
           }
         },
         {
           type: 'inlineCode',
           value: '.reject',
           position: {
-            start: { line: 583, column: 37, offset: 17076 },
-            end: { line: 583, column: 46, offset: 17085 }
+            start: { line: 583, column: 37, offset: 17075 },
+            end: { line: 583, column: 46, offset: 17084 }
           }
         },
         {
           type: 'text',
           value: ' methods on the ',
           position: {
-            start: { line: 583, column: 46, offset: 17085 },
-            end: { line: 583, column: 62, offset: 17101 }
+            start: { line: 583, column: 46, offset: 17084 },
+            end: { line: 583, column: 62, offset: 17100 }
           }
         },
         {
           type: 'inlineCode',
           value: 'Promise',
           position: {
-            start: { line: 583, column: 62, offset: 17101 },
-            end: { line: 583, column: 71, offset: 17110 }
+            start: { line: 583, column: 62, offset: 17100 },
+            end: { line: 583, column: 71, offset: 17109 }
           }
         },
         {
           type: 'text',
           value: ' object to create promises.',
           position: {
-            start: { line: 583, column: 71, offset: 17110 },
-            end: { line: 583, column: 98, offset: 17137 }
+            start: { line: 583, column: 71, offset: 17109 },
+            end: { line: 583, column: 98, offset: 17136 }
           }
         }
       ],
       position: {
-        start: { line: 583, column: 1, offset: 17040 },
-        end: { line: 583, column: 98, offset: 17137 }
+        start: { line: 583, column: 1, offset: 17039 },
+        end: { line: 583, column: 98, offset: 17136 }
       }
     },
     {
@@ -3210,8 +3210,8 @@ export default {
         "const promiseThatRejects = Promise.reject(new Error('example'))\n" +
         'promiseThatRejects.catch(console.error) // Error: example',
       position: {
-        start: { line: 585, column: 1, offset: 17139 },
-        end: { line: 591, column: 4, offset: 17382 }
+        start: { line: 585, column: 1, offset: 17138 },
+        end: { line: 591, column: 4, offset: 17381 }
       }
     },
     {
@@ -3221,14 +3221,14 @@ export default {
           type: 'text',
           value: 'In practice, you usually do not have to create promises. Instead, most asynchronous APIs will return a promise.',
           position: {
-            start: { line: 593, column: 1, offset: 17384 },
-            end: { line: 593, column: 112, offset: 17495 }
+            start: { line: 593, column: 1, offset: 17383 },
+            end: { line: 593, column: 112, offset: 17494 }
           }
         }
       ],
       position: {
-        start: { line: 593, column: 1, offset: 17384 },
-        end: { line: 593, column: 112, offset: 17495 }
+        start: { line: 593, column: 1, offset: 17383 },
+        end: { line: 593, column: 112, offset: 17494 }
       }
     },
     {
@@ -3247,8 +3247,8 @@ export default {
         '  })\n' +
         '})',
       position: {
-        start: { line: 595, column: 1, offset: 17497 },
-        end: { line: 607, column: 4, offset: 17834 }
+        start: { line: 595, column: 1, offset: 17496 },
+        end: { line: 607, column: 4, offset: 17833 }
       }
     },
     {
@@ -3259,14 +3259,14 @@ export default {
           type: 'text',
           value: 'Async/Await',
           position: {
-            start: { line: 609, column: 5, offset: 17840 },
-            end: { line: 609, column: 16, offset: 17851 }
+            start: { line: 609, column: 5, offset: 17839 },
+            end: { line: 609, column: 16, offset: 17850 }
           }
         }
       ],
       position: {
-        start: { line: 609, column: 1, offset: 17836 },
-        end: { line: 609, column: 16, offset: 17851 }
+        start: { line: 609, column: 1, offset: 17835 },
+        end: { line: 609, column: 16, offset: 17850 }
       }
     },
     {
@@ -3276,78 +3276,78 @@ export default {
           type: 'text',
           value: 'The ',
           position: {
-            start: { line: 611, column: 1, offset: 17853 },
-            end: { line: 611, column: 5, offset: 17857 }
+            start: { line: 611, column: 1, offset: 17852 },
+            end: { line: 611, column: 5, offset: 17856 }
           }
         },
         {
           type: 'inlineCode',
           value: 'async function',
           position: {
-            start: { line: 611, column: 5, offset: 17857 },
-            end: { line: 611, column: 21, offset: 17873 }
+            start: { line: 611, column: 5, offset: 17856 },
+            end: { line: 611, column: 21, offset: 17872 }
           }
         },
         {
           type: 'text',
           value: ' syntax permits the use of the ',
           position: {
-            start: { line: 611, column: 21, offset: 17873 },
-            end: { line: 611, column: 52, offset: 17904 }
+            start: { line: 611, column: 21, offset: 17872 },
+            end: { line: 611, column: 52, offset: 17903 }
           }
         },
         {
           type: 'inlineCode',
           value: 'await',
           position: {
-            start: { line: 611, column: 52, offset: 17904 },
-            end: { line: 611, column: 59, offset: 17911 }
+            start: { line: 611, column: 52, offset: 17903 },
+            end: { line: 611, column: 59, offset: 17910 }
           }
         },
         {
           type: 'text',
           value: ' keyword that enables an imperative style of code to handle promises. You can use the ',
           position: {
-            start: { line: 611, column: 59, offset: 17911 },
-            end: { line: 611, column: 145, offset: 17997 }
+            start: { line: 611, column: 59, offset: 17910 },
+            end: { line: 611, column: 145, offset: 17996 }
           }
         },
         {
           type: 'inlineCode',
           value: 'await',
           position: {
-            start: { line: 611, column: 145, offset: 17997 },
-            end: { line: 611, column: 152, offset: 18004 }
+            start: { line: 611, column: 145, offset: 17996 },
+            end: { line: 611, column: 152, offset: 18003 }
           }
         },
         {
           type: 'text',
           value: ' keyword from an ',
           position: {
-            start: { line: 611, column: 152, offset: 18004 },
-            end: { line: 611, column: 169, offset: 18021 }
+            start: { line: 611, column: 152, offset: 18003 },
+            end: { line: 611, column: 169, offset: 18020 }
           }
         },
         {
           type: 'inlineCode',
           value: 'async function',
           position: {
-            start: { line: 611, column: 169, offset: 18021 },
-            end: { line: 611, column: 185, offset: 18037 }
+            start: { line: 611, column: 169, offset: 18020 },
+            end: { line: 611, column: 185, offset: 18036 }
           }
         },
         {
           type: 'text',
           value: ' to access the resolved value or rejected error of a promise.',
           position: {
-            start: { line: 611, column: 185, offset: 18037 },
-            end: { line: 611, column: 246, offset: 18098 }
+            start: { line: 611, column: 185, offset: 18036 },
+            end: { line: 611, column: 246, offset: 18097 }
           }
         }
       ],
       position: {
-        start: { line: 611, column: 1, offset: 17853 },
-        end: { line: 611, column: 246, offset: 18098 }
+        start: { line: 611, column: 1, offset: 17852 },
+        end: { line: 611, column: 246, offset: 18097 }
       }
     },
     {
@@ -3373,8 +3373,8 @@ export default {
         "const promiseThatRejects = Promise.reject(new Error('rejected'))\n" +
         'handleWithAsyncAwait(promiseThatRejects) // Error: rejected',
       position: {
-        start: { line: 613, column: 1, offset: 18100 },
-        end: { line: 632, column: 4, offset: 18639 }
+        start: { line: 613, column: 1, offset: 18099 },
+        end: { line: 632, column: 4, offset: 18638 }
       }
     },
     {
@@ -3385,14 +3385,14 @@ export default {
           type: 'text',
           value: 'Asynchronous Iterable Data Types',
           position: {
-            start: { line: 634, column: 4, offset: 18644 },
-            end: { line: 634, column: 36, offset: 18676 }
+            start: { line: 634, column: 4, offset: 18643 },
+            end: { line: 634, column: 36, offset: 18675 }
           }
         }
       ],
       position: {
-        start: { line: 634, column: 1, offset: 18641 },
-        end: { line: 634, column: 36, offset: 18676 }
+        start: { line: 634, column: 1, offset: 18640 },
+        end: { line: 634, column: 36, offset: 18675 }
       }
     },
     {
@@ -3402,8 +3402,8 @@ export default {
           type: 'text',
           value: 'Asynchronous iterable data types combine asynchronous data types with iterable data types. All asynchronous iterable data types implement the ',
           position: {
-            start: { line: 635, column: 1, offset: 18677 },
-            end: { line: 635, column: 143, offset: 18819 }
+            start: { line: 635, column: 1, offset: 18676 },
+            end: { line: 635, column: 143, offset: 18818 }
           }
         },
         {
@@ -3415,60 +3415,60 @@ export default {
               type: 'text',
               value: 'async iterable protocol',
               position: {
-                start: { line: 635, column: 144, offset: 18820 },
-                end: { line: 635, column: 167, offset: 18843 }
+                start: { line: 635, column: 144, offset: 18819 },
+                end: { line: 635, column: 167, offset: 18842 }
               }
             }
           ],
           position: {
-            start: { line: 635, column: 143, offset: 18819 },
-            end: { line: 635, column: 303, offset: 18979 }
+            start: { line: 635, column: 143, offset: 18818 },
+            end: { line: 635, column: 303, offset: 18978 }
           }
         },
         {
           type: 'text',
           value: '. The only built-in data types that implement this protocol are ',
           position: {
-            start: { line: 635, column: 303, offset: 18979 },
-            end: { line: 635, column: 367, offset: 19043 }
+            start: { line: 635, column: 303, offset: 18978 },
+            end: { line: 635, column: 367, offset: 19042 }
           }
         },
         {
           type: 'inlineCode',
           value: 'AsyncGenerators',
           position: {
-            start: { line: 635, column: 367, offset: 19043 },
-            end: { line: 635, column: 384, offset: 19060 }
+            start: { line: 635, column: 367, offset: 19042 },
+            end: { line: 635, column: 384, offset: 19059 }
           }
         },
         {
           type: 'text',
           value: '. Async iterables are consumable with a ',
           position: {
-            start: { line: 635, column: 384, offset: 19060 },
-            end: { line: 635, column: 424, offset: 19100 }
+            start: { line: 635, column: 384, offset: 19059 },
+            end: { line: 635, column: 424, offset: 19099 }
           }
         },
         {
           type: 'inlineCode',
           value: 'for await...of',
           position: {
-            start: { line: 635, column: 424, offset: 19100 },
-            end: { line: 635, column: 440, offset: 19116 }
+            start: { line: 635, column: 424, offset: 19099 },
+            end: { line: 635, column: 440, offset: 19115 }
           }
         },
         {
           type: 'text',
           value: ' loop.',
           position: {
-            start: { line: 635, column: 440, offset: 19116 },
-            end: { line: 635, column: 446, offset: 19122 }
+            start: { line: 635, column: 440, offset: 19115 },
+            end: { line: 635, column: 446, offset: 19121 }
           }
         }
       ],
       position: {
-        start: { line: 635, column: 1, offset: 18677 },
-        end: { line: 635, column: 446, offset: 19122 }
+        start: { line: 635, column: 1, offset: 18676 },
+        end: { line: 635, column: 446, offset: 19121 }
       }
     },
     {
@@ -3479,14 +3479,14 @@ export default {
           type: 'text',
           value: 'Async Iterable Protocol',
           position: {
-            start: { line: 637, column: 5, offset: 19128 },
-            end: { line: 637, column: 28, offset: 19151 }
+            start: { line: 637, column: 5, offset: 19127 },
+            end: { line: 637, column: 28, offset: 19150 }
           }
         }
       ],
       position: {
-        start: { line: 637, column: 1, offset: 19124 },
-        end: { line: 637, column: 28, offset: 19151 }
+        start: { line: 637, column: 1, offset: 19123 },
+        end: { line: 637, column: 28, offset: 19150 }
       }
     },
     {
@@ -3496,46 +3496,46 @@ export default {
           type: 'text',
           value: 'The async iterable protocol is implemented on classes and objects under the method ',
           position: {
-            start: { line: 638, column: 1, offset: 19152 },
-            end: { line: 638, column: 84, offset: 19235 }
+            start: { line: 638, column: 1, offset: 19151 },
+            end: { line: 638, column: 84, offset: 19234 }
           }
         },
         {
           type: 'inlineCode',
           value: '[Symbol.asyncIterator]()',
           position: {
-            start: { line: 638, column: 84, offset: 19235 },
-            end: { line: 638, column: 110, offset: 19261 }
+            start: { line: 638, column: 84, offset: 19234 },
+            end: { line: 638, column: 110, offset: 19260 }
           }
         },
         {
           type: 'text',
           value: '. The method returns an object that conforms to the async iterator protocol. An object implements the async iterator protocol by implementing the asynchronous method ',
           position: {
-            start: { line: 638, column: 110, offset: 19261 },
-            end: { line: 638, column: 276, offset: 19427 }
+            start: { line: 638, column: 110, offset: 19260 },
+            end: { line: 638, column: 276, offset: 19426 }
           }
         },
         {
           type: 'inlineCode',
           value: 'next',
           position: {
-            start: { line: 638, column: 276, offset: 19427 },
-            end: { line: 638, column: 282, offset: 19433 }
+            start: { line: 638, column: 276, offset: 19426 },
+            end: { line: 638, column: 282, offset: 19432 }
           }
         },
         {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 638, column: 282, offset: 19433 },
-            end: { line: 638, column: 283, offset: 19434 }
+            start: { line: 638, column: 282, offset: 19432 },
+            end: { line: 638, column: 283, offset: 19433 }
           }
         }
       ],
       position: {
-        start: { line: 638, column: 1, offset: 19152 },
-        end: { line: 638, column: 283, offset: 19434 }
+        start: { line: 638, column: 1, offset: 19151 },
+        end: { line: 638, column: 283, offset: 19433 }
       }
     },
     {
@@ -3550,8 +3550,8 @@ export default {
         '  [Symbol.asyncIterator]: ()=>AsyncIterator\n' +
         '}',
       position: {
-        start: { line: 640, column: 1, offset: 19436 },
-        end: { line: 648, column: 4, offset: 19624 }
+        start: { line: 640, column: 1, offset: 19435 },
+        end: { line: 648, column: 4, offset: 19623 }
       }
     },
     {
@@ -3561,14 +3561,14 @@ export default {
           type: 'text',
           value: 'You can implement the async iterable protocol on your own classes and objects.',
           position: {
-            start: { line: 650, column: 1, offset: 19626 },
-            end: { line: 650, column: 79, offset: 19704 }
+            start: { line: 650, column: 1, offset: 19625 },
+            end: { line: 650, column: 79, offset: 19703 }
           }
         }
       ],
       position: {
-        start: { line: 650, column: 1, offset: 19626 },
-        end: { line: 650, column: 79, offset: 19704 }
+        start: { line: 650, column: 1, offset: 19625 },
+        end: { line: 650, column: 79, offset: 19703 }
       }
     },
     {
@@ -3606,8 +3606,8 @@ export default {
         '  // 5\n' +
         '}',
       position: {
-        start: { line: 652, column: 1, offset: 19706 },
-        end: { line: 683, column: 4, offset: 20201 }
+        start: { line: 652, column: 1, offset: 19705 },
+        end: { line: 683, column: 4, offset: 20200 }
       }
     },
     {
@@ -3618,14 +3618,14 @@ export default {
           type: 'text',
           value: 'Async Generators and Async Generator Functions',
           position: {
-            start: { line: 685, column: 5, offset: 20207 },
-            end: { line: 685, column: 51, offset: 20253 }
+            start: { line: 685, column: 5, offset: 20206 },
+            end: { line: 685, column: 51, offset: 20252 }
           }
         }
       ],
       position: {
-        start: { line: 685, column: 1, offset: 20203 },
-        end: { line: 685, column: 51, offset: 20253 }
+        start: { line: 685, column: 1, offset: 20202 },
+        end: { line: 685, column: 51, offset: 20252 }
       }
     },
     {
@@ -3635,62 +3635,62 @@ export default {
           type: 'text',
           value: 'Async generator functions use the ',
           position: {
-            start: { line: 686, column: 1, offset: 20254 },
-            end: { line: 686, column: 35, offset: 20288 }
+            start: { line: 686, column: 1, offset: 20253 },
+            end: { line: 686, column: 35, offset: 20287 }
           }
         },
         {
           type: 'inlineCode',
           value: 'async function* () {}',
           position: {
-            start: { line: 686, column: 35, offset: 20288 },
-            end: { line: 686, column: 58, offset: 20311 }
+            start: { line: 686, column: 35, offset: 20287 },
+            end: { line: 686, column: 58, offset: 20310 }
           }
         },
         {
           type: 'text',
           value: ' syntax and ',
           position: {
-            start: { line: 686, column: 58, offset: 20311 },
-            end: { line: 686, column: 70, offset: 20323 }
+            start: { line: 686, column: 58, offset: 20310 },
+            end: { line: 686, column: 70, offset: 20322 }
           }
         },
         {
           type: 'inlineCode',
           value: 'yield',
           position: {
-            start: { line: 686, column: 70, offset: 20323 },
-            end: { line: 686, column: 77, offset: 20330 }
+            start: { line: 686, column: 70, offset: 20322 },
+            end: { line: 686, column: 77, offset: 20329 }
           }
         },
         {
           type: 'text',
           value: ' keyword and always return an async iterable ',
           position: {
-            start: { line: 686, column: 77, offset: 20330 },
-            end: { line: 686, column: 122, offset: 20375 }
+            start: { line: 686, column: 77, offset: 20329 },
+            end: { line: 686, column: 122, offset: 20374 }
           }
         },
         {
           type: 'inlineCode',
           value: 'AsyncGenerator',
           position: {
-            start: { line: 686, column: 122, offset: 20375 },
-            end: { line: 686, column: 138, offset: 20391 }
+            start: { line: 686, column: 122, offset: 20374 },
+            end: { line: 686, column: 138, offset: 20390 }
           }
         },
         {
           type: 'text',
           value: ' object.',
           position: {
-            start: { line: 686, column: 138, offset: 20391 },
-            end: { line: 686, column: 146, offset: 20399 }
+            start: { line: 686, column: 138, offset: 20390 },
+            end: { line: 686, column: 146, offset: 20398 }
           }
         }
       ],
       position: {
-        start: { line: 686, column: 1, offset: 20254 },
-        end: { line: 686, column: 146, offset: 20399 }
+        start: { line: 686, column: 1, offset: 20253 },
+        end: { line: 686, column: 146, offset: 20398 }
       }
     },
     {
@@ -3717,8 +3717,8 @@ export default {
         '  }\n' +
         '})()',
       position: {
-        start: { line: 688, column: 1, offset: 20401 },
-        end: { line: 708, column: 4, offset: 20881 }
+        start: { line: 688, column: 1, offset: 20400 },
+        end: { line: 708, column: 4, offset: 20880 }
       }
     },
     {
@@ -3728,30 +3728,30 @@ export default {
           type: 'text',
           value: 'Async generators implement the async iterator protocol by default, so often it is simpler to use an async generator function to implement the async iterable protocol using the syntax ',
           position: {
-            start: { line: 710, column: 1, offset: 20883 },
-            end: { line: 710, column: 184, offset: 21066 }
+            start: { line: 710, column: 1, offset: 20882 },
+            end: { line: 710, column: 184, offset: 21065 }
           }
         },
         {
           type: 'inlineCode',
           value: 'async * [Symbol.asyncIterator]()',
           position: {
-            start: { line: 710, column: 184, offset: 21066 },
-            end: { line: 710, column: 218, offset: 21100 }
+            start: { line: 710, column: 184, offset: 21065 },
+            end: { line: 710, column: 218, offset: 21099 }
           }
         },
         {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 710, column: 218, offset: 21100 },
-            end: { line: 710, column: 219, offset: 21101 }
+            start: { line: 710, column: 218, offset: 21099 },
+            end: { line: 710, column: 219, offset: 21100 }
           }
         }
       ],
       position: {
-        start: { line: 710, column: 1, offset: 20883 },
-        end: { line: 710, column: 219, offset: 21101 }
+        start: { line: 710, column: 1, offset: 20882 },
+        end: { line: 710, column: 219, offset: 21100 }
       }
     },
     {
@@ -3798,8 +3798,8 @@ export default {
         '  }\n' +
         '})()',
       position: {
-        start: { line: 712, column: 1, offset: 21103 },
-        end: { line: 752, column: 4, offset: 21696 }
+        start: { line: 712, column: 1, offset: 21102 },
+        end: { line: 752, column: 4, offset: 21695 }
       }
     },
     {
@@ -3810,14 +3810,14 @@ export default {
           type: 'text',
           value: 'Algebraic Structures',
           position: {
-            start: { line: 754, column: 4, offset: 21701 },
-            end: { line: 754, column: 24, offset: 21721 }
+            start: { line: 754, column: 4, offset: 21700 },
+            end: { line: 754, column: 24, offset: 21720 }
           }
         }
       ],
       position: {
-        start: { line: 754, column: 1, offset: 21698 },
-        end: { line: 754, column: 24, offset: 21721 }
+        start: { line: 754, column: 1, offset: 21697 },
+        end: { line: 754, column: 24, offset: 21720 }
       }
     },
     {
@@ -3827,14 +3827,14 @@ export default {
           type: 'text',
           value: 'Algebraic structures are special classes of data types that are identified by the presence of a specific method. For [A]synchronous Functional Programming, we will consider five algebraic structures: functor, filterable, foldable, semigroup, and monad.',
           position: {
-            start: { line: 755, column: 1, offset: 21722 },
-            end: { line: 755, column: 253, offset: 21974 }
+            start: { line: 755, column: 1, offset: 21721 },
+            end: { line: 755, column: 253, offset: 21973 }
           }
         }
       ],
       position: {
-        start: { line: 755, column: 1, offset: 21722 },
-        end: { line: 755, column: 253, offset: 21974 }
+        start: { line: 755, column: 1, offset: 21721 },
+        end: { line: 755, column: 253, offset: 21973 }
       }
     },
     {
@@ -3845,14 +3845,14 @@ export default {
           type: 'text',
           value: 'Functor',
           position: {
-            start: { line: 757, column: 5, offset: 21980 },
-            end: { line: 757, column: 12, offset: 21987 }
+            start: { line: 757, column: 5, offset: 21979 },
+            end: { line: 757, column: 12, offset: 21986 }
           }
         }
       ],
       position: {
-        start: { line: 757, column: 1, offset: 21976 },
-        end: { line: 757, column: 12, offset: 21987 }
+        start: { line: 757, column: 1, offset: 21975 },
+        end: { line: 757, column: 12, offset: 21986 }
       }
     },
     {
@@ -3862,46 +3862,46 @@ export default {
           type: 'text',
           value: 'The functor algebraic structure identifies data types with the ',
           position: {
-            start: { line: 759, column: 1, offset: 21989 },
-            end: { line: 759, column: 64, offset: 22052 }
+            start: { line: 759, column: 1, offset: 21988 },
+            end: { line: 759, column: 64, offset: 22051 }
           }
         },
         {
           type: 'inlineCode',
           value: '.map',
           position: {
-            start: { line: 759, column: 64, offset: 22052 },
-            end: { line: 759, column: 70, offset: 22058 }
+            start: { line: 759, column: 64, offset: 22051 },
+            end: { line: 759, column: 70, offset: 22057 }
           }
         },
         {
           type: 'text',
           value: ' method. Data types implementing ',
           position: {
-            start: { line: 759, column: 70, offset: 22058 },
-            end: { line: 759, column: 103, offset: 22091 }
+            start: { line: 759, column: 70, offset: 22057 },
+            end: { line: 759, column: 103, offset: 22090 }
           }
         },
         {
           type: 'inlineCode',
           value: '.map',
           position: {
-            start: { line: 759, column: 103, offset: 22091 },
-            end: { line: 759, column: 109, offset: 22097 }
+            start: { line: 759, column: 103, offset: 22090 },
+            end: { line: 759, column: 109, offset: 22096 }
           }
         },
         {
           type: 'text',
           value: ' must conform to the functor laws:',
           position: {
-            start: { line: 759, column: 109, offset: 22097 },
-            end: { line: 759, column: 143, offset: 22131 }
+            start: { line: 759, column: 109, offset: 22096 },
+            end: { line: 759, column: 143, offset: 22130 }
           }
         }
       ],
       position: {
-        start: { line: 759, column: 1, offset: 21989 },
-        end: { line: 759, column: 143, offset: 22131 }
+        start: { line: 759, column: 1, offset: 21988 },
+        end: { line: 759, column: 143, offset: 22130 }
       }
     },
     {
@@ -3922,42 +3922,42 @@ export default {
                   type: 'text',
                   value: 'Identity Law: applying the identity function ',
                   position: {
-                    start: { line: 761, column: 5, offset: 22137 },
-                    end: { line: 761, column: 50, offset: 22182 }
+                    start: { line: 761, column: 5, offset: 22136 },
+                    end: { line: 761, column: 50, offset: 22181 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: 'a => a',
                   position: {
-                    start: { line: 761, column: 50, offset: 22182 },
-                    end: { line: 761, column: 58, offset: 22190 }
+                    start: { line: 761, column: 50, offset: 22181 },
+                    end: { line: 761, column: 58, offset: 22189 }
                   }
                 },
                 {
                   type: 'text',
                   value: ' to a functor is equivalent to not having applied a function.',
                   position: {
-                    start: { line: 761, column: 58, offset: 22190 },
-                    end: { line: 761, column: 119, offset: 22251 }
+                    start: { line: 761, column: 58, offset: 22189 },
+                    end: { line: 761, column: 119, offset: 22250 }
                   }
                 }
               ],
               position: {
-                start: { line: 761, column: 5, offset: 22137 },
-                end: { line: 761, column: 119, offset: 22251 }
+                start: { line: 761, column: 5, offset: 22136 },
+                end: { line: 761, column: 119, offset: 22250 }
               }
             }
           ],
           position: {
-            start: { line: 761, column: 2, offset: 22134 },
-            end: { line: 761, column: 119, offset: 22251 }
+            start: { line: 761, column: 2, offset: 22133 },
+            end: { line: 761, column: 119, offset: 22250 }
           }
         }
       ],
       position: {
-        start: { line: 761, column: 2, offset: 22134 },
-        end: { line: 761, column: 119, offset: 22251 }
+        start: { line: 761, column: 2, offset: 22133 },
+        end: { line: 761, column: 119, offset: 22250 }
       }
     },
     {
@@ -3966,8 +3966,8 @@ export default {
       meta: null,
       value: 'assert.equivalent(\n  myFunctor.map(identity),\n  myFunctor\n)',
       position: {
-        start: { line: 763, column: 1, offset: 22253 },
-        end: { line: 768, column: 4, offset: 22330 }
+        start: { line: 763, column: 1, offset: 22252 },
+        end: { line: 768, column: 4, offset: 22329 }
       }
     },
     {
@@ -3981,8 +3981,8 @@ export default {
         'console.log(myArray.map(identity))\n' +
         'console.log(myArray)',
       position: {
-        start: { line: 770, column: 1, offset: 22332 },
-        end: { line: 777, column: 4, offset: 22476 }
+        start: { line: 770, column: 1, offset: 22331 },
+        end: { line: 777, column: 4, offset: 22475 }
       }
     },
     {
@@ -4003,58 +4003,58 @@ export default {
                   type: 'text',
                   value: 'Composition Law: applying two functions in sequence using ',
                   position: {
-                    start: { line: 779, column: 5, offset: 22482 },
-                    end: { line: 779, column: 63, offset: 22540 }
+                    start: { line: 779, column: 5, offset: 22481 },
+                    end: { line: 779, column: 63, offset: 22539 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: '.map',
                   position: {
-                    start: { line: 779, column: 63, offset: 22540 },
-                    end: { line: 779, column: 69, offset: 22546 }
+                    start: { line: 779, column: 63, offset: 22539 },
+                    end: { line: 779, column: 69, offset: 22545 }
                   }
                 },
                 {
                   type: 'text',
                   value: ' is equivalent to applying their composition in a single ',
                   position: {
-                    start: { line: 779, column: 69, offset: 22546 },
-                    end: { line: 779, column: 126, offset: 22603 }
+                    start: { line: 779, column: 69, offset: 22545 },
+                    end: { line: 779, column: 126, offset: 22602 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: '.map',
                   position: {
-                    start: { line: 779, column: 126, offset: 22603 },
-                    end: { line: 779, column: 132, offset: 22609 }
+                    start: { line: 779, column: 126, offset: 22602 },
+                    end: { line: 779, column: 132, offset: 22608 }
                   }
                 },
                 {
                   type: 'text',
                   value: ' operation.',
                   position: {
-                    start: { line: 779, column: 132, offset: 22609 },
-                    end: { line: 779, column: 143, offset: 22620 }
+                    start: { line: 779, column: 132, offset: 22608 },
+                    end: { line: 779, column: 143, offset: 22619 }
                   }
                 }
               ],
               position: {
-                start: { line: 779, column: 5, offset: 22482 },
-                end: { line: 779, column: 143, offset: 22620 }
+                start: { line: 779, column: 5, offset: 22481 },
+                end: { line: 779, column: 143, offset: 22619 }
               }
             }
           ],
           position: {
-            start: { line: 779, column: 2, offset: 22479 },
-            end: { line: 779, column: 143, offset: 22620 }
+            start: { line: 779, column: 2, offset: 22478 },
+            end: { line: 779, column: 143, offset: 22619 }
           }
         }
       ],
       position: {
-        start: { line: 779, column: 2, offset: 22479 },
-        end: { line: 779, column: 143, offset: 22620 }
+        start: { line: 779, column: 2, offset: 22478 },
+        end: { line: 779, column: 143, offset: 22619 }
       }
     },
     {
@@ -4066,8 +4066,8 @@ export default {
         '  myFunctor.map(compose(g, f))\n' +
         ')',
       position: {
-        start: { line: 781, column: 1, offset: 22622 },
-        end: { line: 786, column: 4, offset: 22718 }
+        start: { line: 781, column: 1, offset: 22621 },
+        end: { line: 786, column: 4, offset: 22717 }
       }
     },
     {
@@ -4082,8 +4082,8 @@ export default {
         'console.log(myArray.map(f).map(g))\n' +
         'console.log(myArray.map(compose(g, f)))',
       position: {
-        start: { line: 788, column: 1, offset: 22720 },
-        end: { line: 796, column: 4, offset: 22901 }
+        start: { line: 788, column: 1, offset: 22719 },
+        end: { line: 796, column: 4, offset: 22900 }
       }
     },
     {
@@ -4093,14 +4093,14 @@ export default {
           type: 'text',
           value: 'The following built-in data types are considered to be functors:',
           position: {
-            start: { line: 798, column: 1, offset: 22903 },
-            end: { line: 798, column: 65, offset: 22967 }
+            start: { line: 798, column: 1, offset: 22902 },
+            end: { line: 798, column: 65, offset: 22966 }
           }
         }
       ],
       position: {
-        start: { line: 798, column: 1, offset: 22903 },
-        end: { line: 798, column: 65, offset: 22967 }
+        start: { line: 798, column: 1, offset: 22902 },
+        end: { line: 798, column: 65, offset: 22966 }
       }
     },
     {
@@ -4121,20 +4121,20 @@ export default {
                   type: 'inlineCode',
                   value: 'array',
                   position: {
-                    start: { line: 799, column: 4, offset: 22971 },
-                    end: { line: 799, column: 11, offset: 22978 }
+                    start: { line: 799, column: 4, offset: 22970 },
+                    end: { line: 799, column: 11, offset: 22977 }
                   }
                 }
               ],
               position: {
-                start: { line: 799, column: 4, offset: 22971 },
-                end: { line: 799, column: 11, offset: 22978 }
+                start: { line: 799, column: 4, offset: 22970 },
+                end: { line: 799, column: 11, offset: 22977 }
               }
             }
           ],
           position: {
-            start: { line: 799, column: 2, offset: 22969 },
-            end: { line: 799, column: 11, offset: 22978 }
+            start: { line: 799, column: 2, offset: 22968 },
+            end: { line: 799, column: 11, offset: 22977 }
           }
         },
         {
@@ -4149,20 +4149,20 @@ export default {
                   type: 'inlineCode',
                   value: 'set',
                   position: {
-                    start: { line: 800, column: 4, offset: 22982 },
-                    end: { line: 800, column: 9, offset: 22987 }
+                    start: { line: 800, column: 4, offset: 22981 },
+                    end: { line: 800, column: 9, offset: 22986 }
                   }
                 }
               ],
               position: {
-                start: { line: 800, column: 4, offset: 22982 },
-                end: { line: 800, column: 9, offset: 22987 }
+                start: { line: 800, column: 4, offset: 22981 },
+                end: { line: 800, column: 9, offset: 22986 }
               }
             }
           ],
           position: {
-            start: { line: 800, column: 2, offset: 22980 },
-            end: { line: 800, column: 9, offset: 22987 }
+            start: { line: 800, column: 2, offset: 22979 },
+            end: { line: 800, column: 9, offset: 22986 }
           }
         },
         {
@@ -4177,20 +4177,20 @@ export default {
                   type: 'inlineCode',
                   value: 'map',
                   position: {
-                    start: { line: 801, column: 4, offset: 22991 },
-                    end: { line: 801, column: 9, offset: 22996 }
+                    start: { line: 801, column: 4, offset: 22990 },
+                    end: { line: 801, column: 9, offset: 22995 }
                   }
                 }
               ],
               position: {
-                start: { line: 801, column: 4, offset: 22991 },
-                end: { line: 801, column: 9, offset: 22996 }
+                start: { line: 801, column: 4, offset: 22990 },
+                end: { line: 801, column: 9, offset: 22995 }
               }
             }
           ],
           position: {
-            start: { line: 801, column: 2, offset: 22989 },
-            end: { line: 801, column: 9, offset: 22996 }
+            start: { line: 801, column: 2, offset: 22988 },
+            end: { line: 801, column: 9, offset: 22995 }
           }
         },
         {
@@ -4205,20 +4205,20 @@ export default {
                   type: 'inlineCode',
                   value: 'generator',
                   position: {
-                    start: { line: 802, column: 4, offset: 23000 },
-                    end: { line: 802, column: 15, offset: 23011 }
+                    start: { line: 802, column: 4, offset: 22999 },
+                    end: { line: 802, column: 15, offset: 23010 }
                   }
                 }
               ],
               position: {
-                start: { line: 802, column: 4, offset: 23000 },
-                end: { line: 802, column: 15, offset: 23011 }
+                start: { line: 802, column: 4, offset: 22999 },
+                end: { line: 802, column: 15, offset: 23010 }
               }
             }
           ],
           position: {
-            start: { line: 802, column: 2, offset: 22998 },
-            end: { line: 802, column: 15, offset: 23011 }
+            start: { line: 802, column: 2, offset: 22997 },
+            end: { line: 802, column: 15, offset: 23010 }
           }
         },
         {
@@ -4233,20 +4233,20 @@ export default {
                   type: 'inlineCode',
                   value: 'async generator',
                   position: {
-                    start: { line: 803, column: 4, offset: 23015 },
-                    end: { line: 803, column: 21, offset: 23032 }
+                    start: { line: 803, column: 4, offset: 23014 },
+                    end: { line: 803, column: 21, offset: 23031 }
                   }
                 }
               ],
               position: {
-                start: { line: 803, column: 4, offset: 23015 },
-                end: { line: 803, column: 21, offset: 23032 }
+                start: { line: 803, column: 4, offset: 23014 },
+                end: { line: 803, column: 21, offset: 23031 }
               }
             }
           ],
           position: {
-            start: { line: 803, column: 2, offset: 23013 },
-            end: { line: 803, column: 21, offset: 23032 }
+            start: { line: 803, column: 2, offset: 23012 },
+            end: { line: 803, column: 21, offset: 23031 }
           }
         },
         {
@@ -4261,26 +4261,26 @@ export default {
                   type: 'inlineCode',
                   value: 'object',
                   position: {
-                    start: { line: 804, column: 4, offset: 23036 },
-                    end: { line: 804, column: 12, offset: 23044 }
+                    start: { line: 804, column: 4, offset: 23035 },
+                    end: { line: 804, column: 12, offset: 23043 }
                   }
                 }
               ],
               position: {
-                start: { line: 804, column: 4, offset: 23036 },
-                end: { line: 804, column: 12, offset: 23044 }
+                start: { line: 804, column: 4, offset: 23035 },
+                end: { line: 804, column: 12, offset: 23043 }
               }
             }
           ],
           position: {
-            start: { line: 804, column: 2, offset: 23034 },
-            end: { line: 804, column: 12, offset: 23044 }
+            start: { line: 804, column: 2, offset: 23033 },
+            end: { line: 804, column: 12, offset: 23043 }
           }
         }
       ],
       position: {
-        start: { line: 799, column: 2, offset: 22969 },
-        end: { line: 804, column: 12, offset: 23044 }
+        start: { line: 799, column: 2, offset: 22968 },
+        end: { line: 804, column: 12, offset: 23043 }
       }
     },
     {
@@ -4291,14 +4291,14 @@ export default {
           type: 'text',
           value: 'Filterable',
           position: {
-            start: { line: 806, column: 5, offset: 23050 },
-            end: { line: 806, column: 15, offset: 23060 }
+            start: { line: 806, column: 5, offset: 23049 },
+            end: { line: 806, column: 15, offset: 23059 }
           }
         }
       ],
       position: {
-        start: { line: 806, column: 1, offset: 23046 },
-        end: { line: 806, column: 15, offset: 23060 }
+        start: { line: 806, column: 1, offset: 23045 },
+        end: { line: 806, column: 15, offset: 23059 }
       }
     },
     {
@@ -4308,46 +4308,46 @@ export default {
           type: 'text',
           value: 'The filterable algebraic structure identifies data types with the ',
           position: {
-            start: { line: 808, column: 1, offset: 23062 },
-            end: { line: 808, column: 67, offset: 23128 }
+            start: { line: 808, column: 1, offset: 23061 },
+            end: { line: 808, column: 67, offset: 23127 }
           }
         },
         {
           type: 'inlineCode',
           value: '.filter',
           position: {
-            start: { line: 808, column: 67, offset: 23128 },
-            end: { line: 808, column: 76, offset: 23137 }
+            start: { line: 808, column: 67, offset: 23127 },
+            end: { line: 808, column: 76, offset: 23136 }
           }
         },
         {
           type: 'text',
           value: ' method. Data types implementing ',
           position: {
-            start: { line: 808, column: 76, offset: 23137 },
-            end: { line: 808, column: 109, offset: 23170 }
+            start: { line: 808, column: 76, offset: 23136 },
+            end: { line: 808, column: 109, offset: 23169 }
           }
         },
         {
           type: 'inlineCode',
           value: '.filter',
           position: {
-            start: { line: 808, column: 109, offset: 23170 },
-            end: { line: 808, column: 118, offset: 23179 }
+            start: { line: 808, column: 109, offset: 23169 },
+            end: { line: 808, column: 118, offset: 23178 }
           }
         },
         {
           type: 'text',
           value: ' must conform to the following laws:',
           position: {
-            start: { line: 808, column: 118, offset: 23179 },
-            end: { line: 808, column: 154, offset: 23215 }
+            start: { line: 808, column: 118, offset: 23178 },
+            end: { line: 808, column: 154, offset: 23214 }
           }
         }
       ],
       position: {
-        start: { line: 808, column: 1, offset: 23062 },
-        end: { line: 808, column: 154, offset: 23215 }
+        start: { line: 808, column: 1, offset: 23061 },
+        end: { line: 808, column: 154, offset: 23214 }
       }
     },
     {
@@ -4368,58 +4368,58 @@ export default {
                   type: 'text',
                   value: 'Distributivity Law: applying two predicate functions in sequence using consecutive calls to ',
                   position: {
-                    start: { line: 810, column: 5, offset: 23221 },
-                    end: { line: 810, column: 97, offset: 23313 }
+                    start: { line: 810, column: 5, offset: 23220 },
+                    end: { line: 810, column: 97, offset: 23312 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: '.filter',
                   position: {
-                    start: { line: 810, column: 97, offset: 23313 },
-                    end: { line: 810, column: 106, offset: 23322 }
+                    start: { line: 810, column: 97, offset: 23312 },
+                    end: { line: 810, column: 106, offset: 23321 }
                   }
                 },
                 {
                   type: 'text',
                   value: ' is equivalent to executing both predicate functions in a logical AND expression with a single call to ',
                   position: {
-                    start: { line: 810, column: 106, offset: 23322 },
-                    end: { line: 810, column: 209, offset: 23425 }
+                    start: { line: 810, column: 106, offset: 23321 },
+                    end: { line: 810, column: 209, offset: 23424 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: '.filter',
                   position: {
-                    start: { line: 810, column: 209, offset: 23425 },
-                    end: { line: 810, column: 218, offset: 23434 }
+                    start: { line: 810, column: 209, offset: 23424 },
+                    end: { line: 810, column: 218, offset: 23433 }
                   }
                 },
                 {
                   type: 'text',
                   value: '.',
                   position: {
-                    start: { line: 810, column: 218, offset: 23434 },
-                    end: { line: 810, column: 219, offset: 23435 }
+                    start: { line: 810, column: 218, offset: 23433 },
+                    end: { line: 810, column: 219, offset: 23434 }
                   }
                 }
               ],
               position: {
-                start: { line: 810, column: 5, offset: 23221 },
-                end: { line: 810, column: 219, offset: 23435 }
+                start: { line: 810, column: 5, offset: 23220 },
+                end: { line: 810, column: 219, offset: 23434 }
               }
             }
           ],
           position: {
-            start: { line: 810, column: 2, offset: 23218 },
-            end: { line: 810, column: 219, offset: 23435 }
+            start: { line: 810, column: 2, offset: 23217 },
+            end: { line: 810, column: 219, offset: 23434 }
           }
         }
       ],
       position: {
-        start: { line: 810, column: 2, offset: 23218 },
-        end: { line: 810, column: 219, offset: 23435 }
+        start: { line: 810, column: 2, offset: 23217 },
+        end: { line: 810, column: 219, offset: 23434 }
       }
     },
     {
@@ -4431,8 +4431,8 @@ export default {
         '  myFilterable.filter(f).filter(g)\n' +
         ')',
       position: {
-        start: { line: 812, column: 1, offset: 23437 },
-        end: { line: 817, column: 4, offset: 23552 }
+        start: { line: 812, column: 1, offset: 23436 },
+        end: { line: 817, column: 4, offset: 23551 }
       }
     },
     {
@@ -4447,8 +4447,8 @@ export default {
         'console.log(myArray.filter(x => f(x) && g(x)))\n' +
         'console.log(myArray.filter(f).filter(g))',
       position: {
-        start: { line: 819, column: 1, offset: 23554 },
-        end: { line: 827, column: 4, offset: 23753 }
+        start: { line: 819, column: 1, offset: 23553 },
+        end: { line: 827, column: 4, offset: 23752 }
       }
     },
     {
@@ -4469,26 +4469,26 @@ export default {
                   type: 'text',
                   value: 'Identity Law: applying a predicate function that always returns true is equivalent to not having applied a function.',
                   position: {
-                    start: { line: 829, column: 5, offset: 23759 },
-                    end: { line: 829, column: 121, offset: 23875 }
+                    start: { line: 829, column: 5, offset: 23758 },
+                    end: { line: 829, column: 121, offset: 23874 }
                   }
                 }
               ],
               position: {
-                start: { line: 829, column: 5, offset: 23759 },
-                end: { line: 829, column: 121, offset: 23875 }
+                start: { line: 829, column: 5, offset: 23758 },
+                end: { line: 829, column: 121, offset: 23874 }
               }
             }
           ],
           position: {
-            start: { line: 829, column: 2, offset: 23756 },
-            end: { line: 829, column: 121, offset: 23875 }
+            start: { line: 829, column: 2, offset: 23755 },
+            end: { line: 829, column: 121, offset: 23874 }
           }
         }
       ],
       position: {
-        start: { line: 829, column: 2, offset: 23756 },
-        end: { line: 829, column: 121, offset: 23875 }
+        start: { line: 829, column: 2, offset: 23755 },
+        end: { line: 829, column: 121, offset: 23874 }
       }
     },
     {
@@ -4497,8 +4497,8 @@ export default {
       meta: null,
       value: 'assert.equivalent(\n  myFilterable.filter(() => true),\n  myFilterable\n)',
       position: {
-        start: { line: 831, column: 1, offset: 23877 },
-        end: { line: 836, column: 4, offset: 23965 }
+        start: { line: 831, column: 1, offset: 23876 },
+        end: { line: 836, column: 4, offset: 23964 }
       }
     },
     {
@@ -4510,8 +4510,8 @@ export default {
         'console.log(myArray.filter(() => true))\n' +
         'console.log(myArray)',
       position: {
-        start: { line: 838, column: 1, offset: 23967 },
-        end: { line: 843, column: 4, offset: 24091 }
+        start: { line: 838, column: 1, offset: 23966 },
+        end: { line: 843, column: 4, offset: 24090 }
       }
     },
     {
@@ -4532,26 +4532,26 @@ export default {
                   type: 'text',
                   value: 'Annihilation Law: given two distinct filterables, applying a predicate function that always returns false to both filterables produces equivalent results.',
                   position: {
-                    start: { line: 845, column: 5, offset: 24097 },
-                    end: { line: 845, column: 159, offset: 24251 }
+                    start: { line: 845, column: 5, offset: 24096 },
+                    end: { line: 845, column: 159, offset: 24250 }
                   }
                 }
               ],
               position: {
-                start: { line: 845, column: 5, offset: 24097 },
-                end: { line: 845, column: 159, offset: 24251 }
+                start: { line: 845, column: 5, offset: 24096 },
+                end: { line: 845, column: 159, offset: 24250 }
               }
             }
           ],
           position: {
-            start: { line: 845, column: 2, offset: 24094 },
-            end: { line: 845, column: 159, offset: 24251 }
+            start: { line: 845, column: 2, offset: 24093 },
+            end: { line: 845, column: 159, offset: 24250 }
           }
         }
       ],
       position: {
-        start: { line: 845, column: 2, offset: 24094 },
-        end: { line: 845, column: 159, offset: 24251 }
+        start: { line: 845, column: 2, offset: 24093 },
+        end: { line: 845, column: 159, offset: 24250 }
       }
     },
     {
@@ -4563,8 +4563,8 @@ export default {
         '  myFilterableB.filter(() => false)\n' +
         ')',
       position: {
-        start: { line: 847, column: 1, offset: 24253 },
-        end: { line: 852, column: 4, offset: 24364 }
+        start: { line: 847, column: 1, offset: 24252 },
+        end: { line: 852, column: 4, offset: 24363 }
       }
     },
     {
@@ -4577,8 +4577,8 @@ export default {
         'console.log(myArrayA.filter(() => false))\n' +
         'console.log(myArrayB.filter(() => false))',
       position: {
-        start: { line: 854, column: 1, offset: 24366 },
-        end: { line: 860, column: 4, offset: 24547 }
+        start: { line: 854, column: 1, offset: 24365 },
+        end: { line: 860, column: 4, offset: 24546 }
       }
     },
     {
@@ -4588,14 +4588,14 @@ export default {
           type: 'text',
           value: 'The following built-in data types are considered to be filterables:',
           position: {
-            start: { line: 862, column: 1, offset: 24549 },
-            end: { line: 862, column: 68, offset: 24616 }
+            start: { line: 862, column: 1, offset: 24548 },
+            end: { line: 862, column: 68, offset: 24615 }
           }
         }
       ],
       position: {
-        start: { line: 862, column: 1, offset: 24549 },
-        end: { line: 862, column: 68, offset: 24616 }
+        start: { line: 862, column: 1, offset: 24548 },
+        end: { line: 862, column: 68, offset: 24615 }
       }
     },
     {
@@ -4616,20 +4616,20 @@ export default {
                   type: 'inlineCode',
                   value: 'array',
                   position: {
-                    start: { line: 863, column: 4, offset: 24620 },
-                    end: { line: 863, column: 11, offset: 24627 }
+                    start: { line: 863, column: 4, offset: 24619 },
+                    end: { line: 863, column: 11, offset: 24626 }
                   }
                 }
               ],
               position: {
-                start: { line: 863, column: 4, offset: 24620 },
-                end: { line: 863, column: 11, offset: 24627 }
+                start: { line: 863, column: 4, offset: 24619 },
+                end: { line: 863, column: 11, offset: 24626 }
               }
             }
           ],
           position: {
-            start: { line: 863, column: 2, offset: 24618 },
-            end: { line: 863, column: 11, offset: 24627 }
+            start: { line: 863, column: 2, offset: 24617 },
+            end: { line: 863, column: 11, offset: 24626 }
           }
         },
         {
@@ -4644,20 +4644,20 @@ export default {
                   type: 'inlineCode',
                   value: 'set',
                   position: {
-                    start: { line: 864, column: 4, offset: 24631 },
-                    end: { line: 864, column: 9, offset: 24636 }
+                    start: { line: 864, column: 4, offset: 24630 },
+                    end: { line: 864, column: 9, offset: 24635 }
                   }
                 }
               ],
               position: {
-                start: { line: 864, column: 4, offset: 24631 },
-                end: { line: 864, column: 9, offset: 24636 }
+                start: { line: 864, column: 4, offset: 24630 },
+                end: { line: 864, column: 9, offset: 24635 }
               }
             }
           ],
           position: {
-            start: { line: 864, column: 2, offset: 24629 },
-            end: { line: 864, column: 9, offset: 24636 }
+            start: { line: 864, column: 2, offset: 24628 },
+            end: { line: 864, column: 9, offset: 24635 }
           }
         },
         {
@@ -4672,20 +4672,20 @@ export default {
                   type: 'inlineCode',
                   value: 'map',
                   position: {
-                    start: { line: 865, column: 4, offset: 24640 },
-                    end: { line: 865, column: 9, offset: 24645 }
+                    start: { line: 865, column: 4, offset: 24639 },
+                    end: { line: 865, column: 9, offset: 24644 }
                   }
                 }
               ],
               position: {
-                start: { line: 865, column: 4, offset: 24640 },
-                end: { line: 865, column: 9, offset: 24645 }
+                start: { line: 865, column: 4, offset: 24639 },
+                end: { line: 865, column: 9, offset: 24644 }
               }
             }
           ],
           position: {
-            start: { line: 865, column: 2, offset: 24638 },
-            end: { line: 865, column: 9, offset: 24645 }
+            start: { line: 865, column: 2, offset: 24637 },
+            end: { line: 865, column: 9, offset: 24644 }
           }
         },
         {
@@ -4700,20 +4700,20 @@ export default {
                   type: 'inlineCode',
                   value: 'generator',
                   position: {
-                    start: { line: 866, column: 4, offset: 24649 },
-                    end: { line: 866, column: 15, offset: 24660 }
+                    start: { line: 866, column: 4, offset: 24648 },
+                    end: { line: 866, column: 15, offset: 24659 }
                   }
                 }
               ],
               position: {
-                start: { line: 866, column: 4, offset: 24649 },
-                end: { line: 866, column: 15, offset: 24660 }
+                start: { line: 866, column: 4, offset: 24648 },
+                end: { line: 866, column: 15, offset: 24659 }
               }
             }
           ],
           position: {
-            start: { line: 866, column: 2, offset: 24647 },
-            end: { line: 866, column: 15, offset: 24660 }
+            start: { line: 866, column: 2, offset: 24646 },
+            end: { line: 866, column: 15, offset: 24659 }
           }
         },
         {
@@ -4728,20 +4728,20 @@ export default {
                   type: 'inlineCode',
                   value: 'async generator',
                   position: {
-                    start: { line: 867, column: 4, offset: 24664 },
-                    end: { line: 867, column: 21, offset: 24681 }
+                    start: { line: 867, column: 4, offset: 24663 },
+                    end: { line: 867, column: 21, offset: 24680 }
                   }
                 }
               ],
               position: {
-                start: { line: 867, column: 4, offset: 24664 },
-                end: { line: 867, column: 21, offset: 24681 }
+                start: { line: 867, column: 4, offset: 24663 },
+                end: { line: 867, column: 21, offset: 24680 }
               }
             }
           ],
           position: {
-            start: { line: 867, column: 2, offset: 24662 },
-            end: { line: 867, column: 21, offset: 24681 }
+            start: { line: 867, column: 2, offset: 24661 },
+            end: { line: 867, column: 21, offset: 24680 }
           }
         },
         {
@@ -4756,26 +4756,26 @@ export default {
                   type: 'inlineCode',
                   value: 'object',
                   position: {
-                    start: { line: 868, column: 4, offset: 24685 },
-                    end: { line: 868, column: 12, offset: 24693 }
+                    start: { line: 868, column: 4, offset: 24684 },
+                    end: { line: 868, column: 12, offset: 24692 }
                   }
                 }
               ],
               position: {
-                start: { line: 868, column: 4, offset: 24685 },
-                end: { line: 868, column: 12, offset: 24693 }
+                start: { line: 868, column: 4, offset: 24684 },
+                end: { line: 868, column: 12, offset: 24692 }
               }
             }
           ],
           position: {
-            start: { line: 868, column: 2, offset: 24683 },
-            end: { line: 868, column: 12, offset: 24693 }
+            start: { line: 868, column: 2, offset: 24682 },
+            end: { line: 868, column: 12, offset: 24692 }
           }
         }
       ],
       position: {
-        start: { line: 863, column: 2, offset: 24618 },
-        end: { line: 868, column: 12, offset: 24693 }
+        start: { line: 863, column: 2, offset: 24617 },
+        end: { line: 868, column: 12, offset: 24692 }
       }
     },
     {
@@ -4786,14 +4786,14 @@ export default {
           type: 'text',
           value: 'Foldable',
           position: {
-            start: { line: 870, column: 5, offset: 24699 },
-            end: { line: 870, column: 13, offset: 24707 }
+            start: { line: 870, column: 5, offset: 24698 },
+            end: { line: 870, column: 13, offset: 24706 }
           }
         }
       ],
       position: {
-        start: { line: 870, column: 1, offset: 24695 },
-        end: { line: 870, column: 13, offset: 24707 }
+        start: { line: 870, column: 1, offset: 24694 },
+        end: { line: 870, column: 13, offset: 24706 }
       }
     },
     {
@@ -4803,46 +4803,46 @@ export default {
           type: 'text',
           value: 'The foldable algebraic structure identifies data types with the ',
           position: {
-            start: { line: 872, column: 1, offset: 24709 },
-            end: { line: 872, column: 65, offset: 24773 }
+            start: { line: 872, column: 1, offset: 24708 },
+            end: { line: 872, column: 65, offset: 24772 }
           }
         },
         {
           type: 'inlineCode',
           value: '.reduce',
           position: {
-            start: { line: 872, column: 65, offset: 24773 },
-            end: { line: 872, column: 74, offset: 24782 }
+            start: { line: 872, column: 65, offset: 24772 },
+            end: { line: 872, column: 74, offset: 24781 }
           }
         },
         {
           type: 'text',
           value: ' method. Data types implementing ',
           position: {
-            start: { line: 872, column: 74, offset: 24782 },
-            end: { line: 872, column: 107, offset: 24815 }
+            start: { line: 872, column: 74, offset: 24781 },
+            end: { line: 872, column: 107, offset: 24814 }
           }
         },
         {
           type: 'inlineCode',
           value: '.reduce',
           position: {
-            start: { line: 872, column: 107, offset: 24815 },
-            end: { line: 872, column: 116, offset: 24824 }
+            start: { line: 872, column: 107, offset: 24814 },
+            end: { line: 872, column: 116, offset: 24823 }
           }
         },
         {
           type: 'text',
           value: ' must conform to the following law:',
           position: {
-            start: { line: 872, column: 116, offset: 24824 },
-            end: { line: 872, column: 151, offset: 24859 }
+            start: { line: 872, column: 116, offset: 24823 },
+            end: { line: 872, column: 151, offset: 24858 }
           }
         }
       ],
       position: {
-        start: { line: 872, column: 1, offset: 24709 },
-        end: { line: 872, column: 152, offset: 24860 }
+        start: { line: 872, column: 1, offset: 24708 },
+        end: { line: 872, column: 152, offset: 24859 }
       }
     },
     {
@@ -4863,42 +4863,42 @@ export default {
                   type: 'text',
                   value: 'A given reducing operation is equivalent to two chained reducing operations with ',
                   position: {
-                    start: { line: 874, column: 5, offset: 24866 },
-                    end: { line: 874, column: 86, offset: 24947 }
+                    start: { line: 874, column: 5, offset: 24865 },
+                    end: { line: 874, column: 86, offset: 24946 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: '.reduce',
                   position: {
-                    start: { line: 874, column: 86, offset: 24947 },
-                    end: { line: 874, column: 95, offset: 24956 }
+                    start: { line: 874, column: 86, offset: 24946 },
+                    end: { line: 874, column: 95, offset: 24955 }
                   }
                 },
                 {
                   type: 'text',
                   value: ' where the first reduce concatenates every item in the foldable onto an array and the second reduce takes the array and performs the given reducing operation.',
                   position: {
-                    start: { line: 874, column: 95, offset: 24956 },
-                    end: { line: 874, column: 253, offset: 25114 }
+                    start: { line: 874, column: 95, offset: 24955 },
+                    end: { line: 874, column: 253, offset: 25113 }
                   }
                 }
               ],
               position: {
-                start: { line: 874, column: 5, offset: 24866 },
-                end: { line: 874, column: 253, offset: 25114 }
+                start: { line: 874, column: 5, offset: 24865 },
+                end: { line: 874, column: 253, offset: 25113 }
               }
             }
           ],
           position: {
-            start: { line: 874, column: 2, offset: 24863 },
-            end: { line: 874, column: 253, offset: 25114 }
+            start: { line: 874, column: 2, offset: 24862 },
+            end: { line: 874, column: 253, offset: 25113 }
           }
         }
       ],
       position: {
-        start: { line: 874, column: 2, offset: 24863 },
-        end: { line: 874, column: 253, offset: 25114 }
+        start: { line: 874, column: 2, offset: 24862 },
+        end: { line: 874, column: 253, offset: 25113 }
       }
     },
     {
@@ -4912,8 +4912,8 @@ export default {
         '    .reduce(reducer)\n' +
         ')',
       position: {
-        start: { line: 876, column: 1, offset: 25116 },
-        end: { line: 883, column: 4, offset: 25286 }
+        start: { line: 876, column: 1, offset: 25115 },
+        end: { line: 883, column: 4, offset: 25285 }
       }
     },
     {
@@ -4930,8 +4930,8 @@ export default {
         '    .reduce(add)\n' +
         ')',
       position: {
-        start: { line: 885, column: 1, offset: 25288 },
-        end: { line: 895, column: 4, offset: 25522 }
+        start: { line: 885, column: 1, offset: 25287 },
+        end: { line: 895, column: 4, offset: 25521 }
       }
     },
     {
@@ -4941,14 +4941,14 @@ export default {
           type: 'text',
           value: 'The following built-in data types are considered to be foldables:',
           position: {
-            start: { line: 897, column: 1, offset: 25524 },
-            end: { line: 897, column: 66, offset: 25589 }
+            start: { line: 897, column: 1, offset: 25523 },
+            end: { line: 897, column: 66, offset: 25588 }
           }
         }
       ],
       position: {
-        start: { line: 897, column: 1, offset: 25524 },
-        end: { line: 897, column: 66, offset: 25589 }
+        start: { line: 897, column: 1, offset: 25523 },
+        end: { line: 897, column: 66, offset: 25588 }
       }
     },
     {
@@ -4969,20 +4969,20 @@ export default {
                   type: 'inlineCode',
                   value: 'array',
                   position: {
-                    start: { line: 898, column: 4, offset: 25593 },
-                    end: { line: 898, column: 11, offset: 25600 }
+                    start: { line: 898, column: 4, offset: 25592 },
+                    end: { line: 898, column: 11, offset: 25599 }
                   }
                 }
               ],
               position: {
-                start: { line: 898, column: 4, offset: 25593 },
-                end: { line: 898, column: 11, offset: 25600 }
+                start: { line: 898, column: 4, offset: 25592 },
+                end: { line: 898, column: 11, offset: 25599 }
               }
             }
           ],
           position: {
-            start: { line: 898, column: 2, offset: 25591 },
-            end: { line: 898, column: 11, offset: 25600 }
+            start: { line: 898, column: 2, offset: 25590 },
+            end: { line: 898, column: 11, offset: 25599 }
           }
         },
         {
@@ -4997,20 +4997,20 @@ export default {
                   type: 'inlineCode',
                   value: 'set',
                   position: {
-                    start: { line: 899, column: 4, offset: 25604 },
-                    end: { line: 899, column: 9, offset: 25609 }
+                    start: { line: 899, column: 4, offset: 25603 },
+                    end: { line: 899, column: 9, offset: 25608 }
                   }
                 }
               ],
               position: {
-                start: { line: 899, column: 4, offset: 25604 },
-                end: { line: 899, column: 9, offset: 25609 }
+                start: { line: 899, column: 4, offset: 25603 },
+                end: { line: 899, column: 9, offset: 25608 }
               }
             }
           ],
           position: {
-            start: { line: 899, column: 2, offset: 25602 },
-            end: { line: 899, column: 9, offset: 25609 }
+            start: { line: 899, column: 2, offset: 25601 },
+            end: { line: 899, column: 9, offset: 25608 }
           }
         },
         {
@@ -5025,20 +5025,20 @@ export default {
                   type: 'inlineCode',
                   value: 'map',
                   position: {
-                    start: { line: 900, column: 4, offset: 25613 },
-                    end: { line: 900, column: 9, offset: 25618 }
+                    start: { line: 900, column: 4, offset: 25612 },
+                    end: { line: 900, column: 9, offset: 25617 }
                   }
                 }
               ],
               position: {
-                start: { line: 900, column: 4, offset: 25613 },
-                end: { line: 900, column: 9, offset: 25618 }
+                start: { line: 900, column: 4, offset: 25612 },
+                end: { line: 900, column: 9, offset: 25617 }
               }
             }
           ],
           position: {
-            start: { line: 900, column: 2, offset: 25611 },
-            end: { line: 900, column: 9, offset: 25618 }
+            start: { line: 900, column: 2, offset: 25610 },
+            end: { line: 900, column: 9, offset: 25617 }
           }
         },
         {
@@ -5053,20 +5053,20 @@ export default {
                   type: 'inlineCode',
                   value: 'generator',
                   position: {
-                    start: { line: 901, column: 4, offset: 25622 },
-                    end: { line: 901, column: 15, offset: 25633 }
+                    start: { line: 901, column: 4, offset: 25621 },
+                    end: { line: 901, column: 15, offset: 25632 }
                   }
                 }
               ],
               position: {
-                start: { line: 901, column: 4, offset: 25622 },
-                end: { line: 901, column: 15, offset: 25633 }
+                start: { line: 901, column: 4, offset: 25621 },
+                end: { line: 901, column: 15, offset: 25632 }
               }
             }
           ],
           position: {
-            start: { line: 901, column: 2, offset: 25620 },
-            end: { line: 901, column: 15, offset: 25633 }
+            start: { line: 901, column: 2, offset: 25619 },
+            end: { line: 901, column: 15, offset: 25632 }
           }
         },
         {
@@ -5081,20 +5081,20 @@ export default {
                   type: 'inlineCode',
                   value: 'async generator',
                   position: {
-                    start: { line: 902, column: 4, offset: 25637 },
-                    end: { line: 902, column: 21, offset: 25654 }
+                    start: { line: 902, column: 4, offset: 25636 },
+                    end: { line: 902, column: 21, offset: 25653 }
                   }
                 }
               ],
               position: {
-                start: { line: 902, column: 4, offset: 25637 },
-                end: { line: 902, column: 21, offset: 25654 }
+                start: { line: 902, column: 4, offset: 25636 },
+                end: { line: 902, column: 21, offset: 25653 }
               }
             }
           ],
           position: {
-            start: { line: 902, column: 2, offset: 25635 },
-            end: { line: 902, column: 21, offset: 25654 }
+            start: { line: 902, column: 2, offset: 25634 },
+            end: { line: 902, column: 21, offset: 25653 }
           }
         },
         {
@@ -5109,26 +5109,26 @@ export default {
                   type: 'inlineCode',
                   value: 'object',
                   position: {
-                    start: { line: 903, column: 4, offset: 25658 },
-                    end: { line: 903, column: 12, offset: 25666 }
+                    start: { line: 903, column: 4, offset: 25657 },
+                    end: { line: 903, column: 12, offset: 25665 }
                   }
                 }
               ],
               position: {
-                start: { line: 903, column: 4, offset: 25658 },
-                end: { line: 903, column: 12, offset: 25666 }
+                start: { line: 903, column: 4, offset: 25657 },
+                end: { line: 903, column: 12, offset: 25665 }
               }
             }
           ],
           position: {
-            start: { line: 903, column: 2, offset: 25656 },
-            end: { line: 903, column: 12, offset: 25666 }
+            start: { line: 903, column: 2, offset: 25655 },
+            end: { line: 903, column: 12, offset: 25665 }
           }
         }
       ],
       position: {
-        start: { line: 898, column: 2, offset: 25591 },
-        end: { line: 903, column: 12, offset: 25666 }
+        start: { line: 898, column: 2, offset: 25590 },
+        end: { line: 903, column: 12, offset: 25665 }
       }
     },
     {
@@ -5139,14 +5139,14 @@ export default {
           type: 'text',
           value: 'Semigroup',
           position: {
-            start: { line: 905, column: 5, offset: 25672 },
-            end: { line: 905, column: 14, offset: 25681 }
+            start: { line: 905, column: 5, offset: 25671 },
+            end: { line: 905, column: 14, offset: 25680 }
           }
         }
       ],
       position: {
-        start: { line: 905, column: 1, offset: 25668 },
-        end: { line: 905, column: 14, offset: 25681 }
+        start: { line: 905, column: 1, offset: 25667 },
+        end: { line: 905, column: 14, offset: 25680 }
       }
     },
     {
@@ -5156,46 +5156,46 @@ export default {
           type: 'text',
           value: 'The semigroup algebraic structure identifies data types with the ',
           position: {
-            start: { line: 907, column: 1, offset: 25683 },
-            end: { line: 907, column: 66, offset: 25748 }
+            start: { line: 907, column: 1, offset: 25682 },
+            end: { line: 907, column: 66, offset: 25747 }
           }
         },
         {
           type: 'inlineCode',
           value: '.concat',
           position: {
-            start: { line: 907, column: 66, offset: 25748 },
-            end: { line: 907, column: 75, offset: 25757 }
+            start: { line: 907, column: 66, offset: 25747 },
+            end: { line: 907, column: 75, offset: 25756 }
           }
         },
         {
           type: 'text',
           value: ' method. Data types implementing ',
           position: {
-            start: { line: 907, column: 75, offset: 25757 },
-            end: { line: 907, column: 108, offset: 25790 }
+            start: { line: 907, column: 75, offset: 25756 },
+            end: { line: 907, column: 108, offset: 25789 }
           }
         },
         {
           type: 'inlineCode',
           value: '.concat',
           position: {
-            start: { line: 907, column: 108, offset: 25790 },
-            end: { line: 907, column: 117, offset: 25799 }
+            start: { line: 907, column: 108, offset: 25789 },
+            end: { line: 907, column: 117, offset: 25798 }
           }
         },
         {
           type: 'text',
           value: ' must conform to the following law:',
           position: {
-            start: { line: 907, column: 117, offset: 25799 },
-            end: { line: 907, column: 152, offset: 25834 }
+            start: { line: 907, column: 117, offset: 25798 },
+            end: { line: 907, column: 152, offset: 25833 }
           }
         }
       ],
       position: {
-        start: { line: 907, column: 1, offset: 25683 },
-        end: { line: 907, column: 152, offset: 25834 }
+        start: { line: 907, column: 1, offset: 25682 },
+        end: { line: 907, column: 152, offset: 25833 }
       }
     },
     {
@@ -5216,26 +5216,26 @@ export default {
                   type: 'text',
                   value: 'Associativity: when concatenating three elements, concatenating the first and then the last two is the same as concatenating the first two and then the last.',
                   position: {
-                    start: { line: 909, column: 5, offset: 25840 },
-                    end: { line: 909, column: 162, offset: 25997 }
+                    start: { line: 909, column: 5, offset: 25839 },
+                    end: { line: 909, column: 162, offset: 25996 }
                   }
                 }
               ],
               position: {
-                start: { line: 909, column: 5, offset: 25840 },
-                end: { line: 909, column: 162, offset: 25997 }
+                start: { line: 909, column: 5, offset: 25839 },
+                end: { line: 909, column: 162, offset: 25996 }
               }
             }
           ],
           position: {
-            start: { line: 909, column: 2, offset: 25837 },
-            end: { line: 909, column: 162, offset: 25997 }
+            start: { line: 909, column: 2, offset: 25836 },
+            end: { line: 909, column: 162, offset: 25996 }
           }
         }
       ],
       position: {
-        start: { line: 909, column: 2, offset: 25837 },
-        end: { line: 909, column: 162, offset: 25997 }
+        start: { line: 909, column: 2, offset: 25836 },
+        end: { line: 909, column: 162, offset: 25996 }
       }
     },
     {
@@ -5247,8 +5247,8 @@ export default {
         '  mySemigroup.concat(a, b).concat(c)\n' +
         ')',
       position: {
-        start: { line: 911, column: 1, offset: 25999 },
-        end: { line: 916, column: 4, offset: 26112 }
+        start: { line: 911, column: 1, offset: 25998 },
+        end: { line: 916, column: 4, offset: 26111 }
       }
     },
     {
@@ -5258,8 +5258,8 @@ export default {
       value: 'console.log([0].concat(1).concat(2, 3))\n' +
         'console.log([0].concat(1, 2).concat(3))',
       position: {
-        start: { line: 918, column: 1, offset: 26114 },
-        end: { line: 921, column: 4, offset: 26224 }
+        start: { line: 918, column: 1, offset: 26113 },
+        end: { line: 921, column: 4, offset: 26223 }
       }
     },
     {
@@ -5269,14 +5269,14 @@ export default {
           type: 'text',
           value: 'The following built-in data types are considered to be semigroups:',
           position: {
-            start: { line: 923, column: 1, offset: 26226 },
-            end: { line: 923, column: 67, offset: 26292 }
+            start: { line: 923, column: 1, offset: 26225 },
+            end: { line: 923, column: 67, offset: 26291 }
           }
         }
       ],
       position: {
-        start: { line: 923, column: 1, offset: 26226 },
-        end: { line: 923, column: 67, offset: 26292 }
+        start: { line: 923, column: 1, offset: 26225 },
+        end: { line: 923, column: 67, offset: 26291 }
       }
     },
     {
@@ -5297,20 +5297,20 @@ export default {
                   type: 'inlineCode',
                   value: 'array',
                   position: {
-                    start: { line: 924, column: 4, offset: 26296 },
-                    end: { line: 924, column: 11, offset: 26303 }
+                    start: { line: 924, column: 4, offset: 26295 },
+                    end: { line: 924, column: 11, offset: 26302 }
                   }
                 }
               ],
               position: {
-                start: { line: 924, column: 4, offset: 26296 },
-                end: { line: 924, column: 11, offset: 26303 }
+                start: { line: 924, column: 4, offset: 26295 },
+                end: { line: 924, column: 11, offset: 26302 }
               }
             }
           ],
           position: {
-            start: { line: 924, column: 2, offset: 26294 },
-            end: { line: 924, column: 11, offset: 26303 }
+            start: { line: 924, column: 2, offset: 26293 },
+            end: { line: 924, column: 11, offset: 26302 }
           }
         },
         {
@@ -5325,20 +5325,20 @@ export default {
                   type: 'inlineCode',
                   value: 'string',
                   position: {
-                    start: { line: 925, column: 4, offset: 26307 },
-                    end: { line: 925, column: 12, offset: 26315 }
+                    start: { line: 925, column: 4, offset: 26306 },
+                    end: { line: 925, column: 12, offset: 26314 }
                   }
                 }
               ],
               position: {
-                start: { line: 925, column: 4, offset: 26307 },
-                end: { line: 925, column: 12, offset: 26315 }
+                start: { line: 925, column: 4, offset: 26306 },
+                end: { line: 925, column: 12, offset: 26314 }
               }
             }
           ],
           position: {
-            start: { line: 925, column: 2, offset: 26305 },
-            end: { line: 925, column: 12, offset: 26315 }
+            start: { line: 925, column: 2, offset: 26304 },
+            end: { line: 925, column: 12, offset: 26314 }
           }
         },
         {
@@ -5353,20 +5353,20 @@ export default {
                   type: 'inlineCode',
                   value: 'set',
                   position: {
-                    start: { line: 926, column: 4, offset: 26319 },
-                    end: { line: 926, column: 9, offset: 26324 }
+                    start: { line: 926, column: 4, offset: 26318 },
+                    end: { line: 926, column: 9, offset: 26323 }
                   }
                 }
               ],
               position: {
-                start: { line: 926, column: 4, offset: 26319 },
-                end: { line: 926, column: 9, offset: 26324 }
+                start: { line: 926, column: 4, offset: 26318 },
+                end: { line: 926, column: 9, offset: 26323 }
               }
             }
           ],
           position: {
-            start: { line: 926, column: 2, offset: 26317 },
-            end: { line: 926, column: 9, offset: 26324 }
+            start: { line: 926, column: 2, offset: 26316 },
+            end: { line: 926, column: 9, offset: 26323 }
           }
         },
         {
@@ -5381,20 +5381,20 @@ export default {
                   type: 'inlineCode',
                   value: 'binary',
                   position: {
-                    start: { line: 927, column: 4, offset: 26328 },
-                    end: { line: 927, column: 12, offset: 26336 }
+                    start: { line: 927, column: 4, offset: 26327 },
+                    end: { line: 927, column: 12, offset: 26335 }
                   }
                 }
               ],
               position: {
-                start: { line: 927, column: 4, offset: 26328 },
-                end: { line: 927, column: 12, offset: 26336 }
+                start: { line: 927, column: 4, offset: 26327 },
+                end: { line: 927, column: 12, offset: 26335 }
               }
             }
           ],
           position: {
-            start: { line: 927, column: 2, offset: 26326 },
-            end: { line: 927, column: 12, offset: 26336 }
+            start: { line: 927, column: 2, offset: 26325 },
+            end: { line: 927, column: 12, offset: 26335 }
           }
         },
         {
@@ -5409,26 +5409,26 @@ export default {
                   type: 'inlineCode',
                   value: 'object',
                   position: {
-                    start: { line: 928, column: 4, offset: 26340 },
-                    end: { line: 928, column: 12, offset: 26348 }
+                    start: { line: 928, column: 4, offset: 26339 },
+                    end: { line: 928, column: 12, offset: 26347 }
                   }
                 }
               ],
               position: {
-                start: { line: 928, column: 4, offset: 26340 },
-                end: { line: 928, column: 12, offset: 26348 }
+                start: { line: 928, column: 4, offset: 26339 },
+                end: { line: 928, column: 12, offset: 26347 }
               }
             }
           ],
           position: {
-            start: { line: 928, column: 2, offset: 26338 },
-            end: { line: 928, column: 12, offset: 26348 }
+            start: { line: 928, column: 2, offset: 26337 },
+            end: { line: 928, column: 12, offset: 26347 }
           }
         }
       ],
       position: {
-        start: { line: 924, column: 2, offset: 26294 },
-        end: { line: 928, column: 12, offset: 26348 }
+        start: { line: 924, column: 2, offset: 26293 },
+        end: { line: 928, column: 12, offset: 26347 }
       }
     },
     {
@@ -5439,14 +5439,14 @@ export default {
           type: 'text',
           value: 'Monad',
           position: {
-            start: { line: 930, column: 5, offset: 26354 },
-            end: { line: 930, column: 10, offset: 26359 }
+            start: { line: 930, column: 5, offset: 26353 },
+            end: { line: 930, column: 10, offset: 26358 }
           }
         }
       ],
       position: {
-        start: { line: 930, column: 1, offset: 26350 },
-        end: { line: 930, column: 10, offset: 26359 }
+        start: { line: 930, column: 1, offset: 26349 },
+        end: { line: 930, column: 10, offset: 26358 }
       }
     },
     {
@@ -5456,78 +5456,78 @@ export default {
           type: 'text',
           value: 'The monad algebraic structure identifies data types with the ',
           position: {
-            start: { line: 932, column: 1, offset: 26361 },
-            end: { line: 932, column: 62, offset: 26422 }
+            start: { line: 932, column: 1, offset: 26360 },
+            end: { line: 932, column: 62, offset: 26421 }
           }
         },
         {
           type: 'inlineCode',
           value: '.flatMap',
           position: {
-            start: { line: 932, column: 62, offset: 26422 },
-            end: { line: 932, column: 72, offset: 26432 }
+            start: { line: 932, column: 62, offset: 26421 },
+            end: { line: 932, column: 72, offset: 26431 }
           }
         },
         {
           type: 'text',
           value: ' or ',
           position: {
-            start: { line: 932, column: 72, offset: 26432 },
-            end: { line: 932, column: 76, offset: 26436 }
+            start: { line: 932, column: 72, offset: 26431 },
+            end: { line: 932, column: 76, offset: 26435 }
           }
         },
         {
           type: 'inlineCode',
           value: '.chain',
           position: {
-            start: { line: 932, column: 76, offset: 26436 },
-            end: { line: 932, column: 84, offset: 26444 }
+            start: { line: 932, column: 76, offset: 26435 },
+            end: { line: 932, column: 84, offset: 26443 }
           }
         },
         {
           type: 'text',
           value: ' methods. Data types implementing ',
           position: {
-            start: { line: 932, column: 84, offset: 26444 },
-            end: { line: 932, column: 118, offset: 26478 }
+            start: { line: 932, column: 84, offset: 26443 },
+            end: { line: 932, column: 118, offset: 26477 }
           }
         },
         {
           type: 'inlineCode',
           value: '.flatMap',
           position: {
-            start: { line: 932, column: 118, offset: 26478 },
-            end: { line: 932, column: 128, offset: 26488 }
+            start: { line: 932, column: 118, offset: 26477 },
+            end: { line: 932, column: 128, offset: 26487 }
           }
         },
         {
           type: 'text',
           value: ' or ',
           position: {
-            start: { line: 932, column: 128, offset: 26488 },
-            end: { line: 932, column: 132, offset: 26492 }
+            start: { line: 932, column: 128, offset: 26487 },
+            end: { line: 932, column: 132, offset: 26491 }
           }
         },
         {
           type: 'inlineCode',
           value: '.chain',
           position: {
-            start: { line: 932, column: 132, offset: 26492 },
-            end: { line: 932, column: 140, offset: 26500 }
+            start: { line: 932, column: 132, offset: 26491 },
+            end: { line: 932, column: 140, offset: 26499 }
           }
         },
         {
           type: 'text',
           value: ' must conform to the monad laws:',
           position: {
-            start: { line: 932, column: 140, offset: 26500 },
-            end: { line: 932, column: 172, offset: 26532 }
+            start: { line: 932, column: 140, offset: 26499 },
+            end: { line: 932, column: 172, offset: 26531 }
           }
         }
       ],
       position: {
-        start: { line: 932, column: 1, offset: 26361 },
-        end: { line: 932, column: 172, offset: 26532 }
+        start: { line: 932, column: 1, offset: 26360 },
+        end: { line: 932, column: 172, offset: 26531 }
       }
     },
     {
@@ -5548,58 +5548,58 @@ export default {
                   type: 'text',
                   value: "Left Identity: wrapping a value in a monad and then calling the monad's ",
                   position: {
-                    start: { line: 934, column: 5, offset: 26538 },
-                    end: { line: 934, column: 77, offset: 26610 }
+                    start: { line: 934, column: 5, offset: 26537 },
+                    end: { line: 934, column: 77, offset: 26609 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: '.flatMap',
                   position: {
-                    start: { line: 934, column: 77, offset: 26610 },
-                    end: { line: 934, column: 87, offset: 26620 }
+                    start: { line: 934, column: 77, offset: 26609 },
+                    end: { line: 934, column: 87, offset: 26619 }
                   }
                 },
                 {
                   type: 'text',
                   value: ' or ',
                   position: {
-                    start: { line: 934, column: 87, offset: 26620 },
-                    end: { line: 934, column: 91, offset: 26624 }
+                    start: { line: 934, column: 87, offset: 26619 },
+                    end: { line: 934, column: 91, offset: 26623 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: '.chain',
                   position: {
-                    start: { line: 934, column: 91, offset: 26624 },
-                    end: { line: 934, column: 99, offset: 26632 }
+                    start: { line: 934, column: 91, offset: 26623 },
+                    end: { line: 934, column: 99, offset: 26631 }
                   }
                 },
                 {
                   type: 'text',
                   value: ' with a function is equivalent to directly applying the function to the value.',
                   position: {
-                    start: { line: 934, column: 99, offset: 26632 },
-                    end: { line: 934, column: 177, offset: 26710 }
+                    start: { line: 934, column: 99, offset: 26631 },
+                    end: { line: 934, column: 177, offset: 26709 }
                   }
                 }
               ],
               position: {
-                start: { line: 934, column: 5, offset: 26538 },
-                end: { line: 934, column: 177, offset: 26710 }
+                start: { line: 934, column: 5, offset: 26537 },
+                end: { line: 934, column: 177, offset: 26709 }
               }
             }
           ],
           position: {
-            start: { line: 934, column: 2, offset: 26535 },
-            end: { line: 934, column: 177, offset: 26710 }
+            start: { line: 934, column: 2, offset: 26534 },
+            end: { line: 934, column: 177, offset: 26709 }
           }
         }
       ],
       position: {
-        start: { line: 934, column: 2, offset: 26535 },
-        end: { line: 934, column: 177, offset: 26710 }
+        start: { line: 934, column: 2, offset: 26534 },
+        end: { line: 934, column: 177, offset: 26709 }
       }
     },
     {
@@ -5608,8 +5608,8 @@ export default {
       meta: null,
       value: 'assert.equivalent(\n  MyMonad.of(a).flatMap(f),\n  f(a)\n)',
       position: {
-        start: { line: 936, column: 1, offset: 26712 },
-        end: { line: 941, column: 4, offset: 26785 }
+        start: { line: 936, column: 1, offset: 26711 },
+        end: { line: 941, column: 4, offset: 26784 }
       }
     },
     {
@@ -5624,8 +5624,8 @@ export default {
         'console.log(ArrayOf(a).flatMap(f))\n' +
         'console.log(f(a))',
       position: {
-        start: { line: 943, column: 1, offset: 26787 },
-        end: { line: 951, column: 4, offset: 26949 }
+        start: { line: 943, column: 1, offset: 26786 },
+        end: { line: 951, column: 4, offset: 26948 }
       }
     },
     {
@@ -5646,26 +5646,26 @@ export default {
                   type: 'text',
                   value: 'Right Identity: given a monad, chaining a function that wraps a value in a monad should result in the given monad.',
                   position: {
-                    start: { line: 953, column: 5, offset: 26955 },
-                    end: { line: 953, column: 119, offset: 27069 }
+                    start: { line: 953, column: 5, offset: 26954 },
+                    end: { line: 953, column: 119, offset: 27068 }
                   }
                 }
               ],
               position: {
-                start: { line: 953, column: 5, offset: 26955 },
-                end: { line: 953, column: 119, offset: 27069 }
+                start: { line: 953, column: 5, offset: 26954 },
+                end: { line: 953, column: 119, offset: 27068 }
               }
             }
           ],
           position: {
-            start: { line: 953, column: 2, offset: 26952 },
-            end: { line: 953, column: 119, offset: 27069 }
+            start: { line: 953, column: 2, offset: 26951 },
+            end: { line: 953, column: 119, offset: 27068 }
           }
         }
       ],
       position: {
-        start: { line: 953, column: 2, offset: 26952 },
-        end: { line: 953, column: 119, offset: 27069 }
+        start: { line: 953, column: 2, offset: 26951 },
+        end: { line: 953, column: 119, offset: 27068 }
       }
     },
     {
@@ -5674,8 +5674,8 @@ export default {
       meta: null,
       value: 'assert.equivalent(\n  myMonad.flatMap(MyMonad.of),\n  myMonad\n)',
       position: {
-        start: { line: 955, column: 1, offset: 27071 },
-        end: { line: 960, column: 4, offset: 27150 }
+        start: { line: 955, column: 1, offset: 27070 },
+        end: { line: 960, column: 4, offset: 27149 }
       }
     },
     {
@@ -5689,8 +5689,8 @@ export default {
         'console.log(myArray.flatMap(ArrayOf))\n' +
         'console.log(myArray)',
       position: {
-        start: { line: 962, column: 1, offset: 27152 },
-        end: { line: 969, column: 4, offset: 27316 }
+        start: { line: 962, column: 1, offset: 27151 },
+        end: { line: 969, column: 4, offset: 27315 }
       }
     },
     {
@@ -5711,26 +5711,26 @@ export default {
                   type: 'text',
                   value: 'Associativity: the order of execution of chaining monadic operations on a monad does not affect the final result.',
                   position: {
-                    start: { line: 971, column: 5, offset: 27322 },
-                    end: { line: 971, column: 118, offset: 27435 }
+                    start: { line: 971, column: 5, offset: 27321 },
+                    end: { line: 971, column: 118, offset: 27434 }
                   }
                 }
               ],
               position: {
-                start: { line: 971, column: 5, offset: 27322 },
-                end: { line: 971, column: 118, offset: 27435 }
+                start: { line: 971, column: 5, offset: 27321 },
+                end: { line: 971, column: 118, offset: 27434 }
               }
             }
           ],
           position: {
-            start: { line: 971, column: 2, offset: 27319 },
-            end: { line: 971, column: 118, offset: 27435 }
+            start: { line: 971, column: 2, offset: 27318 },
+            end: { line: 971, column: 118, offset: 27434 }
           }
         }
       ],
       position: {
-        start: { line: 971, column: 2, offset: 27319 },
-        end: { line: 971, column: 118, offset: 27435 }
+        start: { line: 971, column: 2, offset: 27318 },
+        end: { line: 971, column: 118, offset: 27434 }
       }
     },
     {
@@ -5743,8 +5743,8 @@ export default {
         '  myMonad.flatMap(x => f(x).flatMap(g))\n' +
         ')',
       position: {
-        start: { line: 973, column: 1, offset: 27437 },
-        end: { line: 979, column: 4, offset: 27593 }
+        start: { line: 973, column: 1, offset: 27436 },
+        end: { line: 979, column: 4, offset: 27592 }
       }
     },
     {
@@ -5759,8 +5759,8 @@ export default {
         'console.log(myArray.flatMap(f).flatMap(g))\n' +
         'console.log(myArray.flatMap(x => f(x).flatMap(g)))',
       position: {
-        start: { line: 981, column: 1, offset: 27595 },
-        end: { line: 989, column: 4, offset: 27819 }
+        start: { line: 981, column: 1, offset: 27594 },
+        end: { line: 989, column: 4, offset: 27818 }
       }
     },
     {
@@ -5770,14 +5770,14 @@ export default {
           type: 'text',
           value: 'The following built-in data types are considered to be monads:',
           position: {
-            start: { line: 991, column: 1, offset: 27821 },
-            end: { line: 991, column: 63, offset: 27883 }
+            start: { line: 991, column: 1, offset: 27820 },
+            end: { line: 991, column: 63, offset: 27882 }
           }
         }
       ],
       position: {
-        start: { line: 991, column: 1, offset: 27821 },
-        end: { line: 991, column: 63, offset: 27883 }
+        start: { line: 991, column: 1, offset: 27820 },
+        end: { line: 991, column: 63, offset: 27882 }
       }
     },
     {
@@ -5798,20 +5798,20 @@ export default {
                   type: 'inlineCode',
                   value: 'array',
                   position: {
-                    start: { line: 992, column: 4, offset: 27887 },
-                    end: { line: 992, column: 11, offset: 27894 }
+                    start: { line: 992, column: 4, offset: 27886 },
+                    end: { line: 992, column: 11, offset: 27893 }
                   }
                 }
               ],
               position: {
-                start: { line: 992, column: 4, offset: 27887 },
-                end: { line: 992, column: 11, offset: 27894 }
+                start: { line: 992, column: 4, offset: 27886 },
+                end: { line: 992, column: 11, offset: 27893 }
               }
             }
           ],
           position: {
-            start: { line: 992, column: 2, offset: 27885 },
-            end: { line: 992, column: 11, offset: 27894 }
+            start: { line: 992, column: 2, offset: 27884 },
+            end: { line: 992, column: 11, offset: 27893 }
           }
         },
         {
@@ -5826,20 +5826,20 @@ export default {
                   type: 'inlineCode',
                   value: 'string',
                   position: {
-                    start: { line: 993, column: 4, offset: 27898 },
-                    end: { line: 993, column: 12, offset: 27906 }
+                    start: { line: 993, column: 4, offset: 27897 },
+                    end: { line: 993, column: 12, offset: 27905 }
                   }
                 }
               ],
               position: {
-                start: { line: 993, column: 4, offset: 27898 },
-                end: { line: 993, column: 12, offset: 27906 }
+                start: { line: 993, column: 4, offset: 27897 },
+                end: { line: 993, column: 12, offset: 27905 }
               }
             }
           ],
           position: {
-            start: { line: 993, column: 2, offset: 27896 },
-            end: { line: 993, column: 12, offset: 27906 }
+            start: { line: 993, column: 2, offset: 27895 },
+            end: { line: 993, column: 12, offset: 27905 }
           }
         },
         {
@@ -5854,20 +5854,20 @@ export default {
                   type: 'inlineCode',
                   value: 'set',
                   position: {
-                    start: { line: 994, column: 4, offset: 27910 },
-                    end: { line: 994, column: 9, offset: 27915 }
+                    start: { line: 994, column: 4, offset: 27909 },
+                    end: { line: 994, column: 9, offset: 27914 }
                   }
                 }
               ],
               position: {
-                start: { line: 994, column: 4, offset: 27910 },
-                end: { line: 994, column: 9, offset: 27915 }
+                start: { line: 994, column: 4, offset: 27909 },
+                end: { line: 994, column: 9, offset: 27914 }
               }
             }
           ],
           position: {
-            start: { line: 994, column: 2, offset: 27908 },
-            end: { line: 994, column: 9, offset: 27915 }
+            start: { line: 994, column: 2, offset: 27907 },
+            end: { line: 994, column: 9, offset: 27914 }
           }
         },
         {
@@ -5882,20 +5882,20 @@ export default {
                   type: 'inlineCode',
                   value: 'genreator',
                   position: {
-                    start: { line: 995, column: 4, offset: 27919 },
-                    end: { line: 995, column: 15, offset: 27930 }
+                    start: { line: 995, column: 4, offset: 27918 },
+                    end: { line: 995, column: 15, offset: 27929 }
                   }
                 }
               ],
               position: {
-                start: { line: 995, column: 4, offset: 27919 },
-                end: { line: 995, column: 15, offset: 27930 }
+                start: { line: 995, column: 4, offset: 27918 },
+                end: { line: 995, column: 15, offset: 27929 }
               }
             }
           ],
           position: {
-            start: { line: 995, column: 2, offset: 27917 },
-            end: { line: 995, column: 15, offset: 27930 }
+            start: { line: 995, column: 2, offset: 27916 },
+            end: { line: 995, column: 15, offset: 27929 }
           }
         },
         {
@@ -5910,20 +5910,20 @@ export default {
                   type: 'inlineCode',
                   value: 'async generator',
                   position: {
-                    start: { line: 996, column: 4, offset: 27934 },
-                    end: { line: 996, column: 21, offset: 27951 }
+                    start: { line: 996, column: 4, offset: 27933 },
+                    end: { line: 996, column: 21, offset: 27950 }
                   }
                 }
               ],
               position: {
-                start: { line: 996, column: 4, offset: 27934 },
-                end: { line: 996, column: 21, offset: 27951 }
+                start: { line: 996, column: 4, offset: 27933 },
+                end: { line: 996, column: 21, offset: 27950 }
               }
             }
           ],
           position: {
-            start: { line: 996, column: 2, offset: 27932 },
-            end: { line: 996, column: 21, offset: 27951 }
+            start: { line: 996, column: 2, offset: 27931 },
+            end: { line: 996, column: 21, offset: 27950 }
           }
         },
         {
@@ -5938,26 +5938,26 @@ export default {
                   type: 'inlineCode',
                   value: 'object',
                   position: {
-                    start: { line: 997, column: 4, offset: 27955 },
-                    end: { line: 997, column: 12, offset: 27963 }
+                    start: { line: 997, column: 4, offset: 27954 },
+                    end: { line: 997, column: 12, offset: 27962 }
                   }
                 }
               ],
               position: {
-                start: { line: 997, column: 4, offset: 27955 },
-                end: { line: 997, column: 12, offset: 27963 }
+                start: { line: 997, column: 4, offset: 27954 },
+                end: { line: 997, column: 12, offset: 27962 }
               }
             }
           ],
           position: {
-            start: { line: 997, column: 2, offset: 27953 },
-            end: { line: 997, column: 12, offset: 27963 }
+            start: { line: 997, column: 2, offset: 27952 },
+            end: { line: 997, column: 12, offset: 27962 }
           }
         }
       ],
       position: {
-        start: { line: 992, column: 2, offset: 27885 },
-        end: { line: 997, column: 12, offset: 27963 }
+        start: { line: 992, column: 2, offset: 27884 },
+        end: { line: 997, column: 12, offset: 27962 }
       }
     },
     {
@@ -5968,14 +5968,14 @@ export default {
           type: 'text',
           value: 'Conclusion',
           position: {
-            start: { line: 999, column: 4, offset: 27968 },
-            end: { line: 999, column: 14, offset: 27978 }
+            start: { line: 999, column: 4, offset: 27967 },
+            end: { line: 999, column: 14, offset: 27977 }
           }
         }
       ],
       position: {
-        start: { line: 999, column: 1, offset: 27965 },
-        end: { line: 999, column: 14, offset: 27978 }
+        start: { line: 999, column: 1, offset: 27964 },
+        end: { line: 999, column: 14, offset: 27977 }
       }
     },
     {
@@ -5985,14 +5985,14 @@ export default {
           type: 'text',
           value: 'This concludes the data types of the [A]synchronous Functional Programming paradigm.',
           position: {
-            start: { line: 1001, column: 1, offset: 27980 },
-            end: { line: 1001, column: 85, offset: 28064 }
+            start: { line: 1001, column: 1, offset: 27979 },
+            end: { line: 1001, column: 85, offset: 28063 }
           }
         }
       ],
       position: {
-        start: { line: 1001, column: 1, offset: 27980 },
-        end: { line: 1001, column: 85, offset: 28064 }
+        start: { line: 1001, column: 1, offset: 27979 },
+        end: { line: 1001, column: 85, offset: 28063 }
       }
     },
     {
@@ -6002,8 +6002,8 @@ export default {
           type: 'text',
           value: 'If you are interested in getting started with rubico and [A]synchronous Functional Programming, please visit the home page for the library: ',
           position: {
-            start: { line: 1003, column: 1, offset: 28066 },
-            end: { line: 1003, column: 141, offset: 28206 }
+            start: { line: 1003, column: 1, offset: 28065 },
+            end: { line: 1003, column: 141, offset: 28205 }
           }
         },
         {
@@ -6015,33 +6015,33 @@ export default {
               type: 'text',
               value: 'rubico.land',
               position: {
-                start: { line: 1003, column: 142, offset: 28207 },
-                end: { line: 1003, column: 153, offset: 28218 }
+                start: { line: 1003, column: 142, offset: 28206 },
+                end: { line: 1003, column: 153, offset: 28217 }
               }
             }
           ],
           position: {
-            start: { line: 1003, column: 141, offset: 28206 },
-            end: { line: 1003, column: 176, offset: 28241 }
+            start: { line: 1003, column: 141, offset: 28205 },
+            end: { line: 1003, column: 176, offset: 28240 }
           }
         },
         {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 1003, column: 176, offset: 28241 },
-            end: { line: 1003, column: 177, offset: 28242 }
+            start: { line: 1003, column: 176, offset: 28240 },
+            end: { line: 1003, column: 177, offset: 28241 }
           }
         }
       ],
       position: {
-        start: { line: 1003, column: 1, offset: 28066 },
-        end: { line: 1003, column: 177, offset: 28242 }
+        start: { line: 1003, column: 1, offset: 28065 },
+        end: { line: 1003, column: 177, offset: 28241 }
       }
     }
   ],
   position: {
     start: { line: 1, column: 1, offset: 0 },
-    end: { line: 1004, column: 1, offset: 28243 }
+    end: { line: 1004, column: 1, offset: 28242 }
   }
 }
