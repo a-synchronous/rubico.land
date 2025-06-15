@@ -29,7 +29,7 @@ Number('3') // 3
 
 ### String
 
-The string primitive data type represents strings like `'abc'` or `'Hello World!'`. Strings are useful for storing textual data, which is pretty much the entire internet aside from numbers. To create a string in JavaScript you can a string literal.
+The string primitive data type represents strings like `'abc'` or `'Hello World!'`. Strings are useful for storing textual data, which is pretty much the entire internet aside from numbers. To create a string in JavaScript you can write a string literal.
 
 ```javascript
 'Hello World!'
@@ -68,14 +68,14 @@ Boolean(0) // false
 
 ### Binary
 
-The binary primitive data type is useful for storing binary data. Some common forms of binary data are image data and video data. You can use one of the TypedArray constructors to create binary data types.
+The binary primitive data type is useful for storing binary data. Some common forms of binary data are image data and video data. You can use one of the `TypedArray` constructors to create binary data types.
 
 ```javascript
 // Uint8Array is a TypedArray constructor
 new Uint8Array([1, 2, 3])
 ```
 
-In practice, you usually won't use the constructors when working with binary data. Instead, you would access the binary data through an API.
+In practice, you usually won't use constructors when working with binary data. Instead, you would access the binary data through an API.
 
 ```javascript
 const fileReader = new FileReader()
@@ -87,7 +87,7 @@ fileReader.readAsArrayBuffer(myFile)
 
 ### Symbol
 
-The symbol primitive data type represents unique and [immutable](https://developer.mozilla.org/en-US/docs/Glossary/Immutable) values, and are primarily used as identifiers for object properties.
+The symbol primitive data type represents unique and [immutable](https://developer.mozilla.org/en-US/docs/Glossary/Immutable) values, and is primarily used as identifiers for object properties.
 
 ```javascript
 const mySymbol1 = Symbol('description')
@@ -98,14 +98,18 @@ mySymbol1 == mySymbol2 // false
 
 Object properties defined with symbols are non-enumerable, and won't be discoverable with standard object iteration methods like `for...in` loops or `Object.keys`.
 
-```javascript
+```javascript [playground]
 const o = { a: 1, b: 2, c: 3 }
 
 const s1 = Symbol('1')
-const o[s1] = 'my-unique-prop'
+o[s1] = 'my-unique-prop'
 
+// symbol s1 won't be enumerated here
 for (const key in o) {
-  // symbol s1 won't be enumerated here
+  console.log(key)
+  // a
+  // b
+  // c
 }
 ```
 
@@ -113,7 +117,7 @@ Some useful built-in symbols are `Symbol.iterator` and `Symbol.asyncIterator`. T
 
 ### Nullish
 
-Finally, the nullish data type represents the absence of a meaningful value and encopasses two values: `null` and `undefined`. Both of these values are very similar in that they both express the absence of a meaningful value, but they are used differently in practice. Generally, you would use `null` to express the intentional absence of an object value, while you wouldn't normally have to use `undefined`, though it is sometimes stylish to return `undefined` from a function.
+The nullish data type represents the absence of a meaningful value and encopasses two values: `null` and `undefined`. Both of these values are very similar in that they both express the absence of a meaningful value, but they are used differently in practice. Generally, you would use `null` to express the intentional absence of an object value, while you wouldn't normally have to use `undefined`, though it is sometimes useful to return `undefined` from a function.
 
 ```javascript
 function myFunction(arg) {
@@ -203,13 +207,13 @@ for (const n of numbers) {
 
 ### Object
 
-The object data type is an unordered collection of elements that is accessed by string or symbol keys, as opposed to numerical indexes for arrays. You can create an object by writing an object literal.
+The object data type is an unordered collection of elements that is accessed by string or symbol key, as opposed to numerical index for arrays. You can create an object by writing an object literal.
 
 ```javascript
 { a: 1, b: 'foo' }
 ```
 
-You can also use the `Object` constructor to create an object, though this is not as common.
+You can also use the `Object` constructor to create an object, though this is less common.
 
 ```javascript
 new Object()
@@ -217,7 +221,7 @@ new Object()
 
 To insert an element into an object, use property accessor syntax. Property accessor syntax has two forms: dot notation and bracket notation.
 
-```javascript
+```javascript [playground]
 const o = {}
 
 o.a = 1 // set the number 1 as an element at key 'a' on the object o
@@ -225,15 +229,19 @@ o.a = 1 // set the number 1 as an element at key 'a' on the object o
 const myPropertyName = 'My-Prop'
 o[myPropertyName] = 'foo'
 // set the string 'foo' as an element at key 'My-Prop' on the object o
+
+console.log(o) // { a: 1, 'My-Prop': 'foo' }
 ```
 
 To remove an item from an object, use property accessor syntax with the `delete` keyword.
 
-```javascript
+```javascript [playground]
 const o = { a: 1, 'My-Prop': 'foo' }
 
 delete o.a // remove the element 1 under key 'a' from object o
 delete o['My-Prop'] // remove the element 'foo' under key 'My-Prop' from object o
+
+console.log(o) // {}
 ```
 
 To iterate through the enumerable properties of an object, use a `for...in` loop.
@@ -305,7 +313,7 @@ for (const num of mySet) {
 
 ### Map
 
-The map data type is a collection of elements ordered by insertion order and can be accessed using keys of any data type. Maps are similar to objects in many regards but with a few crucial differences:
+The map data type is a collection of elements ordered by insertion order that can be accessed using keys of any data type. Maps are similar to objects in many regards but with a few crucial differences:
   * In scenarios involving frequent insertions and deletions of elements, maps are more performant than objects.
   * Maps need to be first converted to plain objects before they can be serialized, e.g. via `JSON.stringify`
   * Map keys can be any value (including functions, objects, or any primitive), while object keys can only be strings or symbols.
@@ -395,7 +403,7 @@ The iterable protocol is implemented on classes and objects under the method `[S
 
 ```coffeescript [specscript]
 type Iterator = {
-  next: (input? any)=>{ done: boolean, value: any }
+  next: (input? any)=>({ value: any, done: boolean })
 }
 
 type Iterable = {
@@ -512,30 +520,43 @@ Asynchronous data types are data types that represent asynchronous operations. F
 
 ### Promise
 
-The promise data type represents an asynchronous operation that resolves to a single value, or rejects with an error. The way you can access the resolved value or rejected error of a promise is via the `.then` method of a promise instance.
+The promise data type represents an asynchronous operation that resolves to a single value, or rejects with an error. Promise instances have a `.then` and a `.catch` method.
 
-```javascript
-myPromise.then(resolvedValue => {
-  // resolvedValue is the resolved value of myPromise
-}).catch(error => {
-  // error is the rejected error of myPromise
-})
-```
+```coffeescript [specscript]
+type SyncOrAsyncResolver = any=>Promise|any
+type SyncOrAsyncErrorResolver = (Error|any)=>Promise|any
 
-You can also use the keywords `async` and `await` to access the resolved value or rejected error of a promise.
-
-```javascript
-async function myFunction() {
-  try {
-    const resolvedValue = await myPromise
-    // resolvedValue is the resolved value of myPromise
-  } catch (error) {
-    // error is the rejected error of myPromise
-  }
+type Promise = {
+  then: (onFulfilled SyncOrAsyncResolver, onRejected SyncOrAsyncErrorResolver)=>Promise,
+  catch: (onRejected SyncOrAsyncErrorResolver)=>Promise
 }
 ```
 
-You can use the `Promise` constructor to create a promise.
+The promise's `.then` method resolves the promise's resolved value and catches any errors rejected from the promise. Either of the resolvers provided to a promise's `.then` method may be asynchronous and return a promise.
+
+```javascript
+const onFulfilled = resolvedValue => {
+  // resolvedValue is the resolved value of promise1
+}
+
+const onRejected = error => {
+  // error is the rejected error of promise1
+}
+
+const promise2 = promise1.then(onFulfilled, onRejected)
+
+// promise2 is a promise returned from promise1.then(...)
+```
+
+The promise's `.catch` method catches any errors rejected from a promise.
+
+```javascript
+myPromise.catch(error => {
+  // error is rejected from myPromise
+})
+```
+
+To create a promise, you can use the `Promise` constructor.
 
 ```javascript [playground]
 const myPromise = new Promise((resolve, reject) => {
@@ -559,12 +580,14 @@ myRejectingPromise.catch(error => {
 })
 ```
 
-You can also use methods on the Promise constructor to conveniently create promises.
+You can also use the `.resolve` and `.reject` methods on the `Promise` object to create promises.
 
-```javascript
-Promise.resolve(1) // promise with resolved value 1 that doesn't reject
+```javascript [playground]
+const promiseThatResolves = Promise.resolve(1)
+promiseThatResolves.then(console.log) // 1
 
-Promise.reject(new Error('example')) // promise that rejects with an error with message 'example'
+const promiseThatRejects = Promise.reject(new Error('example'))
+promiseThatRejects.catch(console.error) // Error: example
 ```
 
 In practice, you usually do not have to create promises. Instead, most asynchronous APIs will return a promise.
@@ -583,6 +606,31 @@ promise.then(response => {
 })
 ```
 
+### Async/Await
+
+The `async function` syntax permits the use of the `await` keyword that enables an imperative style of code to handle promises. You can use the `await` keyword from an `async function` to access the resolved value or rejected error of a promise.
+
+```javascript [playground]
+async function handleWithAsyncAwait(myPromise) {
+  try {
+    const resolvedValue = await myPromise
+    // resolvedValue is the resolved value of myPromise
+
+    console.log(resolvedValue)
+  } catch (error) {
+    // error is an error rejected from myPromise
+
+    console.error(error)
+  }
+}
+
+const promiseThatResolves = Promise.resolve(3)
+handleWithAsyncAwait(promiseThatResolves) // 3
+
+const promiseThatRejects = Promise.reject(new Error('rejected'))
+handleWithAsyncAwait(promiseThatRejects) // Error: rejected
+```
+
 ## Asynchronous Iterable Data Types
 Asynchronous iterable data types combine asynchronous data types with iterable data types. All asynchronous iterable data types implement the [async iterable protocol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#the_async_iterator_and_async_iterable_protocols). The only built-in data types that implement this protocol are `AsyncGenerators`. Async iterables are consumable with a `for await...of` loop.
 
@@ -591,7 +639,7 @@ The async iterable protocol is implemented on classes and objects under the meth
 
 ```coffeescript [specscript]
 type AsyncIterator = {
-  next: (input? any)=>Promise<{ done: boolean, value: any }>
+  next: (input? any)=>Promise<{ value: any, done: boolean }>
 }
 
 type AsyncIterable = {
