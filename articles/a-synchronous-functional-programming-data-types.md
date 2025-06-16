@@ -414,40 +414,35 @@ type Iterable = {
 You can implement the iterable protocol on your own classes and objects.
 
 ```javascript [playground]
-class MyClass {
+class MyIterable {
   constructor() {
   }
 
-  * [Symbol.iterator]() {
-    yield 1
-    yield 2
-    yield 3
+  [Symbol.iterator]() {
+    return {
+      count: 0,
+      next() {
+        this.count += 1
+
+        if (this.count > 5) {
+          return { value: undefined, done: true }
+        }
+
+        return { value: this.count, done: false }
+      }
+    }
   }
 }
 
-const myInstance = new MyClass()
-// myInstance created from MyClass is iterable
-for (const item of myInstance) {
-  console.log(item)
+const myIterable = new MyIterable()
+
+for (const number of myIterable) {
+  console.log(number)
   // 1
   // 2
   // 3
-}
-
-const myObject = {
-  * [Symbol.iterator]() {
-    yield 1
-    yield 2
-    yield 3
-  }
-}
-
-// myObject is iterable
-for (const item of myObject) {
-  console.log(item)
-  // 1
-  // 2
-  // 3
+  // 4
+  // 5
 }
 ```
 
@@ -697,14 +692,12 @@ const myAsyncGenerator = myAsyncGeneratorFunction()
 
 // myAsyncGenerator is async iterable
 myAsyncGenerator[Symbol.asyncIterator]() // AsyncGenerator
-;(async () => {
-  for await (const item of myAsyncGenerator) {
-    console.log(item)
-    // 1
-    // 2
-    // 3
-  }
-})()
+for await (const item of myAsyncGenerator) {
+  console.log(item)
+  // 1
+  // 2
+  // 3
+}
 ```
 
 Async generators implement the async iterator protocol by default, so often it is simpler to use an async generator function to implement the async iterable protocol using the syntax `async * [Symbol.asyncIterator]()`.
@@ -723,14 +716,12 @@ class MyClass {
 
 const myInstance = new MyClass()
 // myInstance created from MyClass is async iterable
-;(async () => {
-  for await (const item of myInstance) {
-    console.log(item)
-    // 1
-    // 2
-    // 3
-  }
-})()
+for await (const item of myInstance) {
+  console.log(item)
+  // 1
+  // 2
+  // 3
+}
 
 const myObject = {
   async * [Symbol.asyncIterator]() {
@@ -741,14 +732,12 @@ const myObject = {
 }
 
 // myObject is async iterable
-;(async () => {
-  for await (const item of myObject) {
-    console.log(item)
-    // 1
-    // 2
-    // 3
-  }
-})()
+for await (const item of myObject) {
+  console.log(item)
+  // 1
+  // 2
+  // 3
+}
 ```
 
 ## Algebraic Structures
@@ -906,7 +895,7 @@ The following built-in data types are considered to be foldables:
 
 The semigroup algebraic structure identifies data types with the `.concat` method. Data types implementing `.concat` must conform to the following law:
 
- 1. Associativity: when concatenating three elements, concatenating the first and then the last two is the same as concatenating the first two and then the last.
+ 1. Associativity: the grouping of items between concatenation operations on a semigroup does not affect the final result.
 
 ```javascript
 assert.equivalent(
