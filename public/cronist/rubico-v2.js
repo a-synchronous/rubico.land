@@ -54210,13 +54210,13 @@ export default [
       'Any function can be replaced with a nonfunction (object or primitive) value to be used directly in the operation.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      'switchCase([\n' +
+      'switchCase(false, [\n' +
       '  async function asyncIdentity(value) {\n' +
       '    return value\n' +
       '  },\n' +
       "  'something',\n" +
       "  'default',\n" +
-      '])(false).then(console.log) // default\n' +
+      ']).then(console.log) // default\n' +
       '```\n' +
       '\n' +
       'If every element in the conditional array is a nonfunction value, `switchCase` executes eagerly.\n' +
@@ -54492,13 +54492,13 @@ export default [
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: 'switchCase([\n' +
+            value: 'switchCase(false, [\n' +
               '  async function asyncIdentity(value) {\n' +
               '    return value\n' +
               '  },\n' +
               "  'something',\n" +
               "  'default',\n" +
-              '])(false).then(console.log) // default',
+              ']).then(console.log) // default',
             position: {
               start: { line: 35, column: 1, offset: 1529 },
               end: { line: 43, column: 4, offset: 1701 }
