@@ -502,7 +502,7 @@ const myObject = {
 }
 
 // myObject is iterable
-for await (const item of myObject) {
+for (const item of myObject) {
   console.log(item)
   // 1
   // 2
@@ -981,7 +981,7 @@ The following built-in data types are considered to be monads:
  * `array`
  * `string`
  * `set`
- * `genreator`
+ * `generator`
  * `async generator`
  * `object`
 
