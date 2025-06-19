@@ -14,6 +14,12 @@ const blogPostList = [
 ].map(mdast => ({
   mdast,
   metadata: MdastBlogMetadata(mdast),
-}))
+})).sort((a, b) => {
+  const timeA =
+    new Date(a.metadata.dateUpdated ?? a.metadata.datePublished).getTime()
+  const timeB =
+    new Date(b.metadata.dateUpdated ?? b.metadata.datePublished).getTime()
+  return timeB - timeA
+})
 
 export default blogPostList
