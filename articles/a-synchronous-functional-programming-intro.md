@@ -164,7 +164,7 @@ We see a new operation in the above example with `reduce`. It takes the squared 
 
 ### Conclusion
 
-This concludes the intro the the [A]synchronous Functional Programming paradigm. Thank you for taking the time to read. I hope to produce these articles at least one every few months.
+This concludes the intro the the [A]synchronous Functional Programming paradigm.
 
 If you are curious about rubico and would like to get started, you can visit the home page for the library, [rubico.land](https://rubico.land/).
 
