@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>[A]synchronous Functional Programming - Data Types</title>
+  <title>[A]synchronous Functional Programming - Handling HTTP</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width">
-  <meta name="description" content="Data types in [A]synchronous Functional Programming" />
+  <meta name="description" content="Handling HTTP in [A]synchronous Functional Programming" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="[A]synchronous Functional Programming - Data Types" />
-  <meta name="twitter:description" content="Data types in [A]synchronous Functional Programming" />
-  <meta property="og:title" content="[A]synchronous Functional Programming - Data Types" />
+  <meta name="twitter:title" content="[A]synchronous Functional Programming - Handling HTTP" />
+  <meta name="twitter:description" content="Handling HTTP in [A]synchronous Functional Programming" />
+  <meta property="og:title" content="[A]synchronous Functional Programming - Handling HTTP" />
   <meta property="og:type" content="object" />
-  <meta property="og:url" content="https://rubico.land/blog/a-synchronous-functional-programming-data-types" />
-  <meta property="og:description" content="Data types in [A]synchronous Functional Programming" />
+  <meta property="og:url" content="https://rubico.land/blog/a-synchronous-functional-programming-handling-http" />
+  <meta property="og:description" content="Handling HTTP in [A]synchronous Functional Programming" />
 
   
-  <meta name="image" content="/assets/monad.png" />
-  <meta property="og:image" content="/assets/monad.png" />
-  <meta name="twitter:image" content="/assets/monad.png" />
+  <meta name="image" content="/assets/HTTP_logo.png" />
+  <meta property="og:image" content="/assets/HTTP_logo.png" />
+  <meta name="twitter:image" content="/assets/HTTP_logo.png" />
   
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="canonical" href="https://rubico.land/blog/a-synchronous-functional-programming-data-types">
+  <link rel="canonical" href="https://rubico.land/blog/a-synchronous-functional-programming-handling-http">
 
   <script src="https://unpkg.com/rubico@2.0.1/dist/rubico.min.js" crossorigin></script>
   <script src="https://unpkg.com/rubico@2.0.1/dist/Transducer.min.js" crossorigin></script>

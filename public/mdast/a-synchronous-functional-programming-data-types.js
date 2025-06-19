@@ -6,7 +6,7 @@ export default {
       value: 'title: [A]synchronous Functional Programming - Data Types\n' +
         'author: Richard Tong, CTO and Co-Founder of Claimyr Inc.\n' +
         'date: 2025-06-13\n' +
-        'lastUpdated: 2025-06-15\n' +
+        'lastUpdated: 2025-06-16\n' +
         'path: /blog/a-synchronous-functional-programming-data-types\n' +
         'description: Data types in [A]synchronous Functional Programming\n' +
         'image: /assets/monad.png',

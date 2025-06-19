@@ -678,11 +678,12 @@ h4 {
   text-align: center;
 }
 .blog-post article > p > .image > img {
-  width: 42%;
+  max-height: 30vh;
+  width: 85%;
+  object-fit: contain;
 }
 @media only screen and (max-width: 768px) {
   .blog-post article > p > .image > img {
-    width: 85%;
   }
 }
 

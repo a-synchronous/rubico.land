@@ -116,7 +116,7 @@ pipe(ids, [
 
 Above we see a composition of functions created with the `pipe` operator. `pipe` enables us to chain together operations sequentially, the result of one function becoming the argument to the next. The above composition starts with the ids `[1, 2, 3, 4, 5]`, then using the async-enabled rubico `map` operator, makes a request for each id and parses out the response body. Each parsed out response body is then logged out with the rubico `forEach` operator and the `console.log` function.
 
-In the above example, `console.log` is a first-class function - it is provided to the higher order function `forEach` as an argument. `map` is also a higher order function, accepting the anonymous first-class function `async id => {...`. This combination of higher order functions and first-class functions is what is known as a "function composition". There are no pure functions in the above example.
+In the above example, `console.log` is a first-class function - it is provided to the higher order function `forEach` as an argument. `map` is also a higher order function, accepting the anonymous first-class function `async id => {...}`. This combination of higher order functions and first-class functions is what is known as a "function composition". There are no pure functions in the above example.
 
 Now consider an example with pure functions:
 

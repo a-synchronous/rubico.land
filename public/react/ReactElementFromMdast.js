@@ -108,7 +108,17 @@ const ReactElementFromMdast = ReactElement(props => {
             style: { display: 'flex', placeItems: 'center' },
           }, [H3({ id: anchorHash }, ReactElementFromMdastRecurse(mdast))])
         }
-        case 4: return H4(ReactElementFromMdastRecurse(mdast))
+        case 4: {
+          const anchorHash = pipe(mdast, [
+            anchorHashFromMdast,
+            anchorHashFormat,
+          ])
+          return A({
+            class: 'anchor-hash',
+            href: `#${anchorHash}`,
+            style: { display: 'flex', placeItems: 'center' },
+          }, [H4({ id: anchorHash }, ReactElementFromMdastRecurse(mdast))])
+        }
         case 5: return H5(ReactElementFromMdastRecurse(mdast))
         default: return H6(ReactElementFromMdastRecurse(mdast))
       }
