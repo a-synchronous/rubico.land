@@ -2,7 +2,7 @@
 title: [A]synchronous Functional Programming - Intro
 author: Richard Tong, CTO and Co-Founder of Claimyr Inc.
 date: 2024-11-26
-lastModified: 2025-06-19
+updated: 2025-06-19
 path: /blog/a-synchronous-functional-programming-intro
 description: An introduction to the [A]synchronous Functional Programming paradigm
 image: https://rubico.land/assets/rubico-logo-large.png
