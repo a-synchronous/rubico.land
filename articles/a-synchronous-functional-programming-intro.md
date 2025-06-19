@@ -156,7 +156,7 @@ pipe(numbers, [
 ])
 ```
 
-In the above example, `add` and `square` are pure functions. You can see they are very simple, expressed almost as pure math. A given input to `add` or `square` would result in the same output for each invocation. The `add` function is provided as a first class function to the `reduce` higher order function, and the `square` function is provided as a first class function to the `map` higher order function.
+In the above example, `add` and `square` are pure functions. They are very simple, expressed almost as pure math. A given input to `add` or `square` would result in the same output for each invocation. The `add` function is provided as a first class function to the `reduce` higher order function, and the `square` function is provided as a first class function to the `map` higher order function.
 
 The combination of first class and high order functions above is similar to what we have seen with `compose` in the previous example. The difference is the use of the operator `pipe` over `compose`, in this case instead of creating a function composition with `compose` we create a "function pipeline" with `pipe`.
 
