@@ -10,6 +10,7 @@ import useGlobalState from './useGlobalState.js'
  *   metadata: {
  *     title: string,
  *     author: string,
+ *     dateUpdated: string,
  *     datePublished: string,
  *     href: string,
  *     description: string,
@@ -36,6 +37,7 @@ const BlogPost = ReactElement(props => {
   const {
     title,
     author,
+    dateUpdated,
     datePublished,
     href,
     description,
@@ -87,7 +89,11 @@ const BlogPost = ReactElement(props => {
       DownArrowSvg(),
     ]),
 
-    P(`${datePublished} by ${author}`),
+    dateUpdated ? [
+      P(`Updated ${dateUpdated} by ${author}`),
+    ] : [
+      P(`${datePublished} by ${author}`),
+    ],
 
     isActive ? [
       ...image == null ? [] : [

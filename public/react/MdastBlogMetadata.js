@@ -12,6 +12,9 @@ const MdastBlogMetadata = function (mdast) {
   return {
     title: data.title,
     datePublished: DatePublished(data.date),
+    ...data.updated ? {
+      dateUpdated: DatePublished(data.updated),
+    } : {},
     href: data.path,
     author: data.author,
     coverImageUrl: data.coverImageUrl,

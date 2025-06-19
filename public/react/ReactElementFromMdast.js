@@ -67,6 +67,7 @@ const ReactElementFromMdast = ReactElement(props => {
         case 'meta':
         case 'author':
         case 'published':
+        case 'updated':
           return P({ className: 'blog-metadata' }, mdast.title)
         default:
           return Span()
