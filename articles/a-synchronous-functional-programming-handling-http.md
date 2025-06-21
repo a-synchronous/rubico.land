@@ -39,7 +39,7 @@ The basic structure of a URL includes the following parts:
 
 ![url-structure-scheme-diagram.jpg](/assets/url-structure-scheme-diagram.jpg)
 
-The scheme of a URL specifies the protocol that the client will use to send a request to the server. For HTTP, the scheme could be `http` or `https`. Other schemes include `ws` and `wss` for the WebSocket protocol, `mailto` for the "mailto:" protocol, and `file` for the "file:" protocol.
+The scheme of a URL specifies the protocol that the client will use to send a request to the server. For HTTP, the scheme could be `http` or `https`. Other schemes include `ws` and `wss` for the [WebSocket](https://http.dev/ws) protocol, `mailto` for the "mailto:" protocol, and `file` for the "file:" protocol.
 
 ### URL Domain Name
 
