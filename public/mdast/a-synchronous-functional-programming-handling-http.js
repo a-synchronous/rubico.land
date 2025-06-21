@@ -8225,6 +8225,50 @@ export default {
       }
     },
     {
+      type: 'paragraph',
+      children: [
+        {
+          type: 'text',
+          value: 'You can find a working example of the above HTTP server code at ',
+          position: {
+            start: { line: 877, column: 1, offset: 32975 },
+            end: { line: 877, column: 65, offset: 33039 }
+          }
+        },
+        {
+          type: 'link',
+          title: null,
+          url: 'https://github.com/a-synchronous/rubico/tree/master/examples/rubico-http-server',
+          children: [
+            {
+              type: 'text',
+              value: 'rubico-http-server',
+              position: {
+                start: { line: 877, column: 66, offset: 33040 },
+                end: { line: 877, column: 84, offset: 33058 }
+              }
+            }
+          ],
+          position: {
+            start: { line: 877, column: 65, offset: 33039 },
+            end: { line: 877, column: 166, offset: 33140 }
+          }
+        },
+        {
+          type: 'text',
+          value: '.',
+          position: {
+            start: { line: 877, column: 166, offset: 33140 },
+            end: { line: 877, column: 167, offset: 33141 }
+          }
+        }
+      ],
+      position: {
+        start: { line: 877, column: 1, offset: 32975 },
+        end: { line: 877, column: 167, offset: 33141 }
+      }
+    },
+    {
       type: 'heading',
       depth: 3,
       children: [
@@ -8232,14 +8276,14 @@ export default {
           type: 'text',
           value: 'Conclusion',
           position: {
-            start: { line: 877, column: 5, offset: 32979 },
-            end: { line: 877, column: 15, offset: 32989 }
+            start: { line: 879, column: 5, offset: 33147 },
+            end: { line: 879, column: 15, offset: 33157 }
           }
         }
       ],
       position: {
-        start: { line: 877, column: 1, offset: 32975 },
-        end: { line: 877, column: 15, offset: 32989 }
+        start: { line: 879, column: 1, offset: 33143 },
+        end: { line: 879, column: 15, offset: 33157 }
       }
     },
     {
@@ -8249,14 +8293,14 @@ export default {
           type: 'text',
           value: 'This concludes Handling HTTP in [A]synchronous Functional Programming.',
           position: {
-            start: { line: 879, column: 1, offset: 32991 },
-            end: { line: 879, column: 71, offset: 33061 }
+            start: { line: 881, column: 1, offset: 33159 },
+            end: { line: 881, column: 71, offset: 33229 }
           }
         }
       ],
       position: {
-        start: { line: 879, column: 1, offset: 32991 },
-        end: { line: 879, column: 71, offset: 33061 }
+        start: { line: 881, column: 1, offset: 33159 },
+        end: { line: 881, column: 71, offset: 33229 }
       }
     },
     {
@@ -8266,8 +8310,8 @@ export default {
           type: 'text',
           value: "If you are curious about rubico and would like to get started, please visit rubico's home page: ",
           position: {
-            start: { line: 881, column: 1, offset: 33063 },
-            end: { line: 881, column: 97, offset: 33159 }
+            start: { line: 883, column: 1, offset: 33231 },
+            end: { line: 883, column: 97, offset: 33327 }
           }
         },
         {
@@ -8279,33 +8323,33 @@ export default {
               type: 'text',
               value: 'rubico.land',
               position: {
-                start: { line: 881, column: 98, offset: 33160 },
-                end: { line: 881, column: 109, offset: 33171 }
+                start: { line: 883, column: 98, offset: 33328 },
+                end: { line: 883, column: 109, offset: 33339 }
               }
             }
           ],
           position: {
-            start: { line: 881, column: 97, offset: 33159 },
-            end: { line: 881, column: 113, offset: 33175 }
+            start: { line: 883, column: 97, offset: 33327 },
+            end: { line: 883, column: 113, offset: 33343 }
           }
         },
         {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 881, column: 113, offset: 33175 },
-            end: { line: 881, column: 114, offset: 33176 }
+            start: { line: 883, column: 113, offset: 33343 },
+            end: { line: 883, column: 114, offset: 33344 }
           }
         }
       ],
       position: {
-        start: { line: 881, column: 1, offset: 33063 },
-        end: { line: 881, column: 114, offset: 33176 }
+        start: { line: 883, column: 1, offset: 33231 },
+        end: { line: 883, column: 114, offset: 33344 }
       }
     }
   ],
   position: {
     start: { line: 1, column: 1, offset: 0 },
-    end: { line: 882, column: 1, offset: 33177 }
+    end: { line: 884, column: 1, offset: 33345 }
   }
 }
