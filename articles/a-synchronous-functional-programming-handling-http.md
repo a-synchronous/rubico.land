@@ -272,11 +272,11 @@ The requested content is not available until the client makes a payment.
 
 ##### 403 Forbidden
 
-The server is refusing the client access to the requested resource. The client's authentication credentials are usually valid.
+The server is refusing the client access to the requested resource.
 
 ##### 404 Not Found
 
-The server cannot find the requested resource. The URL is not recognized, or the URL is recognized but the requested resource does not exist.
+The server cannot find the requested resource. Either the URL is not recognized, or the URL is recognized but the requested resource does not exist.
 
 ##### 405 Method Not Allowed
 
@@ -308,7 +308,7 @@ The [Content-Length](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference
 
 ##### 412 Precondition Failed
 
-The request headers has indicated preconditions that the server does not meet.
+The request headers have indicated preconditions that the server does not meet.
 
 ##### 413 Content Too Large
 
@@ -436,7 +436,7 @@ Some examples of HTTP response bodies:
 
 ## HTTP Server
 
-An HTTP server is a component of a "web server" or software application running inside a computer that listens on a specific port for HTTP requests. The HTTP server processes those requests and sends back HTTP responses. The [NodeJS](https://en.wikipedia.org/wiki/Node.js) JavaScript code below is part of a software application that runs inside a computer or "server" in a data center.
+An HTTP server is a component of a "web server" or software application running inside a computer that listens on a specific port for HTTP requests. The HTTP server processes those requests and sends back HTTP responses. The [NodeJS](https://nodejs.org/en) JavaScript code below is part of a software application that runs inside a computer or "server" in a data center.
 
 We can use the NodeJS `http` module to create an HTTP server.
 
@@ -455,7 +455,7 @@ const port = 8080
 server.listen(port)
 ```
 
-The example code above creates an HTTP server with `http.createServer` that takes a simple handler `(request, response) => {...}`. The HTTP server starts listening on port `8080` with the call to `server.listen`.
+The example code above creates a NodeJS HTTP server with `http.createServer` that takes a simple handler `(request, response) => {...}` that only responds with status `200` and body `ok`. The HTTP server starts listening on port `8080` with the call to `server.listen`.
 
 An HTTP server has the following properties:
  * port
