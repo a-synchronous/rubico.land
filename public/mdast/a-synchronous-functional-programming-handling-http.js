@@ -4332,16 +4332,16 @@ export default {
       children: [
         {
           type: 'text',
-          value: "The server is refusing the client access to the requested resource. The client's authentication credentials are usually valid.",
+          value: 'The server is refusing the client access to the requested resource.',
           position: {
             start: { line: 275, column: 1, offset: 13633 },
-            end: { line: 275, column: 127, offset: 13759 }
+            end: { line: 275, column: 68, offset: 13700 }
           }
         }
       ],
       position: {
         start: { line: 275, column: 1, offset: 13633 },
-        end: { line: 275, column: 127, offset: 13759 }
+        end: { line: 275, column: 68, offset: 13700 }
       }
     },
     {
@@ -4352,14 +4352,14 @@ export default {
           type: 'text',
           value: '404 Not Found',
           position: {
-            start: { line: 277, column: 7, offset: 13767 },
-            end: { line: 277, column: 20, offset: 13780 }
+            start: { line: 277, column: 7, offset: 13708 },
+            end: { line: 277, column: 20, offset: 13721 }
           }
         }
       ],
       position: {
-        start: { line: 277, column: 1, offset: 13761 },
-        end: { line: 277, column: 20, offset: 13780 }
+        start: { line: 277, column: 1, offset: 13702 },
+        end: { line: 277, column: 20, offset: 13721 }
       }
     },
     {
@@ -4367,16 +4367,16 @@ export default {
       children: [
         {
           type: 'text',
-          value: 'The server cannot find the requested resource. The URL is not recognized, or the URL is recognized but the requested resource does not exist.',
+          value: 'The server cannot find the requested resource. Either the URL is not recognized, or the URL is recognized but the requested resource does not exist.',
           position: {
-            start: { line: 279, column: 1, offset: 13782 },
-            end: { line: 279, column: 142, offset: 13923 }
+            start: { line: 279, column: 1, offset: 13723 },
+            end: { line: 279, column: 149, offset: 13871 }
           }
         }
       ],
       position: {
-        start: { line: 279, column: 1, offset: 13782 },
-        end: { line: 279, column: 142, offset: 13923 }
+        start: { line: 279, column: 1, offset: 13723 },
+        end: { line: 279, column: 149, offset: 13871 }
       }
     },
     {
@@ -4387,14 +4387,14 @@ export default {
           type: 'text',
           value: '405 Method Not Allowed',
           position: {
-            start: { line: 281, column: 7, offset: 13931 },
-            end: { line: 281, column: 29, offset: 13953 }
+            start: { line: 281, column: 7, offset: 13879 },
+            end: { line: 281, column: 29, offset: 13901 }
           }
         }
       ],
       position: {
-        start: { line: 281, column: 1, offset: 13925 },
-        end: { line: 281, column: 29, offset: 13953 }
+        start: { line: 281, column: 1, offset: 13873 },
+        end: { line: 281, column: 29, offset: 13901 }
       }
     },
     {
@@ -4404,14 +4404,14 @@ export default {
           type: 'text',
           value: 'The request method is known by the server but it is not supported for the requested resource.',
           position: {
-            start: { line: 283, column: 1, offset: 13955 },
-            end: { line: 283, column: 94, offset: 14048 }
+            start: { line: 283, column: 1, offset: 13903 },
+            end: { line: 283, column: 94, offset: 13996 }
           }
         }
       ],
       position: {
-        start: { line: 283, column: 1, offset: 13955 },
-        end: { line: 283, column: 94, offset: 14048 }
+        start: { line: 283, column: 1, offset: 13903 },
+        end: { line: 283, column: 94, offset: 13996 }
       }
     },
     {
@@ -4422,14 +4422,14 @@ export default {
           type: 'text',
           value: '406 Not Acceptable',
           position: {
-            start: { line: 285, column: 7, offset: 14056 },
-            end: { line: 285, column: 25, offset: 14074 }
+            start: { line: 285, column: 7, offset: 14004 },
+            end: { line: 285, column: 25, offset: 14022 }
           }
         }
       ],
       position: {
-        start: { line: 285, column: 1, offset: 14050 },
-        end: { line: 285, column: 25, offset: 14074 }
+        start: { line: 285, column: 1, offset: 13998 },
+        end: { line: 285, column: 25, offset: 14022 }
       }
     },
     {
@@ -4439,8 +4439,8 @@ export default {
           type: 'text',
           value: "The server is unable to provide a response that matches the client's requested format, typically specified in the ",
           position: {
-            start: { line: 287, column: 1, offset: 14076 },
-            end: { line: 287, column: 115, offset: 14190 }
+            start: { line: 287, column: 1, offset: 14024 },
+            end: { line: 287, column: 115, offset: 14138 }
           }
         },
         {
@@ -4452,28 +4452,28 @@ export default {
               type: 'text',
               value: 'Accept',
               position: {
-                start: { line: 287, column: 116, offset: 14191 },
-                end: { line: 287, column: 122, offset: 14197 }
+                start: { line: 287, column: 116, offset: 14139 },
+                end: { line: 287, column: 122, offset: 14145 }
               }
             }
           ],
           position: {
-            start: { line: 287, column: 115, offset: 14190 },
-            end: { line: 287, column: 199, offset: 14274 }
+            start: { line: 287, column: 115, offset: 14138 },
+            end: { line: 287, column: 199, offset: 14222 }
           }
         },
         {
           type: 'text',
           value: ' header of the request.',
           position: {
-            start: { line: 287, column: 199, offset: 14274 },
-            end: { line: 287, column: 222, offset: 14297 }
+            start: { line: 287, column: 199, offset: 14222 },
+            end: { line: 287, column: 222, offset: 14245 }
           }
         }
       ],
       position: {
-        start: { line: 287, column: 1, offset: 14076 },
-        end: { line: 287, column: 222, offset: 14297 }
+        start: { line: 287, column: 1, offset: 14024 },
+        end: { line: 287, column: 222, offset: 14245 }
       }
     },
     {
@@ -4484,14 +4484,14 @@ export default {
           type: 'text',
           value: '407 Proxy Authentication Required',
           position: {
-            start: { line: 289, column: 7, offset: 14305 },
-            end: { line: 289, column: 40, offset: 14338 }
+            start: { line: 289, column: 7, offset: 14253 },
+            end: { line: 289, column: 40, offset: 14286 }
           }
         }
       ],
       position: {
-        start: { line: 289, column: 1, offset: 14299 },
-        end: { line: 289, column: 40, offset: 14338 }
+        start: { line: 289, column: 1, offset: 14247 },
+        end: { line: 289, column: 40, offset: 14286 }
       }
     },
     {
@@ -4501,8 +4501,8 @@ export default {
           type: 'text',
           value: 'The request lacks valid authentication credentials for the ',
           position: {
-            start: { line: 291, column: 1, offset: 14340 },
-            end: { line: 291, column: 60, offset: 14399 }
+            start: { line: 291, column: 1, offset: 14288 },
+            end: { line: 291, column: 60, offset: 14347 }
           }
         },
         {
@@ -4514,28 +4514,28 @@ export default {
               type: 'text',
               value: 'proxy server',
               position: {
-                start: { line: 291, column: 61, offset: 14400 },
-                end: { line: 291, column: 73, offset: 14412 }
+                start: { line: 291, column: 61, offset: 14348 },
+                end: { line: 291, column: 73, offset: 14360 }
               }
             }
           ],
           position: {
-            start: { line: 291, column: 60, offset: 14399 },
-            end: { line: 291, column: 118, offset: 14457 }
+            start: { line: 291, column: 60, offset: 14347 },
+            end: { line: 291, column: 118, offset: 14405 }
           }
         },
         {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 291, column: 118, offset: 14457 },
-            end: { line: 291, column: 119, offset: 14458 }
+            start: { line: 291, column: 118, offset: 14405 },
+            end: { line: 291, column: 119, offset: 14406 }
           }
         }
       ],
       position: {
-        start: { line: 291, column: 1, offset: 14340 },
-        end: { line: 291, column: 120, offset: 14459 }
+        start: { line: 291, column: 1, offset: 14288 },
+        end: { line: 291, column: 120, offset: 14407 }
       }
     },
     {
@@ -4546,14 +4546,14 @@ export default {
           type: 'text',
           value: '408 Request Timeout',
           position: {
-            start: { line: 293, column: 7, offset: 14467 },
-            end: { line: 293, column: 26, offset: 14486 }
+            start: { line: 293, column: 7, offset: 14415 },
+            end: { line: 293, column: 26, offset: 14434 }
           }
         }
       ],
       position: {
-        start: { line: 293, column: 1, offset: 14461 },
-        end: { line: 293, column: 26, offset: 14486 }
+        start: { line: 293, column: 1, offset: 14409 },
+        end: { line: 293, column: 26, offset: 14434 }
       }
     },
     {
@@ -4563,14 +4563,14 @@ export default {
           type: 'text',
           value: 'The server would like to shut down the unused connection.',
           position: {
-            start: { line: 295, column: 1, offset: 14488 },
-            end: { line: 295, column: 58, offset: 14545 }
+            start: { line: 295, column: 1, offset: 14436 },
+            end: { line: 295, column: 58, offset: 14493 }
           }
         }
       ],
       position: {
-        start: { line: 295, column: 1, offset: 14488 },
-        end: { line: 295, column: 58, offset: 14545 }
+        start: { line: 295, column: 1, offset: 14436 },
+        end: { line: 295, column: 58, offset: 14493 }
       }
     },
     {
@@ -4581,14 +4581,14 @@ export default {
           type: 'text',
           value: '409 Conflict',
           position: {
-            start: { line: 297, column: 7, offset: 14553 },
-            end: { line: 297, column: 19, offset: 14565 }
+            start: { line: 297, column: 7, offset: 14501 },
+            end: { line: 297, column: 19, offset: 14513 }
           }
         }
       ],
       position: {
-        start: { line: 297, column: 1, offset: 14547 },
-        end: { line: 297, column: 19, offset: 14565 }
+        start: { line: 297, column: 1, offset: 14495 },
+        end: { line: 297, column: 19, offset: 14513 }
       }
     },
     {
@@ -4598,14 +4598,14 @@ export default {
           type: 'text',
           value: 'The request conflicts with the current state of the resource, e.g. when trying to create a resource that already exists.',
           position: {
-            start: { line: 299, column: 1, offset: 14567 },
-            end: { line: 299, column: 121, offset: 14687 }
+            start: { line: 299, column: 1, offset: 14515 },
+            end: { line: 299, column: 121, offset: 14635 }
           }
         }
       ],
       position: {
-        start: { line: 299, column: 1, offset: 14567 },
-        end: { line: 299, column: 121, offset: 14687 }
+        start: { line: 299, column: 1, offset: 14515 },
+        end: { line: 299, column: 121, offset: 14635 }
       }
     },
     {
@@ -4616,14 +4616,14 @@ export default {
           type: 'text',
           value: '410 Gone',
           position: {
-            start: { line: 301, column: 7, offset: 14695 },
-            end: { line: 301, column: 15, offset: 14703 }
+            start: { line: 301, column: 7, offset: 14643 },
+            end: { line: 301, column: 15, offset: 14651 }
           }
         }
       ],
       position: {
-        start: { line: 301, column: 1, offset: 14689 },
-        end: { line: 301, column: 15, offset: 14703 }
+        start: { line: 301, column: 1, offset: 14637 },
+        end: { line: 301, column: 15, offset: 14651 }
       }
     },
     {
@@ -4633,14 +4633,14 @@ export default {
           type: 'text',
           value: 'The resource has been permanently removed from the server.',
           position: {
-            start: { line: 303, column: 1, offset: 14705 },
-            end: { line: 303, column: 59, offset: 14763 }
+            start: { line: 303, column: 1, offset: 14653 },
+            end: { line: 303, column: 59, offset: 14711 }
           }
         }
       ],
       position: {
-        start: { line: 303, column: 1, offset: 14705 },
-        end: { line: 303, column: 59, offset: 14763 }
+        start: { line: 303, column: 1, offset: 14653 },
+        end: { line: 303, column: 59, offset: 14711 }
       }
     },
     {
@@ -4651,14 +4651,14 @@ export default {
           type: 'text',
           value: '411 Length Required',
           position: {
-            start: { line: 305, column: 7, offset: 14771 },
-            end: { line: 305, column: 26, offset: 14790 }
+            start: { line: 305, column: 7, offset: 14719 },
+            end: { line: 305, column: 26, offset: 14738 }
           }
         }
       ],
       position: {
-        start: { line: 305, column: 1, offset: 14765 },
-        end: { line: 305, column: 26, offset: 14790 }
+        start: { line: 305, column: 1, offset: 14713 },
+        end: { line: 305, column: 26, offset: 14738 }
       }
     },
     {
@@ -4668,8 +4668,8 @@ export default {
           type: 'text',
           value: 'The ',
           position: {
-            start: { line: 307, column: 1, offset: 14792 },
-            end: { line: 307, column: 5, offset: 14796 }
+            start: { line: 307, column: 1, offset: 14740 },
+            end: { line: 307, column: 5, offset: 14744 }
           }
         },
         {
@@ -4681,28 +4681,28 @@ export default {
               type: 'text',
               value: 'Content-Length',
               position: {
-                start: { line: 307, column: 6, offset: 14797 },
-                end: { line: 307, column: 20, offset: 14811 }
+                start: { line: 307, column: 6, offset: 14745 },
+                end: { line: 307, column: 20, offset: 14759 }
               }
             }
           ],
           position: {
-            start: { line: 307, column: 5, offset: 14796 },
-            end: { line: 307, column: 105, offset: 14896 }
+            start: { line: 307, column: 5, offset: 14744 },
+            end: { line: 307, column: 105, offset: 14844 }
           }
         },
         {
           type: 'text',
           value: ' request header is required but not present.',
           position: {
-            start: { line: 307, column: 105, offset: 14896 },
-            end: { line: 307, column: 149, offset: 14940 }
+            start: { line: 307, column: 105, offset: 14844 },
+            end: { line: 307, column: 149, offset: 14888 }
           }
         }
       ],
       position: {
-        start: { line: 307, column: 1, offset: 14792 },
-        end: { line: 307, column: 149, offset: 14940 }
+        start: { line: 307, column: 1, offset: 14740 },
+        end: { line: 307, column: 149, offset: 14888 }
       }
     },
     {
@@ -4713,14 +4713,14 @@ export default {
           type: 'text',
           value: '412 Precondition Failed',
           position: {
-            start: { line: 309, column: 7, offset: 14948 },
-            end: { line: 309, column: 30, offset: 14971 }
+            start: { line: 309, column: 7, offset: 14896 },
+            end: { line: 309, column: 30, offset: 14919 }
           }
         }
       ],
       position: {
-        start: { line: 309, column: 1, offset: 14942 },
-        end: { line: 309, column: 30, offset: 14971 }
+        start: { line: 309, column: 1, offset: 14890 },
+        end: { line: 309, column: 30, offset: 14919 }
       }
     },
     {
@@ -4728,16 +4728,16 @@ export default {
       children: [
         {
           type: 'text',
-          value: 'The request headers has indicated preconditions that the server does not meet.',
+          value: 'The request headers have indicated preconditions that the server does not meet.',
           position: {
-            start: { line: 311, column: 1, offset: 14973 },
-            end: { line: 311, column: 79, offset: 15051 }
+            start: { line: 311, column: 1, offset: 14921 },
+            end: { line: 311, column: 80, offset: 15000 }
           }
         }
       ],
       position: {
-        start: { line: 311, column: 1, offset: 14973 },
-        end: { line: 311, column: 79, offset: 15051 }
+        start: { line: 311, column: 1, offset: 14921 },
+        end: { line: 311, column: 80, offset: 15000 }
       }
     },
     {
@@ -4748,14 +4748,14 @@ export default {
           type: 'text',
           value: '413 Content Too Large',
           position: {
-            start: { line: 313, column: 7, offset: 15059 },
-            end: { line: 313, column: 28, offset: 15080 }
+            start: { line: 313, column: 7, offset: 15008 },
+            end: { line: 313, column: 28, offset: 15029 }
           }
         }
       ],
       position: {
-        start: { line: 313, column: 1, offset: 15053 },
-        end: { line: 313, column: 28, offset: 15080 }
+        start: { line: 313, column: 1, offset: 15002 },
+        end: { line: 313, column: 28, offset: 15029 }
       }
     },
     {
@@ -4765,8 +4765,8 @@ export default {
           type: 'text',
           value: 'The request body is larger than the limits defined by the server. The server might close the connection or respond with a ',
           position: {
-            start: { line: 315, column: 1, offset: 15082 },
-            end: { line: 315, column: 123, offset: 15204 }
+            start: { line: 315, column: 1, offset: 15031 },
+            end: { line: 315, column: 123, offset: 15153 }
           }
         },
         {
@@ -4778,28 +4778,28 @@ export default {
               type: 'text',
               value: 'Retry-After',
               position: {
-                start: { line: 315, column: 124, offset: 15205 },
-                end: { line: 315, column: 135, offset: 15216 }
+                start: { line: 315, column: 124, offset: 15154 },
+                end: { line: 315, column: 135, offset: 15165 }
               }
             }
           ],
           position: {
-            start: { line: 315, column: 123, offset: 15204 },
-            end: { line: 315, column: 217, offset: 15298 }
+            start: { line: 315, column: 123, offset: 15153 },
+            end: { line: 315, column: 217, offset: 15247 }
           }
         },
         {
           type: 'text',
           value: ' header.',
           position: {
-            start: { line: 315, column: 217, offset: 15298 },
-            end: { line: 315, column: 225, offset: 15306 }
+            start: { line: 315, column: 217, offset: 15247 },
+            end: { line: 315, column: 225, offset: 15255 }
           }
         }
       ],
       position: {
-        start: { line: 315, column: 1, offset: 15082 },
-        end: { line: 315, column: 225, offset: 15306 }
+        start: { line: 315, column: 1, offset: 15031 },
+        end: { line: 315, column: 225, offset: 15255 }
       }
     },
     {
@@ -4810,14 +4810,14 @@ export default {
           type: 'text',
           value: '414 URI Too Long',
           position: {
-            start: { line: 317, column: 7, offset: 15314 },
-            end: { line: 317, column: 23, offset: 15330 }
+            start: { line: 317, column: 7, offset: 15263 },
+            end: { line: 317, column: 23, offset: 15279 }
           }
         }
       ],
       position: {
-        start: { line: 317, column: 1, offset: 15308 },
-        end: { line: 317, column: 23, offset: 15330 }
+        start: { line: 317, column: 1, offset: 15257 },
+        end: { line: 317, column: 23, offset: 15279 }
       }
     },
     {
@@ -4827,14 +4827,14 @@ export default {
           type: 'text',
           value: 'The URL of the requested resource is too long.',
           position: {
-            start: { line: 319, column: 1, offset: 15332 },
-            end: { line: 319, column: 47, offset: 15378 }
+            start: { line: 319, column: 1, offset: 15281 },
+            end: { line: 319, column: 47, offset: 15327 }
           }
         }
       ],
       position: {
-        start: { line: 319, column: 1, offset: 15332 },
-        end: { line: 319, column: 47, offset: 15378 }
+        start: { line: 319, column: 1, offset: 15281 },
+        end: { line: 319, column: 47, offset: 15327 }
       }
     },
     {
@@ -4845,14 +4845,14 @@ export default {
           type: 'text',
           value: '415 Unsupported Media Type',
           position: {
-            start: { line: 321, column: 7, offset: 15386 },
-            end: { line: 321, column: 33, offset: 15412 }
+            start: { line: 321, column: 7, offset: 15335 },
+            end: { line: 321, column: 33, offset: 15361 }
           }
         }
       ],
       position: {
-        start: { line: 321, column: 1, offset: 15380 },
-        end: { line: 321, column: 33, offset: 15412 }
+        start: { line: 321, column: 1, offset: 15329 },
+        end: { line: 321, column: 33, offset: 15361 }
       }
     },
     {
@@ -4862,14 +4862,14 @@ export default {
           type: 'text',
           value: 'The media format of the requested resource is not supported by the server.',
           position: {
-            start: { line: 323, column: 1, offset: 15414 },
-            end: { line: 323, column: 75, offset: 15488 }
+            start: { line: 323, column: 1, offset: 15363 },
+            end: { line: 323, column: 75, offset: 15437 }
           }
         }
       ],
       position: {
-        start: { line: 323, column: 1, offset: 15414 },
-        end: { line: 323, column: 75, offset: 15488 }
+        start: { line: 323, column: 1, offset: 15363 },
+        end: { line: 323, column: 75, offset: 15437 }
       }
     },
     {
@@ -4880,14 +4880,14 @@ export default {
           type: 'text',
           value: '416 Range Not Satisfiable',
           position: {
-            start: { line: 325, column: 7, offset: 15496 },
-            end: { line: 325, column: 32, offset: 15521 }
+            start: { line: 325, column: 7, offset: 15445 },
+            end: { line: 325, column: 32, offset: 15470 }
           }
         }
       ],
       position: {
-        start: { line: 325, column: 1, offset: 15490 },
-        end: { line: 325, column: 32, offset: 15521 }
+        start: { line: 325, column: 1, offset: 15439 },
+        end: { line: 325, column: 32, offset: 15470 }
       }
     },
     {
@@ -4897,8 +4897,8 @@ export default {
           type: 'text',
           value: "The ranges specified in the request's ",
           position: {
-            start: { line: 327, column: 1, offset: 15523 },
-            end: { line: 327, column: 39, offset: 15561 }
+            start: { line: 327, column: 1, offset: 15472 },
+            end: { line: 327, column: 39, offset: 15510 }
           }
         },
         {
@@ -4910,28 +4910,28 @@ export default {
               type: 'text',
               value: 'Range',
               position: {
-                start: { line: 327, column: 40, offset: 15562 },
-                end: { line: 327, column: 45, offset: 15567 }
+                start: { line: 327, column: 40, offset: 15511 },
+                end: { line: 327, column: 45, offset: 15516 }
               }
             }
           ],
           position: {
-            start: { line: 327, column: 39, offset: 15561 },
-            end: { line: 327, column: 121, offset: 15643 }
+            start: { line: 327, column: 39, offset: 15510 },
+            end: { line: 327, column: 121, offset: 15592 }
           }
         },
         {
           type: 'text',
           value: ' header cannot be fulfilled by the server.',
           position: {
-            start: { line: 327, column: 121, offset: 15643 },
-            end: { line: 327, column: 163, offset: 15685 }
+            start: { line: 327, column: 121, offset: 15592 },
+            end: { line: 327, column: 163, offset: 15634 }
           }
         }
       ],
       position: {
-        start: { line: 327, column: 1, offset: 15523 },
-        end: { line: 327, column: 163, offset: 15685 }
+        start: { line: 327, column: 1, offset: 15472 },
+        end: { line: 327, column: 163, offset: 15634 }
       }
     },
     {
@@ -4942,14 +4942,14 @@ export default {
           type: 'text',
           value: '417 Expectation Failed',
           position: {
-            start: { line: 329, column: 7, offset: 15693 },
-            end: { line: 329, column: 29, offset: 15715 }
+            start: { line: 329, column: 7, offset: 15642 },
+            end: { line: 329, column: 29, offset: 15664 }
           }
         }
       ],
       position: {
-        start: { line: 329, column: 1, offset: 15687 },
-        end: { line: 329, column: 29, offset: 15715 }
+        start: { line: 329, column: 1, offset: 15636 },
+        end: { line: 329, column: 29, offset: 15664 }
       }
     },
     {
@@ -4959,8 +4959,8 @@ export default {
           type: 'text',
           value: "The expectation indicated by the request's ",
           position: {
-            start: { line: 331, column: 1, offset: 15717 },
-            end: { line: 331, column: 44, offset: 15760 }
+            start: { line: 331, column: 1, offset: 15666 },
+            end: { line: 331, column: 44, offset: 15709 }
           }
         },
         {
@@ -4972,28 +4972,28 @@ export default {
               type: 'text',
               value: 'Expect',
               position: {
-                start: { line: 331, column: 45, offset: 15761 },
-                end: { line: 331, column: 51, offset: 15767 }
+                start: { line: 331, column: 45, offset: 15710 },
+                end: { line: 331, column: 51, offset: 15716 }
               }
             }
           ],
           position: {
-            start: { line: 331, column: 44, offset: 15760 },
-            end: { line: 331, column: 128, offset: 15844 }
+            start: { line: 331, column: 44, offset: 15709 },
+            end: { line: 331, column: 128, offset: 15793 }
           }
         },
         {
           type: 'text',
           value: ' header cannot be met by the server.',
           position: {
-            start: { line: 331, column: 128, offset: 15844 },
-            end: { line: 331, column: 164, offset: 15880 }
+            start: { line: 331, column: 128, offset: 15793 },
+            end: { line: 331, column: 164, offset: 15829 }
           }
         }
       ],
       position: {
-        start: { line: 331, column: 1, offset: 15717 },
-        end: { line: 331, column: 164, offset: 15880 }
+        start: { line: 331, column: 1, offset: 15666 },
+        end: { line: 331, column: 164, offset: 15829 }
       }
     },
     {
@@ -5004,14 +5004,14 @@ export default {
           type: 'text',
           value: "418 I'm a teapot",
           position: {
-            start: { line: 333, column: 7, offset: 15888 },
-            end: { line: 333, column: 23, offset: 15904 }
+            start: { line: 333, column: 7, offset: 15837 },
+            end: { line: 333, column: 23, offset: 15853 }
           }
         }
       ],
       position: {
-        start: { line: 333, column: 1, offset: 15882 },
-        end: { line: 333, column: 23, offset: 15904 }
+        start: { line: 333, column: 1, offset: 15831 },
+        end: { line: 333, column: 23, offset: 15853 }
       }
     },
     {
@@ -5021,14 +5021,14 @@ export default {
           type: 'text',
           value: 'The server refuses the attempt to brew coffee with a teapot.',
           position: {
-            start: { line: 335, column: 1, offset: 15906 },
-            end: { line: 335, column: 61, offset: 15966 }
+            start: { line: 335, column: 1, offset: 15855 },
+            end: { line: 335, column: 61, offset: 15915 }
           }
         }
       ],
       position: {
-        start: { line: 335, column: 1, offset: 15906 },
-        end: { line: 335, column: 61, offset: 15966 }
+        start: { line: 335, column: 1, offset: 15855 },
+        end: { line: 335, column: 61, offset: 15915 }
       }
     },
     {
@@ -5039,14 +5039,14 @@ export default {
           type: 'text',
           value: '421 Misdirected Request',
           position: {
-            start: { line: 337, column: 7, offset: 15974 },
-            end: { line: 337, column: 30, offset: 15997 }
+            start: { line: 337, column: 7, offset: 15923 },
+            end: { line: 337, column: 30, offset: 15946 }
           }
         }
       ],
       position: {
-        start: { line: 337, column: 1, offset: 15968 },
-        end: { line: 337, column: 30, offset: 15997 }
+        start: { line: 337, column: 1, offset: 15917 },
+        end: { line: 337, column: 30, offset: 15946 }
       }
     },
     {
@@ -5056,14 +5056,14 @@ export default {
           type: 'text',
           value: "The request was directed at a server that is not configured to produce a response for the request URL's scheme and authority.",
           position: {
-            start: { line: 339, column: 1, offset: 15999 },
-            end: { line: 339, column: 126, offset: 16124 }
+            start: { line: 339, column: 1, offset: 15948 },
+            end: { line: 339, column: 126, offset: 16073 }
           }
         }
       ],
       position: {
-        start: { line: 339, column: 1, offset: 15999 },
-        end: { line: 339, column: 126, offset: 16124 }
+        start: { line: 339, column: 1, offset: 15948 },
+        end: { line: 339, column: 126, offset: 16073 }
       }
     },
     {
@@ -5074,14 +5074,14 @@ export default {
           type: 'text',
           value: '422 Unprocessable Content',
           position: {
-            start: { line: 341, column: 7, offset: 16132 },
-            end: { line: 341, column: 32, offset: 16157 }
+            start: { line: 341, column: 7, offset: 16081 },
+            end: { line: 341, column: 32, offset: 16106 }
           }
         }
       ],
       position: {
-        start: { line: 341, column: 1, offset: 16126 },
-        end: { line: 341, column: 32, offset: 16157 }
+        start: { line: 341, column: 1, offset: 16075 },
+        end: { line: 341, column: 32, offset: 16106 }
       }
     },
     {
@@ -5091,14 +5091,14 @@ export default {
           type: 'text',
           value: 'The request was well-formed but was unable to be processed due to semantic errors.',
           position: {
-            start: { line: 343, column: 1, offset: 16159 },
-            end: { line: 343, column: 83, offset: 16241 }
+            start: { line: 343, column: 1, offset: 16108 },
+            end: { line: 343, column: 83, offset: 16190 }
           }
         }
       ],
       position: {
-        start: { line: 343, column: 1, offset: 16159 },
-        end: { line: 343, column: 83, offset: 16241 }
+        start: { line: 343, column: 1, offset: 16108 },
+        end: { line: 343, column: 83, offset: 16190 }
       }
     },
     {
@@ -5109,14 +5109,14 @@ export default {
           type: 'text',
           value: '423 Locked',
           position: {
-            start: { line: 345, column: 7, offset: 16249 },
-            end: { line: 345, column: 17, offset: 16259 }
+            start: { line: 345, column: 7, offset: 16198 },
+            end: { line: 345, column: 17, offset: 16208 }
           }
         }
       ],
       position: {
-        start: { line: 345, column: 1, offset: 16243 },
-        end: { line: 345, column: 17, offset: 16259 }
+        start: { line: 345, column: 1, offset: 16192 },
+        end: { line: 345, column: 17, offset: 16208 }
       }
     },
     {
@@ -5126,14 +5126,14 @@ export default {
           type: 'text',
           value: 'The requested resource is locked.',
           position: {
-            start: { line: 347, column: 1, offset: 16261 },
-            end: { line: 347, column: 34, offset: 16294 }
+            start: { line: 347, column: 1, offset: 16210 },
+            end: { line: 347, column: 34, offset: 16243 }
           }
         }
       ],
       position: {
-        start: { line: 347, column: 1, offset: 16261 },
-        end: { line: 347, column: 34, offset: 16294 }
+        start: { line: 347, column: 1, offset: 16210 },
+        end: { line: 347, column: 34, offset: 16243 }
       }
     },
     {
@@ -5144,14 +5144,14 @@ export default {
           type: 'text',
           value: '424 Failed Dependency',
           position: {
-            start: { line: 349, column: 7, offset: 16302 },
-            end: { line: 349, column: 28, offset: 16323 }
+            start: { line: 349, column: 7, offset: 16251 },
+            end: { line: 349, column: 28, offset: 16272 }
           }
         }
       ],
       position: {
-        start: { line: 349, column: 1, offset: 16296 },
-        end: { line: 349, column: 28, offset: 16323 }
+        start: { line: 349, column: 1, offset: 16245 },
+        end: { line: 349, column: 28, offset: 16272 }
       }
     },
     {
@@ -5161,14 +5161,14 @@ export default {
           type: 'text',
           value: 'The request failed due to the failure of a previous request.',
           position: {
-            start: { line: 351, column: 1, offset: 16325 },
-            end: { line: 351, column: 61, offset: 16385 }
+            start: { line: 351, column: 1, offset: 16274 },
+            end: { line: 351, column: 61, offset: 16334 }
           }
         }
       ],
       position: {
-        start: { line: 351, column: 1, offset: 16325 },
-        end: { line: 351, column: 61, offset: 16385 }
+        start: { line: 351, column: 1, offset: 16274 },
+        end: { line: 351, column: 61, offset: 16334 }
       }
     },
     {
@@ -5179,14 +5179,14 @@ export default {
           type: 'text',
           value: '425 Too Early',
           position: {
-            start: { line: 353, column: 7, offset: 16393 },
-            end: { line: 353, column: 20, offset: 16406 }
+            start: { line: 353, column: 7, offset: 16342 },
+            end: { line: 353, column: 20, offset: 16355 }
           }
         }
       ],
       position: {
-        start: { line: 353, column: 1, offset: 16387 },
-        end: { line: 353, column: 20, offset: 16406 }
+        start: { line: 353, column: 1, offset: 16336 },
+        end: { line: 353, column: 20, offset: 16355 }
       }
     },
     {
@@ -5196,14 +5196,14 @@ export default {
           type: 'text',
           value: 'The server is unwilling to risk processing a request that might be replayed.',
           position: {
-            start: { line: 355, column: 1, offset: 16408 },
-            end: { line: 355, column: 77, offset: 16484 }
+            start: { line: 355, column: 1, offset: 16357 },
+            end: { line: 355, column: 77, offset: 16433 }
           }
         }
       ],
       position: {
-        start: { line: 355, column: 1, offset: 16408 },
-        end: { line: 355, column: 77, offset: 16484 }
+        start: { line: 355, column: 1, offset: 16357 },
+        end: { line: 355, column: 77, offset: 16433 }
       }
     },
     {
@@ -5214,14 +5214,14 @@ export default {
           type: 'text',
           value: '426 Upgrade Required',
           position: {
-            start: { line: 357, column: 7, offset: 16492 },
-            end: { line: 357, column: 27, offset: 16512 }
+            start: { line: 357, column: 7, offset: 16441 },
+            end: { line: 357, column: 27, offset: 16461 }
           }
         }
       ],
       position: {
-        start: { line: 357, column: 1, offset: 16486 },
-        end: { line: 357, column: 27, offset: 16512 }
+        start: { line: 357, column: 1, offset: 16435 },
+        end: { line: 357, column: 27, offset: 16461 }
       }
     },
     {
@@ -5231,30 +5231,30 @@ export default {
           type: 'text',
           value: 'The server refuses to process the request under the current protocol but might be willing to do so after the client upgrades to a different protocol. The server sends an ',
           position: {
-            start: { line: 359, column: 1, offset: 16514 },
-            end: { line: 359, column: 171, offset: 16684 }
+            start: { line: 359, column: 1, offset: 16463 },
+            end: { line: 359, column: 171, offset: 16633 }
           }
         },
         {
           type: 'inlineCode',
           value: 'Upgrade',
           position: {
-            start: { line: 359, column: 171, offset: 16684 },
-            end: { line: 359, column: 180, offset: 16693 }
+            start: { line: 359, column: 171, offset: 16633 },
+            end: { line: 359, column: 180, offset: 16642 }
           }
         },
         {
           type: 'text',
           value: ' header in the response to indicate the required protocol(s).',
           position: {
-            start: { line: 359, column: 180, offset: 16693 },
-            end: { line: 359, column: 241, offset: 16754 }
+            start: { line: 359, column: 180, offset: 16642 },
+            end: { line: 359, column: 241, offset: 16703 }
           }
         }
       ],
       position: {
-        start: { line: 359, column: 1, offset: 16514 },
-        end: { line: 359, column: 241, offset: 16754 }
+        start: { line: 359, column: 1, offset: 16463 },
+        end: { line: 359, column: 241, offset: 16703 }
       }
     },
     {
@@ -5265,14 +5265,14 @@ export default {
           type: 'text',
           value: '428 Precondition Required',
           position: {
-            start: { line: 361, column: 7, offset: 16762 },
-            end: { line: 361, column: 32, offset: 16787 }
+            start: { line: 361, column: 7, offset: 16711 },
+            end: { line: 361, column: 32, offset: 16736 }
           }
         }
       ],
       position: {
-        start: { line: 361, column: 1, offset: 16756 },
-        end: { line: 361, column: 32, offset: 16787 }
+        start: { line: 361, column: 1, offset: 16705 },
+        end: { line: 361, column: 32, offset: 16736 }
       }
     },
     {
@@ -5282,8 +5282,8 @@ export default {
           type: 'text',
           value: 'The origin server requires the request to be ',
           position: {
-            start: { line: 363, column: 1, offset: 16789 },
-            end: { line: 363, column: 46, offset: 16834 }
+            start: { line: 363, column: 1, offset: 16738 },
+            end: { line: 363, column: 46, offset: 16783 }
           }
         },
         {
@@ -5295,28 +5295,28 @@ export default {
               type: 'text',
               value: 'conditional',
               position: {
-                start: { line: 363, column: 47, offset: 16835 },
-                end: { line: 363, column: 58, offset: 16846 }
+                start: { line: 363, column: 47, offset: 16784 },
+                end: { line: 363, column: 58, offset: 16795 }
               }
             }
           ],
           position: {
-            start: { line: 363, column: 46, offset: 16834 },
-            end: { line: 363, column: 138, offset: 16926 }
+            start: { line: 363, column: 46, offset: 16783 },
+            end: { line: 363, column: 138, offset: 16875 }
           }
         },
         {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 363, column: 138, offset: 16926 },
-            end: { line: 363, column: 139, offset: 16927 }
+            start: { line: 363, column: 138, offset: 16875 },
+            end: { line: 363, column: 139, offset: 16876 }
           }
         }
       ],
       position: {
-        start: { line: 363, column: 1, offset: 16789 },
-        end: { line: 363, column: 139, offset: 16927 }
+        start: { line: 363, column: 1, offset: 16738 },
+        end: { line: 363, column: 139, offset: 16876 }
       }
     },
     {
@@ -5327,14 +5327,14 @@ export default {
           type: 'text',
           value: '429 Too Many Requests',
           position: {
-            start: { line: 365, column: 7, offset: 16935 },
-            end: { line: 365, column: 28, offset: 16956 }
+            start: { line: 365, column: 7, offset: 16884 },
+            end: { line: 365, column: 28, offset: 16905 }
           }
         }
       ],
       position: {
-        start: { line: 365, column: 1, offset: 16929 },
-        end: { line: 365, column: 28, offset: 16956 }
+        start: { line: 365, column: 1, offset: 16878 },
+        end: { line: 365, column: 28, offset: 16905 }
       }
     },
     {
@@ -5344,8 +5344,8 @@ export default {
           type: 'text',
           value: 'The client has sent too many requests in a given time period. See ',
           position: {
-            start: { line: 367, column: 1, offset: 16958 },
-            end: { line: 367, column: 67, offset: 17024 }
+            start: { line: 367, column: 1, offset: 16907 },
+            end: { line: 367, column: 67, offset: 16973 }
           }
         },
         {
@@ -5357,28 +5357,28 @@ export default {
               type: 'text',
               value: 'rate limiting',
               position: {
-                start: { line: 367, column: 68, offset: 17025 },
-                end: { line: 367, column: 81, offset: 17038 }
+                start: { line: 367, column: 68, offset: 16974 },
+                end: { line: 367, column: 81, offset: 16987 }
               }
             }
           ],
           position: {
-            start: { line: 367, column: 67, offset: 17024 },
-            end: { line: 367, column: 144, offset: 17101 }
+            start: { line: 367, column: 67, offset: 16973 },
+            end: { line: 367, column: 144, offset: 17050 }
           }
         },
         {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 367, column: 144, offset: 17101 },
-            end: { line: 367, column: 145, offset: 17102 }
+            start: { line: 367, column: 144, offset: 17050 },
+            end: { line: 367, column: 145, offset: 17051 }
           }
         }
       ],
       position: {
-        start: { line: 367, column: 1, offset: 16958 },
-        end: { line: 367, column: 145, offset: 17102 }
+        start: { line: 367, column: 1, offset: 16907 },
+        end: { line: 367, column: 145, offset: 17051 }
       }
     },
     {
@@ -5389,14 +5389,14 @@ export default {
           type: 'text',
           value: '431 Request Header Fields Too Large',
           position: {
-            start: { line: 369, column: 7, offset: 17110 },
-            end: { line: 369, column: 42, offset: 17145 }
+            start: { line: 369, column: 7, offset: 17059 },
+            end: { line: 369, column: 42, offset: 17094 }
           }
         }
       ],
       position: {
-        start: { line: 369, column: 1, offset: 17104 },
-        end: { line: 369, column: 42, offset: 17145 }
+        start: { line: 369, column: 1, offset: 17053 },
+        end: { line: 369, column: 42, offset: 17094 }
       }
     },
     {
@@ -5406,14 +5406,14 @@ export default {
           type: 'text',
           value: 'The request header fields are too large.',
           position: {
-            start: { line: 371, column: 1, offset: 17147 },
-            end: { line: 371, column: 41, offset: 17187 }
+            start: { line: 371, column: 1, offset: 17096 },
+            end: { line: 371, column: 41, offset: 17136 }
           }
         }
       ],
       position: {
-        start: { line: 371, column: 1, offset: 17147 },
-        end: { line: 371, column: 41, offset: 17187 }
+        start: { line: 371, column: 1, offset: 17096 },
+        end: { line: 371, column: 41, offset: 17136 }
       }
     },
     {
@@ -5424,14 +5424,14 @@ export default {
           type: 'text',
           value: '451 Unavailable For Legal Reasons',
           position: {
-            start: { line: 373, column: 7, offset: 17195 },
-            end: { line: 373, column: 40, offset: 17228 }
+            start: { line: 373, column: 7, offset: 17144 },
+            end: { line: 373, column: 40, offset: 17177 }
           }
         }
       ],
       position: {
-        start: { line: 373, column: 1, offset: 17189 },
-        end: { line: 373, column: 40, offset: 17228 }
+        start: { line: 373, column: 1, offset: 17138 },
+        end: { line: 373, column: 40, offset: 17177 }
       }
     },
     {
@@ -5441,14 +5441,14 @@ export default {
           type: 'text',
           value: 'The requested resource is unavailable due to legal reasons.',
           position: {
-            start: { line: 375, column: 1, offset: 17230 },
-            end: { line: 375, column: 60, offset: 17289 }
+            start: { line: 375, column: 1, offset: 17179 },
+            end: { line: 375, column: 60, offset: 17238 }
           }
         }
       ],
       position: {
-        start: { line: 375, column: 1, offset: 17230 },
-        end: { line: 375, column: 60, offset: 17289 }
+        start: { line: 375, column: 1, offset: 17179 },
+        end: { line: 375, column: 60, offset: 17238 }
       }
     },
     {
@@ -5459,14 +5459,14 @@ export default {
           type: 'text',
           value: 'Server Error Status Codes (500-599)',
           position: {
-            start: { line: 377, column: 6, offset: 17296 },
-            end: { line: 377, column: 41, offset: 17331 }
+            start: { line: 377, column: 6, offset: 17245 },
+            end: { line: 377, column: 41, offset: 17280 }
           }
         }
       ],
       position: {
-        start: { line: 377, column: 1, offset: 17291 },
-        end: { line: 377, column: 41, offset: 17331 }
+        start: { line: 377, column: 1, offset: 17240 },
+        end: { line: 377, column: 41, offset: 17280 }
       }
     },
     {
@@ -5477,14 +5477,14 @@ export default {
           type: 'text',
           value: '500 Internal Server Error',
           position: {
-            start: { line: 379, column: 7, offset: 17339 },
-            end: { line: 379, column: 32, offset: 17364 }
+            start: { line: 379, column: 7, offset: 17288 },
+            end: { line: 379, column: 32, offset: 17313 }
           }
         }
       ],
       position: {
-        start: { line: 379, column: 1, offset: 17333 },
-        end: { line: 379, column: 32, offset: 17364 }
+        start: { line: 379, column: 1, offset: 17282 },
+        end: { line: 379, column: 32, offset: 17313 }
       }
     },
     {
@@ -5494,14 +5494,14 @@ export default {
           type: 'text',
           value: 'The server has encountered a situation it does not know how to handle.',
           position: {
-            start: { line: 381, column: 1, offset: 17366 },
-            end: { line: 381, column: 71, offset: 17436 }
+            start: { line: 381, column: 1, offset: 17315 },
+            end: { line: 381, column: 71, offset: 17385 }
           }
         }
       ],
       position: {
-        start: { line: 381, column: 1, offset: 17366 },
-        end: { line: 381, column: 71, offset: 17436 }
+        start: { line: 381, column: 1, offset: 17315 },
+        end: { line: 381, column: 71, offset: 17385 }
       }
     },
     {
@@ -5512,14 +5512,14 @@ export default {
           type: 'text',
           value: '501 Not Implemented',
           position: {
-            start: { line: 383, column: 7, offset: 17444 },
-            end: { line: 383, column: 26, offset: 17463 }
+            start: { line: 383, column: 7, offset: 17393 },
+            end: { line: 383, column: 26, offset: 17412 }
           }
         }
       ],
       position: {
-        start: { line: 383, column: 1, offset: 17438 },
-        end: { line: 383, column: 26, offset: 17463 }
+        start: { line: 383, column: 1, offset: 17387 },
+        end: { line: 383, column: 26, offset: 17412 }
       }
     },
     {
@@ -5529,14 +5529,14 @@ export default {
           type: 'text',
           value: 'The request method is not supported by the server and cannot be handled.',
           position: {
-            start: { line: 385, column: 1, offset: 17465 },
-            end: { line: 385, column: 73, offset: 17537 }
+            start: { line: 385, column: 1, offset: 17414 },
+            end: { line: 385, column: 73, offset: 17486 }
           }
         }
       ],
       position: {
-        start: { line: 385, column: 1, offset: 17465 },
-        end: { line: 385, column: 73, offset: 17537 }
+        start: { line: 385, column: 1, offset: 17414 },
+        end: { line: 385, column: 73, offset: 17486 }
       }
     },
     {
@@ -5547,14 +5547,14 @@ export default {
           type: 'text',
           value: '502 Bad Gateway',
           position: {
-            start: { line: 387, column: 7, offset: 17545 },
-            end: { line: 387, column: 22, offset: 17560 }
+            start: { line: 387, column: 7, offset: 17494 },
+            end: { line: 387, column: 22, offset: 17509 }
           }
         }
       ],
       position: {
-        start: { line: 387, column: 1, offset: 17539 },
-        end: { line: 387, column: 22, offset: 17560 }
+        start: { line: 387, column: 1, offset: 17488 },
+        end: { line: 387, column: 22, offset: 17509 }
       }
     },
     {
@@ -5564,14 +5564,14 @@ export default {
           type: 'text',
           value: 'The gateway server received an invalid response from an upstream server or origin server.',
           position: {
-            start: { line: 389, column: 1, offset: 17562 },
-            end: { line: 389, column: 90, offset: 17651 }
+            start: { line: 389, column: 1, offset: 17511 },
+            end: { line: 389, column: 90, offset: 17600 }
           }
         }
       ],
       position: {
-        start: { line: 389, column: 1, offset: 17562 },
-        end: { line: 389, column: 90, offset: 17651 }
+        start: { line: 389, column: 1, offset: 17511 },
+        end: { line: 389, column: 90, offset: 17600 }
       }
     },
     {
@@ -5582,14 +5582,14 @@ export default {
           type: 'text',
           value: '503 Service Unavailable',
           position: {
-            start: { line: 391, column: 7, offset: 17659 },
-            end: { line: 391, column: 30, offset: 17682 }
+            start: { line: 391, column: 7, offset: 17608 },
+            end: { line: 391, column: 30, offset: 17631 }
           }
         }
       ],
       position: {
-        start: { line: 391, column: 1, offset: 17653 },
-        end: { line: 391, column: 30, offset: 17682 }
+        start: { line: 391, column: 1, offset: 17602 },
+        end: { line: 391, column: 30, offset: 17631 }
       }
     },
     {
@@ -5599,14 +5599,14 @@ export default {
           type: 'text',
           value: 'The server is not ready to handle the request.',
           position: {
-            start: { line: 393, column: 1, offset: 17684 },
-            end: { line: 393, column: 47, offset: 17730 }
+            start: { line: 393, column: 1, offset: 17633 },
+            end: { line: 393, column: 47, offset: 17679 }
           }
         }
       ],
       position: {
-        start: { line: 393, column: 1, offset: 17684 },
-        end: { line: 393, column: 47, offset: 17730 }
+        start: { line: 393, column: 1, offset: 17633 },
+        end: { line: 393, column: 47, offset: 17679 }
       }
     },
     {
@@ -5617,14 +5617,14 @@ export default {
           type: 'text',
           value: '504 Gateway Timeout',
           position: {
-            start: { line: 395, column: 7, offset: 17738 },
-            end: { line: 395, column: 26, offset: 17757 }
+            start: { line: 395, column: 7, offset: 17687 },
+            end: { line: 395, column: 26, offset: 17706 }
           }
         }
       ],
       position: {
-        start: { line: 395, column: 1, offset: 17732 },
-        end: { line: 395, column: 26, offset: 17757 }
+        start: { line: 395, column: 1, offset: 17681 },
+        end: { line: 395, column: 26, offset: 17706 }
       }
     },
     {
@@ -5634,14 +5634,14 @@ export default {
           type: 'text',
           value: "The gateway server's request to an upstream server or origin server timed out.",
           position: {
-            start: { line: 397, column: 1, offset: 17759 },
-            end: { line: 397, column: 79, offset: 17837 }
+            start: { line: 397, column: 1, offset: 17708 },
+            end: { line: 397, column: 79, offset: 17786 }
           }
         }
       ],
       position: {
-        start: { line: 397, column: 1, offset: 17759 },
-        end: { line: 397, column: 79, offset: 17837 }
+        start: { line: 397, column: 1, offset: 17708 },
+        end: { line: 397, column: 79, offset: 17786 }
       }
     },
     {
@@ -5652,14 +5652,14 @@ export default {
           type: 'text',
           value: '505 HTTP Version Not Supported',
           position: {
-            start: { line: 399, column: 7, offset: 17845 },
-            end: { line: 399, column: 37, offset: 17875 }
+            start: { line: 399, column: 7, offset: 17794 },
+            end: { line: 399, column: 37, offset: 17824 }
           }
         }
       ],
       position: {
-        start: { line: 399, column: 1, offset: 17839 },
-        end: { line: 399, column: 37, offset: 17875 }
+        start: { line: 399, column: 1, offset: 17788 },
+        end: { line: 399, column: 37, offset: 17824 }
       }
     },
     {
@@ -5669,14 +5669,14 @@ export default {
           type: 'text',
           value: 'The HTTP version used in the request is not supported by the server.',
           position: {
-            start: { line: 401, column: 1, offset: 17877 },
-            end: { line: 401, column: 69, offset: 17945 }
+            start: { line: 401, column: 1, offset: 17826 },
+            end: { line: 401, column: 69, offset: 17894 }
           }
         }
       ],
       position: {
-        start: { line: 401, column: 1, offset: 17877 },
-        end: { line: 401, column: 69, offset: 17945 }
+        start: { line: 401, column: 1, offset: 17826 },
+        end: { line: 401, column: 69, offset: 17894 }
       }
     },
     {
@@ -5687,14 +5687,14 @@ export default {
           type: 'text',
           value: '506 Variant Also Negotiates',
           position: {
-            start: { line: 403, column: 7, offset: 17953 },
-            end: { line: 403, column: 34, offset: 17980 }
+            start: { line: 403, column: 7, offset: 17902 },
+            end: { line: 403, column: 34, offset: 17929 }
           }
         }
       ],
       position: {
-        start: { line: 403, column: 1, offset: 17947 },
-        end: { line: 403, column: 34, offset: 17980 }
+        start: { line: 403, column: 1, offset: 17896 },
+        end: { line: 403, column: 34, offset: 17929 }
       }
     },
     {
@@ -5704,14 +5704,14 @@ export default {
           type: 'text',
           value: 'The server has an internal configuration error related to content negotiation.',
           position: {
-            start: { line: 405, column: 1, offset: 17982 },
-            end: { line: 405, column: 79, offset: 18060 }
+            start: { line: 405, column: 1, offset: 17931 },
+            end: { line: 405, column: 79, offset: 18009 }
           }
         }
       ],
       position: {
-        start: { line: 405, column: 1, offset: 17982 },
-        end: { line: 405, column: 79, offset: 18060 }
+        start: { line: 405, column: 1, offset: 17931 },
+        end: { line: 405, column: 79, offset: 18009 }
       }
     },
     {
@@ -5722,14 +5722,14 @@ export default {
           type: 'text',
           value: '507 Insufficient Storage',
           position: {
-            start: { line: 407, column: 7, offset: 18068 },
-            end: { line: 407, column: 31, offset: 18092 }
+            start: { line: 407, column: 7, offset: 18017 },
+            end: { line: 407, column: 31, offset: 18041 }
           }
         }
       ],
       position: {
-        start: { line: 407, column: 1, offset: 18062 },
-        end: { line: 407, column: 31, offset: 18092 }
+        start: { line: 407, column: 1, offset: 18011 },
+        end: { line: 407, column: 31, offset: 18041 }
       }
     },
     {
@@ -5739,14 +5739,14 @@ export default {
           type: 'text',
           value: 'The server does not have enough available storage to successfully process the request.',
           position: {
-            start: { line: 409, column: 1, offset: 18094 },
-            end: { line: 409, column: 87, offset: 18180 }
+            start: { line: 409, column: 1, offset: 18043 },
+            end: { line: 409, column: 87, offset: 18129 }
           }
         }
       ],
       position: {
-        start: { line: 409, column: 1, offset: 18094 },
-        end: { line: 409, column: 87, offset: 18180 }
+        start: { line: 409, column: 1, offset: 18043 },
+        end: { line: 409, column: 87, offset: 18129 }
       }
     },
     {
@@ -5757,14 +5757,14 @@ export default {
           type: 'text',
           value: '508 Loop Detected',
           position: {
-            start: { line: 411, column: 7, offset: 18188 },
-            end: { line: 411, column: 24, offset: 18205 }
+            start: { line: 411, column: 7, offset: 18137 },
+            end: { line: 411, column: 24, offset: 18154 }
           }
         }
       ],
       position: {
-        start: { line: 411, column: 1, offset: 18182 },
-        end: { line: 411, column: 24, offset: 18205 }
+        start: { line: 411, column: 1, offset: 18131 },
+        end: { line: 411, column: 24, offset: 18154 }
       }
     },
     {
@@ -5774,14 +5774,14 @@ export default {
           type: 'text',
           value: 'The server detected an infinite loop while processing the request.',
           position: {
-            start: { line: 413, column: 1, offset: 18207 },
-            end: { line: 413, column: 67, offset: 18273 }
+            start: { line: 413, column: 1, offset: 18156 },
+            end: { line: 413, column: 67, offset: 18222 }
           }
         }
       ],
       position: {
-        start: { line: 413, column: 1, offset: 18207 },
-        end: { line: 413, column: 67, offset: 18273 }
+        start: { line: 413, column: 1, offset: 18156 },
+        end: { line: 413, column: 67, offset: 18222 }
       }
     },
     {
@@ -5792,14 +5792,14 @@ export default {
           type: 'text',
           value: '510 Not Extended',
           position: {
-            start: { line: 415, column: 7, offset: 18281 },
-            end: { line: 415, column: 23, offset: 18297 }
+            start: { line: 415, column: 7, offset: 18230 },
+            end: { line: 415, column: 23, offset: 18246 }
           }
         }
       ],
       position: {
-        start: { line: 415, column: 1, offset: 18275 },
-        end: { line: 415, column: 23, offset: 18297 }
+        start: { line: 415, column: 1, offset: 18224 },
+        end: { line: 415, column: 23, offset: 18246 }
       }
     },
     {
@@ -5809,8 +5809,8 @@ export default {
           type: 'text',
           value: 'The client declares an HTTP Extension (',
           position: {
-            start: { line: 417, column: 1, offset: 18299 },
-            end: { line: 417, column: 40, offset: 18338 }
+            start: { line: 417, column: 1, offset: 18248 },
+            end: { line: 417, column: 40, offset: 18287 }
           }
         },
         {
@@ -5822,28 +5822,28 @@ export default {
               type: 'text',
               value: 'RFC 2774',
               position: {
-                start: { line: 417, column: 41, offset: 18339 },
-                end: { line: 417, column: 49, offset: 18347 }
+                start: { line: 417, column: 41, offset: 18288 },
+                end: { line: 417, column: 49, offset: 18296 }
               }
             }
           ],
           position: {
-            start: { line: 417, column: 40, offset: 18338 },
-            end: { line: 417, column: 97, offset: 18395 }
+            start: { line: 417, column: 40, offset: 18287 },
+            end: { line: 417, column: 97, offset: 18344 }
           }
         },
         {
           type: 'text',
           value: ') that should be used to process the request, but the extension is not supported by the server.',
           position: {
-            start: { line: 417, column: 97, offset: 18395 },
-            end: { line: 417, column: 192, offset: 18490 }
+            start: { line: 417, column: 97, offset: 18344 },
+            end: { line: 417, column: 192, offset: 18439 }
           }
         }
       ],
       position: {
-        start: { line: 417, column: 1, offset: 18299 },
-        end: { line: 417, column: 192, offset: 18490 }
+        start: { line: 417, column: 1, offset: 18248 },
+        end: { line: 417, column: 192, offset: 18439 }
       }
     },
     {
@@ -5854,14 +5854,14 @@ export default {
           type: 'text',
           value: '511 Network Authentication Required',
           position: {
-            start: { line: 419, column: 7, offset: 18498 },
-            end: { line: 419, column: 42, offset: 18533 }
+            start: { line: 419, column: 7, offset: 18447 },
+            end: { line: 419, column: 42, offset: 18482 }
           }
         }
       ],
       position: {
-        start: { line: 419, column: 1, offset: 18492 },
-        end: { line: 419, column: 42, offset: 18533 }
+        start: { line: 419, column: 1, offset: 18441 },
+        end: { line: 419, column: 42, offset: 18482 }
       }
     },
     {
@@ -5871,14 +5871,14 @@ export default {
           type: 'text',
           value: 'The client needs to authenticate to gain network access.',
           position: {
-            start: { line: 421, column: 1, offset: 18535 },
-            end: { line: 421, column: 57, offset: 18591 }
+            start: { line: 421, column: 1, offset: 18484 },
+            end: { line: 421, column: 57, offset: 18540 }
           }
         }
       ],
       position: {
-        start: { line: 421, column: 1, offset: 18535 },
-        end: { line: 421, column: 57, offset: 18591 }
+        start: { line: 421, column: 1, offset: 18484 },
+        end: { line: 421, column: 57, offset: 18540 }
       }
     },
     {
@@ -5889,14 +5889,14 @@ export default {
           type: 'text',
           value: 'HTTP Response Headers',
           position: {
-            start: { line: 423, column: 5, offset: 18597 },
-            end: { line: 423, column: 26, offset: 18618 }
+            start: { line: 423, column: 5, offset: 18546 },
+            end: { line: 423, column: 26, offset: 18567 }
           }
         }
       ],
       position: {
-        start: { line: 423, column: 1, offset: 18593 },
-        end: { line: 423, column: 26, offset: 18618 }
+        start: { line: 423, column: 1, offset: 18542 },
+        end: { line: 423, column: 26, offset: 18567 }
       }
     },
     {
@@ -5906,14 +5906,14 @@ export default {
           type: 'text',
           value: 'HTTP response headers are key-value pairs assigned to each response. HTTP response headers pass additional context and metadata about the response.',
           position: {
-            start: { line: 425, column: 1, offset: 18620 },
-            end: { line: 425, column: 148, offset: 18767 }
+            start: { line: 425, column: 1, offset: 18569 },
+            end: { line: 425, column: 148, offset: 18716 }
           }
         }
       ],
       position: {
-        start: { line: 425, column: 1, offset: 18620 },
-        end: { line: 425, column: 148, offset: 18767 }
+        start: { line: 425, column: 1, offset: 18569 },
+        end: { line: 425, column: 148, offset: 18716 }
       }
     },
     {
@@ -5924,14 +5924,14 @@ export default {
           type: 'text',
           value: 'HTTP Response Body',
           position: {
-            start: { line: 427, column: 5, offset: 18773 },
-            end: { line: 427, column: 23, offset: 18791 }
+            start: { line: 427, column: 5, offset: 18722 },
+            end: { line: 427, column: 23, offset: 18740 }
           }
         }
       ],
       position: {
-        start: { line: 427, column: 1, offset: 18769 },
-        end: { line: 427, column: 23, offset: 18791 }
+        start: { line: 427, column: 1, offset: 18718 },
+        end: { line: 427, column: 23, offset: 18740 }
       }
     },
     {
@@ -5941,8 +5941,8 @@ export default {
           type: 'text',
           value: "The HTTP response body is the part of the response that carries the bulk of the data sent back to the client. The content type of the response body should be specified in the response's ",
           position: {
-            start: { line: 429, column: 1, offset: 18793 },
-            end: { line: 429, column: 187, offset: 18979 }
+            start: { line: 429, column: 1, offset: 18742 },
+            end: { line: 429, column: 187, offset: 18928 }
           }
         },
         {
@@ -5954,28 +5954,28 @@ export default {
               type: 'text',
               value: 'Content-Type',
               position: {
-                start: { line: 429, column: 188, offset: 18980 },
-                end: { line: 429, column: 200, offset: 18992 }
+                start: { line: 429, column: 188, offset: 18929 },
+                end: { line: 429, column: 200, offset: 18941 }
               }
             }
           ],
           position: {
-            start: { line: 429, column: 187, offset: 18979 },
-            end: { line: 429, column: 283, offset: 19075 }
+            start: { line: 429, column: 187, offset: 18928 },
+            end: { line: 429, column: 283, offset: 19024 }
           }
         },
         {
           type: 'text',
           value: ' header.',
           position: {
-            start: { line: 429, column: 283, offset: 19075 },
-            end: { line: 429, column: 291, offset: 19083 }
+            start: { line: 429, column: 283, offset: 19024 },
+            end: { line: 429, column: 291, offset: 19032 }
           }
         }
       ],
       position: {
-        start: { line: 429, column: 1, offset: 18793 },
-        end: { line: 429, column: 291, offset: 19083 }
+        start: { line: 429, column: 1, offset: 18742 },
+        end: { line: 429, column: 291, offset: 19032 }
       }
     },
     {
@@ -5985,14 +5985,14 @@ export default {
           type: 'text',
           value: 'Some examples of HTTP response bodies:',
           position: {
-            start: { line: 431, column: 1, offset: 19085 },
-            end: { line: 431, column: 39, offset: 19123 }
+            start: { line: 431, column: 1, offset: 19034 },
+            end: { line: 431, column: 39, offset: 19072 }
           }
         }
       ],
       position: {
-        start: { line: 431, column: 1, offset: 19085 },
-        end: { line: 431, column: 39, offset: 19123 }
+        start: { line: 431, column: 1, offset: 19034 },
+        end: { line: 431, column: 39, offset: 19072 }
       }
     },
     {
@@ -6018,82 +6018,82 @@ export default {
                       type: 'text',
                       value: 'HTML',
                       position: {
-                        start: { line: 432, column: 5, offset: 19128 },
-                        end: { line: 432, column: 9, offset: 19132 }
+                        start: { line: 432, column: 5, offset: 19077 },
+                        end: { line: 432, column: 9, offset: 19081 }
                       }
                     }
                   ],
                   position: {
-                    start: { line: 432, column: 4, offset: 19127 },
-                    end: { line: 432, column: 61, offset: 19184 }
+                    start: { line: 432, column: 4, offset: 19076 },
+                    end: { line: 432, column: 61, offset: 19133 }
                   }
                 },
                 {
                   type: 'text',
                   value: ' - response body used for web pages. The method of the request is typically ',
                   position: {
-                    start: { line: 432, column: 61, offset: 19184 },
-                    end: { line: 432, column: 137, offset: 19260 }
+                    start: { line: 432, column: 61, offset: 19133 },
+                    end: { line: 432, column: 137, offset: 19209 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: 'GET',
                   position: {
-                    start: { line: 432, column: 137, offset: 19260 },
-                    end: { line: 432, column: 142, offset: 19265 }
+                    start: { line: 432, column: 137, offset: 19209 },
+                    end: { line: 432, column: 142, offset: 19214 }
                   }
                 },
                 {
                   type: 'text',
                   value: '. The ',
                   position: {
-                    start: { line: 432, column: 142, offset: 19265 },
-                    end: { line: 432, column: 148, offset: 19271 }
+                    start: { line: 432, column: 142, offset: 19214 },
+                    end: { line: 432, column: 148, offset: 19220 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: 'Content-Type',
                   position: {
-                    start: { line: 432, column: 148, offset: 19271 },
-                    end: { line: 432, column: 162, offset: 19285 }
+                    start: { line: 432, column: 148, offset: 19220 },
+                    end: { line: 432, column: 162, offset: 19234 }
                   }
                 },
                 {
                   type: 'text',
                   value: ' header field must be ',
                   position: {
-                    start: { line: 432, column: 162, offset: 19285 },
-                    end: { line: 432, column: 184, offset: 19307 }
+                    start: { line: 432, column: 162, offset: 19234 },
+                    end: { line: 432, column: 184, offset: 19256 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: 'text/html',
                   position: {
-                    start: { line: 432, column: 184, offset: 19307 },
-                    end: { line: 432, column: 195, offset: 19318 }
+                    start: { line: 432, column: 184, offset: 19256 },
+                    end: { line: 432, column: 195, offset: 19267 }
                   }
                 },
                 {
                   type: 'text',
                   value: '.',
                   position: {
-                    start: { line: 432, column: 195, offset: 19318 },
-                    end: { line: 432, column: 196, offset: 19319 }
+                    start: { line: 432, column: 195, offset: 19267 },
+                    end: { line: 432, column: 196, offset: 19268 }
                   }
                 }
               ],
               position: {
-                start: { line: 432, column: 4, offset: 19127 },
-                end: { line: 432, column: 196, offset: 19319 }
+                start: { line: 432, column: 4, offset: 19076 },
+                end: { line: 432, column: 196, offset: 19268 }
               }
             }
           ],
           position: {
-            start: { line: 432, column: 2, offset: 19125 },
-            end: { line: 432, column: 196, offset: 19319 }
+            start: { line: 432, column: 2, offset: 19074 },
+            end: { line: 432, column: 196, offset: 19268 }
           }
         },
         {
@@ -6113,114 +6113,114 @@ export default {
                       type: 'text',
                       value: 'JSON',
                       position: {
-                        start: { line: 433, column: 5, offset: 19324 },
-                        end: { line: 433, column: 9, offset: 19328 }
+                        start: { line: 433, column: 5, offset: 19273 },
+                        end: { line: 433, column: 9, offset: 19277 }
                       }
                     }
                   ],
                   position: {
-                    start: { line: 433, column: 4, offset: 19323 },
-                    end: { line: 433, column: 45, offset: 19364 }
+                    start: { line: 433, column: 4, offset: 19272 },
+                    end: { line: 433, column: 45, offset: 19313 }
                   }
                 },
                 {
                   type: 'text',
                   value: ' - response body used for web applications. The method of the request is typically ',
                   position: {
-                    start: { line: 433, column: 45, offset: 19364 },
-                    end: { line: 433, column: 128, offset: 19447 }
+                    start: { line: 433, column: 45, offset: 19313 },
+                    end: { line: 433, column: 128, offset: 19396 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: 'PUT',
                   position: {
-                    start: { line: 433, column: 128, offset: 19447 },
-                    end: { line: 433, column: 133, offset: 19452 }
+                    start: { line: 433, column: 128, offset: 19396 },
+                    end: { line: 433, column: 133, offset: 19401 }
                   }
                 },
                 {
                   type: 'text',
                   value: ', ',
                   position: {
-                    start: { line: 433, column: 133, offset: 19452 },
-                    end: { line: 433, column: 135, offset: 19454 }
+                    start: { line: 433, column: 133, offset: 19401 },
+                    end: { line: 433, column: 135, offset: 19403 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: 'POST',
                   position: {
-                    start: { line: 433, column: 135, offset: 19454 },
-                    end: { line: 433, column: 141, offset: 19460 }
+                    start: { line: 433, column: 135, offset: 19403 },
+                    end: { line: 433, column: 141, offset: 19409 }
                   }
                 },
                 {
                   type: 'text',
                   value: ', or ',
                   position: {
-                    start: { line: 433, column: 141, offset: 19460 },
-                    end: { line: 433, column: 146, offset: 19465 }
+                    start: { line: 433, column: 141, offset: 19409 },
+                    end: { line: 433, column: 146, offset: 19414 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: 'PATCH',
                   position: {
-                    start: { line: 433, column: 146, offset: 19465 },
-                    end: { line: 433, column: 153, offset: 19472 }
+                    start: { line: 433, column: 146, offset: 19414 },
+                    end: { line: 433, column: 153, offset: 19421 }
                   }
                 },
                 {
                   type: 'text',
                   value: '. The ',
                   position: {
-                    start: { line: 433, column: 153, offset: 19472 },
-                    end: { line: 433, column: 159, offset: 19478 }
+                    start: { line: 433, column: 153, offset: 19421 },
+                    end: { line: 433, column: 159, offset: 19427 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: 'Content-Type',
                   position: {
-                    start: { line: 433, column: 159, offset: 19478 },
-                    end: { line: 433, column: 173, offset: 19492 }
+                    start: { line: 433, column: 159, offset: 19427 },
+                    end: { line: 433, column: 173, offset: 19441 }
                   }
                 },
                 {
                   type: 'text',
                   value: ' header field must be ',
                   position: {
-                    start: { line: 433, column: 173, offset: 19492 },
-                    end: { line: 433, column: 195, offset: 19514 }
+                    start: { line: 433, column: 173, offset: 19441 },
+                    end: { line: 433, column: 195, offset: 19463 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: 'application/json',
                   position: {
-                    start: { line: 433, column: 195, offset: 19514 },
-                    end: { line: 433, column: 213, offset: 19532 }
+                    start: { line: 433, column: 195, offset: 19463 },
+                    end: { line: 433, column: 213, offset: 19481 }
                   }
                 },
                 {
                   type: 'text',
                   value: '.',
                   position: {
-                    start: { line: 433, column: 213, offset: 19532 },
-                    end: { line: 433, column: 214, offset: 19533 }
+                    start: { line: 433, column: 213, offset: 19481 },
+                    end: { line: 433, column: 214, offset: 19482 }
                   }
                 }
               ],
               position: {
-                start: { line: 433, column: 4, offset: 19323 },
-                end: { line: 433, column: 214, offset: 19533 }
+                start: { line: 433, column: 4, offset: 19272 },
+                end: { line: 433, column: 214, offset: 19482 }
               }
             }
           ],
           position: {
-            start: { line: 433, column: 2, offset: 19321 },
-            end: { line: 433, column: 214, offset: 19533 }
+            start: { line: 433, column: 2, offset: 19270 },
+            end: { line: 433, column: 214, offset: 19482 }
           }
         },
         {
@@ -6240,22 +6240,22 @@ export default {
                       type: 'text',
                       value: 'XML',
                       position: {
-                        start: { line: 434, column: 5, offset: 19538 },
-                        end: { line: 434, column: 8, offset: 19541 }
+                        start: { line: 434, column: 5, offset: 19487 },
+                        end: { line: 434, column: 8, offset: 19490 }
                       }
                     }
                   ],
                   position: {
-                    start: { line: 434, column: 4, offset: 19537 },
-                    end: { line: 434, column: 46, offset: 19579 }
+                    start: { line: 434, column: 4, offset: 19486 },
+                    end: { line: 434, column: 46, offset: 19528 }
                   }
                 },
                 {
                   type: 'text',
                   value: ' - response body used for ',
                   position: {
-                    start: { line: 434, column: 46, offset: 19579 },
-                    end: { line: 434, column: 72, offset: 19605 }
+                    start: { line: 434, column: 46, offset: 19528 },
+                    end: { line: 434, column: 72, offset: 19554 }
                   }
                 },
                 {
@@ -6267,146 +6267,146 @@ export default {
                       type: 'text',
                       value: 'sitemaps',
                       position: {
-                        start: { line: 434, column: 73, offset: 19606 },
-                        end: { line: 434, column: 81, offset: 19614 }
+                        start: { line: 434, column: 73, offset: 19555 },
+                        end: { line: 434, column: 81, offset: 19563 }
                       }
                     }
                   ],
                   position: {
-                    start: { line: 434, column: 72, offset: 19605 },
-                    end: { line: 434, column: 161, offset: 19694 }
+                    start: { line: 434, column: 72, offset: 19554 },
+                    end: { line: 434, column: 161, offset: 19643 }
                   }
                 },
                 {
                   type: 'text',
                   value: ' or web applications. The method of the request can be ',
                   position: {
-                    start: { line: 434, column: 161, offset: 19694 },
-                    end: { line: 434, column: 216, offset: 19749 }
+                    start: { line: 434, column: 161, offset: 19643 },
+                    end: { line: 434, column: 216, offset: 19698 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: 'GET',
                   position: {
-                    start: { line: 434, column: 216, offset: 19749 },
-                    end: { line: 434, column: 221, offset: 19754 }
+                    start: { line: 434, column: 216, offset: 19698 },
+                    end: { line: 434, column: 221, offset: 19703 }
                   }
                 },
                 {
                   type: 'text',
                   value: ', ',
                   position: {
-                    start: { line: 434, column: 221, offset: 19754 },
-                    end: { line: 434, column: 223, offset: 19756 }
+                    start: { line: 434, column: 221, offset: 19703 },
+                    end: { line: 434, column: 223, offset: 19705 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: 'PUT',
                   position: {
-                    start: { line: 434, column: 223, offset: 19756 },
-                    end: { line: 434, column: 228, offset: 19761 }
+                    start: { line: 434, column: 223, offset: 19705 },
+                    end: { line: 434, column: 228, offset: 19710 }
                   }
                 },
                 {
                   type: 'text',
                   value: ', ',
                   position: {
-                    start: { line: 434, column: 228, offset: 19761 },
-                    end: { line: 434, column: 230, offset: 19763 }
+                    start: { line: 434, column: 228, offset: 19710 },
+                    end: { line: 434, column: 230, offset: 19712 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: 'POST',
                   position: {
-                    start: { line: 434, column: 230, offset: 19763 },
-                    end: { line: 434, column: 236, offset: 19769 }
+                    start: { line: 434, column: 230, offset: 19712 },
+                    end: { line: 434, column: 236, offset: 19718 }
                   }
                 },
                 {
                   type: 'text',
                   value: ', or ',
                   position: {
-                    start: { line: 434, column: 236, offset: 19769 },
-                    end: { line: 434, column: 241, offset: 19774 }
+                    start: { line: 434, column: 236, offset: 19718 },
+                    end: { line: 434, column: 241, offset: 19723 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: 'PATCH',
                   position: {
-                    start: { line: 434, column: 241, offset: 19774 },
-                    end: { line: 434, column: 248, offset: 19781 }
+                    start: { line: 434, column: 241, offset: 19723 },
+                    end: { line: 434, column: 248, offset: 19730 }
                   }
                 },
                 {
                   type: 'text',
                   value: '. The ',
                   position: {
-                    start: { line: 434, column: 248, offset: 19781 },
-                    end: { line: 434, column: 254, offset: 19787 }
+                    start: { line: 434, column: 248, offset: 19730 },
+                    end: { line: 434, column: 254, offset: 19736 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: 'Content-Type',
                   position: {
-                    start: { line: 434, column: 254, offset: 19787 },
-                    end: { line: 434, column: 268, offset: 19801 }
+                    start: { line: 434, column: 254, offset: 19736 },
+                    end: { line: 434, column: 268, offset: 19750 }
                   }
                 },
                 {
                   type: 'text',
                   value: ' header field can be ',
                   position: {
-                    start: { line: 434, column: 268, offset: 19801 },
-                    end: { line: 434, column: 289, offset: 19822 }
+                    start: { line: 434, column: 268, offset: 19750 },
+                    end: { line: 434, column: 289, offset: 19771 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: 'application/xml',
                   position: {
-                    start: { line: 434, column: 289, offset: 19822 },
-                    end: { line: 434, column: 306, offset: 19839 }
+                    start: { line: 434, column: 289, offset: 19771 },
+                    end: { line: 434, column: 306, offset: 19788 }
                   }
                 },
                 {
                   type: 'text',
                   value: ' or ',
                   position: {
-                    start: { line: 434, column: 306, offset: 19839 },
-                    end: { line: 434, column: 310, offset: 19843 }
+                    start: { line: 434, column: 306, offset: 19788 },
+                    end: { line: 434, column: 310, offset: 19792 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: 'text/xml',
                   position: {
-                    start: { line: 434, column: 310, offset: 19843 },
-                    end: { line: 434, column: 320, offset: 19853 }
+                    start: { line: 434, column: 310, offset: 19792 },
+                    end: { line: 434, column: 320, offset: 19802 }
                   }
                 },
                 {
                   type: 'text',
                   value: '.',
                   position: {
-                    start: { line: 434, column: 320, offset: 19853 },
-                    end: { line: 434, column: 321, offset: 19854 }
+                    start: { line: 434, column: 320, offset: 19802 },
+                    end: { line: 434, column: 321, offset: 19803 }
                   }
                 }
               ],
               position: {
-                start: { line: 434, column: 4, offset: 19537 },
-                end: { line: 434, column: 321, offset: 19854 }
+                start: { line: 434, column: 4, offset: 19486 },
+                end: { line: 434, column: 321, offset: 19803 }
               }
             }
           ],
           position: {
-            start: { line: 434, column: 2, offset: 19535 },
-            end: { line: 434, column: 321, offset: 19854 }
+            start: { line: 434, column: 2, offset: 19484 },
+            end: { line: 434, column: 321, offset: 19803 }
           }
         },
         {
@@ -6421,138 +6421,138 @@ export default {
                   type: 'text',
                   value: 'Binary - response body used for media transfer. The method of the request is typically ',
                   position: {
-                    start: { line: 435, column: 4, offset: 19858 },
-                    end: { line: 435, column: 91, offset: 19945 }
+                    start: { line: 435, column: 4, offset: 19807 },
+                    end: { line: 435, column: 91, offset: 19894 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: 'GET',
                   position: {
-                    start: { line: 435, column: 91, offset: 19945 },
-                    end: { line: 435, column: 96, offset: 19950 }
+                    start: { line: 435, column: 91, offset: 19894 },
+                    end: { line: 435, column: 96, offset: 19899 }
                   }
                 },
                 {
                   type: 'text',
                   value: '. The ',
                   position: {
-                    start: { line: 435, column: 96, offset: 19950 },
-                    end: { line: 435, column: 102, offset: 19956 }
+                    start: { line: 435, column: 96, offset: 19899 },
+                    end: { line: 435, column: 102, offset: 19905 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: 'Content-Type',
                   position: {
-                    start: { line: 435, column: 102, offset: 19956 },
-                    end: { line: 435, column: 116, offset: 19970 }
+                    start: { line: 435, column: 102, offset: 19905 },
+                    end: { line: 435, column: 116, offset: 19919 }
                   }
                 },
                 {
                   type: 'text',
                   value: ' header field can be ',
                   position: {
-                    start: { line: 435, column: 116, offset: 19970 },
-                    end: { line: 435, column: 137, offset: 19991 }
+                    start: { line: 435, column: 116, offset: 19919 },
+                    end: { line: 435, column: 137, offset: 19940 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: 'image/jpeg',
                   position: {
-                    start: { line: 435, column: 137, offset: 19991 },
-                    end: { line: 435, column: 149, offset: 20003 }
+                    start: { line: 435, column: 137, offset: 19940 },
+                    end: { line: 435, column: 149, offset: 19952 }
                   }
                 },
                 {
                   type: 'text',
                   value: ', ',
                   position: {
-                    start: { line: 435, column: 149, offset: 20003 },
-                    end: { line: 435, column: 151, offset: 20005 }
+                    start: { line: 435, column: 149, offset: 19952 },
+                    end: { line: 435, column: 151, offset: 19954 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: 'image/png',
                   position: {
-                    start: { line: 435, column: 151, offset: 20005 },
-                    end: { line: 435, column: 162, offset: 20016 }
+                    start: { line: 435, column: 151, offset: 19954 },
+                    end: { line: 435, column: 162, offset: 19965 }
                   }
                 },
                 {
                   type: 'text',
                   value: ', ',
                   position: {
-                    start: { line: 435, column: 162, offset: 20016 },
-                    end: { line: 435, column: 164, offset: 20018 }
+                    start: { line: 435, column: 162, offset: 19965 },
+                    end: { line: 435, column: 164, offset: 19967 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: 'audio/mpeg',
                   position: {
-                    start: { line: 435, column: 164, offset: 20018 },
-                    end: { line: 435, column: 176, offset: 20030 }
+                    start: { line: 435, column: 164, offset: 19967 },
+                    end: { line: 435, column: 176, offset: 19979 }
                   }
                 },
                 {
                   type: 'text',
                   value: ', ',
                   position: {
-                    start: { line: 435, column: 176, offset: 20030 },
-                    end: { line: 435, column: 178, offset: 20032 }
+                    start: { line: 435, column: 176, offset: 19979 },
+                    end: { line: 435, column: 178, offset: 19981 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: 'audio/x-wav',
                   position: {
-                    start: { line: 435, column: 178, offset: 20032 },
-                    end: { line: 435, column: 191, offset: 20045 }
+                    start: { line: 435, column: 178, offset: 19981 },
+                    end: { line: 435, column: 191, offset: 19994 }
                   }
                 },
                 {
                   type: 'text',
                   value: ', or ',
                   position: {
-                    start: { line: 435, column: 191, offset: 20045 },
-                    end: { line: 435, column: 196, offset: 20050 }
+                    start: { line: 435, column: 191, offset: 19994 },
+                    end: { line: 435, column: 196, offset: 19999 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: 'video/mp4',
                   position: {
-                    start: { line: 435, column: 196, offset: 20050 },
-                    end: { line: 435, column: 207, offset: 20061 }
+                    start: { line: 435, column: 196, offset: 19999 },
+                    end: { line: 435, column: 207, offset: 20010 }
                   }
                 },
                 {
                   type: 'text',
                   value: '.',
                   position: {
-                    start: { line: 435, column: 207, offset: 20061 },
-                    end: { line: 435, column: 208, offset: 20062 }
+                    start: { line: 435, column: 207, offset: 20010 },
+                    end: { line: 435, column: 208, offset: 20011 }
                   }
                 }
               ],
               position: {
-                start: { line: 435, column: 4, offset: 19858 },
-                end: { line: 435, column: 208, offset: 20062 }
+                start: { line: 435, column: 4, offset: 19807 },
+                end: { line: 435, column: 208, offset: 20011 }
               }
             }
           ],
           position: {
-            start: { line: 435, column: 2, offset: 19856 },
-            end: { line: 435, column: 208, offset: 20062 }
+            start: { line: 435, column: 2, offset: 19805 },
+            end: { line: 435, column: 208, offset: 20011 }
           }
         }
       ],
       position: {
-        start: { line: 432, column: 2, offset: 19125 },
-        end: { line: 435, column: 208, offset: 20062 }
+        start: { line: 432, column: 2, offset: 19074 },
+        end: { line: 435, column: 208, offset: 20011 }
       }
     },
     {
@@ -6563,14 +6563,14 @@ export default {
           type: 'text',
           value: 'HTTP Server',
           position: {
-            start: { line: 437, column: 4, offset: 20067 },
-            end: { line: 437, column: 15, offset: 20078 }
+            start: { line: 437, column: 4, offset: 20016 },
+            end: { line: 437, column: 15, offset: 20027 }
           }
         }
       ],
       position: {
-        start: { line: 437, column: 1, offset: 20064 },
-        end: { line: 437, column: 15, offset: 20078 }
+        start: { line: 437, column: 1, offset: 20013 },
+        end: { line: 437, column: 15, offset: 20027 }
       }
     },
     {
@@ -6580,41 +6580,41 @@ export default {
           type: 'text',
           value: 'An HTTP server is a component of a "web server" or software application running inside a computer that listens on a specific port for HTTP requests. The HTTP server processes those requests and sends back HTTP responses. The ',
           position: {
-            start: { line: 439, column: 1, offset: 20080 },
-            end: { line: 439, column: 226, offset: 20305 }
+            start: { line: 439, column: 1, offset: 20029 },
+            end: { line: 439, column: 226, offset: 20254 }
           }
         },
         {
           type: 'link',
           title: null,
-          url: 'https://en.wikipedia.org/wiki/Node.js',
+          url: 'https://nodejs.org/en',
           children: [
             {
               type: 'text',
               value: 'NodeJS',
               position: {
-                start: { line: 439, column: 227, offset: 20306 },
-                end: { line: 439, column: 233, offset: 20312 }
+                start: { line: 439, column: 227, offset: 20255 },
+                end: { line: 439, column: 233, offset: 20261 }
               }
             }
           ],
           position: {
-            start: { line: 439, column: 226, offset: 20305 },
-            end: { line: 439, column: 273, offset: 20352 }
+            start: { line: 439, column: 226, offset: 20254 },
+            end: { line: 439, column: 257, offset: 20285 }
           }
         },
         {
           type: 'text',
           value: ' JavaScript code below is part of a software application that runs inside a computer or "server" in a data center.',
           position: {
-            start: { line: 439, column: 273, offset: 20352 },
-            end: { line: 439, column: 387, offset: 20466 }
+            start: { line: 439, column: 257, offset: 20285 },
+            end: { line: 439, column: 371, offset: 20399 }
           }
         }
       ],
       position: {
-        start: { line: 439, column: 1, offset: 20080 },
-        end: { line: 439, column: 387, offset: 20466 }
+        start: { line: 439, column: 1, offset: 20029 },
+        end: { line: 439, column: 371, offset: 20399 }
       }
     },
     {
@@ -6624,30 +6624,30 @@ export default {
           type: 'text',
           value: 'We can use the NodeJS ',
           position: {
-            start: { line: 441, column: 1, offset: 20468 },
-            end: { line: 441, column: 23, offset: 20490 }
+            start: { line: 441, column: 1, offset: 20401 },
+            end: { line: 441, column: 23, offset: 20423 }
           }
         },
         {
           type: 'inlineCode',
           value: 'http',
           position: {
-            start: { line: 441, column: 23, offset: 20490 },
-            end: { line: 441, column: 29, offset: 20496 }
+            start: { line: 441, column: 23, offset: 20423 },
+            end: { line: 441, column: 29, offset: 20429 }
           }
         },
         {
           type: 'text',
           value: ' module to create an HTTP server.',
           position: {
-            start: { line: 441, column: 29, offset: 20496 },
-            end: { line: 441, column: 62, offset: 20529 }
+            start: { line: 441, column: 29, offset: 20429 },
+            end: { line: 441, column: 62, offset: 20462 }
           }
         }
       ],
       position: {
-        start: { line: 441, column: 1, offset: 20468 },
-        end: { line: 441, column: 62, offset: 20529 }
+        start: { line: 441, column: 1, offset: 20401 },
+        end: { line: 441, column: 62, offset: 20462 }
       }
     },
     {
@@ -6667,8 +6667,8 @@ export default {
         '\n' +
         'server.listen(port)',
       position: {
-        start: { line: 443, column: 1, offset: 20531 },
-        end: { line: 456, column: 4, offset: 20767 }
+        start: { line: 443, column: 1, offset: 20464 },
+        end: { line: 456, column: 4, offset: 20700 }
       }
     },
     {
@@ -6676,80 +6676,112 @@ export default {
       children: [
         {
           type: 'text',
-          value: 'The example code above creates an HTTP server with ',
+          value: 'The example code above creates a NodeJS HTTP server with ',
           position: {
-            start: { line: 458, column: 1, offset: 20769 },
-            end: { line: 458, column: 52, offset: 20820 }
+            start: { line: 458, column: 1, offset: 20702 },
+            end: { line: 458, column: 58, offset: 20759 }
           }
         },
         {
           type: 'inlineCode',
           value: 'http.createServer',
           position: {
-            start: { line: 458, column: 52, offset: 20820 },
-            end: { line: 458, column: 71, offset: 20839 }
+            start: { line: 458, column: 58, offset: 20759 },
+            end: { line: 458, column: 77, offset: 20778 }
           }
         },
         {
           type: 'text',
           value: ' that takes a simple handler ',
           position: {
-            start: { line: 458, column: 71, offset: 20839 },
-            end: { line: 458, column: 100, offset: 20868 }
+            start: { line: 458, column: 77, offset: 20778 },
+            end: { line: 458, column: 106, offset: 20807 }
           }
         },
         {
           type: 'inlineCode',
           value: '(request, response) => {...}',
           position: {
-            start: { line: 458, column: 100, offset: 20868 },
-            end: { line: 458, column: 130, offset: 20898 }
+            start: { line: 458, column: 106, offset: 20807 },
+            end: { line: 458, column: 136, offset: 20837 }
+          }
+        },
+        {
+          type: 'text',
+          value: ' that only responds with status ',
+          position: {
+            start: { line: 458, column: 136, offset: 20837 },
+            end: { line: 458, column: 168, offset: 20869 }
+          }
+        },
+        {
+          type: 'inlineCode',
+          value: '200',
+          position: {
+            start: { line: 458, column: 168, offset: 20869 },
+            end: { line: 458, column: 173, offset: 20874 }
+          }
+        },
+        {
+          type: 'text',
+          value: ' and body ',
+          position: {
+            start: { line: 458, column: 173, offset: 20874 },
+            end: { line: 458, column: 183, offset: 20884 }
+          }
+        },
+        {
+          type: 'inlineCode',
+          value: 'ok',
+          position: {
+            start: { line: 458, column: 183, offset: 20884 },
+            end: { line: 458, column: 187, offset: 20888 }
           }
         },
         {
           type: 'text',
           value: '. The HTTP server starts listening on port ',
           position: {
-            start: { line: 458, column: 130, offset: 20898 },
-            end: { line: 458, column: 173, offset: 20941 }
+            start: { line: 458, column: 187, offset: 20888 },
+            end: { line: 458, column: 230, offset: 20931 }
           }
         },
         {
           type: 'inlineCode',
           value: '8080',
           position: {
-            start: { line: 458, column: 173, offset: 20941 },
-            end: { line: 458, column: 179, offset: 20947 }
+            start: { line: 458, column: 230, offset: 20931 },
+            end: { line: 458, column: 236, offset: 20937 }
           }
         },
         {
           type: 'text',
           value: ' with the call to ',
           position: {
-            start: { line: 458, column: 179, offset: 20947 },
-            end: { line: 458, column: 197, offset: 20965 }
+            start: { line: 458, column: 236, offset: 20937 },
+            end: { line: 458, column: 254, offset: 20955 }
           }
         },
         {
           type: 'inlineCode',
           value: 'server.listen',
           position: {
-            start: { line: 458, column: 197, offset: 20965 },
-            end: { line: 458, column: 212, offset: 20980 }
+            start: { line: 458, column: 254, offset: 20955 },
+            end: { line: 458, column: 269, offset: 20970 }
           }
         },
         {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 458, column: 212, offset: 20980 },
-            end: { line: 458, column: 213, offset: 20981 }
+            start: { line: 458, column: 269, offset: 20970 },
+            end: { line: 458, column: 270, offset: 20971 }
           }
         }
       ],
       position: {
-        start: { line: 458, column: 1, offset: 20769 },
-        end: { line: 458, column: 213, offset: 20981 }
+        start: { line: 458, column: 1, offset: 20702 },
+        end: { line: 458, column: 270, offset: 20971 }
       }
     },
     {
@@ -6759,14 +6791,14 @@ export default {
           type: 'text',
           value: 'An HTTP server has the following properties:',
           position: {
-            start: { line: 460, column: 1, offset: 20983 },
-            end: { line: 460, column: 45, offset: 21027 }
+            start: { line: 460, column: 1, offset: 20973 },
+            end: { line: 460, column: 45, offset: 21017 }
           }
         }
       ],
       position: {
-        start: { line: 460, column: 1, offset: 20983 },
-        end: { line: 460, column: 45, offset: 21027 }
+        start: { line: 460, column: 1, offset: 20973 },
+        end: { line: 460, column: 45, offset: 21017 }
       }
     },
     {
@@ -6787,26 +6819,26 @@ export default {
                   type: 'text',
                   value: 'port',
                   position: {
-                    start: { line: 461, column: 4, offset: 21031 },
-                    end: { line: 461, column: 8, offset: 21035 }
+                    start: { line: 461, column: 4, offset: 21021 },
+                    end: { line: 461, column: 8, offset: 21025 }
                   }
                 }
               ],
               position: {
-                start: { line: 461, column: 4, offset: 21031 },
-                end: { line: 461, column: 8, offset: 21035 }
+                start: { line: 461, column: 4, offset: 21021 },
+                end: { line: 461, column: 8, offset: 21025 }
               }
             }
           ],
           position: {
-            start: { line: 461, column: 2, offset: 21029 },
-            end: { line: 461, column: 8, offset: 21035 }
+            start: { line: 461, column: 2, offset: 21019 },
+            end: { line: 461, column: 8, offset: 21025 }
           }
         }
       ],
       position: {
-        start: { line: 461, column: 2, offset: 21029 },
-        end: { line: 461, column: 8, offset: 21035 }
+        start: { line: 461, column: 2, offset: 21019 },
+        end: { line: 461, column: 8, offset: 21025 }
       }
     },
     {
@@ -6817,14 +6849,14 @@ export default {
           type: 'text',
           value: 'HTTP Server Port',
           position: {
-            start: { line: 463, column: 5, offset: 21041 },
-            end: { line: 463, column: 21, offset: 21057 }
+            start: { line: 463, column: 5, offset: 21031 },
+            end: { line: 463, column: 21, offset: 21047 }
           }
         }
       ],
       position: {
-        start: { line: 463, column: 1, offset: 21037 },
-        end: { line: 463, column: 21, offset: 21057 }
+        start: { line: 463, column: 1, offset: 21027 },
+        end: { line: 463, column: 21, offset: 21047 }
       }
     },
     {
@@ -6834,30 +6866,30 @@ export default {
           type: 'text',
           value: 'An HTTP server port is a number that represents the network port on which the server is listening. A network port is a logical communication endpoint within a network. The value for the port can range from 0 and 65535. In the above example, we created an HTTP web server that listened on port ',
           position: {
-            start: { line: 465, column: 1, offset: 21059 },
-            end: { line: 465, column: 294, offset: 21352 }
+            start: { line: 465, column: 1, offset: 21049 },
+            end: { line: 465, column: 294, offset: 21342 }
           }
         },
         {
           type: 'inlineCode',
           value: '8080',
           position: {
-            start: { line: 465, column: 294, offset: 21352 },
-            end: { line: 465, column: 300, offset: 21358 }
+            start: { line: 465, column: 294, offset: 21342 },
+            end: { line: 465, column: 300, offset: 21348 }
           }
         },
         {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 465, column: 300, offset: 21358 },
-            end: { line: 465, column: 301, offset: 21359 }
+            start: { line: 465, column: 300, offset: 21348 },
+            end: { line: 465, column: 301, offset: 21349 }
           }
         }
       ],
       position: {
-        start: { line: 465, column: 1, offset: 21059 },
-        end: { line: 465, column: 301, offset: 21359 }
+        start: { line: 465, column: 1, offset: 21049 },
+        end: { line: 465, column: 301, offset: 21349 }
       }
     },
     {
@@ -6868,14 +6900,14 @@ export default {
           type: 'text',
           value: 'HTTP Handler',
           position: {
-            start: { line: 467, column: 4, offset: 21364 },
-            end: { line: 467, column: 16, offset: 21376 }
+            start: { line: 467, column: 4, offset: 21354 },
+            end: { line: 467, column: 16, offset: 21366 }
           }
         }
       ],
       position: {
-        start: { line: 467, column: 1, offset: 21361 },
-        end: { line: 467, column: 16, offset: 21376 }
+        start: { line: 467, column: 1, offset: 21351 },
+        end: { line: 467, column: 16, offset: 21366 }
       }
     },
     {
@@ -6885,14 +6917,14 @@ export default {
           type: 'text',
           value: 'An HTTP handler is a component of an HTTP server that processes or "handles" incoming requests from clients.',
           position: {
-            start: { line: 469, column: 1, offset: 21378 },
-            end: { line: 469, column: 109, offset: 21486 }
+            start: { line: 469, column: 1, offset: 21368 },
+            end: { line: 469, column: 109, offset: 21476 }
           }
         }
       ],
       position: {
-        start: { line: 469, column: 1, offset: 21378 },
-        end: { line: 469, column: 109, offset: 21486 }
+        start: { line: 469, column: 1, offset: 21368 },
+        end: { line: 469, column: 109, offset: 21476 }
       }
     },
     {
@@ -6902,14 +6934,14 @@ export default {
           type: 'text',
           value: 'Generally, an HTTP handler is responsible for the following:',
           position: {
-            start: { line: 471, column: 1, offset: 21488 },
-            end: { line: 471, column: 61, offset: 21548 }
+            start: { line: 471, column: 1, offset: 21478 },
+            end: { line: 471, column: 61, offset: 21538 }
           }
         }
       ],
       position: {
-        start: { line: 471, column: 1, offset: 21488 },
-        end: { line: 471, column: 61, offset: 21548 }
+        start: { line: 471, column: 1, offset: 21478 },
+        end: { line: 471, column: 61, offset: 21538 }
       }
     },
     {
@@ -6930,20 +6962,20 @@ export default {
                   type: 'text',
                   value: 'Parsing information from a request such as its headers, path, and body',
                   position: {
-                    start: { line: 472, column: 4, offset: 21552 },
-                    end: { line: 472, column: 74, offset: 21622 }
+                    start: { line: 472, column: 4, offset: 21542 },
+                    end: { line: 472, column: 74, offset: 21612 }
                   }
                 }
               ],
               position: {
-                start: { line: 472, column: 4, offset: 21552 },
-                end: { line: 472, column: 74, offset: 21622 }
+                start: { line: 472, column: 4, offset: 21542 },
+                end: { line: 472, column: 74, offset: 21612 }
               }
             }
           ],
           position: {
-            start: { line: 472, column: 2, offset: 21550 },
-            end: { line: 472, column: 74, offset: 21622 }
+            start: { line: 472, column: 2, offset: 21540 },
+            end: { line: 472, column: 74, offset: 21612 }
           }
         },
         {
@@ -6958,20 +6990,20 @@ export default {
                   type: 'text',
                   value: 'Validating the information parsed from a request',
                   position: {
-                    start: { line: 473, column: 4, offset: 21626 },
-                    end: { line: 473, column: 52, offset: 21674 }
+                    start: { line: 473, column: 4, offset: 21616 },
+                    end: { line: 473, column: 52, offset: 21664 }
                   }
                 }
               ],
               position: {
-                start: { line: 473, column: 4, offset: 21626 },
-                end: { line: 473, column: 52, offset: 21674 }
+                start: { line: 473, column: 4, offset: 21616 },
+                end: { line: 473, column: 52, offset: 21664 }
               }
             }
           ],
           position: {
-            start: { line: 473, column: 2, offset: 21624 },
-            end: { line: 473, column: 52, offset: 21674 }
+            start: { line: 473, column: 2, offset: 21614 },
+            end: { line: 473, column: 52, offset: 21664 }
           }
         },
         {
@@ -6986,20 +7018,20 @@ export default {
                   type: 'text',
                   value: 'Sending additional requests to other web servers or "web services", for example sending a request to a database web service (Amazon DynamoDB, Amazon RDS running PostgreSQL or MySQL) or external cache (Redis) to retrieve or store data',
                   position: {
-                    start: { line: 474, column: 4, offset: 21678 },
-                    end: { line: 474, column: 237, offset: 21911 }
+                    start: { line: 474, column: 4, offset: 21668 },
+                    end: { line: 474, column: 237, offset: 21901 }
                   }
                 }
               ],
               position: {
-                start: { line: 474, column: 4, offset: 21678 },
-                end: { line: 474, column: 237, offset: 21911 }
+                start: { line: 474, column: 4, offset: 21668 },
+                end: { line: 474, column: 237, offset: 21901 }
               }
             }
           ],
           position: {
-            start: { line: 474, column: 2, offset: 21676 },
-            end: { line: 474, column: 237, offset: 21911 }
+            start: { line: 474, column: 2, offset: 21666 },
+            end: { line: 474, column: 237, offset: 21901 }
           }
         },
         {
@@ -7014,26 +7046,26 @@ export default {
                   type: 'text',
                   value: 'Generating the response to the request, including setting the appropriate response headers and writing to the response body.',
                   position: {
-                    start: { line: 475, column: 4, offset: 21915 },
-                    end: { line: 475, column: 128, offset: 22039 }
+                    start: { line: 475, column: 4, offset: 21905 },
+                    end: { line: 475, column: 128, offset: 22029 }
                   }
                 }
               ],
               position: {
-                start: { line: 475, column: 4, offset: 21915 },
-                end: { line: 475, column: 128, offset: 22039 }
+                start: { line: 475, column: 4, offset: 21905 },
+                end: { line: 475, column: 128, offset: 22029 }
               }
             }
           ],
           position: {
-            start: { line: 475, column: 2, offset: 21913 },
-            end: { line: 475, column: 128, offset: 22039 }
+            start: { line: 475, column: 2, offset: 21903 },
+            end: { line: 475, column: 128, offset: 22029 }
           }
         }
       ],
       position: {
-        start: { line: 472, column: 2, offset: 21550 },
-        end: { line: 475, column: 128, offset: 22039 }
+        start: { line: 472, column: 2, offset: 21540 },
+        end: { line: 475, column: 128, offset: 22029 }
       }
     },
     {
@@ -7044,14 +7076,14 @@ export default {
           type: 'text',
           value: 'HTTP Handlers in NodeJS',
           position: {
-            start: { line: 477, column: 5, offset: 22045 },
-            end: { line: 477, column: 28, offset: 22068 }
+            start: { line: 477, column: 5, offset: 22035 },
+            end: { line: 477, column: 28, offset: 22058 }
           }
         }
       ],
       position: {
-        start: { line: 477, column: 1, offset: 22041 },
-        end: { line: 477, column: 28, offset: 22068 }
+        start: { line: 477, column: 1, offset: 22031 },
+        end: { line: 477, column: 28, offset: 22058 }
       }
     },
     {
@@ -7061,46 +7093,46 @@ export default {
           type: 'text',
           value: "The NodeJS JavaScript runtime's ",
           position: {
-            start: { line: 479, column: 1, offset: 22070 },
-            end: { line: 479, column: 33, offset: 22102 }
+            start: { line: 479, column: 1, offset: 22060 },
+            end: { line: 479, column: 33, offset: 22092 }
           }
         },
         {
           type: 'inlineCode',
           value: 'http',
           position: {
-            start: { line: 479, column: 33, offset: 22102 },
-            end: { line: 479, column: 39, offset: 22108 }
+            start: { line: 479, column: 33, offset: 22092 },
+            end: { line: 479, column: 39, offset: 22098 }
           }
         },
         {
           type: 'text',
           value: ' module handles most of the processing of the raw HTTP request message and abstracts the parsed information into a NodeJS ',
           position: {
-            start: { line: 479, column: 39, offset: 22108 },
-            end: { line: 479, column: 161, offset: 22230 }
+            start: { line: 479, column: 39, offset: 22098 },
+            end: { line: 479, column: 161, offset: 22220 }
           }
         },
         {
           type: 'inlineCode',
           value: 'ClientRequest',
           position: {
-            start: { line: 479, column: 161, offset: 22230 },
-            end: { line: 479, column: 176, offset: 22245 }
+            start: { line: 479, column: 161, offset: 22220 },
+            end: { line: 479, column: 176, offset: 22235 }
           }
         },
         {
           type: 'text',
           value: ' object.',
           position: {
-            start: { line: 479, column: 176, offset: 22245 },
-            end: { line: 479, column: 184, offset: 22253 }
+            start: { line: 479, column: 176, offset: 22235 },
+            end: { line: 479, column: 184, offset: 22243 }
           }
         }
       ],
       position: {
-        start: { line: 479, column: 1, offset: 22070 },
-        end: { line: 479, column: 184, offset: 22253 }
+        start: { line: 479, column: 1, offset: 22060 },
+        end: { line: 479, column: 184, offset: 22243 }
       }
     },
     {
@@ -7120,8 +7152,8 @@ export default {
         "request.on('error', (error Error)=>undefined)\n" +
         "request.on('end', ()=>undefined)",
       position: {
-        start: { line: 481, column: 1, offset: 22255 },
-        end: { line: 494, column: 4, offset: 22580 }
+        start: { line: 481, column: 1, offset: 22245 },
+        end: { line: 494, column: 4, offset: 22570 }
       }
     },
     {
@@ -7131,46 +7163,46 @@ export default {
           type: 'text',
           value: 'The NodeJS ',
           position: {
-            start: { line: 496, column: 1, offset: 22582 },
-            end: { line: 496, column: 12, offset: 22593 }
+            start: { line: 496, column: 1, offset: 22572 },
+            end: { line: 496, column: 12, offset: 22583 }
           }
         },
         {
           type: 'inlineCode',
           value: 'http',
           position: {
-            start: { line: 496, column: 12, offset: 22593 },
-            end: { line: 496, column: 18, offset: 22599 }
+            start: { line: 496, column: 12, offset: 22583 },
+            end: { line: 496, column: 18, offset: 22589 }
           }
         },
         {
           type: 'text',
           value: ' module offers an interface or "API" for generating HTTP responses as ',
           position: {
-            start: { line: 496, column: 18, offset: 22599 },
-            end: { line: 496, column: 88, offset: 22669 }
+            start: { line: 496, column: 18, offset: 22589 },
+            end: { line: 496, column: 88, offset: 22659 }
           }
         },
         {
           type: 'inlineCode',
           value: 'ServerResponse',
           position: {
-            start: { line: 496, column: 88, offset: 22669 },
-            end: { line: 496, column: 104, offset: 22685 }
+            start: { line: 496, column: 88, offset: 22659 },
+            end: { line: 496, column: 104, offset: 22675 }
           }
         },
         {
           type: 'text',
           value: ' objects.',
           position: {
-            start: { line: 496, column: 104, offset: 22685 },
-            end: { line: 496, column: 113, offset: 22694 }
+            start: { line: 496, column: 104, offset: 22675 },
+            end: { line: 496, column: 113, offset: 22684 }
           }
         }
       ],
       position: {
-        start: { line: 496, column: 1, offset: 22582 },
-        end: { line: 496, column: 113, offset: 22694 }
+        start: { line: 496, column: 1, offset: 22572 },
+        end: { line: 496, column: 113, offset: 22684 }
       }
     },
     {
@@ -7183,8 +7215,8 @@ export default {
         '  end: (data Buffer|string)=>undefined\n' +
         '}',
       position: {
-        start: { line: 498, column: 1, offset: 22696 },
-        end: { line: 504, column: 4, offset: 22893 }
+        start: { line: 498, column: 1, offset: 22686 },
+        end: { line: 504, column: 4, offset: 22883 }
       }
     },
     {
@@ -7194,46 +7226,46 @@ export default {
           type: 'text',
           value: 'An HTTP handler in NodeJS handles ',
           position: {
-            start: { line: 506, column: 1, offset: 22895 },
-            end: { line: 506, column: 35, offset: 22929 }
+            start: { line: 506, column: 1, offset: 22885 },
+            end: { line: 506, column: 35, offset: 22919 }
           }
         },
         {
           type: 'inlineCode',
           value: 'ClientRequest',
           position: {
-            start: { line: 506, column: 35, offset: 22929 },
-            end: { line: 506, column: 50, offset: 22944 }
+            start: { line: 506, column: 35, offset: 22919 },
+            end: { line: 506, column: 50, offset: 22934 }
           }
         },
         {
           type: 'text',
           value: ' and ',
           position: {
-            start: { line: 506, column: 50, offset: 22944 },
-            end: { line: 506, column: 55, offset: 22949 }
+            start: { line: 506, column: 50, offset: 22934 },
+            end: { line: 506, column: 55, offset: 22939 }
           }
         },
         {
           type: 'inlineCode',
           value: 'ServerResponse',
           position: {
-            start: { line: 506, column: 55, offset: 22949 },
-            end: { line: 506, column: 71, offset: 22965 }
+            start: { line: 506, column: 55, offset: 22939 },
+            end: { line: 506, column: 71, offset: 22955 }
           }
         },
         {
           type: 'text',
           value: ' objects and has the following structure:',
           position: {
-            start: { line: 506, column: 71, offset: 22965 },
-            end: { line: 506, column: 112, offset: 23006 }
+            start: { line: 506, column: 71, offset: 22955 },
+            end: { line: 506, column: 112, offset: 22996 }
           }
         }
       ],
       position: {
-        start: { line: 506, column: 1, offset: 22895 },
-        end: { line: 506, column: 112, offset: 23006 }
+        start: { line: 506, column: 1, offset: 22885 },
+        end: { line: 506, column: 112, offset: 22996 }
       }
     },
     {
@@ -7255,8 +7287,8 @@ export default {
         '\n' +
         'type HttpHandler = (request ClientRequest, response ServerResponse)=>Promise|undefined',
       position: {
-        start: { line: 508, column: 1, offset: 23008 },
-        end: { line: 523, column: 4, offset: 23439 }
+        start: { line: 508, column: 1, offset: 22998 },
+        end: { line: 523, column: 4, offset: 23429 }
       }
     },
     {
@@ -7266,8 +7298,8 @@ export default {
           type: 'text',
           value: 'Below is a theoretical NodeJS HTTP handler that handles the request made in the ',
           position: {
-            start: { line: 525, column: 1, offset: 23441 },
-            end: { line: 525, column: 81, offset: 23521 }
+            start: { line: 525, column: 1, offset: 23431 },
+            end: { line: 525, column: 81, offset: 23511 }
           }
         },
         {
@@ -7279,28 +7311,28 @@ export default {
               type: 'text',
               value: 'HTTP client',
               position: {
-                start: { line: 525, column: 82, offset: 23522 },
-                end: { line: 525, column: 93, offset: 23533 }
+                start: { line: 525, column: 82, offset: 23512 },
+                end: { line: 525, column: 93, offset: 23523 }
               }
             }
           ],
           position: {
-            start: { line: 525, column: 81, offset: 23521 },
-            end: { line: 525, column: 108, offset: 23548 }
+            start: { line: 525, column: 81, offset: 23511 },
+            end: { line: 525, column: 108, offset: 23538 }
           }
         },
         {
           type: 'text',
           value: ' example.',
           position: {
-            start: { line: 525, column: 108, offset: 23548 },
-            end: { line: 525, column: 117, offset: 23557 }
+            start: { line: 525, column: 108, offset: 23538 },
+            end: { line: 525, column: 117, offset: 23547 }
           }
         }
       ],
       position: {
-        start: { line: 525, column: 1, offset: 23441 },
-        end: { line: 525, column: 117, offset: 23557 }
+        start: { line: 525, column: 1, offset: 23431 },
+        end: { line: 525, column: 117, offset: 23547 }
       }
     },
     {
@@ -7341,8 +7373,8 @@ export default {
         '\n' +
         'server.listen(port)',
       position: {
-        start: { line: 527, column: 1, offset: 23559 },
-        end: { line: 561, column: 4, offset: 24210 }
+        start: { line: 527, column: 1, offset: 23549 },
+        end: { line: 561, column: 4, offset: 24200 }
       }
     },
     {
@@ -7352,110 +7384,110 @@ export default {
           type: 'text',
           value: 'The HTTP server ',
           position: {
-            start: { line: 563, column: 1, offset: 24212 },
-            end: { line: 563, column: 17, offset: 24228 }
+            start: { line: 563, column: 1, offset: 24202 },
+            end: { line: 563, column: 17, offset: 24218 }
           }
         },
         {
           type: 'inlineCode',
           value: 'server',
           position: {
-            start: { line: 563, column: 17, offset: 24228 },
-            end: { line: 563, column: 25, offset: 24236 }
+            start: { line: 563, column: 17, offset: 24218 },
+            end: { line: 563, column: 25, offset: 24226 }
           }
         },
         {
           type: 'text',
           value: ' created by the NodeJS ',
           position: {
-            start: { line: 563, column: 25, offset: 24236 },
-            end: { line: 563, column: 48, offset: 24259 }
+            start: { line: 563, column: 25, offset: 24226 },
+            end: { line: 563, column: 48, offset: 24249 }
           }
         },
         {
           type: 'inlineCode',
           value: 'http',
           position: {
-            start: { line: 563, column: 48, offset: 24259 },
-            end: { line: 563, column: 54, offset: 24265 }
+            start: { line: 563, column: 48, offset: 24249 },
+            end: { line: 563, column: 54, offset: 24255 }
           }
         },
         {
           type: 'text',
           value: " module's ",
           position: {
-            start: { line: 563, column: 54, offset: 24265 },
-            end: { line: 563, column: 64, offset: 24275 }
+            start: { line: 563, column: 54, offset: 24255 },
+            end: { line: 563, column: 64, offset: 24265 }
           }
         },
         {
           type: 'inlineCode',
           value: 'createServer',
           position: {
-            start: { line: 563, column: 64, offset: 24275 },
-            end: { line: 563, column: 78, offset: 24289 }
+            start: { line: 563, column: 64, offset: 24265 },
+            end: { line: 563, column: 78, offset: 24279 }
           }
         },
         {
           type: 'text',
           value: ' accepts the HTTP handler ',
           position: {
-            start: { line: 563, column: 78, offset: 24289 },
-            end: { line: 563, column: 104, offset: 24315 }
+            start: { line: 563, column: 78, offset: 24279 },
+            end: { line: 563, column: 104, offset: 24305 }
           }
         },
         {
           type: 'inlineCode',
           value: 'handler',
           position: {
-            start: { line: 563, column: 104, offset: 24315 },
-            end: { line: 563, column: 113, offset: 24324 }
+            start: { line: 563, column: 104, offset: 24305 },
+            end: { line: 563, column: 113, offset: 24314 }
           }
         },
         {
           type: 'text',
           value: ' as a single argument. To start the server we only need to call ',
           position: {
-            start: { line: 563, column: 113, offset: 24324 },
-            end: { line: 563, column: 177, offset: 24388 }
+            start: { line: 563, column: 113, offset: 24314 },
+            end: { line: 563, column: 177, offset: 24378 }
           }
         },
         {
           type: 'inlineCode',
           value: 'server.listen',
           position: {
-            start: { line: 563, column: 177, offset: 24388 },
-            end: { line: 563, column: 192, offset: 24403 }
+            start: { line: 563, column: 177, offset: 24378 },
+            end: { line: 563, column: 192, offset: 24393 }
           }
         },
         {
           type: 'text',
           value: ', specifying port ',
           position: {
-            start: { line: 563, column: 192, offset: 24403 },
-            end: { line: 563, column: 210, offset: 24421 }
+            start: { line: 563, column: 192, offset: 24393 },
+            end: { line: 563, column: 210, offset: 24411 }
           }
         },
         {
           type: 'inlineCode',
           value: '8080',
           position: {
-            start: { line: 563, column: 210, offset: 24421 },
-            end: { line: 563, column: 216, offset: 24427 }
+            start: { line: 563, column: 210, offset: 24411 },
+            end: { line: 563, column: 216, offset: 24417 }
           }
         },
         {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 563, column: 216, offset: 24427 },
-            end: { line: 563, column: 217, offset: 24428 }
+            start: { line: 563, column: 216, offset: 24417 },
+            end: { line: 563, column: 217, offset: 24418 }
           }
         }
       ],
       position: {
-        start: { line: 563, column: 1, offset: 24212 },
-        end: { line: 563, column: 217, offset: 24428 }
+        start: { line: 563, column: 1, offset: 24202 },
+        end: { line: 563, column: 217, offset: 24418 }
       }
     },
     {
@@ -7466,14 +7498,14 @@ export default {
           type: 'text',
           value: 'Http Handlers in [A]synchronous Functional Programming',
           position: {
-            start: { line: 565, column: 5, offset: 24434 },
-            end: { line: 565, column: 59, offset: 24488 }
+            start: { line: 565, column: 5, offset: 24424 },
+            end: { line: 565, column: 59, offset: 24478 }
           }
         }
       ],
       position: {
-        start: { line: 565, column: 1, offset: 24430 },
-        end: { line: 565, column: 59, offset: 24488 }
+        start: { line: 565, column: 1, offset: 24420 },
+        end: { line: 565, column: 59, offset: 24478 }
       }
     },
     {
@@ -7483,14 +7515,14 @@ export default {
           type: 'text',
           value: 'In [A]synchronous Functional Programming, HTTP handlers are simple, reusable, and modular. Consider the following web server implementation with a complex HTTP handler:',
           position: {
-            start: { line: 567, column: 1, offset: 24490 },
-            end: { line: 567, column: 169, offset: 24658 }
+            start: { line: 567, column: 1, offset: 24480 },
+            end: { line: 567, column: 169, offset: 24648 }
           }
         }
       ],
       position: {
-        start: { line: 567, column: 1, offset: 24490 },
-        end: { line: 567, column: 169, offset: 24658 }
+        start: { line: 567, column: 1, offset: 24480 },
+        end: { line: 567, column: 169, offset: 24648 }
       }
     },
     {
@@ -7582,8 +7614,8 @@ export default {
         '\n' +
         'server.listen(port)',
       position: {
-        start: { line: 569, column: 1, offset: 24660 },
-        end: { line: 654, column: 4, offset: 26886 }
+        start: { line: 569, column: 1, offset: 24650 },
+        end: { line: 654, column: 4, offset: 26876 }
       }
     },
     {
@@ -7593,30 +7625,30 @@ export default {
           type: 'text',
           value: 'The above handler ',
           position: {
-            start: { line: 656, column: 1, offset: 26888 },
-            end: { line: 656, column: 19, offset: 26906 }
+            start: { line: 656, column: 1, offset: 26878 },
+            end: { line: 656, column: 19, offset: 26896 }
           }
         },
         {
           type: 'inlineCode',
           value: 'complexHandler',
           position: {
-            start: { line: 656, column: 19, offset: 26906 },
-            end: { line: 656, column: 35, offset: 26922 }
+            start: { line: 656, column: 19, offset: 26896 },
+            end: { line: 656, column: 35, offset: 26912 }
           }
         },
         {
           type: 'text',
           value: ' has many responsibilities, including handling health checks, options requests, user resource lookups, and errors.',
           position: {
-            start: { line: 656, column: 35, offset: 26922 },
-            end: { line: 656, column: 149, offset: 27036 }
+            start: { line: 656, column: 35, offset: 26912 },
+            end: { line: 656, column: 149, offset: 27026 }
           }
         }
       ],
       position: {
-        start: { line: 656, column: 1, offset: 26888 },
-        end: { line: 656, column: 149, offset: 27036 }
+        start: { line: 656, column: 1, offset: 26878 },
+        end: { line: 656, column: 149, offset: 27026 }
       }
     },
     {
@@ -7626,8 +7658,8 @@ export default {
           type: 'text',
           value: 'With [A]synchronous Functional Programming, we can break down the above complex HTTP handler into simple, modular, and reusable handlers, then use the library ',
           position: {
-            start: { line: 658, column: 1, offset: 27038 },
-            end: { line: 658, column: 160, offset: 27197 }
+            start: { line: 658, column: 1, offset: 27028 },
+            end: { line: 658, column: 160, offset: 27187 }
           }
         },
         {
@@ -7639,28 +7671,28 @@ export default {
               type: 'text',
               value: 'rubico',
               position: {
-                start: { line: 658, column: 161, offset: 27198 },
-                end: { line: 658, column: 167, offset: 27204 }
+                start: { line: 658, column: 161, offset: 27188 },
+                end: { line: 658, column: 167, offset: 27194 }
               }
             }
           ],
           position: {
-            start: { line: 658, column: 160, offset: 27197 },
-            end: { line: 658, column: 190, offset: 27227 }
+            start: { line: 658, column: 160, offset: 27187 },
+            end: { line: 658, column: 190, offset: 27217 }
           }
         },
         {
           type: 'text',
           value: ' to combine those handlers in a meaningful way.',
           position: {
-            start: { line: 658, column: 190, offset: 27227 },
-            end: { line: 658, column: 237, offset: 27274 }
+            start: { line: 658, column: 190, offset: 27217 },
+            end: { line: 658, column: 237, offset: 27264 }
           }
         }
       ],
       position: {
-        start: { line: 658, column: 1, offset: 27038 },
-        end: { line: 658, column: 237, offset: 27274 }
+        start: { line: 658, column: 1, offset: 27028 },
+        end: { line: 658, column: 237, offset: 27264 }
       }
     },
     {
@@ -7670,14 +7702,14 @@ export default {
           type: 'text',
           value: "First, let's break down the complex handler.",
           position: {
-            start: { line: 660, column: 1, offset: 27276 },
-            end: { line: 660, column: 45, offset: 27320 }
+            start: { line: 660, column: 1, offset: 27266 },
+            end: { line: 660, column: 45, offset: 27310 }
           }
         }
       ],
       position: {
-        start: { line: 660, column: 1, offset: 27276 },
-        end: { line: 660, column: 45, offset: 27320 }
+        start: { line: 660, column: 1, offset: 27266 },
+        end: { line: 660, column: 45, offset: 27310 }
       }
     },
     {
@@ -7759,8 +7791,8 @@ export default {
         '  response.end(error.message)\n' +
         '}',
       position: {
-        start: { line: 662, column: 1, offset: 27322 },
-        end: { line: 737, column: 4, offset: 29072 }
+        start: { line: 662, column: 1, offset: 27312 },
+        end: { line: 737, column: 4, offset: 29062 }
       }
     },
     {
@@ -7770,110 +7802,110 @@ export default {
           type: 'text',
           value: "We've broken down the complex handler ",
           position: {
-            start: { line: 739, column: 1, offset: 29074 },
-            end: { line: 739, column: 39, offset: 29112 }
+            start: { line: 739, column: 1, offset: 29064 },
+            end: { line: 739, column: 39, offset: 29102 }
           }
         },
         {
           type: 'inlineCode',
           value: 'complexHandler',
           position: {
-            start: { line: 739, column: 39, offset: 29112 },
-            end: { line: 739, column: 55, offset: 29128 }
+            start: { line: 739, column: 39, offset: 29102 },
+            end: { line: 739, column: 55, offset: 29118 }
           }
         },
         {
           type: 'text',
           value: ' into smaller, simpler handlers ',
           position: {
-            start: { line: 739, column: 55, offset: 29128 },
-            end: { line: 739, column: 87, offset: 29160 }
+            start: { line: 739, column: 55, offset: 29118 },
+            end: { line: 739, column: 87, offset: 29150 }
           }
         },
         {
           type: 'inlineCode',
           value: 'healthCheckHandler',
           position: {
-            start: { line: 739, column: 87, offset: 29160 },
-            end: { line: 739, column: 107, offset: 29180 }
+            start: { line: 739, column: 87, offset: 29150 },
+            end: { line: 739, column: 107, offset: 29170 }
           }
         },
         {
           type: 'text',
           value: ', ',
           position: {
-            start: { line: 739, column: 107, offset: 29180 },
-            end: { line: 739, column: 109, offset: 29182 }
+            start: { line: 739, column: 107, offset: 29170 },
+            end: { line: 739, column: 109, offset: 29172 }
           }
         },
         {
           type: 'inlineCode',
           value: 'optionsHandler',
           position: {
-            start: { line: 739, column: 109, offset: 29182 },
-            end: { line: 739, column: 125, offset: 29198 }
+            start: { line: 739, column: 109, offset: 29172 },
+            end: { line: 739, column: 125, offset: 29188 }
           }
         },
         {
           type: 'text',
           value: ', ',
           position: {
-            start: { line: 739, column: 125, offset: 29198 },
-            end: { line: 739, column: 127, offset: 29200 }
+            start: { line: 739, column: 125, offset: 29188 },
+            end: { line: 739, column: 127, offset: 29190 }
           }
         },
         {
           type: 'inlineCode',
           value: 'getUserHandler',
           position: {
-            start: { line: 739, column: 127, offset: 29200 },
-            end: { line: 739, column: 143, offset: 29216 }
+            start: { line: 739, column: 127, offset: 29190 },
+            end: { line: 739, column: 143, offset: 29206 }
           }
         },
         {
           type: 'text',
           value: ', ',
           position: {
-            start: { line: 739, column: 143, offset: 29216 },
-            end: { line: 739, column: 145, offset: 29218 }
+            start: { line: 739, column: 143, offset: 29206 },
+            end: { line: 739, column: 145, offset: 29208 }
           }
         },
         {
           type: 'inlineCode',
           value: 'notFoundHandler',
           position: {
-            start: { line: 739, column: 145, offset: 29218 },
-            end: { line: 739, column: 162, offset: 29235 }
+            start: { line: 739, column: 145, offset: 29208 },
+            end: { line: 739, column: 162, offset: 29225 }
           }
         },
         {
           type: 'text',
           value: ', and ',
           position: {
-            start: { line: 739, column: 162, offset: 29235 },
-            end: { line: 739, column: 168, offset: 29241 }
+            start: { line: 739, column: 162, offset: 29225 },
+            end: { line: 739, column: 168, offset: 29231 }
           }
         },
         {
           type: 'inlineCode',
           value: 'errorHandler',
           position: {
-            start: { line: 739, column: 168, offset: 29241 },
-            end: { line: 739, column: 182, offset: 29255 }
+            start: { line: 739, column: 168, offset: 29231 },
+            end: { line: 739, column: 182, offset: 29245 }
           }
         },
         {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 739, column: 182, offset: 29255 },
-            end: { line: 739, column: 183, offset: 29256 }
+            start: { line: 739, column: 182, offset: 29245 },
+            end: { line: 739, column: 183, offset: 29246 }
           }
         }
       ],
       position: {
-        start: { line: 739, column: 1, offset: 29074 },
-        end: { line: 739, column: 183, offset: 29256 }
+        start: { line: 739, column: 1, offset: 29064 },
+        end: { line: 739, column: 183, offset: 29246 }
       }
     },
     {
@@ -7883,8 +7915,8 @@ export default {
           type: 'text',
           value: "Now let's combine the smaller handlers using rubico's ",
           position: {
-            start: { line: 741, column: 1, offset: 29258 },
-            end: { line: 741, column: 55, offset: 29312 }
+            start: { line: 741, column: 1, offset: 29248 },
+            end: { line: 741, column: 55, offset: 29302 }
           }
         },
         {
@@ -7896,22 +7928,22 @@ export default {
               type: 'text',
               value: 'tryCatch',
               position: {
-                start: { line: 741, column: 56, offset: 29313 },
-                end: { line: 741, column: 64, offset: 29321 }
+                start: { line: 741, column: 56, offset: 29303 },
+                end: { line: 741, column: 64, offset: 29311 }
               }
             }
           ],
           position: {
-            start: { line: 741, column: 55, offset: 29312 },
-            end: { line: 741, column: 81, offset: 29338 }
+            start: { line: 741, column: 55, offset: 29302 },
+            end: { line: 741, column: 81, offset: 29328 }
           }
         },
         {
           type: 'text',
           value: ' and ',
           position: {
-            start: { line: 741, column: 81, offset: 29338 },
-            end: { line: 741, column: 86, offset: 29343 }
+            start: { line: 741, column: 81, offset: 29328 },
+            end: { line: 741, column: 86, offset: 29333 }
           }
         },
         {
@@ -7923,28 +7955,28 @@ export default {
               type: 'text',
               value: 'switchCase',
               position: {
-                start: { line: 741, column: 87, offset: 29344 },
-                end: { line: 741, column: 97, offset: 29354 }
+                start: { line: 741, column: 87, offset: 29334 },
+                end: { line: 741, column: 97, offset: 29344 }
               }
             }
           ],
           position: {
-            start: { line: 741, column: 86, offset: 29343 },
-            end: { line: 741, column: 116, offset: 29373 }
+            start: { line: 741, column: 86, offset: 29333 },
+            end: { line: 741, column: 116, offset: 29363 }
           }
         },
         {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 741, column: 116, offset: 29373 },
-            end: { line: 741, column: 117, offset: 29374 }
+            start: { line: 741, column: 116, offset: 29363 },
+            end: { line: 741, column: 117, offset: 29364 }
           }
         }
       ],
       position: {
-        start: { line: 741, column: 1, offset: 29258 },
-        end: { line: 741, column: 117, offset: 29374 }
+        start: { line: 741, column: 1, offset: 29248 },
+        end: { line: 741, column: 117, offset: 29364 }
       }
     },
     {
@@ -7970,8 +8002,8 @@ export default {
         '  errorHandler\n' +
         ')',
       position: {
-        start: { line: 743, column: 1, offset: 29376 },
-        end: { line: 762, column: 4, offset: 29805 }
+        start: { line: 743, column: 1, offset: 29366 },
+        end: { line: 762, column: 4, offset: 29795 }
       }
     },
     {
@@ -7981,38 +8013,38 @@ export default {
           type: 'inlineCode',
           value: 'combinedHandler',
           position: {
-            start: { line: 764, column: 1, offset: 29807 },
-            end: { line: 764, column: 18, offset: 29824 }
+            start: { line: 764, column: 1, offset: 29797 },
+            end: { line: 764, column: 18, offset: 29814 }
           }
         },
         {
           type: 'text',
           value: ' is functionally equivalent to ',
           position: {
-            start: { line: 764, column: 18, offset: 29824 },
-            end: { line: 764, column: 49, offset: 29855 }
+            start: { line: 764, column: 18, offset: 29814 },
+            end: { line: 764, column: 49, offset: 29845 }
           }
         },
         {
           type: 'inlineCode',
           value: 'complexHandler',
           position: {
-            start: { line: 764, column: 49, offset: 29855 },
-            end: { line: 764, column: 65, offset: 29871 }
+            start: { line: 764, column: 49, offset: 29845 },
+            end: { line: 764, column: 65, offset: 29861 }
           }
         },
         {
           type: 'text',
           value: ', but is able to be expressed using a combination of smaller, simpler HTTP handlers. The benefits are as follows: being able to structure your application as small, simple components lends itself well to development, testing, and maintenance.',
           position: {
-            start: { line: 764, column: 65, offset: 29871 },
-            end: { line: 764, column: 307, offset: 30113 }
+            start: { line: 764, column: 65, offset: 29861 },
+            end: { line: 764, column: 307, offset: 30103 }
           }
         }
       ],
       position: {
-        start: { line: 764, column: 1, offset: 29807 },
-        end: { line: 764, column: 307, offset: 30113 }
+        start: { line: 764, column: 1, offset: 29797 },
+        end: { line: 764, column: 307, offset: 30103 }
       }
     },
     {
@@ -8022,14 +8054,14 @@ export default {
           type: 'text',
           value: 'Development is quick and easy: where you once had to digest and add onto the entire complex component, now you only need to write a simple, greenfield component.',
           position: {
-            start: { line: 766, column: 1, offset: 30115 },
-            end: { line: 766, column: 162, offset: 30276 }
+            start: { line: 766, column: 1, offset: 30105 },
+            end: { line: 766, column: 162, offset: 30266 }
           }
         }
       ],
       position: {
-        start: { line: 766, column: 1, offset: 30115 },
-        end: { line: 766, column: 162, offset: 30276 }
+        start: { line: 766, column: 1, offset: 30105 },
+        end: { line: 766, column: 162, offset: 30266 }
       }
     },
     {
@@ -8039,14 +8071,14 @@ export default {
           type: 'text',
           value: 'Testing is simplified: where you once had to write a complex integration test with many controls and conditions for the complex component, now you only need to write simple integration tests for the simple components.',
           position: {
-            start: { line: 768, column: 1, offset: 30278 },
-            end: { line: 768, column: 218, offset: 30495 }
+            start: { line: 768, column: 1, offset: 30268 },
+            end: { line: 768, column: 218, offset: 30485 }
           }
         }
       ],
       position: {
-        start: { line: 768, column: 1, offset: 30278 },
-        end: { line: 768, column: 218, offset: 30495 }
+        start: { line: 768, column: 1, offset: 30268 },
+        end: { line: 768, column: 218, offset: 30485 }
       }
     },
     {
@@ -8056,14 +8088,14 @@ export default {
           type: 'text',
           value: 'The maintenance overhead is reduced: where you once had to concern yourself with testing changes over large areas of code with complex components, now you can reduce the burden to smaller areas of code with simple components.',
           position: {
-            start: { line: 770, column: 1, offset: 30497 },
-            end: { line: 770, column: 226, offset: 30722 }
+            start: { line: 770, column: 1, offset: 30487 },
+            end: { line: 770, column: 226, offset: 30712 }
           }
         }
       ],
       position: {
-        start: { line: 770, column: 1, offset: 30497 },
-        end: { line: 770, column: 226, offset: 30722 }
+        start: { line: 770, column: 1, offset: 30487 },
+        end: { line: 770, column: 226, offset: 30712 }
       }
     },
     {
@@ -8073,14 +8105,14 @@ export default {
           type: 'text',
           value: 'Putting everything together:',
           position: {
-            start: { line: 772, column: 1, offset: 30724 },
-            end: { line: 772, column: 29, offset: 30752 }
+            start: { line: 772, column: 1, offset: 30714 },
+            end: { line: 772, column: 29, offset: 30742 }
           }
         }
       ],
       position: {
-        start: { line: 772, column: 1, offset: 30724 },
-        end: { line: 772, column: 29, offset: 30752 }
+        start: { line: 772, column: 1, offset: 30714 },
+        end: { line: 772, column: 29, offset: 30742 }
       }
     },
     {
@@ -8188,8 +8220,8 @@ export default {
         '\n' +
         'server.listen(port)',
       position: {
-        start: { line: 774, column: 1, offset: 30754 },
-        end: { line: 875, column: 4, offset: 32983 }
+        start: { line: 774, column: 1, offset: 30744 },
+        end: { line: 875, column: 4, offset: 32973 }
       }
     },
     {
@@ -8200,14 +8232,14 @@ export default {
           type: 'text',
           value: 'Conclusion',
           position: {
-            start: { line: 877, column: 5, offset: 32989 },
-            end: { line: 877, column: 15, offset: 32999 }
+            start: { line: 877, column: 5, offset: 32979 },
+            end: { line: 877, column: 15, offset: 32989 }
           }
         }
       ],
       position: {
-        start: { line: 877, column: 1, offset: 32985 },
-        end: { line: 877, column: 15, offset: 32999 }
+        start: { line: 877, column: 1, offset: 32975 },
+        end: { line: 877, column: 15, offset: 32989 }
       }
     },
     {
@@ -8217,14 +8249,14 @@ export default {
           type: 'text',
           value: 'This concludes Handling HTTP in [A]synchronous Functional Programming.',
           position: {
-            start: { line: 879, column: 1, offset: 33001 },
-            end: { line: 879, column: 71, offset: 33071 }
+            start: { line: 879, column: 1, offset: 32991 },
+            end: { line: 879, column: 71, offset: 33061 }
           }
         }
       ],
       position: {
-        start: { line: 879, column: 1, offset: 33001 },
-        end: { line: 879, column: 71, offset: 33071 }
+        start: { line: 879, column: 1, offset: 32991 },
+        end: { line: 879, column: 71, offset: 33061 }
       }
     },
     {
@@ -8234,8 +8266,8 @@ export default {
           type: 'text',
           value: "If you are curious about rubico and would like to get started, please visit rubico's home page: ",
           position: {
-            start: { line: 881, column: 1, offset: 33073 },
-            end: { line: 881, column: 97, offset: 33169 }
+            start: { line: 881, column: 1, offset: 33063 },
+            end: { line: 881, column: 97, offset: 33159 }
           }
         },
         {
@@ -8247,33 +8279,33 @@ export default {
               type: 'text',
               value: 'rubico.land',
               position: {
-                start: { line: 881, column: 98, offset: 33170 },
-                end: { line: 881, column: 109, offset: 33181 }
+                start: { line: 881, column: 98, offset: 33160 },
+                end: { line: 881, column: 109, offset: 33171 }
               }
             }
           ],
           position: {
-            start: { line: 881, column: 97, offset: 33169 },
-            end: { line: 881, column: 113, offset: 33185 }
+            start: { line: 881, column: 97, offset: 33159 },
+            end: { line: 881, column: 113, offset: 33175 }
           }
         },
         {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 881, column: 113, offset: 33185 },
-            end: { line: 881, column: 114, offset: 33186 }
+            start: { line: 881, column: 113, offset: 33175 },
+            end: { line: 881, column: 114, offset: 33176 }
           }
         }
       ],
       position: {
-        start: { line: 881, column: 1, offset: 33073 },
-        end: { line: 881, column: 114, offset: 33186 }
+        start: { line: 881, column: 1, offset: 33063 },
+        end: { line: 881, column: 114, offset: 33176 }
       }
     }
   ],
   position: {
     start: { line: 1, column: 1, offset: 0 },
-    end: { line: 882, column: 1, offset: 33187 }
+    end: { line: 882, column: 1, offset: 33177 }
   }
 }
