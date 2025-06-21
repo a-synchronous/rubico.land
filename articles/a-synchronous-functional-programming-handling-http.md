@@ -702,8 +702,7 @@ const complexHandler = async function (request, response) {
         message: 'success',
       }))
 
-    }
-    else { // not found
+    } else { // not found
       response.writeHead(404, {
         'Content-Type': 'text/plain',
       })
