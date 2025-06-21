@@ -874,6 +874,8 @@ const port = 8080
 server.listen(port)
 ```
 
+You can find a working example of the above HTTP server code at [rubico-http-server](https://github.com/a-synchronous/rubico/tree/master/examples/rubico-http-server).
+
 ### Conclusion
 
 This concludes Handling HTTP in [A]synchronous Functional Programming.
