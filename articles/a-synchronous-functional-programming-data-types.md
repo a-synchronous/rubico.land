@@ -2,7 +2,7 @@
 title: [A]synchronous Functional Programming - Data Types
 author: Richard Tong, CTO and Co-Founder of Claimyr Inc.
 date: 2025-06-13
-updated: 2025-06-16
+updated: 2025-06-21
 path: /blog/a-synchronous-functional-programming-data-types
 description: Data types in [A]synchronous Functional Programming
 image: /assets/monad.png
@@ -987,6 +987,6 @@ The following built-in data types are considered to be monads:
 
 ## Conclusion
 
-This concludes the data types of the [A]synchronous Functional Programming paradigm.
+This concludes Data Types in [A]synchronous Functional Programming.
 
-If you are interested in getting started with rubico and [A]synchronous Functional Programming, please visit the home page for the library: [rubico.land](https://rubico.land/).
+If you are interested in getting started with rubico and [A]synchronous Functional Programming, please visit rubico's home page: [rubico.land](/).

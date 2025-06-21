@@ -6,7 +6,7 @@ export default {
       value: 'title: [A]synchronous Functional Programming - Data Types\n' +
         'author: Richard Tong, CTO and Co-Founder of Claimyr Inc.\n' +
         'date: 2025-06-13\n' +
-        'updated: 2025-06-16\n' +
+        'updated: 2025-06-21\n' +
         'path: /blog/a-synchronous-functional-programming-data-types\n' +
         'description: Data types in [A]synchronous Functional Programming\n' +
         'image: /assets/monad.png',
@@ -5972,16 +5972,16 @@ export default {
       children: [
         {
           type: 'text',
-          value: 'This concludes the data types of the [A]synchronous Functional Programming paradigm.',
+          value: 'This concludes Data Types in [A]synchronous Functional Programming.',
           position: {
             start: { line: 990, column: 1, offset: 27808 },
-            end: { line: 990, column: 85, offset: 27892 }
+            end: { line: 990, column: 68, offset: 27875 }
           }
         }
       ],
       position: {
         start: { line: 990, column: 1, offset: 27808 },
-        end: { line: 990, column: 85, offset: 27892 }
+        end: { line: 990, column: 68, offset: 27875 }
       }
     },
     {
@@ -5989,48 +5989,48 @@ export default {
       children: [
         {
           type: 'text',
-          value: 'If you are interested in getting started with rubico and [A]synchronous Functional Programming, please visit the home page for the library: ',
+          value: "If you are interested in getting started with rubico and [A]synchronous Functional Programming, please visit rubico's home page: ",
           position: {
-            start: { line: 992, column: 1, offset: 27894 },
-            end: { line: 992, column: 141, offset: 28034 }
+            start: { line: 992, column: 1, offset: 27877 },
+            end: { line: 992, column: 130, offset: 28006 }
           }
         },
         {
           type: 'link',
           title: null,
-          url: 'https://rubico.land/',
+          url: '/',
           children: [
             {
               type: 'text',
               value: 'rubico.land',
               position: {
-                start: { line: 992, column: 142, offset: 28035 },
-                end: { line: 992, column: 153, offset: 28046 }
+                start: { line: 992, column: 131, offset: 28007 },
+                end: { line: 992, column: 142, offset: 28018 }
               }
             }
           ],
           position: {
-            start: { line: 992, column: 141, offset: 28034 },
-            end: { line: 992, column: 176, offset: 28069 }
+            start: { line: 992, column: 130, offset: 28006 },
+            end: { line: 992, column: 146, offset: 28022 }
           }
         },
         {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 992, column: 176, offset: 28069 },
-            end: { line: 992, column: 177, offset: 28070 }
+            start: { line: 992, column: 146, offset: 28022 },
+            end: { line: 992, column: 147, offset: 28023 }
           }
         }
       ],
       position: {
-        start: { line: 992, column: 1, offset: 27894 },
-        end: { line: 992, column: 177, offset: 28070 }
+        start: { line: 992, column: 1, offset: 27877 },
+        end: { line: 992, column: 147, offset: 28023 }
       }
     }
   ],
   position: {
     start: { line: 1, column: 1, offset: 0 },
-    end: { line: 993, column: 1, offset: 28071 }
+    end: { line: 993, column: 1, offset: 28024 }
   }
 }

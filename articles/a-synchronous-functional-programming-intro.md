@@ -2,7 +2,7 @@
 title: [A]synchronous Functional Programming - Intro
 author: Richard Tong, CTO and Co-Founder of Claimyr Inc.
 date: 2024-11-26
-updated: 2025-06-19
+updated: 2025-06-21
 path: /blog/a-synchronous-functional-programming-intro
 description: An introduction to the [A]synchronous Functional Programming paradigm
 image: https://rubico.land/assets/rubico-logo-large.png
@@ -114,7 +114,7 @@ compose(
 )(ids)
 ```
 
-Above we see a composition of functions created with the `compose` operator. `compose` allows us to chain together operations sequentially, the result of one function becoming the argument to the next. The above composition starts with the ids `[1, 2, 3, 4, 5]`, then using the async-enabled rubico `map` operator, makes a request for each id and parses out the response body. Each parsed out response body is then logged out with the rubico `forEach` operator and the `console.log` function.
+Above we see a composition of functions created with the rubico [compose](/docs/compose) operator. `compose` allows us to chain together operations sequentially, the result of one function becoming the argument to the next. The above composition starts with the ids `[1, 2, 3, 4, 5]`, then using the async-enabled rubico [map](/docs/map) operator, makes a request for each id and parses out the response body. Each parsed out response body is then logged out with the rubico [forEach](/docs/forEach) operator and the `console.log` function.
 
 In the above example, `console.log` is a first-class function - it is provided to the higher order function `forEach` as an argument. `map` is also a higher order function, accepting the anonymous first-class function `async id => {...}`. This combination of higher order functions and first-class functions using `compose` is what is known as a "function composition". There are no pure functions in the above example.
 
@@ -156,21 +156,14 @@ pipe(numbers, [
 ])
 ```
 
-In the above example, `add` and `square` are pure functions. They are very simple, expressed almost as pure math. A given input to `add` or `square` would result in the same output for each invocation. The `add` function is provided as a first class function to the `reduce` higher order function, and the `square` function is provided as a first class function to the `map` higher order function.
+In the above example, `add` and `square` are pure functions. They are very simple, expressed almost as pure math. A given input to `add` or `square` would result in the same output for each invocation. The `add` function is provided as a first class function to the rubico [reduce](/docs/reduce) operator, and the `square` function is provided as a first class function to the rubico [map](/docs/map) operator. Both `reduce` and `map` operators are considered to be higher order functions.
 
-The combination of first class and high order functions above is similar to what we have seen with `compose` in the previous example. The difference is the use of the operator `pipe` over `compose`, in this case instead of creating a function composition with `compose` we create a "function pipeline" with `pipe`.
+The combination of first class and high order functions above is similar to what we have seen with `compose` in the previous example. The difference is the use of the operator `pipe` over `compose`, in this case instead of creating a function composition with `compose` we create a "function pipeline" with [pipe](/docs/pipe).
 
-We see a new operation in the above example with `reduce`. It takes the squared numbers from `map(square)` and adds them all together into a final sum. We see the operator `tap` as well - it allows us to provide an asynchronous function to the composition, logging out the squared numbers while waiting 500 milliseconds between each log. With `tap`, the return value of the provided function is unused, so we don't see `tap` affecting the rest of the pipeline.
+We see a new operation in the above example with `reduce`. It takes the squared numbers from `map(square)` and adds them all together into a final sum. We see the operator [tap](/docs/tap) as well - it allows us to provide an asynchronous function to the composition, logging out the squared numbers while waiting 500 milliseconds between each log. With `tap`, the return value of the provided function is unused, so we can expect the input to the `reduce` operation following the tap expression `tap(async numbers => {...})` to be the same as the input to the tap expression.
 
 ### Conclusion
 
-This concludes the intro the the [A]synchronous Functional Programming paradigm.
+This concludes the intro to the [A]synchronous Functional Programming paradigm.
 
-If you are curious about rubico and would like to get started, you can visit the home page for the library, [rubico.land](https://rubico.land/).
-
-Below are quick links for some of the rubico operators used in the examples:
- * [pipe](https://rubico.land/docs/pipe)
- * [tap](https://rubico.land/docs/tap)
- * [map](https://rubico.land/docs/map)
- * [reduce](https://rubico.land/docs/reduce)
- * [forEach](https://rubico.land/docs/forEach)
+If you are curious about rubico and would like to get started, please visit rubico's home page, [rubico.land](/).

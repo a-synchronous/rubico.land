@@ -6,7 +6,7 @@ import aSynchronousProgrammingDataTypesMdast from '../mdast/a-synchronous-functi
 import aSynchronousProgrammingHandlingHTTPMdast from '../mdast/a-synchronous-functional-programming-handling-http.js'
 
 const blogPostList = [
-  // aSynchronousProgrammingHandlingHTTPMdast,
+  aSynchronousProgrammingHandlingHTTPMdast,
   aSynchronousProgrammingDataTypesMdast,
   aSynchronousProgrammingIntroMdast,
   transducersMdastV2,

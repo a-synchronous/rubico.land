@@ -140,7 +140,7 @@ const CodeRunner = ReactElement(({
     setImports(createImports(rubicoVersion))
   }, [rubicoVersion, propsImports])
 
-  return Div([
+  return Div({ class: 'code-runner' }, [
     Div({ ref: codeAreaRef }),
     Div({ style: { height: '.5em' } }),
     Div({

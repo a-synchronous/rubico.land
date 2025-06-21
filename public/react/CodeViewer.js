@@ -44,7 +44,7 @@ const CodeViewer = ReactElement(({
     }
   }, [])
 
-  return Div([
+  return Div({ class: 'code-viewer' }, [
     Div({ ref: codeAreaRef }),
   ])
 })

@@ -120,7 +120,17 @@ const ReactElementFromMdast = ReactElement(props => {
             style: { display: 'flex', placeItems: 'center' },
           }, [H4({ id: anchorHash }, ReactElementFromMdastRecurse(mdast))])
         }
-        case 5: return H5(ReactElementFromMdastRecurse(mdast))
+        case 5: {
+          const anchorHash = pipe(mdast, [
+            anchorHashFromMdast,
+            anchorHashFormat,
+          ])
+          return A({
+            class: 'anchor-hash',
+            href: `#${anchorHash}`,
+            style: { display: 'flex', placeItems: 'center' },
+          }, [H5({ id: anchorHash }, ReactElementFromMdastRecurse(mdast))])
+        }
         default: return H6(ReactElementFromMdastRecurse(mdast))
       }
 
@@ -149,7 +159,7 @@ const ReactElementFromMdast = ReactElement(props => {
       switch (mdast.meta) {
         case '[specscript]':
           return Div([
-            H3('Syntax'),
+            // H3('Syntax'),
             CodeViewer({
               code: mdast.value,
               mode: mdast.lang,
