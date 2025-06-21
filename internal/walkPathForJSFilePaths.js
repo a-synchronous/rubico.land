@@ -18,7 +18,7 @@ const walkPathForJSFilePaths = function (path, options = []) {
     readdirWithFileTypes,
     flatMap(dirent => {
       if (dirent.isDirectory() && !ignoreDirs.includes(dirent.name)) {
-        return walkPathForJSFilePaths(`${path}/${dirent.name}`)
+        return walkPathForJSFilePaths(`${path}/${dirent.name}`, options)
       }
       if (dirent.name.endsWith('.js')) {
         return [`${path}/${dirent.name}`]
