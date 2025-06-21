@@ -116,7 +116,7 @@ The `HEAD` HTTP request method asks the web server for metadata about the resour
 
 #### POST
 
-The `POST` HTTP request method sends data to the web server to create or update the resource. `POST` requests are not safe, are not idempotent, and are cacheable only when the response includes [freshness](https://developer.mozilla.org/en-US/docs/Glossary/Cacheable) information via the `Expires` or `Cache-Control` headers as well as a `Content-Location` header.
+The `POST` HTTP request method sends data to the web server to create the resource. `POST` requests are not safe, are not idempotent, and are cacheable only when the response includes [freshness](https://developer.mozilla.org/en-US/docs/Glossary/Cacheable) information via the `Expires` or `Cache-Control` headers as well as a `Content-Location` header.
 
 #### PUT
 
@@ -194,8 +194,8 @@ The server returns some header information while preparing the rest of the respo
 The server successfully processed the request. The meaning of success depends on the request method:
  * `GET` - The resource has been successfully retrieved and transmitted in the response message body.
  * `HEAD` - The requested metadata about the resource is available in the response headers.
- * `POST` - The resource was created or updated successfully.
- * `PUT` - The resource was replaced successfully.
+ * `POST` - The resource was created successfully.
+ * `PUT` - The resource was created or updated successfully.
  * `PATCH` - The resource was updated successfully.
  * `DELETE` - The resource was deleted successfully.
  * `CONNECT` - The connection was established successfully.
@@ -573,12 +573,15 @@ const complexHandler = async function (request, response) {
   try {
     if (request.url.startsWith('/health')) {
       // GET /health
+
       response.writeHead(200, {
         'Content-Type': 'text/plain',
       })
       response.end('ok')
-    } else if (request => request.method == 'OPTIONS') {
+
+    } else if (request.method == 'OPTIONS') {
       // OPTIONS
+
       response.writeHead(204, {
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Methods': '*',
@@ -586,9 +589,10 @@ const complexHandler = async function (request, response) {
         'Access-Control-Max-Age': '86400',
       })
       response.end()
+
     } else if (request.method == 'GET' && /^\/user\/\d+$/.test(request.url)) {
       // GET /user/:userId
-      // looks up a user by userId
+      // retrieves a user resource
 
       const userId = request.url.match(/\d+/)[0]
 
@@ -599,7 +603,7 @@ const complexHandler = async function (request, response) {
         throw error
       }
 
-      // userTable is a theoretical client for a database
+      // retrieve the user record from the db
       const user = await userTable.getById(userId)
 
       // handle not found
@@ -627,7 +631,79 @@ const complexHandler = async function (request, response) {
         user: publicUser,
       }))
 
-    } else { // not found
+    } else if (request.method == 'PUT' && /^\/user\/\d+$/.test(request.url)) {
+      // PUT /user/:userId
+      // creates or updates a user resource
+
+      const userId = request.url.match(/\d+/)[0]
+
+      const requestBodyBuffer = await new Promise(resolve => {
+        const binaryArray = []
+        request.on('data', chunk => {
+          binaryArray.push(chunk)
+        })
+        request.on('end', () => {
+          resolve(Buffer.concat(binaryArray))
+        })
+      })
+      const requestBodyString = requestBodyBuffer.toString('utf8')
+      const requestBodyJSON = JSON.parse(requestBodyString)
+
+      // validate
+      if (isNaN(Number(userId))) {
+        const error = new Error('Bad Request')
+        error.code = 400
+        throw error
+      }
+      if (typeof requestBodyJSON.id != 'string') {
+        const error = new Error('Bad Request')
+        error.code = 400
+        throw error
+      }
+      if (typeof requestBodyJSON.name != 'string') {
+        const error = new Error('Bad Request')
+        error.code = 400
+        throw error
+      }
+      if (typeof requestBodyJSON.birthdate != 'string') {
+        const error = new Error('Bad Request')
+        error.code = 400
+        throw error
+      }
+      if (typeof requestBodyJSON.profilePictureUrl != 'string') {
+        const error = new Error('Bad Request')
+        error.code = 400
+        throw error
+      }
+      if (typeof requestBodyJSON.email != 'string') {
+        const error = new Error('Bad Request')
+        error.code = 400
+        throw error
+      }
+
+      const user = {
+        id: requestBodyJSON.id,
+        name: requestBodyJSON.name,
+        birthdate: requestBodyJSON.birthdate,
+        profilePictureUrl: requestBodyJSON.profilePictureUrl,
+        email: requestBodyJSON.email,
+        createTime: Date.now(),
+      }
+
+      // save user record to the db
+      await userTable.put(user)
+
+      // send back a successful response
+      response.writeHead(200, {
+        'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'application/json',
+      })
+      response.end(JSON.stringify({
+        message: 'success',
+      }))
+
+    }
+    else { // not found
       response.writeHead(404, {
         'Content-Type': 'text/plain',
       })
@@ -646,14 +722,14 @@ const complexHandler = async function (request, response) {
   }
 }
 
-const server = http.createServer(handler)
+const server = http.createServer(complexHandler)
 
 const port = 8080
 
 server.listen(port)
 ```
 
-The above handler `complexHandler` has many responsibilities, including handling health checks, options requests, user resource lookups, and errors.
+The above handler `complexHandler` has many responsibilities, including handling health checks, handling options requests, retrieving user resources, updating or creating user resources, and handling application errors.
 
 With [A]synchronous Functional Programming, we can break down the above complex HTTP handler into simple, modular, and reusable handlers, then use the library [rubico](https://rubico.land/) to combine those handlers in a meaningful way.
 
@@ -677,6 +753,8 @@ function optionsHandler(request, response) {
   response.end()
 }
 
+// GET /user/:userId
+// retrieves a user resource
 async function getUserHandler(request, response) {
   const userId = request.url.match(/\d+/)[0]
 
@@ -716,6 +794,77 @@ async function getUserHandler(request, response) {
   }))
 }
 
+// PUT /user/:userId
+// creates or updates a user resource
+async function putUserHandler(request, response) {
+  const userId = request.url.match(/\d+/)[0]
+
+  const requestBodyBuffer = await new Promise(resolve => {
+    const binaryArray = []
+    request.on('data', chunk => {
+      binaryArray.push(chunk)
+    })
+    request.on('end', () => {
+      resolve(Buffer.concat(binaryArray))
+    })
+  })
+  const requestBodyString = requestBodyBuffer.toString('utf8')
+  const requestBodyJSON = JSON.parse(requestBodyString)
+
+  // validate
+  if (isNaN(Number(userId))) {
+    const error = new Error('Bad Request')
+    error.code = 400
+    throw error
+  }
+  if (typeof requestBodyJSON.id != 'string') {
+    const error = new Error('Bad Request')
+    error.code = 400
+    throw error
+  }
+  if (typeof requestBodyJSON.name != 'string') {
+    const error = new Error('Bad Request')
+    error.code = 400
+    throw error
+  }
+  if (typeof requestBodyJSON.birthdate != 'string') {
+    const error = new Error('Bad Request')
+    error.code = 400
+    throw error
+  }
+  if (typeof requestBodyJSON.profilePictureUrl != 'string') {
+    const error = new Error('Bad Request')
+    error.code = 400
+    throw error
+  }
+  if (typeof requestBodyJSON.email != 'string') {
+    const error = new Error('Bad Request')
+    error.code = 400
+    throw error
+  }
+
+  const user = {
+    id: requestBodyJSON.id,
+    name: requestBodyJSON.name,
+    birthdate: requestBodyJSON.birthdate,
+    profilePictureUrl: requestBodyJSON.profilePictureUrl,
+    email: requestBodyJSON.email,
+    createTime: Date.now(),
+  }
+
+  // save user record to the db
+  await userTable.put(user)
+
+  // send back a successful response
+  response.writeHead(200, {
+    'Access-Control-Allow-Origin': '*',
+    'Content-Type': 'application/json',
+  })
+  response.end(JSON.stringify({
+    message: 'success',
+  }))
+}
+
 function notFoundHandler(request, response) {
   response.writeHead(404, {
     'Content-Type': 'text/plain',
@@ -723,7 +872,7 @@ function notFoundHandler(request, response) {
   response.end('Not Found')
 }
 
-function errorHandler(request, response) {
+function errorHandler(error, request, response) {
   console.error(error)
   if (typeof error.code != 'number') {
     error.code = 500
@@ -753,6 +902,9 @@ const combinedHandler = tryCatch(
 
     request => request.method == 'GET' && /^\/user\/\d+$/.test(request.url),
     getUserHandler,
+
+    request => request.method == 'PUT' && /^\/user\/\d+$/.test(request.url),
+    putUserHandler,
 
     notFoundHandler,
   ]),
@@ -792,6 +944,8 @@ function optionsHandler(request, response) {
   response.end()
 }
 
+// GET /user/:userId
+// retrieves a user resource
 async function getUserHandler(request, response) {
   const userId = request.url.match(/\d+/)[0]
 
@@ -831,6 +985,77 @@ async function getUserHandler(request, response) {
   }))
 }
 
+// PUT /user/:userId
+// creates or updates a user resource
+async function putUserHandler(request, response) {
+  const userId = request.url.match(/\d+/)[0]
+
+  const requestBodyBuffer = await new Promise(resolve => {
+    const binaryArray = []
+    request.on('data', chunk => {
+      binaryArray.push(chunk)
+    })
+    request.on('end', () => {
+      resolve(Buffer.concat(binaryArray))
+    })
+  })
+  const requestBodyString = requestBodyBuffer.toString('utf8')
+  const requestBodyJSON = JSON.parse(requestBodyString)
+
+  // validate
+  if (isNaN(Number(userId))) {
+    const error = new Error('Bad Request')
+    error.code = 400
+    throw error
+  }
+  if (typeof requestBodyJSON.id != 'string') {
+    const error = new Error('Bad Request')
+    error.code = 400
+    throw error
+  }
+  if (typeof requestBodyJSON.name != 'string') {
+    const error = new Error('Bad Request')
+    error.code = 400
+    throw error
+  }
+  if (typeof requestBodyJSON.birthdate != 'string') {
+    const error = new Error('Bad Request')
+    error.code = 400
+    throw error
+  }
+  if (typeof requestBodyJSON.profilePictureUrl != 'string') {
+    const error = new Error('Bad Request')
+    error.code = 400
+    throw error
+  }
+  if (typeof requestBodyJSON.email != 'string') {
+    const error = new Error('Bad Request')
+    error.code = 400
+    throw error
+  }
+
+  const user = {
+    id: requestBodyJSON.id,
+    name: requestBodyJSON.name,
+    birthdate: requestBodyJSON.birthdate,
+    profilePictureUrl: requestBodyJSON.profilePictureUrl,
+    email: requestBodyJSON.email,
+    createTime: Date.now(),
+  }
+
+  // save user record to the db
+  await userTable.put(user)
+
+  // send back a successful response
+  response.writeHead(200, {
+    'Access-Control-Allow-Origin': '*',
+    'Content-Type': 'application/json',
+  })
+  response.end(JSON.stringify({
+    message: 'success',
+  }))
+}
+
 function notFoundHandler(request, response) {
   response.writeHead(404, {
     'Content-Type': 'text/plain',
@@ -838,7 +1063,7 @@ function notFoundHandler(request, response) {
   response.end('Not Found')
 }
 
-function errorHandler(request, response) {
+function errorHandler(error, request, response) {
   console.error(error)
   if (typeof error.code != 'number') {
     error.code = 500
@@ -860,6 +1085,9 @@ const combinedHandler = tryCatch(
 
     request => request.method == 'GET' && /^\/user\/\d+$/.test(request.url),
     getUserHandler,
+
+    request => request.method == 'PUT' && /^\/user\/\d+$/.test(request.url),
+    putUserHandler,
 
     notFoundHandler,
   ]),
