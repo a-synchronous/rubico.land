@@ -93,7 +93,7 @@ The following are examples of side effects
 
 [A]synchronous Functional Programming builds on these concepts, extending the ideas of Functional Programming to modern JavaScript (ECMAScript 6 onwards). In particular, the [A]synchronous Functional Programming paradigm considers current asynchronous primitives (e.g. [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) and [async/await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)) when creating modular and predictable programs composed of functions.
 
-In order to operate in the [A]synchronous Functional Programming paradigm, we need the library [rubico](https://rubico.land/). Consider the following example:
+We can use the [rubico](https://rubico.land/) library to operate in the [A]synchronous Functional Programming paradigm.
 
 ```javascript [playground]
 const { compose, map, forEach } = rubico
