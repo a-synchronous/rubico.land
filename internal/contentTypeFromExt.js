@@ -15,6 +15,8 @@ const contentTypeFromExt = ext => {
       return 'text/css'
     case 'gif':
       return 'image/gif'
+    case 'jpg':
+      return 'image/jpeg'
     case 'png':
       return 'image/png'
     case 'ico':
