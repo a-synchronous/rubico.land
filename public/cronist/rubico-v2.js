@@ -58746,10 +58746,10 @@ export default [
   {
     name: 'arrayDefaultsDeepFromArray',
     synopsis: '```coffeescript [specscript]\n' +
-      'var array Array<Array|Object|any>,\n' +
-      '  defaultArray Array<Array|Object|any>,\n' +
-      '\n' +
-      'arrayDefaultsDeepFromArray(array, defaultArray) -> Array\n' +
+      'arrayDefaultsDeepFromArray(\n' +
+      '  data Array<Array|Object|any>,\n' +
+      '  defaults Array<Array|Object|any>\n' +
+      ') -> Object\n' +
       '```',
     mdast: {
       name: {
@@ -58785,19 +58785,19 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'var array Array<Array|Object|any>,\n' +
-              '  defaultArray Array<Array|Object|any>,\n' +
-              '\n' +
-              'arrayDefaultsDeepFromArray(array, defaultArray) -> Array',
+            value: 'arrayDefaultsDeepFromArray(\n' +
+              '  data Array<Array|Object|any>,\n' +
+              '  defaults Array<Array|Object|any>\n' +
+              ') -> Object',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 6, column: 4, offset: 165 }
+              end: { line: 6, column: 4, offset: 139 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 6, column: 4, offset: 165 }
+          end: { line: 6, column: 4, offset: 139 }
         }
       }
     },
@@ -58806,10 +58806,10 @@ export default [
   {
     name: 'objectDefaultsDeepFromObject',
     synopsis: '```coffeescript [specscript]\n' +
-      'var object Object<Array|Object|any>,\n' +
-      '  defaultObject Object<Array|Object|any>\n' +
-      '\n' +
-      'objectDefaultsDeepFromObject(object, defaultObject) -> Object\n' +
+      'objectDefaultsDeepFromObject(\n' +
+      '  data Object<Array|Object|any>,\n' +
+      '  defaults Object<Array|Object|any>\n' +
+      ') -> Object\n' +
       '```',
     mdast: {
       name: {
@@ -58845,19 +58845,79 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'var object Object<Array|Object|any>,\n' +
-              '  defaultObject Object<Array|Object|any>\n' +
-              '\n' +
-              'objectDefaultsDeepFromObject(object, defaultObject) -> Object',
+            value: 'objectDefaultsDeepFromObject(\n' +
+              '  data Object<Array|Object|any>,\n' +
+              '  defaults Object<Array|Object|any>\n' +
+              ') -> Object',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 6, column: 4, offset: 173 }
+              end: { line: 6, column: 4, offset: 143 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 6, column: 4, offset: 173 }
+          end: { line: 6, column: 4, offset: 143 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/x/defaultsDeep.js'
+  },
+  {
+    name: '_defaultsDeep',
+    synopsis: '```coffeescript [specscript]\n' +
+      '_defaultsDeep(\n' +
+      '  data Object<Array|Object|any>,\n' +
+      '  defaults (Object|Array)<Array|Object|any>\n' +
+      ') -> result Object\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: '_defaultsDeep',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 14, offset: 13 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 14, offset: 13 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 14, offset: 13 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: '_defaultsDeep(\n' +
+              '  data Object<Array|Object|any>,\n' +
+              '  defaults (Object|Array)<Array|Object|any>\n' +
+              ') -> result Object',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 6, column: 4, offset: 143 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 6, column: 4, offset: 143 }
         }
       }
     },
@@ -58866,29 +58926,32 @@ export default [
   {
     name: 'defaultsDeep',
     synopsis: '```coffeescript [specscript]\n' +
-      'var defaultCollection Array|Object,\n' +
-      '  value Array|Object\n' +
+      'data (Object|Array)<Array|Object|any>\n' +
+      'defaults (Object|Array)<Array|Object|any>\n' +
       '\n' +
-      'defaultsDeep(defaultCollection)(value) -> Array|Object\n' +
+      'defaultsDeep(data, defaults) -> result Object\n' +
+      'defaultsDeep(defaults)(data) -> result Object\n' +
       '```',
-    description: 'Deeply assign default values to an array or object by an array or object of possibly nested default values.\n' +
+    description: 'Deeply assign default values to an object or array `data` using an array or object of default values `defaults`. The keys or indices of each element of `defaults` are used to extend `data` where there is no existing value. Both `data` and `defaults` may have nested arrays or objects.\n' +
       '\n' +
       '```javascript [playground]\n' +
       "import defaultsDeep from 'https://unpkg.com/rubico/dist/x/defaultsDeep.es.js'\n" +
       '\n' +
-      'const defaultUser = defaultsDeep({\n' +
+      'const user = {\n' +
+      "  name: 'John',\n" +
+      "  images: [{ url: 'https://placehold.co/600x400' }],\n" +
+      '}\n' +
+      '\n' +
+      'const userWithDefaults = defaultsDeep(user, {\n' +
       "  name: 'placeholder',\n" +
       '  images: [\n' +
-      "    { url: 'https://via.placeholder.com/150' },\n" +
-      "    { url: 'https://via.placeholder.com/150' },\n" +
-      "    { url: 'https://via.placeholder.com/150' },\n" +
+      "    { url: 'https://placehold.co/150' },\n" +
+      "    { url: 'https://placehold.co/150' },\n" +
+      "    { url: 'https://placehold.co/150' },\n" +
       '  ],\n' +
       '})\n' +
       '\n' +
-      'console.log(defaultUser({\n' +
-      "  name: 'John',\n" +
-      "  images: [{ url: 'https://via.placeholder.com/150/0000FF/808080%20?Text=Digital.com' }],\n" +
-      '}))\n' +
+      'console.log(userWithDefaults)\n' +
       '// {\n' +
       "//   name: 'John',\n" +
       '//   images: [\n' +
@@ -58899,7 +58962,18 @@ export default [
       '// }\n' +
       '```\n' +
       '\n' +
+      'The `defaults` array or object may be provided to `defaultsDeep` without `data` to create a lazy version of `defaultsDeep` that accepts `data` as a single argument. This "lazy" API can be used for function pipelines and function compositions.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'pipe({ a: 1 }, [\n' +
+      '  defaultsDeep({ b: 2, c: 3, g: [1, 2, 3] }),\n' +
+      '  console.log, // { a: 1, b: 2, c: 3, g: [1, 2, 3] }\n' +
+      '])\n' +
+      '```\n' +
+      '\n' +
       'See also:\n' +
+      ' * [pipe](/docs/pipe)\n' +
+      ' * [compose](/docs/compose)\n' +
       ' * [callProp](/docs/callProp)\n' +
       ' * [differenceWith](/docs/differenceWith)',
     mdast: {
@@ -58936,19 +59010,20 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'var defaultCollection Array|Object,\n' +
-              '  value Array|Object\n' +
+            value: 'data (Object|Array)<Array|Object|any>\n' +
+              'defaults (Object|Array)<Array|Object|any>\n' +
               '\n' +
-              'defaultsDeep(defaultCollection)(value) -> Array|Object',
+              'defaultsDeep(data, defaults) -> result Object\n' +
+              'defaultsDeep(defaults)(data) -> result Object',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 6, column: 4, offset: 145 }
+              end: { line: 7, column: 4, offset: 205 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 6, column: 4, offset: 145 }
+          end: { line: 7, column: 4, offset: 205 }
         }
       },
       description: {
@@ -58959,16 +59034,112 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Deeply assign default values to an array or object by an array or object of possibly nested default values.',
+                value: 'Deeply assign default values to an object or array ',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 108, offset: 107 }
+                  end: { line: 1, column: 52, offset: 51 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'data',
+                position: {
+                  start: { line: 1, column: 52, offset: 51 },
+                  end: { line: 1, column: 58, offset: 57 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' using an array or object of default values ',
+                position: {
+                  start: { line: 1, column: 58, offset: 57 },
+                  end: { line: 1, column: 102, offset: 101 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'defaults',
+                position: {
+                  start: { line: 1, column: 102, offset: 101 },
+                  end: { line: 1, column: 112, offset: 111 }
+                }
+              },
+              {
+                type: 'text',
+                value: '. The keys or indices of each element of ',
+                position: {
+                  start: { line: 1, column: 112, offset: 111 },
+                  end: { line: 1, column: 153, offset: 152 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'defaults',
+                position: {
+                  start: { line: 1, column: 153, offset: 152 },
+                  end: { line: 1, column: 163, offset: 162 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' are used to extend ',
+                position: {
+                  start: { line: 1, column: 163, offset: 162 },
+                  end: { line: 1, column: 183, offset: 182 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'data',
+                position: {
+                  start: { line: 1, column: 183, offset: 182 },
+                  end: { line: 1, column: 189, offset: 188 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' where there is no existing value. Both ',
+                position: {
+                  start: { line: 1, column: 189, offset: 188 },
+                  end: { line: 1, column: 229, offset: 228 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'data',
+                position: {
+                  start: { line: 1, column: 229, offset: 228 },
+                  end: { line: 1, column: 235, offset: 234 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' and ',
+                position: {
+                  start: { line: 1, column: 235, offset: 234 },
+                  end: { line: 1, column: 240, offset: 239 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'defaults',
+                position: {
+                  start: { line: 1, column: 240, offset: 239 },
+                  end: { line: 1, column: 250, offset: 249 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' may have nested arrays or objects.',
+                position: {
+                  start: { line: 1, column: 250, offset: 249 },
+                  end: { line: 1, column: 285, offset: 284 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 108, offset: 107 }
+              end: { line: 1, column: 285, offset: 284 }
             }
           },
           {
@@ -58977,19 +59148,21 @@ export default [
             meta: '[playground]',
             value: "import defaultsDeep from 'https://unpkg.com/rubico/dist/x/defaultsDeep.es.js'\n" +
               '\n' +
-              'const defaultUser = defaultsDeep({\n' +
+              'const user = {\n' +
+              "  name: 'John',\n" +
+              "  images: [{ url: 'https://placehold.co/600x400' }],\n" +
+              '}\n' +
+              '\n' +
+              'const userWithDefaults = defaultsDeep(user, {\n' +
               "  name: 'placeholder',\n" +
               '  images: [\n' +
-              "    { url: 'https://via.placeholder.com/150' },\n" +
-              "    { url: 'https://via.placeholder.com/150' },\n" +
-              "    { url: 'https://via.placeholder.com/150' },\n" +
+              "    { url: 'https://placehold.co/150' },\n" +
+              "    { url: 'https://placehold.co/150' },\n" +
+              "    { url: 'https://placehold.co/150' },\n" +
               '  ],\n' +
               '})\n' +
               '\n' +
-              'console.log(defaultUser({\n' +
-              "  name: 'John',\n" +
-              "  images: [{ url: 'https://via.placeholder.com/150/0000FF/808080%20?Text=Digital.com' }],\n" +
-              '}))\n' +
+              'console.log(userWithDefaults)\n' +
               '// {\n' +
               "//   name: 'John',\n" +
               '//   images: [\n' +
@@ -58999,8 +59172,118 @@ export default [
               '//   ],\n' +
               '// }',
             position: {
-              start: { line: 3, column: 1, offset: 109 },
-              end: { line: 27, column: 4, offset: 813 }
+              start: { line: 3, column: 1, offset: 286 },
+              end: { line: 29, column: 4, offset: 961 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'The ',
+                position: {
+                  start: { line: 31, column: 1, offset: 963 },
+                  end: { line: 31, column: 5, offset: 967 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'defaults',
+                position: {
+                  start: { line: 31, column: 5, offset: 967 },
+                  end: { line: 31, column: 15, offset: 977 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' array or object may be provided to ',
+                position: {
+                  start: { line: 31, column: 15, offset: 977 },
+                  end: { line: 31, column: 51, offset: 1013 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'defaultsDeep',
+                position: {
+                  start: { line: 31, column: 51, offset: 1013 },
+                  end: { line: 31, column: 65, offset: 1027 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' without ',
+                position: {
+                  start: { line: 31, column: 65, offset: 1027 },
+                  end: { line: 31, column: 74, offset: 1036 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'data',
+                position: {
+                  start: { line: 31, column: 74, offset: 1036 },
+                  end: { line: 31, column: 80, offset: 1042 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' to create a lazy version of ',
+                position: {
+                  start: { line: 31, column: 80, offset: 1042 },
+                  end: { line: 31, column: 109, offset: 1071 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'defaultsDeep',
+                position: {
+                  start: { line: 31, column: 109, offset: 1071 },
+                  end: { line: 31, column: 123, offset: 1085 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' that accepts ',
+                position: {
+                  start: { line: 31, column: 123, offset: 1085 },
+                  end: { line: 31, column: 137, offset: 1099 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'data',
+                position: {
+                  start: { line: 31, column: 137, offset: 1099 },
+                  end: { line: 31, column: 143, offset: 1105 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' as a single argument. This "lazy" API can be used for function pipelines and function compositions.',
+                position: {
+                  start: { line: 31, column: 143, offset: 1105 },
+                  end: { line: 31, column: 243, offset: 1205 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 31, column: 1, offset: 963 },
+              end: { line: 31, column: 243, offset: 1205 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'pipe({ a: 1 }, [\n' +
+              '  defaultsDeep({ b: 2, c: 3, g: [1, 2, 3] }),\n' +
+              '  console.log, // { a: 1, b: 2, c: 3, g: [1, 2, 3] }\n' +
+              '])',
+            position: {
+              start: { line: 33, column: 1, offset: 1207 },
+              end: { line: 38, column: 4, offset: 1356 }
             }
           },
           {
@@ -59010,14 +59293,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 29, column: 1, offset: 815 },
-                  end: { line: 29, column: 10, offset: 824 }
+                  start: { line: 40, column: 1, offset: 1358 },
+                  end: { line: 40, column: 10, offset: 1367 }
                 }
               }
             ],
             position: {
-              start: { line: 29, column: 1, offset: 815 },
-              end: { line: 29, column: 10, offset: 824 }
+              start: { line: 40, column: 1, offset: 1358 },
+              end: { line: 40, column: 10, offset: 1367 }
             }
           },
           {
@@ -59037,32 +59320,110 @@ export default [
                       {
                         type: 'link',
                         title: null,
+                        url: '/docs/pipe',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'pipe',
+                            position: {
+                              start: { line: 41, column: 5, offset: 1372 },
+                              end: { line: 41, column: 9, offset: 1376 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 41, column: 4, offset: 1371 },
+                          end: { line: 41, column: 22, offset: 1389 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 41, column: 4, offset: 1371 },
+                      end: { line: 41, column: 22, offset: 1389 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 41, column: 2, offset: 1369 },
+                  end: { line: 41, column: 22, offset: 1389 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/compose',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'compose',
+                            position: {
+                              start: { line: 42, column: 5, offset: 1394 },
+                              end: { line: 42, column: 12, offset: 1401 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 42, column: 4, offset: 1393 },
+                          end: { line: 42, column: 28, offset: 1417 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 42, column: 4, offset: 1393 },
+                      end: { line: 42, column: 28, offset: 1417 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 42, column: 2, offset: 1391 },
+                  end: { line: 42, column: 28, offset: 1417 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
                         url: '/docs/callProp',
                         children: [
                           {
                             type: 'text',
                             value: 'callProp',
                             position: {
-                              start: { line: 30, column: 5, offset: 829 },
-                              end: { line: 30, column: 13, offset: 837 }
+                              start: { line: 43, column: 5, offset: 1422 },
+                              end: { line: 43, column: 13, offset: 1430 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 30, column: 4, offset: 828 },
-                          end: { line: 30, column: 30, offset: 854 }
+                          start: { line: 43, column: 4, offset: 1421 },
+                          end: { line: 43, column: 30, offset: 1447 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 30, column: 4, offset: 828 },
-                      end: { line: 30, column: 30, offset: 854 }
+                      start: { line: 43, column: 4, offset: 1421 },
+                      end: { line: 43, column: 30, offset: 1447 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 30, column: 2, offset: 826 },
-                  end: { line: 30, column: 30, offset: 854 }
+                  start: { line: 43, column: 2, offset: 1419 },
+                  end: { line: 43, column: 30, offset: 1447 }
                 }
               },
               {
@@ -59082,38 +59443,38 @@ export default [
                             type: 'text',
                             value: 'differenceWith',
                             position: {
-                              start: { line: 31, column: 5, offset: 859 },
-                              end: { line: 31, column: 19, offset: 873 }
+                              start: { line: 44, column: 5, offset: 1452 },
+                              end: { line: 44, column: 19, offset: 1466 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 31, column: 4, offset: 858 },
-                          end: { line: 31, column: 42, offset: 896 }
+                          start: { line: 44, column: 4, offset: 1451 },
+                          end: { line: 44, column: 42, offset: 1489 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 31, column: 4, offset: 858 },
-                      end: { line: 31, column: 42, offset: 896 }
+                      start: { line: 44, column: 4, offset: 1451 },
+                      end: { line: 44, column: 42, offset: 1489 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 31, column: 2, offset: 856 },
-                  end: { line: 31, column: 42, offset: 896 }
+                  start: { line: 44, column: 2, offset: 1449 },
+                  end: { line: 44, column: 42, offset: 1489 }
                 }
               }
             ],
             position: {
-              start: { line: 30, column: 2, offset: 826 },
-              end: { line: 31, column: 42, offset: 896 }
+              start: { line: 41, column: 2, offset: 1369 },
+              end: { line: 44, column: 42, offset: 1489 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 31, column: 42, offset: 896 }
+          end: { line: 44, column: 42, offset: 1489 }
         }
       }
     },
