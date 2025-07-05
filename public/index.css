@@ -391,11 +391,11 @@ h4 {
 }
 
 #tour {
-  padding: 0px 15%;
+  padding: 10px 15%;
 }
 @media only screen and (max-width: 768px) {
   #tour {
-    padding: 0;
+    padding: 10px 0;
   }
 }
 

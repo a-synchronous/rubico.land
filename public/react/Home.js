@@ -18,22 +18,6 @@ const Home = ReactElement(props => {
   return Layout(props, [
     Div({ id: 'home' }, [
       readmeContent,
-      Div({ class: 'cta-links' }, [
-        NavLink({ ...props, href: '/tour' }, [
-          Button({ id: 'take-the-tour-button' }, 'Take the tour'),
-        ]),
-        NavLink({ ...props, href: '/docs' }, [
-          Button({ id: 'read-the-docs-button' }, 'Read the docs'),
-        ]),
-        /*
-        A({ href: '/tour' }, [
-          Button({ id: 'take-the-tour-button' }, 'Take the tour'),
-        ]),
-        A({ href: '/docs' }, [
-          Button({ id: 'read-the-docs-button' }, 'Read the docs'),
-        ]),
-        */
-      ]),
     ])
   ])
 })
