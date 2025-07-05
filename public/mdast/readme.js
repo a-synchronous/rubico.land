@@ -187,7 +187,7 @@ export default {
       children: [
         {
           type: 'text',
-          value: '[a]synchronous functional programming',
+          value: '[A]synchronous Functional Programming',
           position: {
             start: { line: 10, column: 4, offset: 622 },
             end: { line: 10, column: 41, offset: 659 }
@@ -1752,78 +1752,16 @@ export default {
       children: [
         {
           type: 'text',
-          value: 'Awesome Resources',
+          value: 'Blog',
           position: {
             start: { line: 262, column: 4, offset: 9111 },
-            end: { line: 262, column: 21, offset: 9128 }
+            end: { line: 262, column: 8, offset: 9115 }
           }
         }
       ],
       position: {
         start: { line: 262, column: 1, offset: 9108 },
-        end: { line: 262, column: 21, offset: 9128 }
-      }
-    },
-    {
-      type: 'paragraph',
-      children: [
-        {
-          type: 'link',
-          title: null,
-          url: 'https://dev.to/richytong/rubico-a-synchrnous-functional-syntax-motivation-20hf',
-          children: [
-            {
-              type: 'text',
-              value: 'rubico simplifies asynchronous code',
-              position: {
-                start: { line: 263, column: 2, offset: 9130 },
-                end: { line: 263, column: 37, offset: 9165 }
-              }
-            }
-          ],
-          position: {
-            start: { line: 263, column: 1, offset: 9129 },
-            end: { line: 263, column: 118, offset: 9246 }
-          }
-        },
-        {
-          type: 'text',
-          value: '\n',
-          position: {
-            start: { line: 263, column: 118, offset: 9246 },
-            end: { line: 264, column: 1, offset: 9247 }
-          }
-        },
-        {
-          type: 'html',
-          value: '<br>',
-          position: {
-            start: { line: 264, column: 1, offset: 9247 },
-            end: { line: 264, column: 5, offset: 9251 }
-          }
-        }
-      ],
-      position: {
-        start: { line: 263, column: 1, offset: 9129 },
-        end: { line: 264, column: 5, offset: 9251 }
-      }
-    },
-    {
-      type: 'heading',
-      depth: 2,
-      children: [
-        {
-          type: 'text',
-          value: 'Blog',
-          position: {
-            start: { line: 266, column: 4, offset: 9256 },
-            end: { line: 266, column: 8, offset: 9260 }
-          }
-        }
-      ],
-      position: {
-        start: { line: 266, column: 1, offset: 9253 },
-        end: { line: 266, column: 8, offset: 9260 }
+        end: { line: 262, column: 8, offset: 9115 }
       }
     },
     {
@@ -1831,10 +1769,10 @@ export default {
       children: [
         {
           type: 'text',
-          value: 'Check out the rubico blog at ',
+          value: 'Learn more about rubico and [A]synchronous Functional Programming at ',
           position: {
-            start: { line: 267, column: 1, offset: 9261 },
-            end: { line: 267, column: 30, offset: 9290 }
+            start: { line: 263, column: 1, offset: 9116 },
+            end: { line: 263, column: 70, offset: 9185 }
           }
         },
         {
@@ -1846,25 +1784,33 @@ export default {
               type: 'text',
               value: 'https://rubico.land/blog',
               position: {
-                start: { line: 267, column: 31, offset: 9291 },
-                end: { line: 267, column: 55, offset: 9315 }
+                start: { line: 263, column: 71, offset: 9186 },
+                end: { line: 263, column: 95, offset: 9210 }
               }
             }
           ],
           position: {
-            start: { line: 267, column: 30, offset: 9290 },
-            end: { line: 267, column: 82, offset: 9342 }
+            start: { line: 263, column: 70, offset: 9185 },
+            end: { line: 263, column: 122, offset: 9237 }
+          }
+        },
+        {
+          type: 'text',
+          value: '.',
+          position: {
+            start: { line: 263, column: 122, offset: 9237 },
+            end: { line: 263, column: 123, offset: 9238 }
           }
         }
       ],
       position: {
-        start: { line: 267, column: 1, offset: 9261 },
-        end: { line: 267, column: 82, offset: 9342 }
+        start: { line: 263, column: 1, offset: 9116 },
+        end: { line: 263, column: 123, offset: 9238 }
       }
     }
   ],
   position: {
     start: { line: 1, column: 1, offset: 0 },
-    end: { line: 268, column: 1, offset: 9343 }
+    end: { line: 264, column: 1, offset: 9239 }
   }
 }
