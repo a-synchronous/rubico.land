@@ -90,7 +90,7 @@ const BlogPost = ReactElement(props => {
     ]),
 
     dateUpdated ? [
-      P(`Updated ${dateUpdated} by ${author}`),
+      P(`Last Updated ${dateUpdated} by ${author}`),
     ] : [
       P(`${datePublished} by ${author}`),
     ],
