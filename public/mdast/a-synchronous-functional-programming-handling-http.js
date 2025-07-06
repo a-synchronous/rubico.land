@@ -7128,7 +7128,7 @@ export default {
         {
           type: 'link',
           title: null,
-          url: 'https://blog.netwrix.com/network-devices-explained',
+          url: 'https://www.lepide.com/blog/the-most-common-types-of-network-devices/',
           children: [
             {
               type: 'text',
@@ -7141,21 +7141,21 @@ export default {
           ],
           position: {
             start: { line: 470, column: 47, offset: 21749 },
-            end: { line: 470, column: 115, offset: 21817 }
+            end: { line: 470, column: 134, offset: 21836 }
           }
         },
         {
           type: 'text',
           value: ' on which the server is running.',
           position: {
-            start: { line: 470, column: 115, offset: 21817 },
-            end: { line: 470, column: 147, offset: 21849 }
+            start: { line: 470, column: 134, offset: 21836 },
+            end: { line: 470, column: 166, offset: 21868 }
           }
         }
       ],
       position: {
         start: { line: 470, column: 1, offset: 21703 },
-        end: { line: 470, column: 147, offset: 21849 }
+        end: { line: 470, column: 166, offset: 21868 }
       }
     },
     {
@@ -7166,14 +7166,14 @@ export default {
           type: 'text',
           value: 'HTTP Handler',
           position: {
-            start: { line: 472, column: 4, offset: 21854 },
-            end: { line: 472, column: 16, offset: 21866 }
+            start: { line: 472, column: 4, offset: 21873 },
+            end: { line: 472, column: 16, offset: 21885 }
           }
         }
       ],
       position: {
-        start: { line: 472, column: 1, offset: 21851 },
-        end: { line: 472, column: 16, offset: 21866 }
+        start: { line: 472, column: 1, offset: 21870 },
+        end: { line: 472, column: 16, offset: 21885 }
       }
     },
     {
@@ -7183,14 +7183,14 @@ export default {
           type: 'text',
           value: 'An HTTP handler is a component of an HTTP server that processes or "handles" incoming requests from clients.',
           position: {
-            start: { line: 474, column: 1, offset: 21868 },
-            end: { line: 474, column: 109, offset: 21976 }
+            start: { line: 474, column: 1, offset: 21887 },
+            end: { line: 474, column: 109, offset: 21995 }
           }
         }
       ],
       position: {
-        start: { line: 474, column: 1, offset: 21868 },
-        end: { line: 474, column: 109, offset: 21976 }
+        start: { line: 474, column: 1, offset: 21887 },
+        end: { line: 474, column: 109, offset: 21995 }
       }
     },
     {
@@ -7200,14 +7200,14 @@ export default {
           type: 'text',
           value: 'Generally, an HTTP handler is responsible for the following:',
           position: {
-            start: { line: 476, column: 1, offset: 21978 },
-            end: { line: 476, column: 61, offset: 22038 }
+            start: { line: 476, column: 1, offset: 21997 },
+            end: { line: 476, column: 61, offset: 22057 }
           }
         }
       ],
       position: {
-        start: { line: 476, column: 1, offset: 21978 },
-        end: { line: 476, column: 61, offset: 22038 }
+        start: { line: 476, column: 1, offset: 21997 },
+        end: { line: 476, column: 61, offset: 22057 }
       }
     },
     {
@@ -7228,20 +7228,20 @@ export default {
                   type: 'text',
                   value: 'Parsing information from a request such as its headers, path, and body',
                   position: {
-                    start: { line: 477, column: 4, offset: 22042 },
-                    end: { line: 477, column: 74, offset: 22112 }
+                    start: { line: 477, column: 4, offset: 22061 },
+                    end: { line: 477, column: 74, offset: 22131 }
                   }
                 }
               ],
               position: {
-                start: { line: 477, column: 4, offset: 22042 },
-                end: { line: 477, column: 74, offset: 22112 }
+                start: { line: 477, column: 4, offset: 22061 },
+                end: { line: 477, column: 74, offset: 22131 }
               }
             }
           ],
           position: {
-            start: { line: 477, column: 2, offset: 22040 },
-            end: { line: 477, column: 74, offset: 22112 }
+            start: { line: 477, column: 2, offset: 22059 },
+            end: { line: 477, column: 74, offset: 22131 }
           }
         },
         {
@@ -7256,20 +7256,20 @@ export default {
                   type: 'text',
                   value: 'Validating the information parsed from a request',
                   position: {
-                    start: { line: 478, column: 4, offset: 22116 },
-                    end: { line: 478, column: 52, offset: 22164 }
+                    start: { line: 478, column: 4, offset: 22135 },
+                    end: { line: 478, column: 52, offset: 22183 }
                   }
                 }
               ],
               position: {
-                start: { line: 478, column: 4, offset: 22116 },
-                end: { line: 478, column: 52, offset: 22164 }
+                start: { line: 478, column: 4, offset: 22135 },
+                end: { line: 478, column: 52, offset: 22183 }
               }
             }
           ],
           position: {
-            start: { line: 478, column: 2, offset: 22114 },
-            end: { line: 478, column: 52, offset: 22164 }
+            start: { line: 478, column: 2, offset: 22133 },
+            end: { line: 478, column: 52, offset: 22183 }
           }
         },
         {
@@ -7284,20 +7284,20 @@ export default {
                   type: 'text',
                   value: 'Sending additional requests to other web servers or "web services", for example sending a request to a database web service (Amazon DynamoDB, Amazon RDS running PostgreSQL or MySQL) or external cache (Redis) to retrieve or store data',
                   position: {
-                    start: { line: 479, column: 4, offset: 22168 },
-                    end: { line: 479, column: 237, offset: 22401 }
+                    start: { line: 479, column: 4, offset: 22187 },
+                    end: { line: 479, column: 237, offset: 22420 }
                   }
                 }
               ],
               position: {
-                start: { line: 479, column: 4, offset: 22168 },
-                end: { line: 479, column: 237, offset: 22401 }
+                start: { line: 479, column: 4, offset: 22187 },
+                end: { line: 479, column: 237, offset: 22420 }
               }
             }
           ],
           position: {
-            start: { line: 479, column: 2, offset: 22166 },
-            end: { line: 479, column: 237, offset: 22401 }
+            start: { line: 479, column: 2, offset: 22185 },
+            end: { line: 479, column: 237, offset: 22420 }
           }
         },
         {
@@ -7312,26 +7312,26 @@ export default {
                   type: 'text',
                   value: 'Generating the response to the request, including setting the appropriate response headers and writing to the response body.',
                   position: {
-                    start: { line: 480, column: 4, offset: 22405 },
-                    end: { line: 480, column: 128, offset: 22529 }
+                    start: { line: 480, column: 4, offset: 22424 },
+                    end: { line: 480, column: 128, offset: 22548 }
                   }
                 }
               ],
               position: {
-                start: { line: 480, column: 4, offset: 22405 },
-                end: { line: 480, column: 128, offset: 22529 }
+                start: { line: 480, column: 4, offset: 22424 },
+                end: { line: 480, column: 128, offset: 22548 }
               }
             }
           ],
           position: {
-            start: { line: 480, column: 2, offset: 22403 },
-            end: { line: 480, column: 128, offset: 22529 }
+            start: { line: 480, column: 2, offset: 22422 },
+            end: { line: 480, column: 128, offset: 22548 }
           }
         }
       ],
       position: {
-        start: { line: 477, column: 2, offset: 22040 },
-        end: { line: 480, column: 128, offset: 22529 }
+        start: { line: 477, column: 2, offset: 22059 },
+        end: { line: 480, column: 128, offset: 22548 }
       }
     },
     {
@@ -7342,14 +7342,14 @@ export default {
           type: 'text',
           value: 'HTTP Handlers in NodeJS',
           position: {
-            start: { line: 482, column: 5, offset: 22535 },
-            end: { line: 482, column: 28, offset: 22558 }
+            start: { line: 482, column: 5, offset: 22554 },
+            end: { line: 482, column: 28, offset: 22577 }
           }
         }
       ],
       position: {
-        start: { line: 482, column: 1, offset: 22531 },
-        end: { line: 482, column: 28, offset: 22558 }
+        start: { line: 482, column: 1, offset: 22550 },
+        end: { line: 482, column: 28, offset: 22577 }
       }
     },
     {
@@ -7359,46 +7359,46 @@ export default {
           type: 'text',
           value: "The NodeJS JavaScript runtime's ",
           position: {
-            start: { line: 484, column: 1, offset: 22560 },
-            end: { line: 484, column: 33, offset: 22592 }
+            start: { line: 484, column: 1, offset: 22579 },
+            end: { line: 484, column: 33, offset: 22611 }
           }
         },
         {
           type: 'inlineCode',
           value: 'http',
           position: {
-            start: { line: 484, column: 33, offset: 22592 },
-            end: { line: 484, column: 39, offset: 22598 }
+            start: { line: 484, column: 33, offset: 22611 },
+            end: { line: 484, column: 39, offset: 22617 }
           }
         },
         {
           type: 'text',
           value: ' module handles most of the processing of the raw HTTP request message and abstracts the parsed information into a NodeJS ',
           position: {
-            start: { line: 484, column: 39, offset: 22598 },
-            end: { line: 484, column: 161, offset: 22720 }
+            start: { line: 484, column: 39, offset: 22617 },
+            end: { line: 484, column: 161, offset: 22739 }
           }
         },
         {
           type: 'inlineCode',
           value: 'ClientRequest',
           position: {
-            start: { line: 484, column: 161, offset: 22720 },
-            end: { line: 484, column: 176, offset: 22735 }
+            start: { line: 484, column: 161, offset: 22739 },
+            end: { line: 484, column: 176, offset: 22754 }
           }
         },
         {
           type: 'text',
           value: ' object.',
           position: {
-            start: { line: 484, column: 176, offset: 22735 },
-            end: { line: 484, column: 184, offset: 22743 }
+            start: { line: 484, column: 176, offset: 22754 },
+            end: { line: 484, column: 184, offset: 22762 }
           }
         }
       ],
       position: {
-        start: { line: 484, column: 1, offset: 22560 },
-        end: { line: 484, column: 184, offset: 22743 }
+        start: { line: 484, column: 1, offset: 22579 },
+        end: { line: 484, column: 184, offset: 22762 }
       }
     },
     {
@@ -7418,8 +7418,8 @@ export default {
         "request.on('error', (error Error)=>undefined)\n" +
         "request.on('end', ()=>undefined)",
       position: {
-        start: { line: 486, column: 1, offset: 22745 },
-        end: { line: 499, column: 4, offset: 23070 }
+        start: { line: 486, column: 1, offset: 22764 },
+        end: { line: 499, column: 4, offset: 23089 }
       }
     },
     {
@@ -7429,46 +7429,46 @@ export default {
           type: 'text',
           value: 'The NodeJS ',
           position: {
-            start: { line: 501, column: 1, offset: 23072 },
-            end: { line: 501, column: 12, offset: 23083 }
+            start: { line: 501, column: 1, offset: 23091 },
+            end: { line: 501, column: 12, offset: 23102 }
           }
         },
         {
           type: 'inlineCode',
           value: 'http',
           position: {
-            start: { line: 501, column: 12, offset: 23083 },
-            end: { line: 501, column: 18, offset: 23089 }
+            start: { line: 501, column: 12, offset: 23102 },
+            end: { line: 501, column: 18, offset: 23108 }
           }
         },
         {
           type: 'text',
           value: ' module offers an interface or "API" for generating HTTP responses as ',
           position: {
-            start: { line: 501, column: 18, offset: 23089 },
-            end: { line: 501, column: 88, offset: 23159 }
+            start: { line: 501, column: 18, offset: 23108 },
+            end: { line: 501, column: 88, offset: 23178 }
           }
         },
         {
           type: 'inlineCode',
           value: 'ServerResponse',
           position: {
-            start: { line: 501, column: 88, offset: 23159 },
-            end: { line: 501, column: 104, offset: 23175 }
+            start: { line: 501, column: 88, offset: 23178 },
+            end: { line: 501, column: 104, offset: 23194 }
           }
         },
         {
           type: 'text',
           value: ' objects.',
           position: {
-            start: { line: 501, column: 104, offset: 23175 },
-            end: { line: 501, column: 113, offset: 23184 }
+            start: { line: 501, column: 104, offset: 23194 },
+            end: { line: 501, column: 113, offset: 23203 }
           }
         }
       ],
       position: {
-        start: { line: 501, column: 1, offset: 23072 },
-        end: { line: 501, column: 113, offset: 23184 }
+        start: { line: 501, column: 1, offset: 23091 },
+        end: { line: 501, column: 113, offset: 23203 }
       }
     },
     {
@@ -7481,8 +7481,8 @@ export default {
         '  end: (data Buffer|string)=>undefined\n' +
         '}',
       position: {
-        start: { line: 503, column: 1, offset: 23186 },
-        end: { line: 509, column: 4, offset: 23383 }
+        start: { line: 503, column: 1, offset: 23205 },
+        end: { line: 509, column: 4, offset: 23402 }
       }
     },
     {
@@ -7492,46 +7492,46 @@ export default {
           type: 'text',
           value: 'An HTTP handler in NodeJS handles ',
           position: {
-            start: { line: 511, column: 1, offset: 23385 },
-            end: { line: 511, column: 35, offset: 23419 }
+            start: { line: 511, column: 1, offset: 23404 },
+            end: { line: 511, column: 35, offset: 23438 }
           }
         },
         {
           type: 'inlineCode',
           value: 'ClientRequest',
           position: {
-            start: { line: 511, column: 35, offset: 23419 },
-            end: { line: 511, column: 50, offset: 23434 }
+            start: { line: 511, column: 35, offset: 23438 },
+            end: { line: 511, column: 50, offset: 23453 }
           }
         },
         {
           type: 'text',
           value: ' and ',
           position: {
-            start: { line: 511, column: 50, offset: 23434 },
-            end: { line: 511, column: 55, offset: 23439 }
+            start: { line: 511, column: 50, offset: 23453 },
+            end: { line: 511, column: 55, offset: 23458 }
           }
         },
         {
           type: 'inlineCode',
           value: 'ServerResponse',
           position: {
-            start: { line: 511, column: 55, offset: 23439 },
-            end: { line: 511, column: 71, offset: 23455 }
+            start: { line: 511, column: 55, offset: 23458 },
+            end: { line: 511, column: 71, offset: 23474 }
           }
         },
         {
           type: 'text',
           value: ' objects and has the following structure:',
           position: {
-            start: { line: 511, column: 71, offset: 23455 },
-            end: { line: 511, column: 112, offset: 23496 }
+            start: { line: 511, column: 71, offset: 23474 },
+            end: { line: 511, column: 112, offset: 23515 }
           }
         }
       ],
       position: {
-        start: { line: 511, column: 1, offset: 23385 },
-        end: { line: 511, column: 112, offset: 23496 }
+        start: { line: 511, column: 1, offset: 23404 },
+        end: { line: 511, column: 112, offset: 23515 }
       }
     },
     {
@@ -7553,8 +7553,8 @@ export default {
         '\n' +
         'type HttpHandler = (request ClientRequest, response ServerResponse)=>Promise|undefined',
       position: {
-        start: { line: 513, column: 1, offset: 23498 },
-        end: { line: 528, column: 4, offset: 23929 }
+        start: { line: 513, column: 1, offset: 23517 },
+        end: { line: 528, column: 4, offset: 23948 }
       }
     },
     {
@@ -7564,8 +7564,8 @@ export default {
           type: 'text',
           value: 'Below is a theoretical NodeJS HTTP handler that handles the request made in the ',
           position: {
-            start: { line: 530, column: 1, offset: 23931 },
-            end: { line: 530, column: 81, offset: 24011 }
+            start: { line: 530, column: 1, offset: 23950 },
+            end: { line: 530, column: 81, offset: 24030 }
           }
         },
         {
@@ -7577,28 +7577,28 @@ export default {
               type: 'text',
               value: 'HTTP client',
               position: {
-                start: { line: 530, column: 82, offset: 24012 },
-                end: { line: 530, column: 93, offset: 24023 }
+                start: { line: 530, column: 82, offset: 24031 },
+                end: { line: 530, column: 93, offset: 24042 }
               }
             }
           ],
           position: {
-            start: { line: 530, column: 81, offset: 24011 },
-            end: { line: 530, column: 108, offset: 24038 }
+            start: { line: 530, column: 81, offset: 24030 },
+            end: { line: 530, column: 108, offset: 24057 }
           }
         },
         {
           type: 'text',
           value: ' example.',
           position: {
-            start: { line: 530, column: 108, offset: 24038 },
-            end: { line: 530, column: 117, offset: 24047 }
+            start: { line: 530, column: 108, offset: 24057 },
+            end: { line: 530, column: 117, offset: 24066 }
           }
         }
       ],
       position: {
-        start: { line: 530, column: 1, offset: 23931 },
-        end: { line: 530, column: 117, offset: 24047 }
+        start: { line: 530, column: 1, offset: 23950 },
+        end: { line: 530, column: 117, offset: 24066 }
       }
     },
     {
@@ -7639,8 +7639,8 @@ export default {
         '\n' +
         'server.listen(port)',
       position: {
-        start: { line: 532, column: 1, offset: 24049 },
-        end: { line: 566, column: 4, offset: 24700 }
+        start: { line: 532, column: 1, offset: 24068 },
+        end: { line: 566, column: 4, offset: 24719 }
       }
     },
     {
@@ -7650,110 +7650,110 @@ export default {
           type: 'text',
           value: 'The HTTP server ',
           position: {
-            start: { line: 568, column: 1, offset: 24702 },
-            end: { line: 568, column: 17, offset: 24718 }
+            start: { line: 568, column: 1, offset: 24721 },
+            end: { line: 568, column: 17, offset: 24737 }
           }
         },
         {
           type: 'inlineCode',
           value: 'server',
           position: {
-            start: { line: 568, column: 17, offset: 24718 },
-            end: { line: 568, column: 25, offset: 24726 }
+            start: { line: 568, column: 17, offset: 24737 },
+            end: { line: 568, column: 25, offset: 24745 }
           }
         },
         {
           type: 'text',
           value: ' created by the NodeJS ',
           position: {
-            start: { line: 568, column: 25, offset: 24726 },
-            end: { line: 568, column: 48, offset: 24749 }
+            start: { line: 568, column: 25, offset: 24745 },
+            end: { line: 568, column: 48, offset: 24768 }
           }
         },
         {
           type: 'inlineCode',
           value: 'http',
           position: {
-            start: { line: 568, column: 48, offset: 24749 },
-            end: { line: 568, column: 54, offset: 24755 }
+            start: { line: 568, column: 48, offset: 24768 },
+            end: { line: 568, column: 54, offset: 24774 }
           }
         },
         {
           type: 'text',
           value: " module's ",
           position: {
-            start: { line: 568, column: 54, offset: 24755 },
-            end: { line: 568, column: 64, offset: 24765 }
+            start: { line: 568, column: 54, offset: 24774 },
+            end: { line: 568, column: 64, offset: 24784 }
           }
         },
         {
           type: 'inlineCode',
           value: 'createServer',
           position: {
-            start: { line: 568, column: 64, offset: 24765 },
-            end: { line: 568, column: 78, offset: 24779 }
+            start: { line: 568, column: 64, offset: 24784 },
+            end: { line: 568, column: 78, offset: 24798 }
           }
         },
         {
           type: 'text',
           value: ' accepts the HTTP handler ',
           position: {
-            start: { line: 568, column: 78, offset: 24779 },
-            end: { line: 568, column: 104, offset: 24805 }
+            start: { line: 568, column: 78, offset: 24798 },
+            end: { line: 568, column: 104, offset: 24824 }
           }
         },
         {
           type: 'inlineCode',
           value: 'handler',
           position: {
-            start: { line: 568, column: 104, offset: 24805 },
-            end: { line: 568, column: 113, offset: 24814 }
+            start: { line: 568, column: 104, offset: 24824 },
+            end: { line: 568, column: 113, offset: 24833 }
           }
         },
         {
           type: 'text',
           value: ' as a single argument. To start the server we only need to call ',
           position: {
-            start: { line: 568, column: 113, offset: 24814 },
-            end: { line: 568, column: 177, offset: 24878 }
+            start: { line: 568, column: 113, offset: 24833 },
+            end: { line: 568, column: 177, offset: 24897 }
           }
         },
         {
           type: 'inlineCode',
           value: 'server.listen',
           position: {
-            start: { line: 568, column: 177, offset: 24878 },
-            end: { line: 568, column: 192, offset: 24893 }
+            start: { line: 568, column: 177, offset: 24897 },
+            end: { line: 568, column: 192, offset: 24912 }
           }
         },
         {
           type: 'text',
           value: ', specifying port ',
           position: {
-            start: { line: 568, column: 192, offset: 24893 },
-            end: { line: 568, column: 210, offset: 24911 }
+            start: { line: 568, column: 192, offset: 24912 },
+            end: { line: 568, column: 210, offset: 24930 }
           }
         },
         {
           type: 'inlineCode',
           value: '8080',
           position: {
-            start: { line: 568, column: 210, offset: 24911 },
-            end: { line: 568, column: 216, offset: 24917 }
+            start: { line: 568, column: 210, offset: 24930 },
+            end: { line: 568, column: 216, offset: 24936 }
           }
         },
         {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 568, column: 216, offset: 24917 },
-            end: { line: 568, column: 217, offset: 24918 }
+            start: { line: 568, column: 216, offset: 24936 },
+            end: { line: 568, column: 217, offset: 24937 }
           }
         }
       ],
       position: {
-        start: { line: 568, column: 1, offset: 24702 },
-        end: { line: 568, column: 217, offset: 24918 }
+        start: { line: 568, column: 1, offset: 24721 },
+        end: { line: 568, column: 217, offset: 24937 }
       }
     },
     {
@@ -7764,14 +7764,14 @@ export default {
           type: 'text',
           value: 'Http Handlers in [A]synchronous Functional Programming',
           position: {
-            start: { line: 570, column: 5, offset: 24924 },
-            end: { line: 570, column: 59, offset: 24978 }
+            start: { line: 570, column: 5, offset: 24943 },
+            end: { line: 570, column: 59, offset: 24997 }
           }
         }
       ],
       position: {
-        start: { line: 570, column: 1, offset: 24920 },
-        end: { line: 570, column: 59, offset: 24978 }
+        start: { line: 570, column: 1, offset: 24939 },
+        end: { line: 570, column: 59, offset: 24997 }
       }
     },
     {
@@ -7781,14 +7781,14 @@ export default {
           type: 'text',
           value: 'In [A]synchronous Functional Programming, HTTP handlers are simple, reusable, and modular. Consider the following web server implementation with a complex HTTP handler:',
           position: {
-            start: { line: 572, column: 1, offset: 24980 },
-            end: { line: 572, column: 169, offset: 25148 }
+            start: { line: 572, column: 1, offset: 24999 },
+            end: { line: 572, column: 169, offset: 25167 }
           }
         }
       ],
       position: {
-        start: { line: 572, column: 1, offset: 24980 },
-        end: { line: 572, column: 169, offset: 25148 }
+        start: { line: 572, column: 1, offset: 24999 },
+        end: { line: 572, column: 169, offset: 25167 }
       }
     },
     {
@@ -7955,8 +7955,8 @@ export default {
         '\n' +
         'server.listen(port)',
       position: {
-        start: { line: 574, column: 1, offset: 25150 },
-        end: { line: 734, column: 4, offset: 29496 }
+        start: { line: 574, column: 1, offset: 25169 },
+        end: { line: 734, column: 4, offset: 29515 }
       }
     },
     {
@@ -7966,30 +7966,30 @@ export default {
           type: 'text',
           value: 'The above handler ',
           position: {
-            start: { line: 736, column: 1, offset: 29498 },
-            end: { line: 736, column: 19, offset: 29516 }
+            start: { line: 736, column: 1, offset: 29517 },
+            end: { line: 736, column: 19, offset: 29535 }
           }
         },
         {
           type: 'inlineCode',
           value: 'complexHandler',
           position: {
-            start: { line: 736, column: 19, offset: 29516 },
-            end: { line: 736, column: 35, offset: 29532 }
+            start: { line: 736, column: 19, offset: 29535 },
+            end: { line: 736, column: 35, offset: 29551 }
           }
         },
         {
           type: 'text',
           value: ' has many responsibilities, including handling health checks, handling options requests, retrieving user resources, updating or creating user resources, and handling application errors.',
           position: {
-            start: { line: 736, column: 35, offset: 29532 },
-            end: { line: 736, column: 220, offset: 29717 }
+            start: { line: 736, column: 35, offset: 29551 },
+            end: { line: 736, column: 220, offset: 29736 }
           }
         }
       ],
       position: {
-        start: { line: 736, column: 1, offset: 29498 },
-        end: { line: 736, column: 220, offset: 29717 }
+        start: { line: 736, column: 1, offset: 29517 },
+        end: { line: 736, column: 220, offset: 29736 }
       }
     },
     {
@@ -7999,8 +7999,8 @@ export default {
           type: 'text',
           value: 'With [A]synchronous Functional Programming, we can break down the above complex HTTP handler into simple, modular, and reusable handlers, then use the library ',
           position: {
-            start: { line: 738, column: 1, offset: 29719 },
-            end: { line: 738, column: 160, offset: 29878 }
+            start: { line: 738, column: 1, offset: 29738 },
+            end: { line: 738, column: 160, offset: 29897 }
           }
         },
         {
@@ -8012,28 +8012,28 @@ export default {
               type: 'text',
               value: 'rubico',
               position: {
-                start: { line: 738, column: 161, offset: 29879 },
-                end: { line: 738, column: 167, offset: 29885 }
+                start: { line: 738, column: 161, offset: 29898 },
+                end: { line: 738, column: 167, offset: 29904 }
               }
             }
           ],
           position: {
-            start: { line: 738, column: 160, offset: 29878 },
-            end: { line: 738, column: 190, offset: 29908 }
+            start: { line: 738, column: 160, offset: 29897 },
+            end: { line: 738, column: 190, offset: 29927 }
           }
         },
         {
           type: 'text',
           value: ' to combine those handlers in a meaningful way.',
           position: {
-            start: { line: 738, column: 190, offset: 29908 },
-            end: { line: 738, column: 237, offset: 29955 }
+            start: { line: 738, column: 190, offset: 29927 },
+            end: { line: 738, column: 237, offset: 29974 }
           }
         }
       ],
       position: {
-        start: { line: 738, column: 1, offset: 29719 },
-        end: { line: 738, column: 237, offset: 29955 }
+        start: { line: 738, column: 1, offset: 29738 },
+        end: { line: 738, column: 237, offset: 29974 }
       }
     },
     {
@@ -8043,14 +8043,14 @@ export default {
           type: 'text',
           value: "First, let's break down the complex handler.",
           position: {
-            start: { line: 740, column: 1, offset: 29957 },
-            end: { line: 740, column: 45, offset: 30001 }
+            start: { line: 740, column: 1, offset: 29976 },
+            end: { line: 740, column: 45, offset: 30020 }
           }
         }
       ],
       position: {
-        start: { line: 740, column: 1, offset: 29957 },
-        end: { line: 740, column: 45, offset: 30001 }
+        start: { line: 740, column: 1, offset: 29976 },
+        end: { line: 740, column: 45, offset: 30020 }
       }
     },
     {
@@ -8205,8 +8205,8 @@ export default {
         '  response.end(error.message)\n' +
         '}',
       position: {
-        start: { line: 742, column: 1, offset: 30003 },
-        end: { line: 890, column: 4, offset: 33659 }
+        start: { line: 742, column: 1, offset: 30022 },
+        end: { line: 890, column: 4, offset: 33678 }
       }
     },
     {
@@ -8216,110 +8216,110 @@ export default {
           type: 'text',
           value: "We've broken down the complex handler ",
           position: {
-            start: { line: 892, column: 1, offset: 33661 },
-            end: { line: 892, column: 39, offset: 33699 }
+            start: { line: 892, column: 1, offset: 33680 },
+            end: { line: 892, column: 39, offset: 33718 }
           }
         },
         {
           type: 'inlineCode',
           value: 'complexHandler',
           position: {
-            start: { line: 892, column: 39, offset: 33699 },
-            end: { line: 892, column: 55, offset: 33715 }
+            start: { line: 892, column: 39, offset: 33718 },
+            end: { line: 892, column: 55, offset: 33734 }
           }
         },
         {
           type: 'text',
           value: ' into smaller, simpler handlers ',
           position: {
-            start: { line: 892, column: 55, offset: 33715 },
-            end: { line: 892, column: 87, offset: 33747 }
+            start: { line: 892, column: 55, offset: 33734 },
+            end: { line: 892, column: 87, offset: 33766 }
           }
         },
         {
           type: 'inlineCode',
           value: 'healthCheckHandler',
           position: {
-            start: { line: 892, column: 87, offset: 33747 },
-            end: { line: 892, column: 107, offset: 33767 }
+            start: { line: 892, column: 87, offset: 33766 },
+            end: { line: 892, column: 107, offset: 33786 }
           }
         },
         {
           type: 'text',
           value: ', ',
           position: {
-            start: { line: 892, column: 107, offset: 33767 },
-            end: { line: 892, column: 109, offset: 33769 }
+            start: { line: 892, column: 107, offset: 33786 },
+            end: { line: 892, column: 109, offset: 33788 }
           }
         },
         {
           type: 'inlineCode',
           value: 'optionsHandler',
           position: {
-            start: { line: 892, column: 109, offset: 33769 },
-            end: { line: 892, column: 125, offset: 33785 }
+            start: { line: 892, column: 109, offset: 33788 },
+            end: { line: 892, column: 125, offset: 33804 }
           }
         },
         {
           type: 'text',
           value: ', ',
           position: {
-            start: { line: 892, column: 125, offset: 33785 },
-            end: { line: 892, column: 127, offset: 33787 }
+            start: { line: 892, column: 125, offset: 33804 },
+            end: { line: 892, column: 127, offset: 33806 }
           }
         },
         {
           type: 'inlineCode',
           value: 'getUserHandler',
           position: {
-            start: { line: 892, column: 127, offset: 33787 },
-            end: { line: 892, column: 143, offset: 33803 }
+            start: { line: 892, column: 127, offset: 33806 },
+            end: { line: 892, column: 143, offset: 33822 }
           }
         },
         {
           type: 'text',
           value: ', ',
           position: {
-            start: { line: 892, column: 143, offset: 33803 },
-            end: { line: 892, column: 145, offset: 33805 }
+            start: { line: 892, column: 143, offset: 33822 },
+            end: { line: 892, column: 145, offset: 33824 }
           }
         },
         {
           type: 'inlineCode',
           value: 'notFoundHandler',
           position: {
-            start: { line: 892, column: 145, offset: 33805 },
-            end: { line: 892, column: 162, offset: 33822 }
+            start: { line: 892, column: 145, offset: 33824 },
+            end: { line: 892, column: 162, offset: 33841 }
           }
         },
         {
           type: 'text',
           value: ', and ',
           position: {
-            start: { line: 892, column: 162, offset: 33822 },
-            end: { line: 892, column: 168, offset: 33828 }
+            start: { line: 892, column: 162, offset: 33841 },
+            end: { line: 892, column: 168, offset: 33847 }
           }
         },
         {
           type: 'inlineCode',
           value: 'errorHandler',
           position: {
-            start: { line: 892, column: 168, offset: 33828 },
-            end: { line: 892, column: 182, offset: 33842 }
+            start: { line: 892, column: 168, offset: 33847 },
+            end: { line: 892, column: 182, offset: 33861 }
           }
         },
         {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 892, column: 182, offset: 33842 },
-            end: { line: 892, column: 183, offset: 33843 }
+            start: { line: 892, column: 182, offset: 33861 },
+            end: { line: 892, column: 183, offset: 33862 }
           }
         }
       ],
       position: {
-        start: { line: 892, column: 1, offset: 33661 },
-        end: { line: 892, column: 183, offset: 33843 }
+        start: { line: 892, column: 1, offset: 33680 },
+        end: { line: 892, column: 183, offset: 33862 }
       }
     },
     {
@@ -8329,8 +8329,8 @@ export default {
           type: 'text',
           value: "Now let's combine the smaller handlers using rubico's ",
           position: {
-            start: { line: 894, column: 1, offset: 33845 },
-            end: { line: 894, column: 55, offset: 33899 }
+            start: { line: 894, column: 1, offset: 33864 },
+            end: { line: 894, column: 55, offset: 33918 }
           }
         },
         {
@@ -8342,22 +8342,22 @@ export default {
               type: 'text',
               value: 'tryCatch',
               position: {
-                start: { line: 894, column: 56, offset: 33900 },
-                end: { line: 894, column: 64, offset: 33908 }
+                start: { line: 894, column: 56, offset: 33919 },
+                end: { line: 894, column: 64, offset: 33927 }
               }
             }
           ],
           position: {
-            start: { line: 894, column: 55, offset: 33899 },
-            end: { line: 894, column: 81, offset: 33925 }
+            start: { line: 894, column: 55, offset: 33918 },
+            end: { line: 894, column: 81, offset: 33944 }
           }
         },
         {
           type: 'text',
           value: ' and ',
           position: {
-            start: { line: 894, column: 81, offset: 33925 },
-            end: { line: 894, column: 86, offset: 33930 }
+            start: { line: 894, column: 81, offset: 33944 },
+            end: { line: 894, column: 86, offset: 33949 }
           }
         },
         {
@@ -8369,28 +8369,28 @@ export default {
               type: 'text',
               value: 'switchCase',
               position: {
-                start: { line: 894, column: 87, offset: 33931 },
-                end: { line: 894, column: 97, offset: 33941 }
+                start: { line: 894, column: 87, offset: 33950 },
+                end: { line: 894, column: 97, offset: 33960 }
               }
             }
           ],
           position: {
-            start: { line: 894, column: 86, offset: 33930 },
-            end: { line: 894, column: 116, offset: 33960 }
+            start: { line: 894, column: 86, offset: 33949 },
+            end: { line: 894, column: 116, offset: 33979 }
           }
         },
         {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 894, column: 116, offset: 33960 },
-            end: { line: 894, column: 117, offset: 33961 }
+            start: { line: 894, column: 116, offset: 33979 },
+            end: { line: 894, column: 117, offset: 33980 }
           }
         }
       ],
       position: {
-        start: { line: 894, column: 1, offset: 33845 },
-        end: { line: 894, column: 117, offset: 33961 }
+        start: { line: 894, column: 1, offset: 33864 },
+        end: { line: 894, column: 117, offset: 33980 }
       }
     },
     {
@@ -8419,8 +8419,8 @@ export default {
         '  errorHandler\n' +
         ')',
       position: {
-        start: { line: 896, column: 1, offset: 33963 },
-        end: { line: 918, column: 4, offset: 34490 }
+        start: { line: 896, column: 1, offset: 33982 },
+        end: { line: 918, column: 4, offset: 34509 }
       }
     },
     {
@@ -8430,38 +8430,38 @@ export default {
           type: 'inlineCode',
           value: 'combinedHandler',
           position: {
-            start: { line: 920, column: 1, offset: 34492 },
-            end: { line: 920, column: 18, offset: 34509 }
+            start: { line: 920, column: 1, offset: 34511 },
+            end: { line: 920, column: 18, offset: 34528 }
           }
         },
         {
           type: 'text',
           value: ' is functionally equivalent to ',
           position: {
-            start: { line: 920, column: 18, offset: 34509 },
-            end: { line: 920, column: 49, offset: 34540 }
+            start: { line: 920, column: 18, offset: 34528 },
+            end: { line: 920, column: 49, offset: 34559 }
           }
         },
         {
           type: 'inlineCode',
           value: 'complexHandler',
           position: {
-            start: { line: 920, column: 49, offset: 34540 },
-            end: { line: 920, column: 65, offset: 34556 }
+            start: { line: 920, column: 49, offset: 34559 },
+            end: { line: 920, column: 65, offset: 34575 }
           }
         },
         {
           type: 'text',
           value: ', but is able to be expressed using a combination of smaller, simpler HTTP handlers. The benefits are as follows: being able to structure your application as small, simple components lends itself well to development, testing, and maintenance.',
           position: {
-            start: { line: 920, column: 65, offset: 34556 },
-            end: { line: 920, column: 307, offset: 34798 }
+            start: { line: 920, column: 65, offset: 34575 },
+            end: { line: 920, column: 307, offset: 34817 }
           }
         }
       ],
       position: {
-        start: { line: 920, column: 1, offset: 34492 },
-        end: { line: 920, column: 307, offset: 34798 }
+        start: { line: 920, column: 1, offset: 34511 },
+        end: { line: 920, column: 307, offset: 34817 }
       }
     },
     {
@@ -8471,14 +8471,14 @@ export default {
           type: 'text',
           value: 'Development is quick and easy: where you once had to digest and add onto the entire complex component, now you only need to write a simple, greenfield component.',
           position: {
-            start: { line: 922, column: 1, offset: 34800 },
-            end: { line: 922, column: 162, offset: 34961 }
+            start: { line: 922, column: 1, offset: 34819 },
+            end: { line: 922, column: 162, offset: 34980 }
           }
         }
       ],
       position: {
-        start: { line: 922, column: 1, offset: 34800 },
-        end: { line: 922, column: 162, offset: 34961 }
+        start: { line: 922, column: 1, offset: 34819 },
+        end: { line: 922, column: 162, offset: 34980 }
       }
     },
     {
@@ -8488,14 +8488,14 @@ export default {
           type: 'text',
           value: 'Testing is simplified: where you once had to write a complex integration test with many controls and conditions for the complex component, now you only need to write simple integration tests for the simple components.',
           position: {
-            start: { line: 924, column: 1, offset: 34963 },
-            end: { line: 924, column: 218, offset: 35180 }
+            start: { line: 924, column: 1, offset: 34982 },
+            end: { line: 924, column: 218, offset: 35199 }
           }
         }
       ],
       position: {
-        start: { line: 924, column: 1, offset: 34963 },
-        end: { line: 924, column: 218, offset: 35180 }
+        start: { line: 924, column: 1, offset: 34982 },
+        end: { line: 924, column: 218, offset: 35199 }
       }
     },
     {
@@ -8505,14 +8505,14 @@ export default {
           type: 'text',
           value: 'The maintenance overhead is reduced: where you once had to concern yourself with testing changes over large areas of code with complex components, now you can reduce the burden to smaller areas of code with simple components.',
           position: {
-            start: { line: 926, column: 1, offset: 35182 },
-            end: { line: 926, column: 226, offset: 35407 }
+            start: { line: 926, column: 1, offset: 35201 },
+            end: { line: 926, column: 226, offset: 35426 }
           }
         }
       ],
       position: {
-        start: { line: 926, column: 1, offset: 35182 },
-        end: { line: 926, column: 226, offset: 35407 }
+        start: { line: 926, column: 1, offset: 35201 },
+        end: { line: 926, column: 226, offset: 35426 }
       }
     },
     {
@@ -8522,14 +8522,14 @@ export default {
           type: 'text',
           value: 'Putting everything together:',
           position: {
-            start: { line: 928, column: 1, offset: 35409 },
-            end: { line: 928, column: 29, offset: 35437 }
+            start: { line: 928, column: 1, offset: 35428 },
+            end: { line: 928, column: 29, offset: 35456 }
           }
         }
       ],
       position: {
-        start: { line: 928, column: 1, offset: 35409 },
-        end: { line: 928, column: 29, offset: 35437 }
+        start: { line: 928, column: 1, offset: 35428 },
+        end: { line: 928, column: 29, offset: 35456 }
       }
     },
     {
@@ -8713,8 +8713,8 @@ export default {
         '\n' +
         'server.listen(port)',
       position: {
-        start: { line: 930, column: 1, offset: 35439 },
-        end: { line: 1107, column: 4, offset: 39672 }
+        start: { line: 930, column: 1, offset: 35458 },
+        end: { line: 1107, column: 4, offset: 39691 }
       }
     },
     {
@@ -8724,8 +8724,8 @@ export default {
           type: 'text',
           value: 'You can find a working example of the above HTTP server code at ',
           position: {
-            start: { line: 1109, column: 1, offset: 39674 },
-            end: { line: 1109, column: 65, offset: 39738 }
+            start: { line: 1109, column: 1, offset: 39693 },
+            end: { line: 1109, column: 65, offset: 39757 }
           }
         },
         {
@@ -8737,28 +8737,28 @@ export default {
               type: 'text',
               value: 'rubico-http-server',
               position: {
-                start: { line: 1109, column: 66, offset: 39739 },
-                end: { line: 1109, column: 84, offset: 39757 }
+                start: { line: 1109, column: 66, offset: 39758 },
+                end: { line: 1109, column: 84, offset: 39776 }
               }
             }
           ],
           position: {
-            start: { line: 1109, column: 65, offset: 39738 },
-            end: { line: 1109, column: 166, offset: 39839 }
+            start: { line: 1109, column: 65, offset: 39757 },
+            end: { line: 1109, column: 166, offset: 39858 }
           }
         },
         {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 1109, column: 166, offset: 39839 },
-            end: { line: 1109, column: 167, offset: 39840 }
+            start: { line: 1109, column: 166, offset: 39858 },
+            end: { line: 1109, column: 167, offset: 39859 }
           }
         }
       ],
       position: {
-        start: { line: 1109, column: 1, offset: 39674 },
-        end: { line: 1109, column: 167, offset: 39840 }
+        start: { line: 1109, column: 1, offset: 39693 },
+        end: { line: 1109, column: 167, offset: 39859 }
       }
     },
     {
@@ -8769,14 +8769,14 @@ export default {
           type: 'text',
           value: 'Conclusion',
           position: {
-            start: { line: 1111, column: 5, offset: 39846 },
-            end: { line: 1111, column: 15, offset: 39856 }
+            start: { line: 1111, column: 5, offset: 39865 },
+            end: { line: 1111, column: 15, offset: 39875 }
           }
         }
       ],
       position: {
-        start: { line: 1111, column: 1, offset: 39842 },
-        end: { line: 1111, column: 15, offset: 39856 }
+        start: { line: 1111, column: 1, offset: 39861 },
+        end: { line: 1111, column: 15, offset: 39875 }
       }
     },
     {
@@ -8786,14 +8786,14 @@ export default {
           type: 'text',
           value: 'This concludes Handling HTTP in [A]synchronous Functional Programming.',
           position: {
-            start: { line: 1113, column: 1, offset: 39858 },
-            end: { line: 1113, column: 71, offset: 39928 }
+            start: { line: 1113, column: 1, offset: 39877 },
+            end: { line: 1113, column: 71, offset: 39947 }
           }
         }
       ],
       position: {
-        start: { line: 1113, column: 1, offset: 39858 },
-        end: { line: 1113, column: 71, offset: 39928 }
+        start: { line: 1113, column: 1, offset: 39877 },
+        end: { line: 1113, column: 71, offset: 39947 }
       }
     },
     {
@@ -8803,8 +8803,8 @@ export default {
           type: 'text',
           value: "If you are curious about rubico and would like to get started, please visit rubico's home page: ",
           position: {
-            start: { line: 1115, column: 1, offset: 39930 },
-            end: { line: 1115, column: 97, offset: 40026 }
+            start: { line: 1115, column: 1, offset: 39949 },
+            end: { line: 1115, column: 97, offset: 40045 }
           }
         },
         {
@@ -8816,33 +8816,33 @@ export default {
               type: 'text',
               value: 'rubico.land',
               position: {
-                start: { line: 1115, column: 98, offset: 40027 },
-                end: { line: 1115, column: 109, offset: 40038 }
+                start: { line: 1115, column: 98, offset: 40046 },
+                end: { line: 1115, column: 109, offset: 40057 }
               }
             }
           ],
           position: {
-            start: { line: 1115, column: 97, offset: 40026 },
-            end: { line: 1115, column: 113, offset: 40042 }
+            start: { line: 1115, column: 97, offset: 40045 },
+            end: { line: 1115, column: 113, offset: 40061 }
           }
         },
         {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 1115, column: 113, offset: 40042 },
-            end: { line: 1115, column: 114, offset: 40043 }
+            start: { line: 1115, column: 113, offset: 40061 },
+            end: { line: 1115, column: 114, offset: 40062 }
           }
         }
       ],
       position: {
-        start: { line: 1115, column: 1, offset: 39930 },
-        end: { line: 1115, column: 114, offset: 40043 }
+        start: { line: 1115, column: 1, offset: 39949 },
+        end: { line: 1115, column: 114, offset: 40062 }
       }
     }
   ],
   position: {
     start: { line: 1, column: 1, offset: 0 },
-    end: { line: 1116, column: 1, offset: 40044 }
+    end: { line: 1116, column: 1, offset: 40063 }
   }
 }
