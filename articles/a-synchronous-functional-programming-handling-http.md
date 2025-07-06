@@ -2,7 +2,7 @@
 title: [A]synchronous Functional Programming - Handling HTTP
 author: Richard Tong, CTO and Co-Founder of Claimyr Inc.
 date: 2025-06-21
-updated: 2025-06-21
+updated: 2025-07-06
 path: /blog/a-synchronous-functional-programming-handling-http
 description: Handling HTTP in [A]synchronous Functional Programming
 image: /assets/HTTP_logo.png
@@ -27,13 +27,13 @@ A URL (Uniform Resource Locator) is a string that uniquely identifies the web ad
 ![url-structure-diagram.jpg](/assets/url-structure-diagram.jpg)
 
 The basic structure of a URL includes the following parts:
- * scheme
- * domain name
- * port
- * authority
- * path
- * query parameters
- * anchor
+ * [scheme](#url-scheme)
+ * [domain name](#url-domain-name)
+ * [port](#url-port)
+ * [authority](#url-authority)
+ * [path](#url-path)
+ * [query parameters](#url-query-parameters)
+ * [anchor](#url-anchor)
 
 ### URL Scheme
 
@@ -97,10 +97,10 @@ console.log('HTTP Response Body:', data)
 ## HTTP Request
 
 An HTTP request is a message conforming to the HTTP protocol that a client sends to a server. An HTTP request has the following properties:
- * method
- * url
- * headers
- * body
+ * [method](#http-request-method)
+ * [url](#http-request-url)
+ * [headers](#http-request-headers)
+ * [body](#http-request-body)
 
 ### HTTP Request Method
 
@@ -161,9 +161,9 @@ Some examples of HTTP request bodies:
 ## HTTP Response
 
 An HTTP response is a message conforming to the HTTP protocol that a server sends back to the client. An HTTP response has the following properties:
- * status code
- * headers
- * body
+ * [status code](#http-response-status-code)
+ * [headers](#http-response-headers)
+ * [body](#http-response-body)
 
 ### HTTP Response Status Code
 
@@ -458,11 +458,16 @@ server.listen(port)
 The example code above creates a NodeJS HTTP server with `http.createServer` that takes a simple handler `(request, response) => {...}` that only responds with status `200` and body `ok`. The HTTP server starts listening on port `8080` with the call to `server.listen`.
 
 An HTTP server has the following properties:
- * port
+ * [port](#http-server-port)
+ * [host](#http-server-host)
 
 ### HTTP Server Port
 
-An HTTP server port is a number that represents the network port on which the server is listening. A network port is a logical communication endpoint within a network. The value for the port can range from 0 and 65535. In the above example, we created an HTTP web server that listened on port `8080`.
+The HTTP server port is a number that represents the network port on which the server is listening. A network port is a logical communication endpoint within a network. The value for the port can range from 0 and 65535. In the above example, we created an HTTP web server that listened on port `8080`.
+
+### HTTP Server Host
+
+The HTTP server host is the IP address of the [network device](https://blog.netwrix.com/network-devices-explained) on which the server is running.
 
 ## HTTP Handler
 
