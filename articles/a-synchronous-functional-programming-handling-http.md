@@ -467,7 +467,7 @@ The HTTP server port is a number that represents the network port on which the s
 
 ### HTTP Server Host
 
-The HTTP server host is the IP address of the [network device](https://blog.netwrix.com/network-devices-explained) on which the server is running.
+The HTTP server host is the IP address of the [network device](https://www.lepide.com/blog/the-most-common-types-of-network-devices/) on which the server is running.
 
 ## HTTP Handler
 
