@@ -1,0 +1,18 @@
+#!/usr/bin/env node
+
+require('rubico/global')
+const resizeWidth = require('./internal/resizeWidth')
+const { glob } = require('glob')
+
+// ./resize-width 100 assets/*-seal.png
+setImmediate(async function () {
+  const widthPx = Number(process.argv[2])
+  const pattern = process.argv[3]
+
+  await pipe(pattern, [
+    glob,
+    map.pool(10, async filePath => {
+      await resizeWidth(filePath, widthPx)
+    }),
+  ])
+})
