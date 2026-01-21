@@ -16,7 +16,7 @@ HTTP (Hypertext Transfer Protocol) is a [protocol](https://www.cloudflare.com/le
 
 HTTP adheres to the [client-server model](https://www.akamai.com/glossary/what-is-the-client-server-model) where a client sends a request to a server and the server sends a response back to the client.
 
-![http-diagram.jpg](/assets/http-diagram.jpg)
+![http-diagram.jpg](/assets/http-diagram-2.jpg)
 
 In order for clients to find the right servers to request, they need to use a URL.
 
