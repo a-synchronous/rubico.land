@@ -30515,7 +30515,7 @@ export default [
       '// [1, 1, 2, 3, 3, 5, 5, 8, 7, 7]\n' +
       '```\n' +
       '\n' +
-      'Values from async generators are muxed. Muxing, or asynchronously "mixing", is the process of combining multiple asynchronous sources into one source, with order determined by the asynchronous resolution of the individual elements.\n' +
+      'Values from async generators are muxed. Muxing, or asynchronously "mixing", is the process of combining multiple asynchronous sources into one source, with order determined by the asynchronous resolution of the individual promise elements.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))\n' +
@@ -30994,16 +30994,16 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Values from async generators are muxed. Muxing, or asynchronously "mixing", is the process of combining multiple asynchronous sources into one source, with order determined by the asynchronous resolution of the individual elements.',
+                value: 'Values from async generators are muxed. Muxing, or asynchronously "mixing", is the process of combining multiple asynchronous sources into one source, with order determined by the asynchronous resolution of the individual promise elements.',
                 position: {
                   start: { line: 33, column: 1, offset: 1063 },
-                  end: { line: 33, column: 232, offset: 1294 }
+                  end: { line: 33, column: 240, offset: 1302 }
                 }
               }
             ],
             position: {
               start: { line: 33, column: 1, offset: 1063 },
-              end: { line: 33, column: 232, offset: 1294 }
+              end: { line: 33, column: 240, offset: 1302 }
             }
           },
           {
@@ -31032,8 +31032,8 @@ export default [
               "flatMap(['foo', 'bar', 'baz'], asyncRepeat3).then(console.log)\n" +
               "// ['foo', 'bar', 'baz', 'foo', 'bar', 'baz', 'foo', 'bar', 'baz']",
             position: {
-              start: { line: 35, column: 1, offset: 1296 },
-              end: { line: 57, column: 4, offset: 1943 }
+              start: { line: 35, column: 1, offset: 1304 },
+              end: { line: 57, column: 4, offset: 1951 }
             }
           },
           {
@@ -31043,22 +31043,22 @@ export default [
                 type: 'inlineCode',
                 value: 'flatMap',
                 position: {
-                  start: { line: 59, column: 1, offset: 1945 },
-                  end: { line: 59, column: 10, offset: 1954 }
+                  start: { line: 59, column: 1, offset: 1953 },
+                  end: { line: 59, column: 10, offset: 1962 }
                 }
               },
               {
                 type: 'text',
                 value: ' applies the flatMapper function to each element of an array, flattening the results into a new array.',
                 position: {
-                  start: { line: 59, column: 10, offset: 1954 },
-                  end: { line: 59, column: 112, offset: 2056 }
+                  start: { line: 59, column: 10, offset: 1962 },
+                  end: { line: 59, column: 112, offset: 2064 }
                 }
               }
             ],
             position: {
-              start: { line: 59, column: 1, offset: 1945 },
-              end: { line: 59, column: 112, offset: 2056 }
+              start: { line: 59, column: 1, offset: 1953 },
+              end: { line: 59, column: 112, offset: 2064 }
             }
           },
           {
@@ -31071,8 +31071,8 @@ export default [
               '  flatMap([1, 2, 3, 4, 5], duplicate)\n' +
               ') // [1, 1, 2, 2, 3, 3, 4, 4, 5, 5]',
             position: {
-              start: { line: 61, column: 1, offset: 2058 },
-              end: { line: 67, column: 4, offset: 2218 }
+              start: { line: 61, column: 1, offset: 2066 },
+              end: { line: 67, column: 4, offset: 2226 }
             }
           },
           {
@@ -31082,22 +31082,22 @@ export default [
                 type: 'inlineCode',
                 value: 'flatMap',
                 position: {
-                  start: { line: 69, column: 1, offset: 2220 },
-                  end: { line: 69, column: 10, offset: 2229 }
+                  start: { line: 69, column: 1, offset: 2228 },
+                  end: { line: 69, column: 10, offset: 2237 }
                 }
               },
               {
                 type: 'text',
                 value: ' acts on each character of a string.',
                 position: {
-                  start: { line: 69, column: 10, offset: 2229 },
-                  end: { line: 69, column: 46, offset: 2265 }
+                  start: { line: 69, column: 10, offset: 2237 },
+                  end: { line: 69, column: 46, offset: 2273 }
                 }
               }
             ],
             position: {
-              start: { line: 69, column: 1, offset: 2220 },
-              end: { line: 69, column: 46, offset: 2265 }
+              start: { line: 69, column: 1, offset: 2228 },
+              end: { line: 69, column: 46, offset: 2273 }
             }
           },
           {
@@ -31110,8 +31110,8 @@ export default [
               "  flatMap('12345', duplicate)\n" +
               ') // 1122334455',
             position: {
-              start: { line: 71, column: 1, offset: 2267 },
-              end: { line: 77, column: 4, offset: 2399 }
+              start: { line: 71, column: 1, offset: 2275 },
+              end: { line: 77, column: 4, offset: 2407 }
             }
           },
           {
@@ -31121,14 +31121,14 @@ export default [
                 type: 'text',
                 value: 'Any promises passed in argument position are resolved for their values before further execution. This only applies to the eager version of the API.',
                 position: {
-                  start: { line: 79, column: 1, offset: 2401 },
-                  end: { line: 79, column: 148, offset: 2548 }
+                  start: { line: 79, column: 1, offset: 2409 },
+                  end: { line: 79, column: 148, offset: 2556 }
                 }
               }
             ],
             position: {
-              start: { line: 79, column: 1, offset: 2401 },
-              end: { line: 79, column: 148, offset: 2548 }
+              start: { line: 79, column: 1, offset: 2409 },
+              end: { line: 79, column: 148, offset: 2556 }
             }
           },
           {
@@ -31138,8 +31138,8 @@ export default [
             value: 'flatMap(Promise.resolve([1, 2, 3, 4, 5]), n => [n, n]).then(console.log)\n' +
               '// [1, 1, 2, 2, 3, 3, 4, 4, 5, 5]',
             position: {
-              start: { line: 81, column: 1, offset: 2550 },
-              end: { line: 84, column: 4, offset: 2687 }
+              start: { line: 81, column: 1, offset: 2558 },
+              end: { line: 84, column: 4, offset: 2695 }
             }
           },
           {
@@ -31149,14 +31149,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 86, column: 1, offset: 2689 },
-                  end: { line: 86, column: 10, offset: 2698 }
+                  start: { line: 86, column: 1, offset: 2697 },
+                  end: { line: 86, column: 10, offset: 2706 }
                 }
               }
             ],
             position: {
-              start: { line: 86, column: 1, offset: 2689 },
-              end: { line: 86, column: 10, offset: 2698 }
+              start: { line: 86, column: 1, offset: 2697 },
+              end: { line: 86, column: 10, offset: 2706 }
             }
           },
           {
@@ -31182,26 +31182,26 @@ export default [
                             type: 'text',
                             value: 'forEach',
                             position: {
-                              start: { line: 87, column: 5, offset: 2703 },
-                              end: { line: 87, column: 12, offset: 2710 }
+                              start: { line: 87, column: 5, offset: 2711 },
+                              end: { line: 87, column: 12, offset: 2718 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 87, column: 4, offset: 2702 },
-                          end: { line: 87, column: 28, offset: 2726 }
+                          start: { line: 87, column: 4, offset: 2710 },
+                          end: { line: 87, column: 28, offset: 2734 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 87, column: 4, offset: 2702 },
-                      end: { line: 87, column: 28, offset: 2726 }
+                      start: { line: 87, column: 4, offset: 2710 },
+                      end: { line: 87, column: 28, offset: 2734 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 87, column: 2, offset: 2700 },
-                  end: { line: 87, column: 28, offset: 2726 }
+                  start: { line: 87, column: 2, offset: 2708 },
+                  end: { line: 87, column: 28, offset: 2734 }
                 }
               },
               {
@@ -31221,26 +31221,26 @@ export default [
                             type: 'text',
                             value: 'map',
                             position: {
-                              start: { line: 88, column: 5, offset: 2731 },
-                              end: { line: 88, column: 8, offset: 2734 }
+                              start: { line: 88, column: 5, offset: 2739 },
+                              end: { line: 88, column: 8, offset: 2742 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 88, column: 4, offset: 2730 },
-                          end: { line: 88, column: 20, offset: 2746 }
+                          start: { line: 88, column: 4, offset: 2738 },
+                          end: { line: 88, column: 20, offset: 2754 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 88, column: 4, offset: 2730 },
-                      end: { line: 88, column: 20, offset: 2746 }
+                      start: { line: 88, column: 4, offset: 2738 },
+                      end: { line: 88, column: 20, offset: 2754 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 88, column: 2, offset: 2728 },
-                  end: { line: 88, column: 20, offset: 2746 }
+                  start: { line: 88, column: 2, offset: 2736 },
+                  end: { line: 88, column: 20, offset: 2754 }
                 }
               },
               {
@@ -31260,26 +31260,26 @@ export default [
                             type: 'text',
                             value: 'filter',
                             position: {
-                              start: { line: 89, column: 5, offset: 2751 },
-                              end: { line: 89, column: 11, offset: 2757 }
+                              start: { line: 89, column: 5, offset: 2759 },
+                              end: { line: 89, column: 11, offset: 2765 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 89, column: 4, offset: 2750 },
-                          end: { line: 89, column: 26, offset: 2772 }
+                          start: { line: 89, column: 4, offset: 2758 },
+                          end: { line: 89, column: 26, offset: 2780 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 89, column: 4, offset: 2750 },
-                      end: { line: 89, column: 26, offset: 2772 }
+                      start: { line: 89, column: 4, offset: 2758 },
+                      end: { line: 89, column: 26, offset: 2780 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 89, column: 2, offset: 2748 },
-                  end: { line: 89, column: 26, offset: 2772 }
+                  start: { line: 89, column: 2, offset: 2756 },
+                  end: { line: 89, column: 26, offset: 2780 }
                 }
               },
               {
@@ -31299,26 +31299,26 @@ export default [
                             type: 'text',
                             value: 'reduce',
                             position: {
-                              start: { line: 90, column: 5, offset: 2777 },
-                              end: { line: 90, column: 11, offset: 2783 }
+                              start: { line: 90, column: 5, offset: 2785 },
+                              end: { line: 90, column: 11, offset: 2791 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 90, column: 4, offset: 2776 },
-                          end: { line: 90, column: 26, offset: 2798 }
+                          start: { line: 90, column: 4, offset: 2784 },
+                          end: { line: 90, column: 26, offset: 2806 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 90, column: 4, offset: 2776 },
-                      end: { line: 90, column: 26, offset: 2798 }
+                      start: { line: 90, column: 4, offset: 2784 },
+                      end: { line: 90, column: 26, offset: 2806 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 90, column: 2, offset: 2774 },
-                  end: { line: 90, column: 26, offset: 2798 }
+                  start: { line: 90, column: 2, offset: 2782 },
+                  end: { line: 90, column: 26, offset: 2806 }
                 }
               },
               {
@@ -31338,26 +31338,26 @@ export default [
                             type: 'text',
                             value: 'transform',
                             position: {
-                              start: { line: 91, column: 5, offset: 2803 },
-                              end: { line: 91, column: 14, offset: 2812 }
+                              start: { line: 91, column: 5, offset: 2811 },
+                              end: { line: 91, column: 14, offset: 2820 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 91, column: 4, offset: 2802 },
-                          end: { line: 91, column: 32, offset: 2830 }
+                          start: { line: 91, column: 4, offset: 2810 },
+                          end: { line: 91, column: 32, offset: 2838 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 91, column: 4, offset: 2802 },
-                      end: { line: 91, column: 32, offset: 2830 }
+                      start: { line: 91, column: 4, offset: 2810 },
+                      end: { line: 91, column: 32, offset: 2838 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 91, column: 2, offset: 2800 },
-                  end: { line: 91, column: 32, offset: 2830 }
+                  start: { line: 91, column: 2, offset: 2808 },
+                  end: { line: 91, column: 32, offset: 2838 }
                 }
               },
               {
@@ -31377,38 +31377,38 @@ export default [
                             type: 'text',
                             value: 'some',
                             position: {
-                              start: { line: 92, column: 5, offset: 2835 },
-                              end: { line: 92, column: 9, offset: 2839 }
+                              start: { line: 92, column: 5, offset: 2843 },
+                              end: { line: 92, column: 9, offset: 2847 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 92, column: 4, offset: 2834 },
-                          end: { line: 92, column: 22, offset: 2852 }
+                          start: { line: 92, column: 4, offset: 2842 },
+                          end: { line: 92, column: 22, offset: 2860 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 92, column: 4, offset: 2834 },
-                      end: { line: 92, column: 22, offset: 2852 }
+                      start: { line: 92, column: 4, offset: 2842 },
+                      end: { line: 92, column: 22, offset: 2860 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 92, column: 2, offset: 2832 },
-                  end: { line: 92, column: 22, offset: 2852 }
+                  start: { line: 92, column: 2, offset: 2840 },
+                  end: { line: 92, column: 22, offset: 2860 }
                 }
               }
             ],
             position: {
-              start: { line: 87, column: 2, offset: 2700 },
-              end: { line: 92, column: 22, offset: 2852 }
+              start: { line: 87, column: 2, offset: 2708 },
+              end: { line: 92, column: 22, offset: 2860 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 92, column: 22, offset: 2852 }
+          end: { line: 92, column: 22, offset: 2860 }
         }
       },
       execution: {
