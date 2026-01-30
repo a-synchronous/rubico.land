@@ -22,7 +22,8 @@
     "arche": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "rubico": "^2.0.1"
+    "rubico": "^2.0.1",
+    "sharp": "^0.34.5"
   },
   "devDependencies": {
     "cronist": "latest",
