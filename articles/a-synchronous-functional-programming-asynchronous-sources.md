@@ -2,7 +2,7 @@
 title: [A]synchronous Functional Programming - Asynchronous Sources
 author: Richard Tong, CTO and Co-Founder of Claimyr Inc.
 date: 2025-06-21
-updated: 2025-06-21
+updated: 2026-01-31
 path: /blog/a-synchronous-functional-programming-asynchronous-sources
 description: Handling HTTP in [A]synchronous Functional Programming
 image: /assets/HTTP_logo.png

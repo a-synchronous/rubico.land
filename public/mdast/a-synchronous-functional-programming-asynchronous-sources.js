@@ -6,7 +6,7 @@ export default {
       value: 'title: [A]synchronous Functional Programming - Asynchronous Sources\n' +
         'author: Richard Tong, CTO and Co-Founder of Claimyr Inc.\n' +
         'date: 2025-06-21\n' +
-        'updated: 2025-06-21\n' +
+        'updated: 2026-01-31\n' +
         'path: /blog/a-synchronous-functional-programming-asynchronous-sources\n' +
         'description: Handling HTTP in [A]synchronous Functional Programming\n' +
         'image: /assets/HTTP_logo.png',

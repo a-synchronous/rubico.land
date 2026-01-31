@@ -1,8 +1,8 @@
 ---
 title: [A]synchronous Functional Programming - Intro
-author: Richard Tong, CTO and Co-Founder of Claimyr Inc.
+author: Richard Yufei Tong, King of Software at CLOUT
 date: 2024-11-26
-updated: 2025-06-21
+updated: 2026-01-31
 path: /blog/a-synchronous-functional-programming-intro
 description: An introduction to the [A]synchronous Functional Programming paradigm
 image: https://rubico.land/assets/rubico-logo-large.png
@@ -93,7 +93,7 @@ The following are examples of side effects
 
 [A]synchronous Functional Programming builds on these concepts, extending the ideas of Functional Programming to modern JavaScript (ECMAScript 6 onwards). In particular, the [A]synchronous Functional Programming paradigm considers current asynchronous primitives (e.g. [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) and [async/await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)) when creating modular and predictable programs composed of functions.
 
-We can use the [rubico](https://rubico.land/) library to operate in the [A]synchronous Functional Programming paradigm.
+We can use the [Rubico](https://rubico.land/) library to operate in the [A]synchronous Functional Programming paradigm.
 
 ```javascript [playground]
 const { compose, map, forEach } = rubico
@@ -114,7 +114,7 @@ compose(
 )(ids)
 ```
 
-Above we see a composition of functions created with the rubico [compose](/docs/compose) operator. `compose` allows us to chain together operations sequentially, the result of one function becoming the argument to the next. The above composition starts with the ids `[1, 2, 3, 4, 5]`, then using the async-enabled rubico [map](/docs/map) operator, makes a request for each id and parses out the response body. Each parsed out response body is then logged out with the rubico [forEach](/docs/forEach) operator and the `console.log` function.
+Above we see a composition of functions created with the Rubico [compose](/docs/compose) operator. `compose` allows us to chain together operations sequentially, the result of one function becoming the argument to the next. The above composition starts with the ids `[1, 2, 3, 4, 5]`, then using the async-enabled Rubico [map](/docs/map) operator, makes a request for each id and parses out the response body. Each parsed out response body is then logged out with the Rubico [forEach](/docs/forEach) operator and the `console.log` function.
 
 In the above example, `console.log` is a first-class function - it is provided to the higher order function `forEach` as an argument. `map` is also a higher order function, accepting the anonymous first-class function `async id => {...}`. This combination of higher order functions and first-class functions using `compose` is what is known as a "function composition". There are no pure functions in the above example.
 
@@ -156,7 +156,7 @@ pipe(numbers, [
 ])
 ```
 
-In the above example, `add` and `square` are pure functions. They are very simple, expressed almost as pure math. A given input to `add` or `square` would result in the same output for each invocation. The `add` function is provided as a first class function to the rubico [reduce](/docs/reduce) operator, and the `square` function is provided as a first class function to the rubico [map](/docs/map) operator. Both `reduce` and `map` operators are considered to be higher order functions.
+In the above example, `add` and `square` are pure functions. They are very simple, expressed almost as pure math. A given input to `add` or `square` would result in the same output for each invocation. The `add` function is provided as a first class function to the Rubico [reduce](/docs/reduce) operator, and the `square` function is provided as a first class function to the Rubico [map](/docs/map) operator. Both `reduce` and `map` operators are considered to be higher order functions.
 
 The combination of first class and high order functions above is similar to what we have seen with `compose` in the previous example. The difference is the use of the operator `pipe` over `compose`, in this case instead of creating a function composition with `compose` we create a "function pipeline" with [pipe](/docs/pipe).
 
@@ -166,4 +166,4 @@ We see a new operation in the above example with `reduce`. It takes the squared 
 
 This concludes the intro to the [A]synchronous Functional Programming paradigm.
 
-If you are curious about rubico and would like to get started, please visit rubico's home page, [rubico.land](/).
+If you are curious about Rubico and would like to get started, please visit Rubico's home page, [rubico.land](/).

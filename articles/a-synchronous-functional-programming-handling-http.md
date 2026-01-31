@@ -1,8 +1,8 @@
 ---
 title: [A]synchronous Functional Programming - Handling HTTP
-author: Richard Tong, CTO and Co-Founder of Claimyr Inc.
+author: Richard Yufei Tong, King of Software at CLOUT
 date: 2025-06-21
-updated: 2025-07-06
+updated: 2026-01-31
 path: /blog/a-synchronous-functional-programming-handling-http
 description: Handling HTTP in [A]synchronous Functional Programming
 image: /assets/HTTP_logo.png
@@ -735,7 +735,7 @@ server.listen(port)
 
 The above handler `complexHandler` has many responsibilities, including handling health checks, handling options requests, retrieving user resources, updating or creating user resources, and handling application errors.
 
-With [A]synchronous Functional Programming, we can break down the above complex HTTP handler into simple, modular, and reusable handlers, then use the library [rubico](https://rubico.land/) to combine those handlers in a meaningful way.
+With [A]synchronous Functional Programming, we can break down the above complex HTTP handler into simple, modular, and reusable handlers, then use the library [Rubico](https://rubico.land/) to combine those handlers in a meaningful way.
 
 First, let's break down the complex handler.
 
@@ -891,10 +891,10 @@ function errorHandler(error, request, response) {
 
 We've broken down the complex handler `complexHandler` into smaller, simpler handlers `healthCheckHandler`, `optionsHandler`, `getUserHandler`, `notFoundHandler`, and `errorHandler`.
 
-Now let's combine the smaller handlers using rubico's [tryCatch](/docs/tryCatch) and [switchCase](/docs/switchCase).
+Now let's combine the smaller handlers using Rubico's [tryCatch](/docs/tryCatch) and [switchCase](/docs/switchCase).
 
 ```javascript
-require('rubico/global') // imports rubico's tryCatch and switchCase operators
+require('rubico/global') // imports Rubico's tryCatch and switchCase operators
 
 const combinedHandler = tryCatch(
   switchCase([
@@ -1112,4 +1112,4 @@ You can find a working example of the above HTTP server code at [rubico-http-ser
 
 This concludes Handling HTTP in [A]synchronous Functional Programming.
 
-If you are curious about rubico and would like to get started, please visit rubico's home page: [rubico.land](/).
+If you are curious about Rubico and would like to get started, please visit Rubico's home page: [rubico.land](/).

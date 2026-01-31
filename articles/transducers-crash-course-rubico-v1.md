@@ -1,9 +1,10 @@
 ---
-title: Transducers Crash Course for rubico V1
-author: Richard Tong, CTO and Co-Founder of Claimyr Inc.
+title: Transducers Crash Course for Rubico V1
+author: Richard Yufei Tong, King of Software at CLOUT
 date: 2020-10-02
+updated: 2026-01-31
 path: /blog/transducers-crash-course-rubico-v1
-description: A crash course in transducers for rubico v1
+description: A crash course in transducers for Rubico v1
 ---
 
 Transducers enable composable and memory efficient wrangling of very large or even infinite sets of data. With transducers, each item of the data is transformed by all operations in a single pass, as opposed to the data having to go through batch transformations one operation at a time.
@@ -28,7 +29,7 @@ console.log(
 
 With transducers, you could express the above transformation as a single pass. An item in the transformation would be both filtered and mapped before the next item in the reducing operation. Batch transformations must create an intermediate array between each operation; transducers do not have this requirement and so do not incur the memory penalty.
 
-Below takes the above example and converts it to use rubico transducers.
+Below takes the above example and converts it to use Rubico transducers.
 
 <br />
 
@@ -69,7 +70,7 @@ A `Transducer` is a function that takes a `Reducer` and returns another `Reducer
 
 Since the reducer that sets off a pipeline of transducers is called last, `pipe` behaves as `compose` and chains functions in reverse when a reducer is passed in data position. This decision is purely for API, and allows for all function pipelines created with `pipe`, even those of transducers, to read left to right.
 
-The following operators are the core building blocks of rubico's transducer API. It is possible to perform the full spectrum of tranducer transformations with just these.
+The following operators are the core building blocks of Rubico's transducer API. It is possible to perform the full spectrum of tranducer transformations with just these.
 
  * `map` - apply a mapper to each item of a reducing operation
  * `filter` - filter out items of a reducing operation by predicate
@@ -104,7 +105,7 @@ console.log(
 ) // [1, 9, 25, 36, 49, ...]
 ```
 
-Due to rubico's polymorphic nature, any transducer not used in a reduce implementation is capable of eager transformations. Below is an eager version of the above transformation.
+Due to Rubico's polymorphic nature, any transducer not used in a reduce implementation is capable of eager transformations. Below is an eager version of the above transformation.
 
 ```javascript [playground]
 const square = number => number ** 2
@@ -123,7 +124,7 @@ console.log(
 ) // [1, 9, 25, 36, 49, ...]
 ```
 
-Transducers are useful for creating memory efficient data transformations, and are easy to use with rubico. You can get started with transducers at the [docs](/docs/map).
+Transducers are useful for creating memory efficient data transformations, and are easy to use with Rubico. You can get started with transducers at the [docs](/docs/map).
 
 Further reading:
  * https://tgvashworth.com/2014/08/31/csp-and-transducers.html
