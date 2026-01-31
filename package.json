@@ -1,7 +1,7 @@
 {
   "name": "rubico.land",
   "version": "0.0.1",
-  "description": "rubico's home page",
+  "description": "Documentation for Rubico",
   "author": "Richard Tong",
   "license": "MIT",
   "main": "index.js",
