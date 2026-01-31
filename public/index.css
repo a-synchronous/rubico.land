@@ -286,7 +286,6 @@ h4 {
 }
 #layout > nav > .home select {
   position: relative;
-  top: 3px;
   border: none;
   outline: none;
   padding: 6px 5px;
@@ -309,7 +308,6 @@ h4 {
   */
 }
 #home-link .text1 {
-  margin-top: 8px;
   font-size: 32px;
   font-weight: 600;
   line-height: 1em;
