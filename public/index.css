@@ -281,6 +281,9 @@ h4 {
   text-decoration-color: rgb(101, 121, 155);
 }
 
+#layout > nav > .home {
+  display: flex;
+}
 #layout > nav > .home select {
   position: relative;
   top: 3px;
@@ -292,15 +295,6 @@ h4 {
   background-color: #e4e4e4;
   color: rgb(101, 121, 155);
   cursor: pointer;
-}
-@media only screen and (max-width: 768px) {
-  #layout > nav > .home {
-    display: flex;
-  }
-  #layout > nav > .home select {
-    top: 0;
-    margin-left: 0px;
-  }
 }
 
 #layout > footer {
@@ -327,7 +321,6 @@ h4 {
   #home-link {
   }
   #home-link .text1 {
-    display: none;
   }
   #home-link > img {
     width: 100px;
