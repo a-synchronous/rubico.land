@@ -459,7 +459,7 @@ h4 {
 }
 
 #docs-search input {
-  background: url('https://yrcdn.net/assets/search-solid-gray-small.png') no-repeat 98% 5px;
+  background: url('/assets/magnifying-glass-docs-search-d4d4d4.svg') no-repeat 98% 5px;
   background-size: 15px;
   padding: 5px 3%;
   width: calc(94% - 5px);
