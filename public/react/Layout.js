@@ -46,7 +46,7 @@ const Layout = ReactElement(props => {
             src: '/assets/rubico-logo.png',
             alt: 'rubico-national-park',
           }),
-          Span({ class: 'text1' }, 'rubico'),
+          Span({ class: 'text1' }, 'Rubico'),
         ]),
 
         Select({

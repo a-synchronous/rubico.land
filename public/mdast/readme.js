@@ -415,7 +415,7 @@ export default {
       children: [
         {
           type: 'text',
-          value: 'require rubico in ',
+          value: 'require Rubico in ',
           position: {
             start: { line: 37, column: 1, offset: 1334 },
             end: { line: 37, column: 19, offset: 1352 }
@@ -485,7 +485,7 @@ export default {
       children: [
         {
           type: 'text',
-          value: 'import rubico in the browser:',
+          value: 'import Rubico in the browser:',
           position: {
             start: { line: 59, column: 1, offset: 1888 },
             end: { line: 59, column: 30, offset: 1917 }
@@ -563,7 +563,7 @@ export default {
           children: [
             {
               type: 'text',
-              value: 'At a certain point in my career, I grew frustrated with the entanglement of my own code. While looking for something better, I found functional programming. I was excited by the idea of functional composition, but disillusioned by the redundancy of effectful types. I started rubico to capitalize on the prior while rebuking the latter. Many iterations since then, the library has grown into something I personally enjoy using, and continue to use to this day.',
+              value: 'At a certain point in my career, I grew frustrated with the entanglement of my own code. While looking for something better, I found functional programming. I was excited by the idea of functional composition, but disillusioned by the redundancy of effectful types. I started Rubico to capitalize on the prior while rebuking the latter. Many iterations since then, the library has grown into something I personally enjoy using, and continue to use to this day.',
               position: {
                 start: { line: 80, column: 3, offset: 2542 },
                 end: { line: 80, column: 463, offset: 3002 }
@@ -586,7 +586,7 @@ export default {
       children: [
         {
           type: 'text',
-          value: 'rubico is founded on the following principles:',
+          value: 'Rubico is founded on the following principles:',
           position: {
             start: { line: 82, column: 1, offset: 3004 },
             end: { line: 82, column: 47, offset: 3050 }
@@ -734,7 +734,7 @@ export default {
       children: [
         {
           type: 'text',
-          value: 'rubico is a library for [A]synchronous Functional Programming in JavaScript. The library supports a simple and composable functional style in asynchronous environments.',
+          value: 'Rubico is a library for [A]synchronous Functional Programming in JavaScript. The library supports a simple and composable functional style in asynchronous environments.',
           position: {
             start: { line: 91, column: 1, offset: 3387 },
             end: { line: 91, column: 169, offset: 3555 }
@@ -823,7 +823,7 @@ export default {
       children: [
         {
           type: 'text',
-          value: 'All rubico operators support both eager and lazy APIs. The eager API takes all required arguments and executes at once, while the lazy API takes only the setup arguments and returns a function that executes later. This dual API supports a natural and composable code style.',
+          value: 'All Rubico operators support both eager and lazy APIs. The eager API takes all required arguments and executes at once, while the lazy API takes only the setup arguments and returns a function that executes later. This dual API supports a natural and composable code style.',
           position: {
             start: { line: 138, column: 1, offset: 4523 },
             end: { line: 138, column: 274, offset: 4796 }
@@ -861,7 +861,7 @@ export default {
       children: [
         {
           type: 'text',
-          value: 'The rubico operators are versatile and act on a wide range of vanilla JavaScript types to create declarative, extensible, and async-enabled function compositions. The same operator ',
+          value: 'The Rubico operators are versatile and act on a wide range of vanilla JavaScript types to create declarative, extensible, and async-enabled function compositions. The same operator ',
           position: {
             start: { line: 155, column: 1, offset: 5130 },
             end: { line: 155, column: 182, offset: 5311 }
@@ -967,7 +967,7 @@ export default {
       children: [
         {
           type: 'text',
-          value: 'rubico offers transducers through its ',
+          value: 'Rubico offers transducers through its ',
           position: {
             start: { line: 208, column: 1, offset: 6824 },
             end: { line: 208, column: 39, offset: 6862 }
@@ -983,7 +983,7 @@ export default {
         },
         {
           type: 'text',
-          value: " module. You can consume these transducers with rubico's ",
+          value: " module. You can consume these transducers with Rubico's ",
           position: {
             start: { line: 208, column: 51, offset: 6874 },
             end: { line: 208, column: 108, offset: 6931 }
@@ -1076,7 +1076,7 @@ export default {
       children: [
         {
           type: 'text',
-          value: 'For advanced asynchronous use cases, some of the rubico operators have property functions that have various asynchronous behavior, e.g.',
+          value: 'For advanced asynchronous use cases, some of the Rubico operators have property functions that have various asynchronous behavior, e.g.',
           position: {
             start: { line: 232, column: 1, offset: 7410 },
             end: { line: 232, column: 136, offset: 7545 }
@@ -1505,7 +1505,7 @@ export default {
       children: [
         {
           type: 'text',
-          value: 'rubico is ',
+          value: 'Rubico is ',
           position: {
             start: { line: 253, column: 1, offset: 8852 },
             end: { line: 253, column: 11, offset: 8862 }
@@ -1737,7 +1737,7 @@ export default {
       children: [
         {
           type: 'text',
-          value: 'Learn more about rubico and [A]synchronous Functional Programming at ',
+          value: 'Learn more about Rubico and [A]synchronous Functional Programming at ',
           position: {
             start: { line: 263, column: 1, offset: 9112 },
             end: { line: 263, column: 70, offset: 9181 }

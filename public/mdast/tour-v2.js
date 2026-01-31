@@ -6,7 +6,7 @@ export default {
       children: [
         {
           type: 'text',
-          value: 'Welcome to the rubico tour. This tour covers high level concepts and provides runnable and editable code examples. All code areas have the rubico core methods and Transducer module imported globally.',
+          value: 'Welcome to the Rubico tour. This tour covers high level concepts and provides runnable and editable code examples. All code areas have the Rubico core methods and Transducer module imported globally.',
           position: {
             start: { line: 1, column: 1, offset: 0 },
             end: { line: 1, column: 200, offset: 199 }
@@ -360,7 +360,7 @@ export default {
         },
         {
           type: 'text',
-          value: ' functions to any rubico operator - all promises are resolved for their promised value before continuing. Run things in parallel without having to call ',
+          value: ' functions to any Rubico operator - all promises are resolved for their promised value before continuing. Run things in parallel without having to call ',
           position: {
             start: { line: 37, column: 37, offset: 748 },
             end: { line: 37, column: 189, offset: 900 }
@@ -536,7 +536,7 @@ export default {
         },
         {
           type: 'text',
-          value: ". Use rubico's operators to create compositions of small, reusable functions. Add functionality to your program by composing the desired function - rubico gives you the tools to make this as simple and stress-free as possible.",
+          value: ". Use Rubico's operators to create compositions of small, reusable functions. Add functionality to your program by composing the desired function - Rubico gives you the tools to make this as simple and stress-free as possible.",
           position: {
             start: { line: 52, column: 35, offset: 1445 },
             end: { line: 52, column: 261, offset: 1671 }
@@ -629,7 +629,7 @@ export default {
         },
         {
           type: 'text',
-          value: ". The above example also introduces rubico's ",
+          value: ". The above example also introduces Rubico's ",
           position: {
             start: { line: 76, column: 206, offset: 2315 },
             end: { line: 76, column: 251, offset: 2360 }
@@ -713,7 +713,7 @@ export default {
         },
         {
           type: 'text',
-          value: '. All rubico methods support data types beyond arrays including generators, async generators, strings, sets, maps, binary, and plain objects where sensible.',
+          value: '. All Rubico methods support data types beyond arrays including generators, async generators, strings, sets, maps, binary, and plain objects where sensible.',
           position: {
             start: { line: 79, column: 40, offset: 2548 },
             end: { line: 79, column: 196, offset: 2704 }
@@ -760,7 +760,7 @@ export default {
       children: [
         {
           type: 'text',
-          value: 'In the above example, the rubico operator ',
+          value: 'In the above example, the Rubico operator ',
           position: {
             start: { line: 105, column: 1, offset: 3240 },
             end: { line: 105, column: 43, offset: 3282 }
@@ -951,7 +951,7 @@ export default {
         },
         {
           type: 'text',
-          value: " by composing predicates with rubico's logical operators. Below depicts vanilla JavaScript operators and their rubico analogs.",
+          value: " by composing predicates with Rubico's logical operators. Below depicts vanilla JavaScript operators and their Rubico analogs.",
           position: {
             start: { line: 108, column: 54, offset: 3723 },
             end: { line: 108, column: 180, offset: 3849 }
@@ -1496,7 +1496,7 @@ export default {
         },
         {
           type: 'text',
-          value: ' using the rubico ',
+          value: ' using the Rubico ',
           position: {
             start: { line: 146, column: 44, offset: 4689 },
             end: { line: 146, column: 62, offset: 4707 }
@@ -1580,7 +1580,7 @@ export default {
         },
         {
           type: 'text',
-          value: ". rubico's ",
+          value: ". Rubico's ",
           position: {
             start: { line: 149, column: 29, offset: 4786 },
             end: { line: 149, column: 40, offset: 4797 }
@@ -1654,7 +1654,7 @@ export default {
       children: [
         {
           type: 'text',
-          value: 'The example above depicts a rubico ',
+          value: 'The example above depicts a Rubico ',
           position: {
             start: { line: 170, column: 1, offset: 5408 },
             end: { line: 170, column: 36, offset: 5443 }
@@ -1802,7 +1802,7 @@ export default {
         },
         {
           type: 'text',
-          value: ". Easily express complex transformations in a memory efficient way with rubico's ",
+          value: ". Easily express complex transformations in a memory efficient way with Rubico's ",
           position: {
             start: { line: 173, column: 46, offset: 5701 },
             end: { line: 173, column: 127, offset: 5782 }
@@ -1911,7 +1911,7 @@ export default {
       children: [
         {
           type: 'text',
-          value: 'Above we see a complex transformation made simple by the rubico ',
+          value: 'Above we see a complex transformation made simple by the Rubico ',
           position: {
             start: { line: 202, column: 1, offset: 6566 },
             end: { line: 202, column: 65, offset: 6630 }
@@ -1994,7 +1994,7 @@ export default {
       children: [
         {
           type: 'text',
-          value: "You've arrived at the end of the tour. From here, you could get started with rubico (",
+          value: "You've arrived at the end of the tour. From here, you could get started with Rubico (",
           position: {
             start: { line: 206, column: 1, offset: 6780 },
             end: { line: 206, column: 86, offset: 6865 }
