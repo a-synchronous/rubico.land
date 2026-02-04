@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "arche": "latest",
+    "presidium": "^1.0.6",
     "react": "latest",
     "react-dom": "latest",
     "rubico": "^2.0.1",
