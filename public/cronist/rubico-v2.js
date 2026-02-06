@@ -51,7 +51,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/AggregateReducer.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/AggregateReducer.js'
   },
   {
     name: 'Transducer',
@@ -110,7 +110,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/Transducer.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/Transducer.js'
   },
   {
     name: 'Transducer.map',
@@ -634,7 +634,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/Transducer.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/Transducer.js'
   },
   {
     name: 'Transducer.filter',
@@ -1136,7 +1136,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/Transducer.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/Transducer.js'
   },
   {
     name: 'Transducer.flatMap',
@@ -1628,7 +1628,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/Transducer.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/Transducer.js'
   },
   {
     name: 'Transducer.forEach',
@@ -2114,7 +2114,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/Transducer.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/Transducer.js'
   },
   {
     name: 'Transducer.passthrough',
@@ -2550,7 +2550,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/Transducer.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/Transducer.js'
   },
   {
     name: 'Transducer.tryCatch',
@@ -3080,7 +3080,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/Transducer.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/Transducer.js'
   },
   {
     name: '__',
@@ -3464,7 +3464,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/__.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/__.js'
   },
   {
     name: 'File',
@@ -3516,7 +3516,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/File.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/File.js'
   },
   {
     name: 'File.prototype.write',
@@ -3568,7 +3568,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/File.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/File.js'
   },
   {
     name: 'File.prototype.rm',
@@ -3620,7 +3620,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/File.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/File.js'
   },
   {
     name: 'FilteringAsyncIterator',
@@ -3684,7 +3684,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/FilteringAsyncIterator.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/FilteringAsyncIterator.js'
   },
   {
     name: 'FilteringIterator',
@@ -3777,7 +3777,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/FilteringIterator.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/FilteringIterator.js'
   },
   {
     name: 'FlatMappingAsyncIterator',
@@ -3871,7 +3871,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/FlatMappingAsyncIterator.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/FlatMappingAsyncIterator.js'
   },
   {
     name: 'FlatMappingAsyncIterator.prototype.next',
@@ -3929,7 +3929,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/FlatMappingAsyncIterator.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/FlatMappingAsyncIterator.js'
   },
   {
     name: 'FlatMappingIterator',
@@ -3987,7 +3987,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/FlatMappingIterator.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/FlatMappingIterator.js'
   },
   {
     name: 'MappingAsyncIterator',
@@ -4051,7 +4051,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/MappingAsyncIterator.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/MappingAsyncIterator.js'
   },
   {
     name: 'MappingIterator',
@@ -4163,7 +4163,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/MappingIterator.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/MappingIterator.js'
   },
   {
     name: 'NextIteration',
@@ -4249,7 +4249,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/NextIteration.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/NextIteration.js'
   },
   {
     name: 'SelfReferencingPromise',
@@ -4303,7 +4303,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/SelfReferencingPromise.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/SelfReferencingPromise.js'
   },
   {
     name: 'formatRunOutput',
@@ -4365,7 +4365,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/TimeInLoopSuite.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/TimeInLoopSuite.js'
   },
   {
     name: 'TimeInLoopSuite',
@@ -4427,7 +4427,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/TimeInLoopSuite.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/TimeInLoopSuite.js'
   },
   {
     name: 'TimeInLoopSuite.prototype.emit',
@@ -4481,7 +4481,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/TimeInLoopSuite.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/TimeInLoopSuite.js'
   },
   {
     name: 'TimeInLoopSuite.prototype.on',
@@ -4535,7 +4535,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/TimeInLoopSuite.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/TimeInLoopSuite.js'
   },
   {
     name: 'TimeInLoopSuite.prototype.add',
@@ -4589,7 +4589,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/TimeInLoopSuite.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/TimeInLoopSuite.js'
   },
   {
     name: 'TimeInLoopSuite.prototype.run',
@@ -4643,7 +4643,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/TimeInLoopSuite.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/TimeInLoopSuite.js'
   },
   {
     name: 'add',
@@ -4737,7 +4737,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/add.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/add.js'
   },
   {
     name: 'always',
@@ -4816,7 +4816,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/always.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/always.js'
   },
   {
     name: 'areAllValuesNonfunctions',
@@ -4872,7 +4872,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/areAllValuesNonfunctions.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/areAllValuesNonfunctions.js'
   },
   {
     name: 'areAnyValuesPromises',
@@ -4928,7 +4928,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/areAnyValuesPromises.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/areAnyValuesPromises.js'
   },
   {
     name: 'arrayConditional',
@@ -5045,7 +5045,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayConditional.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/arrayConditional.js'
   },
   {
     name: 'arrayEvery',
@@ -5099,7 +5099,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayEvery.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/arrayEvery.js'
   },
   {
     name: '_arrayExtend',
@@ -5153,7 +5153,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayExtend.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/arrayExtend.js'
   },
   {
     name: 'arrayExtend',
@@ -5234,7 +5234,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayExtend.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/arrayExtend.js'
   },
   {
     name: 'arrayExtendMap',
@@ -5337,7 +5337,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayExtendMap.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/arrayExtendMap.js'
   },
   {
     name: 'arrayExtendMapIndexes',
@@ -5436,7 +5436,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayExtendMapIndexes.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/arrayExtendMapIndexes.js'
   },
   {
     name: 'arrayExtendMapWithIndex',
@@ -5556,7 +5556,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayExtendMapWithIndex.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/arrayExtendMapWithIndex.js'
   },
   {
     name: 'arrayFilter',
@@ -5659,7 +5659,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayFilter.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/arrayFilter.js'
   },
   {
     name: 'arrayFilterByConditions',
@@ -5777,7 +5777,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayFilterByConditions.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/arrayFilterByConditions.js'
   },
   {
     name: 'arrayFilterIndexes',
@@ -5841,7 +5841,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayFilterIndexes.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/arrayFilterIndexes.js'
   },
   {
     name: 'arrayFilterWithIndex',
@@ -5932,7 +5932,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayFilterWithIndex.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/arrayFilterWithIndex.js'
   },
   {
     name: 'arrayFindAsync',
@@ -5996,7 +5996,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayFind.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/arrayFind.js'
   },
   {
     name: 'arrayFind',
@@ -6060,7 +6060,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayFind.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/arrayFind.js'
   },
   {
     name: 'arrayFlatMap',
@@ -6134,7 +6134,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayFlatMap.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/arrayFlatMap.js'
   },
   {
     name: 'arrayFlatten',
@@ -6208,7 +6208,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayFlatten.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/arrayFlatten.js'
   },
   {
     name: 'arrayForEach',
@@ -6316,7 +6316,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayForEach.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/arrayForEach.js'
   },
   {
     name: 'arrayForEachSeries',
@@ -6405,7 +6405,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayForEachSeries.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/arrayForEachSeries.js'
   },
   {
     name: 'arrayJoin',
@@ -6502,7 +6502,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayJoin.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/arrayJoin.js'
   },
   {
     name: 'arrayMap',
@@ -6589,7 +6589,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayMap.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/arrayMap.js'
   },
   {
     name: 'arrayMapPoolAsync',
@@ -6702,7 +6702,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayMapPool.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/arrayMapPool.js'
   },
   {
     name: 'arrayMapPool',
@@ -6799,7 +6799,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayMapPool.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/arrayMapPool.js'
   },
   {
     name: 'arrayMapRate',
@@ -6861,7 +6861,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayMapRate.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/arrayMapRate.js'
   },
   {
     name: 'range',
@@ -6915,7 +6915,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayMapRate.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/arrayMapRate.js'
   },
   {
     name: 'arrayMapSeriesAsync',
@@ -7024,7 +7024,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayMapSeries.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/arrayMapSeries.js'
   },
   {
     name: 'arrayMapSeries',
@@ -7113,7 +7113,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayMapSeries.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/arrayMapSeries.js'
   },
   {
     name: 'arrayMapWithIndex',
@@ -7204,7 +7204,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayMapWithIndex.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/arrayMapWithIndex.js'
   },
   {
     name: 'arrayOf',
@@ -7271,7 +7271,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayOf.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/arrayOf.js'
   },
   {
     name: 'arrayPush',
@@ -7330,7 +7330,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayPush.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/arrayPush.js'
   },
   {
     name: 'arrayReduceAsync',
@@ -7421,7 +7421,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayReduce.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/arrayReduce.js'
   },
   {
     name: 'arrayReduce',
@@ -7483,7 +7483,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayReduce.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/arrayReduce.js'
   },
   {
     name: 'asyncArraySome',
@@ -7547,7 +7547,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arraySome.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/arraySome.js'
   },
   {
     name: 'arraySome',
@@ -7607,7 +7607,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arraySome.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/arraySome.js'
   },
   {
     name: 'async',
@@ -7696,7 +7696,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/async.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/async.js'
   },
   {
     name: 'asyncGeneratorFunctionFilter',
@@ -7789,7 +7789,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/asyncGeneratorFunctionFilter.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/asyncGeneratorFunctionFilter.js'
   },
   {
     name: 'asyncGeneratorFunctionFlatMap',
@@ -7869,7 +7869,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/asyncGeneratorFunctionFlatMap.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/asyncGeneratorFunctionFlatMap.js'
   },
   {
     name: 'asyncGeneratorFunctionForEach',
@@ -7958,7 +7958,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/asyncGeneratorFunctionForEach.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/asyncGeneratorFunctionForEach.js'
   },
   {
     name: 'asyncGeneratorFunctionMap',
@@ -8105,7 +8105,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/asyncGeneratorFunctionMap.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/asyncGeneratorFunctionMap.js'
   },
   {
     name: 'asyncGeneratorFunctionReduce',
@@ -8167,7 +8167,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/asyncGeneratorFunctionReduce.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/asyncGeneratorFunctionReduce.js'
   },
   {
     name: 'asyncIteratorEvery',
@@ -8280,7 +8280,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/asyncIteratorEvery.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/asyncIteratorEvery.js'
   },
   {
     name: 'asyncIteratorFind',
@@ -8376,7 +8376,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/asyncIteratorFind.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/asyncIteratorFind.js'
   },
   {
     name: 'asyncIteratorForEach',
@@ -8465,7 +8465,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/asyncIteratorForEach.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/asyncIteratorForEach.js'
   },
   {
     name: 'asyncIteratorForEachSeries',
@@ -8554,7 +8554,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/asyncIteratorForEachSeries.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/asyncIteratorForEachSeries.js'
   },
   {
     name: 'asyncIteratorReduce',
@@ -8616,7 +8616,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/asyncIteratorReduce.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/asyncIteratorReduce.js'
   },
   {
     name: 'asyncIteratorSome',
@@ -8682,7 +8682,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/asyncIteratorSome.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/asyncIteratorSome.js'
   },
   {
     name: 'asyncIteratorToArray',
@@ -8786,7 +8786,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/asyncIteratorToArray.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/asyncIteratorToArray.js'
   },
   {
     name: '_binaryExtend',
@@ -8873,7 +8873,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/binaryExtend.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/binaryExtend.js'
   },
   {
     name: 'binaryExtend',
@@ -8960,7 +8960,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/binaryExtend.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/binaryExtend.js'
   },
   {
     name: 'arrayJoinToBinary',
@@ -9020,7 +9020,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/binaryFlatMap.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/binaryFlatMap.js'
   },
   {
     name: 'arrayFlattenToBinary',
@@ -9094,7 +9094,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/binaryFlatMap.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/binaryFlatMap.js'
   },
   {
     name: 'binaryFlatMap',
@@ -9168,7 +9168,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/binaryFlatMap.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/binaryFlatMap.js'
   },
   {
     name: 'bufferAlloc',
@@ -9243,7 +9243,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/bufferAlloc.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/bufferAlloc.js'
   },
   {
     name: 'callConcat',
@@ -9302,7 +9302,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/callConcat.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/callConcat.js'
   },
   {
     name: 'callPropBinary',
@@ -9393,7 +9393,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/callPropBinary.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/callPropBinary.js'
   },
   {
     name: 'callPropUnary',
@@ -9482,7 +9482,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/callPropUnary.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/callPropUnary.js'
   },
   {
     name: 'catcherApply',
@@ -9571,7 +9571,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/catcherApply.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/catcherApply.js'
   },
   {
     name: 'conditional',
@@ -9660,7 +9660,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/conditional.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/conditional.js'
   },
   {
     name: 'copyDeep',
@@ -9741,7 +9741,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/copyDeep.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/copyDeep.js'
   },
   {
     name: 'curry1',
@@ -9834,7 +9834,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/curry1.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/curry1.js'
   },
   {
     name: 'curry2',
@@ -9946,7 +9946,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/curry2.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/curry2.js'
   },
   {
     name: 'curry3',
@@ -10060,7 +10060,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/curry3.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/curry3.js'
   },
   {
     name: 'curry4',
@@ -10176,7 +10176,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/curry4.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/curry4.js'
   },
   {
     name: 'curry5',
@@ -10294,7 +10294,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/curry5.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/curry5.js'
   },
   {
     name: 'curryArgs2',
@@ -10406,7 +10406,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/curryArgs2.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/curryArgs2.js'
   },
   {
     name: 'curryArgs3',
@@ -10520,7 +10520,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/curryArgs3.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/curryArgs3.js'
   },
   {
     name: 'curryArgs4',
@@ -10636,7 +10636,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/curryArgs4.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/curryArgs4.js'
   },
   {
     name: '_curryArity',
@@ -10704,7 +10704,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/curryArity.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/curryArity.js'
   },
   {
     name: 'curryArity',
@@ -10799,7 +10799,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/curryArity.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/curryArity.js'
   },
   {
     name: 'deleteByPath',
@@ -10859,7 +10859,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/deleteByPath.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/deleteByPath.js'
   },
   {
     name: 'equals',
@@ -10911,7 +10911,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/equals.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/equals.js'
   },
   {
     name: 'funcAll',
@@ -10969,7 +10969,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/funcAll.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/funcAll.js'
   },
   {
     name: 'asyncFuncAllSeries',
@@ -11060,7 +11060,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/funcAllSeries.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/funcAllSeries.js'
   },
   {
     name: 'funcAllSeries',
@@ -11118,7 +11118,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/funcAllSeries.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/funcAllSeries.js'
   },
   {
     name: 'funcApply',
@@ -11205,7 +11205,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/funcApply.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/funcApply.js'
   },
   {
     name: 'funcCall',
@@ -11286,7 +11286,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/funcCall.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/funcCall.js'
   },
   {
     name: 'funcConcat',
@@ -11354,7 +11354,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/funcConcat.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/funcConcat.js'
   },
   {
     name: 'funcConcatSync',
@@ -11422,7 +11422,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/funcConcatSync.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/funcConcatSync.js'
   },
   {
     name: 'funcObjectAll',
@@ -11507,7 +11507,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/funcObjectAll.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/funcObjectAll.js'
   },
   {
     name: 'functionArrayAll',
@@ -11561,7 +11561,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/functionArrayAll.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/functionArrayAll.js'
   },
   {
     name: 'asyncFunctionArrayAllSeries',
@@ -11652,7 +11652,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/functionArrayAllSeries.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/functionArrayAllSeries.js'
   },
   {
     name: 'functionArrayAllSeries',
@@ -11706,7 +11706,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/functionArrayAllSeries.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/functionArrayAllSeries.js'
   },
   {
     name: 'functionObjectAll',
@@ -11787,7 +11787,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/functionObjectAll.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/functionObjectAll.js'
   },
   {
     name: 'generatorFunctionFilter',
@@ -11899,7 +11899,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/generatorFunctionFilter.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/generatorFunctionFilter.js'
   },
   {
     name: 'generatorFunctionFlatMap',
@@ -11979,7 +11979,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/generatorFunctionFlatMap.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/generatorFunctionFlatMap.js'
   },
   {
     name: 'generatorFunctionForEach',
@@ -12068,7 +12068,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/generatorFunctionForEach.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/generatorFunctionForEach.js'
   },
   {
     name: 'generatorFunctionMap',
@@ -12186,7 +12186,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/generatorFunctionMap.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/generatorFunctionMap.js'
   },
   {
     name: 'generatorFunctionReduce',
@@ -12281,7 +12281,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/generatorFunctionReduce.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/generatorFunctionReduce.js'
   },
   {
     name: 'genericReduce',
@@ -12391,7 +12391,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/genericReduce.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/genericReduce.js'
   },
   {
     name: 'identityTransform',
@@ -12484,7 +12484,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/genericTransform.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/genericTransform.js'
   },
   {
     name: 'genericTransform',
@@ -12554,7 +12554,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/genericTransform.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/genericTransform.js'
   },
   {
     name: 'getArg1',
@@ -12613,7 +12613,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/getArg1.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/getArg1.js'
   },
   {
     name: 'getByPath',
@@ -12673,7 +12673,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/getByPath.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/getByPath.js'
   },
   {
     name: 'globalThisHasBuffer',
@@ -12767,7 +12767,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/globalThisHasBuffer.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/globalThisHasBuffer.js'
   },
   {
     name: 'greaterThan',
@@ -12821,7 +12821,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/greaterThan.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/greaterThan.js'
   },
   {
     name: 'greaterThanOrEqual',
@@ -12875,7 +12875,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/greaterThanOrEqual.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/greaterThanOrEqual.js'
   },
   {
     name: 'hasOwn',
@@ -12961,7 +12961,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/hasOwn.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/hasOwn.js'
   },
   {
     name: 'identity',
@@ -13047,7 +13047,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/identity.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/identity.js'
   },
   {
     name: 'isArray',
@@ -13133,7 +13133,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/isArray.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/isArray.js'
   },
   {
     name: 'isArrayLike',
@@ -13228,7 +13228,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/isArrayLike.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/isArrayLike.js'
   },
   {
     name: 'isAsyncGeneratorFunction',
@@ -13314,7 +13314,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/isAsyncGeneratorFunction.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/isAsyncGeneratorFunction.js'
   },
   {
     name: 'isBinary',
@@ -13448,7 +13448,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/isBinary.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/isBinary.js'
   },
   {
     name: 'isGeneratorFunction',
@@ -13534,7 +13534,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/isGeneratorFunction.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/isGeneratorFunction.js'
   },
   {
     name: 'isNodeReadStream',
@@ -13620,7 +13620,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/isNodeReadStream.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/isNodeReadStream.js'
   },
   {
     name: 'isObject',
@@ -13706,7 +13706,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/isObject.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/isObject.js'
   },
   {
     name: 'isPromise',
@@ -13792,7 +13792,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/isPromise.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/isPromise.js'
   },
   {
     name: 'iterationMap',
@@ -13911,7 +13911,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/iterationMap.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/iterationMap.js'
   },
   {
     name: 'iteratorEvery',
@@ -13992,7 +13992,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/iteratorEvery.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/iteratorEvery.js'
   },
   {
     name: 'iteratorFindAsync',
@@ -14088,7 +14088,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/iteratorFind.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/iteratorFind.js'
   },
   {
     name: 'iteratorFind',
@@ -14184,7 +14184,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/iteratorFind.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/iteratorFind.js'
   },
   {
     name: 'iteratorForEach',
@@ -14292,7 +14292,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/iteratorForEach.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/iteratorForEach.js'
   },
   {
     name: 'iteratorForEachSeries',
@@ -14392,7 +14392,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/iteratorForEachSeries.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/iteratorForEachSeries.js'
   },
   {
     name: 'iteratorReduceAsync',
@@ -14483,7 +14483,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/iteratorReduce.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/iteratorReduce.js'
   },
   {
     name: 'iteratorReduce',
@@ -14574,7 +14574,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/iteratorReduce.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/iteratorReduce.js'
   },
   {
     name: 'iteratorSome',
@@ -14634,7 +14634,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/iteratorSome.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/iteratorSome.js'
   },
   {
     name: 'lessThan',
@@ -14688,7 +14688,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/lessThan.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/lessThan.js'
   },
   {
     name: 'lessThanOrEqual',
@@ -14742,7 +14742,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/lessThanOrEqual.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/lessThanOrEqual.js'
   },
   {
     name: 'mapFilter',
@@ -14893,7 +14893,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/mapFilter.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/mapFilter.js'
   },
   {
     name: 'mapFrom',
@@ -14972,7 +14972,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/mapFrom.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/mapFrom.js'
   },
   {
     name: 'mapMap',
@@ -15075,7 +15075,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/mapMap.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/mapMap.js'
   },
   {
     name: 'mapMapEntries',
@@ -15135,7 +15135,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/mapMapEntries.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/mapMapEntries.js'
   },
   {
     name: '_mapMapPoolAsync',
@@ -15203,7 +15203,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/mapMapPool.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/mapMapPool.js'
   },
   {
     name: 'mapMapPool',
@@ -15257,7 +15257,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/mapMapPool.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/mapMapPool.js'
   },
   {
     name: 'mapMapSeries',
@@ -15350,7 +15350,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/mapMapSeries.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/mapMapSeries.js'
   },
   {
     name: 'mapReduceAsync',
@@ -15414,7 +15414,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/mapReduce.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/mapReduce.js'
   },
   {
     name: 'mapReduce',
@@ -15476,7 +15476,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/mapReduce.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/mapReduce.js'
   },
   {
     name: 'mapSet',
@@ -15530,7 +15530,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/mapSet.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/mapSet.js'
   },
   {
     name: 'memoizeCappedUnary',
@@ -15638,7 +15638,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/memoizeCappedUnary.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/memoizeCappedUnary.js'
   },
   {
     name: 'nonfunctionsConditional',
@@ -15692,7 +15692,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/nonfunctionsConditional.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/nonfunctionsConditional.js'
   },
   {
     name: 'noop',
@@ -15786,7 +15786,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/noop.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/noop.js'
   },
   {
     name: 'objectAssign',
@@ -15879,7 +15879,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectAssign.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/objectAssign.js'
   },
   {
     name: 'objectFilter',
@@ -15939,7 +15939,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectFilter.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/objectFilter.js'
   },
   {
     name: 'objectFlatMap',
@@ -16069,7 +16069,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectFlatMap.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/objectFlatMap.js'
   },
   {
     name: 'objectFlatten',
@@ -16168,7 +16168,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectFlatten.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/objectFlatten.js'
   },
   {
     name: 'objectForEach',
@@ -16257,7 +16257,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectForEach.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/objectForEach.js'
   },
   {
     name: 'objectForEachSeries',
@@ -16338,7 +16338,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectForEachSeries.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/objectForEachSeries.js'
   },
   {
     name: 'objectGet',
@@ -16397,7 +16397,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectGet.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/objectGet.js'
   },
   {
     name: 'objectGetFirstKey',
@@ -16451,7 +16451,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectGetFirstKey.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/objectGetFirstKey.js'
   },
   {
     name: 'objectKeys',
@@ -16585,7 +16585,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectKeys.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/objectKeys.js'
   },
   {
     name: 'objectKeysLength',
@@ -16639,7 +16639,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectKeysLength.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/objectKeysLength.js'
   },
   {
     name: 'objectMap',
@@ -16728,7 +16728,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectMap.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/objectMap.js'
   },
   {
     name: 'objectMapEntries',
@@ -16788,7 +16788,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectMapEntries.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/objectMapEntries.js'
   },
   {
     name: 'objectMapOwn',
@@ -16879,7 +16879,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectMapOwn.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/objectMapOwn.js'
   },
   {
     name: '_objectMapPoolAsync',
@@ -16947,7 +16947,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectMapPool.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/objectMapPool.js'
   },
   {
     name: 'objectMapPool',
@@ -17001,7 +17001,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectMapPool.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/objectMapPool.js'
   },
   {
     name: 'objectMapSeries',
@@ -17126,7 +17126,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectMapSeries.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/objectMapSeries.js'
   },
   {
     name: 'objectReduceAsync',
@@ -17188,7 +17188,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectReduce.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/objectReduce.js'
   },
   {
     name: 'objectReduce',
@@ -17250,7 +17250,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectReduce.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/objectReduce.js'
   },
   {
     name: 'objectSet',
@@ -17312,7 +17312,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectSet.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/objectSet.js'
   },
   {
     name: 'objectSetIf',
@@ -17376,7 +17376,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectSetIf.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/objectSetIf.js'
   },
   {
     name: 'objectToString',
@@ -17462,7 +17462,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectToString.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/objectToString.js'
   },
   {
     name: 'objectValues',
@@ -17596,7 +17596,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/objectValues.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/objectValues.js'
   },
   {
     name: 'once',
@@ -17650,7 +17650,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/once.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/once.js'
   },
   {
     name: 'promiseAll',
@@ -17744,7 +17744,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/promiseAll.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/promiseAll.js'
   },
   {
     name: 'promiseObjectAllExecutor',
@@ -17798,7 +17798,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/promiseObjectAll.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/promiseObjectAll.js'
   },
   {
     name: 'promiseObjectAll',
@@ -17895,7 +17895,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/promiseObjectAll.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/promiseObjectAll.js'
   },
   {
     name: 'promiseRace',
@@ -17981,7 +17981,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/promiseRace.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/promiseRace.js'
   },
   {
     name: 'parsePropertyPath',
@@ -18062,7 +18062,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/propertyPathToArray.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/propertyPathToArray.js'
   },
   {
     name: 'propertyPathToArray',
@@ -18116,7 +18116,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/propertyPathToArray.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/propertyPathToArray.js'
   },
   {
     name: 'reducerAllSync',
@@ -18170,7 +18170,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/reducerAllSync.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/reducerAllSync.js'
   },
   {
     name: 'reducerAnySync',
@@ -18224,7 +18224,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/reducerAnySync.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/reducerAnySync.js'
   },
   {
     name: 'reducerConcat',
@@ -18288,7 +18288,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/reducerConcat.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/reducerConcat.js'
   },
   {
     name: 'reducerConcatSync',
@@ -18353,7 +18353,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/reducerConcatSync.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/reducerConcatSync.js'
   },
   {
     name: 'reducerEvery',
@@ -18411,7 +18411,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/reducerEvery.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/reducerEvery.js'
   },
   {
     name: 'reducerFilter',
@@ -18535,7 +18535,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/reducerFilter.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/reducerFilter.js'
   },
   {
     name: 'reducerFlatMap',
@@ -18609,7 +18609,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/reducerFlatMap.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/reducerFlatMap.js'
   },
   {
     name: 'reducerFlatten',
@@ -18735,7 +18735,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/reducerFlatten.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/reducerFlatten.js'
   },
   {
     name: 'reducerForEach',
@@ -18826,7 +18826,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/reducerForEach.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/reducerForEach.js'
   },
   {
     name: 'reducerMap',
@@ -18950,7 +18950,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/reducerMap.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/reducerMap.js'
   },
   {
     name: 'reducerSome',
@@ -19062,7 +19062,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/reducerSome.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/reducerSome.js'
   },
   {
     name: '_reducerTryCatchErrorHandler',
@@ -19126,7 +19126,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/reducerTryCatch.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/reducerTryCatch.js'
   },
   {
     name: 'reducerTryCatch',
@@ -19190,7 +19190,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/reducerTryCatch.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/reducerTryCatch.js'
   },
   {
     name: 'sameValueZero',
@@ -19298,7 +19298,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/sameValueZero.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/sameValueZero.js'
   },
   {
     name: 'setAdd',
@@ -19350,7 +19350,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/setAdd.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/setAdd.js'
   },
   {
     name: 'setByPath',
@@ -19412,7 +19412,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/setByPath.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/setByPath.js'
   },
   {
     name: 'setExtend',
@@ -19491,7 +19491,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/setExtend.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/setExtend.js'
   },
   {
     name: 'setFilter',
@@ -19594,7 +19594,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/setFilter.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/setFilter.js'
   },
   {
     name: 'setFlatMap',
@@ -19670,7 +19670,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/setFlatMap.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/setFlatMap.js'
   },
   {
     name: 'setFlatten',
@@ -19742,7 +19742,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/setFlatten.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/setFlatten.js'
   },
   {
     name: 'setMap',
@@ -19831,7 +19831,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/setMap.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/setMap.js'
   },
   {
     name: '_setMapPoolAsync',
@@ -19899,7 +19899,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/setMapPool.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/setMapPool.js'
   },
   {
     name: 'setMapPool',
@@ -20012,7 +20012,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/setMapPool.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/setMapPool.js'
   },
   {
     name: 'setMapSeries',
@@ -20105,7 +20105,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/setMapSeries.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/setMapSeries.js'
   },
   {
     name: 'sleep',
@@ -20159,7 +20159,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/sleep.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/sleep.js'
   },
   {
     name: 'spread2',
@@ -20221,7 +20221,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/spread2.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/spread2.js'
   },
   {
     name: '__streamWrite',
@@ -20285,7 +20285,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/streamExtend.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/streamExtend.js'
   },
   {
     name: '_streamExtendExecutor',
@@ -20380,7 +20380,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/streamExtend.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/streamExtend.js'
   },
   {
     name: '_streamExtend',
@@ -20444,7 +20444,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/streamExtend.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/streamExtend.js'
   },
   {
     name: 'streamExtend',
@@ -20543,7 +20543,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/streamExtend.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/streamExtend.js'
   },
   {
     name: 'streamFlatExtend',
@@ -20617,7 +20617,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/streamFlatExtend.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/streamFlatExtend.js'
   },
   {
     name: 'streamFlatMap',
@@ -20691,7 +20691,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/streamFlatMap.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/streamFlatMap.js'
   },
   {
     name: 'streamWrite',
@@ -20798,7 +20798,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/streamWrite.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/streamWrite.js'
   },
   {
     name: 'strictEqual',
@@ -20850,7 +20850,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/strictEqual.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/strictEqual.js'
   },
   {
     name: 'stringMap',
@@ -20939,7 +20939,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/stringFilter.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/stringFilter.js'
   },
   {
     name: 'arrayFlattenToString',
@@ -21011,7 +21011,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/stringFlatMap.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/stringFlatMap.js'
   },
   {
     name: 'stringFlatMap',
@@ -21112,7 +21112,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/stringFlatMap.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/stringFlatMap.js'
   },
   {
     name: 'stringMap',
@@ -21228,7 +21228,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/stringMap.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/stringMap.js'
   },
   {
     name: 'stringMapPool',
@@ -21282,7 +21282,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/stringMapPool.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/stringMapPool.js'
   },
   {
     name: 'stringMapSeries',
@@ -21398,7 +21398,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/stringMapSeries.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/stringMapSeries.js'
   },
   {
     name: 'symbolAsyncIterator',
@@ -21492,7 +21492,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/symbolAsyncIterator.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/symbolAsyncIterator.js'
   },
   {
     name: 'symbolIterator',
@@ -21586,7 +21586,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/symbolIterator.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/symbolIterator.js'
   },
   {
     name: 'tapSync',
@@ -21673,7 +21673,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/tapSync.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/tapSync.js'
   },
   {
     name: 'thunkConditional',
@@ -21778,7 +21778,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/thunkConditional.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/thunkConditional.js'
   },
   {
     name: 'thunkify1',
@@ -21865,7 +21865,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/thunkify1.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/thunkify1.js'
   },
   {
     name: 'thunkify2',
@@ -21954,7 +21954,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/thunkify2.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/thunkify2.js'
   },
   {
     name: 'thunkify3',
@@ -22045,7 +22045,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/thunkify3.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/thunkify3.js'
   },
   {
     name: 'thunkify4',
@@ -22138,7 +22138,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/thunkify4.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/thunkify4.js'
   },
   {
     name: 'thunkify5',
@@ -22233,7 +22233,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/thunkify5.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/thunkify5.js'
   },
   {
     name: 'thunkifyArgs',
@@ -22279,7 +22279,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/thunkifyArgs.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/thunkifyArgs.js'
   },
   {
     name: 'timeInLoop',
@@ -22397,7 +22397,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/timeInLoop.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/timeInLoop.js'
   },
   {
     name: 'timeInLoopAsync',
@@ -22496,7 +22496,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/timeInLoopAsync.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/_internal/timeInLoopAsync.js'
   },
   {
     name: '_allValues',
@@ -22552,7 +22552,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/all.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/all.js'
   },
   {
     name: 'all',
@@ -23376,7 +23376,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/all.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/all.js'
   },
   {
     name: 'all.series',
@@ -23530,7 +23530,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/all.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/all.js'
   },
   {
     name: 'always',
@@ -23862,7 +23862,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/always.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/always.js'
   },
   {
     name: 'areAllValuesTruthy',
@@ -23916,7 +23916,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/and.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/and.js'
   },
   {
     name: 'asyncArePredicatesAllTruthy',
@@ -23978,7 +23978,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/and.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/and.js'
   },
   {
     name: 'and',
@@ -24528,7 +24528,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/and.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/and.js'
   },
   {
     name: 'assign',
@@ -25301,7 +25301,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/assign.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/assign.js'
   },
   {
     name: 'compose',
@@ -25703,7 +25703,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/compose.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/compose.js'
   },
   {
     name: 'curry',
@@ -26121,7 +26121,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/curry.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/curry.js'
   },
   {
     name: 'curry.arity',
@@ -26515,1071 +26515,1071 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/curry.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/curry.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/Transducer.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/Transducer.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/Transducer.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/Transducer.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/Transducer.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/Transducer.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/Transducer.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/Transducer.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/__.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/__.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/__.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/__.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/__.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/__.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/__.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/__.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/all.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/all.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/all.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/all.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/all.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/all.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/all.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/all.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/always.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/always.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/always.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/always.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/always.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/always.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/always.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/always.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/and.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/and.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/and.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/and.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/and.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/and.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/and.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/and.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/assign.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/assign.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/assign.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/assign.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/assign.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/assign.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/assign.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/assign.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/compose.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/compose.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/compose.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/compose.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/compose.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/compose.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/compose.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/compose.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/curry.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/curry.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/curry.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/curry.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/curry.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/curry.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/curry.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/curry.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/eq.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/eq.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/eq.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/eq.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/eq.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/eq.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/eq.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/eq.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/every.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/every.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/every.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/every.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/every.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/every.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/every.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/every.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/filter.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/filter.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/filter.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/filter.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/filter.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/filter.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/filter.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/filter.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/flatMap.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/flatMap.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/flatMap.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/flatMap.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/flatMap.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/flatMap.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/flatMap.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/flatMap.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/forEach.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/forEach.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/forEach.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/forEach.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/forEach.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/forEach.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/forEach.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/forEach.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/get.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/get.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/get.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/get.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/get.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/get.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/get.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/get.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/gt.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/gt.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/gt.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/gt.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/gt.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/gt.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/gt.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/gt.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/gte.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/gte.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/gte.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/gte.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/gte.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/gte.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/gte.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/gte.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/lt.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/lt.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/lt.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/lt.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/lt.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/lt.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/lt.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/lt.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/lte.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/lte.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/lte.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/lte.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/lte.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/lte.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/lte.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/lte.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/map.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/map.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/map.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/map.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/map.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/map.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/map.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/map.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/not.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/not.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/not.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/not.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/not.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/not.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/not.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/not.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/omit.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/omit.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/omit.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/omit.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/omit.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/omit.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/omit.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/omit.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/or.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/or.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/or.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/or.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/or.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/or.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/or.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/or.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/pick.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/pick.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/pick.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/pick.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/pick.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/pick.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/pick.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/pick.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/pipe.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/pipe.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/pipe.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/pipe.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/pipe.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/pipe.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/pipe.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/pipe.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/reduce.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/reduce.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/reduce.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/reduce.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/reduce.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/reduce.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/reduce.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/reduce.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/rubico.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/rubico.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/rubico.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/rubico.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/rubico.global.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/rubico.global.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/rubico.global.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/rubico.global.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/rubico.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/rubico.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/rubico.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/rubico.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/set.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/set.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/set.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/set.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/set.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/set.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/set.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/set.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/some.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/some.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/some.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/some.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/some.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/some.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/some.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/some.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/switchCase.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/switchCase.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/switchCase.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/switchCase.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/switchCase.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/switchCase.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/switchCase.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/switchCase.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/tap.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/tap.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/tap.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/tap.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/tap.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/tap.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/tap.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/tap.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/thunkify.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/thunkify.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/thunkify.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/thunkify.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/thunkify.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/thunkify.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/thunkify.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/thunkify.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/transform.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/transform.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/transform.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/transform.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/transform.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/transform.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/transform.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/transform.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/tryCatch.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/tryCatch.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/tryCatch.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/tryCatch.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/tryCatch.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/tryCatch.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/tryCatch.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/tryCatch.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/append.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/append.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/append.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/append.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/append.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/append.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/append.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/append.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/callProp.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/callProp.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/callProp.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/callProp.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/callProp.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/callProp.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/callProp.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/callProp.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/defaultsDeep.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/defaultsDeep.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/defaultsDeep.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/defaultsDeep.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/defaultsDeep.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/defaultsDeep.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/defaultsDeep.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/defaultsDeep.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/differenceWith.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/differenceWith.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/differenceWith.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/differenceWith.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/differenceWith.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/differenceWith.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/differenceWith.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/differenceWith.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/filterOut.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/filterOut.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/filterOut.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/filterOut.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/filterOut.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/filterOut.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/filterOut.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/filterOut.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/find.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/find.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/find.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/find.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/find.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/find.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/find.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/find.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/findIndex.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/findIndex.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/findIndex.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/findIndex.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/findIndex.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/findIndex.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/findIndex.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/findIndex.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/first.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/first.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/first.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/first.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/first.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/first.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/first.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/first.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/flatten.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/flatten.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/flatten.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/flatten.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/flatten.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/flatten.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/flatten.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/flatten.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/groupBy.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/groupBy.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/groupBy.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/groupBy.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/groupBy.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/groupBy.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/groupBy.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/groupBy.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/has.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/has.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/has.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/has.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/has.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/has.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/has.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/has.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/identity.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/identity.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/identity.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/identity.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/identity.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/identity.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/identity.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/identity.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/includes.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/includes.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/includes.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/includes.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/includes.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/includes.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/includes.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/includes.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isDeepEqual.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/isDeepEqual.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isDeepEqual.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/isDeepEqual.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isDeepEqual.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/isDeepEqual.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isDeepEqual.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/isDeepEqual.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isEmpty.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/isEmpty.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isEmpty.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/isEmpty.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isEmpty.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/isEmpty.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isEmpty.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/isEmpty.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isEqual.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/isEqual.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isEqual.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/isEqual.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isEqual.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/isEqual.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isEqual.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/isEqual.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isFunction.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/isFunction.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isFunction.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/isFunction.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isFunction.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/isFunction.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isFunction.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/isFunction.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isIn.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/isIn.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isIn.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/isIn.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isIn.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/isIn.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isIn.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/isIn.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isObject.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/isObject.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isObject.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/isObject.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isObject.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/isObject.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isObject.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/isObject.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isString.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/isString.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isString.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/isString.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isString.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/isString.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/isString.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/isString.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/keys.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/keys.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/keys.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/keys.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/keys.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/keys.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/keys.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/keys.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/last.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/last.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/last.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/last.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/last.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/last.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/last.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/last.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/maxBy.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/maxBy.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/maxBy.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/maxBy.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/maxBy.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/maxBy.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/maxBy.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/maxBy.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/noop.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/noop.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/noop.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/noop.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/noop.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/noop.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/noop.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/noop.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/pluck.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/pluck.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/pluck.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/pluck.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/pluck.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/pluck.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/pluck.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/pluck.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/prepend.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/prepend.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/prepend.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/prepend.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/prepend.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/prepend.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/prepend.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/prepend.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/size.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/size.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/size.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/size.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/size.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/size.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/size.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/size.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/trace.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/trace.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/trace.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/trace.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/trace.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/trace.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/trace.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/trace.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/unionWith.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/unionWith.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/unionWith.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/unionWith.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/unionWith.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/unionWith.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/unionWith.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/unionWith.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/uniq.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/uniq.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/uniq.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/uniq.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/uniq.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/uniq.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/uniq.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/uniq.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/unless.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/unless.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/unless.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/unless.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/unless.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/unless.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/unless.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/unless.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/values.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/values.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/values.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/values.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/values.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/values.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/values.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/values.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/when.es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/when.es.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/when.es.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/when.es.min.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/when.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/when.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/dist/x/when.min.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/dist/x/when.min.js'
   },
   {
     name: 'eq',
@@ -28258,11 +28258,11 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/eq.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/eq.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/es.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/es.js'
   },
   {
     name: 'every',
@@ -28935,7 +28935,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/every.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/every.js'
   },
   {
     name: '_filter',
@@ -29055,7 +29055,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/filter.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/filter.js'
   },
   {
     name: 'filter',
@@ -30399,7 +30399,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/filter.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/filter.js'
   },
   {
     name: '_flatMap',
@@ -30465,7 +30465,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/flatMap.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/flatMap.js'
   },
   {
     name: 'flatMap',
@@ -31668,7 +31668,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/flatMap.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/flatMap.js'
   },
   {
     name: 'forEach',
@@ -32690,7 +32690,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/forEach.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/forEach.js'
   },
   {
     name: '_forEachSeries',
@@ -32748,7 +32748,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/forEach.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/forEach.js'
   },
   {
     name: 'forEach.series',
@@ -33176,7 +33176,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/forEach.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/forEach.js'
   },
   {
     name: 'get',
@@ -33932,7 +33932,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/get.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/get.js'
   },
   {
     name: 'gt',
@@ -34575,7 +34575,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/gt.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/gt.js'
   },
   {
     name: 'gte',
@@ -35226,11 +35226,11 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/gte.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/gte.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/index.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/index.js'
   },
   {
     name: 'lt',
@@ -35606,7 +35606,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/lt.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/lt.js'
   },
   {
     name: 'lte',
@@ -36253,7 +36253,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/lte.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/lte.js'
   },
   {
     name: '_map',
@@ -36343,7 +36343,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/map.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/map.js'
   },
   {
     name: 'map',
@@ -37791,7 +37791,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/map.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/map.js'
   },
   {
     name: 'map.entries',
@@ -38608,7 +38608,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/map.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/map.js'
   },
   {
     name: '_mapSeries',
@@ -38678,7 +38678,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/map.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/map.js'
   },
   {
     name: 'map.series',
@@ -39293,7 +39293,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/map.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/map.js'
   },
   {
     name: '_mapPool',
@@ -39351,7 +39351,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/map.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/map.js'
   },
   {
     name: 'map.pool',
@@ -40034,7 +40034,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/map.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/map.js'
   },
   {
     name: 'map.rate',
@@ -40110,7 +40110,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/map.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/map.js'
   },
   {
     name: 'BrokenPromise',
@@ -40262,7 +40262,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/BrokenPromise.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/BrokenPromise.js'
   },
   {
     name: 'BrokenPromise.prototype.then',
@@ -40479,7 +40479,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/BrokenPromise.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/BrokenPromise.js'
   },
   {
     name: 'BrokenPromise.prototype.resolve',
@@ -40587,7 +40587,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/BrokenPromise.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/BrokenPromise.js'
   },
   {
     name: 'CancelToken',
@@ -40646,7 +40646,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Cancellable.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Cancellable.js'
   },
   {
     name: 'CancelToken.prototype.cancel',
@@ -40705,7 +40705,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Cancellable.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Cancellable.js'
   },
   {
     name: 'CancellablePromise',
@@ -40766,7 +40766,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Cancellable.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Cancellable.js'
   },
   {
     name: 'Cancellable',
@@ -40963,7 +40963,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Cancellable.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Cancellable.js'
   },
   {
     name: 'Cancellable',
@@ -41028,7 +41028,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Cancellable.memoryUsage.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Cancellable.memoryUsage.js'
   },
   {
     name: 'Instance',
@@ -41114,7 +41114,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Instance.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Instance.js'
   },
   {
     name: 'Instance.prototype.chain',
@@ -41257,7 +41257,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Instance.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Instance.js'
   },
   {
     name: 'Instance.prototype.map',
@@ -41335,7 +41335,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Instance.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Instance.js'
   },
   {
     name: 'Instance.prototype.is',
@@ -41394,7 +41394,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Instance.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Instance.js'
   },
   {
     name: 'Instance.prototype.isString',
@@ -41453,7 +41453,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Instance.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Instance.js'
   },
   {
     name: 'Instance.prototype.isNumber',
@@ -41512,7 +41512,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Instance.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Instance.js'
   },
   {
     name: 'Instance.prototype.isArray',
@@ -41571,7 +41571,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Instance.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Instance.js'
   },
   {
     name: 'Instance.prototype.isObject',
@@ -41630,7 +41630,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Instance.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Instance.js'
   },
   {
     name: 'Instance.prototype.isSet',
@@ -41689,7 +41689,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Instance.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Instance.js'
   },
   {
     name: 'Instance.prototype.isMap',
@@ -41748,7 +41748,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Instance.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Instance.js'
   },
   {
     name: 'Instance.prototype.isIterable',
@@ -41807,7 +41807,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Instance.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Instance.js'
   },
   {
     name: 'Instance.prototype.isAsyncIterable',
@@ -41866,7 +41866,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Instance.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Instance.js'
   },
   {
     name: 'Instance.prototype.isFunction',
@@ -41925,7 +41925,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Instance.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Instance.js'
   },
   {
     name: 'Instance.prototype.isReadable',
@@ -41984,7 +41984,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Instance.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Instance.js'
   },
   {
     name: 'Instance.prototype.isWritable',
@@ -42043,7 +42043,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Instance.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Instance.js'
   },
   {
     name: 'Instance.prototype.isPromise',
@@ -42102,7 +42102,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Instance.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Instance.js'
   },
   {
     name: 'Instance.prototype.isTypedArray',
@@ -42161,7 +42161,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Instance.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Instance.js'
   },
   {
     name: 'Mux.flatten',
@@ -42221,7 +42221,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.benchmark.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Mux.benchmark.js'
   },
   {
     synopsis: 'isGeneratorFunction(value !null) -> boolean',
@@ -42253,7 +42253,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Mux.js'
   },
   {
     synopsis: 'isSequence(value any) -> boolean',
@@ -42285,7 +42285,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Mux.js'
   },
   {
     synopsis: 'isAsyncSequence(value any) -> boolean',
@@ -42317,7 +42317,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Mux.js'
   },
   {
     name: 'Mux',
@@ -42477,7 +42477,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Mux.js'
   },
   {
     name: 'Mux.isSequence',
@@ -42617,7 +42617,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Mux.js'
   },
   {
     name: 'iteratorOf',
@@ -42692,7 +42692,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Mux.js'
   },
   {
     name: 'getSyncIterator',
@@ -42802,7 +42802,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Mux.js'
   },
   {
     name: 'getIterator',
@@ -42930,7 +42930,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Mux.js'
   },
   {
     name: 'sequenceIsAsync',
@@ -43010,7 +43010,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Mux.js'
   },
   {
     name: 'muxIsSync',
@@ -43114,7 +43114,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Mux.js'
   },
   {
     name: 'muxZipSync',
@@ -43218,7 +43218,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Mux.js'
   },
   {
     name: 'muxZipAsync',
@@ -43324,7 +43324,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Mux.js'
   },
   {
     name: 'Mux.zip',
@@ -43585,7 +43585,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Mux.js'
   },
   {
     name: 'muxConcatSync',
@@ -43697,7 +43697,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Mux.js'
   },
   {
     name: 'muxConcatAsync',
@@ -43813,7 +43813,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Mux.js'
   },
   {
     name: 'Mux.concat',
@@ -44094,7 +44094,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Mux.js'
   },
   {
     name: 'muxSwitchSync',
@@ -44187,7 +44187,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Mux.js'
   },
   {
     name: 'muxSwitchAsync',
@@ -44303,7 +44303,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Mux.js'
   },
   {
     name: 'Mux.switch',
@@ -44567,7 +44567,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Mux.js'
   },
   {
     name: 'muxRaceAsync',
@@ -44658,7 +44658,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Mux.js'
   },
   {
     name: 'Mux.race',
@@ -44952,7 +44952,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Mux.js'
   },
   {
     name: 'arrayPushArray',
@@ -45011,7 +45011,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Mux.js'
   },
   {
     name: 'arrayPushIterable',
@@ -45070,7 +45070,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Mux.js'
   },
   {
     name: 'arrayFlatten',
@@ -45161,7 +45161,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Mux.js'
   },
   {
     name: [ 'Mux.flatten', 'Mux.flatten' ],
@@ -45284,7 +45284,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Mux.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Mux.js'
   },
   {
     name: 'PossiblePromise.then',
@@ -45366,7 +45366,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/PossiblePromise.benchmark.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/PossiblePromise.benchmark.js'
   },
   {
     name: 'PossiblePromise.all',
@@ -45448,7 +45448,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/PossiblePromise.benchmark.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/PossiblePromise.benchmark.js'
   },
   {
     name: 'PossiblePromise.args',
@@ -45515,7 +45515,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/PossiblePromise.benchmark.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/PossiblePromise.benchmark.js'
   },
   {
     name: 'PossiblePromise',
@@ -45601,7 +45601,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/PossiblePromise.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/PossiblePromise.js'
   },
   {
     name: 'PossiblePromise.prototype.then',
@@ -45687,7 +45687,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/PossiblePromise.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/PossiblePromise.js'
   },
   {
     name: 'PossiblePromise.then',
@@ -45773,7 +45773,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/PossiblePromise.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/PossiblePromise.js'
   },
   {
     name: 'PossiblePromise.catch',
@@ -45865,7 +45865,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/PossiblePromise.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/PossiblePromise.js'
   },
   {
     name: 'SyncThenable',
@@ -45951,7 +45951,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/PossiblePromise.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/PossiblePromise.js'
   },
   {
     name: 'SyncThenable.prototype.then',
@@ -46037,7 +46037,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/PossiblePromise.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/PossiblePromise.js'
   },
   {
     name: 'PossiblePromise.all',
@@ -46165,7 +46165,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/PossiblePromise.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/PossiblePromise.js'
   },
   {
     name: 'PossiblePromise.args',
@@ -46251,7 +46251,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/PossiblePromise.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/PossiblePromise.js'
   },
   {
     name: 'Struct.get',
@@ -46312,7 +46312,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Struct.benchmark.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Struct.benchmark.js'
   },
   {
     name: 'Struct.set',
@@ -46435,7 +46435,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Struct.benchmark.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Struct.benchmark.js'
   },
   {
     name: 'Struct.size',
@@ -46518,7 +46518,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Struct.benchmark.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Struct.benchmark.js'
   },
   {
     name: 'Struct.copy',
@@ -46648,7 +46648,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Struct.benchmark.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Struct.benchmark.js'
   },
   {
     synopsis: 'isStruct(x any) -> boolean',
@@ -46680,7 +46680,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Struct.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Struct.js'
   },
   {
     name: 'Struct',
@@ -46766,7 +46766,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Struct.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Struct.js'
   },
   {
     name: 'Struct.isStruct',
@@ -46852,7 +46852,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Struct.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Struct.js'
   },
   {
     synopsis: '<T>objectEntriesGenerator(x Object<T>) -> Iterator<[key string, T]>',
@@ -46908,7 +46908,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Struct.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Struct.js'
   },
   {
     name: 'Struct.entries',
@@ -47123,7 +47123,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Struct.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Struct.js'
   },
   {
     synopsis: '<T>objectValuesGenerator(x Object<T>) -> Iterator<T>',
@@ -47187,7 +47187,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Struct.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Struct.js'
   },
   {
     name: 'Struct.values',
@@ -47339,7 +47339,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Struct.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Struct.js'
   },
   {
     name: 'Struct.get',
@@ -47554,7 +47554,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Struct.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Struct.js'
   },
   {
     name: 'Struct.set',
@@ -47697,7 +47697,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Struct.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Struct.js'
   },
   {
     synopsis: 'objectKeysCount(obj object) -> ct number',
@@ -47729,7 +47729,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Struct.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Struct.js'
   },
   {
     name: 'Struct.size',
@@ -47815,7 +47815,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Struct.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Struct.js'
   },
   {
     synopsis: 'copySet(x Set) -> y Set',
@@ -47847,7 +47847,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Struct.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Struct.js'
   },
   {
     synopsis: 'copyMap(x Map) -> y Map',
@@ -47879,7 +47879,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Struct.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Struct.js'
   },
   {
     name: 'Struct.copy',
@@ -48022,7 +48022,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Struct.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Struct.js'
   },
   {
     name: 'Struct.copyDeep',
@@ -48165,7 +48165,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/monad/Struct.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/monad/Struct.js'
   },
   {
     name: 'not',
@@ -48657,7 +48657,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/not.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/not.js'
   },
   {
     name: 'omit',
@@ -49360,7 +49360,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/omit.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/omit.js'
   },
   {
     name: 'areAnyNonfunctionsTruthy',
@@ -49414,7 +49414,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/or.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/or.js'
   },
   {
     name: 'asyncAreAnyPredicatesTruthy',
@@ -49476,7 +49476,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/or.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/or.js'
   },
   {
     name: 'or',
@@ -50026,7 +50026,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/or.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/or.js'
   },
   {
     name: 'pick',
@@ -50715,7 +50715,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/pick.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/pick.js'
   },
   {
     name: 'pipe',
@@ -51200,7 +51200,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/pipe.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/pipe.js'
   },
   {
     name: 'reduce',
@@ -52631,11 +52631,11 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/reduce.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/reduce.js'
   },
   {
     mdast: {},
-    fileName: '/home/richard/code/rubico.land/../rubico/rubico.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/rubico.js'
   },
   {
     name: '_set',
@@ -52697,7 +52697,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/set.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/set.js'
   },
   {
     name: 'set',
@@ -53436,7 +53436,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/set.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/set.js'
   },
   {
     name: 'some',
@@ -54158,7 +54158,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/some.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/some.js'
   },
   {
     name: 'switchCase',
@@ -54802,7 +54802,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/switchCase.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/switchCase.js'
   },
   {
     name: 'tap',
@@ -55193,7 +55193,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/tap.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/tap.js'
   },
   {
     name: '_tapIf',
@@ -55255,7 +55255,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/tap.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/tap.js'
   },
   {
     name: 'tap.if',
@@ -55710,7 +55710,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/tap.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/tap.js'
   },
   {
     name: 'thunkify',
@@ -56048,7 +56048,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/thunkify.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/thunkify.js'
   },
   {
     name: 'transform',
@@ -57682,7 +57682,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/transform.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/transform.js'
   },
   {
     name: 'tryCatch',
@@ -58298,7 +58298,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/tryCatch.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/tryCatch.js'
   },
   {
     name: 'append',
@@ -58529,7 +58529,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/append.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/append.js'
   },
   {
     name: 'callProp',
@@ -58741,7 +58741,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/callProp.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/callProp.js'
   },
   {
     name: 'arrayDefaultsDeepFromArray',
@@ -58801,7 +58801,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/defaultsDeep.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/defaultsDeep.js'
   },
   {
     name: 'objectDefaultsDeepFromObject',
@@ -58861,7 +58861,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/defaultsDeep.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/defaultsDeep.js'
   },
   {
     name: '_defaultsDeep',
@@ -58921,7 +58921,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/defaultsDeep.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/defaultsDeep.js'
   },
   {
     name: 'defaultsDeep',
@@ -59478,7 +59478,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/defaultsDeep.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/defaultsDeep.js'
   },
   {
     name: 'differenceWith-race',
@@ -59538,7 +59538,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/differenceWith.benchmark.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/differenceWith.benchmark.js'
   },
   {
     name: 'differenceWithArrayAsync',
@@ -59604,7 +59604,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/differenceWith.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/differenceWith.js'
   },
   {
     name: 'differenceWithArray',
@@ -59666,7 +59666,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/differenceWith.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/differenceWith.js'
   },
   {
     name: 'differenceWith',
@@ -59888,7 +59888,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/differenceWith.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/differenceWith.js'
   },
   {
     name: 'filterOut',
@@ -60037,7 +60037,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/filterOut.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/filterOut.js'
   },
   {
     name: 'find',
@@ -60100,7 +60100,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/find.benchmark.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/find.benchmark.js'
   },
   {
     name: 'find',
@@ -60229,7 +60229,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/find.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/find.js'
   },
   {
     name: 'findIndexAsync',
@@ -60291,7 +60291,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/findIndex.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/findIndex.js'
   },
   {
     name: 'findIndex',
@@ -60425,7 +60425,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/findIndex.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/findIndex.js'
   },
   {
     name: 'first',
@@ -60488,7 +60488,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/first.benchmark.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/first.benchmark.js'
   },
   {
     name: 'first',
@@ -60593,7 +60593,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/first.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/first.js'
   },
   {
     name: 'flatten',
@@ -60683,7 +60683,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/flatten.benchmark.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/flatten.benchmark.js'
   },
   {
     name: 'flatten',
@@ -60881,7 +60881,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/flatten.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/flatten.js'
   },
   {
     name: 'groupByRaceProperty',
@@ -60944,7 +60944,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/groupBy.benchmark.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/groupBy.benchmark.js'
   },
   {
     name: 'groupBy',
@@ -61126,7 +61126,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/groupBy.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/groupBy.js'
   },
   {
     name: 'has',
@@ -61237,7 +61237,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/has.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/has.js'
   },
   {
     name: 'bytesToMiB',
@@ -61296,7 +61296,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/heapUsedInLoop.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/heapUsedInLoop.js'
   },
   {
     name: 'heapUsedInLoop',
@@ -61545,7 +61545,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/heapUsedInLoop.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/heapUsedInLoop.js'
   },
   {
     name: 'heapUsedInLoop.async',
@@ -61612,7 +61612,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/heapUsedInLoop.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/heapUsedInLoop.js'
   },
   {
     name: 'identity',
@@ -61713,7 +61713,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/identity.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/identity.js'
   },
   {
     name: 'arrayIncludes',
@@ -61772,7 +61772,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/includes.benchmark.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/includes.benchmark.js'
   },
   {
     name: 'includes',
@@ -61910,7 +61910,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/includes.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/includes.js'
   },
   {
     name: 'isDeepEqual',
@@ -62041,7 +62041,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/isDeepEqual.benchmark.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/isDeepEqual.benchmark.js'
   },
   {
     name: 'areIteratorsDeepEqual',
@@ -62100,7 +62100,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/isDeepEqual.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/isDeepEqual.js'
   },
   {
     name: 'areObjectsDeepEqual',
@@ -62159,7 +62159,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/isDeepEqual.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/isDeepEqual.js'
   },
   {
     name: 'areArraysDeepEqual',
@@ -62218,7 +62218,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/isDeepEqual.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/isDeepEqual.js'
   },
   {
     name: 'areValuesDeepEqual',
@@ -62272,7 +62272,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/isDeepEqual.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/isDeepEqual.js'
   },
   {
     name: 'isDeepEqual',
@@ -62465,7 +62465,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/isDeepEqual.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/isDeepEqual.js'
   },
   {
     name: 'isEmpty',
@@ -62553,7 +62553,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/isEmpty.benchmark.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/isEmpty.benchmark.js'
   },
   {
     name: 'isEmpty',
@@ -62660,7 +62660,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/isEmpty.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/isEmpty.js'
   },
   {
     name: 'isEqual',
@@ -62740,7 +62740,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/isEqual.benchmark.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/isEqual.benchmark.js'
   },
   {
     name: 'isFunction',
@@ -62799,7 +62799,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/isFunction.benchmark.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/isFunction.benchmark.js'
   },
   {
     name: 'isFunction',
@@ -62904,7 +62904,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/isFunction.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/isFunction.js'
   },
   {
     name: '_isIn',
@@ -63087,7 +63087,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/isIn.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/isIn.js'
   },
   {
     name: 'isIn',
@@ -63270,7 +63270,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/isIn.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/isIn.js'
   },
   {
     name: 'isObject',
@@ -63353,7 +63353,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/isObject.benchmark.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/isObject.benchmark.js'
   },
   {
     name: 'isObject',
@@ -63513,7 +63513,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/isObject.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/isObject.js'
   },
   {
     name: 'isString',
@@ -63586,7 +63586,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/isString.benchmarks.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/isString.benchmarks.js'
   },
   {
     name: 'isString',
@@ -63687,7 +63687,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/isString.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/isString.js'
   },
   {
     name: 'keys',
@@ -63817,7 +63817,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/keys.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/keys.js'
   },
   {
     name: 'last',
@@ -63972,7 +63972,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/last.benchmark.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/last.benchmark.js'
   },
   {
     name: 'last',
@@ -64075,7 +64075,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/last.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/last.js'
   },
   {
     name: '_maxBy',
@@ -64129,7 +64129,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/maxBy.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/maxBy.js'
   },
   {
     name: 'maxBy',
@@ -64301,7 +64301,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/maxBy.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/maxBy.js'
   },
   {
     name: 'noop',
@@ -64402,7 +64402,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/noop.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/noop.js'
   },
   {
     name: 'pluck',
@@ -64672,7 +64672,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/pluck.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/pluck.js'
   },
   {
     name: 'prepend',
@@ -64832,7 +64832,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/prepend.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/prepend.js'
   },
   {
     name: 'size',
@@ -64897,7 +64897,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/size.benchmark.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/size.benchmark.js'
   },
   {
     name: 'size',
@@ -64998,7 +64998,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/size.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/size.js'
   },
   {
     name: 'timeInLoop',
@@ -65117,7 +65117,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/timeInLoop.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/timeInLoop.js'
   },
   {
     name: 'timeInLoop.async',
@@ -65217,7 +65217,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/timeInLoop.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/timeInLoop.js'
   },
   {
     name: 'trace',
@@ -65338,7 +65338,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/trace.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/trace.js'
   },
   {
     name: 'tracef',
@@ -65379,7 +65379,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/tracef.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/tracef.js'
   },
   {
     name: 'unionWith',
@@ -65463,7 +65463,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/unionWith.benchmark.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/unionWith.benchmark.js'
   },
   {
     name: 'arrayIncludesWith',
@@ -65527,7 +65527,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/unionWith.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/unionWith.js'
   },
   {
     name: 'arrayUniqWithAsync',
@@ -65589,7 +65589,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/unionWith.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/unionWith.js'
   },
   {
     name: 'arrayUniqWith',
@@ -65678,7 +65678,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/unionWith.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/unionWith.js'
   },
   {
     name: 'unionWith',
@@ -65840,7 +65840,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/unionWith.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/unionWith.js'
   },
   {
     name: 'uniq',
@@ -65972,7 +65972,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/uniq.benchmark.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/uniq.benchmark.js'
   },
   {
     name: 'uniq',
@@ -66078,7 +66078,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/uniq.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/uniq.js'
   },
   {
     name: 'unless',
@@ -66218,7 +66218,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/unless.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/unless.js'
   },
   {
     name: 'valuesRace',
@@ -66281,7 +66281,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/values.benchmark.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/values.benchmark.js'
   },
   {
     name: 'values',
@@ -66388,7 +66388,7 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/values.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/values.js'
   },
   {
     name: 'when',
@@ -66528,6 +66528,6 @@ export default [
         }
       }
     },
-    fileName: '/home/richard/code/rubico.land/../rubico/x/when.js'
+    fileName: '/Users/richard/code/rubico.land/../rubico/x/when.js'
   }
 ]
