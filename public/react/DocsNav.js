@@ -197,6 +197,7 @@ const DocsNav = ReactElement(props => {
           CoreDocsNavItem('always'),
           CoreDocsNavItem('curry'),
           CoreDocsNavItem('curry.arity'),
+          CoreDocsNavItem('curry.call'),
           CoreDocsNavItem('__'),
         ]),
 
@@ -324,6 +325,7 @@ const DocsNav = ReactElement(props => {
         CoreDocsNavItem('always'),
         CoreDocsNavItem('curry'),
         CoreDocsNavItem('curry.arity'),
+        CoreDocsNavItem('curry.call'),
         CoreDocsNavItem('__'),
       ]),
 
