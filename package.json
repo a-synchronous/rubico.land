@@ -15,9 +15,6 @@
     "rubico",
     "react"
   ],
-  "scripts": {
-    "start": "serve -p 4507 public"
-  },
   "dependencies": {
     "arche": "latest",
     "presidium": "^1.0.6",
@@ -29,6 +26,6 @@
   "devDependencies": {
     "cronist": "latest",
     "glob": "^11.0.3",
-    "serve": "^11.3.2"
+    "serve": "^14.2.4"
   }
 }
