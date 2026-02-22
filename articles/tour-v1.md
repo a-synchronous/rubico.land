@@ -157,7 +157,7 @@ myApp({ userId: 1 }) // validated user 1
 The example above depicts a Rubico `tryCatch` operator wrapping a pipeline created by a `pipe` operator. The catcher function `errorHandler` catches the error thrown by the function `validate` when the `userId` of `data` is undefined.
 
 # Transducers
-**Wrangle large or infinite streams of data**. Easily express complex transformations in a memory efficient way with Rubico's transducer functionality built into its data transformation functions. Read more on Rubico's transducers [here](/blog/transducers-crash-course-v1).
+**Wrangle large or infinite streams of data**. Easily express complex transformations in a memory efficient way with Rubico's transducer functionality built into its data transformation functions. Read more on Rubico's transducers [here](/blog/transducers-crash-course-rubico-v1).
 
 ```javascript [playground]
 const toBinaryString = value => value.toString(2)
