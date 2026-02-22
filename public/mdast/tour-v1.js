@@ -323,93 +323,74 @@ export default {
       type: 'paragraph',
       children: [
         {
+          type: 'text',
+          value: 'Pass ',
+          position: {
+            start: { line: 26, column: 1, offset: 658 },
+            end: { line: 26, column: 6, offset: 663 }
+          }
+        },
+        {
           type: 'strong',
           children: [
             {
               type: 'text',
-              value: 'Stop worrying about async',
+              value: 'synchronous or asynchronous',
               position: {
-                start: { line: 26, column: 3, offset: 660 },
-                end: { line: 26, column: 28, offset: 685 }
+                start: { line: 26, column: 8, offset: 665 },
+                end: { line: 26, column: 35, offset: 692 }
               }
             }
           ],
           position: {
-            start: { line: 26, column: 1, offset: 658 },
-            end: { line: 26, column: 30, offset: 687 }
+            start: { line: 26, column: 6, offset: 663 },
+            end: { line: 26, column: 37, offset: 694 }
           }
         },
         {
           type: 'text',
-          value: '. Pass synchronous or asynchronous functions to any Rubico operator - all promises are resolved for their promised value before continuing. Run things in parallel without having to call ',
+          value: ' functions to any Rubico operator - any and all promises will be resolved. Execute functions concurrently without having to call ',
           position: {
-            start: { line: 26, column: 30, offset: 687 },
-            end: { line: 26, column: 216, offset: 873 }
+            start: { line: 26, column: 37, offset: 694 },
+            end: { line: 26, column: 166, offset: 823 }
           }
         },
         {
           type: 'inlineCode',
           value: 'Promise.all',
           position: {
-            start: { line: 26, column: 216, offset: 873 },
-            end: { line: 26, column: 229, offset: 886 }
+            start: { line: 26, column: 166, offset: 823 },
+            end: { line: 26, column: 179, offset: 836 }
           }
         },
         {
           type: 'text',
           value: ' on ',
           position: {
-            start: { line: 26, column: 229, offset: 886 },
-            end: { line: 26, column: 233, offset: 890 }
+            start: { line: 26, column: 179, offset: 836 },
+            end: { line: 26, column: 183, offset: 840 }
           }
         },
         {
           type: 'inlineCode',
-          value: 'someArray.map(...)',
+          value: 'array.map',
           position: {
-            start: { line: 26, column: 233, offset: 890 },
-            end: { line: 26, column: 253, offset: 910 }
-          }
-        },
-        {
-          type: 'text',
-          value: '. For more on this behavior, see this ',
-          position: {
-            start: { line: 26, column: 253, offset: 910 },
-            end: { line: 26, column: 291, offset: 948 }
-          }
-        },
-        {
-          type: 'link',
-          title: null,
-          url: 'https://dev.to/richytong/rubico-a-synchrnous-functional-syntax-motivation-20hf',
-          children: [
-            {
-              type: 'text',
-              value: 'blog post',
-              position: {
-                start: { line: 26, column: 292, offset: 949 },
-                end: { line: 26, column: 301, offset: 958 }
-              }
-            }
-          ],
-          position: {
-            start: { line: 26, column: 291, offset: 948 },
-            end: { line: 26, column: 382, offset: 1039 }
+            start: { line: 26, column: 183, offset: 840 },
+            end: { line: 26, column: 194, offset: 851 }
           }
         },
         {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 26, column: 382, offset: 1039 },
-            end: { line: 26, column: 383, offset: 1040 }
+            start: { line: 26, column: 194, offset: 851 },
+            end: { line: 26, column: 195, offset: 852 }
           }
         }
       ],
       position: {
         start: { line: 26, column: 1, offset: 658 },
-        end: { line: 26, column: 383, offset: 1040 }
+        end: { line: 26, column: 195, offset: 852 }
       }
     },
     {
@@ -424,8 +405,8 @@ export default {
         '  console.log,\n' +
         ']))',
       position: {
-        start: { line: 28, column: 1, offset: 1042 },
-        end: { line: 36, column: 4, offset: 1232 }
+        start: { line: 28, column: 1, offset: 854 },
+        end: { line: 36, column: 4, offset: 1044 }
       }
     },
     {
@@ -435,46 +416,46 @@ export default {
           type: 'text',
           value: 'Press the ',
           position: {
-            start: { line: 38, column: 1, offset: 1234 },
-            end: { line: 38, column: 11, offset: 1244 }
+            start: { line: 38, column: 1, offset: 1046 },
+            end: { line: 38, column: 11, offset: 1056 }
           }
         },
         {
           type: 'inlineCode',
           value: 'run',
           position: {
-            start: { line: 38, column: 11, offset: 1244 },
-            end: { line: 38, column: 16, offset: 1249 }
+            start: { line: 38, column: 11, offset: 1056 },
+            end: { line: 38, column: 16, offset: 1061 }
           }
         },
         {
           type: 'text',
-          value: ' button to make five requests using ',
+          value: ' button to make five concurrent requests using ',
           position: {
-            start: { line: 38, column: 16, offset: 1249 },
-            end: { line: 38, column: 52, offset: 1285 }
+            start: { line: 38, column: 16, offset: 1061 },
+            end: { line: 38, column: 63, offset: 1108 }
           }
         },
         {
           type: 'inlineCode',
           value: 'fetch',
           position: {
-            start: { line: 38, column: 52, offset: 1285 },
-            end: { line: 38, column: 59, offset: 1292 }
+            start: { line: 38, column: 63, offset: 1108 },
+            end: { line: 38, column: 70, offset: 1115 }
           }
         },
         {
           type: 'text',
-          value: ', parse five request bodies, and log five todos out to the console - all in parallel.',
+          value: ', parse five request bodies, and log five todos out to the console.',
           position: {
-            start: { line: 38, column: 59, offset: 1292 },
-            end: { line: 38, column: 144, offset: 1377 }
+            start: { line: 38, column: 70, offset: 1115 },
+            end: { line: 38, column: 137, offset: 1182 }
           }
         }
       ],
       position: {
-        start: { line: 38, column: 1, offset: 1234 },
-        end: { line: 38, column: 144, offset: 1377 }
+        start: { line: 38, column: 1, offset: 1046 },
+        end: { line: 38, column: 137, offset: 1182 }
       }
     },
     {
@@ -485,14 +466,14 @@ export default {
           type: 'text',
           value: 'Composition',
           position: {
-            start: { line: 40, column: 3, offset: 1381 },
-            end: { line: 40, column: 14, offset: 1392 }
+            start: { line: 40, column: 3, offset: 1186 },
+            end: { line: 40, column: 14, offset: 1197 }
           }
         }
       ],
       position: {
-        start: { line: 40, column: 1, offset: 1379 },
-        end: { line: 40, column: 14, offset: 1392 }
+        start: { line: 40, column: 1, offset: 1184 },
+        end: { line: 40, column: 14, offset: 1197 }
       }
     },
     {
@@ -505,28 +486,28 @@ export default {
               type: 'text',
               value: 'Reduce coupling and complexity',
               position: {
-                start: { line: 41, column: 3, offset: 1395 },
-                end: { line: 41, column: 33, offset: 1425 }
+                start: { line: 41, column: 3, offset: 1200 },
+                end: { line: 41, column: 33, offset: 1230 }
               }
             }
           ],
           position: {
-            start: { line: 41, column: 1, offset: 1393 },
-            end: { line: 41, column: 35, offset: 1427 }
+            start: { line: 41, column: 1, offset: 1198 },
+            end: { line: 41, column: 35, offset: 1232 }
           }
         },
         {
           type: 'text',
-          value: ". Use Rubico's operators to create compositions of small, reusable functions. Add functionality to your program by composing the desired function - Rubico gives you the tools to make this as simple and seamless as possible.",
+          value: ". Use Rubico's operators to create compositions of small, reusable functions. Add functionality by composing a new function - Rubico gives you the tools to make this as simple and stress-free as possible.",
           position: {
-            start: { line: 41, column: 35, offset: 1427 },
-            end: { line: 41, column: 258, offset: 1650 }
+            start: { line: 41, column: 35, offset: 1232 },
+            end: { line: 41, column: 239, offset: 1436 }
           }
         }
       ],
       position: {
-        start: { line: 41, column: 1, offset: 1393 },
-        end: { line: 41, column: 258, offset: 1650 }
+        start: { line: 41, column: 1, offset: 1198 },
+        end: { line: 41, column: 239, offset: 1436 }
       }
     },
     {
@@ -553,8 +534,8 @@ export default {
         '// result of square: 9\n' +
         '// { number: 3, numberSquared: 9 }',
       position: {
-        start: { line: 43, column: 1, offset: 1652 },
-        end: { line: 63, column: 4, offset: 2088 }
+        start: { line: 43, column: 1, offset: 1438 },
+        end: { line: 63, column: 4, offset: 1874 }
       }
     },
     {
@@ -562,96 +543,80 @@ export default {
       children: [
         {
           type: 'text',
-          value: 'The ',
+          value: 'The code above executes the pipeline ',
           position: {
-            start: { line: 65, column: 1, offset: 2090 },
-            end: { line: 65, column: 5, offset: 2094 }
-          }
-        },
-        {
-          type: 'inlineCode',
-          value: 'run',
-          position: {
-            start: { line: 65, column: 5, offset: 2094 },
-            end: { line: 65, column: 10, offset: 2099 }
-          }
-        },
-        {
-          type: 'text',
-          value: ' button above executes the pipeline ',
-          position: {
-            start: { line: 65, column: 10, offset: 2099 },
-            end: { line: 65, column: 46, offset: 2135 }
+            start: { line: 65, column: 1, offset: 1876 },
+            end: { line: 65, column: 38, offset: 1913 }
           }
         },
         {
           type: 'inlineCode',
           value: 'doMathsWithLogs',
           position: {
-            start: { line: 65, column: 46, offset: 2135 },
-            end: { line: 65, column: 63, offset: 2152 }
+            start: { line: 65, column: 38, offset: 1913 },
+            end: { line: 65, column: 55, offset: 1930 }
           }
         },
         {
           type: 'text',
-          value: ' that logs a number out to the console, then parallelizes its identity operation and another pipeline into an object ',
+          value: ', logging a number out to the console and composing an identity operation and another Rubico pipeline into the object ',
           position: {
-            start: { line: 65, column: 63, offset: 2152 },
-            end: { line: 65, column: 180, offset: 2269 }
+            start: { line: 65, column: 55, offset: 1930 },
+            end: { line: 65, column: 173, offset: 2048 }
           }
         },
         {
           type: 'inlineCode',
           value: '{ number, numberSquared }',
           position: {
-            start: { line: 65, column: 180, offset: 2269 },
-            end: { line: 65, column: 207, offset: 2296 }
+            start: { line: 65, column: 173, offset: 2048 },
+            end: { line: 65, column: 200, offset: 2075 }
           }
         },
         {
           type: 'text',
           value: ". The above example also introduces Rubico's ",
           position: {
-            start: { line: 65, column: 207, offset: 2296 },
-            end: { line: 65, column: 252, offset: 2341 }
+            start: { line: 65, column: 200, offset: 2075 },
+            end: { line: 65, column: 245, offset: 2120 }
           }
         },
         {
           type: 'inlineCode',
           value: 'curry',
           position: {
-            start: { line: 65, column: 252, offset: 2341 },
-            end: { line: 65, column: 259, offset: 2348 }
+            start: { line: 65, column: 245, offset: 2120 },
+            end: { line: 65, column: 252, offset: 2127 }
           }
         },
         {
           type: 'text',
-          value: ' and placeholder ',
+          value: ' operator and placeholder ',
           position: {
-            start: { line: 65, column: 259, offset: 2348 },
-            end: { line: 65, column: 276, offset: 2365 }
+            start: { line: 65, column: 252, offset: 2127 },
+            end: { line: 65, column: 278, offset: 2153 }
           }
         },
         {
           type: 'inlineCode',
           value: '__',
           position: {
-            start: { line: 65, column: 276, offset: 2365 },
-            end: { line: 65, column: 280, offset: 2369 }
+            start: { line: 65, column: 278, offset: 2153 },
+            end: { line: 65, column: 282, offset: 2157 }
           }
         },
         {
           type: 'text',
-          value: '; use these to compose any function by creating a partially applied variant suited for the task at hand.',
+          value: '; use these to create a partially applied function that suits any API.',
           position: {
-            start: { line: 65, column: 280, offset: 2369 },
-            end: { line: 65, column: 384, offset: 2473 }
+            start: { line: 65, column: 282, offset: 2157 },
+            end: { line: 65, column: 352, offset: 2227 }
           }
         }
       ],
       position: {
-        start: { line: 65, column: 1, offset: 2090 },
-        end: { line: 65, column: 384, offset: 2473 }
+        start: { line: 65, column: 1, offset: 1876 },
+        end: { line: 65, column: 352, offset: 2227 }
       }
     },
     {
@@ -662,14 +627,14 @@ export default {
           type: 'text',
           value: 'Polymorphism',
           position: {
-            start: { line: 67, column: 3, offset: 2477 },
-            end: { line: 67, column: 15, offset: 2489 }
+            start: { line: 67, column: 3, offset: 2231 },
+            end: { line: 67, column: 15, offset: 2243 }
           }
         }
       ],
       position: {
-        start: { line: 67, column: 1, offset: 2475 },
-        end: { line: 67, column: 15, offset: 2489 }
+        start: { line: 67, column: 1, offset: 2229 },
+        end: { line: 67, column: 15, offset: 2243 }
       }
     },
     {
@@ -682,28 +647,28 @@ export default {
               type: 'text',
               value: 'Expressive power at your fingertips',
               position: {
-                start: { line: 68, column: 3, offset: 2492 },
-                end: { line: 68, column: 38, offset: 2527 }
+                start: { line: 68, column: 3, offset: 2246 },
+                end: { line: 68, column: 38, offset: 2281 }
               }
             }
           ],
           position: {
-            start: { line: 68, column: 1, offset: 2490 },
-            end: { line: 68, column: 40, offset: 2529 }
+            start: { line: 68, column: 1, offset: 2244 },
+            end: { line: 68, column: 40, offset: 2283 }
           }
         },
         {
           type: 'text',
-          value: '. Any Rubico method should support data types beyond arrays such as async iterables, strings, sets, maps, binary arrays, and object values.',
+          value: '. All Rubico methods support data types beyond arrays where sensible, including generators, async generators, strings, sets, maps, binary data, and plain objects.',
           position: {
-            start: { line: 68, column: 40, offset: 2529 },
-            end: { line: 68, column: 179, offset: 2668 }
+            start: { line: 68, column: 40, offset: 2283 },
+            end: { line: 68, column: 202, offset: 2445 }
           }
         }
       ],
       position: {
-        start: { line: 68, column: 1, offset: 2490 },
-        end: { line: 68, column: 179, offset: 2668 }
+        start: { line: 68, column: 1, offset: 2244 },
+        end: { line: 68, column: 202, offset: 2445 }
       }
     },
     {
@@ -732,8 +697,164 @@ export default {
         '// { a: 1, b: 4, c: 9, d: 16, e: 25 }\n' +
         "// Map { 'a' => 1, 'b' => 4, 'c' => 9, 'd' => 16, 'e' => 25 }",
       position: {
-        start: { line: 70, column: 1, offset: 2670 },
-        end: { line: 92, column: 4, offset: 3203 }
+        start: { line: 70, column: 1, offset: 2447 },
+        end: { line: 92, column: 4, offset: 2980 }
+      }
+    },
+    {
+      type: 'paragraph',
+      children: [
+        {
+          type: 'text',
+          value: 'In the above example, the Rubico operator ',
+          position: {
+            start: { line: 94, column: 1, offset: 2982 },
+            end: { line: 94, column: 43, offset: 3024 }
+          }
+        },
+        {
+          type: 'inlineCode',
+          value: 'map',
+          position: {
+            start: { line: 94, column: 43, offset: 3024 },
+            end: { line: 94, column: 48, offset: 3029 }
+          }
+        },
+        {
+          type: 'text',
+          value: ' acts on a multitude of ',
+          position: {
+            start: { line: 94, column: 48, offset: 3029 },
+            end: { line: 94, column: 72, offset: 3053 }
+          }
+        },
+        {
+          type: 'link',
+          title: null,
+          url: '/blog/a-synchronous-functional-programming-data-types#functor',
+          children: [
+            {
+              type: 'text',
+              value: 'functor',
+              position: {
+                start: { line: 94, column: 73, offset: 3054 },
+                end: { line: 94, column: 80, offset: 3061 }
+              }
+            }
+          ],
+          position: {
+            start: { line: 94, column: 72, offset: 3053 },
+            end: { line: 94, column: 144, offset: 3125 }
+          }
+        },
+        {
+          type: 'text',
+          value: ' data types, including an array ',
+          position: {
+            start: { line: 94, column: 144, offset: 3125 },
+            end: { line: 94, column: 176, offset: 3157 }
+          }
+        },
+        {
+          type: 'inlineCode',
+          value: '[1, 2, 3, 4, 5]',
+          position: {
+            start: { line: 94, column: 176, offset: 3157 },
+            end: { line: 94, column: 193, offset: 3174 }
+          }
+        },
+        {
+          type: 'text',
+          value: ', a string ',
+          position: {
+            start: { line: 94, column: 193, offset: 3174 },
+            end: { line: 94, column: 204, offset: 3185 }
+          }
+        },
+        {
+          type: 'inlineCode',
+          value: "'12345'",
+          position: {
+            start: { line: 94, column: 204, offset: 3185 },
+            end: { line: 94, column: 213, offset: 3194 }
+          }
+        },
+        {
+          type: 'text',
+          value: ', a set ',
+          position: {
+            start: { line: 94, column: 213, offset: 3194 },
+            end: { line: 94, column: 221, offset: 3202 }
+          }
+        },
+        {
+          type: 'inlineCode',
+          value: 'new Set([1, 2, 3, 4, 5])',
+          position: {
+            start: { line: 94, column: 221, offset: 3202 },
+            end: { line: 94, column: 247, offset: 3228 }
+          }
+        },
+        {
+          type: 'text',
+          value: ', binary ',
+          position: {
+            start: { line: 94, column: 247, offset: 3228 },
+            end: { line: 94, column: 256, offset: 3237 }
+          }
+        },
+        {
+          type: 'inlineCode',
+          value: 'new Uint8Array([1, 2, 3, 4, 5])',
+          position: {
+            start: { line: 94, column: 256, offset: 3237 },
+            end: { line: 94, column: 289, offset: 3270 }
+          }
+        },
+        {
+          type: 'text',
+          value: ', a plain object ',
+          position: {
+            start: { line: 94, column: 289, offset: 3270 },
+            end: { line: 94, column: 306, offset: 3287 }
+          }
+        },
+        {
+          type: 'inlineCode',
+          value: '{ a: 1, b: 2, c: 3, d: 4, e: 5 }',
+          position: {
+            start: { line: 94, column: 306, offset: 3287 },
+            end: { line: 94, column: 340, offset: 3321 }
+          }
+        },
+        {
+          type: 'text',
+          value: ', and a map ',
+          position: {
+            start: { line: 94, column: 340, offset: 3321 },
+            end: { line: 94, column: 352, offset: 3333 }
+          }
+        },
+        {
+          type: 'inlineCode',
+          value: "new Map([['a', 1], ['b', 2], ['c', 3], ['d', 4], ['e', 5]])",
+          position: {
+            start: { line: 94, column: 352, offset: 3333 },
+            end: { line: 94, column: 413, offset: 3394 }
+          }
+        },
+        {
+          type: 'text',
+          value: '.',
+          position: {
+            start: { line: 94, column: 413, offset: 3394 },
+            end: { line: 94, column: 414, offset: 3395 }
+          }
+        }
+      ],
+      position: {
+        start: { line: 94, column: 1, offset: 2982 },
+        end: { line: 94, column: 414, offset: 3395 }
       }
     },
     {
@@ -744,14 +865,14 @@ export default {
           type: 'text',
           value: 'Control Flow',
           position: {
-            start: { line: 94, column: 3, offset: 3207 },
-            end: { line: 94, column: 15, offset: 3219 }
+            start: { line: 96, column: 3, offset: 3399 },
+            end: { line: 96, column: 15, offset: 3411 }
           }
         }
       ],
       position: {
-        start: { line: 94, column: 1, offset: 3205 },
-        end: { line: 94, column: 15, offset: 3219 }
+        start: { line: 96, column: 1, offset: 3397 },
+        end: { line: 96, column: 15, offset: 3411 }
       }
     },
     {
@@ -764,28 +885,28 @@ export default {
               type: 'text',
               value: 'Create declarative, SQL-esque logical expressions',
               position: {
-                start: { line: 95, column: 3, offset: 3222 },
-                end: { line: 95, column: 52, offset: 3271 }
+                start: { line: 97, column: 3, offset: 3414 },
+                end: { line: 97, column: 52, offset: 3463 }
               }
             }
           ],
           position: {
-            start: { line: 95, column: 1, offset: 3220 },
-            end: { line: 95, column: 54, offset: 3273 }
+            start: { line: 97, column: 1, offset: 3412 },
+            end: { line: 97, column: 54, offset: 3465 }
           }
         },
         {
           type: 'text',
-          value: " by composing predicates with Rubico's logical operators. Below depicts vanilla JavaScript operators and their Rubico analogs.",
+          value: ". Compose predicate functions with Rubico's logical operators. Below depicts vanilla JavaScript operators and their Rubico analogs.",
           position: {
-            start: { line: 95, column: 54, offset: 3273 },
-            end: { line: 95, column: 180, offset: 3399 }
+            start: { line: 97, column: 54, offset: 3465 },
+            end: { line: 97, column: 185, offset: 3596 }
           }
         }
       ],
       position: {
-        start: { line: 95, column: 1, offset: 3220 },
-        end: { line: 95, column: 180, offset: 3399 }
+        start: { line: 97, column: 1, offset: 3412 },
+        end: { line: 97, column: 185, offset: 3596 }
       }
     },
     {
@@ -806,44 +927,44 @@ export default {
                   type: 'text',
                   value: 'Conditional (Ternary), ',
                   position: {
-                    start: { line: 97, column: 3, offset: 3403 },
-                    end: { line: 97, column: 26, offset: 3426 }
+                    start: { line: 99, column: 3, offset: 3600 },
+                    end: { line: 99, column: 26, offset: 3623 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: 'a ? b : c',
                   position: {
-                    start: { line: 97, column: 26, offset: 3426 },
-                    end: { line: 97, column: 37, offset: 3437 }
+                    start: { line: 99, column: 26, offset: 3623 },
+                    end: { line: 99, column: 37, offset: 3634 }
                   }
                 },
                 {
                   type: 'text',
                   value: ' → ',
                   position: {
-                    start: { line: 97, column: 37, offset: 3437 },
-                    end: { line: 97, column: 40, offset: 3440 }
+                    start: { line: 99, column: 37, offset: 3634 },
+                    end: { line: 99, column: 40, offset: 3637 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: 'switchCase([f, g, h])',
                   position: {
-                    start: { line: 97, column: 40, offset: 3440 },
-                    end: { line: 97, column: 63, offset: 3463 }
+                    start: { line: 99, column: 40, offset: 3637 },
+                    end: { line: 99, column: 63, offset: 3660 }
                   }
                 }
               ],
               position: {
-                start: { line: 97, column: 3, offset: 3403 },
-                end: { line: 97, column: 63, offset: 3463 }
+                start: { line: 99, column: 3, offset: 3600 },
+                end: { line: 99, column: 63, offset: 3660 }
               }
             }
           ],
           position: {
-            start: { line: 97, column: 1, offset: 3401 },
-            end: { line: 97, column: 63, offset: 3463 }
+            start: { line: 99, column: 1, offset: 3598 },
+            end: { line: 99, column: 63, offset: 3660 }
           }
         },
         {
@@ -858,44 +979,44 @@ export default {
                   type: 'text',
                   value: 'Logical And, ',
                   position: {
-                    start: { line: 98, column: 3, offset: 3466 },
-                    end: { line: 98, column: 16, offset: 3479 }
+                    start: { line: 100, column: 3, offset: 3663 },
+                    end: { line: 100, column: 16, offset: 3676 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: 'a && b',
                   position: {
-                    start: { line: 98, column: 16, offset: 3479 },
-                    end: { line: 98, column: 24, offset: 3487 }
+                    start: { line: 100, column: 16, offset: 3676 },
+                    end: { line: 100, column: 24, offset: 3684 }
                   }
                 },
                 {
                   type: 'text',
                   value: ' → ',
                   position: {
-                    start: { line: 98, column: 24, offset: 3487 },
-                    end: { line: 98, column: 27, offset: 3490 }
+                    start: { line: 100, column: 24, offset: 3684 },
+                    end: { line: 100, column: 27, offset: 3687 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: 'and([f, g])',
                   position: {
-                    start: { line: 98, column: 27, offset: 3490 },
-                    end: { line: 98, column: 40, offset: 3503 }
+                    start: { line: 100, column: 27, offset: 3687 },
+                    end: { line: 100, column: 40, offset: 3700 }
                   }
                 }
               ],
               position: {
-                start: { line: 98, column: 3, offset: 3466 },
-                end: { line: 98, column: 40, offset: 3503 }
+                start: { line: 100, column: 3, offset: 3663 },
+                end: { line: 100, column: 40, offset: 3700 }
               }
             }
           ],
           position: {
-            start: { line: 98, column: 1, offset: 3464 },
-            end: { line: 98, column: 40, offset: 3503 }
+            start: { line: 100, column: 1, offset: 3661 },
+            end: { line: 100, column: 40, offset: 3700 }
           }
         },
         {
@@ -910,44 +1031,44 @@ export default {
                   type: 'text',
                   value: 'Logical Or, ',
                   position: {
-                    start: { line: 99, column: 3, offset: 3506 },
-                    end: { line: 99, column: 15, offset: 3518 }
+                    start: { line: 101, column: 3, offset: 3703 },
+                    end: { line: 101, column: 15, offset: 3715 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: 'a || b',
                   position: {
-                    start: { line: 99, column: 15, offset: 3518 },
-                    end: { line: 99, column: 23, offset: 3526 }
+                    start: { line: 101, column: 15, offset: 3715 },
+                    end: { line: 101, column: 23, offset: 3723 }
                   }
                 },
                 {
                   type: 'text',
                   value: ' → ',
                   position: {
-                    start: { line: 99, column: 23, offset: 3526 },
-                    end: { line: 99, column: 26, offset: 3529 }
+                    start: { line: 101, column: 23, offset: 3723 },
+                    end: { line: 101, column: 26, offset: 3726 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: 'or([f, g])',
                   position: {
-                    start: { line: 99, column: 26, offset: 3529 },
-                    end: { line: 99, column: 38, offset: 3541 }
+                    start: { line: 101, column: 26, offset: 3726 },
+                    end: { line: 101, column: 38, offset: 3738 }
                   }
                 }
               ],
               position: {
-                start: { line: 99, column: 3, offset: 3506 },
-                end: { line: 99, column: 38, offset: 3541 }
+                start: { line: 101, column: 3, offset: 3703 },
+                end: { line: 101, column: 38, offset: 3738 }
               }
             }
           ],
           position: {
-            start: { line: 99, column: 1, offset: 3504 },
-            end: { line: 99, column: 38, offset: 3541 }
+            start: { line: 101, column: 1, offset: 3701 },
+            end: { line: 101, column: 38, offset: 3738 }
           }
         },
         {
@@ -962,44 +1083,44 @@ export default {
                   type: 'text',
                   value: 'Logical Not, ',
                   position: {
-                    start: { line: 100, column: 3, offset: 3544 },
-                    end: { line: 100, column: 16, offset: 3557 }
+                    start: { line: 102, column: 3, offset: 3741 },
+                    end: { line: 102, column: 16, offset: 3754 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: '!a',
                   position: {
-                    start: { line: 100, column: 16, offset: 3557 },
-                    end: { line: 100, column: 20, offset: 3561 }
+                    start: { line: 102, column: 16, offset: 3754 },
+                    end: { line: 102, column: 20, offset: 3758 }
                   }
                 },
                 {
                   type: 'text',
                   value: ' → ',
                   position: {
-                    start: { line: 100, column: 20, offset: 3561 },
-                    end: { line: 100, column: 23, offset: 3564 }
+                    start: { line: 102, column: 20, offset: 3758 },
+                    end: { line: 102, column: 23, offset: 3761 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: 'not(f)',
                   position: {
-                    start: { line: 100, column: 23, offset: 3564 },
-                    end: { line: 100, column: 31, offset: 3572 }
+                    start: { line: 102, column: 23, offset: 3761 },
+                    end: { line: 102, column: 31, offset: 3769 }
                   }
                 }
               ],
               position: {
-                start: { line: 100, column: 3, offset: 3544 },
-                end: { line: 100, column: 31, offset: 3572 }
+                start: { line: 102, column: 3, offset: 3741 },
+                end: { line: 102, column: 31, offset: 3769 }
               }
             }
           ],
           position: {
-            start: { line: 100, column: 1, offset: 3542 },
-            end: { line: 100, column: 31, offset: 3572 }
+            start: { line: 102, column: 1, offset: 3739 },
+            end: { line: 102, column: 31, offset: 3769 }
           }
         },
         {
@@ -1014,44 +1135,44 @@ export default {
                   type: 'text',
                   value: 'Identity, ',
                   position: {
-                    start: { line: 101, column: 3, offset: 3575 },
-                    end: { line: 101, column: 13, offset: 3585 }
+                    start: { line: 103, column: 3, offset: 3772 },
+                    end: { line: 103, column: 13, offset: 3782 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: 'a === b',
                   position: {
-                    start: { line: 101, column: 13, offset: 3585 },
-                    end: { line: 101, column: 22, offset: 3594 }
+                    start: { line: 103, column: 13, offset: 3782 },
+                    end: { line: 103, column: 22, offset: 3791 }
                   }
                 },
                 {
                   type: 'text',
                   value: ' → ',
                   position: {
-                    start: { line: 101, column: 22, offset: 3594 },
-                    end: { line: 101, column: 25, offset: 3597 }
+                    start: { line: 103, column: 22, offset: 3791 },
+                    end: { line: 103, column: 25, offset: 3794 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: 'eq(f, g)',
                   position: {
-                    start: { line: 101, column: 25, offset: 3597 },
-                    end: { line: 101, column: 35, offset: 3607 }
+                    start: { line: 103, column: 25, offset: 3794 },
+                    end: { line: 103, column: 35, offset: 3804 }
                   }
                 }
               ],
               position: {
-                start: { line: 101, column: 3, offset: 3575 },
-                end: { line: 101, column: 35, offset: 3607 }
+                start: { line: 103, column: 3, offset: 3772 },
+                end: { line: 103, column: 35, offset: 3804 }
               }
             }
           ],
           position: {
-            start: { line: 101, column: 1, offset: 3573 },
-            end: { line: 101, column: 35, offset: 3607 }
+            start: { line: 103, column: 1, offset: 3770 },
+            end: { line: 103, column: 35, offset: 3804 }
           }
         },
         {
@@ -1066,44 +1187,44 @@ export default {
                   type: 'text',
                   value: 'Greater Than, ',
                   position: {
-                    start: { line: 102, column: 3, offset: 3610 },
-                    end: { line: 102, column: 17, offset: 3624 }
+                    start: { line: 104, column: 3, offset: 3807 },
+                    end: { line: 104, column: 17, offset: 3821 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: 'a > b',
                   position: {
-                    start: { line: 102, column: 17, offset: 3624 },
-                    end: { line: 102, column: 24, offset: 3631 }
+                    start: { line: 104, column: 17, offset: 3821 },
+                    end: { line: 104, column: 24, offset: 3828 }
                   }
                 },
                 {
                   type: 'text',
                   value: ' → ',
                   position: {
-                    start: { line: 102, column: 24, offset: 3631 },
-                    end: { line: 102, column: 27, offset: 3634 }
+                    start: { line: 104, column: 24, offset: 3828 },
+                    end: { line: 104, column: 27, offset: 3831 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: 'gt(f, g)',
                   position: {
-                    start: { line: 102, column: 27, offset: 3634 },
-                    end: { line: 102, column: 37, offset: 3644 }
+                    start: { line: 104, column: 27, offset: 3831 },
+                    end: { line: 104, column: 37, offset: 3841 }
                   }
                 }
               ],
               position: {
-                start: { line: 102, column: 3, offset: 3610 },
-                end: { line: 102, column: 37, offset: 3644 }
+                start: { line: 104, column: 3, offset: 3807 },
+                end: { line: 104, column: 37, offset: 3841 }
               }
             }
           ],
           position: {
-            start: { line: 102, column: 1, offset: 3608 },
-            end: { line: 102, column: 37, offset: 3644 }
+            start: { line: 104, column: 1, offset: 3805 },
+            end: { line: 104, column: 37, offset: 3841 }
           }
         },
         {
@@ -1118,44 +1239,44 @@ export default {
                   type: 'text',
                   value: 'Less Than, ',
                   position: {
-                    start: { line: 103, column: 3, offset: 3647 },
-                    end: { line: 103, column: 14, offset: 3658 }
+                    start: { line: 105, column: 3, offset: 3844 },
+                    end: { line: 105, column: 14, offset: 3855 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: 'a < b',
                   position: {
-                    start: { line: 103, column: 14, offset: 3658 },
-                    end: { line: 103, column: 21, offset: 3665 }
+                    start: { line: 105, column: 14, offset: 3855 },
+                    end: { line: 105, column: 21, offset: 3862 }
                   }
                 },
                 {
                   type: 'text',
                   value: ' → ',
                   position: {
-                    start: { line: 103, column: 21, offset: 3665 },
-                    end: { line: 103, column: 24, offset: 3668 }
+                    start: { line: 105, column: 21, offset: 3862 },
+                    end: { line: 105, column: 24, offset: 3865 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: 'lt(f, g)',
                   position: {
-                    start: { line: 103, column: 24, offset: 3668 },
-                    end: { line: 103, column: 34, offset: 3678 }
+                    start: { line: 105, column: 24, offset: 3865 },
+                    end: { line: 105, column: 34, offset: 3875 }
                   }
                 }
               ],
               position: {
-                start: { line: 103, column: 3, offset: 3647 },
-                end: { line: 103, column: 34, offset: 3678 }
+                start: { line: 105, column: 3, offset: 3844 },
+                end: { line: 105, column: 34, offset: 3875 }
               }
             }
           ],
           position: {
-            start: { line: 103, column: 1, offset: 3645 },
-            end: { line: 103, column: 34, offset: 3678 }
+            start: { line: 105, column: 1, offset: 3842 },
+            end: { line: 105, column: 34, offset: 3875 }
           }
         },
         {
@@ -1170,44 +1291,44 @@ export default {
                   type: 'text',
                   value: 'Greater Than or Equal, ',
                   position: {
-                    start: { line: 104, column: 3, offset: 3681 },
-                    end: { line: 104, column: 26, offset: 3704 }
+                    start: { line: 106, column: 3, offset: 3878 },
+                    end: { line: 106, column: 26, offset: 3901 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: 'a >= b',
                   position: {
-                    start: { line: 104, column: 26, offset: 3704 },
-                    end: { line: 104, column: 34, offset: 3712 }
+                    start: { line: 106, column: 26, offset: 3901 },
+                    end: { line: 106, column: 34, offset: 3909 }
                   }
                 },
                 {
                   type: 'text',
                   value: ' → ',
                   position: {
-                    start: { line: 104, column: 34, offset: 3712 },
-                    end: { line: 104, column: 37, offset: 3715 }
+                    start: { line: 106, column: 34, offset: 3909 },
+                    end: { line: 106, column: 37, offset: 3912 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: 'gte(f, g)',
                   position: {
-                    start: { line: 104, column: 37, offset: 3715 },
-                    end: { line: 104, column: 48, offset: 3726 }
+                    start: { line: 106, column: 37, offset: 3912 },
+                    end: { line: 106, column: 48, offset: 3923 }
                   }
                 }
               ],
               position: {
-                start: { line: 104, column: 3, offset: 3681 },
-                end: { line: 104, column: 48, offset: 3726 }
+                start: { line: 106, column: 3, offset: 3878 },
+                end: { line: 106, column: 48, offset: 3923 }
               }
             }
           ],
           position: {
-            start: { line: 104, column: 1, offset: 3679 },
-            end: { line: 104, column: 48, offset: 3726 }
+            start: { line: 106, column: 1, offset: 3876 },
+            end: { line: 106, column: 48, offset: 3923 }
           }
         },
         {
@@ -1222,50 +1343,50 @@ export default {
                   type: 'text',
                   value: 'Less Than or Equal, ',
                   position: {
-                    start: { line: 105, column: 3, offset: 3729 },
-                    end: { line: 105, column: 23, offset: 3749 }
+                    start: { line: 107, column: 3, offset: 3926 },
+                    end: { line: 107, column: 23, offset: 3946 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: 'a <= b',
                   position: {
-                    start: { line: 105, column: 23, offset: 3749 },
-                    end: { line: 105, column: 31, offset: 3757 }
+                    start: { line: 107, column: 23, offset: 3946 },
+                    end: { line: 107, column: 31, offset: 3954 }
                   }
                 },
                 {
                   type: 'text',
                   value: ' → ',
                   position: {
-                    start: { line: 105, column: 31, offset: 3757 },
-                    end: { line: 105, column: 34, offset: 3760 }
+                    start: { line: 107, column: 31, offset: 3954 },
+                    end: { line: 107, column: 34, offset: 3957 }
                   }
                 },
                 {
                   type: 'inlineCode',
                   value: 'lte(f, g)',
                   position: {
-                    start: { line: 105, column: 34, offset: 3760 },
-                    end: { line: 105, column: 45, offset: 3771 }
+                    start: { line: 107, column: 34, offset: 3957 },
+                    end: { line: 107, column: 45, offset: 3968 }
                   }
                 }
               ],
               position: {
-                start: { line: 105, column: 3, offset: 3729 },
-                end: { line: 105, column: 45, offset: 3771 }
+                start: { line: 107, column: 3, offset: 3926 },
+                end: { line: 107, column: 45, offset: 3968 }
               }
             }
           ],
           position: {
-            start: { line: 105, column: 1, offset: 3727 },
-            end: { line: 105, column: 45, offset: 3771 }
+            start: { line: 107, column: 1, offset: 3924 },
+            end: { line: 107, column: 45, offset: 3968 }
           }
         }
       ],
       position: {
-        start: { line: 97, column: 1, offset: 3401 },
-        end: { line: 105, column: 45, offset: 3771 }
+        start: { line: 99, column: 1, offset: 3598 },
+        end: { line: 107, column: 45, offset: 3968 }
       }
     },
     {
@@ -1296,8 +1417,73 @@ export default {
         "cli(['--version']) // v0.0.0\n" +
         "cli(['???']) // USAGE: ...",
       position: {
-        start: { line: 107, column: 1, offset: 3773 },
-        end: { line: 131, column: 4, offset: 4194 }
+        start: { line: 109, column: 1, offset: 3970 },
+        end: { line: 133, column: 4, offset: 4391 }
+      }
+    },
+    {
+      type: 'paragraph',
+      children: [
+        {
+          type: 'text',
+          value: 'The above example shows a declarative ',
+          position: {
+            start: { line: 135, column: 1, offset: 4393 },
+            end: { line: 135, column: 39, offset: 4431 }
+          }
+        },
+        {
+          type: 'inlineCode',
+          value: 'cli',
+          position: {
+            start: { line: 135, column: 39, offset: 4431 },
+            end: { line: 135, column: 44, offset: 4436 }
+          }
+        },
+        {
+          type: 'text',
+          value: ' using the Rubico ',
+          position: {
+            start: { line: 135, column: 44, offset: 4436 },
+            end: { line: 135, column: 62, offset: 4454 }
+          }
+        },
+        {
+          type: 'inlineCode',
+          value: 'switchCase',
+          position: {
+            start: { line: 135, column: 62, offset: 4454 },
+            end: { line: 135, column: 74, offset: 4466 }
+          }
+        },
+        {
+          type: 'text',
+          value: ' and ',
+          position: {
+            start: { line: 135, column: 74, offset: 4466 },
+            end: { line: 135, column: 79, offset: 4471 }
+          }
+        },
+        {
+          type: 'inlineCode',
+          value: 'or',
+          position: {
+            start: { line: 135, column: 79, offset: 4471 },
+            end: { line: 135, column: 83, offset: 4475 }
+          }
+        },
+        {
+          type: 'text',
+          value: ' operators.',
+          position: {
+            start: { line: 135, column: 83, offset: 4475 },
+            end: { line: 135, column: 94, offset: 4486 }
+          }
+        }
+      ],
+      position: {
+        start: { line: 135, column: 1, offset: 4393 },
+        end: { line: 135, column: 94, offset: 4486 }
       }
     },
     {
@@ -1308,14 +1494,14 @@ export default {
           type: 'text',
           value: 'Error Handling',
           position: {
-            start: { line: 133, column: 3, offset: 4198 },
-            end: { line: 133, column: 17, offset: 4212 }
+            start: { line: 137, column: 3, offset: 4490 },
+            end: { line: 137, column: 17, offset: 4504 }
           }
         }
       ],
       position: {
-        start: { line: 133, column: 1, offset: 4196 },
-        end: { line: 133, column: 17, offset: 4212 }
+        start: { line: 137, column: 1, offset: 4488 },
+        end: { line: 137, column: 17, offset: 4504 }
       }
     },
     {
@@ -1326,62 +1512,62 @@ export default {
           children: [
             {
               type: 'text',
-              value: 'Confidently throw errors',
+              value: 'Confidently throw and catch errors',
               position: {
-                start: { line: 134, column: 3, offset: 4215 },
-                end: { line: 134, column: 27, offset: 4239 }
+                start: { line: 138, column: 3, offset: 4507 },
+                end: { line: 138, column: 37, offset: 4541 }
               }
             }
           ],
           position: {
-            start: { line: 134, column: 1, offset: 4213 },
-            end: { line: 134, column: 29, offset: 4241 }
+            start: { line: 138, column: 1, offset: 4505 },
+            end: { line: 138, column: 39, offset: 4543 }
           }
         },
         {
           type: 'text',
           value: ". Rubico's ",
           position: {
-            start: { line: 134, column: 29, offset: 4241 },
-            end: { line: 134, column: 40, offset: 4252 }
+            start: { line: 138, column: 39, offset: 4543 },
+            end: { line: 138, column: 50, offset: 4554 }
           }
         },
         {
           type: 'inlineCode',
           value: 'tryCatch',
           position: {
-            start: { line: 134, column: 40, offset: 4252 },
-            end: { line: 134, column: 50, offset: 4262 }
+            start: { line: 138, column: 50, offset: 4554 },
+            end: { line: 138, column: 60, offset: 4564 }
           }
         },
         {
           type: 'text',
-          value: ' catches both errors and rejected Promises. Wrap your application pipeline in a ',
+          value: ' operator catches both thrown errors and rejected Promises. Wrap your application pipeline in a Rubico ',
           position: {
-            start: { line: 134, column: 50, offset: 4262 },
-            end: { line: 134, column: 130, offset: 4342 }
+            start: { line: 138, column: 60, offset: 4564 },
+            end: { line: 138, column: 163, offset: 4667 }
           }
         },
         {
           type: 'inlineCode',
           value: 'tryCatch',
           position: {
-            start: { line: 134, column: 130, offset: 4342 },
-            end: { line: 134, column: 140, offset: 4352 }
+            start: { line: 138, column: 163, offset: 4667 },
+            end: { line: 138, column: 173, offset: 4677 }
           }
         },
         {
           type: 'text',
-          value: ' and never worry about uncaught errors or unhandled promise rejections again.',
+          value: ' operator and never worry about uncaught errors or unhandled promise rejections again.',
           position: {
-            start: { line: 134, column: 140, offset: 4352 },
-            end: { line: 134, column: 217, offset: 4429 }
+            start: { line: 138, column: 173, offset: 4677 },
+            end: { line: 138, column: 259, offset: 4763 }
           }
         }
       ],
       position: {
-        start: { line: 134, column: 1, offset: 4213 },
-        end: { line: 134, column: 217, offset: 4429 }
+        start: { line: 138, column: 1, offset: 4505 },
+        end: { line: 138, column: 259, offset: 4763 }
       }
     },
     {
@@ -1403,8 +1589,121 @@ export default {
         '\n' +
         'myApp({ userId: 1 }) // validated user 1',
       position: {
-        start: { line: 136, column: 1, offset: 4431 },
-        end: { line: 151, column: 4, offset: 4819 }
+        start: { line: 140, column: 1, offset: 4765 },
+        end: { line: 155, column: 4, offset: 5153 }
+      }
+    },
+    {
+      type: 'paragraph',
+      children: [
+        {
+          type: 'text',
+          value: 'The example above depicts a Rubico ',
+          position: {
+            start: { line: 157, column: 1, offset: 5155 },
+            end: { line: 157, column: 36, offset: 5190 }
+          }
+        },
+        {
+          type: 'inlineCode',
+          value: 'tryCatch',
+          position: {
+            start: { line: 157, column: 36, offset: 5190 },
+            end: { line: 157, column: 46, offset: 5200 }
+          }
+        },
+        {
+          type: 'text',
+          value: ' operator wrapping a pipeline created by a ',
+          position: {
+            start: { line: 157, column: 46, offset: 5200 },
+            end: { line: 157, column: 89, offset: 5243 }
+          }
+        },
+        {
+          type: 'inlineCode',
+          value: 'pipe',
+          position: {
+            start: { line: 157, column: 89, offset: 5243 },
+            end: { line: 157, column: 95, offset: 5249 }
+          }
+        },
+        {
+          type: 'text',
+          value: ' operator. The catcher function ',
+          position: {
+            start: { line: 157, column: 95, offset: 5249 },
+            end: { line: 157, column: 127, offset: 5281 }
+          }
+        },
+        {
+          type: 'inlineCode',
+          value: 'errorHandler',
+          position: {
+            start: { line: 157, column: 127, offset: 5281 },
+            end: { line: 157, column: 141, offset: 5295 }
+          }
+        },
+        {
+          type: 'text',
+          value: ' catches the error thrown by the function ',
+          position: {
+            start: { line: 157, column: 141, offset: 5295 },
+            end: { line: 157, column: 183, offset: 5337 }
+          }
+        },
+        {
+          type: 'inlineCode',
+          value: 'validate',
+          position: {
+            start: { line: 157, column: 183, offset: 5337 },
+            end: { line: 157, column: 193, offset: 5347 }
+          }
+        },
+        {
+          type: 'text',
+          value: ' when the ',
+          position: {
+            start: { line: 157, column: 193, offset: 5347 },
+            end: { line: 157, column: 203, offset: 5357 }
+          }
+        },
+        {
+          type: 'inlineCode',
+          value: 'userId',
+          position: {
+            start: { line: 157, column: 203, offset: 5357 },
+            end: { line: 157, column: 211, offset: 5365 }
+          }
+        },
+        {
+          type: 'text',
+          value: ' of ',
+          position: {
+            start: { line: 157, column: 211, offset: 5365 },
+            end: { line: 157, column: 215, offset: 5369 }
+          }
+        },
+        {
+          type: 'inlineCode',
+          value: 'data',
+          position: {
+            start: { line: 157, column: 215, offset: 5369 },
+            end: { line: 157, column: 221, offset: 5375 }
+          }
+        },
+        {
+          type: 'text',
+          value: ' is undefined.',
+          position: {
+            start: { line: 157, column: 221, offset: 5375 },
+            end: { line: 157, column: 235, offset: 5389 }
+          }
+        }
+      ],
+      position: {
+        start: { line: 157, column: 1, offset: 5155 },
+        end: { line: 157, column: 235, offset: 5389 }
       }
     },
     {
@@ -1415,14 +1714,14 @@ export default {
           type: 'text',
           value: 'Transducers',
           position: {
-            start: { line: 153, column: 3, offset: 4823 },
-            end: { line: 153, column: 14, offset: 4834 }
+            start: { line: 159, column: 3, offset: 5393 },
+            end: { line: 159, column: 14, offset: 5404 }
           }
         }
       ],
       position: {
-        start: { line: 153, column: 1, offset: 4821 },
-        end: { line: 153, column: 14, offset: 4834 }
+        start: { line: 159, column: 1, offset: 5391 },
+        end: { line: 159, column: 14, offset: 5404 }
       }
     },
     {
@@ -1435,22 +1734,22 @@ export default {
               type: 'text',
               value: 'Wrangle large or infinite streams of data',
               position: {
-                start: { line: 154, column: 3, offset: 4837 },
-                end: { line: 154, column: 44, offset: 4878 }
+                start: { line: 160, column: 3, offset: 5407 },
+                end: { line: 160, column: 44, offset: 5448 }
               }
             }
           ],
           position: {
-            start: { line: 154, column: 1, offset: 4835 },
-            end: { line: 154, column: 46, offset: 4880 }
+            start: { line: 160, column: 1, offset: 5405 },
+            end: { line: 160, column: 46, offset: 5450 }
           }
         },
         {
           type: 'text',
           value: ". Easily express complex transformations in a memory efficient way with Rubico's transducer functionality built into its data transformation functions. Read more on Rubico's transducers ",
           position: {
-            start: { line: 154, column: 46, offset: 4880 },
-            end: { line: 154, column: 232, offset: 5066 }
+            start: { line: 160, column: 46, offset: 5450 },
+            end: { line: 160, column: 232, offset: 5636 }
           }
         },
         {
@@ -1462,28 +1761,28 @@ export default {
               type: 'text',
               value: 'here',
               position: {
-                start: { line: 154, column: 233, offset: 5067 },
-                end: { line: 154, column: 237, offset: 5071 }
+                start: { line: 160, column: 233, offset: 5637 },
+                end: { line: 160, column: 237, offset: 5641 }
               }
             }
           ],
           position: {
-            start: { line: 154, column: 232, offset: 5066 },
-            end: { line: 154, column: 273, offset: 5107 }
+            start: { line: 160, column: 232, offset: 5636 },
+            end: { line: 160, column: 273, offset: 5677 }
           }
         },
         {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 154, column: 273, offset: 5107 },
-            end: { line: 154, column: 274, offset: 5108 }
+            start: { line: 160, column: 273, offset: 5677 },
+            end: { line: 160, column: 274, offset: 5678 }
           }
         }
       ],
       position: {
-        start: { line: 154, column: 1, offset: 4835 },
-        end: { line: 154, column: 274, offset: 5108 }
+        start: { line: 160, column: 1, offset: 5405 },
+        end: { line: 160, column: 274, offset: 5678 }
       }
     },
     {
@@ -1516,8 +1815,73 @@ export default {
         '\n' +
         'console.log(notes) // CCGGAAGFFEEDDCGGFFEEDGGFFEEDCCGGAAGFFEEDDC',
       position: {
-        start: { line: 156, column: 1, offset: 5110 },
-        end: { line: 182, column: 4, offset: 5787 }
+        start: { line: 162, column: 1, offset: 5680 },
+        end: { line: 188, column: 4, offset: 6357 }
+      }
+    },
+    {
+      type: 'paragraph',
+      children: [
+        {
+          type: 'text',
+          value: 'Above we see a complex transformation made simple by the Rubico ',
+          position: {
+            start: { line: 190, column: 1, offset: 6359 },
+            end: { line: 190, column: 65, offset: 6423 }
+          }
+        },
+        {
+          type: 'inlineCode',
+          value: 'transform',
+          position: {
+            start: { line: 190, column: 65, offset: 6423 },
+            end: { line: 190, column: 76, offset: 6434 }
+          }
+        },
+        {
+          type: 'text',
+          value: ' operator. The operator transforms the generator of decimal segments created by ',
+          position: {
+            start: { line: 190, column: 76, offset: 6434 },
+            end: { line: 190, column: 156, offset: 6514 }
+          }
+        },
+        {
+          type: 'inlineCode',
+          value: 'generateSegments',
+          position: {
+            start: { line: 190, column: 156, offset: 6514 },
+            end: { line: 190, column: 174, offset: 6532 }
+          }
+        },
+        {
+          type: 'text',
+          value: ' into the string ',
+          position: {
+            start: { line: 190, column: 174, offset: 6532 },
+            end: { line: 190, column: 191, offset: 6549 }
+          }
+        },
+        {
+          type: 'inlineCode',
+          value: 'notes',
+          position: {
+            start: { line: 190, column: 191, offset: 6549 },
+            end: { line: 190, column: 198, offset: 6556 }
+          }
+        },
+        {
+          type: 'text',
+          value: '.',
+          position: {
+            start: { line: 190, column: 198, offset: 6556 },
+            end: { line: 190, column: 199, offset: 6557 }
+          }
+        }
+      ],
+      position: {
+        start: { line: 190, column: 1, offset: 6359 },
+        end: { line: 190, column: 199, offset: 6557 }
       }
     },
     {
@@ -1527,8 +1891,8 @@ export default {
           type: 'text',
           value: "You've arrived at the end of the tour. From here, you could get started with Rubico in a project (",
           position: {
-            start: { line: 184, column: 1, offset: 5789 },
-            end: { line: 184, column: 99, offset: 5887 }
+            start: { line: 192, column: 1, offset: 6559 },
+            end: { line: 192, column: 99, offset: 6657 }
           }
         },
         {
@@ -1540,22 +1904,22 @@ export default {
               type: 'text',
               value: 'installation',
               position: {
-                start: { line: 184, column: 100, offset: 5888 },
-                end: { line: 184, column: 112, offset: 5900 }
+                start: { line: 192, column: 100, offset: 6658 },
+                end: { line: 192, column: 112, offset: 6670 }
               }
             }
           ],
           position: {
-            start: { line: 184, column: 99, offset: 5887 },
-            end: { line: 184, column: 129, offset: 5917 }
+            start: { line: 192, column: 99, offset: 6657 },
+            end: { line: 192, column: 129, offset: 6687 }
           }
         },
         {
           type: 'text',
           value: ') or read more at the ',
           position: {
-            start: { line: 184, column: 129, offset: 5917 },
-            end: { line: 184, column: 151, offset: 5939 }
+            start: { line: 192, column: 129, offset: 6687 },
+            end: { line: 192, column: 151, offset: 6709 }
           }
         },
         {
@@ -1567,33 +1931,33 @@ export default {
               type: 'text',
               value: 'docs',
               position: {
-                start: { line: 184, column: 152, offset: 5940 },
-                end: { line: 184, column: 156, offset: 5944 }
+                start: { line: 192, column: 152, offset: 6710 },
+                end: { line: 192, column: 156, offset: 6714 }
               }
             }
           ],
           position: {
-            start: { line: 184, column: 151, offset: 5939 },
-            end: { line: 184, column: 164, offset: 5952 }
+            start: { line: 192, column: 151, offset: 6709 },
+            end: { line: 192, column: 164, offset: 6722 }
           }
         },
         {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 184, column: 164, offset: 5952 },
-            end: { line: 184, column: 165, offset: 5953 }
+            start: { line: 192, column: 164, offset: 6722 },
+            end: { line: 192, column: 165, offset: 6723 }
           }
         }
       ],
       position: {
-        start: { line: 184, column: 1, offset: 5789 },
-        end: { line: 184, column: 165, offset: 5953 }
+        start: { line: 192, column: 1, offset: 6559 },
+        end: { line: 192, column: 165, offset: 6723 }
       }
     }
   ],
   position: {
     start: { line: 1, column: 1, offset: 0 },
-    end: { line: 185, column: 1, offset: 5954 }
+    end: { line: 193, column: 1, offset: 6724 }
   }
 }

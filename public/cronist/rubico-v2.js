@@ -59512,7 +59512,7 @@ export default [
     description: 'Append a string or an array.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      "import append from 'https://unpkg.com/rubico/dist/x/append.es.js'\n" +
+      "import append from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/append.es.js'\n" +
       '\n' +
       "const myArray = ['orange', 'apple']\n" +
       '\n' +
@@ -59607,7 +59607,7 @@ export default [
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: "import append from 'https://unpkg.com/rubico/dist/x/append.es.js'\n" +
+            value: "import append from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/append.es.js'\n" +
               '\n' +
               "const myArray = ['orange', 'apple']\n" +
               '\n' +
@@ -59627,7 +59627,7 @@ export default [
               '}',
             position: {
               start: { line: 3, column: 1, offset: 30 },
-              end: { line: 22, column: 4, offset: 458 }
+              end: { line: 22, column: 4, offset: 469 }
             }
           },
           {
@@ -59637,14 +59637,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 24, column: 1, offset: 460 },
-                  end: { line: 24, column: 10, offset: 469 }
+                  start: { line: 24, column: 1, offset: 471 },
+                  end: { line: 24, column: 10, offset: 480 }
                 }
               }
             ],
             position: {
-              start: { line: 24, column: 1, offset: 460 },
-              end: { line: 24, column: 10, offset: 469 }
+              start: { line: 24, column: 1, offset: 471 },
+              end: { line: 24, column: 10, offset: 480 }
             }
           },
           {
@@ -59670,38 +59670,38 @@ export default [
                             type: 'text',
                             value: 'callProp',
                             position: {
-                              start: { line: 25, column: 5, offset: 474 },
-                              end: { line: 25, column: 13, offset: 482 }
+                              start: { line: 25, column: 5, offset: 485 },
+                              end: { line: 25, column: 13, offset: 493 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 25, column: 4, offset: 473 },
-                          end: { line: 25, column: 30, offset: 499 }
+                          start: { line: 25, column: 4, offset: 484 },
+                          end: { line: 25, column: 30, offset: 510 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 25, column: 4, offset: 473 },
-                      end: { line: 25, column: 30, offset: 499 }
+                      start: { line: 25, column: 4, offset: 484 },
+                      end: { line: 25, column: 30, offset: 510 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 25, column: 2, offset: 471 },
-                  end: { line: 25, column: 30, offset: 499 }
+                  start: { line: 25, column: 2, offset: 482 },
+                  end: { line: 25, column: 30, offset: 510 }
                 }
               }
             ],
             position: {
-              start: { line: 25, column: 2, offset: 471 },
-              end: { line: 25, column: 30, offset: 499 }
+              start: { line: 25, column: 2, offset: 482 },
+              end: { line: 25, column: 30, offset: 510 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 25, column: 30, offset: 499 }
+          end: { line: 25, column: 30, offset: 510 }
         }
       },
       since: {
@@ -59741,7 +59741,7 @@ export default [
     description: 'Calls a property on an object with arguments.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      "import callProp from 'https://unpkg.com/rubico/dist/x/callProp.es.js'\n" +
+      "import callProp from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/callProp.es.js'\n" +
       '\n' +
       "const priceRoundedDown = callProp('toFixed', 2)(5.992)\n" +
       "console.log('priceRoundedDown:', priceRoundedDown) // '5.99'\n" +
@@ -59820,13 +59820,13 @@ export default [
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: "import callProp from 'https://unpkg.com/rubico/dist/x/callProp.es.js'\n" +
+            value: "import callProp from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/callProp.es.js'\n" +
               '\n' +
               "const priceRoundedDown = callProp('toFixed', 2)(5.992)\n" +
               "console.log('priceRoundedDown:', priceRoundedDown) // '5.99'",
             position: {
               start: { line: 3, column: 1, offset: 47 },
-              end: { line: 8, column: 4, offset: 264 }
+              end: { line: 8, column: 4, offset: 275 }
             }
           },
           {
@@ -59836,14 +59836,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 10, column: 1, offset: 266 },
-                  end: { line: 10, column: 10, offset: 275 }
+                  start: { line: 10, column: 1, offset: 277 },
+                  end: { line: 10, column: 10, offset: 286 }
                 }
               }
             ],
             position: {
-              start: { line: 10, column: 1, offset: 266 },
-              end: { line: 10, column: 10, offset: 275 }
+              start: { line: 10, column: 1, offset: 277 },
+              end: { line: 10, column: 10, offset: 286 }
             }
           },
           {
@@ -59869,26 +59869,26 @@ export default [
                             type: 'text',
                             value: 'append',
                             position: {
-                              start: { line: 11, column: 5, offset: 280 },
-                              end: { line: 11, column: 11, offset: 286 }
+                              start: { line: 11, column: 5, offset: 291 },
+                              end: { line: 11, column: 11, offset: 297 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 11, column: 4, offset: 279 },
-                          end: { line: 11, column: 26, offset: 301 }
+                          start: { line: 11, column: 4, offset: 290 },
+                          end: { line: 11, column: 26, offset: 312 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 11, column: 4, offset: 279 },
-                      end: { line: 11, column: 26, offset: 301 }
+                      start: { line: 11, column: 4, offset: 290 },
+                      end: { line: 11, column: 26, offset: 312 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 11, column: 2, offset: 277 },
-                  end: { line: 11, column: 26, offset: 301 }
+                  start: { line: 11, column: 2, offset: 288 },
+                  end: { line: 11, column: 26, offset: 312 }
                 }
               },
               {
@@ -59908,38 +59908,38 @@ export default [
                             type: 'text',
                             value: 'defaultsDeep',
                             position: {
-                              start: { line: 12, column: 5, offset: 306 },
-                              end: { line: 12, column: 17, offset: 318 }
+                              start: { line: 12, column: 5, offset: 317 },
+                              end: { line: 12, column: 17, offset: 329 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 12, column: 4, offset: 305 },
-                          end: { line: 12, column: 38, offset: 339 }
+                          start: { line: 12, column: 4, offset: 316 },
+                          end: { line: 12, column: 38, offset: 350 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 12, column: 4, offset: 305 },
-                      end: { line: 12, column: 38, offset: 339 }
+                      start: { line: 12, column: 4, offset: 316 },
+                      end: { line: 12, column: 38, offset: 350 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 12, column: 2, offset: 303 },
-                  end: { line: 12, column: 38, offset: 339 }
+                  start: { line: 12, column: 2, offset: 314 },
+                  end: { line: 12, column: 38, offset: 350 }
                 }
               }
             ],
             position: {
-              start: { line: 11, column: 2, offset: 277 },
-              end: { line: 12, column: 38, offset: 339 }
+              start: { line: 11, column: 2, offset: 288 },
+              end: { line: 12, column: 38, offset: 350 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 12, column: 38, offset: 339 }
+          end: { line: 12, column: 38, offset: 350 }
         }
       }
     },
@@ -60137,7 +60137,7 @@ export default [
     description: 'Deeply assign default values to an object or array `data` using an array or object of default values `defaults`. The keys or indices of each element of `defaults` are used to extend `data` where there is no existing value. Both `data` and `defaults` may have nested arrays or objects.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      "import defaultsDeep from 'https://unpkg.com/rubico/dist/x/defaultsDeep.es.js'\n" +
+      "import defaultsDeep from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/defaultsDeep.es.js'\n" +
       '\n' +
       'const user = {\n' +
       "  name: 'John',\n" +
@@ -60348,7 +60348,7 @@ export default [
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: "import defaultsDeep from 'https://unpkg.com/rubico/dist/x/defaultsDeep.es.js'\n" +
+            value: "import defaultsDeep from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/defaultsDeep.es.js'\n" +
               '\n' +
               'const user = {\n' +
               "  name: 'John',\n" +
@@ -60375,7 +60375,7 @@ export default [
               '// }',
             position: {
               start: { line: 3, column: 1, offset: 286 },
-              end: { line: 29, column: 4, offset: 961 }
+              end: { line: 29, column: 4, offset: 972 }
             }
           },
           {
@@ -60385,94 +60385,94 @@ export default [
                 type: 'text',
                 value: 'The ',
                 position: {
-                  start: { line: 31, column: 1, offset: 963 },
-                  end: { line: 31, column: 5, offset: 967 }
+                  start: { line: 31, column: 1, offset: 974 },
+                  end: { line: 31, column: 5, offset: 978 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'defaults',
                 position: {
-                  start: { line: 31, column: 5, offset: 967 },
-                  end: { line: 31, column: 15, offset: 977 }
+                  start: { line: 31, column: 5, offset: 978 },
+                  end: { line: 31, column: 15, offset: 988 }
                 }
               },
               {
                 type: 'text',
                 value: ' array or object may be provided to ',
                 position: {
-                  start: { line: 31, column: 15, offset: 977 },
-                  end: { line: 31, column: 51, offset: 1013 }
+                  start: { line: 31, column: 15, offset: 988 },
+                  end: { line: 31, column: 51, offset: 1024 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'defaultsDeep',
                 position: {
-                  start: { line: 31, column: 51, offset: 1013 },
-                  end: { line: 31, column: 65, offset: 1027 }
+                  start: { line: 31, column: 51, offset: 1024 },
+                  end: { line: 31, column: 65, offset: 1038 }
                 }
               },
               {
                 type: 'text',
                 value: ' without ',
                 position: {
-                  start: { line: 31, column: 65, offset: 1027 },
-                  end: { line: 31, column: 74, offset: 1036 }
+                  start: { line: 31, column: 65, offset: 1038 },
+                  end: { line: 31, column: 74, offset: 1047 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'data',
                 position: {
-                  start: { line: 31, column: 74, offset: 1036 },
-                  end: { line: 31, column: 80, offset: 1042 }
+                  start: { line: 31, column: 74, offset: 1047 },
+                  end: { line: 31, column: 80, offset: 1053 }
                 }
               },
               {
                 type: 'text',
                 value: ' to create a lazy version of ',
                 position: {
-                  start: { line: 31, column: 80, offset: 1042 },
-                  end: { line: 31, column: 109, offset: 1071 }
+                  start: { line: 31, column: 80, offset: 1053 },
+                  end: { line: 31, column: 109, offset: 1082 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'defaultsDeep',
                 position: {
-                  start: { line: 31, column: 109, offset: 1071 },
-                  end: { line: 31, column: 123, offset: 1085 }
+                  start: { line: 31, column: 109, offset: 1082 },
+                  end: { line: 31, column: 123, offset: 1096 }
                 }
               },
               {
                 type: 'text',
                 value: ' that accepts ',
                 position: {
-                  start: { line: 31, column: 123, offset: 1085 },
-                  end: { line: 31, column: 137, offset: 1099 }
+                  start: { line: 31, column: 123, offset: 1096 },
+                  end: { line: 31, column: 137, offset: 1110 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'data',
                 position: {
-                  start: { line: 31, column: 137, offset: 1099 },
-                  end: { line: 31, column: 143, offset: 1105 }
+                  start: { line: 31, column: 137, offset: 1110 },
+                  end: { line: 31, column: 143, offset: 1116 }
                 }
               },
               {
                 type: 'text',
                 value: ' as a single argument. This "lazy" API can be used for function pipelines and function compositions.',
                 position: {
-                  start: { line: 31, column: 143, offset: 1105 },
-                  end: { line: 31, column: 243, offset: 1205 }
+                  start: { line: 31, column: 143, offset: 1116 },
+                  end: { line: 31, column: 243, offset: 1216 }
                 }
               }
             ],
             position: {
-              start: { line: 31, column: 1, offset: 963 },
-              end: { line: 31, column: 243, offset: 1205 }
+              start: { line: 31, column: 1, offset: 974 },
+              end: { line: 31, column: 243, offset: 1216 }
             }
           },
           {
@@ -60484,8 +60484,8 @@ export default [
               '  console.log, // { a: 1, b: 2, c: 3, g: [1, 2, 3] }\n' +
               '])',
             position: {
-              start: { line: 33, column: 1, offset: 1207 },
-              end: { line: 38, column: 4, offset: 1356 }
+              start: { line: 33, column: 1, offset: 1218 },
+              end: { line: 38, column: 4, offset: 1367 }
             }
           },
           {
@@ -60495,14 +60495,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 40, column: 1, offset: 1358 },
-                  end: { line: 40, column: 10, offset: 1367 }
+                  start: { line: 40, column: 1, offset: 1369 },
+                  end: { line: 40, column: 10, offset: 1378 }
                 }
               }
             ],
             position: {
-              start: { line: 40, column: 1, offset: 1358 },
-              end: { line: 40, column: 10, offset: 1367 }
+              start: { line: 40, column: 1, offset: 1369 },
+              end: { line: 40, column: 10, offset: 1378 }
             }
           },
           {
@@ -60528,26 +60528,26 @@ export default [
                             type: 'text',
                             value: 'pipe',
                             position: {
-                              start: { line: 41, column: 5, offset: 1372 },
-                              end: { line: 41, column: 9, offset: 1376 }
+                              start: { line: 41, column: 5, offset: 1383 },
+                              end: { line: 41, column: 9, offset: 1387 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 41, column: 4, offset: 1371 },
-                          end: { line: 41, column: 22, offset: 1389 }
+                          start: { line: 41, column: 4, offset: 1382 },
+                          end: { line: 41, column: 22, offset: 1400 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 41, column: 4, offset: 1371 },
-                      end: { line: 41, column: 22, offset: 1389 }
+                      start: { line: 41, column: 4, offset: 1382 },
+                      end: { line: 41, column: 22, offset: 1400 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 41, column: 2, offset: 1369 },
-                  end: { line: 41, column: 22, offset: 1389 }
+                  start: { line: 41, column: 2, offset: 1380 },
+                  end: { line: 41, column: 22, offset: 1400 }
                 }
               },
               {
@@ -60567,26 +60567,26 @@ export default [
                             type: 'text',
                             value: 'compose',
                             position: {
-                              start: { line: 42, column: 5, offset: 1394 },
-                              end: { line: 42, column: 12, offset: 1401 }
+                              start: { line: 42, column: 5, offset: 1405 },
+                              end: { line: 42, column: 12, offset: 1412 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 42, column: 4, offset: 1393 },
-                          end: { line: 42, column: 28, offset: 1417 }
+                          start: { line: 42, column: 4, offset: 1404 },
+                          end: { line: 42, column: 28, offset: 1428 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 42, column: 4, offset: 1393 },
-                      end: { line: 42, column: 28, offset: 1417 }
+                      start: { line: 42, column: 4, offset: 1404 },
+                      end: { line: 42, column: 28, offset: 1428 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 42, column: 2, offset: 1391 },
-                  end: { line: 42, column: 28, offset: 1417 }
+                  start: { line: 42, column: 2, offset: 1402 },
+                  end: { line: 42, column: 28, offset: 1428 }
                 }
               },
               {
@@ -60606,26 +60606,26 @@ export default [
                             type: 'text',
                             value: 'callProp',
                             position: {
-                              start: { line: 43, column: 5, offset: 1422 },
-                              end: { line: 43, column: 13, offset: 1430 }
+                              start: { line: 43, column: 5, offset: 1433 },
+                              end: { line: 43, column: 13, offset: 1441 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 43, column: 4, offset: 1421 },
-                          end: { line: 43, column: 30, offset: 1447 }
+                          start: { line: 43, column: 4, offset: 1432 },
+                          end: { line: 43, column: 30, offset: 1458 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 43, column: 4, offset: 1421 },
-                      end: { line: 43, column: 30, offset: 1447 }
+                      start: { line: 43, column: 4, offset: 1432 },
+                      end: { line: 43, column: 30, offset: 1458 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 43, column: 2, offset: 1419 },
-                  end: { line: 43, column: 30, offset: 1447 }
+                  start: { line: 43, column: 2, offset: 1430 },
+                  end: { line: 43, column: 30, offset: 1458 }
                 }
               },
               {
@@ -60645,38 +60645,38 @@ export default [
                             type: 'text',
                             value: 'differenceWith',
                             position: {
-                              start: { line: 44, column: 5, offset: 1452 },
-                              end: { line: 44, column: 19, offset: 1466 }
+                              start: { line: 44, column: 5, offset: 1463 },
+                              end: { line: 44, column: 19, offset: 1477 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 44, column: 4, offset: 1451 },
-                          end: { line: 44, column: 42, offset: 1489 }
+                          start: { line: 44, column: 4, offset: 1462 },
+                          end: { line: 44, column: 42, offset: 1500 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 44, column: 4, offset: 1451 },
-                      end: { line: 44, column: 42, offset: 1489 }
+                      start: { line: 44, column: 4, offset: 1462 },
+                      end: { line: 44, column: 42, offset: 1500 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 44, column: 2, offset: 1449 },
-                  end: { line: 44, column: 42, offset: 1489 }
+                  start: { line: 44, column: 2, offset: 1460 },
+                  end: { line: 44, column: 42, offset: 1500 }
                 }
               }
             ],
             position: {
-              start: { line: 41, column: 2, offset: 1369 },
-              end: { line: 44, column: 42, offset: 1489 }
+              start: { line: 41, column: 2, offset: 1380 },
+              end: { line: 44, column: 42, offset: 1500 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 44, column: 42, offset: 1489 }
+          end: { line: 44, column: 42, offset: 1500 }
         }
       }
     },
@@ -60881,8 +60881,8 @@ export default [
     description: 'Create an array of all the values in an array that are not in another array as dictated by a comparator.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      "import differenceWith from 'https://unpkg.com/rubico/dist/x/differenceWith.es.js'\n" +
-      "import isDeepEqual from 'https://unpkg.com/rubico/dist/x/isDeepEqual.es.js'\n" +
+      "import differenceWith from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/differenceWith.es.js'\n" +
+      "import isDeepEqual from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/isDeepEqual.es.js'\n" +
       '\n' +
       'console.log(\n' +
       '  differenceWith(isDeepEqual, [{ a: 1 }, { b: 2 }, { c: 3 }])([{ b: 2 }]),\n' +
@@ -60965,15 +60965,15 @@ export default [
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: "import differenceWith from 'https://unpkg.com/rubico/dist/x/differenceWith.es.js'\n" +
-              "import isDeepEqual from 'https://unpkg.com/rubico/dist/x/isDeepEqual.es.js'\n" +
+            value: "import differenceWith from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/differenceWith.es.js'\n" +
+              "import isDeepEqual from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/isDeepEqual.es.js'\n" +
               '\n' +
               'console.log(\n' +
               '  differenceWith(isDeepEqual, [{ a: 1 }, { b: 2 }, { c: 3 }])([{ b: 2 }]),\n' +
               ') // [{ a: 1 }, { c: 3 }]',
             position: {
               start: { line: 3, column: 1, offset: 106 },
-              end: { line: 10, column: 4, offset: 409 }
+              end: { line: 10, column: 4, offset: 431 }
             }
           },
           {
@@ -60983,14 +60983,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 12, column: 1, offset: 411 },
-                  end: { line: 12, column: 10, offset: 420 }
+                  start: { line: 12, column: 1, offset: 433 },
+                  end: { line: 12, column: 10, offset: 442 }
                 }
               }
             ],
             position: {
-              start: { line: 12, column: 1, offset: 411 },
-              end: { line: 12, column: 10, offset: 420 }
+              start: { line: 12, column: 1, offset: 433 },
+              end: { line: 12, column: 10, offset: 442 }
             }
           },
           {
@@ -61016,26 +61016,26 @@ export default [
                             type: 'text',
                             value: 'defaultsDeep',
                             position: {
-                              start: { line: 13, column: 5, offset: 425 },
-                              end: { line: 13, column: 17, offset: 437 }
+                              start: { line: 13, column: 5, offset: 447 },
+                              end: { line: 13, column: 17, offset: 459 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 13, column: 4, offset: 424 },
-                          end: { line: 13, column: 38, offset: 458 }
+                          start: { line: 13, column: 4, offset: 446 },
+                          end: { line: 13, column: 38, offset: 480 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 13, column: 4, offset: 424 },
-                      end: { line: 13, column: 38, offset: 458 }
+                      start: { line: 13, column: 4, offset: 446 },
+                      end: { line: 13, column: 38, offset: 480 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 13, column: 2, offset: 422 },
-                  end: { line: 13, column: 38, offset: 458 }
+                  start: { line: 13, column: 2, offset: 444 },
+                  end: { line: 13, column: 38, offset: 480 }
                 }
               },
               {
@@ -61055,38 +61055,38 @@ export default [
                             type: 'text',
                             value: 'filterOut',
                             position: {
-                              start: { line: 14, column: 5, offset: 463 },
-                              end: { line: 14, column: 14, offset: 472 }
+                              start: { line: 14, column: 5, offset: 485 },
+                              end: { line: 14, column: 14, offset: 494 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 14, column: 4, offset: 462 },
-                          end: { line: 14, column: 32, offset: 490 }
+                          start: { line: 14, column: 4, offset: 484 },
+                          end: { line: 14, column: 32, offset: 512 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 14, column: 4, offset: 462 },
-                      end: { line: 14, column: 32, offset: 490 }
+                      start: { line: 14, column: 4, offset: 484 },
+                      end: { line: 14, column: 32, offset: 512 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 14, column: 2, offset: 460 },
-                  end: { line: 14, column: 32, offset: 490 }
+                  start: { line: 14, column: 2, offset: 482 },
+                  end: { line: 14, column: 32, offset: 512 }
                 }
               }
             ],
             position: {
-              start: { line: 13, column: 2, offset: 422 },
-              end: { line: 14, column: 32, offset: 490 }
+              start: { line: 13, column: 2, offset: 444 },
+              end: { line: 14, column: 32, offset: 512 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 14, column: 32, offset: 490 }
+          end: { line: 14, column: 32, offset: 512 }
         }
       }
     },
@@ -61319,7 +61319,7 @@ export default [
     description: 'Get the first element in a foldable collection that matches a predicate.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      "import find from 'https://unpkg.com/rubico/dist/x/find.es.js'\n" +
+      "import find from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/find.es.js'\n" +
       '\n' +
       'const users = [\n' +
       "  { name: 'John', age: 16 },\n" +
@@ -61408,7 +61408,7 @@ export default [
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: "import find from 'https://unpkg.com/rubico/dist/x/find.es.js'\n" +
+            value: "import find from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/find.es.js'\n" +
               '\n' +
               'const users = [\n' +
               "  { name: 'John', age: 16 },\n" +
@@ -61421,13 +61421,13 @@ export default [
               ") // { name: 'John', age: 51 }",
             position: {
               start: { line: 3, column: 1, offset: 74 },
-              end: { line: 15, column: 4, offset: 355 }
+              end: { line: 15, column: 4, offset: 366 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 15, column: 4, offset: 355 }
+          end: { line: 15, column: 4, offset: 366 }
         }
       }
     },
@@ -61503,7 +61503,7 @@ export default [
     description: 'Returns the index of the first element in an array that satisfies the predicate. Returns -1 if no element satisfies the predicate.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      "import findIndex from 'https://unpkg.com/rubico/dist/x/findIndex.es.js'\n" +
+      "import findIndex from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/findIndex.es.js'\n" +
       '\n' +
       'const oddNumberIndex = findIndex(function isOdd(number) {\n' +
       '  return number % 2 == 1\n' +
@@ -61582,7 +61582,7 @@ export default [
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: "import findIndex from 'https://unpkg.com/rubico/dist/x/findIndex.es.js'\n" +
+            value: "import findIndex from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/findIndex.es.js'\n" +
               '\n' +
               'const oddNumberIndex = findIndex(function isOdd(number) {\n' +
               '  return number % 2 == 1\n' +
@@ -61591,13 +61591,13 @@ export default [
               'console.log(oddNumberIndex) // 1',
             position: {
               start: { line: 3, column: 1, offset: 132 },
-              end: { line: 11, column: 4, offset: 366 }
+              end: { line: 11, column: 4, offset: 377 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 11, column: 4, offset: 366 }
+          end: { line: 11, column: 4, offset: 377 }
         }
       },
       since: {
@@ -61702,7 +61702,7 @@ export default [
     description: 'Get the first element of a collection\n' +
       '\n' +
       '```javascript [playground]\n' +
-      "import first from 'https://unpkg.com/rubico/dist/x/first.es.js'\n" +
+      "import first from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/first.es.js'\n" +
       '\n' +
       'console.log(first([1, 2, 3])) // 1\n' +
       "console.log(first('abc')) // 'a'\n" +
@@ -61778,20 +61778,20 @@ export default [
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: "import first from 'https://unpkg.com/rubico/dist/x/first.es.js'\n" +
+            value: "import first from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/first.es.js'\n" +
               '\n' +
               'console.log(first([1, 2, 3])) // 1\n' +
               "console.log(first('abc')) // 'a'\n" +
               'console.log(first([])) // undefined',
             position: {
               start: { line: 3, column: 1, offset: 39 },
-              end: { line: 9, column: 4, offset: 238 }
+              end: { line: 9, column: 4, offset: 249 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 9, column: 4, offset: 238 }
+          end: { line: 9, column: 4, offset: 249 }
         }
       }
     },
@@ -61915,7 +61915,7 @@ export default [
     description: 'Flatten a collection. Works in transducer position.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      "import flatten from 'https://unpkg.com/rubico/dist/x/flatten.es.js'\n" +
+      "import flatten from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/flatten.es.js'\n" +
       '\n' +
       'flatten([\n' +
       '  [1, 1],\n' +
@@ -62026,7 +62026,7 @@ export default [
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: "import flatten from 'https://unpkg.com/rubico/dist/x/flatten.es.js'\n" +
+            value: "import flatten from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/flatten.es.js'\n" +
               '\n' +
               'flatten([\n' +
               '  [1, 1],\n' +
@@ -62047,13 +62047,13 @@ export default [
               ') // 15',
             position: {
               start: { line: 3, column: 1, offset: 53 },
-              end: { line: 23, column: 4, offset: 512 }
+              end: { line: 23, column: 4, offset: 523 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 23, column: 4, offset: 512 }
+          end: { line: 23, column: 4, offset: 523 }
         }
       },
       TODO: {
@@ -62165,7 +62165,7 @@ export default [
     description: 'Group a foldable collection into a Map of arrays by a property on each of its elements.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      "import groupBy from 'https://unpkg.com/rubico/dist/x/groupBy.es.js'\n" +
+      "import groupBy from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/groupBy.es.js'\n" +
       '\n' +
       'console.log(\n' +
       "  groupBy('age')([\n" +
@@ -62183,7 +62183,7 @@ export default [
       'Additionally, pass a resolver in property position to resolve a value for group membership for each element.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      "import groupBy from 'https://unpkg.com/rubico/dist/x/groupBy.es.js'\n" +
+      "import groupBy from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/groupBy.es.js'\n" +
       '\n' +
       'console.log(\n' +
       '  groupBy(\n' +
@@ -62270,7 +62270,7 @@ export default [
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: "import groupBy from 'https://unpkg.com/rubico/dist/x/groupBy.es.js'\n" +
+            value: "import groupBy from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/groupBy.es.js'\n" +
               '\n' +
               'console.log(\n' +
               "  groupBy('age')([\n" +
@@ -62285,7 +62285,7 @@ export default [
               '// }',
             position: {
               start: { line: 3, column: 1, offset: 89 },
-              end: { line: 17, column: 4, offset: 444 }
+              end: { line: 17, column: 4, offset: 455 }
             }
           },
           {
@@ -62295,21 +62295,21 @@ export default [
                 type: 'text',
                 value: 'Additionally, pass a resolver in property position to resolve a value for group membership for each element.',
                 position: {
-                  start: { line: 19, column: 1, offset: 446 },
-                  end: { line: 19, column: 109, offset: 554 }
+                  start: { line: 19, column: 1, offset: 457 },
+                  end: { line: 19, column: 109, offset: 565 }
                 }
               }
             ],
             position: {
-              start: { line: 19, column: 1, offset: 446 },
-              end: { line: 19, column: 109, offset: 554 }
+              start: { line: 19, column: 1, offset: 457 },
+              end: { line: 19, column: 109, offset: 565 }
             }
           },
           {
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: "import groupBy from 'https://unpkg.com/rubico/dist/x/groupBy.es.js'\n" +
+            value: "import groupBy from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/groupBy.es.js'\n" +
               '\n' +
               'console.log(\n' +
               '  groupBy(\n' +
@@ -62317,14 +62317,14 @@ export default [
               "  )(['Hello', 'hello', 'Hey']),\n" +
               ") // Map { 'hello' => ['Hello', 'hello'], 'hey' => ['Hey'] }",
             position: {
-              start: { line: 21, column: 1, offset: 556 },
-              end: { line: 29, column: 4, offset: 804 }
+              start: { line: 21, column: 1, offset: 567 },
+              end: { line: 29, column: 4, offset: 826 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 29, column: 4, offset: 804 }
+          end: { line: 29, column: 4, offset: 826 }
         }
       }
     },
@@ -62338,7 +62338,7 @@ export default [
     description: 'Check if a collection has a key.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      "import has from 'https://unpkg.com/rubico/dist/x/has.es.js'\n" +
+      "import has from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/has.es.js'\n" +
       '\n' +
       'console.log(\n' +
       "  has('a')({ a: 1, b: 2, c: 3 }),\n" +
@@ -62418,7 +62418,7 @@ export default [
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: "import has from 'https://unpkg.com/rubico/dist/x/has.es.js'\n" +
+            value: "import has from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/has.es.js'\n" +
               '\n' +
               'console.log(\n' +
               "  has('a')({ a: 1, b: 2, c: 3 }),\n" +
@@ -62429,13 +62429,13 @@ export default [
               ') // false',
             position: {
               start: { line: 3, column: 1, offset: 34 },
-              end: { line: 13, column: 4, offset: 223 }
+              end: { line: 13, column: 4, offset: 234 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 13, column: 4, offset: 223 }
+          end: { line: 13, column: 4, offset: 234 }
         }
       }
     },
@@ -62822,7 +62822,7 @@ export default [
     description: 'Pass a value and receive the same value back.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      "import identity from 'https://unpkg.com/rubico/dist/x/identity.es.js'\n" +
+      "import identity from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/identity.es.js'\n" +
       '\n' +
       'console.log(\n' +
       '  identity(1),\n' +
@@ -62898,20 +62898,20 @@ export default [
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: "import identity from 'https://unpkg.com/rubico/dist/x/identity.es.js'\n" +
+            value: "import identity from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/identity.es.js'\n" +
               '\n' +
               'console.log(\n' +
               '  identity(1),\n' +
               ') // 1',
             position: {
               start: { line: 3, column: 1, offset: 47 },
-              end: { line: 9, column: 4, offset: 183 }
+              end: { line: 9, column: 4, offset: 194 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 9, column: 4, offset: 183 }
+          end: { line: 9, column: 4, offset: 194 }
         }
       }
     },
@@ -62984,7 +62984,7 @@ export default [
     description: 'Check if a collection includes another value by [SameValueZero](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero).\n' +
       '\n' +
       '```javascript [playground]\n' +
-      "import includes from 'https://unpkg.com/rubico/dist/x/includes.es.js'\n" +
+      "import includes from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/includes.es.js'\n" +
       '\n' +
       'console.log(\n' +
       '  includes(5)([1, 2, 3, 4, 5])\n' +
@@ -63091,7 +63091,7 @@ export default [
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: "import includes from 'https://unpkg.com/rubico/dist/x/includes.es.js'\n" +
+            value: "import includes from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/includes.es.js'\n" +
               '\n' +
               'console.log(\n' +
               '  includes(5)([1, 2, 3, 4, 5])\n' +
@@ -63102,13 +63102,13 @@ export default [
               ') // false',
             position: {
               start: { line: 3, column: 1, offset: 129 },
-              end: { line: 13, column: 4, offset: 334 }
+              end: { line: 13, column: 4, offset: 345 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 13, column: 4, offset: 334 }
+          end: { line: 13, column: 4, offset: 345 }
         }
       }
     },
@@ -63489,7 +63489,7 @@ export default [
     description: 'Check two values for deep [SameValueZero](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero) equality.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      "import isDeepEqual from 'https://unpkg.com/rubico/dist/x/isDeepEqual.es.js'\n" +
+      "import isDeepEqual from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/isDeepEqual.es.js'\n" +
       '\n' +
       'console.log(\n' +
       '  isDeepEqual({ a: 1, b: 2, c: [3] }, { a: 1, b: 2, c: [3] }),\n' +
@@ -63503,7 +63503,7 @@ export default [
       'When passed a resolver function as the left or right argument or resolvers as both arguments, returns a function that resolves the value by the resolver before performing the deep equal comparison.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      "import isDeepEqual from 'https://unpkg.com/rubico/dist/x/isDeepEqual.es.js'\n" +
+      "import isDeepEqual from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/isDeepEqual.es.js'\n" +
       '\n' +
       'const isPropADeepEqualTo123Array = isDeepEqual(object => object.a, [1, 2, 3])\n' +
       '\n' +
@@ -63613,7 +63613,7 @@ export default [
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: "import isDeepEqual from 'https://unpkg.com/rubico/dist/x/isDeepEqual.es.js'\n" +
+            value: "import isDeepEqual from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/isDeepEqual.es.js'\n" +
               '\n' +
               'console.log(\n' +
               '  isDeepEqual({ a: 1, b: 2, c: [3] }, { a: 1, b: 2, c: [3] }),\n' +
@@ -63624,7 +63624,7 @@ export default [
               ') // false',
             position: {
               start: { line: 3, column: 1, offset: 116 },
-              end: { line: 13, column: 4, offset: 397 }
+              end: { line: 13, column: 4, offset: 408 }
             }
           },
           {
@@ -63634,21 +63634,21 @@ export default [
                 type: 'text',
                 value: 'When passed a resolver function as the left or right argument or resolvers as both arguments, returns a function that resolves the value by the resolver before performing the deep equal comparison.',
                 position: {
-                  start: { line: 15, column: 1, offset: 399 },
-                  end: { line: 15, column: 198, offset: 596 }
+                  start: { line: 15, column: 1, offset: 410 },
+                  end: { line: 15, column: 198, offset: 607 }
                 }
               }
             ],
             position: {
-              start: { line: 15, column: 1, offset: 399 },
-              end: { line: 15, column: 198, offset: 596 }
+              start: { line: 15, column: 1, offset: 410 },
+              end: { line: 15, column: 198, offset: 607 }
             }
           },
           {
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: "import isDeepEqual from 'https://unpkg.com/rubico/dist/x/isDeepEqual.es.js'\n" +
+            value: "import isDeepEqual from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/isDeepEqual.es.js'\n" +
               '\n' +
               'const isPropADeepEqualTo123Array = isDeepEqual(object => object.a, [1, 2, 3])\n' +
               '\n' +
@@ -63656,14 +63656,14 @@ export default [
               '  isPropADeepEqualTo123Array({ a: [1, 2, 3] }),\n' +
               ') // true',
             position: {
-              start: { line: 17, column: 1, offset: 598 },
-              end: { line: 25, column: 4, offset: 855 }
+              start: { line: 17, column: 1, offset: 609 },
+              end: { line: 25, column: 4, offset: 877 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 25, column: 4, offset: 855 }
+          end: { line: 25, column: 4, offset: 877 }
         }
       }
     },
@@ -63763,7 +63763,7 @@ export default [
     description: 'Check if a value is empty.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      "import isEmpty from 'https://unpkg.com/rubico/dist/x/isEmpty.es.js'\n" +
+      "import isEmpty from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/isEmpty.es.js'\n" +
       '\n' +
       "console.log('', isEmpty('')) // true\n" +
       'console.log([], isEmpty([])) // true\n' +
@@ -63842,7 +63842,7 @@ export default [
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: "import isEmpty from 'https://unpkg.com/rubico/dist/x/isEmpty.es.js'\n" +
+            value: "import isEmpty from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/isEmpty.es.js'\n" +
               '\n' +
               "console.log('', isEmpty('')) // true\n" +
               'console.log([], isEmpty([])) // true\n' +
@@ -63852,13 +63852,13 @@ export default [
               'console.log({ a: 1, b: 2, c: 3 }, isEmpty({ a: 1, b: 2, c: 3 })) // false',
             position: {
               start: { line: 3, column: 1, offset: 28 },
-              end: { line: 12, column: 4, offset: 434 }
+              end: { line: 12, column: 4, offset: 445 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 12, column: 4, offset: 434 }
+          end: { line: 12, column: 4, offset: 445 }
         }
       }
     },
@@ -64009,7 +64009,7 @@ export default [
     description: 'Determine whether a value is a function.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      "import isFunction from 'https://unpkg.com/rubico/dist/x/isFunction.es.js'\n" +
+      "import isFunction from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/isFunction.es.js'\n" +
       '\n' +
       'const add = (a, b) => a + b\n' +
       '\n' +
@@ -64087,7 +64087,7 @@ export default [
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: "import isFunction from 'https://unpkg.com/rubico/dist/x/isFunction.es.js'\n" +
+            value: "import isFunction from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/isFunction.es.js'\n" +
               '\n' +
               'const add = (a, b) => a + b\n' +
               '\n' +
@@ -64096,13 +64096,13 @@ export default [
               ') // true',
             position: {
               start: { line: 3, column: 1, offset: 42 },
-              end: { line: 11, column: 4, offset: 218 }
+              end: { line: 11, column: 4, offset: 229 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 11, column: 4, offset: 218 }
+          end: { line: 11, column: 4, offset: 229 }
         }
       }
     },
@@ -64116,7 +64116,7 @@ export default [
     description: 'Counterpart to includes. Check if a collection includes another value.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      "import isIn from 'https://unpkg.com/rubico/dist/x/isIn.es.js'\n" +
+      "import isIn from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/isIn.es.js'\n" +
       '\n' +
       'console.log(\n' +
       '  isIn(1, [1, 2, 3])\n' +
@@ -64232,7 +64232,7 @@ export default [
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: "import isIn from 'https://unpkg.com/rubico/dist/x/isIn.es.js'\n" +
+            value: "import isIn from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/isIn.es.js'\n" +
               '\n' +
               'console.log(\n' +
               '  isIn(1, [1, 2, 3])\n' +
@@ -64279,13 +64279,13 @@ export default [
               ') // false',
             position: {
               start: { line: 3, column: 1, offset: 72 },
-              end: { line: 49, column: 4, offset: 722 }
+              end: { line: 49, column: 4, offset: 733 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 49, column: 4, offset: 722 }
+          end: { line: 49, column: 4, offset: 733 }
         }
       }
     },
@@ -64299,7 +64299,7 @@ export default [
     description: 'Counterpart to includes. Check if a collection includes another value.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      "import isIn from 'https://unpkg.com/rubico/dist/x/isIn.es.js'\n" +
+      "import isIn from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/isIn.es.js'\n" +
       '\n' +
       'console.log(\n' +
       '  isIn([1, 2, 3](1)\n' +
@@ -64415,7 +64415,7 @@ export default [
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: "import isIn from 'https://unpkg.com/rubico/dist/x/isIn.es.js'\n" +
+            value: "import isIn from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/isIn.es.js'\n" +
               '\n' +
               'console.log(\n' +
               '  isIn([1, 2, 3](1)\n' +
@@ -64462,13 +64462,13 @@ export default [
               ') // false',
             position: {
               start: { line: 3, column: 1, offset: 72 },
-              end: { line: 49, column: 4, offset: 720 }
+              end: { line: 49, column: 4, offset: 731 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 49, column: 4, offset: 720 }
+          end: { line: 49, column: 4, offset: 731 }
         }
       }
     },
@@ -64563,7 +64563,7 @@ export default [
     description: 'Determine whether a value has the [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types) of `Object`.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      "import isObject from 'https://unpkg.com/rubico/dist/x/isObject.es.js'\n" +
+      "import isObject from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/isObject.es.js'\n" +
       '\n' +
       'console.log(\n' +
       '  isObject({ a: 1, b: 2, c: 3 }),\n' +
@@ -64690,7 +64690,7 @@ export default [
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: "import isObject from 'https://unpkg.com/rubico/dist/x/isObject.es.js'\n" +
+            value: "import isObject from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/isObject.es.js'\n" +
               '\n' +
               'console.log(\n' +
               '  isObject({ a: 1, b: 2, c: 3 }),\n' +
@@ -64705,13 +64705,13 @@ export default [
               ') // true',
             position: {
               start: { line: 3, column: 1, offset: 143 },
-              end: { line: 17, column: 4, offset: 401 }
+              end: { line: 17, column: 4, offset: 412 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 17, column: 4, offset: 401 }
+          end: { line: 17, column: 4, offset: 412 }
         }
       }
     },
@@ -64796,7 +64796,7 @@ export default [
     description: 'Determine whether a value is a string.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      "import isString from 'https://unpkg.com/rubico/dist/x/isString.es.js'\n" +
+      "import isString from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/isString.es.js'\n" +
       '\n' +
       'console.log(\n' +
       "  isString('hey'),\n" +
@@ -64872,20 +64872,20 @@ export default [
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: "import isString from 'https://unpkg.com/rubico/dist/x/isString.es.js'\n" +
+            value: "import isString from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/isString.es.js'\n" +
               '\n' +
               'console.log(\n' +
               "  isString('hey'),\n" +
               ') // true',
             position: {
               start: { line: 3, column: 1, offset: 40 },
-              end: { line: 9, column: 4, offset: 183 }
+              end: { line: 9, column: 4, offset: 194 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 9, column: 4, offset: 183 }
+          end: { line: 9, column: 4, offset: 194 }
         }
       }
     },
@@ -64899,7 +64899,7 @@ export default [
     description: 'Get an array of keys from an instance.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      "import keys from 'https://unpkg.com/rubico/dist/x/keys.es.js'\n" +
+      "import keys from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/keys.es.js'\n" +
       '\n' +
       "console.log(keys({ a: 1, b: 2, c: 3 })) // ['a', 'b', 'c']\n" +
       "console.log(keys(['hello', 'world'])) // [0, 1]\n" +
@@ -64976,20 +64976,20 @@ export default [
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: "import keys from 'https://unpkg.com/rubico/dist/x/keys.es.js'\n" +
+            value: "import keys from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/keys.es.js'\n" +
               '\n' +
               "console.log(keys({ a: 1, b: 2, c: 3 })) // ['a', 'b', 'c']\n" +
               "console.log(keys(['hello', 'world'])) // [0, 1]\n" +
               "console.log(keys(new Map([['hello', 1], ['world', 2]]))) // ['hello', 'world']",
             position: {
               start: { line: 3, column: 1, offset: 40 },
-              end: { line: 9, column: 4, offset: 319 }
+              end: { line: 9, column: 4, offset: 330 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 9, column: 4, offset: 319 }
+          end: { line: 9, column: 4, offset: 330 }
         }
       },
       since: {
@@ -65186,7 +65186,7 @@ export default [
     description: 'Get the last element of a collection\n' +
       '\n' +
       '```javascript [playground]\n' +
-      "import last from 'https://unpkg.com/rubico/dist/x/last.es.js'\n" +
+      "import last from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/last.es.js'\n" +
       '\n' +
       'console.log(last([1, 2, 3])) // 3\n' +
       'console.log(last([])) // undefined\n' +
@@ -65261,19 +65261,19 @@ export default [
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: "import last from 'https://unpkg.com/rubico/dist/x/last.es.js'\n" +
+            value: "import last from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/last.es.js'\n" +
               '\n' +
               'console.log(last([1, 2, 3])) // 3\n' +
               'console.log(last([])) // undefined',
             position: {
               start: { line: 3, column: 1, offset: 38 },
-              end: { line: 8, column: 4, offset: 200 }
+              end: { line: 8, column: 4, offset: 211 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 8, column: 4, offset: 200 }
+          end: { line: 8, column: 4, offset: 211 }
         }
       }
     },
@@ -65343,7 +65343,7 @@ export default [
     description: 'Finds the element that is the max by a property denoted by path.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      "import maxBy from 'https://unpkg.com/rubico/dist/x/maxBy.es.js'\n" +
+      "import maxBy from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/maxBy.es.js'\n" +
       '\n' +
       'const array = [{ a: 1 }, { a: 2 }, { a: 3 }]\n' +
       '\n' +
@@ -65355,7 +65355,7 @@ export default [
       '`maxBy` composes in a lazy way.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      "import maxBy from 'https://unpkg.com/rubico/dist/x/maxBy.es.js'\n" +
+      "import maxBy from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/maxBy.es.js'\n" +
       '\n' +
       'const numbers = [1, 2, 3]\n' +
       '\n' +
@@ -65439,7 +65439,7 @@ export default [
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: "import maxBy from 'https://unpkg.com/rubico/dist/x/maxBy.es.js'\n" +
+            value: "import maxBy from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/maxBy.es.js'\n" +
               '\n' +
               'const array = [{ a: 1 }, { a: 2 }, { a: 3 }]\n' +
               '\n' +
@@ -65448,7 +65448,7 @@ export default [
               'console.log(maxElement) // { a: 3 }',
             position: {
               start: { line: 3, column: 1, offset: 66 },
-              end: { line: 11, column: 4, offset: 281 }
+              end: { line: 11, column: 4, offset: 292 }
             }
           },
           {
@@ -65458,29 +65458,29 @@ export default [
                 type: 'inlineCode',
                 value: 'maxBy',
                 position: {
-                  start: { line: 13, column: 1, offset: 283 },
-                  end: { line: 13, column: 8, offset: 290 }
+                  start: { line: 13, column: 1, offset: 294 },
+                  end: { line: 13, column: 8, offset: 301 }
                 }
               },
               {
                 type: 'text',
                 value: ' composes in a lazy way.',
                 position: {
-                  start: { line: 13, column: 8, offset: 290 },
-                  end: { line: 13, column: 32, offset: 314 }
+                  start: { line: 13, column: 8, offset: 301 },
+                  end: { line: 13, column: 32, offset: 325 }
                 }
               }
             ],
             position: {
-              start: { line: 13, column: 1, offset: 283 },
-              end: { line: 13, column: 32, offset: 314 }
+              start: { line: 13, column: 1, offset: 294 },
+              end: { line: 13, column: 32, offset: 325 }
             }
           },
           {
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: "import maxBy from 'https://unpkg.com/rubico/dist/x/maxBy.es.js'\n" +
+            value: "import maxBy from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/maxBy.es.js'\n" +
               '\n' +
               'const numbers = [1, 2, 3]\n' +
               '\n' +
@@ -65492,14 +65492,14 @@ export default [
               '\n' +
               'console.log(maxElement) // { a: { b: { c: 9 } } }',
             position: {
-              start: { line: 15, column: 1, offset: 316 },
-              end: { line: 27, column: 4, offset: 622 }
+              start: { line: 15, column: 1, offset: 327 },
+              end: { line: 27, column: 4, offset: 644 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 27, column: 4, offset: 622 }
+          end: { line: 27, column: 4, offset: 644 }
         }
       }
     },
@@ -65511,7 +65511,7 @@ export default [
     description: "Doesn't do anything.\n" +
       '\n' +
       '```javascript [playground]\n' +
-      "import noop from 'https://unpkg.com/rubico/dist/x/noop.es.js'\n" +
+      "import noop from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/noop.es.js'\n" +
       '\n' +
       'console.log(\n' +
       '  noop(),\n' +
@@ -65587,20 +65587,20 @@ export default [
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: "import noop from 'https://unpkg.com/rubico/dist/x/noop.es.js'\n" +
+            value: "import noop from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/noop.es.js'\n" +
               '\n' +
               'console.log(\n' +
               '  noop(),\n' +
               ') // undefined',
             position: {
               start: { line: 3, column: 1, offset: 22 },
-              end: { line: 9, column: 4, offset: 153 }
+              end: { line: 9, column: 4, offset: 164 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 9, column: 4, offset: 153 }
+          end: { line: 9, column: 4, offset: 164 }
         }
       }
     },
@@ -65622,7 +65622,7 @@ export default [
       " * an array of keys or indices - `['a', 0, 'value']`\n" +
       '\n' +
       '```javascript [playground]\n' +
-      "import pluck from 'https://unpkg.com/rubico/dist/x/pluck.es.js'\n" +
+      "import pluck from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/pluck.es.js'\n" +
       '\n' +
       'const users = [\n' +
       "  { name: 'John', age: 33 },\n" +
@@ -65851,7 +65851,7 @@ export default [
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: "import pluck from 'https://unpkg.com/rubico/dist/x/pluck.es.js'\n" +
+            value: "import pluck from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/pluck.es.js'\n" +
               '\n' +
               'const users = [\n' +
               "  { name: 'John', age: 33 },\n" +
@@ -65864,13 +65864,13 @@ export default [
               "console.log(usernames) // ['John', 'Jane', 'Jim']",
             position: {
               start: { line: 9, column: 1, offset: 272 },
-              end: { line: 21, column: 4, offset: 562 }
+              end: { line: 21, column: 4, offset: 573 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 21, column: 4, offset: 562 }
+          end: { line: 21, column: 4, offset: 573 }
         }
       }
     },
@@ -65886,7 +65886,7 @@ export default [
     description: 'Prepend a string or an array.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      "import prepend from 'https://unpkg.com/rubico/dist/x/prepend.es.js'\n" +
+      "import prepend from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/prepend.es.js'\n" +
       '\n' +
       "const myArray = ['orange', 'apple']\n" +
       '\n' +
@@ -65978,7 +65978,7 @@ export default [
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: "import prepend from 'https://unpkg.com/rubico/dist/x/prepend.es.js'\n" +
+            value: "import prepend from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/prepend.es.js'\n" +
               '\n' +
               "const myArray = ['orange', 'apple']\n" +
               '\n' +
@@ -65998,13 +65998,13 @@ export default [
               '}',
             position: {
               start: { line: 3, column: 1, offset: 31 },
-              end: { line: 22, column: 4, offset: 464 }
+              end: { line: 22, column: 4, offset: 475 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 22, column: 4, offset: 464 }
+          end: { line: 22, column: 4, offset: 475 }
         }
       },
       since: {
@@ -66107,7 +66107,7 @@ export default [
     description: 'Get the count of elements in a value.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      "import size from 'https://unpkg.com/rubico/dist/x/size.es.js'\n" +
+      "import size from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/size.es.js'\n" +
       '\n' +
       'console.log(size([1, 2, 3])) // 3\n' +
       "console.log(size('hey')) // 3\n" +
@@ -66183,20 +66183,20 @@ export default [
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: "import size from 'https://unpkg.com/rubico/dist/x/size.es.js'\n" +
+            value: "import size from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/size.es.js'\n" +
               '\n' +
               'console.log(size([1, 2, 3])) // 3\n' +
               "console.log(size('hey')) // 3\n" +
               'console.log(size(new Set([1, 2, 3]))) // 3',
             position: {
               start: { line: 3, column: 1, offset: 39 },
-              end: { line: 9, column: 4, offset: 239 }
+              end: { line: 9, column: 4, offset: 250 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 9, column: 4, offset: 239 }
+          end: { line: 9, column: 4, offset: 250 }
         }
       }
     },
@@ -66435,7 +66435,7 @@ export default [
     description: 'Log a value out to the console, returning the value. If the value is a function, treat it as a resolver.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      "import trace from 'https://unpkg.com/rubico/dist/x/trace.es.js'\n" +
+      "import trace from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/trace.es.js'\n" +
       '\n' +
       'pipe([\n' +
       '  trace,\n' +
@@ -66520,7 +66520,7 @@ export default [
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: "import trace from 'https://unpkg.com/rubico/dist/x/trace.es.js'\n" +
+            value: "import trace from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/trace.es.js'\n" +
               '\n' +
               'pipe([\n' +
               '  trace,\n' +
@@ -66530,13 +66530,13 @@ export default [
               "console.log('check your console')",
             position: {
               start: { line: 3, column: 1, offset: 106 },
-              end: { line: 12, column: 4, offset: 324 }
+              end: { line: 12, column: 4, offset: 335 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 12, column: 4, offset: 324 }
+          end: { line: 12, column: 4, offset: 335 }
         }
       }
     },
@@ -66894,8 +66894,8 @@ export default [
     description: 'Create an array of unique values from an array of arrays with uniqueness determined by a comparator. The comparator is a function that returns a boolean value, `true` if two given values are distinct.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      "import isDeepEqual from 'https://unpkg.com/rubico/dist/x/isDeepEqual.es.js'\n" +
-      "import unionWith from 'https://unpkg.com/rubico/dist/x/unionWith.es.js'\n" +
+      "import isDeepEqual from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/isDeepEqual.es.js'\n" +
+      "import unionWith from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/unionWith.es.js'\n" +
       '\n' +
       'console.log(\n' +
       '  unionWith(isDeepEqual)([\n' +
@@ -66995,8 +66995,8 @@ export default [
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: "import isDeepEqual from 'https://unpkg.com/rubico/dist/x/isDeepEqual.es.js'\n" +
-              "import unionWith from 'https://unpkg.com/rubico/dist/x/unionWith.es.js'\n" +
+            value: "import isDeepEqual from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/isDeepEqual.es.js'\n" +
+              "import unionWith from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/unionWith.es.js'\n" +
               '\n' +
               'console.log(\n' +
               '  unionWith(isDeepEqual)([\n' +
@@ -67006,13 +67006,13 @@ export default [
               ') // [{ a: 1 }, { b: 2 }]',
             position: {
               start: { line: 3, column: 1, offset: 202 },
-              end: { line: 13, column: 4, offset: 525 }
+              end: { line: 13, column: 4, offset: 547 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 13, column: 4, offset: 525 }
+          end: { line: 13, column: 4, offset: 547 }
         }
       },
       TODO: {
@@ -67187,7 +67187,7 @@ export default [
     description: 'Get an array of unique values from an array.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      "import uniq from 'https://unpkg.com/rubico/dist/x/uniq.es.js'\n" +
+      "import uniq from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/uniq.es.js'\n" +
       '\n' +
       'console.log(\n' +
       '  uniq([1, 2, 2, 3]),\n' +
@@ -67263,20 +67263,20 @@ export default [
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: "import uniq from 'https://unpkg.com/rubico/dist/x/uniq.es.js'\n" +
+            value: "import uniq from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/uniq.es.js'\n" +
               '\n' +
               'console.log(\n' +
               '  uniq([1, 2, 2, 3]),\n' +
               ') // [1, 2, 3]',
             position: {
               start: { line: 3, column: 1, offset: 46 },
-              end: { line: 9, column: 4, offset: 189 }
+              end: { line: 9, column: 4, offset: 200 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 9, column: 4, offset: 189 }
+          end: { line: 9, column: 4, offset: 200 }
         }
       }
     },
@@ -67293,7 +67293,7 @@ export default [
     description: 'Execute a function and return the result unless a condition is true, otherwise return the original value.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      "import unless from 'https://unpkg.com/rubico/dist/x/unless.es.js'\n" +
+      "import unless from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/unless.es.js'\n" +
       '\n' +
       'const isEven = num => num % 2 === 0\n' +
       'const doubleIfOdd = unless(isEven, num => num * 2)\n' +
@@ -67375,7 +67375,7 @@ export default [
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: "import unless from 'https://unpkg.com/rubico/dist/x/unless.es.js'\n" +
+            value: "import unless from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/unless.es.js'\n" +
               '\n' +
               'const isEven = num => num % 2 === 0\n' +
               'const doubleIfOdd = unless(isEven, num => num * 2)\n' +
@@ -67384,13 +67384,13 @@ export default [
               'console.log(doubleIfOdd(101)) // 202',
             position: {
               start: { line: 3, column: 1, offset: 107 },
-              end: { line: 11, column: 4, offset: 366 }
+              end: { line: 11, column: 4, offset: 377 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 11, column: 4, offset: 366 }
+          end: { line: 11, column: 4, offset: 377 }
         }
       },
       since: {
@@ -67495,7 +67495,7 @@ export default [
     description: 'Get an array of values from an instance.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      "import values from 'https://unpkg.com/rubico/dist/x/values.es.js'\n" +
+      "import values from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/values.es.js'\n" +
       '\n' +
       'console.log(values({ a: 1, b: 2, c: 3 })) // [1, 2, 3]\n' +
       "console.log(values('abc')) // ['a', 'b', 'c']\n" +
@@ -67573,20 +67573,20 @@ export default [
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: "import values from 'https://unpkg.com/rubico/dist/x/values.es.js'\n" +
+            value: "import values from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/values.es.js'\n" +
               '\n' +
               'console.log(values({ a: 1, b: 2, c: 3 })) // [1, 2, 3]\n' +
               "console.log(values('abc')) // ['a', 'b', 'c']\n" +
               "console.log(values(new Map([[1, 'hello'], [2, 'world']]))) // ['hello', 'world']",
             position: {
               start: { line: 3, column: 1, offset: 42 },
-              end: { line: 9, column: 4, offset: 321 }
+              end: { line: 9, column: 4, offset: 332 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 9, column: 4, offset: 321 }
+          end: { line: 9, column: 4, offset: 332 }
         }
       }
     },
@@ -67603,7 +67603,7 @@ export default [
     description: 'Execute a function and return the result when a condition is true, otherwise return the original value.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      "import when from 'https://unpkg.com/rubico/dist/x/when.es.js'\n" +
+      "import when from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/when.es.js'\n" +
       '\n' +
       'const isEven = num => num % 2 === 0\n' +
       'const doubleIfEven = when(isEven, num => num * 2)\n' +
@@ -67685,7 +67685,7 @@ export default [
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: "import when from 'https://unpkg.com/rubico/dist/x/when.es.js'\n" +
+            value: "import when from 'https://cdn.jsdelivr.net/npm/rubico/dist/x/when.es.js'\n" +
               '\n' +
               'const isEven = num => num % 2 === 0\n' +
               'const doubleIfEven = when(isEven, num => num * 2)\n' +
@@ -67694,13 +67694,13 @@ export default [
               'console.log(doubleIfEven(101)) // 101',
             position: {
               start: { line: 3, column: 1, offset: 105 },
-              end: { line: 11, column: 4, offset: 361 }
+              end: { line: 11, column: 4, offset: 372 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 11, column: 4, offset: 361 }
+          end: { line: 11, column: 4, offset: 372 }
         }
       },
       since: {
