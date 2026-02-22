@@ -20,7 +20,6 @@ const {
  3. [Polymorphism](#polymorphism)
  4. [Control Flow](#control-flow)
  5. [Error Handling](#error-handling)
- 6. [Transducers](#transducers)
 
 # [A]synchrony
 Pass **synchronous or asynchronous** functions to any Rubico operator - any and all promises will be resolved. Execute functions concurrently without having to call `Promise.all` on `array.map`.
@@ -155,38 +154,5 @@ myApp({ userId: 1 }) // validated user 1
 ```
 
 The example above depicts a Rubico `tryCatch` operator wrapping a pipeline created by a `pipe` operator. The catcher function `errorHandler` catches the error thrown by the function `validate` when the `userId` of `data` is undefined.
-
-# Transducers
-**Wrangle large or infinite streams of data**. Easily express complex transformations in a memory efficient way with Rubico's transducer functionality built into its data transformation functions. Read more on Rubico's transducers [here](/blog/transducers-crash-course-rubico-v1).
-
-```javascript [playground]
-const toBinaryString = value => value.toString(2)
-
-const toBinaryInt = value => parseInt(value, 2)
-
-const decimalsToNotes = pipe([
-  BigInt,
-  toBinaryString,
-
-  function* generateSegments(str, length = 7) {
-    for (let i = 0; i < str.length; i += length) {
-      yield str.slice(i, i + length)
-    }
-  },
-
-  // the pipe of maps is a transducer
-  transform(pipe([
-    map(toBinaryInt),
-    map(String.fromCharCode),
-  ]), ''),
-])
-
-const decimals = '16791573288892525934609440079317541905554393653557736896280802239551592289061061348368963'
-const notes = decimalsToNotes(decimals)
-
-console.log(notes) // CCGGAAGFFEEDDCGGFFEEDGGFFEEDCCGGAAGFFEEDDC
-```
-
-Above we see a complex transformation made simple by the Rubico `transform` operator. The operator transforms the generator of decimal segments created by `generateSegments` into the string `notes`.
 
 You've arrived at the end of the tour. From here, you could get started with Rubico in a project ([installation](/#installation)) or read more at the [docs](/docs).

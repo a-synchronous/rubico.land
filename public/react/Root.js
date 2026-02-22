@@ -10,9 +10,7 @@ import useIsHamburgerMenuActive from './useIsHamburgerMenuActive.js'
 import getCookie from './getCookie.js'
 import cleanPath from './cleanPath.js'
 import useGlobalState from './useGlobalState.js'
-import blogPostList from './blogPostList.js'
-
-const blogUrls = blogPostList.map(get('metadata.href'))
+import useBlogPostList from './useBlogPostList.js'
 
 // Tour Docs Blog
 const tabAnchors = [...document.querySelectorAll('header > nav > a')]
@@ -22,6 +20,9 @@ const homeAnchor = document.getElementById('home')
 
 // initialState { path: string } -> ReactElement
 const Root = ReactElement(props => {
+  const [blogPostList] = useBlogPostList()
+  const blogUrls = blogPostList.map(get('metadata.href'))
+
   const [appState, dispatch] = useReducer((state, action) => {
     switch (action.type) {
       case 'SET_PATH':

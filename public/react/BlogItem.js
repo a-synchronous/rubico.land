@@ -4,8 +4,8 @@ const BlogItem = ({
   return ReactElement(props => {
     const { goto, path, children } = props,
       isExpanded = path.endsWith('/')
-        ? (path == `${blogItemPath}/`)
-        : (path == blogItemPath),
+      ? (path == `${blogItemPath}/`)
+      : (path == blogItemPath),
       [transition, setTransition] = useState('none')
 
     useEffect(() => {
@@ -38,8 +38,8 @@ const BlogItem = ({
 
       Div({
         className: transition == 'start' ? 'fade-in-out'
-          : isExpanded && transition == 'end' ? 'fade-in-out transition-end'
-          : 'fade-in-out',
+        : isExpanded && transition == 'end' ? 'fade-in-out transition-end'
+        : 'fade-in-out',
       }, isExpanded ? [content] : []),
     ])
   })
