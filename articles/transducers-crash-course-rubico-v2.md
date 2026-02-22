@@ -2,14 +2,14 @@
 title: Transducers Crash Course for Rubico V2
 author: Richard Yufei Tong, King of Software at CLOUT
 date: 2023-07-15
-updated: 2026-01-31
+updated: 2026-02-22
 path: /blog/transducers-crash-course-rubico-v2
 description: A crash course in transducers for Rubico v2
 ---
 
 Transducers enable composable and memory efficient wrangling of very large or even infinite sets of data. With transducers, each item of the data is transformed by all operations in a single pass, as opposed to the data having to go through batch transformations one operation at a time.
 
-The following example depicts numbers going through two batch transformations, one with `.filter` and one with `.map`.
+The following example depicts the array `manyNumbers` going through two batch transformations, one with Array `.filter` and one with Array `.map`.
 
 ```javascript [playground]
 const isOdd = number => number % 2 == 1
@@ -18,18 +18,16 @@ const square = number => number ** 2
 
 const manyNumbers = Array.from({ length: 1000 }, (_, i) => i)
 
-console.log(
-  manyNumbers
-    .filter(isOdd)
-    .map(square),
-) // [1, 9, 25, 36, 49, ...]
+const transformed = manyNumbers.filter(isOdd).map(square)
+
+console.log(transformed)
 ```
 
 <br />
 
-With transducers, you could express the above transformation as a single pass. An item in the transformation would be both filtered and mapped before the next item in the reducing operation. Batch transformations must create an intermediate array between each operation; transducers do not have this requirement and so do not incur the memory penalty.
+With transducers, you can express the above transformation as a single pass. Each item would be both filtered and mapped before the next item in the array. Batch transformations such as those with Array `.map` and `.filter` must create an intermediate array between each operation; transducers do not have this requirement and so do not incur a memory penalty.
 
-The next example takes the above example and converts it to use Rubico transducers.
+The next example takes the above and converts it to use Rubico transducers.
 
 <br />
 
@@ -45,12 +43,12 @@ const squaredOdds = compose([
   Transducer.map(square),
 ])
 
-console.log(
-  transform(manyNumbers, squaredOdds, [])
-) // [1, 9, 25, 36, 49, ...]
+const transformed = transform(manyNumbers, squaredOdds, [])
+
+console.log(transformed)
 ```
 
-Now the numbers are transformed in a single pass, avoiding the memory penalty 🎉. Transducers offer many benefits and expressive power, but they can be confusing to anyone picking them up for the first time. I have found it easiest to build intuition for transducers by starting with reducers.
+Now the numbers are transformed in a single pass, avoiding the memory penalty 🎉. Transducers offer many benefits and expressive power, but can be difficult to pick up. You can build intuition for transducers by starting with reducers.
 
 ```coffeescript [specscript]
 type Reducer = (
@@ -67,7 +65,7 @@ A `Transducer` is a function that takes a `Reducer` and returns another `Reducer
 
 ![dominoes.png](/assets/dominoes.png)
 
-It's a good exercise to try to implement transducers yourself. You could also use transducers through Rubico. The `Transducer` module offers the core building blocks for Rubico's transducer API.
+It's a good exercise to implement transducers on your own. If you are interested in transducers after that, you can use transducers anywhere via Rubico's `Transducer` module. The `Transducer` module offers the core building blocks for Rubico's transducer API.
 
  * [Transducer.map](/docs/Transducer.map)
  * [Transducer.filter](/docs/Transducer.filter)
@@ -76,7 +74,7 @@ It's a good exercise to try to implement transducers yourself. You could also us
  * [Transducer.passthrough](/docs/Transducer.passthrough)
  * [Transducer.tryCatch](/docs/Transducer.tryCatch)
 
-A transducer must be used with a reducing implementation to have a transducing effect. This library provides async-capable implementations as `transform` and `reduce`, and it's also possible to execute a synchronous transducer with vanilla JavaScript `Array.prototype.reduce`.
+A transducer must be used with a reduce function such as Array `.reduce`. Rubico provides async-capable reduce functions as the `transform` and `reduce` operators.
 
 The following example shows the function pipeline `squaredOdds` used as a transducer.
 
@@ -92,17 +90,18 @@ const squaredOdds = compose([
 
 const manyNumbers = Array.from({ length: 1000 }, (_, i) => i)
 
-// consume the transducer squaredOdds with Rubico's transform
-console.log(
-  transform(manyNumbers, squaredOdds, [])
-) // [1, 9, 25, 36, 49, ...]
+// use the transducer squaredOdds with Rubico's transform
+const transformedWithRubicoTransform = transform(manyNumbers, squaredOdds, [])
+
+console.log(transformedWithRubicoTransform)
 
 const arrayConcat = (array, value) => array.concat(value)
 
-// consume the transducer squaredOdds with vanilla JavaScript
-console.log(
-  manyNumbers.reduce(squaredOdds(arrayConcat), []),
-) // [1, 9, 25, 36, 49, ...]
+// use the transducer squaredOdds with vanilla JavaScript
+const transformedWithArrayReduce =
+  manyNumbers.reduce(squaredOdds(arrayConcat), [])
+
+console.log(transformedWithArrayReduce)
 ```
 
 With Rubico's transducers, it is possible to transform asynchronous sources.
@@ -116,8 +115,13 @@ const myAsyncSource = async function* () {
   }
 }
 
-transform(myAsyncSource(), Transducer.passthrough, [])
-  .then(console.log) // [1, 2, 3, 4, 5, ...]
+const transformed = await transform(
+  myAsyncSource(),
+  Transducer.passthrough,
+  []
+)
+
+console.log(transformed)
 ```
 
 This is powerful in comparison to the vanilla JavaScript `for await`, where it takes more lines to express the same operation.
@@ -131,16 +135,14 @@ const myAsyncSource = async function* () {
   }
 }
 
-setTimeout(async function () {
-  const array = []
-  for await (const number of myAsyncSource()) {
-    array.push(number)
-  }
-  console.log(array) // [1, 2, 3, 4, 5, ...]
-}, 0)
+const array = []
+for await (const number of myAsyncSource()) {
+  array.push(number)
+}
+console.log(array)
 ```
 
-Transducers are useful for creating memory efficient data transformations, and are easy to use with Rubico. You can get started with transducers at the [docs](/docs/Transducer.map).
+Transducers are useful for creating memory efficient data transformations, and are easy to use with Rubico. You can get started with transducers [here](/docs/Transducer.map).
 
 Further reading:
  * https://tgvashworth.com/2014/08/31/csp-and-transducers.html
