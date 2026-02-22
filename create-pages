@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
 require('rubico/global')
-const rubico = require('rubico')
-const Transducer = require('rubico/Transducer')
-const x = require('rubico/x')
+const rubico = require('../rubico')
+const Transducer = require('../rubico/Transducer')
+const x = require('../rubico/x')
 const IndexHtml = require('./internal/IndexHtml')
 const FileSystem = require('./internal/FileSystem')
 

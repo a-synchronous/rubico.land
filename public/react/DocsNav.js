@@ -194,6 +194,7 @@ const DocsNav = ReactElement(props => {
         Section([
           H4('Partial application'),
           CoreDocsNavItem('thunkify'),
+          CoreDocsNavItem('thunkify.call'),
           CoreDocsNavItem('always'),
           CoreDocsNavItem('curry'),
           CoreDocsNavItem('curry.arity'),
@@ -322,6 +323,7 @@ const DocsNav = ReactElement(props => {
       Section([
         H4('Partial application'),
         CoreDocsNavItem('thunkify'),
+        CoreDocsNavItem('thunkify.call'),
         CoreDocsNavItem('always'),
         CoreDocsNavItem('curry'),
         CoreDocsNavItem('curry.arity'),
