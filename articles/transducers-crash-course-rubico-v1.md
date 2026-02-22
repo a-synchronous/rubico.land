@@ -32,6 +32,10 @@ Below takes the above example and converts it to use Rubico transducers.
 <br />
 
 ```javascript [playground]
+import rubico from 'https://cdn.jsdelivr.net/npm/rubico@1/es.js'
+
+const { pipe, map, filter } = rubico
+
 const isOdd = number => number % 2 == 1
 
 const square = number => number ** 2
@@ -84,6 +88,10 @@ The following example shows the function pipeline `squaredOdds` used as a transd
 <br />
 
 ```javascript [playground]
+import rubico from 'https://cdn.jsdelivr.net/npm/rubico@1/es.js'
+
+const { pipe, map, filter } = rubico
+
 const square = number => number ** 2
 
 const isOdd = number => number % 2 == 1
@@ -112,6 +120,10 @@ console.log(transformedWithArrayReduce)
 Due to Rubico's polymorphic nature, any transducer-capable operator not used in a reduce function is capable of eager transformations. The below example is a non-transducing version of the above.
 
 ```javascript [playground]
+import rubico from 'https://cdn.jsdelivr.net/npm/rubico@1/es.js'
+
+const { pipe, map, filter } = rubico
+
 const square = number => number ** 2
 
 const isOdd = number => number % 2 == 1

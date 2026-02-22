@@ -60,7 +60,7 @@ const createMdast = async function () {
     `${__dirname}/public/mdast/readme.js`,
   )
 
-  const rubicoVersion = require('rubico/package').version
+  const rubicoVersion = require('../rubico/package').version
   const rubicoMajorVersion = rubicoVersion.split('.')[0]
   console.log(`Creating cronist/rubico-v${rubicoMajorVersion}.js`)
   await createCronistFile(
