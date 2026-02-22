@@ -48,9 +48,9 @@ const IndexHtml = function (options) {
   <link rel="manifest" href="/site.webmanifest">
   <link rel="canonical" href="${url}">
 
-  <script src="https://unpkg.com/rubico@2.0.1/dist/rubico.min.js" crossorigin></script>
-  <script src="https://unpkg.com/rubico@2.0.1/dist/Transducer.min.js" crossorigin></script>
-  <script src="https://unpkg.com/arche@0.3.5/index.js" crossorigin></script>
+  <script src="https://cdn.jsdelivr.net/npm/rubico@2.8.2/dist/rubico.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/rubico@2.8.2/dist/Transducer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/arche@1.0.2/index.js"></script>
   <script src="https://unpkg.com/react@17.0.1/umd/react.production.min.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@17.0.1/umd/react-dom.production.min.js" crossorigin></script>
   <script src="/codemirror/index.js"></script>
