@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>x/noop - rubico documentation</title>
+  <title>x/noop - Rubico documentation</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width">
   <meta name="description" content="Reference for x/noop" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="x/noop - rubico documentation" />
+  <meta name="twitter:title" content="x/noop - Rubico documentation" />
   <meta name="twitter:description" content="Reference for x/noop" />
-  <meta property="og:title" content="x/noop - rubico documentation" />
+  <meta property="og:title" content="x/noop - Rubico documentation" />
   <meta property="og:type" content="object" />
   <meta property="og:url" content="https://rubico.land/docs/x/noop" />
   <meta property="og:description" content="Reference for x/noop" />

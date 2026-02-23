@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Transducer.forEach - rubico documentation</title>
+  <title>Transducer.forEach - Rubico documentation</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width">
   <meta name="description" content="Reference for Transducer.forEach" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Transducer.forEach - rubico documentation" />
+  <meta name="twitter:title" content="Transducer.forEach - Rubico documentation" />
   <meta name="twitter:description" content="Reference for Transducer.forEach" />
-  <meta property="og:title" content="Transducer.forEach - rubico documentation" />
+  <meta property="og:title" content="Transducer.forEach - Rubico documentation" />
   <meta property="og:type" content="object" />
   <meta property="og:url" content="https://rubico.land/docs/Transducer.forEach" />
   <meta property="og:description" content="Reference for Transducer.forEach" />

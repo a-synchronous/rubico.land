@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>x/trace - rubico documentation</title>
+  <title>x/trace - Rubico documentation</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width">
   <meta name="description" content="Reference for x/trace" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="x/trace - rubico documentation" />
+  <meta name="twitter:title" content="x/trace - Rubico documentation" />
   <meta name="twitter:description" content="Reference for x/trace" />
-  <meta property="og:title" content="x/trace - rubico documentation" />
+  <meta property="og:title" content="x/trace - Rubico documentation" />
   <meta property="og:type" content="object" />
   <meta property="og:url" content="https://rubico.land/docs/x/trace" />
   <meta property="og:description" content="Reference for x/trace" />

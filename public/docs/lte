@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>lte - rubico documentation</title>
+  <title>lte - Rubico documentation</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width">
   <meta name="description" content="Reference for lte" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="lte - rubico documentation" />
+  <meta name="twitter:title" content="lte - Rubico documentation" />
   <meta name="twitter:description" content="Reference for lte" />
-  <meta property="og:title" content="lte - rubico documentation" />
+  <meta property="og:title" content="lte - Rubico documentation" />
   <meta property="og:type" content="object" />
   <meta property="og:url" content="https://rubico.land/docs/lte" />
   <meta property="og:description" content="Reference for lte" />

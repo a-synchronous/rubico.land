@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>compose - rubico documentation</title>
+  <title>compose - Rubico documentation</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width">
   <meta name="description" content="Reference for compose" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="compose - rubico documentation" />
+  <meta name="twitter:title" content="compose - Rubico documentation" />
   <meta name="twitter:description" content="Reference for compose" />
-  <meta property="og:title" content="compose - rubico documentation" />
+  <meta property="og:title" content="compose - Rubico documentation" />
   <meta property="og:type" content="object" />
   <meta property="og:url" content="https://rubico.land/docs/compose" />
   <meta property="og:description" content="Reference for compose" />

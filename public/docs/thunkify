@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>thunkify - rubico documentation</title>
+  <title>thunkify - Rubico documentation</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width">
   <meta name="description" content="Reference for thunkify" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="thunkify - rubico documentation" />
+  <meta name="twitter:title" content="thunkify - Rubico documentation" />
   <meta name="twitter:description" content="Reference for thunkify" />
-  <meta property="og:title" content="thunkify - rubico documentation" />
+  <meta property="og:title" content="thunkify - Rubico documentation" />
   <meta property="og:type" content="object" />
   <meta property="og:url" content="https://rubico.land/docs/thunkify" />
   <meta property="og:description" content="Reference for thunkify" />

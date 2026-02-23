@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>x/identity - rubico documentation</title>
+  <title>x/identity - Rubico documentation</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width">
   <meta name="description" content="Reference for x/identity" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="x/identity - rubico documentation" />
+  <meta name="twitter:title" content="x/identity - Rubico documentation" />
   <meta name="twitter:description" content="Reference for x/identity" />
-  <meta property="og:title" content="x/identity - rubico documentation" />
+  <meta property="og:title" content="x/identity - Rubico documentation" />
   <meta property="og:type" content="object" />
   <meta property="og:url" content="https://rubico.land/docs/x/identity" />
   <meta property="og:description" content="Reference for x/identity" />

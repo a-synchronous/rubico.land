@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Transducers Crash Course for Rubico</title>
+  <title>Transducers Crash Course</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width">
-  <meta name="description" content="A crash course in Rubico transducers" />
+  <meta name="description" content="A crash course on Rubico transducers" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Transducers Crash Course for Rubico" />
-  <meta name="twitter:description" content="A crash course in Rubico transducers" />
-  <meta property="og:title" content="Transducers Crash Course for Rubico" />
+  <meta name="twitter:title" content="Transducers Crash Course" />
+  <meta name="twitter:description" content="A crash course on Rubico transducers" />
+  <meta property="og:title" content="Transducers Crash Course" />
   <meta property="og:type" content="object" />
   <meta property="og:url" content="https://rubico.land/blog/transducers-crash-course" />
-  <meta property="og:description" content="A crash course in Rubico transducers" />
+  <meta property="og:description" content="A crash course on Rubico transducers" />
 
+  
+  <meta name="image" content="/assets/dominoes.png" />
+  <meta property="og:image" content="/assets/dominoes.png" />
+  <meta name="twitter:image" content="/assets/dominoes.png" />
   
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">

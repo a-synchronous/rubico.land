@@ -4,13 +4,13 @@ import Docs from './Docs.js'
 import Blog from './Blog.js'
 import NotFound from './NotFound.js'
 import Analytics from './Analytics.js'
-import PathTitle from './PathTitle.js'
 import useRubicoVersion from './useRubicoVersion.js'
 import useIsHamburgerMenuActive from './useIsHamburgerMenuActive.js'
 import getCookie from './getCookie.js'
 import cleanPath from './cleanPath.js'
 import useGlobalState from './useGlobalState.js'
 import useBlogPostList from './useBlogPostList.js'
+import usePathPageMap from './usePathPageMap.js'
 
 // Tour Docs Blog
 const tabAnchors = [...document.querySelectorAll('header > nav > a')]
@@ -40,12 +40,19 @@ const Root = ReactElement(props => {
     }
   })
 
+  const [pathPageMap] = usePathPageMap()
   const [_, setIsHamburgerMenuActive] = useIsHamburgerMenuActive()
 
   const goto = path => {
     history.pushState({ path }, null, path)
     dispatch({ type: 'SET_PATH', path })
-    document.title = PathTitle(path)
+
+    if (pathPageMap.has(path)) {
+      document.title = pathPageMap.get(path).title
+    } else {
+      document.title = 'Rubico - [A]synchronous Functional Programming'
+    }
+
     setIsHamburgerMenuActive(false)
     Analytics.goto(path)
   }

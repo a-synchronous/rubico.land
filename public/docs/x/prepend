@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>x/prepend - rubico documentation</title>
+  <title>x/prepend - Rubico documentation</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width">
   <meta name="description" content="Reference for x/prepend" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="x/prepend - rubico documentation" />
+  <meta name="twitter:title" content="x/prepend - Rubico documentation" />
   <meta name="twitter:description" content="Reference for x/prepend" />
-  <meta property="og:title" content="x/prepend - rubico documentation" />
+  <meta property="og:title" content="x/prepend - Rubico documentation" />
   <meta property="og:type" content="object" />
   <meta property="og:url" content="https://rubico.land/docs/x/prepend" />
   <meta property="og:description" content="Reference for x/prepend" />

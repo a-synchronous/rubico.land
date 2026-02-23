@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>map.withIndex - rubico documentation</title>
+  <title>map.withIndex - Rubico documentation</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width">
   <meta name="description" content="Reference for map.withIndex" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="map.withIndex - rubico documentation" />
+  <meta name="twitter:title" content="map.withIndex - Rubico documentation" />
   <meta name="twitter:description" content="Reference for map.withIndex" />
-  <meta property="og:title" content="map.withIndex - rubico documentation" />
+  <meta property="og:title" content="map.withIndex - Rubico documentation" />
   <meta property="og:type" content="object" />
   <meta property="og:url" content="https://rubico.land/docs/map.withIndex" />
   <meta property="og:description" content="Reference for map.withIndex" />

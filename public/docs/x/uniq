@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>x/uniq - rubico documentation</title>
+  <title>x/uniq - Rubico documentation</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width">
   <meta name="description" content="Reference for x/uniq" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="x/uniq - rubico documentation" />
+  <meta name="twitter:title" content="x/uniq - Rubico documentation" />
   <meta name="twitter:description" content="Reference for x/uniq" />
-  <meta property="og:title" content="x/uniq - rubico documentation" />
+  <meta property="og:title" content="x/uniq - Rubico documentation" />
   <meta property="og:type" content="object" />
   <meta property="og:url" content="https://rubico.land/docs/x/uniq" />
   <meta property="og:description" content="Reference for x/uniq" />

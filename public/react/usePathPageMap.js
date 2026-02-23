@@ -12,26 +12,26 @@ function createPathPageMap(options) {
 
   m.set('/', {
     path: '/',
-    title: 'rubico - [a]synchronous functional programming',
+    title: 'Rubico - [A]synchronous Functional Programming',
     description: 'A library for creating async-enabled function compositions.',
   })
 
   m.set('/tour', {
     path: '/tour',
-    title: 'A tour of rubico',
-    description: 'An overview of the rubico library',
+    title: 'A tour of Rubico',
+    description: 'An overview of the Rubico library',
   })
 
   m.set('/docs', {
     path: '/docs',
-    title: 'rubico documentation',
-    description: 'A reference for the rubico library',
+    title: 'Rubico documentation',
+    description: 'A reference for the Rubico library',
   })
 
   m.set('/blog', {
     path: '/blog',
-    title: 'rubico blog',
-    description: 'A blog about the rubico library, JavaScript, and functional programming',
+    title: 'Rubico blog',
+    description: 'A blog about the Rubico library, JavaScript, and functional programming',
   })
 
   Array.from([
@@ -40,7 +40,7 @@ function createPathPageMap(options) {
   ]).flat(1).forEach(funcName => {
     m.set(`/docs/${funcName}`, {
       path: `/docs/${funcName}`,
-      title: `${funcName} - rubico documentation`,
+      title: `${funcName} - Rubico documentation`,
       description: `Reference for ${funcName}`,
     })
   })
@@ -48,7 +48,7 @@ function createPathPageMap(options) {
   FunctionNames(Transducer).forEach(funcName => {
     m.set(`/docs/Transducer.${funcName}`, {
       path: `/docs/Transducer.${funcName}`,
-      title: `Transducer.${funcName} - rubico documentation`,
+      title: `Transducer.${funcName} - Rubico documentation`,
       description: `Reference for Transducer.${funcName}`,
     })
   })
@@ -68,10 +68,11 @@ function usePathPageMap() {
   const [pathPageMap, setPathPageMap] = useGlobalState('pathPageMap', initial)
 
   useEffect(() => {
-    setPathPageMap(createPathPageMap({ blogPostList }))
+    const m1 = createPathPageMap({ blogPostList })
+    setPathPageMap(m1)
   }, [blogPostList])
 
-  return pathPageMap
+  return [pathPageMap, usePathPageMap]
 }
 
 export default usePathPageMap

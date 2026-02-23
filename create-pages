@@ -40,29 +40,29 @@ const main = async function (options) {
   console.log('Creating index.html')
   await publicFs.writeFile('index.html', IndexHtml({
     path: '/',
-    title: 'rubico - [a]synchronous functional programming',
+    title: 'Rubico - [A]synchronous Functional Programming',
     description: 'A library for creating async-enabled function compositions.',
   }))
 
   console.log('Creating tour/index.html')
   await publicFs.writeFile('tour/index.html', IndexHtml({
     path: '/tour/',
-    title: 'A tour of rubico',
-    description: 'An overview of the rubico library',
+    title: 'A tour of Rubico',
+    description: 'An overview of the Rubico library',
   }))
 
   console.log('Creating docs/index.html')
   await publicFs.writeFile('docs/index.html', IndexHtml({
     path: '/docs/',
-    title: 'rubico documentation',
-    description: 'A reference for the rubico library',
+    title: 'Rubico documentation',
+    description: 'A reference for the Rubico library',
   }))
 
   console.log('Creating blog/index.html')
   await publicFs.writeFile('blog/index.html', IndexHtml({
     path: '/blog/',
-    title: 'rubico blog',
-    description: 'A blog about the rubico library, JavaScript, and [A]synchronous Functional Programming',
+    title: 'Rubico blog',
+    description: 'A blog about the Rubico library, JavaScript, and [A]synchronous Functional Programming',
   }))
 
   const coreFunctionNames = FunctionNames(rubico)
@@ -85,7 +85,7 @@ const main = async function (options) {
     console.log(`Creating docs/${functionName}`)
     await publicFs.writeFile(`docs/${functionName}`, IndexHtml({
       path: `/docs/${functionName}`,
-      title: `${functionName} - rubico documentation`,
+      title: `${functionName} - Rubico documentation`,
       description: `Reference for ${functionName}`,
     }))
   }
@@ -94,7 +94,7 @@ const main = async function (options) {
     console.log(`Creating docs/${functionName}`)
     await publicFs.writeFile(`docs/Transducer.${functionName}`, IndexHtml({
       path: `/docs/Transducer.${functionName}`,
-      title: `Transducer.${functionName} - rubico documentation`,
+      title: `Transducer.${functionName} - Rubico documentation`,
       description: `Reference for Transducer.${functionName}`,
     }))
   }
@@ -105,7 +105,7 @@ const main = async function (options) {
     console.log(`Creating docs/x/${functionName}`)
     await publicFs.writeFile(`docs/x/${functionName}`, IndexHtml({
       path: `/docs/x/${functionName}`,
-      title: `x/${functionName} - rubico documentation`,
+      title: `x/${functionName} - Rubico documentation`,
       description: `Reference for x/${functionName}`,
     }))
   }

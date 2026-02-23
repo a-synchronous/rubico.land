@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>tryCatch - rubico documentation</title>
+  <title>tryCatch - Rubico documentation</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width">
   <meta name="description" content="Reference for tryCatch" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="tryCatch - rubico documentation" />
+  <meta name="twitter:title" content="tryCatch - Rubico documentation" />
   <meta name="twitter:description" content="Reference for tryCatch" />
-  <meta property="og:title" content="tryCatch - rubico documentation" />
+  <meta property="og:title" content="tryCatch - Rubico documentation" />
   <meta property="og:type" content="object" />
   <meta property="og:url" content="https://rubico.land/docs/tryCatch" />
   <meta property="og:description" content="Reference for tryCatch" />

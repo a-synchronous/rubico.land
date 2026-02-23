@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Transducer.tryCatch - rubico documentation</title>
+  <title>Transducer.tryCatch - Rubico documentation</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width">
   <meta name="description" content="Reference for Transducer.tryCatch" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Transducer.tryCatch - rubico documentation" />
+  <meta name="twitter:title" content="Transducer.tryCatch - Rubico documentation" />
   <meta name="twitter:description" content="Reference for Transducer.tryCatch" />
-  <meta property="og:title" content="Transducer.tryCatch - rubico documentation" />
+  <meta property="og:title" content="Transducer.tryCatch - Rubico documentation" />
   <meta property="og:type" content="object" />
   <meta property="og:url" content="https://rubico.land/docs/Transducer.tryCatch" />
   <meta property="og:description" content="Reference for Transducer.tryCatch" />

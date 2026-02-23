@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Transducer.filter - rubico documentation</title>
+  <title>Transducer.filter - Rubico documentation</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width">
   <meta name="description" content="Reference for Transducer.filter" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Transducer.filter - rubico documentation" />
+  <meta name="twitter:title" content="Transducer.filter - Rubico documentation" />
   <meta name="twitter:description" content="Reference for Transducer.filter" />
-  <meta property="og:title" content="Transducer.filter - rubico documentation" />
+  <meta property="og:title" content="Transducer.filter - Rubico documentation" />
   <meta property="og:type" content="object" />
   <meta property="og:url" content="https://rubico.land/docs/Transducer.filter" />
   <meta property="og:description" content="Reference for Transducer.filter" />

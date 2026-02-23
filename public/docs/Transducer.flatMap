@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Transducer.flatMap - rubico documentation</title>
+  <title>Transducer.flatMap - Rubico documentation</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width">
   <meta name="description" content="Reference for Transducer.flatMap" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Transducer.flatMap - rubico documentation" />
+  <meta name="twitter:title" content="Transducer.flatMap - Rubico documentation" />
   <meta name="twitter:description" content="Reference for Transducer.flatMap" />
-  <meta property="og:title" content="Transducer.flatMap - rubico documentation" />
+  <meta property="og:title" content="Transducer.flatMap - Rubico documentation" />
   <meta property="og:type" content="object" />
   <meta property="og:url" content="https://rubico.land/docs/Transducer.flatMap" />
   <meta property="og:description" content="Reference for Transducer.flatMap" />
