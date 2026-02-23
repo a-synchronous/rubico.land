@@ -1,134 +1,101 @@
 ---
 title: [A]synchronous Functional Programming - Asynchronous Sources
-author: Richard Tong, CTO and Co-Founder of Claimyr Inc.
-date: 2025-06-21
-updated: 2026-01-31
+author: Richard Yufei Tong, King of Software at CLOUT
+date: 2025-02-23
+updated: 2026-02-23
 path: /blog/a-synchronous-functional-programming-asynchronous-sources
-description: Handling HTTP in [A]synchronous Functional Programming
-image: /assets/HTTP_logo.png
+description: Asynchronous Sources in [A]synchronous Functional Programming
+image: /assets/asynchronous-sources-examples.jpg
 ---
 
-Welcome to Asynchronous Sources in [A]synchronous Functional Programming. In this article we will discuss asynchronous sources in [A]synchronous Functional Programming.
+Welcome to Asynchronous Sources in [A]synchronous Functional Programming. In this article we will discuss asynchronous sources in the context of the [A]synchronous Functional Programming paradigm in JavaScript.
 
 ## Asynchronous Sources
 
-An "asynchronous source" or "stream" is a connection, producer, origin, or target of events, messages, or data. An asynchronous source flows independently of the main program's execution flow.
+Asynchronous Sources are ubiquitous in modern day JavaScript environments, in both web browsers and servers. Asynchronous sources can be data streams, network connections, and event targets. Asynchronous sources execute independently of the main program's execution flow.
 
-Below are examples of asynchronous sources that occur on the [web](https://developer.mozilla.org/en-US/docs/Glossary/World_Wide_Web) and in [NodeJS](https://nodejs.org/en).
+Here are some examples of asynchronous sources that occur in web browsers and in [NodeJS](https://nodejs.org/en).
 
 ```javascript
 // EventTarget (Web)
 const myButtonElement = document.getElementById('#my-button')
 myButtonElement.addEventListener('click', event => {
-  // event is a click event of the asynchronous source myButtonElement
+  // event is a click event of the event target myButtonElement
 })
 
+// fetch response (web)
+const response = await fetch('https://jsonplaceholder.typicode.com/posts')
+// response.body
+
 // WebSocket (Web)
-const myWebSocket = new WebSocket('ws://localhost:8080/')
-myWebSocket.addEventListener('message', event => {
-  // event is a message event of the asynchronous source myWebSocket
+const myWebsocket = new WebSocket('ws://localhost:8080/')
+websocket.addEventListener('message', event => {
+  // event is a message event of the WebSocket connection myWebsocket
 })
 
 // stream.Readable (NodeJS)
 const fs = require('fs')
-const myReadableStream = fs.createReadStream('/path/to/file')
+const myReadableStream = fs.createReadStream('/path/to/my/file')
 myReadableStream.on('data', chunk => {
-  // chunk is a string or Buffer of the asynchronous source myReadableStream
+  // chunk is data from the file stream myReadableStream
 })
 ```
 
 ## Asynchronous Sources on the Web
 
-On the web, asynchronous sources can be event targets and WebSocket connections.
+On the web, event targets and network connections are both examples of asynchronous sources.
 
-### Event
+### Event Targets and Events
 
-An "event" ([Event](https://developer.mozilla.org/en-US/docs/Web/API/Event)) is an object that represents an asynchronous occurence in relation to an [event target](#event-target). For example a "click" event can occur on a "button" event target.
+An event target ([EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget)) is an object that can receive events. Any element ([Element](https://developer.mozilla.org/en-US/docs/Web/API/Element)), including the `document` ([Document](https://developer.mozilla.org/en-US/docs/Web/API/Document)) object and global `window` ([Window](https://developer.mozilla.org/en-US/docs/Web/API/Window)) object, can be considered an event target.
+
+An event ([Event](https://developer.mozilla.org/en-US/docs/Web/API/Event)) is an object that represents an asynchronous occurrence in relation to an event target. For example, a "click" event can occur on a button event target, and a "change" event can occur on an input event target.
 
 ```coffeescript [specscript]
 type Event = {
-  bubbles: boolean,
-  cancelable: boolean,
-  composed: boolean,
-  currentTarget: EventTarget,
-  defaultPrevented: boolean,
-  eventPhase: number,
-  isTrusted: boolean,
-  srcElement: EventTarget,
-  target: EventTarget,
-  timeStamp: number,
   type: string,
-}
-```
-
-#### Event bubbles
-#### Event cancelable
-#### Event composed
-#### Event currentTarget
-#### Event defaultPrevented
-#### Event eventPhase
-#### Event isTrusted
-#### Event srcElement
-#### Event target
-#### Event timeStamp
-#### Event type
-
-https://developer.mozilla.org/en-US/docs/Web/API/Event
-
-### Event Types
-
-#### click event
-Fires when mouse's primary button is pressed and released while pointer is inside the event target. For mobile devices, fires when a touch gesture is performed on the element.
-
-```coffeescript [specscript]
-type EventTarget = Element|Document|Window
-
-type Event = {
   target: EventTarget,
 }
 
-eventTarget.addEventListener('click', event Event)
-```
-
-#### dblclick event
-mouse's primary button is double-clicked (rapidly clicked twice) while pointer is inside the event target.
-
-#### mousedown event
-mouse button is pressed over event target
-
-`mouseup` - mouse button is released over event target
-`mousemove` - pointer is moved while over event target
-`mouseover` - pointer 
-`mouseout`
-`contextmenu`
-`wheel`
-
-### Event Target
-
-An "event target" [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) is an object that can receive [events](#event). Any [DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction) element ([Element](https://developer.mozilla.org/en-US/docs/Web/API/Element)), the `document` object ([Document](https://developer.mozilla.org/en-US/docs/Web/API/Document)), and global `window` object ([Window](https://developer.mozilla.org/en-US/docs/Web/API/Window)) can be considered event targets.
-
-```coffeescript [specscript]
-type AbortSignal = {
-  aborted: boolean,
-  reason: string,
-}
-
-type EventListener = (event Event)=>()
+type EventListener = (event Event)=>any
 
 type EventTarget = {
-  addEventListener: (eventType string, listener EventListener, optionsOrUseCapture {
-    capture?: boolean,
-    once?: boolean,
-    passive?: boolean,
-    signal?: AbortSignal,
-  }|boolean)=>(),
-
-  removeEventListener: (eventType string, listener EventListener, optionsOrUseCapture {
-    capture?: boolean,
-  }|boolean)=>(),
-
-  dispatchEvent: (event Event)=>boolean,
+  addEventListener: (eventName string, listener EventListener)=>undefined,
+  removeEventListener: (eventName string, listener EventListener)=>undefined,
 }
 ```
+
+To listen for an event on an event target, you would call the `addEventListener` method of the event target with the event name and an event listener callback function. You can add multiple event listeners for the same event, and remove event listeners with `removeEventListener`. To remove an event listener, you would call the `removeEventListener` method of the event target with the event name and the event listener callback function to remove.
+
+```javascript
+// myButton is an event target
+const myButton = document.getElementById('my-button')
+
+const myListener = event => {
+  console.log(event.target)
+}
+
+// adds myListener to myButton's click event listeners
+myButton.addEventListener('click', myListener)
+
+const myOtherListener = event => {
+  console.log(event.target)
+}
+
+// adds myOtherListener to myButton's click event listeners
+myButton.addEventListener('click', myOtherListener)
+
+// removes myOtherListener from myButton's click event listeners
+myButton.removeEventListener('click', myOtherListener)
+```
+
+Some common events:
+  * [Element focus event](https://developer.mozilla.org/en-US/docs/Web/API/Element/focus_event)
+  * [Element change event](#element-change-event)
+  * [Element keydown event](#element-keydown-event)
+  * [Element keyup event](#element-keyup-event)
+  * [Element mousemove event](#element-mousemove-event)
+  * [Element click event](#element-click-event)
+  * [Element scroll event](#element-scroll-event)
 
 ## Asynchronous Sources in NodeJS
