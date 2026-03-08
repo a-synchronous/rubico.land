@@ -276,7 +276,7 @@ export default {
           children: [
             {
               type: 'text',
-              value: '~7.7 kB minified and gzipped',
+              value: '~8.3 kB minified and gzipped',
               position: {
                 start: { line: 29, column: 62, offset: 1016 },
                 end: { line: 29, column: 90, offset: 1044 }
@@ -330,7 +330,7 @@ export default {
           children: [
             {
               type: 'text',
-              value: '~1.5kb minified and gzipped',
+              value: '~1.7kb minified and gzipped',
               position: {
                 start: { line: 29, column: 227, offset: 1181 },
                 end: { line: 29, column: 254, offset: 1208 }

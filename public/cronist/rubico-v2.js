@@ -11301,6 +11301,95 @@ export default [
     fileName: '/Users/richard/code/rubico.land/../rubico/_internal/funcApply2.js'
   },
   {
+    name: 'funcApply2',
+    synopsis: '```coffeescript [specscript]\n' +
+      'funcApply2<\n' +
+      '  func function,\n' +
+      '  context object,\n' +
+      '  args Array\n' +
+      '>(func, args) -> func(...args)\n' +
+      '```',
+    description: 'Apply arguments to a function with context.',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'funcApply2',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 11, offset: 10 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 11, offset: 10 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 11, offset: 10 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'funcApply2<\n' +
+              '  func function,\n' +
+              '  context object,\n' +
+              '  args Array\n' +
+              '>(func, args) -> func(...args)',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 7, column: 4, offset: 123 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 7, column: 4, offset: 123 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Apply arguments to a function with context.',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 44, offset: 43 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 44, offset: 43 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 44, offset: 43 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/funcApply2.js'
+  },
+  {
     name: 'funcCall',
     synopsis: '```coffeescript [specscript]\n' +
       'funcCall(func function, context Object, ...args) -> any\n' +
@@ -23478,20 +23567,20 @@ export default [
       '\n' +
       'all.series(funcsArray Array<function>)(...args) -> result Promise|Array\n' +
       '```',
-    description: '`all` with serial execution.\n' +
+    description: '[all](/docs/all) with serial execution.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const sleep = ms => () => new Promise(resolve => setTimeout(resolve, ms))\n' +
       '\n' +
-      'all.series([\n' +
-      "  greeting => console.log(greeting + ' world'),\n" +
+      "all.series('hello', '!', [\n" +
+      "  (greeting, punctuationMark) => console.log(greeting + ' world' + punctuationMark),\n" +
       '  sleep(1000),\n' +
-      "  greeting => console.log(greeting + ' mom'),\n" +
+      "  (greeting, punctuationMark) => console.log(greeting + ' mom' + punctuationMark),\n" +
       '  sleep(1000),\n' +
-      "  greeting => console.log(greeting + ' goodbye'),\n" +
-      "])('hello') // hello world\n" +
-      '            // hello mom\n' +
-      '            // hello goodbye\n' +
+      "  (greeting, punctuationMark) => console.log(greeting + ' goodbye' + punctuationMark),\n" +
+      ']) // hello world!\n' +
+      '   // hello mom!\n' +
+      '   // hello goodbye!\n' +
       '```',
     execution: 'series',
     mdast: {
@@ -23549,25 +23638,36 @@ export default [
             type: 'paragraph',
             children: [
               {
-                type: 'inlineCode',
-                value: 'all',
+                type: 'link',
+                title: null,
+                url: '/docs/all',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'all',
+                    position: {
+                      start: { line: 1, column: 2, offset: 1 },
+                      end: { line: 1, column: 5, offset: 4 }
+                    }
+                  }
+                ],
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 6, offset: 5 }
+                  end: { line: 1, column: 17, offset: 16 }
                 }
               },
               {
                 type: 'text',
                 value: ' with serial execution.',
                 position: {
-                  start: { line: 1, column: 6, offset: 5 },
-                  end: { line: 1, column: 29, offset: 28 }
+                  start: { line: 1, column: 17, offset: 16 },
+                  end: { line: 1, column: 40, offset: 39 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 29, offset: 28 }
+              end: { line: 1, column: 40, offset: 39 }
             }
           },
           {
@@ -23576,24 +23676,24 @@ export default [
             meta: '[playground]',
             value: 'const sleep = ms => () => new Promise(resolve => setTimeout(resolve, ms))\n' +
               '\n' +
-              'all.series([\n' +
-              "  greeting => console.log(greeting + ' world'),\n" +
+              "all.series('hello', '!', [\n" +
+              "  (greeting, punctuationMark) => console.log(greeting + ' world' + punctuationMark),\n" +
               '  sleep(1000),\n' +
-              "  greeting => console.log(greeting + ' mom'),\n" +
+              "  (greeting, punctuationMark) => console.log(greeting + ' mom' + punctuationMark),\n" +
               '  sleep(1000),\n' +
-              "  greeting => console.log(greeting + ' goodbye'),\n" +
-              "])('hello') // hello world\n" +
-              '            // hello mom\n' +
-              '            // hello goodbye',
+              "  (greeting, punctuationMark) => console.log(greeting + ' goodbye' + punctuationMark),\n" +
+              ']) // hello world!\n' +
+              '   // hello mom!\n' +
+              '   // hello goodbye!',
             position: {
-              start: { line: 3, column: 1, offset: 30 },
-              end: { line: 15, column: 4, offset: 403 }
+              start: { line: 3, column: 1, offset: 41 },
+              end: { line: 15, column: 4, offset: 515 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 15, column: 4, offset: 403 }
+          end: { line: 15, column: 4, offset: 515 }
         }
       },
       execution: {
@@ -26741,6 +26841,482 @@ export default [
         position: {
           start: { line: 1, column: 1, offset: 0 },
           end: { line: 16, column: 42, offset: 428 }
+<<<<<<< HEAD
+=======
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/curry.js'
+  },
+  {
+    name: 'curry.call',
+    synopsis: '```coffeescript [specscript]\n' +
+      'type __ = Symbol(placeholder)\n' +
+      'type ArgsWithPlaceholder = Array<__|any>\n' +
+      '\n' +
+      'n number\n' +
+      'args ArgsWithPlaceholder\n' +
+      'moreArgs ArgsWithPlaceholder\n' +
+      '\n' +
+      'curry.call(func function, context object, ...args) -> curriedFuncOrResult function|any\n' +
+      'curriedFuncOrResult(...moreArgs) -> anotherCurriedFuncOrResult function|any\n' +
+      '```',
+    description: '[curry](/docs/curry) with specified context.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'class Point {\n' +
+      '  constructor(x, y) {\n' +
+      '    this.x = x\n' +
+      '    this.y = y\n' +
+      '  }\n' +
+      '\n' +
+      '  toString() {\n' +
+      '    return `(${this.x}, ${this.y})`\n' +
+      '  }\n' +
+      '}\n' +
+      '\n' +
+      'const point = new Point(100, 100)\n' +
+      '\n' +
+      'const box = { x: 5, y: 10 }\n' +
+      '\n' +
+      'console.log(curry.call(point.toString, point))\n' +
+      'console.log(curry.call(point.toString, box))\n' +
+      '```\n' +
+      '\n' +
+      'See also:\n' +
+      ' * [eq](/docs/eq)\n' +
+      ' * [thunkify](/docs/thunkify)\n' +
+      ' * [always](/docs/always)\n' +
+      ' * [curry](/docs/curry)\n' +
+      ' * [curry.arity](/docs/curry.arity)\n' +
+      ' * [__](/docs/__)\n' +
+      ' * [Transducer.map](/docs/Transducer.map)',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'curry.call',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 11, offset: 10 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 11, offset: 10 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 11, offset: 10 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'type __ = Symbol(placeholder)\n' +
+              'type ArgsWithPlaceholder = Array<__|any>\n' +
+              '\n' +
+              'n number\n' +
+              'args ArgsWithPlaceholder\n' +
+              'moreArgs ArgsWithPlaceholder\n' +
+              '\n' +
+              'curry.call(func function, context object, ...args) -> curriedFuncOrResult function|any\n' +
+              'curriedFuncOrResult(...moreArgs) -> anotherCurriedFuncOrResult function|any',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 11, column: 4, offset: 331 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 11, column: 4, offset: 331 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'link',
+                title: null,
+                url: '/docs/curry',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'curry',
+                    position: {
+                      start: { line: 1, column: 2, offset: 1 },
+                      end: { line: 1, column: 7, offset: 6 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 21, offset: 20 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' with specified context.',
+                position: {
+                  start: { line: 1, column: 21, offset: 20 },
+                  end: { line: 1, column: 45, offset: 44 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 45, offset: 44 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'class Point {\n' +
+              '  constructor(x, y) {\n' +
+              '    this.x = x\n' +
+              '    this.y = y\n' +
+              '  }\n' +
+              '\n' +
+              '  toString() {\n' +
+              '    return `(${this.x}, ${this.y})`\n' +
+              '  }\n' +
+              '}\n' +
+              '\n' +
+              'const point = new Point(100, 100)\n' +
+              '\n' +
+              'const box = { x: 5, y: 10 }\n' +
+              '\n' +
+              'console.log(curry.call(point.toString, point))\n' +
+              'console.log(curry.call(point.toString, box))',
+            position: {
+              start: { line: 3, column: 1, offset: 46 },
+              end: { line: 21, column: 4, offset: 361 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'See also:',
+                position: {
+                  start: { line: 23, column: 1, offset: 363 },
+                  end: { line: 23, column: 10, offset: 372 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 23, column: 1, offset: 363 },
+              end: { line: 23, column: 10, offset: 372 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/eq',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'eq',
+                            position: {
+                              start: { line: 24, column: 5, offset: 377 },
+                              end: { line: 24, column: 7, offset: 379 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 24, column: 4, offset: 376 },
+                          end: { line: 24, column: 18, offset: 390 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 24, column: 4, offset: 376 },
+                      end: { line: 24, column: 18, offset: 390 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 24, column: 2, offset: 374 },
+                  end: { line: 24, column: 18, offset: 390 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/thunkify',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'thunkify',
+                            position: {
+                              start: { line: 25, column: 5, offset: 395 },
+                              end: { line: 25, column: 13, offset: 403 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 25, column: 4, offset: 394 },
+                          end: { line: 25, column: 30, offset: 420 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 25, column: 4, offset: 394 },
+                      end: { line: 25, column: 30, offset: 420 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 25, column: 2, offset: 392 },
+                  end: { line: 25, column: 30, offset: 420 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/always',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'always',
+                            position: {
+                              start: { line: 26, column: 5, offset: 425 },
+                              end: { line: 26, column: 11, offset: 431 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 26, column: 4, offset: 424 },
+                          end: { line: 26, column: 26, offset: 446 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 26, column: 4, offset: 424 },
+                      end: { line: 26, column: 26, offset: 446 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 26, column: 2, offset: 422 },
+                  end: { line: 26, column: 26, offset: 446 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/curry',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'curry',
+                            position: {
+                              start: { line: 27, column: 5, offset: 451 },
+                              end: { line: 27, column: 10, offset: 456 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 27, column: 4, offset: 450 },
+                          end: { line: 27, column: 24, offset: 470 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 27, column: 4, offset: 450 },
+                      end: { line: 27, column: 24, offset: 470 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 27, column: 2, offset: 448 },
+                  end: { line: 27, column: 24, offset: 470 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/curry.arity',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'curry.arity',
+                            position: {
+                              start: { line: 28, column: 5, offset: 475 },
+                              end: { line: 28, column: 16, offset: 486 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 28, column: 4, offset: 474 },
+                          end: { line: 28, column: 36, offset: 506 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 28, column: 4, offset: 474 },
+                      end: { line: 28, column: 36, offset: 506 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 28, column: 2, offset: 472 },
+                  end: { line: 28, column: 36, offset: 506 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/__',
+                        children: [
+                          {
+                            type: 'text',
+                            value: '__',
+                            position: {
+                              start: { line: 29, column: 5, offset: 511 },
+                              end: { line: 29, column: 7, offset: 513 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 29, column: 4, offset: 510 },
+                          end: { line: 29, column: 18, offset: 524 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 29, column: 4, offset: 510 },
+                      end: { line: 29, column: 18, offset: 524 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 29, column: 2, offset: 508 },
+                  end: { line: 29, column: 18, offset: 524 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/Transducer.map',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'Transducer.map',
+                            position: {
+                              start: { line: 30, column: 5, offset: 529 },
+                              end: { line: 30, column: 19, offset: 543 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 30, column: 4, offset: 528 },
+                          end: { line: 30, column: 42, offset: 566 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 30, column: 4, offset: 528 },
+                      end: { line: 30, column: 42, offset: 566 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 30, column: 2, offset: 526 },
+                  end: { line: 30, column: 42, offset: 566 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 24, column: 2, offset: 374 },
+              end: { line: 30, column: 42, offset: 566 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 30, column: 42, offset: 566 }
+>>>>>>> da0a776 (docs)
         }
       }
     },
@@ -56469,6 +57045,60 @@ export default [
     fileName: '/Users/richard/code/rubico.land/../rubico/thunkify.js'
   },
   {
+    name: '_thunkifyArgs',
+    synopsis: '```coffeescript [specscript]\n' +
+      '_thunkifyArgs(func function, context object, args Array) -> thunk\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: '_thunkifyArgs',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 14, offset: 13 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 14, offset: 13 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 14, offset: 13 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: '_thunkifyArgs(func function, context object, args Array) -> thunk',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 98 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 98 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/thunkify.js'
+  },
+  {
     name: 'thunkify',
     synopsis: '```coffeescript [specscript]\n' +
       'args Array<any>\n' +
@@ -56841,6 +57471,415 @@ export default [
         position: {
           start: { line: 1, column: 1, offset: 0 },
           end: { line: 17, column: 42, offset: 497 }
+<<<<<<< HEAD
+=======
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/thunkify.js'
+  },
+  {
+    name: 'thunkify.call',
+    synopsis: '```coffeescript [specscript]\n' +
+      'args Array<any>\n' +
+      '\n' +
+      'thunkify.call(func function, context object, ...args) -> thunk ()=>func(...args)\n' +
+      '```',
+    description: 'Creates a thunk that calls a function with the specified context and arguments.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'class Point {\n' +
+      '  constructor(x, y) {\n' +
+      '    this.x = x\n' +
+      '    this.y = y\n' +
+      '  }\n' +
+      '\n' +
+      '  distanceTo() {\n' +
+      '    const x2 = (point.x - this.x) ** 2\n' +
+      '    const y2 = (point.y - this.y) ** 2\n' +
+      '    return (x2 + y2) ** 0.5\n' +
+      '  }\n' +
+      '}\n' +
+      '\n' +
+      'const point0 = new Point(0, 0)\n' +
+      'const point = new Point(3, 4)\n' +
+      '\n' +
+      'const thunk = thunkify.call(point0.distanceTo, point0, point)\n' +
+      '\n' +
+      'console.log(thunk())\n' +
+      '```\n' +
+      '\n' +
+      'See also:\n' +
+      ' * [eq](/docs/eq)\n' +
+      ' * [thunkify](/docs/thunkify)\n' +
+      ' * [always](/docs/always)\n' +
+      ' * [curry](/docs/curry)\n' +
+      ' * [__](/docs/__)\n' +
+      ' * [Transducer.map](/docs/Transducer.map)',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'thunkify.call',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 14, offset: 13 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 14, offset: 13 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 14, offset: 13 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'args Array<any>\n' +
+              '\n' +
+              'thunkify.call(func function, context object, ...args) -> thunk ()=>func(...args)',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 5, column: 4, offset: 130 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 5, column: 4, offset: 130 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Creates a thunk that calls a function with the specified context and arguments.',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 80, offset: 79 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 80, offset: 79 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'class Point {\n' +
+              '  constructor(x, y) {\n' +
+              '    this.x = x\n' +
+              '    this.y = y\n' +
+              '  }\n' +
+              '\n' +
+              '  distanceTo() {\n' +
+              '    const x2 = (point.x - this.x) ** 2\n' +
+              '    const y2 = (point.y - this.y) ** 2\n' +
+              '    return (x2 + y2) ** 0.5\n' +
+              '  }\n' +
+              '}\n' +
+              '\n' +
+              'const point0 = new Point(0, 0)\n' +
+              'const point = new Point(3, 4)\n' +
+              '\n' +
+              'const thunk = thunkify.call(point0.distanceTo, point0, point)\n' +
+              '\n' +
+              'console.log(thunk())',
+            position: {
+              start: { line: 3, column: 1, offset: 81 },
+              end: { line: 23, column: 4, offset: 458 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'See also:',
+                position: {
+                  start: { line: 25, column: 1, offset: 460 },
+                  end: { line: 25, column: 10, offset: 469 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 25, column: 1, offset: 460 },
+              end: { line: 25, column: 10, offset: 469 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/eq',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'eq',
+                            position: {
+                              start: { line: 26, column: 5, offset: 474 },
+                              end: { line: 26, column: 7, offset: 476 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 26, column: 4, offset: 473 },
+                          end: { line: 26, column: 18, offset: 487 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 26, column: 4, offset: 473 },
+                      end: { line: 26, column: 18, offset: 487 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 26, column: 2, offset: 471 },
+                  end: { line: 26, column: 18, offset: 487 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/thunkify',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'thunkify',
+                            position: {
+                              start: { line: 27, column: 5, offset: 492 },
+                              end: { line: 27, column: 13, offset: 500 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 27, column: 4, offset: 491 },
+                          end: { line: 27, column: 30, offset: 517 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 27, column: 4, offset: 491 },
+                      end: { line: 27, column: 30, offset: 517 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 27, column: 2, offset: 489 },
+                  end: { line: 27, column: 30, offset: 517 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/always',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'always',
+                            position: {
+                              start: { line: 28, column: 5, offset: 522 },
+                              end: { line: 28, column: 11, offset: 528 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 28, column: 4, offset: 521 },
+                          end: { line: 28, column: 26, offset: 543 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 28, column: 4, offset: 521 },
+                      end: { line: 28, column: 26, offset: 543 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 28, column: 2, offset: 519 },
+                  end: { line: 28, column: 26, offset: 543 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/curry',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'curry',
+                            position: {
+                              start: { line: 29, column: 5, offset: 548 },
+                              end: { line: 29, column: 10, offset: 553 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 29, column: 4, offset: 547 },
+                          end: { line: 29, column: 24, offset: 567 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 29, column: 4, offset: 547 },
+                      end: { line: 29, column: 24, offset: 567 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 29, column: 2, offset: 545 },
+                  end: { line: 29, column: 24, offset: 567 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/__',
+                        children: [
+                          {
+                            type: 'text',
+                            value: '__',
+                            position: {
+                              start: { line: 30, column: 5, offset: 572 },
+                              end: { line: 30, column: 7, offset: 574 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 30, column: 4, offset: 571 },
+                          end: { line: 30, column: 18, offset: 585 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 30, column: 4, offset: 571 },
+                      end: { line: 30, column: 18, offset: 585 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 30, column: 2, offset: 569 },
+                  end: { line: 30, column: 18, offset: 585 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/Transducer.map',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'Transducer.map',
+                            position: {
+                              start: { line: 31, column: 5, offset: 590 },
+                              end: { line: 31, column: 19, offset: 604 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 31, column: 4, offset: 589 },
+                          end: { line: 31, column: 42, offset: 627 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 31, column: 4, offset: 589 },
+                      end: { line: 31, column: 42, offset: 627 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 31, column: 2, offset: 587 },
+                  end: { line: 31, column: 42, offset: 627 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 26, column: 2, offset: 471 },
+              end: { line: 31, column: 42, offset: 627 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 31, column: 42, offset: 627 }
+>>>>>>> da0a776 (docs)
         }
       }
     },

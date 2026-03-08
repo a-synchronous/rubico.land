@@ -273,6 +273,7 @@ const DocsNav = ReactElement(props => {
       Section([
         H4('Object Composition'),
         CoreDocsNavItem('all'),
+        CoreDocsNavItem('all.series'),
         CoreDocsNavItem('assign'),
         CoreDocsNavItem('get'),
         CoreDocsNavItem('set'),
