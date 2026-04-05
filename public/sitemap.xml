@@ -249,9 +249,6 @@
     <loc>https://rubico.land/blog/a-synchronous-functional-programming-intro</loc>
   </url>
   <url>
-    <loc>https://rubico.land/blog/transducers-crash-course-rubico-v2</loc>
-  </url>
-  <url>
-    <loc>https://rubico.land/blog/transducers-crash-course-rubico-v1</loc>
+    <loc>https://rubico.land/blog/transducers-crash-course</loc>
   </url>
 </urlset>
