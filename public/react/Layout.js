@@ -91,6 +91,10 @@ const Layout = ReactElement(props => {
       ]),
     ]),
 
+    Blockquote([
+      P('a shallow river in northeastern Italy, just south of Ravenna'),
+    ]),
+
     Slider({
       index: isHamburgerMenuActive ? 1 : 0,
       translateOffset: '10%',

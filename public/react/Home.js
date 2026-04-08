@@ -8,7 +8,7 @@ const ReactElement = Arche(React)
 const { Div, Button, A } = ReactElement
 
 // removes the rubico link heading and duplicate logo
-readmeMdast.children.splice(0, 2)
+readmeMdast.children.splice(0, 3)
 
 // readmeContent ReactElement
 const readmeContent = ReactElementFromMdast({ mdast: readmeMdast })

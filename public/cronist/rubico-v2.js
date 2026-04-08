@@ -6319,6 +6319,103 @@ export default [
     fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayForEach.js'
   },
   {
+    name: 'arrayForEachPool',
+    synopsis: '```coffeescript [specscript]\n' +
+      'arrayForEachPool(array Array, concurrency number, cb function) -> Promise<>\n' +
+      '```',
+    description: 'Apply a callback function `cb` with limited concurrency to each element of an array',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'arrayForEachPool',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 17, offset: 16 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 17, offset: 16 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 17, offset: 16 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'arrayForEachPool(array Array, concurrency number, cb function) -> Promise<>',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 108 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 108 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Apply a callback function ',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 27, offset: 26 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'cb',
+                position: {
+                  start: { line: 1, column: 27, offset: 26 },
+                  end: { line: 1, column: 31, offset: 30 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' with limited concurrency to each element of an array',
+                position: {
+                  start: { line: 1, column: 31, offset: 30 },
+                  end: { line: 1, column: 84, offset: 83 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 84, offset: 83 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 84, offset: 83 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/arrayForEachPool.js'
+  },
+  {
     name: 'arrayForEachSeries',
     synopsis: '```coffeescript [specscript]\n' +
       'var T any,\n' +
@@ -23478,20 +23575,20 @@ export default [
       '\n' +
       'all.series(funcsArray Array<function>)(...args) -> result Promise|Array\n' +
       '```',
-    description: '[all](/docs/all) with serial execution.\n' +
+    description: '`all` with serial execution.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const sleep = ms => () => new Promise(resolve => setTimeout(resolve, ms))\n' +
       '\n' +
-      "all.series('hello', '!', [\n" +
-      "  (greeting, punctuationMark) => console.log(greeting + ' world' + punctuationMark),\n" +
+      'all.series([\n' +
+      "  greeting => console.log(greeting + ' world'),\n" +
       '  sleep(1000),\n' +
-      "  (greeting, punctuationMark) => console.log(greeting + ' mom' + punctuationMark),\n" +
+      "  greeting => console.log(greeting + ' mom'),\n" +
       '  sleep(1000),\n' +
-      "  (greeting, punctuationMark) => console.log(greeting + ' goodbye' + punctuationMark),\n" +
-      ']) // hello world!\n' +
-      '   // hello mom!\n' +
-      '   // hello goodbye!\n' +
+      "  greeting => console.log(greeting + ' goodbye'),\n" +
+      "])('hello') // hello world\n" +
+      '            // hello mom\n' +
+      '            // hello goodbye\n' +
       '```',
     execution: 'series',
     mdast: {
@@ -23549,36 +23646,25 @@ export default [
             type: 'paragraph',
             children: [
               {
-                type: 'link',
-                title: null,
-                url: '/docs/all',
-                children: [
-                  {
-                    type: 'text',
-                    value: 'all',
-                    position: {
-                      start: { line: 1, column: 2, offset: 1 },
-                      end: { line: 1, column: 5, offset: 4 }
-                    }
-                  }
-                ],
+                type: 'inlineCode',
+                value: 'all',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 17, offset: 16 }
+                  end: { line: 1, column: 6, offset: 5 }
                 }
               },
               {
                 type: 'text',
                 value: ' with serial execution.',
                 position: {
-                  start: { line: 1, column: 17, offset: 16 },
-                  end: { line: 1, column: 40, offset: 39 }
+                  start: { line: 1, column: 6, offset: 5 },
+                  end: { line: 1, column: 29, offset: 28 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 40, offset: 39 }
+              end: { line: 1, column: 29, offset: 28 }
             }
           },
           {
@@ -23587,24 +23673,24 @@ export default [
             meta: '[playground]',
             value: 'const sleep = ms => () => new Promise(resolve => setTimeout(resolve, ms))\n' +
               '\n' +
-              "all.series('hello', '!', [\n" +
-              "  (greeting, punctuationMark) => console.log(greeting + ' world' + punctuationMark),\n" +
+              'all.series([\n' +
+              "  greeting => console.log(greeting + ' world'),\n" +
               '  sleep(1000),\n' +
-              "  (greeting, punctuationMark) => console.log(greeting + ' mom' + punctuationMark),\n" +
+              "  greeting => console.log(greeting + ' mom'),\n" +
               '  sleep(1000),\n' +
-              "  (greeting, punctuationMark) => console.log(greeting + ' goodbye' + punctuationMark),\n" +
-              ']) // hello world!\n' +
-              '   // hello mom!\n' +
-              '   // hello goodbye!',
+              "  greeting => console.log(greeting + ' goodbye'),\n" +
+              "])('hello') // hello world\n" +
+              '            // hello mom\n' +
+              '            // hello goodbye',
             position: {
-              start: { line: 3, column: 1, offset: 41 },
-              end: { line: 15, column: 4, offset: 515 }
+              start: { line: 3, column: 1, offset: 30 },
+              end: { line: 15, column: 4, offset: 403 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 15, column: 4, offset: 515 }
+          end: { line: 15, column: 4, offset: 403 }
         }
       },
       execution: {
