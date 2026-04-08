@@ -159,6 +159,14 @@ h4 {
 #layout > blockquote {
   margin: 25px 5%;
 }
+@media only screen and (max-width: 768px) {
+  #layout > blockquote {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 8%;
+    margin-right: 2%;
+  }
+}
 #layout > blockquote * {
   margin: 0;
 }
