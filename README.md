@@ -8,5 +8,5 @@ Documentation for [Rubico](https://rubico.land/).
 
 ## Deploy to AWS S3
 ```sh
-./deploy rubico.land .
+./deploy
 ```
