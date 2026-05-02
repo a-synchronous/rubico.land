@@ -29,6 +29,8 @@ body {
 
 h1 {
   font-size: 32px;
+  padding: 0;
+  margin: 0;
 }
 
 h2 {
@@ -598,11 +600,7 @@ h4 {
 }
 
 #blog {
-  padding: 0;
-}
-@media only screen and (max-width: 768px) {
-  #blog {
-  }
+  padding: 20px 0;
 }
 
 #home article {
@@ -644,7 +642,7 @@ h4 {
 }
 
 .blog-post {
-  margin-bottom: 25px;
+  margin-bottom: 50px;
 }
 .blog-post.inactive {
 }
