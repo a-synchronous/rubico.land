@@ -1017,67 +1017,10 @@ export default {
         start: { line: 149, column: 2, offset: 5142 },
         end: { line: 149, column: 63, offset: 5203 }
       }
-    },
-    {
-      type: 'paragraph',
-      children: [
-        {
-          type: 'text',
-          value: 'Photo credits:',
-          position: {
-            start: { line: 151, column: 1, offset: 5205 },
-            end: { line: 151, column: 15, offset: 5219 }
-          }
-        }
-      ],
-      position: {
-        start: { line: 151, column: 1, offset: 5205 },
-        end: { line: 151, column: 15, offset: 5219 }
-      }
-    },
-    {
-      type: 'list',
-      ordered: false,
-      start: null,
-      spread: false,
-      children: [
-        {
-          type: 'listItem',
-          spread: false,
-          checked: null,
-          children: [
-            {
-              type: 'paragraph',
-              children: [
-                {
-                  type: 'text',
-                  value: 'https://www.pngkit.com/view/u2w7e6u2y3o0o0y3_junior-alex-berlaga-helps-set-dominoes-world-records/',
-                  position: {
-                    start: { line: 152, column: 4, offset: 5223 },
-                    end: { line: 152, column: 102, offset: 5321 }
-                  }
-                }
-              ],
-              position: {
-                start: { line: 152, column: 4, offset: 5223 },
-                end: { line: 152, column: 102, offset: 5321 }
-              }
-            }
-          ],
-          position: {
-            start: { line: 152, column: 2, offset: 5221 },
-            end: { line: 152, column: 102, offset: 5321 }
-          }
-        }
-      ],
-      position: {
-        start: { line: 152, column: 2, offset: 5221 },
-        end: { line: 152, column: 102, offset: 5321 }
-      }
     }
   ],
   position: {
     start: { line: 1, column: 1, offset: 0 },
-    end: { line: 153, column: 1, offset: 5322 }
+    end: { line: 151, column: 1, offset: 5205 }
   }
 }

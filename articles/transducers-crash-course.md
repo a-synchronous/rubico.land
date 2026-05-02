@@ -148,5 +148,3 @@ Transducers are useful for creating memory efficient data transformations, and a
 Further reading:
  * https://tgvashworth.com/2014/08/31/csp-and-transducers.html
 
-Photo credits:
- * https://www.pngkit.com/view/u2w7e6u2y3o0o0y3_junior-alex-berlaga-helps-set-dominoes-world-records/
