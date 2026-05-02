@@ -617,11 +617,11 @@ h4 {
 }
 
 #blog article {
-  padding: 0px 2%;
+  padding: 20px 2%;
 }
 @media only screen and (max-width: 768px) {
   #blog article {
-    padding: 0px 5%;
+    padding: 20px 5%;
   }
 }
 
