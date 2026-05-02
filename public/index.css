@@ -126,8 +126,7 @@ h4 {
 #layout main {
   border-radius: 10px;
   background-color: #fff;
-  padding: 20px 0%;
-  padding-bottom: 25px;
+  padding: 0;
   width: 94%;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   margin: 25px auto;
@@ -441,7 +440,7 @@ h4 {
   padding-top: 10px;
   border-right: 1px solid #e4e4e4;
   width: 20%;
-  padding-right: 2%;
+  padding: 20px 2%;
 }
 @media only screen and (max-width: 768px) {
   #docs .sidebar {
@@ -464,11 +463,12 @@ h4 {
 
 #docs .viewer {
   width: 75%;
-  padding-left: 2%;
+  padding: 20px 2%;
 }
 @media only screen and (max-width: 768px) {
   #docs .viewer {
     width: 100%;
+    padding: 20px 5%;
   }
 }
 
