@@ -77,23 +77,25 @@ const BlogPost = ReactElement(props => {
       : 'blog-post inactive'
     ),
   }, [
-    A({
-      href: isActive ? backHref : href,
-      class: isActive ? 'active' : '',
-      onClick(event) {
-        event.preventDefault()
-        onLinkClick()
-      },
-    }, [
-      H1(title),
-      DownArrowSvg(),
-    ]),
+    Div({ class: 'title' }, [
+      A({
+        href: isActive ? backHref : href,
+        class: isActive ? 'active' : '',
+        onClick(event) {
+          event.preventDefault()
+          onLinkClick()
+        },
+      }, [
+        H1(title),
+        DownArrowSvg(),
+      ]),
 
-    dateUpdated ? [
-      P(`Updated ${dateUpdated} by ${author}`),
-    ] : [
-      P(`${datePublished} by ${author}`),
-    ],
+      dateUpdated ? [
+        P(`Updated ${dateUpdated} by ${author}`),
+      ] : [
+        P(`${datePublished} by ${author}`),
+      ],
+    ]),
 
     isActive ? [
       ...image == null ? [] : [
@@ -114,15 +116,17 @@ const BlogPost = ReactElement(props => {
         ]),
       ],
 
-      H3(description),
+      Div({ class: 'description' }, [
+        H3(description),
 
-      Button({
-        class: 'read-more',
-        onClick(event) {
-          event.preventDefault()
-          onLinkClick()
-        },
-      }, 'Read more'),
+        Button({
+          class: 'read-more',
+          onClick(event) {
+            event.preventDefault()
+            onLinkClick()
+          },
+        }, 'Read more'),
+      ]),
     ],
 
     Div({

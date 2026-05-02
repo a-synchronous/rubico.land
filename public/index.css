@@ -126,7 +126,7 @@ h4 {
 #layout main {
   border-radius: 10px;
   background-color: #fff;
-  padding: 20px 2%;
+  padding: 20px 0%;
   padding-bottom: 25px;
   width: 94%;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -136,7 +136,7 @@ h4 {
 }
 @media only screen and (max-width: 768px) {
   #layout main {
-    width: 96%;
+    width: 100%;
   }
 }
 #layout > nav {
@@ -357,11 +357,11 @@ h4 {
 #react-root {}
 
 #home {
-  padding: 0px 15%;
+  padding: 0px 2%;
 }
 @media only screen and (max-width: 618px) {
   #home {
-    padding: 0;
+    padding: 0 5%;
   }
 }
 #home .cta-links {
@@ -407,11 +407,11 @@ h4 {
 }
 
 #tour {
-  padding: 10px 15%;
+  padding: 10px 2%;
 }
 @media only screen and (max-width: 768px) {
   #tour {
-    padding: 10px 0;
+    padding: 10px 5%;
   }
 }
 
@@ -603,16 +603,24 @@ h4 {
 }
 
 #blog {
-  padding: 0px 15%;
+  padding: 0;
 }
 @media only screen and (max-width: 768px) {
   #blog {
-    padding: 0px;
   }
 }
 
 #home > article > a > #blog {
   padding: 0;
+}
+
+#blog article {
+  padding: 0px 2%;
+}
+@media only screen and (max-width: 768px) {
+  #blog article {
+    padding: 0px 5%;
+  }
 }
 
 #blog > article > p > img {
@@ -637,6 +645,15 @@ h4 {
 .blog-post.inactive {
 }
 
+.blog-post .title, .blog-post .description {
+  margin: 0 2%;
+}
+@media only screen and (max-width: 768px) {
+  .blog-post .title, .blog-post .description {
+    margin: 0 5%;
+  }
+}
+
 .blog-post > p {
   margin-right: 18px;
   margin-bottom: 15px;
@@ -651,6 +668,7 @@ h4 {
 .blog-post .cover {
   text-align: center;
   margin: 30px 0px;
+  max-height: 70vh;
 }
 .blog-post .cover > img {
   max-height: 50vh;
@@ -666,14 +684,14 @@ h4 {
   width: 100%;
 }
 
-.blog-post > h3 {
+.blog-post .description h3 {
   font-size: 18px;
   font-weight: 500;
   margin: 0;
   margin-bottom: 15px;
 }
 
-.blog-post > button.read-more {
+.blog-post button.read-more {
   border: none;
   background-color: #65799b;
   color: #fff;
@@ -685,14 +703,14 @@ h4 {
   transition: background-color 0.18s ease;
   outline: none;
 }
-.blog-post > button.read-more:hover {
+.blog-post button.read-more:hover {
   background-color: #5a6c8b;
 }
-.blog-post > p.inactive {
+.blog-post p.inactive {
   opacity: 0;
   margin: 0;
 }
-.blog-post > a {
+.blog-post .title a {
   display: flex;
   font-size: 16px;
   align-items: center;
@@ -701,12 +719,12 @@ h4 {
   transition-duration: 0.28s, 0.28s;
   transition-timing-function: ease, ease;
 }
-.blog-post > a > img {
+.blog-post .title a > img {
   filter: grayscale(100%);
 }
-.blog-post > a:hover {
+.blog-post .title a:hover {
 }
-.blog-post > a.active {
+.blog-post .title a.active {
   color: black;
   text-decoration: none;
 }
@@ -715,16 +733,18 @@ h4 {
   text-align: center;
 }
 .blog-post article > p > .image > img {
-  max-height: 30vh;
-  width: 85%;
+  max-height: 70vh;
+  width: 100%;
   object-fit: contain;
+  margin: 25px 0;
 }
 @media only screen and (max-width: 768px) {
   .blog-post article > p > .image > img {
+    margin: 10px 0;
   }
 }
 
-.blog-post > a > .down-arrow-svg {
+.blog-post .title a > .down-arrow-svg {
   position: relative;
   margin-left: 18px;
   width: 35px;
@@ -735,20 +755,20 @@ h4 {
   transform: rotate(-90deg);
 }
 @media only screen and (max-width: 768px) {
-  .blog-post > a > .down-arrow-svg {
+  .blog-post .title a > .down-arrow-svg {
     width: 100%;
   }
 }
 
-.blog-post > a.active > .down-arrow-svg {
+.blog-post .title a.active > .down-arrow-svg {
   transform: rotate(0deg);
   opacity: 1;
 }
 
-.blog-post > a > .down-arrow-svg > rect {
+.blog-post .title a > .down-arrow-svg > rect {
   fill: #65799b;
 }
-.blog-post > a.active > .down-arrow-svg > rect {
+.blog-post .title a.active > .down-arrow-svg > rect {
   fill: #000;
   transition: fill 0.25s;
 }
