@@ -401,11 +401,11 @@ h4 {
 }
 
 #tour {
-  padding: 10px 2%;
+  padding: 20px 2%;
 }
 @media only screen and (max-width: 768px) {
   #tour {
-    padding: 10px 5%;
+    padding: 20px 5%;
   }
 }
 
