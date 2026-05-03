@@ -193,16 +193,16 @@ export default {
       children: [
         {
           type: 'text',
-          value: '[A]synchronous functional programming adapts the functional programming notion of a program. In [A]synchronous Functional Programming, functions are expressions and first-class entities, and programs are trees of function expressions. [A]synchronous functional programming allows for imperative statements within function declarations. [A]synchronous functional programming allows for programs to be a series of statements in that programs are function definitions, and series of statements are the contents of those programs.',
+          value: '[A]synchronous functional programming adapts the functional programming notion of a program. In [A]synchronous Functional Programming, functions are expressions and first-class entities, and programs are trees of function expressions. [A]synchronous functional programming allows for imperative statements within function declarations. [A]synchronous functional programming allows for programs to be series of statements in addition to trees of function expressions in that programs are function definitions, and series of statements can be the contents of those programs.',
           position: {
             start: { line: 26, column: 1, offset: 2352 },
-            end: { line: 26, column: 527, offset: 2878 }
+            end: { line: 26, column: 573, offset: 2924 }
           }
         }
       ],
       position: {
         start: { line: 26, column: 1, offset: 2352 },
-        end: { line: 26, column: 527, offset: 2878 }
+        end: { line: 26, column: 573, offset: 2924 }
       }
     },
     {
@@ -213,14 +213,14 @@ export default {
           type: 'text',
           value: 'Conclusion',
           position: {
-            start: { line: 28, column: 4, offset: 2883 },
-            end: { line: 28, column: 14, offset: 2893 }
+            start: { line: 28, column: 4, offset: 2929 },
+            end: { line: 28, column: 14, offset: 2939 }
           }
         }
       ],
       position: {
-        start: { line: 28, column: 1, offset: 2880 },
-        end: { line: 28, column: 14, offset: 2893 }
+        start: { line: 28, column: 1, offset: 2926 },
+        end: { line: 28, column: 14, offset: 2939 }
       }
     },
     {
@@ -230,19 +230,19 @@ export default {
           type: 'text',
           value: 'Statements and expressions are similar entities. Both statements and expressions convey information, and both are some kind of manifestation. In the context of imperative programming and [A]synchronous functional programming, statements and expressions are also similar entities, where statements are syntactic units that are composed of expressions. [A]synchronous functional programming shares with functional programming the notion of a function as an expression and first-class entity.',
           position: {
-            start: { line: 29, column: 1, offset: 2894 },
-            end: { line: 29, column: 490, offset: 3383 }
+            start: { line: 29, column: 1, offset: 2940 },
+            end: { line: 29, column: 490, offset: 3429 }
           }
         }
       ],
       position: {
-        start: { line: 29, column: 1, offset: 2894 },
-        end: { line: 29, column: 490, offset: 3383 }
+        start: { line: 29, column: 1, offset: 2940 },
+        end: { line: 29, column: 490, offset: 3429 }
       }
     }
   ],
   position: {
     start: { line: 1, column: 1, offset: 0 },
-    end: { line: 30, column: 1, offset: 3384 }
+    end: { line: 30, column: 1, offset: 3430 }
   }
 }
