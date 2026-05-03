@@ -4,7 +4,7 @@ author: Richard Yufei Tong, King of Software at CLOUT
 date: 2026-05-03
 updated: 2026-05-03
 path: /blog/a-synchronous-functional-programming-statements-vs-expressions
-description: Statements vs Expressions in [A]synchronous Functional Programming
+description: Statements vs Expressions in [A]synchronous Functional Programming.
 ---
 
 Welcome to Statements vs Expressions in [A]synchronous Functional Programming. This article will cover and compare statements and expressions used in the pure context and in the contexts of various programming paradigms, including that of the [A]synchronous functional programming paradigm.

@@ -4,7 +4,7 @@ author: Richard Yufei Tong, King of Software at CLOUT
 date: 2025-06-21
 updated: 2026-01-31
 path: /blog/a-synchronous-functional-programming-handling-http
-description: Handling HTTP in [A]synchronous Functional Programming
+description: Handling HTTP in [A]synchronous Functional Programming.
 image: /assets/HTTP_logo.png
 ---
 

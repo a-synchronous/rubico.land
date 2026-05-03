@@ -4,7 +4,7 @@ author: Richard Yufei Tong, King of Software at CLOUT
 date: 2025-02-23
 updated: 2026-02-23
 path: /blog/a-synchronous-functional-programming-asynchronous-sources
-description: Asynchronous Sources in [A]synchronous Functional Programming
+description: Asynchronous Sources in [A]synchronous Functional Programming.
 image: /assets/asynchronous-sources-examples.jpg
 ---
 

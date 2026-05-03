@@ -4,7 +4,7 @@ author: Richard Yufei Tong, King of Software at CLOUT
 date: 2025-06-13
 updated: 2026-01-31
 path: /blog/a-synchronous-functional-programming-data-types
-description: Data types in [A]synchronous Functional Programming
+description: Data types in [A]synchronous Functional Programming.
 image: /assets/monad.png
 ---
 

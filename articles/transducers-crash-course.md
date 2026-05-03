@@ -4,7 +4,7 @@ author: Richard Yufei Tong, King of Software at CLOUT
 date: 2026-02-22
 updated: 2026-02-22
 path: /blog/transducers-crash-course
-description: A crash course on Rubico transducers
+description: A crash course on Rubico transducers.
 ---
 
 Transducers enable composable and memory efficient wrangling of very large or even infinite sets of data. With transducers, each item of the data is transformed by all operations in a single pass, as opposed to the data having to go through batch transformations one operation at a time.

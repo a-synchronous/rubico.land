@@ -4,7 +4,7 @@ author: Richard Yufei Tong, King of Software at CLOUT
 date: 2024-11-26
 updated: 2026-01-31
 path: /blog/a-synchronous-functional-programming-intro
-description: An introduction to the [A]synchronous Functional Programming paradigm
+description: An introduction to the [A]synchronous Functional Programming paradigm.
 image: https://rubico.land/assets/rubico-logo-large.png
 ---
 
