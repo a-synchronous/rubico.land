@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Transducers Crash Course</title>
+  <title>[A]synchronous Functional Programming - Statements vs Expressions</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width">
-  <meta name="description" content="A crash course on Rubico transducers" />
+  <meta name="description" content="Statements vs Expressions in [A]synchronous Functional Programming" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Transducers Crash Course" />
-  <meta name="twitter:description" content="A crash course on Rubico transducers" />
-  <meta property="og:title" content="Transducers Crash Course" />
+  <meta name="twitter:title" content="[A]synchronous Functional Programming - Statements vs Expressions" />
+  <meta name="twitter:description" content="Statements vs Expressions in [A]synchronous Functional Programming" />
+  <meta property="og:title" content="[A]synchronous Functional Programming - Statements vs Expressions" />
   <meta property="og:type" content="object" />
-  <meta property="og:url" content="https://rubico.land/blog/transducers-crash-course" />
-  <meta property="og:description" content="A crash course on Rubico transducers" />
+  <meta property="og:url" content="https://rubico.land/blog/a-synchronous-functional-programming-statements-vs-expressions" />
+  <meta property="og:description" content="Statements vs Expressions in [A]synchronous Functional Programming" />
 
   
 
@@ -19,7 +19,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="canonical" href="https://rubico.land/blog/transducers-crash-course">
+  <link rel="canonical" href="https://rubico.land/blog/a-synchronous-functional-programming-statements-vs-expressions">
 
   <script src="https://cdn.jsdelivr.net/npm/rubico@2.8.2/dist/rubico.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/rubico@2.8.2/dist/Transducer.min.js"></script>

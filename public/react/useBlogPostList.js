@@ -5,6 +5,7 @@ import transducersCrashCourseMdast from '../mdast/transducers-crash-course.js'
 import aSynchronousProgrammingIntroMdast from '../mdast/a-synchronous-functional-programming-intro.js'
 import aSynchronousProgrammingDataTypesMdast from '../mdast/a-synchronous-functional-programming-data-types.js'
 import aSynchronousProgrammingHandlingHTTPMdast from '../mdast/a-synchronous-functional-programming-handling-http.js'
+import aSynchronousProgrammingStatementsVsExpressionsMdast from '../mdast/a-synchronous-functional-programming-statements-vs-expressions.js'
 
 function createBlogPostList(mdastList) {
   return mdastList.map(mdast => ({
@@ -19,12 +20,17 @@ function createBlogPostList(mdastList) {
   })
 }
 
-const initial = createBlogPostList([
-  aSynchronousProgrammingHandlingHTTPMdast,
-  aSynchronousProgrammingDataTypesMdast,
-  aSynchronousProgrammingIntroMdast,
+const mdastList = [
   transducersCrashCourseMdast,
-])
+  aSynchronousProgrammingIntroMdast,
+  aSynchronousProgrammingDataTypesMdast,
+  aSynchronousProgrammingHandlingHTTPMdast,
+  aSynchronousProgrammingStatementsVsExpressionsMdast,
+]
+
+const v1MdastList = mdastList.filter(mdast => mdast != transducersCrashCourseMdast)
+
+const initial = createBlogPostList(mdastList)
 
 function useBlogPostList() {
   const [rubicoVersion] = useRubicoVersion()
@@ -32,20 +38,9 @@ function useBlogPostList() {
 
   useEffect(() => {
     if (rubicoVersion == 'v1') {
-      const blogPostList1 = createBlogPostList([
-        aSynchronousProgrammingHandlingHTTPMdast,
-        aSynchronousProgrammingDataTypesMdast,
-        aSynchronousProgrammingIntroMdast,
-      ])
-      setBlogPostList(blogPostList1)
+      setBlogPostList(createBlogPostList(v1MdastList))
     } else {
-      const blogPostList1 = createBlogPostList([
-        aSynchronousProgrammingHandlingHTTPMdast,
-        aSynchronousProgrammingDataTypesMdast,
-        aSynchronousProgrammingIntroMdast,
-        transducersCrashCourseMdast,
-      ])
-      setBlogPostList(blogPostList1)
+      setBlogPostList(createBlogPostList(mdastList))
     }
   }, [rubicoVersion])
 

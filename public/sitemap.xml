@@ -251,4 +251,7 @@
   <url>
     <loc>https://rubico.land/blog/transducers-crash-course</loc>
   </url>
+  <url>
+    <loc>https://rubico.land/blog/a-synchronous-functional-programming-statements-vs-expressions</loc>
+  </url>
 </urlset>

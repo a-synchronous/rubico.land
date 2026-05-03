@@ -4,19 +4,19 @@
   <title>[A]synchronous Functional Programming - Asynchronous Sources</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width">
-  <meta name="description" content="Handling HTTP in [A]synchronous Functional Programming" />
+  <meta name="description" content="Asynchronous Sources in [A]synchronous Functional Programming" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="[A]synchronous Functional Programming - Asynchronous Sources" />
-  <meta name="twitter:description" content="Handling HTTP in [A]synchronous Functional Programming" />
+  <meta name="twitter:description" content="Asynchronous Sources in [A]synchronous Functional Programming" />
   <meta property="og:title" content="[A]synchronous Functional Programming - Asynchronous Sources" />
   <meta property="og:type" content="object" />
   <meta property="og:url" content="https://rubico.land/blog/a-synchronous-functional-programming-asynchronous-sources" />
-  <meta property="og:description" content="Handling HTTP in [A]synchronous Functional Programming" />
+  <meta property="og:description" content="Asynchronous Sources in [A]synchronous Functional Programming" />
 
   
-  <meta name="image" content="/assets/HTTP_logo.png" />
-  <meta property="og:image" content="/assets/HTTP_logo.png" />
-  <meta name="twitter:image" content="/assets/HTTP_logo.png" />
+  <meta name="image" content="/assets/asynchronous-sources-examples.jpg" />
+  <meta property="og:image" content="/assets/asynchronous-sources-examples.jpg" />
+  <meta name="twitter:image" content="/assets/asynchronous-sources-examples.jpg" />
   
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
