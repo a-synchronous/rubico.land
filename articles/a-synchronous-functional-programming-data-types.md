@@ -2,7 +2,7 @@
 title: [A]synchronous Functional Programming - Data Types
 author: Richard Yufei Tong, King of Software at CLOUT
 date: 2025-06-13
-updated: 2026-01-31
+updated: 2026-05-05
 path: /blog/a-synchronous-functional-programming-data-types
 description: Data types in [A]synchronous Functional Programming.
 image: /assets/monad.png
@@ -920,7 +920,7 @@ The following built-in data types are considered to be semigroups:
 
 The monad algebraic structure identifies data types with the `.flatMap` or `.chain` methods. Data types implementing `.flatMap` or `.chain` must conform to the monad laws:
 
- 1. Left Identity: wrapping a value in a monad and then calling the monad's `.flatMap` or `.chain` with a function is equivalent to directly applying the function to the value.
+ 1. Left Identity: wrapping a value in a monad and then calling the monad's `.flatMap` or `.chain` with a function is equivalent to directly applying the function to the value, given the function returns a monad.
 
 ```javascript
 assert.equivalent(
