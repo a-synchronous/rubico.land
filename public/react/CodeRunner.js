@@ -96,7 +96,7 @@ const CodeRunner = ReactElement(({
   code,
   imports: propsImports,
   theme = 'rubico',
-  lineWrapping = true,
+  lineWrapping = false,
   lineNumbers = true,
 }) => {
   const codeAreaRef = useRef(null)
