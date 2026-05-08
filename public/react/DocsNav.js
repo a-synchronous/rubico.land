@@ -260,7 +260,7 @@ const DocsNav = ReactElement(props => {
       ]),
 
       Section([
-        H4('Control Flow'),
+        H4('Conditional Operators'),
         CoreDocsNavItem('tap.if'),
         CoreDocsNavItem('switchCase'),
       ]),
@@ -271,7 +271,7 @@ const DocsNav = ReactElement(props => {
       ]),
 
       Section([
-        H4('Object Composition'),
+        H4('Data Construction'),
         CoreDocsNavItem('all'),
         CoreDocsNavItem('all.series'),
         CoreDocsNavItem('assign'),
@@ -288,7 +288,7 @@ const DocsNav = ReactElement(props => {
       ]),
 
       Section([
-        H4('Data Transformation'),
+        H4('Transformation'),
         CoreDocsNavItem('map'),
         CoreDocsNavItem('map.entries'),
         CoreDocsNavItem('map.series'),
@@ -322,7 +322,7 @@ const DocsNav = ReactElement(props => {
       ]),
 
       Section([
-        H4('Partial application'),
+        H4('Partial Application'),
         CoreDocsNavItem('thunkify'),
         CoreDocsNavItem('thunkify.call'),
         CoreDocsNavItem('always'),
@@ -343,7 +343,7 @@ const DocsNav = ReactElement(props => {
       ]),
 
       Section([
-        H4('x/'),
+        H4('x'),
         XDocsNavItem('append'),
         XDocsNavItem('callProp'),
         XDocsNavItem('defaultsDeep'),

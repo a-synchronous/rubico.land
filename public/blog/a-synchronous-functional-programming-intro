@@ -4,14 +4,14 @@
   <title>[A]synchronous Functional Programming - Intro</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width">
-  <meta name="description" content="An introduction to the [A]synchronous Functional Programming paradigm" />
+  <meta name="description" content="An introduction to the [A]synchronous Functional Programming paradigm." />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="[A]synchronous Functional Programming - Intro" />
-  <meta name="twitter:description" content="An introduction to the [A]synchronous Functional Programming paradigm" />
+  <meta name="twitter:description" content="An introduction to the [A]synchronous Functional Programming paradigm." />
   <meta property="og:title" content="[A]synchronous Functional Programming - Intro" />
   <meta property="og:type" content="object" />
   <meta property="og:url" content="https://rubico.land/blog/a-synchronous-functional-programming-intro" />
-  <meta property="og:description" content="An introduction to the [A]synchronous Functional Programming paradigm" />
+  <meta property="og:description" content="An introduction to the [A]synchronous Functional Programming paradigm." />
 
   
   <meta name="image" content="https://rubico.land/assets/rubico-logo-large.png" />
