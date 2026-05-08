@@ -42,11 +42,17 @@ a {
   text-decoration: none;
   font-weight: 650;
 }
+
 blockquote {
   font-style: italic;
   line-height: 18px;
   color: grey;
 }
+
+pre {
+  -webkit-text-size-adjust: none;
+}
+
 article {
 }
 article .anchor-hash {
