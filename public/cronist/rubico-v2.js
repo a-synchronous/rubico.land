@@ -117,18 +117,16 @@ export default [
     synopsis: '```coffeescript [specscript]\n' +
       'type SyncOrAsyncReducer = (accumulator any, value any)=>(nextAccumulator Promise|any)\n' +
       'type Transducer = SyncOrAsyncReducer=>SyncOrAsyncReducer\n' +
-      'type UnarySyncOrAsyncMapper = (element any)=>(resultElement Promise|any)\n' +
+      'type UnarySyncOrAsyncMapper = (item any)=>(mappedItem Promise|any)\n' +
       '\n' +
-      'mapper UnarySyncOrAsyncMapper\n' +
-      '\n' +
-      'Transducer.map(mapper) -> mappingTransducer Transducer\n' +
+      'Transducer.map(mapper UnarySyncOrAsyncMapper) -> mappingTransducer Transducer\n' +
       '```',
-    description: "Creates a mapping transducer. Elements of the transducer's reducing operation are transformed by the mapper function. It is possible to use an asynchronous mapper, however the reducing operation must support asynchronous execution. This library provides such implementations as [reduce](/docs/reduce) and [transform](/docs/transform).\n" +
+    description: "Creates a mapping [transducer](/blog/transducers-crash-course). Items of the transducer's reducing operation are transformed by the mapper function. It is possible to use an asynchronous mapper, however the reducing operation must support asynchronous execution. This library provides such implementations as [reduce](/docs/reduce) and [transform](/docs/transform).\n" +
       '\n' +
       '```javascript [playground]\n' +
       'const square = number => number ** 2\n' +
       '\n' +
-      'const concat = (array, element) => array.concat(element)\n' +
+      'const concat = (array, item) => array.concat(item)\n' +
       '\n' +
       'const mapSquare = Transducer.map(square)\n' +
       '// mapSquare is a transducer\n' +
@@ -137,22 +135,17 @@ export default [
       '// now mapSquare is passed the reducer function concat; squareConcatReducer\n' +
       '// is a reducer with chained functionality square and concat\n' +
       '\n' +
-      'console.log(\n' +
-      '  reduce([1, 2, 3, 4, 5], squareConcatReducer, [])\n' +
-      ') // [1, 4, 9, 16, 25]\n' +
+      'const squaredNumbersRubicoReduce = reduce([1, 2, 3, 4, 5], squareConcatReducer, [])\n' +
+      'console.log(squaredNumbersRubicoReduce)\n' +
       '\n' +
       '// the same squareConcatReducer is consumable with vanilla JavaScript\n' +
-      'console.log(\n' +
-      '  [1, 2, 3, 4, 5].reduce(squareConcatReducer, [])\n' +
-      ') // [1, 4, 9, 16, 25]\n' +
+      'const squaredNumbersVanillaReduce = [1, 2, 3, 4, 5].reduce(squareConcatReducer, [])\n' +
+      'console.log(squaredNumbersVanillaReduce)\n' +
       '\n' +
       '// concat is implicit when transforming into arrays\n' +
-      'console.log(\n' +
-      '  transform([1, 2, 3, 4, 5], Transducer.map(square), [])\n' +
-      ') // [1, 4, 9, 16, 25]\n' +
+      'const squaredNumbersTransform = transform([1, 2, 3, 4, 5], Transducer.map(square), [])\n' +
+      'console.log(squaredNumbersTransform)\n' +
       '```\n' +
-      '\n' +
-      'Read more on [transducers](/blog/transducers-crash-course-rubico-v2).\n' +
       '\n' +
       'See also:\n' +
       ' * [thunkify](/docs/thunkify)\n' +
@@ -197,20 +190,18 @@ export default [
             meta: '[specscript]',
             value: 'type SyncOrAsyncReducer = (accumulator any, value any)=>(nextAccumulator Promise|any)\n' +
               'type Transducer = SyncOrAsyncReducer=>SyncOrAsyncReducer\n' +
-              'type UnarySyncOrAsyncMapper = (element any)=>(resultElement Promise|any)\n' +
+              'type UnarySyncOrAsyncMapper = (item any)=>(mappedItem Promise|any)\n' +
               '\n' +
-              'mapper UnarySyncOrAsyncMapper\n' +
-              '\n' +
-              'Transducer.map(mapper) -> mappingTransducer Transducer',
+              'Transducer.map(mapper UnarySyncOrAsyncMapper) -> mappingTransducer Transducer',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 9, column: 4, offset: 335 }
+              end: { line: 7, column: 4, offset: 321 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 9, column: 4, offset: 335 }
+          end: { line: 7, column: 4, offset: 321 }
         }
       },
       description: {
@@ -221,10 +212,37 @@ export default [
             children: [
               {
                 type: 'text',
-                value: "Creates a mapping transducer. Elements of the transducer's reducing operation are transformed by the mapper function. It is possible to use an asynchronous mapper, however the reducing operation must support asynchronous execution. This library provides such implementations as ",
+                value: 'Creates a mapping ',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 279, offset: 278 }
+                  end: { line: 1, column: 19, offset: 18 }
+                }
+              },
+              {
+                type: 'link',
+                title: null,
+                url: '/blog/transducers-crash-course',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'transducer',
+                    position: {
+                      start: { line: 1, column: 20, offset: 19 },
+                      end: { line: 1, column: 30, offset: 29 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 19, offset: 18 },
+                  end: { line: 1, column: 63, offset: 62 }
+                }
+              },
+              {
+                type: 'text',
+                value: ". Items of the transducer's reducing operation are transformed by the mapper function. It is possible to use an asynchronous mapper, however the reducing operation must support asynchronous execution. This library provides such implementations as ",
+                position: {
+                  start: { line: 1, column: 63, offset: 62 },
+                  end: { line: 1, column: 310, offset: 309 }
                 }
               },
               {
@@ -236,22 +254,22 @@ export default [
                     type: 'text',
                     value: 'reduce',
                     position: {
-                      start: { line: 1, column: 280, offset: 279 },
-                      end: { line: 1, column: 286, offset: 285 }
+                      start: { line: 1, column: 311, offset: 310 },
+                      end: { line: 1, column: 317, offset: 316 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 1, column: 279, offset: 278 },
-                  end: { line: 1, column: 301, offset: 300 }
+                  start: { line: 1, column: 310, offset: 309 },
+                  end: { line: 1, column: 332, offset: 331 }
                 }
               },
               {
                 type: 'text',
                 value: ' and ',
                 position: {
-                  start: { line: 1, column: 301, offset: 300 },
-                  end: { line: 1, column: 306, offset: 305 }
+                  start: { line: 1, column: 332, offset: 331 },
+                  end: { line: 1, column: 337, offset: 336 }
                 }
               },
               {
@@ -263,28 +281,28 @@ export default [
                     type: 'text',
                     value: 'transform',
                     position: {
-                      start: { line: 1, column: 307, offset: 306 },
-                      end: { line: 1, column: 316, offset: 315 }
+                      start: { line: 1, column: 338, offset: 337 },
+                      end: { line: 1, column: 347, offset: 346 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 1, column: 306, offset: 305 },
-                  end: { line: 1, column: 334, offset: 333 }
+                  start: { line: 1, column: 337, offset: 336 },
+                  end: { line: 1, column: 365, offset: 364 }
                 }
               },
               {
                 type: 'text',
                 value: '.',
                 position: {
-                  start: { line: 1, column: 334, offset: 333 },
-                  end: { line: 1, column: 335, offset: 334 }
+                  start: { line: 1, column: 365, offset: 364 },
+                  end: { line: 1, column: 366, offset: 365 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 335, offset: 334 }
+              end: { line: 1, column: 366, offset: 365 }
             }
           },
           {
@@ -293,7 +311,7 @@ export default [
             meta: '[playground]',
             value: 'const square = number => number ** 2\n' +
               '\n' +
-              'const concat = (array, element) => array.concat(element)\n' +
+              'const concat = (array, item) => array.concat(item)\n' +
               '\n' +
               'const mapSquare = Transducer.map(square)\n' +
               '// mapSquare is a transducer\n' +
@@ -302,66 +320,19 @@ export default [
               '// now mapSquare is passed the reducer function concat; squareConcatReducer\n' +
               '// is a reducer with chained functionality square and concat\n' +
               '\n' +
-              'console.log(\n' +
-              '  reduce([1, 2, 3, 4, 5], squareConcatReducer, [])\n' +
-              ') // [1, 4, 9, 16, 25]\n' +
+              'const squaredNumbersRubicoReduce = reduce([1, 2, 3, 4, 5], squareConcatReducer, [])\n' +
+              'console.log(squaredNumbersRubicoReduce)\n' +
               '\n' +
               '// the same squareConcatReducer is consumable with vanilla JavaScript\n' +
-              'console.log(\n' +
-              '  [1, 2, 3, 4, 5].reduce(squareConcatReducer, [])\n' +
-              ') // [1, 4, 9, 16, 25]\n' +
+              'const squaredNumbersVanillaReduce = [1, 2, 3, 4, 5].reduce(squareConcatReducer, [])\n' +
+              'console.log(squaredNumbersVanillaReduce)\n' +
               '\n' +
               '// concat is implicit when transforming into arrays\n' +
-              'console.log(\n' +
-              '  transform([1, 2, 3, 4, 5], Transducer.map(square), [])\n' +
-              ') // [1, 4, 9, 16, 25]',
+              'const squaredNumbersTransform = transform([1, 2, 3, 4, 5], Transducer.map(square), [])\n' +
+              'console.log(squaredNumbersTransform)',
             position: {
-              start: { line: 3, column: 1, offset: 336 },
-              end: { line: 28, column: 4, offset: 1107 }
-            }
-          },
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: 'Read more on ',
-                position: {
-                  start: { line: 30, column: 1, offset: 1109 },
-                  end: { line: 30, column: 14, offset: 1122 }
-                }
-              },
-              {
-                type: 'link',
-                title: null,
-                url: '/blog/transducers-crash-course-rubico-v2',
-                children: [
-                  {
-                    type: 'text',
-                    value: 'transducers',
-                    position: {
-                      start: { line: 30, column: 15, offset: 1123 },
-                      end: { line: 30, column: 26, offset: 1134 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 30, column: 14, offset: 1122 },
-                  end: { line: 30, column: 69, offset: 1177 }
-                }
-              },
-              {
-                type: 'text',
-                value: '.',
-                position: {
-                  start: { line: 30, column: 69, offset: 1177 },
-                  end: { line: 30, column: 70, offset: 1178 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 30, column: 1, offset: 1109 },
-              end: { line: 30, column: 70, offset: 1178 }
+              start: { line: 3, column: 1, offset: 367 },
+              end: { line: 25, column: 4, offset: 1239 }
             }
           },
           {
@@ -371,14 +342,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 32, column: 1, offset: 1180 },
-                  end: { line: 32, column: 10, offset: 1189 }
+                  start: { line: 27, column: 1, offset: 1241 },
+                  end: { line: 27, column: 10, offset: 1250 }
                 }
               }
             ],
             position: {
-              start: { line: 32, column: 1, offset: 1180 },
-              end: { line: 32, column: 10, offset: 1189 }
+              start: { line: 27, column: 1, offset: 1241 },
+              end: { line: 27, column: 10, offset: 1250 }
             }
           },
           {
@@ -404,26 +375,26 @@ export default [
                             type: 'text',
                             value: 'thunkify',
                             position: {
-                              start: { line: 33, column: 5, offset: 1194 },
-                              end: { line: 33, column: 13, offset: 1202 }
+                              start: { line: 28, column: 5, offset: 1255 },
+                              end: { line: 28, column: 13, offset: 1263 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 33, column: 4, offset: 1193 },
-                          end: { line: 33, column: 30, offset: 1219 }
+                          start: { line: 28, column: 4, offset: 1254 },
+                          end: { line: 28, column: 30, offset: 1280 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 33, column: 4, offset: 1193 },
-                      end: { line: 33, column: 30, offset: 1219 }
+                      start: { line: 28, column: 4, offset: 1254 },
+                      end: { line: 28, column: 30, offset: 1280 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 33, column: 2, offset: 1191 },
-                  end: { line: 33, column: 30, offset: 1219 }
+                  start: { line: 28, column: 2, offset: 1252 },
+                  end: { line: 28, column: 30, offset: 1280 }
                 }
               },
               {
@@ -443,26 +414,26 @@ export default [
                             type: 'text',
                             value: 'Transducer.filter',
                             position: {
-                              start: { line: 34, column: 5, offset: 1224 },
-                              end: { line: 34, column: 22, offset: 1241 }
+                              start: { line: 29, column: 5, offset: 1285 },
+                              end: { line: 29, column: 22, offset: 1302 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 34, column: 4, offset: 1223 },
-                          end: { line: 34, column: 48, offset: 1267 }
+                          start: { line: 29, column: 4, offset: 1284 },
+                          end: { line: 29, column: 48, offset: 1328 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 34, column: 4, offset: 1223 },
-                      end: { line: 34, column: 48, offset: 1267 }
+                      start: { line: 29, column: 4, offset: 1284 },
+                      end: { line: 29, column: 48, offset: 1328 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 34, column: 2, offset: 1221 },
-                  end: { line: 34, column: 48, offset: 1267 }
+                  start: { line: 29, column: 2, offset: 1282 },
+                  end: { line: 29, column: 48, offset: 1328 }
                 }
               },
               {
@@ -482,26 +453,26 @@ export default [
                             type: 'text',
                             value: 'Transducer.flatMap',
                             position: {
-                              start: { line: 35, column: 5, offset: 1272 },
-                              end: { line: 35, column: 23, offset: 1290 }
+                              start: { line: 30, column: 5, offset: 1333 },
+                              end: { line: 30, column: 23, offset: 1351 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 35, column: 4, offset: 1271 },
-                          end: { line: 35, column: 50, offset: 1317 }
+                          start: { line: 30, column: 4, offset: 1332 },
+                          end: { line: 30, column: 50, offset: 1378 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 35, column: 4, offset: 1271 },
-                      end: { line: 35, column: 50, offset: 1317 }
+                      start: { line: 30, column: 4, offset: 1332 },
+                      end: { line: 30, column: 50, offset: 1378 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 35, column: 2, offset: 1269 },
-                  end: { line: 35, column: 50, offset: 1317 }
+                  start: { line: 30, column: 2, offset: 1330 },
+                  end: { line: 30, column: 50, offset: 1378 }
                 }
               },
               {
@@ -521,26 +492,26 @@ export default [
                             type: 'text',
                             value: 'Transducer.forEach',
                             position: {
-                              start: { line: 36, column: 5, offset: 1322 },
-                              end: { line: 36, column: 23, offset: 1340 }
+                              start: { line: 31, column: 5, offset: 1383 },
+                              end: { line: 31, column: 23, offset: 1401 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 36, column: 4, offset: 1321 },
-                          end: { line: 36, column: 50, offset: 1367 }
+                          start: { line: 31, column: 4, offset: 1382 },
+                          end: { line: 31, column: 50, offset: 1428 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 36, column: 4, offset: 1321 },
-                      end: { line: 36, column: 50, offset: 1367 }
+                      start: { line: 31, column: 4, offset: 1382 },
+                      end: { line: 31, column: 50, offset: 1428 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 36, column: 2, offset: 1319 },
-                  end: { line: 36, column: 50, offset: 1367 }
+                  start: { line: 31, column: 2, offset: 1380 },
+                  end: { line: 31, column: 50, offset: 1428 }
                 }
               },
               {
@@ -560,26 +531,26 @@ export default [
                             type: 'text',
                             value: 'Transducer.passthrough',
                             position: {
-                              start: { line: 37, column: 5, offset: 1372 },
-                              end: { line: 37, column: 27, offset: 1394 }
+                              start: { line: 32, column: 5, offset: 1433 },
+                              end: { line: 32, column: 27, offset: 1455 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 37, column: 4, offset: 1371 },
-                          end: { line: 37, column: 58, offset: 1425 }
+                          start: { line: 32, column: 4, offset: 1432 },
+                          end: { line: 32, column: 58, offset: 1486 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 37, column: 4, offset: 1371 },
-                      end: { line: 37, column: 58, offset: 1425 }
+                      start: { line: 32, column: 4, offset: 1432 },
+                      end: { line: 32, column: 58, offset: 1486 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 37, column: 2, offset: 1369 },
-                  end: { line: 37, column: 58, offset: 1425 }
+                  start: { line: 32, column: 2, offset: 1430 },
+                  end: { line: 32, column: 58, offset: 1486 }
                 }
               },
               {
@@ -599,38 +570,38 @@ export default [
                             type: 'text',
                             value: 'Transducer.tryCatch',
                             position: {
-                              start: { line: 38, column: 5, offset: 1430 },
-                              end: { line: 38, column: 24, offset: 1449 }
+                              start: { line: 33, column: 5, offset: 1491 },
+                              end: { line: 33, column: 24, offset: 1510 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 38, column: 4, offset: 1429 },
-                          end: { line: 38, column: 52, offset: 1477 }
+                          start: { line: 33, column: 4, offset: 1490 },
+                          end: { line: 33, column: 52, offset: 1538 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 38, column: 4, offset: 1429 },
-                      end: { line: 38, column: 52, offset: 1477 }
+                      start: { line: 33, column: 4, offset: 1490 },
+                      end: { line: 33, column: 52, offset: 1538 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 38, column: 2, offset: 1427 },
-                  end: { line: 38, column: 52, offset: 1477 }
+                  start: { line: 33, column: 2, offset: 1488 },
+                  end: { line: 33, column: 52, offset: 1538 }
                 }
               }
             ],
             position: {
-              start: { line: 33, column: 2, offset: 1191 },
-              end: { line: 38, column: 52, offset: 1477 }
+              start: { line: 28, column: 2, offset: 1252 },
+              end: { line: 33, column: 52, offset: 1538 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 38, column: 52, offset: 1477 }
+          end: { line: 33, column: 52, offset: 1538 }
         }
       }
     },
@@ -643,29 +614,25 @@ export default [
       'type Transducer = SyncOrAsyncReducer=>SyncOrAsyncReducer\n' +
       'type UnarySyncOrAsyncPredicate = any=>Promise|boolean|any\n' +
       '\n' +
-      'predicate UnarySyncOrAsyncPredicate\n' +
-      '\n' +
-      'Transducer.filter(predicate) -> filteringTransducer Transducer\n' +
+      'Transducer.filter(predicate UnarySyncOrAsyncPredicate) -> filteringTransducer Transducer\n' +
       '```',
-    description: 'Creates a filtering transducer. A filtering transducer filters out elements of its reducing operation if they test false by the predicate. It is possible to use an asynchronous predicate, however the reducing operation must support asynchronous execution. This library provides such implementations as [reduce](/docs/reduce) and [transform](/docs/transform).\n' +
+    description: 'Creates a filtering [transducer](/blog/transducers-crash-course). A filtering transducer filters out items of its reducing operation if they test false by the predicate. It is possible to use an asynchronous predicate, however the reducing operation must support asynchronous execution. This library provides such implementations as [reduce](/docs/reduce) and [transform](/docs/transform).\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const isOdd = number => number % 2 == 1\n' +
       '\n' +
-      'const concat = (array, element) => array.concat(element)\n' +
+      'const concat = (array, item) => array.concat(item)\n' +
       '\n' +
       'const concatOddNumbers = Transducer.filter(isOdd)(concat)\n' +
       '\n' +
       'const array = [1, 2, 3, 4, 5]\n' +
       '\n' +
       'const oddNumbers1 = array.reduce(concatOddNumbers, [])\n' +
-      'console.log(oddNumbers1) // [1, 3, 5]\n' +
-      '\n' +
       'const oddNumbers2 = transform(array, Transducer.filter(isOdd), [])\n' +
-      'console.log(oddNumbers2) // [1, 3, 5]\n' +
-      '```\n' +
       '\n' +
-      'Read more on [transducers](/blog/transducers-crash-course-rubico-v2).\n' +
+      'console.log(oddNumbers1)\n' +
+      'console.log(oddNumbers2)\n' +
+      '```\n' +
       '\n' +
       'See also:\n' +
       ' * [thunkify](/docs/thunkify)\n' +
@@ -712,18 +679,16 @@ export default [
               'type Transducer = SyncOrAsyncReducer=>SyncOrAsyncReducer\n' +
               'type UnarySyncOrAsyncPredicate = any=>Promise|boolean|any\n' +
               '\n' +
-              'predicate UnarySyncOrAsyncPredicate\n' +
-              '\n' +
-              'Transducer.filter(predicate) -> filteringTransducer Transducer',
+              'Transducer.filter(predicate UnarySyncOrAsyncPredicate) -> filteringTransducer Transducer',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 9, column: 4, offset: 334 }
+              end: { line: 7, column: 4, offset: 323 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 9, column: 4, offset: 334 }
+          end: { line: 7, column: 4, offset: 323 }
         }
       },
       description: {
@@ -734,10 +699,37 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Creates a filtering transducer. A filtering transducer filters out elements of its reducing operation if they test false by the predicate. It is possible to use an asynchronous predicate, however the reducing operation must support asynchronous execution. This library provides such implementations as ',
+                value: 'Creates a filtering ',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 303, offset: 302 }
+                  end: { line: 1, column: 21, offset: 20 }
+                }
+              },
+              {
+                type: 'link',
+                title: null,
+                url: '/blog/transducers-crash-course',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'transducer',
+                    position: {
+                      start: { line: 1, column: 22, offset: 21 },
+                      end: { line: 1, column: 32, offset: 31 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 21, offset: 20 },
+                  end: { line: 1, column: 65, offset: 64 }
+                }
+              },
+              {
+                type: 'text',
+                value: '. A filtering transducer filters out items of its reducing operation if they test false by the predicate. It is possible to use an asynchronous predicate, however the reducing operation must support asynchronous execution. This library provides such implementations as ',
+                position: {
+                  start: { line: 1, column: 65, offset: 64 },
+                  end: { line: 1, column: 334, offset: 333 }
                 }
               },
               {
@@ -749,22 +741,22 @@ export default [
                     type: 'text',
                     value: 'reduce',
                     position: {
-                      start: { line: 1, column: 304, offset: 303 },
-                      end: { line: 1, column: 310, offset: 309 }
+                      start: { line: 1, column: 335, offset: 334 },
+                      end: { line: 1, column: 341, offset: 340 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 1, column: 303, offset: 302 },
-                  end: { line: 1, column: 325, offset: 324 }
+                  start: { line: 1, column: 334, offset: 333 },
+                  end: { line: 1, column: 356, offset: 355 }
                 }
               },
               {
                 type: 'text',
                 value: ' and ',
                 position: {
-                  start: { line: 1, column: 325, offset: 324 },
-                  end: { line: 1, column: 330, offset: 329 }
+                  start: { line: 1, column: 356, offset: 355 },
+                  end: { line: 1, column: 361, offset: 360 }
                 }
               },
               {
@@ -776,28 +768,28 @@ export default [
                     type: 'text',
                     value: 'transform',
                     position: {
-                      start: { line: 1, column: 331, offset: 330 },
-                      end: { line: 1, column: 340, offset: 339 }
+                      start: { line: 1, column: 362, offset: 361 },
+                      end: { line: 1, column: 371, offset: 370 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 1, column: 330, offset: 329 },
-                  end: { line: 1, column: 358, offset: 357 }
+                  start: { line: 1, column: 361, offset: 360 },
+                  end: { line: 1, column: 389, offset: 388 }
                 }
               },
               {
                 type: 'text',
                 value: '.',
                 position: {
-                  start: { line: 1, column: 358, offset: 357 },
-                  end: { line: 1, column: 359, offset: 358 }
+                  start: { line: 1, column: 389, offset: 388 },
+                  end: { line: 1, column: 390, offset: 389 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 359, offset: 358 }
+              end: { line: 1, column: 390, offset: 389 }
             }
           },
           {
@@ -806,64 +798,20 @@ export default [
             meta: '[playground]',
             value: 'const isOdd = number => number % 2 == 1\n' +
               '\n' +
-              'const concat = (array, element) => array.concat(element)\n' +
+              'const concat = (array, item) => array.concat(item)\n' +
               '\n' +
               'const concatOddNumbers = Transducer.filter(isOdd)(concat)\n' +
               '\n' +
               'const array = [1, 2, 3, 4, 5]\n' +
               '\n' +
               'const oddNumbers1 = array.reduce(concatOddNumbers, [])\n' +
-              'console.log(oddNumbers1) // [1, 3, 5]\n' +
-              '\n' +
               'const oddNumbers2 = transform(array, Transducer.filter(isOdd), [])\n' +
-              'console.log(oddNumbers2) // [1, 3, 5]',
+              '\n' +
+              'console.log(oddNumbers1)\n' +
+              'console.log(oddNumbers2)',
             position: {
-              start: { line: 3, column: 1, offset: 360 },
-              end: { line: 17, column: 4, offset: 778 }
-            }
-          },
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: 'Read more on ',
-                position: {
-                  start: { line: 19, column: 1, offset: 780 },
-                  end: { line: 19, column: 14, offset: 793 }
-                }
-              },
-              {
-                type: 'link',
-                title: null,
-                url: '/blog/transducers-crash-course-rubico-v2',
-                children: [
-                  {
-                    type: 'text',
-                    value: 'transducers',
-                    position: {
-                      start: { line: 19, column: 15, offset: 794 },
-                      end: { line: 19, column: 26, offset: 805 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 19, column: 14, offset: 793 },
-                  end: { line: 19, column: 69, offset: 848 }
-                }
-              },
-              {
-                type: 'text',
-                value: '.',
-                position: {
-                  start: { line: 19, column: 69, offset: 848 },
-                  end: { line: 19, column: 70, offset: 849 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 19, column: 1, offset: 780 },
-              end: { line: 19, column: 70, offset: 849 }
+              start: { line: 3, column: 1, offset: 391 },
+              end: { line: 17, column: 4, offset: 777 }
             }
           },
           {
@@ -873,14 +821,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 21, column: 1, offset: 851 },
-                  end: { line: 21, column: 10, offset: 860 }
+                  start: { line: 19, column: 1, offset: 779 },
+                  end: { line: 19, column: 10, offset: 788 }
                 }
               }
             ],
             position: {
-              start: { line: 21, column: 1, offset: 851 },
-              end: { line: 21, column: 10, offset: 860 }
+              start: { line: 19, column: 1, offset: 779 },
+              end: { line: 19, column: 10, offset: 788 }
             }
           },
           {
@@ -906,26 +854,26 @@ export default [
                             type: 'text',
                             value: 'thunkify',
                             position: {
-                              start: { line: 22, column: 5, offset: 865 },
-                              end: { line: 22, column: 13, offset: 873 }
+                              start: { line: 20, column: 5, offset: 793 },
+                              end: { line: 20, column: 13, offset: 801 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 22, column: 4, offset: 864 },
-                          end: { line: 22, column: 30, offset: 890 }
+                          start: { line: 20, column: 4, offset: 792 },
+                          end: { line: 20, column: 30, offset: 818 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 22, column: 4, offset: 864 },
-                      end: { line: 22, column: 30, offset: 890 }
+                      start: { line: 20, column: 4, offset: 792 },
+                      end: { line: 20, column: 30, offset: 818 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 22, column: 2, offset: 862 },
-                  end: { line: 22, column: 30, offset: 890 }
+                  start: { line: 20, column: 2, offset: 790 },
+                  end: { line: 20, column: 30, offset: 818 }
                 }
               },
               {
@@ -945,26 +893,26 @@ export default [
                             type: 'text',
                             value: 'Transducer.map',
                             position: {
-                              start: { line: 23, column: 5, offset: 895 },
-                              end: { line: 23, column: 19, offset: 909 }
+                              start: { line: 21, column: 5, offset: 823 },
+                              end: { line: 21, column: 19, offset: 837 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 23, column: 4, offset: 894 },
-                          end: { line: 23, column: 42, offset: 932 }
+                          start: { line: 21, column: 4, offset: 822 },
+                          end: { line: 21, column: 42, offset: 860 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 23, column: 4, offset: 894 },
-                      end: { line: 23, column: 42, offset: 932 }
+                      start: { line: 21, column: 4, offset: 822 },
+                      end: { line: 21, column: 42, offset: 860 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 23, column: 2, offset: 892 },
-                  end: { line: 23, column: 42, offset: 932 }
+                  start: { line: 21, column: 2, offset: 820 },
+                  end: { line: 21, column: 42, offset: 860 }
                 }
               },
               {
@@ -984,26 +932,26 @@ export default [
                             type: 'text',
                             value: 'Transducer.flatMap',
                             position: {
-                              start: { line: 24, column: 5, offset: 937 },
-                              end: { line: 24, column: 23, offset: 955 }
+                              start: { line: 22, column: 5, offset: 865 },
+                              end: { line: 22, column: 23, offset: 883 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 24, column: 4, offset: 936 },
-                          end: { line: 24, column: 50, offset: 982 }
+                          start: { line: 22, column: 4, offset: 864 },
+                          end: { line: 22, column: 50, offset: 910 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 24, column: 4, offset: 936 },
-                      end: { line: 24, column: 50, offset: 982 }
+                      start: { line: 22, column: 4, offset: 864 },
+                      end: { line: 22, column: 50, offset: 910 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 24, column: 2, offset: 934 },
-                  end: { line: 24, column: 50, offset: 982 }
+                  start: { line: 22, column: 2, offset: 862 },
+                  end: { line: 22, column: 50, offset: 910 }
                 }
               },
               {
@@ -1023,26 +971,26 @@ export default [
                             type: 'text',
                             value: 'Transducer.forEach',
                             position: {
-                              start: { line: 25, column: 5, offset: 987 },
-                              end: { line: 25, column: 23, offset: 1005 }
+                              start: { line: 23, column: 5, offset: 915 },
+                              end: { line: 23, column: 23, offset: 933 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 25, column: 4, offset: 986 },
-                          end: { line: 25, column: 50, offset: 1032 }
+                          start: { line: 23, column: 4, offset: 914 },
+                          end: { line: 23, column: 50, offset: 960 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 25, column: 4, offset: 986 },
-                      end: { line: 25, column: 50, offset: 1032 }
+                      start: { line: 23, column: 4, offset: 914 },
+                      end: { line: 23, column: 50, offset: 960 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 25, column: 2, offset: 984 },
-                  end: { line: 25, column: 50, offset: 1032 }
+                  start: { line: 23, column: 2, offset: 912 },
+                  end: { line: 23, column: 50, offset: 960 }
                 }
               },
               {
@@ -1062,26 +1010,26 @@ export default [
                             type: 'text',
                             value: 'Transducer.passthrough',
                             position: {
-                              start: { line: 26, column: 5, offset: 1037 },
-                              end: { line: 26, column: 27, offset: 1059 }
+                              start: { line: 24, column: 5, offset: 965 },
+                              end: { line: 24, column: 27, offset: 987 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 26, column: 4, offset: 1036 },
-                          end: { line: 26, column: 58, offset: 1090 }
+                          start: { line: 24, column: 4, offset: 964 },
+                          end: { line: 24, column: 58, offset: 1018 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 26, column: 4, offset: 1036 },
-                      end: { line: 26, column: 58, offset: 1090 }
+                      start: { line: 24, column: 4, offset: 964 },
+                      end: { line: 24, column: 58, offset: 1018 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 26, column: 2, offset: 1034 },
-                  end: { line: 26, column: 58, offset: 1090 }
+                  start: { line: 24, column: 2, offset: 962 },
+                  end: { line: 24, column: 58, offset: 1018 }
                 }
               },
               {
@@ -1101,38 +1049,38 @@ export default [
                             type: 'text',
                             value: 'Transducer.tryCatch',
                             position: {
-                              start: { line: 27, column: 5, offset: 1095 },
-                              end: { line: 27, column: 24, offset: 1114 }
+                              start: { line: 25, column: 5, offset: 1023 },
+                              end: { line: 25, column: 24, offset: 1042 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 27, column: 4, offset: 1094 },
-                          end: { line: 27, column: 52, offset: 1142 }
+                          start: { line: 25, column: 4, offset: 1022 },
+                          end: { line: 25, column: 52, offset: 1070 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 27, column: 4, offset: 1094 },
-                      end: { line: 27, column: 52, offset: 1142 }
+                      start: { line: 25, column: 4, offset: 1022 },
+                      end: { line: 25, column: 52, offset: 1070 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 27, column: 2, offset: 1092 },
-                  end: { line: 27, column: 52, offset: 1142 }
+                  start: { line: 25, column: 2, offset: 1020 },
+                  end: { line: 25, column: 52, offset: 1070 }
                 }
               }
             ],
             position: {
-              start: { line: 22, column: 2, offset: 862 },
-              end: { line: 27, column: 52, offset: 1142 }
+              start: { line: 20, column: 2, offset: 790 },
+              end: { line: 25, column: 52, offset: 1070 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 27, column: 52, offset: 1142 }
+          end: { line: 25, column: 52, offset: 1070 }
         }
       }
     },
@@ -1144,25 +1092,21 @@ export default [
       'type SyncOrAsyncReducer = (accumulator any, value any)=>(nextAccumulator Promise|any)\n' +
       'type Transducer = SyncOrAsyncReducer=>SyncOrAsyncReducer\n' +
       'type Monad = Array|String|Set|Generator|AsyncGenerator|{ flatMap: string }|{ chain: string }|Object\n' +
-      'type UnarySyncOrAsyncFlatMapper = (element any)=>(monad Promise|Monad|any)\n' +
+      'type UnarySyncOrAsyncFlatMapper = (item any)=>(monad Promise|Monad|any)\n' +
       '\n' +
-      'flatMapper UnarySyncOrAsyncFlatMapper\n' +
-      '\n' +
-      'Transducer.flatMap(flatMapper) -> flatMappingTransducer Transducer\n' +
+      'Transducer.flatMap(flatMapper UnarySyncOrAsyncFlatMapper) -> flatMappingTransducer Transducer\n' +
       '```',
-    description: 'Creates a flatMapping transducer. A flatMapping transducer applies the flatMapper function to each element of its reducing operation, concatenating the results of the flatMapper execution onto the accumulator. It is possible to use an asynchronous flatMapper, however the reducing operation must support asynchronous execution. This library provides such implementations as [reduce](/docs/reduce) and [transform](/docs/transform).\n' +
+    description: 'Creates a flatMapping [transducer](/blog/transducers-crash-course). A flatMapping transducer applies the flatMapper function to each item of its reducing operation, concatenating the results of the flatMapper execution onto the accumulator. It is possible to use an asynchronous flatMapper, however the reducing operation must support asynchronous execution. This library provides such implementations as [reduce](/docs/reduce) and [transform](/docs/transform).\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const powers = number => [number, number ** 2, number ** 3]\n' +
       '\n' +
       'const numbers = [1, 2, 3, 4, 5]\n' +
       '\n' +
-      'console.log(\n' +
-      '  transform(numbers, Transducer.flatMap(powers), [])\n' +
-      ') // [1, 1, 1, 2, 4, 8, 3, 9, 27, 4, 16, 64, 5, 25, 125]\n' +
-      '```\n' +
+      'const result = transform(numbers, Transducer.flatMap(powers), [])\n' +
       '\n' +
-      'Read more on [transducers](/blog/transducers-crash-course-rubico-v2).\n' +
+      'console.log(result)\n' +
+      '```\n' +
       '\n' +
       'See also:\n' +
       ' * [thunkify](/docs/thunkify)\n' +
@@ -1208,20 +1152,18 @@ export default [
             value: 'type SyncOrAsyncReducer = (accumulator any, value any)=>(nextAccumulator Promise|any)\n' +
               'type Transducer = SyncOrAsyncReducer=>SyncOrAsyncReducer\n' +
               'type Monad = Array|String|Set|Generator|AsyncGenerator|{ flatMap: string }|{ chain: string }|Object\n' +
-              'type UnarySyncOrAsyncFlatMapper = (element any)=>(monad Promise|Monad|any)\n' +
+              'type UnarySyncOrAsyncFlatMapper = (item any)=>(monad Promise|Monad|any)\n' +
               '\n' +
-              'flatMapper UnarySyncOrAsyncFlatMapper\n' +
-              '\n' +
-              'Transducer.flatMap(flatMapper) -> flatMappingTransducer Transducer',
+              'Transducer.flatMap(flatMapper UnarySyncOrAsyncFlatMapper) -> flatMappingTransducer Transducer',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 10, column: 4, offset: 457 }
+              end: { line: 8, column: 4, offset: 442 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 10, column: 4, offset: 457 }
+          end: { line: 8, column: 4, offset: 442 }
         }
       },
       description: {
@@ -1232,10 +1174,37 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Creates a flatMapping transducer. A flatMapping transducer applies the flatMapper function to each element of its reducing operation, concatenating the results of the flatMapper execution onto the accumulator. It is possible to use an asynchronous flatMapper, however the reducing operation must support asynchronous execution. This library provides such implementations as ',
+                value: 'Creates a flatMapping ',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 375, offset: 374 }
+                  end: { line: 1, column: 23, offset: 22 }
+                }
+              },
+              {
+                type: 'link',
+                title: null,
+                url: '/blog/transducers-crash-course',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'transducer',
+                    position: {
+                      start: { line: 1, column: 24, offset: 23 },
+                      end: { line: 1, column: 34, offset: 33 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 23, offset: 22 },
+                  end: { line: 1, column: 67, offset: 66 }
+                }
+              },
+              {
+                type: 'text',
+                value: '. A flatMapping transducer applies the flatMapper function to each item of its reducing operation, concatenating the results of the flatMapper execution onto the accumulator. It is possible to use an asynchronous flatMapper, however the reducing operation must support asynchronous execution. This library provides such implementations as ',
+                position: {
+                  start: { line: 1, column: 67, offset: 66 },
+                  end: { line: 1, column: 406, offset: 405 }
                 }
               },
               {
@@ -1247,22 +1216,22 @@ export default [
                     type: 'text',
                     value: 'reduce',
                     position: {
-                      start: { line: 1, column: 376, offset: 375 },
-                      end: { line: 1, column: 382, offset: 381 }
+                      start: { line: 1, column: 407, offset: 406 },
+                      end: { line: 1, column: 413, offset: 412 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 1, column: 375, offset: 374 },
-                  end: { line: 1, column: 397, offset: 396 }
+                  start: { line: 1, column: 406, offset: 405 },
+                  end: { line: 1, column: 428, offset: 427 }
                 }
               },
               {
                 type: 'text',
                 value: ' and ',
                 position: {
-                  start: { line: 1, column: 397, offset: 396 },
-                  end: { line: 1, column: 402, offset: 401 }
+                  start: { line: 1, column: 428, offset: 427 },
+                  end: { line: 1, column: 433, offset: 432 }
                 }
               },
               {
@@ -1274,28 +1243,28 @@ export default [
                     type: 'text',
                     value: 'transform',
                     position: {
-                      start: { line: 1, column: 403, offset: 402 },
-                      end: { line: 1, column: 412, offset: 411 }
+                      start: { line: 1, column: 434, offset: 433 },
+                      end: { line: 1, column: 443, offset: 442 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 1, column: 402, offset: 401 },
-                  end: { line: 1, column: 430, offset: 429 }
+                  start: { line: 1, column: 433, offset: 432 },
+                  end: { line: 1, column: 461, offset: 460 }
                 }
               },
               {
                 type: 'text',
                 value: '.',
                 position: {
-                  start: { line: 1, column: 430, offset: 429 },
-                  end: { line: 1, column: 431, offset: 430 }
+                  start: { line: 1, column: 461, offset: 460 },
+                  end: { line: 1, column: 462, offset: 461 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 431, offset: 430 }
+              end: { line: 1, column: 462, offset: 461 }
             }
           },
           {
@@ -1306,56 +1275,12 @@ export default [
               '\n' +
               'const numbers = [1, 2, 3, 4, 5]\n' +
               '\n' +
-              'console.log(\n' +
-              '  transform(numbers, Transducer.flatMap(powers), [])\n' +
-              ') // [1, 1, 1, 2, 4, 8, 3, 9, 27, 4, 16, 64, 5, 25, 125]',
+              'const result = transform(numbers, Transducer.flatMap(powers), [])\n' +
+              '\n' +
+              'console.log(result)',
             position: {
-              start: { line: 3, column: 1, offset: 432 },
-              end: { line: 11, column: 4, offset: 679 }
-            }
-          },
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: 'Read more on ',
-                position: {
-                  start: { line: 13, column: 1, offset: 681 },
-                  end: { line: 13, column: 14, offset: 694 }
-                }
-              },
-              {
-                type: 'link',
-                title: null,
-                url: '/blog/transducers-crash-course-rubico-v2',
-                children: [
-                  {
-                    type: 'text',
-                    value: 'transducers',
-                    position: {
-                      start: { line: 13, column: 15, offset: 695 },
-                      end: { line: 13, column: 26, offset: 706 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 13, column: 14, offset: 694 },
-                  end: { line: 13, column: 69, offset: 749 }
-                }
-              },
-              {
-                type: 'text',
-                value: '.',
-                position: {
-                  start: { line: 13, column: 69, offset: 749 },
-                  end: { line: 13, column: 70, offset: 750 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 13, column: 1, offset: 681 },
-              end: { line: 13, column: 70, offset: 750 }
+              start: { line: 3, column: 1, offset: 463 },
+              end: { line: 11, column: 4, offset: 674 }
             }
           },
           {
@@ -1365,14 +1290,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 15, column: 1, offset: 752 },
-                  end: { line: 15, column: 10, offset: 761 }
+                  start: { line: 13, column: 1, offset: 676 },
+                  end: { line: 13, column: 10, offset: 685 }
                 }
               }
             ],
             position: {
-              start: { line: 15, column: 1, offset: 752 },
-              end: { line: 15, column: 10, offset: 761 }
+              start: { line: 13, column: 1, offset: 676 },
+              end: { line: 13, column: 10, offset: 685 }
             }
           },
           {
@@ -1398,26 +1323,26 @@ export default [
                             type: 'text',
                             value: 'thunkify',
                             position: {
-                              start: { line: 16, column: 5, offset: 766 },
-                              end: { line: 16, column: 13, offset: 774 }
+                              start: { line: 14, column: 5, offset: 690 },
+                              end: { line: 14, column: 13, offset: 698 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 16, column: 4, offset: 765 },
-                          end: { line: 16, column: 30, offset: 791 }
+                          start: { line: 14, column: 4, offset: 689 },
+                          end: { line: 14, column: 30, offset: 715 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 16, column: 4, offset: 765 },
-                      end: { line: 16, column: 30, offset: 791 }
+                      start: { line: 14, column: 4, offset: 689 },
+                      end: { line: 14, column: 30, offset: 715 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 16, column: 2, offset: 763 },
-                  end: { line: 16, column: 30, offset: 791 }
+                  start: { line: 14, column: 2, offset: 687 },
+                  end: { line: 14, column: 30, offset: 715 }
                 }
               },
               {
@@ -1437,26 +1362,26 @@ export default [
                             type: 'text',
                             value: 'Transducer.map',
                             position: {
-                              start: { line: 17, column: 5, offset: 796 },
-                              end: { line: 17, column: 19, offset: 810 }
+                              start: { line: 15, column: 5, offset: 720 },
+                              end: { line: 15, column: 19, offset: 734 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 17, column: 4, offset: 795 },
-                          end: { line: 17, column: 42, offset: 833 }
+                          start: { line: 15, column: 4, offset: 719 },
+                          end: { line: 15, column: 42, offset: 757 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 17, column: 4, offset: 795 },
-                      end: { line: 17, column: 42, offset: 833 }
+                      start: { line: 15, column: 4, offset: 719 },
+                      end: { line: 15, column: 42, offset: 757 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 17, column: 2, offset: 793 },
-                  end: { line: 17, column: 42, offset: 833 }
+                  start: { line: 15, column: 2, offset: 717 },
+                  end: { line: 15, column: 42, offset: 757 }
                 }
               },
               {
@@ -1476,26 +1401,26 @@ export default [
                             type: 'text',
                             value: 'Transducer.filter',
                             position: {
-                              start: { line: 18, column: 5, offset: 838 },
-                              end: { line: 18, column: 22, offset: 855 }
+                              start: { line: 16, column: 5, offset: 762 },
+                              end: { line: 16, column: 22, offset: 779 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 18, column: 4, offset: 837 },
-                          end: { line: 18, column: 48, offset: 881 }
+                          start: { line: 16, column: 4, offset: 761 },
+                          end: { line: 16, column: 48, offset: 805 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 18, column: 4, offset: 837 },
-                      end: { line: 18, column: 48, offset: 881 }
+                      start: { line: 16, column: 4, offset: 761 },
+                      end: { line: 16, column: 48, offset: 805 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 18, column: 2, offset: 835 },
-                  end: { line: 18, column: 48, offset: 881 }
+                  start: { line: 16, column: 2, offset: 759 },
+                  end: { line: 16, column: 48, offset: 805 }
                 }
               },
               {
@@ -1515,26 +1440,26 @@ export default [
                             type: 'text',
                             value: 'Transducer.forEach',
                             position: {
-                              start: { line: 19, column: 5, offset: 886 },
-                              end: { line: 19, column: 23, offset: 904 }
+                              start: { line: 17, column: 5, offset: 810 },
+                              end: { line: 17, column: 23, offset: 828 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 19, column: 4, offset: 885 },
-                          end: { line: 19, column: 50, offset: 931 }
+                          start: { line: 17, column: 4, offset: 809 },
+                          end: { line: 17, column: 50, offset: 855 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 19, column: 4, offset: 885 },
-                      end: { line: 19, column: 50, offset: 931 }
+                      start: { line: 17, column: 4, offset: 809 },
+                      end: { line: 17, column: 50, offset: 855 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 19, column: 2, offset: 883 },
-                  end: { line: 19, column: 50, offset: 931 }
+                  start: { line: 17, column: 2, offset: 807 },
+                  end: { line: 17, column: 50, offset: 855 }
                 }
               },
               {
@@ -1554,26 +1479,26 @@ export default [
                             type: 'text',
                             value: 'Transducer.passthrough',
                             position: {
-                              start: { line: 20, column: 5, offset: 936 },
-                              end: { line: 20, column: 27, offset: 958 }
+                              start: { line: 18, column: 5, offset: 860 },
+                              end: { line: 18, column: 27, offset: 882 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 20, column: 4, offset: 935 },
-                          end: { line: 20, column: 58, offset: 989 }
+                          start: { line: 18, column: 4, offset: 859 },
+                          end: { line: 18, column: 58, offset: 913 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 20, column: 4, offset: 935 },
-                      end: { line: 20, column: 58, offset: 989 }
+                      start: { line: 18, column: 4, offset: 859 },
+                      end: { line: 18, column: 58, offset: 913 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 20, column: 2, offset: 933 },
-                  end: { line: 20, column: 58, offset: 989 }
+                  start: { line: 18, column: 2, offset: 857 },
+                  end: { line: 18, column: 58, offset: 913 }
                 }
               },
               {
@@ -1593,38 +1518,38 @@ export default [
                             type: 'text',
                             value: 'Transducer.tryCatch',
                             position: {
-                              start: { line: 21, column: 5, offset: 994 },
-                              end: { line: 21, column: 24, offset: 1013 }
+                              start: { line: 19, column: 5, offset: 918 },
+                              end: { line: 19, column: 24, offset: 937 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 21, column: 4, offset: 993 },
-                          end: { line: 21, column: 52, offset: 1041 }
+                          start: { line: 19, column: 4, offset: 917 },
+                          end: { line: 19, column: 52, offset: 965 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 21, column: 4, offset: 993 },
-                      end: { line: 21, column: 52, offset: 1041 }
+                      start: { line: 19, column: 4, offset: 917 },
+                      end: { line: 19, column: 52, offset: 965 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 21, column: 2, offset: 991 },
-                  end: { line: 21, column: 52, offset: 1041 }
+                  start: { line: 19, column: 2, offset: 915 },
+                  end: { line: 19, column: 52, offset: 965 }
                 }
               }
             ],
             position: {
-              start: { line: 16, column: 2, offset: 763 },
-              end: { line: 21, column: 52, offset: 1041 }
+              start: { line: 14, column: 2, offset: 687 },
+              end: { line: 19, column: 52, offset: 965 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 21, column: 52, offset: 1041 }
+          end: { line: 19, column: 52, offset: 965 }
         }
       }
     },
@@ -1635,23 +1560,20 @@ export default [
     synopsis: '```coffeescript [specscript]\n' +
       'type SyncOrAsyncReducer = (accumulator any, value any)=>(nextAccumulator Promise|any)\n' +
       'type Transducer = SyncOrAsyncReducer=>SyncOrAsyncReducer\n' +
-      'type UnarySyncOrAsyncCallback = (element any)=>Promise|undefined\n' +
+      'type UnarySyncOrAsyncCallback = (item any)=>Promise|undefined\n' +
       '\n' +
-      'callback UnarySyncOrAsyncCallback\n' +
-      '\n' +
-      'Transducer.forEach(callback) -> forEachTransducer Transducer\n' +
+      'Transducer.forEach(callback UnarySyncOrAsyncCallback) -> forEachTransducer Transducer\n' +
       '```',
-    description: 'Executes a callback function for each element of a reducing operation, leaving the reducing operation unmodified. It is possible to use an asynchronous callback function, however the reducing operation must support asynchronous execution. This library provides such implementations as [reduce](/docs/reduce) and [transform](/docs/transform).\n' +
+    description: 'Creates an iterative [transducer](/blog/transducers-crash-course). Executes a callback function for each item of a reducing operation, leaving each item unmodified. It is possible to use an asynchronous callback function, however the reducing operation must support asynchronous execution. This library provides such implementations as [reduce](/docs/reduce) and [transform](/docs/transform).\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const numbers = [1, 2, 3, 4, 5]\n' +
+      '\n' +
       'transform(numbers, compose(\n' +
       '  Transducer.map(number => number ** 2),\n' +
-      '  Transducer.forEach(console.log), // 1 4 9 16 25\n' +
+      '  Transducer.forEach(console.log),\n' +
       '), null)\n' +
       '```\n' +
-      '\n' +
-      'Read more on [transducers](/blog/transducers-crash-course-rubico-v2).\n' +
       '\n' +
       'See also:\n' +
       ' * [thunkify](/docs/thunkify)\n' +
@@ -1696,20 +1618,18 @@ export default [
             meta: '[specscript]',
             value: 'type SyncOrAsyncReducer = (accumulator any, value any)=>(nextAccumulator Promise|any)\n' +
               'type Transducer = SyncOrAsyncReducer=>SyncOrAsyncReducer\n' +
-              'type UnarySyncOrAsyncCallback = (element any)=>Promise|undefined\n' +
+              'type UnarySyncOrAsyncCallback = (item any)=>Promise|undefined\n' +
               '\n' +
-              'callback UnarySyncOrAsyncCallback\n' +
-              '\n' +
-              'Transducer.forEach(callback) -> forEachTransducer Transducer',
+              'Transducer.forEach(callback UnarySyncOrAsyncCallback) -> forEachTransducer Transducer',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 9, column: 4, offset: 337 }
+              end: { line: 7, column: 4, offset: 324 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 9, column: 4, offset: 337 }
+          end: { line: 7, column: 4, offset: 324 }
         }
       },
       description: {
@@ -1720,10 +1640,37 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Executes a callback function for each element of a reducing operation, leaving the reducing operation unmodified. It is possible to use an asynchronous callback function, however the reducing operation must support asynchronous execution. This library provides such implementations as ',
+                value: 'Creates an iterative ',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 286, offset: 285 }
+                  end: { line: 1, column: 22, offset: 21 }
+                }
+              },
+              {
+                type: 'link',
+                title: null,
+                url: '/blog/transducers-crash-course',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'transducer',
+                    position: {
+                      start: { line: 1, column: 23, offset: 22 },
+                      end: { line: 1, column: 33, offset: 32 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 22, offset: 21 },
+                  end: { line: 1, column: 66, offset: 65 }
+                }
+              },
+              {
+                type: 'text',
+                value: '. Executes a callback function for each item of a reducing operation, leaving each item unmodified. It is possible to use an asynchronous callback function, however the reducing operation must support asynchronous execution. This library provides such implementations as ',
+                position: {
+                  start: { line: 1, column: 66, offset: 65 },
+                  end: { line: 1, column: 337, offset: 336 }
                 }
               },
               {
@@ -1735,22 +1682,22 @@ export default [
                     type: 'text',
                     value: 'reduce',
                     position: {
-                      start: { line: 1, column: 287, offset: 286 },
-                      end: { line: 1, column: 293, offset: 292 }
+                      start: { line: 1, column: 338, offset: 337 },
+                      end: { line: 1, column: 344, offset: 343 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 1, column: 286, offset: 285 },
-                  end: { line: 1, column: 308, offset: 307 }
+                  start: { line: 1, column: 337, offset: 336 },
+                  end: { line: 1, column: 359, offset: 358 }
                 }
               },
               {
                 type: 'text',
                 value: ' and ',
                 position: {
-                  start: { line: 1, column: 308, offset: 307 },
-                  end: { line: 1, column: 313, offset: 312 }
+                  start: { line: 1, column: 359, offset: 358 },
+                  end: { line: 1, column: 364, offset: 363 }
                 }
               },
               {
@@ -1762,28 +1709,28 @@ export default [
                     type: 'text',
                     value: 'transform',
                     position: {
-                      start: { line: 1, column: 314, offset: 313 },
-                      end: { line: 1, column: 323, offset: 322 }
+                      start: { line: 1, column: 365, offset: 364 },
+                      end: { line: 1, column: 374, offset: 373 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 1, column: 313, offset: 312 },
-                  end: { line: 1, column: 341, offset: 340 }
+                  start: { line: 1, column: 364, offset: 363 },
+                  end: { line: 1, column: 392, offset: 391 }
                 }
               },
               {
                 type: 'text',
                 value: '.',
                 position: {
-                  start: { line: 1, column: 341, offset: 340 },
-                  end: { line: 1, column: 342, offset: 341 }
+                  start: { line: 1, column: 392, offset: 391 },
+                  end: { line: 1, column: 393, offset: 392 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 342, offset: 341 }
+              end: { line: 1, column: 393, offset: 392 }
             }
           },
           {
@@ -1791,57 +1738,14 @@ export default [
             lang: 'javascript',
             meta: '[playground]',
             value: 'const numbers = [1, 2, 3, 4, 5]\n' +
+              '\n' +
               'transform(numbers, compose(\n' +
               '  Transducer.map(number => number ** 2),\n' +
-              '  Transducer.forEach(console.log), // 1 4 9 16 25\n' +
+              '  Transducer.forEach(console.log),\n' +
               '), null)',
             position: {
-              start: { line: 3, column: 1, offset: 343 },
-              end: { line: 9, column: 4, offset: 533 }
-            }
-          },
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: 'Read more on ',
-                position: {
-                  start: { line: 11, column: 1, offset: 535 },
-                  end: { line: 11, column: 14, offset: 548 }
-                }
-              },
-              {
-                type: 'link',
-                title: null,
-                url: '/blog/transducers-crash-course-rubico-v2',
-                children: [
-                  {
-                    type: 'text',
-                    value: 'transducers',
-                    position: {
-                      start: { line: 11, column: 15, offset: 549 },
-                      end: { line: 11, column: 26, offset: 560 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 11, column: 14, offset: 548 },
-                  end: { line: 11, column: 69, offset: 603 }
-                }
-              },
-              {
-                type: 'text',
-                value: '.',
-                position: {
-                  start: { line: 11, column: 69, offset: 603 },
-                  end: { line: 11, column: 70, offset: 604 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 11, column: 1, offset: 535 },
-              end: { line: 11, column: 70, offset: 604 }
+              start: { line: 3, column: 1, offset: 394 },
+              end: { line: 10, column: 4, offset: 570 }
             }
           },
           {
@@ -1851,14 +1755,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 13, column: 1, offset: 606 },
-                  end: { line: 13, column: 10, offset: 615 }
+                  start: { line: 12, column: 1, offset: 572 },
+                  end: { line: 12, column: 10, offset: 581 }
                 }
               }
             ],
             position: {
-              start: { line: 13, column: 1, offset: 606 },
-              end: { line: 13, column: 10, offset: 615 }
+              start: { line: 12, column: 1, offset: 572 },
+              end: { line: 12, column: 10, offset: 581 }
             }
           },
           {
@@ -1884,26 +1788,26 @@ export default [
                             type: 'text',
                             value: 'thunkify',
                             position: {
-                              start: { line: 14, column: 5, offset: 620 },
-                              end: { line: 14, column: 13, offset: 628 }
+                              start: { line: 13, column: 5, offset: 586 },
+                              end: { line: 13, column: 13, offset: 594 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 14, column: 4, offset: 619 },
-                          end: { line: 14, column: 30, offset: 645 }
+                          start: { line: 13, column: 4, offset: 585 },
+                          end: { line: 13, column: 30, offset: 611 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 14, column: 4, offset: 619 },
-                      end: { line: 14, column: 30, offset: 645 }
+                      start: { line: 13, column: 4, offset: 585 },
+                      end: { line: 13, column: 30, offset: 611 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 14, column: 2, offset: 617 },
-                  end: { line: 14, column: 30, offset: 645 }
+                  start: { line: 13, column: 2, offset: 583 },
+                  end: { line: 13, column: 30, offset: 611 }
                 }
               },
               {
@@ -1923,26 +1827,26 @@ export default [
                             type: 'text',
                             value: 'Transducer.map',
                             position: {
-                              start: { line: 15, column: 5, offset: 650 },
-                              end: { line: 15, column: 19, offset: 664 }
+                              start: { line: 14, column: 5, offset: 616 },
+                              end: { line: 14, column: 19, offset: 630 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 15, column: 4, offset: 649 },
-                          end: { line: 15, column: 42, offset: 687 }
+                          start: { line: 14, column: 4, offset: 615 },
+                          end: { line: 14, column: 42, offset: 653 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 15, column: 4, offset: 649 },
-                      end: { line: 15, column: 42, offset: 687 }
+                      start: { line: 14, column: 4, offset: 615 },
+                      end: { line: 14, column: 42, offset: 653 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 15, column: 2, offset: 647 },
-                  end: { line: 15, column: 42, offset: 687 }
+                  start: { line: 14, column: 2, offset: 613 },
+                  end: { line: 14, column: 42, offset: 653 }
                 }
               },
               {
@@ -1962,26 +1866,26 @@ export default [
                             type: 'text',
                             value: 'Transducer.filter',
                             position: {
-                              start: { line: 16, column: 5, offset: 692 },
-                              end: { line: 16, column: 22, offset: 709 }
+                              start: { line: 15, column: 5, offset: 658 },
+                              end: { line: 15, column: 22, offset: 675 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 16, column: 4, offset: 691 },
-                          end: { line: 16, column: 48, offset: 735 }
+                          start: { line: 15, column: 4, offset: 657 },
+                          end: { line: 15, column: 48, offset: 701 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 16, column: 4, offset: 691 },
-                      end: { line: 16, column: 48, offset: 735 }
+                      start: { line: 15, column: 4, offset: 657 },
+                      end: { line: 15, column: 48, offset: 701 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 16, column: 2, offset: 689 },
-                  end: { line: 16, column: 48, offset: 735 }
+                  start: { line: 15, column: 2, offset: 655 },
+                  end: { line: 15, column: 48, offset: 701 }
                 }
               },
               {
@@ -2001,26 +1905,26 @@ export default [
                             type: 'text',
                             value: 'Transducer.flatMap',
                             position: {
-                              start: { line: 17, column: 5, offset: 740 },
-                              end: { line: 17, column: 23, offset: 758 }
+                              start: { line: 16, column: 5, offset: 706 },
+                              end: { line: 16, column: 23, offset: 724 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 17, column: 4, offset: 739 },
-                          end: { line: 17, column: 50, offset: 785 }
+                          start: { line: 16, column: 4, offset: 705 },
+                          end: { line: 16, column: 50, offset: 751 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 17, column: 4, offset: 739 },
-                      end: { line: 17, column: 50, offset: 785 }
+                      start: { line: 16, column: 4, offset: 705 },
+                      end: { line: 16, column: 50, offset: 751 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 17, column: 2, offset: 737 },
-                  end: { line: 17, column: 50, offset: 785 }
+                  start: { line: 16, column: 2, offset: 703 },
+                  end: { line: 16, column: 50, offset: 751 }
                 }
               },
               {
@@ -2040,26 +1944,26 @@ export default [
                             type: 'text',
                             value: 'Transducer.passthrough',
                             position: {
-                              start: { line: 18, column: 5, offset: 790 },
-                              end: { line: 18, column: 27, offset: 812 }
+                              start: { line: 17, column: 5, offset: 756 },
+                              end: { line: 17, column: 27, offset: 778 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 18, column: 4, offset: 789 },
-                          end: { line: 18, column: 58, offset: 843 }
+                          start: { line: 17, column: 4, offset: 755 },
+                          end: { line: 17, column: 58, offset: 809 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 18, column: 4, offset: 789 },
-                      end: { line: 18, column: 58, offset: 843 }
+                      start: { line: 17, column: 4, offset: 755 },
+                      end: { line: 17, column: 58, offset: 809 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 18, column: 2, offset: 787 },
-                  end: { line: 18, column: 58, offset: 843 }
+                  start: { line: 17, column: 2, offset: 753 },
+                  end: { line: 17, column: 58, offset: 809 }
                 }
               },
               {
@@ -2079,38 +1983,38 @@ export default [
                             type: 'text',
                             value: 'Transducer.tryCatch',
                             position: {
-                              start: { line: 19, column: 5, offset: 848 },
-                              end: { line: 19, column: 24, offset: 867 }
+                              start: { line: 18, column: 5, offset: 814 },
+                              end: { line: 18, column: 24, offset: 833 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 19, column: 4, offset: 847 },
-                          end: { line: 19, column: 52, offset: 895 }
+                          start: { line: 18, column: 4, offset: 813 },
+                          end: { line: 18, column: 52, offset: 861 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 19, column: 4, offset: 847 },
-                      end: { line: 19, column: 52, offset: 895 }
+                      start: { line: 18, column: 4, offset: 813 },
+                      end: { line: 18, column: 52, offset: 861 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 19, column: 2, offset: 845 },
-                  end: { line: 19, column: 52, offset: 895 }
+                  start: { line: 18, column: 2, offset: 811 },
+                  end: { line: 18, column: 52, offset: 861 }
                 }
               }
             ],
             position: {
-              start: { line: 14, column: 2, offset: 617 },
-              end: { line: 19, column: 52, offset: 895 }
+              start: { line: 13, column: 2, offset: 583 },
+              end: { line: 18, column: 52, offset: 861 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 19, column: 52, offset: 895 }
+          end: { line: 18, column: 52, offset: 861 }
         }
       }
     },
@@ -2122,9 +2026,9 @@ export default [
       'type SyncOrAsyncReducer = (accumulator any, value any)=>(nextAccumulator Promise|any)\n' +
       'type Transducer = SyncOrAsyncReducer=>SyncOrAsyncReducer\n' +
       '\n' +
-      'Transducer.passthrough Transducer\n' +
+      'Transducer.passthrough -> Transducer\n' +
       '```',
-    description: 'Creates a pasthrough transducer. The passthrough transducer simply passes each element of the reducing operation through to the next downstream operation, leaving the reducing operation unmodified.\n' +
+    description: 'Creates a pasthrough [transducer](/blog/transducers-crash-course). The passthrough transducer simply passes each item of the reducing operation through to the next downstream transducer, leaving each item unmodified.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const createAsyncNumbers = async function* () {\n' +
@@ -2135,11 +2039,10 @@ export default [
       '  }\n' +
       '}\n' +
       '\n' +
-      'transform(createAsyncNumbers(), Transducer.passthrough, [])\n' +
-      '  .then(console.log) // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\n' +
-      '```\n' +
+      'const numbers = await transform(createAsyncNumbers(), Transducer.passthrough, [])\n' +
       '\n' +
-      'Read more on [transducers](/blog/transducers-crash-course-rubico-v2).\n' +
+      'console.log(numbers)\n' +
+      '```\n' +
       '\n' +
       'See also:\n' +
       ' * [thunkify](/docs/thunkify)\n' +
@@ -2185,16 +2088,16 @@ export default [
             value: 'type SyncOrAsyncReducer = (accumulator any, value any)=>(nextAccumulator Promise|any)\n' +
               'type Transducer = SyncOrAsyncReducer=>SyncOrAsyncReducer\n' +
               '\n' +
-              'Transducer.passthrough Transducer',
+              'Transducer.passthrough -> Transducer',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 6, column: 4, offset: 210 }
+              end: { line: 6, column: 4, offset: 213 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 6, column: 4, offset: 210 }
+          end: { line: 6, column: 4, offset: 213 }
         }
       },
       description: {
@@ -2205,16 +2108,43 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Creates a pasthrough transducer. The passthrough transducer simply passes each element of the reducing operation through to the next downstream operation, leaving the reducing operation unmodified.',
+                value: 'Creates a pasthrough ',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 198, offset: 197 }
+                  end: { line: 1, column: 22, offset: 21 }
+                }
+              },
+              {
+                type: 'link',
+                title: null,
+                url: '/blog/transducers-crash-course',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'transducer',
+                    position: {
+                      start: { line: 1, column: 23, offset: 22 },
+                      end: { line: 1, column: 33, offset: 32 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 22, offset: 21 },
+                  end: { line: 1, column: 66, offset: 65 }
+                }
+              },
+              {
+                type: 'text',
+                value: '. The passthrough transducer simply passes each item of the reducing operation through to the next downstream transducer, leaving each item unmodified.',
+                position: {
+                  start: { line: 1, column: 66, offset: 65 },
+                  end: { line: 1, column: 217, offset: 216 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 198, offset: 197 }
+              end: { line: 1, column: 217, offset: 216 }
             }
           },
           {
@@ -2229,55 +2159,12 @@ export default [
               '  }\n' +
               '}\n' +
               '\n' +
-              'transform(createAsyncNumbers(), Transducer.passthrough, [])\n' +
-              '  .then(console.log) // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]',
+              'const numbers = await transform(createAsyncNumbers(), Transducer.passthrough, [])\n' +
+              '\n' +
+              'console.log(numbers)',
             position: {
-              start: { line: 3, column: 1, offset: 199 },
-              end: { line: 14, column: 4, offset: 473 }
-            }
-          },
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: 'Read more on ',
-                position: {
-                  start: { line: 16, column: 1, offset: 475 },
-                  end: { line: 16, column: 14, offset: 488 }
-                }
-              },
-              {
-                type: 'link',
-                title: null,
-                url: '/blog/transducers-crash-course-rubico-v2',
-                children: [
-                  {
-                    type: 'text',
-                    value: 'transducers',
-                    position: {
-                      start: { line: 16, column: 15, offset: 489 },
-                      end: { line: 16, column: 26, offset: 500 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 16, column: 14, offset: 488 },
-                  end: { line: 16, column: 69, offset: 543 }
-                }
-              },
-              {
-                type: 'text',
-                value: '.',
-                position: {
-                  start: { line: 16, column: 69, offset: 543 },
-                  end: { line: 16, column: 70, offset: 544 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 16, column: 1, offset: 475 },
-              end: { line: 16, column: 70, offset: 544 }
+              start: { line: 3, column: 1, offset: 218 },
+              end: { line: 15, column: 4, offset: 481 }
             }
           },
           {
@@ -2287,14 +2174,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 18, column: 1, offset: 546 },
-                  end: { line: 18, column: 10, offset: 555 }
+                  start: { line: 17, column: 1, offset: 483 },
+                  end: { line: 17, column: 10, offset: 492 }
                 }
               }
             ],
             position: {
-              start: { line: 18, column: 1, offset: 546 },
-              end: { line: 18, column: 10, offset: 555 }
+              start: { line: 17, column: 1, offset: 483 },
+              end: { line: 17, column: 10, offset: 492 }
             }
           },
           {
@@ -2320,26 +2207,26 @@ export default [
                             type: 'text',
                             value: 'thunkify',
                             position: {
-                              start: { line: 19, column: 5, offset: 560 },
-                              end: { line: 19, column: 13, offset: 568 }
+                              start: { line: 18, column: 5, offset: 497 },
+                              end: { line: 18, column: 13, offset: 505 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 19, column: 4, offset: 559 },
-                          end: { line: 19, column: 30, offset: 585 }
+                          start: { line: 18, column: 4, offset: 496 },
+                          end: { line: 18, column: 30, offset: 522 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 19, column: 4, offset: 559 },
-                      end: { line: 19, column: 30, offset: 585 }
+                      start: { line: 18, column: 4, offset: 496 },
+                      end: { line: 18, column: 30, offset: 522 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 19, column: 2, offset: 557 },
-                  end: { line: 19, column: 30, offset: 585 }
+                  start: { line: 18, column: 2, offset: 494 },
+                  end: { line: 18, column: 30, offset: 522 }
                 }
               },
               {
@@ -2359,26 +2246,26 @@ export default [
                             type: 'text',
                             value: 'Transducer.map',
                             position: {
-                              start: { line: 20, column: 5, offset: 590 },
-                              end: { line: 20, column: 19, offset: 604 }
+                              start: { line: 19, column: 5, offset: 527 },
+                              end: { line: 19, column: 19, offset: 541 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 20, column: 4, offset: 589 },
-                          end: { line: 20, column: 42, offset: 627 }
+                          start: { line: 19, column: 4, offset: 526 },
+                          end: { line: 19, column: 42, offset: 564 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 20, column: 4, offset: 589 },
-                      end: { line: 20, column: 42, offset: 627 }
+                      start: { line: 19, column: 4, offset: 526 },
+                      end: { line: 19, column: 42, offset: 564 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 20, column: 2, offset: 587 },
-                  end: { line: 20, column: 42, offset: 627 }
+                  start: { line: 19, column: 2, offset: 524 },
+                  end: { line: 19, column: 42, offset: 564 }
                 }
               },
               {
@@ -2398,26 +2285,26 @@ export default [
                             type: 'text',
                             value: 'Transducer.filter',
                             position: {
-                              start: { line: 21, column: 5, offset: 632 },
-                              end: { line: 21, column: 22, offset: 649 }
+                              start: { line: 20, column: 5, offset: 569 },
+                              end: { line: 20, column: 22, offset: 586 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 21, column: 4, offset: 631 },
-                          end: { line: 21, column: 48, offset: 675 }
+                          start: { line: 20, column: 4, offset: 568 },
+                          end: { line: 20, column: 48, offset: 612 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 21, column: 4, offset: 631 },
-                      end: { line: 21, column: 48, offset: 675 }
+                      start: { line: 20, column: 4, offset: 568 },
+                      end: { line: 20, column: 48, offset: 612 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 21, column: 2, offset: 629 },
-                  end: { line: 21, column: 48, offset: 675 }
+                  start: { line: 20, column: 2, offset: 566 },
+                  end: { line: 20, column: 48, offset: 612 }
                 }
               },
               {
@@ -2437,26 +2324,26 @@ export default [
                             type: 'text',
                             value: 'Transducer.flatMap',
                             position: {
-                              start: { line: 22, column: 5, offset: 680 },
-                              end: { line: 22, column: 23, offset: 698 }
+                              start: { line: 21, column: 5, offset: 617 },
+                              end: { line: 21, column: 23, offset: 635 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 22, column: 4, offset: 679 },
-                          end: { line: 22, column: 50, offset: 725 }
+                          start: { line: 21, column: 4, offset: 616 },
+                          end: { line: 21, column: 50, offset: 662 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 22, column: 4, offset: 679 },
-                      end: { line: 22, column: 50, offset: 725 }
+                      start: { line: 21, column: 4, offset: 616 },
+                      end: { line: 21, column: 50, offset: 662 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 22, column: 2, offset: 677 },
-                  end: { line: 22, column: 50, offset: 725 }
+                  start: { line: 21, column: 2, offset: 614 },
+                  end: { line: 21, column: 50, offset: 662 }
                 }
               },
               {
@@ -2476,26 +2363,26 @@ export default [
                             type: 'text',
                             value: 'Transducer.forEach',
                             position: {
-                              start: { line: 23, column: 5, offset: 730 },
-                              end: { line: 23, column: 23, offset: 748 }
+                              start: { line: 22, column: 5, offset: 667 },
+                              end: { line: 22, column: 23, offset: 685 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 23, column: 4, offset: 729 },
-                          end: { line: 23, column: 50, offset: 775 }
+                          start: { line: 22, column: 4, offset: 666 },
+                          end: { line: 22, column: 50, offset: 712 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 23, column: 4, offset: 729 },
-                      end: { line: 23, column: 50, offset: 775 }
+                      start: { line: 22, column: 4, offset: 666 },
+                      end: { line: 22, column: 50, offset: 712 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 23, column: 2, offset: 727 },
-                  end: { line: 23, column: 50, offset: 775 }
+                  start: { line: 22, column: 2, offset: 664 },
+                  end: { line: 22, column: 50, offset: 712 }
                 }
               },
               {
@@ -2515,38 +2402,38 @@ export default [
                             type: 'text',
                             value: 'Transducer.tryCatch',
                             position: {
-                              start: { line: 24, column: 5, offset: 780 },
-                              end: { line: 24, column: 24, offset: 799 }
+                              start: { line: 23, column: 5, offset: 717 },
+                              end: { line: 23, column: 24, offset: 736 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 24, column: 4, offset: 779 },
-                          end: { line: 24, column: 52, offset: 827 }
+                          start: { line: 23, column: 4, offset: 716 },
+                          end: { line: 23, column: 52, offset: 764 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 24, column: 4, offset: 779 },
-                      end: { line: 24, column: 52, offset: 827 }
+                      start: { line: 23, column: 4, offset: 716 },
+                      end: { line: 23, column: 52, offset: 764 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 24, column: 2, offset: 777 },
-                  end: { line: 24, column: 52, offset: 827 }
+                  start: { line: 23, column: 2, offset: 714 },
+                  end: { line: 23, column: 52, offset: 764 }
                 }
               }
             ],
             position: {
-              start: { line: 19, column: 2, offset: 557 },
-              end: { line: 24, column: 52, offset: 827 }
+              start: { line: 18, column: 2, offset: 494 },
+              end: { line: 23, column: 52, offset: 764 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 24, column: 52, offset: 827 }
+          end: { line: 23, column: 52, offset: 764 }
         }
       }
     },
@@ -2558,12 +2445,12 @@ export default [
       'type SyncOrAsyncReducer = (accumulator any, value any)=>(nextAccumulator Promise|any)\n' +
       'type Transducer = SyncOrAsyncReducer=>SyncOrAsyncReducer\n' +
       '\n' +
-      'transducerTryer Transducer\n' +
-      'catcher (error Error, element any)=>Promise|any\n' +
-      '\n' +
-      'Transducer.tryCatch(transducerTryer, catcher) -> tryCatchTransducer Transducer\n' +
+      'Transducer.tryCatch(\n' +
+      '  transducerTryer Transducer,\n' +
+      '  catcher (error Error, item any)=>(Promise|any)\n' +
+      ') -> tryCatchTransducer Transducer\n' +
       '```',
-    description: 'Creates an error handling transducer. The error handling transducer wraps a transducer and catches any errors thrown by the transducer with the catcher function. The catcher function is provided the error as well as the element for which the error was thrown. It is possible for either the transducer or the catcher to be asynchronous, however the reducing operation must support asynchronous execution. This library provides such implementations as [reduce](/docs/reduce) and [transform](/docs/transform).\n' +
+    description: 'Creates an error handling [transducer](/blog/transducers-crash-course). The error handling transducer wraps a transducer and catches any errors thrown by the transducer with the catcher function. The catcher function is provided the error and the item for which the error was thrown. It is possible for either the transducer or the catcher to be asynchronous, however the reducing operation must support asynchronous execution. This library provides such implementations as [reduce](/docs/reduce) and [transform](/docs/transform).\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const db = new Map()\n' +
@@ -2594,8 +2481,6 @@ export default [
       '  }\n' +
       '), null)\n' +
       '```\n' +
-      '\n' +
-      'Read more on [transducers](/blog/transducers-crash-course-rubico-v2).\n' +
       '\n' +
       'See also:\n' +
       ' * [thunkify](/docs/thunkify)\n' +
@@ -2641,19 +2526,19 @@ export default [
             value: 'type SyncOrAsyncReducer = (accumulator any, value any)=>(nextAccumulator Promise|any)\n' +
               'type Transducer = SyncOrAsyncReducer=>SyncOrAsyncReducer\n' +
               '\n' +
-              'transducerTryer Transducer\n' +
-              'catcher (error Error, element any)=>Promise|any\n' +
-              '\n' +
-              'Transducer.tryCatch(transducerTryer, catcher) -> tryCatchTransducer Transducer',
+              'Transducer.tryCatch(\n' +
+              '  transducerTryer Transducer,\n' +
+              '  catcher (error Error, item any)=>(Promise|any)\n' +
+              ') -> tryCatchTransducer Transducer',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 9, column: 4, offset: 331 }
+              end: { line: 9, column: 4, offset: 311 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 9, column: 4, offset: 331 }
+          end: { line: 9, column: 4, offset: 311 }
         }
       },
       description: {
@@ -2664,10 +2549,37 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Creates an error handling transducer. The error handling transducer wraps a transducer and catches any errors thrown by the transducer with the catcher function. The catcher function is provided the error as well as the element for which the error was thrown. It is possible for either the transducer or the catcher to be asynchronous, however the reducing operation must support asynchronous execution. This library provides such implementations as ',
+                value: 'Creates an error handling ',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 451, offset: 450 }
+                  end: { line: 1, column: 27, offset: 26 }
+                }
+              },
+              {
+                type: 'link',
+                title: null,
+                url: '/blog/transducers-crash-course',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'transducer',
+                    position: {
+                      start: { line: 1, column: 28, offset: 27 },
+                      end: { line: 1, column: 38, offset: 37 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 27, offset: 26 },
+                  end: { line: 1, column: 71, offset: 70 }
+                }
+              },
+              {
+                type: 'text',
+                value: '. The error handling transducer wraps a transducer and catches any errors thrown by the transducer with the catcher function. The catcher function is provided the error and the item for which the error was thrown. It is possible for either the transducer or the catcher to be asynchronous, however the reducing operation must support asynchronous execution. This library provides such implementations as ',
+                position: {
+                  start: { line: 1, column: 71, offset: 70 },
+                  end: { line: 1, column: 475, offset: 474 }
                 }
               },
               {
@@ -2679,22 +2591,22 @@ export default [
                     type: 'text',
                     value: 'reduce',
                     position: {
-                      start: { line: 1, column: 452, offset: 451 },
-                      end: { line: 1, column: 458, offset: 457 }
+                      start: { line: 1, column: 476, offset: 475 },
+                      end: { line: 1, column: 482, offset: 481 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 1, column: 451, offset: 450 },
-                  end: { line: 1, column: 473, offset: 472 }
+                  start: { line: 1, column: 475, offset: 474 },
+                  end: { line: 1, column: 497, offset: 496 }
                 }
               },
               {
                 type: 'text',
                 value: ' and ',
                 position: {
-                  start: { line: 1, column: 473, offset: 472 },
-                  end: { line: 1, column: 478, offset: 477 }
+                  start: { line: 1, column: 497, offset: 496 },
+                  end: { line: 1, column: 502, offset: 501 }
                 }
               },
               {
@@ -2706,28 +2618,28 @@ export default [
                     type: 'text',
                     value: 'transform',
                     position: {
-                      start: { line: 1, column: 479, offset: 478 },
-                      end: { line: 1, column: 488, offset: 487 }
+                      start: { line: 1, column: 503, offset: 502 },
+                      end: { line: 1, column: 512, offset: 511 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 1, column: 478, offset: 477 },
-                  end: { line: 1, column: 506, offset: 505 }
+                  start: { line: 1, column: 502, offset: 501 },
+                  end: { line: 1, column: 530, offset: 529 }
                 }
               },
               {
                 type: 'text',
                 value: '.',
                 position: {
-                  start: { line: 1, column: 506, offset: 505 },
-                  end: { line: 1, column: 507, offset: 506 }
+                  start: { line: 1, column: 530, offset: 529 },
+                  end: { line: 1, column: 531, offset: 530 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 507, offset: 506 }
+              end: { line: 1, column: 531, offset: 530 }
             }
           },
           {
@@ -2762,52 +2674,8 @@ export default [
               '  }\n' +
               '), null)',
             position: {
-              start: { line: 3, column: 1, offset: 508 },
-              end: { line: 31, column: 4, offset: 1227 }
-            }
-          },
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: 'Read more on ',
-                position: {
-                  start: { line: 33, column: 1, offset: 1229 },
-                  end: { line: 33, column: 14, offset: 1242 }
-                }
-              },
-              {
-                type: 'link',
-                title: null,
-                url: '/blog/transducers-crash-course-rubico-v2',
-                children: [
-                  {
-                    type: 'text',
-                    value: 'transducers',
-                    position: {
-                      start: { line: 33, column: 15, offset: 1243 },
-                      end: { line: 33, column: 26, offset: 1254 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 33, column: 14, offset: 1242 },
-                  end: { line: 33, column: 69, offset: 1297 }
-                }
-              },
-              {
-                type: 'text',
-                value: '.',
-                position: {
-                  start: { line: 33, column: 69, offset: 1297 },
-                  end: { line: 33, column: 70, offset: 1298 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 33, column: 1, offset: 1229 },
-              end: { line: 33, column: 70, offset: 1298 }
+              start: { line: 3, column: 1, offset: 532 },
+              end: { line: 31, column: 4, offset: 1251 }
             }
           },
           {
@@ -2817,14 +2685,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 35, column: 1, offset: 1300 },
-                  end: { line: 35, column: 10, offset: 1309 }
+                  start: { line: 33, column: 1, offset: 1253 },
+                  end: { line: 33, column: 10, offset: 1262 }
                 }
               }
             ],
             position: {
-              start: { line: 35, column: 1, offset: 1300 },
-              end: { line: 35, column: 10, offset: 1309 }
+              start: { line: 33, column: 1, offset: 1253 },
+              end: { line: 33, column: 10, offset: 1262 }
             }
           },
           {
@@ -2850,26 +2718,26 @@ export default [
                             type: 'text',
                             value: 'thunkify',
                             position: {
-                              start: { line: 36, column: 5, offset: 1314 },
-                              end: { line: 36, column: 13, offset: 1322 }
+                              start: { line: 34, column: 5, offset: 1267 },
+                              end: { line: 34, column: 13, offset: 1275 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 36, column: 4, offset: 1313 },
-                          end: { line: 36, column: 30, offset: 1339 }
+                          start: { line: 34, column: 4, offset: 1266 },
+                          end: { line: 34, column: 30, offset: 1292 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 36, column: 4, offset: 1313 },
-                      end: { line: 36, column: 30, offset: 1339 }
+                      start: { line: 34, column: 4, offset: 1266 },
+                      end: { line: 34, column: 30, offset: 1292 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 36, column: 2, offset: 1311 },
-                  end: { line: 36, column: 30, offset: 1339 }
+                  start: { line: 34, column: 2, offset: 1264 },
+                  end: { line: 34, column: 30, offset: 1292 }
                 }
               },
               {
@@ -2889,26 +2757,26 @@ export default [
                             type: 'text',
                             value: 'Transducer.map',
                             position: {
-                              start: { line: 37, column: 5, offset: 1344 },
-                              end: { line: 37, column: 19, offset: 1358 }
+                              start: { line: 35, column: 5, offset: 1297 },
+                              end: { line: 35, column: 19, offset: 1311 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 37, column: 4, offset: 1343 },
-                          end: { line: 37, column: 42, offset: 1381 }
+                          start: { line: 35, column: 4, offset: 1296 },
+                          end: { line: 35, column: 42, offset: 1334 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 37, column: 4, offset: 1343 },
-                      end: { line: 37, column: 42, offset: 1381 }
+                      start: { line: 35, column: 4, offset: 1296 },
+                      end: { line: 35, column: 42, offset: 1334 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 37, column: 2, offset: 1341 },
-                  end: { line: 37, column: 42, offset: 1381 }
+                  start: { line: 35, column: 2, offset: 1294 },
+                  end: { line: 35, column: 42, offset: 1334 }
                 }
               },
               {
@@ -2928,26 +2796,26 @@ export default [
                             type: 'text',
                             value: 'Transducer.filter',
                             position: {
-                              start: { line: 38, column: 5, offset: 1386 },
-                              end: { line: 38, column: 22, offset: 1403 }
+                              start: { line: 36, column: 5, offset: 1339 },
+                              end: { line: 36, column: 22, offset: 1356 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 38, column: 4, offset: 1385 },
-                          end: { line: 38, column: 48, offset: 1429 }
+                          start: { line: 36, column: 4, offset: 1338 },
+                          end: { line: 36, column: 48, offset: 1382 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 38, column: 4, offset: 1385 },
-                      end: { line: 38, column: 48, offset: 1429 }
+                      start: { line: 36, column: 4, offset: 1338 },
+                      end: { line: 36, column: 48, offset: 1382 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 38, column: 2, offset: 1383 },
-                  end: { line: 38, column: 48, offset: 1429 }
+                  start: { line: 36, column: 2, offset: 1336 },
+                  end: { line: 36, column: 48, offset: 1382 }
                 }
               },
               {
@@ -2967,26 +2835,26 @@ export default [
                             type: 'text',
                             value: 'Transducer.flatMap',
                             position: {
-                              start: { line: 39, column: 5, offset: 1434 },
-                              end: { line: 39, column: 23, offset: 1452 }
+                              start: { line: 37, column: 5, offset: 1387 },
+                              end: { line: 37, column: 23, offset: 1405 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 39, column: 4, offset: 1433 },
-                          end: { line: 39, column: 50, offset: 1479 }
+                          start: { line: 37, column: 4, offset: 1386 },
+                          end: { line: 37, column: 50, offset: 1432 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 39, column: 4, offset: 1433 },
-                      end: { line: 39, column: 50, offset: 1479 }
+                      start: { line: 37, column: 4, offset: 1386 },
+                      end: { line: 37, column: 50, offset: 1432 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 39, column: 2, offset: 1431 },
-                  end: { line: 39, column: 50, offset: 1479 }
+                  start: { line: 37, column: 2, offset: 1384 },
+                  end: { line: 37, column: 50, offset: 1432 }
                 }
               },
               {
@@ -3006,26 +2874,26 @@ export default [
                             type: 'text',
                             value: 'Transducer.forEach',
                             position: {
-                              start: { line: 40, column: 5, offset: 1484 },
-                              end: { line: 40, column: 23, offset: 1502 }
+                              start: { line: 38, column: 5, offset: 1437 },
+                              end: { line: 38, column: 23, offset: 1455 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 40, column: 4, offset: 1483 },
-                          end: { line: 40, column: 50, offset: 1529 }
+                          start: { line: 38, column: 4, offset: 1436 },
+                          end: { line: 38, column: 50, offset: 1482 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 40, column: 4, offset: 1483 },
-                      end: { line: 40, column: 50, offset: 1529 }
+                      start: { line: 38, column: 4, offset: 1436 },
+                      end: { line: 38, column: 50, offset: 1482 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 40, column: 2, offset: 1481 },
-                  end: { line: 40, column: 50, offset: 1529 }
+                  start: { line: 38, column: 2, offset: 1434 },
+                  end: { line: 38, column: 50, offset: 1482 }
                 }
               },
               {
@@ -3045,38 +2913,38 @@ export default [
                             type: 'text',
                             value: 'Transducer.passthrough',
                             position: {
-                              start: { line: 41, column: 5, offset: 1534 },
-                              end: { line: 41, column: 27, offset: 1556 }
+                              start: { line: 39, column: 5, offset: 1487 },
+                              end: { line: 39, column: 27, offset: 1509 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 41, column: 4, offset: 1533 },
-                          end: { line: 41, column: 58, offset: 1587 }
+                          start: { line: 39, column: 4, offset: 1486 },
+                          end: { line: 39, column: 58, offset: 1540 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 41, column: 4, offset: 1533 },
-                      end: { line: 41, column: 58, offset: 1587 }
+                      start: { line: 39, column: 4, offset: 1486 },
+                      end: { line: 39, column: 58, offset: 1540 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 41, column: 2, offset: 1531 },
-                  end: { line: 41, column: 58, offset: 1587 }
+                  start: { line: 39, column: 2, offset: 1484 },
+                  end: { line: 39, column: 58, offset: 1540 }
                 }
               }
             ],
             position: {
-              start: { line: 36, column: 2, offset: 1311 },
-              end: { line: 41, column: 58, offset: 1587 }
+              start: { line: 34, column: 2, offset: 1264 },
+              end: { line: 39, column: 58, offset: 1540 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 41, column: 58, offset: 1587 }
+          end: { line: 39, column: 58, offset: 1540 }
         }
       }
     },
@@ -3088,9 +2956,9 @@ export default [
     description: 'A special placeholder value `__` (two underscores) that denotes the position of an argument in a curried function.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      'console.log(\n' +
-      '  curry.arity(3, Array.of, __, 2, 3)(1),\n' +
-      ') // [1, 2, 3]\n' +
+      'const curriedFunction = curry.arity(3, Array.of, __, 2, 3)\n' +
+      '\n' +
+      'console.log(curriedFunction(1))\n' +
       '```\n' +
       '\n' +
       'See also:\n' +
@@ -3186,12 +3054,12 @@ export default [
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: 'console.log(\n' +
-              '  curry.arity(3, Array.of, __, 2, 3)(1),\n' +
-              ') // [1, 2, 3]',
+            value: 'const curriedFunction = curry.arity(3, Array.of, __, 2, 3)\n' +
+              '\n' +
+              'console.log(curriedFunction(1))',
             position: {
               start: { line: 3, column: 1, offset: 116 },
-              end: { line: 7, column: 4, offset: 215 }
+              end: { line: 7, column: 4, offset: 238 }
             }
           },
           {
@@ -3201,14 +3069,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 9, column: 1, offset: 217 },
-                  end: { line: 9, column: 10, offset: 226 }
+                  start: { line: 9, column: 1, offset: 240 },
+                  end: { line: 9, column: 10, offset: 249 }
                 }
               }
             ],
             position: {
-              start: { line: 9, column: 1, offset: 217 },
-              end: { line: 9, column: 10, offset: 226 }
+              start: { line: 9, column: 1, offset: 240 },
+              end: { line: 9, column: 10, offset: 249 }
             }
           },
           {
@@ -3234,26 +3102,26 @@ export default [
                             type: 'text',
                             value: 'eq',
                             position: {
-                              start: { line: 10, column: 5, offset: 231 },
-                              end: { line: 10, column: 7, offset: 233 }
+                              start: { line: 10, column: 5, offset: 254 },
+                              end: { line: 10, column: 7, offset: 256 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 10, column: 4, offset: 230 },
-                          end: { line: 10, column: 18, offset: 244 }
+                          start: { line: 10, column: 4, offset: 253 },
+                          end: { line: 10, column: 18, offset: 267 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 10, column: 4, offset: 230 },
-                      end: { line: 10, column: 18, offset: 244 }
+                      start: { line: 10, column: 4, offset: 253 },
+                      end: { line: 10, column: 18, offset: 267 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 10, column: 2, offset: 228 },
-                  end: { line: 10, column: 18, offset: 244 }
+                  start: { line: 10, column: 2, offset: 251 },
+                  end: { line: 10, column: 18, offset: 267 }
                 }
               },
               {
@@ -3273,26 +3141,26 @@ export default [
                             type: 'text',
                             value: 'thunkify',
                             position: {
-                              start: { line: 11, column: 5, offset: 249 },
-                              end: { line: 11, column: 13, offset: 257 }
+                              start: { line: 11, column: 5, offset: 272 },
+                              end: { line: 11, column: 13, offset: 280 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 11, column: 4, offset: 248 },
-                          end: { line: 11, column: 30, offset: 274 }
+                          start: { line: 11, column: 4, offset: 271 },
+                          end: { line: 11, column: 30, offset: 297 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 11, column: 4, offset: 248 },
-                      end: { line: 11, column: 30, offset: 274 }
+                      start: { line: 11, column: 4, offset: 271 },
+                      end: { line: 11, column: 30, offset: 297 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 11, column: 2, offset: 246 },
-                  end: { line: 11, column: 30, offset: 274 }
+                  start: { line: 11, column: 2, offset: 269 },
+                  end: { line: 11, column: 30, offset: 297 }
                 }
               },
               {
@@ -3312,26 +3180,26 @@ export default [
                             type: 'text',
                             value: 'always',
                             position: {
-                              start: { line: 12, column: 5, offset: 279 },
-                              end: { line: 12, column: 11, offset: 285 }
+                              start: { line: 12, column: 5, offset: 302 },
+                              end: { line: 12, column: 11, offset: 308 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 12, column: 4, offset: 278 },
-                          end: { line: 12, column: 26, offset: 300 }
+                          start: { line: 12, column: 4, offset: 301 },
+                          end: { line: 12, column: 26, offset: 323 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 12, column: 4, offset: 278 },
-                      end: { line: 12, column: 26, offset: 300 }
+                      start: { line: 12, column: 4, offset: 301 },
+                      end: { line: 12, column: 26, offset: 323 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 12, column: 2, offset: 276 },
-                  end: { line: 12, column: 26, offset: 300 }
+                  start: { line: 12, column: 2, offset: 299 },
+                  end: { line: 12, column: 26, offset: 323 }
                 }
               },
               {
@@ -3351,26 +3219,26 @@ export default [
                             type: 'text',
                             value: 'curry',
                             position: {
-                              start: { line: 13, column: 5, offset: 305 },
-                              end: { line: 13, column: 10, offset: 310 }
+                              start: { line: 13, column: 5, offset: 328 },
+                              end: { line: 13, column: 10, offset: 333 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 13, column: 4, offset: 304 },
-                          end: { line: 13, column: 24, offset: 324 }
+                          start: { line: 13, column: 4, offset: 327 },
+                          end: { line: 13, column: 24, offset: 347 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 13, column: 4, offset: 304 },
-                      end: { line: 13, column: 24, offset: 324 }
+                      start: { line: 13, column: 4, offset: 327 },
+                      end: { line: 13, column: 24, offset: 347 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 13, column: 2, offset: 302 },
-                  end: { line: 13, column: 24, offset: 324 }
+                  start: { line: 13, column: 2, offset: 325 },
+                  end: { line: 13, column: 24, offset: 347 }
                 }
               },
               {
@@ -3390,26 +3258,26 @@ export default [
                             type: 'text',
                             value: 'curry.arity',
                             position: {
-                              start: { line: 14, column: 5, offset: 329 },
-                              end: { line: 14, column: 16, offset: 340 }
+                              start: { line: 14, column: 5, offset: 352 },
+                              end: { line: 14, column: 16, offset: 363 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 14, column: 4, offset: 328 },
-                          end: { line: 14, column: 36, offset: 360 }
+                          start: { line: 14, column: 4, offset: 351 },
+                          end: { line: 14, column: 36, offset: 383 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 14, column: 4, offset: 328 },
-                      end: { line: 14, column: 36, offset: 360 }
+                      start: { line: 14, column: 4, offset: 351 },
+                      end: { line: 14, column: 36, offset: 383 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 14, column: 2, offset: 326 },
-                  end: { line: 14, column: 36, offset: 360 }
+                  start: { line: 14, column: 2, offset: 349 },
+                  end: { line: 14, column: 36, offset: 383 }
                 }
               },
               {
@@ -3429,38 +3297,38 @@ export default [
                             type: 'text',
                             value: 'Transducer.map',
                             position: {
-                              start: { line: 15, column: 5, offset: 365 },
-                              end: { line: 15, column: 19, offset: 379 }
+                              start: { line: 15, column: 5, offset: 388 },
+                              end: { line: 15, column: 19, offset: 402 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 15, column: 4, offset: 364 },
-                          end: { line: 15, column: 42, offset: 402 }
+                          start: { line: 15, column: 4, offset: 387 },
+                          end: { line: 15, column: 42, offset: 425 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 15, column: 4, offset: 364 },
-                      end: { line: 15, column: 42, offset: 402 }
+                      start: { line: 15, column: 4, offset: 387 },
+                      end: { line: 15, column: 42, offset: 425 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 15, column: 2, offset: 362 },
-                  end: { line: 15, column: 42, offset: 402 }
+                  start: { line: 15, column: 2, offset: 385 },
+                  end: { line: 15, column: 42, offset: 425 }
                 }
               }
             ],
             position: {
-              start: { line: 10, column: 2, offset: 228 },
-              end: { line: 15, column: 42, offset: 402 }
+              start: { line: 10, column: 2, offset: 251 },
+              end: { line: 15, column: 42, offset: 425 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 15, column: 42, offset: 402 }
+          end: { line: 15, column: 42, offset: 425 }
         }
       }
     },
@@ -23492,14 +23360,14 @@ export default [
   {
     name: 'always',
     synopsis: '```coffeescript [specscript]\nalways(value any) -> getter ()=>value\n```',
-    description: 'Creates a function from a value that always returns the provided value.\n' +
+    description: 'Creates a function that always returns a value.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const always5 = always(5)\n' +
       '\n' +
-      'console.log(always5()) // 5\n' +
-      'console.log(always5()) // 5\n' +
-      'console.log(always5()) // 5\n' +
+      'console.log(always5())\n' +
+      'console.log(always5())\n' +
+      'console.log(always5())\n' +
       '```\n' +
       '\n' +
       'See also:\n' +
@@ -23562,16 +23430,16 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Creates a function from a value that always returns the provided value.',
+                value: 'Creates a function that always returns a value.',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 72, offset: 71 }
+                  end: { line: 1, column: 48, offset: 47 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 72, offset: 71 }
+              end: { line: 1, column: 48, offset: 47 }
             }
           },
           {
@@ -23580,12 +23448,12 @@ export default [
             meta: '[playground]',
             value: 'const always5 = always(5)\n' +
               '\n' +
-              'console.log(always5()) // 5\n' +
-              'console.log(always5()) // 5\n' +
-              'console.log(always5()) // 5',
+              'console.log(always5())\n' +
+              'console.log(always5())\n' +
+              'console.log(always5())',
             position: {
-              start: { line: 3, column: 1, offset: 73 },
-              end: { line: 9, column: 4, offset: 214 }
+              start: { line: 3, column: 1, offset: 49 },
+              end: { line: 9, column: 4, offset: 175 }
             }
           },
           {
@@ -23595,14 +23463,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 11, column: 1, offset: 216 },
-                  end: { line: 11, column: 10, offset: 225 }
+                  start: { line: 11, column: 1, offset: 177 },
+                  end: { line: 11, column: 10, offset: 186 }
                 }
               }
             ],
             position: {
-              start: { line: 11, column: 1, offset: 216 },
-              end: { line: 11, column: 10, offset: 225 }
+              start: { line: 11, column: 1, offset: 177 },
+              end: { line: 11, column: 10, offset: 186 }
             }
           },
           {
@@ -23628,26 +23496,26 @@ export default [
                             type: 'text',
                             value: 'eq',
                             position: {
-                              start: { line: 12, column: 5, offset: 230 },
-                              end: { line: 12, column: 7, offset: 232 }
+                              start: { line: 12, column: 5, offset: 191 },
+                              end: { line: 12, column: 7, offset: 193 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 12, column: 4, offset: 229 },
-                          end: { line: 12, column: 18, offset: 243 }
+                          start: { line: 12, column: 4, offset: 190 },
+                          end: { line: 12, column: 18, offset: 204 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 12, column: 4, offset: 229 },
-                      end: { line: 12, column: 18, offset: 243 }
+                      start: { line: 12, column: 4, offset: 190 },
+                      end: { line: 12, column: 18, offset: 204 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 12, column: 2, offset: 227 },
-                  end: { line: 12, column: 18, offset: 243 }
+                  start: { line: 12, column: 2, offset: 188 },
+                  end: { line: 12, column: 18, offset: 204 }
                 }
               },
               {
@@ -23667,26 +23535,26 @@ export default [
                             type: 'text',
                             value: 'thunkify',
                             position: {
-                              start: { line: 13, column: 5, offset: 248 },
-                              end: { line: 13, column: 13, offset: 256 }
+                              start: { line: 13, column: 5, offset: 209 },
+                              end: { line: 13, column: 13, offset: 217 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 13, column: 4, offset: 247 },
-                          end: { line: 13, column: 30, offset: 273 }
+                          start: { line: 13, column: 4, offset: 208 },
+                          end: { line: 13, column: 30, offset: 234 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 13, column: 4, offset: 247 },
-                      end: { line: 13, column: 30, offset: 273 }
+                      start: { line: 13, column: 4, offset: 208 },
+                      end: { line: 13, column: 30, offset: 234 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 13, column: 2, offset: 245 },
-                  end: { line: 13, column: 30, offset: 273 }
+                  start: { line: 13, column: 2, offset: 206 },
+                  end: { line: 13, column: 30, offset: 234 }
                 }
               },
               {
@@ -23706,26 +23574,26 @@ export default [
                             type: 'text',
                             value: 'curry',
                             position: {
-                              start: { line: 14, column: 5, offset: 278 },
-                              end: { line: 14, column: 10, offset: 283 }
+                              start: { line: 14, column: 5, offset: 239 },
+                              end: { line: 14, column: 10, offset: 244 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 14, column: 4, offset: 277 },
-                          end: { line: 14, column: 24, offset: 297 }
+                          start: { line: 14, column: 4, offset: 238 },
+                          end: { line: 14, column: 24, offset: 258 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 14, column: 4, offset: 277 },
-                      end: { line: 14, column: 24, offset: 297 }
+                      start: { line: 14, column: 4, offset: 238 },
+                      end: { line: 14, column: 24, offset: 258 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 14, column: 2, offset: 275 },
-                  end: { line: 14, column: 24, offset: 297 }
+                  start: { line: 14, column: 2, offset: 236 },
+                  end: { line: 14, column: 24, offset: 258 }
                 }
               },
               {
@@ -23745,26 +23613,26 @@ export default [
                             type: 'text',
                             value: '__',
                             position: {
-                              start: { line: 15, column: 5, offset: 302 },
-                              end: { line: 15, column: 7, offset: 304 }
+                              start: { line: 15, column: 5, offset: 263 },
+                              end: { line: 15, column: 7, offset: 265 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 15, column: 4, offset: 301 },
-                          end: { line: 15, column: 18, offset: 315 }
+                          start: { line: 15, column: 4, offset: 262 },
+                          end: { line: 15, column: 18, offset: 276 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 15, column: 4, offset: 301 },
-                      end: { line: 15, column: 18, offset: 315 }
+                      start: { line: 15, column: 4, offset: 262 },
+                      end: { line: 15, column: 18, offset: 276 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 15, column: 2, offset: 299 },
-                  end: { line: 15, column: 18, offset: 315 }
+                  start: { line: 15, column: 2, offset: 260 },
+                  end: { line: 15, column: 18, offset: 276 }
                 }
               },
               {
@@ -23784,38 +23652,38 @@ export default [
                             type: 'text',
                             value: 'Transducer.map',
                             position: {
-                              start: { line: 16, column: 5, offset: 320 },
-                              end: { line: 16, column: 19, offset: 334 }
+                              start: { line: 16, column: 5, offset: 281 },
+                              end: { line: 16, column: 19, offset: 295 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 16, column: 4, offset: 319 },
-                          end: { line: 16, column: 42, offset: 357 }
+                          start: { line: 16, column: 4, offset: 280 },
+                          end: { line: 16, column: 42, offset: 318 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 16, column: 4, offset: 319 },
-                      end: { line: 16, column: 42, offset: 357 }
+                      start: { line: 16, column: 4, offset: 280 },
+                      end: { line: 16, column: 42, offset: 318 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 16, column: 2, offset: 317 },
-                  end: { line: 16, column: 42, offset: 357 }
+                  start: { line: 16, column: 2, offset: 278 },
+                  end: { line: 16, column: 42, offset: 318 }
                 }
               }
             ],
             position: {
-              start: { line: 12, column: 2, offset: 227 },
-              end: { line: 16, column: 42, offset: 357 }
+              start: { line: 12, column: 2, offset: 188 },
+              end: { line: 16, column: 42, offset: 318 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 16, column: 42, offset: 357 }
+          end: { line: 16, column: 42, offset: 318 }
         }
       }
     },
@@ -25557,16 +25425,13 @@ export default [
     name: 'curry',
     synopsis: '```coffeescript [specscript]\n' +
       '__ Symbol(placeholder)\n' +
+      'argumentsWithPlaceholder Array<__|any>\n' +
       '\n' +
-      'type ArgsWithPlaceholder = Array<__|any>\n' +
-      '\n' +
-      'args ArgsWithPlaceholder\n' +
-      'moreArgs ArgsWithPlaceholder\n' +
-      '\n' +
-      'curry(func function, ...args) -> curriedFuncOrResult function|any\n' +
-      'curriedFuncOrResult(...moreArgs) -> anotherCurriedFuncOrResult function|any\n' +
+      'curry(func function, ...arguments) -> result any\n' +
+      'curry(func function, ...argumentsWithPlaceholder) -> result any\n' +
+      'curry(func function, ...argumentsWithPlaceholder) -> curriedFunction function\n' +
       '```',
-    description: "Enables partial application of a function's arguments in any order. Provide the placeholder value `__` to specify an argument to be resolved in the partially applied function.\n" +
+    description: "Enables partial application of a function's arguments in any order. The placeholder value [__](/docs/__) specifies an argument to be resolved in the partially applied function.\n" +
       '\n' +
       '```javascript [playground]\n' +
       'const add = (a, b, c) => a + b + c\n' +
@@ -25576,13 +25441,12 @@ export default [
       "console.log(curry(add, 'a')('b', 'c'))\n" +
       "console.log(curry(add, 'a', 'b')('c'))\n" +
       "console.log(curry(add)('a')('b')('c'))\n" +
-      '\n' +
       "console.log(curry(add, __, 'b', 'c')('a'))\n" +
       "console.log(curry(add, __, __, 'c')('a', 'b'))\n" +
       "console.log(curry(add, __, __, 'c')(__, 'b')('a'))\n" +
       '```\n' +
       '\n' +
-      'Any promises passed in data argument position are resolved for their values before further execution.\n' +
+      'Any promises in `arguments` or `argumentsWithPlaceholder` are resolved for their values before further execution.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const add = (a, b, c) => a + b + c\n' +
@@ -25637,23 +25501,20 @@ export default [
             lang: 'coffeescript',
             meta: '[specscript]',
             value: '__ Symbol(placeholder)\n' +
+              'argumentsWithPlaceholder Array<__|any>\n' +
               '\n' +
-              'type ArgsWithPlaceholder = Array<__|any>\n' +
-              '\n' +
-              'args ArgsWithPlaceholder\n' +
-              'moreArgs ArgsWithPlaceholder\n' +
-              '\n' +
-              'curry(func function, ...args) -> curriedFuncOrResult function|any\n' +
-              'curriedFuncOrResult(...moreArgs) -> anotherCurriedFuncOrResult function|any',
+              'curry(func function, ...arguments) -> result any\n' +
+              'curry(func function, ...argumentsWithPlaceholder) -> result any\n' +
+              'curry(func function, ...argumentsWithPlaceholder) -> curriedFunction function',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 11, column: 4, offset: 295 }
+              end: { line: 8, column: 4, offset: 286 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 11, column: 4, offset: 295 }
+          end: { line: 8, column: 4, offset: 286 }
         }
       },
       description: {
@@ -25664,32 +25525,43 @@ export default [
             children: [
               {
                 type: 'text',
-                value: "Enables partial application of a function's arguments in any order. Provide the placeholder value ",
+                value: "Enables partial application of a function's arguments in any order. The placeholder value ",
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 99, offset: 98 }
+                  end: { line: 1, column: 91, offset: 90 }
                 }
               },
               {
-                type: 'inlineCode',
-                value: '__',
+                type: 'link',
+                title: null,
+                url: '/docs/__',
+                children: [
+                  {
+                    type: 'text',
+                    value: '__',
+                    position: {
+                      start: { line: 1, column: 92, offset: 91 },
+                      end: { line: 1, column: 94, offset: 93 }
+                    }
+                  }
+                ],
                 position: {
-                  start: { line: 1, column: 99, offset: 98 },
-                  end: { line: 1, column: 103, offset: 102 }
+                  start: { line: 1, column: 91, offset: 90 },
+                  end: { line: 1, column: 105, offset: 104 }
                 }
               },
               {
                 type: 'text',
-                value: ' to specify an argument to be resolved in the partially applied function.',
+                value: ' specifies an argument to be resolved in the partially applied function.',
                 position: {
-                  start: { line: 1, column: 103, offset: 102 },
-                  end: { line: 1, column: 176, offset: 175 }
+                  start: { line: 1, column: 105, offset: 104 },
+                  end: { line: 1, column: 177, offset: 176 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 176, offset: 175 }
+              end: { line: 1, column: 177, offset: 176 }
             }
           },
           {
@@ -25703,13 +25575,12 @@ export default [
               "console.log(curry(add, 'a')('b', 'c'))\n" +
               "console.log(curry(add, 'a', 'b')('c'))\n" +
               "console.log(curry(add)('a')('b')('c'))\n" +
-              '\n' +
               "console.log(curry(add, __, 'b', 'c')('a'))\n" +
               "console.log(curry(add, __, __, 'c')('a', 'b'))\n" +
               "console.log(curry(add, __, __, 'c')(__, 'b')('a'))",
             position: {
-              start: { line: 3, column: 1, offset: 177 },
-              end: { line: 15, column: 4, offset: 580 }
+              start: { line: 3, column: 1, offset: 178 },
+              end: { line: 14, column: 4, offset: 580 }
             }
           },
           {
@@ -25717,16 +25588,48 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Any promises passed in data argument position are resolved for their values before further execution.',
+                value: 'Any promises in ',
                 position: {
-                  start: { line: 17, column: 1, offset: 582 },
-                  end: { line: 17, column: 102, offset: 683 }
+                  start: { line: 16, column: 1, offset: 582 },
+                  end: { line: 16, column: 17, offset: 598 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'arguments',
+                position: {
+                  start: { line: 16, column: 17, offset: 598 },
+                  end: { line: 16, column: 28, offset: 609 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' or ',
+                position: {
+                  start: { line: 16, column: 28, offset: 609 },
+                  end: { line: 16, column: 32, offset: 613 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'argumentsWithPlaceholder',
+                position: {
+                  start: { line: 16, column: 32, offset: 613 },
+                  end: { line: 16, column: 58, offset: 639 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' are resolved for their values before further execution.',
+                position: {
+                  start: { line: 16, column: 58, offset: 639 },
+                  end: { line: 16, column: 114, offset: 695 }
                 }
               }
             ],
             position: {
-              start: { line: 17, column: 1, offset: 582 },
-              end: { line: 17, column: 102, offset: 683 }
+              start: { line: 16, column: 1, offset: 582 },
+              end: { line: 16, column: 114, offset: 695 }
             }
           },
           {
@@ -25741,8 +25644,8 @@ export default [
               "curried = await curried(__, Promise.resolve('b'))\n" +
               "console.log(curried('a'))",
             position: {
-              start: { line: 19, column: 1, offset: 685 },
-              end: { line: 27, column: 4, offset: 950 }
+              start: { line: 18, column: 1, offset: 697 },
+              end: { line: 26, column: 4, offset: 962 }
             }
           },
           {
@@ -25752,14 +25655,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 29, column: 1, offset: 952 },
-                  end: { line: 29, column: 10, offset: 961 }
+                  start: { line: 28, column: 1, offset: 964 },
+                  end: { line: 28, column: 10, offset: 973 }
                 }
               }
             ],
             position: {
-              start: { line: 29, column: 1, offset: 952 },
-              end: { line: 29, column: 10, offset: 961 }
+              start: { line: 28, column: 1, offset: 964 },
+              end: { line: 28, column: 10, offset: 973 }
             }
           },
           {
@@ -25785,26 +25688,26 @@ export default [
                             type: 'text',
                             value: 'eq',
                             position: {
-                              start: { line: 30, column: 5, offset: 966 },
-                              end: { line: 30, column: 7, offset: 968 }
+                              start: { line: 29, column: 5, offset: 978 },
+                              end: { line: 29, column: 7, offset: 980 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 30, column: 4, offset: 965 },
-                          end: { line: 30, column: 18, offset: 979 }
+                          start: { line: 29, column: 4, offset: 977 },
+                          end: { line: 29, column: 18, offset: 991 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 30, column: 4, offset: 965 },
-                      end: { line: 30, column: 18, offset: 979 }
+                      start: { line: 29, column: 4, offset: 977 },
+                      end: { line: 29, column: 18, offset: 991 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 30, column: 2, offset: 963 },
-                  end: { line: 30, column: 18, offset: 979 }
+                  start: { line: 29, column: 2, offset: 975 },
+                  end: { line: 29, column: 18, offset: 991 }
                 }
               },
               {
@@ -25824,26 +25727,26 @@ export default [
                             type: 'text',
                             value: 'thunkify',
                             position: {
-                              start: { line: 31, column: 5, offset: 984 },
-                              end: { line: 31, column: 13, offset: 992 }
+                              start: { line: 30, column: 5, offset: 996 },
+                              end: { line: 30, column: 13, offset: 1004 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 31, column: 4, offset: 983 },
-                          end: { line: 31, column: 30, offset: 1009 }
+                          start: { line: 30, column: 4, offset: 995 },
+                          end: { line: 30, column: 30, offset: 1021 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 31, column: 4, offset: 983 },
-                      end: { line: 31, column: 30, offset: 1009 }
+                      start: { line: 30, column: 4, offset: 995 },
+                      end: { line: 30, column: 30, offset: 1021 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 31, column: 2, offset: 981 },
-                  end: { line: 31, column: 30, offset: 1009 }
+                  start: { line: 30, column: 2, offset: 993 },
+                  end: { line: 30, column: 30, offset: 1021 }
                 }
               },
               {
@@ -25863,26 +25766,26 @@ export default [
                             type: 'text',
                             value: 'always',
                             position: {
-                              start: { line: 32, column: 5, offset: 1014 },
-                              end: { line: 32, column: 11, offset: 1020 }
+                              start: { line: 31, column: 5, offset: 1026 },
+                              end: { line: 31, column: 11, offset: 1032 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 32, column: 4, offset: 1013 },
-                          end: { line: 32, column: 26, offset: 1035 }
+                          start: { line: 31, column: 4, offset: 1025 },
+                          end: { line: 31, column: 26, offset: 1047 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 32, column: 4, offset: 1013 },
-                      end: { line: 32, column: 26, offset: 1035 }
+                      start: { line: 31, column: 4, offset: 1025 },
+                      end: { line: 31, column: 26, offset: 1047 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 32, column: 2, offset: 1011 },
-                  end: { line: 32, column: 26, offset: 1035 }
+                  start: { line: 31, column: 2, offset: 1023 },
+                  end: { line: 31, column: 26, offset: 1047 }
                 }
               },
               {
@@ -25902,26 +25805,26 @@ export default [
                             type: 'text',
                             value: 'curry.arity',
                             position: {
-                              start: { line: 33, column: 5, offset: 1040 },
-                              end: { line: 33, column: 16, offset: 1051 }
+                              start: { line: 32, column: 5, offset: 1052 },
+                              end: { line: 32, column: 16, offset: 1063 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 33, column: 4, offset: 1039 },
-                          end: { line: 33, column: 36, offset: 1071 }
+                          start: { line: 32, column: 4, offset: 1051 },
+                          end: { line: 32, column: 36, offset: 1083 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 33, column: 4, offset: 1039 },
-                      end: { line: 33, column: 36, offset: 1071 }
+                      start: { line: 32, column: 4, offset: 1051 },
+                      end: { line: 32, column: 36, offset: 1083 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 33, column: 2, offset: 1037 },
-                  end: { line: 33, column: 36, offset: 1071 }
+                  start: { line: 32, column: 2, offset: 1049 },
+                  end: { line: 32, column: 36, offset: 1083 }
                 }
               },
               {
@@ -25941,26 +25844,26 @@ export default [
                             type: 'text',
                             value: 'curry.call',
                             position: {
-                              start: { line: 34, column: 5, offset: 1076 },
-                              end: { line: 34, column: 15, offset: 1086 }
+                              start: { line: 33, column: 5, offset: 1088 },
+                              end: { line: 33, column: 15, offset: 1098 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 34, column: 4, offset: 1075 },
-                          end: { line: 34, column: 34, offset: 1105 }
+                          start: { line: 33, column: 4, offset: 1087 },
+                          end: { line: 33, column: 34, offset: 1117 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 34, column: 4, offset: 1075 },
-                      end: { line: 34, column: 34, offset: 1105 }
+                      start: { line: 33, column: 4, offset: 1087 },
+                      end: { line: 33, column: 34, offset: 1117 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 34, column: 2, offset: 1073 },
-                  end: { line: 34, column: 34, offset: 1105 }
+                  start: { line: 33, column: 2, offset: 1085 },
+                  end: { line: 33, column: 34, offset: 1117 }
                 }
               },
               {
@@ -25980,26 +25883,26 @@ export default [
                             type: 'text',
                             value: '__',
                             position: {
-                              start: { line: 35, column: 5, offset: 1110 },
-                              end: { line: 35, column: 7, offset: 1112 }
+                              start: { line: 34, column: 5, offset: 1122 },
+                              end: { line: 34, column: 7, offset: 1124 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 35, column: 4, offset: 1109 },
-                          end: { line: 35, column: 18, offset: 1123 }
+                          start: { line: 34, column: 4, offset: 1121 },
+                          end: { line: 34, column: 18, offset: 1135 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 35, column: 4, offset: 1109 },
-                      end: { line: 35, column: 18, offset: 1123 }
+                      start: { line: 34, column: 4, offset: 1121 },
+                      end: { line: 34, column: 18, offset: 1135 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 35, column: 2, offset: 1107 },
-                  end: { line: 35, column: 18, offset: 1123 }
+                  start: { line: 34, column: 2, offset: 1119 },
+                  end: { line: 34, column: 18, offset: 1135 }
                 }
               },
               {
@@ -26019,38 +25922,38 @@ export default [
                             type: 'text',
                             value: 'Transducer.map',
                             position: {
-                              start: { line: 36, column: 5, offset: 1128 },
-                              end: { line: 36, column: 19, offset: 1142 }
+                              start: { line: 35, column: 5, offset: 1140 },
+                              end: { line: 35, column: 19, offset: 1154 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 36, column: 4, offset: 1127 },
-                          end: { line: 36, column: 42, offset: 1165 }
+                          start: { line: 35, column: 4, offset: 1139 },
+                          end: { line: 35, column: 42, offset: 1177 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 36, column: 4, offset: 1127 },
-                      end: { line: 36, column: 42, offset: 1165 }
+                      start: { line: 35, column: 4, offset: 1139 },
+                      end: { line: 35, column: 42, offset: 1177 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 36, column: 2, offset: 1125 },
-                  end: { line: 36, column: 42, offset: 1165 }
+                  start: { line: 35, column: 2, offset: 1137 },
+                  end: { line: 35, column: 42, offset: 1177 }
                 }
               }
             ],
             position: {
-              start: { line: 30, column: 2, offset: 963 },
-              end: { line: 36, column: 42, offset: 1165 }
+              start: { line: 29, column: 2, offset: 975 },
+              end: { line: 35, column: 42, offset: 1177 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 36, column: 42, offset: 1165 }
+          end: { line: 35, column: 42, offset: 1177 }
         }
       }
     },
@@ -26059,22 +25962,27 @@ export default [
   {
     name: 'curry.arity',
     synopsis: '```coffeescript [specscript]\n' +
-      'type __ = Symbol(placeholder)\n' +
-      'type ArgsWithPlaceholder = Array<__|any>\n' +
+      '__ Symbol(placeholder)\n' +
+      'argumentsWithPlaceholder Array<__|any>\n' +
       '\n' +
-      'n number\n' +
-      'args ArgsWithPlaceholder\n' +
-      'moreArgs ArgsWithPlaceholder\n' +
-      '\n' +
-      'curry.arity(n number, func function, ...args) -> curriedFuncOrResult function|any\n' +
-      'curriedFuncOrResult(...moreArgs) -> anotherCurriedFuncOrResult function|any\n' +
+      'curry.arity(n number, func function, ...arguments) -> result any\n' +
+      'curry.arity(n number, func function, ...argumentsWithPlaceholder) -> result any\n' +
+      'curry.arity(n number, func function, ...argumentsWithPlaceholder) -> curriedFunction function\n' +
       '```',
-    description: '[curry](/docs/curry) with specified arity (number of arguments taken by the function) as the first parameter.\n' +
+    description: '[curry](/docs/curry) with specified arity (number of arguments taken by the function).\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const add = (a, b, c = 0) => a + b + c\n' +
       '\n' +
-      'console.log(curry.arity(2, add, 1, 2)) // 3\n' +
+      'console.log(curry.arity(2, add, 1, 2))\n' +
+      '```\n' +
+      '\n' +
+      'Any promises in `arguments` or `argumentsWithPlaceholder` are resolved for their values before further execution.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const add = (a, b, c = 0) => a + b + c\n' +
+      '\n' +
+      'console.log(await curry.arity(2, add, Promise.resolve(1), 2))\n' +
       '```\n' +
       '\n' +
       'See also:\n' +
@@ -26119,24 +26027,21 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'type __ = Symbol(placeholder)\n' +
-              'type ArgsWithPlaceholder = Array<__|any>\n' +
+            value: '__ Symbol(placeholder)\n' +
+              'argumentsWithPlaceholder Array<__|any>\n' +
               '\n' +
-              'n number\n' +
-              'args ArgsWithPlaceholder\n' +
-              'moreArgs ArgsWithPlaceholder\n' +
-              '\n' +
-              'curry.arity(n number, func function, ...args) -> curriedFuncOrResult function|any\n' +
-              'curriedFuncOrResult(...moreArgs) -> anotherCurriedFuncOrResult function|any',
+              'curry.arity(n number, func function, ...arguments) -> result any\n' +
+              'curry.arity(n number, func function, ...argumentsWithPlaceholder) -> result any\n' +
+              'curry.arity(n number, func function, ...argumentsWithPlaceholder) -> curriedFunction function',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 11, column: 4, offset: 326 }
+              end: { line: 8, column: 4, offset: 334 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 11, column: 4, offset: 326 }
+          end: { line: 8, column: 4, offset: 334 }
         }
       },
       description: {
@@ -26166,16 +26071,16 @@ export default [
               },
               {
                 type: 'text',
-                value: ' with specified arity (number of arguments taken by the function) as the first parameter.',
+                value: ' with specified arity (number of arguments taken by the function).',
                 position: {
                   start: { line: 1, column: 21, offset: 20 },
-                  end: { line: 1, column: 110, offset: 109 }
+                  end: { line: 1, column: 87, offset: 86 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 110, offset: 109 }
+              end: { line: 1, column: 87, offset: 86 }
             }
           },
           {
@@ -26184,10 +26089,71 @@ export default [
             meta: '[playground]',
             value: 'const add = (a, b, c = 0) => a + b + c\n' +
               '\n' +
-              'console.log(curry.arity(2, add, 1, 2)) // 3',
+              'console.log(curry.arity(2, add, 1, 2))',
             position: {
-              start: { line: 3, column: 1, offset: 111 },
-              end: { line: 7, column: 4, offset: 225 }
+              start: { line: 3, column: 1, offset: 88 },
+              end: { line: 7, column: 4, offset: 197 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Any promises in ',
+                position: {
+                  start: { line: 9, column: 1, offset: 199 },
+                  end: { line: 9, column: 17, offset: 215 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'arguments',
+                position: {
+                  start: { line: 9, column: 17, offset: 215 },
+                  end: { line: 9, column: 28, offset: 226 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' or ',
+                position: {
+                  start: { line: 9, column: 28, offset: 226 },
+                  end: { line: 9, column: 32, offset: 230 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'argumentsWithPlaceholder',
+                position: {
+                  start: { line: 9, column: 32, offset: 230 },
+                  end: { line: 9, column: 58, offset: 256 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' are resolved for their values before further execution.',
+                position: {
+                  start: { line: 9, column: 58, offset: 256 },
+                  end: { line: 9, column: 114, offset: 312 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 9, column: 1, offset: 199 },
+              end: { line: 9, column: 114, offset: 312 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'const add = (a, b, c = 0) => a + b + c\n' +
+              '\n' +
+              'console.log(await curry.arity(2, add, Promise.resolve(1), 2))',
+            position: {
+              start: { line: 11, column: 1, offset: 314 },
+              end: { line: 15, column: 4, offset: 446 }
             }
           },
           {
@@ -26197,14 +26163,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 9, column: 1, offset: 227 },
-                  end: { line: 9, column: 10, offset: 236 }
+                  start: { line: 17, column: 1, offset: 448 },
+                  end: { line: 17, column: 10, offset: 457 }
                 }
               }
             ],
             position: {
-              start: { line: 9, column: 1, offset: 227 },
-              end: { line: 9, column: 10, offset: 236 }
+              start: { line: 17, column: 1, offset: 448 },
+              end: { line: 17, column: 10, offset: 457 }
             }
           },
           {
@@ -26230,26 +26196,26 @@ export default [
                             type: 'text',
                             value: 'eq',
                             position: {
-                              start: { line: 10, column: 5, offset: 241 },
-                              end: { line: 10, column: 7, offset: 243 }
+                              start: { line: 18, column: 5, offset: 462 },
+                              end: { line: 18, column: 7, offset: 464 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 10, column: 4, offset: 240 },
-                          end: { line: 10, column: 18, offset: 254 }
+                          start: { line: 18, column: 4, offset: 461 },
+                          end: { line: 18, column: 18, offset: 475 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 10, column: 4, offset: 240 },
-                      end: { line: 10, column: 18, offset: 254 }
+                      start: { line: 18, column: 4, offset: 461 },
+                      end: { line: 18, column: 18, offset: 475 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 10, column: 2, offset: 238 },
-                  end: { line: 10, column: 18, offset: 254 }
+                  start: { line: 18, column: 2, offset: 459 },
+                  end: { line: 18, column: 18, offset: 475 }
                 }
               },
               {
@@ -26269,26 +26235,26 @@ export default [
                             type: 'text',
                             value: 'thunkify',
                             position: {
-                              start: { line: 11, column: 5, offset: 259 },
-                              end: { line: 11, column: 13, offset: 267 }
+                              start: { line: 19, column: 5, offset: 480 },
+                              end: { line: 19, column: 13, offset: 488 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 11, column: 4, offset: 258 },
-                          end: { line: 11, column: 30, offset: 284 }
+                          start: { line: 19, column: 4, offset: 479 },
+                          end: { line: 19, column: 30, offset: 505 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 11, column: 4, offset: 258 },
-                      end: { line: 11, column: 30, offset: 284 }
+                      start: { line: 19, column: 4, offset: 479 },
+                      end: { line: 19, column: 30, offset: 505 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 11, column: 2, offset: 256 },
-                  end: { line: 11, column: 30, offset: 284 }
+                  start: { line: 19, column: 2, offset: 477 },
+                  end: { line: 19, column: 30, offset: 505 }
                 }
               },
               {
@@ -26308,26 +26274,26 @@ export default [
                             type: 'text',
                             value: 'always',
                             position: {
-                              start: { line: 12, column: 5, offset: 289 },
-                              end: { line: 12, column: 11, offset: 295 }
+                              start: { line: 20, column: 5, offset: 510 },
+                              end: { line: 20, column: 11, offset: 516 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 12, column: 4, offset: 288 },
-                          end: { line: 12, column: 26, offset: 310 }
+                          start: { line: 20, column: 4, offset: 509 },
+                          end: { line: 20, column: 26, offset: 531 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 12, column: 4, offset: 288 },
-                      end: { line: 12, column: 26, offset: 310 }
+                      start: { line: 20, column: 4, offset: 509 },
+                      end: { line: 20, column: 26, offset: 531 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 12, column: 2, offset: 286 },
-                  end: { line: 12, column: 26, offset: 310 }
+                  start: { line: 20, column: 2, offset: 507 },
+                  end: { line: 20, column: 26, offset: 531 }
                 }
               },
               {
@@ -26347,26 +26313,26 @@ export default [
                             type: 'text',
                             value: 'curry',
                             position: {
-                              start: { line: 13, column: 5, offset: 315 },
-                              end: { line: 13, column: 10, offset: 320 }
+                              start: { line: 21, column: 5, offset: 536 },
+                              end: { line: 21, column: 10, offset: 541 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 13, column: 4, offset: 314 },
-                          end: { line: 13, column: 24, offset: 334 }
+                          start: { line: 21, column: 4, offset: 535 },
+                          end: { line: 21, column: 24, offset: 555 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 13, column: 4, offset: 314 },
-                      end: { line: 13, column: 24, offset: 334 }
+                      start: { line: 21, column: 4, offset: 535 },
+                      end: { line: 21, column: 24, offset: 555 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 13, column: 2, offset: 312 },
-                  end: { line: 13, column: 24, offset: 334 }
+                  start: { line: 21, column: 2, offset: 533 },
+                  end: { line: 21, column: 24, offset: 555 }
                 }
               },
               {
@@ -26386,26 +26352,26 @@ export default [
                             type: 'text',
                             value: 'curry.call',
                             position: {
-                              start: { line: 14, column: 5, offset: 339 },
-                              end: { line: 14, column: 15, offset: 349 }
+                              start: { line: 22, column: 5, offset: 560 },
+                              end: { line: 22, column: 15, offset: 570 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 14, column: 4, offset: 338 },
-                          end: { line: 14, column: 34, offset: 368 }
+                          start: { line: 22, column: 4, offset: 559 },
+                          end: { line: 22, column: 34, offset: 589 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 14, column: 4, offset: 338 },
-                      end: { line: 14, column: 34, offset: 368 }
+                      start: { line: 22, column: 4, offset: 559 },
+                      end: { line: 22, column: 34, offset: 589 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 14, column: 2, offset: 336 },
-                  end: { line: 14, column: 34, offset: 368 }
+                  start: { line: 22, column: 2, offset: 557 },
+                  end: { line: 22, column: 34, offset: 589 }
                 }
               },
               {
@@ -26425,26 +26391,26 @@ export default [
                             type: 'text',
                             value: '__',
                             position: {
-                              start: { line: 15, column: 5, offset: 373 },
-                              end: { line: 15, column: 7, offset: 375 }
+                              start: { line: 23, column: 5, offset: 594 },
+                              end: { line: 23, column: 7, offset: 596 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 15, column: 4, offset: 372 },
-                          end: { line: 15, column: 18, offset: 386 }
+                          start: { line: 23, column: 4, offset: 593 },
+                          end: { line: 23, column: 18, offset: 607 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 15, column: 4, offset: 372 },
-                      end: { line: 15, column: 18, offset: 386 }
+                      start: { line: 23, column: 4, offset: 593 },
+                      end: { line: 23, column: 18, offset: 607 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 15, column: 2, offset: 370 },
-                  end: { line: 15, column: 18, offset: 386 }
+                  start: { line: 23, column: 2, offset: 591 },
+                  end: { line: 23, column: 18, offset: 607 }
                 }
               },
               {
@@ -26464,38 +26430,38 @@ export default [
                             type: 'text',
                             value: 'Transducer.map',
                             position: {
-                              start: { line: 16, column: 5, offset: 391 },
-                              end: { line: 16, column: 19, offset: 405 }
+                              start: { line: 24, column: 5, offset: 612 },
+                              end: { line: 24, column: 19, offset: 626 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 16, column: 4, offset: 390 },
-                          end: { line: 16, column: 42, offset: 428 }
+                          start: { line: 24, column: 4, offset: 611 },
+                          end: { line: 24, column: 42, offset: 649 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 16, column: 4, offset: 390 },
-                      end: { line: 16, column: 42, offset: 428 }
+                      start: { line: 24, column: 4, offset: 611 },
+                      end: { line: 24, column: 42, offset: 649 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 16, column: 2, offset: 388 },
-                  end: { line: 16, column: 42, offset: 428 }
+                  start: { line: 24, column: 2, offset: 609 },
+                  end: { line: 24, column: 42, offset: 649 }
                 }
               }
             ],
             position: {
-              start: { line: 10, column: 2, offset: 238 },
-              end: { line: 16, column: 42, offset: 428 }
+              start: { line: 18, column: 2, offset: 459 },
+              end: { line: 24, column: 42, offset: 649 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 16, column: 42, offset: 428 }
+          end: { line: 24, column: 42, offset: 649 }
         }
       }
     },
@@ -26504,15 +26470,12 @@ export default [
   {
     name: 'curry.call',
     synopsis: '```coffeescript [specscript]\n' +
-      'type __ = Symbol(placeholder)\n' +
-      'type ArgsWithPlaceholder = Array<__|any>\n' +
+      '__ Symbol(placeholder)\n' +
+      'argumentsWithPlaceholder Array<__|any>\n' +
       '\n' +
-      'n number\n' +
-      'args ArgsWithPlaceholder\n' +
-      'moreArgs ArgsWithPlaceholder\n' +
-      '\n' +
-      'curry.call(func function, context object, ...args) -> curriedFuncOrResult function|any\n' +
-      'curriedFuncOrResult(...moreArgs) -> anotherCurriedFuncOrResult function|any\n' +
+      'curry.call(func function, context object, ...arguments) -> result any\n' +
+      'curry.call(func function, context object, ...argumentsWithPlaceholder) -> result any\n' +
+      'curry.call(func function, context object, ...argumentsWithPlaceholder) -> curriedFunction function\n' +
       '```',
     description: '[curry](/docs/curry) with specified context.\n' +
       '\n' +
@@ -26534,6 +26497,28 @@ export default [
       '\n' +
       'console.log(curry.call(point.toString, point))\n' +
       'console.log(curry.call(point.toString, box))\n' +
+      '```\n' +
+      '\n' +
+      'Any promises in `arguments` are resolved for their values during thunk creation.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'class Point {\n' +
+      '  constructor(x, y) {\n' +
+      '    this.x = x\n' +
+      '    this.y = y\n' +
+      '  }\n' +
+      '\n' +
+      '  distanceTo(point) {\n' +
+      '    const x2 = (point.x - this.x) ** 2\n' +
+      '    const y2 = (point.y - this.y) ** 2\n' +
+      '    return (x2 + y2) ** 0.5\n' +
+      '  }\n' +
+      '}\n' +
+      '\n' +
+      'const point1 = new Point(100, 100)\n' +
+      'const point2 = new Point(200, 200)\n' +
+      '\n' +
+      'console.log(await curry.call(point1.distanceTo, point1, Promise.resolve(point2)))\n' +
       '```\n' +
       '\n' +
       'See also:\n' +
@@ -26578,24 +26563,21 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'type __ = Symbol(placeholder)\n' +
-              'type ArgsWithPlaceholder = Array<__|any>\n' +
+            value: '__ Symbol(placeholder)\n' +
+              'argumentsWithPlaceholder Array<__|any>\n' +
               '\n' +
-              'n number\n' +
-              'args ArgsWithPlaceholder\n' +
-              'moreArgs ArgsWithPlaceholder\n' +
-              '\n' +
-              'curry.call(func function, context object, ...args) -> curriedFuncOrResult function|any\n' +
-              'curriedFuncOrResult(...moreArgs) -> anotherCurriedFuncOrResult function|any',
+              'curry.call(func function, context object, ...arguments) -> result any\n' +
+              'curry.call(func function, context object, ...argumentsWithPlaceholder) -> result any\n' +
+              'curry.call(func function, context object, ...argumentsWithPlaceholder) -> curriedFunction function',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 11, column: 4, offset: 331 }
+              end: { line: 8, column: 4, offset: 349 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 11, column: 4, offset: 331 }
+          end: { line: 8, column: 4, offset: 349 }
         }
       },
       description: {
@@ -26668,16 +26650,75 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'See also:',
+                value: 'Any promises in ',
                 position: {
                   start: { line: 23, column: 1, offset: 363 },
-                  end: { line: 23, column: 10, offset: 372 }
+                  end: { line: 23, column: 17, offset: 379 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'arguments',
+                position: {
+                  start: { line: 23, column: 17, offset: 379 },
+                  end: { line: 23, column: 28, offset: 390 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' are resolved for their values during thunk creation.',
+                position: {
+                  start: { line: 23, column: 28, offset: 390 },
+                  end: { line: 23, column: 81, offset: 443 }
                 }
               }
             ],
             position: {
               start: { line: 23, column: 1, offset: 363 },
-              end: { line: 23, column: 10, offset: 372 }
+              end: { line: 23, column: 81, offset: 443 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'class Point {\n' +
+              '  constructor(x, y) {\n' +
+              '    this.x = x\n' +
+              '    this.y = y\n' +
+              '  }\n' +
+              '\n' +
+              '  distanceTo(point) {\n' +
+              '    const x2 = (point.x - this.x) ** 2\n' +
+              '    const y2 = (point.y - this.y) ** 2\n' +
+              '    return (x2 + y2) ** 0.5\n' +
+              '  }\n' +
+              '}\n' +
+              '\n' +
+              'const point1 = new Point(100, 100)\n' +
+              'const point2 = new Point(200, 200)\n' +
+              '\n' +
+              'console.log(await curry.call(point1.distanceTo, point1, Promise.resolve(point2)))',
+            position: {
+              start: { line: 25, column: 1, offset: 445 },
+              end: { line: 43, column: 4, offset: 834 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'See also:',
+                position: {
+                  start: { line: 45, column: 1, offset: 836 },
+                  end: { line: 45, column: 10, offset: 845 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 45, column: 1, offset: 836 },
+              end: { line: 45, column: 10, offset: 845 }
             }
           },
           {
@@ -26703,26 +26744,26 @@ export default [
                             type: 'text',
                             value: 'eq',
                             position: {
-                              start: { line: 24, column: 5, offset: 377 },
-                              end: { line: 24, column: 7, offset: 379 }
+                              start: { line: 46, column: 5, offset: 850 },
+                              end: { line: 46, column: 7, offset: 852 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 24, column: 4, offset: 376 },
-                          end: { line: 24, column: 18, offset: 390 }
+                          start: { line: 46, column: 4, offset: 849 },
+                          end: { line: 46, column: 18, offset: 863 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 24, column: 4, offset: 376 },
-                      end: { line: 24, column: 18, offset: 390 }
+                      start: { line: 46, column: 4, offset: 849 },
+                      end: { line: 46, column: 18, offset: 863 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 24, column: 2, offset: 374 },
-                  end: { line: 24, column: 18, offset: 390 }
+                  start: { line: 46, column: 2, offset: 847 },
+                  end: { line: 46, column: 18, offset: 863 }
                 }
               },
               {
@@ -26742,26 +26783,26 @@ export default [
                             type: 'text',
                             value: 'thunkify',
                             position: {
-                              start: { line: 25, column: 5, offset: 395 },
-                              end: { line: 25, column: 13, offset: 403 }
+                              start: { line: 47, column: 5, offset: 868 },
+                              end: { line: 47, column: 13, offset: 876 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 25, column: 4, offset: 394 },
-                          end: { line: 25, column: 30, offset: 420 }
+                          start: { line: 47, column: 4, offset: 867 },
+                          end: { line: 47, column: 30, offset: 893 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 25, column: 4, offset: 394 },
-                      end: { line: 25, column: 30, offset: 420 }
+                      start: { line: 47, column: 4, offset: 867 },
+                      end: { line: 47, column: 30, offset: 893 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 25, column: 2, offset: 392 },
-                  end: { line: 25, column: 30, offset: 420 }
+                  start: { line: 47, column: 2, offset: 865 },
+                  end: { line: 47, column: 30, offset: 893 }
                 }
               },
               {
@@ -26781,26 +26822,26 @@ export default [
                             type: 'text',
                             value: 'always',
                             position: {
-                              start: { line: 26, column: 5, offset: 425 },
-                              end: { line: 26, column: 11, offset: 431 }
+                              start: { line: 48, column: 5, offset: 898 },
+                              end: { line: 48, column: 11, offset: 904 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 26, column: 4, offset: 424 },
-                          end: { line: 26, column: 26, offset: 446 }
+                          start: { line: 48, column: 4, offset: 897 },
+                          end: { line: 48, column: 26, offset: 919 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 26, column: 4, offset: 424 },
-                      end: { line: 26, column: 26, offset: 446 }
+                      start: { line: 48, column: 4, offset: 897 },
+                      end: { line: 48, column: 26, offset: 919 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 26, column: 2, offset: 422 },
-                  end: { line: 26, column: 26, offset: 446 }
+                  start: { line: 48, column: 2, offset: 895 },
+                  end: { line: 48, column: 26, offset: 919 }
                 }
               },
               {
@@ -26820,26 +26861,26 @@ export default [
                             type: 'text',
                             value: 'curry',
                             position: {
-                              start: { line: 27, column: 5, offset: 451 },
-                              end: { line: 27, column: 10, offset: 456 }
+                              start: { line: 49, column: 5, offset: 924 },
+                              end: { line: 49, column: 10, offset: 929 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 27, column: 4, offset: 450 },
-                          end: { line: 27, column: 24, offset: 470 }
+                          start: { line: 49, column: 4, offset: 923 },
+                          end: { line: 49, column: 24, offset: 943 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 27, column: 4, offset: 450 },
-                      end: { line: 27, column: 24, offset: 470 }
+                      start: { line: 49, column: 4, offset: 923 },
+                      end: { line: 49, column: 24, offset: 943 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 27, column: 2, offset: 448 },
-                  end: { line: 27, column: 24, offset: 470 }
+                  start: { line: 49, column: 2, offset: 921 },
+                  end: { line: 49, column: 24, offset: 943 }
                 }
               },
               {
@@ -26859,26 +26900,26 @@ export default [
                             type: 'text',
                             value: 'curry.arity',
                             position: {
-                              start: { line: 28, column: 5, offset: 475 },
-                              end: { line: 28, column: 16, offset: 486 }
+                              start: { line: 50, column: 5, offset: 948 },
+                              end: { line: 50, column: 16, offset: 959 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 28, column: 4, offset: 474 },
-                          end: { line: 28, column: 36, offset: 506 }
+                          start: { line: 50, column: 4, offset: 947 },
+                          end: { line: 50, column: 36, offset: 979 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 28, column: 4, offset: 474 },
-                      end: { line: 28, column: 36, offset: 506 }
+                      start: { line: 50, column: 4, offset: 947 },
+                      end: { line: 50, column: 36, offset: 979 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 28, column: 2, offset: 472 },
-                  end: { line: 28, column: 36, offset: 506 }
+                  start: { line: 50, column: 2, offset: 945 },
+                  end: { line: 50, column: 36, offset: 979 }
                 }
               },
               {
@@ -26898,26 +26939,26 @@ export default [
                             type: 'text',
                             value: '__',
                             position: {
-                              start: { line: 29, column: 5, offset: 511 },
-                              end: { line: 29, column: 7, offset: 513 }
+                              start: { line: 51, column: 5, offset: 984 },
+                              end: { line: 51, column: 7, offset: 986 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 29, column: 4, offset: 510 },
-                          end: { line: 29, column: 18, offset: 524 }
+                          start: { line: 51, column: 4, offset: 983 },
+                          end: { line: 51, column: 18, offset: 997 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 29, column: 4, offset: 510 },
-                      end: { line: 29, column: 18, offset: 524 }
+                      start: { line: 51, column: 4, offset: 983 },
+                      end: { line: 51, column: 18, offset: 997 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 29, column: 2, offset: 508 },
-                  end: { line: 29, column: 18, offset: 524 }
+                  start: { line: 51, column: 2, offset: 981 },
+                  end: { line: 51, column: 18, offset: 997 }
                 }
               },
               {
@@ -26937,38 +26978,38 @@ export default [
                             type: 'text',
                             value: 'Transducer.map',
                             position: {
-                              start: { line: 30, column: 5, offset: 529 },
-                              end: { line: 30, column: 19, offset: 543 }
+                              start: { line: 52, column: 5, offset: 1002 },
+                              end: { line: 52, column: 19, offset: 1016 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 30, column: 4, offset: 528 },
-                          end: { line: 30, column: 42, offset: 566 }
+                          start: { line: 52, column: 4, offset: 1001 },
+                          end: { line: 52, column: 42, offset: 1039 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 30, column: 4, offset: 528 },
-                      end: { line: 30, column: 42, offset: 566 }
+                      start: { line: 52, column: 4, offset: 1001 },
+                      end: { line: 52, column: 42, offset: 1039 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 30, column: 2, offset: 526 },
-                  end: { line: 30, column: 42, offset: 566 }
+                  start: { line: 52, column: 2, offset: 999 },
+                  end: { line: 52, column: 42, offset: 1039 }
                 }
               }
             ],
             position: {
-              start: { line: 24, column: 2, offset: 374 },
-              end: { line: 30, column: 42, offset: 566 }
+              start: { line: 46, column: 2, offset: 847 },
+              end: { line: 52, column: 42, offset: 1039 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 30, column: 42, offset: 566 }
+          end: { line: 52, column: 42, offset: 1039 }
         }
       }
     },
@@ -55971,18 +56012,26 @@ export default [
   {
     name: 'thunkify',
     synopsis: '```coffeescript [specscript]\n' +
-      'args Array<any>\n' +
-      '\n' +
-      'thunkify(func function, ...args) -> thunk ()=>func(...args)\n' +
+      'thunkify(func function, ...arguments) -> thunk function\n' +
       '```',
-    description: 'Creates a thunk from a function and arguments. A thunk takes no arguments, and when called, executes the other function with the arguments. The other function is said to be "thunkified".\n' +
+    description: 'Creates a thunk function from a function and arguments. A thunk function takes no arguments, and when called, executes the function and arguments. The function is said to be "thunkified".\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const add = (a, b) => a + b\n' +
       '\n' +
       'const thunkAdd12 = thunkify(add, 1, 2)\n' +
       '\n' +
-      'console.log(thunkAdd12()) // 3\n' +
+      'console.log(thunkAdd12())\n' +
+      '```\n' +
+      '\n' +
+      'Any promises in `arguments` are resolved for their values during thunk creation.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const add = (a, b) => a + b\n' +
+      '\n' +
+      'const thunkAdd12 = await thunkify(add, Promise.resolve(1), 2)\n' +
+      '\n' +
+      'console.log(thunkAdd12())\n' +
       '```\n' +
       '\n' +
       'See also:\n' +
@@ -56026,18 +56075,16 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'args Array<any>\n' +
-              '\n' +
-              'thunkify(func function, ...args) -> thunk ()=>func(...args)',
+            value: 'thunkify(func function, ...arguments) -> thunk function',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 109 }
+              end: { line: 3, column: 4, offset: 88 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 5, column: 4, offset: 109 }
+          end: { line: 3, column: 4, offset: 88 }
         }
       },
       description: {
@@ -56048,16 +56095,16 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Creates a thunk from a function and arguments. A thunk takes no arguments, and when called, executes the other function with the arguments. The other function is said to be "thunkified".',
+                value: 'Creates a thunk function from a function and arguments. A thunk function takes no arguments, and when called, executes the function and arguments. The function is said to be "thunkified".',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 187, offset: 186 }
+                  end: { line: 1, column: 188, offset: 187 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 187, offset: 186 }
+              end: { line: 1, column: 188, offset: 187 }
             }
           },
           {
@@ -56068,10 +56115,57 @@ export default [
               '\n' +
               'const thunkAdd12 = thunkify(add, 1, 2)\n' +
               '\n' +
-              'console.log(thunkAdd12()) // 3',
+              'console.log(thunkAdd12())',
             position: {
-              start: { line: 3, column: 1, offset: 188 },
-              end: { line: 9, column: 4, offset: 318 }
+              start: { line: 3, column: 1, offset: 189 },
+              end: { line: 9, column: 4, offset: 314 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Any promises in ',
+                position: {
+                  start: { line: 11, column: 1, offset: 316 },
+                  end: { line: 11, column: 17, offset: 332 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'arguments',
+                position: {
+                  start: { line: 11, column: 17, offset: 332 },
+                  end: { line: 11, column: 28, offset: 343 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' are resolved for their values during thunk creation.',
+                position: {
+                  start: { line: 11, column: 28, offset: 343 },
+                  end: { line: 11, column: 81, offset: 396 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 11, column: 1, offset: 316 },
+              end: { line: 11, column: 81, offset: 396 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'const add = (a, b) => a + b\n' +
+              '\n' +
+              'const thunkAdd12 = await thunkify(add, Promise.resolve(1), 2)\n' +
+              '\n' +
+              'console.log(thunkAdd12())',
+            position: {
+              start: { line: 13, column: 1, offset: 398 },
+              end: { line: 19, column: 4, offset: 546 }
             }
           },
           {
@@ -56081,14 +56175,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 11, column: 1, offset: 320 },
-                  end: { line: 11, column: 10, offset: 329 }
+                  start: { line: 21, column: 1, offset: 548 },
+                  end: { line: 21, column: 10, offset: 557 }
                 }
               }
             ],
             position: {
-              start: { line: 11, column: 1, offset: 320 },
-              end: { line: 11, column: 10, offset: 329 }
+              start: { line: 21, column: 1, offset: 548 },
+              end: { line: 21, column: 10, offset: 557 }
             }
           },
           {
@@ -56114,26 +56208,26 @@ export default [
                             type: 'text',
                             value: 'eq',
                             position: {
-                              start: { line: 12, column: 5, offset: 334 },
-                              end: { line: 12, column: 7, offset: 336 }
+                              start: { line: 22, column: 5, offset: 562 },
+                              end: { line: 22, column: 7, offset: 564 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 12, column: 4, offset: 333 },
-                          end: { line: 12, column: 18, offset: 347 }
+                          start: { line: 22, column: 4, offset: 561 },
+                          end: { line: 22, column: 18, offset: 575 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 12, column: 4, offset: 333 },
-                      end: { line: 12, column: 18, offset: 347 }
+                      start: { line: 22, column: 4, offset: 561 },
+                      end: { line: 22, column: 18, offset: 575 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 12, column: 2, offset: 331 },
-                  end: { line: 12, column: 18, offset: 347 }
+                  start: { line: 22, column: 2, offset: 559 },
+                  end: { line: 22, column: 18, offset: 575 }
                 }
               },
               {
@@ -56153,26 +56247,26 @@ export default [
                             type: 'text',
                             value: 'thunkify.call',
                             position: {
-                              start: { line: 13, column: 5, offset: 352 },
-                              end: { line: 13, column: 18, offset: 365 }
+                              start: { line: 23, column: 5, offset: 580 },
+                              end: { line: 23, column: 18, offset: 593 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 13, column: 4, offset: 351 },
-                          end: { line: 13, column: 40, offset: 387 }
+                          start: { line: 23, column: 4, offset: 579 },
+                          end: { line: 23, column: 40, offset: 615 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 13, column: 4, offset: 351 },
-                      end: { line: 13, column: 40, offset: 387 }
+                      start: { line: 23, column: 4, offset: 579 },
+                      end: { line: 23, column: 40, offset: 615 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 13, column: 2, offset: 349 },
-                  end: { line: 13, column: 40, offset: 387 }
+                  start: { line: 23, column: 2, offset: 577 },
+                  end: { line: 23, column: 40, offset: 615 }
                 }
               },
               {
@@ -56192,26 +56286,26 @@ export default [
                             type: 'text',
                             value: 'always',
                             position: {
-                              start: { line: 14, column: 5, offset: 392 },
-                              end: { line: 14, column: 11, offset: 398 }
+                              start: { line: 24, column: 5, offset: 620 },
+                              end: { line: 24, column: 11, offset: 626 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 14, column: 4, offset: 391 },
-                          end: { line: 14, column: 26, offset: 413 }
+                          start: { line: 24, column: 4, offset: 619 },
+                          end: { line: 24, column: 26, offset: 641 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 14, column: 4, offset: 391 },
-                      end: { line: 14, column: 26, offset: 413 }
+                      start: { line: 24, column: 4, offset: 619 },
+                      end: { line: 24, column: 26, offset: 641 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 14, column: 2, offset: 389 },
-                  end: { line: 14, column: 26, offset: 413 }
+                  start: { line: 24, column: 2, offset: 617 },
+                  end: { line: 24, column: 26, offset: 641 }
                 }
               },
               {
@@ -56231,26 +56325,26 @@ export default [
                             type: 'text',
                             value: 'curry',
                             position: {
-                              start: { line: 15, column: 5, offset: 418 },
-                              end: { line: 15, column: 10, offset: 423 }
+                              start: { line: 25, column: 5, offset: 646 },
+                              end: { line: 25, column: 10, offset: 651 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 15, column: 4, offset: 417 },
-                          end: { line: 15, column: 24, offset: 437 }
+                          start: { line: 25, column: 4, offset: 645 },
+                          end: { line: 25, column: 24, offset: 665 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 15, column: 4, offset: 417 },
-                      end: { line: 15, column: 24, offset: 437 }
+                      start: { line: 25, column: 4, offset: 645 },
+                      end: { line: 25, column: 24, offset: 665 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 15, column: 2, offset: 415 },
-                  end: { line: 15, column: 24, offset: 437 }
+                  start: { line: 25, column: 2, offset: 643 },
+                  end: { line: 25, column: 24, offset: 665 }
                 }
               },
               {
@@ -56270,26 +56364,26 @@ export default [
                             type: 'text',
                             value: '__',
                             position: {
-                              start: { line: 16, column: 5, offset: 442 },
-                              end: { line: 16, column: 7, offset: 444 }
+                              start: { line: 26, column: 5, offset: 670 },
+                              end: { line: 26, column: 7, offset: 672 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 16, column: 4, offset: 441 },
-                          end: { line: 16, column: 18, offset: 455 }
+                          start: { line: 26, column: 4, offset: 669 },
+                          end: { line: 26, column: 18, offset: 683 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 16, column: 4, offset: 441 },
-                      end: { line: 16, column: 18, offset: 455 }
+                      start: { line: 26, column: 4, offset: 669 },
+                      end: { line: 26, column: 18, offset: 683 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 16, column: 2, offset: 439 },
-                  end: { line: 16, column: 18, offset: 455 }
+                  start: { line: 26, column: 2, offset: 667 },
+                  end: { line: 26, column: 18, offset: 683 }
                 }
               },
               {
@@ -56309,38 +56403,38 @@ export default [
                             type: 'text',
                             value: 'Transducer.map',
                             position: {
-                              start: { line: 17, column: 5, offset: 460 },
-                              end: { line: 17, column: 19, offset: 474 }
+                              start: { line: 27, column: 5, offset: 688 },
+                              end: { line: 27, column: 19, offset: 702 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 17, column: 4, offset: 459 },
-                          end: { line: 17, column: 42, offset: 497 }
+                          start: { line: 27, column: 4, offset: 687 },
+                          end: { line: 27, column: 42, offset: 725 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 17, column: 4, offset: 459 },
-                      end: { line: 17, column: 42, offset: 497 }
+                      start: { line: 27, column: 4, offset: 687 },
+                      end: { line: 27, column: 42, offset: 725 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 17, column: 2, offset: 457 },
-                  end: { line: 17, column: 42, offset: 497 }
+                  start: { line: 27, column: 2, offset: 685 },
+                  end: { line: 27, column: 42, offset: 725 }
                 }
               }
             ],
             position: {
-              start: { line: 12, column: 2, offset: 331 },
-              end: { line: 17, column: 42, offset: 497 }
+              start: { line: 22, column: 2, offset: 559 },
+              end: { line: 27, column: 42, offset: 725 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 17, column: 42, offset: 497 }
+          end: { line: 27, column: 42, offset: 725 }
         }
       }
     },
@@ -56349,11 +56443,9 @@ export default [
   {
     name: 'thunkify.call',
     synopsis: '```coffeescript [specscript]\n' +
-      'args Array<any>\n' +
-      '\n' +
-      'thunkify.call(func function, context object, ...args) -> thunk ()=>func(...args)\n' +
+      'thunkify.call(func function, context object, ...arguments) -> thunk function\n' +
       '```',
-    description: 'Creates a thunk that calls a function with the specified context and arguments.\n' +
+    description: 'Creates a thunk function that calls a function with the specified context and arguments.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'class Point {\n' +
@@ -56362,7 +56454,7 @@ export default [
       '    this.y = y\n' +
       '  }\n' +
       '\n' +
-      '  distanceTo() {\n' +
+      '  distanceTo(point) {\n' +
       '    const x2 = (point.x - this.x) ** 2\n' +
       '    const y2 = (point.y - this.y) ** 2\n' +
       '    return (x2 + y2) ** 0.5\n' +
@@ -56370,9 +56462,33 @@ export default [
       '}\n' +
       '\n' +
       'const point0 = new Point(0, 0)\n' +
-      'const point = new Point(3, 4)\n' +
+      'const point1 = new Point(3, 4)\n' +
       '\n' +
-      'const thunk = thunkify.call(point0.distanceTo, point0, point)\n' +
+      'const thunk = thunkify.call(point0.distanceTo, point0, point1)\n' +
+      '\n' +
+      'console.log(thunk())\n' +
+      '```\n' +
+      '\n' +
+      'Any promises in `arguments` are resolved for their values during thunk creation.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'class Point {\n' +
+      '  constructor(x, y) {\n' +
+      '    this.x = x\n' +
+      '    this.y = y\n' +
+      '  }\n' +
+      '\n' +
+      '  distanceTo(point) {\n' +
+      '    const x2 = (point.x - this.x) ** 2\n' +
+      '    const y2 = (point.y - this.y) ** 2\n' +
+      '    return (x2 + y2) ** 0.5\n' +
+      '  }\n' +
+      '}\n' +
+      '\n' +
+      'const point0 = new Point(0, 0)\n' +
+      'const point1 = new Point(3, 4)\n' +
+      '\n' +
+      'const thunk = await thunkify.call(point0.distanceTo, point0, Promise.resolve(point1))\n' +
       '\n' +
       'console.log(thunk())\n' +
       '```\n' +
@@ -56418,18 +56534,16 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'args Array<any>\n' +
-              '\n' +
-              'thunkify.call(func function, context object, ...args) -> thunk ()=>func(...args)',
+            value: 'thunkify.call(func function, context object, ...arguments) -> thunk function',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 130 }
+              end: { line: 3, column: 4, offset: 109 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 5, column: 4, offset: 130 }
+          end: { line: 3, column: 4, offset: 109 }
         }
       },
       description: {
@@ -56440,16 +56554,16 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Creates a thunk that calls a function with the specified context and arguments.',
+                value: 'Creates a thunk function that calls a function with the specified context and arguments.',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 80, offset: 79 }
+                  end: { line: 1, column: 89, offset: 88 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 80, offset: 79 }
+              end: { line: 1, column: 89, offset: 88 }
             }
           },
           {
@@ -56462,7 +56576,7 @@ export default [
               '    this.y = y\n' +
               '  }\n' +
               '\n' +
-              '  distanceTo() {\n' +
+              '  distanceTo(point) {\n' +
               '    const x2 = (point.x - this.x) ** 2\n' +
               '    const y2 = (point.y - this.y) ** 2\n' +
               '    return (x2 + y2) ** 0.5\n' +
@@ -56470,14 +56584,75 @@ export default [
               '}\n' +
               '\n' +
               'const point0 = new Point(0, 0)\n' +
-              'const point = new Point(3, 4)\n' +
+              'const point1 = new Point(3, 4)\n' +
               '\n' +
-              'const thunk = thunkify.call(point0.distanceTo, point0, point)\n' +
+              'const thunk = thunkify.call(point0.distanceTo, point0, point1)\n' +
               '\n' +
               'console.log(thunk())',
             position: {
-              start: { line: 3, column: 1, offset: 81 },
-              end: { line: 23, column: 4, offset: 458 }
+              start: { line: 3, column: 1, offset: 90 },
+              end: { line: 23, column: 4, offset: 474 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Any promises in ',
+                position: {
+                  start: { line: 25, column: 1, offset: 476 },
+                  end: { line: 25, column: 17, offset: 492 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'arguments',
+                position: {
+                  start: { line: 25, column: 17, offset: 492 },
+                  end: { line: 25, column: 28, offset: 503 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' are resolved for their values during thunk creation.',
+                position: {
+                  start: { line: 25, column: 28, offset: 503 },
+                  end: { line: 25, column: 81, offset: 556 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 25, column: 1, offset: 476 },
+              end: { line: 25, column: 81, offset: 556 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'class Point {\n' +
+              '  constructor(x, y) {\n' +
+              '    this.x = x\n' +
+              '    this.y = y\n' +
+              '  }\n' +
+              '\n' +
+              '  distanceTo(point) {\n' +
+              '    const x2 = (point.x - this.x) ** 2\n' +
+              '    const y2 = (point.y - this.y) ** 2\n' +
+              '    return (x2 + y2) ** 0.5\n' +
+              '  }\n' +
+              '}\n' +
+              '\n' +
+              'const point0 = new Point(0, 0)\n' +
+              'const point1 = new Point(3, 4)\n' +
+              '\n' +
+              'const thunk = await thunkify.call(point0.distanceTo, point0, Promise.resolve(point1))\n' +
+              '\n' +
+              'console.log(thunk())',
+            position: {
+              start: { line: 27, column: 1, offset: 558 },
+              end: { line: 47, column: 4, offset: 965 }
             }
           },
           {
@@ -56487,14 +56662,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 25, column: 1, offset: 460 },
-                  end: { line: 25, column: 10, offset: 469 }
+                  start: { line: 49, column: 1, offset: 967 },
+                  end: { line: 49, column: 10, offset: 976 }
                 }
               }
             ],
             position: {
-              start: { line: 25, column: 1, offset: 460 },
-              end: { line: 25, column: 10, offset: 469 }
+              start: { line: 49, column: 1, offset: 967 },
+              end: { line: 49, column: 10, offset: 976 }
             }
           },
           {
@@ -56520,26 +56695,26 @@ export default [
                             type: 'text',
                             value: 'eq',
                             position: {
-                              start: { line: 26, column: 5, offset: 474 },
-                              end: { line: 26, column: 7, offset: 476 }
+                              start: { line: 50, column: 5, offset: 981 },
+                              end: { line: 50, column: 7, offset: 983 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 26, column: 4, offset: 473 },
-                          end: { line: 26, column: 18, offset: 487 }
+                          start: { line: 50, column: 4, offset: 980 },
+                          end: { line: 50, column: 18, offset: 994 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 26, column: 4, offset: 473 },
-                      end: { line: 26, column: 18, offset: 487 }
+                      start: { line: 50, column: 4, offset: 980 },
+                      end: { line: 50, column: 18, offset: 994 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 26, column: 2, offset: 471 },
-                  end: { line: 26, column: 18, offset: 487 }
+                  start: { line: 50, column: 2, offset: 978 },
+                  end: { line: 50, column: 18, offset: 994 }
                 }
               },
               {
@@ -56559,26 +56734,26 @@ export default [
                             type: 'text',
                             value: 'thunkify',
                             position: {
-                              start: { line: 27, column: 5, offset: 492 },
-                              end: { line: 27, column: 13, offset: 500 }
+                              start: { line: 51, column: 5, offset: 999 },
+                              end: { line: 51, column: 13, offset: 1007 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 27, column: 4, offset: 491 },
-                          end: { line: 27, column: 30, offset: 517 }
+                          start: { line: 51, column: 4, offset: 998 },
+                          end: { line: 51, column: 30, offset: 1024 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 27, column: 4, offset: 491 },
-                      end: { line: 27, column: 30, offset: 517 }
+                      start: { line: 51, column: 4, offset: 998 },
+                      end: { line: 51, column: 30, offset: 1024 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 27, column: 2, offset: 489 },
-                  end: { line: 27, column: 30, offset: 517 }
+                  start: { line: 51, column: 2, offset: 996 },
+                  end: { line: 51, column: 30, offset: 1024 }
                 }
               },
               {
@@ -56598,26 +56773,26 @@ export default [
                             type: 'text',
                             value: 'always',
                             position: {
-                              start: { line: 28, column: 5, offset: 522 },
-                              end: { line: 28, column: 11, offset: 528 }
+                              start: { line: 52, column: 5, offset: 1029 },
+                              end: { line: 52, column: 11, offset: 1035 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 28, column: 4, offset: 521 },
-                          end: { line: 28, column: 26, offset: 543 }
+                          start: { line: 52, column: 4, offset: 1028 },
+                          end: { line: 52, column: 26, offset: 1050 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 28, column: 4, offset: 521 },
-                      end: { line: 28, column: 26, offset: 543 }
+                      start: { line: 52, column: 4, offset: 1028 },
+                      end: { line: 52, column: 26, offset: 1050 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 28, column: 2, offset: 519 },
-                  end: { line: 28, column: 26, offset: 543 }
+                  start: { line: 52, column: 2, offset: 1026 },
+                  end: { line: 52, column: 26, offset: 1050 }
                 }
               },
               {
@@ -56637,26 +56812,26 @@ export default [
                             type: 'text',
                             value: 'curry',
                             position: {
-                              start: { line: 29, column: 5, offset: 548 },
-                              end: { line: 29, column: 10, offset: 553 }
+                              start: { line: 53, column: 5, offset: 1055 },
+                              end: { line: 53, column: 10, offset: 1060 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 29, column: 4, offset: 547 },
-                          end: { line: 29, column: 24, offset: 567 }
+                          start: { line: 53, column: 4, offset: 1054 },
+                          end: { line: 53, column: 24, offset: 1074 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 29, column: 4, offset: 547 },
-                      end: { line: 29, column: 24, offset: 567 }
+                      start: { line: 53, column: 4, offset: 1054 },
+                      end: { line: 53, column: 24, offset: 1074 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 29, column: 2, offset: 545 },
-                  end: { line: 29, column: 24, offset: 567 }
+                  start: { line: 53, column: 2, offset: 1052 },
+                  end: { line: 53, column: 24, offset: 1074 }
                 }
               },
               {
@@ -56676,26 +56851,26 @@ export default [
                             type: 'text',
                             value: '__',
                             position: {
-                              start: { line: 30, column: 5, offset: 572 },
-                              end: { line: 30, column: 7, offset: 574 }
+                              start: { line: 54, column: 5, offset: 1079 },
+                              end: { line: 54, column: 7, offset: 1081 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 30, column: 4, offset: 571 },
-                          end: { line: 30, column: 18, offset: 585 }
+                          start: { line: 54, column: 4, offset: 1078 },
+                          end: { line: 54, column: 18, offset: 1092 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 30, column: 4, offset: 571 },
-                      end: { line: 30, column: 18, offset: 585 }
+                      start: { line: 54, column: 4, offset: 1078 },
+                      end: { line: 54, column: 18, offset: 1092 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 30, column: 2, offset: 569 },
-                  end: { line: 30, column: 18, offset: 585 }
+                  start: { line: 54, column: 2, offset: 1076 },
+                  end: { line: 54, column: 18, offset: 1092 }
                 }
               },
               {
@@ -56715,38 +56890,38 @@ export default [
                             type: 'text',
                             value: 'Transducer.map',
                             position: {
-                              start: { line: 31, column: 5, offset: 590 },
-                              end: { line: 31, column: 19, offset: 604 }
+                              start: { line: 55, column: 5, offset: 1097 },
+                              end: { line: 55, column: 19, offset: 1111 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 31, column: 4, offset: 589 },
-                          end: { line: 31, column: 42, offset: 627 }
+                          start: { line: 55, column: 4, offset: 1096 },
+                          end: { line: 55, column: 42, offset: 1134 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 31, column: 4, offset: 589 },
-                      end: { line: 31, column: 42, offset: 627 }
+                      start: { line: 55, column: 4, offset: 1096 },
+                      end: { line: 55, column: 42, offset: 1134 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 31, column: 2, offset: 587 },
-                  end: { line: 31, column: 42, offset: 627 }
+                  start: { line: 55, column: 2, offset: 1094 },
+                  end: { line: 55, column: 42, offset: 1134 }
                 }
               }
             ],
             position: {
-              start: { line: 26, column: 2, offset: 471 },
-              end: { line: 31, column: 42, offset: 627 }
+              start: { line: 50, column: 2, offset: 978 },
+              end: { line: 55, column: 42, offset: 1134 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 31, column: 42, offset: 627 }
+          end: { line: 55, column: 42, offset: 1134 }
         }
       }
     },
