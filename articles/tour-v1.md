@@ -56,9 +56,6 @@ const doMathsWithLogs = pipe([
 ])
 
 console.log(doMathsWithLogs(3))
-// input: 3
-// result of square: 9
-// { number: 3, numberSquared: 9 }
 ```
 
 The code above executes the pipeline `doMathsWithLogs`, logging a number out to the console and composing an identity operation and another Rubico pipeline into the object `{ number, numberSquared }`. The above example also introduces Rubico's `curry` operator and placeholder `__`; use these to create a partially applied function that suits any API.
@@ -82,12 +79,6 @@ iterables.forEach(pipe([
   map(square),
   console.log,
 ]))
-// [1, 2, 3, 4, 5]
-// '1491625'
-// Set { 1, 4, 9, 16, 25 }
-// Uint8Array [1, 4, 9, 16, 25]
-// { a: 1, b: 4, c: 9, d: 16, e: 25 }
-// Map { 'a' => 1, 'b' => 4, 'c' => 9, 'd' => 16, 'e' => 25 }
 ```
 
 In the above example, the Rubico operator `map` acts on a multitude of [functor](/blog/a-synchronous-functional-programming-data-types#functor) data types, including an array `[1, 2, 3, 4, 5]`, a string `'12345'`, a set `new Set([1, 2, 3, 4, 5])`, binary `new Uint8Array([1, 2, 3, 4, 5])`, a plain object `{ a: 1, b: 2, c: 3, d: 4, e: 5 }`, and a map `new Map([['a', 1], ['b', 2], ['c', 3], ['d', 4], ['e', 5]])`.
@@ -126,9 +117,9 @@ const cli = switchCase([
   log('USAGE: ...'),
 ])
 
-cli(['-h']) // USAGE: ...
-cli(['--version']) // v0.0.0
-cli(['???']) // USAGE: ...
+cli(['-h'])
+cli(['--version'])
+cli(['???'])
 ```
 
 The above example shows a declarative `cli` using the Rubico `switchCase` and `or` operators.
@@ -148,9 +139,9 @@ const myApp = tryCatch(pipe([
   },
 ]), error => console.error(error))
 
-myApp({}) // Error: userId is required but not found
+myApp({})
 
-myApp({ userId: 1 }) // validated user 1
+myApp({ userId: 1 })
 ```
 
 The example above depicts a Rubico `tryCatch` operator wrapping a pipeline created by a `pipe` operator. The catcher function `errorHandler` catches the error thrown by the function `validate` when the `userId` of `data` is undefined.
