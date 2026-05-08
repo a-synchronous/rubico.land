@@ -92,9 +92,11 @@ article > ol > li > p > a:hover {
 }
 article .code-runner {
   margin: 15px 0;
+  width: calc(100% - 20px);
 }
 article .code-viewer {
   margin: 15px 0 20px 0;
+  width: calc(100% - 20px);
 }
 article p + p {
   margin-top: 15px;
