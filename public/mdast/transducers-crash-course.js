@@ -6,7 +6,7 @@ export default {
       value: 'title: Transducers Crash Course\n' +
         'author: Richard Yufei Tong, King of Software at CLOUT\n' +
         'date: 2026-02-22\n' +
-        'updated: 2026-02-22\n' +
+        'updated: 2026-05-27\n' +
         'path: /blog/transducers-crash-course\n' +
         'description: A crash course on Rubico transducers.',
       position: {
@@ -825,16 +825,16 @@ export default {
       children: [
         {
           type: 'text',
-          value: "With Rubico's transducers, it is possible to transform asynchronous sources.",
+          value: "With Rubico's transducers, it is possible to transform asynchronous sources such as async generators.",
           position: {
             start: { line: 107, column: 1, offset: 4179 },
-            end: { line: 107, column: 77, offset: 4255 }
+            end: { line: 107, column: 102, offset: 4280 }
           }
         }
       ],
       position: {
         start: { line: 107, column: 1, offset: 4179 },
-        end: { line: 107, column: 77, offset: 4255 }
+        end: { line: 107, column: 102, offset: 4280 }
       }
     },
     {
@@ -849,16 +849,12 @@ export default {
         '  }\n' +
         '}\n' +
         '\n' +
-        'const transformed = await transform(\n' +
-        '  myAsyncSource(),\n' +
-        '  Transducer.passthrough,\n' +
-        '  []\n' +
-        ')\n' +
+        'const array = await transform(myAsyncSource(), Transducer.passthrough, [])\n' +
         '\n' +
-        'console.log(transformed)',
+        'console.log(array)',
       position: {
-        start: { line: 109, column: 1, offset: 4257 },
-        end: { line: 125, column: 4, offset: 4528 }
+        start: { line: 109, column: 1, offset: 4282 },
+        end: { line: 121, column: 4, offset: 4533 }
       }
     },
     {
@@ -866,32 +862,32 @@ export default {
       children: [
         {
           type: 'text',
-          value: 'This is powerful in comparison to the vanilla JavaScript ',
+          value: 'The above is equivalent to the below with vanilla JavaScript ',
           position: {
-            start: { line: 127, column: 1, offset: 4530 },
-            end: { line: 127, column: 58, offset: 4587 }
+            start: { line: 123, column: 1, offset: 4535 },
+            end: { line: 123, column: 62, offset: 4596 }
           }
         },
         {
           type: 'inlineCode',
           value: 'for await',
           position: {
-            start: { line: 127, column: 58, offset: 4587 },
-            end: { line: 127, column: 69, offset: 4598 }
+            start: { line: 123, column: 62, offset: 4596 },
+            end: { line: 123, column: 73, offset: 4607 }
           }
         },
         {
           type: 'text',
-          value: ', where it takes more lines to express the same operation.',
+          value: ':',
           position: {
-            start: { line: 127, column: 69, offset: 4598 },
-            end: { line: 127, column: 127, offset: 4656 }
+            start: { line: 123, column: 73, offset: 4607 },
+            end: { line: 123, column: 74, offset: 4608 }
           }
         }
       ],
       position: {
-        start: { line: 127, column: 1, offset: 4530 },
-        end: { line: 127, column: 127, offset: 4656 }
+        start: { line: 123, column: 1, offset: 4535 },
+        end: { line: 123, column: 74, offset: 4608 }
       }
     },
     {
@@ -912,8 +908,8 @@ export default {
         '}\n' +
         'console.log(array)',
       position: {
-        start: { line: 129, column: 1, offset: 4658 },
-        end: { line: 143, column: 4, offset: 4919 }
+        start: { line: 125, column: 1, offset: 4610 },
+        end: { line: 139, column: 4, offset: 4871 }
       }
     },
     {
@@ -921,10 +917,10 @@ export default {
       children: [
         {
           type: 'text',
-          value: 'Transducers are useful for creating memory efficient data transformations, and are easy to use with Rubico. You can get started with transducers ',
+          value: "Rubico's transducers are simple and useful for creating memory efficient data transformations. Get started with transducers at the ",
           position: {
-            start: { line: 145, column: 1, offset: 4921 },
-            end: { line: 145, column: 146, offset: 5066 }
+            start: { line: 141, column: 1, offset: 4873 },
+            end: { line: 141, column: 132, offset: 5004 }
           }
         },
         {
@@ -934,30 +930,30 @@ export default {
           children: [
             {
               type: 'text',
-              value: 'here',
+              value: 'docs',
               position: {
-                start: { line: 145, column: 147, offset: 5067 },
-                end: { line: 145, column: 151, offset: 5071 }
+                start: { line: 141, column: 133, offset: 5005 },
+                end: { line: 141, column: 137, offset: 5009 }
               }
             }
           ],
           position: {
-            start: { line: 145, column: 146, offset: 5066 },
-            end: { line: 145, column: 174, offset: 5094 }
+            start: { line: 141, column: 132, offset: 5004 },
+            end: { line: 141, column: 160, offset: 5032 }
           }
         },
         {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 145, column: 174, offset: 5094 },
-            end: { line: 145, column: 175, offset: 5095 }
+            start: { line: 141, column: 160, offset: 5032 },
+            end: { line: 141, column: 161, offset: 5033 }
           }
         }
       ],
       position: {
-        start: { line: 145, column: 1, offset: 4921 },
-        end: { line: 145, column: 175, offset: 5095 }
+        start: { line: 141, column: 1, offset: 4873 },
+        end: { line: 141, column: 161, offset: 5033 }
       }
     },
     {
@@ -967,14 +963,14 @@ export default {
           type: 'text',
           value: 'Further reading:',
           position: {
-            start: { line: 147, column: 1, offset: 5097 },
-            end: { line: 147, column: 17, offset: 5113 }
+            start: { line: 143, column: 1, offset: 5035 },
+            end: { line: 143, column: 17, offset: 5051 }
           }
         }
       ],
       position: {
-        start: { line: 147, column: 1, offset: 5097 },
-        end: { line: 147, column: 17, offset: 5113 }
+        start: { line: 143, column: 1, offset: 5035 },
+        end: { line: 143, column: 17, offset: 5051 }
       }
     },
     {
@@ -995,31 +991,31 @@ export default {
                   type: 'text',
                   value: 'https://tgvashworth.com/2014/08/31/csp-and-transducers.html',
                   position: {
-                    start: { line: 148, column: 4, offset: 5117 },
-                    end: { line: 148, column: 63, offset: 5176 }
+                    start: { line: 144, column: 4, offset: 5055 },
+                    end: { line: 144, column: 63, offset: 5114 }
                   }
                 }
               ],
               position: {
-                start: { line: 148, column: 4, offset: 5117 },
-                end: { line: 148, column: 63, offset: 5176 }
+                start: { line: 144, column: 4, offset: 5055 },
+                end: { line: 144, column: 63, offset: 5114 }
               }
             }
           ],
           position: {
-            start: { line: 148, column: 2, offset: 5115 },
-            end: { line: 148, column: 63, offset: 5176 }
+            start: { line: 144, column: 2, offset: 5053 },
+            end: { line: 144, column: 63, offset: 5114 }
           }
         }
       ],
       position: {
-        start: { line: 148, column: 2, offset: 5115 },
-        end: { line: 148, column: 63, offset: 5176 }
+        start: { line: 144, column: 2, offset: 5053 },
+        end: { line: 144, column: 63, offset: 5114 }
       }
     }
   ],
   position: {
     start: { line: 1, column: 1, offset: 0 },
-    end: { line: 150, column: 1, offset: 5178 }
+    end: { line: 146, column: 1, offset: 5116 }
   }
 }
