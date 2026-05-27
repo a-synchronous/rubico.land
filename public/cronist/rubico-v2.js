@@ -29361,8 +29361,8 @@ export default [
       'type Foldable = Array|Set|Map|Generator|AsyncGenerator|{ reduce: function }|Object\n' +
       'type Predicate = any=>Promise|boolean\n' +
       '\n' +
-      'every(foldable Foldable, predicate Predicate) -> result Promise|boolean\n' +
-      'every(predicate Predicate)(foldable Foldable) -> result Promise|boolean\n' +
+      'every(foldable Foldable, predicate Predicate) -> booleanResult Promise|boolean\n' +
+      'every(predicate Predicate)(foldable Foldable) -> booleanResult Promise|boolean\n' +
       '```',
     description: 'Tests a predicate concurrently across all items of a foldable. Returns true if every item tests true by the predicate.\n' +
       '\n' +
@@ -29449,17 +29449,17 @@ export default [
             value: 'type Foldable = Array|Set|Map|Generator|AsyncGenerator|{ reduce: function }|Object\n' +
               'type Predicate = any=>Promise|boolean\n' +
               '\n' +
-              'every(foldable Foldable, predicate Predicate) -> result Promise|boolean\n' +
-              'every(predicate Predicate)(foldable Foldable) -> result Promise|boolean',
+              'every(foldable Foldable, predicate Predicate) -> booleanResult Promise|boolean\n' +
+              'every(predicate Predicate)(foldable Foldable) -> booleanResult Promise|boolean',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 7, column: 4, offset: 298 }
+              end: { line: 7, column: 4, offset: 312 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 7, column: 4, offset: 298 }
+          end: { line: 7, column: 4, offset: 312 }
         }
       },
       description: {
