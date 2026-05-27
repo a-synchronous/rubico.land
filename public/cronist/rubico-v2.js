@@ -52216,13 +52216,13 @@ export default [
       '\n' +
       'type Resolver = any=>Promise|any\n' +
       '\n' +
-      'reduce(foldable Promise|Foldable, reducer Reducer) -> accumulator Promise|any\n' +
-      'reduce(foldable Promise|Foldable, reducer Reducer, initialValue Promise|any) -> accumulator Promise|any\n' +
-      'reduce(foldable Promise|Foldable, reducer Reducer, initialResolver Resolver) -> accumulator Promise|any\n' +
+      'reduce(foldable Promise|Foldable, reducer Reducer) -> result Promise|any\n' +
+      'reduce(foldable Promise|Foldable, reducer Reducer, initialValue Promise|any) -> result Promise|any\n' +
+      'reduce(foldable Promise|Foldable, reducer Reducer, initialResolver Resolver) -> result Promise|any\n' +
       '\n' +
-      'reduce(reducer Reducer)(foldable Foldable) -> accumulator Promise|any\n' +
-      'reduce(reducer Reducer, initialValue Promise|any)(foldable Foldable) -> accumulator Promise|any\n' +
-      'reduce(reducer Reducer, initialResolver Resolver)(foldable Foldable) -> accumulator Promise|any\n' +
+      'reduce(reducer Reducer)(foldable Foldable) -> result Promise|any\n' +
+      'reduce(reducer Reducer, initialValue Promise|any)(foldable Foldable) -> result Promise|any\n' +
+      'reduce(reducer Reducer, initialResolver Resolver)(foldable Foldable) -> result Promise|any\n' +
       '```',
     description: 'Reduces a foldable to an accumulated value.\n' +
       '\n' +
@@ -52440,22 +52440,22 @@ export default [
               '\n' +
               'type Resolver = any=>Promise|any\n' +
               '\n' +
-              'reduce(foldable Promise|Foldable, reducer Reducer) -> accumulator Promise|any\n' +
-              'reduce(foldable Promise|Foldable, reducer Reducer, initialValue Promise|any) -> accumulator Promise|any\n' +
-              'reduce(foldable Promise|Foldable, reducer Reducer, initialResolver Resolver) -> accumulator Promise|any\n' +
+              'reduce(foldable Promise|Foldable, reducer Reducer) -> result Promise|any\n' +
+              'reduce(foldable Promise|Foldable, reducer Reducer, initialValue Promise|any) -> result Promise|any\n' +
+              'reduce(foldable Promise|Foldable, reducer Reducer, initialResolver Resolver) -> result Promise|any\n' +
               '\n' +
-              'reduce(reducer Reducer)(foldable Foldable) -> accumulator Promise|any\n' +
-              'reduce(reducer Reducer, initialValue Promise|any)(foldable Foldable) -> accumulator Promise|any\n' +
-              'reduce(reducer Reducer, initialResolver Resolver)(foldable Foldable) -> accumulator Promise|any',
+              'reduce(reducer Reducer)(foldable Foldable) -> result Promise|any\n' +
+              'reduce(reducer Reducer, initialValue Promise|any)(foldable Foldable) -> result Promise|any\n' +
+              'reduce(reducer Reducer, initialResolver Resolver)(foldable Foldable) -> result Promise|any',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 20, column: 4, offset: 833 }
+              end: { line: 20, column: 4, offset: 803 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 20, column: 4, offset: 833 }
+          end: { line: 20, column: 4, offset: 803 }
         }
       },
       description: {
