@@ -3,22 +3,34 @@ Welcome to the Rubico tour. This tour covers high level concepts and provides ru
 ```javascript
 const {
 
-  pipe, compose,
+  // function composition
+  pipe, compose, tap,
 
-  tap, forEach,
-
+  // conditional operators
   switchCase,
 
+  // error handling
   tryCatch,
 
+  // data construction
   all, assign, get, set, pick, omit,
 
-  map, filter, flatMap, reduce, transform,
+  // iteration
+  forEach,
 
-  and, or, not, some, every,
+  // transformation
+  map, filter, reduce, transform, flatMap,
 
+  // data testing
+  some, every,
+
+  // logical operators
+  and, or, not,
+
+  // comparison operators
   eq, gt, lt, gte, lte,
 
+  // partial application
   thunkify, always, curry, __,
 
 } = rubico
