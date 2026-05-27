@@ -24415,9 +24415,9 @@ export default [
     synopsis: '```coffeescript [specscript]\n' +
       'type Predicate = (...arguments)=>Promise|boolean|any\n' +
       '\n' +
-      'and(values Array<boolean|any>) -> booleanResult boolean\n' +
-      'and(...arguments, predicatesOrValues Array<Predicate|boolean|any>) -> booleanResult Promise|boolean\n' +
-      'and(predicatesOrValues Array<Predicate|boolean|any>)(...arguments) -> booleanResult Promise|boolean\n' +
+      'and(values Array<Promise|boolean|any>) -> booleanResult boolean\n' +
+      'and(...arguments, predicatesOrValues Array<Promise|Predicate|boolean|any>) -> booleanResult Promise|boolean\n' +
+      'and(predicatesOrValues Array<Promise|Predicate|boolean|any>)(...arguments) -> booleanResult Promise|boolean\n' +
       '```',
     description: 'Logical operator. Tests an array of predicate functions, promises, or values, returning true if all predicates test true and all values are truthy.\n' +
       '\n' +
@@ -24519,18 +24519,18 @@ export default [
             meta: '[specscript]',
             value: 'type Predicate = (...arguments)=>Promise|boolean|any\n' +
               '\n' +
-              'and(values Array<boolean|any>) -> booleanResult boolean\n' +
-              'and(...arguments, predicatesOrValues Array<Predicate|boolean|any>) -> booleanResult Promise|boolean\n' +
-              'and(predicatesOrValues Array<Predicate|boolean|any>)(...arguments) -> booleanResult Promise|boolean',
+              'and(values Array<Promise|boolean|any>) -> booleanResult boolean\n' +
+              'and(...arguments, predicatesOrValues Array<Promise|Predicate|boolean|any>) -> booleanResult Promise|boolean\n' +
+              'and(predicatesOrValues Array<Promise|Predicate|boolean|any>)(...arguments) -> booleanResult Promise|boolean',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 7, column: 4, offset: 342 }
+              end: { line: 7, column: 4, offset: 366 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 7, column: 4, offset: 342 }
+          end: { line: 7, column: 4, offset: 366 }
         }
       },
       description: {
@@ -50481,9 +50481,9 @@ export default [
     synopsis: '```coffeescript [specscript]\n' +
       'type Predicate = (...arguments)=>Promise|boolean|any\n' +
       '\n' +
-      'or(values Array<boolean|any>) -> booleanResult boolean\n' +
-      'or(...arguments, predicatesOrValues Array<Predicate|boolean|any>) -> booleanResult Promise|boolean\n' +
-      'or(predicatesOrValues Array<Predicate|boolean|any>)(...arguments) -> booleanResult Promise|boolean\n' +
+      'or(values Array<Promise|boolean|any>) -> booleanResult boolean\n' +
+      'or(...arguments, predicatesOrValues Array<Promise|Predicate|boolean|any>) -> booleanResult Promise|boolean\n' +
+      'or(predicatesOrValues Array<Promise|Predicate|boolean|any>)(...arguments) -> booleanResult Promise|boolean\n' +
       '```',
     description: 'Logical operator. Tests an array of predicate functions, promises, or values, returning true if any predicate tests true or any value is truthy.\n' +
       '\n' +
@@ -50585,18 +50585,18 @@ export default [
             meta: '[specscript]',
             value: 'type Predicate = (...arguments)=>Promise|boolean|any\n' +
               '\n' +
-              'or(values Array<boolean|any>) -> booleanResult boolean\n' +
-              'or(...arguments, predicatesOrValues Array<Predicate|boolean|any>) -> booleanResult Promise|boolean\n' +
-              'or(predicatesOrValues Array<Predicate|boolean|any>)(...arguments) -> booleanResult Promise|boolean',
+              'or(values Array<Promise|boolean|any>) -> booleanResult boolean\n' +
+              'or(...arguments, predicatesOrValues Array<Promise|Predicate|boolean|any>) -> booleanResult Promise|boolean\n' +
+              'or(predicatesOrValues Array<Promise|Predicate|boolean|any>)(...arguments) -> booleanResult Promise|boolean',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 7, column: 4, offset: 339 }
+              end: { line: 7, column: 4, offset: 363 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 7, column: 4, offset: 339 }
+          end: { line: 7, column: 4, offset: 363 }
         }
       },
       description: {
