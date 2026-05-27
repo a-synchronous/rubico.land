@@ -334,6 +334,7 @@ const DocsNav = ReactElement(props => {
 
       Section([
         H4('Transducers'),
+        CoreDocsNavItem('Transducer'),
         CoreDocsNavItem('Transducer.map'),
         CoreDocsNavItem('Transducer.filter'),
         CoreDocsNavItem('Transducer.flatMap'),

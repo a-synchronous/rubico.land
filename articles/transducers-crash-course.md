@@ -56,22 +56,15 @@ type Reducer = (accumulator any, value any)=>(nextAccumulator Promise|any)
 type Transducer = Reducer=>Reducer
 ```
 
-A `Reducer` is a function that defines a relationship between an accumulator and an item in a transformation, and can be used in a reducing operation, such as with [Array.prototype.reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce).
+A reducer is a function that defines a relationship between an accumulator and an item in a transformation, and can be used in a reducing operation, such as with Rubico's [reduce](/docs/reduce) or vanilla JavaScript [Array.prototype.reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce).
 
-A `Transducer` is a function that takes a `Reducer` and returns another `Reducer`. Transducers enable function chains with reducers - pass a reducer to a transducer to create a reducer with chained functionality. Imagine dominos falling over.
+A transducer is a function that takes a reducer and returns another reducer. Transducers enable function chains with reducers - pass a reducer to a transducer to create a reducer with chained functionality. Imagine dominos falling over.
 
 ![dominoes.png](/assets/dominoes.png)
 
-It's a good exercise to implement transducers on your own. If you are interested in transducers after that, you can use transducers anywhere via Rubico's `Transducer` module. The `Transducer` module offers the core building blocks for Rubico's transducer API.
+It's a good exercise to implement transducers on your own, however Rubico offers production-ready transducers via its [Transducer](/docs/Transducer) module.
 
- * [Transducer.map](/docs/Transducer.map)
- * [Transducer.filter](/docs/Transducer.filter)
- * [Transducer.flatMap](/docs/Transducer.flatMap)
- * [Transducer.forEach](/docs/Transducer.forEach)
- * [Transducer.passthrough](/docs/Transducer.passthrough)
- * [Transducer.tryCatch](/docs/Transducer.tryCatch)
-
-A transducer must be used with a reduce function such as Array `.reduce`. Rubico provides async-capable reduce functions as the `transform` and `reduce` operators.
+A transducer must be used with a reduce function such as Array `.reduce`. Rubico provides async-capable reduce functions as the [transform](/docs/transform) and [reduce](/docs/reduce) operators.
 
 The following example shows the function pipeline `squaredOdds` used as a transducer.
 
@@ -135,8 +128,8 @@ for await (const number of myAsyncSource()) {
 console.log(array)
 ```
 
-Rubico's transducers are simple and useful for creating memory efficient data transformations. Get started with transducers at the [docs](/docs/Transducer.map).
+Rubico's transducers are simple and useful for creating memory efficient data transformations. Get started with transducers at the [docs](/docs/Transducer).
 
 Further reading:
- * https://tgvashworth.com/2014/08/31/csp-and-transducers.html
+ * [CSP and transducers in JavaScript](https://tgvashworth.com/2014/08/31/csp-and-transducers.html)
 

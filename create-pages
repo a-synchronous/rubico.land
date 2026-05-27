@@ -90,6 +90,13 @@ const main = async function (options) {
     }))
   }
 
+  console.log(`Creating docs/Transducer`)
+  await publicFs.writeFile(`docs/Transducer`, IndexHtml({
+    path: `/docs/Transducer`,
+    title: 'Transducer - Rubico documentation',
+    description: 'Transducer reference',
+  }))
+
   for (const functionName of transducerFunctionNames) {
     console.log(`Creating docs/${functionName}`)
     await publicFs.writeFile(`docs/Transducer.${functionName}`, IndexHtml({
