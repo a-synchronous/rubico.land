@@ -2,7 +2,7 @@
 title: Transducers Crash Course
 author: Richard Yufei Tong, King of Software at CLOUT
 date: 2026-02-22
-updated: 2026-02-22
+updated: 2026-05-27
 path: /blog/transducers-crash-course
 description: A crash course on Rubico transducers.
 ---
@@ -104,7 +104,7 @@ const transformedWithArrayReduce =
 console.log(transformedWithArrayReduce)
 ```
 
-With Rubico's transducers, it is possible to transform asynchronous sources.
+With Rubico's transducers, it is possible to transform asynchronous sources such as async generators.
 
 ```javascript [playground]
 const myAsyncSource = async function* () {
@@ -115,16 +115,12 @@ const myAsyncSource = async function* () {
   }
 }
 
-const transformed = await transform(
-  myAsyncSource(),
-  Transducer.passthrough,
-  []
-)
+const array = await transform(myAsyncSource(), Transducer.passthrough, [])
 
-console.log(transformed)
+console.log(array)
 ```
 
-This is powerful in comparison to the vanilla JavaScript `for await`, where it takes more lines to express the same operation.
+The above is equivalent to the below with vanilla JavaScript `for await`:
 
 ```javascript [playground]
 const myAsyncSource = async function* () {
@@ -142,7 +138,7 @@ for await (const number of myAsyncSource()) {
 console.log(array)
 ```
 
-Transducers are useful for creating memory efficient data transformations, and are easy to use with Rubico. You can get started with transducers [here](/docs/Transducer.map).
+Rubico's transducers are simple and useful for creating memory efficient data transformations. Get started with transducers at the [docs](/docs/Transducer.map).
 
 Further reading:
  * https://tgvashworth.com/2014/08/31/csp-and-transducers.html
