@@ -57501,11 +57501,11 @@ export default [
       '\n' +
       'type SemigroupResolver = any=>Promise|Semigroup\n' +
       '\n' +
-      'transform(foldable Promise|Foldable, transducer, initialValue Promise|any) -> result Promise|Semigroup\n' +
-      'transform(foldable Promise|Foldable, transducer, initialResolver SemigroupResolver) -> result Promise|Semigroup\n' +
+      'transform(foldable Promise|Foldable, transducer Transducer, initialValue Promise|any) -> result Promise|Semigroup\n' +
+      'transform(foldable Promise|Foldable, transducer Transducer, initialResolver SemigroupResolver) -> result Promise|Semigroup\n' +
       '\n' +
-      'transform(transducer, initialValue Promise|any)(foldable Foldable) -> result Promise|Semigroup\n' +
-      'transform(transducer, initialResolver SemigroupResolver)(foldable Foldable) -> result Promise|Semigroup\n' +
+      'transform(transducer Transducer, initialValue Promise|any)(foldable Foldable) -> result Promise|Semigroup\n' +
+      'transform(transducer Transducer, initialResolver SemigroupResolver)(foldable Foldable) -> result Promise|Semigroup\n' +
       '```',
     description: 'Transforms a foldable into a semigroup with a [transducer](https://rubico.land/blog/transducers-crash-course-rubico-v2).\n' +
       '\n' +
@@ -57735,20 +57735,20 @@ export default [
               '\n' +
               'type SemigroupResolver = any=>Promise|Semigroup\n' +
               '\n' +
-              'transform(foldable Promise|Foldable, transducer, initialValue Promise|any) -> result Promise|Semigroup\n' +
-              'transform(foldable Promise|Foldable, transducer, initialResolver SemigroupResolver) -> result Promise|Semigroup\n' +
+              'transform(foldable Promise|Foldable, transducer Transducer, initialValue Promise|any) -> result Promise|Semigroup\n' +
+              'transform(foldable Promise|Foldable, transducer Transducer, initialResolver SemigroupResolver) -> result Promise|Semigroup\n' +
               '\n' +
-              'transform(transducer, initialValue Promise|any)(foldable Foldable) -> result Promise|Semigroup\n' +
-              'transform(transducer, initialResolver SemigroupResolver)(foldable Foldable) -> result Promise|Semigroup',
+              'transform(transducer Transducer, initialValue Promise|any)(foldable Foldable) -> result Promise|Semigroup\n' +
+              'transform(transducer Transducer, initialResolver SemigroupResolver)(foldable Foldable) -> result Promise|Semigroup',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 15, column: 4, offset: 784 }
+              end: { line: 15, column: 4, offset: 828 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 15, column: 4, offset: 784 }
+          end: { line: 15, column: 4, offset: 828 }
         }
       },
       description: {
