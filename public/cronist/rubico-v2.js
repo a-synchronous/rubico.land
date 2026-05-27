@@ -55,6 +55,9 @@ export default [
   },
   {
     name: 'Transducer',
+    synopsis: '```coffeescript [specscript]\n' +
+      'type Reducer = (accumulator any, value any)=>(nextAccumulator Promise|any)\n' +
+      '```',
     description: 'Temporary repository of transducer functionality throughout rubico v1',
     mdast: {
       name: {
@@ -81,6 +84,25 @@ export default [
         position: {
           start: { line: 1, column: 1, offset: 0 },
           end: { line: 1, column: 11, offset: 10 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'type Reducer = (accumulator any, value any)=>(nextAccumulator Promise|any)',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 107 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 107 }
         }
       },
       description: {

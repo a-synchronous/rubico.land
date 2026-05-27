@@ -51,10 +51,7 @@ console.log(transformed)
 Now the numbers are transformed in a single pass, avoiding the memory penalty 🎉. Transducers offer many benefits and expressive power, but can be difficult to pick up. You can build intuition for transducers by starting with reducers.
 
 ```coffeescript [specscript]
-type Reducer = (
-  accumulator any,
-  value any,
-)=>(nextAccumulator Promise|any)
+type Reducer = (accumulator any, value any)=>(nextAccumulator Promise|any)
 
 type Transducer = Reducer=>Reducer
 ```
