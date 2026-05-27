@@ -64,8 +64,8 @@ const IndexHtml = function (options) {
   <script src="/codemirror/syntax/xml.js" async></script>
   <script src="/codemirror/syntax/css.js" async></script>
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179545084-1"></script>
-  <script async src="/global-scripts.js"></script>
+  <script src="https://www.googletagmanager.com/gtag/js?id=UA-179545084-1"></script>
+  <script src="/global-scripts.js"></script>
 </head>
 
 <body>
