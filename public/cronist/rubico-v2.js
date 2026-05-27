@@ -5232,100 +5232,6 @@ export default [
     fileName: '/home/richard/code/rubico.land/../rubico/_internal/TimeInLoopSuite.js'
   },
   {
-    name: 'add',
-    synopsis: 'add (a any, b any) -> a + b',
-    description: '`+` two things',
-    mdast: {
-      name: {
-        type: 'root',
-        children: [
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: 'add',
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 4, offset: 3 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 4, offset: 3 }
-            }
-          }
-        ],
-        position: {
-          start: { line: 1, column: 1, offset: 0 },
-          end: { line: 1, column: 4, offset: 3 }
-        }
-      },
-      synopsis: {
-        type: 'root',
-        children: [
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: 'add (a any, b any) -> a + b',
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 28, offset: 27 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 28, offset: 27 }
-            }
-          }
-        ],
-        position: {
-          start: { line: 1, column: 1, offset: 0 },
-          end: { line: 1, column: 28, offset: 27 }
-        }
-      },
-      description: {
-        type: 'root',
-        children: [
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'inlineCode',
-                value: '+',
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 4, offset: 3 }
-                }
-              },
-              {
-                type: 'text',
-                value: ' two things',
-                position: {
-                  start: { line: 1, column: 4, offset: 3 },
-                  end: { line: 1, column: 15, offset: 14 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 15, offset: 14 }
-            }
-          }
-        ],
-        position: {
-          start: { line: 1, column: 1, offset: 0 },
-          end: { line: 1, column: 15, offset: 14 }
-        }
-      }
-    },
-    fileName: '/home/richard/code/rubico.land/../rubico/_internal/add.js'
-  },
-  {
     name: 'always',
     synopsis: '```coffeescript [specscript]\nalways(value any) -> getter ()=>value\n```',
     description: 'Create a function that always returns a value.',
@@ -12246,7 +12152,7 @@ export default [
     name: 'asyncFunctionArrayAllSeries',
     synopsis: '```coffeescript [specscript]\n' +
       'asyncFunctionArrayAllSeries(\n' +
-      '  funcs Array<function>,\n' +
+      '  funcs Array<function|any>,\n' +
       '  args Array,\n' +
       '  result Array,\n' +
       '  funcsIndex number\n' +
@@ -12288,20 +12194,20 @@ export default [
             lang: 'coffeescript',
             meta: '[specscript]',
             value: 'asyncFunctionArrayAllSeries(\n' +
-              '  funcs Array<function>,\n' +
+              '  funcs Array<function|any>,\n' +
               '  args Array,\n' +
               '  result Array,\n' +
               '  funcsIndex number\n' +
               ') -> Promise|Array',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 8, column: 4, offset: 155 }
+              end: { line: 8, column: 4, offset: 159 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 8, column: 4, offset: 155 }
+          end: { line: 8, column: 4, offset: 159 }
         }
       },
       TODO: {
@@ -12336,7 +12242,7 @@ export default [
   {
     name: 'functionArrayAllSeries',
     synopsis: '```coffeescript [specscript]\n' +
-      'functionArrayAllSeries(funcs Array<function>, args Array) -> Promise|Array\n' +
+      'functionArrayAllSeries(funcs Array<function|any>, args Array) -> Promise|Array\n' +
       '```',
     mdast: {
       name: {
@@ -12372,16 +12278,16 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'functionArrayAllSeries(funcs Array<function>, args Array) -> Promise|Array',
+            value: 'functionArrayAllSeries(funcs Array<function|any>, args Array) -> Promise|Array',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 3, column: 4, offset: 107 }
+              end: { line: 3, column: 4, offset: 111 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 3, column: 4, offset: 107 }
+          end: { line: 3, column: 4, offset: 111 }
         }
       }
     },
@@ -12467,6 +12373,153 @@ export default [
       }
     },
     fileName: '/home/richard/code/rubico.land/../rubico/_internal/functionObjectAll.js'
+  },
+  {
+    name: 'asyncFunctionObjectAllSeries',
+    synopsis: '```coffeescript [specscript]\n' +
+      'asyncFunctionObjectAllSeries(\n' +
+      '  funcs Array<function>,\n' +
+      '  args Array,\n' +
+      '  result Array,\n' +
+      '  keys Array<string>,\n' +
+      '  keysIndex number\n' +
+      ') -> Promise|Array\n' +
+      '```',
+    TODO: 'benchmark vs regular promise handling',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'asyncFunctionObjectAllSeries',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 29, offset: 28 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 29, offset: 28 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 29, offset: 28 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'asyncFunctionObjectAllSeries(\n' +
+              '  funcs Array<function>,\n' +
+              '  args Array,\n' +
+              '  result Array,\n' +
+              '  keys Array<string>,\n' +
+              '  keysIndex number\n' +
+              ') -> Promise|Array',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 9, column: 4, offset: 177 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 9, column: 4, offset: 177 }
+        }
+      },
+      TODO: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'benchmark vs regular promise handling',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 38, offset: 37 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 38, offset: 37 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 38, offset: 37 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/functionObjectAllSeries.js'
+  },
+  {
+    name: 'functionObjectAllSeries',
+    synopsis: '```coffeescript [specscript]\n' +
+      'functionObjectAllSeries(funcs Object<function|any>, args Array) -> Promise|Array\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'functionObjectAllSeries',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 24, offset: 23 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 24, offset: 23 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 24, offset: 23 }
+        }
+      },
+      synopsis: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'functionObjectAllSeries(funcs Object<function|any>, args Array) -> Promise|Array',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 113 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 113 }
+        }
+      }
+    },
+    fileName: '/home/richard/code/rubico.land/../rubico/_internal/functionObjectAllSeries.js'
   },
   {
     name: 'generatorFunctionFlatMap',
@@ -23008,13 +23061,13 @@ export default [
       'type Resolver = (...arguments)=>Promise|any\n' +
       'type ResolverOrValue = Resolver|Promise|any\n' +
       '\n' +
-      'all(Promise|Array<Promise|any>) -> Promise|Array\n' +
-      'all(...arguments, Array<ResolverOrValue>) -> Promise|Array\n' +
-      'all(Array<ResolverOrValue>)(...arguments) -> Promise|Array\n' +
+      'all(values Promise|Array<Promise|any>) -> result Promise|Array\n' +
+      'all(...arguments, valuesOrFuncs Array<ResolverOrValue>) -> result Promise|Array\n' +
+      'all(valuesOrFuncs Array<ResolverOrValue>)(...arguments) -> result Promise|Array\n' +
       '\n' +
-      'all(Promise|Object<Promise|any>) -> Promise|Object\n' +
-      'all(...arguments, Object<ResolverOrValue>) -> Promise|Object\n' +
-      'all(Object<ResolverOrValue>)(...arguments) -> Promise|Object\n' +
+      'all(values Promise|Object<Promise|any>) -> result Promise|Object\n' +
+      'all(...arguments, valuesOrFuncs Object<ResolverOrValue>) -> result Promise|Object\n' +
+      'all(valuesOrFuncs Object<ResolverOrValue>)(...arguments) -> result Promise|Object\n' +
       '```',
     description: 'Function composer and data constructor. Constructs an array if provided an array of resolvers, promises, or values. Constructs an object if provided an object of resolvers, promises, or values. `all` returns a constructor function if provided resolvers. Otherwise, `all` returns the constructed array or object directly.\n' +
       '\n' +
@@ -23129,22 +23182,22 @@ export default [
             value: 'type Resolver = (...arguments)=>Promise|any\n' +
               'type ResolverOrValue = Resolver|Promise|any\n' +
               '\n' +
-              'all(Promise|Array<Promise|any>) -> Promise|Array\n' +
-              'all(...arguments, Array<ResolverOrValue>) -> Promise|Array\n' +
-              'all(Array<ResolverOrValue>)(...arguments) -> Promise|Array\n' +
+              'all(values Promise|Array<Promise|any>) -> result Promise|Array\n' +
+              'all(...arguments, valuesOrFuncs Array<ResolverOrValue>) -> result Promise|Array\n' +
+              'all(valuesOrFuncs Array<ResolverOrValue>)(...arguments) -> result Promise|Array\n' +
               '\n' +
-              'all(Promise|Object<Promise|any>) -> Promise|Object\n' +
-              'all(...arguments, Object<ResolverOrValue>) -> Promise|Object\n' +
-              'all(Object<ResolverOrValue>)(...arguments) -> Promise|Object',
+              'all(values Promise|Object<Promise|any>) -> result Promise|Object\n' +
+              'all(...arguments, valuesOrFuncs Object<ResolverOrValue>) -> result Promise|Object\n' +
+              'all(valuesOrFuncs Object<ResolverOrValue>)(...arguments) -> result Promise|Object',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 12, column: 4, offset: 462 }
+              end: { line: 12, column: 4, offset: 574 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 12, column: 4, offset: 462 }
+          end: { line: 12, column: 4, offset: 574 }
         }
       },
       description: {
@@ -23737,9 +23790,16 @@ export default [
   {
     name: 'all.series',
     synopsis: '```coffeescript [specscript]\n' +
-      'all.series(...arguments, Array<function>) -> Promise|Array\n' +
+      'type Resolver = (...arguments)=>Promise|any\n' +
+      'type ResolverOrValue = Resolver|Promise|any\n' +
       '\n' +
-      'all.series(Array<function>)(...arguments) -> Promise|Array\n' +
+      'all.series(values Promise|Array<Promise|any>) -> result Promise|Array\n' +
+      'all.series(...arguments, valuesOrFuncs Array<ResolverOrValue>) -> result Promise|Array\n' +
+      'all.series(valuesOrFuncs Array<ResolverOrValue>)(...arguments) -> result Promise|Array\n' +
+      '\n' +
+      'all.series(values Promise|Object<Promise|any>) -> result Promise|Object\n' +
+      'all.series(...arguments, valuesOrFuncs Object<ResolverOrValue>) -> result Promise|Object\n' +
+      'all.series(valuesOrFuncs Object<ResolverOrValue>)(...arguments) -> result Promise|Object\n' +
       '```',
     description: '[all](/docs/all) with serial execution.\n' +
       '\n' +
@@ -23789,18 +23849,25 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'all.series(...arguments, Array<function>) -> Promise|Array\n' +
+            value: 'type Resolver = (...arguments)=>Promise|any\n' +
+              'type ResolverOrValue = Resolver|Promise|any\n' +
               '\n' +
-              'all.series(Array<function>)(...arguments) -> Promise|Array',
+              'all.series(values Promise|Array<Promise|any>) -> result Promise|Array\n' +
+              'all.series(...arguments, valuesOrFuncs Array<ResolverOrValue>) -> result Promise|Array\n' +
+              'all.series(valuesOrFuncs Array<ResolverOrValue>)(...arguments) -> result Promise|Array\n' +
+              '\n' +
+              'all.series(values Promise|Object<Promise|any>) -> result Promise|Object\n' +
+              'all.series(...arguments, valuesOrFuncs Object<ResolverOrValue>) -> result Promise|Object\n' +
+              'all.series(valuesOrFuncs Object<ResolverOrValue>)(...arguments) -> result Promise|Object',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 151 }
+              end: { line: 12, column: 4, offset: 616 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 5, column: 4, offset: 151 }
+          end: { line: 12, column: 4, offset: 616 }
         }
       },
       description: {
@@ -24348,9 +24415,9 @@ export default [
     synopsis: '```coffeescript [specscript]\n' +
       'type Predicate = (...arguments)=>Promise|boolean|any\n' +
       '\n' +
-      'and(values Array<boolean|any>) -> testResult boolean\n' +
-      'and(...arguments, predicatesOrValues Array<Predicate|boolean|any>) -> testResult Promise|boolean\n' +
-      'and(predicatesOrValues Array<Predicate|boolean|any>)(...arguments) -> testResult Promise|boolean\n' +
+      'and(values Array<boolean|any>) -> booleanResult boolean\n' +
+      'and(...arguments, predicatesOrValues Array<Predicate|boolean|any>) -> booleanResult Promise|boolean\n' +
+      'and(predicatesOrValues Array<Predicate|boolean|any>)(...arguments) -> booleanResult Promise|boolean\n' +
       '```',
     description: 'Logical operator. Tests an array of predicate functions, promises, or values, returning true if all predicates test true and all values are truthy.\n' +
       '\n' +
@@ -24452,18 +24519,18 @@ export default [
             meta: '[specscript]',
             value: 'type Predicate = (...arguments)=>Promise|boolean|any\n' +
               '\n' +
-              'and(values Array<boolean|any>) -> testResult boolean\n' +
-              'and(...arguments, predicatesOrValues Array<Predicate|boolean|any>) -> testResult Promise|boolean\n' +
-              'and(predicatesOrValues Array<Predicate|boolean|any>)(...arguments) -> testResult Promise|boolean',
+              'and(values Array<boolean|any>) -> booleanResult boolean\n' +
+              'and(...arguments, predicatesOrValues Array<Predicate|boolean|any>) -> booleanResult Promise|boolean\n' +
+              'and(predicatesOrValues Array<Predicate|boolean|any>)(...arguments) -> booleanResult Promise|boolean',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 7, column: 4, offset: 333 }
+              end: { line: 7, column: 4, offset: 342 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 7, column: 4, offset: 333 }
+          end: { line: 7, column: 4, offset: 342 }
         }
       },
       description: {
@@ -24893,8 +24960,8 @@ export default [
     synopsis: '```coffeescript [specscript]\n' +
       'type Resolver = any=>Promise|any\n' +
       '\n' +
-      'assign(Promise|Object, Object<Resolver|Promise|any>) -> Promise|Object\n' +
-      'assign(Object<Resolver|Promise|any>)(Object) -> Promise|Object\n' +
+      'assign(object Promise|Object, valuesOrFuncs Object<Resolver|Promise|any>) -> result Promise|Object\n' +
+      'assign(valuesOrFuncs Object<Resolver|Promise|any>)(object Object) -> result Promise|Object\n' +
       '```',
     description: 'Function composer and data constructor. Constructs a new object from an argument object and an object of resolvers, promises, or values.\n' +
       '\n' +
@@ -24990,17 +25057,17 @@ export default [
             meta: '[specscript]',
             value: 'type Resolver = any=>Promise|any\n' +
               '\n' +
-              'assign(Promise|Object, Object<Resolver|Promise|any>) -> Promise|Object\n' +
-              'assign(Object<Resolver|Promise|any>)(Object) -> Promise|Object',
+              'assign(object Promise|Object, valuesOrFuncs Object<Resolver|Promise|any>) -> result Promise|Object\n' +
+              'assign(valuesOrFuncs Object<Resolver|Promise|any>)(object Object) -> result Promise|Object',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 6, column: 4, offset: 200 }
+              end: { line: 6, column: 4, offset: 256 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 6, column: 4, offset: 200 }
+          end: { line: 6, column: 4, offset: 256 }
         }
       },
       description: {
@@ -25526,9 +25593,9 @@ export default [
       '\n' +
       'funcs [Function, ...Array<UnaryFunction>]\n' +
       '\n' +
-      'compose(funcs)(...arguments) -> Promise|any\n' +
-      'compose(...arguments, funcs) -> Promise|any\n' +
-      'compose(...funcs)(...arguments) -> Promise|any\n' +
+      'compose(funcs)(...arguments) -> result Promise|any\n' +
+      'compose(...arguments, funcs) -> result Promise|any\n' +
+      'compose(...funcs)(...arguments) -> result Promise|any\n' +
       '```',
     description: 'Creates a function composition from multiple functions. Each function in the function composition is evaluated in series starting from the last function in the function composition, passing its return value as the first and only argument to the previous function in the function composition. The result of the execution of a function composition is the return value of the first function in the function composition. If any function in the function composition is asynchronous, the result of the execution of the function composition is a promise.\n' +
       '\n' +
@@ -25606,18 +25673,18 @@ export default [
               '\n' +
               'funcs [Function, ...Array<UnaryFunction>]\n' +
               '\n' +
-              'compose(funcs)(...arguments) -> Promise|any\n' +
-              'compose(...arguments, funcs) -> Promise|any\n' +
-              'compose(...funcs)(...arguments) -> Promise|any',
+              'compose(funcs)(...arguments) -> result Promise|any\n' +
+              'compose(...arguments, funcs) -> result Promise|any\n' +
+              'compose(...funcs)(...arguments) -> result Promise|any',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 10, column: 4, offset: 293 }
+              end: { line: 10, column: 4, offset: 314 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 10, column: 4, offset: 293 }
+          end: { line: 10, column: 4, offset: 314 }
         }
       },
       description: {
@@ -28622,14 +28689,14 @@ export default [
     synopsis: '```coffeescript [specscript]\n' +
       'type Resolver = (...arguments)=>Promise|any\n' +
       '\n' +
-      'eq(leftValue Promise|any, rightValue Promise|any) -> Promise|boolean\n' +
-      'eq(...arguments, leftResolver Resolver, rightValue Promise|any) -> Promise|boolean\n' +
-      'eq(...arguments, leftValue Promise|any, rightResolver Resolver) -> Promise|boolean\n' +
-      'eq(...arguments, leftResolver Resolver, rightResolver Resolver) -> Promise|boolean\n' +
+      'eq(leftValue Promise|any, rightValue Promise|any) -> booleanResult Promise|boolean\n' +
+      'eq(...arguments, leftResolver Resolver, rightValue Promise|any) -> booleanResult Promise|boolean\n' +
+      'eq(...arguments, leftValue Promise|any, rightResolver Resolver) -> booleanResult Promise|boolean\n' +
+      'eq(...arguments, leftResolver Resolver, rightResolver Resolver) -> booleanResult Promise|boolean\n' +
       '\n' +
-      'eq(leftResolver Resolver, rightValue Promise|any)(...arguments) -> Promise|boolean\n' +
-      'eq(leftValue Promise|any, rightResolver Resolver)(...arguments) -> Promise|boolean\n' +
-      'eq(leftResolver Resolver, rightResolver Resolver)(...arguments) -> Promise|boolean\n' +
+      'eq(leftResolver Resolver, rightValue Promise|any)(...arguments) -> booleanResult Promise|boolean\n' +
+      'eq(leftValue Promise|any, rightResolver Resolver)(...arguments) -> booleanResult Promise|boolean\n' +
+      'eq(leftResolver Resolver, rightResolver Resolver)(...arguments) -> booleanResult Promise|boolean\n' +
       '```',
     description: 'Comparison operator. Tests for equality (`==`) between two values.\n' +
       '\n' +
@@ -28731,23 +28798,23 @@ export default [
             meta: '[specscript]',
             value: 'type Resolver = (...arguments)=>Promise|any\n' +
               '\n' +
-              'eq(leftValue Promise|any, rightValue Promise|any) -> Promise|boolean\n' +
-              'eq(...arguments, leftResolver Resolver, rightValue Promise|any) -> Promise|boolean\n' +
-              'eq(...arguments, leftValue Promise|any, rightResolver Resolver) -> Promise|boolean\n' +
-              'eq(...arguments, leftResolver Resolver, rightResolver Resolver) -> Promise|boolean\n' +
+              'eq(leftValue Promise|any, rightValue Promise|any) -> booleanResult Promise|boolean\n' +
+              'eq(...arguments, leftResolver Resolver, rightValue Promise|any) -> booleanResult Promise|boolean\n' +
+              'eq(...arguments, leftValue Promise|any, rightResolver Resolver) -> booleanResult Promise|boolean\n' +
+              'eq(...arguments, leftResolver Resolver, rightResolver Resolver) -> booleanResult Promise|boolean\n' +
               '\n' +
-              'eq(leftResolver Resolver, rightValue Promise|any)(...arguments) -> Promise|boolean\n' +
-              'eq(leftValue Promise|any, rightResolver Resolver)(...arguments) -> Promise|boolean\n' +
-              'eq(leftResolver Resolver, rightResolver Resolver)(...arguments) -> Promise|boolean',
+              'eq(leftResolver Resolver, rightValue Promise|any)(...arguments) -> booleanResult Promise|boolean\n' +
+              'eq(leftValue Promise|any, rightResolver Resolver)(...arguments) -> booleanResult Promise|boolean\n' +
+              'eq(leftResolver Resolver, rightResolver Resolver)(...arguments) -> booleanResult Promise|boolean',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 12, column: 4, offset: 645 }
+              end: { line: 12, column: 4, offset: 743 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 12, column: 4, offset: 645 }
+          end: { line: 12, column: 4, offset: 743 }
         }
       },
       description: {
@@ -29294,10 +29361,8 @@ export default [
       'type Foldable = Array|Set|Map|Generator|AsyncGenerator|{ reduce: function }|Object\n' +
       'type Predicate = any=>Promise|boolean\n' +
       '\n' +
-      'predicate Predicate\n' +
-      '\n' +
-      'every(foldable Foldable, predicate) -> result Promise|boolean\n' +
-      'every(predicate)(foldable Foldable) -> result Promise|boolean\n' +
+      'every(foldable Foldable, predicate Predicate) -> result Promise|boolean\n' +
+      'every(predicate Predicate)(foldable Foldable) -> result Promise|boolean\n' +
       '```',
     description: 'Tests a predicate concurrently across all items of a foldable. Returns true if every item tests true by the predicate.\n' +
       '\n' +
@@ -29384,19 +29449,17 @@ export default [
             value: 'type Foldable = Array|Set|Map|Generator|AsyncGenerator|{ reduce: function }|Object\n' +
               'type Predicate = any=>Promise|boolean\n' +
               '\n' +
-              'predicate Predicate\n' +
-              '\n' +
-              'every(foldable Foldable, predicate) -> result Promise|boolean\n' +
-              'every(predicate)(foldable Foldable) -> result Promise|boolean',
+              'every(foldable Foldable, predicate Predicate) -> result Promise|boolean\n' +
+              'every(predicate Predicate)(foldable Foldable) -> result Promise|boolean',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 9, column: 4, offset: 299 }
+              end: { line: 7, column: 4, offset: 298 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 9, column: 4, offset: 299 }
+          end: { line: 7, column: 4, offset: 298 }
         }
       },
       description: {
@@ -34077,17 +34140,16 @@ export default [
   {
     name: 'get',
     synopsis: '```coffeescript [specscript]\n' +
-      'path string|number|Array<string|number>\n' +
-      'defaultValue any\n' +
-      'defaultResolver function\n' +
+      'type Path = string|number|Array<string|number>\n' +
+      'type Resolver = any=>Promise|any\n' +
       '\n' +
-      'get(Promise|Object, path) -> Promise|any\n' +
-      'get(Promise|Object, path, defaultValue) -> Promise|any\n' +
-      'get(Promise|Object, path, defaultResolver) -> Promise|any\n' +
+      'get(object Promise|Object, path Path) -> result Promise|any\n' +
+      'get(object Promise|Object, path Path, defaultValue any) -> result Promise|any\n' +
+      'get(object Promise|Object, path Path, defaultResolver Resolver) -> result Promise|any\n' +
       '\n' +
-      'get(path)(Object) -> Promise|any\n' +
-      'get(path, defaultValue)(Object) -> Promise|any\n' +
-      'get(path, defaultResolver)(Object) -> Promise|any\n' +
+      'get(path Path)(object Object) -> result Promise|any\n' +
+      'get(path Path, defaultValue any)(object Object) -> result Promise|any\n' +
+      'get(path Path, defaultResolver Resolver)(object Object) -> result Promise|any\n' +
       '```',
     description: 'Property accessor. Accesses the property of an object given a path denoted by a string, number, or array of string or numbers.\n' +
       '\n' +
@@ -34207,26 +34269,25 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'path string|number|Array<string|number>\n' +
-              'defaultValue any\n' +
-              'defaultResolver function\n' +
+            value: 'type Path = string|number|Array<string|number>\n' +
+              'type Resolver = any=>Promise|any\n' +
               '\n' +
-              'get(Promise|Object, path) -> Promise|any\n' +
-              'get(Promise|Object, path, defaultValue) -> Promise|any\n' +
-              'get(Promise|Object, path, defaultResolver) -> Promise|any\n' +
+              'get(object Promise|Object, path Path) -> result Promise|any\n' +
+              'get(object Promise|Object, path Path, defaultValue any) -> result Promise|any\n' +
+              'get(object Promise|Object, path Path, defaultResolver Resolver) -> result Promise|any\n' +
               '\n' +
-              'get(path)(Object) -> Promise|any\n' +
-              'get(path, defaultValue)(Object) -> Promise|any\n' +
-              'get(path, defaultResolver)(Object) -> Promise|any',
+              'get(path Path)(object Object) -> result Promise|any\n' +
+              'get(path Path, defaultValue any)(object Object) -> result Promise|any\n' +
+              'get(path Path, defaultResolver Resolver)(object Object) -> result Promise|any',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 13, column: 4, offset: 400 }
+              end: { line: 12, column: 4, offset: 538 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 13, column: 4, offset: 400 }
+          end: { line: 12, column: 4, offset: 538 }
         }
       },
       description: {
@@ -34946,14 +35007,14 @@ export default [
     synopsis: '```coffeescript [specscript]\n' +
       'type Resolver = (...arguments)=>Promise|any\n' +
       '\n' +
-      'gt(leftValue Promise|any, rightValue Promise|any) -> Promise|boolean\n' +
-      'gt(...arguments, leftResolver Resolver, rightValue Promise|any) -> Promise|boolean\n' +
-      'gt(...arguments, leftValue Promise|any, rightResolver Resolver) -> Promise|boolean\n' +
-      'gt(...arguments, leftResolver Resolver, rightResolver Resolver) -> Promise|boolean\n' +
+      'gt(leftValue Promise|any, rightValue Promise|any) -> booleanResult Promise|boolean\n' +
+      'gt(...arguments, leftResolver Resolver, rightValue Promise|any) -> booleanResult Promise|boolean\n' +
+      'gt(...arguments, leftValue Promise|any, rightResolver Resolver) -> booleanResult Promise|boolean\n' +
+      'gt(...arguments, leftResolver Resolver, rightResolver Resolver) -> booleanResult Promise|boolean\n' +
       '\n' +
-      'gt(leftResolver Resolver, rightValue Promise|any)(...arguments) -> Promise|boolean\n' +
-      'gt(leftValue Promise|any, rightResolver Resolver)(...arguments) -> Promise|boolean\n' +
-      'gt(leftResolver Resolver, rightResolver Resolver)(...arguments) -> Promise|boolean\n' +
+      'gt(leftResolver Resolver, rightValue Promise|any)(...arguments) -> booleanResult Promise|boolean\n' +
+      'gt(leftValue Promise|any, rightResolver Resolver)(...arguments) -> booleanResult Promise|boolean\n' +
+      'gt(leftResolver Resolver, rightResolver Resolver)(...arguments) -> booleanResult Promise|boolean\n' +
       '```',
     description: 'Comparison operator. Tests if a value is greater than (`>`) another value.\n' +
       '\n' +
@@ -35043,23 +35104,23 @@ export default [
             meta: '[specscript]',
             value: 'type Resolver = (...arguments)=>Promise|any\n' +
               '\n' +
-              'gt(leftValue Promise|any, rightValue Promise|any) -> Promise|boolean\n' +
-              'gt(...arguments, leftResolver Resolver, rightValue Promise|any) -> Promise|boolean\n' +
-              'gt(...arguments, leftValue Promise|any, rightResolver Resolver) -> Promise|boolean\n' +
-              'gt(...arguments, leftResolver Resolver, rightResolver Resolver) -> Promise|boolean\n' +
+              'gt(leftValue Promise|any, rightValue Promise|any) -> booleanResult Promise|boolean\n' +
+              'gt(...arguments, leftResolver Resolver, rightValue Promise|any) -> booleanResult Promise|boolean\n' +
+              'gt(...arguments, leftValue Promise|any, rightResolver Resolver) -> booleanResult Promise|boolean\n' +
+              'gt(...arguments, leftResolver Resolver, rightResolver Resolver) -> booleanResult Promise|boolean\n' +
               '\n' +
-              'gt(leftResolver Resolver, rightValue Promise|any)(...arguments) -> Promise|boolean\n' +
-              'gt(leftValue Promise|any, rightResolver Resolver)(...arguments) -> Promise|boolean\n' +
-              'gt(leftResolver Resolver, rightResolver Resolver)(...arguments) -> Promise|boolean',
+              'gt(leftResolver Resolver, rightValue Promise|any)(...arguments) -> booleanResult Promise|boolean\n' +
+              'gt(leftValue Promise|any, rightResolver Resolver)(...arguments) -> booleanResult Promise|boolean\n' +
+              'gt(leftResolver Resolver, rightResolver Resolver)(...arguments) -> booleanResult Promise|boolean',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 12, column: 4, offset: 645 }
+              end: { line: 12, column: 4, offset: 743 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 12, column: 4, offset: 645 }
+          end: { line: 12, column: 4, offset: 743 }
         }
       },
       description: {
@@ -35561,14 +35622,14 @@ export default [
     synopsis: '```coffeescript [specscript]\n' +
       'type Resolver = (...arguments)=>Promise|any\n' +
       '\n' +
-      'gte(leftValue Promise|any, rightValue Promise|any) -> Promise|boolean\n' +
-      'gte(...arguments, leftResolver Resolver, rightValue Promise|any) -> Promise|boolean\n' +
-      'gte(...arguments, leftValue Promise|any, rightResolver Resolver) -> Promise|boolean\n' +
-      'gte(...arguments, leftResolver Resolver, rightResolver Resolver) -> Promise|boolean\n' +
+      'gte(leftValue Promise|any, rightValue Promise|any) -> booleanResult Promise|boolean\n' +
+      'gte(...arguments, leftResolver Resolver, rightValue Promise|any) -> booleanResult Promise|boolean\n' +
+      'gte(...arguments, leftValue Promise|any, rightResolver Resolver) -> booleanResult Promise|boolean\n' +
+      'gte(...arguments, leftResolver Resolver, rightResolver Resolver) -> booleanResult Promise|boolean\n' +
       '\n' +
-      'gte(leftResolver Resolver, rightValue Promise|any)(...arguments) -> Promise|boolean\n' +
-      'gte(leftValue Promise|any, rightResolver Resolver)(...arguments) -> Promise|boolean\n' +
-      'gte(leftResolver Resolver, rightResolver Resolver)(...arguments) -> Promise|boolean\n' +
+      'gte(leftResolver Resolver, rightValue Promise|any)(...arguments) -> booleanResult Promise|boolean\n' +
+      'gte(leftValue Promise|any, rightResolver Resolver)(...arguments) -> booleanResult Promise|boolean\n' +
+      'gte(leftResolver Resolver, rightResolver Resolver)(...arguments) -> booleanResult Promise|boolean\n' +
       '```',
     description: 'Comparison operator. Tests if a value is greater than or equal (`>=`) to another value.\n' +
       '\n' +
@@ -35662,23 +35723,23 @@ export default [
             meta: '[specscript]',
             value: 'type Resolver = (...arguments)=>Promise|any\n' +
               '\n' +
-              'gte(leftValue Promise|any, rightValue Promise|any) -> Promise|boolean\n' +
-              'gte(...arguments, leftResolver Resolver, rightValue Promise|any) -> Promise|boolean\n' +
-              'gte(...arguments, leftValue Promise|any, rightResolver Resolver) -> Promise|boolean\n' +
-              'gte(...arguments, leftResolver Resolver, rightResolver Resolver) -> Promise|boolean\n' +
+              'gte(leftValue Promise|any, rightValue Promise|any) -> booleanResult Promise|boolean\n' +
+              'gte(...arguments, leftResolver Resolver, rightValue Promise|any) -> booleanResult Promise|boolean\n' +
+              'gte(...arguments, leftValue Promise|any, rightResolver Resolver) -> booleanResult Promise|boolean\n' +
+              'gte(...arguments, leftResolver Resolver, rightResolver Resolver) -> booleanResult Promise|boolean\n' +
               '\n' +
-              'gte(leftResolver Resolver, rightValue Promise|any)(...arguments) -> Promise|boolean\n' +
-              'gte(leftValue Promise|any, rightResolver Resolver)(...arguments) -> Promise|boolean\n' +
-              'gte(leftResolver Resolver, rightResolver Resolver)(...arguments) -> Promise|boolean',
+              'gte(leftResolver Resolver, rightValue Promise|any)(...arguments) -> booleanResult Promise|boolean\n' +
+              'gte(leftValue Promise|any, rightResolver Resolver)(...arguments) -> booleanResult Promise|boolean\n' +
+              'gte(leftResolver Resolver, rightResolver Resolver)(...arguments) -> booleanResult Promise|boolean',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 12, column: 4, offset: 652 }
+              end: { line: 12, column: 4, offset: 750 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 12, column: 4, offset: 652 }
+          end: { line: 12, column: 4, offset: 750 }
         }
       },
       description: {
@@ -36188,14 +36249,14 @@ export default [
     synopsis: '```coffeescript [specscript]\n' +
       'type Resolver = (...arguments)=>Promise|any\n' +
       '\n' +
-      'lt(leftValue Promise|any, rightValue Promise|any) -> Promise|boolean\n' +
-      'lt(...arguments, leftResolver Resolver, rightValue Promise|any) -> Promise|boolean\n' +
-      'lt(...arguments, leftValue Promise|any, rightResolver Resolver) -> Promise|boolean\n' +
-      'lt(...arguments, leftResolver Resolver, rightResolver Resolver) -> Promise|boolean\n' +
+      'lt(leftValue Promise|any, rightValue Promise|any) -> booleanResult Promise|boolean\n' +
+      'lt(...arguments, leftResolver Resolver, rightValue Promise|any) -> booleanResult Promise|boolean\n' +
+      'lt(...arguments, leftValue Promise|any, rightResolver Resolver) -> booleanResult Promise|boolean\n' +
+      'lt(...arguments, leftResolver Resolver, rightResolver Resolver) -> booleanResult Promise|boolean\n' +
       '\n' +
-      'lt(leftResolver Resolver, rightValue Promise|any)(...arguments) -> Promise|boolean\n' +
-      'lt(leftValue Promise|any, rightResolver Resolver)(...arguments) -> Promise|boolean\n' +
-      'lt(leftResolver Resolver, rightResolver Resolver)(...arguments) -> Promise|boolean\n' +
+      'lt(leftResolver Resolver, rightValue Promise|any)(...arguments) -> booleanResult Promise|boolean\n' +
+      'lt(leftValue Promise|any, rightResolver Resolver)(...arguments) -> booleanResult Promise|boolean\n' +
+      'lt(leftResolver Resolver, rightResolver Resolver)(...arguments) -> booleanResult Promise|boolean\n' +
       '```',
     description: 'Comparison operator. Tests if a value is less than (`<`) another value.\n' +
       '\n' +
@@ -36287,23 +36348,23 @@ export default [
             meta: '[specscript]',
             value: 'type Resolver = (...arguments)=>Promise|any\n' +
               '\n' +
-              'lt(leftValue Promise|any, rightValue Promise|any) -> Promise|boolean\n' +
-              'lt(...arguments, leftResolver Resolver, rightValue Promise|any) -> Promise|boolean\n' +
-              'lt(...arguments, leftValue Promise|any, rightResolver Resolver) -> Promise|boolean\n' +
-              'lt(...arguments, leftResolver Resolver, rightResolver Resolver) -> Promise|boolean\n' +
+              'lt(leftValue Promise|any, rightValue Promise|any) -> booleanResult Promise|boolean\n' +
+              'lt(...arguments, leftResolver Resolver, rightValue Promise|any) -> booleanResult Promise|boolean\n' +
+              'lt(...arguments, leftValue Promise|any, rightResolver Resolver) -> booleanResult Promise|boolean\n' +
+              'lt(...arguments, leftResolver Resolver, rightResolver Resolver) -> booleanResult Promise|boolean\n' +
               '\n' +
-              'lt(leftResolver Resolver, rightValue Promise|any)(...arguments) -> Promise|boolean\n' +
-              'lt(leftValue Promise|any, rightResolver Resolver)(...arguments) -> Promise|boolean\n' +
-              'lt(leftResolver Resolver, rightResolver Resolver)(...arguments) -> Promise|boolean',
+              'lt(leftResolver Resolver, rightValue Promise|any)(...arguments) -> booleanResult Promise|boolean\n' +
+              'lt(leftValue Promise|any, rightResolver Resolver)(...arguments) -> booleanResult Promise|boolean\n' +
+              'lt(leftResolver Resolver, rightResolver Resolver)(...arguments) -> booleanResult Promise|boolean',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 12, column: 4, offset: 645 }
+              end: { line: 12, column: 4, offset: 743 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 12, column: 4, offset: 645 }
+          end: { line: 12, column: 4, offset: 743 }
         }
       },
       description: {
@@ -36807,14 +36868,14 @@ export default [
     synopsis: '```coffeescript [specscript]\n' +
       'type Resolver = (...arguments)=>Promise|any\n' +
       '\n' +
-      'lte(leftValue Promise|any, rightValue Promise|any) -> Promise|boolean\n' +
-      'lte(...arguments, leftResolver Resolver, rightValue Promise|any) -> Promise|boolean\n' +
-      'lte(...arguments, leftValue Promise|any, rightResolver Resolver) -> Promise|boolean\n' +
-      'lte(...arguments, leftResolver Resolver, rightResolver Resolver) -> Promise|boolean\n' +
+      'lte(leftValue Promise|any, rightValue Promise|any) -> booleanResult Promise|boolean\n' +
+      'lte(...arguments, leftResolver Resolver, rightValue Promise|any) -> booleanResult Promise|boolean\n' +
+      'lte(...arguments, leftValue Promise|any, rightResolver Resolver) -> booleanResult Promise|boolean\n' +
+      'lte(...arguments, leftResolver Resolver, rightResolver Resolver) -> booleanResult Promise|boolean\n' +
       '\n' +
-      'lte(leftResolver Resolver, rightValue Promise|any)(...arguments) -> Promise|boolean\n' +
-      'lte(leftValue Promise|any, rightResolver Resolver)(...arguments) -> Promise|boolean\n' +
-      'lte(leftResolver Resolver, rightResolver Resolver)(...arguments) -> Promise|boolean\n' +
+      'lte(leftResolver Resolver, rightValue Promise|any)(...arguments) -> booleanResult Promise|boolean\n' +
+      'lte(leftValue Promise|any, rightResolver Resolver)(...arguments) -> booleanResult Promise|boolean\n' +
+      'lte(leftResolver Resolver, rightResolver Resolver)(...arguments) -> booleanResult Promise|boolean\n' +
       '```',
     description: 'Comparison operator. Tests if a value is less than or equal (`<=`) to another value.\n' +
       '\n' +
@@ -36906,23 +36967,23 @@ export default [
             meta: '[specscript]',
             value: 'type Resolver = (...arguments)=>Promise|any\n' +
               '\n' +
-              'lte(leftValue Promise|any, rightValue Promise|any) -> Promise|boolean\n' +
-              'lte(...arguments, leftResolver Resolver, rightValue Promise|any) -> Promise|boolean\n' +
-              'lte(...arguments, leftValue Promise|any, rightResolver Resolver) -> Promise|boolean\n' +
-              'lte(...arguments, leftResolver Resolver, rightResolver Resolver) -> Promise|boolean\n' +
+              'lte(leftValue Promise|any, rightValue Promise|any) -> booleanResult Promise|boolean\n' +
+              'lte(...arguments, leftResolver Resolver, rightValue Promise|any) -> booleanResult Promise|boolean\n' +
+              'lte(...arguments, leftValue Promise|any, rightResolver Resolver) -> booleanResult Promise|boolean\n' +
+              'lte(...arguments, leftResolver Resolver, rightResolver Resolver) -> booleanResult Promise|boolean\n' +
               '\n' +
-              'lte(leftResolver Resolver, rightValue Promise|any)(...arguments) -> Promise|boolean\n' +
-              'lte(leftValue Promise|any, rightResolver Resolver)(...arguments) -> Promise|boolean\n' +
-              'lte(leftResolver Resolver, rightResolver Resolver)(...arguments) -> Promise|boolean',
+              'lte(leftResolver Resolver, rightValue Promise|any)(...arguments) -> booleanResult Promise|boolean\n' +
+              'lte(leftValue Promise|any, rightResolver Resolver)(...arguments) -> booleanResult Promise|boolean\n' +
+              'lte(leftResolver Resolver, rightResolver Resolver)(...arguments) -> booleanResult Promise|boolean',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 12, column: 4, offset: 652 }
+              end: { line: 12, column: 4, offset: 750 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 12, column: 4, offset: 652 }
+          end: { line: 12, column: 4, offset: 750 }
         }
       },
       description: {
@@ -38859,10 +38920,13 @@ export default [
       'map.entries(\n' +
       '  functorOfEntries Promise|FunctorOfEntries,\n' +
       '  mapper EntryMapper\n' +
-      ') -> mappedFunctorWithEntries Promise|FunctorOfEntries\n' +
+      ') -> mappedFunctorOfEntries Promise|FunctorOfEntries\n' +
       '\n' +
-      'map.entries(mapper EntryMapper)(functorOfEntries FunctorOfEntries)\n' +
-      '  -> mappedFunctorWithEntries Promise|FunctorOfEntries\n' +
+      'map.entries(\n' +
+      '  mapper EntryMapper\n' +
+      ')(\n' +
+      '  functorOfEntries FunctorOfEntries\n' +
+      ') -> mappedFunctorOfEntries Promise|FunctorOfEntries\n' +
       '```',
     description: '[map](/docs/map) that applies the mapper function to the entries of a functor as opposed to the values.\n' +
       '\n' +
@@ -38962,19 +39026,22 @@ export default [
               'map.entries(\n' +
               '  functorOfEntries Promise|FunctorOfEntries,\n' +
               '  mapper EntryMapper\n' +
-              ') -> mappedFunctorWithEntries Promise|FunctorOfEntries\n' +
+              ') -> mappedFunctorOfEntries Promise|FunctorOfEntries\n' +
               '\n' +
-              'map.entries(mapper EntryMapper)(functorOfEntries FunctorOfEntries)\n' +
-              '  -> mappedFunctorWithEntries Promise|FunctorOfEntries',
+              'map.entries(\n' +
+              '  mapper EntryMapper\n' +
+              ')(\n' +
+              '  functorOfEntries FunctorOfEntries\n' +
+              ') -> mappedFunctorOfEntries Promise|FunctorOfEntries',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 15, column: 4, offset: 435 }
+              end: { line: 18, column: 4, offset: 437 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 15, column: 4, offset: 435 }
+          end: { line: 18, column: 4, offset: 437 }
         }
       },
       description: {
@@ -39721,14 +39788,9 @@ export default [
       '  functor Functor,\n' +
       ')=>(mappedItem Promise|any)\n' +
       '\n' +
-      'map.series(\n' +
-      '  functor Promise|Functor,\n' +
-      '  mapper Mapper\n' +
-      ') -> mappedFunctor Promise|Functor\n' +
+      'map.series(functor Promise|Functor, mapper Mapper) -> mappedFunctor Promise|Functor\n' +
       '\n' +
-      'map.series(\n' +
-      '  mapper Mapper\n' +
-      ')(functor Functor) -> mappedFunctor Promise|Functor\n' +
+      'map.series(mapper Mapper)(functor Functor) -> mappedFunctor Promise|Functor\n' +
       '```',
     description: '[map](/docs/map) with serial execution.\n' +
       '\n' +
@@ -39809,23 +39871,18 @@ export default [
               '  functor Functor,\n' +
               ')=>(mappedItem Promise|any)\n' +
               '\n' +
-              'map.series(\n' +
-              '  functor Promise|Functor,\n' +
-              '  mapper Mapper\n' +
-              ') -> mappedFunctor Promise|Functor\n' +
+              'map.series(functor Promise|Functor, mapper Mapper) -> mappedFunctor Promise|Functor\n' +
               '\n' +
-              'map.series(\n' +
-              '  mapper Mapper\n' +
-              ')(functor Functor) -> mappedFunctor Promise|Functor',
+              'map.series(mapper Mapper)(functor Functor) -> mappedFunctor Promise|Functor',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 18, column: 4, offset: 392 }
+              end: { line: 13, column: 4, offset: 382 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 18, column: 4, offset: 392 }
+          end: { line: 13, column: 4, offset: 382 }
         }
       },
       description: {
@@ -40448,16 +40505,9 @@ export default [
       '  functor Functor\n' +
       ')=>(mappedItem Promise|any)\n' +
       '\n' +
-      'map.pool(\n' +
-      '  functor MapPoolFunctor,\n' +
-      '  concurrency number,\n' +
-      '  mapper Mapper\n' +
-      ') -> result Promise|Array\n' +
+      'map.pool(functor MapPoolFunctor, concurrency number, mapper Mapper) -> result Promise|Array\n' +
       '\n' +
-      'map.pool(\n' +
-      '  concurrency number,\n' +
-      '  mapper Mapper\n' +
-      ')(functor MapPoolFunctor) -> result Promise|Array\n' +
+      'map.pool(concurrency number, mapper Mapper)(functor MapPoolFunctor) -> result Promise|Array\n' +
       '```',
     description: '[map](/docs/map) with limited [concurrency](https://web.mit.edu/6.005/www/fa14/classes/17-concurrency/).\n' +
       '\n' +
@@ -40536,25 +40586,18 @@ export default [
               '  functor Functor\n' +
               ')=>(mappedItem Promise|any)\n' +
               '\n' +
-              'map.pool(\n' +
-              '  functor MapPoolFunctor,\n' +
-              '  concurrency number,\n' +
-              '  mapper Mapper\n' +
-              ') -> result Promise|Array\n' +
+              'map.pool(functor MapPoolFunctor, concurrency number, mapper Mapper) -> result Promise|Array\n' +
               '\n' +
-              'map.pool(\n' +
-              '  concurrency number,\n' +
-              '  mapper Mapper\n' +
-              ')(functor MapPoolFunctor) -> result Promise|Array',
+              'map.pool(concurrency number, mapper Mapper)(functor MapPoolFunctor) -> result Promise|Array',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 20, column: 4, offset: 382 }
+              end: { line: 13, column: 4, offset: 368 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 20, column: 4, offset: 382 }
+          end: { line: 13, column: 4, offset: 368 }
         }
       },
       description: {
@@ -49184,9 +49227,9 @@ export default [
     synopsis: '```coffeescript [specscript]\n' +
       'type Predicate = (...arguments)=>Promise|boolean\n' +
       '\n' +
-      'not(value Promise|boolean|any) -> negatedResult Promise|boolean\n' +
-      'not(...arguments, predicate Predicate) -> negatedResult Promise|boolean\n' +
-      'not(predicate Predicate)(...arguments) -> negatedResult Promise|boolean\n' +
+      'not(value Promise|boolean|any) -> booleanResult Promise|boolean\n' +
+      'not(...arguments, predicate Predicate) -> booleanResult Promise|boolean\n' +
+      'not(predicate Predicate)(...arguments) -> booleanResult Promise|boolean\n' +
       '```',
     description: 'Logical operator. Negates a predicate or value.\n' +
       '\n' +
@@ -49264,9 +49307,9 @@ export default [
             meta: '[specscript]',
             value: 'type Predicate = (...arguments)=>Promise|boolean\n' +
               '\n' +
-              'not(value Promise|boolean|any) -> negatedResult Promise|boolean\n' +
-              'not(...arguments, predicate Predicate) -> negatedResult Promise|boolean\n' +
-              'not(predicate Predicate)(...arguments) -> negatedResult Promise|boolean',
+              'not(value Promise|boolean|any) -> booleanResult Promise|boolean\n' +
+              'not(...arguments, predicate Predicate) -> booleanResult Promise|boolean\n' +
+              'not(predicate Predicate)(...arguments) -> booleanResult Promise|boolean',
             position: {
               start: { line: 1, column: 1, offset: 0 },
               end: { line: 7, column: 4, offset: 290 }
@@ -49637,10 +49680,9 @@ export default [
   {
     name: 'omit',
     synopsis: '```coffeescript [specscript]\n' +
-      'paths Array<string>\n' +
+      'omit(object Promise|Object, paths Array<string>) -> result Object\n' +
       '\n' +
-      'omit(Promise|Object, paths) -> Object\n' +
-      'omit(paths)(Object) -> Object\n' +
+      'omit(paths Array<string>)(object Object) -> result Object\n' +
       '```',
     description: 'Object constructor. Creates a new object by excluding provided paths on an argument object.\n' +
       '\n' +
@@ -49729,19 +49771,18 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'paths Array<string>\n' +
+            value: 'omit(object Promise|Object, paths Array<string>) -> result Object\n' +
               '\n' +
-              'omit(Promise|Object, paths) -> Object\n' +
-              'omit(paths)(Object) -> Object',
+              'omit(paths Array<string>)(object Object) -> result Object',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 6, column: 4, offset: 121 }
+              end: { line: 5, column: 4, offset: 157 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 6, column: 4, offset: 121 }
+          end: { line: 5, column: 4, offset: 157 }
         }
       },
       description: {
@@ -50440,9 +50481,9 @@ export default [
     synopsis: '```coffeescript [specscript]\n' +
       'type Predicate = (...arguments)=>Promise|boolean|any\n' +
       '\n' +
-      'or(values Array<boolean|any>) -> testResult boolean\n' +
-      'or(...arguments, predicatesOrValues Array<Predicate|boolean|any>) -> testResult Promise|boolean\n' +
-      'or(predicatesOrValues Array<Predicate|boolean|any>)(...arguments) -> testResult Promise|boolean\n' +
+      'or(values Array<boolean|any>) -> booleanResult boolean\n' +
+      'or(...arguments, predicatesOrValues Array<Predicate|boolean|any>) -> booleanResult Promise|boolean\n' +
+      'or(predicatesOrValues Array<Predicate|boolean|any>)(...arguments) -> booleanResult Promise|boolean\n' +
       '```',
     description: 'Logical operator. Tests an array of predicate functions, promises, or values, returning true if any predicate tests true or any value is truthy.\n' +
       '\n' +
@@ -50544,18 +50585,18 @@ export default [
             meta: '[specscript]',
             value: 'type Predicate = (...arguments)=>Promise|boolean|any\n' +
               '\n' +
-              'or(values Array<boolean|any>) -> testResult boolean\n' +
-              'or(...arguments, predicatesOrValues Array<Predicate|boolean|any>) -> testResult Promise|boolean\n' +
-              'or(predicatesOrValues Array<Predicate|boolean|any>)(...arguments) -> testResult Promise|boolean',
+              'or(values Array<boolean|any>) -> booleanResult boolean\n' +
+              'or(...arguments, predicatesOrValues Array<Predicate|boolean|any>) -> booleanResult Promise|boolean\n' +
+              'or(predicatesOrValues Array<Predicate|boolean|any>)(...arguments) -> booleanResult Promise|boolean',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 7, column: 4, offset: 330 }
+              end: { line: 7, column: 4, offset: 339 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 7, column: 4, offset: 330 }
+          end: { line: 7, column: 4, offset: 339 }
         }
       },
       description: {
@@ -50983,10 +51024,9 @@ export default [
   {
     name: 'pick',
     synopsis: '```coffeescript [specscript]\n' +
-      'keys Array<string>\n' +
+      'pick(object Promise|Object, keys Array<string>) -> result Object\n' +
       '\n' +
-      'pick(Promise|Object, keys) -> Object\n' +
-      'pick(keys)(Object) -> Object\n' +
+      'pick(keys Array<string>)(object Object) -> result Object\n' +
       '```',
     description: 'Object constructor. Creates a new object from an argument object by selecting keys from an array. If a key does not exist on the argument object, it is excluded from the new object.\n' +
       '\n' +
@@ -51068,19 +51108,18 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'keys Array<string>\n' +
+            value: 'pick(object Promise|Object, keys Array<string>) -> result Object\n' +
               '\n' +
-              'pick(Promise|Object, keys) -> Object\n' +
-              'pick(keys)(Object) -> Object',
+              'pick(keys Array<string>)(object Object) -> result Object',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 6, column: 4, offset: 118 }
+              end: { line: 5, column: 4, offset: 155 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 6, column: 4, offset: 118 }
+          end: { line: 5, column: 4, offset: 155 }
         }
       },
       description: {
@@ -51659,9 +51698,9 @@ export default [
       '\n' +
       'funcs [Function, ...Array<UnaryFunction>]\n' +
       '\n' +
-      'pipe(funcs)(...arguments) -> Promise|any\n' +
-      'pipe(...arguments, funcs) -> Promise|any\n' +
-      'pipe(...funcs)(...arguments) -> Promise|any\n' +
+      'pipe(funcs)(...arguments) -> result Promise|any\n' +
+      'pipe(...arguments, funcs) -> result Promise|any\n' +
+      'pipe(...funcs)(...arguments) -> result Promise|any\n' +
       '```',
     description: 'Creates a function pipeline from multiple functions. Each function in the function pipeline is evaluated in series starting from the first function in the function pipeline, passing its return value as the first and only argument to the next function in the pipeline. The result of the execution of a function pipeline is the return value of the last function in the function pipeline. If any function in the function pipeline is asynchronous, the result of the execution of the function pipeline is a promise.\n' +
       '\n' +
@@ -51746,18 +51785,18 @@ export default [
               '\n' +
               'funcs [Function, ...Array<UnaryFunction>]\n' +
               '\n' +
-              'pipe(funcs)(...arguments) -> Promise|any\n' +
-              'pipe(...arguments, funcs) -> Promise|any\n' +
-              'pipe(...funcs)(...arguments) -> Promise|any',
+              'pipe(funcs)(...arguments) -> result Promise|any\n' +
+              'pipe(...arguments, funcs) -> result Promise|any\n' +
+              'pipe(...funcs)(...arguments) -> result Promise|any',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 10, column: 4, offset: 284 }
+              end: { line: 10, column: 4, offset: 305 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 10, column: 4, offset: 284 }
+          end: { line: 10, column: 4, offset: 305 }
         }
       },
       description: {
@@ -53586,13 +53625,13 @@ export default [
     synopsis: '```coffeescript [specscript]\n' +
       'path string|Array<string|number>\n' +
       'resolver (...arguments)=>Promise|any\n' +
-      'value any\n' +
+      'defaultValue any\n' +
       '\n' +
-      'set(Promise|Object, path, value) -> Promise|Object\n' +
-      'set(Promise|Object, path, resolver) -> Promise|Object\n' +
+      'set(object Promise|Object, path, defaultValue) -> result Promise|Object\n' +
+      'set(object Promise|Object, path, resolver) -> result Promise|Object\n' +
       '\n' +
-      'set(path, value)(Object) -> Promise|Object\n' +
-      'set(path, resolver)(Object) -> Promise|Object\n' +
+      'set(path, defaultValue)(object Object) -> result Promise|Object\n' +
+      'set(path, resolver)(object Object) -> result Promise|Object\n' +
       '```',
     description: 'Property setter. Shallow clones the argument object and sets a property on the shallow cloned object at the path denoted by a string, number, or array of string or numbers.\n' +
       '\n' +
@@ -53684,22 +53723,22 @@ export default [
             meta: '[specscript]',
             value: 'path string|Array<string|number>\n' +
               'resolver (...arguments)=>Promise|any\n' +
-              'value any\n' +
+              'defaultValue any\n' +
               '\n' +
-              'set(Promise|Object, path, value) -> Promise|Object\n' +
-              'set(Promise|Object, path, resolver) -> Promise|Object\n' +
+              'set(object Promise|Object, path, defaultValue) -> result Promise|Object\n' +
+              'set(object Promise|Object, path, resolver) -> result Promise|Object\n' +
               '\n' +
-              'set(path, value)(Object) -> Promise|Object\n' +
-              'set(path, resolver)(Object) -> Promise|Object',
+              'set(path, defaultValue)(object Object) -> result Promise|Object\n' +
+              'set(path, resolver)(object Object) -> result Promise|Object',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 11, column: 4, offset: 308 }
+              end: { line: 11, column: 4, offset: 385 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 11, column: 4, offset: 308 }
+          end: { line: 11, column: 4, offset: 385 }
         }
       },
       description: {
@@ -54321,10 +54360,8 @@ export default [
       'type Foldable = Array|Set|Map|Generator|AsyncGenerator|{ reduce: function }|Object\n' +
       'type Predicate = any=>Promise|boolean\n' +
       '\n' +
-      'predicate Predicate\n' +
-      '\n' +
-      'some(foldable Promise|Foldable, predicate) -> testResult Promise|boolean\n' +
-      'some(predicate)(foldable Foldable) -> testResult Promise|boolean\n' +
+      'some(foldable Promise|Foldable, predicate Predicate) -> testResult Promise|boolean\n' +
+      'some(predicate Predicate)(foldable Foldable) -> testResult Promise|boolean\n' +
       '```',
     description: 'Tests a predicate concurrently across all items of a foldable. Returns true if any item tests true by the predicate.\n' +
       '\n' +
@@ -54406,19 +54443,17 @@ export default [
             value: 'type Foldable = Array|Set|Map|Generator|AsyncGenerator|{ reduce: function }|Object\n' +
               'type Predicate = any=>Promise|boolean\n' +
               '\n' +
-              'predicate Predicate\n' +
-              '\n' +
-              'some(foldable Promise|Foldable, predicate) -> testResult Promise|boolean\n' +
-              'some(predicate)(foldable Foldable) -> testResult Promise|boolean',
+              'some(foldable Promise|Foldable, predicate Predicate) -> testResult Promise|boolean\n' +
+              'some(predicate Predicate)(foldable Foldable) -> testResult Promise|boolean',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 9, column: 4, offset: 313 }
+              end: { line: 7, column: 4, offset: 312 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 9, column: 4, offset: 313 }
+          end: { line: 7, column: 4, offset: 312 }
         }
       },
       description: {
@@ -54971,9 +55006,9 @@ export default [
       'conditionalValues Array<Promise|boolean|any>\n' +
       'conditionalFunctionsOrValues Array<Predicate|Function|Promise|boolean|any>\n' +
       '\n' +
-      'switchCase(conditionalValues) -> Promise|any\n' +
-      'switchCase(...arguments, conditionalFunctionsOrValues) -> Promise|any\n' +
-      'switchCase(conditionalFunctionsOrValues)(...arguments) -> Promise|any\n' +
+      'switchCase(conditionalValues) -> result Promise|any\n' +
+      'switchCase(...arguments, conditionalFunctionsOrValues) -> result Promise|any\n' +
+      'switchCase(conditionalFunctionsOrValues)(...arguments) -> result Promise|any\n' +
       '```',
     description: 'Conditional function operator. Accepts an array of conditional functions or values that specifies cases as function or value pairs with the exception of the last, default function or value. All functions are provided with the same arguments and executed in series. The result of a conditional execution with `switchCase` is the result of the execution of the first truthy function or value pair, the result of the execution of the last, default function, or the provided last, default value.\n' +
       '\n' +
@@ -55097,18 +55132,18 @@ export default [
               'conditionalValues Array<Promise|boolean|any>\n' +
               'conditionalFunctionsOrValues Array<Predicate|Function|Promise|boolean|any>\n' +
               '\n' +
-              'switchCase(conditionalValues) -> Promise|any\n' +
-              'switchCase(...arguments, conditionalFunctionsOrValues) -> Promise|any\n' +
-              'switchCase(conditionalFunctionsOrValues)(...arguments) -> Promise|any',
+              'switchCase(conditionalValues) -> result Promise|any\n' +
+              'switchCase(...arguments, conditionalFunctionsOrValues) -> result Promise|any\n' +
+              'switchCase(conditionalFunctionsOrValues)(...arguments) -> result Promise|any',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 11, column: 4, offset: 436 }
+              end: { line: 11, column: 4, offset: 457 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 11, column: 4, offset: 436 }
+          end: { line: 11, column: 4, offset: 457 }
         }
       },
       description: {
@@ -55576,10 +55611,8 @@ export default [
     synopsis: '```coffeescript [specscript]\n' +
       'type Function = (...arguments)=>Promise|any\n' +
       '\n' +
-      'f Function\n' +
-      '\n' +
-      'tap(...arguments, f) -> Promise|arguments[0]\n' +
-      'tap(f)(...arguments) -> Promise|arguments[0]\n' +
+      'tap(...arguments, f Function) -> result Promise|any\n' +
+      'tap(f Function)(...arguments) -> result Promise|any\n' +
       '```',
     description: 'Calls a function with provided arguments, returning the first argument. The return value of the function call is discarded.\n' +
       '\n' +
@@ -55641,19 +55674,17 @@ export default [
             meta: '[specscript]',
             value: 'type Function = (...arguments)=>Promise|any\n' +
               '\n' +
-              'f Function\n' +
-              '\n' +
-              'tap(...arguments, f) -> Promise|arguments[0]\n' +
-              'tap(f)(...arguments) -> Promise|arguments[0]',
+              'tap(...arguments, f Function) -> result Promise|any\n' +
+              'tap(f Function)(...arguments) -> result Promise|any',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 8, column: 4, offset: 179 }
+              end: { line: 6, column: 4, offset: 181 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 8, column: 4, offset: 179 }
+          end: { line: 6, column: 4, offset: 181 }
         }
       },
       description: {
@@ -56036,11 +56067,8 @@ export default [
       'type Predicate = (...arguments)=>Promise|boolean|any\n' +
       'type Function = (...arguments)=>Promise|any\n' +
       '\n' +
-      'predicate Predicate\n' +
-      'f Function\n' +
-      '\n' +
-      'tap.if(...arguments, predicate, f) -> Promise|arguments[0]\n' +
-      'tap.if(predicate, f)(...arguments) -> Promise|arguments[0]\n' +
+      'tap.if(...arguments, predicate Predicate, f Function) -> result Promise|any\n' +
+      'tap.if(predicate Predicate, f Function)(...arguments) -> result Promise|any\n' +
       '```',
     description: 'A version of [tap](/docs/tap) that accepts a predicate function before the function to execute and only executes the function if the predicate function tests true.\n' +
       '\n' +
@@ -56105,20 +56133,17 @@ export default [
             value: 'type Predicate = (...arguments)=>Promise|boolean|any\n' +
               'type Function = (...arguments)=>Promise|any\n' +
               '\n' +
-              'predicate Predicate\n' +
-              'f Function\n' +
-              '\n' +
-              'tap.if(...arguments, predicate, f) -> Promise|arguments[0]\n' +
-              'tap.if(predicate, f)(...arguments) -> Promise|arguments[0]',
+              'tap.if(...arguments, predicate Predicate, f Function) -> result Promise|any\n' +
+              'tap.if(predicate Predicate, f Function)(...arguments) -> result Promise|any',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 10, column: 4, offset: 280 }
+              end: { line: 7, column: 4, offset: 282 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 10, column: 4, offset: 280 }
+          end: { line: 7, column: 4, offset: 282 }
         }
       },
       description: {
@@ -59092,11 +59117,8 @@ export default [
       'type Function = (...arguments)=>Promise|any\n' +
       'type Catcher = (error Error|any, ...arguments)=>Promise|any\n' +
       '\n' +
-      'tryer Function\n' +
-      'catcher Catcher\n' +
-      '\n' +
-      'tryCatch(tryer, catcher)(...arguments) -> Promise|any\n' +
-      'tryCatch(...arguments, tryer, catcher) -> Promise|any\n' +
+      'tryCatch(tryer Function, catcher Catcher)(...arguments) -> result Promise|any\n' +
+      'tryCatch(...arguments, tryer Function, catcher Catcher) -> result Promise|any\n' +
       '```',
     description: 'Function error handler. Accepts a tryer function and a catcher function. Calls the tryer function and catches any error thrown by the tryer function with the catcher function.\n' +
       '\n' +
@@ -59207,20 +59229,17 @@ export default [
             value: 'type Function = (...arguments)=>Promise|any\n' +
               'type Catcher = (error Error|any, ...arguments)=>Promise|any\n' +
               '\n' +
-              'tryer Function\n' +
-              'catcher Catcher\n' +
-              '\n' +
-              'tryCatch(tryer, catcher)(...arguments) -> Promise|any\n' +
-              'tryCatch(...arguments, tryer, catcher) -> Promise|any',
+              'tryCatch(tryer Function, catcher Catcher)(...arguments) -> result Promise|any\n' +
+              'tryCatch(...arguments, tryer Function, catcher Catcher) -> result Promise|any',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 10, column: 4, offset: 277 }
+              end: { line: 7, column: 4, offset: 293 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 10, column: 4, offset: 277 }
+          end: { line: 7, column: 4, offset: 293 }
         }
       },
       description: {
