@@ -105,8 +105,8 @@ const Layout = ReactElement(props => {
 
     Footer([
       P({
-        style: { fontSize: '12px', color: 'grey' },
-      }, `© ${new Date().getFullYear()} Richard Tong`),
+        style: { fontSize: '12px', textAlign: 'center', padding: '15px 0' },
+      }, 'All content on this site is freely released in the public domain.'),
     ]),
   ])
 })
