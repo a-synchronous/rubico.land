@@ -25,7 +25,6 @@
   },
   "devDependencies": {
     "cronist": "latest",
-    "glob": "^11.0.3",
-    "serve": "^14.2.4"
+    "glob": "^11.0.3"
   }
 }
