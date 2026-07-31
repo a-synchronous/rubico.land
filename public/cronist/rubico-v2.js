@@ -25597,7 +25597,7 @@ export default [
       'compose(...arguments, funcs) -> result Promise|any\n' +
       'compose(...funcs)(...arguments) -> result Promise|any\n' +
       '```',
-    description: 'Creates a function composition from multiple functions. Each function in the function composition is evaluated in series starting from the last function in the function composition, passing its return value as the first and only argument to the previous function in the function composition. The result of the execution of a function composition is the return value of the first function in the function composition. If any function in the function composition is asynchronous, the result of the execution of the function composition is a promise.\n' +
+    description: 'Creates a function composition from multiple functions. Each function in the function composition is evaluated in series starting from the last function in the function composition, passing the return value as the first and only argument to the previous function in the function composition. The result of the execution of a function composition is the return value of the first function in the function composition. If any function in the function composition is asynchronous, the result of the execution of the function composition is a promise.\n' +
       '\n' +
       'Multiple arguments may be provided to a function composition, in which case they are passed directly to the last function in the function composition.\n' +
       '\n' +
@@ -25695,7 +25695,7 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Creates a function composition from multiple functions. Each function in the function composition is evaluated in series starting from the last function in the function composition, passing its return value as the first and only argument to the previous function in the function composition. The result of the execution of a function composition is the return value of the first function in the function composition. If any function in the function composition is asynchronous, the result of the execution of the function composition is a promise.',
+                value: 'Creates a function composition from multiple functions. Each function in the function composition is evaluated in series starting from the last function in the function composition, passing the return value as the first and only argument to the previous function in the function composition. The result of the execution of a function composition is the return value of the first function in the function composition. If any function in the function composition is asynchronous, the result of the execution of the function composition is a promise.',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
                   end: { line: 1, column: 548, offset: 547 }
@@ -51702,7 +51702,7 @@ export default [
       'pipe(...arguments, funcs) -> result Promise|any\n' +
       'pipe(...funcs)(...arguments) -> result Promise|any\n' +
       '```',
-    description: 'Creates a function pipeline from multiple functions. Each function in the function pipeline is evaluated in series starting from the first function in the function pipeline, passing its return value as the first and only argument to the next function in the pipeline. The result of the execution of a function pipeline is the return value of the last function in the function pipeline. If any function in the function pipeline is asynchronous, the result of the execution of the function pipeline is a promise.\n' +
+    description: 'Creates a function pipeline from multiple functions. Each function in the function pipeline is evaluated in series starting from the first function in the function pipeline, the its return value as the first and only argument to the next function in the pipeline. The result of the execution of a function pipeline is the return value of the last function in the function pipeline. If any function in the function pipeline is asynchronous, the result of the execution of the function pipeline is a promise.\n' +
       '\n' +
       'Multiple arguments may be provided to a function pipeline, in which case they are passed directly to the first function in the function pipeline.\n' +
       '\n' +
@@ -51807,16 +51807,16 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Creates a function pipeline from multiple functions. Each function in the function pipeline is evaluated in series starting from the first function in the function pipeline, passing its return value as the first and only argument to the next function in the pipeline. The result of the execution of a function pipeline is the return value of the last function in the function pipeline. If any function in the function pipeline is asynchronous, the result of the execution of the function pipeline is a promise.',
+                value: 'Creates a function pipeline from multiple functions. Each function in the function pipeline is evaluated in series starting from the first function in the function pipeline, the its return value as the first and only argument to the next function in the pipeline. The result of the execution of a function pipeline is the return value of the last function in the function pipeline. If any function in the function pipeline is asynchronous, the result of the execution of the function pipeline is a promise.',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 511, offset: 510 }
+                  end: { line: 1, column: 507, offset: 506 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 511, offset: 510 }
+              end: { line: 1, column: 507, offset: 506 }
             }
           },
           {
@@ -51826,14 +51826,14 @@ export default [
                 type: 'text',
                 value: 'Multiple arguments may be provided to a function pipeline, in which case they are passed directly to the first function in the function pipeline.',
                 position: {
-                  start: { line: 3, column: 1, offset: 512 },
-                  end: { line: 3, column: 146, offset: 657 }
+                  start: { line: 3, column: 1, offset: 508 },
+                  end: { line: 3, column: 146, offset: 653 }
                 }
               }
             ],
             position: {
-              start: { line: 3, column: 1, offset: 512 },
-              end: { line: 3, column: 146, offset: 657 }
+              start: { line: 3, column: 1, offset: 508 },
+              end: { line: 3, column: 146, offset: 653 }
             }
           },
           {
@@ -51851,8 +51851,8 @@ export default [
               '\n' +
               'pipeline(1, 2, 3)',
             position: {
-              start: { line: 5, column: 1, offset: 659 },
-              end: { line: 16, column: 4, offset: 803 }
+              start: { line: 5, column: 1, offset: 655 },
+              end: { line: 16, column: 4, offset: 799 }
             }
           },
           {
@@ -51862,30 +51862,30 @@ export default [
                 type: 'text',
                 value: 'Functions may be passed to ',
                 position: {
-                  start: { line: 18, column: 1, offset: 805 },
-                  end: { line: 18, column: 28, offset: 832 }
+                  start: { line: 18, column: 1, offset: 801 },
+                  end: { line: 18, column: 28, offset: 828 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'pipe',
                 position: {
-                  start: { line: 18, column: 28, offset: 832 },
-                  end: { line: 18, column: 34, offset: 838 }
+                  start: { line: 18, column: 28, offset: 828 },
+                  end: { line: 18, column: 34, offset: 834 }
                 }
               },
               {
                 type: 'text',
                 value: ' as arguments instead of as items of an array.',
                 position: {
-                  start: { line: 18, column: 34, offset: 838 },
-                  end: { line: 18, column: 80, offset: 884 }
+                  start: { line: 18, column: 34, offset: 834 },
+                  end: { line: 18, column: 80, offset: 880 }
                 }
               }
             ],
             position: {
-              start: { line: 18, column: 1, offset: 805 },
-              end: { line: 18, column: 80, offset: 884 }
+              start: { line: 18, column: 1, offset: 801 },
+              end: { line: 18, column: 80, offset: 880 }
             }
           },
           {
@@ -51899,8 +51899,8 @@ export default [
               '\n' +
               "console.log(appendBC('a'))",
             position: {
-              start: { line: 20, column: 1, offset: 886 },
-              end: { line: 27, column: 4, offset: 1043 }
+              start: { line: 20, column: 1, offset: 882 },
+              end: { line: 27, column: 4, offset: 1039 }
             }
           },
           {
@@ -51910,30 +51910,30 @@ export default [
                 type: 'text',
                 value: 'Any promises in ',
                 position: {
-                  start: { line: 29, column: 1, offset: 1045 },
-                  end: { line: 29, column: 17, offset: 1061 }
+                  start: { line: 29, column: 1, offset: 1041 },
+                  end: { line: 29, column: 17, offset: 1057 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'arguments',
                 position: {
-                  start: { line: 29, column: 17, offset: 1061 },
-                  end: { line: 29, column: 28, offset: 1072 }
+                  start: { line: 29, column: 17, offset: 1057 },
+                  end: { line: 29, column: 28, offset: 1068 }
                 }
               },
               {
                 type: 'text',
                 value: ' are resolved for their values before further execution for the eager interface only.',
                 position: {
-                  start: { line: 29, column: 28, offset: 1072 },
-                  end: { line: 29, column: 113, offset: 1157 }
+                  start: { line: 29, column: 28, offset: 1068 },
+                  end: { line: 29, column: 113, offset: 1153 }
                 }
               }
             ],
             position: {
-              start: { line: 29, column: 1, offset: 1045 },
-              end: { line: 29, column: 113, offset: 1157 }
+              start: { line: 29, column: 1, offset: 1041 },
+              end: { line: 29, column: 113, offset: 1153 }
             }
           },
           {
@@ -51944,8 +51944,8 @@ export default [
               '  console.log,\n' +
               '])',
             position: {
-              start: { line: 31, column: 1, offset: 1159 },
-              end: { line: 35, column: 4, offset: 1257 }
+              start: { line: 31, column: 1, offset: 1155 },
+              end: { line: 35, column: 4, offset: 1253 }
             }
           },
           {
@@ -51955,14 +51955,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 37, column: 1, offset: 1259 },
-                  end: { line: 37, column: 10, offset: 1268 }
+                  start: { line: 37, column: 1, offset: 1255 },
+                  end: { line: 37, column: 10, offset: 1264 }
                 }
               }
             ],
             position: {
-              start: { line: 37, column: 1, offset: 1259 },
-              end: { line: 37, column: 10, offset: 1268 }
+              start: { line: 37, column: 1, offset: 1255 },
+              end: { line: 37, column: 10, offset: 1264 }
             }
           },
           {
@@ -51988,26 +51988,26 @@ export default [
                             type: 'text',
                             value: 'compose',
                             position: {
-                              start: { line: 38, column: 5, offset: 1273 },
-                              end: { line: 38, column: 12, offset: 1280 }
+                              start: { line: 38, column: 5, offset: 1269 },
+                              end: { line: 38, column: 12, offset: 1276 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 38, column: 4, offset: 1272 },
-                          end: { line: 38, column: 28, offset: 1296 }
+                          start: { line: 38, column: 4, offset: 1268 },
+                          end: { line: 38, column: 28, offset: 1292 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 38, column: 4, offset: 1272 },
-                      end: { line: 38, column: 28, offset: 1296 }
+                      start: { line: 38, column: 4, offset: 1268 },
+                      end: { line: 38, column: 28, offset: 1292 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 38, column: 2, offset: 1270 },
-                  end: { line: 38, column: 28, offset: 1296 }
+                  start: { line: 38, column: 2, offset: 1266 },
+                  end: { line: 38, column: 28, offset: 1292 }
                 }
               },
               {
@@ -52027,26 +52027,26 @@ export default [
                             type: 'text',
                             value: 'tap',
                             position: {
-                              start: { line: 39, column: 5, offset: 1301 },
-                              end: { line: 39, column: 8, offset: 1304 }
+                              start: { line: 39, column: 5, offset: 1297 },
+                              end: { line: 39, column: 8, offset: 1300 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 39, column: 4, offset: 1300 },
-                          end: { line: 39, column: 20, offset: 1316 }
+                          start: { line: 39, column: 4, offset: 1296 },
+                          end: { line: 39, column: 20, offset: 1312 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 39, column: 4, offset: 1300 },
-                      end: { line: 39, column: 20, offset: 1316 }
+                      start: { line: 39, column: 4, offset: 1296 },
+                      end: { line: 39, column: 20, offset: 1312 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 39, column: 2, offset: 1298 },
-                  end: { line: 39, column: 20, offset: 1316 }
+                  start: { line: 39, column: 2, offset: 1294 },
+                  end: { line: 39, column: 20, offset: 1312 }
                 }
               },
               {
@@ -52066,26 +52066,26 @@ export default [
                             type: 'text',
                             value: 'switchCase',
                             position: {
-                              start: { line: 40, column: 5, offset: 1321 },
-                              end: { line: 40, column: 15, offset: 1331 }
+                              start: { line: 40, column: 5, offset: 1317 },
+                              end: { line: 40, column: 15, offset: 1327 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 40, column: 4, offset: 1320 },
-                          end: { line: 40, column: 34, offset: 1350 }
+                          start: { line: 40, column: 4, offset: 1316 },
+                          end: { line: 40, column: 34, offset: 1346 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 40, column: 4, offset: 1320 },
-                      end: { line: 40, column: 34, offset: 1350 }
+                      start: { line: 40, column: 4, offset: 1316 },
+                      end: { line: 40, column: 34, offset: 1346 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 40, column: 2, offset: 1318 },
-                  end: { line: 40, column: 34, offset: 1350 }
+                  start: { line: 40, column: 2, offset: 1314 },
+                  end: { line: 40, column: 34, offset: 1346 }
                 }
               },
               {
@@ -52105,38 +52105,38 @@ export default [
                             type: 'text',
                             value: 'tryCatch',
                             position: {
-                              start: { line: 41, column: 5, offset: 1355 },
-                              end: { line: 41, column: 13, offset: 1363 }
+                              start: { line: 41, column: 5, offset: 1351 },
+                              end: { line: 41, column: 13, offset: 1359 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 41, column: 4, offset: 1354 },
-                          end: { line: 41, column: 30, offset: 1380 }
+                          start: { line: 41, column: 4, offset: 1350 },
+                          end: { line: 41, column: 30, offset: 1376 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 41, column: 4, offset: 1354 },
-                      end: { line: 41, column: 30, offset: 1380 }
+                      start: { line: 41, column: 4, offset: 1350 },
+                      end: { line: 41, column: 30, offset: 1376 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 41, column: 2, offset: 1352 },
-                  end: { line: 41, column: 30, offset: 1380 }
+                  start: { line: 41, column: 2, offset: 1348 },
+                  end: { line: 41, column: 30, offset: 1376 }
                 }
               }
             ],
             position: {
-              start: { line: 38, column: 2, offset: 1270 },
-              end: { line: 41, column: 30, offset: 1380 }
+              start: { line: 38, column: 2, offset: 1266 },
+              end: { line: 41, column: 30, offset: 1376 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 41, column: 30, offset: 1380 }
+          end: { line: 41, column: 30, offset: 1376 }
         }
       },
       execution: {
