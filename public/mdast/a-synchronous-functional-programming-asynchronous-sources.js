@@ -4,7 +4,7 @@ export default {
     {
       type: 'yaml',
       value: 'title: [A]synchronous Functional Programming - Asynchronous Sources\n' +
-        'author: Richard Tong, King of Software at CLOUT\n' +
+        'author: Richard Tong, King of Software at CLOUŢ\n' +
         'date: 2025-02-23\n' +
         'updated: 2026-02-23\n' +
         'path: /blog/a-synchronous-functional-programming-asynchronous-sources\n' +

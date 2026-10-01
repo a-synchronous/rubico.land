@@ -1,6 +1,6 @@
 ---
 title: [A]synchronous Functional Programming - Intro
-author: Richard Tong, King of Software at CLOUT
+author: Richard Tong, King of Software at CLOUŢ
 date: 2024-11-26
 updated: 2026-01-31
 path: /blog/a-synchronous-functional-programming-intro

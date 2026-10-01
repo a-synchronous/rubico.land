@@ -4,7 +4,7 @@ export default {
     {
       type: 'yaml',
       value: 'title: [A]synchronous Functional Programming - Statements vs Expressions\n' +
-        'author: Richard Tong, King of Software at CLOUT\n' +
+        'author: Richard Tong, King of Software at CLOUŢ\n' +
         'date: 2026-05-03\n' +
         'updated: 2026-05-03\n' +
         'path: /blog/a-synchronous-functional-programming-statements-vs-expressions\n' +

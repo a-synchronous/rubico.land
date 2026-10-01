@@ -1,6 +1,6 @@
 ---
 title: Transducers Crash Course
-author: Richard Tong, King of Software at CLOUT
+author: Richard Tong, King of Software at CLOUŢ
 date: 2026-02-22
 updated: 2026-05-27
 path: /blog/transducers-crash-course

@@ -1,6 +1,6 @@
 ---
 title: [A]synchronous Functional Programming - Statements vs Expressions
-author: Richard Tong, King of Software at CLOUT
+author: Richard Tong, King of Software at CLOUŢ
 date: 2026-05-03
 updated: 2026-05-03
 path: /blog/a-synchronous-functional-programming-statements-vs-expressions

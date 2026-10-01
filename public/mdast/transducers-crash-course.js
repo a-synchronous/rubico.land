@@ -4,7 +4,7 @@ export default {
     {
       type: 'yaml',
       value: 'title: Transducers Crash Course\n' +
-        'author: Richard Tong, King of Software at CLOUT\n' +
+        'author: Richard Tong, King of Software at CLOUŢ\n' +
         'date: 2026-02-22\n' +
         'updated: 2026-05-27\n' +
         'path: /blog/transducers-crash-course\n' +

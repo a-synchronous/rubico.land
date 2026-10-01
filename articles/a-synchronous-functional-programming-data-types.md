@@ -1,6 +1,6 @@
 ---
 title: [A]synchronous Functional Programming - Data Types
-author: Richard Tong, King of Software at CLOUT
+author: Richard Tong, King of Software at CLOUŢ
 date: 2025-06-13
 updated: 2026-05-05
 path: /blog/a-synchronous-functional-programming-data-types
