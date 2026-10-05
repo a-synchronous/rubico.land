@@ -2,7 +2,7 @@
 title: [A]synchronous Functional Programming - Intro
 author: Richard Tong, King of Software at CLOUŢ
 date: 2024-11-26
-updated: 2026-01-31
+updated: 2026-10-05
 path: /blog/a-synchronous-functional-programming-intro
 description: An introduction to the [A]synchronous Functional Programming paradigm.
 image: https://rubico.land/assets/rubico-logo-large.png
@@ -16,9 +16,25 @@ Hello, welcome to my series on a new paradigm built on top of the [Functional Pr
 
 At its core, [A]synchronous Functional Programming, like Functional Programming, uses functions to construct programs, leading to code that is modular, predictable, and easy to reason about. [A]synchronous Functional Programming inherits the following concepts from Functional Programming:
 
-### First class and higher-order Functions
+### First Class Functions
+First class functions are functions as data types, as opposed to language constructs. A first class function can be passed to another function as an argument.
 
-Functions that fall under first class and higher-order functions are all functions that can take other functions as arguments and return a function as the result. The distinction between the two is subtle: a "higher-order" function is a function that takes one or more functions as arguments and returns a function or value as a result, while a "first class" function is a function that can be treated like any other data type (e.g. number, string, function) in a programming language. First class functions are passed as arguments to higher-order functions. There can be no higher-order functions without first class functions in any programming language.
+In the example below, `square` is a first class function.
+
+```javascript [playground]
+function square(n) {
+  return n ** 2
+}
+
+const array = [1, 2, 3]
+
+const squared = array.map(square)
+
+console.log(squared)
+```
+
+### Higher-Order Functions
+Higher-order functions are functions that take other functions as arguments.
 
 Here are some examples of higher-order functions in JavaScript:
 
@@ -26,13 +42,7 @@ Here are some examples of higher-order functions in JavaScript:
  * **.forEach() Method**: Executes a callback function on each of the elements in an array in order
  * **.map() Method**: Returns a new array made up of the return values from the provided callback function
 
-Here are some examples of first class functions in JavaScript:
-
- * **.reduce(firstClassFunction)**: `firstClassFunction` is a first class function
- * **.forEach(firstClassFunction)**: `firstClassFunction` is a first class function
- * **.map(firstClassFunction)**: `firstClassFunction` is a first class function
-
-You could even write your own higher-order functions, for example, the function `logArgs` takes the first class function `f` and logs the arguments to `f` every time `f` is called.
+In the example below, `logArgs` is a higher-order function.
 
 ```javascript [playground]
 function logArgs(f) {
@@ -46,10 +56,8 @@ const add = (a, b) => a + b
 const addWithArgsLogged = logArgs(add)
 
 const result = addWithArgsLogged(1, 2)
-// 1 2
 
 console.log(result)
-// 3
 ```
 
 ### Pure functions
@@ -71,13 +79,10 @@ The function `add` is a pure function because it does not have any side effects 
 const add = (a, b) => a + b
 
 console.log(add(1, 2))
-// 3
 
 console.log(add(1, 2))
-// 3
 
 console.log(add(1, 2))
-// 3
 ```
 
 The following are examples of side effects
@@ -88,6 +93,37 @@ The following are examples of side effects
  * Inserting, updating, or deleting data from a database (database storage is state outside the function's scope)
  * Sending a network request to an external http API (the API is an interface over state outside the function's scope)
  * Overwriting a key on an object passed as an argument to the function (the object passed to the function is considered state outside the function's scope)
+
+### Partial Application
+Partial application is a technique in functional programming where a curry function is used to partially apply arguments to a function, returning a partially applied function that expects the remaining arguments of the function.
+
+Here is an example of partial application:
+
+```javascript [playground]
+function multiply(a, b, c) {
+  return a * b * c
+}
+
+const multiply__5 = curry(multiply, __, __, 5)
+const multiply3_5 = curry(multiply__5, 3, __)
+
+const product = multiply3_5(4)
+
+console.log(product)
+```
+
+### Monad-Like Structures
+Monad-like structures are classes that embody the Monadic idea that a Monad's methods return a Monad. Promise is an example of a monad-like structure.
+
+The below example shows a promise's `.then` method returning another promise.
+
+```javascript [playground]
+const promiseA = Promise.resolve(1)
+
+const promiseB = promiseA.then(n => n + 2)
+
+console.log(promiseB)
+```
 
 ### [A]synchronous Functional Programming
 
@@ -100,9 +136,7 @@ const { compose, map, forEach } = rubico
 
 const ids = [1, 2, 3, 4, 5]
 
-compose(
-  // log each response body
-  forEach(console.log),
+pipe(ids, [
 
   // make a request for each id
   map(async id => {
@@ -111,7 +145,11 @@ compose(
     const data = await response.json()
     return data
   }),
-)(ids)
+
+  // log each response body
+  forEach(console.log),
+
+])
 ```
 
 Above we see a composition of functions created with the Rubico [compose](/docs/compose) operator. `compose` allows us to chain together operations sequentially, the result of one function becoming the argument to the next. The above composition starts with the ids `[1, 2, 3, 4, 5]`, then using the async-enabled Rubico [map](/docs/map) operator, makes a request for each id and parses out the response body. Each parsed out response body is then logged out with the Rubico [forEach](/docs/forEach) operator and the `console.log` function.

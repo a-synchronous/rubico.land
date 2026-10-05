@@ -6,7 +6,7 @@ export default {
       value: 'title: [A]synchronous Functional Programming - Intro\n' +
         'author: Richard Tong, King of Software at CLOUŢ\n' +
         'date: 2024-11-26\n' +
-        'updated: 2026-01-31\n' +
+        'updated: 2026-10-05\n' +
         'path: /blog/a-synchronous-functional-programming-intro\n' +
         'description: An introduction to the [A]synchronous Functional Programming paradigm.\n' +
         'image: https://rubico.land/assets/rubico-logo-large.png',
@@ -203,16 +203,16 @@ export default {
       children: [
         {
           type: 'text',
-          value: 'First class and higher-order Functions',
+          value: 'First Class Functions',
           position: {
             start: { line: 19, column: 5, offset: 1158 },
-            end: { line: 19, column: 43, offset: 1196 }
+            end: { line: 19, column: 26, offset: 1179 }
           }
         }
       ],
       position: {
         start: { line: 19, column: 1, offset: 1154 },
-        end: { line: 19, column: 43, offset: 1196 }
+        end: { line: 19, column: 26, offset: 1179 }
       }
     },
     {
@@ -220,16 +220,102 @@ export default {
       children: [
         {
           type: 'text',
-          value: 'Functions that fall under first class and higher-order functions are all functions that can take other functions as arguments and return a function as the result. The distinction between the two is subtle: a "higher-order" function is a function that takes one or more functions as arguments and returns a function or value as a result, while a "first class" function is a function that can be treated like any other data type (e.g. number, string, function) in a programming language. First class functions are passed as arguments to higher-order functions. There can be no higher-order functions without first class functions in any programming language.',
+          value: 'First class functions are functions as data types, as opposed to language constructs. A first class function can be passed to another function as an argument.',
           position: {
-            start: { line: 21, column: 1, offset: 1198 },
-            end: { line: 21, column: 657, offset: 1854 }
+            start: { line: 20, column: 1, offset: 1180 },
+            end: { line: 20, column: 159, offset: 1338 }
           }
         }
       ],
       position: {
-        start: { line: 21, column: 1, offset: 1198 },
-        end: { line: 21, column: 657, offset: 1854 }
+        start: { line: 20, column: 1, offset: 1180 },
+        end: { line: 20, column: 159, offset: 1338 }
+      }
+    },
+    {
+      type: 'paragraph',
+      children: [
+        {
+          type: 'text',
+          value: 'In the example below, ',
+          position: {
+            start: { line: 22, column: 1, offset: 1340 },
+            end: { line: 22, column: 23, offset: 1362 }
+          }
+        },
+        {
+          type: 'inlineCode',
+          value: 'square',
+          position: {
+            start: { line: 22, column: 23, offset: 1362 },
+            end: { line: 22, column: 31, offset: 1370 }
+          }
+        },
+        {
+          type: 'text',
+          value: ' is a first class function.',
+          position: {
+            start: { line: 22, column: 31, offset: 1370 },
+            end: { line: 22, column: 58, offset: 1397 }
+          }
+        }
+      ],
+      position: {
+        start: { line: 22, column: 1, offset: 1340 },
+        end: { line: 22, column: 58, offset: 1397 }
+      }
+    },
+    {
+      type: 'code',
+      lang: 'javascript',
+      meta: '[playground]',
+      value: 'function square(n) {\n' +
+        '  return n ** 2\n' +
+        '}\n' +
+        '\n' +
+        'const array = [1, 2, 3]\n' +
+        '\n' +
+        'const squared = array.map(square)\n' +
+        '\n' +
+        'console.log(squared)',
+      position: {
+        start: { line: 24, column: 1, offset: 1399 },
+        end: { line: 34, column: 4, offset: 1550 }
+      }
+    },
+    {
+      type: 'heading',
+      depth: 3,
+      children: [
+        {
+          type: 'text',
+          value: 'Higher-Order Functions',
+          position: {
+            start: { line: 36, column: 5, offset: 1556 },
+            end: { line: 36, column: 27, offset: 1578 }
+          }
+        }
+      ],
+      position: {
+        start: { line: 36, column: 1, offset: 1552 },
+        end: { line: 36, column: 27, offset: 1578 }
+      }
+    },
+    {
+      type: 'paragraph',
+      children: [
+        {
+          type: 'text',
+          value: 'Higher-order functions are functions that take other functions as arguments.',
+          position: {
+            start: { line: 37, column: 1, offset: 1579 },
+            end: { line: 37, column: 77, offset: 1655 }
+          }
+        }
+      ],
+      position: {
+        start: { line: 37, column: 1, offset: 1579 },
+        end: { line: 37, column: 77, offset: 1655 }
       }
     },
     {
@@ -239,14 +325,14 @@ export default {
           type: 'text',
           value: 'Here are some examples of higher-order functions in JavaScript:',
           position: {
-            start: { line: 23, column: 1, offset: 1856 },
-            end: { line: 23, column: 64, offset: 1919 }
+            start: { line: 39, column: 1, offset: 1657 },
+            end: { line: 39, column: 64, offset: 1720 }
           }
         }
       ],
       position: {
-        start: { line: 23, column: 1, offset: 1856 },
-        end: { line: 23, column: 64, offset: 1919 }
+        start: { line: 39, column: 1, offset: 1657 },
+        end: { line: 39, column: 64, offset: 1720 }
       }
     },
     {
@@ -270,34 +356,34 @@ export default {
                       type: 'text',
                       value: '.reduce() Method',
                       position: {
-                        start: { line: 25, column: 6, offset: 1926 },
-                        end: { line: 25, column: 22, offset: 1942 }
+                        start: { line: 41, column: 6, offset: 1727 },
+                        end: { line: 41, column: 22, offset: 1743 }
                       }
                     }
                   ],
                   position: {
-                    start: { line: 25, column: 4, offset: 1924 },
-                    end: { line: 25, column: 24, offset: 1944 }
+                    start: { line: 41, column: 4, offset: 1725 },
+                    end: { line: 41, column: 24, offset: 1745 }
                   }
                 },
                 {
                   type: 'text',
                   value: ': Iterates through an array and returns a single value',
                   position: {
-                    start: { line: 25, column: 24, offset: 1944 },
-                    end: { line: 25, column: 78, offset: 1998 }
+                    start: { line: 41, column: 24, offset: 1745 },
+                    end: { line: 41, column: 78, offset: 1799 }
                   }
                 }
               ],
               position: {
-                start: { line: 25, column: 4, offset: 1924 },
-                end: { line: 25, column: 78, offset: 1998 }
+                start: { line: 41, column: 4, offset: 1725 },
+                end: { line: 41, column: 78, offset: 1799 }
               }
             }
           ],
           position: {
-            start: { line: 25, column: 2, offset: 1922 },
-            end: { line: 25, column: 78, offset: 1998 }
+            start: { line: 41, column: 2, offset: 1723 },
+            end: { line: 41, column: 78, offset: 1799 }
           }
         },
         {
@@ -315,34 +401,34 @@ export default {
                       type: 'text',
                       value: '.forEach() Method',
                       position: {
-                        start: { line: 26, column: 6, offset: 2004 },
-                        end: { line: 26, column: 23, offset: 2021 }
+                        start: { line: 42, column: 6, offset: 1805 },
+                        end: { line: 42, column: 23, offset: 1822 }
                       }
                     }
                   ],
                   position: {
-                    start: { line: 26, column: 4, offset: 2002 },
-                    end: { line: 26, column: 25, offset: 2023 }
+                    start: { line: 42, column: 4, offset: 1803 },
+                    end: { line: 42, column: 25, offset: 1824 }
                   }
                 },
                 {
                   type: 'text',
                   value: ': Executes a callback function on each of the elements in an array in order',
                   position: {
-                    start: { line: 26, column: 25, offset: 2023 },
-                    end: { line: 26, column: 100, offset: 2098 }
+                    start: { line: 42, column: 25, offset: 1824 },
+                    end: { line: 42, column: 100, offset: 1899 }
                   }
                 }
               ],
               position: {
-                start: { line: 26, column: 4, offset: 2002 },
-                end: { line: 26, column: 100, offset: 2098 }
+                start: { line: 42, column: 4, offset: 1803 },
+                end: { line: 42, column: 100, offset: 1899 }
               }
             }
           ],
           position: {
-            start: { line: 26, column: 2, offset: 2000 },
-            end: { line: 26, column: 100, offset: 2098 }
+            start: { line: 42, column: 2, offset: 1801 },
+            end: { line: 42, column: 100, offset: 1899 }
           }
         },
         {
@@ -360,40 +446,40 @@ export default {
                       type: 'text',
                       value: '.map() Method',
                       position: {
-                        start: { line: 27, column: 6, offset: 2104 },
-                        end: { line: 27, column: 19, offset: 2117 }
+                        start: { line: 43, column: 6, offset: 1905 },
+                        end: { line: 43, column: 19, offset: 1918 }
                       }
                     }
                   ],
                   position: {
-                    start: { line: 27, column: 4, offset: 2102 },
-                    end: { line: 27, column: 21, offset: 2119 }
+                    start: { line: 43, column: 4, offset: 1903 },
+                    end: { line: 43, column: 21, offset: 1920 }
                   }
                 },
                 {
                   type: 'text',
                   value: ': Returns a new array made up of the return values from the provided callback function',
                   position: {
-                    start: { line: 27, column: 21, offset: 2119 },
-                    end: { line: 27, column: 107, offset: 2205 }
+                    start: { line: 43, column: 21, offset: 1920 },
+                    end: { line: 43, column: 107, offset: 2006 }
                   }
                 }
               ],
               position: {
-                start: { line: 27, column: 4, offset: 2102 },
-                end: { line: 27, column: 107, offset: 2205 }
+                start: { line: 43, column: 4, offset: 1903 },
+                end: { line: 43, column: 107, offset: 2006 }
               }
             }
           ],
           position: {
-            start: { line: 27, column: 2, offset: 2100 },
-            end: { line: 27, column: 107, offset: 2205 }
+            start: { line: 43, column: 2, offset: 1901 },
+            end: { line: 43, column: 107, offset: 2006 }
           }
         }
       ],
       position: {
-        start: { line: 25, column: 2, offset: 1922 },
-        end: { line: 27, column: 107, offset: 2205 }
+        start: { line: 41, column: 2, offset: 1723 },
+        end: { line: 43, column: 107, offset: 2006 }
       }
     },
     {
@@ -401,292 +487,32 @@ export default {
       children: [
         {
           type: 'text',
-          value: 'Here are some examples of first class functions in JavaScript:',
+          value: 'In the example below, ',
           position: {
-            start: { line: 29, column: 1, offset: 2207 },
-            end: { line: 29, column: 63, offset: 2269 }
-          }
-        }
-      ],
-      position: {
-        start: { line: 29, column: 1, offset: 2207 },
-        end: { line: 29, column: 63, offset: 2269 }
-      }
-    },
-    {
-      type: 'list',
-      ordered: false,
-      start: null,
-      spread: false,
-      children: [
-        {
-          type: 'listItem',
-          spread: false,
-          checked: null,
-          children: [
-            {
-              type: 'paragraph',
-              children: [
-                {
-                  type: 'strong',
-                  children: [
-                    {
-                      type: 'text',
-                      value: '.reduce(firstClassFunction)',
-                      position: {
-                        start: { line: 31, column: 6, offset: 2276 },
-                        end: { line: 31, column: 33, offset: 2303 }
-                      }
-                    }
-                  ],
-                  position: {
-                    start: { line: 31, column: 4, offset: 2274 },
-                    end: { line: 31, column: 35, offset: 2305 }
-                  }
-                },
-                {
-                  type: 'text',
-                  value: ': ',
-                  position: {
-                    start: { line: 31, column: 35, offset: 2305 },
-                    end: { line: 31, column: 37, offset: 2307 }
-                  }
-                },
-                {
-                  type: 'inlineCode',
-                  value: 'firstClassFunction',
-                  position: {
-                    start: { line: 31, column: 37, offset: 2307 },
-                    end: { line: 31, column: 57, offset: 2327 }
-                  }
-                },
-                {
-                  type: 'text',
-                  value: ' is a first class function',
-                  position: {
-                    start: { line: 31, column: 57, offset: 2327 },
-                    end: { line: 31, column: 83, offset: 2353 }
-                  }
-                }
-              ],
-              position: {
-                start: { line: 31, column: 4, offset: 2274 },
-                end: { line: 31, column: 83, offset: 2353 }
-              }
-            }
-          ],
-          position: {
-            start: { line: 31, column: 2, offset: 2272 },
-            end: { line: 31, column: 83, offset: 2353 }
-          }
-        },
-        {
-          type: 'listItem',
-          spread: false,
-          checked: null,
-          children: [
-            {
-              type: 'paragraph',
-              children: [
-                {
-                  type: 'strong',
-                  children: [
-                    {
-                      type: 'text',
-                      value: '.forEach(firstClassFunction)',
-                      position: {
-                        start: { line: 32, column: 6, offset: 2359 },
-                        end: { line: 32, column: 34, offset: 2387 }
-                      }
-                    }
-                  ],
-                  position: {
-                    start: { line: 32, column: 4, offset: 2357 },
-                    end: { line: 32, column: 36, offset: 2389 }
-                  }
-                },
-                {
-                  type: 'text',
-                  value: ': ',
-                  position: {
-                    start: { line: 32, column: 36, offset: 2389 },
-                    end: { line: 32, column: 38, offset: 2391 }
-                  }
-                },
-                {
-                  type: 'inlineCode',
-                  value: 'firstClassFunction',
-                  position: {
-                    start: { line: 32, column: 38, offset: 2391 },
-                    end: { line: 32, column: 58, offset: 2411 }
-                  }
-                },
-                {
-                  type: 'text',
-                  value: ' is a first class function',
-                  position: {
-                    start: { line: 32, column: 58, offset: 2411 },
-                    end: { line: 32, column: 84, offset: 2437 }
-                  }
-                }
-              ],
-              position: {
-                start: { line: 32, column: 4, offset: 2357 },
-                end: { line: 32, column: 84, offset: 2437 }
-              }
-            }
-          ],
-          position: {
-            start: { line: 32, column: 2, offset: 2355 },
-            end: { line: 32, column: 84, offset: 2437 }
-          }
-        },
-        {
-          type: 'listItem',
-          spread: false,
-          checked: null,
-          children: [
-            {
-              type: 'paragraph',
-              children: [
-                {
-                  type: 'strong',
-                  children: [
-                    {
-                      type: 'text',
-                      value: '.map(firstClassFunction)',
-                      position: {
-                        start: { line: 33, column: 6, offset: 2443 },
-                        end: { line: 33, column: 30, offset: 2467 }
-                      }
-                    }
-                  ],
-                  position: {
-                    start: { line: 33, column: 4, offset: 2441 },
-                    end: { line: 33, column: 32, offset: 2469 }
-                  }
-                },
-                {
-                  type: 'text',
-                  value: ': ',
-                  position: {
-                    start: { line: 33, column: 32, offset: 2469 },
-                    end: { line: 33, column: 34, offset: 2471 }
-                  }
-                },
-                {
-                  type: 'inlineCode',
-                  value: 'firstClassFunction',
-                  position: {
-                    start: { line: 33, column: 34, offset: 2471 },
-                    end: { line: 33, column: 54, offset: 2491 }
-                  }
-                },
-                {
-                  type: 'text',
-                  value: ' is a first class function',
-                  position: {
-                    start: { line: 33, column: 54, offset: 2491 },
-                    end: { line: 33, column: 80, offset: 2517 }
-                  }
-                }
-              ],
-              position: {
-                start: { line: 33, column: 4, offset: 2441 },
-                end: { line: 33, column: 80, offset: 2517 }
-              }
-            }
-          ],
-          position: {
-            start: { line: 33, column: 2, offset: 2439 },
-            end: { line: 33, column: 80, offset: 2517 }
-          }
-        }
-      ],
-      position: {
-        start: { line: 31, column: 2, offset: 2272 },
-        end: { line: 33, column: 80, offset: 2517 }
-      }
-    },
-    {
-      type: 'paragraph',
-      children: [
-        {
-          type: 'text',
-          value: 'You could even write your own higher-order functions, for example, the function ',
-          position: {
-            start: { line: 35, column: 1, offset: 2519 },
-            end: { line: 35, column: 81, offset: 2599 }
+            start: { line: 45, column: 1, offset: 2008 },
+            end: { line: 45, column: 23, offset: 2030 }
           }
         },
         {
           type: 'inlineCode',
           value: 'logArgs',
           position: {
-            start: { line: 35, column: 81, offset: 2599 },
-            end: { line: 35, column: 90, offset: 2608 }
+            start: { line: 45, column: 23, offset: 2030 },
+            end: { line: 45, column: 32, offset: 2039 }
           }
         },
         {
           type: 'text',
-          value: ' takes the first class function ',
+          value: ' is a higher-order function.',
           position: {
-            start: { line: 35, column: 90, offset: 2608 },
-            end: { line: 35, column: 122, offset: 2640 }
-          }
-        },
-        {
-          type: 'inlineCode',
-          value: 'f',
-          position: {
-            start: { line: 35, column: 122, offset: 2640 },
-            end: { line: 35, column: 125, offset: 2643 }
-          }
-        },
-        {
-          type: 'text',
-          value: ' and logs the arguments to ',
-          position: {
-            start: { line: 35, column: 125, offset: 2643 },
-            end: { line: 35, column: 152, offset: 2670 }
-          }
-        },
-        {
-          type: 'inlineCode',
-          value: 'f',
-          position: {
-            start: { line: 35, column: 152, offset: 2670 },
-            end: { line: 35, column: 155, offset: 2673 }
-          }
-        },
-        {
-          type: 'text',
-          value: ' every time ',
-          position: {
-            start: { line: 35, column: 155, offset: 2673 },
-            end: { line: 35, column: 167, offset: 2685 }
-          }
-        },
-        {
-          type: 'inlineCode',
-          value: 'f',
-          position: {
-            start: { line: 35, column: 167, offset: 2685 },
-            end: { line: 35, column: 170, offset: 2688 }
-          }
-        },
-        {
-          type: 'text',
-          value: ' is called.',
-          position: {
-            start: { line: 35, column: 170, offset: 2688 },
-            end: { line: 35, column: 181, offset: 2699 }
+            start: { line: 45, column: 32, offset: 2039 },
+            end: { line: 45, column: 60, offset: 2067 }
           }
         }
       ],
       position: {
-        start: { line: 35, column: 1, offset: 2519 },
-        end: { line: 35, column: 181, offset: 2699 }
+        start: { line: 45, column: 1, offset: 2008 },
+        end: { line: 45, column: 60, offset: 2067 }
       }
     },
     {
@@ -704,13 +530,11 @@ export default {
         'const addWithArgsLogged = logArgs(add)\n' +
         '\n' +
         'const result = addWithArgsLogged(1, 2)\n' +
-        '// 1 2\n' +
         '\n' +
-        'console.log(result)\n' +
-        '// 3',
+        'console.log(result)',
       position: {
-        start: { line: 37, column: 1, offset: 2701 },
-        end: { line: 53, column: 4, offset: 2971 }
+        start: { line: 47, column: 1, offset: 2069 },
+        end: { line: 61, column: 4, offset: 2327 }
       }
     },
     {
@@ -721,14 +545,14 @@ export default {
           type: 'text',
           value: 'Pure functions',
           position: {
-            start: { line: 55, column: 5, offset: 2977 },
-            end: { line: 55, column: 19, offset: 2991 }
+            start: { line: 63, column: 5, offset: 2333 },
+            end: { line: 63, column: 19, offset: 2347 }
           }
         }
       ],
       position: {
-        start: { line: 55, column: 1, offset: 2973 },
-        end: { line: 55, column: 19, offset: 2991 }
+        start: { line: 63, column: 1, offset: 2329 },
+        end: { line: 63, column: 19, offset: 2347 }
       }
     },
     {
@@ -738,14 +562,14 @@ export default {
           type: 'text',
           value: 'Pure functions are functions that have the following characteristics:',
           position: {
-            start: { line: 57, column: 1, offset: 2993 },
-            end: { line: 57, column: 70, offset: 3062 }
+            start: { line: 65, column: 1, offset: 2349 },
+            end: { line: 65, column: 70, offset: 2418 }
           }
         }
       ],
       position: {
-        start: { line: 57, column: 1, offset: 2993 },
-        end: { line: 57, column: 70, offset: 3062 }
+        start: { line: 65, column: 1, offset: 2349 },
+        end: { line: 65, column: 70, offset: 2418 }
       }
     },
     {
@@ -769,22 +593,22 @@ export default {
                       type: 'text',
                       value: 'No side effects',
                       position: {
-                        start: { line: 59, column: 6, offset: 3069 },
-                        end: { line: 59, column: 21, offset: 3084 }
+                        start: { line: 67, column: 6, offset: 2425 },
+                        end: { line: 67, column: 21, offset: 2440 }
                       }
                     }
                   ],
                   position: {
-                    start: { line: 59, column: 4, offset: 3067 },
-                    end: { line: 59, column: 23, offset: 3086 }
+                    start: { line: 67, column: 4, offset: 2423 },
+                    end: { line: 67, column: 23, offset: 2442 }
                   }
                 },
                 {
                   type: 'text',
                   value: ': A pure function does not change any variables, data, or state outside its scope, nor does it modify any outside state referenced by variables inside of its scope (see ',
                   position: {
-                    start: { line: 59, column: 23, offset: 3086 },
-                    end: { line: 59, column: 192, offset: 3255 }
+                    start: { line: 67, column: 23, offset: 2442 },
+                    end: { line: 67, column: 192, offset: 2611 }
                   }
                 },
                 {
@@ -796,34 +620,34 @@ export default {
                       type: 'text',
                       value: 'immutability',
                       position: {
-                        start: { line: 59, column: 193, offset: 3256 },
-                        end: { line: 59, column: 205, offset: 3268 }
+                        start: { line: 67, column: 193, offset: 2612 },
+                        end: { line: 67, column: 205, offset: 2624 }
                       }
                     }
                   ],
                   position: {
-                    start: { line: 59, column: 192, offset: 3255 },
-                    end: { line: 59, column: 254, offset: 3317 }
+                    start: { line: 67, column: 192, offset: 2611 },
+                    end: { line: 67, column: 254, offset: 2673 }
                   }
                 },
                 {
                   type: 'text',
                   value: ').',
                   position: {
-                    start: { line: 59, column: 254, offset: 3317 },
-                    end: { line: 59, column: 256, offset: 3319 }
+                    start: { line: 67, column: 254, offset: 2673 },
+                    end: { line: 67, column: 256, offset: 2675 }
                   }
                 }
               ],
               position: {
-                start: { line: 59, column: 4, offset: 3067 },
-                end: { line: 59, column: 256, offset: 3319 }
+                start: { line: 67, column: 4, offset: 2423 },
+                end: { line: 67, column: 256, offset: 2675 }
               }
             }
           ],
           position: {
-            start: { line: 59, column: 2, offset: 3065 },
-            end: { line: 59, column: 256, offset: 3319 }
+            start: { line: 67, column: 2, offset: 2421 },
+            end: { line: 67, column: 256, offset: 2675 }
           }
         },
         {
@@ -841,40 +665,40 @@ export default {
                       type: 'text',
                       value: 'Deterministic output / Referential transparency / Idempotence',
                       position: {
-                        start: { line: 60, column: 6, offset: 3325 },
-                        end: { line: 60, column: 67, offset: 3386 }
+                        start: { line: 68, column: 6, offset: 2681 },
+                        end: { line: 68, column: 67, offset: 2742 }
                       }
                     }
                   ],
                   position: {
-                    start: { line: 60, column: 4, offset: 3323 },
-                    end: { line: 60, column: 69, offset: 3388 }
+                    start: { line: 68, column: 4, offset: 2679 },
+                    end: { line: 68, column: 69, offset: 2744 }
                   }
                 },
                 {
                   type: 'text',
                   value: ': Given the same input, a pure function will always return the same output.',
                   position: {
-                    start: { line: 60, column: 69, offset: 3388 },
-                    end: { line: 60, column: 144, offset: 3463 }
+                    start: { line: 68, column: 69, offset: 2744 },
+                    end: { line: 68, column: 144, offset: 2819 }
                   }
                 }
               ],
               position: {
-                start: { line: 60, column: 4, offset: 3323 },
-                end: { line: 60, column: 144, offset: 3463 }
+                start: { line: 68, column: 4, offset: 2679 },
+                end: { line: 68, column: 144, offset: 2819 }
               }
             }
           ],
           position: {
-            start: { line: 60, column: 2, offset: 3321 },
-            end: { line: 60, column: 144, offset: 3463 }
+            start: { line: 68, column: 2, offset: 2677 },
+            end: { line: 68, column: 144, offset: 2819 }
           }
         }
       ],
       position: {
-        start: { line: 59, column: 2, offset: 3065 },
-        end: { line: 60, column: 144, offset: 3463 }
+        start: { line: 67, column: 2, offset: 2421 },
+        end: { line: 68, column: 144, offset: 2819 }
       }
     },
     {
@@ -884,14 +708,14 @@ export default {
           type: 'text',
           value: 'Pure functions have the following advantages:',
           position: {
-            start: { line: 62, column: 1, offset: 3465 },
-            end: { line: 62, column: 46, offset: 3510 }
+            start: { line: 70, column: 1, offset: 2821 },
+            end: { line: 70, column: 46, offset: 2866 }
           }
         }
       ],
       position: {
-        start: { line: 62, column: 1, offset: 3465 },
-        end: { line: 62, column: 46, offset: 3510 }
+        start: { line: 70, column: 1, offset: 2821 },
+        end: { line: 70, column: 46, offset: 2866 }
       }
     },
     {
@@ -912,20 +736,20 @@ export default {
                   type: 'text',
                   value: 'Pure functions are easy to test - simply vary the input for full code coverage',
                   position: {
-                    start: { line: 64, column: 4, offset: 3515 },
-                    end: { line: 64, column: 82, offset: 3593 }
+                    start: { line: 72, column: 4, offset: 2871 },
+                    end: { line: 72, column: 82, offset: 2949 }
                   }
                 }
               ],
               position: {
-                start: { line: 64, column: 4, offset: 3515 },
-                end: { line: 64, column: 82, offset: 3593 }
+                start: { line: 72, column: 4, offset: 2871 },
+                end: { line: 72, column: 82, offset: 2949 }
               }
             }
           ],
           position: {
-            start: { line: 64, column: 2, offset: 3513 },
-            end: { line: 64, column: 82, offset: 3593 }
+            start: { line: 72, column: 2, offset: 2869 },
+            end: { line: 72, column: 82, offset: 2949 }
           }
         },
         {
@@ -940,20 +764,20 @@ export default {
                   type: 'text',
                   value: 'Multiple pure functions can be executed in parallel without interfering with each other',
                   position: {
-                    start: { line: 65, column: 4, offset: 3597 },
-                    end: { line: 65, column: 91, offset: 3684 }
+                    start: { line: 73, column: 4, offset: 2953 },
+                    end: { line: 73, column: 91, offset: 3040 }
                   }
                 }
               ],
               position: {
-                start: { line: 65, column: 4, offset: 3597 },
-                end: { line: 65, column: 91, offset: 3684 }
+                start: { line: 73, column: 4, offset: 2953 },
+                end: { line: 73, column: 91, offset: 3040 }
               }
             }
           ],
           position: {
-            start: { line: 65, column: 2, offset: 3595 },
-            end: { line: 65, column: 91, offset: 3684 }
+            start: { line: 73, column: 2, offset: 2951 },
+            end: { line: 73, column: 91, offset: 3040 }
           }
         },
         {
@@ -968,8 +792,8 @@ export default {
                   type: 'text',
                   value: 'Pure functions can be ',
                   position: {
-                    start: { line: 66, column: 4, offset: 3688 },
-                    end: { line: 66, column: 26, offset: 3710 }
+                    start: { line: 74, column: 4, offset: 3044 },
+                    end: { line: 74, column: 26, offset: 3066 }
                   }
                 },
                 {
@@ -981,32 +805,32 @@ export default {
                       type: 'text',
                       value: 'memoized',
                       position: {
-                        start: { line: 66, column: 27, offset: 3711 },
-                        end: { line: 66, column: 35, offset: 3719 }
+                        start: { line: 74, column: 27, offset: 3067 },
+                        end: { line: 74, column: 35, offset: 3075 }
                       }
                     }
                   ],
                   position: {
-                    start: { line: 66, column: 26, offset: 3710 },
-                    end: { line: 66, column: 79, offset: 3763 }
+                    start: { line: 74, column: 26, offset: 3066 },
+                    end: { line: 74, column: 79, offset: 3119 }
                   }
                 }
               ],
               position: {
-                start: { line: 66, column: 4, offset: 3688 },
-                end: { line: 66, column: 79, offset: 3763 }
+                start: { line: 74, column: 4, offset: 3044 },
+                end: { line: 74, column: 79, offset: 3119 }
               }
             }
           ],
           position: {
-            start: { line: 66, column: 2, offset: 3686 },
-            end: { line: 66, column: 79, offset: 3763 }
+            start: { line: 74, column: 2, offset: 3042 },
+            end: { line: 74, column: 79, offset: 3119 }
           }
         }
       ],
       position: {
-        start: { line: 64, column: 2, offset: 3513 },
-        end: { line: 66, column: 79, offset: 3763 }
+        start: { line: 72, column: 2, offset: 2869 },
+        end: { line: 74, column: 79, offset: 3119 }
       }
     },
     {
@@ -1016,46 +840,46 @@ export default {
           type: 'text',
           value: 'The function ',
           position: {
-            start: { line: 68, column: 1, offset: 3765 },
-            end: { line: 68, column: 14, offset: 3778 }
+            start: { line: 76, column: 1, offset: 3121 },
+            end: { line: 76, column: 14, offset: 3134 }
           }
         },
         {
           type: 'inlineCode',
           value: 'add',
           position: {
-            start: { line: 68, column: 14, offset: 3778 },
-            end: { line: 68, column: 19, offset: 3783 }
+            start: { line: 76, column: 14, offset: 3134 },
+            end: { line: 76, column: 19, offset: 3139 }
           }
         },
         {
           type: 'text',
           value: ' is a pure function because it does not have any side effects (nothing changes outside of its scope) and it has deterministic output (calling ',
           position: {
-            start: { line: 68, column: 19, offset: 3783 },
-            end: { line: 68, column: 161, offset: 3925 }
+            start: { line: 76, column: 19, offset: 3139 },
+            end: { line: 76, column: 161, offset: 3281 }
           }
         },
         {
           type: 'inlineCode',
           value: 'add',
           position: {
-            start: { line: 68, column: 161, offset: 3925 },
-            end: { line: 68, column: 166, offset: 3930 }
+            start: { line: 76, column: 161, offset: 3281 },
+            end: { line: 76, column: 166, offset: 3286 }
           }
         },
         {
           type: 'text',
           value: ' with 1 and 2 will always result in 3)',
           position: {
-            start: { line: 68, column: 166, offset: 3930 },
-            end: { line: 68, column: 204, offset: 3968 }
+            start: { line: 76, column: 166, offset: 3286 },
+            end: { line: 76, column: 204, offset: 3324 }
           }
         }
       ],
       position: {
-        start: { line: 68, column: 1, offset: 3765 },
-        end: { line: 68, column: 204, offset: 3968 }
+        start: { line: 76, column: 1, offset: 3121 },
+        end: { line: 76, column: 204, offset: 3324 }
       }
     },
     {
@@ -1065,16 +889,13 @@ export default {
       value: 'const add = (a, b) => a + b\n' +
         '\n' +
         'console.log(add(1, 2))\n' +
-        '// 3\n' +
         '\n' +
         'console.log(add(1, 2))\n' +
-        '// 3\n' +
         '\n' +
-        'console.log(add(1, 2))\n' +
-        '// 3',
+        'console.log(add(1, 2))',
       position: {
-        start: { line: 70, column: 1, offset: 3970 },
-        end: { line: 81, column: 4, offset: 4115 }
+        start: { line: 78, column: 1, offset: 3326 },
+        end: { line: 86, column: 4, offset: 3456 }
       }
     },
     {
@@ -1084,14 +905,14 @@ export default {
           type: 'text',
           value: 'The following are examples of side effects',
           position: {
-            start: { line: 83, column: 1, offset: 4117 },
-            end: { line: 83, column: 43, offset: 4159 }
+            start: { line: 88, column: 1, offset: 3458 },
+            end: { line: 88, column: 43, offset: 3500 }
           }
         }
       ],
       position: {
-        start: { line: 83, column: 1, offset: 4117 },
-        end: { line: 83, column: 43, offset: 4159 }
+        start: { line: 88, column: 1, offset: 3458 },
+        end: { line: 88, column: 43, offset: 3500 }
       }
     },
     {
@@ -1112,20 +933,20 @@ export default {
                   type: 'text',
                   value: "Modifying global variables (global variables are state outside the function's scope)",
                   position: {
-                    start: { line: 85, column: 4, offset: 4164 },
-                    end: { line: 85, column: 88, offset: 4248 }
+                    start: { line: 90, column: 4, offset: 3505 },
+                    end: { line: 90, column: 88, offset: 3589 }
                   }
                 }
               ],
               position: {
-                start: { line: 85, column: 4, offset: 4164 },
-                end: { line: 85, column: 88, offset: 4248 }
+                start: { line: 90, column: 4, offset: 3505 },
+                end: { line: 90, column: 88, offset: 3589 }
               }
             }
           ],
           position: {
-            start: { line: 85, column: 2, offset: 4162 },
-            end: { line: 85, column: 88, offset: 4248 }
+            start: { line: 90, column: 2, offset: 3503 },
+            end: { line: 90, column: 88, offset: 3589 }
           }
         },
         {
@@ -1140,20 +961,20 @@ export default {
                   type: 'text',
                   value: "Writing to a file (file contents are state outside the function's scope)",
                   position: {
-                    start: { line: 86, column: 4, offset: 4252 },
-                    end: { line: 86, column: 76, offset: 4324 }
+                    start: { line: 91, column: 4, offset: 3593 },
+                    end: { line: 91, column: 76, offset: 3665 }
                   }
                 }
               ],
               position: {
-                start: { line: 86, column: 4, offset: 4252 },
-                end: { line: 86, column: 76, offset: 4324 }
+                start: { line: 91, column: 4, offset: 3593 },
+                end: { line: 91, column: 76, offset: 3665 }
               }
             }
           ],
           position: {
-            start: { line: 86, column: 2, offset: 4250 },
-            end: { line: 86, column: 76, offset: 4324 }
+            start: { line: 91, column: 2, offset: 3591 },
+            end: { line: 91, column: 76, offset: 3665 }
           }
         },
         {
@@ -1168,20 +989,20 @@ export default {
                   type: 'text',
                   value: "Logging output to the console (console is state outside the function's scope)",
                   position: {
-                    start: { line: 87, column: 4, offset: 4328 },
-                    end: { line: 87, column: 81, offset: 4405 }
+                    start: { line: 92, column: 4, offset: 3669 },
+                    end: { line: 92, column: 81, offset: 3746 }
                   }
                 }
               ],
               position: {
-                start: { line: 87, column: 4, offset: 4328 },
-                end: { line: 87, column: 81, offset: 4405 }
+                start: { line: 92, column: 4, offset: 3669 },
+                end: { line: 92, column: 81, offset: 3746 }
               }
             }
           ],
           position: {
-            start: { line: 87, column: 2, offset: 4326 },
-            end: { line: 87, column: 81, offset: 4405 }
+            start: { line: 92, column: 2, offset: 3667 },
+            end: { line: 92, column: 81, offset: 3746 }
           }
         },
         {
@@ -1196,20 +1017,20 @@ export default {
                   type: 'text',
                   value: "Inserting, updating, or deleting data from a database (database storage is state outside the function's scope)",
                   position: {
-                    start: { line: 88, column: 4, offset: 4409 },
-                    end: { line: 88, column: 114, offset: 4519 }
+                    start: { line: 93, column: 4, offset: 3750 },
+                    end: { line: 93, column: 114, offset: 3860 }
                   }
                 }
               ],
               position: {
-                start: { line: 88, column: 4, offset: 4409 },
-                end: { line: 88, column: 114, offset: 4519 }
+                start: { line: 93, column: 4, offset: 3750 },
+                end: { line: 93, column: 114, offset: 3860 }
               }
             }
           ],
           position: {
-            start: { line: 88, column: 2, offset: 4407 },
-            end: { line: 88, column: 114, offset: 4519 }
+            start: { line: 93, column: 2, offset: 3748 },
+            end: { line: 93, column: 114, offset: 3860 }
           }
         },
         {
@@ -1224,20 +1045,20 @@ export default {
                   type: 'text',
                   value: "Sending a network request to an external http API (the API is an interface over state outside the function's scope)",
                   position: {
-                    start: { line: 89, column: 4, offset: 4523 },
-                    end: { line: 89, column: 119, offset: 4638 }
+                    start: { line: 94, column: 4, offset: 3864 },
+                    end: { line: 94, column: 119, offset: 3979 }
                   }
                 }
               ],
               position: {
-                start: { line: 89, column: 4, offset: 4523 },
-                end: { line: 89, column: 119, offset: 4638 }
+                start: { line: 94, column: 4, offset: 3864 },
+                end: { line: 94, column: 119, offset: 3979 }
               }
             }
           ],
           position: {
-            start: { line: 89, column: 2, offset: 4521 },
-            end: { line: 89, column: 119, offset: 4638 }
+            start: { line: 94, column: 2, offset: 3862 },
+            end: { line: 94, column: 119, offset: 3979 }
           }
         },
         {
@@ -1252,26 +1073,179 @@ export default {
                   type: 'text',
                   value: "Overwriting a key on an object passed as an argument to the function (the object passed to the function is considered state outside the function's scope)",
                   position: {
-                    start: { line: 90, column: 4, offset: 4642 },
-                    end: { line: 90, column: 157, offset: 4795 }
+                    start: { line: 95, column: 4, offset: 3983 },
+                    end: { line: 95, column: 157, offset: 4136 }
                   }
                 }
               ],
               position: {
-                start: { line: 90, column: 4, offset: 4642 },
-                end: { line: 90, column: 157, offset: 4795 }
+                start: { line: 95, column: 4, offset: 3983 },
+                end: { line: 95, column: 157, offset: 4136 }
               }
             }
           ],
           position: {
-            start: { line: 90, column: 2, offset: 4640 },
-            end: { line: 90, column: 157, offset: 4795 }
+            start: { line: 95, column: 2, offset: 3981 },
+            end: { line: 95, column: 157, offset: 4136 }
           }
         }
       ],
       position: {
-        start: { line: 85, column: 2, offset: 4162 },
-        end: { line: 90, column: 157, offset: 4795 }
+        start: { line: 90, column: 2, offset: 3503 },
+        end: { line: 95, column: 157, offset: 4136 }
+      }
+    },
+    {
+      type: 'heading',
+      depth: 3,
+      children: [
+        {
+          type: 'text',
+          value: 'Partial Application',
+          position: {
+            start: { line: 97, column: 5, offset: 4142 },
+            end: { line: 97, column: 24, offset: 4161 }
+          }
+        }
+      ],
+      position: {
+        start: { line: 97, column: 1, offset: 4138 },
+        end: { line: 97, column: 24, offset: 4161 }
+      }
+    },
+    {
+      type: 'paragraph',
+      children: [
+        {
+          type: 'text',
+          value: 'Partial application is a technique in functional programming where a curry function is used to partially apply arguments to a function, returning a partially applied function that expects the remaining arguments of the function.',
+          position: {
+            start: { line: 98, column: 1, offset: 4162 },
+            end: { line: 98, column: 229, offset: 4390 }
+          }
+        }
+      ],
+      position: {
+        start: { line: 98, column: 1, offset: 4162 },
+        end: { line: 98, column: 229, offset: 4390 }
+      }
+    },
+    {
+      type: 'paragraph',
+      children: [
+        {
+          type: 'text',
+          value: 'Here is an example of partial application:',
+          position: {
+            start: { line: 100, column: 1, offset: 4392 },
+            end: { line: 100, column: 43, offset: 4434 }
+          }
+        }
+      ],
+      position: {
+        start: { line: 100, column: 1, offset: 4392 },
+        end: { line: 100, column: 43, offset: 4434 }
+      }
+    },
+    {
+      type: 'code',
+      lang: 'javascript',
+      meta: '[playground]',
+      value: 'function multiply(a, b, c) {\n' +
+        '  return a * b * c\n' +
+        '}\n' +
+        '\n' +
+        'const multiply__5 = curry(multiply, __, __, 5)\n' +
+        'const multiply3_5 = curry(multiply__5, 3, __)\n' +
+        '\n' +
+        'const product = multiply3_5(4)\n' +
+        '\n' +
+        'console.log(product)',
+      position: {
+        start: { line: 102, column: 1, offset: 4436 },
+        end: { line: 113, column: 4, offset: 4664 }
+      }
+    },
+    {
+      type: 'heading',
+      depth: 3,
+      children: [
+        {
+          type: 'text',
+          value: 'Monad-Like Structures',
+          position: {
+            start: { line: 115, column: 5, offset: 4670 },
+            end: { line: 115, column: 26, offset: 4691 }
+          }
+        }
+      ],
+      position: {
+        start: { line: 115, column: 1, offset: 4666 },
+        end: { line: 115, column: 26, offset: 4691 }
+      }
+    },
+    {
+      type: 'paragraph',
+      children: [
+        {
+          type: 'text',
+          value: "Monad-like structures are classes that embody the Monadic idea that a Monad's methods return a Monad. Promise is an example of a monad-like structure.",
+          position: {
+            start: { line: 116, column: 1, offset: 4692 },
+            end: { line: 116, column: 151, offset: 4842 }
+          }
+        }
+      ],
+      position: {
+        start: { line: 116, column: 1, offset: 4692 },
+        end: { line: 116, column: 151, offset: 4842 }
+      }
+    },
+    {
+      type: 'paragraph',
+      children: [
+        {
+          type: 'text',
+          value: "The below example shows a promise's ",
+          position: {
+            start: { line: 118, column: 1, offset: 4844 },
+            end: { line: 118, column: 37, offset: 4880 }
+          }
+        },
+        {
+          type: 'inlineCode',
+          value: '.then',
+          position: {
+            start: { line: 118, column: 37, offset: 4880 },
+            end: { line: 118, column: 44, offset: 4887 }
+          }
+        },
+        {
+          type: 'text',
+          value: ' method returning another promise.',
+          position: {
+            start: { line: 118, column: 44, offset: 4887 },
+            end: { line: 118, column: 78, offset: 4921 }
+          }
+        }
+      ],
+      position: {
+        start: { line: 118, column: 1, offset: 4844 },
+        end: { line: 118, column: 78, offset: 4921 }
+      }
+    },
+    {
+      type: 'code',
+      lang: 'javascript',
+      meta: '[playground]',
+      value: 'const promiseA = Promise.resolve(1)\n' +
+        '\n' +
+        'const promiseB = promiseA.then(n => n + 2)\n' +
+        '\n' +
+        'console.log(promiseB)',
+      position: {
+        start: { line: 120, column: 1, offset: 4923 },
+        end: { line: 126, column: 4, offset: 5056 }
       }
     },
     {
@@ -1282,14 +1256,14 @@ export default {
           type: 'text',
           value: '[A]synchronous Functional Programming',
           position: {
-            start: { line: 92, column: 5, offset: 4801 },
-            end: { line: 92, column: 42, offset: 4838 }
+            start: { line: 128, column: 5, offset: 5062 },
+            end: { line: 128, column: 42, offset: 5099 }
           }
         }
       ],
       position: {
-        start: { line: 92, column: 1, offset: 4797 },
-        end: { line: 92, column: 42, offset: 4838 }
+        start: { line: 128, column: 1, offset: 5058 },
+        end: { line: 128, column: 42, offset: 5099 }
       }
     },
     {
@@ -1299,8 +1273,8 @@ export default {
           type: 'text',
           value: '[A]synchronous Functional Programming builds on these concepts, extending the ideas of Functional Programming to modern JavaScript (ECMAScript 6 onwards). In particular, the [A]synchronous Functional Programming paradigm considers current asynchronous primitives (e.g. ',
           position: {
-            start: { line: 94, column: 1, offset: 4840 },
-            end: { line: 94, column: 270, offset: 5109 }
+            start: { line: 130, column: 1, offset: 5101 },
+            end: { line: 130, column: 270, offset: 5370 }
           }
         },
         {
@@ -1312,22 +1286,22 @@ export default {
               type: 'text',
               value: 'Promises',
               position: {
-                start: { line: 94, column: 271, offset: 5110 },
-                end: { line: 94, column: 279, offset: 5118 }
+                start: { line: 130, column: 271, offset: 5371 },
+                end: { line: 130, column: 279, offset: 5379 }
               }
             }
           ],
           position: {
-            start: { line: 94, column: 270, offset: 5109 },
-            end: { line: 94, column: 370, offset: 5209 }
+            start: { line: 130, column: 270, offset: 5370 },
+            end: { line: 130, column: 370, offset: 5470 }
           }
         },
         {
           type: 'text',
           value: ' and ',
           position: {
-            start: { line: 94, column: 370, offset: 5209 },
-            end: { line: 94, column: 375, offset: 5214 }
+            start: { line: 130, column: 370, offset: 5470 },
+            end: { line: 130, column: 375, offset: 5475 }
           }
         },
         {
@@ -1339,28 +1313,28 @@ export default {
               type: 'text',
               value: 'async/await',
               position: {
-                start: { line: 94, column: 376, offset: 5215 },
-                end: { line: 94, column: 387, offset: 5226 }
+                start: { line: 130, column: 376, offset: 5476 },
+                end: { line: 130, column: 387, offset: 5487 }
               }
             }
           ],
           position: {
-            start: { line: 94, column: 375, offset: 5214 },
-            end: { line: 94, column: 481, offset: 5320 }
+            start: { line: 130, column: 375, offset: 5475 },
+            end: { line: 130, column: 481, offset: 5581 }
           }
         },
         {
           type: 'text',
           value: ') when creating modular and predictable programs composed of functions.',
           position: {
-            start: { line: 94, column: 481, offset: 5320 },
-            end: { line: 94, column: 552, offset: 5391 }
+            start: { line: 130, column: 481, offset: 5581 },
+            end: { line: 130, column: 552, offset: 5652 }
           }
         }
       ],
       position: {
-        start: { line: 94, column: 1, offset: 4840 },
-        end: { line: 94, column: 552, offset: 5391 }
+        start: { line: 130, column: 1, offset: 5101 },
+        end: { line: 130, column: 552, offset: 5652 }
       }
     },
     {
@@ -1370,8 +1344,8 @@ export default {
           type: 'text',
           value: 'We can use the ',
           position: {
-            start: { line: 96, column: 1, offset: 5393 },
-            end: { line: 96, column: 16, offset: 5408 }
+            start: { line: 132, column: 1, offset: 5654 },
+            end: { line: 132, column: 16, offset: 5669 }
           }
         },
         {
@@ -1383,28 +1357,28 @@ export default {
               type: 'text',
               value: 'Rubico',
               position: {
-                start: { line: 96, column: 17, offset: 5409 },
-                end: { line: 96, column: 23, offset: 5415 }
+                start: { line: 132, column: 17, offset: 5670 },
+                end: { line: 132, column: 23, offset: 5676 }
               }
             }
           ],
           position: {
-            start: { line: 96, column: 16, offset: 5408 },
-            end: { line: 96, column: 46, offset: 5438 }
+            start: { line: 132, column: 16, offset: 5669 },
+            end: { line: 132, column: 46, offset: 5699 }
           }
         },
         {
           type: 'text',
           value: ' library to operate in the [A]synchronous Functional Programming paradigm.',
           position: {
-            start: { line: 96, column: 46, offset: 5438 },
-            end: { line: 96, column: 120, offset: 5512 }
+            start: { line: 132, column: 46, offset: 5699 },
+            end: { line: 132, column: 120, offset: 5773 }
           }
         }
       ],
       position: {
-        start: { line: 96, column: 1, offset: 5393 },
-        end: { line: 96, column: 120, offset: 5512 }
+        start: { line: 132, column: 1, offset: 5654 },
+        end: { line: 132, column: 120, offset: 5773 }
       }
     },
     {
@@ -1415,9 +1389,7 @@ export default {
         '\n' +
         'const ids = [1, 2, 3, 4, 5]\n' +
         '\n' +
-        'compose(\n' +
-        '  // log each response body\n' +
-        '  forEach(console.log),\n' +
+        'pipe(ids, [\n' +
         '\n' +
         '  // make a request for each id\n' +
         '  map(async id => {\n' +
@@ -1426,10 +1398,14 @@ export default {
         '    const data = await response.json()\n' +
         '    return data\n' +
         '  }),\n' +
-        ')(ids)',
+        '\n' +
+        '  // log each response body\n' +
+        '  forEach(console.log),\n' +
+        '\n' +
+        '])',
       position: {
-        start: { line: 98, column: 1, offset: 5514 },
-        end: { line: 115, column: 4, offset: 5902 }
+        start: { line: 134, column: 1, offset: 5775 },
+        end: { line: 153, column: 4, offset: 6164 }
       }
     },
     {
@@ -1439,8 +1415,8 @@ export default {
           type: 'text',
           value: 'Above we see a composition of functions created with the Rubico ',
           position: {
-            start: { line: 117, column: 1, offset: 5904 },
-            end: { line: 117, column: 65, offset: 5968 }
+            start: { line: 155, column: 1, offset: 6166 },
+            end: { line: 155, column: 65, offset: 6230 }
           }
         },
         {
@@ -1452,54 +1428,54 @@ export default {
               type: 'text',
               value: 'compose',
               position: {
-                start: { line: 117, column: 66, offset: 5969 },
-                end: { line: 117, column: 73, offset: 5976 }
+                start: { line: 155, column: 66, offset: 6231 },
+                end: { line: 155, column: 73, offset: 6238 }
               }
             }
           ],
           position: {
-            start: { line: 117, column: 65, offset: 5968 },
-            end: { line: 117, column: 89, offset: 5992 }
+            start: { line: 155, column: 65, offset: 6230 },
+            end: { line: 155, column: 89, offset: 6254 }
           }
         },
         {
           type: 'text',
           value: ' operator. ',
           position: {
-            start: { line: 117, column: 89, offset: 5992 },
-            end: { line: 117, column: 100, offset: 6003 }
+            start: { line: 155, column: 89, offset: 6254 },
+            end: { line: 155, column: 100, offset: 6265 }
           }
         },
         {
           type: 'inlineCode',
           value: 'compose',
           position: {
-            start: { line: 117, column: 100, offset: 6003 },
-            end: { line: 117, column: 109, offset: 6012 }
+            start: { line: 155, column: 100, offset: 6265 },
+            end: { line: 155, column: 109, offset: 6274 }
           }
         },
         {
           type: 'text',
           value: ' allows us to chain together operations sequentially, the result of one function becoming the argument to the next. The above composition starts with the ids ',
           position: {
-            start: { line: 117, column: 109, offset: 6012 },
-            end: { line: 117, column: 267, offset: 6170 }
+            start: { line: 155, column: 109, offset: 6274 },
+            end: { line: 155, column: 267, offset: 6432 }
           }
         },
         {
           type: 'inlineCode',
           value: '[1, 2, 3, 4, 5]',
           position: {
-            start: { line: 117, column: 267, offset: 6170 },
-            end: { line: 117, column: 284, offset: 6187 }
+            start: { line: 155, column: 267, offset: 6432 },
+            end: { line: 155, column: 284, offset: 6449 }
           }
         },
         {
           type: 'text',
           value: ', then using the async-enabled Rubico ',
           position: {
-            start: { line: 117, column: 284, offset: 6187 },
-            end: { line: 117, column: 322, offset: 6225 }
+            start: { line: 155, column: 284, offset: 6449 },
+            end: { line: 155, column: 322, offset: 6487 }
           }
         },
         {
@@ -1511,22 +1487,22 @@ export default {
               type: 'text',
               value: 'map',
               position: {
-                start: { line: 117, column: 323, offset: 6226 },
-                end: { line: 117, column: 326, offset: 6229 }
+                start: { line: 155, column: 323, offset: 6488 },
+                end: { line: 155, column: 326, offset: 6491 }
               }
             }
           ],
           position: {
-            start: { line: 117, column: 322, offset: 6225 },
-            end: { line: 117, column: 338, offset: 6241 }
+            start: { line: 155, column: 322, offset: 6487 },
+            end: { line: 155, column: 338, offset: 6503 }
           }
         },
         {
           type: 'text',
           value: ' operator, makes a request for each id and parses out the response body. Each parsed out response body is then logged out with the Rubico ',
           position: {
-            start: { line: 117, column: 338, offset: 6241 },
-            end: { line: 117, column: 476, offset: 6379 }
+            start: { line: 155, column: 338, offset: 6503 },
+            end: { line: 155, column: 476, offset: 6641 }
           }
         },
         {
@@ -1538,44 +1514,44 @@ export default {
               type: 'text',
               value: 'forEach',
               position: {
-                start: { line: 117, column: 477, offset: 6380 },
-                end: { line: 117, column: 484, offset: 6387 }
+                start: { line: 155, column: 477, offset: 6642 },
+                end: { line: 155, column: 484, offset: 6649 }
               }
             }
           ],
           position: {
-            start: { line: 117, column: 476, offset: 6379 },
-            end: { line: 117, column: 500, offset: 6403 }
+            start: { line: 155, column: 476, offset: 6641 },
+            end: { line: 155, column: 500, offset: 6665 }
           }
         },
         {
           type: 'text',
           value: ' operator and the ',
           position: {
-            start: { line: 117, column: 500, offset: 6403 },
-            end: { line: 117, column: 518, offset: 6421 }
+            start: { line: 155, column: 500, offset: 6665 },
+            end: { line: 155, column: 518, offset: 6683 }
           }
         },
         {
           type: 'inlineCode',
           value: 'console.log',
           position: {
-            start: { line: 117, column: 518, offset: 6421 },
-            end: { line: 117, column: 531, offset: 6434 }
+            start: { line: 155, column: 518, offset: 6683 },
+            end: { line: 155, column: 531, offset: 6696 }
           }
         },
         {
           type: 'text',
           value: ' function.',
           position: {
-            start: { line: 117, column: 531, offset: 6434 },
-            end: { line: 117, column: 541, offset: 6444 }
+            start: { line: 155, column: 531, offset: 6696 },
+            end: { line: 155, column: 541, offset: 6706 }
           }
         }
       ],
       position: {
-        start: { line: 117, column: 1, offset: 5904 },
-        end: { line: 117, column: 541, offset: 6444 }
+        start: { line: 155, column: 1, offset: 6166 },
+        end: { line: 155, column: 541, offset: 6706 }
       }
     },
     {
@@ -1585,94 +1561,94 @@ export default {
           type: 'text',
           value: 'In the above example, ',
           position: {
-            start: { line: 119, column: 1, offset: 6446 },
-            end: { line: 119, column: 23, offset: 6468 }
+            start: { line: 157, column: 1, offset: 6708 },
+            end: { line: 157, column: 23, offset: 6730 }
           }
         },
         {
           type: 'inlineCode',
           value: 'console.log',
           position: {
-            start: { line: 119, column: 23, offset: 6468 },
-            end: { line: 119, column: 36, offset: 6481 }
+            start: { line: 157, column: 23, offset: 6730 },
+            end: { line: 157, column: 36, offset: 6743 }
           }
         },
         {
           type: 'text',
           value: ' is a first-class function - it is provided to the higher order function ',
           position: {
-            start: { line: 119, column: 36, offset: 6481 },
-            end: { line: 119, column: 109, offset: 6554 }
+            start: { line: 157, column: 36, offset: 6743 },
+            end: { line: 157, column: 109, offset: 6816 }
           }
         },
         {
           type: 'inlineCode',
           value: 'forEach',
           position: {
-            start: { line: 119, column: 109, offset: 6554 },
-            end: { line: 119, column: 118, offset: 6563 }
+            start: { line: 157, column: 109, offset: 6816 },
+            end: { line: 157, column: 118, offset: 6825 }
           }
         },
         {
           type: 'text',
           value: ' as an argument. ',
           position: {
-            start: { line: 119, column: 118, offset: 6563 },
-            end: { line: 119, column: 135, offset: 6580 }
+            start: { line: 157, column: 118, offset: 6825 },
+            end: { line: 157, column: 135, offset: 6842 }
           }
         },
         {
           type: 'inlineCode',
           value: 'map',
           position: {
-            start: { line: 119, column: 135, offset: 6580 },
-            end: { line: 119, column: 140, offset: 6585 }
+            start: { line: 157, column: 135, offset: 6842 },
+            end: { line: 157, column: 140, offset: 6847 }
           }
         },
         {
           type: 'text',
           value: ' is also a higher order function, accepting the anonymous first-class function ',
           position: {
-            start: { line: 119, column: 140, offset: 6585 },
-            end: { line: 119, column: 219, offset: 6664 }
+            start: { line: 157, column: 140, offset: 6847 },
+            end: { line: 157, column: 219, offset: 6926 }
           }
         },
         {
           type: 'inlineCode',
           value: 'async id => {...}',
           position: {
-            start: { line: 119, column: 219, offset: 6664 },
-            end: { line: 119, column: 238, offset: 6683 }
+            start: { line: 157, column: 219, offset: 6926 },
+            end: { line: 157, column: 238, offset: 6945 }
           }
         },
         {
           type: 'text',
           value: '. This combination of higher order functions and first-class functions using ',
           position: {
-            start: { line: 119, column: 238, offset: 6683 },
-            end: { line: 119, column: 315, offset: 6760 }
+            start: { line: 157, column: 238, offset: 6945 },
+            end: { line: 157, column: 315, offset: 7022 }
           }
         },
         {
           type: 'inlineCode',
           value: 'compose',
           position: {
-            start: { line: 119, column: 315, offset: 6760 },
-            end: { line: 119, column: 324, offset: 6769 }
+            start: { line: 157, column: 315, offset: 7022 },
+            end: { line: 157, column: 324, offset: 7031 }
           }
         },
         {
           type: 'text',
           value: ' is what is known as a "function composition". There are no pure functions in the above example.',
           position: {
-            start: { line: 119, column: 324, offset: 6769 },
-            end: { line: 119, column: 420, offset: 6865 }
+            start: { line: 157, column: 324, offset: 7031 },
+            end: { line: 157, column: 420, offset: 7127 }
           }
         }
       ],
       position: {
-        start: { line: 119, column: 1, offset: 6446 },
-        end: { line: 119, column: 420, offset: 6865 }
+        start: { line: 157, column: 1, offset: 6708 },
+        end: { line: 157, column: 420, offset: 7127 }
       }
     },
     {
@@ -1682,14 +1658,14 @@ export default {
           type: 'text',
           value: 'Now consider an example with pure functions:',
           position: {
-            start: { line: 121, column: 1, offset: 6867 },
-            end: { line: 121, column: 45, offset: 6911 }
+            start: { line: 159, column: 1, offset: 7129 },
+            end: { line: 159, column: 45, offset: 7173 }
           }
         }
       ],
       position: {
-        start: { line: 121, column: 1, offset: 6867 },
-        end: { line: 121, column: 45, offset: 6911 }
+        start: { line: 159, column: 1, offset: 7129 },
+        end: { line: 159, column: 45, offset: 7173 }
       }
     },
     {
@@ -1730,8 +1706,8 @@ export default {
         '  },\n' +
         '])',
       position: {
-        start: { line: 123, column: 1, offset: 6913 },
-        end: { line: 157, column: 4, offset: 7538 }
+        start: { line: 161, column: 1, offset: 7175 },
+        end: { line: 195, column: 4, offset: 7800 }
       }
     },
     {
@@ -1741,88 +1717,88 @@ export default {
           type: 'text',
           value: 'In the above example, ',
           position: {
-            start: { line: 159, column: 1, offset: 7540 },
-            end: { line: 159, column: 23, offset: 7562 }
+            start: { line: 197, column: 1, offset: 7802 },
+            end: { line: 197, column: 23, offset: 7824 }
           }
         },
         {
           type: 'inlineCode',
           value: 'add',
           position: {
-            start: { line: 159, column: 23, offset: 7562 },
-            end: { line: 159, column: 28, offset: 7567 }
+            start: { line: 197, column: 23, offset: 7824 },
+            end: { line: 197, column: 28, offset: 7829 }
           }
         },
         {
           type: 'text',
           value: ' and ',
           position: {
-            start: { line: 159, column: 28, offset: 7567 },
-            end: { line: 159, column: 33, offset: 7572 }
+            start: { line: 197, column: 28, offset: 7829 },
+            end: { line: 197, column: 33, offset: 7834 }
           }
         },
         {
           type: 'inlineCode',
           value: 'square',
           position: {
-            start: { line: 159, column: 33, offset: 7572 },
-            end: { line: 159, column: 41, offset: 7580 }
+            start: { line: 197, column: 33, offset: 7834 },
+            end: { line: 197, column: 41, offset: 7842 }
           }
         },
         {
           type: 'text',
           value: ' are pure functions. They are very simple, expressed almost as pure math. A given input to ',
           position: {
-            start: { line: 159, column: 41, offset: 7580 },
-            end: { line: 159, column: 132, offset: 7671 }
+            start: { line: 197, column: 41, offset: 7842 },
+            end: { line: 197, column: 132, offset: 7933 }
           }
         },
         {
           type: 'inlineCode',
           value: 'add',
           position: {
-            start: { line: 159, column: 132, offset: 7671 },
-            end: { line: 159, column: 137, offset: 7676 }
+            start: { line: 197, column: 132, offset: 7933 },
+            end: { line: 197, column: 137, offset: 7938 }
           }
         },
         {
           type: 'text',
           value: ' or ',
           position: {
-            start: { line: 159, column: 137, offset: 7676 },
-            end: { line: 159, column: 141, offset: 7680 }
+            start: { line: 197, column: 137, offset: 7938 },
+            end: { line: 197, column: 141, offset: 7942 }
           }
         },
         {
           type: 'inlineCode',
           value: 'square',
           position: {
-            start: { line: 159, column: 141, offset: 7680 },
-            end: { line: 159, column: 149, offset: 7688 }
+            start: { line: 197, column: 141, offset: 7942 },
+            end: { line: 197, column: 149, offset: 7950 }
           }
         },
         {
           type: 'text',
           value: ' would result in the same output for each invocation. The ',
           position: {
-            start: { line: 159, column: 149, offset: 7688 },
-            end: { line: 159, column: 207, offset: 7746 }
+            start: { line: 197, column: 149, offset: 7950 },
+            end: { line: 197, column: 207, offset: 8008 }
           }
         },
         {
           type: 'inlineCode',
           value: 'add',
           position: {
-            start: { line: 159, column: 207, offset: 7746 },
-            end: { line: 159, column: 212, offset: 7751 }
+            start: { line: 197, column: 207, offset: 8008 },
+            end: { line: 197, column: 212, offset: 8013 }
           }
         },
         {
           type: 'text',
           value: ' function is provided as a first class function to the Rubico ',
           position: {
-            start: { line: 159, column: 212, offset: 7751 },
-            end: { line: 159, column: 274, offset: 7813 }
+            start: { line: 197, column: 212, offset: 8013 },
+            end: { line: 197, column: 274, offset: 8075 }
           }
         },
         {
@@ -1834,38 +1810,38 @@ export default {
               type: 'text',
               value: 'reduce',
               position: {
-                start: { line: 159, column: 275, offset: 7814 },
-                end: { line: 159, column: 281, offset: 7820 }
+                start: { line: 197, column: 275, offset: 8076 },
+                end: { line: 197, column: 281, offset: 8082 }
               }
             }
           ],
           position: {
-            start: { line: 159, column: 274, offset: 7813 },
-            end: { line: 159, column: 296, offset: 7835 }
+            start: { line: 197, column: 274, offset: 8075 },
+            end: { line: 197, column: 296, offset: 8097 }
           }
         },
         {
           type: 'text',
           value: ' operator, and the ',
           position: {
-            start: { line: 159, column: 296, offset: 7835 },
-            end: { line: 159, column: 315, offset: 7854 }
+            start: { line: 197, column: 296, offset: 8097 },
+            end: { line: 197, column: 315, offset: 8116 }
           }
         },
         {
           type: 'inlineCode',
           value: 'square',
           position: {
-            start: { line: 159, column: 315, offset: 7854 },
-            end: { line: 159, column: 323, offset: 7862 }
+            start: { line: 197, column: 315, offset: 8116 },
+            end: { line: 197, column: 323, offset: 8124 }
           }
         },
         {
           type: 'text',
           value: ' function is provided as a first class function to the Rubico ',
           position: {
-            start: { line: 159, column: 323, offset: 7862 },
-            end: { line: 159, column: 385, offset: 7924 }
+            start: { line: 197, column: 323, offset: 8124 },
+            end: { line: 197, column: 385, offset: 8186 }
           }
         },
         {
@@ -1877,60 +1853,60 @@ export default {
               type: 'text',
               value: 'map',
               position: {
-                start: { line: 159, column: 386, offset: 7925 },
-                end: { line: 159, column: 389, offset: 7928 }
+                start: { line: 197, column: 386, offset: 8187 },
+                end: { line: 197, column: 389, offset: 8190 }
               }
             }
           ],
           position: {
-            start: { line: 159, column: 385, offset: 7924 },
-            end: { line: 159, column: 401, offset: 7940 }
+            start: { line: 197, column: 385, offset: 8186 },
+            end: { line: 197, column: 401, offset: 8202 }
           }
         },
         {
           type: 'text',
           value: ' operator. Both ',
           position: {
-            start: { line: 159, column: 401, offset: 7940 },
-            end: { line: 159, column: 417, offset: 7956 }
+            start: { line: 197, column: 401, offset: 8202 },
+            end: { line: 197, column: 417, offset: 8218 }
           }
         },
         {
           type: 'inlineCode',
           value: 'reduce',
           position: {
-            start: { line: 159, column: 417, offset: 7956 },
-            end: { line: 159, column: 425, offset: 7964 }
+            start: { line: 197, column: 417, offset: 8218 },
+            end: { line: 197, column: 425, offset: 8226 }
           }
         },
         {
           type: 'text',
           value: ' and ',
           position: {
-            start: { line: 159, column: 425, offset: 7964 },
-            end: { line: 159, column: 430, offset: 7969 }
+            start: { line: 197, column: 425, offset: 8226 },
+            end: { line: 197, column: 430, offset: 8231 }
           }
         },
         {
           type: 'inlineCode',
           value: 'map',
           position: {
-            start: { line: 159, column: 430, offset: 7969 },
-            end: { line: 159, column: 435, offset: 7974 }
+            start: { line: 197, column: 430, offset: 8231 },
+            end: { line: 197, column: 435, offset: 8236 }
           }
         },
         {
           type: 'text',
           value: ' operators are considered to be higher order functions.',
           position: {
-            start: { line: 159, column: 435, offset: 7974 },
-            end: { line: 159, column: 490, offset: 8029 }
+            start: { line: 197, column: 435, offset: 8236 },
+            end: { line: 197, column: 490, offset: 8291 }
           }
         }
       ],
       position: {
-        start: { line: 159, column: 1, offset: 7540 },
-        end: { line: 159, column: 490, offset: 8029 }
+        start: { line: 197, column: 1, offset: 7802 },
+        end: { line: 197, column: 490, offset: 8291 }
       }
     },
     {
@@ -1940,72 +1916,72 @@ export default {
           type: 'text',
           value: 'The combination of first class and high order functions above is similar to what we have seen with ',
           position: {
-            start: { line: 161, column: 1, offset: 8031 },
-            end: { line: 161, column: 100, offset: 8130 }
+            start: { line: 199, column: 1, offset: 8293 },
+            end: { line: 199, column: 100, offset: 8392 }
           }
         },
         {
           type: 'inlineCode',
           value: 'compose',
           position: {
-            start: { line: 161, column: 100, offset: 8130 },
-            end: { line: 161, column: 109, offset: 8139 }
+            start: { line: 199, column: 100, offset: 8392 },
+            end: { line: 199, column: 109, offset: 8401 }
           }
         },
         {
           type: 'text',
           value: ' in the previous example. The difference is the use of the operator ',
           position: {
-            start: { line: 161, column: 109, offset: 8139 },
-            end: { line: 161, column: 177, offset: 8207 }
+            start: { line: 199, column: 109, offset: 8401 },
+            end: { line: 199, column: 177, offset: 8469 }
           }
         },
         {
           type: 'inlineCode',
           value: 'pipe',
           position: {
-            start: { line: 161, column: 177, offset: 8207 },
-            end: { line: 161, column: 183, offset: 8213 }
+            start: { line: 199, column: 177, offset: 8469 },
+            end: { line: 199, column: 183, offset: 8475 }
           }
         },
         {
           type: 'text',
           value: ' over ',
           position: {
-            start: { line: 161, column: 183, offset: 8213 },
-            end: { line: 161, column: 189, offset: 8219 }
+            start: { line: 199, column: 183, offset: 8475 },
+            end: { line: 199, column: 189, offset: 8481 }
           }
         },
         {
           type: 'inlineCode',
           value: 'compose',
           position: {
-            start: { line: 161, column: 189, offset: 8219 },
-            end: { line: 161, column: 198, offset: 8228 }
+            start: { line: 199, column: 189, offset: 8481 },
+            end: { line: 199, column: 198, offset: 8490 }
           }
         },
         {
           type: 'text',
           value: ', in this case instead of creating a function composition with ',
           position: {
-            start: { line: 161, column: 198, offset: 8228 },
-            end: { line: 161, column: 261, offset: 8291 }
+            start: { line: 199, column: 198, offset: 8490 },
+            end: { line: 199, column: 261, offset: 8553 }
           }
         },
         {
           type: 'inlineCode',
           value: 'compose',
           position: {
-            start: { line: 161, column: 261, offset: 8291 },
-            end: { line: 161, column: 270, offset: 8300 }
+            start: { line: 199, column: 261, offset: 8553 },
+            end: { line: 199, column: 270, offset: 8562 }
           }
         },
         {
           type: 'text',
           value: ' we create a "function pipeline" with ',
           position: {
-            start: { line: 161, column: 270, offset: 8300 },
-            end: { line: 161, column: 308, offset: 8338 }
+            start: { line: 199, column: 270, offset: 8562 },
+            end: { line: 199, column: 308, offset: 8600 }
           }
         },
         {
@@ -2017,28 +1993,28 @@ export default {
               type: 'text',
               value: 'pipe',
               position: {
-                start: { line: 161, column: 309, offset: 8339 },
-                end: { line: 161, column: 313, offset: 8343 }
+                start: { line: 199, column: 309, offset: 8601 },
+                end: { line: 199, column: 313, offset: 8605 }
               }
             }
           ],
           position: {
-            start: { line: 161, column: 308, offset: 8338 },
-            end: { line: 161, column: 326, offset: 8356 }
+            start: { line: 199, column: 308, offset: 8600 },
+            end: { line: 199, column: 326, offset: 8618 }
           }
         },
         {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 161, column: 326, offset: 8356 },
-            end: { line: 161, column: 327, offset: 8357 }
+            start: { line: 199, column: 326, offset: 8618 },
+            end: { line: 199, column: 327, offset: 8619 }
           }
         }
       ],
       position: {
-        start: { line: 161, column: 1, offset: 8031 },
-        end: { line: 161, column: 327, offset: 8357 }
+        start: { line: 199, column: 1, offset: 8293 },
+        end: { line: 199, column: 327, offset: 8619 }
       }
     },
     {
@@ -2048,40 +2024,40 @@ export default {
           type: 'text',
           value: 'We see a new operation in the above example with ',
           position: {
-            start: { line: 163, column: 1, offset: 8359 },
-            end: { line: 163, column: 50, offset: 8408 }
+            start: { line: 201, column: 1, offset: 8621 },
+            end: { line: 201, column: 50, offset: 8670 }
           }
         },
         {
           type: 'inlineCode',
           value: 'reduce',
           position: {
-            start: { line: 163, column: 50, offset: 8408 },
-            end: { line: 163, column: 58, offset: 8416 }
+            start: { line: 201, column: 50, offset: 8670 },
+            end: { line: 201, column: 58, offset: 8678 }
           }
         },
         {
           type: 'text',
           value: '. It takes the squared numbers from ',
           position: {
-            start: { line: 163, column: 58, offset: 8416 },
-            end: { line: 163, column: 94, offset: 8452 }
+            start: { line: 201, column: 58, offset: 8678 },
+            end: { line: 201, column: 94, offset: 8714 }
           }
         },
         {
           type: 'inlineCode',
           value: 'map(square)',
           position: {
-            start: { line: 163, column: 94, offset: 8452 },
-            end: { line: 163, column: 107, offset: 8465 }
+            start: { line: 201, column: 94, offset: 8714 },
+            end: { line: 201, column: 107, offset: 8727 }
           }
         },
         {
           type: 'text',
           value: ' and adds them all together into a final sum. We see the operator ',
           position: {
-            start: { line: 163, column: 107, offset: 8465 },
-            end: { line: 163, column: 173, offset: 8531 }
+            start: { line: 201, column: 107, offset: 8727 },
+            end: { line: 201, column: 173, offset: 8793 }
           }
         },
         {
@@ -2093,76 +2069,76 @@ export default {
               type: 'text',
               value: 'tap',
               position: {
-                start: { line: 163, column: 174, offset: 8532 },
-                end: { line: 163, column: 177, offset: 8535 }
+                start: { line: 201, column: 174, offset: 8794 },
+                end: { line: 201, column: 177, offset: 8797 }
               }
             }
           ],
           position: {
-            start: { line: 163, column: 173, offset: 8531 },
-            end: { line: 163, column: 189, offset: 8547 }
+            start: { line: 201, column: 173, offset: 8793 },
+            end: { line: 201, column: 189, offset: 8809 }
           }
         },
         {
           type: 'text',
           value: ' as well - it allows us to provide an asynchronous function to the composition, logging out the squared numbers while waiting 500 milliseconds between each log. With ',
           position: {
-            start: { line: 163, column: 189, offset: 8547 },
-            end: { line: 163, column: 355, offset: 8713 }
+            start: { line: 201, column: 189, offset: 8809 },
+            end: { line: 201, column: 355, offset: 8975 }
           }
         },
         {
           type: 'inlineCode',
           value: 'tap',
           position: {
-            start: { line: 163, column: 355, offset: 8713 },
-            end: { line: 163, column: 360, offset: 8718 }
+            start: { line: 201, column: 355, offset: 8975 },
+            end: { line: 201, column: 360, offset: 8980 }
           }
         },
         {
           type: 'text',
           value: ', the return value of the provided function is unused, so we can expect the input to the ',
           position: {
-            start: { line: 163, column: 360, offset: 8718 },
-            end: { line: 163, column: 449, offset: 8807 }
+            start: { line: 201, column: 360, offset: 8980 },
+            end: { line: 201, column: 449, offset: 9069 }
           }
         },
         {
           type: 'inlineCode',
           value: 'reduce',
           position: {
-            start: { line: 163, column: 449, offset: 8807 },
-            end: { line: 163, column: 457, offset: 8815 }
+            start: { line: 201, column: 449, offset: 9069 },
+            end: { line: 201, column: 457, offset: 9077 }
           }
         },
         {
           type: 'text',
           value: ' operation following the tap expression ',
           position: {
-            start: { line: 163, column: 457, offset: 8815 },
-            end: { line: 163, column: 497, offset: 8855 }
+            start: { line: 201, column: 457, offset: 9077 },
+            end: { line: 201, column: 497, offset: 9117 }
           }
         },
         {
           type: 'inlineCode',
           value: 'tap(async numbers => {...})',
           position: {
-            start: { line: 163, column: 497, offset: 8855 },
-            end: { line: 163, column: 526, offset: 8884 }
+            start: { line: 201, column: 497, offset: 9117 },
+            end: { line: 201, column: 526, offset: 9146 }
           }
         },
         {
           type: 'text',
           value: ' to be the same as the input to the tap expression.',
           position: {
-            start: { line: 163, column: 526, offset: 8884 },
-            end: { line: 163, column: 577, offset: 8935 }
+            start: { line: 201, column: 526, offset: 9146 },
+            end: { line: 201, column: 577, offset: 9197 }
           }
         }
       ],
       position: {
-        start: { line: 163, column: 1, offset: 8359 },
-        end: { line: 163, column: 577, offset: 8935 }
+        start: { line: 201, column: 1, offset: 8621 },
+        end: { line: 201, column: 577, offset: 9197 }
       }
     },
     {
@@ -2173,14 +2149,14 @@ export default {
           type: 'text',
           value: 'Conclusion',
           position: {
-            start: { line: 165, column: 5, offset: 8941 },
-            end: { line: 165, column: 15, offset: 8951 }
+            start: { line: 203, column: 5, offset: 9203 },
+            end: { line: 203, column: 15, offset: 9213 }
           }
         }
       ],
       position: {
-        start: { line: 165, column: 1, offset: 8937 },
-        end: { line: 165, column: 15, offset: 8951 }
+        start: { line: 203, column: 1, offset: 9199 },
+        end: { line: 203, column: 15, offset: 9213 }
       }
     },
     {
@@ -2190,14 +2166,14 @@ export default {
           type: 'text',
           value: 'This concludes the intro to the [A]synchronous Functional Programming paradigm.',
           position: {
-            start: { line: 167, column: 1, offset: 8953 },
-            end: { line: 167, column: 80, offset: 9032 }
+            start: { line: 205, column: 1, offset: 9215 },
+            end: { line: 205, column: 80, offset: 9294 }
           }
         }
       ],
       position: {
-        start: { line: 167, column: 1, offset: 8953 },
-        end: { line: 167, column: 80, offset: 9032 }
+        start: { line: 205, column: 1, offset: 9215 },
+        end: { line: 205, column: 80, offset: 9294 }
       }
     },
     {
@@ -2207,8 +2183,8 @@ export default {
           type: 'text',
           value: "If you are curious about Rubico and would like to get started, please visit Rubico's home page, ",
           position: {
-            start: { line: 169, column: 1, offset: 9034 },
-            end: { line: 169, column: 97, offset: 9130 }
+            start: { line: 207, column: 1, offset: 9296 },
+            end: { line: 207, column: 97, offset: 9392 }
           }
         },
         {
@@ -2220,33 +2196,33 @@ export default {
               type: 'text',
               value: 'rubico.land',
               position: {
-                start: { line: 169, column: 98, offset: 9131 },
-                end: { line: 169, column: 109, offset: 9142 }
+                start: { line: 207, column: 98, offset: 9393 },
+                end: { line: 207, column: 109, offset: 9404 }
               }
             }
           ],
           position: {
-            start: { line: 169, column: 97, offset: 9130 },
-            end: { line: 169, column: 113, offset: 9146 }
+            start: { line: 207, column: 97, offset: 9392 },
+            end: { line: 207, column: 113, offset: 9408 }
           }
         },
         {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 169, column: 113, offset: 9146 },
-            end: { line: 169, column: 114, offset: 9147 }
+            start: { line: 207, column: 113, offset: 9408 },
+            end: { line: 207, column: 114, offset: 9409 }
           }
         }
       ],
       position: {
-        start: { line: 169, column: 1, offset: 9034 },
-        end: { line: 169, column: 114, offset: 9147 }
+        start: { line: 207, column: 1, offset: 9296 },
+        end: { line: 207, column: 114, offset: 9409 }
       }
     }
   ],
   position: {
     start: { line: 1, column: 1, offset: 0 },
-    end: { line: 170, column: 1, offset: 9148 }
+    end: { line: 208, column: 1, offset: 9410 }
   }
 }
