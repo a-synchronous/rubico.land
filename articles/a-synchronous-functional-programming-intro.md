@@ -112,8 +112,8 @@ const product = multiply3_5(4)
 console.log(product)
 ```
 
-### Monad-Like Structures
-Monad-like structures are classes that create meaningful objects. A meaningful object is an object that has some meaning beyond its name, for example the Array class creates arrays that can store other data types, and the Promise class creates a promise that can either complete or fail with a result on completion or error on failure. Arrays and Promises are examples of a monad-like structures. Array is in fact a monad, but also fits the definition of a monad-like structure.
+### Meaningful Objects
+A meaningful object is an object that has some meaning beyond its name, for example the Array class creates arrays that can store other data types, and the Promise class creates a promise that can either complete or fail with a result on completion or error on failure. Arrays and Promises are examples of a meaningful objects.
 
 The below example shows a promise `promiseB` chaining functionality with its `.then` method in a meaningful way, as if to say "wait for promiseA to resolve, and then execute the result on completion as n, returning n + 2".
 
