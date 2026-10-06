@@ -50760,6 +50760,7 @@ export default [
       ')\n' +
       '\n' +
       'console.log(bool)\n' +
+      '```\n' +
       '\n' +
       'Any promises in the array are resolved for their values before further execution.\n' +
       '\n' +
@@ -50774,11 +50775,9 @@ export default [
       ' * [some](/docs/some)\n' +
       ' * [and](/docs/and)\n' +
       ' * [not](/docs/not)\n' +
-      ' * [eq](/docs/eq)\n' +
-      '\n' +
-      '@execution series\n' +
-      '\n' +
-      '@note ...args slows down here by an order of magnitude',
+      ' * [eq](/docs/eq)',
+    execution: 'series',
+    note: '...args slows down here by an order of magnitude',
     mdast: {
       name: {
         type: 'root',
@@ -51019,18 +51018,40 @@ export default [
               '  n => n % 2 == 0,\n' +
               ')\n' +
               '\n' +
-              'console.log(bool)\n' +
-              '\n' +
-              'Any promises in the array are resolved for their values before further execution.\n' +
-              '\n' +
-              '```javascript [playground]\n' +
-              "or(Promise.resolve('aaa'), [\n" +
+              'console.log(bool)',
+            position: {
+              start: { line: 51, column: 1, offset: 1354 },
+              end: { line: 59, column: 4, offset: 1460 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Any promises in the array are resolved for their values before further execution.',
+                position: {
+                  start: { line: 61, column: 1, offset: 1462 },
+                  end: { line: 61, column: 82, offset: 1543 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 61, column: 1, offset: 1462 },
+              end: { line: 61, column: 82, offset: 1543 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: "or(Promise.resolve('aaa'), [\n" +
               "  s => s.startsWith('b'),\n" +
               "  s => s.endsWith('a'),\n" +
               ']).then(console.log)',
             position: {
-              start: { line: 51, column: 1, offset: 1354 },
-              end: { line: 67, column: 4, offset: 1671 }
+              start: { line: 63, column: 1, offset: 1545 },
+              end: { line: 68, column: 4, offset: 1675 }
             }
           },
           {
@@ -51040,14 +51061,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 69, column: 1, offset: 1673 },
-                  end: { line: 69, column: 10, offset: 1682 }
+                  start: { line: 70, column: 1, offset: 1677 },
+                  end: { line: 70, column: 10, offset: 1686 }
                 }
               }
             ],
             position: {
-              start: { line: 69, column: 1, offset: 1673 },
-              end: { line: 69, column: 10, offset: 1682 }
+              start: { line: 70, column: 1, offset: 1677 },
+              end: { line: 70, column: 10, offset: 1686 }
             }
           },
           {
@@ -51073,26 +51094,26 @@ export default [
                             type: 'text',
                             value: 'some',
                             position: {
-                              start: { line: 70, column: 5, offset: 1687 },
-                              end: { line: 70, column: 9, offset: 1691 }
+                              start: { line: 71, column: 5, offset: 1691 },
+                              end: { line: 71, column: 9, offset: 1695 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 70, column: 4, offset: 1686 },
-                          end: { line: 70, column: 22, offset: 1704 }
+                          start: { line: 71, column: 4, offset: 1690 },
+                          end: { line: 71, column: 22, offset: 1708 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 70, column: 4, offset: 1686 },
-                      end: { line: 70, column: 22, offset: 1704 }
+                      start: { line: 71, column: 4, offset: 1690 },
+                      end: { line: 71, column: 22, offset: 1708 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 70, column: 2, offset: 1684 },
-                  end: { line: 70, column: 22, offset: 1704 }
+                  start: { line: 71, column: 2, offset: 1688 },
+                  end: { line: 71, column: 22, offset: 1708 }
                 }
               },
               {
@@ -51112,26 +51133,26 @@ export default [
                             type: 'text',
                             value: 'and',
                             position: {
-                              start: { line: 71, column: 5, offset: 1709 },
-                              end: { line: 71, column: 8, offset: 1712 }
+                              start: { line: 72, column: 5, offset: 1713 },
+                              end: { line: 72, column: 8, offset: 1716 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 71, column: 4, offset: 1708 },
-                          end: { line: 71, column: 20, offset: 1724 }
+                          start: { line: 72, column: 4, offset: 1712 },
+                          end: { line: 72, column: 20, offset: 1728 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 71, column: 4, offset: 1708 },
-                      end: { line: 71, column: 20, offset: 1724 }
+                      start: { line: 72, column: 4, offset: 1712 },
+                      end: { line: 72, column: 20, offset: 1728 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 71, column: 2, offset: 1706 },
-                  end: { line: 71, column: 20, offset: 1724 }
+                  start: { line: 72, column: 2, offset: 1710 },
+                  end: { line: 72, column: 20, offset: 1728 }
                 }
               },
               {
@@ -51151,26 +51172,26 @@ export default [
                             type: 'text',
                             value: 'not',
                             position: {
-                              start: { line: 72, column: 5, offset: 1729 },
-                              end: { line: 72, column: 8, offset: 1732 }
+                              start: { line: 73, column: 5, offset: 1733 },
+                              end: { line: 73, column: 8, offset: 1736 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 72, column: 4, offset: 1728 },
-                          end: { line: 72, column: 20, offset: 1744 }
+                          start: { line: 73, column: 4, offset: 1732 },
+                          end: { line: 73, column: 20, offset: 1748 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 72, column: 4, offset: 1728 },
-                      end: { line: 72, column: 20, offset: 1744 }
+                      start: { line: 73, column: 4, offset: 1732 },
+                      end: { line: 73, column: 20, offset: 1748 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 72, column: 2, offset: 1726 },
-                  end: { line: 72, column: 20, offset: 1744 }
+                  start: { line: 73, column: 2, offset: 1730 },
+                  end: { line: 73, column: 20, offset: 1748 }
                 }
               },
               {
@@ -51190,72 +51211,90 @@ export default [
                             type: 'text',
                             value: 'eq',
                             position: {
-                              start: { line: 73, column: 5, offset: 1749 },
-                              end: { line: 73, column: 7, offset: 1751 }
+                              start: { line: 74, column: 5, offset: 1753 },
+                              end: { line: 74, column: 7, offset: 1755 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 73, column: 4, offset: 1748 },
-                          end: { line: 73, column: 18, offset: 1762 }
+                          start: { line: 74, column: 4, offset: 1752 },
+                          end: { line: 74, column: 18, offset: 1766 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 73, column: 4, offset: 1748 },
-                      end: { line: 73, column: 18, offset: 1762 }
+                      start: { line: 74, column: 4, offset: 1752 },
+                      end: { line: 74, column: 18, offset: 1766 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 73, column: 2, offset: 1746 },
-                  end: { line: 73, column: 18, offset: 1762 }
+                  start: { line: 74, column: 2, offset: 1750 },
+                  end: { line: 74, column: 18, offset: 1766 }
                 }
               }
             ],
             position: {
-              start: { line: 70, column: 2, offset: 1684 },
-              end: { line: 73, column: 18, offset: 1762 }
-            }
-          },
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: '@execution series',
-                position: {
-                  start: { line: 75, column: 1, offset: 1764 },
-                  end: { line: 75, column: 18, offset: 1781 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 75, column: 1, offset: 1764 },
-              end: { line: 75, column: 18, offset: 1781 }
-            }
-          },
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: '@note ...args slows down here by an order of magnitude',
-                position: {
-                  start: { line: 77, column: 1, offset: 1783 },
-                  end: { line: 77, column: 55, offset: 1837 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 77, column: 1, offset: 1783 },
-              end: { line: 77, column: 55, offset: 1837 }
+              start: { line: 71, column: 2, offset: 1688 },
+              end: { line: 74, column: 18, offset: 1766 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 77, column: 55, offset: 1837 }
+          end: { line: 74, column: 18, offset: 1766 }
+        }
+      },
+      execution: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'series',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 7, offset: 6 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 7, offset: 6 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 7, offset: 6 }
+        }
+      },
+      note: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: '...args slows down here by an order of magnitude',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 49, offset: 48 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 49, offset: 48 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 49, offset: 48 }
         }
       }
     },
