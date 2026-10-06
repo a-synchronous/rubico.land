@@ -23126,7 +23126,7 @@ export default [
       "getAndLogUserById('1')\n" +
       '```\n' +
       '\n' +
-      'Any promises in `arguments` are resolved for their values before further execution for the eager interface only.\n' +
+      'Any promises in `arguments` are resolved for their values before further execution for the immediate interface only.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'all(Promise.resolve({ a: 1 }), Promise.resolve(2), [\n' +
@@ -23424,16 +23424,16 @@ export default [
               },
               {
                 type: 'text',
-                value: ' are resolved for their values before further execution for the eager interface only.',
+                value: ' are resolved for their values before further execution for the immediate interface only.',
                 position: {
                   start: { line: 58, column: 28, offset: 1417 },
-                  end: { line: 58, column: 113, offset: 1502 }
+                  end: { line: 58, column: 117, offset: 1506 }
                 }
               }
             ],
             position: {
               start: { line: 58, column: 1, offset: 1390 },
-              end: { line: 58, column: 113, offset: 1502 }
+              end: { line: 58, column: 117, offset: 1506 }
             }
           },
           {
@@ -23446,8 +23446,8 @@ export default [
               '  (obj, n) => obj.a + n + 3,\n' +
               ']).then(console.log)',
             position: {
-              start: { line: 60, column: 1, offset: 1504 },
-              end: { line: 66, column: 4, offset: 1695 }
+              start: { line: 60, column: 1, offset: 1508 },
+              end: { line: 66, column: 4, offset: 1699 }
             }
           },
           {
@@ -23457,14 +23457,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 68, column: 1, offset: 1697 },
-                  end: { line: 68, column: 10, offset: 1706 }
+                  start: { line: 68, column: 1, offset: 1701 },
+                  end: { line: 68, column: 10, offset: 1710 }
                 }
               }
             ],
             position: {
-              start: { line: 68, column: 1, offset: 1697 },
-              end: { line: 68, column: 10, offset: 1706 }
+              start: { line: 68, column: 1, offset: 1701 },
+              end: { line: 68, column: 10, offset: 1710 }
             }
           },
           {
@@ -23490,26 +23490,26 @@ export default [
                             type: 'text',
                             value: 'pipe',
                             position: {
-                              start: { line: 69, column: 5, offset: 1711 },
-                              end: { line: 69, column: 9, offset: 1715 }
+                              start: { line: 69, column: 5, offset: 1715 },
+                              end: { line: 69, column: 9, offset: 1719 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 69, column: 4, offset: 1710 },
-                          end: { line: 69, column: 22, offset: 1728 }
+                          start: { line: 69, column: 4, offset: 1714 },
+                          end: { line: 69, column: 22, offset: 1732 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 69, column: 4, offset: 1710 },
-                      end: { line: 69, column: 22, offset: 1728 }
+                      start: { line: 69, column: 4, offset: 1714 },
+                      end: { line: 69, column: 22, offset: 1732 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 69, column: 2, offset: 1708 },
-                  end: { line: 69, column: 22, offset: 1728 }
+                  start: { line: 69, column: 2, offset: 1712 },
+                  end: { line: 69, column: 22, offset: 1732 }
                 }
               },
               {
@@ -23529,26 +23529,26 @@ export default [
                             type: 'text',
                             value: 'assign',
                             position: {
-                              start: { line: 70, column: 5, offset: 1733 },
-                              end: { line: 70, column: 11, offset: 1739 }
+                              start: { line: 70, column: 5, offset: 1737 },
+                              end: { line: 70, column: 11, offset: 1743 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 70, column: 4, offset: 1732 },
-                          end: { line: 70, column: 26, offset: 1754 }
+                          start: { line: 70, column: 4, offset: 1736 },
+                          end: { line: 70, column: 26, offset: 1758 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 70, column: 4, offset: 1732 },
-                      end: { line: 70, column: 26, offset: 1754 }
+                      start: { line: 70, column: 4, offset: 1736 },
+                      end: { line: 70, column: 26, offset: 1758 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 70, column: 2, offset: 1730 },
-                  end: { line: 70, column: 26, offset: 1754 }
+                  start: { line: 70, column: 2, offset: 1734 },
+                  end: { line: 70, column: 26, offset: 1758 }
                 }
               },
               {
@@ -23568,26 +23568,26 @@ export default [
                             type: 'text',
                             value: 'get',
                             position: {
-                              start: { line: 71, column: 5, offset: 1759 },
-                              end: { line: 71, column: 8, offset: 1762 }
+                              start: { line: 71, column: 5, offset: 1763 },
+                              end: { line: 71, column: 8, offset: 1766 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 71, column: 4, offset: 1758 },
-                          end: { line: 71, column: 20, offset: 1774 }
+                          start: { line: 71, column: 4, offset: 1762 },
+                          end: { line: 71, column: 20, offset: 1778 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 71, column: 4, offset: 1758 },
-                      end: { line: 71, column: 20, offset: 1774 }
+                      start: { line: 71, column: 4, offset: 1762 },
+                      end: { line: 71, column: 20, offset: 1778 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 71, column: 2, offset: 1756 },
-                  end: { line: 71, column: 20, offset: 1774 }
+                  start: { line: 71, column: 2, offset: 1760 },
+                  end: { line: 71, column: 20, offset: 1778 }
                 }
               },
               {
@@ -23607,26 +23607,26 @@ export default [
                             type: 'text',
                             value: 'set',
                             position: {
-                              start: { line: 72, column: 5, offset: 1779 },
-                              end: { line: 72, column: 8, offset: 1782 }
+                              start: { line: 72, column: 5, offset: 1783 },
+                              end: { line: 72, column: 8, offset: 1786 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 72, column: 4, offset: 1778 },
-                          end: { line: 72, column: 20, offset: 1794 }
+                          start: { line: 72, column: 4, offset: 1782 },
+                          end: { line: 72, column: 20, offset: 1798 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 72, column: 4, offset: 1778 },
-                      end: { line: 72, column: 20, offset: 1794 }
+                      start: { line: 72, column: 4, offset: 1782 },
+                      end: { line: 72, column: 20, offset: 1798 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 72, column: 2, offset: 1776 },
-                  end: { line: 72, column: 20, offset: 1794 }
+                  start: { line: 72, column: 2, offset: 1780 },
+                  end: { line: 72, column: 20, offset: 1798 }
                 }
               },
               {
@@ -23646,26 +23646,26 @@ export default [
                             type: 'text',
                             value: 'pick',
                             position: {
-                              start: { line: 73, column: 5, offset: 1799 },
-                              end: { line: 73, column: 9, offset: 1803 }
+                              start: { line: 73, column: 5, offset: 1803 },
+                              end: { line: 73, column: 9, offset: 1807 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 73, column: 4, offset: 1798 },
-                          end: { line: 73, column: 22, offset: 1816 }
+                          start: { line: 73, column: 4, offset: 1802 },
+                          end: { line: 73, column: 22, offset: 1820 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 73, column: 4, offset: 1798 },
-                      end: { line: 73, column: 22, offset: 1816 }
+                      start: { line: 73, column: 4, offset: 1802 },
+                      end: { line: 73, column: 22, offset: 1820 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 73, column: 2, offset: 1796 },
-                  end: { line: 73, column: 22, offset: 1816 }
+                  start: { line: 73, column: 2, offset: 1800 },
+                  end: { line: 73, column: 22, offset: 1820 }
                 }
               },
               {
@@ -23685,26 +23685,26 @@ export default [
                             type: 'text',
                             value: 'omit',
                             position: {
-                              start: { line: 74, column: 5, offset: 1821 },
-                              end: { line: 74, column: 9, offset: 1825 }
+                              start: { line: 74, column: 5, offset: 1825 },
+                              end: { line: 74, column: 9, offset: 1829 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 74, column: 4, offset: 1820 },
-                          end: { line: 74, column: 22, offset: 1838 }
+                          start: { line: 74, column: 4, offset: 1824 },
+                          end: { line: 74, column: 22, offset: 1842 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 74, column: 4, offset: 1820 },
-                      end: { line: 74, column: 22, offset: 1838 }
+                      start: { line: 74, column: 4, offset: 1824 },
+                      end: { line: 74, column: 22, offset: 1842 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 74, column: 2, offset: 1818 },
-                  end: { line: 74, column: 22, offset: 1838 }
+                  start: { line: 74, column: 2, offset: 1822 },
+                  end: { line: 74, column: 22, offset: 1842 }
                 }
               },
               {
@@ -23724,38 +23724,38 @@ export default [
                             type: 'text',
                             value: 'forEach',
                             position: {
-                              start: { line: 75, column: 5, offset: 1843 },
-                              end: { line: 75, column: 12, offset: 1850 }
+                              start: { line: 75, column: 5, offset: 1847 },
+                              end: { line: 75, column: 12, offset: 1854 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 75, column: 4, offset: 1842 },
-                          end: { line: 75, column: 28, offset: 1866 }
+                          start: { line: 75, column: 4, offset: 1846 },
+                          end: { line: 75, column: 28, offset: 1870 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 75, column: 4, offset: 1842 },
-                      end: { line: 75, column: 28, offset: 1866 }
+                      start: { line: 75, column: 4, offset: 1846 },
+                      end: { line: 75, column: 28, offset: 1870 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 75, column: 2, offset: 1840 },
-                  end: { line: 75, column: 28, offset: 1866 }
+                  start: { line: 75, column: 2, offset: 1844 },
+                  end: { line: 75, column: 28, offset: 1870 }
                 }
               }
             ],
             position: {
-              start: { line: 69, column: 2, offset: 1708 },
-              end: { line: 75, column: 28, offset: 1866 }
+              start: { line: 69, column: 2, offset: 1712 },
+              end: { line: 75, column: 28, offset: 1870 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 75, column: 28, offset: 1866 }
+          end: { line: 75, column: 28, offset: 1870 }
         }
       },
       execution: {
@@ -24999,7 +24999,7 @@ export default [
       'console.log(result)\n' +
       '```\n' +
       '\n' +
-      'If the argument object is a promise, it is resolved for its value before further execution for the eager interface only.\n' +
+      'If the argument object is a promise, it is resolved for its value before further execution for the immediate interface only.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'assign(Promise.resolve({}), {\n' +
@@ -25219,16 +25219,16 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'If the argument object is a promise, it is resolved for its value before further execution for the eager interface only.',
+                value: 'If the argument object is a promise, it is resolved for its value before further execution for the immediate interface only.',
                 position: {
                   start: { line: 37, column: 1, offset: 1106 },
-                  end: { line: 37, column: 121, offset: 1226 }
+                  end: { line: 37, column: 125, offset: 1230 }
                 }
               }
             ],
             position: {
               start: { line: 37, column: 1, offset: 1106 },
-              end: { line: 37, column: 121, offset: 1226 }
+              end: { line: 37, column: 125, offset: 1230 }
             }
           },
           {
@@ -25244,8 +25244,8 @@ export default [
               '  },\n' +
               '}).then(console.log)',
             position: {
-              start: { line: 39, column: 1, offset: 1228 },
-              end: { line: 48, column: 4, offset: 1361 }
+              start: { line: 39, column: 1, offset: 1232 },
+              end: { line: 48, column: 4, offset: 1365 }
             }
           },
           {
@@ -25255,14 +25255,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 50, column: 1, offset: 1363 },
-                  end: { line: 50, column: 10, offset: 1372 }
+                  start: { line: 50, column: 1, offset: 1367 },
+                  end: { line: 50, column: 10, offset: 1376 }
                 }
               }
             ],
             position: {
-              start: { line: 50, column: 1, offset: 1363 },
-              end: { line: 50, column: 10, offset: 1372 }
+              start: { line: 50, column: 1, offset: 1367 },
+              end: { line: 50, column: 10, offset: 1376 }
             }
           },
           {
@@ -25288,26 +25288,26 @@ export default [
                             type: 'text',
                             value: 'pipe',
                             position: {
-                              start: { line: 51, column: 5, offset: 1377 },
-                              end: { line: 51, column: 9, offset: 1381 }
+                              start: { line: 51, column: 5, offset: 1381 },
+                              end: { line: 51, column: 9, offset: 1385 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 51, column: 4, offset: 1376 },
-                          end: { line: 51, column: 22, offset: 1394 }
+                          start: { line: 51, column: 4, offset: 1380 },
+                          end: { line: 51, column: 22, offset: 1398 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 51, column: 4, offset: 1376 },
-                      end: { line: 51, column: 22, offset: 1394 }
+                      start: { line: 51, column: 4, offset: 1380 },
+                      end: { line: 51, column: 22, offset: 1398 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 51, column: 2, offset: 1374 },
-                  end: { line: 51, column: 22, offset: 1394 }
+                  start: { line: 51, column: 2, offset: 1378 },
+                  end: { line: 51, column: 22, offset: 1398 }
                 }
               },
               {
@@ -25327,26 +25327,26 @@ export default [
                             type: 'text',
                             value: 'all',
                             position: {
-                              start: { line: 52, column: 5, offset: 1399 },
-                              end: { line: 52, column: 8, offset: 1402 }
+                              start: { line: 52, column: 5, offset: 1403 },
+                              end: { line: 52, column: 8, offset: 1406 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 52, column: 4, offset: 1398 },
-                          end: { line: 52, column: 20, offset: 1414 }
+                          start: { line: 52, column: 4, offset: 1402 },
+                          end: { line: 52, column: 20, offset: 1418 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 52, column: 4, offset: 1398 },
-                      end: { line: 52, column: 20, offset: 1414 }
+                      start: { line: 52, column: 4, offset: 1402 },
+                      end: { line: 52, column: 20, offset: 1418 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 52, column: 2, offset: 1396 },
-                  end: { line: 52, column: 20, offset: 1414 }
+                  start: { line: 52, column: 2, offset: 1400 },
+                  end: { line: 52, column: 20, offset: 1418 }
                 }
               },
               {
@@ -25366,26 +25366,26 @@ export default [
                             type: 'text',
                             value: 'get',
                             position: {
-                              start: { line: 53, column: 5, offset: 1419 },
-                              end: { line: 53, column: 8, offset: 1422 }
+                              start: { line: 53, column: 5, offset: 1423 },
+                              end: { line: 53, column: 8, offset: 1426 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 53, column: 4, offset: 1418 },
-                          end: { line: 53, column: 20, offset: 1434 }
+                          start: { line: 53, column: 4, offset: 1422 },
+                          end: { line: 53, column: 20, offset: 1438 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 53, column: 4, offset: 1418 },
-                      end: { line: 53, column: 20, offset: 1434 }
+                      start: { line: 53, column: 4, offset: 1422 },
+                      end: { line: 53, column: 20, offset: 1438 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 53, column: 2, offset: 1416 },
-                  end: { line: 53, column: 20, offset: 1434 }
+                  start: { line: 53, column: 2, offset: 1420 },
+                  end: { line: 53, column: 20, offset: 1438 }
                 }
               },
               {
@@ -25405,26 +25405,26 @@ export default [
                             type: 'text',
                             value: 'set',
                             position: {
-                              start: { line: 54, column: 5, offset: 1439 },
-                              end: { line: 54, column: 8, offset: 1442 }
+                              start: { line: 54, column: 5, offset: 1443 },
+                              end: { line: 54, column: 8, offset: 1446 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 54, column: 4, offset: 1438 },
-                          end: { line: 54, column: 20, offset: 1454 }
+                          start: { line: 54, column: 4, offset: 1442 },
+                          end: { line: 54, column: 20, offset: 1458 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 54, column: 4, offset: 1438 },
-                      end: { line: 54, column: 20, offset: 1454 }
+                      start: { line: 54, column: 4, offset: 1442 },
+                      end: { line: 54, column: 20, offset: 1458 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 54, column: 2, offset: 1436 },
-                  end: { line: 54, column: 20, offset: 1454 }
+                  start: { line: 54, column: 2, offset: 1440 },
+                  end: { line: 54, column: 20, offset: 1458 }
                 }
               },
               {
@@ -25444,26 +25444,26 @@ export default [
                             type: 'text',
                             value: 'pick',
                             position: {
-                              start: { line: 55, column: 5, offset: 1459 },
-                              end: { line: 55, column: 9, offset: 1463 }
+                              start: { line: 55, column: 5, offset: 1463 },
+                              end: { line: 55, column: 9, offset: 1467 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 55, column: 4, offset: 1458 },
-                          end: { line: 55, column: 22, offset: 1476 }
+                          start: { line: 55, column: 4, offset: 1462 },
+                          end: { line: 55, column: 22, offset: 1480 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 55, column: 4, offset: 1458 },
-                      end: { line: 55, column: 22, offset: 1476 }
+                      start: { line: 55, column: 4, offset: 1462 },
+                      end: { line: 55, column: 22, offset: 1480 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 55, column: 2, offset: 1456 },
-                  end: { line: 55, column: 22, offset: 1476 }
+                  start: { line: 55, column: 2, offset: 1460 },
+                  end: { line: 55, column: 22, offset: 1480 }
                 }
               },
               {
@@ -25483,26 +25483,26 @@ export default [
                             type: 'text',
                             value: 'omit',
                             position: {
-                              start: { line: 56, column: 5, offset: 1481 },
-                              end: { line: 56, column: 9, offset: 1485 }
+                              start: { line: 56, column: 5, offset: 1485 },
+                              end: { line: 56, column: 9, offset: 1489 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 56, column: 4, offset: 1480 },
-                          end: { line: 56, column: 22, offset: 1498 }
+                          start: { line: 56, column: 4, offset: 1484 },
+                          end: { line: 56, column: 22, offset: 1502 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 56, column: 4, offset: 1480 },
-                      end: { line: 56, column: 22, offset: 1498 }
+                      start: { line: 56, column: 4, offset: 1484 },
+                      end: { line: 56, column: 22, offset: 1502 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 56, column: 2, offset: 1478 },
-                  end: { line: 56, column: 22, offset: 1498 }
+                  start: { line: 56, column: 2, offset: 1482 },
+                  end: { line: 56, column: 22, offset: 1502 }
                 }
               },
               {
@@ -25522,38 +25522,38 @@ export default [
                             type: 'text',
                             value: 'forEach',
                             position: {
-                              start: { line: 57, column: 5, offset: 1503 },
-                              end: { line: 57, column: 12, offset: 1510 }
+                              start: { line: 57, column: 5, offset: 1507 },
+                              end: { line: 57, column: 12, offset: 1514 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 57, column: 4, offset: 1502 },
-                          end: { line: 57, column: 28, offset: 1526 }
+                          start: { line: 57, column: 4, offset: 1506 },
+                          end: { line: 57, column: 28, offset: 1530 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 57, column: 4, offset: 1502 },
-                      end: { line: 57, column: 28, offset: 1526 }
+                      start: { line: 57, column: 4, offset: 1506 },
+                      end: { line: 57, column: 28, offset: 1530 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 57, column: 2, offset: 1500 },
-                  end: { line: 57, column: 28, offset: 1526 }
+                  start: { line: 57, column: 2, offset: 1504 },
+                  end: { line: 57, column: 28, offset: 1530 }
                 }
               }
             ],
             position: {
-              start: { line: 51, column: 2, offset: 1374 },
-              end: { line: 57, column: 28, offset: 1526 }
+              start: { line: 51, column: 2, offset: 1378 },
+              end: { line: 57, column: 28, offset: 1530 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 57, column: 28, offset: 1526 }
+          end: { line: 57, column: 28, offset: 1530 }
         }
       },
       execution: {
@@ -25595,6 +25595,7 @@ export default [
       '\n' +
       'compose(funcs)(...arguments) -> result Promise|any\n' +
       'compose(...arguments, funcs) -> result Promise|any\n' +
+      'compose(argument, ...funcs) -> result Promise|any\n' +
       'compose(...funcs)(...arguments) -> result Promise|any\n' +
       '```',
     description: 'Creates a function composition from multiple functions. Each function in the function composition is evaluated in series starting from the last function in the function composition, passing the return value as the first and only argument to the previous function in the function composition. The result of the execution of a function composition is the return value of the first function in the function composition. If any function in the function composition is asynchronous, the result of the execution of the function composition is a promise.\n' +
@@ -25621,7 +25622,18 @@ export default [
       'console.log(composition(1))\n' +
       '```\n' +
       '\n' +
-      'Any promises in `arguments` are resolved for their values before further execution for the eager interface only.\n' +
+      'A single argument and one or more functions passed to `compose` executes immediately.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'const f = x => x * 2\n' +
+      'const g = x => x + 1\n' +
+      '\n' +
+      'const result = compose(1, f, g)\n' +
+      '\n' +
+      'console.log(result)\n' +
+      '```\n' +
+      '\n' +
+      'Any promises in `arguments` are resolved for their values before further execution for the immediate interface only.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'compose(Promise.resolve(1), 2, Promise.resolve(3), [\n' +
@@ -25675,16 +25687,17 @@ export default [
               '\n' +
               'compose(funcs)(...arguments) -> result Promise|any\n' +
               'compose(...arguments, funcs) -> result Promise|any\n' +
+              'compose(argument, ...funcs) -> result Promise|any\n' +
               'compose(...funcs)(...arguments) -> result Promise|any',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 10, column: 4, offset: 314 }
+              end: { line: 11, column: 4, offset: 364 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 10, column: 4, offset: 314 }
+          end: { line: 11, column: 4, offset: 364 }
         }
       },
       description: {
@@ -25792,32 +25805,80 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Any promises in ',
+                value: 'A single argument and one or more functions passed to ',
                 position: {
                   start: { line: 25, column: 1, offset: 1053 },
-                  end: { line: 25, column: 17, offset: 1069 }
+                  end: { line: 25, column: 55, offset: 1107 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'compose',
+                position: {
+                  start: { line: 25, column: 55, offset: 1107 },
+                  end: { line: 25, column: 64, offset: 1116 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' executes immediately.',
+                position: {
+                  start: { line: 25, column: 64, offset: 1116 },
+                  end: { line: 25, column: 86, offset: 1138 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 25, column: 1, offset: 1053 },
+              end: { line: 25, column: 86, offset: 1138 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'const f = x => x * 2\n' +
+              'const g = x => x + 1\n' +
+              '\n' +
+              'const result = compose(1, f, g)\n' +
+              '\n' +
+              'console.log(result)',
+            position: {
+              start: { line: 27, column: 1, offset: 1140 },
+              end: { line: 34, column: 4, offset: 1266 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Any promises in ',
+                position: {
+                  start: { line: 36, column: 1, offset: 1268 },
+                  end: { line: 36, column: 17, offset: 1284 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'arguments',
                 position: {
-                  start: { line: 25, column: 17, offset: 1069 },
-                  end: { line: 25, column: 28, offset: 1080 }
+                  start: { line: 36, column: 17, offset: 1284 },
+                  end: { line: 36, column: 28, offset: 1295 }
                 }
               },
               {
                 type: 'text',
-                value: ' are resolved for their values before further execution for the eager interface only.',
+                value: ' are resolved for their values before further execution for the immediate interface only.',
                 position: {
-                  start: { line: 25, column: 28, offset: 1080 },
-                  end: { line: 25, column: 113, offset: 1165 }
+                  start: { line: 36, column: 28, offset: 1295 },
+                  end: { line: 36, column: 117, offset: 1384 }
                 }
               }
             ],
             position: {
-              start: { line: 25, column: 1, offset: 1053 },
-              end: { line: 25, column: 113, offset: 1165 }
+              start: { line: 36, column: 1, offset: 1268 },
+              end: { line: 36, column: 117, offset: 1384 }
             }
           },
           {
@@ -25828,8 +25889,8 @@ export default [
               '  console.log,\n' +
               '])',
             position: {
-              start: { line: 27, column: 1, offset: 1167 },
-              end: { line: 31, column: 4, offset: 1268 }
+              start: { line: 38, column: 1, offset: 1386 },
+              end: { line: 42, column: 4, offset: 1487 }
             }
           },
           {
@@ -25839,14 +25900,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 33, column: 1, offset: 1270 },
-                  end: { line: 33, column: 10, offset: 1279 }
+                  start: { line: 44, column: 1, offset: 1489 },
+                  end: { line: 44, column: 10, offset: 1498 }
                 }
               }
             ],
             position: {
-              start: { line: 33, column: 1, offset: 1270 },
-              end: { line: 33, column: 10, offset: 1279 }
+              start: { line: 44, column: 1, offset: 1489 },
+              end: { line: 44, column: 10, offset: 1498 }
             }
           },
           {
@@ -25872,26 +25933,26 @@ export default [
                             type: 'text',
                             value: 'pipe',
                             position: {
-                              start: { line: 34, column: 5, offset: 1284 },
-                              end: { line: 34, column: 9, offset: 1288 }
+                              start: { line: 45, column: 5, offset: 1503 },
+                              end: { line: 45, column: 9, offset: 1507 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 34, column: 4, offset: 1283 },
-                          end: { line: 34, column: 22, offset: 1301 }
+                          start: { line: 45, column: 4, offset: 1502 },
+                          end: { line: 45, column: 22, offset: 1520 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 34, column: 4, offset: 1283 },
-                      end: { line: 34, column: 22, offset: 1301 }
+                      start: { line: 45, column: 4, offset: 1502 },
+                      end: { line: 45, column: 22, offset: 1520 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 34, column: 2, offset: 1281 },
-                  end: { line: 34, column: 22, offset: 1301 }
+                  start: { line: 45, column: 2, offset: 1500 },
+                  end: { line: 45, column: 22, offset: 1520 }
                 }
               },
               {
@@ -25911,26 +25972,26 @@ export default [
                             type: 'text',
                             value: 'tap',
                             position: {
-                              start: { line: 35, column: 5, offset: 1306 },
-                              end: { line: 35, column: 8, offset: 1309 }
+                              start: { line: 46, column: 5, offset: 1525 },
+                              end: { line: 46, column: 8, offset: 1528 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 35, column: 4, offset: 1305 },
-                          end: { line: 35, column: 20, offset: 1321 }
+                          start: { line: 46, column: 4, offset: 1524 },
+                          end: { line: 46, column: 20, offset: 1540 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 35, column: 4, offset: 1305 },
-                      end: { line: 35, column: 20, offset: 1321 }
+                      start: { line: 46, column: 4, offset: 1524 },
+                      end: { line: 46, column: 20, offset: 1540 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 35, column: 2, offset: 1303 },
-                  end: { line: 35, column: 20, offset: 1321 }
+                  start: { line: 46, column: 2, offset: 1522 },
+                  end: { line: 46, column: 20, offset: 1540 }
                 }
               },
               {
@@ -25950,26 +26011,26 @@ export default [
                             type: 'text',
                             value: 'switchCase',
                             position: {
-                              start: { line: 36, column: 5, offset: 1326 },
-                              end: { line: 36, column: 15, offset: 1336 }
+                              start: { line: 47, column: 5, offset: 1545 },
+                              end: { line: 47, column: 15, offset: 1555 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 36, column: 4, offset: 1325 },
-                          end: { line: 36, column: 34, offset: 1355 }
+                          start: { line: 47, column: 4, offset: 1544 },
+                          end: { line: 47, column: 34, offset: 1574 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 36, column: 4, offset: 1325 },
-                      end: { line: 36, column: 34, offset: 1355 }
+                      start: { line: 47, column: 4, offset: 1544 },
+                      end: { line: 47, column: 34, offset: 1574 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 36, column: 2, offset: 1323 },
-                  end: { line: 36, column: 34, offset: 1355 }
+                  start: { line: 47, column: 2, offset: 1542 },
+                  end: { line: 47, column: 34, offset: 1574 }
                 }
               },
               {
@@ -25989,38 +26050,38 @@ export default [
                             type: 'text',
                             value: 'tryCatch',
                             position: {
-                              start: { line: 37, column: 5, offset: 1360 },
-                              end: { line: 37, column: 13, offset: 1368 }
+                              start: { line: 48, column: 5, offset: 1579 },
+                              end: { line: 48, column: 13, offset: 1587 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 37, column: 4, offset: 1359 },
-                          end: { line: 37, column: 30, offset: 1385 }
+                          start: { line: 48, column: 4, offset: 1578 },
+                          end: { line: 48, column: 30, offset: 1604 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 37, column: 4, offset: 1359 },
-                      end: { line: 37, column: 30, offset: 1385 }
+                      start: { line: 48, column: 4, offset: 1578 },
+                      end: { line: 48, column: 30, offset: 1604 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 37, column: 2, offset: 1357 },
-                  end: { line: 37, column: 30, offset: 1385 }
+                  start: { line: 48, column: 2, offset: 1576 },
+                  end: { line: 48, column: 30, offset: 1604 }
                 }
               }
             ],
             position: {
-              start: { line: 34, column: 2, offset: 1281 },
-              end: { line: 37, column: 30, offset: 1385 }
+              start: { line: 45, column: 2, offset: 1500 },
+              end: { line: 48, column: 30, offset: 1604 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 37, column: 30, offset: 1385 }
+          end: { line: 48, column: 30, offset: 1604 }
         }
       }
     },
@@ -28748,7 +28809,7 @@ export default [
       '])\n' +
       '```\n' +
       '\n' +
-      'Any promises in `arguments` are resolved for their values before further execution for the eager interface only.\n' +
+      'Any promises in `arguments` are resolved for their values before further execution for the immediate interface only.\n' +
       '\n' +
       '```javascript [playground]\n' +
       "eq(Promise.resolve({ a: 1, b: 1 }), get('a'), get('b')).then(console.log)\n" +
@@ -29031,16 +29092,16 @@ export default [
               },
               {
                 type: 'text',
-                value: ' are resolved for their values before further execution for the eager interface only.',
+                value: ' are resolved for their values before further execution for the immediate interface only.',
                 position: {
                   start: { line: 51, column: 28, offset: 1192 },
-                  end: { line: 51, column: 113, offset: 1277 }
+                  end: { line: 51, column: 117, offset: 1281 }
                 }
               }
             ],
             position: {
               start: { line: 51, column: 1, offset: 1165 },
-              end: { line: 51, column: 113, offset: 1277 }
+              end: { line: 51, column: 117, offset: 1281 }
             }
           },
           {
@@ -29049,8 +29110,8 @@ export default [
             meta: '[playground]',
             value: "eq(Promise.resolve({ a: 1, b: 1 }), get('a'), get('b')).then(console.log)",
             position: {
-              start: { line: 53, column: 1, offset: 1279 },
-              end: { line: 55, column: 4, offset: 1383 }
+              start: { line: 53, column: 1, offset: 1283 },
+              end: { line: 55, column: 4, offset: 1387 }
             }
           },
           {
@@ -29060,14 +29121,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 57, column: 1, offset: 1385 },
-                  end: { line: 57, column: 10, offset: 1394 }
+                  start: { line: 57, column: 1, offset: 1389 },
+                  end: { line: 57, column: 10, offset: 1398 }
                 }
               }
             ],
             position: {
-              start: { line: 57, column: 1, offset: 1385 },
-              end: { line: 57, column: 10, offset: 1394 }
+              start: { line: 57, column: 1, offset: 1389 },
+              end: { line: 57, column: 10, offset: 1398 }
             }
           },
           {
@@ -29093,26 +29154,26 @@ export default [
                             type: 'text',
                             value: 'and',
                             position: {
-                              start: { line: 58, column: 5, offset: 1399 },
-                              end: { line: 58, column: 8, offset: 1402 }
+                              start: { line: 58, column: 5, offset: 1403 },
+                              end: { line: 58, column: 8, offset: 1406 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 58, column: 4, offset: 1398 },
-                          end: { line: 58, column: 20, offset: 1414 }
+                          start: { line: 58, column: 4, offset: 1402 },
+                          end: { line: 58, column: 20, offset: 1418 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 58, column: 4, offset: 1398 },
-                      end: { line: 58, column: 20, offset: 1414 }
+                      start: { line: 58, column: 4, offset: 1402 },
+                      end: { line: 58, column: 20, offset: 1418 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 58, column: 2, offset: 1396 },
-                  end: { line: 58, column: 20, offset: 1414 }
+                  start: { line: 58, column: 2, offset: 1400 },
+                  end: { line: 58, column: 20, offset: 1418 }
                 }
               },
               {
@@ -29132,26 +29193,26 @@ export default [
                             type: 'text',
                             value: 'gt',
                             position: {
-                              start: { line: 59, column: 5, offset: 1419 },
-                              end: { line: 59, column: 7, offset: 1421 }
+                              start: { line: 59, column: 5, offset: 1423 },
+                              end: { line: 59, column: 7, offset: 1425 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 59, column: 4, offset: 1418 },
-                          end: { line: 59, column: 18, offset: 1432 }
+                          start: { line: 59, column: 4, offset: 1422 },
+                          end: { line: 59, column: 18, offset: 1436 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 59, column: 4, offset: 1418 },
-                      end: { line: 59, column: 18, offset: 1432 }
+                      start: { line: 59, column: 4, offset: 1422 },
+                      end: { line: 59, column: 18, offset: 1436 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 59, column: 2, offset: 1416 },
-                  end: { line: 59, column: 18, offset: 1432 }
+                  start: { line: 59, column: 2, offset: 1420 },
+                  end: { line: 59, column: 18, offset: 1436 }
                 }
               },
               {
@@ -29171,26 +29232,26 @@ export default [
                             type: 'text',
                             value: 'lt',
                             position: {
-                              start: { line: 60, column: 5, offset: 1437 },
-                              end: { line: 60, column: 7, offset: 1439 }
+                              start: { line: 60, column: 5, offset: 1441 },
+                              end: { line: 60, column: 7, offset: 1443 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 60, column: 4, offset: 1436 },
-                          end: { line: 60, column: 18, offset: 1450 }
+                          start: { line: 60, column: 4, offset: 1440 },
+                          end: { line: 60, column: 18, offset: 1454 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 60, column: 4, offset: 1436 },
-                      end: { line: 60, column: 18, offset: 1450 }
+                      start: { line: 60, column: 4, offset: 1440 },
+                      end: { line: 60, column: 18, offset: 1454 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 60, column: 2, offset: 1434 },
-                  end: { line: 60, column: 18, offset: 1450 }
+                  start: { line: 60, column: 2, offset: 1438 },
+                  end: { line: 60, column: 18, offset: 1454 }
                 }
               },
               {
@@ -29210,26 +29271,26 @@ export default [
                             type: 'text',
                             value: 'gte',
                             position: {
-                              start: { line: 61, column: 5, offset: 1455 },
-                              end: { line: 61, column: 8, offset: 1458 }
+                              start: { line: 61, column: 5, offset: 1459 },
+                              end: { line: 61, column: 8, offset: 1462 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 61, column: 4, offset: 1454 },
-                          end: { line: 61, column: 20, offset: 1470 }
+                          start: { line: 61, column: 4, offset: 1458 },
+                          end: { line: 61, column: 20, offset: 1474 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 61, column: 4, offset: 1454 },
-                      end: { line: 61, column: 20, offset: 1470 }
+                      start: { line: 61, column: 4, offset: 1458 },
+                      end: { line: 61, column: 20, offset: 1474 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 61, column: 2, offset: 1452 },
-                  end: { line: 61, column: 20, offset: 1470 }
+                  start: { line: 61, column: 2, offset: 1456 },
+                  end: { line: 61, column: 20, offset: 1474 }
                 }
               },
               {
@@ -29249,26 +29310,26 @@ export default [
                             type: 'text',
                             value: 'lte',
                             position: {
-                              start: { line: 62, column: 5, offset: 1475 },
-                              end: { line: 62, column: 8, offset: 1478 }
+                              start: { line: 62, column: 5, offset: 1479 },
+                              end: { line: 62, column: 8, offset: 1482 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 62, column: 4, offset: 1474 },
-                          end: { line: 62, column: 20, offset: 1490 }
+                          start: { line: 62, column: 4, offset: 1478 },
+                          end: { line: 62, column: 20, offset: 1494 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 62, column: 4, offset: 1474 },
-                      end: { line: 62, column: 20, offset: 1490 }
+                      start: { line: 62, column: 4, offset: 1478 },
+                      end: { line: 62, column: 20, offset: 1494 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 62, column: 2, offset: 1472 },
-                  end: { line: 62, column: 20, offset: 1490 }
+                  start: { line: 62, column: 2, offset: 1476 },
+                  end: { line: 62, column: 20, offset: 1494 }
                 }
               },
               {
@@ -29288,38 +29349,38 @@ export default [
                             type: 'text',
                             value: 'thunkify',
                             position: {
-                              start: { line: 63, column: 5, offset: 1495 },
-                              end: { line: 63, column: 13, offset: 1503 }
+                              start: { line: 63, column: 5, offset: 1499 },
+                              end: { line: 63, column: 13, offset: 1507 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 63, column: 4, offset: 1494 },
-                          end: { line: 63, column: 30, offset: 1520 }
+                          start: { line: 63, column: 4, offset: 1498 },
+                          end: { line: 63, column: 30, offset: 1524 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 63, column: 4, offset: 1494 },
-                      end: { line: 63, column: 30, offset: 1520 }
+                      start: { line: 63, column: 4, offset: 1498 },
+                      end: { line: 63, column: 30, offset: 1524 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 63, column: 2, offset: 1492 },
-                  end: { line: 63, column: 30, offset: 1520 }
+                  start: { line: 63, column: 2, offset: 1496 },
+                  end: { line: 63, column: 30, offset: 1524 }
                 }
               }
             ],
             position: {
-              start: { line: 58, column: 2, offset: 1396 },
-              end: { line: 63, column: 30, offset: 1520 }
+              start: { line: 58, column: 2, offset: 1400 },
+              end: { line: 63, column: 30, offset: 1524 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 63, column: 30, offset: 1520 }
+          end: { line: 63, column: 30, offset: 1524 }
         }
       },
       execution: {
@@ -29400,7 +29461,7 @@ export default [
       '])\n' +
       '```\n' +
       '\n' +
-      'If the foldable is a promise, it is resolved for its value before further execution for the eager interface only.\n' +
+      'If the foldable is a promise, it is resolved for its value before further execution for the immediate interface only.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'every(Promise.resolve([1, 2, 3, 4, 5]), n => n < 6).then(console.log)\n' +
@@ -29772,16 +29833,16 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'If the foldable is a promise, it is resolved for its value before further execution for the eager interface only.',
+                value: 'If the foldable is a promise, it is resolved for its value before further execution for the immediate interface only.',
                 position: {
                   start: { line: 37, column: 1, offset: 738 },
-                  end: { line: 37, column: 114, offset: 851 }
+                  end: { line: 37, column: 118, offset: 855 }
                 }
               }
             ],
             position: {
               start: { line: 37, column: 1, offset: 738 },
-              end: { line: 37, column: 114, offset: 851 }
+              end: { line: 37, column: 118, offset: 855 }
             }
           },
           {
@@ -29790,8 +29851,8 @@ export default [
             meta: '[playground]',
             value: 'every(Promise.resolve([1, 2, 3, 4, 5]), n => n < 6).then(console.log)',
             position: {
-              start: { line: 39, column: 1, offset: 853 },
-              end: { line: 41, column: 4, offset: 953 }
+              start: { line: 39, column: 1, offset: 857 },
+              end: { line: 41, column: 4, offset: 957 }
             }
           },
           {
@@ -29801,14 +29862,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 43, column: 1, offset: 955 },
-                  end: { line: 43, column: 10, offset: 964 }
+                  start: { line: 43, column: 1, offset: 959 },
+                  end: { line: 43, column: 10, offset: 968 }
                 }
               }
             ],
             position: {
-              start: { line: 43, column: 1, offset: 955 },
-              end: { line: 43, column: 10, offset: 964 }
+              start: { line: 43, column: 1, offset: 959 },
+              end: { line: 43, column: 10, offset: 968 }
             }
           },
           {
@@ -29834,26 +29895,26 @@ export default [
                             type: 'text',
                             value: 'map',
                             position: {
-                              start: { line: 44, column: 5, offset: 969 },
-                              end: { line: 44, column: 8, offset: 972 }
+                              start: { line: 44, column: 5, offset: 973 },
+                              end: { line: 44, column: 8, offset: 976 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 44, column: 4, offset: 968 },
-                          end: { line: 44, column: 20, offset: 984 }
+                          start: { line: 44, column: 4, offset: 972 },
+                          end: { line: 44, column: 20, offset: 988 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 44, column: 4, offset: 968 },
-                      end: { line: 44, column: 20, offset: 984 }
+                      start: { line: 44, column: 4, offset: 972 },
+                      end: { line: 44, column: 20, offset: 988 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 44, column: 2, offset: 966 },
-                  end: { line: 44, column: 20, offset: 984 }
+                  start: { line: 44, column: 2, offset: 970 },
+                  end: { line: 44, column: 20, offset: 988 }
                 }
               },
               {
@@ -29873,26 +29934,26 @@ export default [
                             type: 'text',
                             value: 'some',
                             position: {
-                              start: { line: 45, column: 5, offset: 989 },
-                              end: { line: 45, column: 9, offset: 993 }
+                              start: { line: 45, column: 5, offset: 993 },
+                              end: { line: 45, column: 9, offset: 997 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 45, column: 4, offset: 988 },
-                          end: { line: 45, column: 22, offset: 1006 }
+                          start: { line: 45, column: 4, offset: 992 },
+                          end: { line: 45, column: 22, offset: 1010 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 45, column: 4, offset: 988 },
-                      end: { line: 45, column: 22, offset: 1006 }
+                      start: { line: 45, column: 4, offset: 992 },
+                      end: { line: 45, column: 22, offset: 1010 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 45, column: 2, offset: 986 },
-                  end: { line: 45, column: 22, offset: 1006 }
+                  start: { line: 45, column: 2, offset: 990 },
+                  end: { line: 45, column: 22, offset: 1010 }
                 }
               },
               {
@@ -29912,38 +29973,38 @@ export default [
                             type: 'text',
                             value: 'and',
                             position: {
-                              start: { line: 46, column: 5, offset: 1011 },
-                              end: { line: 46, column: 8, offset: 1014 }
+                              start: { line: 46, column: 5, offset: 1015 },
+                              end: { line: 46, column: 8, offset: 1018 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 46, column: 4, offset: 1010 },
-                          end: { line: 46, column: 20, offset: 1026 }
+                          start: { line: 46, column: 4, offset: 1014 },
+                          end: { line: 46, column: 20, offset: 1030 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 46, column: 4, offset: 1010 },
-                      end: { line: 46, column: 20, offset: 1026 }
+                      start: { line: 46, column: 4, offset: 1014 },
+                      end: { line: 46, column: 20, offset: 1030 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 46, column: 2, offset: 1008 },
-                  end: { line: 46, column: 20, offset: 1026 }
+                  start: { line: 46, column: 2, offset: 1012 },
+                  end: { line: 46, column: 20, offset: 1030 }
                 }
               }
             ],
             position: {
-              start: { line: 44, column: 2, offset: 966 },
-              end: { line: 46, column: 20, offset: 1026 }
+              start: { line: 44, column: 2, offset: 970 },
+              end: { line: 46, column: 20, offset: 1030 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 46, column: 20, offset: 1026 }
+          end: { line: 46, column: 20, offset: 1030 }
         }
       },
       execution: {
@@ -30233,7 +30294,7 @@ export default [
       '}\n' +
       '```\n' +
       '\n' +
-      'If the filterable is a promise, it is resolved for its value before further execution for the eager interface only. \n' +
+      'If the filterable is a promise, it is resolved for its value before further execution for the immediate interface only. \n' +
       '\n' +
       '```javascript [playground]\n' +
       'const isOdd = number => number % 2 == 1\n' +
@@ -30967,16 +31028,16 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'If the filterable is a promise, it is resolved for its value before further execution for the eager interface only.',
+                value: 'If the filterable is a promise, it is resolved for its value before further execution for the immediate interface only.',
                 position: {
                   start: { line: 117, column: 1, offset: 3063 },
-                  end: { line: 117, column: 116, offset: 3178 }
+                  end: { line: 117, column: 120, offset: 3182 }
                 }
               }
             ],
             position: {
               start: { line: 117, column: 1, offset: 3063 },
-              end: { line: 117, column: 117, offset: 3179 }
+              end: { line: 117, column: 121, offset: 3183 }
             }
           },
           {
@@ -30987,8 +31048,8 @@ export default [
               '\n' +
               'filter(Promise.resolve([1, 2, 3, 4, 5]), isOdd).then(console.log)',
             position: {
-              start: { line: 119, column: 1, offset: 3181 },
-              end: { line: 123, column: 4, offset: 3318 }
+              start: { line: 119, column: 1, offset: 3185 },
+              end: { line: 123, column: 4, offset: 3322 }
             }
           },
           {
@@ -30998,14 +31059,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 125, column: 1, offset: 3320 },
-                  end: { line: 125, column: 10, offset: 3329 }
+                  start: { line: 125, column: 1, offset: 3324 },
+                  end: { line: 125, column: 10, offset: 3333 }
                 }
               }
             ],
             position: {
-              start: { line: 125, column: 1, offset: 3320 },
-              end: { line: 125, column: 10, offset: 3329 }
+              start: { line: 125, column: 1, offset: 3324 },
+              end: { line: 125, column: 10, offset: 3333 }
             }
           },
           {
@@ -31031,26 +31092,26 @@ export default [
                             type: 'text',
                             value: 'forEach',
                             position: {
-                              start: { line: 126, column: 5, offset: 3334 },
-                              end: { line: 126, column: 12, offset: 3341 }
+                              start: { line: 126, column: 5, offset: 3338 },
+                              end: { line: 126, column: 12, offset: 3345 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 126, column: 4, offset: 3333 },
-                          end: { line: 126, column: 28, offset: 3357 }
+                          start: { line: 126, column: 4, offset: 3337 },
+                          end: { line: 126, column: 28, offset: 3361 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 126, column: 4, offset: 3333 },
-                      end: { line: 126, column: 28, offset: 3357 }
+                      start: { line: 126, column: 4, offset: 3337 },
+                      end: { line: 126, column: 28, offset: 3361 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 126, column: 2, offset: 3331 },
-                  end: { line: 126, column: 28, offset: 3357 }
+                  start: { line: 126, column: 2, offset: 3335 },
+                  end: { line: 126, column: 28, offset: 3361 }
                 }
               },
               {
@@ -31070,26 +31131,26 @@ export default [
                             type: 'text',
                             value: 'map',
                             position: {
-                              start: { line: 127, column: 5, offset: 3362 },
-                              end: { line: 127, column: 8, offset: 3365 }
+                              start: { line: 127, column: 5, offset: 3366 },
+                              end: { line: 127, column: 8, offset: 3369 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 127, column: 4, offset: 3361 },
-                          end: { line: 127, column: 20, offset: 3377 }
+                          start: { line: 127, column: 4, offset: 3365 },
+                          end: { line: 127, column: 20, offset: 3381 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 127, column: 4, offset: 3361 },
-                      end: { line: 127, column: 20, offset: 3377 }
+                      start: { line: 127, column: 4, offset: 3365 },
+                      end: { line: 127, column: 20, offset: 3381 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 127, column: 2, offset: 3359 },
-                  end: { line: 127, column: 20, offset: 3377 }
+                  start: { line: 127, column: 2, offset: 3363 },
+                  end: { line: 127, column: 20, offset: 3381 }
                 }
               },
               {
@@ -31109,26 +31170,26 @@ export default [
                             type: 'text',
                             value: 'reduce',
                             position: {
-                              start: { line: 128, column: 5, offset: 3382 },
-                              end: { line: 128, column: 11, offset: 3388 }
+                              start: { line: 128, column: 5, offset: 3386 },
+                              end: { line: 128, column: 11, offset: 3392 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 128, column: 4, offset: 3381 },
-                          end: { line: 128, column: 26, offset: 3403 }
+                          start: { line: 128, column: 4, offset: 3385 },
+                          end: { line: 128, column: 26, offset: 3407 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 128, column: 4, offset: 3381 },
-                      end: { line: 128, column: 26, offset: 3403 }
+                      start: { line: 128, column: 4, offset: 3385 },
+                      end: { line: 128, column: 26, offset: 3407 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 128, column: 2, offset: 3379 },
-                  end: { line: 128, column: 26, offset: 3403 }
+                  start: { line: 128, column: 2, offset: 3383 },
+                  end: { line: 128, column: 26, offset: 3407 }
                 }
               },
               {
@@ -31148,26 +31209,26 @@ export default [
                             type: 'text',
                             value: 'transform',
                             position: {
-                              start: { line: 129, column: 5, offset: 3408 },
-                              end: { line: 129, column: 14, offset: 3417 }
+                              start: { line: 129, column: 5, offset: 3412 },
+                              end: { line: 129, column: 14, offset: 3421 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 129, column: 4, offset: 3407 },
-                          end: { line: 129, column: 32, offset: 3435 }
+                          start: { line: 129, column: 4, offset: 3411 },
+                          end: { line: 129, column: 32, offset: 3439 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 129, column: 4, offset: 3407 },
-                      end: { line: 129, column: 32, offset: 3435 }
+                      start: { line: 129, column: 4, offset: 3411 },
+                      end: { line: 129, column: 32, offset: 3439 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 129, column: 2, offset: 3405 },
-                  end: { line: 129, column: 32, offset: 3435 }
+                  start: { line: 129, column: 2, offset: 3409 },
+                  end: { line: 129, column: 32, offset: 3439 }
                 }
               },
               {
@@ -31187,26 +31248,26 @@ export default [
                             type: 'text',
                             value: 'flatMap',
                             position: {
-                              start: { line: 130, column: 5, offset: 3440 },
-                              end: { line: 130, column: 12, offset: 3447 }
+                              start: { line: 130, column: 5, offset: 3444 },
+                              end: { line: 130, column: 12, offset: 3451 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 130, column: 4, offset: 3439 },
-                          end: { line: 130, column: 28, offset: 3463 }
+                          start: { line: 130, column: 4, offset: 3443 },
+                          end: { line: 130, column: 28, offset: 3467 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 130, column: 4, offset: 3439 },
-                      end: { line: 130, column: 28, offset: 3463 }
+                      start: { line: 130, column: 4, offset: 3443 },
+                      end: { line: 130, column: 28, offset: 3467 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 130, column: 2, offset: 3437 },
-                  end: { line: 130, column: 28, offset: 3463 }
+                  start: { line: 130, column: 2, offset: 3441 },
+                  end: { line: 130, column: 28, offset: 3467 }
                 }
               },
               {
@@ -31226,38 +31287,38 @@ export default [
                             type: 'text',
                             value: 'some',
                             position: {
-                              start: { line: 131, column: 5, offset: 3468 },
-                              end: { line: 131, column: 9, offset: 3472 }
+                              start: { line: 131, column: 5, offset: 3472 },
+                              end: { line: 131, column: 9, offset: 3476 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 131, column: 4, offset: 3467 },
-                          end: { line: 131, column: 22, offset: 3485 }
+                          start: { line: 131, column: 4, offset: 3471 },
+                          end: { line: 131, column: 22, offset: 3489 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 131, column: 4, offset: 3467 },
-                      end: { line: 131, column: 22, offset: 3485 }
+                      start: { line: 131, column: 4, offset: 3471 },
+                      end: { line: 131, column: 22, offset: 3489 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 131, column: 2, offset: 3465 },
-                  end: { line: 131, column: 22, offset: 3485 }
+                  start: { line: 131, column: 2, offset: 3469 },
+                  end: { line: 131, column: 22, offset: 3489 }
                 }
               }
             ],
             position: {
-              start: { line: 126, column: 2, offset: 3331 },
-              end: { line: 131, column: 22, offset: 3485 }
+              start: { line: 126, column: 2, offset: 3335 },
+              end: { line: 131, column: 22, offset: 3489 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 131, column: 22, offset: 3485 }
+          end: { line: 131, column: 22, offset: 3489 }
         }
       },
       execution: {
@@ -31465,7 +31526,7 @@ export default [
       "console.log('repeated:', repeated)\n" +
       '```\n' +
       '\n' +
-      'If the monad is a promise, it is resolved for its value before further execution for the eager interface only.\n' +
+      'If the monad is a promise, it is resolved for its value before further execution for the immediate interface only.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'flatMap(Promise.resolve([1, 2, 3, 4, 5]), n => [n, n]).then(console.log)\n' +
@@ -32166,16 +32227,16 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'If the monad is a promise, it is resolved for its value before further execution for the eager interface only.',
+                value: 'If the monad is a promise, it is resolved for its value before further execution for the immediate interface only.',
                 position: {
                   start: { line: 89, column: 1, offset: 3069 },
-                  end: { line: 89, column: 111, offset: 3179 }
+                  end: { line: 89, column: 115, offset: 3183 }
                 }
               }
             ],
             position: {
               start: { line: 89, column: 1, offset: 3069 },
-              end: { line: 89, column: 111, offset: 3179 }
+              end: { line: 89, column: 115, offset: 3183 }
             }
           },
           {
@@ -32184,8 +32245,8 @@ export default [
             meta: '[playground]',
             value: 'flatMap(Promise.resolve([1, 2, 3, 4, 5]), n => [n, n]).then(console.log)',
             position: {
-              start: { line: 91, column: 1, offset: 3181 },
-              end: { line: 93, column: 4, offset: 3284 }
+              start: { line: 91, column: 1, offset: 3185 },
+              end: { line: 93, column: 4, offset: 3288 }
             }
           },
           {
@@ -32195,14 +32256,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 95, column: 1, offset: 3286 },
-                  end: { line: 95, column: 10, offset: 3295 }
+                  start: { line: 95, column: 1, offset: 3290 },
+                  end: { line: 95, column: 10, offset: 3299 }
                 }
               }
             ],
             position: {
-              start: { line: 95, column: 1, offset: 3286 },
-              end: { line: 95, column: 10, offset: 3295 }
+              start: { line: 95, column: 1, offset: 3290 },
+              end: { line: 95, column: 10, offset: 3299 }
             }
           },
           {
@@ -32228,26 +32289,26 @@ export default [
                             type: 'text',
                             value: 'forEach',
                             position: {
-                              start: { line: 96, column: 5, offset: 3300 },
-                              end: { line: 96, column: 12, offset: 3307 }
+                              start: { line: 96, column: 5, offset: 3304 },
+                              end: { line: 96, column: 12, offset: 3311 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 96, column: 4, offset: 3299 },
-                          end: { line: 96, column: 28, offset: 3323 }
+                          start: { line: 96, column: 4, offset: 3303 },
+                          end: { line: 96, column: 28, offset: 3327 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 96, column: 4, offset: 3299 },
-                      end: { line: 96, column: 28, offset: 3323 }
+                      start: { line: 96, column: 4, offset: 3303 },
+                      end: { line: 96, column: 28, offset: 3327 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 96, column: 2, offset: 3297 },
-                  end: { line: 96, column: 28, offset: 3323 }
+                  start: { line: 96, column: 2, offset: 3301 },
+                  end: { line: 96, column: 28, offset: 3327 }
                 }
               },
               {
@@ -32267,26 +32328,26 @@ export default [
                             type: 'text',
                             value: 'map',
                             position: {
-                              start: { line: 97, column: 5, offset: 3328 },
-                              end: { line: 97, column: 8, offset: 3331 }
+                              start: { line: 97, column: 5, offset: 3332 },
+                              end: { line: 97, column: 8, offset: 3335 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 97, column: 4, offset: 3327 },
-                          end: { line: 97, column: 20, offset: 3343 }
+                          start: { line: 97, column: 4, offset: 3331 },
+                          end: { line: 97, column: 20, offset: 3347 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 97, column: 4, offset: 3327 },
-                      end: { line: 97, column: 20, offset: 3343 }
+                      start: { line: 97, column: 4, offset: 3331 },
+                      end: { line: 97, column: 20, offset: 3347 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 97, column: 2, offset: 3325 },
-                  end: { line: 97, column: 20, offset: 3343 }
+                  start: { line: 97, column: 2, offset: 3329 },
+                  end: { line: 97, column: 20, offset: 3347 }
                 }
               },
               {
@@ -32306,26 +32367,26 @@ export default [
                             type: 'text',
                             value: 'filter',
                             position: {
-                              start: { line: 98, column: 5, offset: 3348 },
-                              end: { line: 98, column: 11, offset: 3354 }
+                              start: { line: 98, column: 5, offset: 3352 },
+                              end: { line: 98, column: 11, offset: 3358 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 98, column: 4, offset: 3347 },
-                          end: { line: 98, column: 26, offset: 3369 }
+                          start: { line: 98, column: 4, offset: 3351 },
+                          end: { line: 98, column: 26, offset: 3373 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 98, column: 4, offset: 3347 },
-                      end: { line: 98, column: 26, offset: 3369 }
+                      start: { line: 98, column: 4, offset: 3351 },
+                      end: { line: 98, column: 26, offset: 3373 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 98, column: 2, offset: 3345 },
-                  end: { line: 98, column: 26, offset: 3369 }
+                  start: { line: 98, column: 2, offset: 3349 },
+                  end: { line: 98, column: 26, offset: 3373 }
                 }
               },
               {
@@ -32345,26 +32406,26 @@ export default [
                             type: 'text',
                             value: 'reduce',
                             position: {
-                              start: { line: 99, column: 5, offset: 3374 },
-                              end: { line: 99, column: 11, offset: 3380 }
+                              start: { line: 99, column: 5, offset: 3378 },
+                              end: { line: 99, column: 11, offset: 3384 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 99, column: 4, offset: 3373 },
-                          end: { line: 99, column: 26, offset: 3395 }
+                          start: { line: 99, column: 4, offset: 3377 },
+                          end: { line: 99, column: 26, offset: 3399 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 99, column: 4, offset: 3373 },
-                      end: { line: 99, column: 26, offset: 3395 }
+                      start: { line: 99, column: 4, offset: 3377 },
+                      end: { line: 99, column: 26, offset: 3399 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 99, column: 2, offset: 3371 },
-                  end: { line: 99, column: 26, offset: 3395 }
+                  start: { line: 99, column: 2, offset: 3375 },
+                  end: { line: 99, column: 26, offset: 3399 }
                 }
               },
               {
@@ -32384,26 +32445,26 @@ export default [
                             type: 'text',
                             value: 'transform',
                             position: {
-                              start: { line: 100, column: 5, offset: 3400 },
-                              end: { line: 100, column: 14, offset: 3409 }
+                              start: { line: 100, column: 5, offset: 3404 },
+                              end: { line: 100, column: 14, offset: 3413 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 100, column: 4, offset: 3399 },
-                          end: { line: 100, column: 32, offset: 3427 }
+                          start: { line: 100, column: 4, offset: 3403 },
+                          end: { line: 100, column: 32, offset: 3431 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 100, column: 4, offset: 3399 },
-                      end: { line: 100, column: 32, offset: 3427 }
+                      start: { line: 100, column: 4, offset: 3403 },
+                      end: { line: 100, column: 32, offset: 3431 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 100, column: 2, offset: 3397 },
-                  end: { line: 100, column: 32, offset: 3427 }
+                  start: { line: 100, column: 2, offset: 3401 },
+                  end: { line: 100, column: 32, offset: 3431 }
                 }
               },
               {
@@ -32423,38 +32484,38 @@ export default [
                             type: 'text',
                             value: 'some',
                             position: {
-                              start: { line: 101, column: 5, offset: 3432 },
-                              end: { line: 101, column: 9, offset: 3436 }
+                              start: { line: 101, column: 5, offset: 3436 },
+                              end: { line: 101, column: 9, offset: 3440 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 101, column: 4, offset: 3431 },
-                          end: { line: 101, column: 22, offset: 3449 }
+                          start: { line: 101, column: 4, offset: 3435 },
+                          end: { line: 101, column: 22, offset: 3453 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 101, column: 4, offset: 3431 },
-                      end: { line: 101, column: 22, offset: 3449 }
+                      start: { line: 101, column: 4, offset: 3435 },
+                      end: { line: 101, column: 22, offset: 3453 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 101, column: 2, offset: 3429 },
-                  end: { line: 101, column: 22, offset: 3449 }
+                  start: { line: 101, column: 2, offset: 3433 },
+                  end: { line: 101, column: 22, offset: 3453 }
                 }
               }
             ],
             position: {
-              start: { line: 96, column: 2, offset: 3297 },
-              end: { line: 101, column: 22, offset: 3449 }
+              start: { line: 96, column: 2, offset: 3301 },
+              end: { line: 101, column: 22, offset: 3453 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 101, column: 22, offset: 3449 }
+          end: { line: 101, column: 22, offset: 3453 }
         }
       },
       execution: {
@@ -32804,7 +32865,7 @@ export default [
       '])\n' +
       '```\n' +
       '\n' +
-      'If the iterable is a promise, it is resolved for its value before further execution for the eager interface only.\n' +
+      'If the iterable is a promise, it is resolved for its value before further execution for the immediate interface only.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'forEach(Promise.resolve([1, 2, 3]), console.log)\n' +
@@ -33418,16 +33479,16 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'If the iterable is a promise, it is resolved for its value before further execution for the eager interface only.',
+                value: 'If the iterable is a promise, it is resolved for its value before further execution for the immediate interface only.',
                 position: {
                   start: { line: 75, column: 1, offset: 1823 },
-                  end: { line: 75, column: 114, offset: 1936 }
+                  end: { line: 75, column: 118, offset: 1940 }
                 }
               }
             ],
             position: {
               start: { line: 75, column: 1, offset: 1823 },
-              end: { line: 75, column: 114, offset: 1936 }
+              end: { line: 75, column: 118, offset: 1940 }
             }
           },
           {
@@ -33436,8 +33497,8 @@ export default [
             meta: '[playground]',
             value: 'forEach(Promise.resolve([1, 2, 3]), console.log)',
             position: {
-              start: { line: 77, column: 1, offset: 1938 },
-              end: { line: 79, column: 4, offset: 2017 }
+              start: { line: 77, column: 1, offset: 1942 },
+              end: { line: 79, column: 4, offset: 2021 }
             }
           },
           {
@@ -33447,14 +33508,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 81, column: 1, offset: 2019 },
-                  end: { line: 81, column: 10, offset: 2028 }
+                  start: { line: 81, column: 1, offset: 2023 },
+                  end: { line: 81, column: 10, offset: 2032 }
                 }
               }
             ],
             position: {
-              start: { line: 81, column: 1, offset: 2019 },
-              end: { line: 81, column: 10, offset: 2028 }
+              start: { line: 81, column: 1, offset: 2023 },
+              end: { line: 81, column: 10, offset: 2032 }
             }
           },
           {
@@ -33480,26 +33541,26 @@ export default [
                             type: 'text',
                             value: 'pipe',
                             position: {
-                              start: { line: 82, column: 5, offset: 2033 },
-                              end: { line: 82, column: 9, offset: 2037 }
+                              start: { line: 82, column: 5, offset: 2037 },
+                              end: { line: 82, column: 9, offset: 2041 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 82, column: 4, offset: 2032 },
-                          end: { line: 82, column: 22, offset: 2050 }
+                          start: { line: 82, column: 4, offset: 2036 },
+                          end: { line: 82, column: 22, offset: 2054 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 82, column: 4, offset: 2032 },
-                      end: { line: 82, column: 22, offset: 2050 }
+                      start: { line: 82, column: 4, offset: 2036 },
+                      end: { line: 82, column: 22, offset: 2054 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 82, column: 2, offset: 2030 },
-                  end: { line: 82, column: 22, offset: 2050 }
+                  start: { line: 82, column: 2, offset: 2034 },
+                  end: { line: 82, column: 22, offset: 2054 }
                 }
               },
               {
@@ -33519,26 +33580,26 @@ export default [
                             type: 'text',
                             value: 'tap',
                             position: {
-                              start: { line: 83, column: 5, offset: 2055 },
-                              end: { line: 83, column: 8, offset: 2058 }
+                              start: { line: 83, column: 5, offset: 2059 },
+                              end: { line: 83, column: 8, offset: 2062 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 83, column: 4, offset: 2054 },
-                          end: { line: 83, column: 20, offset: 2070 }
+                          start: { line: 83, column: 4, offset: 2058 },
+                          end: { line: 83, column: 20, offset: 2074 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 83, column: 4, offset: 2054 },
-                      end: { line: 83, column: 20, offset: 2070 }
+                      start: { line: 83, column: 4, offset: 2058 },
+                      end: { line: 83, column: 20, offset: 2074 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 83, column: 2, offset: 2052 },
-                  end: { line: 83, column: 20, offset: 2070 }
+                  start: { line: 83, column: 2, offset: 2056 },
+                  end: { line: 83, column: 20, offset: 2074 }
                 }
               },
               {
@@ -33558,26 +33619,26 @@ export default [
                             type: 'text',
                             value: 'all',
                             position: {
-                              start: { line: 84, column: 5, offset: 2075 },
-                              end: { line: 84, column: 8, offset: 2078 }
+                              start: { line: 84, column: 5, offset: 2079 },
+                              end: { line: 84, column: 8, offset: 2082 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 84, column: 4, offset: 2074 },
-                          end: { line: 84, column: 20, offset: 2090 }
+                          start: { line: 84, column: 4, offset: 2078 },
+                          end: { line: 84, column: 20, offset: 2094 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 84, column: 4, offset: 2074 },
-                      end: { line: 84, column: 20, offset: 2090 }
+                      start: { line: 84, column: 4, offset: 2078 },
+                      end: { line: 84, column: 20, offset: 2094 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 84, column: 2, offset: 2072 },
-                  end: { line: 84, column: 20, offset: 2090 }
+                  start: { line: 84, column: 2, offset: 2076 },
+                  end: { line: 84, column: 20, offset: 2094 }
                 }
               },
               {
@@ -33597,26 +33658,26 @@ export default [
                             type: 'text',
                             value: 'forEach.series',
                             position: {
-                              start: { line: 85, column: 5, offset: 2095 },
-                              end: { line: 85, column: 19, offset: 2109 }
+                              start: { line: 85, column: 5, offset: 2099 },
+                              end: { line: 85, column: 19, offset: 2113 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 85, column: 4, offset: 2094 },
-                          end: { line: 85, column: 42, offset: 2132 }
+                          start: { line: 85, column: 4, offset: 2098 },
+                          end: { line: 85, column: 42, offset: 2136 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 85, column: 4, offset: 2094 },
-                      end: { line: 85, column: 42, offset: 2132 }
+                      start: { line: 85, column: 4, offset: 2098 },
+                      end: { line: 85, column: 42, offset: 2136 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 85, column: 2, offset: 2092 },
-                  end: { line: 85, column: 42, offset: 2132 }
+                  start: { line: 85, column: 2, offset: 2096 },
+                  end: { line: 85, column: 42, offset: 2136 }
                 }
               },
               {
@@ -33636,38 +33697,38 @@ export default [
                             type: 'text',
                             value: 'map',
                             position: {
-                              start: { line: 86, column: 5, offset: 2137 },
-                              end: { line: 86, column: 8, offset: 2140 }
+                              start: { line: 86, column: 5, offset: 2141 },
+                              end: { line: 86, column: 8, offset: 2144 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 86, column: 4, offset: 2136 },
-                          end: { line: 86, column: 20, offset: 2152 }
+                          start: { line: 86, column: 4, offset: 2140 },
+                          end: { line: 86, column: 20, offset: 2156 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 86, column: 4, offset: 2136 },
-                      end: { line: 86, column: 20, offset: 2152 }
+                      start: { line: 86, column: 4, offset: 2140 },
+                      end: { line: 86, column: 20, offset: 2156 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 86, column: 2, offset: 2134 },
-                  end: { line: 86, column: 20, offset: 2152 }
+                  start: { line: 86, column: 2, offset: 2138 },
+                  end: { line: 86, column: 20, offset: 2156 }
                 }
               }
             ],
             position: {
-              start: { line: 82, column: 2, offset: 2030 },
-              end: { line: 86, column: 20, offset: 2152 }
+              start: { line: 82, column: 2, offset: 2034 },
+              end: { line: 86, column: 20, offset: 2156 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 86, column: 20, offset: 2152 }
+          end: { line: 86, column: 20, offset: 2156 }
         }
       }
     },
@@ -33756,7 +33817,7 @@ export default [
       '})\n' +
       '```\n' +
       '\n' +
-      'If the iterable is a promise, it is resolved for its value before further execution for the eager interface only.\n' +
+      'If the iterable is a promise, it is resolved for its value before further execution for the immediate interface only.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'forEach.series(Promise.resolve([1, 2, 3]), console.log)\n' +
@@ -33882,16 +33943,16 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'If the iterable is a promise, it is resolved for its value before further execution for the eager interface only.',
+                value: 'If the iterable is a promise, it is resolved for its value before further execution for the immediate interface only.',
                 position: {
                   start: { line: 12, column: 1, offset: 224 },
-                  end: { line: 12, column: 114, offset: 337 }
+                  end: { line: 12, column: 118, offset: 341 }
                 }
               }
             ],
             position: {
               start: { line: 12, column: 1, offset: 224 },
-              end: { line: 12, column: 114, offset: 337 }
+              end: { line: 12, column: 118, offset: 341 }
             }
           },
           {
@@ -33900,8 +33961,8 @@ export default [
             meta: '[playground]',
             value: 'forEach.series(Promise.resolve([1, 2, 3]), console.log)',
             position: {
-              start: { line: 14, column: 1, offset: 339 },
-              end: { line: 16, column: 4, offset: 425 }
+              start: { line: 14, column: 1, offset: 343 },
+              end: { line: 16, column: 4, offset: 429 }
             }
           },
           {
@@ -33911,14 +33972,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 18, column: 1, offset: 427 },
-                  end: { line: 18, column: 10, offset: 436 }
+                  start: { line: 18, column: 1, offset: 431 },
+                  end: { line: 18, column: 10, offset: 440 }
                 }
               }
             ],
             position: {
-              start: { line: 18, column: 1, offset: 427 },
-              end: { line: 18, column: 10, offset: 436 }
+              start: { line: 18, column: 1, offset: 431 },
+              end: { line: 18, column: 10, offset: 440 }
             }
           },
           {
@@ -33944,26 +34005,26 @@ export default [
                             type: 'text',
                             value: 'pipe',
                             position: {
-                              start: { line: 19, column: 5, offset: 441 },
-                              end: { line: 19, column: 9, offset: 445 }
+                              start: { line: 19, column: 5, offset: 445 },
+                              end: { line: 19, column: 9, offset: 449 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 19, column: 4, offset: 440 },
-                          end: { line: 19, column: 22, offset: 458 }
+                          start: { line: 19, column: 4, offset: 444 },
+                          end: { line: 19, column: 22, offset: 462 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 19, column: 4, offset: 440 },
-                      end: { line: 19, column: 22, offset: 458 }
+                      start: { line: 19, column: 4, offset: 444 },
+                      end: { line: 19, column: 22, offset: 462 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 19, column: 2, offset: 438 },
-                  end: { line: 19, column: 22, offset: 458 }
+                  start: { line: 19, column: 2, offset: 442 },
+                  end: { line: 19, column: 22, offset: 462 }
                 }
               },
               {
@@ -33983,26 +34044,26 @@ export default [
                             type: 'text',
                             value: 'tap',
                             position: {
-                              start: { line: 20, column: 5, offset: 463 },
-                              end: { line: 20, column: 8, offset: 466 }
+                              start: { line: 20, column: 5, offset: 467 },
+                              end: { line: 20, column: 8, offset: 470 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 20, column: 4, offset: 462 },
-                          end: { line: 20, column: 20, offset: 478 }
+                          start: { line: 20, column: 4, offset: 466 },
+                          end: { line: 20, column: 20, offset: 482 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 20, column: 4, offset: 462 },
-                      end: { line: 20, column: 20, offset: 478 }
+                      start: { line: 20, column: 4, offset: 466 },
+                      end: { line: 20, column: 20, offset: 482 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 20, column: 2, offset: 460 },
-                  end: { line: 20, column: 20, offset: 478 }
+                  start: { line: 20, column: 2, offset: 464 },
+                  end: { line: 20, column: 20, offset: 482 }
                 }
               },
               {
@@ -34022,26 +34083,26 @@ export default [
                             type: 'text',
                             value: 'all',
                             position: {
-                              start: { line: 21, column: 5, offset: 483 },
-                              end: { line: 21, column: 8, offset: 486 }
+                              start: { line: 21, column: 5, offset: 487 },
+                              end: { line: 21, column: 8, offset: 490 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 21, column: 4, offset: 482 },
-                          end: { line: 21, column: 20, offset: 498 }
+                          start: { line: 21, column: 4, offset: 486 },
+                          end: { line: 21, column: 20, offset: 502 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 21, column: 4, offset: 482 },
-                      end: { line: 21, column: 20, offset: 498 }
+                      start: { line: 21, column: 4, offset: 486 },
+                      end: { line: 21, column: 20, offset: 502 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 21, column: 2, offset: 480 },
-                  end: { line: 21, column: 20, offset: 498 }
+                  start: { line: 21, column: 2, offset: 484 },
+                  end: { line: 21, column: 20, offset: 502 }
                 }
               },
               {
@@ -34061,26 +34122,26 @@ export default [
                             type: 'text',
                             value: 'forEach',
                             position: {
-                              start: { line: 22, column: 5, offset: 503 },
-                              end: { line: 22, column: 12, offset: 510 }
+                              start: { line: 22, column: 5, offset: 507 },
+                              end: { line: 22, column: 12, offset: 514 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 22, column: 4, offset: 502 },
-                          end: { line: 22, column: 28, offset: 526 }
+                          start: { line: 22, column: 4, offset: 506 },
+                          end: { line: 22, column: 28, offset: 530 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 22, column: 4, offset: 502 },
-                      end: { line: 22, column: 28, offset: 526 }
+                      start: { line: 22, column: 4, offset: 506 },
+                      end: { line: 22, column: 28, offset: 530 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 22, column: 2, offset: 500 },
-                  end: { line: 22, column: 28, offset: 526 }
+                  start: { line: 22, column: 2, offset: 504 },
+                  end: { line: 22, column: 28, offset: 530 }
                 }
               },
               {
@@ -34100,38 +34161,38 @@ export default [
                             type: 'text',
                             value: 'map',
                             position: {
-                              start: { line: 23, column: 5, offset: 531 },
-                              end: { line: 23, column: 8, offset: 534 }
+                              start: { line: 23, column: 5, offset: 535 },
+                              end: { line: 23, column: 8, offset: 538 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 23, column: 4, offset: 530 },
-                          end: { line: 23, column: 20, offset: 546 }
+                          start: { line: 23, column: 4, offset: 534 },
+                          end: { line: 23, column: 20, offset: 550 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 23, column: 4, offset: 530 },
-                      end: { line: 23, column: 20, offset: 546 }
+                      start: { line: 23, column: 4, offset: 534 },
+                      end: { line: 23, column: 20, offset: 550 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 23, column: 2, offset: 528 },
-                  end: { line: 23, column: 20, offset: 546 }
+                  start: { line: 23, column: 2, offset: 532 },
+                  end: { line: 23, column: 20, offset: 550 }
                 }
               }
             ],
             position: {
-              start: { line: 19, column: 2, offset: 438 },
-              end: { line: 23, column: 20, offset: 546 }
+              start: { line: 19, column: 2, offset: 442 },
+              end: { line: 23, column: 20, offset: 550 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 23, column: 20, offset: 546 }
+          end: { line: 23, column: 20, offset: 550 }
         }
       }
     },
@@ -34219,7 +34280,7 @@ export default [
       'console.log(get00000ArrayNotation(nested))\n' +
       '```\n' +
       '\n' +
-      'If the argument object or default value is a promise, it is resolved for its value before further execution for the eager interface only.\n' +
+      'If the argument object or default value is a promise, it is resolved for its value before further execution for the immediate interface only.\n' +
       '\n' +
       '```javascript [playground]\n' +
       "get(Promise.resolve({ a: 1 }), 'a').then(console.log)\n" +
@@ -34667,16 +34728,16 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'If the argument object or default value is a promise, it is resolved for its value before further execution for the eager interface only.',
+                value: 'If the argument object or default value is a promise, it is resolved for its value before further execution for the immediate interface only.',
                 position: {
                   start: { line: 69, column: 1, offset: 1837 },
-                  end: { line: 69, column: 138, offset: 1974 }
+                  end: { line: 69, column: 142, offset: 1978 }
                 }
               }
             ],
             position: {
               start: { line: 69, column: 1, offset: 1837 },
-              end: { line: 69, column: 138, offset: 1974 }
+              end: { line: 69, column: 142, offset: 1978 }
             }
           },
           {
@@ -34687,8 +34748,8 @@ export default [
               '\n' +
               "get({}, 'a', Promise.resolve('default-value')).then(console.log)",
             position: {
-              start: { line: 71, column: 1, offset: 1976 },
-              end: { line: 75, column: 4, offset: 2126 }
+              start: { line: 71, column: 1, offset: 1980 },
+              end: { line: 75, column: 4, offset: 2130 }
             }
           },
           {
@@ -34698,14 +34759,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 77, column: 1, offset: 2128 },
-                  end: { line: 77, column: 10, offset: 2137 }
+                  start: { line: 77, column: 1, offset: 2132 },
+                  end: { line: 77, column: 10, offset: 2141 }
                 }
               }
             ],
             position: {
-              start: { line: 77, column: 1, offset: 2128 },
-              end: { line: 77, column: 10, offset: 2137 }
+              start: { line: 77, column: 1, offset: 2132 },
+              end: { line: 77, column: 10, offset: 2141 }
             }
           },
           {
@@ -34731,26 +34792,26 @@ export default [
                             type: 'text',
                             value: 'pipe',
                             position: {
-                              start: { line: 78, column: 5, offset: 2142 },
-                              end: { line: 78, column: 9, offset: 2146 }
+                              start: { line: 78, column: 5, offset: 2146 },
+                              end: { line: 78, column: 9, offset: 2150 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 78, column: 4, offset: 2141 },
-                          end: { line: 78, column: 22, offset: 2159 }
+                          start: { line: 78, column: 4, offset: 2145 },
+                          end: { line: 78, column: 22, offset: 2163 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 78, column: 4, offset: 2141 },
-                      end: { line: 78, column: 22, offset: 2159 }
+                      start: { line: 78, column: 4, offset: 2145 },
+                      end: { line: 78, column: 22, offset: 2163 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 78, column: 2, offset: 2139 },
-                  end: { line: 78, column: 22, offset: 2159 }
+                  start: { line: 78, column: 2, offset: 2143 },
+                  end: { line: 78, column: 22, offset: 2163 }
                 }
               },
               {
@@ -34770,26 +34831,26 @@ export default [
                             type: 'text',
                             value: 'all',
                             position: {
-                              start: { line: 79, column: 5, offset: 2164 },
-                              end: { line: 79, column: 8, offset: 2167 }
+                              start: { line: 79, column: 5, offset: 2168 },
+                              end: { line: 79, column: 8, offset: 2171 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 79, column: 4, offset: 2163 },
-                          end: { line: 79, column: 20, offset: 2179 }
+                          start: { line: 79, column: 4, offset: 2167 },
+                          end: { line: 79, column: 20, offset: 2183 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 79, column: 4, offset: 2163 },
-                      end: { line: 79, column: 20, offset: 2179 }
+                      start: { line: 79, column: 4, offset: 2167 },
+                      end: { line: 79, column: 20, offset: 2183 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 79, column: 2, offset: 2161 },
-                  end: { line: 79, column: 20, offset: 2179 }
+                  start: { line: 79, column: 2, offset: 2165 },
+                  end: { line: 79, column: 20, offset: 2183 }
                 }
               },
               {
@@ -34809,26 +34870,26 @@ export default [
                             type: 'text',
                             value: 'assign',
                             position: {
-                              start: { line: 80, column: 5, offset: 2184 },
-                              end: { line: 80, column: 11, offset: 2190 }
+                              start: { line: 80, column: 5, offset: 2188 },
+                              end: { line: 80, column: 11, offset: 2194 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 80, column: 4, offset: 2183 },
-                          end: { line: 80, column: 26, offset: 2205 }
+                          start: { line: 80, column: 4, offset: 2187 },
+                          end: { line: 80, column: 26, offset: 2209 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 80, column: 4, offset: 2183 },
-                      end: { line: 80, column: 26, offset: 2205 }
+                      start: { line: 80, column: 4, offset: 2187 },
+                      end: { line: 80, column: 26, offset: 2209 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 80, column: 2, offset: 2181 },
-                  end: { line: 80, column: 26, offset: 2205 }
+                  start: { line: 80, column: 2, offset: 2185 },
+                  end: { line: 80, column: 26, offset: 2209 }
                 }
               },
               {
@@ -34848,26 +34909,26 @@ export default [
                             type: 'text',
                             value: 'set',
                             position: {
-                              start: { line: 81, column: 5, offset: 2210 },
-                              end: { line: 81, column: 8, offset: 2213 }
+                              start: { line: 81, column: 5, offset: 2214 },
+                              end: { line: 81, column: 8, offset: 2217 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 81, column: 4, offset: 2209 },
-                          end: { line: 81, column: 20, offset: 2225 }
+                          start: { line: 81, column: 4, offset: 2213 },
+                          end: { line: 81, column: 20, offset: 2229 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 81, column: 4, offset: 2209 },
-                      end: { line: 81, column: 20, offset: 2225 }
+                      start: { line: 81, column: 4, offset: 2213 },
+                      end: { line: 81, column: 20, offset: 2229 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 81, column: 2, offset: 2207 },
-                  end: { line: 81, column: 20, offset: 2225 }
+                  start: { line: 81, column: 2, offset: 2211 },
+                  end: { line: 81, column: 20, offset: 2229 }
                 }
               },
               {
@@ -34887,26 +34948,26 @@ export default [
                             type: 'text',
                             value: 'pick',
                             position: {
-                              start: { line: 82, column: 5, offset: 2230 },
-                              end: { line: 82, column: 9, offset: 2234 }
+                              start: { line: 82, column: 5, offset: 2234 },
+                              end: { line: 82, column: 9, offset: 2238 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 82, column: 4, offset: 2229 },
-                          end: { line: 82, column: 22, offset: 2247 }
+                          start: { line: 82, column: 4, offset: 2233 },
+                          end: { line: 82, column: 22, offset: 2251 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 82, column: 4, offset: 2229 },
-                      end: { line: 82, column: 22, offset: 2247 }
+                      start: { line: 82, column: 4, offset: 2233 },
+                      end: { line: 82, column: 22, offset: 2251 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 82, column: 2, offset: 2227 },
-                  end: { line: 82, column: 22, offset: 2247 }
+                  start: { line: 82, column: 2, offset: 2231 },
+                  end: { line: 82, column: 22, offset: 2251 }
                 }
               },
               {
@@ -34926,26 +34987,26 @@ export default [
                             type: 'text',
                             value: 'omit',
                             position: {
-                              start: { line: 83, column: 5, offset: 2252 },
-                              end: { line: 83, column: 9, offset: 2256 }
+                              start: { line: 83, column: 5, offset: 2256 },
+                              end: { line: 83, column: 9, offset: 2260 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 83, column: 4, offset: 2251 },
-                          end: { line: 83, column: 22, offset: 2269 }
+                          start: { line: 83, column: 4, offset: 2255 },
+                          end: { line: 83, column: 22, offset: 2273 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 83, column: 4, offset: 2251 },
-                      end: { line: 83, column: 22, offset: 2269 }
+                      start: { line: 83, column: 4, offset: 2255 },
+                      end: { line: 83, column: 22, offset: 2273 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 83, column: 2, offset: 2249 },
-                  end: { line: 83, column: 22, offset: 2269 }
+                  start: { line: 83, column: 2, offset: 2253 },
+                  end: { line: 83, column: 22, offset: 2273 }
                 }
               },
               {
@@ -34965,38 +35026,38 @@ export default [
                             type: 'text',
                             value: 'forEach',
                             position: {
-                              start: { line: 84, column: 5, offset: 2274 },
-                              end: { line: 84, column: 12, offset: 2281 }
+                              start: { line: 84, column: 5, offset: 2278 },
+                              end: { line: 84, column: 12, offset: 2285 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 84, column: 4, offset: 2273 },
-                          end: { line: 84, column: 28, offset: 2297 }
+                          start: { line: 84, column: 4, offset: 2277 },
+                          end: { line: 84, column: 28, offset: 2301 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 84, column: 4, offset: 2273 },
-                      end: { line: 84, column: 28, offset: 2297 }
+                      start: { line: 84, column: 4, offset: 2277 },
+                      end: { line: 84, column: 28, offset: 2301 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 84, column: 2, offset: 2271 },
-                  end: { line: 84, column: 28, offset: 2297 }
+                  start: { line: 84, column: 2, offset: 2275 },
+                  end: { line: 84, column: 28, offset: 2301 }
                 }
               }
             ],
             position: {
-              start: { line: 78, column: 2, offset: 2139 },
-              end: { line: 84, column: 28, offset: 2297 }
+              start: { line: 78, column: 2, offset: 2143 },
+              end: { line: 84, column: 28, offset: 2301 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 84, column: 28, offset: 2297 }
+          end: { line: 84, column: 28, offset: 2301 }
         }
       }
     },
@@ -35055,7 +35116,7 @@ export default [
       '])\n' +
       '```\n' +
       '\n' +
-      'Any promises in `arguments` are resolved for their values before further execution for the eager interface only.\n' +
+      'Any promises in `arguments` are resolved for their values before further execution for the immediate interface only.\n' +
       '\n' +
       '```javascript [playground]\n' +
       "gt(Promise.resolve({ a: 2, b: 1 }), get('a'), get('b')).then(console.log)\n" +
@@ -35323,16 +35384,16 @@ export default [
               },
               {
                 type: 'text',
-                value: ' are resolved for their values before further execution for the eager interface only.',
+                value: ' are resolved for their values before further execution for the immediate interface only.',
                 position: {
                   start: { line: 40, column: 28, offset: 884 },
-                  end: { line: 40, column: 113, offset: 969 }
+                  end: { line: 40, column: 117, offset: 973 }
                 }
               }
             ],
             position: {
               start: { line: 40, column: 1, offset: 857 },
-              end: { line: 40, column: 113, offset: 969 }
+              end: { line: 40, column: 117, offset: 973 }
             }
           },
           {
@@ -35341,8 +35402,8 @@ export default [
             meta: '[playground]',
             value: "gt(Promise.resolve({ a: 2, b: 1 }), get('a'), get('b')).then(console.log)",
             position: {
-              start: { line: 42, column: 1, offset: 971 },
-              end: { line: 44, column: 4, offset: 1075 }
+              start: { line: 42, column: 1, offset: 975 },
+              end: { line: 44, column: 4, offset: 1079 }
             }
           },
           {
@@ -35352,14 +35413,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 46, column: 1, offset: 1077 },
-                  end: { line: 46, column: 10, offset: 1086 }
+                  start: { line: 46, column: 1, offset: 1081 },
+                  end: { line: 46, column: 10, offset: 1090 }
                 }
               }
             ],
             position: {
-              start: { line: 46, column: 1, offset: 1077 },
-              end: { line: 46, column: 10, offset: 1086 }
+              start: { line: 46, column: 1, offset: 1081 },
+              end: { line: 46, column: 10, offset: 1090 }
             }
           },
           {
@@ -35385,26 +35446,26 @@ export default [
                             type: 'text',
                             value: 'and',
                             position: {
-                              start: { line: 47, column: 5, offset: 1091 },
-                              end: { line: 47, column: 8, offset: 1094 }
+                              start: { line: 47, column: 5, offset: 1095 },
+                              end: { line: 47, column: 8, offset: 1098 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 47, column: 4, offset: 1090 },
-                          end: { line: 47, column: 20, offset: 1106 }
+                          start: { line: 47, column: 4, offset: 1094 },
+                          end: { line: 47, column: 20, offset: 1110 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 47, column: 4, offset: 1090 },
-                      end: { line: 47, column: 20, offset: 1106 }
+                      start: { line: 47, column: 4, offset: 1094 },
+                      end: { line: 47, column: 20, offset: 1110 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 47, column: 2, offset: 1088 },
-                  end: { line: 47, column: 20, offset: 1106 }
+                  start: { line: 47, column: 2, offset: 1092 },
+                  end: { line: 47, column: 20, offset: 1110 }
                 }
               },
               {
@@ -35424,26 +35485,26 @@ export default [
                             type: 'text',
                             value: 'eq',
                             position: {
-                              start: { line: 48, column: 5, offset: 1111 },
-                              end: { line: 48, column: 7, offset: 1113 }
+                              start: { line: 48, column: 5, offset: 1115 },
+                              end: { line: 48, column: 7, offset: 1117 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 48, column: 4, offset: 1110 },
-                          end: { line: 48, column: 18, offset: 1124 }
+                          start: { line: 48, column: 4, offset: 1114 },
+                          end: { line: 48, column: 18, offset: 1128 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 48, column: 4, offset: 1110 },
-                      end: { line: 48, column: 18, offset: 1124 }
+                      start: { line: 48, column: 4, offset: 1114 },
+                      end: { line: 48, column: 18, offset: 1128 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 48, column: 2, offset: 1108 },
-                  end: { line: 48, column: 18, offset: 1124 }
+                  start: { line: 48, column: 2, offset: 1112 },
+                  end: { line: 48, column: 18, offset: 1128 }
                 }
               },
               {
@@ -35463,26 +35524,26 @@ export default [
                             type: 'text',
                             value: 'lt',
                             position: {
-                              start: { line: 49, column: 5, offset: 1129 },
-                              end: { line: 49, column: 7, offset: 1131 }
+                              start: { line: 49, column: 5, offset: 1133 },
+                              end: { line: 49, column: 7, offset: 1135 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 49, column: 4, offset: 1128 },
-                          end: { line: 49, column: 18, offset: 1142 }
+                          start: { line: 49, column: 4, offset: 1132 },
+                          end: { line: 49, column: 18, offset: 1146 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 49, column: 4, offset: 1128 },
-                      end: { line: 49, column: 18, offset: 1142 }
+                      start: { line: 49, column: 4, offset: 1132 },
+                      end: { line: 49, column: 18, offset: 1146 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 49, column: 2, offset: 1126 },
-                  end: { line: 49, column: 18, offset: 1142 }
+                  start: { line: 49, column: 2, offset: 1130 },
+                  end: { line: 49, column: 18, offset: 1146 }
                 }
               },
               {
@@ -35502,26 +35563,26 @@ export default [
                             type: 'text',
                             value: 'gte',
                             position: {
-                              start: { line: 50, column: 5, offset: 1147 },
-                              end: { line: 50, column: 8, offset: 1150 }
+                              start: { line: 50, column: 5, offset: 1151 },
+                              end: { line: 50, column: 8, offset: 1154 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 50, column: 4, offset: 1146 },
-                          end: { line: 50, column: 20, offset: 1162 }
+                          start: { line: 50, column: 4, offset: 1150 },
+                          end: { line: 50, column: 20, offset: 1166 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 50, column: 4, offset: 1146 },
-                      end: { line: 50, column: 20, offset: 1162 }
+                      start: { line: 50, column: 4, offset: 1150 },
+                      end: { line: 50, column: 20, offset: 1166 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 50, column: 2, offset: 1144 },
-                  end: { line: 50, column: 20, offset: 1162 }
+                  start: { line: 50, column: 2, offset: 1148 },
+                  end: { line: 50, column: 20, offset: 1166 }
                 }
               },
               {
@@ -35541,26 +35602,26 @@ export default [
                             type: 'text',
                             value: 'lte',
                             position: {
-                              start: { line: 51, column: 5, offset: 1167 },
-                              end: { line: 51, column: 8, offset: 1170 }
+                              start: { line: 51, column: 5, offset: 1171 },
+                              end: { line: 51, column: 8, offset: 1174 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 51, column: 4, offset: 1166 },
-                          end: { line: 51, column: 20, offset: 1182 }
+                          start: { line: 51, column: 4, offset: 1170 },
+                          end: { line: 51, column: 20, offset: 1186 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 51, column: 4, offset: 1166 },
-                      end: { line: 51, column: 20, offset: 1182 }
+                      start: { line: 51, column: 4, offset: 1170 },
+                      end: { line: 51, column: 20, offset: 1186 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 51, column: 2, offset: 1164 },
-                  end: { line: 51, column: 20, offset: 1182 }
+                  start: { line: 51, column: 2, offset: 1168 },
+                  end: { line: 51, column: 20, offset: 1186 }
                 }
               },
               {
@@ -35580,38 +35641,38 @@ export default [
                             type: 'text',
                             value: 'thunkify',
                             position: {
-                              start: { line: 52, column: 5, offset: 1187 },
-                              end: { line: 52, column: 13, offset: 1195 }
+                              start: { line: 52, column: 5, offset: 1191 },
+                              end: { line: 52, column: 13, offset: 1199 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 52, column: 4, offset: 1186 },
-                          end: { line: 52, column: 30, offset: 1212 }
+                          start: { line: 52, column: 4, offset: 1190 },
+                          end: { line: 52, column: 30, offset: 1216 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 52, column: 4, offset: 1186 },
-                      end: { line: 52, column: 30, offset: 1212 }
+                      start: { line: 52, column: 4, offset: 1190 },
+                      end: { line: 52, column: 30, offset: 1216 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 52, column: 2, offset: 1184 },
-                  end: { line: 52, column: 30, offset: 1212 }
+                  start: { line: 52, column: 2, offset: 1188 },
+                  end: { line: 52, column: 30, offset: 1216 }
                 }
               }
             ],
             position: {
-              start: { line: 47, column: 2, offset: 1088 },
-              end: { line: 52, column: 30, offset: 1212 }
+              start: { line: 47, column: 2, offset: 1092 },
+              end: { line: 52, column: 30, offset: 1216 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 52, column: 30, offset: 1212 }
+          end: { line: 52, column: 30, offset: 1216 }
         }
       }
     },
@@ -35674,7 +35735,7 @@ export default [
       '])\n' +
       '```\n' +
       '\n' +
-      'Any promises in `arguments` are resolved for their values before further execution for the eager interface only.\n' +
+      'Any promises in `arguments` are resolved for their values before further execution for the immediate interface only.\n' +
       '\n' +
       '```javascript [playground]\n' +
       "gte(Promise.resolve({ a: 1, b: 1 }), get('a'), get('b')).then(console.log)\n" +
@@ -35946,16 +36007,16 @@ export default [
               },
               {
                 type: 'text',
-                value: ' are resolved for their values before further execution for the eager interface only.',
+                value: ' are resolved for their values before further execution for the immediate interface only.',
                 position: {
                   start: { line: 44, column: 28, offset: 1028 },
-                  end: { line: 44, column: 113, offset: 1113 }
+                  end: { line: 44, column: 117, offset: 1117 }
                 }
               }
             ],
             position: {
               start: { line: 44, column: 1, offset: 1001 },
-              end: { line: 44, column: 113, offset: 1113 }
+              end: { line: 44, column: 117, offset: 1117 }
             }
           },
           {
@@ -35964,8 +36025,8 @@ export default [
             meta: '[playground]',
             value: "gte(Promise.resolve({ a: 1, b: 1 }), get('a'), get('b')).then(console.log)",
             position: {
-              start: { line: 46, column: 1, offset: 1115 },
-              end: { line: 48, column: 4, offset: 1220 }
+              start: { line: 46, column: 1, offset: 1119 },
+              end: { line: 48, column: 4, offset: 1224 }
             }
           },
           {
@@ -35975,14 +36036,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 50, column: 1, offset: 1222 },
-                  end: { line: 50, column: 10, offset: 1231 }
+                  start: { line: 50, column: 1, offset: 1226 },
+                  end: { line: 50, column: 10, offset: 1235 }
                 }
               }
             ],
             position: {
-              start: { line: 50, column: 1, offset: 1222 },
-              end: { line: 50, column: 10, offset: 1231 }
+              start: { line: 50, column: 1, offset: 1226 },
+              end: { line: 50, column: 10, offset: 1235 }
             }
           },
           {
@@ -36008,26 +36069,26 @@ export default [
                             type: 'text',
                             value: 'and',
                             position: {
-                              start: { line: 51, column: 5, offset: 1236 },
-                              end: { line: 51, column: 8, offset: 1239 }
+                              start: { line: 51, column: 5, offset: 1240 },
+                              end: { line: 51, column: 8, offset: 1243 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 51, column: 4, offset: 1235 },
-                          end: { line: 51, column: 20, offset: 1251 }
+                          start: { line: 51, column: 4, offset: 1239 },
+                          end: { line: 51, column: 20, offset: 1255 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 51, column: 4, offset: 1235 },
-                      end: { line: 51, column: 20, offset: 1251 }
+                      start: { line: 51, column: 4, offset: 1239 },
+                      end: { line: 51, column: 20, offset: 1255 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 51, column: 2, offset: 1233 },
-                  end: { line: 51, column: 20, offset: 1251 }
+                  start: { line: 51, column: 2, offset: 1237 },
+                  end: { line: 51, column: 20, offset: 1255 }
                 }
               },
               {
@@ -36047,26 +36108,26 @@ export default [
                             type: 'text',
                             value: 'eq',
                             position: {
-                              start: { line: 52, column: 5, offset: 1256 },
-                              end: { line: 52, column: 7, offset: 1258 }
+                              start: { line: 52, column: 5, offset: 1260 },
+                              end: { line: 52, column: 7, offset: 1262 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 52, column: 4, offset: 1255 },
-                          end: { line: 52, column: 18, offset: 1269 }
+                          start: { line: 52, column: 4, offset: 1259 },
+                          end: { line: 52, column: 18, offset: 1273 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 52, column: 4, offset: 1255 },
-                      end: { line: 52, column: 18, offset: 1269 }
+                      start: { line: 52, column: 4, offset: 1259 },
+                      end: { line: 52, column: 18, offset: 1273 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 52, column: 2, offset: 1253 },
-                  end: { line: 52, column: 18, offset: 1269 }
+                  start: { line: 52, column: 2, offset: 1257 },
+                  end: { line: 52, column: 18, offset: 1273 }
                 }
               },
               {
@@ -36086,26 +36147,26 @@ export default [
                             type: 'text',
                             value: 'lt',
                             position: {
-                              start: { line: 53, column: 5, offset: 1274 },
-                              end: { line: 53, column: 7, offset: 1276 }
+                              start: { line: 53, column: 5, offset: 1278 },
+                              end: { line: 53, column: 7, offset: 1280 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 53, column: 4, offset: 1273 },
-                          end: { line: 53, column: 18, offset: 1287 }
+                          start: { line: 53, column: 4, offset: 1277 },
+                          end: { line: 53, column: 18, offset: 1291 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 53, column: 4, offset: 1273 },
-                      end: { line: 53, column: 18, offset: 1287 }
+                      start: { line: 53, column: 4, offset: 1277 },
+                      end: { line: 53, column: 18, offset: 1291 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 53, column: 2, offset: 1271 },
-                  end: { line: 53, column: 18, offset: 1287 }
+                  start: { line: 53, column: 2, offset: 1275 },
+                  end: { line: 53, column: 18, offset: 1291 }
                 }
               },
               {
@@ -36125,26 +36186,26 @@ export default [
                             type: 'text',
                             value: 'gt',
                             position: {
-                              start: { line: 54, column: 5, offset: 1292 },
-                              end: { line: 54, column: 7, offset: 1294 }
+                              start: { line: 54, column: 5, offset: 1296 },
+                              end: { line: 54, column: 7, offset: 1298 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 54, column: 4, offset: 1291 },
-                          end: { line: 54, column: 18, offset: 1305 }
+                          start: { line: 54, column: 4, offset: 1295 },
+                          end: { line: 54, column: 18, offset: 1309 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 54, column: 4, offset: 1291 },
-                      end: { line: 54, column: 18, offset: 1305 }
+                      start: { line: 54, column: 4, offset: 1295 },
+                      end: { line: 54, column: 18, offset: 1309 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 54, column: 2, offset: 1289 },
-                  end: { line: 54, column: 18, offset: 1305 }
+                  start: { line: 54, column: 2, offset: 1293 },
+                  end: { line: 54, column: 18, offset: 1309 }
                 }
               },
               {
@@ -36164,26 +36225,26 @@ export default [
                             type: 'text',
                             value: 'lte',
                             position: {
-                              start: { line: 55, column: 5, offset: 1310 },
-                              end: { line: 55, column: 8, offset: 1313 }
+                              start: { line: 55, column: 5, offset: 1314 },
+                              end: { line: 55, column: 8, offset: 1317 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 55, column: 4, offset: 1309 },
-                          end: { line: 55, column: 20, offset: 1325 }
+                          start: { line: 55, column: 4, offset: 1313 },
+                          end: { line: 55, column: 20, offset: 1329 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 55, column: 4, offset: 1309 },
-                      end: { line: 55, column: 20, offset: 1325 }
+                      start: { line: 55, column: 4, offset: 1313 },
+                      end: { line: 55, column: 20, offset: 1329 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 55, column: 2, offset: 1307 },
-                  end: { line: 55, column: 20, offset: 1325 }
+                  start: { line: 55, column: 2, offset: 1311 },
+                  end: { line: 55, column: 20, offset: 1329 }
                 }
               },
               {
@@ -36203,38 +36264,38 @@ export default [
                             type: 'text',
                             value: 'thunkify',
                             position: {
-                              start: { line: 56, column: 5, offset: 1330 },
-                              end: { line: 56, column: 13, offset: 1338 }
+                              start: { line: 56, column: 5, offset: 1334 },
+                              end: { line: 56, column: 13, offset: 1342 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 56, column: 4, offset: 1329 },
-                          end: { line: 56, column: 30, offset: 1355 }
+                          start: { line: 56, column: 4, offset: 1333 },
+                          end: { line: 56, column: 30, offset: 1359 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 56, column: 4, offset: 1329 },
-                      end: { line: 56, column: 30, offset: 1355 }
+                      start: { line: 56, column: 4, offset: 1333 },
+                      end: { line: 56, column: 30, offset: 1359 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 56, column: 2, offset: 1327 },
-                  end: { line: 56, column: 30, offset: 1355 }
+                  start: { line: 56, column: 2, offset: 1331 },
+                  end: { line: 56, column: 30, offset: 1359 }
                 }
               }
             ],
             position: {
-              start: { line: 51, column: 2, offset: 1233 },
-              end: { line: 56, column: 30, offset: 1355 }
+              start: { line: 51, column: 2, offset: 1237 },
+              end: { line: 56, column: 30, offset: 1359 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 56, column: 30, offset: 1355 }
+          end: { line: 56, column: 30, offset: 1359 }
         }
       }
     },
@@ -36299,7 +36360,7 @@ export default [
       '])\n' +
       '```\n' +
       '\n' +
-      'Any promises in `arguments` are resolved for their values before further execution for the eager interface only.\n' +
+      'Any promises in `arguments` are resolved for their values before further execution for the immediate interface only.\n' +
       '\n' +
       '```javascript [playground]\n' +
       "lt(Promise.resolve({ a: 1, b: 2 }), get('a'), get('b')).then(console.log)\n" +
@@ -36569,16 +36630,16 @@ export default [
               },
               {
                 type: 'text',
-                value: ' are resolved for their values before further execution for the eager interface only.',
+                value: ' are resolved for their values before further execution for the immediate interface only.',
                 position: {
                   start: { line: 42, column: 28, offset: 973 },
-                  end: { line: 42, column: 113, offset: 1058 }
+                  end: { line: 42, column: 117, offset: 1062 }
                 }
               }
             ],
             position: {
               start: { line: 42, column: 1, offset: 946 },
-              end: { line: 42, column: 113, offset: 1058 }
+              end: { line: 42, column: 117, offset: 1062 }
             }
           },
           {
@@ -36587,8 +36648,8 @@ export default [
             meta: '[playground]',
             value: "lt(Promise.resolve({ a: 1, b: 2 }), get('a'), get('b')).then(console.log)",
             position: {
-              start: { line: 44, column: 1, offset: 1060 },
-              end: { line: 46, column: 4, offset: 1164 }
+              start: { line: 44, column: 1, offset: 1064 },
+              end: { line: 46, column: 4, offset: 1168 }
             }
           },
           {
@@ -36598,14 +36659,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 48, column: 1, offset: 1166 },
-                  end: { line: 48, column: 10, offset: 1175 }
+                  start: { line: 48, column: 1, offset: 1170 },
+                  end: { line: 48, column: 10, offset: 1179 }
                 }
               }
             ],
             position: {
-              start: { line: 48, column: 1, offset: 1166 },
-              end: { line: 48, column: 10, offset: 1175 }
+              start: { line: 48, column: 1, offset: 1170 },
+              end: { line: 48, column: 10, offset: 1179 }
             }
           },
           {
@@ -36631,26 +36692,26 @@ export default [
                             type: 'text',
                             value: 'and',
                             position: {
-                              start: { line: 49, column: 5, offset: 1180 },
-                              end: { line: 49, column: 8, offset: 1183 }
+                              start: { line: 49, column: 5, offset: 1184 },
+                              end: { line: 49, column: 8, offset: 1187 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 49, column: 4, offset: 1179 },
-                          end: { line: 49, column: 20, offset: 1195 }
+                          start: { line: 49, column: 4, offset: 1183 },
+                          end: { line: 49, column: 20, offset: 1199 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 49, column: 4, offset: 1179 },
-                      end: { line: 49, column: 20, offset: 1195 }
+                      start: { line: 49, column: 4, offset: 1183 },
+                      end: { line: 49, column: 20, offset: 1199 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 49, column: 2, offset: 1177 },
-                  end: { line: 49, column: 20, offset: 1195 }
+                  start: { line: 49, column: 2, offset: 1181 },
+                  end: { line: 49, column: 20, offset: 1199 }
                 }
               },
               {
@@ -36670,26 +36731,26 @@ export default [
                             type: 'text',
                             value: 'eq',
                             position: {
-                              start: { line: 50, column: 5, offset: 1200 },
-                              end: { line: 50, column: 7, offset: 1202 }
+                              start: { line: 50, column: 5, offset: 1204 },
+                              end: { line: 50, column: 7, offset: 1206 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 50, column: 4, offset: 1199 },
-                          end: { line: 50, column: 18, offset: 1213 }
+                          start: { line: 50, column: 4, offset: 1203 },
+                          end: { line: 50, column: 18, offset: 1217 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 50, column: 4, offset: 1199 },
-                      end: { line: 50, column: 18, offset: 1213 }
+                      start: { line: 50, column: 4, offset: 1203 },
+                      end: { line: 50, column: 18, offset: 1217 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 50, column: 2, offset: 1197 },
-                  end: { line: 50, column: 18, offset: 1213 }
+                  start: { line: 50, column: 2, offset: 1201 },
+                  end: { line: 50, column: 18, offset: 1217 }
                 }
               },
               {
@@ -36709,26 +36770,26 @@ export default [
                             type: 'text',
                             value: 'gt',
                             position: {
-                              start: { line: 51, column: 5, offset: 1218 },
-                              end: { line: 51, column: 7, offset: 1220 }
+                              start: { line: 51, column: 5, offset: 1222 },
+                              end: { line: 51, column: 7, offset: 1224 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 51, column: 4, offset: 1217 },
-                          end: { line: 51, column: 18, offset: 1231 }
+                          start: { line: 51, column: 4, offset: 1221 },
+                          end: { line: 51, column: 18, offset: 1235 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 51, column: 4, offset: 1217 },
-                      end: { line: 51, column: 18, offset: 1231 }
+                      start: { line: 51, column: 4, offset: 1221 },
+                      end: { line: 51, column: 18, offset: 1235 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 51, column: 2, offset: 1215 },
-                  end: { line: 51, column: 18, offset: 1231 }
+                  start: { line: 51, column: 2, offset: 1219 },
+                  end: { line: 51, column: 18, offset: 1235 }
                 }
               },
               {
@@ -36748,26 +36809,26 @@ export default [
                             type: 'text',
                             value: 'gte',
                             position: {
-                              start: { line: 52, column: 5, offset: 1236 },
-                              end: { line: 52, column: 8, offset: 1239 }
+                              start: { line: 52, column: 5, offset: 1240 },
+                              end: { line: 52, column: 8, offset: 1243 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 52, column: 4, offset: 1235 },
-                          end: { line: 52, column: 20, offset: 1251 }
+                          start: { line: 52, column: 4, offset: 1239 },
+                          end: { line: 52, column: 20, offset: 1255 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 52, column: 4, offset: 1235 },
-                      end: { line: 52, column: 20, offset: 1251 }
+                      start: { line: 52, column: 4, offset: 1239 },
+                      end: { line: 52, column: 20, offset: 1255 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 52, column: 2, offset: 1233 },
-                  end: { line: 52, column: 20, offset: 1251 }
+                  start: { line: 52, column: 2, offset: 1237 },
+                  end: { line: 52, column: 20, offset: 1255 }
                 }
               },
               {
@@ -36787,26 +36848,26 @@ export default [
                             type: 'text',
                             value: 'lte',
                             position: {
-                              start: { line: 53, column: 5, offset: 1256 },
-                              end: { line: 53, column: 8, offset: 1259 }
+                              start: { line: 53, column: 5, offset: 1260 },
+                              end: { line: 53, column: 8, offset: 1263 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 53, column: 4, offset: 1255 },
-                          end: { line: 53, column: 20, offset: 1271 }
+                          start: { line: 53, column: 4, offset: 1259 },
+                          end: { line: 53, column: 20, offset: 1275 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 53, column: 4, offset: 1255 },
-                      end: { line: 53, column: 20, offset: 1271 }
+                      start: { line: 53, column: 4, offset: 1259 },
+                      end: { line: 53, column: 20, offset: 1275 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 53, column: 2, offset: 1253 },
-                  end: { line: 53, column: 20, offset: 1271 }
+                  start: { line: 53, column: 2, offset: 1257 },
+                  end: { line: 53, column: 20, offset: 1275 }
                 }
               },
               {
@@ -36826,38 +36887,38 @@ export default [
                             type: 'text',
                             value: 'thunkify',
                             position: {
-                              start: { line: 54, column: 5, offset: 1276 },
-                              end: { line: 54, column: 13, offset: 1284 }
+                              start: { line: 54, column: 5, offset: 1280 },
+                              end: { line: 54, column: 13, offset: 1288 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 54, column: 4, offset: 1275 },
-                          end: { line: 54, column: 30, offset: 1301 }
+                          start: { line: 54, column: 4, offset: 1279 },
+                          end: { line: 54, column: 30, offset: 1305 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 54, column: 4, offset: 1275 },
-                      end: { line: 54, column: 30, offset: 1301 }
+                      start: { line: 54, column: 4, offset: 1279 },
+                      end: { line: 54, column: 30, offset: 1305 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 54, column: 2, offset: 1273 },
-                  end: { line: 54, column: 30, offset: 1301 }
+                  start: { line: 54, column: 2, offset: 1277 },
+                  end: { line: 54, column: 30, offset: 1305 }
                 }
               }
             ],
             position: {
-              start: { line: 49, column: 2, offset: 1177 },
-              end: { line: 54, column: 30, offset: 1301 }
+              start: { line: 49, column: 2, offset: 1181 },
+              end: { line: 54, column: 30, offset: 1305 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 54, column: 30, offset: 1301 }
+          end: { line: 54, column: 30, offset: 1305 }
         }
       }
     },
@@ -36918,7 +36979,7 @@ export default [
       '])\n' +
       '```\n' +
       '\n' +
-      'Any promises in `arguments` are resolved for their values before further execution for the eager interface only.\n' +
+      'Any promises in `arguments` are resolved for their values before further execution for the immediate interface only.\n' +
       '\n' +
       '```javascript [playground]\n' +
       "lte(Promise.resolve({ a: 1, b: 1 }), get('a'), get('b')).then(console.log)\n" +
@@ -37188,16 +37249,16 @@ export default [
               },
               {
                 type: 'text',
-                value: ' are resolved for their values before further execution for the eager interface only.',
+                value: ' are resolved for their values before further execution for the immediate interface only.',
                 position: {
                   start: { line: 42, column: 28, offset: 1071 },
-                  end: { line: 42, column: 113, offset: 1156 }
+                  end: { line: 42, column: 117, offset: 1160 }
                 }
               }
             ],
             position: {
               start: { line: 42, column: 1, offset: 1044 },
-              end: { line: 42, column: 113, offset: 1156 }
+              end: { line: 42, column: 117, offset: 1160 }
             }
           },
           {
@@ -37206,8 +37267,8 @@ export default [
             meta: '[playground]',
             value: "lte(Promise.resolve({ a: 1, b: 1 }), get('a'), get('b')).then(console.log)",
             position: {
-              start: { line: 44, column: 1, offset: 1158 },
-              end: { line: 46, column: 4, offset: 1263 }
+              start: { line: 44, column: 1, offset: 1162 },
+              end: { line: 46, column: 4, offset: 1267 }
             }
           },
           {
@@ -37217,14 +37278,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 48, column: 1, offset: 1265 },
-                  end: { line: 48, column: 10, offset: 1274 }
+                  start: { line: 48, column: 1, offset: 1269 },
+                  end: { line: 48, column: 10, offset: 1278 }
                 }
               }
             ],
             position: {
-              start: { line: 48, column: 1, offset: 1265 },
-              end: { line: 48, column: 10, offset: 1274 }
+              start: { line: 48, column: 1, offset: 1269 },
+              end: { line: 48, column: 10, offset: 1278 }
             }
           },
           {
@@ -37250,26 +37311,26 @@ export default [
                             type: 'text',
                             value: 'and',
                             position: {
-                              start: { line: 49, column: 5, offset: 1279 },
-                              end: { line: 49, column: 8, offset: 1282 }
+                              start: { line: 49, column: 5, offset: 1283 },
+                              end: { line: 49, column: 8, offset: 1286 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 49, column: 4, offset: 1278 },
-                          end: { line: 49, column: 20, offset: 1294 }
+                          start: { line: 49, column: 4, offset: 1282 },
+                          end: { line: 49, column: 20, offset: 1298 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 49, column: 4, offset: 1278 },
-                      end: { line: 49, column: 20, offset: 1294 }
+                      start: { line: 49, column: 4, offset: 1282 },
+                      end: { line: 49, column: 20, offset: 1298 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 49, column: 2, offset: 1276 },
-                  end: { line: 49, column: 20, offset: 1294 }
+                  start: { line: 49, column: 2, offset: 1280 },
+                  end: { line: 49, column: 20, offset: 1298 }
                 }
               },
               {
@@ -37289,26 +37350,26 @@ export default [
                             type: 'text',
                             value: 'eq',
                             position: {
-                              start: { line: 50, column: 5, offset: 1299 },
-                              end: { line: 50, column: 7, offset: 1301 }
+                              start: { line: 50, column: 5, offset: 1303 },
+                              end: { line: 50, column: 7, offset: 1305 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 50, column: 4, offset: 1298 },
-                          end: { line: 50, column: 18, offset: 1312 }
+                          start: { line: 50, column: 4, offset: 1302 },
+                          end: { line: 50, column: 18, offset: 1316 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 50, column: 4, offset: 1298 },
-                      end: { line: 50, column: 18, offset: 1312 }
+                      start: { line: 50, column: 4, offset: 1302 },
+                      end: { line: 50, column: 18, offset: 1316 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 50, column: 2, offset: 1296 },
-                  end: { line: 50, column: 18, offset: 1312 }
+                  start: { line: 50, column: 2, offset: 1300 },
+                  end: { line: 50, column: 18, offset: 1316 }
                 }
               },
               {
@@ -37328,26 +37389,26 @@ export default [
                             type: 'text',
                             value: 'lt',
                             position: {
-                              start: { line: 51, column: 5, offset: 1317 },
-                              end: { line: 51, column: 7, offset: 1319 }
+                              start: { line: 51, column: 5, offset: 1321 },
+                              end: { line: 51, column: 7, offset: 1323 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 51, column: 4, offset: 1316 },
-                          end: { line: 51, column: 18, offset: 1330 }
+                          start: { line: 51, column: 4, offset: 1320 },
+                          end: { line: 51, column: 18, offset: 1334 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 51, column: 4, offset: 1316 },
-                      end: { line: 51, column: 18, offset: 1330 }
+                      start: { line: 51, column: 4, offset: 1320 },
+                      end: { line: 51, column: 18, offset: 1334 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 51, column: 2, offset: 1314 },
-                  end: { line: 51, column: 18, offset: 1330 }
+                  start: { line: 51, column: 2, offset: 1318 },
+                  end: { line: 51, column: 18, offset: 1334 }
                 }
               },
               {
@@ -37367,26 +37428,26 @@ export default [
                             type: 'text',
                             value: 'gt',
                             position: {
-                              start: { line: 52, column: 5, offset: 1335 },
-                              end: { line: 52, column: 7, offset: 1337 }
+                              start: { line: 52, column: 5, offset: 1339 },
+                              end: { line: 52, column: 7, offset: 1341 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 52, column: 4, offset: 1334 },
-                          end: { line: 52, column: 18, offset: 1348 }
+                          start: { line: 52, column: 4, offset: 1338 },
+                          end: { line: 52, column: 18, offset: 1352 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 52, column: 4, offset: 1334 },
-                      end: { line: 52, column: 18, offset: 1348 }
+                      start: { line: 52, column: 4, offset: 1338 },
+                      end: { line: 52, column: 18, offset: 1352 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 52, column: 2, offset: 1332 },
-                  end: { line: 52, column: 18, offset: 1348 }
+                  start: { line: 52, column: 2, offset: 1336 },
+                  end: { line: 52, column: 18, offset: 1352 }
                 }
               },
               {
@@ -37406,26 +37467,26 @@ export default [
                             type: 'text',
                             value: 'gte',
                             position: {
-                              start: { line: 53, column: 5, offset: 1353 },
-                              end: { line: 53, column: 8, offset: 1356 }
+                              start: { line: 53, column: 5, offset: 1357 },
+                              end: { line: 53, column: 8, offset: 1360 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 53, column: 4, offset: 1352 },
-                          end: { line: 53, column: 20, offset: 1368 }
+                          start: { line: 53, column: 4, offset: 1356 },
+                          end: { line: 53, column: 20, offset: 1372 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 53, column: 4, offset: 1352 },
-                      end: { line: 53, column: 20, offset: 1368 }
+                      start: { line: 53, column: 4, offset: 1356 },
+                      end: { line: 53, column: 20, offset: 1372 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 53, column: 2, offset: 1350 },
-                  end: { line: 53, column: 20, offset: 1368 }
+                  start: { line: 53, column: 2, offset: 1354 },
+                  end: { line: 53, column: 20, offset: 1372 }
                 }
               },
               {
@@ -37445,38 +37506,38 @@ export default [
                             type: 'text',
                             value: 'thunkify',
                             position: {
-                              start: { line: 54, column: 5, offset: 1373 },
-                              end: { line: 54, column: 13, offset: 1381 }
+                              start: { line: 54, column: 5, offset: 1377 },
+                              end: { line: 54, column: 13, offset: 1385 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 54, column: 4, offset: 1372 },
-                          end: { line: 54, column: 30, offset: 1398 }
+                          start: { line: 54, column: 4, offset: 1376 },
+                          end: { line: 54, column: 30, offset: 1402 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 54, column: 4, offset: 1372 },
-                      end: { line: 54, column: 30, offset: 1398 }
+                      start: { line: 54, column: 4, offset: 1376 },
+                      end: { line: 54, column: 30, offset: 1402 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 54, column: 2, offset: 1370 },
-                  end: { line: 54, column: 30, offset: 1398 }
+                  start: { line: 54, column: 2, offset: 1374 },
+                  end: { line: 54, column: 30, offset: 1402 }
                 }
               }
             ],
             position: {
-              start: { line: 49, column: 2, offset: 1276 },
-              end: { line: 54, column: 30, offset: 1398 }
+              start: { line: 49, column: 2, offset: 1280 },
+              end: { line: 54, column: 30, offset: 1402 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 54, column: 30, offset: 1398 }
+          end: { line: 54, column: 30, offset: 1402 }
         }
       }
     },
@@ -37708,7 +37769,7 @@ export default [
       '}\n' +
       '```\n' +
       '\n' +
-      'If the functor is a promise, it is resolved for its value before further execution for the eager interface only.\n' +
+      'If the functor is a promise, it is resolved for its value before further execution for the immediate interface only.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const asyncSquare = async n => n ** 2\n' +
@@ -38443,16 +38504,16 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'If the functor is a promise, it is resolved for its value before further execution for the eager interface only.',
+                value: 'If the functor is a promise, it is resolved for its value before further execution for the immediate interface only.',
                 position: {
                   start: { line: 123, column: 1, offset: 3002 },
-                  end: { line: 123, column: 113, offset: 3114 }
+                  end: { line: 123, column: 117, offset: 3118 }
                 }
               }
             ],
             position: {
               start: { line: 123, column: 1, offset: 3002 },
-              end: { line: 123, column: 113, offset: 3114 }
+              end: { line: 123, column: 117, offset: 3118 }
             }
           },
           {
@@ -38463,8 +38524,8 @@ export default [
               '\n' +
               'map(Promise.resolve([1, 2, 3, 4, 5]), asyncSquare).then(console.log)',
             position: {
-              start: { line: 125, column: 1, offset: 3116 },
-              end: { line: 129, column: 4, offset: 3254 }
+              start: { line: 125, column: 1, offset: 3120 },
+              end: { line: 129, column: 4, offset: 3258 }
             }
           },
           {
@@ -38474,14 +38535,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 131, column: 1, offset: 3256 },
-                  end: { line: 131, column: 10, offset: 3265 }
+                  start: { line: 131, column: 1, offset: 3260 },
+                  end: { line: 131, column: 10, offset: 3269 }
                 }
               }
             ],
             position: {
-              start: { line: 131, column: 1, offset: 3256 },
-              end: { line: 131, column: 10, offset: 3265 }
+              start: { line: 131, column: 1, offset: 3260 },
+              end: { line: 131, column: 10, offset: 3269 }
             }
           },
           {
@@ -38507,26 +38568,26 @@ export default [
                             type: 'text',
                             value: 'forEach',
                             position: {
-                              start: { line: 132, column: 5, offset: 3270 },
-                              end: { line: 132, column: 12, offset: 3277 }
+                              start: { line: 132, column: 5, offset: 3274 },
+                              end: { line: 132, column: 12, offset: 3281 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 132, column: 4, offset: 3269 },
-                          end: { line: 132, column: 28, offset: 3293 }
+                          start: { line: 132, column: 4, offset: 3273 },
+                          end: { line: 132, column: 28, offset: 3297 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 132, column: 4, offset: 3269 },
-                      end: { line: 132, column: 28, offset: 3293 }
+                      start: { line: 132, column: 4, offset: 3273 },
+                      end: { line: 132, column: 28, offset: 3297 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 132, column: 2, offset: 3267 },
-                  end: { line: 132, column: 28, offset: 3293 }
+                  start: { line: 132, column: 2, offset: 3271 },
+                  end: { line: 132, column: 28, offset: 3297 }
                 }
               },
               {
@@ -38546,26 +38607,26 @@ export default [
                             type: 'text',
                             value: 'map.entries',
                             position: {
-                              start: { line: 133, column: 5, offset: 3298 },
-                              end: { line: 133, column: 16, offset: 3309 }
+                              start: { line: 133, column: 5, offset: 3302 },
+                              end: { line: 133, column: 16, offset: 3313 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 133, column: 4, offset: 3297 },
-                          end: { line: 133, column: 36, offset: 3329 }
+                          start: { line: 133, column: 4, offset: 3301 },
+                          end: { line: 133, column: 36, offset: 3333 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 133, column: 4, offset: 3297 },
-                      end: { line: 133, column: 36, offset: 3329 }
+                      start: { line: 133, column: 4, offset: 3301 },
+                      end: { line: 133, column: 36, offset: 3333 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 133, column: 2, offset: 3295 },
-                  end: { line: 133, column: 36, offset: 3329 }
+                  start: { line: 133, column: 2, offset: 3299 },
+                  end: { line: 133, column: 36, offset: 3333 }
                 }
               },
               {
@@ -38585,26 +38646,26 @@ export default [
                             type: 'text',
                             value: 'map.series',
                             position: {
-                              start: { line: 134, column: 5, offset: 3334 },
-                              end: { line: 134, column: 15, offset: 3344 }
+                              start: { line: 134, column: 5, offset: 3338 },
+                              end: { line: 134, column: 15, offset: 3348 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 134, column: 4, offset: 3333 },
-                          end: { line: 134, column: 34, offset: 3363 }
+                          start: { line: 134, column: 4, offset: 3337 },
+                          end: { line: 134, column: 34, offset: 3367 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 134, column: 4, offset: 3333 },
-                      end: { line: 134, column: 34, offset: 3363 }
+                      start: { line: 134, column: 4, offset: 3337 },
+                      end: { line: 134, column: 34, offset: 3367 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 134, column: 2, offset: 3331 },
-                  end: { line: 134, column: 34, offset: 3363 }
+                  start: { line: 134, column: 2, offset: 3335 },
+                  end: { line: 134, column: 34, offset: 3367 }
                 }
               },
               {
@@ -38624,26 +38685,26 @@ export default [
                             type: 'text',
                             value: 'map.pool',
                             position: {
-                              start: { line: 135, column: 5, offset: 3368 },
-                              end: { line: 135, column: 13, offset: 3376 }
+                              start: { line: 135, column: 5, offset: 3372 },
+                              end: { line: 135, column: 13, offset: 3380 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 135, column: 4, offset: 3367 },
-                          end: { line: 135, column: 30, offset: 3393 }
+                          start: { line: 135, column: 4, offset: 3371 },
+                          end: { line: 135, column: 30, offset: 3397 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 135, column: 4, offset: 3367 },
-                      end: { line: 135, column: 30, offset: 3393 }
+                      start: { line: 135, column: 4, offset: 3371 },
+                      end: { line: 135, column: 30, offset: 3397 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 135, column: 2, offset: 3365 },
-                  end: { line: 135, column: 30, offset: 3393 }
+                  start: { line: 135, column: 2, offset: 3369 },
+                  end: { line: 135, column: 30, offset: 3397 }
                 }
               },
               {
@@ -38663,26 +38724,26 @@ export default [
                             type: 'text',
                             value: 'filter',
                             position: {
-                              start: { line: 136, column: 5, offset: 3398 },
-                              end: { line: 136, column: 11, offset: 3404 }
+                              start: { line: 136, column: 5, offset: 3402 },
+                              end: { line: 136, column: 11, offset: 3408 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 136, column: 4, offset: 3397 },
-                          end: { line: 136, column: 26, offset: 3419 }
+                          start: { line: 136, column: 4, offset: 3401 },
+                          end: { line: 136, column: 26, offset: 3423 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 136, column: 4, offset: 3397 },
-                      end: { line: 136, column: 26, offset: 3419 }
+                      start: { line: 136, column: 4, offset: 3401 },
+                      end: { line: 136, column: 26, offset: 3423 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 136, column: 2, offset: 3395 },
-                  end: { line: 136, column: 26, offset: 3419 }
+                  start: { line: 136, column: 2, offset: 3399 },
+                  end: { line: 136, column: 26, offset: 3423 }
                 }
               },
               {
@@ -38702,26 +38763,26 @@ export default [
                             type: 'text',
                             value: 'reduce',
                             position: {
-                              start: { line: 137, column: 5, offset: 3424 },
-                              end: { line: 137, column: 11, offset: 3430 }
+                              start: { line: 137, column: 5, offset: 3428 },
+                              end: { line: 137, column: 11, offset: 3434 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 137, column: 4, offset: 3423 },
-                          end: { line: 137, column: 26, offset: 3445 }
+                          start: { line: 137, column: 4, offset: 3427 },
+                          end: { line: 137, column: 26, offset: 3449 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 137, column: 4, offset: 3423 },
-                      end: { line: 137, column: 26, offset: 3445 }
+                      start: { line: 137, column: 4, offset: 3427 },
+                      end: { line: 137, column: 26, offset: 3449 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 137, column: 2, offset: 3421 },
-                  end: { line: 137, column: 26, offset: 3445 }
+                  start: { line: 137, column: 2, offset: 3425 },
+                  end: { line: 137, column: 26, offset: 3449 }
                 }
               },
               {
@@ -38741,26 +38802,26 @@ export default [
                             type: 'text',
                             value: 'transform',
                             position: {
-                              start: { line: 138, column: 5, offset: 3450 },
-                              end: { line: 138, column: 14, offset: 3459 }
+                              start: { line: 138, column: 5, offset: 3454 },
+                              end: { line: 138, column: 14, offset: 3463 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 138, column: 4, offset: 3449 },
-                          end: { line: 138, column: 32, offset: 3477 }
+                          start: { line: 138, column: 4, offset: 3453 },
+                          end: { line: 138, column: 32, offset: 3481 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 138, column: 4, offset: 3449 },
-                      end: { line: 138, column: 32, offset: 3477 }
+                      start: { line: 138, column: 4, offset: 3453 },
+                      end: { line: 138, column: 32, offset: 3481 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 138, column: 2, offset: 3447 },
-                  end: { line: 138, column: 32, offset: 3477 }
+                  start: { line: 138, column: 2, offset: 3451 },
+                  end: { line: 138, column: 32, offset: 3481 }
                 }
               },
               {
@@ -38780,26 +38841,26 @@ export default [
                             type: 'text',
                             value: 'flatMap',
                             position: {
-                              start: { line: 139, column: 5, offset: 3482 },
-                              end: { line: 139, column: 12, offset: 3489 }
+                              start: { line: 139, column: 5, offset: 3486 },
+                              end: { line: 139, column: 12, offset: 3493 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 139, column: 4, offset: 3481 },
-                          end: { line: 139, column: 28, offset: 3505 }
+                          start: { line: 139, column: 4, offset: 3485 },
+                          end: { line: 139, column: 28, offset: 3509 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 139, column: 4, offset: 3481 },
-                      end: { line: 139, column: 28, offset: 3505 }
+                      start: { line: 139, column: 4, offset: 3485 },
+                      end: { line: 139, column: 28, offset: 3509 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 139, column: 2, offset: 3479 },
-                  end: { line: 139, column: 28, offset: 3505 }
+                  start: { line: 139, column: 2, offset: 3483 },
+                  end: { line: 139, column: 28, offset: 3509 }
                 }
               },
               {
@@ -38819,38 +38880,38 @@ export default [
                             type: 'text',
                             value: 'some',
                             position: {
-                              start: { line: 140, column: 5, offset: 3510 },
-                              end: { line: 140, column: 9, offset: 3514 }
+                              start: { line: 140, column: 5, offset: 3514 },
+                              end: { line: 140, column: 9, offset: 3518 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 140, column: 4, offset: 3509 },
-                          end: { line: 140, column: 22, offset: 3527 }
+                          start: { line: 140, column: 4, offset: 3513 },
+                          end: { line: 140, column: 22, offset: 3531 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 140, column: 4, offset: 3509 },
-                      end: { line: 140, column: 22, offset: 3527 }
+                      start: { line: 140, column: 4, offset: 3513 },
+                      end: { line: 140, column: 22, offset: 3531 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 140, column: 2, offset: 3507 },
-                  end: { line: 140, column: 22, offset: 3527 }
+                  start: { line: 140, column: 2, offset: 3511 },
+                  end: { line: 140, column: 22, offset: 3531 }
                 }
               }
             ],
             position: {
-              start: { line: 132, column: 2, offset: 3267 },
-              end: { line: 140, column: 22, offset: 3527 }
+              start: { line: 132, column: 2, offset: 3271 },
+              end: { line: 140, column: 22, offset: 3531 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 140, column: 22, offset: 3527 }
+          end: { line: 140, column: 22, offset: 3531 }
         }
       },
       execution: {
@@ -38961,7 +39022,7 @@ export default [
       '  mappedEntry Promise|[mappedKey string, mappedValue any]\n' +
       '```\n' +
       '\n' +
-      'If the functor with entries is a promise, it is resolved for its value before further execution for the eager interface only.\n' +
+      'If the functor with entries is a promise, it is resolved for its value before further execution for the immediate interface only.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const asyncSquareEntries = async ([k, v]) => [k, v ** 2]\n' +
@@ -39265,16 +39326,16 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'If the functor with entries is a promise, it is resolved for its value before further execution for the eager interface only.',
+                value: 'If the functor with entries is a promise, it is resolved for its value before further execution for the immediate interface only.',
                 position: {
                   start: { line: 34, column: 1, offset: 912 },
-                  end: { line: 34, column: 126, offset: 1037 }
+                  end: { line: 34, column: 130, offset: 1041 }
                 }
               }
             ],
             position: {
               start: { line: 34, column: 1, offset: 912 },
-              end: { line: 34, column: 126, offset: 1037 }
+              end: { line: 34, column: 130, offset: 1041 }
             }
           },
           {
@@ -39288,8 +39349,8 @@ export default [
               '  asyncSquareEntries\n' +
               ').then(console.log)',
             position: {
-              start: { line: 36, column: 1, offset: 1039 },
-              end: { line: 43, column: 4, offset: 1222 }
+              start: { line: 36, column: 1, offset: 1043 },
+              end: { line: 43, column: 4, offset: 1226 }
             }
           },
           {
@@ -39299,14 +39360,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 45, column: 1, offset: 1224 },
-                  end: { line: 45, column: 10, offset: 1233 }
+                  start: { line: 45, column: 1, offset: 1228 },
+                  end: { line: 45, column: 10, offset: 1237 }
                 }
               }
             ],
             position: {
-              start: { line: 45, column: 1, offset: 1224 },
-              end: { line: 45, column: 10, offset: 1233 }
+              start: { line: 45, column: 1, offset: 1228 },
+              end: { line: 45, column: 10, offset: 1237 }
             }
           },
           {
@@ -39332,26 +39393,26 @@ export default [
                             type: 'text',
                             value: 'forEach',
                             position: {
-                              start: { line: 46, column: 5, offset: 1238 },
-                              end: { line: 46, column: 12, offset: 1245 }
+                              start: { line: 46, column: 5, offset: 1242 },
+                              end: { line: 46, column: 12, offset: 1249 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 46, column: 4, offset: 1237 },
-                          end: { line: 46, column: 28, offset: 1261 }
+                          start: { line: 46, column: 4, offset: 1241 },
+                          end: { line: 46, column: 28, offset: 1265 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 46, column: 4, offset: 1237 },
-                      end: { line: 46, column: 28, offset: 1261 }
+                      start: { line: 46, column: 4, offset: 1241 },
+                      end: { line: 46, column: 28, offset: 1265 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 46, column: 2, offset: 1235 },
-                  end: { line: 46, column: 28, offset: 1261 }
+                  start: { line: 46, column: 2, offset: 1239 },
+                  end: { line: 46, column: 28, offset: 1265 }
                 }
               },
               {
@@ -39371,26 +39432,26 @@ export default [
                             type: 'text',
                             value: 'map',
                             position: {
-                              start: { line: 47, column: 5, offset: 1266 },
-                              end: { line: 47, column: 8, offset: 1269 }
+                              start: { line: 47, column: 5, offset: 1270 },
+                              end: { line: 47, column: 8, offset: 1273 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 47, column: 4, offset: 1265 },
-                          end: { line: 47, column: 20, offset: 1281 }
+                          start: { line: 47, column: 4, offset: 1269 },
+                          end: { line: 47, column: 20, offset: 1285 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 47, column: 4, offset: 1265 },
-                      end: { line: 47, column: 20, offset: 1281 }
+                      start: { line: 47, column: 4, offset: 1269 },
+                      end: { line: 47, column: 20, offset: 1285 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 47, column: 2, offset: 1263 },
-                  end: { line: 47, column: 20, offset: 1281 }
+                  start: { line: 47, column: 2, offset: 1267 },
+                  end: { line: 47, column: 20, offset: 1285 }
                 }
               },
               {
@@ -39410,26 +39471,26 @@ export default [
                             type: 'text',
                             value: 'map.series',
                             position: {
-                              start: { line: 48, column: 5, offset: 1286 },
-                              end: { line: 48, column: 15, offset: 1296 }
+                              start: { line: 48, column: 5, offset: 1290 },
+                              end: { line: 48, column: 15, offset: 1300 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 48, column: 4, offset: 1285 },
-                          end: { line: 48, column: 34, offset: 1315 }
+                          start: { line: 48, column: 4, offset: 1289 },
+                          end: { line: 48, column: 34, offset: 1319 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 48, column: 4, offset: 1285 },
-                      end: { line: 48, column: 34, offset: 1315 }
+                      start: { line: 48, column: 4, offset: 1289 },
+                      end: { line: 48, column: 34, offset: 1319 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 48, column: 2, offset: 1283 },
-                  end: { line: 48, column: 34, offset: 1315 }
+                  start: { line: 48, column: 2, offset: 1287 },
+                  end: { line: 48, column: 34, offset: 1319 }
                 }
               },
               {
@@ -39449,26 +39510,26 @@ export default [
                             type: 'text',
                             value: 'map.pool',
                             position: {
-                              start: { line: 49, column: 5, offset: 1320 },
-                              end: { line: 49, column: 13, offset: 1328 }
+                              start: { line: 49, column: 5, offset: 1324 },
+                              end: { line: 49, column: 13, offset: 1332 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 49, column: 4, offset: 1319 },
-                          end: { line: 49, column: 30, offset: 1345 }
+                          start: { line: 49, column: 4, offset: 1323 },
+                          end: { line: 49, column: 30, offset: 1349 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 49, column: 4, offset: 1319 },
-                      end: { line: 49, column: 30, offset: 1345 }
+                      start: { line: 49, column: 4, offset: 1323 },
+                      end: { line: 49, column: 30, offset: 1349 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 49, column: 2, offset: 1317 },
-                  end: { line: 49, column: 30, offset: 1345 }
+                  start: { line: 49, column: 2, offset: 1321 },
+                  end: { line: 49, column: 30, offset: 1349 }
                 }
               },
               {
@@ -39488,26 +39549,26 @@ export default [
                             type: 'text',
                             value: 'filter',
                             position: {
-                              start: { line: 50, column: 5, offset: 1350 },
-                              end: { line: 50, column: 11, offset: 1356 }
+                              start: { line: 50, column: 5, offset: 1354 },
+                              end: { line: 50, column: 11, offset: 1360 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 50, column: 4, offset: 1349 },
-                          end: { line: 50, column: 26, offset: 1371 }
+                          start: { line: 50, column: 4, offset: 1353 },
+                          end: { line: 50, column: 26, offset: 1375 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 50, column: 4, offset: 1349 },
-                      end: { line: 50, column: 26, offset: 1371 }
+                      start: { line: 50, column: 4, offset: 1353 },
+                      end: { line: 50, column: 26, offset: 1375 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 50, column: 2, offset: 1347 },
-                  end: { line: 50, column: 26, offset: 1371 }
+                  start: { line: 50, column: 2, offset: 1351 },
+                  end: { line: 50, column: 26, offset: 1375 }
                 }
               },
               {
@@ -39527,26 +39588,26 @@ export default [
                             type: 'text',
                             value: 'reduce',
                             position: {
-                              start: { line: 51, column: 5, offset: 1376 },
-                              end: { line: 51, column: 11, offset: 1382 }
+                              start: { line: 51, column: 5, offset: 1380 },
+                              end: { line: 51, column: 11, offset: 1386 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 51, column: 4, offset: 1375 },
-                          end: { line: 51, column: 26, offset: 1397 }
+                          start: { line: 51, column: 4, offset: 1379 },
+                          end: { line: 51, column: 26, offset: 1401 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 51, column: 4, offset: 1375 },
-                      end: { line: 51, column: 26, offset: 1397 }
+                      start: { line: 51, column: 4, offset: 1379 },
+                      end: { line: 51, column: 26, offset: 1401 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 51, column: 2, offset: 1373 },
-                  end: { line: 51, column: 26, offset: 1397 }
+                  start: { line: 51, column: 2, offset: 1377 },
+                  end: { line: 51, column: 26, offset: 1401 }
                 }
               },
               {
@@ -39566,26 +39627,26 @@ export default [
                             type: 'text',
                             value: 'transform',
                             position: {
-                              start: { line: 52, column: 5, offset: 1402 },
-                              end: { line: 52, column: 14, offset: 1411 }
+                              start: { line: 52, column: 5, offset: 1406 },
+                              end: { line: 52, column: 14, offset: 1415 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 52, column: 4, offset: 1401 },
-                          end: { line: 52, column: 32, offset: 1429 }
+                          start: { line: 52, column: 4, offset: 1405 },
+                          end: { line: 52, column: 32, offset: 1433 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 52, column: 4, offset: 1401 },
-                      end: { line: 52, column: 32, offset: 1429 }
+                      start: { line: 52, column: 4, offset: 1405 },
+                      end: { line: 52, column: 32, offset: 1433 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 52, column: 2, offset: 1399 },
-                  end: { line: 52, column: 32, offset: 1429 }
+                  start: { line: 52, column: 2, offset: 1403 },
+                  end: { line: 52, column: 32, offset: 1433 }
                 }
               },
               {
@@ -39605,26 +39666,26 @@ export default [
                             type: 'text',
                             value: 'flatMap',
                             position: {
-                              start: { line: 53, column: 5, offset: 1434 },
-                              end: { line: 53, column: 12, offset: 1441 }
+                              start: { line: 53, column: 5, offset: 1438 },
+                              end: { line: 53, column: 12, offset: 1445 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 53, column: 4, offset: 1433 },
-                          end: { line: 53, column: 28, offset: 1457 }
+                          start: { line: 53, column: 4, offset: 1437 },
+                          end: { line: 53, column: 28, offset: 1461 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 53, column: 4, offset: 1433 },
-                      end: { line: 53, column: 28, offset: 1457 }
+                      start: { line: 53, column: 4, offset: 1437 },
+                      end: { line: 53, column: 28, offset: 1461 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 53, column: 2, offset: 1431 },
-                  end: { line: 53, column: 28, offset: 1457 }
+                  start: { line: 53, column: 2, offset: 1435 },
+                  end: { line: 53, column: 28, offset: 1461 }
                 }
               },
               {
@@ -39644,38 +39705,38 @@ export default [
                             type: 'text',
                             value: 'some',
                             position: {
-                              start: { line: 54, column: 5, offset: 1462 },
-                              end: { line: 54, column: 9, offset: 1466 }
+                              start: { line: 54, column: 5, offset: 1466 },
+                              end: { line: 54, column: 9, offset: 1470 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 54, column: 4, offset: 1461 },
-                          end: { line: 54, column: 22, offset: 1479 }
+                          start: { line: 54, column: 4, offset: 1465 },
+                          end: { line: 54, column: 22, offset: 1483 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 54, column: 4, offset: 1461 },
-                      end: { line: 54, column: 22, offset: 1479 }
+                      start: { line: 54, column: 4, offset: 1465 },
+                      end: { line: 54, column: 22, offset: 1483 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 54, column: 2, offset: 1459 },
-                  end: { line: 54, column: 22, offset: 1479 }
+                  start: { line: 54, column: 2, offset: 1463 },
+                  end: { line: 54, column: 22, offset: 1483 }
                 }
               }
             ],
             position: {
-              start: { line: 46, column: 2, offset: 1235 },
-              end: { line: 54, column: 22, offset: 1479 }
+              start: { line: 46, column: 2, offset: 1239 },
+              end: { line: 54, column: 22, offset: 1483 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 54, column: 22, offset: 1479 }
+          end: { line: 54, column: 22, offset: 1483 }
         }
       },
       since: {
@@ -39810,7 +39871,7 @@ export default [
       '\n' +
       'If the functor is a generator, the mapper function must be synchronous.\n' +
       '\n' +
-      'If the functor is a promise, it is resolved for its value before further execution for the eager interface only.\n' +
+      'If the functor is a promise, it is resolved for its value before further execution for the immediate interface only.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const asyncSquare = async n => n ** 2\n' +
@@ -39997,16 +40058,16 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'If the functor is a promise, it is resolved for its value before further execution for the eager interface only.',
+                value: 'If the functor is a promise, it is resolved for its value before further execution for the immediate interface only.',
                 position: {
                   start: { line: 19, column: 1, offset: 502 },
-                  end: { line: 19, column: 113, offset: 614 }
+                  end: { line: 19, column: 117, offset: 618 }
                 }
               }
             ],
             position: {
               start: { line: 19, column: 1, offset: 502 },
-              end: { line: 19, column: 113, offset: 614 }
+              end: { line: 19, column: 117, offset: 618 }
             }
           },
           {
@@ -40017,8 +40078,8 @@ export default [
               '\n' +
               'map.series(Promise.resolve([1, 2, 3, 4, 5]), asyncSquare).then(console.log)',
             position: {
-              start: { line: 21, column: 1, offset: 616 },
-              end: { line: 25, column: 4, offset: 761 }
+              start: { line: 21, column: 1, offset: 620 },
+              end: { line: 25, column: 4, offset: 765 }
             }
           },
           {
@@ -40028,14 +40089,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 27, column: 1, offset: 763 },
-                  end: { line: 27, column: 10, offset: 772 }
+                  start: { line: 27, column: 1, offset: 767 },
+                  end: { line: 27, column: 10, offset: 776 }
                 }
               }
             ],
             position: {
-              start: { line: 27, column: 1, offset: 763 },
-              end: { line: 27, column: 10, offset: 772 }
+              start: { line: 27, column: 1, offset: 767 },
+              end: { line: 27, column: 10, offset: 776 }
             }
           },
           {
@@ -40061,26 +40122,26 @@ export default [
                             type: 'text',
                             value: 'forEach',
                             position: {
-                              start: { line: 28, column: 5, offset: 777 },
-                              end: { line: 28, column: 12, offset: 784 }
+                              start: { line: 28, column: 5, offset: 781 },
+                              end: { line: 28, column: 12, offset: 788 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 28, column: 4, offset: 776 },
-                          end: { line: 28, column: 28, offset: 800 }
+                          start: { line: 28, column: 4, offset: 780 },
+                          end: { line: 28, column: 28, offset: 804 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 28, column: 4, offset: 776 },
-                      end: { line: 28, column: 28, offset: 800 }
+                      start: { line: 28, column: 4, offset: 780 },
+                      end: { line: 28, column: 28, offset: 804 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 28, column: 2, offset: 774 },
-                  end: { line: 28, column: 28, offset: 800 }
+                  start: { line: 28, column: 2, offset: 778 },
+                  end: { line: 28, column: 28, offset: 804 }
                 }
               },
               {
@@ -40100,26 +40161,26 @@ export default [
                             type: 'text',
                             value: 'map',
                             position: {
-                              start: { line: 29, column: 5, offset: 805 },
-                              end: { line: 29, column: 8, offset: 808 }
+                              start: { line: 29, column: 5, offset: 809 },
+                              end: { line: 29, column: 8, offset: 812 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 29, column: 4, offset: 804 },
-                          end: { line: 29, column: 20, offset: 820 }
+                          start: { line: 29, column: 4, offset: 808 },
+                          end: { line: 29, column: 20, offset: 824 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 29, column: 4, offset: 804 },
-                      end: { line: 29, column: 20, offset: 820 }
+                      start: { line: 29, column: 4, offset: 808 },
+                      end: { line: 29, column: 20, offset: 824 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 29, column: 2, offset: 802 },
-                  end: { line: 29, column: 20, offset: 820 }
+                  start: { line: 29, column: 2, offset: 806 },
+                  end: { line: 29, column: 20, offset: 824 }
                 }
               },
               {
@@ -40139,26 +40200,26 @@ export default [
                             type: 'text',
                             value: 'map.entries',
                             position: {
-                              start: { line: 30, column: 5, offset: 825 },
-                              end: { line: 30, column: 16, offset: 836 }
+                              start: { line: 30, column: 5, offset: 829 },
+                              end: { line: 30, column: 16, offset: 840 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 30, column: 4, offset: 824 },
-                          end: { line: 30, column: 36, offset: 856 }
+                          start: { line: 30, column: 4, offset: 828 },
+                          end: { line: 30, column: 36, offset: 860 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 30, column: 4, offset: 824 },
-                      end: { line: 30, column: 36, offset: 856 }
+                      start: { line: 30, column: 4, offset: 828 },
+                      end: { line: 30, column: 36, offset: 860 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 30, column: 2, offset: 822 },
-                  end: { line: 30, column: 36, offset: 856 }
+                  start: { line: 30, column: 2, offset: 826 },
+                  end: { line: 30, column: 36, offset: 860 }
                 }
               },
               {
@@ -40178,26 +40239,26 @@ export default [
                             type: 'text',
                             value: 'map.pool',
                             position: {
-                              start: { line: 31, column: 5, offset: 861 },
-                              end: { line: 31, column: 13, offset: 869 }
+                              start: { line: 31, column: 5, offset: 865 },
+                              end: { line: 31, column: 13, offset: 873 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 31, column: 4, offset: 860 },
-                          end: { line: 31, column: 30, offset: 886 }
+                          start: { line: 31, column: 4, offset: 864 },
+                          end: { line: 31, column: 30, offset: 890 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 31, column: 4, offset: 860 },
-                      end: { line: 31, column: 30, offset: 886 }
+                      start: { line: 31, column: 4, offset: 864 },
+                      end: { line: 31, column: 30, offset: 890 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 31, column: 2, offset: 858 },
-                  end: { line: 31, column: 30, offset: 886 }
+                  start: { line: 31, column: 2, offset: 862 },
+                  end: { line: 31, column: 30, offset: 890 }
                 }
               },
               {
@@ -40217,26 +40278,26 @@ export default [
                             type: 'text',
                             value: 'filter',
                             position: {
-                              start: { line: 32, column: 5, offset: 891 },
-                              end: { line: 32, column: 11, offset: 897 }
+                              start: { line: 32, column: 5, offset: 895 },
+                              end: { line: 32, column: 11, offset: 901 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 32, column: 4, offset: 890 },
-                          end: { line: 32, column: 26, offset: 912 }
+                          start: { line: 32, column: 4, offset: 894 },
+                          end: { line: 32, column: 26, offset: 916 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 32, column: 4, offset: 890 },
-                      end: { line: 32, column: 26, offset: 912 }
+                      start: { line: 32, column: 4, offset: 894 },
+                      end: { line: 32, column: 26, offset: 916 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 32, column: 2, offset: 888 },
-                  end: { line: 32, column: 26, offset: 912 }
+                  start: { line: 32, column: 2, offset: 892 },
+                  end: { line: 32, column: 26, offset: 916 }
                 }
               },
               {
@@ -40256,26 +40317,26 @@ export default [
                             type: 'text',
                             value: 'reduce',
                             position: {
-                              start: { line: 33, column: 5, offset: 917 },
-                              end: { line: 33, column: 11, offset: 923 }
+                              start: { line: 33, column: 5, offset: 921 },
+                              end: { line: 33, column: 11, offset: 927 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 33, column: 4, offset: 916 },
-                          end: { line: 33, column: 26, offset: 938 }
+                          start: { line: 33, column: 4, offset: 920 },
+                          end: { line: 33, column: 26, offset: 942 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 33, column: 4, offset: 916 },
-                      end: { line: 33, column: 26, offset: 938 }
+                      start: { line: 33, column: 4, offset: 920 },
+                      end: { line: 33, column: 26, offset: 942 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 33, column: 2, offset: 914 },
-                  end: { line: 33, column: 26, offset: 938 }
+                  start: { line: 33, column: 2, offset: 918 },
+                  end: { line: 33, column: 26, offset: 942 }
                 }
               },
               {
@@ -40295,26 +40356,26 @@ export default [
                             type: 'text',
                             value: 'transform',
                             position: {
-                              start: { line: 34, column: 5, offset: 943 },
-                              end: { line: 34, column: 14, offset: 952 }
+                              start: { line: 34, column: 5, offset: 947 },
+                              end: { line: 34, column: 14, offset: 956 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 34, column: 4, offset: 942 },
-                          end: { line: 34, column: 32, offset: 970 }
+                          start: { line: 34, column: 4, offset: 946 },
+                          end: { line: 34, column: 32, offset: 974 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 34, column: 4, offset: 942 },
-                      end: { line: 34, column: 32, offset: 970 }
+                      start: { line: 34, column: 4, offset: 946 },
+                      end: { line: 34, column: 32, offset: 974 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 34, column: 2, offset: 940 },
-                  end: { line: 34, column: 32, offset: 970 }
+                  start: { line: 34, column: 2, offset: 944 },
+                  end: { line: 34, column: 32, offset: 974 }
                 }
               },
               {
@@ -40334,26 +40395,26 @@ export default [
                             type: 'text',
                             value: 'flatMap',
                             position: {
-                              start: { line: 35, column: 5, offset: 975 },
-                              end: { line: 35, column: 12, offset: 982 }
+                              start: { line: 35, column: 5, offset: 979 },
+                              end: { line: 35, column: 12, offset: 986 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 35, column: 4, offset: 974 },
-                          end: { line: 35, column: 28, offset: 998 }
+                          start: { line: 35, column: 4, offset: 978 },
+                          end: { line: 35, column: 28, offset: 1002 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 35, column: 4, offset: 974 },
-                      end: { line: 35, column: 28, offset: 998 }
+                      start: { line: 35, column: 4, offset: 978 },
+                      end: { line: 35, column: 28, offset: 1002 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 35, column: 2, offset: 972 },
-                  end: { line: 35, column: 28, offset: 998 }
+                  start: { line: 35, column: 2, offset: 976 },
+                  end: { line: 35, column: 28, offset: 1002 }
                 }
               },
               {
@@ -40373,38 +40434,38 @@ export default [
                             type: 'text',
                             value: 'some',
                             position: {
-                              start: { line: 36, column: 5, offset: 1003 },
-                              end: { line: 36, column: 9, offset: 1007 }
+                              start: { line: 36, column: 5, offset: 1007 },
+                              end: { line: 36, column: 9, offset: 1011 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 36, column: 4, offset: 1002 },
-                          end: { line: 36, column: 22, offset: 1020 }
+                          start: { line: 36, column: 4, offset: 1006 },
+                          end: { line: 36, column: 22, offset: 1024 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 36, column: 4, offset: 1002 },
-                      end: { line: 36, column: 22, offset: 1020 }
+                      start: { line: 36, column: 4, offset: 1006 },
+                      end: { line: 36, column: 22, offset: 1024 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 36, column: 2, offset: 1000 },
-                  end: { line: 36, column: 22, offset: 1020 }
+                  start: { line: 36, column: 2, offset: 1004 },
+                  end: { line: 36, column: 22, offset: 1024 }
                 }
               }
             ],
             position: {
-              start: { line: 28, column: 2, offset: 774 },
-              end: { line: 36, column: 22, offset: 1020 }
+              start: { line: 28, column: 2, offset: 778 },
+              end: { line: 36, column: 22, offset: 1024 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 36, column: 22, offset: 1020 }
+          end: { line: 36, column: 22, offset: 1024 }
         }
       },
       execution: {
@@ -40524,7 +40585,7 @@ export default [
       'map.pool(ids, 2, pipe(delayedIdentity, console.log))\n' +
       '```\n' +
       '\n' +
-      'If the functor is a promise, it is resolved for its value before further execution for the eager interface only.\n' +
+      'If the functor is a promise, it is resolved for its value before further execution for the immediate interface only.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const asyncSquare = async n => n ** 2\n' +
@@ -40690,16 +40751,16 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'If the functor is a promise, it is resolved for its value before further execution for the eager interface only.',
+                value: 'If the functor is a promise, it is resolved for its value before further execution for the immediate interface only.',
                 position: {
                   start: { line: 16, column: 1, offset: 368 },
-                  end: { line: 16, column: 113, offset: 480 }
+                  end: { line: 16, column: 117, offset: 484 }
                 }
               }
             ],
             position: {
               start: { line: 16, column: 1, offset: 368 },
-              end: { line: 16, column: 113, offset: 480 }
+              end: { line: 16, column: 117, offset: 484 }
             }
           },
           {
@@ -40710,8 +40771,8 @@ export default [
               '\n' +
               'map.pool(Promise.resolve([1, 2, 3, 4, 5]), 5, asyncSquare).then(console.log)',
             position: {
-              start: { line: 18, column: 1, offset: 482 },
-              end: { line: 22, column: 4, offset: 628 }
+              start: { line: 18, column: 1, offset: 486 },
+              end: { line: 22, column: 4, offset: 632 }
             }
           },
           {
@@ -40721,14 +40782,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 24, column: 1, offset: 630 },
-                  end: { line: 24, column: 10, offset: 639 }
+                  start: { line: 24, column: 1, offset: 634 },
+                  end: { line: 24, column: 10, offset: 643 }
                 }
               }
             ],
             position: {
-              start: { line: 24, column: 1, offset: 630 },
-              end: { line: 24, column: 10, offset: 639 }
+              start: { line: 24, column: 1, offset: 634 },
+              end: { line: 24, column: 10, offset: 643 }
             }
           },
           {
@@ -40754,26 +40815,26 @@ export default [
                             type: 'text',
                             value: 'forEach',
                             position: {
-                              start: { line: 25, column: 5, offset: 644 },
-                              end: { line: 25, column: 12, offset: 651 }
+                              start: { line: 25, column: 5, offset: 648 },
+                              end: { line: 25, column: 12, offset: 655 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 25, column: 4, offset: 643 },
-                          end: { line: 25, column: 28, offset: 667 }
+                          start: { line: 25, column: 4, offset: 647 },
+                          end: { line: 25, column: 28, offset: 671 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 25, column: 4, offset: 643 },
-                      end: { line: 25, column: 28, offset: 667 }
+                      start: { line: 25, column: 4, offset: 647 },
+                      end: { line: 25, column: 28, offset: 671 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 25, column: 2, offset: 641 },
-                  end: { line: 25, column: 28, offset: 667 }
+                  start: { line: 25, column: 2, offset: 645 },
+                  end: { line: 25, column: 28, offset: 671 }
                 }
               },
               {
@@ -40793,26 +40854,26 @@ export default [
                             type: 'text',
                             value: 'map',
                             position: {
-                              start: { line: 26, column: 5, offset: 672 },
-                              end: { line: 26, column: 8, offset: 675 }
+                              start: { line: 26, column: 5, offset: 676 },
+                              end: { line: 26, column: 8, offset: 679 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 26, column: 4, offset: 671 },
-                          end: { line: 26, column: 20, offset: 687 }
+                          start: { line: 26, column: 4, offset: 675 },
+                          end: { line: 26, column: 20, offset: 691 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 26, column: 4, offset: 671 },
-                      end: { line: 26, column: 20, offset: 687 }
+                      start: { line: 26, column: 4, offset: 675 },
+                      end: { line: 26, column: 20, offset: 691 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 26, column: 2, offset: 669 },
-                  end: { line: 26, column: 20, offset: 687 }
+                  start: { line: 26, column: 2, offset: 673 },
+                  end: { line: 26, column: 20, offset: 691 }
                 }
               },
               {
@@ -40832,26 +40893,26 @@ export default [
                             type: 'text',
                             value: 'map.entries',
                             position: {
-                              start: { line: 27, column: 5, offset: 692 },
-                              end: { line: 27, column: 16, offset: 703 }
+                              start: { line: 27, column: 5, offset: 696 },
+                              end: { line: 27, column: 16, offset: 707 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 27, column: 4, offset: 691 },
-                          end: { line: 27, column: 36, offset: 723 }
+                          start: { line: 27, column: 4, offset: 695 },
+                          end: { line: 27, column: 36, offset: 727 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 27, column: 4, offset: 691 },
-                      end: { line: 27, column: 36, offset: 723 }
+                      start: { line: 27, column: 4, offset: 695 },
+                      end: { line: 27, column: 36, offset: 727 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 27, column: 2, offset: 689 },
-                  end: { line: 27, column: 36, offset: 723 }
+                  start: { line: 27, column: 2, offset: 693 },
+                  end: { line: 27, column: 36, offset: 727 }
                 }
               },
               {
@@ -40871,26 +40932,26 @@ export default [
                             type: 'text',
                             value: 'map.series',
                             position: {
-                              start: { line: 28, column: 5, offset: 728 },
-                              end: { line: 28, column: 15, offset: 738 }
+                              start: { line: 28, column: 5, offset: 732 },
+                              end: { line: 28, column: 15, offset: 742 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 28, column: 4, offset: 727 },
-                          end: { line: 28, column: 34, offset: 757 }
+                          start: { line: 28, column: 4, offset: 731 },
+                          end: { line: 28, column: 34, offset: 761 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 28, column: 4, offset: 727 },
-                      end: { line: 28, column: 34, offset: 757 }
+                      start: { line: 28, column: 4, offset: 731 },
+                      end: { line: 28, column: 34, offset: 761 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 28, column: 2, offset: 725 },
-                  end: { line: 28, column: 34, offset: 757 }
+                  start: { line: 28, column: 2, offset: 729 },
+                  end: { line: 28, column: 34, offset: 761 }
                 }
               },
               {
@@ -40910,26 +40971,26 @@ export default [
                             type: 'text',
                             value: 'filter',
                             position: {
-                              start: { line: 29, column: 5, offset: 762 },
-                              end: { line: 29, column: 11, offset: 768 }
+                              start: { line: 29, column: 5, offset: 766 },
+                              end: { line: 29, column: 11, offset: 772 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 29, column: 4, offset: 761 },
-                          end: { line: 29, column: 26, offset: 783 }
+                          start: { line: 29, column: 4, offset: 765 },
+                          end: { line: 29, column: 26, offset: 787 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 29, column: 4, offset: 761 },
-                      end: { line: 29, column: 26, offset: 783 }
+                      start: { line: 29, column: 4, offset: 765 },
+                      end: { line: 29, column: 26, offset: 787 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 29, column: 2, offset: 759 },
-                  end: { line: 29, column: 26, offset: 783 }
+                  start: { line: 29, column: 2, offset: 763 },
+                  end: { line: 29, column: 26, offset: 787 }
                 }
               },
               {
@@ -40949,26 +41010,26 @@ export default [
                             type: 'text',
                             value: 'reduce',
                             position: {
-                              start: { line: 30, column: 5, offset: 788 },
-                              end: { line: 30, column: 11, offset: 794 }
+                              start: { line: 30, column: 5, offset: 792 },
+                              end: { line: 30, column: 11, offset: 798 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 30, column: 4, offset: 787 },
-                          end: { line: 30, column: 26, offset: 809 }
+                          start: { line: 30, column: 4, offset: 791 },
+                          end: { line: 30, column: 26, offset: 813 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 30, column: 4, offset: 787 },
-                      end: { line: 30, column: 26, offset: 809 }
+                      start: { line: 30, column: 4, offset: 791 },
+                      end: { line: 30, column: 26, offset: 813 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 30, column: 2, offset: 785 },
-                  end: { line: 30, column: 26, offset: 809 }
+                  start: { line: 30, column: 2, offset: 789 },
+                  end: { line: 30, column: 26, offset: 813 }
                 }
               },
               {
@@ -40988,26 +41049,26 @@ export default [
                             type: 'text',
                             value: 'transform',
                             position: {
-                              start: { line: 31, column: 5, offset: 814 },
-                              end: { line: 31, column: 14, offset: 823 }
+                              start: { line: 31, column: 5, offset: 818 },
+                              end: { line: 31, column: 14, offset: 827 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 31, column: 4, offset: 813 },
-                          end: { line: 31, column: 32, offset: 841 }
+                          start: { line: 31, column: 4, offset: 817 },
+                          end: { line: 31, column: 32, offset: 845 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 31, column: 4, offset: 813 },
-                      end: { line: 31, column: 32, offset: 841 }
+                      start: { line: 31, column: 4, offset: 817 },
+                      end: { line: 31, column: 32, offset: 845 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 31, column: 2, offset: 811 },
-                  end: { line: 31, column: 32, offset: 841 }
+                  start: { line: 31, column: 2, offset: 815 },
+                  end: { line: 31, column: 32, offset: 845 }
                 }
               },
               {
@@ -41027,26 +41088,26 @@ export default [
                             type: 'text',
                             value: 'flatMap',
                             position: {
-                              start: { line: 32, column: 5, offset: 846 },
-                              end: { line: 32, column: 12, offset: 853 }
+                              start: { line: 32, column: 5, offset: 850 },
+                              end: { line: 32, column: 12, offset: 857 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 32, column: 4, offset: 845 },
-                          end: { line: 32, column: 28, offset: 869 }
+                          start: { line: 32, column: 4, offset: 849 },
+                          end: { line: 32, column: 28, offset: 873 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 32, column: 4, offset: 845 },
-                      end: { line: 32, column: 28, offset: 869 }
+                      start: { line: 32, column: 4, offset: 849 },
+                      end: { line: 32, column: 28, offset: 873 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 32, column: 2, offset: 843 },
-                  end: { line: 32, column: 28, offset: 869 }
+                  start: { line: 32, column: 2, offset: 847 },
+                  end: { line: 32, column: 28, offset: 873 }
                 }
               },
               {
@@ -41066,38 +41127,38 @@ export default [
                             type: 'text',
                             value: 'some',
                             position: {
-                              start: { line: 33, column: 5, offset: 874 },
-                              end: { line: 33, column: 9, offset: 878 }
+                              start: { line: 33, column: 5, offset: 878 },
+                              end: { line: 33, column: 9, offset: 882 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 33, column: 4, offset: 873 },
-                          end: { line: 33, column: 22, offset: 891 }
+                          start: { line: 33, column: 4, offset: 877 },
+                          end: { line: 33, column: 22, offset: 895 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 33, column: 4, offset: 873 },
-                      end: { line: 33, column: 22, offset: 891 }
+                      start: { line: 33, column: 4, offset: 877 },
+                      end: { line: 33, column: 22, offset: 895 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 33, column: 2, offset: 871 },
-                  end: { line: 33, column: 22, offset: 891 }
+                  start: { line: 33, column: 2, offset: 875 },
+                  end: { line: 33, column: 22, offset: 895 }
                 }
               }
             ],
             position: {
-              start: { line: 25, column: 2, offset: 641 },
-              end: { line: 33, column: 22, offset: 891 }
+              start: { line: 25, column: 2, offset: 645 },
+              end: { line: 33, column: 22, offset: 895 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 33, column: 22, offset: 891 }
+          end: { line: 33, column: 22, offset: 895 }
         }
       },
       TODO: {
@@ -49258,7 +49319,7 @@ export default [
       'not(promise).then(console.log)\n' +
       '```\n' +
       '\n' +
-      'Any promises in `arguments` are resolved for their values before further execution for the eager interface only.\n' +
+      'Any promises in `arguments` are resolved for their values before further execution for the immediate interface only.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const isOdd = number => number % 2 == 1\n' +
@@ -49459,16 +49520,16 @@ export default [
               },
               {
                 type: 'text',
-                value: ' are resolved for their values before further execution for the eager interface only.',
+                value: ' are resolved for their values before further execution for the immediate interface only.',
                 position: {
                   start: { line: 28, column: 28, offset: 556 },
-                  end: { line: 28, column: 113, offset: 641 }
+                  end: { line: 28, column: 117, offset: 645 }
                 }
               }
             ],
             position: {
               start: { line: 28, column: 1, offset: 529 },
-              end: { line: 28, column: 113, offset: 641 }
+              end: { line: 28, column: 117, offset: 645 }
             }
           },
           {
@@ -49479,8 +49540,8 @@ export default [
               '\n' +
               'not(Promise.resolve(3), isOdd).then(console.log) // false',
             position: {
-              start: { line: 30, column: 1, offset: 643 },
-              end: { line: 34, column: 4, offset: 772 }
+              start: { line: 30, column: 1, offset: 647 },
+              end: { line: 34, column: 4, offset: 776 }
             }
           },
           {
@@ -49490,14 +49551,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 36, column: 1, offset: 774 },
-                  end: { line: 36, column: 10, offset: 783 }
+                  start: { line: 36, column: 1, offset: 778 },
+                  end: { line: 36, column: 10, offset: 787 }
                 }
               }
             ],
             position: {
-              start: { line: 36, column: 1, offset: 774 },
-              end: { line: 36, column: 10, offset: 783 }
+              start: { line: 36, column: 1, offset: 778 },
+              end: { line: 36, column: 10, offset: 787 }
             }
           },
           {
@@ -49523,26 +49584,26 @@ export default [
                             type: 'text',
                             value: 'some',
                             position: {
-                              start: { line: 37, column: 5, offset: 788 },
-                              end: { line: 37, column: 9, offset: 792 }
+                              start: { line: 37, column: 5, offset: 792 },
+                              end: { line: 37, column: 9, offset: 796 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 37, column: 4, offset: 787 },
-                          end: { line: 37, column: 22, offset: 805 }
+                          start: { line: 37, column: 4, offset: 791 },
+                          end: { line: 37, column: 22, offset: 809 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 37, column: 4, offset: 787 },
-                      end: { line: 37, column: 22, offset: 805 }
+                      start: { line: 37, column: 4, offset: 791 },
+                      end: { line: 37, column: 22, offset: 809 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 37, column: 2, offset: 785 },
-                  end: { line: 37, column: 22, offset: 805 }
+                  start: { line: 37, column: 2, offset: 789 },
+                  end: { line: 37, column: 22, offset: 809 }
                 }
               },
               {
@@ -49562,26 +49623,26 @@ export default [
                             type: 'text',
                             value: 'and',
                             position: {
-                              start: { line: 38, column: 5, offset: 810 },
-                              end: { line: 38, column: 8, offset: 813 }
+                              start: { line: 38, column: 5, offset: 814 },
+                              end: { line: 38, column: 8, offset: 817 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 38, column: 4, offset: 809 },
-                          end: { line: 38, column: 20, offset: 825 }
+                          start: { line: 38, column: 4, offset: 813 },
+                          end: { line: 38, column: 20, offset: 829 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 38, column: 4, offset: 809 },
-                      end: { line: 38, column: 20, offset: 825 }
+                      start: { line: 38, column: 4, offset: 813 },
+                      end: { line: 38, column: 20, offset: 829 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 38, column: 2, offset: 807 },
-                  end: { line: 38, column: 20, offset: 825 }
+                  start: { line: 38, column: 2, offset: 811 },
+                  end: { line: 38, column: 20, offset: 829 }
                 }
               },
               {
@@ -49601,26 +49662,26 @@ export default [
                             type: 'text',
                             value: 'or',
                             position: {
-                              start: { line: 39, column: 5, offset: 830 },
-                              end: { line: 39, column: 7, offset: 832 }
+                              start: { line: 39, column: 5, offset: 834 },
+                              end: { line: 39, column: 7, offset: 836 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 39, column: 4, offset: 829 },
-                          end: { line: 39, column: 18, offset: 843 }
+                          start: { line: 39, column: 4, offset: 833 },
+                          end: { line: 39, column: 18, offset: 847 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 39, column: 4, offset: 829 },
-                      end: { line: 39, column: 18, offset: 843 }
+                      start: { line: 39, column: 4, offset: 833 },
+                      end: { line: 39, column: 18, offset: 847 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 39, column: 2, offset: 827 },
-                  end: { line: 39, column: 18, offset: 843 }
+                  start: { line: 39, column: 2, offset: 831 },
+                  end: { line: 39, column: 18, offset: 847 }
                 }
               },
               {
@@ -49640,38 +49701,38 @@ export default [
                             type: 'text',
                             value: 'eq',
                             position: {
-                              start: { line: 40, column: 5, offset: 848 },
-                              end: { line: 40, column: 7, offset: 850 }
+                              start: { line: 40, column: 5, offset: 852 },
+                              end: { line: 40, column: 7, offset: 854 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 40, column: 4, offset: 847 },
-                          end: { line: 40, column: 18, offset: 861 }
+                          start: { line: 40, column: 4, offset: 851 },
+                          end: { line: 40, column: 18, offset: 865 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 40, column: 4, offset: 847 },
-                      end: { line: 40, column: 18, offset: 861 }
+                      start: { line: 40, column: 4, offset: 851 },
+                      end: { line: 40, column: 18, offset: 865 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 40, column: 2, offset: 845 },
-                  end: { line: 40, column: 18, offset: 861 }
+                  start: { line: 40, column: 2, offset: 849 },
+                  end: { line: 40, column: 18, offset: 865 }
                 }
               }
             ],
             position: {
-              start: { line: 37, column: 2, offset: 785 },
-              end: { line: 40, column: 18, offset: 861 }
+              start: { line: 37, column: 2, offset: 789 },
+              end: { line: 40, column: 18, offset: 865 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 40, column: 18, offset: 861 }
+          end: { line: 40, column: 18, offset: 865 }
         }
       }
     },
@@ -49723,7 +49784,7 @@ export default [
       '])\n' +
       '```\n' +
       '\n' +
-      'If the argument object is a promise, it is resolved for its value before further execution for the eager interface only.\n' +
+      'If the argument object is a promise, it is resolved for its value before further execution for the immediate interface only.\n' +
       '\n' +
       '```javascript [playground]\n' +
       "omit(Promise.resolve({ a: 1, b: 2, c: 3 }), ['a', 'b']).then(console.log)\n" +
@@ -50027,16 +50088,16 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'If the argument object is a promise, it is resolved for its value before further execution for the eager interface only.',
+                value: 'If the argument object is a promise, it is resolved for its value before further execution for the immediate interface only.',
                 position: {
                   start: { line: 40, column: 1, offset: 786 },
-                  end: { line: 40, column: 121, offset: 906 }
+                  end: { line: 40, column: 125, offset: 910 }
                 }
               }
             ],
             position: {
               start: { line: 40, column: 1, offset: 786 },
-              end: { line: 40, column: 121, offset: 906 }
+              end: { line: 40, column: 125, offset: 910 }
             }
           },
           {
@@ -50045,8 +50106,8 @@ export default [
             meta: '[playground]',
             value: "omit(Promise.resolve({ a: 1, b: 2, c: 3 }), ['a', 'b']).then(console.log)",
             position: {
-              start: { line: 42, column: 1, offset: 908 },
-              end: { line: 44, column: 4, offset: 1012 }
+              start: { line: 42, column: 1, offset: 912 },
+              end: { line: 44, column: 4, offset: 1016 }
             }
           },
           {
@@ -50056,14 +50117,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 46, column: 1, offset: 1014 },
-                  end: { line: 46, column: 10, offset: 1023 }
+                  start: { line: 46, column: 1, offset: 1018 },
+                  end: { line: 46, column: 10, offset: 1027 }
                 }
               }
             ],
             position: {
-              start: { line: 46, column: 1, offset: 1014 },
-              end: { line: 46, column: 10, offset: 1023 }
+              start: { line: 46, column: 1, offset: 1018 },
+              end: { line: 46, column: 10, offset: 1027 }
             }
           },
           {
@@ -50089,26 +50150,26 @@ export default [
                             type: 'text',
                             value: 'pipe',
                             position: {
-                              start: { line: 47, column: 5, offset: 1028 },
-                              end: { line: 47, column: 9, offset: 1032 }
+                              start: { line: 47, column: 5, offset: 1032 },
+                              end: { line: 47, column: 9, offset: 1036 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 47, column: 4, offset: 1027 },
-                          end: { line: 47, column: 22, offset: 1045 }
+                          start: { line: 47, column: 4, offset: 1031 },
+                          end: { line: 47, column: 22, offset: 1049 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 47, column: 4, offset: 1027 },
-                      end: { line: 47, column: 22, offset: 1045 }
+                      start: { line: 47, column: 4, offset: 1031 },
+                      end: { line: 47, column: 22, offset: 1049 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 47, column: 2, offset: 1025 },
-                  end: { line: 47, column: 22, offset: 1045 }
+                  start: { line: 47, column: 2, offset: 1029 },
+                  end: { line: 47, column: 22, offset: 1049 }
                 }
               },
               {
@@ -50128,26 +50189,26 @@ export default [
                             type: 'text',
                             value: 'all',
                             position: {
-                              start: { line: 48, column: 5, offset: 1050 },
-                              end: { line: 48, column: 8, offset: 1053 }
+                              start: { line: 48, column: 5, offset: 1054 },
+                              end: { line: 48, column: 8, offset: 1057 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 48, column: 4, offset: 1049 },
-                          end: { line: 48, column: 20, offset: 1065 }
+                          start: { line: 48, column: 4, offset: 1053 },
+                          end: { line: 48, column: 20, offset: 1069 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 48, column: 4, offset: 1049 },
-                      end: { line: 48, column: 20, offset: 1065 }
+                      start: { line: 48, column: 4, offset: 1053 },
+                      end: { line: 48, column: 20, offset: 1069 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 48, column: 2, offset: 1047 },
-                  end: { line: 48, column: 20, offset: 1065 }
+                  start: { line: 48, column: 2, offset: 1051 },
+                  end: { line: 48, column: 20, offset: 1069 }
                 }
               },
               {
@@ -50167,26 +50228,26 @@ export default [
                             type: 'text',
                             value: 'assign',
                             position: {
-                              start: { line: 49, column: 5, offset: 1070 },
-                              end: { line: 49, column: 11, offset: 1076 }
+                              start: { line: 49, column: 5, offset: 1074 },
+                              end: { line: 49, column: 11, offset: 1080 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 49, column: 4, offset: 1069 },
-                          end: { line: 49, column: 26, offset: 1091 }
+                          start: { line: 49, column: 4, offset: 1073 },
+                          end: { line: 49, column: 26, offset: 1095 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 49, column: 4, offset: 1069 },
-                      end: { line: 49, column: 26, offset: 1091 }
+                      start: { line: 49, column: 4, offset: 1073 },
+                      end: { line: 49, column: 26, offset: 1095 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 49, column: 2, offset: 1067 },
-                  end: { line: 49, column: 26, offset: 1091 }
+                  start: { line: 49, column: 2, offset: 1071 },
+                  end: { line: 49, column: 26, offset: 1095 }
                 }
               },
               {
@@ -50206,26 +50267,26 @@ export default [
                             type: 'text',
                             value: 'get',
                             position: {
-                              start: { line: 50, column: 5, offset: 1096 },
-                              end: { line: 50, column: 8, offset: 1099 }
+                              start: { line: 50, column: 5, offset: 1100 },
+                              end: { line: 50, column: 8, offset: 1103 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 50, column: 4, offset: 1095 },
-                          end: { line: 50, column: 20, offset: 1111 }
+                          start: { line: 50, column: 4, offset: 1099 },
+                          end: { line: 50, column: 20, offset: 1115 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 50, column: 4, offset: 1095 },
-                      end: { line: 50, column: 20, offset: 1111 }
+                      start: { line: 50, column: 4, offset: 1099 },
+                      end: { line: 50, column: 20, offset: 1115 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 50, column: 2, offset: 1093 },
-                  end: { line: 50, column: 20, offset: 1111 }
+                  start: { line: 50, column: 2, offset: 1097 },
+                  end: { line: 50, column: 20, offset: 1115 }
                 }
               },
               {
@@ -50245,26 +50306,26 @@ export default [
                             type: 'text',
                             value: 'set',
                             position: {
-                              start: { line: 51, column: 5, offset: 1116 },
-                              end: { line: 51, column: 8, offset: 1119 }
+                              start: { line: 51, column: 5, offset: 1120 },
+                              end: { line: 51, column: 8, offset: 1123 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 51, column: 4, offset: 1115 },
-                          end: { line: 51, column: 20, offset: 1131 }
+                          start: { line: 51, column: 4, offset: 1119 },
+                          end: { line: 51, column: 20, offset: 1135 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 51, column: 4, offset: 1115 },
-                      end: { line: 51, column: 20, offset: 1131 }
+                      start: { line: 51, column: 4, offset: 1119 },
+                      end: { line: 51, column: 20, offset: 1135 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 51, column: 2, offset: 1113 },
-                  end: { line: 51, column: 20, offset: 1131 }
+                  start: { line: 51, column: 2, offset: 1117 },
+                  end: { line: 51, column: 20, offset: 1135 }
                 }
               },
               {
@@ -50284,26 +50345,26 @@ export default [
                             type: 'text',
                             value: 'pick',
                             position: {
-                              start: { line: 52, column: 5, offset: 1136 },
-                              end: { line: 52, column: 9, offset: 1140 }
+                              start: { line: 52, column: 5, offset: 1140 },
+                              end: { line: 52, column: 9, offset: 1144 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 52, column: 4, offset: 1135 },
-                          end: { line: 52, column: 22, offset: 1153 }
+                          start: { line: 52, column: 4, offset: 1139 },
+                          end: { line: 52, column: 22, offset: 1157 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 52, column: 4, offset: 1135 },
-                      end: { line: 52, column: 22, offset: 1153 }
+                      start: { line: 52, column: 4, offset: 1139 },
+                      end: { line: 52, column: 22, offset: 1157 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 52, column: 2, offset: 1133 },
-                  end: { line: 52, column: 22, offset: 1153 }
+                  start: { line: 52, column: 2, offset: 1137 },
+                  end: { line: 52, column: 22, offset: 1157 }
                 }
               },
               {
@@ -50323,38 +50384,38 @@ export default [
                             type: 'text',
                             value: 'forEach',
                             position: {
-                              start: { line: 53, column: 5, offset: 1158 },
-                              end: { line: 53, column: 12, offset: 1165 }
+                              start: { line: 53, column: 5, offset: 1162 },
+                              end: { line: 53, column: 12, offset: 1169 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 53, column: 4, offset: 1157 },
-                          end: { line: 53, column: 28, offset: 1181 }
+                          start: { line: 53, column: 4, offset: 1161 },
+                          end: { line: 53, column: 28, offset: 1185 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 53, column: 4, offset: 1157 },
-                      end: { line: 53, column: 28, offset: 1181 }
+                      start: { line: 53, column: 4, offset: 1161 },
+                      end: { line: 53, column: 28, offset: 1185 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 53, column: 2, offset: 1155 },
-                  end: { line: 53, column: 28, offset: 1181 }
+                  start: { line: 53, column: 2, offset: 1159 },
+                  end: { line: 53, column: 28, offset: 1185 }
                 }
               }
             ],
             position: {
-              start: { line: 47, column: 2, offset: 1025 },
-              end: { line: 53, column: 28, offset: 1181 }
+              start: { line: 47, column: 2, offset: 1029 },
+              end: { line: 53, column: 28, offset: 1185 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 53, column: 28, offset: 1181 }
+          end: { line: 53, column: 28, offset: 1185 }
         }
       }
     },
@@ -51060,7 +51121,7 @@ export default [
       '])\n' +
       '```\n' +
       '\n' +
-      'If the argument object is a promise, it is resolved for its value before further execution for the eager interface only.\n' +
+      'If the argument object is a promise, it is resolved for its value before further execution for the immediate interface only.\n' +
       '\n' +
       '```javascript [playground]\n' +
       "pick(Promise.resolve({ a: 1, b: 2, c: 3 }), ['a', 'b']).then(console.log)\n" +
@@ -51357,16 +51418,16 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'If the argument object is a promise, it is resolved for its value before further execution for the eager interface only.',
+                value: 'If the argument object is a promise, it is resolved for its value before further execution for the immediate interface only.',
                 position: {
                   start: { line: 33, column: 1, offset: 850 },
-                  end: { line: 33, column: 121, offset: 970 }
+                  end: { line: 33, column: 125, offset: 974 }
                 }
               }
             ],
             position: {
               start: { line: 33, column: 1, offset: 850 },
-              end: { line: 33, column: 121, offset: 970 }
+              end: { line: 33, column: 125, offset: 974 }
             }
           },
           {
@@ -51375,8 +51436,8 @@ export default [
             meta: '[playground]',
             value: "pick(Promise.resolve({ a: 1, b: 2, c: 3 }), ['a', 'b']).then(console.log)",
             position: {
-              start: { line: 35, column: 1, offset: 972 },
-              end: { line: 37, column: 4, offset: 1076 }
+              start: { line: 35, column: 1, offset: 976 },
+              end: { line: 37, column: 4, offset: 1080 }
             }
           },
           {
@@ -51386,14 +51447,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 39, column: 1, offset: 1078 },
-                  end: { line: 39, column: 10, offset: 1087 }
+                  start: { line: 39, column: 1, offset: 1082 },
+                  end: { line: 39, column: 10, offset: 1091 }
                 }
               }
             ],
             position: {
-              start: { line: 39, column: 1, offset: 1078 },
-              end: { line: 39, column: 10, offset: 1087 }
+              start: { line: 39, column: 1, offset: 1082 },
+              end: { line: 39, column: 10, offset: 1091 }
             }
           },
           {
@@ -51419,26 +51480,26 @@ export default [
                             type: 'text',
                             value: 'pipe',
                             position: {
-                              start: { line: 40, column: 5, offset: 1092 },
-                              end: { line: 40, column: 9, offset: 1096 }
+                              start: { line: 40, column: 5, offset: 1096 },
+                              end: { line: 40, column: 9, offset: 1100 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 40, column: 4, offset: 1091 },
-                          end: { line: 40, column: 22, offset: 1109 }
+                          start: { line: 40, column: 4, offset: 1095 },
+                          end: { line: 40, column: 22, offset: 1113 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 40, column: 4, offset: 1091 },
-                      end: { line: 40, column: 22, offset: 1109 }
+                      start: { line: 40, column: 4, offset: 1095 },
+                      end: { line: 40, column: 22, offset: 1113 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 40, column: 2, offset: 1089 },
-                  end: { line: 40, column: 22, offset: 1109 }
+                  start: { line: 40, column: 2, offset: 1093 },
+                  end: { line: 40, column: 22, offset: 1113 }
                 }
               },
               {
@@ -51458,26 +51519,26 @@ export default [
                             type: 'text',
                             value: 'all',
                             position: {
-                              start: { line: 41, column: 5, offset: 1114 },
-                              end: { line: 41, column: 8, offset: 1117 }
+                              start: { line: 41, column: 5, offset: 1118 },
+                              end: { line: 41, column: 8, offset: 1121 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 41, column: 4, offset: 1113 },
-                          end: { line: 41, column: 20, offset: 1129 }
+                          start: { line: 41, column: 4, offset: 1117 },
+                          end: { line: 41, column: 20, offset: 1133 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 41, column: 4, offset: 1113 },
-                      end: { line: 41, column: 20, offset: 1129 }
+                      start: { line: 41, column: 4, offset: 1117 },
+                      end: { line: 41, column: 20, offset: 1133 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 41, column: 2, offset: 1111 },
-                  end: { line: 41, column: 20, offset: 1129 }
+                  start: { line: 41, column: 2, offset: 1115 },
+                  end: { line: 41, column: 20, offset: 1133 }
                 }
               },
               {
@@ -51497,26 +51558,26 @@ export default [
                             type: 'text',
                             value: 'assign',
                             position: {
-                              start: { line: 42, column: 5, offset: 1134 },
-                              end: { line: 42, column: 11, offset: 1140 }
+                              start: { line: 42, column: 5, offset: 1138 },
+                              end: { line: 42, column: 11, offset: 1144 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 42, column: 4, offset: 1133 },
-                          end: { line: 42, column: 26, offset: 1155 }
+                          start: { line: 42, column: 4, offset: 1137 },
+                          end: { line: 42, column: 26, offset: 1159 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 42, column: 4, offset: 1133 },
-                      end: { line: 42, column: 26, offset: 1155 }
+                      start: { line: 42, column: 4, offset: 1137 },
+                      end: { line: 42, column: 26, offset: 1159 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 42, column: 2, offset: 1131 },
-                  end: { line: 42, column: 26, offset: 1155 }
+                  start: { line: 42, column: 2, offset: 1135 },
+                  end: { line: 42, column: 26, offset: 1159 }
                 }
               },
               {
@@ -51536,26 +51597,26 @@ export default [
                             type: 'text',
                             value: 'get',
                             position: {
-                              start: { line: 43, column: 5, offset: 1160 },
-                              end: { line: 43, column: 8, offset: 1163 }
+                              start: { line: 43, column: 5, offset: 1164 },
+                              end: { line: 43, column: 8, offset: 1167 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 43, column: 4, offset: 1159 },
-                          end: { line: 43, column: 20, offset: 1175 }
+                          start: { line: 43, column: 4, offset: 1163 },
+                          end: { line: 43, column: 20, offset: 1179 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 43, column: 4, offset: 1159 },
-                      end: { line: 43, column: 20, offset: 1175 }
+                      start: { line: 43, column: 4, offset: 1163 },
+                      end: { line: 43, column: 20, offset: 1179 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 43, column: 2, offset: 1157 },
-                  end: { line: 43, column: 20, offset: 1175 }
+                  start: { line: 43, column: 2, offset: 1161 },
+                  end: { line: 43, column: 20, offset: 1179 }
                 }
               },
               {
@@ -51575,26 +51636,26 @@ export default [
                             type: 'text',
                             value: 'set',
                             position: {
-                              start: { line: 44, column: 5, offset: 1180 },
-                              end: { line: 44, column: 8, offset: 1183 }
+                              start: { line: 44, column: 5, offset: 1184 },
+                              end: { line: 44, column: 8, offset: 1187 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 44, column: 4, offset: 1179 },
-                          end: { line: 44, column: 20, offset: 1195 }
+                          start: { line: 44, column: 4, offset: 1183 },
+                          end: { line: 44, column: 20, offset: 1199 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 44, column: 4, offset: 1179 },
-                      end: { line: 44, column: 20, offset: 1195 }
+                      start: { line: 44, column: 4, offset: 1183 },
+                      end: { line: 44, column: 20, offset: 1199 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 44, column: 2, offset: 1177 },
-                  end: { line: 44, column: 20, offset: 1195 }
+                  start: { line: 44, column: 2, offset: 1181 },
+                  end: { line: 44, column: 20, offset: 1199 }
                 }
               },
               {
@@ -51614,26 +51675,26 @@ export default [
                             type: 'text',
                             value: 'omit',
                             position: {
-                              start: { line: 45, column: 5, offset: 1200 },
-                              end: { line: 45, column: 9, offset: 1204 }
+                              start: { line: 45, column: 5, offset: 1204 },
+                              end: { line: 45, column: 9, offset: 1208 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 45, column: 4, offset: 1199 },
-                          end: { line: 45, column: 22, offset: 1217 }
+                          start: { line: 45, column: 4, offset: 1203 },
+                          end: { line: 45, column: 22, offset: 1221 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 45, column: 4, offset: 1199 },
-                      end: { line: 45, column: 22, offset: 1217 }
+                      start: { line: 45, column: 4, offset: 1203 },
+                      end: { line: 45, column: 22, offset: 1221 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 45, column: 2, offset: 1197 },
-                  end: { line: 45, column: 22, offset: 1217 }
+                  start: { line: 45, column: 2, offset: 1201 },
+                  end: { line: 45, column: 22, offset: 1221 }
                 }
               },
               {
@@ -51653,38 +51714,38 @@ export default [
                             type: 'text',
                             value: 'forEach',
                             position: {
-                              start: { line: 46, column: 5, offset: 1222 },
-                              end: { line: 46, column: 12, offset: 1229 }
+                              start: { line: 46, column: 5, offset: 1226 },
+                              end: { line: 46, column: 12, offset: 1233 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 46, column: 4, offset: 1221 },
-                          end: { line: 46, column: 28, offset: 1245 }
+                          start: { line: 46, column: 4, offset: 1225 },
+                          end: { line: 46, column: 28, offset: 1249 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 46, column: 4, offset: 1221 },
-                      end: { line: 46, column: 28, offset: 1245 }
+                      start: { line: 46, column: 4, offset: 1225 },
+                      end: { line: 46, column: 28, offset: 1249 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 46, column: 2, offset: 1219 },
-                  end: { line: 46, column: 28, offset: 1245 }
+                  start: { line: 46, column: 2, offset: 1223 },
+                  end: { line: 46, column: 28, offset: 1249 }
                 }
               }
             ],
             position: {
-              start: { line: 40, column: 2, offset: 1089 },
-              end: { line: 46, column: 28, offset: 1245 }
+              start: { line: 40, column: 2, offset: 1093 },
+              end: { line: 46, column: 28, offset: 1249 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 46, column: 28, offset: 1245 }
+          end: { line: 46, column: 28, offset: 1249 }
         }
       }
     },
@@ -51700,6 +51761,7 @@ export default [
       '\n' +
       'pipe(funcs)(...arguments) -> result Promise|any\n' +
       'pipe(...arguments, funcs) -> result Promise|any\n' +
+      'pipe(argument, ...funcs) -> result Promise|any\n' +
       'pipe(...funcs)(...arguments) -> result Promise|any\n' +
       '```',
     description: 'Creates a function pipeline from multiple functions. Each function in the function pipeline is evaluated in series starting from the first function in the function pipeline, passing the return value as the first and only argument to the next function in the pipeline. The result of the execution of a function pipeline is the return value of the last function in the function pipeline. If any function in the function pipeline is asynchronous, the result of the execution of the function pipeline is a promise.\n' +
@@ -51730,7 +51792,18 @@ export default [
       "console.log(appendBC('a'))\n" +
       '```\n' +
       '\n' +
-      'Any promises in `arguments` are resolved for their values before further execution for the eager interface only.\n' +
+      'A single argument and one or more functions passed to `pipe` executes immediately.\n' +
+      '\n' +
+      '```javascript [playground]\n' +
+      'pipe(\n' +
+      '  1,\n' +
+      '  n => n + 2,\n' +
+      '  n => n + 3,\n' +
+      '  console.log\n' +
+      ')\n' +
+      '```\n' +
+      '\n' +
+      'Any promises in `arguments` are resolved for their values before further execution for the immediate interface only.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'pipe(Promise.resolve(1), 2, Promise.resolve(3), [\n' +
@@ -51787,16 +51860,17 @@ export default [
               '\n' +
               'pipe(funcs)(...arguments) -> result Promise|any\n' +
               'pipe(...arguments, funcs) -> result Promise|any\n' +
+              'pipe(argument, ...funcs) -> result Promise|any\n' +
               'pipe(...funcs)(...arguments) -> result Promise|any',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 10, column: 4, offset: 305 }
+              end: { line: 11, column: 4, offset: 352 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 10, column: 4, offset: 305 }
+          end: { line: 11, column: 4, offset: 352 }
         }
       },
       description: {
@@ -51908,32 +51982,75 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Any promises in ',
+                value: 'A single argument and one or more functions passed to ',
                 position: {
                   start: { line: 29, column: 1, offset: 1045 },
-                  end: { line: 29, column: 17, offset: 1061 }
+                  end: { line: 29, column: 55, offset: 1099 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'pipe',
+                position: {
+                  start: { line: 29, column: 55, offset: 1099 },
+                  end: { line: 29, column: 61, offset: 1105 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' executes immediately.',
+                position: {
+                  start: { line: 29, column: 61, offset: 1105 },
+                  end: { line: 29, column: 83, offset: 1127 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 29, column: 1, offset: 1045 },
+              end: { line: 29, column: 83, offset: 1127 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: '[playground]',
+            value: 'pipe(\n  1,\n  n => n + 2,\n  n => n + 3,\n  console.log\n)',
+            position: {
+              start: { line: 31, column: 1, offset: 1129 },
+              end: { line: 38, column: 4, offset: 1214 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Any promises in ',
+                position: {
+                  start: { line: 40, column: 1, offset: 1216 },
+                  end: { line: 40, column: 17, offset: 1232 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'arguments',
                 position: {
-                  start: { line: 29, column: 17, offset: 1061 },
-                  end: { line: 29, column: 28, offset: 1072 }
+                  start: { line: 40, column: 17, offset: 1232 },
+                  end: { line: 40, column: 28, offset: 1243 }
                 }
               },
               {
                 type: 'text',
-                value: ' are resolved for their values before further execution for the eager interface only.',
+                value: ' are resolved for their values before further execution for the immediate interface only.',
                 position: {
-                  start: { line: 29, column: 28, offset: 1072 },
-                  end: { line: 29, column: 113, offset: 1157 }
+                  start: { line: 40, column: 28, offset: 1243 },
+                  end: { line: 40, column: 117, offset: 1332 }
                 }
               }
             ],
             position: {
-              start: { line: 29, column: 1, offset: 1045 },
-              end: { line: 29, column: 113, offset: 1157 }
+              start: { line: 40, column: 1, offset: 1216 },
+              end: { line: 40, column: 117, offset: 1332 }
             }
           },
           {
@@ -51944,8 +52061,8 @@ export default [
               '  console.log,\n' +
               '])',
             position: {
-              start: { line: 31, column: 1, offset: 1159 },
-              end: { line: 35, column: 4, offset: 1257 }
+              start: { line: 42, column: 1, offset: 1334 },
+              end: { line: 46, column: 4, offset: 1432 }
             }
           },
           {
@@ -51955,14 +52072,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 37, column: 1, offset: 1259 },
-                  end: { line: 37, column: 10, offset: 1268 }
+                  start: { line: 48, column: 1, offset: 1434 },
+                  end: { line: 48, column: 10, offset: 1443 }
                 }
               }
             ],
             position: {
-              start: { line: 37, column: 1, offset: 1259 },
-              end: { line: 37, column: 10, offset: 1268 }
+              start: { line: 48, column: 1, offset: 1434 },
+              end: { line: 48, column: 10, offset: 1443 }
             }
           },
           {
@@ -51988,26 +52105,26 @@ export default [
                             type: 'text',
                             value: 'compose',
                             position: {
-                              start: { line: 38, column: 5, offset: 1273 },
-                              end: { line: 38, column: 12, offset: 1280 }
+                              start: { line: 49, column: 5, offset: 1448 },
+                              end: { line: 49, column: 12, offset: 1455 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 38, column: 4, offset: 1272 },
-                          end: { line: 38, column: 28, offset: 1296 }
+                          start: { line: 49, column: 4, offset: 1447 },
+                          end: { line: 49, column: 28, offset: 1471 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 38, column: 4, offset: 1272 },
-                      end: { line: 38, column: 28, offset: 1296 }
+                      start: { line: 49, column: 4, offset: 1447 },
+                      end: { line: 49, column: 28, offset: 1471 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 38, column: 2, offset: 1270 },
-                  end: { line: 38, column: 28, offset: 1296 }
+                  start: { line: 49, column: 2, offset: 1445 },
+                  end: { line: 49, column: 28, offset: 1471 }
                 }
               },
               {
@@ -52027,26 +52144,26 @@ export default [
                             type: 'text',
                             value: 'tap',
                             position: {
-                              start: { line: 39, column: 5, offset: 1301 },
-                              end: { line: 39, column: 8, offset: 1304 }
+                              start: { line: 50, column: 5, offset: 1476 },
+                              end: { line: 50, column: 8, offset: 1479 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 39, column: 4, offset: 1300 },
-                          end: { line: 39, column: 20, offset: 1316 }
+                          start: { line: 50, column: 4, offset: 1475 },
+                          end: { line: 50, column: 20, offset: 1491 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 39, column: 4, offset: 1300 },
-                      end: { line: 39, column: 20, offset: 1316 }
+                      start: { line: 50, column: 4, offset: 1475 },
+                      end: { line: 50, column: 20, offset: 1491 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 39, column: 2, offset: 1298 },
-                  end: { line: 39, column: 20, offset: 1316 }
+                  start: { line: 50, column: 2, offset: 1473 },
+                  end: { line: 50, column: 20, offset: 1491 }
                 }
               },
               {
@@ -52066,26 +52183,26 @@ export default [
                             type: 'text',
                             value: 'switchCase',
                             position: {
-                              start: { line: 40, column: 5, offset: 1321 },
-                              end: { line: 40, column: 15, offset: 1331 }
+                              start: { line: 51, column: 5, offset: 1496 },
+                              end: { line: 51, column: 15, offset: 1506 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 40, column: 4, offset: 1320 },
-                          end: { line: 40, column: 34, offset: 1350 }
+                          start: { line: 51, column: 4, offset: 1495 },
+                          end: { line: 51, column: 34, offset: 1525 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 40, column: 4, offset: 1320 },
-                      end: { line: 40, column: 34, offset: 1350 }
+                      start: { line: 51, column: 4, offset: 1495 },
+                      end: { line: 51, column: 34, offset: 1525 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 40, column: 2, offset: 1318 },
-                  end: { line: 40, column: 34, offset: 1350 }
+                  start: { line: 51, column: 2, offset: 1493 },
+                  end: { line: 51, column: 34, offset: 1525 }
                 }
               },
               {
@@ -52105,38 +52222,38 @@ export default [
                             type: 'text',
                             value: 'tryCatch',
                             position: {
-                              start: { line: 41, column: 5, offset: 1355 },
-                              end: { line: 41, column: 13, offset: 1363 }
+                              start: { line: 52, column: 5, offset: 1530 },
+                              end: { line: 52, column: 13, offset: 1538 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 41, column: 4, offset: 1354 },
-                          end: { line: 41, column: 30, offset: 1380 }
+                          start: { line: 52, column: 4, offset: 1529 },
+                          end: { line: 52, column: 30, offset: 1555 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 41, column: 4, offset: 1354 },
-                      end: { line: 41, column: 30, offset: 1380 }
+                      start: { line: 52, column: 4, offset: 1529 },
+                      end: { line: 52, column: 30, offset: 1555 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 41, column: 2, offset: 1352 },
-                  end: { line: 41, column: 30, offset: 1380 }
+                  start: { line: 52, column: 2, offset: 1527 },
+                  end: { line: 52, column: 30, offset: 1555 }
                 }
               }
             ],
             position: {
-              start: { line: 38, column: 2, offset: 1270 },
-              end: { line: 41, column: 30, offset: 1380 }
+              start: { line: 49, column: 2, offset: 1445 },
+              end: { line: 52, column: 30, offset: 1555 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 41, column: 30, offset: 1380 }
+          end: { line: 52, column: 30, offset: 1555 }
         }
       },
       execution: {
@@ -52372,7 +52489,7 @@ export default [
       'console.log(result)\n' +
       '```\n' +
       '\n' +
-      'If the foldable or initial value is a promise, it is resolved for its value before further execution for the eager interface only.\n' +
+      'If the foldable or initial value is a promise, it is resolved for its value before further execution for the immediate interface only.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const add = (a, b) => a + b\n' +
@@ -53211,16 +53328,16 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'If the foldable or initial value is a promise, it is resolved for its value before further execution for the eager interface only.',
+                value: 'If the foldable or initial value is a promise, it is resolved for its value before further execution for the immediate interface only.',
                 position: {
                   start: { line: 149, column: 1, offset: 3587 },
-                  end: { line: 149, column: 131, offset: 3717 }
+                  end: { line: 149, column: 135, offset: 3721 }
                 }
               }
             ],
             position: {
               start: { line: 149, column: 1, offset: 3587 },
-              end: { line: 149, column: 131, offset: 3717 }
+              end: { line: 149, column: 135, offset: 3721 }
             }
           },
           {
@@ -53236,8 +53353,8 @@ export default [
               'console.log(resultWithPromiseFoldable)\n' +
               'console.log(resultWithPromiseInitialValue)',
             position: {
-              start: { line: 151, column: 1, offset: 3719 },
-              end: { line: 160, column: 4, offset: 4044 }
+              start: { line: 151, column: 1, offset: 3723 },
+              end: { line: 160, column: 4, offset: 4048 }
             }
           },
           {
@@ -53247,14 +53364,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 162, column: 1, offset: 4046 },
-                  end: { line: 162, column: 10, offset: 4055 }
+                  start: { line: 162, column: 1, offset: 4050 },
+                  end: { line: 162, column: 10, offset: 4059 }
                 }
               }
             ],
             position: {
-              start: { line: 162, column: 1, offset: 4046 },
-              end: { line: 162, column: 10, offset: 4055 }
+              start: { line: 162, column: 1, offset: 4050 },
+              end: { line: 162, column: 10, offset: 4059 }
             }
           },
           {
@@ -53280,26 +53397,26 @@ export default [
                             type: 'text',
                             value: 'forEach',
                             position: {
-                              start: { line: 163, column: 5, offset: 4060 },
-                              end: { line: 163, column: 12, offset: 4067 }
+                              start: { line: 163, column: 5, offset: 4064 },
+                              end: { line: 163, column: 12, offset: 4071 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 163, column: 4, offset: 4059 },
-                          end: { line: 163, column: 28, offset: 4083 }
+                          start: { line: 163, column: 4, offset: 4063 },
+                          end: { line: 163, column: 28, offset: 4087 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 163, column: 4, offset: 4059 },
-                      end: { line: 163, column: 28, offset: 4083 }
+                      start: { line: 163, column: 4, offset: 4063 },
+                      end: { line: 163, column: 28, offset: 4087 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 163, column: 2, offset: 4057 },
-                  end: { line: 163, column: 28, offset: 4083 }
+                  start: { line: 163, column: 2, offset: 4061 },
+                  end: { line: 163, column: 28, offset: 4087 }
                 }
               },
               {
@@ -53319,26 +53436,26 @@ export default [
                             type: 'text',
                             value: 'map',
                             position: {
-                              start: { line: 164, column: 5, offset: 4088 },
-                              end: { line: 164, column: 8, offset: 4091 }
+                              start: { line: 164, column: 5, offset: 4092 },
+                              end: { line: 164, column: 8, offset: 4095 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 164, column: 4, offset: 4087 },
-                          end: { line: 164, column: 20, offset: 4103 }
+                          start: { line: 164, column: 4, offset: 4091 },
+                          end: { line: 164, column: 20, offset: 4107 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 164, column: 4, offset: 4087 },
-                      end: { line: 164, column: 20, offset: 4103 }
+                      start: { line: 164, column: 4, offset: 4091 },
+                      end: { line: 164, column: 20, offset: 4107 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 164, column: 2, offset: 4085 },
-                  end: { line: 164, column: 20, offset: 4103 }
+                  start: { line: 164, column: 2, offset: 4089 },
+                  end: { line: 164, column: 20, offset: 4107 }
                 }
               },
               {
@@ -53358,26 +53475,26 @@ export default [
                             type: 'text',
                             value: 'filter',
                             position: {
-                              start: { line: 165, column: 5, offset: 4108 },
-                              end: { line: 165, column: 11, offset: 4114 }
+                              start: { line: 165, column: 5, offset: 4112 },
+                              end: { line: 165, column: 11, offset: 4118 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 165, column: 4, offset: 4107 },
-                          end: { line: 165, column: 26, offset: 4129 }
+                          start: { line: 165, column: 4, offset: 4111 },
+                          end: { line: 165, column: 26, offset: 4133 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 165, column: 4, offset: 4107 },
-                      end: { line: 165, column: 26, offset: 4129 }
+                      start: { line: 165, column: 4, offset: 4111 },
+                      end: { line: 165, column: 26, offset: 4133 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 165, column: 2, offset: 4105 },
-                  end: { line: 165, column: 26, offset: 4129 }
+                  start: { line: 165, column: 2, offset: 4109 },
+                  end: { line: 165, column: 26, offset: 4133 }
                 }
               },
               {
@@ -53397,26 +53514,26 @@ export default [
                             type: 'text',
                             value: 'transform',
                             position: {
-                              start: { line: 166, column: 5, offset: 4134 },
-                              end: { line: 166, column: 14, offset: 4143 }
+                              start: { line: 166, column: 5, offset: 4138 },
+                              end: { line: 166, column: 14, offset: 4147 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 166, column: 4, offset: 4133 },
-                          end: { line: 166, column: 32, offset: 4161 }
+                          start: { line: 166, column: 4, offset: 4137 },
+                          end: { line: 166, column: 32, offset: 4165 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 166, column: 4, offset: 4133 },
-                      end: { line: 166, column: 32, offset: 4161 }
+                      start: { line: 166, column: 4, offset: 4137 },
+                      end: { line: 166, column: 32, offset: 4165 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 166, column: 2, offset: 4131 },
-                  end: { line: 166, column: 32, offset: 4161 }
+                  start: { line: 166, column: 2, offset: 4135 },
+                  end: { line: 166, column: 32, offset: 4165 }
                 }
               },
               {
@@ -53436,26 +53553,26 @@ export default [
                             type: 'text',
                             value: 'flatMap',
                             position: {
-                              start: { line: 167, column: 5, offset: 4166 },
-                              end: { line: 167, column: 12, offset: 4173 }
+                              start: { line: 167, column: 5, offset: 4170 },
+                              end: { line: 167, column: 12, offset: 4177 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 167, column: 4, offset: 4165 },
-                          end: { line: 167, column: 28, offset: 4189 }
+                          start: { line: 167, column: 4, offset: 4169 },
+                          end: { line: 167, column: 28, offset: 4193 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 167, column: 4, offset: 4165 },
-                      end: { line: 167, column: 28, offset: 4189 }
+                      start: { line: 167, column: 4, offset: 4169 },
+                      end: { line: 167, column: 28, offset: 4193 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 167, column: 2, offset: 4163 },
-                  end: { line: 167, column: 28, offset: 4189 }
+                  start: { line: 167, column: 2, offset: 4167 },
+                  end: { line: 167, column: 28, offset: 4193 }
                 }
               },
               {
@@ -53475,38 +53592,38 @@ export default [
                             type: 'text',
                             value: 'some',
                             position: {
-                              start: { line: 168, column: 5, offset: 4194 },
-                              end: { line: 168, column: 9, offset: 4198 }
+                              start: { line: 168, column: 5, offset: 4198 },
+                              end: { line: 168, column: 9, offset: 4202 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 168, column: 4, offset: 4193 },
-                          end: { line: 168, column: 22, offset: 4211 }
+                          start: { line: 168, column: 4, offset: 4197 },
+                          end: { line: 168, column: 22, offset: 4215 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 168, column: 4, offset: 4193 },
-                      end: { line: 168, column: 22, offset: 4211 }
+                      start: { line: 168, column: 4, offset: 4197 },
+                      end: { line: 168, column: 22, offset: 4215 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 168, column: 2, offset: 4191 },
-                  end: { line: 168, column: 22, offset: 4211 }
+                  start: { line: 168, column: 2, offset: 4195 },
+                  end: { line: 168, column: 22, offset: 4215 }
                 }
               }
             ],
             position: {
-              start: { line: 163, column: 2, offset: 4057 },
-              end: { line: 168, column: 22, offset: 4211 }
+              start: { line: 163, column: 2, offset: 4061 },
+              end: { line: 168, column: 22, offset: 4215 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 168, column: 22, offset: 4211 }
+          end: { line: 168, column: 22, offset: 4215 }
         }
       },
       execution: {
@@ -53672,7 +53789,7 @@ export default [
       '])\n' +
       '```\n' +
       '\n' +
-      'If the argument object is a promise, it is resolved for its value before further execution for the eager interface only.\n' +
+      'If the argument object is a promise, it is resolved for its value before further execution for the immediate interface only.\n' +
       '\n' +
       '```javascript [playground]\n' +
       "set(Promise.resolve({}), 'a', 1).then(console.log)\n" +
@@ -53995,16 +54112,16 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'If the argument object is a promise, it is resolved for its value before further execution for the eager interface only.',
+                value: 'If the argument object is a promise, it is resolved for its value before further execution for the immediate interface only.',
                 position: {
                   start: { line: 40, column: 1, offset: 1007 },
-                  end: { line: 40, column: 121, offset: 1127 }
+                  end: { line: 40, column: 125, offset: 1131 }
                 }
               }
             ],
             position: {
               start: { line: 40, column: 1, offset: 1007 },
-              end: { line: 40, column: 121, offset: 1127 }
+              end: { line: 40, column: 125, offset: 1131 }
             }
           },
           {
@@ -54013,8 +54130,8 @@ export default [
             meta: '[playground]',
             value: "set(Promise.resolve({}), 'a', 1).then(console.log)",
             position: {
-              start: { line: 42, column: 1, offset: 1129 },
-              end: { line: 44, column: 4, offset: 1210 }
+              start: { line: 42, column: 1, offset: 1133 },
+              end: { line: 44, column: 4, offset: 1214 }
             }
           },
           {
@@ -54024,14 +54141,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 46, column: 1, offset: 1212 },
-                  end: { line: 46, column: 10, offset: 1221 }
+                  start: { line: 46, column: 1, offset: 1216 },
+                  end: { line: 46, column: 10, offset: 1225 }
                 }
               }
             ],
             position: {
-              start: { line: 46, column: 1, offset: 1212 },
-              end: { line: 46, column: 10, offset: 1221 }
+              start: { line: 46, column: 1, offset: 1216 },
+              end: { line: 46, column: 10, offset: 1225 }
             }
           },
           {
@@ -54057,26 +54174,26 @@ export default [
                             type: 'text',
                             value: 'pipe',
                             position: {
-                              start: { line: 47, column: 5, offset: 1226 },
-                              end: { line: 47, column: 9, offset: 1230 }
+                              start: { line: 47, column: 5, offset: 1230 },
+                              end: { line: 47, column: 9, offset: 1234 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 47, column: 4, offset: 1225 },
-                          end: { line: 47, column: 22, offset: 1243 }
+                          start: { line: 47, column: 4, offset: 1229 },
+                          end: { line: 47, column: 22, offset: 1247 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 47, column: 4, offset: 1225 },
-                      end: { line: 47, column: 22, offset: 1243 }
+                      start: { line: 47, column: 4, offset: 1229 },
+                      end: { line: 47, column: 22, offset: 1247 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 47, column: 2, offset: 1223 },
-                  end: { line: 47, column: 22, offset: 1243 }
+                  start: { line: 47, column: 2, offset: 1227 },
+                  end: { line: 47, column: 22, offset: 1247 }
                 }
               },
               {
@@ -54096,26 +54213,26 @@ export default [
                             type: 'text',
                             value: 'all',
                             position: {
-                              start: { line: 48, column: 5, offset: 1248 },
-                              end: { line: 48, column: 8, offset: 1251 }
+                              start: { line: 48, column: 5, offset: 1252 },
+                              end: { line: 48, column: 8, offset: 1255 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 48, column: 4, offset: 1247 },
-                          end: { line: 48, column: 20, offset: 1263 }
+                          start: { line: 48, column: 4, offset: 1251 },
+                          end: { line: 48, column: 20, offset: 1267 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 48, column: 4, offset: 1247 },
-                      end: { line: 48, column: 20, offset: 1263 }
+                      start: { line: 48, column: 4, offset: 1251 },
+                      end: { line: 48, column: 20, offset: 1267 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 48, column: 2, offset: 1245 },
-                  end: { line: 48, column: 20, offset: 1263 }
+                  start: { line: 48, column: 2, offset: 1249 },
+                  end: { line: 48, column: 20, offset: 1267 }
                 }
               },
               {
@@ -54135,26 +54252,26 @@ export default [
                             type: 'text',
                             value: 'assign',
                             position: {
-                              start: { line: 49, column: 5, offset: 1268 },
-                              end: { line: 49, column: 11, offset: 1274 }
+                              start: { line: 49, column: 5, offset: 1272 },
+                              end: { line: 49, column: 11, offset: 1278 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 49, column: 4, offset: 1267 },
-                          end: { line: 49, column: 26, offset: 1289 }
+                          start: { line: 49, column: 4, offset: 1271 },
+                          end: { line: 49, column: 26, offset: 1293 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 49, column: 4, offset: 1267 },
-                      end: { line: 49, column: 26, offset: 1289 }
+                      start: { line: 49, column: 4, offset: 1271 },
+                      end: { line: 49, column: 26, offset: 1293 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 49, column: 2, offset: 1265 },
-                  end: { line: 49, column: 26, offset: 1289 }
+                  start: { line: 49, column: 2, offset: 1269 },
+                  end: { line: 49, column: 26, offset: 1293 }
                 }
               },
               {
@@ -54174,26 +54291,26 @@ export default [
                             type: 'text',
                             value: 'get',
                             position: {
-                              start: { line: 50, column: 5, offset: 1294 },
-                              end: { line: 50, column: 8, offset: 1297 }
+                              start: { line: 50, column: 5, offset: 1298 },
+                              end: { line: 50, column: 8, offset: 1301 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 50, column: 4, offset: 1293 },
-                          end: { line: 50, column: 20, offset: 1309 }
+                          start: { line: 50, column: 4, offset: 1297 },
+                          end: { line: 50, column: 20, offset: 1313 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 50, column: 4, offset: 1293 },
-                      end: { line: 50, column: 20, offset: 1309 }
+                      start: { line: 50, column: 4, offset: 1297 },
+                      end: { line: 50, column: 20, offset: 1313 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 50, column: 2, offset: 1291 },
-                  end: { line: 50, column: 20, offset: 1309 }
+                  start: { line: 50, column: 2, offset: 1295 },
+                  end: { line: 50, column: 20, offset: 1313 }
                 }
               },
               {
@@ -54213,26 +54330,26 @@ export default [
                             type: 'text',
                             value: 'pick',
                             position: {
-                              start: { line: 51, column: 5, offset: 1314 },
-                              end: { line: 51, column: 9, offset: 1318 }
+                              start: { line: 51, column: 5, offset: 1318 },
+                              end: { line: 51, column: 9, offset: 1322 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 51, column: 4, offset: 1313 },
-                          end: { line: 51, column: 22, offset: 1331 }
+                          start: { line: 51, column: 4, offset: 1317 },
+                          end: { line: 51, column: 22, offset: 1335 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 51, column: 4, offset: 1313 },
-                      end: { line: 51, column: 22, offset: 1331 }
+                      start: { line: 51, column: 4, offset: 1317 },
+                      end: { line: 51, column: 22, offset: 1335 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 51, column: 2, offset: 1311 },
-                  end: { line: 51, column: 22, offset: 1331 }
+                  start: { line: 51, column: 2, offset: 1315 },
+                  end: { line: 51, column: 22, offset: 1335 }
                 }
               },
               {
@@ -54252,26 +54369,26 @@ export default [
                             type: 'text',
                             value: 'omit',
                             position: {
-                              start: { line: 52, column: 5, offset: 1336 },
-                              end: { line: 52, column: 9, offset: 1340 }
+                              start: { line: 52, column: 5, offset: 1340 },
+                              end: { line: 52, column: 9, offset: 1344 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 52, column: 4, offset: 1335 },
-                          end: { line: 52, column: 22, offset: 1353 }
+                          start: { line: 52, column: 4, offset: 1339 },
+                          end: { line: 52, column: 22, offset: 1357 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 52, column: 4, offset: 1335 },
-                      end: { line: 52, column: 22, offset: 1353 }
+                      start: { line: 52, column: 4, offset: 1339 },
+                      end: { line: 52, column: 22, offset: 1357 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 52, column: 2, offset: 1333 },
-                  end: { line: 52, column: 22, offset: 1353 }
+                  start: { line: 52, column: 2, offset: 1337 },
+                  end: { line: 52, column: 22, offset: 1357 }
                 }
               },
               {
@@ -54291,38 +54408,38 @@ export default [
                             type: 'text',
                             value: 'forEach',
                             position: {
-                              start: { line: 53, column: 5, offset: 1358 },
-                              end: { line: 53, column: 12, offset: 1365 }
+                              start: { line: 53, column: 5, offset: 1362 },
+                              end: { line: 53, column: 12, offset: 1369 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 53, column: 4, offset: 1357 },
-                          end: { line: 53, column: 28, offset: 1381 }
+                          start: { line: 53, column: 4, offset: 1361 },
+                          end: { line: 53, column: 28, offset: 1385 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 53, column: 4, offset: 1357 },
-                      end: { line: 53, column: 28, offset: 1381 }
+                      start: { line: 53, column: 4, offset: 1361 },
+                      end: { line: 53, column: 28, offset: 1385 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 53, column: 2, offset: 1355 },
-                  end: { line: 53, column: 28, offset: 1381 }
+                  start: { line: 53, column: 2, offset: 1359 },
+                  end: { line: 53, column: 28, offset: 1385 }
                 }
               }
             ],
             position: {
-              start: { line: 47, column: 2, offset: 1223 },
-              end: { line: 53, column: 28, offset: 1381 }
+              start: { line: 47, column: 2, offset: 1227 },
+              end: { line: 53, column: 28, offset: 1385 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 53, column: 28, offset: 1381 }
+          end: { line: 53, column: 28, offset: 1385 }
         }
       },
       since: {
@@ -54393,7 +54510,7 @@ export default [
       '])\n' +
       '```\n' +
       '\n' +
-      'If the foldable is a promise, it is resolved for its value before further execution for the eager interface only.\n' +
+      'If the foldable is a promise, it is resolved for its value before further execution for the immediate interface only.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'some(Promise.resolve([1, 2, 3, 4, 5]), n => n > 6).then(console.log)\n' +
@@ -54760,16 +54877,16 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'If the foldable is a promise, it is resolved for its value before further execution for the eager interface only.',
+                value: 'If the foldable is a promise, it is resolved for its value before further execution for the immediate interface only.',
                 position: {
                   start: { line: 31, column: 1, offset: 619 },
-                  end: { line: 31, column: 114, offset: 732 }
+                  end: { line: 31, column: 118, offset: 736 }
                 }
               }
             ],
             position: {
               start: { line: 31, column: 1, offset: 619 },
-              end: { line: 31, column: 114, offset: 732 }
+              end: { line: 31, column: 118, offset: 736 }
             }
           },
           {
@@ -54778,8 +54895,8 @@ export default [
             meta: '[playground]',
             value: 'some(Promise.resolve([1, 2, 3, 4, 5]), n => n > 6).then(console.log)',
             position: {
-              start: { line: 33, column: 1, offset: 734 },
-              end: { line: 35, column: 4, offset: 833 }
+              start: { line: 33, column: 1, offset: 738 },
+              end: { line: 35, column: 4, offset: 837 }
             }
           },
           {
@@ -54789,14 +54906,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 37, column: 1, offset: 835 },
-                  end: { line: 37, column: 10, offset: 844 }
+                  start: { line: 37, column: 1, offset: 839 },
+                  end: { line: 37, column: 10, offset: 848 }
                 }
               }
             ],
             position: {
-              start: { line: 37, column: 1, offset: 835 },
-              end: { line: 37, column: 10, offset: 844 }
+              start: { line: 37, column: 1, offset: 839 },
+              end: { line: 37, column: 10, offset: 848 }
             }
           },
           {
@@ -54822,26 +54939,26 @@ export default [
                             type: 'text',
                             value: 'map',
                             position: {
-                              start: { line: 38, column: 5, offset: 849 },
-                              end: { line: 38, column: 8, offset: 852 }
+                              start: { line: 38, column: 5, offset: 853 },
+                              end: { line: 38, column: 8, offset: 856 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 38, column: 4, offset: 848 },
-                          end: { line: 38, column: 20, offset: 864 }
+                          start: { line: 38, column: 4, offset: 852 },
+                          end: { line: 38, column: 20, offset: 868 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 38, column: 4, offset: 848 },
-                      end: { line: 38, column: 20, offset: 864 }
+                      start: { line: 38, column: 4, offset: 852 },
+                      end: { line: 38, column: 20, offset: 868 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 38, column: 2, offset: 846 },
-                  end: { line: 38, column: 20, offset: 864 }
+                  start: { line: 38, column: 2, offset: 850 },
+                  end: { line: 38, column: 20, offset: 868 }
                 }
               },
               {
@@ -54861,26 +54978,26 @@ export default [
                             type: 'text',
                             value: 'every',
                             position: {
-                              start: { line: 39, column: 5, offset: 869 },
-                              end: { line: 39, column: 10, offset: 874 }
+                              start: { line: 39, column: 5, offset: 873 },
+                              end: { line: 39, column: 10, offset: 878 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 39, column: 4, offset: 868 },
-                          end: { line: 39, column: 24, offset: 888 }
+                          start: { line: 39, column: 4, offset: 872 },
+                          end: { line: 39, column: 24, offset: 892 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 39, column: 4, offset: 868 },
-                      end: { line: 39, column: 24, offset: 888 }
+                      start: { line: 39, column: 4, offset: 872 },
+                      end: { line: 39, column: 24, offset: 892 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 39, column: 2, offset: 866 },
-                  end: { line: 39, column: 24, offset: 888 }
+                  start: { line: 39, column: 2, offset: 870 },
+                  end: { line: 39, column: 24, offset: 892 }
                 }
               },
               {
@@ -54900,38 +55017,38 @@ export default [
                             type: 'text',
                             value: 'and',
                             position: {
-                              start: { line: 40, column: 5, offset: 893 },
-                              end: { line: 40, column: 8, offset: 896 }
+                              start: { line: 40, column: 5, offset: 897 },
+                              end: { line: 40, column: 8, offset: 900 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 40, column: 4, offset: 892 },
-                          end: { line: 40, column: 20, offset: 908 }
+                          start: { line: 40, column: 4, offset: 896 },
+                          end: { line: 40, column: 20, offset: 912 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 40, column: 4, offset: 892 },
-                      end: { line: 40, column: 20, offset: 908 }
+                      start: { line: 40, column: 4, offset: 896 },
+                      end: { line: 40, column: 20, offset: 912 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 40, column: 2, offset: 890 },
-                  end: { line: 40, column: 20, offset: 908 }
+                  start: { line: 40, column: 2, offset: 894 },
+                  end: { line: 40, column: 20, offset: 912 }
                 }
               }
             ],
             position: {
-              start: { line: 38, column: 2, offset: 846 },
-              end: { line: 40, column: 20, offset: 908 }
+              start: { line: 38, column: 2, offset: 850 },
+              end: { line: 40, column: 20, offset: 912 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 40, column: 20, offset: 908 }
+          end: { line: 40, column: 20, offset: 912 }
         }
       },
       execution: {
@@ -55056,7 +55173,7 @@ export default [
       'console.log(value)\n' +
       '```\n' +
       '\n' +
-      'If every item in the conditional array is a nonfunction value, `switchCase` executes eagerly.\n' +
+      'If every item in the conditional array is a nonfunction value, `switchCase` executes immediately.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const age = 26\n' +
@@ -55066,7 +55183,7 @@ export default [
       'console.log(myDrink)\n' +
       '```\n' +
       '\n' +
-      'Any promises in `arguments` are resolved for their values before further execution for the eager interface only. Any promises in the conditional array are resolved before further execution for both the lazy and eager interface.\n' +
+      'Any promises in `arguments` are resolved for their values before further execution for the immediate interface only. Any promises in the conditional array are resolved before further execution for both the lazy and immediate interface.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'switchCase(Promise.resolve(1), 2, Promise.resolve(3), [\n' +
@@ -55303,16 +55420,16 @@ export default [
               },
               {
                 type: 'text',
-                value: ' executes eagerly.',
+                value: ' executes immediately.',
                 position: {
                   start: { line: 47, column: 76, offset: 1471 },
-                  end: { line: 47, column: 94, offset: 1489 }
+                  end: { line: 47, column: 98, offset: 1493 }
                 }
               }
             ],
             position: {
               start: { line: 47, column: 1, offset: 1396 },
-              end: { line: 47, column: 94, offset: 1489 }
+              end: { line: 47, column: 98, offset: 1493 }
             }
           },
           {
@@ -55325,8 +55442,8 @@ export default [
               '\n' +
               'console.log(myDrink)',
             position: {
-              start: { line: 49, column: 1, offset: 1491 },
-              end: { line: 55, column: 4, offset: 1617 }
+              start: { line: 49, column: 1, offset: 1495 },
+              end: { line: 55, column: 4, offset: 1621 }
             }
           },
           {
@@ -55336,30 +55453,30 @@ export default [
                 type: 'text',
                 value: 'Any promises in ',
                 position: {
-                  start: { line: 57, column: 1, offset: 1619 },
-                  end: { line: 57, column: 17, offset: 1635 }
+                  start: { line: 57, column: 1, offset: 1623 },
+                  end: { line: 57, column: 17, offset: 1639 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'arguments',
                 position: {
-                  start: { line: 57, column: 17, offset: 1635 },
-                  end: { line: 57, column: 28, offset: 1646 }
+                  start: { line: 57, column: 17, offset: 1639 },
+                  end: { line: 57, column: 28, offset: 1650 }
                 }
               },
               {
                 type: 'text',
-                value: ' are resolved for their values before further execution for the eager interface only. Any promises in the conditional array are resolved before further execution for both the lazy and eager interface.',
+                value: ' are resolved for their values before further execution for the immediate interface only. Any promises in the conditional array are resolved before further execution for both the lazy and immediate interface.',
                 position: {
-                  start: { line: 57, column: 28, offset: 1646 },
-                  end: { line: 57, column: 228, offset: 1846 }
+                  start: { line: 57, column: 28, offset: 1650 },
+                  end: { line: 57, column: 236, offset: 1858 }
                 }
               }
             ],
             position: {
-              start: { line: 57, column: 1, offset: 1619 },
-              end: { line: 57, column: 228, offset: 1846 }
+              start: { line: 57, column: 1, offset: 1623 },
+              end: { line: 57, column: 236, offset: 1858 }
             }
           },
           {
@@ -55382,8 +55499,8 @@ export default [
               '\n' +
               'console.log(result)',
             position: {
-              start: { line: 59, column: 1, offset: 1848 },
-              end: { line: 75, column: 4, offset: 2245 }
+              start: { line: 59, column: 1, offset: 1860 },
+              end: { line: 75, column: 4, offset: 2257 }
             }
           },
           {
@@ -55393,14 +55510,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 77, column: 1, offset: 2247 },
-                  end: { line: 77, column: 10, offset: 2256 }
+                  start: { line: 77, column: 1, offset: 2259 },
+                  end: { line: 77, column: 10, offset: 2268 }
                 }
               }
             ],
             position: {
-              start: { line: 77, column: 1, offset: 2247 },
-              end: { line: 77, column: 10, offset: 2256 }
+              start: { line: 77, column: 1, offset: 2259 },
+              end: { line: 77, column: 10, offset: 2268 }
             }
           },
           {
@@ -55426,26 +55543,26 @@ export default [
                             type: 'text',
                             value: 'pipe',
                             position: {
-                              start: { line: 78, column: 5, offset: 2261 },
-                              end: { line: 78, column: 9, offset: 2265 }
+                              start: { line: 78, column: 5, offset: 2273 },
+                              end: { line: 78, column: 9, offset: 2277 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 78, column: 4, offset: 2260 },
-                          end: { line: 78, column: 22, offset: 2278 }
+                          start: { line: 78, column: 4, offset: 2272 },
+                          end: { line: 78, column: 22, offset: 2290 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 78, column: 4, offset: 2260 },
-                      end: { line: 78, column: 22, offset: 2278 }
+                      start: { line: 78, column: 4, offset: 2272 },
+                      end: { line: 78, column: 22, offset: 2290 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 78, column: 2, offset: 2258 },
-                  end: { line: 78, column: 22, offset: 2278 }
+                  start: { line: 78, column: 2, offset: 2270 },
+                  end: { line: 78, column: 22, offset: 2290 }
                 }
               },
               {
@@ -55465,26 +55582,26 @@ export default [
                             type: 'text',
                             value: 'tap.if',
                             position: {
-                              start: { line: 79, column: 5, offset: 2283 },
-                              end: { line: 79, column: 11, offset: 2289 }
+                              start: { line: 79, column: 5, offset: 2295 },
+                              end: { line: 79, column: 11, offset: 2301 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 79, column: 4, offset: 2282 },
-                          end: { line: 79, column: 26, offset: 2304 }
+                          start: { line: 79, column: 4, offset: 2294 },
+                          end: { line: 79, column: 26, offset: 2316 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 79, column: 4, offset: 2282 },
-                      end: { line: 79, column: 26, offset: 2304 }
+                      start: { line: 79, column: 4, offset: 2294 },
+                      end: { line: 79, column: 26, offset: 2316 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 79, column: 2, offset: 2280 },
-                  end: { line: 79, column: 26, offset: 2304 }
+                  start: { line: 79, column: 2, offset: 2292 },
+                  end: { line: 79, column: 26, offset: 2316 }
                 }
               },
               {
@@ -55504,26 +55621,26 @@ export default [
                             type: 'text',
                             value: 'tryCatch',
                             position: {
-                              start: { line: 80, column: 5, offset: 2309 },
-                              end: { line: 80, column: 13, offset: 2317 }
+                              start: { line: 80, column: 5, offset: 2321 },
+                              end: { line: 80, column: 13, offset: 2329 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 80, column: 4, offset: 2308 },
-                          end: { line: 80, column: 30, offset: 2334 }
+                          start: { line: 80, column: 4, offset: 2320 },
+                          end: { line: 80, column: 30, offset: 2346 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 80, column: 4, offset: 2308 },
-                      end: { line: 80, column: 30, offset: 2334 }
+                      start: { line: 80, column: 4, offset: 2320 },
+                      end: { line: 80, column: 30, offset: 2346 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 80, column: 2, offset: 2306 },
-                  end: { line: 80, column: 30, offset: 2334 }
+                  start: { line: 80, column: 2, offset: 2318 },
+                  end: { line: 80, column: 30, offset: 2346 }
                 }
               },
               {
@@ -55543,38 +55660,38 @@ export default [
                             type: 'text',
                             value: 'all',
                             position: {
-                              start: { line: 81, column: 5, offset: 2339 },
-                              end: { line: 81, column: 8, offset: 2342 }
+                              start: { line: 81, column: 5, offset: 2351 },
+                              end: { line: 81, column: 8, offset: 2354 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 81, column: 4, offset: 2338 },
-                          end: { line: 81, column: 20, offset: 2354 }
+                          start: { line: 81, column: 4, offset: 2350 },
+                          end: { line: 81, column: 20, offset: 2366 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 81, column: 4, offset: 2338 },
-                      end: { line: 81, column: 20, offset: 2354 }
+                      start: { line: 81, column: 4, offset: 2350 },
+                      end: { line: 81, column: 20, offset: 2366 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 81, column: 2, offset: 2336 },
-                  end: { line: 81, column: 20, offset: 2354 }
+                  start: { line: 81, column: 2, offset: 2348 },
+                  end: { line: 81, column: 20, offset: 2366 }
                 }
               }
             ],
             position: {
-              start: { line: 78, column: 2, offset: 2258 },
-              end: { line: 81, column: 20, offset: 2354 }
+              start: { line: 78, column: 2, offset: 2270 },
+              end: { line: 81, column: 20, offset: 2366 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 81, column: 20, offset: 2354 }
+          end: { line: 81, column: 20, offset: 2366 }
         }
       },
       execution: {
@@ -55626,7 +55743,7 @@ export default [
       "pipeline('a')\n" +
       '```\n' +
       '\n' +
-      'Any promises in `arguments` are resolved for their values before further execution for the eager interface only.\n' +
+      'Any promises in `arguments` are resolved for their values before further execution for the immediate interface only.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'tap(Promise.resolve(1), Promise.resolve(2), 3, console.log)\n' +
@@ -55744,16 +55861,16 @@ export default [
               },
               {
                 type: 'text',
-                value: ' are resolved for their values before further execution for the eager interface only.',
+                value: ' are resolved for their values before further execution for the immediate interface only.',
                 position: {
                   start: { line: 13, column: 28, offset: 347 },
-                  end: { line: 13, column: 113, offset: 432 }
+                  end: { line: 13, column: 117, offset: 436 }
                 }
               }
             ],
             position: {
               start: { line: 13, column: 1, offset: 320 },
-              end: { line: 13, column: 113, offset: 432 }
+              end: { line: 13, column: 117, offset: 436 }
             }
           },
           {
@@ -55762,8 +55879,8 @@ export default [
             meta: '[playground]',
             value: 'tap(Promise.resolve(1), Promise.resolve(2), 3, console.log)',
             position: {
-              start: { line: 15, column: 1, offset: 434 },
-              end: { line: 17, column: 4, offset: 524 }
+              start: { line: 15, column: 1, offset: 438 },
+              end: { line: 17, column: 4, offset: 528 }
             }
           },
           {
@@ -55773,14 +55890,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 19, column: 1, offset: 526 },
-                  end: { line: 19, column: 10, offset: 535 }
+                  start: { line: 19, column: 1, offset: 530 },
+                  end: { line: 19, column: 10, offset: 539 }
                 }
               }
             ],
             position: {
-              start: { line: 19, column: 1, offset: 526 },
-              end: { line: 19, column: 10, offset: 535 }
+              start: { line: 19, column: 1, offset: 530 },
+              end: { line: 19, column: 10, offset: 539 }
             }
           },
           {
@@ -55806,26 +55923,26 @@ export default [
                             type: 'text',
                             value: 'pipe',
                             position: {
-                              start: { line: 20, column: 5, offset: 540 },
-                              end: { line: 20, column: 9, offset: 544 }
+                              start: { line: 20, column: 5, offset: 544 },
+                              end: { line: 20, column: 9, offset: 548 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 20, column: 4, offset: 539 },
-                          end: { line: 20, column: 22, offset: 557 }
+                          start: { line: 20, column: 4, offset: 543 },
+                          end: { line: 20, column: 22, offset: 561 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 20, column: 4, offset: 539 },
-                      end: { line: 20, column: 22, offset: 557 }
+                      start: { line: 20, column: 4, offset: 543 },
+                      end: { line: 20, column: 22, offset: 561 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 20, column: 2, offset: 537 },
-                  end: { line: 20, column: 22, offset: 557 }
+                  start: { line: 20, column: 2, offset: 541 },
+                  end: { line: 20, column: 22, offset: 561 }
                 }
               },
               {
@@ -55845,26 +55962,26 @@ export default [
                             type: 'text',
                             value: 'compose',
                             position: {
-                              start: { line: 21, column: 5, offset: 562 },
-                              end: { line: 21, column: 12, offset: 569 }
+                              start: { line: 21, column: 5, offset: 566 },
+                              end: { line: 21, column: 12, offset: 573 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 21, column: 4, offset: 561 },
-                          end: { line: 21, column: 28, offset: 585 }
+                          start: { line: 21, column: 4, offset: 565 },
+                          end: { line: 21, column: 28, offset: 589 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 21, column: 4, offset: 561 },
-                      end: { line: 21, column: 28, offset: 585 }
+                      start: { line: 21, column: 4, offset: 565 },
+                      end: { line: 21, column: 28, offset: 589 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 21, column: 2, offset: 559 },
-                  end: { line: 21, column: 28, offset: 585 }
+                  start: { line: 21, column: 2, offset: 563 },
+                  end: { line: 21, column: 28, offset: 589 }
                 }
               },
               {
@@ -55884,26 +56001,26 @@ export default [
                             type: 'text',
                             value: 'tap.if',
                             position: {
-                              start: { line: 22, column: 5, offset: 590 },
-                              end: { line: 22, column: 11, offset: 596 }
+                              start: { line: 22, column: 5, offset: 594 },
+                              end: { line: 22, column: 11, offset: 600 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 22, column: 4, offset: 589 },
-                          end: { line: 22, column: 26, offset: 611 }
+                          start: { line: 22, column: 4, offset: 593 },
+                          end: { line: 22, column: 26, offset: 615 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 22, column: 4, offset: 589 },
-                      end: { line: 22, column: 26, offset: 611 }
+                      start: { line: 22, column: 4, offset: 593 },
+                      end: { line: 22, column: 26, offset: 615 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 22, column: 2, offset: 587 },
-                  end: { line: 22, column: 26, offset: 611 }
+                  start: { line: 22, column: 2, offset: 591 },
+                  end: { line: 22, column: 26, offset: 615 }
                 }
               },
               {
@@ -55923,26 +56040,26 @@ export default [
                             type: 'text',
                             value: 'switchCase',
                             position: {
-                              start: { line: 23, column: 5, offset: 616 },
-                              end: { line: 23, column: 15, offset: 626 }
+                              start: { line: 23, column: 5, offset: 620 },
+                              end: { line: 23, column: 15, offset: 630 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 23, column: 4, offset: 615 },
-                          end: { line: 23, column: 34, offset: 645 }
+                          start: { line: 23, column: 4, offset: 619 },
+                          end: { line: 23, column: 34, offset: 649 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 23, column: 4, offset: 615 },
-                      end: { line: 23, column: 34, offset: 645 }
+                      start: { line: 23, column: 4, offset: 619 },
+                      end: { line: 23, column: 34, offset: 649 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 23, column: 2, offset: 613 },
-                  end: { line: 23, column: 34, offset: 645 }
+                  start: { line: 23, column: 2, offset: 617 },
+                  end: { line: 23, column: 34, offset: 649 }
                 }
               },
               {
@@ -55962,38 +56079,38 @@ export default [
                             type: 'text',
                             value: 'tryCatch',
                             position: {
-                              start: { line: 24, column: 5, offset: 650 },
-                              end: { line: 24, column: 13, offset: 658 }
+                              start: { line: 24, column: 5, offset: 654 },
+                              end: { line: 24, column: 13, offset: 662 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 24, column: 4, offset: 649 },
-                          end: { line: 24, column: 30, offset: 675 }
+                          start: { line: 24, column: 4, offset: 653 },
+                          end: { line: 24, column: 30, offset: 679 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 24, column: 4, offset: 649 },
-                      end: { line: 24, column: 30, offset: 675 }
+                      start: { line: 24, column: 4, offset: 653 },
+                      end: { line: 24, column: 30, offset: 679 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 24, column: 2, offset: 647 },
-                  end: { line: 24, column: 30, offset: 675 }
+                  start: { line: 24, column: 2, offset: 651 },
+                  end: { line: 24, column: 30, offset: 679 }
                 }
               }
             ],
             position: {
-              start: { line: 20, column: 2, offset: 537 },
-              end: { line: 24, column: 30, offset: 675 }
+              start: { line: 20, column: 2, offset: 541 },
+              end: { line: 24, column: 30, offset: 679 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 24, column: 30, offset: 675 }
+          end: { line: 24, column: 30, offset: 679 }
         }
       }
     },
@@ -56083,7 +56200,7 @@ export default [
       'logIfOdd(3)\n' +
       '```\n' +
       '\n' +
-      'Any promises in `arguments` are resolved for their values before further execution for the eager interface only.\n' +
+      'Any promises in `arguments` are resolved for their values before further execution for the immediate interface only.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'tap.if(Promise.resolve(1), n => n < 5, console.log)\n' +
@@ -56262,16 +56379,16 @@ export default [
               },
               {
                 type: 'text',
-                value: ' are resolved for their values before further execution for the eager interface only.',
+                value: ' are resolved for their values before further execution for the immediate interface only.',
                 position: {
                   start: { line: 14, column: 28, offset: 437 },
-                  end: { line: 14, column: 113, offset: 522 }
+                  end: { line: 14, column: 117, offset: 526 }
                 }
               }
             ],
             position: {
               start: { line: 14, column: 1, offset: 410 },
-              end: { line: 14, column: 113, offset: 522 }
+              end: { line: 14, column: 117, offset: 526 }
             }
           },
           {
@@ -56281,8 +56398,8 @@ export default [
             value: 'tap.if(Promise.resolve(1), n => n < 5, console.log)\n' +
               'tap.if(Promise.resolve(6), n => n < 5, console.log)',
             position: {
-              start: { line: 16, column: 1, offset: 524 },
-              end: { line: 19, column: 4, offset: 658 }
+              start: { line: 16, column: 1, offset: 528 },
+              end: { line: 19, column: 4, offset: 662 }
             }
           },
           {
@@ -56292,14 +56409,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 21, column: 1, offset: 660 },
-                  end: { line: 21, column: 10, offset: 669 }
+                  start: { line: 21, column: 1, offset: 664 },
+                  end: { line: 21, column: 10, offset: 673 }
                 }
               }
             ],
             position: {
-              start: { line: 21, column: 1, offset: 660 },
-              end: { line: 21, column: 10, offset: 669 }
+              start: { line: 21, column: 1, offset: 664 },
+              end: { line: 21, column: 10, offset: 673 }
             }
           },
           {
@@ -56325,26 +56442,26 @@ export default [
                             type: 'text',
                             value: 'pipe',
                             position: {
-                              start: { line: 22, column: 5, offset: 674 },
-                              end: { line: 22, column: 9, offset: 678 }
+                              start: { line: 22, column: 5, offset: 678 },
+                              end: { line: 22, column: 9, offset: 682 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 22, column: 4, offset: 673 },
-                          end: { line: 22, column: 22, offset: 691 }
+                          start: { line: 22, column: 4, offset: 677 },
+                          end: { line: 22, column: 22, offset: 695 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 22, column: 4, offset: 673 },
-                      end: { line: 22, column: 22, offset: 691 }
+                      start: { line: 22, column: 4, offset: 677 },
+                      end: { line: 22, column: 22, offset: 695 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 22, column: 2, offset: 671 },
-                  end: { line: 22, column: 22, offset: 691 }
+                  start: { line: 22, column: 2, offset: 675 },
+                  end: { line: 22, column: 22, offset: 695 }
                 }
               },
               {
@@ -56364,26 +56481,26 @@ export default [
                             type: 'text',
                             value: 'compose',
                             position: {
-                              start: { line: 23, column: 5, offset: 696 },
-                              end: { line: 23, column: 12, offset: 703 }
+                              start: { line: 23, column: 5, offset: 700 },
+                              end: { line: 23, column: 12, offset: 707 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 23, column: 4, offset: 695 },
-                          end: { line: 23, column: 28, offset: 719 }
+                          start: { line: 23, column: 4, offset: 699 },
+                          end: { line: 23, column: 28, offset: 723 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 23, column: 4, offset: 695 },
-                      end: { line: 23, column: 28, offset: 719 }
+                      start: { line: 23, column: 4, offset: 699 },
+                      end: { line: 23, column: 28, offset: 723 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 23, column: 2, offset: 693 },
-                  end: { line: 23, column: 28, offset: 719 }
+                  start: { line: 23, column: 2, offset: 697 },
+                  end: { line: 23, column: 28, offset: 723 }
                 }
               },
               {
@@ -56403,26 +56520,26 @@ export default [
                             type: 'text',
                             value: 'tap',
                             position: {
-                              start: { line: 24, column: 5, offset: 724 },
-                              end: { line: 24, column: 8, offset: 727 }
+                              start: { line: 24, column: 5, offset: 728 },
+                              end: { line: 24, column: 8, offset: 731 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 24, column: 4, offset: 723 },
-                          end: { line: 24, column: 20, offset: 739 }
+                          start: { line: 24, column: 4, offset: 727 },
+                          end: { line: 24, column: 20, offset: 743 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 24, column: 4, offset: 723 },
-                      end: { line: 24, column: 20, offset: 739 }
+                      start: { line: 24, column: 4, offset: 727 },
+                      end: { line: 24, column: 20, offset: 743 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 24, column: 2, offset: 721 },
-                  end: { line: 24, column: 20, offset: 739 }
+                  start: { line: 24, column: 2, offset: 725 },
+                  end: { line: 24, column: 20, offset: 743 }
                 }
               },
               {
@@ -56442,26 +56559,26 @@ export default [
                             type: 'text',
                             value: 'switchCase',
                             position: {
-                              start: { line: 25, column: 5, offset: 744 },
-                              end: { line: 25, column: 15, offset: 754 }
+                              start: { line: 25, column: 5, offset: 748 },
+                              end: { line: 25, column: 15, offset: 758 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 25, column: 4, offset: 743 },
-                          end: { line: 25, column: 34, offset: 773 }
+                          start: { line: 25, column: 4, offset: 747 },
+                          end: { line: 25, column: 34, offset: 777 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 25, column: 4, offset: 743 },
-                      end: { line: 25, column: 34, offset: 773 }
+                      start: { line: 25, column: 4, offset: 747 },
+                      end: { line: 25, column: 34, offset: 777 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 25, column: 2, offset: 741 },
-                  end: { line: 25, column: 34, offset: 773 }
+                  start: { line: 25, column: 2, offset: 745 },
+                  end: { line: 25, column: 34, offset: 777 }
                 }
               },
               {
@@ -56481,38 +56598,38 @@ export default [
                             type: 'text',
                             value: 'tryCatch',
                             position: {
-                              start: { line: 26, column: 5, offset: 778 },
-                              end: { line: 26, column: 13, offset: 786 }
+                              start: { line: 26, column: 5, offset: 782 },
+                              end: { line: 26, column: 13, offset: 790 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 26, column: 4, offset: 777 },
-                          end: { line: 26, column: 30, offset: 803 }
+                          start: { line: 26, column: 4, offset: 781 },
+                          end: { line: 26, column: 30, offset: 807 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 26, column: 4, offset: 777 },
-                      end: { line: 26, column: 30, offset: 803 }
+                      start: { line: 26, column: 4, offset: 781 },
+                      end: { line: 26, column: 30, offset: 807 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 26, column: 2, offset: 775 },
-                  end: { line: 26, column: 30, offset: 803 }
+                  start: { line: 26, column: 2, offset: 779 },
+                  end: { line: 26, column: 30, offset: 807 }
                 }
               }
             ],
             position: {
-              start: { line: 22, column: 2, offset: 671 },
-              end: { line: 26, column: 30, offset: 803 }
+              start: { line: 22, column: 2, offset: 675 },
+              end: { line: 26, column: 30, offset: 807 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 26, column: 30, offset: 803 }
+          end: { line: 26, column: 30, offset: 807 }
         }
       }
     },
@@ -57665,7 +57782,7 @@ export default [
       'console.log(result)\n' +
       '```\n' +
       '\n' +
-      'If the foldable or initial value is a promise, it is resolved for its value before further execution for the eager interface only.\n' +
+      'If the foldable or initial value is a promise, it is resolved for its value before further execution for the immediate interface only.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const resultFromPromiseFoldable = await transform(\n' +
@@ -58752,16 +58869,16 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'If the foldable or initial value is a promise, it is resolved for its value before further execution for the eager interface only.',
+                value: 'If the foldable or initial value is a promise, it is resolved for its value before further execution for the immediate interface only.',
                 position: {
                   start: { line: 159, column: 1, offset: 3985 },
-                  end: { line: 159, column: 131, offset: 4115 }
+                  end: { line: 159, column: 135, offset: 4119 }
                 }
               }
             ],
             position: {
               start: { line: 159, column: 1, offset: 3985 },
-              end: { line: 159, column: 131, offset: 4115 }
+              end: { line: 159, column: 135, offset: 4119 }
             }
           },
           {
@@ -58783,8 +58900,8 @@ export default [
               'console.log(resultFromPromiseFoldable)\n' +
               'console.log(resultFromPromiseSemigroup)',
             position: {
-              start: { line: 161, column: 1, offset: 4117 },
-              end: { line: 176, column: 4, offset: 4479 }
+              start: { line: 161, column: 1, offset: 4121 },
+              end: { line: 176, column: 4, offset: 4483 }
             }
           },
           {
@@ -58794,14 +58911,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 178, column: 1, offset: 4481 },
-                  end: { line: 178, column: 10, offset: 4490 }
+                  start: { line: 178, column: 1, offset: 4485 },
+                  end: { line: 178, column: 10, offset: 4494 }
                 }
               }
             ],
             position: {
-              start: { line: 178, column: 1, offset: 4481 },
-              end: { line: 178, column: 10, offset: 4490 }
+              start: { line: 178, column: 1, offset: 4485 },
+              end: { line: 178, column: 10, offset: 4494 }
             }
           },
           {
@@ -58827,26 +58944,26 @@ export default [
                             type: 'text',
                             value: 'forEach',
                             position: {
-                              start: { line: 179, column: 5, offset: 4495 },
-                              end: { line: 179, column: 12, offset: 4502 }
+                              start: { line: 179, column: 5, offset: 4499 },
+                              end: { line: 179, column: 12, offset: 4506 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 179, column: 4, offset: 4494 },
-                          end: { line: 179, column: 28, offset: 4518 }
+                          start: { line: 179, column: 4, offset: 4498 },
+                          end: { line: 179, column: 28, offset: 4522 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 179, column: 4, offset: 4494 },
-                      end: { line: 179, column: 28, offset: 4518 }
+                      start: { line: 179, column: 4, offset: 4498 },
+                      end: { line: 179, column: 28, offset: 4522 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 179, column: 2, offset: 4492 },
-                  end: { line: 179, column: 28, offset: 4518 }
+                  start: { line: 179, column: 2, offset: 4496 },
+                  end: { line: 179, column: 28, offset: 4522 }
                 }
               },
               {
@@ -58866,26 +58983,26 @@ export default [
                             type: 'text',
                             value: 'map',
                             position: {
-                              start: { line: 180, column: 5, offset: 4523 },
-                              end: { line: 180, column: 8, offset: 4526 }
+                              start: { line: 180, column: 5, offset: 4527 },
+                              end: { line: 180, column: 8, offset: 4530 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 180, column: 4, offset: 4522 },
-                          end: { line: 180, column: 20, offset: 4538 }
+                          start: { line: 180, column: 4, offset: 4526 },
+                          end: { line: 180, column: 20, offset: 4542 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 180, column: 4, offset: 4522 },
-                      end: { line: 180, column: 20, offset: 4538 }
+                      start: { line: 180, column: 4, offset: 4526 },
+                      end: { line: 180, column: 20, offset: 4542 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 180, column: 2, offset: 4520 },
-                  end: { line: 180, column: 20, offset: 4538 }
+                  start: { line: 180, column: 2, offset: 4524 },
+                  end: { line: 180, column: 20, offset: 4542 }
                 }
               },
               {
@@ -58905,26 +59022,26 @@ export default [
                             type: 'text',
                             value: 'filter',
                             position: {
-                              start: { line: 181, column: 5, offset: 4543 },
-                              end: { line: 181, column: 11, offset: 4549 }
+                              start: { line: 181, column: 5, offset: 4547 },
+                              end: { line: 181, column: 11, offset: 4553 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 181, column: 4, offset: 4542 },
-                          end: { line: 181, column: 26, offset: 4564 }
+                          start: { line: 181, column: 4, offset: 4546 },
+                          end: { line: 181, column: 26, offset: 4568 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 181, column: 4, offset: 4542 },
-                      end: { line: 181, column: 26, offset: 4564 }
+                      start: { line: 181, column: 4, offset: 4546 },
+                      end: { line: 181, column: 26, offset: 4568 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 181, column: 2, offset: 4540 },
-                  end: { line: 181, column: 26, offset: 4564 }
+                  start: { line: 181, column: 2, offset: 4544 },
+                  end: { line: 181, column: 26, offset: 4568 }
                 }
               },
               {
@@ -58944,26 +59061,26 @@ export default [
                             type: 'text',
                             value: 'reduce',
                             position: {
-                              start: { line: 182, column: 5, offset: 4569 },
-                              end: { line: 182, column: 11, offset: 4575 }
+                              start: { line: 182, column: 5, offset: 4573 },
+                              end: { line: 182, column: 11, offset: 4579 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 182, column: 4, offset: 4568 },
-                          end: { line: 182, column: 26, offset: 4590 }
+                          start: { line: 182, column: 4, offset: 4572 },
+                          end: { line: 182, column: 26, offset: 4594 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 182, column: 4, offset: 4568 },
-                      end: { line: 182, column: 26, offset: 4590 }
+                      start: { line: 182, column: 4, offset: 4572 },
+                      end: { line: 182, column: 26, offset: 4594 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 182, column: 2, offset: 4566 },
-                  end: { line: 182, column: 26, offset: 4590 }
+                  start: { line: 182, column: 2, offset: 4570 },
+                  end: { line: 182, column: 26, offset: 4594 }
                 }
               },
               {
@@ -58983,26 +59100,26 @@ export default [
                             type: 'text',
                             value: 'flatMap',
                             position: {
-                              start: { line: 183, column: 5, offset: 4595 },
-                              end: { line: 183, column: 12, offset: 4602 }
+                              start: { line: 183, column: 5, offset: 4599 },
+                              end: { line: 183, column: 12, offset: 4606 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 183, column: 4, offset: 4594 },
-                          end: { line: 183, column: 28, offset: 4618 }
+                          start: { line: 183, column: 4, offset: 4598 },
+                          end: { line: 183, column: 28, offset: 4622 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 183, column: 4, offset: 4594 },
-                      end: { line: 183, column: 28, offset: 4618 }
+                      start: { line: 183, column: 4, offset: 4598 },
+                      end: { line: 183, column: 28, offset: 4622 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 183, column: 2, offset: 4592 },
-                  end: { line: 183, column: 28, offset: 4618 }
+                  start: { line: 183, column: 2, offset: 4596 },
+                  end: { line: 183, column: 28, offset: 4622 }
                 }
               },
               {
@@ -59022,38 +59139,38 @@ export default [
                             type: 'text',
                             value: 'some',
                             position: {
-                              start: { line: 184, column: 5, offset: 4623 },
-                              end: { line: 184, column: 9, offset: 4627 }
+                              start: { line: 184, column: 5, offset: 4627 },
+                              end: { line: 184, column: 9, offset: 4631 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 184, column: 4, offset: 4622 },
-                          end: { line: 184, column: 22, offset: 4640 }
+                          start: { line: 184, column: 4, offset: 4626 },
+                          end: { line: 184, column: 22, offset: 4644 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 184, column: 4, offset: 4622 },
-                      end: { line: 184, column: 22, offset: 4640 }
+                      start: { line: 184, column: 4, offset: 4626 },
+                      end: { line: 184, column: 22, offset: 4644 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 184, column: 2, offset: 4620 },
-                  end: { line: 184, column: 22, offset: 4640 }
+                  start: { line: 184, column: 2, offset: 4624 },
+                  end: { line: 184, column: 22, offset: 4644 }
                 }
               }
             ],
             position: {
-              start: { line: 179, column: 2, offset: 4492 },
-              end: { line: 184, column: 22, offset: 4640 }
+              start: { line: 179, column: 2, offset: 4496 },
+              end: { line: 184, column: 22, offset: 4644 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 184, column: 22, offset: 4640 }
+          end: { line: 184, column: 22, offset: 4644 }
         }
       },
       execution: {
@@ -59162,7 +59279,7 @@ export default [
       'asyncHandler(3)\n' +
       '```\n' +
       '\n' +
-      '`tryCatch` executes eagerly when provided any number of arguments before the tryer and catcher functions.\n' +
+      '`tryCatch` executes immediate when provided any number of arguments before the tryer and catcher functions.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'const add = (a, b) => a + b\n' +
@@ -59175,7 +59292,7 @@ export default [
       '})\n' +
       '```\n' +
       '\n' +
-      'Any promises in `arguments` are resolved for their values before further execution for the eager interface only.\n' +
+      'Any promises in `arguments` are resolved for their values before further execution for the immediate interface only.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'tryCatch(Promise.resolve(1), 2, Promise.resolve(3), (a, b, c) => {\n' +
@@ -59342,16 +59459,16 @@ export default [
               },
               {
                 type: 'text',
-                value: ' executes eagerly when provided any number of arguments before the tryer and catcher functions.',
+                value: ' executes immediate when provided any number of arguments before the tryer and catcher functions.',
                 position: {
                   start: { line: 43, column: 11, offset: 1107 },
-                  end: { line: 43, column: 106, offset: 1202 }
+                  end: { line: 43, column: 108, offset: 1204 }
                 }
               }
             ],
             position: {
               start: { line: 43, column: 1, offset: 1097 },
-              end: { line: 43, column: 106, offset: 1202 }
+              end: { line: 43, column: 108, offset: 1204 }
             }
           },
           {
@@ -59367,8 +59484,8 @@ export default [
               '  console.error(error.message)\n' +
               '})',
             position: {
-              start: { line: 45, column: 1, offset: 1204 },
-              end: { line: 54, column: 4, offset: 1457 }
+              start: { line: 45, column: 1, offset: 1206 },
+              end: { line: 54, column: 4, offset: 1459 }
             }
           },
           {
@@ -59378,30 +59495,30 @@ export default [
                 type: 'text',
                 value: 'Any promises in ',
                 position: {
-                  start: { line: 56, column: 1, offset: 1459 },
-                  end: { line: 56, column: 17, offset: 1475 }
+                  start: { line: 56, column: 1, offset: 1461 },
+                  end: { line: 56, column: 17, offset: 1477 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'arguments',
                 position: {
-                  start: { line: 56, column: 17, offset: 1475 },
-                  end: { line: 56, column: 28, offset: 1486 }
+                  start: { line: 56, column: 17, offset: 1477 },
+                  end: { line: 56, column: 28, offset: 1488 }
                 }
               },
               {
                 type: 'text',
-                value: ' are resolved for their values before further execution for the eager interface only.',
+                value: ' are resolved for their values before further execution for the immediate interface only.',
                 position: {
-                  start: { line: 56, column: 28, offset: 1486 },
-                  end: { line: 56, column: 113, offset: 1571 }
+                  start: { line: 56, column: 28, offset: 1488 },
+                  end: { line: 56, column: 117, offset: 1577 }
                 }
               }
             ],
             position: {
-              start: { line: 56, column: 1, offset: 1459 },
-              end: { line: 56, column: 113, offset: 1571 }
+              start: { line: 56, column: 1, offset: 1461 },
+              end: { line: 56, column: 117, offset: 1577 }
             }
           },
           {
@@ -59417,8 +59534,8 @@ export default [
               '  console.error(`${a} + ${b} + ${c}: ${error.message}`)\n' +
               '})',
             position: {
-              start: { line: 58, column: 1, offset: 1573 },
-              end: { line: 67, column: 4, offset: 1837 }
+              start: { line: 58, column: 1, offset: 1579 },
+              end: { line: 67, column: 4, offset: 1843 }
             }
           },
           {
@@ -59428,14 +59545,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 69, column: 1, offset: 1839 },
-                  end: { line: 69, column: 10, offset: 1848 }
+                  start: { line: 69, column: 1, offset: 1845 },
+                  end: { line: 69, column: 10, offset: 1854 }
                 }
               }
             ],
             position: {
-              start: { line: 69, column: 1, offset: 1839 },
-              end: { line: 69, column: 10, offset: 1848 }
+              start: { line: 69, column: 1, offset: 1845 },
+              end: { line: 69, column: 10, offset: 1854 }
             }
           },
           {
@@ -59461,26 +59578,26 @@ export default [
                             type: 'text',
                             value: 'pipe',
                             position: {
-                              start: { line: 70, column: 5, offset: 1853 },
-                              end: { line: 70, column: 9, offset: 1857 }
+                              start: { line: 70, column: 5, offset: 1859 },
+                              end: { line: 70, column: 9, offset: 1863 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 70, column: 4, offset: 1852 },
-                          end: { line: 70, column: 22, offset: 1870 }
+                          start: { line: 70, column: 4, offset: 1858 },
+                          end: { line: 70, column: 22, offset: 1876 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 70, column: 4, offset: 1852 },
-                      end: { line: 70, column: 22, offset: 1870 }
+                      start: { line: 70, column: 4, offset: 1858 },
+                      end: { line: 70, column: 22, offset: 1876 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 70, column: 2, offset: 1850 },
-                  end: { line: 70, column: 22, offset: 1870 }
+                  start: { line: 70, column: 2, offset: 1856 },
+                  end: { line: 70, column: 22, offset: 1876 }
                 }
               },
               {
@@ -59500,26 +59617,26 @@ export default [
                             type: 'text',
                             value: 'switchCase',
                             position: {
-                              start: { line: 71, column: 5, offset: 1875 },
-                              end: { line: 71, column: 15, offset: 1885 }
+                              start: { line: 71, column: 5, offset: 1881 },
+                              end: { line: 71, column: 15, offset: 1891 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 71, column: 4, offset: 1874 },
-                          end: { line: 71, column: 34, offset: 1904 }
+                          start: { line: 71, column: 4, offset: 1880 },
+                          end: { line: 71, column: 34, offset: 1910 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 71, column: 4, offset: 1874 },
-                      end: { line: 71, column: 34, offset: 1904 }
+                      start: { line: 71, column: 4, offset: 1880 },
+                      end: { line: 71, column: 34, offset: 1910 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 71, column: 2, offset: 1872 },
-                  end: { line: 71, column: 34, offset: 1904 }
+                  start: { line: 71, column: 2, offset: 1878 },
+                  end: { line: 71, column: 34, offset: 1910 }
                 }
               },
               {
@@ -59539,38 +59656,38 @@ export default [
                             type: 'text',
                             value: 'all',
                             position: {
-                              start: { line: 72, column: 5, offset: 1909 },
-                              end: { line: 72, column: 8, offset: 1912 }
+                              start: { line: 72, column: 5, offset: 1915 },
+                              end: { line: 72, column: 8, offset: 1918 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 72, column: 4, offset: 1908 },
-                          end: { line: 72, column: 20, offset: 1924 }
+                          start: { line: 72, column: 4, offset: 1914 },
+                          end: { line: 72, column: 20, offset: 1930 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 72, column: 4, offset: 1908 },
-                      end: { line: 72, column: 20, offset: 1924 }
+                      start: { line: 72, column: 4, offset: 1914 },
+                      end: { line: 72, column: 20, offset: 1930 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 72, column: 2, offset: 1906 },
-                  end: { line: 72, column: 20, offset: 1924 }
+                  start: { line: 72, column: 2, offset: 1912 },
+                  end: { line: 72, column: 20, offset: 1930 }
                 }
               }
             ],
             position: {
-              start: { line: 70, column: 2, offset: 1850 },
-              end: { line: 72, column: 20, offset: 1924 }
+              start: { line: 70, column: 2, offset: 1856 },
+              end: { line: 72, column: 20, offset: 1930 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 72, column: 20, offset: 1924 }
+          end: { line: 72, column: 20, offset: 1930 }
         }
       }
     },
