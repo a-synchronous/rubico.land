@@ -234,6 +234,23 @@ export default {
       }
     },
     {
+      type: 'paragraph',
+      children: [
+        {
+          type: 'text',
+          value: 'A program is a tree of synchronous or asynchronous functions.',
+          position: {
+            start: { line: 14, column: 1, offset: 689 },
+            end: { line: 14, column: 62, offset: 750 }
+          }
+        }
+      ],
+      position: {
+        start: { line: 14, column: 1, offset: 689 },
+        end: { line: 14, column: 62, offset: 750 }
+      }
+    },
+    {
       type: 'code',
       lang: 'javascript',
       meta: '[playground]',
@@ -251,8 +268,8 @@ export default {
         '  console.log,\n' +
         '])',
       position: {
-        start: { line: 14, column: 1, offset: 689 },
-        end: { line: 28, column: 4, offset: 951 }
+        start: { line: 16, column: 1, offset: 752 },
+        end: { line: 30, column: 4, offset: 1014 }
       }
     },
     {
@@ -263,14 +280,14 @@ export default {
           type: 'text',
           value: 'Installation',
           position: {
-            start: { line: 30, column: 4, offset: 956 },
-            end: { line: 30, column: 16, offset: 968 }
+            start: { line: 32, column: 4, offset: 1019 },
+            end: { line: 32, column: 16, offset: 1031 }
           }
         }
       ],
       position: {
-        start: { line: 30, column: 1, offset: 953 },
-        end: { line: 30, column: 16, offset: 968 }
+        start: { line: 32, column: 1, offset: 1016 },
+        end: { line: 32, column: 16, offset: 1031 }
       }
     },
     {
@@ -285,22 +302,22 @@ export default {
               type: 'text',
               value: 'Core build',
               position: {
-                start: { line: 31, column: 2, offset: 970 },
-                end: { line: 31, column: 12, offset: 980 }
+                start: { line: 33, column: 2, offset: 1033 },
+                end: { line: 33, column: 12, offset: 1043 }
               }
             }
           ],
           position: {
-            start: { line: 31, column: 1, offset: 969 },
-            end: { line: 31, column: 59, offset: 1027 }
+            start: { line: 33, column: 1, offset: 1032 },
+            end: { line: 33, column: 59, offset: 1090 }
           }
         },
         {
           type: 'text',
           value: ' (',
           position: {
-            start: { line: 31, column: 59, offset: 1027 },
-            end: { line: 31, column: 61, offset: 1029 }
+            start: { line: 33, column: 59, offset: 1090 },
+            end: { line: 33, column: 61, offset: 1092 }
           }
         },
         {
@@ -312,22 +329,22 @@ export default {
               type: 'text',
               value: '~8.3 kB minified and gzipped',
               position: {
-                start: { line: 31, column: 62, offset: 1030 },
-                end: { line: 31, column: 90, offset: 1058 }
+                start: { line: 33, column: 62, offset: 1093 },
+                end: { line: 33, column: 90, offset: 1121 }
               }
             }
           ],
           position: {
-            start: { line: 31, column: 61, offset: 1029 },
-            end: { line: 31, column: 147, offset: 1115 }
+            start: { line: 33, column: 61, offset: 1092 },
+            end: { line: 33, column: 147, offset: 1178 }
           }
         },
         {
           type: 'text',
           value: ') ',
           position: {
-            start: { line: 31, column: 147, offset: 1115 },
-            end: { line: 31, column: 149, offset: 1117 }
+            start: { line: 33, column: 147, offset: 1178 },
+            end: { line: 33, column: 149, offset: 1180 }
           }
         },
         {
@@ -339,22 +356,22 @@ export default {
               type: 'text',
               value: 'Transducer module',
               position: {
-                start: { line: 31, column: 150, offset: 1118 },
-                end: { line: 31, column: 167, offset: 1135 }
+                start: { line: 33, column: 150, offset: 1181 },
+                end: { line: 33, column: 167, offset: 1198 }
               }
             }
           ],
           position: {
-            start: { line: 31, column: 149, offset: 1117 },
-            end: { line: 31, column: 224, offset: 1192 }
+            start: { line: 33, column: 149, offset: 1180 },
+            end: { line: 33, column: 224, offset: 1255 }
           }
         },
         {
           type: 'text',
           value: ' (',
           position: {
-            start: { line: 31, column: 224, offset: 1192 },
-            end: { line: 31, column: 226, offset: 1194 }
+            start: { line: 33, column: 224, offset: 1255 },
+            end: { line: 33, column: 226, offset: 1257 }
           }
         },
         {
@@ -366,28 +383,28 @@ export default {
               type: 'text',
               value: '~1.7kb minified and gzipped',
               position: {
-                start: { line: 31, column: 227, offset: 1195 },
-                end: { line: 31, column: 254, offset: 1222 }
+                start: { line: 33, column: 227, offset: 1258 },
+                end: { line: 33, column: 254, offset: 1285 }
               }
             }
           ],
           position: {
-            start: { line: 31, column: 226, offset: 1194 },
-            end: { line: 31, column: 315, offset: 1283 }
+            start: { line: 33, column: 226, offset: 1257 },
+            end: { line: 33, column: 315, offset: 1346 }
           }
         },
         {
           type: 'text',
           value: ')',
           position: {
-            start: { line: 31, column: 315, offset: 1283 },
-            end: { line: 31, column: 316, offset: 1284 }
+            start: { line: 33, column: 315, offset: 1346 },
+            end: { line: 33, column: 316, offset: 1347 }
           }
         }
       ],
       position: {
-        start: { line: 31, column: 1, offset: 969 },
-        end: { line: 31, column: 316, offset: 1284 }
+        start: { line: 33, column: 1, offset: 1032 },
+        end: { line: 33, column: 316, offset: 1347 }
       }
     },
     {
@@ -397,8 +414,8 @@ export default {
           type: 'text',
           value: 'with ',
           position: {
-            start: { line: 33, column: 1, offset: 1286 },
-            end: { line: 33, column: 6, offset: 1291 }
+            start: { line: 35, column: 1, offset: 1349 },
+            end: { line: 35, column: 6, offset: 1354 }
           }
         },
         {
@@ -410,28 +427,28 @@ export default {
               type: 'text',
               value: 'npm',
               position: {
-                start: { line: 33, column: 7, offset: 1292 },
-                end: { line: 33, column: 10, offset: 1295 }
+                start: { line: 35, column: 7, offset: 1355 },
+                end: { line: 35, column: 10, offset: 1358 }
               }
             }
           ],
           position: {
-            start: { line: 33, column: 6, offset: 1291 },
-            end: { line: 33, column: 78, offset: 1363 }
+            start: { line: 35, column: 6, offset: 1354 },
+            end: { line: 35, column: 78, offset: 1426 }
           }
         },
         {
           type: 'text',
           value: ':',
           position: {
-            start: { line: 33, column: 78, offset: 1363 },
-            end: { line: 33, column: 79, offset: 1364 }
+            start: { line: 35, column: 78, offset: 1426 },
+            end: { line: 35, column: 79, offset: 1427 }
           }
         }
       ],
       position: {
-        start: { line: 33, column: 1, offset: 1286 },
-        end: { line: 33, column: 79, offset: 1364 }
+        start: { line: 35, column: 1, offset: 1349 },
+        end: { line: 35, column: 79, offset: 1427 }
       }
     },
     {
@@ -440,8 +457,8 @@ export default {
       meta: null,
       value: 'npm i rubico',
       position: {
-        start: { line: 34, column: 1, offset: 1365 },
-        end: { line: 36, column: 4, offset: 1389 }
+        start: { line: 36, column: 1, offset: 1428 },
+        end: { line: 38, column: 4, offset: 1452 }
       }
     },
     {
@@ -451,8 +468,8 @@ export default {
           type: 'text',
           value: 'require Rubico in ',
           position: {
-            start: { line: 39, column: 1, offset: 1392 },
-            end: { line: 39, column: 19, offset: 1410 }
+            start: { line: 41, column: 1, offset: 1455 },
+            end: { line: 41, column: 19, offset: 1473 }
           }
         },
         {
@@ -464,28 +481,28 @@ export default {
               type: 'text',
               value: 'CommonJS',
               position: {
-                start: { line: 39, column: 20, offset: 1411 },
-                end: { line: 39, column: 28, offset: 1419 }
+                start: { line: 41, column: 20, offset: 1474 },
+                end: { line: 41, column: 28, offset: 1482 }
               }
             }
           ],
           position: {
-            start: { line: 39, column: 19, offset: 1410 },
-            end: { line: 39, column: 103, offset: 1494 }
+            start: { line: 41, column: 19, offset: 1473 },
+            end: { line: 41, column: 103, offset: 1557 }
           }
         },
         {
           type: 'text',
           value: ':',
           position: {
-            start: { line: 39, column: 103, offset: 1494 },
-            end: { line: 39, column: 104, offset: 1495 }
+            start: { line: 41, column: 103, offset: 1557 },
+            end: { line: 41, column: 104, offset: 1558 }
           }
         }
       ],
       position: {
-        start: { line: 39, column: 1, offset: 1392 },
-        end: { line: 39, column: 104, offset: 1495 }
+        start: { line: 41, column: 1, offset: 1455 },
+        end: { line: 41, column: 104, offset: 1558 }
       }
     },
     {
@@ -510,8 +527,8 @@ export default {
         "// import rubico's Transducer module\n" +
         "const Transducer = require('rubico/Transducer')",
       position: {
-        start: { line: 40, column: 1, offset: 1496 },
-        end: { line: 58, column: 4, offset: 1943 }
+        start: { line: 42, column: 1, offset: 1559 },
+        end: { line: 60, column: 4, offset: 2006 }
       }
     },
     {
@@ -521,14 +538,14 @@ export default {
           type: 'text',
           value: 'import Rubico in the browser:',
           position: {
-            start: { line: 61, column: 1, offset: 1946 },
-            end: { line: 61, column: 30, offset: 1975 }
+            start: { line: 63, column: 1, offset: 2009 },
+            end: { line: 63, column: 30, offset: 2038 }
           }
         }
       ],
       position: {
-        start: { line: 61, column: 1, offset: 1946 },
-        end: { line: 61, column: 30, offset: 1975 }
+        start: { line: 63, column: 1, offset: 2009 },
+        end: { line: 63, column: 30, offset: 2038 }
       }
     },
     {
@@ -550,8 +567,8 @@ export default {
         "<!-- import rubico's Transducer module -->\n" +
         '<script src="https://cdn.jsdelivr.net/npm/rubico/dist/Transducer.min.js"></script>',
       position: {
-        start: { line: 62, column: 1, offset: 1976 },
-        end: { line: 77, column: 4, offset: 2613 }
+        start: { line: 64, column: 1, offset: 2039 },
+        end: { line: 79, column: 4, offset: 2676 }
       }
     },
     {
@@ -562,14 +579,14 @@ export default {
           type: 'text',
           value: 'Motivation',
           position: {
-            start: { line: 79, column: 4, offset: 2618 },
-            end: { line: 79, column: 14, offset: 2628 }
+            start: { line: 81, column: 4, offset: 2681 },
+            end: { line: 81, column: 14, offset: 2691 }
           }
         }
       ],
       position: {
-        start: { line: 79, column: 1, offset: 2615 },
-        end: { line: 79, column: 14, offset: 2628 }
+        start: { line: 81, column: 1, offset: 2678 },
+        end: { line: 81, column: 14, offset: 2691 }
       }
     },
     {
@@ -579,14 +596,14 @@ export default {
           type: 'text',
           value: 'A note from the author:',
           position: {
-            start: { line: 81, column: 1, offset: 2630 },
-            end: { line: 81, column: 24, offset: 2653 }
+            start: { line: 83, column: 1, offset: 2693 },
+            end: { line: 83, column: 24, offset: 2716 }
           }
         }
       ],
       position: {
-        start: { line: 81, column: 1, offset: 2630 },
-        end: { line: 81, column: 24, offset: 2653 }
+        start: { line: 83, column: 1, offset: 2693 },
+        end: { line: 83, column: 24, offset: 2716 }
       }
     },
     {
@@ -599,20 +616,20 @@ export default {
               type: 'text',
               value: 'At a certain point in my career, I grew frustrated with the entanglement of my own code. While looking for something better, I found functional programming. I was excited by the idea of functional composition, but disillusioned by the redundancy of effectful types. I started Rubico to capitalize on the prior while rebuking the latter. Many iterations since then, the library has grown into something I personally enjoy using, and continue to use to this day.',
               position: {
-                start: { line: 82, column: 3, offset: 2656 },
-                end: { line: 82, column: 463, offset: 3116 }
+                start: { line: 84, column: 3, offset: 2719 },
+                end: { line: 84, column: 463, offset: 3179 }
               }
             }
           ],
           position: {
-            start: { line: 82, column: 3, offset: 2656 },
-            end: { line: 82, column: 463, offset: 3116 }
+            start: { line: 84, column: 3, offset: 2719 },
+            end: { line: 84, column: 463, offset: 3179 }
           }
         }
       ],
       position: {
-        start: { line: 82, column: 1, offset: 2654 },
-        end: { line: 82, column: 463, offset: 3116 }
+        start: { line: 84, column: 1, offset: 2717 },
+        end: { line: 84, column: 463, offset: 3179 }
       }
     },
     {
@@ -622,14 +639,14 @@ export default {
           type: 'text',
           value: 'Rubico is founded on the following principles:',
           position: {
-            start: { line: 84, column: 1, offset: 3118 },
-            end: { line: 84, column: 47, offset: 3164 }
+            start: { line: 86, column: 1, offset: 3181 },
+            end: { line: 86, column: 47, offset: 3227 }
           }
         }
       ],
       position: {
-        start: { line: 84, column: 1, offset: 3118 },
-        end: { line: 84, column: 47, offset: 3164 }
+        start: { line: 86, column: 1, offset: 3181 },
+        end: { line: 86, column: 47, offset: 3227 }
       }
     },
     {
@@ -650,20 +667,20 @@ export default {
                   type: 'text',
                   value: 'asynchronous code should be simple',
                   position: {
-                    start: { line: 85, column: 4, offset: 3168 },
-                    end: { line: 85, column: 38, offset: 3202 }
+                    start: { line: 87, column: 4, offset: 3231 },
+                    end: { line: 87, column: 38, offset: 3265 }
                   }
                 }
               ],
               position: {
-                start: { line: 85, column: 4, offset: 3168 },
-                end: { line: 85, column: 38, offset: 3202 }
+                start: { line: 87, column: 4, offset: 3231 },
+                end: { line: 87, column: 38, offset: 3265 }
               }
             }
           ],
           position: {
-            start: { line: 85, column: 2, offset: 3166 },
-            end: { line: 85, column: 38, offset: 3202 }
+            start: { line: 87, column: 2, offset: 3229 },
+            end: { line: 87, column: 38, offset: 3265 }
           }
         },
         {
@@ -678,20 +695,20 @@ export default {
                   type: 'text',
                   value: 'functional style should not care about async',
                   position: {
-                    start: { line: 86, column: 4, offset: 3206 },
-                    end: { line: 86, column: 48, offset: 3250 }
+                    start: { line: 88, column: 4, offset: 3269 },
+                    end: { line: 88, column: 48, offset: 3313 }
                   }
                 }
               ],
               position: {
-                start: { line: 86, column: 4, offset: 3206 },
-                end: { line: 86, column: 48, offset: 3250 }
+                start: { line: 88, column: 4, offset: 3269 },
+                end: { line: 88, column: 48, offset: 3313 }
               }
             }
           ],
           position: {
-            start: { line: 86, column: 2, offset: 3204 },
-            end: { line: 86, column: 48, offset: 3250 }
+            start: { line: 88, column: 2, offset: 3267 },
+            end: { line: 88, column: 48, offset: 3313 }
           }
         },
         {
@@ -706,26 +723,26 @@ export default {
                   type: 'text',
                   value: 'functional transformations should be composable, performant, and simple to express',
                   position: {
-                    start: { line: 87, column: 4, offset: 3254 },
-                    end: { line: 87, column: 86, offset: 3336 }
+                    start: { line: 89, column: 4, offset: 3317 },
+                    end: { line: 89, column: 86, offset: 3399 }
                   }
                 }
               ],
               position: {
-                start: { line: 87, column: 4, offset: 3254 },
-                end: { line: 87, column: 86, offset: 3336 }
+                start: { line: 89, column: 4, offset: 3317 },
+                end: { line: 89, column: 86, offset: 3399 }
               }
             }
           ],
           position: {
-            start: { line: 87, column: 2, offset: 3252 },
-            end: { line: 87, column: 86, offset: 3336 }
+            start: { line: 89, column: 2, offset: 3315 },
+            end: { line: 89, column: 86, offset: 3399 }
           }
         }
       ],
       position: {
-        start: { line: 85, column: 2, offset: 3166 },
-        end: { line: 87, column: 86, offset: 3336 }
+        start: { line: 87, column: 2, offset: 3229 },
+        end: { line: 89, column: 86, offset: 3399 }
       }
     },
     {
@@ -735,14 +752,14 @@ export default {
           type: 'text',
           value: 'When you import this library, you obtain the freedom that comes from having those three points fulfilled. The result is something you may enjoy.',
           position: {
-            start: { line: 89, column: 1, offset: 3338 },
-            end: { line: 89, column: 145, offset: 3482 }
+            start: { line: 91, column: 1, offset: 3401 },
+            end: { line: 91, column: 145, offset: 3545 }
           }
         }
       ],
       position: {
-        start: { line: 89, column: 1, offset: 3338 },
-        end: { line: 89, column: 145, offset: 3482 }
+        start: { line: 91, column: 1, offset: 3401 },
+        end: { line: 91, column: 145, offset: 3545 }
       }
     },
     {
@@ -753,14 +770,14 @@ export default {
           type: 'text',
           value: 'Introduction',
           position: {
-            start: { line: 91, column: 4, offset: 3487 },
-            end: { line: 91, column: 16, offset: 3499 }
+            start: { line: 93, column: 4, offset: 3550 },
+            end: { line: 93, column: 16, offset: 3562 }
           }
         }
       ],
       position: {
-        start: { line: 91, column: 1, offset: 3484 },
-        end: { line: 91, column: 16, offset: 3499 }
+        start: { line: 93, column: 1, offset: 3547 },
+        end: { line: 93, column: 16, offset: 3562 }
       }
     },
     {
@@ -770,14 +787,14 @@ export default {
           type: 'text',
           value: 'Rubico is a library for [A]synchronous Functional Programming in JavaScript. The library supports a simple and composable functional style in asynchronous environments.',
           position: {
-            start: { line: 93, column: 1, offset: 3501 },
-            end: { line: 93, column: 169, offset: 3669 }
+            start: { line: 95, column: 1, offset: 3564 },
+            end: { line: 95, column: 169, offset: 3732 }
           }
         }
       ],
       position: {
-        start: { line: 93, column: 1, offset: 3501 },
-        end: { line: 93, column: 169, offset: 3669 }
+        start: { line: 95, column: 1, offset: 3564 },
+        end: { line: 95, column: 169, offset: 3732 }
       }
     },
     {
@@ -818,8 +835,8 @@ export default {
         '\n' +
         '} = rubico',
       position: {
-        start: { line: 95, column: 1, offset: 3671 },
-        end: { line: 129, column: 4, offset: 4166 }
+        start: { line: 97, column: 1, offset: 3734 },
+        end: { line: 131, column: 4, offset: 4229 }
       }
     },
     {
@@ -829,14 +846,14 @@ export default {
           type: 'text',
           value: 'With [A]synchronous Functional Programming, any function may be asynchronous and return a promise, and arguments may be promises as well. If a promise is provided to a Rubico operator in argument position, the Rubico operator will resolve the promise.',
           position: {
-            start: { line: 131, column: 1, offset: 4168 },
-            end: { line: 131, column: 252, offset: 4419 }
+            start: { line: 133, column: 1, offset: 4231 },
+            end: { line: 133, column: 252, offset: 4482 }
           }
         }
       ],
       position: {
-        start: { line: 131, column: 1, offset: 4168 },
-        end: { line: 131, column: 252, offset: 4419 }
+        start: { line: 133, column: 1, offset: 4231 },
+        end: { line: 133, column: 252, offset: 4482 }
       }
     },
     {
@@ -853,8 +870,8 @@ export default {
         '  console.log,\n' +
         '])',
       position: {
-        start: { line: 133, column: 1, offset: 4421 },
-        end: { line: 143, column: 4, offset: 4734 }
+        start: { line: 135, column: 1, offset: 4484 },
+        end: { line: 145, column: 4, offset: 4797 }
       }
     },
     {
@@ -864,14 +881,14 @@ export default {
           type: 'text',
           value: 'All Rubico operators support both eager and lazy interfaces. The eager interface takes all required arguments and executes at once, while the lazy interface takes only the setup arguments and returns a function that only expects the data arguments. This dual interface supports a natural and composable code style.',
           position: {
-            start: { line: 145, column: 1, offset: 4736 },
-            end: { line: 145, column: 315, offset: 5050 }
+            start: { line: 147, column: 1, offset: 4799 },
+            end: { line: 147, column: 315, offset: 5113 }
           }
         }
       ],
       position: {
-        start: { line: 145, column: 1, offset: 4736 },
-        end: { line: 145, column: 315, offset: 5050 }
+        start: { line: 147, column: 1, offset: 4799 },
+        end: { line: 147, column: 315, offset: 5113 }
       }
     },
     {
@@ -890,8 +907,8 @@ export default {
         '\n' +
         'console.log(myDuplicatedSquaredObject)',
       position: {
-        start: { line: 147, column: 1, offset: 5052 },
-        end: { line: 159, column: 4, offset: 5343 }
+        start: { line: 149, column: 1, offset: 5115 },
+        end: { line: 161, column: 4, offset: 5406 }
       }
     },
     {
@@ -901,46 +918,46 @@ export default {
           type: 'text',
           value: 'The Rubico operators are versatile and act on a wide range of vanilla JavaScript types to create declarative, extensible, and async-enabled function compositions. The same operator ',
           position: {
-            start: { line: 161, column: 1, offset: 5345 },
-            end: { line: 161, column: 182, offset: 5526 }
+            start: { line: 163, column: 1, offset: 5408 },
+            end: { line: 163, column: 182, offset: 5589 }
           }
         },
         {
           type: 'inlineCode',
           value: 'map',
           position: {
-            start: { line: 161, column: 182, offset: 5526 },
-            end: { line: 161, column: 187, offset: 5531 }
+            start: { line: 163, column: 182, offset: 5589 },
+            end: { line: 163, column: 187, offset: 5594 }
           }
         },
         {
           type: 'text',
           value: ' can act on an array and also a ',
           position: {
-            start: { line: 161, column: 187, offset: 5531 },
-            end: { line: 161, column: 219, offset: 5563 }
+            start: { line: 163, column: 187, offset: 5594 },
+            end: { line: 163, column: 219, offset: 5626 }
           }
         },
         {
           type: 'inlineCode',
           value: 'Map',
           position: {
-            start: { line: 161, column: 219, offset: 5563 },
-            end: { line: 161, column: 224, offset: 5568 }
+            start: { line: 163, column: 219, offset: 5626 },
+            end: { line: 163, column: 224, offset: 5631 }
           }
         },
         {
           type: 'text',
           value: ' data structure.',
           position: {
-            start: { line: 161, column: 224, offset: 5568 },
-            end: { line: 161, column: 240, offset: 5584 }
+            start: { line: 163, column: 224, offset: 5631 },
+            end: { line: 163, column: 240, offset: 5647 }
           }
         }
       ],
       position: {
-        start: { line: 161, column: 1, offset: 5345 },
-        end: { line: 161, column: 240, offset: 5584 }
+        start: { line: 163, column: 1, offset: 5408 },
+        end: { line: 163, column: 240, offset: 5647 }
       }
     },
     {
@@ -988,8 +1005,8 @@ export default {
         '  tap(console.log),\n' +
         '])',
       position: {
-        start: { line: 163, column: 1, offset: 5586 },
-        end: { line: 204, column: 4, offset: 6554 }
+        start: { line: 165, column: 1, offset: 5649 },
+        end: { line: 206, column: 4, offset: 6617 }
       }
     },
     {
@@ -999,78 +1016,78 @@ export default {
           type: 'text',
           value: 'Rubico offers transducers via the ',
           position: {
-            start: { line: 206, column: 1, offset: 6556 },
-            end: { line: 206, column: 35, offset: 6590 }
+            start: { line: 208, column: 1, offset: 6619 },
+            end: { line: 208, column: 35, offset: 6653 }
           }
         },
         {
           type: 'inlineCode',
           value: 'Transducer',
           position: {
-            start: { line: 206, column: 35, offset: 6590 },
-            end: { line: 206, column: 47, offset: 6602 }
+            start: { line: 208, column: 35, offset: 6653 },
+            end: { line: 208, column: 47, offset: 6665 }
           }
         },
         {
           type: 'text',
           value: " module, which can be used with Rubico's ",
           position: {
-            start: { line: 206, column: 47, offset: 6602 },
-            end: { line: 206, column: 88, offset: 6643 }
+            start: { line: 208, column: 47, offset: 6665 },
+            end: { line: 208, column: 88, offset: 6706 }
           }
         },
         {
           type: 'inlineCode',
           value: 'transform',
           position: {
-            start: { line: 206, column: 88, offset: 6643 },
-            end: { line: 206, column: 99, offset: 6654 }
+            start: { line: 208, column: 88, offset: 6706 },
+            end: { line: 208, column: 99, offset: 6717 }
           }
         },
         {
           type: 'text',
           value: ' and ',
           position: {
-            start: { line: 206, column: 99, offset: 6654 },
-            end: { line: 206, column: 104, offset: 6659 }
+            start: { line: 208, column: 99, offset: 6717 },
+            end: { line: 208, column: 104, offset: 6722 }
           }
         },
         {
           type: 'inlineCode',
           value: 'compose',
           position: {
-            start: { line: 206, column: 104, offset: 6659 },
-            end: { line: 206, column: 113, offset: 6668 }
+            start: { line: 208, column: 104, offset: 6722 },
+            end: { line: 208, column: 113, offset: 6731 }
           }
         },
         {
           type: 'text',
           value: ' operators. Use ',
           position: {
-            start: { line: 206, column: 113, offset: 6668 },
-            end: { line: 206, column: 129, offset: 6684 }
+            start: { line: 208, column: 113, offset: 6731 },
+            end: { line: 208, column: 129, offset: 6747 }
           }
         },
         {
           type: 'inlineCode',
           value: 'compose',
           position: {
-            start: { line: 206, column: 129, offset: 6684 },
-            end: { line: 206, column: 138, offset: 6693 }
+            start: { line: 208, column: 129, offset: 6747 },
+            end: { line: 208, column: 138, offset: 6756 }
           }
         },
         {
           type: 'text',
           value: ' to chain a left-to-right composition of transducers.',
           position: {
-            start: { line: 206, column: 138, offset: 6693 },
-            end: { line: 206, column: 191, offset: 6746 }
+            start: { line: 208, column: 138, offset: 6756 },
+            end: { line: 208, column: 191, offset: 6809 }
           }
         }
       ],
       position: {
-        start: { line: 206, column: 1, offset: 6556 },
-        end: { line: 206, column: 191, offset: 6746 }
+        start: { line: 208, column: 1, offset: 6619 },
+        end: { line: 208, column: 191, offset: 6809 }
       }
     },
     {
@@ -1097,8 +1114,8 @@ export default {
         '  console.log,\n' +
         '])',
       position: {
-        start: { line: 208, column: 1, offset: 6748 },
-        end: { line: 228, column: 4, offset: 7098 }
+        start: { line: 210, column: 1, offset: 6811 },
+        end: { line: 230, column: 4, offset: 7161 }
       }
     },
     {
@@ -1108,14 +1125,14 @@ export default {
           type: 'text',
           value: "For advanced asynchronous use cases, some of Rubico's operators have property operators that support varied asynchronous behavior, e.g.",
           position: {
-            start: { line: 230, column: 1, offset: 7100 },
-            end: { line: 230, column: 136, offset: 7235 }
+            start: { line: 232, column: 1, offset: 7163 },
+            end: { line: 232, column: 136, offset: 7298 }
           }
         }
       ],
       position: {
-        start: { line: 230, column: 1, offset: 7100 },
-        end: { line: 230, column: 136, offset: 7235 }
+        start: { line: 232, column: 1, offset: 7163 },
+        end: { line: 232, column: 136, offset: 7298 }
       }
     },
     {
@@ -1136,28 +1153,28 @@ export default {
                   type: 'inlineCode',
                   value: 'map',
                   position: {
-                    start: { line: 231, column: 4, offset: 7239 },
-                    end: { line: 231, column: 9, offset: 7244 }
+                    start: { line: 233, column: 4, offset: 7302 },
+                    end: { line: 233, column: 9, offset: 7307 }
                   }
                 },
                 {
                   type: 'text',
                   value: ' - applies a mapper function concurrently',
                   position: {
-                    start: { line: 231, column: 9, offset: 7244 },
-                    end: { line: 231, column: 50, offset: 7285 }
+                    start: { line: 233, column: 9, offset: 7307 },
+                    end: { line: 233, column: 50, offset: 7348 }
                   }
                 }
               ],
               position: {
-                start: { line: 231, column: 4, offset: 7239 },
-                end: { line: 231, column: 50, offset: 7285 }
+                start: { line: 233, column: 4, offset: 7302 },
+                end: { line: 233, column: 50, offset: 7348 }
               }
             }
           ],
           position: {
-            start: { line: 231, column: 2, offset: 7237 },
-            end: { line: 231, column: 50, offset: 7285 }
+            start: { line: 233, column: 2, offset: 7300 },
+            end: { line: 233, column: 50, offset: 7348 }
           }
         },
         {
@@ -1172,28 +1189,28 @@ export default {
                   type: 'inlineCode',
                   value: 'map.pool',
                   position: {
-                    start: { line: 232, column: 4, offset: 7289 },
-                    end: { line: 232, column: 14, offset: 7299 }
+                    start: { line: 234, column: 4, offset: 7352 },
+                    end: { line: 234, column: 14, offset: 7362 }
                   }
                 },
                 {
                   type: 'text',
                   value: ' - applies a mapper function concurrently with a concurrency limit',
                   position: {
-                    start: { line: 232, column: 14, offset: 7299 },
-                    end: { line: 232, column: 80, offset: 7365 }
+                    start: { line: 234, column: 14, offset: 7362 },
+                    end: { line: 234, column: 80, offset: 7428 }
                   }
                 }
               ],
               position: {
-                start: { line: 232, column: 4, offset: 7289 },
-                end: { line: 232, column: 80, offset: 7365 }
+                start: { line: 234, column: 4, offset: 7352 },
+                end: { line: 234, column: 80, offset: 7428 }
               }
             }
           ],
           position: {
-            start: { line: 232, column: 2, offset: 7287 },
-            end: { line: 232, column: 80, offset: 7365 }
+            start: { line: 234, column: 2, offset: 7350 },
+            end: { line: 234, column: 80, offset: 7428 }
           }
         },
         {
@@ -1208,34 +1225,34 @@ export default {
                   type: 'inlineCode',
                   value: 'map.series',
                   position: {
-                    start: { line: 233, column: 4, offset: 7369 },
-                    end: { line: 233, column: 16, offset: 7381 }
+                    start: { line: 235, column: 4, offset: 7432 },
+                    end: { line: 235, column: 16, offset: 7444 }
                   }
                 },
                 {
                   type: 'text',
                   value: ' - applies a mapper function serially',
                   position: {
-                    start: { line: 233, column: 16, offset: 7381 },
-                    end: { line: 233, column: 53, offset: 7418 }
+                    start: { line: 235, column: 16, offset: 7444 },
+                    end: { line: 235, column: 53, offset: 7481 }
                   }
                 }
               ],
               position: {
-                start: { line: 233, column: 4, offset: 7369 },
-                end: { line: 233, column: 53, offset: 7418 }
+                start: { line: 235, column: 4, offset: 7432 },
+                end: { line: 235, column: 53, offset: 7481 }
               }
             }
           ],
           position: {
-            start: { line: 233, column: 2, offset: 7367 },
-            end: { line: 233, column: 53, offset: 7418 }
+            start: { line: 235, column: 2, offset: 7430 },
+            end: { line: 235, column: 53, offset: 7481 }
           }
         }
       ],
       position: {
-        start: { line: 231, column: 2, offset: 7237 },
-        end: { line: 233, column: 53, offset: 7418 }
+        start: { line: 233, column: 2, offset: 7300 },
+        end: { line: 235, column: 53, offset: 7481 }
       }
     },
     {
@@ -1245,24 +1262,24 @@ export default {
           type: 'text',
           value: 'For more functions beyond the core operators, please visit ',
           position: {
-            start: { line: 235, column: 1, offset: 7420 },
-            end: { line: 235, column: 60, offset: 7479 }
+            start: { line: 237, column: 1, offset: 7483 },
+            end: { line: 237, column: 60, offset: 7542 }
           }
         },
         {
           type: 'inlineCode',
           value: 'rubico/x',
           position: {
-            start: { line: 235, column: 60, offset: 7479 },
-            end: { line: 235, column: 70, offset: 7489 }
+            start: { line: 237, column: 60, offset: 7542 },
+            end: { line: 237, column: 70, offset: 7552 }
           }
         },
         {
           type: 'text',
           value: '. You can find the full documentation at ',
           position: {
-            start: { line: 235, column: 70, offset: 7489 },
-            end: { line: 235, column: 111, offset: 7530 }
+            start: { line: 237, column: 70, offset: 7552 },
+            end: { line: 237, column: 111, offset: 7593 }
           }
         },
         {
@@ -1274,28 +1291,28 @@ export default {
               type: 'text',
               value: 'rubico.land/docs',
               position: {
-                start: { line: 235, column: 112, offset: 7531 },
-                end: { line: 235, column: 128, offset: 7547 }
+                start: { line: 237, column: 112, offset: 7594 },
+                end: { line: 237, column: 128, offset: 7610 }
               }
             }
           ],
           position: {
-            start: { line: 235, column: 111, offset: 7530 },
-            end: { line: 235, column: 155, offset: 7574 }
+            start: { line: 237, column: 111, offset: 7593 },
+            end: { line: 237, column: 155, offset: 7637 }
           }
         },
         {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 235, column: 155, offset: 7574 },
-            end: { line: 235, column: 156, offset: 7575 }
+            start: { line: 237, column: 155, offset: 7637 },
+            end: { line: 237, column: 156, offset: 7638 }
           }
         }
       ],
       position: {
-        start: { line: 235, column: 1, offset: 7420 },
-        end: { line: 235, column: 156, offset: 7575 }
+        start: { line: 237, column: 1, offset: 7483 },
+        end: { line: 237, column: 156, offset: 7638 }
       }
     },
     {
@@ -1306,14 +1323,14 @@ export default {
           type: 'text',
           value: 'Benchmarks',
           position: {
-            start: { line: 237, column: 4, offset: 7580 },
-            end: { line: 237, column: 14, offset: 7590 }
+            start: { line: 239, column: 4, offset: 7643 },
+            end: { line: 239, column: 14, offset: 7653 }
           }
         }
       ],
       position: {
-        start: { line: 237, column: 1, offset: 7577 },
-        end: { line: 237, column: 14, offset: 7590 }
+        start: { line: 239, column: 1, offset: 7640 },
+        end: { line: 239, column: 14, offset: 7653 }
       }
     },
     {
@@ -1323,8 +1340,8 @@ export default {
           type: 'text',
           value: 'Please find the published benchmark output inside the ',
           position: {
-            start: { line: 238, column: 1, offset: 7591 },
-            end: { line: 238, column: 55, offset: 7645 }
+            start: { line: 240, column: 1, offset: 7654 },
+            end: { line: 240, column: 55, offset: 7708 }
           }
         },
         {
@@ -1336,28 +1353,28 @@ export default {
               type: 'text',
               value: 'benchmark-output',
               position: {
-                start: { line: 238, column: 56, offset: 7646 },
-                end: { line: 238, column: 72, offset: 7662 }
+                start: { line: 240, column: 56, offset: 7709 },
+                end: { line: 240, column: 72, offset: 7725 }
               }
             }
           ],
           position: {
-            start: { line: 238, column: 55, offset: 7645 },
-            end: { line: 238, column: 143, offset: 7733 }
+            start: { line: 240, column: 55, offset: 7708 },
+            end: { line: 240, column: 143, offset: 7796 }
           }
         },
         {
           type: 'text',
           value: ' folder. You can run the benchmarks on your own system with the following command:',
           position: {
-            start: { line: 238, column: 143, offset: 7733 },
-            end: { line: 238, column: 225, offset: 7815 }
+            start: { line: 240, column: 143, offset: 7796 },
+            end: { line: 240, column: 225, offset: 7878 }
           }
         }
       ],
       position: {
-        start: { line: 238, column: 1, offset: 7591 },
-        end: { line: 238, column: 225, offset: 7815 }
+        start: { line: 240, column: 1, offset: 7654 },
+        end: { line: 240, column: 225, offset: 7878 }
       }
     },
     {
@@ -1366,8 +1383,8 @@ export default {
       meta: null,
       value: 'npm run bench',
       position: {
-        start: { line: 239, column: 1, offset: 7816 },
-        end: { line: 241, column: 4, offset: 7837 }
+        start: { line: 241, column: 1, offset: 7879 },
+        end: { line: 243, column: 4, offset: 7900 }
       }
     },
     {
@@ -1378,14 +1395,14 @@ export default {
           type: 'text',
           value: 'Contributing',
           position: {
-            start: { line: 243, column: 4, offset: 7842 },
-            end: { line: 243, column: 16, offset: 7854 }
+            start: { line: 245, column: 4, offset: 7905 },
+            end: { line: 245, column: 16, offset: 7917 }
           }
         }
       ],
       position: {
-        start: { line: 243, column: 1, offset: 7839 },
-        end: { line: 243, column: 16, offset: 7854 }
+        start: { line: 245, column: 1, offset: 7902 },
+        end: { line: 245, column: 16, offset: 7917 }
       }
     },
     {
@@ -1395,14 +1412,14 @@ export default {
           type: 'text',
           value: 'Your feedback and contributions are welcome. If you have a suggestion, please raise an issue. Prior to that, please search through the issues first in case your suggestion has been made already. If you decide to work on an issue, please create a pull request.',
           position: {
-            start: { line: 244, column: 1, offset: 7855 },
-            end: { line: 244, column: 260, offset: 8114 }
+            start: { line: 246, column: 1, offset: 7918 },
+            end: { line: 246, column: 260, offset: 8177 }
           }
         }
       ],
       position: {
-        start: { line: 244, column: 1, offset: 7855 },
-        end: { line: 244, column: 260, offset: 8114 }
+        start: { line: 246, column: 1, offset: 7918 },
+        end: { line: 246, column: 260, offset: 8177 }
       }
     },
     {
@@ -1412,8 +1429,8 @@ export default {
           type: 'text',
           value: 'Pull requests should provide some basic context and link the relevant issue. Here is an ',
           position: {
-            start: { line: 246, column: 1, offset: 8116 },
-            end: { line: 246, column: 89, offset: 8204 }
+            start: { line: 248, column: 1, offset: 8179 },
+            end: { line: 248, column: 89, offset: 8267 }
           }
         },
         {
@@ -1425,22 +1442,22 @@ export default {
               type: 'text',
               value: 'example pull request',
               position: {
-                start: { line: 246, column: 90, offset: 8205 },
-                end: { line: 246, column: 110, offset: 8225 }
+                start: { line: 248, column: 90, offset: 8268 },
+                end: { line: 248, column: 110, offset: 8288 }
               }
             }
           ],
           position: {
-            start: { line: 246, column: 89, offset: 8204 },
-            end: { line: 246, column: 160, offset: 8275 }
+            start: { line: 248, column: 89, offset: 8267 },
+            end: { line: 248, column: 160, offset: 8338 }
           }
         },
         {
           type: 'text',
           value: '. If you are interested in contributing, the ',
           position: {
-            start: { line: 246, column: 160, offset: 8275 },
-            end: { line: 246, column: 205, offset: 8320 }
+            start: { line: 248, column: 160, offset: 8338 },
+            end: { line: 248, column: 205, offset: 8383 }
           }
         },
         {
@@ -1452,28 +1469,28 @@ export default {
               type: 'text',
               value: 'help wanted',
               position: {
-                start: { line: 246, column: 206, offset: 8321 },
-                end: { line: 246, column: 217, offset: 8332 }
+                start: { line: 248, column: 206, offset: 8384 },
+                end: { line: 248, column: 217, offset: 8395 }
               }
             }
           ],
           position: {
-            start: { line: 246, column: 205, offset: 8320 },
-            end: { line: 246, column: 315, offset: 8430 }
+            start: { line: 248, column: 205, offset: 8383 },
+            end: { line: 248, column: 315, offset: 8493 }
           }
         },
         {
           type: 'text',
           value: ' tag is a good place to start.',
           position: {
-            start: { line: 246, column: 315, offset: 8430 },
-            end: { line: 246, column: 345, offset: 8460 }
+            start: { line: 248, column: 315, offset: 8493 },
+            end: { line: 248, column: 345, offset: 8523 }
           }
         }
       ],
       position: {
-        start: { line: 246, column: 1, offset: 8116 },
-        end: { line: 246, column: 345, offset: 8460 }
+        start: { line: 248, column: 1, offset: 8179 },
+        end: { line: 248, column: 345, offset: 8523 }
       }
     },
     {
@@ -1483,8 +1500,8 @@ export default {
           type: 'text',
           value: 'For more information please see ',
           position: {
-            start: { line: 248, column: 1, offset: 8462 },
-            end: { line: 248, column: 33, offset: 8494 }
+            start: { line: 250, column: 1, offset: 8525 },
+            end: { line: 250, column: 33, offset: 8557 }
           }
         },
         {
@@ -1496,20 +1513,20 @@ export default {
               type: 'text',
               value: 'CONTRIBUTING.md',
               position: {
-                start: { line: 248, column: 34, offset: 8495 },
-                end: { line: 248, column: 49, offset: 8510 }
+                start: { line: 250, column: 34, offset: 8558 },
+                end: { line: 250, column: 49, offset: 8573 }
               }
             }
           ],
           position: {
-            start: { line: 248, column: 33, offset: 8494 },
-            end: { line: 248, column: 119, offset: 8580 }
+            start: { line: 250, column: 33, offset: 8557 },
+            end: { line: 250, column: 119, offset: 8643 }
           }
         }
       ],
       position: {
-        start: { line: 248, column: 1, offset: 8462 },
-        end: { line: 248, column: 119, offset: 8580 }
+        start: { line: 250, column: 1, offset: 8525 },
+        end: { line: 250, column: 119, offset: 8643 }
       }
     },
     {
@@ -1520,14 +1537,14 @@ export default {
           type: 'text',
           value: 'License',
           position: {
-            start: { line: 250, column: 4, offset: 8585 },
-            end: { line: 250, column: 11, offset: 8592 }
+            start: { line: 252, column: 4, offset: 8648 },
+            end: { line: 252, column: 11, offset: 8655 }
           }
         }
       ],
       position: {
-        start: { line: 250, column: 1, offset: 8582 },
-        end: { line: 250, column: 11, offset: 8592 }
+        start: { line: 252, column: 1, offset: 8645 },
+        end: { line: 252, column: 11, offset: 8655 }
       }
     },
     {
@@ -1537,8 +1554,8 @@ export default {
           type: 'text',
           value: 'Rubico is distributed under the ',
           position: {
-            start: { line: 251, column: 1, offset: 8593 },
-            end: { line: 251, column: 33, offset: 8625 }
+            start: { line: 253, column: 1, offset: 8656 },
+            end: { line: 253, column: 33, offset: 8688 }
           }
         },
         {
@@ -1550,28 +1567,28 @@ export default {
               type: 'text',
               value: 'CFOSS License',
               position: {
-                start: { line: 251, column: 34, offset: 8626 },
-                end: { line: 251, column: 47, offset: 8639 }
+                start: { line: 253, column: 34, offset: 8689 },
+                end: { line: 253, column: 47, offset: 8702 }
               }
             }
           ],
           position: {
-            start: { line: 251, column: 33, offset: 8625 },
-            end: { line: 251, column: 99, offset: 8691 }
+            start: { line: 253, column: 33, offset: 8688 },
+            end: { line: 253, column: 99, offset: 8754 }
           }
         },
         {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 251, column: 99, offset: 8691 },
-            end: { line: 251, column: 100, offset: 8692 }
+            start: { line: 253, column: 99, offset: 8754 },
+            end: { line: 253, column: 100, offset: 8755 }
           }
         }
       ],
       position: {
-        start: { line: 251, column: 1, offset: 8593 },
-        end: { line: 251, column: 100, offset: 8692 }
+        start: { line: 253, column: 1, offset: 8656 },
+        end: { line: 253, column: 100, offset: 8755 }
       }
     },
     {
@@ -1582,14 +1599,14 @@ export default {
           type: 'text',
           value: 'Support',
           position: {
-            start: { line: 253, column: 4, offset: 8697 },
-            end: { line: 253, column: 11, offset: 8704 }
+            start: { line: 255, column: 4, offset: 8760 },
+            end: { line: 255, column: 11, offset: 8767 }
           }
         }
       ],
       position: {
-        start: { line: 253, column: 1, offset: 8694 },
-        end: { line: 253, column: 11, offset: 8704 }
+        start: { line: 255, column: 1, offset: 8757 },
+        end: { line: 255, column: 11, offset: 8767 }
       }
     },
     {
@@ -1610,20 +1627,20 @@ export default {
                   type: 'text',
                   value: 'minimum Node.js version: 16',
                   position: {
-                    start: { line: 254, column: 4, offset: 8708 },
-                    end: { line: 254, column: 31, offset: 8735 }
+                    start: { line: 256, column: 4, offset: 8771 },
+                    end: { line: 256, column: 31, offset: 8798 }
                   }
                 }
               ],
               position: {
-                start: { line: 254, column: 4, offset: 8708 },
-                end: { line: 254, column: 31, offset: 8735 }
+                start: { line: 256, column: 4, offset: 8771 },
+                end: { line: 256, column: 31, offset: 8798 }
               }
             }
           ],
           position: {
-            start: { line: 254, column: 2, offset: 8706 },
-            end: { line: 254, column: 31, offset: 8735 }
+            start: { line: 256, column: 2, offset: 8769 },
+            end: { line: 256, column: 31, offset: 8798 }
           }
         },
         {
@@ -1638,20 +1655,20 @@ export default {
                   type: 'text',
                   value: 'minimum Chrome version: 63',
                   position: {
-                    start: { line: 255, column: 4, offset: 8739 },
-                    end: { line: 255, column: 30, offset: 8765 }
+                    start: { line: 257, column: 4, offset: 8802 },
+                    end: { line: 257, column: 30, offset: 8828 }
                   }
                 }
               ],
               position: {
-                start: { line: 255, column: 4, offset: 8739 },
-                end: { line: 255, column: 30, offset: 8765 }
+                start: { line: 257, column: 4, offset: 8802 },
+                end: { line: 257, column: 30, offset: 8828 }
               }
             }
           ],
           position: {
-            start: { line: 255, column: 2, offset: 8737 },
-            end: { line: 255, column: 30, offset: 8765 }
+            start: { line: 257, column: 2, offset: 8800 },
+            end: { line: 257, column: 30, offset: 8828 }
           }
         },
         {
@@ -1666,20 +1683,20 @@ export default {
                   type: 'text',
                   value: 'minimum Firefox version: 57',
                   position: {
-                    start: { line: 256, column: 4, offset: 8769 },
-                    end: { line: 256, column: 31, offset: 8796 }
+                    start: { line: 258, column: 4, offset: 8832 },
+                    end: { line: 258, column: 31, offset: 8859 }
                   }
                 }
               ],
               position: {
-                start: { line: 256, column: 4, offset: 8769 },
-                end: { line: 256, column: 31, offset: 8796 }
+                start: { line: 258, column: 4, offset: 8832 },
+                end: { line: 258, column: 31, offset: 8859 }
               }
             }
           ],
           position: {
-            start: { line: 256, column: 2, offset: 8767 },
-            end: { line: 256, column: 31, offset: 8796 }
+            start: { line: 258, column: 2, offset: 8830 },
+            end: { line: 258, column: 31, offset: 8859 }
           }
         },
         {
@@ -1694,20 +1711,20 @@ export default {
                   type: 'text',
                   value: 'minimum Edge version: 79',
                   position: {
-                    start: { line: 257, column: 4, offset: 8800 },
-                    end: { line: 257, column: 28, offset: 8824 }
+                    start: { line: 259, column: 4, offset: 8863 },
+                    end: { line: 259, column: 28, offset: 8887 }
                   }
                 }
               ],
               position: {
-                start: { line: 257, column: 4, offset: 8800 },
-                end: { line: 257, column: 28, offset: 8824 }
+                start: { line: 259, column: 4, offset: 8863 },
+                end: { line: 259, column: 28, offset: 8887 }
               }
             }
           ],
           position: {
-            start: { line: 257, column: 2, offset: 8798 },
-            end: { line: 257, column: 28, offset: 8824 }
+            start: { line: 259, column: 2, offset: 8861 },
+            end: { line: 259, column: 28, offset: 8887 }
           }
         },
         {
@@ -1722,26 +1739,26 @@ export default {
                   type: 'text',
                   value: 'minimum Safari version: 11.1',
                   position: {
-                    start: { line: 258, column: 4, offset: 8828 },
-                    end: { line: 258, column: 32, offset: 8856 }
+                    start: { line: 260, column: 4, offset: 8891 },
+                    end: { line: 260, column: 32, offset: 8919 }
                   }
                 }
               ],
               position: {
-                start: { line: 258, column: 4, offset: 8828 },
-                end: { line: 258, column: 32, offset: 8856 }
+                start: { line: 260, column: 4, offset: 8891 },
+                end: { line: 260, column: 32, offset: 8919 }
               }
             }
           ],
           position: {
-            start: { line: 258, column: 2, offset: 8826 },
-            end: { line: 258, column: 32, offset: 8856 }
+            start: { line: 260, column: 2, offset: 8889 },
+            end: { line: 260, column: 32, offset: 8919 }
           }
         }
       ],
       position: {
-        start: { line: 254, column: 2, offset: 8706 },
-        end: { line: 258, column: 32, offset: 8856 }
+        start: { line: 256, column: 2, offset: 8769 },
+        end: { line: 260, column: 32, offset: 8919 }
       }
     },
     {
@@ -1752,14 +1769,14 @@ export default {
           type: 'text',
           value: 'Blog',
           position: {
-            start: { line: 260, column: 4, offset: 8861 },
-            end: { line: 260, column: 8, offset: 8865 }
+            start: { line: 262, column: 4, offset: 8924 },
+            end: { line: 262, column: 8, offset: 8928 }
           }
         }
       ],
       position: {
-        start: { line: 260, column: 1, offset: 8858 },
-        end: { line: 260, column: 8, offset: 8865 }
+        start: { line: 262, column: 1, offset: 8921 },
+        end: { line: 262, column: 8, offset: 8928 }
       }
     },
     {
@@ -1769,8 +1786,8 @@ export default {
           type: 'text',
           value: 'Learn more about Rubico and [A]synchronous Functional Programming at ',
           position: {
-            start: { line: 261, column: 1, offset: 8866 },
-            end: { line: 261, column: 70, offset: 8935 }
+            start: { line: 263, column: 1, offset: 8929 },
+            end: { line: 263, column: 70, offset: 8998 }
           }
         },
         {
@@ -1782,33 +1799,33 @@ export default {
               type: 'text',
               value: 'https://rubico.land/blog',
               position: {
-                start: { line: 261, column: 71, offset: 8936 },
-                end: { line: 261, column: 95, offset: 8960 }
+                start: { line: 263, column: 71, offset: 8999 },
+                end: { line: 263, column: 95, offset: 9023 }
               }
             }
           ],
           position: {
-            start: { line: 261, column: 70, offset: 8935 },
-            end: { line: 261, column: 122, offset: 8987 }
+            start: { line: 263, column: 70, offset: 8998 },
+            end: { line: 263, column: 122, offset: 9050 }
           }
         },
         {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 261, column: 122, offset: 8987 },
-            end: { line: 261, column: 123, offset: 8988 }
+            start: { line: 263, column: 122, offset: 9050 },
+            end: { line: 263, column: 123, offset: 9051 }
           }
         }
       ],
       position: {
-        start: { line: 261, column: 1, offset: 8866 },
-        end: { line: 261, column: 123, offset: 8988 }
+        start: { line: 263, column: 1, offset: 8929 },
+        end: { line: 263, column: 123, offset: 9051 }
       }
     }
   ],
   position: {
     start: { line: 1, column: 1, offset: 0 },
-    end: { line: 262, column: 1, offset: 8989 }
+    end: { line: 264, column: 1, offset: 9052 }
   }
 }
