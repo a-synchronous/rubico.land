@@ -60,7 +60,7 @@ const result = addWithArgsLogged(1, 2)
 console.log(result)
 ```
 
-### Pure functions
+### Pure Functions
 
 Pure functions are functions that have the following characteristics:
 
@@ -112,8 +112,8 @@ const product = multiply3_5(4)
 console.log(product)
 ```
 
-### Meaningful Objects
-A meaningful object is an object that has some meaning beyond its name, for example the Array class creates arrays that can store other data types, and the Promise class creates a promise that can either complete or fail with a result on completion or error on failure. Arrays and Promises are examples of a meaningful objects.
+### Monad-Like Structures / Meaningful Objects
+A monad-like structure or meaningful object is an object that has some meaning beyond its name, for example the Array class creates arrays that can store other data types, and the Promise class creates a promise that can either complete or fail with a result on completion or error on failure. Arrays and Promises are examples of a meaningful objects.
 
 The below example shows a promise `promiseB` chaining functionality with its `.then` method in a meaningful way, as if to say "wait for promiseA to resolve, and then execute the result on completion as n, returning n + 2".
 
