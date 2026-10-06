@@ -2,7 +2,7 @@
 title: [A]synchronous Functional Programming - Intro
 author: Richard Tong, King of Software at CLOUŢ
 date: 2024-11-26
-updated: 2026-10-05
+updated: 2026-10-06
 path: /blog/a-synchronous-functional-programming-intro
 description: An introduction to the [A]synchronous Functional Programming paradigm.
 image: https://rubico.land/assets/rubico-logo-large.png
@@ -113,9 +113,9 @@ console.log(product)
 ```
 
 ### Monad-Like Structures
-Monad-like structures are classes that embody the Monadic idea that a Monad's methods return a Monad. Promise is an example of a monad-like structure.
+Monad-like structures are classes that create meaningful objects. A meaningful object is an object that has some meaning beyond its name, for example the Array class creates arrays that can store other data types, and the Promise class creates a promise that can either complete or fail with a result on completion or error on failure. Arrays and Promises are examples of a monad-like structures. Array is in fact a monad, but also fits the definition of a monad-like structure.
 
-The below example shows a promise's `.then` method returning another promise.
+The below example shows a promise `promiseB` chaining functionality with its `.then` method in a meaningful way, as if to say "wait for promiseA to resolve, and then execute the result on completion as n, returning n + 2".
 
 ```javascript [playground]
 const promiseA = Promise.resolve(1)
