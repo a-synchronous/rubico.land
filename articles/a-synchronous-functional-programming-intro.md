@@ -122,7 +122,7 @@ const promiseA = Promise.resolve(1)
 
 const promiseB = promiseA.then(n => n + 2)
 
-console.log(promiseB)
+promiseB.then(console.log)
 ```
 
 ### [A]synchronous Functional Programming
