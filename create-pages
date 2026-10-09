@@ -87,7 +87,7 @@ const main = async function (options) {
       path: `/docs/${functionName}`,
       title: `${functionName} - Rubico documentation`,
       description: `Reference for ${functionName}`,
-      image: '/assets/rubico-logo-3-2.jpg'
+      image: '/assets/rubico-logo-3-3.jpg'
     }))
   }
 
@@ -96,7 +96,7 @@ const main = async function (options) {
     path: `/docs/Transducer`,
     title: 'Transducer - Rubico documentation',
     description: 'Transducer reference',
-    image: '/assets/rubico-logo-3-2.jpg'
+    image: '/assets/rubico-logo-3-3.jpg'
   }))
 
   for (const functionName of transducerFunctionNames) {
@@ -105,7 +105,7 @@ const main = async function (options) {
       path: `/docs/Transducer.${functionName}`,
       title: `Transducer.${functionName} - Rubico documentation`,
       description: `Reference for Transducer.${functionName}`,
-      image: '/assets/rubico-logo-3-2.jpg'
+      image: '/assets/rubico-logo-3-3.jpg'
     }))
   }
 
@@ -117,7 +117,7 @@ const main = async function (options) {
       path: `/docs/x/${functionName}`,
       title: `x/${functionName} - Rubico documentation`,
       description: `Reference for x/${functionName}`,
-      image: '/assets/rubico-logo-3-2.jpg'
+      image: '/assets/rubico-logo-3-3.jpg'
     }))
   }
 
