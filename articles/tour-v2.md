@@ -94,7 +94,6 @@ const functors = [
   [1, 2, 3, 4, 5],
   '12345',
   new Set([1, 2, 3, 4, 5]),
-  new Uint8Array([1, 2, 3, 4, 5]),
   { a: 1, b: 2, c: 3, d: 4, e: 5 },
   new Map([['a', 1], ['b', 2], ['c', 3], ['d', 4], ['e', 5]]),
 ]
@@ -105,7 +104,7 @@ forEach(functors, pipe([
 ]))
 ```
 
-In the above example, the Rubico operator `map` acts on a multitude of [functor](/blog/a-synchronous-functional-programming-data-types#functor) data types, including an array `[1, 2, 3, 4, 5]`, a string `'12345'`, a set `new Set([1, 2, 3, 4, 5])`, binary `new Uint8Array([1, 2, 3, 4, 5])`, a plain object `{ a: 1, b: 2, c: 3, d: 4, e: 5 }`, and a map `new Map([['a', 1], ['b', 2], ['c', 3], ['d', 4], ['e', 5]])`.
+In the above example, the Rubico operator `map` acts on a multitude of [functor](/blog/a-synchronous-functional-programming-data-types#functor) data types, including an array `[1, 2, 3, 4, 5]`, a string `'12345'`, a set `new Set([1, 2, 3, 4, 5])`, a plain object `{ a: 1, b: 2, c: 3, d: 4, e: 5 }`, and a map `new Map([['a', 1], ['b', 2], ['c', 3], ['d', 4], ['e', 5]])`.
 
 # Control Flow
 **Create declarative, SQL-esque logical expressions**. Compose predicate functions with Rubico's logical operators. Below depicts vanilla JavaScript operators and their Rubico analogs.
