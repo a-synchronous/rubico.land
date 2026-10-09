@@ -332,14 +332,12 @@ h4 {
 #home-link {
   display: flex;
   align-items: center;
-  /*
-  margin-right: 8vw;
-  */
 }
 #home-link .text1 {
   font-size: 32px;
   font-weight: 600;
   line-height: 1em;
+  margin-left: 10px;
 }
 #home-link > img {
   width: 150px;
