@@ -17,12 +17,12 @@ const HamburgerMenuIcon = ReactElement(() => {
       d: 'M0 0h50v100H0z',
     }),
     Path({
-      fill: '#b2c1db',
+      fill: '#BFEFFF',
       d: 'M14 15h22v4H14zm0 8h22v4H14zm0 8h22v4H14z',
     }),
     Path({
       // fill: '#fff',
-      fill: '#65799b',
+      fill: '#0000FF',
       d: 'M14 65h22v4H14zm0 8h22v4H14zm0 8h22v4H14z',
     }),
   ])
