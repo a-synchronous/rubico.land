@@ -9,7 +9,7 @@ export default {
         'updated: 2026-10-06\n' +
         'path: /blog/a-synchronous-functional-programming-intro\n' +
         'description: An introduction to the [A]synchronous Functional Programming paradigm.\n' +
-        'image: https://rubico.land/assets/rubico-logo-3-2.jpg',
+        'image: https://rubico.land/assets/rubico-logo-3-3.jpg',
       position: {
         start: { line: 1, column: 1, offset: 0 },
         end: { line: 9, column: 4, offset: 338 }
