@@ -14,14 +14,14 @@
   <meta property="og:description" content="Reference for x/pluck" />
 
   
-  <meta name="image" content="/assets/rubico-logo-simple.jpg" />
-  <meta property="og:image" content="/assets/rubico-logo-simple.jpg" />
-  <meta name="twitter:image" content="/assets/rubico-logo-simple.jpg" />
+  <meta name="image" content="/assets/rubico-logo-3.jpg" />
+  <meta property="og:image" content="/assets/rubico-logo-3.jpg" />
+  <meta name="twitter:image" content="/assets/rubico-logo-3.jpg" />
   
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/rubico-simple-apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/rubico-simple-favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/rubico-simple-favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/rubico-logo-3-apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/rubico-logo-3-favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/rubico-logo-3-favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="canonical" href="https://rubico.land/docs/x/pluck">
 
