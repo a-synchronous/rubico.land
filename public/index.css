@@ -38,7 +38,7 @@ h2 {
 }
 
 a {
-  color: #65799B;
+  color: #0000FF;
   text-decoration: none;
   font-weight: 650;
 }
@@ -121,7 +121,7 @@ h4 {
 }
 
 .text1 {
-  color: #65799B;
+  color: #0000FF;
 }
 .text2 {
   color: #333;
@@ -386,7 +386,7 @@ h4 {
   border-radius: 10px;
   border: none;
   color: #FFF;
-  background-color: #65799b;
+  background-color: #0000FF;
   transition: background-color 0.18s ease;
 }
 #take-the-tour-button:hover {
@@ -395,8 +395,8 @@ h4 {
 
 #read-the-docs-button {
   border-radius: 10px;
-  border: 1px solid #65799B;
-  color: #65799B;
+  border: 1px solid #0000FF;
+  color: #0000FF;
   background-color: #FFF;
 }
 #read-the-docs-button:hover {
@@ -416,7 +416,7 @@ h4 {
   border: none;
   background-color: #fff;
   cursor: pointer;
-  color: #65799B;
+  color: #0000FF;
   font-size: 16px;
   font-weight: 600;
 }
@@ -473,7 +473,7 @@ h4 {
 #docs .viewer h1 {
   font-size: 42px;
   margin: 12px 0px;
-  color: #65799B;
+  color: #0000FF;
 }
 @media only screen and (max-width: 768px) {
   #docs .viewer h1 {
@@ -523,7 +523,7 @@ h4 {
 
 #docs-x-back-button {
   position: relative;
-  color: #65799B;
+  color: #0000FF;
   margin: 0;
   font-size: 80px;
   font-weight: 800;
@@ -556,7 +556,7 @@ h4 {
   cursor: pointer;
 }
 .docs-item > a > h3 {
-  color: #65799B;
+  color: #0000FF;
   font-size: 22px;
   margin: 0;
   display: inline;
@@ -576,7 +576,7 @@ h4 {
 }
 
 .docs-link {
-  color: #65799B;
+  color: #0000FF;
   font-size: 22px;
   font-weight: 800;
 }
@@ -696,7 +696,7 @@ h4 {
 
 .blog-post button.read-more {
   border: none;
-  background-color: #65799b;
+  background-color: #0000FF;
   color: #fff;
   padding: 10px 20px;
   font-size: 18px;
@@ -717,7 +717,7 @@ h4 {
   display: flex;
   font-size: 16px;
   align-items: center;
-  color: #65799B;
+  color: #0000FF;
   transition-property: color, font-size;
   transition-duration: 0.28s, 0.28s;
   transition-timing-function: ease, ease;
@@ -769,7 +769,7 @@ h4 {
 }
 
 .blog-post .title a > .down-arrow-svg > rect {
-  fill: #65799b;
+  fill: #0000FF;
 }
 .blog-post .title a.active > .down-arrow-svg > rect {
   fill: #000;
