@@ -37,7 +37,7 @@
 
 .cm-s-rubico .CodeMirror-cursor { border-left: thin solid #b0b0b0; }
 
-.cm-s-rubico span.cm-comment { color: #999999; }
+.cm-s-rubico span.cm-comment { color: #BCBCBC; }
 
 .cm-s-rubico span.cm-atom { color: #aa759f; }
 
