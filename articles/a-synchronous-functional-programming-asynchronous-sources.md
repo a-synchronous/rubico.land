@@ -1,8 +1,8 @@
 ---
 title: [A]synchronous Functional Programming - Asynchronous Sources
-author: Richard Tong, King of Software at CLOUŢ
+author: Richard Tong, King of Technology at CLOUŢ
 date: 2025-02-23
-updated: 2026-02-23
+updated: 2026-10-09
 path: /blog/a-synchronous-functional-programming-asynchronous-sources
 description: Asynchronous Sources in [A]synchronous Functional Programming.
 image: /assets/asynchronous-sources-examples.jpg

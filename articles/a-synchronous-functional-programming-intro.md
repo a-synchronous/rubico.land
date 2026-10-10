@@ -1,8 +1,8 @@
 ---
 title: [A]synchronous Functional Programming - Intro
-author: Richard Tong, King of Software at CLOUŢ
+author: Richard Tong, King of Technology at CLOUŢ
 date: 2024-11-26
-updated: 2026-10-06
+updated: 2026-10-09
 path: /blog/a-synchronous-functional-programming-intro
 description: An introduction to the [A]synchronous Functional Programming paradigm.
 image: https://rubico.land/assets/rubico-logo-3-3.jpg

@@ -1,8 +1,8 @@
 ---
 title: Transducers Crash Course
-author: Richard Tong, King of Software at CLOUŢ
+author: Richard Tong, King of Technology at CLOUŢ
 date: 2026-02-22
-updated: 2026-05-27
+updated: 2026-10-09
 path: /blog/transducers-crash-course
 description: A crash course on Rubico transducers.
 ---
