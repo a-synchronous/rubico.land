@@ -55431,10 +55431,12 @@ export default [
       'conditionalValues Array<Promise|boolean|any>\n' +
       'conditionalFunctionsOrValues Array<Predicate|Function|Promise|boolean|any>\n' +
       '\n' +
-      'switchCase(conditionalValues) -> result Promise|any\n' +
       'switchCase(...arguments, conditionalFunctionsOrValues) -> result Promise|any\n' +
       'switchCase(argument, ...conditionalFunctionsOrValues) -> result Promise|any\n' +
+      'switchCase(conditionalValues) -> result Promise|any\n' +
       'switchCase(conditionalFunctionsOrValues)(...arguments) -> result Promise|any\n' +
+      'switchCase(...conditionalValues) -> result Promise|any\n' +
+      'switchCase(...conditionalFunctionsOrValues)(...arguments) -> result Promise|any\n' +
       '```',
     description: 'Conditional function operator. Accepts an array of conditional functions or values that specifies cases as function or value pairs with the exception of the last, default function or value. All functions are provided with the same arguments and executed in series. The result of a conditional execution with `switchCase` is the result of the execution of the first truthy function or value pair, the result of the execution of the last, default function, or the provided last, default value.\n' +
       '\n' +
@@ -55443,21 +55445,22 @@ export default [
       '  return n % 2 == 1\n' +
       '}\n' +
       '\n' +
-      'switchCase(1, [\n' +
+      'switchCase(\n' +
+      '  1,\n' +
       '  isOdd,\n' +
       '  n => console.log(`${n} is odd`),\n' +
       '  n => console.log(`${n} is even`),\n' +
-      '])\n' +
+      ')\n' +
       '```\n' +
       '\n' +
-      '`switchCase` supports a lazy interface for composability.\n' +
+      '`switchCase` supports a composable interface.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      'const fruitsGuesser = switchCase([\n' +
+      'const fruitsGuesser = switchCase(\n' +
       "  fruit => fruit.color == 'yellow',\n" +
       "  fruit => fruit.name + ' is possibly a banana',\n" +
       "  fruit => fruit.name + ' is possibly not a banana',\n" +
-      '])\n' +
+      ')\n' +
       '\n' +
       "const guess1 = fruitsGuesser({ name: 'plantain', color: 'yellow' })\n" +
       "const guess2 = fruitsGuesser({ name: 'apple', color: 'red' })\n" +
@@ -55469,17 +55472,17 @@ export default [
       'Any item of the conditional array passed to switchCase can be a nonfunction (object or primitive) value.\n' +
       '\n' +
       '```javascript [playground]\n' +
-      'function identity (value) {\n' +
-      '  return value\n' +
+      'function isSumGreaterThan3(a, b) {\n' +
+      '  return a + b > 3\n' +
       '}\n' +
       '\n' +
-      'const value = switchCase(false, [\n' +
-      '  identity,\n' +
-      "  'non-function',\n" +
-      "  'default-value',\n" +
+      'const answer = switchCase(1, 3, [\n' +
+      '  isSumGreaterThan3,\n' +
+      "  'sum is greater than 3',\n" +
+      "  'sum is not greater than 3',\n" +
       '])\n' +
       '\n' +
-      'console.log(value)\n' +
+      'console.log(answer)\n' +
       '```\n' +
       '\n' +
       'If every item in the conditional array is a nonfunction value, `switchCase` executes immediately.\n' +
@@ -55487,7 +55490,7 @@ export default [
       '```javascript [playground]\n' +
       'const age = 26\n' +
       '\n' +
-      "const myDrink = switchCase([age >= 21, 'Water', 'Juice'])\n" +
+      "const myDrink = switchCase(age >= 21, 'Water', 'Juice')\n" +
       '\n' +
       'console.log(myDrink)\n' +
       '```\n' +
@@ -55569,19 +55572,21 @@ export default [
               'conditionalValues Array<Promise|boolean|any>\n' +
               'conditionalFunctionsOrValues Array<Predicate|Function|Promise|boolean|any>\n' +
               '\n' +
-              'switchCase(conditionalValues) -> result Promise|any\n' +
               'switchCase(...arguments, conditionalFunctionsOrValues) -> result Promise|any\n' +
               'switchCase(argument, ...conditionalFunctionsOrValues) -> result Promise|any\n' +
-              'switchCase(conditionalFunctionsOrValues)(...arguments) -> result Promise|any',
+              'switchCase(conditionalValues) -> result Promise|any\n' +
+              'switchCase(conditionalFunctionsOrValues)(...arguments) -> result Promise|any\n' +
+              'switchCase(...conditionalValues) -> result Promise|any\n' +
+              'switchCase(...conditionalFunctionsOrValues)(...arguments) -> result Promise|any',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 12, column: 4, offset: 533 }
+              end: { line: 14, column: 4, offset: 668 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 12, column: 4, offset: 533 }
+          end: { line: 14, column: 4, offset: 668 }
         }
       },
       description: {
@@ -55628,14 +55633,15 @@ export default [
               '  return n % 2 == 1\n' +
               '}\n' +
               '\n' +
-              'switchCase(1, [\n' +
+              'switchCase(\n' +
+              '  1,\n' +
               '  isOdd,\n' +
               '  n => console.log(`${n} is odd`),\n' +
               '  n => console.log(`${n} is even`),\n' +
-              '])',
+              ')',
             position: {
               start: { line: 3, column: 1, offset: 493 },
-              end: { line: 13, column: 4, offset: 665 }
+              end: { line: 14, column: 4, offset: 665 }
             }
           },
           {
@@ -55645,33 +55651,33 @@ export default [
                 type: 'inlineCode',
                 value: 'switchCase',
                 position: {
-                  start: { line: 15, column: 1, offset: 667 },
-                  end: { line: 15, column: 13, offset: 679 }
+                  start: { line: 16, column: 1, offset: 667 },
+                  end: { line: 16, column: 13, offset: 679 }
                 }
               },
               {
                 type: 'text',
-                value: ' supports a lazy interface for composability.',
+                value: ' supports a composable interface.',
                 position: {
-                  start: { line: 15, column: 13, offset: 679 },
-                  end: { line: 15, column: 58, offset: 724 }
+                  start: { line: 16, column: 13, offset: 679 },
+                  end: { line: 16, column: 46, offset: 712 }
                 }
               }
             ],
             position: {
-              start: { line: 15, column: 1, offset: 667 },
-              end: { line: 15, column: 58, offset: 724 }
+              start: { line: 16, column: 1, offset: 667 },
+              end: { line: 16, column: 46, offset: 712 }
             }
           },
           {
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: 'const fruitsGuesser = switchCase([\n' +
+            value: 'const fruitsGuesser = switchCase(\n' +
               "  fruit => fruit.color == 'yellow',\n" +
               "  fruit => fruit.name + ' is possibly a banana',\n" +
               "  fruit => fruit.name + ' is possibly not a banana',\n" +
-              '])\n' +
+              ')\n' +
               '\n' +
               "const guess1 = fruitsGuesser({ name: 'plantain', color: 'yellow' })\n" +
               "const guess2 = fruitsGuesser({ name: 'apple', color: 'red' })\n" +
@@ -55679,8 +55685,8 @@ export default [
               'console.log(guess1)\n' +
               'console.log(guess2)',
             position: {
-              start: { line: 17, column: 1, offset: 726 },
-              end: { line: 29, column: 4, offset: 1104 }
+              start: { line: 18, column: 1, offset: 714 },
+              end: { line: 30, column: 4, offset: 1090 }
             }
           },
           {
@@ -55690,34 +55696,34 @@ export default [
                 type: 'text',
                 value: 'Any item of the conditional array passed to switchCase can be a nonfunction (object or primitive) value.',
                 position: {
-                  start: { line: 31, column: 1, offset: 1106 },
-                  end: { line: 31, column: 105, offset: 1210 }
+                  start: { line: 32, column: 1, offset: 1092 },
+                  end: { line: 32, column: 105, offset: 1196 }
                 }
               }
             ],
             position: {
-              start: { line: 31, column: 1, offset: 1106 },
-              end: { line: 31, column: 105, offset: 1210 }
+              start: { line: 32, column: 1, offset: 1092 },
+              end: { line: 32, column: 105, offset: 1196 }
             }
           },
           {
             type: 'code',
             lang: 'javascript',
             meta: '[playground]',
-            value: 'function identity (value) {\n' +
-              '  return value\n' +
+            value: 'function isSumGreaterThan3(a, b) {\n' +
+              '  return a + b > 3\n' +
               '}\n' +
               '\n' +
-              'const value = switchCase(false, [\n' +
-              '  identity,\n' +
-              "  'non-function',\n" +
-              "  'default-value',\n" +
+              'const answer = switchCase(1, 3, [\n' +
+              '  isSumGreaterThan3,\n' +
+              "  'sum is greater than 3',\n" +
+              "  'sum is not greater than 3',\n" +
               '])\n' +
               '\n' +
-              'console.log(value)',
+              'console.log(answer)',
             position: {
-              start: { line: 33, column: 1, offset: 1212 },
-              end: { line: 45, column: 4, offset: 1394 }
+              start: { line: 34, column: 1, offset: 1198 },
+              end: { line: 46, column: 4, offset: 1422 }
             }
           },
           {
@@ -55727,30 +55733,30 @@ export default [
                 type: 'text',
                 value: 'If every item in the conditional array is a nonfunction value, ',
                 position: {
-                  start: { line: 47, column: 1, offset: 1396 },
-                  end: { line: 47, column: 64, offset: 1459 }
+                  start: { line: 48, column: 1, offset: 1424 },
+                  end: { line: 48, column: 64, offset: 1487 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'switchCase',
                 position: {
-                  start: { line: 47, column: 64, offset: 1459 },
-                  end: { line: 47, column: 76, offset: 1471 }
+                  start: { line: 48, column: 64, offset: 1487 },
+                  end: { line: 48, column: 76, offset: 1499 }
                 }
               },
               {
                 type: 'text',
                 value: ' executes immediately.',
                 position: {
-                  start: { line: 47, column: 76, offset: 1471 },
-                  end: { line: 47, column: 98, offset: 1493 }
+                  start: { line: 48, column: 76, offset: 1499 },
+                  end: { line: 48, column: 98, offset: 1521 }
                 }
               }
             ],
             position: {
-              start: { line: 47, column: 1, offset: 1396 },
-              end: { line: 47, column: 98, offset: 1493 }
+              start: { line: 48, column: 1, offset: 1424 },
+              end: { line: 48, column: 98, offset: 1521 }
             }
           },
           {
@@ -55759,12 +55765,12 @@ export default [
             meta: '[playground]',
             value: 'const age = 26\n' +
               '\n' +
-              "const myDrink = switchCase([age >= 21, 'Water', 'Juice'])\n" +
+              "const myDrink = switchCase(age >= 21, 'Water', 'Juice')\n" +
               '\n' +
               'console.log(myDrink)',
             position: {
-              start: { line: 49, column: 1, offset: 1495 },
-              end: { line: 55, column: 4, offset: 1621 }
+              start: { line: 50, column: 1, offset: 1523 },
+              end: { line: 56, column: 4, offset: 1647 }
             }
           },
           {
@@ -55774,30 +55780,30 @@ export default [
                 type: 'text',
                 value: 'A single argument and one or more functions passed to ',
                 position: {
-                  start: { line: 57, column: 1, offset: 1623 },
-                  end: { line: 57, column: 55, offset: 1677 }
+                  start: { line: 58, column: 1, offset: 1649 },
+                  end: { line: 58, column: 55, offset: 1703 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'switchCase',
                 position: {
-                  start: { line: 57, column: 55, offset: 1677 },
-                  end: { line: 57, column: 67, offset: 1689 }
+                  start: { line: 58, column: 55, offset: 1703 },
+                  end: { line: 58, column: 67, offset: 1715 }
                 }
               },
               {
                 type: 'text',
                 value: ' executes immediately.',
                 position: {
-                  start: { line: 57, column: 67, offset: 1689 },
-                  end: { line: 57, column: 89, offset: 1711 }
+                  start: { line: 58, column: 67, offset: 1715 },
+                  end: { line: 58, column: 89, offset: 1737 }
                 }
               }
             ],
             position: {
-              start: { line: 57, column: 1, offset: 1623 },
-              end: { line: 57, column: 89, offset: 1711 }
+              start: { line: 58, column: 1, offset: 1649 },
+              end: { line: 58, column: 89, offset: 1737 }
             }
           },
           {
@@ -55811,8 +55817,8 @@ export default [
               "  () => console.log('odd')\n" +
               ')',
             position: {
-              start: { line: 59, column: 1, offset: 1713 },
-              end: { line: 66, column: 4, offset: 1837 }
+              start: { line: 60, column: 1, offset: 1739 },
+              end: { line: 67, column: 4, offset: 1863 }
             }
           },
           {
@@ -55822,30 +55828,30 @@ export default [
                 type: 'text',
                 value: 'Any promises in ',
                 position: {
-                  start: { line: 68, column: 1, offset: 1839 },
-                  end: { line: 68, column: 17, offset: 1855 }
+                  start: { line: 69, column: 1, offset: 1865 },
+                  end: { line: 69, column: 17, offset: 1881 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'arguments',
                 position: {
-                  start: { line: 68, column: 17, offset: 1855 },
-                  end: { line: 68, column: 28, offset: 1866 }
+                  start: { line: 69, column: 17, offset: 1881 },
+                  end: { line: 69, column: 28, offset: 1892 }
                 }
               },
               {
                 type: 'text',
                 value: ' are resolved for their values before further execution for the immediate interface only. Any promises in the conditional array are resolved before further execution for both the lazy and immediate interface.',
                 position: {
-                  start: { line: 68, column: 28, offset: 1866 },
-                  end: { line: 68, column: 236, offset: 2074 }
+                  start: { line: 69, column: 28, offset: 1892 },
+                  end: { line: 69, column: 236, offset: 2100 }
                 }
               }
             ],
             position: {
-              start: { line: 68, column: 1, offset: 1839 },
-              end: { line: 68, column: 236, offset: 2074 }
+              start: { line: 69, column: 1, offset: 1865 },
+              end: { line: 69, column: 236, offset: 2100 }
             }
           },
           {
@@ -55868,8 +55874,8 @@ export default [
               '\n' +
               'console.log(result)',
             position: {
-              start: { line: 70, column: 1, offset: 2076 },
-              end: { line: 86, column: 4, offset: 2473 }
+              start: { line: 71, column: 1, offset: 2102 },
+              end: { line: 87, column: 4, offset: 2499 }
             }
           },
           {
@@ -55879,14 +55885,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 88, column: 1, offset: 2475 },
-                  end: { line: 88, column: 10, offset: 2484 }
+                  start: { line: 89, column: 1, offset: 2501 },
+                  end: { line: 89, column: 10, offset: 2510 }
                 }
               }
             ],
             position: {
-              start: { line: 88, column: 1, offset: 2475 },
-              end: { line: 88, column: 10, offset: 2484 }
+              start: { line: 89, column: 1, offset: 2501 },
+              end: { line: 89, column: 10, offset: 2510 }
             }
           },
           {
@@ -55912,26 +55918,26 @@ export default [
                             type: 'text',
                             value: 'pipe',
                             position: {
-                              start: { line: 89, column: 5, offset: 2489 },
-                              end: { line: 89, column: 9, offset: 2493 }
+                              start: { line: 90, column: 5, offset: 2515 },
+                              end: { line: 90, column: 9, offset: 2519 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 89, column: 4, offset: 2488 },
-                          end: { line: 89, column: 22, offset: 2506 }
+                          start: { line: 90, column: 4, offset: 2514 },
+                          end: { line: 90, column: 22, offset: 2532 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 89, column: 4, offset: 2488 },
-                      end: { line: 89, column: 22, offset: 2506 }
+                      start: { line: 90, column: 4, offset: 2514 },
+                      end: { line: 90, column: 22, offset: 2532 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 89, column: 2, offset: 2486 },
-                  end: { line: 89, column: 22, offset: 2506 }
+                  start: { line: 90, column: 2, offset: 2512 },
+                  end: { line: 90, column: 22, offset: 2532 }
                 }
               },
               {
@@ -55951,26 +55957,26 @@ export default [
                             type: 'text',
                             value: 'tap.if',
                             position: {
-                              start: { line: 90, column: 5, offset: 2511 },
-                              end: { line: 90, column: 11, offset: 2517 }
+                              start: { line: 91, column: 5, offset: 2537 },
+                              end: { line: 91, column: 11, offset: 2543 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 90, column: 4, offset: 2510 },
-                          end: { line: 90, column: 26, offset: 2532 }
+                          start: { line: 91, column: 4, offset: 2536 },
+                          end: { line: 91, column: 26, offset: 2558 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 90, column: 4, offset: 2510 },
-                      end: { line: 90, column: 26, offset: 2532 }
+                      start: { line: 91, column: 4, offset: 2536 },
+                      end: { line: 91, column: 26, offset: 2558 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 90, column: 2, offset: 2508 },
-                  end: { line: 90, column: 26, offset: 2532 }
+                  start: { line: 91, column: 2, offset: 2534 },
+                  end: { line: 91, column: 26, offset: 2558 }
                 }
               },
               {
@@ -55990,26 +55996,26 @@ export default [
                             type: 'text',
                             value: 'tryCatch',
                             position: {
-                              start: { line: 91, column: 5, offset: 2537 },
-                              end: { line: 91, column: 13, offset: 2545 }
+                              start: { line: 92, column: 5, offset: 2563 },
+                              end: { line: 92, column: 13, offset: 2571 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 91, column: 4, offset: 2536 },
-                          end: { line: 91, column: 30, offset: 2562 }
+                          start: { line: 92, column: 4, offset: 2562 },
+                          end: { line: 92, column: 30, offset: 2588 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 91, column: 4, offset: 2536 },
-                      end: { line: 91, column: 30, offset: 2562 }
+                      start: { line: 92, column: 4, offset: 2562 },
+                      end: { line: 92, column: 30, offset: 2588 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 91, column: 2, offset: 2534 },
-                  end: { line: 91, column: 30, offset: 2562 }
+                  start: { line: 92, column: 2, offset: 2560 },
+                  end: { line: 92, column: 30, offset: 2588 }
                 }
               },
               {
@@ -56029,38 +56035,38 @@ export default [
                             type: 'text',
                             value: 'all',
                             position: {
-                              start: { line: 92, column: 5, offset: 2567 },
-                              end: { line: 92, column: 8, offset: 2570 }
+                              start: { line: 93, column: 5, offset: 2593 },
+                              end: { line: 93, column: 8, offset: 2596 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 92, column: 4, offset: 2566 },
-                          end: { line: 92, column: 20, offset: 2582 }
+                          start: { line: 93, column: 4, offset: 2592 },
+                          end: { line: 93, column: 20, offset: 2608 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 92, column: 4, offset: 2566 },
-                      end: { line: 92, column: 20, offset: 2582 }
+                      start: { line: 93, column: 4, offset: 2592 },
+                      end: { line: 93, column: 20, offset: 2608 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 92, column: 2, offset: 2564 },
-                  end: { line: 92, column: 20, offset: 2582 }
+                  start: { line: 93, column: 2, offset: 2590 },
+                  end: { line: 93, column: 20, offset: 2608 }
                 }
               }
             ],
             position: {
-              start: { line: 89, column: 2, offset: 2486 },
-              end: { line: 92, column: 20, offset: 2582 }
+              start: { line: 90, column: 2, offset: 2512 },
+              end: { line: 93, column: 20, offset: 2608 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 92, column: 20, offset: 2582 }
+          end: { line: 93, column: 20, offset: 2608 }
         }
       },
       execution: {
