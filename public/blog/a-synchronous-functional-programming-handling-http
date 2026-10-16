@@ -25,11 +25,6 @@
   <link rel="manifest" href="/site.webmanifest">
   <link rel="canonical" href="https://rubico.land/blog/a-synchronous-functional-programming-handling-http">
 
-  <script src="https://cdn.jsdelivr.net/npm/rubico@2.8.2/dist/rubico.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/rubico@2.8.2/dist/Transducer.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/arche@1.0.2/index.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/react@17.0.1/umd/react.production.min.js" crossorigin></script>
-  <script src="https://cdn.jsdelivr.net/npm/react-dom@17.0.1/umd/react-dom.production.min.js" crossorigin></script>
   <script src="/codemirror/index.js"></script>
   <link rel="stylesheet" href="/codemirror/styles.css">
   <link rel="stylesheet" href="/codemirror/theme/rubico.css">
@@ -46,9 +41,630 @@
 </head>
 
 <body>
-  <div id="react-root"></div>
-</body>
+  <div id="react-root"><div id="layout"><nav><div class="home"><a id="home-link" href="/"><img src="/assets/rubico-logo-3-3.jpg" alt=""></img><span class="text1">Rubico</span></a><select><option value="v1">v1</option><option value="v2" selected>v2</option></select><div class="links"><a href="/tour" class="nav-link">Tour</a><a href="/docs" class="nav-link">Docs</a><a href="/blog" class="nav-link active">Blog</a></div></div><div class="right-links"><a id="github-link" href="https://github.com/a-synchronous/rubico"><svg id="github-mark" width="100" height="100" viewBox="0 0 100 100 " xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="#24292f"></path></svg></a></div></nav><blockquote><p>a shallow river in northeastern Italy, just south of Ravenna</p></blockquote><div class="slider"><div class="panels" style="width: 200%; transform: translate(calc(0%));"><div class="panel" style="width: 50%;"><main><div id="blog"><div class="blog-post active"><div class="title"><a href="/blog" class="active"><h1>[A]synchronous Functional Programming - Handling HTTP</h1><svg class="down-arrow-svg" width="200" height="133" viewBox="0 0 200 133" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="143.875" height="41.9555" rx="20.9777" transform="matrix(0.683998 -0.729484 0.756447 0.654055 69.8527 105.123)" fill="black"></rect><rect width="143.875" height="41.9555" rx="20.9777" transform="matrix(0.683998 0.729484 -0.756447 0.654055 31.7371 0)" fill="black"></rect></svg></a><p>Updated October 9, 2026 by Richard Tong, King of Technology at CLOUŢ</p></div><div class="cover"><img src="/assets/HTTP_logo.png" alt="/assets/HTTP_logo.png"></img></div><div class="fade-in-out"><article><p><span>Welcome to Handling HTTP in [A]synchronous Functional Programming. In this article we will discuss how to handle HTTP in the context of the [A]synchronous Functional Programming paradigm in JavaScript.</span></p><a class="anchor-hash" href="#http" style="display: flex; place-items: center;"><h2 id="http"><span>HTTP</span></h2></a><p><span>HTTP (Hypertext Transfer Protocol) is a </span><a href="https://www.cloudflare.com/learning/network-layer/what-is-a-protocol/"><span>protocol</span></a><span> by which data is transferred over the internet. The internet is just a bunch of computers (including PCs, laptops, and smartphones), and those computers communicate with each other using HTTP. When you visit a website, chances are it was served to you using HTTP. When you use a mobile app, chances are it used HTTP to serve you content.</span></p><p><span>HTTP adheres to the </span><a href="https://www.akamai.com/glossary/what-is-the-client-server-model"><span>client-server model</span></a><span> where a client sends a request to a server and the server sends a response back to the client.</span></p><p><div class="image"><img src="/assets/http-diagram-2.jpg" alt="http-diagram.jpg"></img></div></p><p><span>In order for clients to find the right servers to request, they need to use a URL.</span></p><a class="anchor-hash" href="#url" style="display: flex; place-items: center;"><h2 id="url"><span>URL</span></h2></a><p><span>A URL (Uniform Resource Locator) is a string that uniquely identifies the web address of a resource on the internet. A resource is information or content that can be identified and accessed via a URL. A resources can be a file, an image, a document, or a record in a database.</span></p><p><div class="image"><img src="/assets/url-structure-diagram.jpg" alt="url-structure-diagram.jpg"></img></div></p><p><span>The basic structure of a URL includes the following parts:</span></p><ul><li><p><a href="#url-scheme"><span>scheme</span></a></p></li><li><p><a href="#url-domain-name"><span>domain name</span></a></p></li><li><p><a href="#url-port"><span>port</span></a></p></li><li><p><a href="#url-authority"><span>authority</span></a></p></li><li><p><a href="#url-path"><span>path</span></a></p></li><li><p><a href="#url-query-parameters"><span>query parameters</span></a></p></li><li><p><a href="#url-anchor"><span>anchor</span></a></p></li></ul><a class="anchor-hash" href="#url-scheme" style="display: flex; place-items: center;"><h3 id="url-scheme"><span>URL Scheme</span></h3></a><p><div class="image"><img src="/assets/url-structure-scheme-diagram.jpg" alt="url-structure-scheme-diagram.jpg"></img></div></p><p><span>The scheme of a URL specifies the protocol that the client will use to send a request to the server. For HTTP, the scheme could be </span><code>http</code><span> or </span><code>https</code><span>. Other schemes include </span><code>ws</code><span> and </span><code>wss</code><span> for the </span><a href="https://http.dev/ws"><span>WebSocket</span></a><span> protocol, </span><code>mailto</code><span> for the "mailto:" protocol, and </span><code>file</code><span> for the "file:" protocol.</span></p><a class="anchor-hash" href="#url-domain-name" style="display: flex; place-items: center;"><h3 id="url-domain-name"><span>URL Domain Name</span></h3></a><p><div class="image"><img src="/assets/url-structure-domain-name-diagram.jpg" alt="url-structure-domain-name-diagram.jpg"></img></div></p><p><span>The domain name of a URL is a unique name that translates to the address of a computer where the resource of the URL is located. Domain names are translated via the </span><a href="https://www.cloudflare.com/learning/dns/what-is-dns/"><span>Domain Name System (DNS)</span></a><span> to computer addresses running web servers to which HTTP clients can send requests.</span></p><a class="anchor-hash" href="#url-port" style="display: flex; place-items: center;"><h3 id="url-port"><span>URL Port</span></h3></a><p><div class="image"><img src="/assets/url-structure-port-diagram.jpg" alt="url-structure-port-diagram.jpg"></img></div></p><p><span>The port of a URL is a number that identifies a specific process or network service running on the computer where the resource of the URL is located. When a computer starts up a process like a web server, it can assign it a numerical port between 0 and 65535. The web server would then listen on this assigned port for HTTP requests.</span></p><a class="anchor-hash" href="#url-authority" style="display: flex; place-items: center;"><h3 id="url-authority"><span>URL Authority</span></h3></a><p><div class="image"><img src="/assets/url-structure-authority-diagram.jpg" alt="url-structure-authority-diagram.jpg"></img></div></p><p><span>The authority of a URL consists of the domain name and port of the URL separated by a colon.</span></p><a class="anchor-hash" href="#url-path" style="display: flex; place-items: center;"><h3 id="url-path"><span>URL Path</span></h3></a><p><div class="image"><img src="/assets/url-structure-path-diagram.jpg" alt="url-structure-path-diagram.jpg"></img></div></p><p><span>The path of a URL is a string that identifies the physical or abstract location of the resource within the URL's domain.</span></p><a class="anchor-hash" href="#url-query-parameters" style="display: flex; place-items: center;"><h3 id="url-query-parameters"><span>URL Query Parameters</span></h3></a><p><div class="image"><img src="/assets/url-structure-query-parameters-diagram.jpg" alt="url-structure-query-parameters-diagram.jpg"></img></div></p><p><span>The query parameters of a URL are a list of key-value pairs separated by the </span><code>&</code><span> symbol. The query parameters can further identify the resource of a URL.</span></p><a class="anchor-hash" href="#url-anchor" style="display: flex; place-items: center;"><h3 id="url-anchor"><span>URL Anchor</span></h3></a><p><div class="image"><img src="/assets/url-structure-anchor-diagram.jpg" alt="url-structure-anchor-diagram.jpg"></img></div></p><p><span>The anchor of a URL specifies a part of the URL's resource, and does not necessarily locate the resource. When a web server serves a web page as a resource, the anchor acts as a sort of "bookmark" inside the resource. Browsers will see the anchor and scroll the page down to where the section identified by the anchor is visible.</span></p><a class="anchor-hash" href="#http-client" style="display: flex; place-items: center;"><h2 id="http-client"><span>HTTP Client</span></h2></a><p><span>An HTTP client is a component of a </span><a href="https://en.wikipedia.org/wiki/Application_software"><span>software application</span></a><span> running inside a computer that sends HTTP requests to HTTP servers. The JavaScript code below is part of a software application that runs in your web browser. The code demonstrates the use of an HTTP client </span><code>fetch</code><span> to send a request to an HTTP server at the url </span><code>https://jsonplaceholder.typicode.com/todos/1</code><span>.</span></p><div class="code-runner"><div></div><div style="height: .5em;"></div><div style="display: grid; grid-template-columns: 36px 26px 1fr;"><button style="text-align: center; border-radius: 2px; width: 36px; padding: 0; cursor: pointer; height: 2em; outline: none; box-shadow: 1px 1px grey;">run</button><span style="visibility: hidden; color: #3f72fc; font-size: .80em; font-weight: 625; position: relative; right: -0.75em; bottom: -0.65em;"> ></span><iframe style="visibility: hidden; height: 6em; position: relative; bottom: -0.05em; width: 99%;"></iframe></div></div><a class="anchor-hash" href="#http-request" style="display: flex; place-items: center;"><h2 id="http-request"><span>HTTP Request</span></h2></a><p><span>An HTTP request is a message conforming to the HTTP protocol that a client sends to a server. An HTTP request has the following properties:</span></p><ul><li><p><a href="#http-request-method"><span>method</span></a></p></li><li><p><a href="#http-request-url"><span>url</span></a></p></li><li><p><a href="#http-request-headers"><span>headers</span></a></p></li><li><p><a href="#http-request-body"><span>body</span></a></p></li></ul><a class="anchor-hash" href="#http-request-method" style="display: flex; place-items: center;"><h3 id="http-request-method"><span>HTTP Request Method</span></h3></a><p><span>The HTTP request method is a verb that specifies the purpose of the request, and often dictates the behavior of the web server at the url being requested. The request methods are as follows: </span><code>GET</code><span>, </span><code>HEAD</code><span>, </span><code>POST</code><span>, </span><code>PUT</code><span>, </span><code>PATCH</code><span>, </span><code>DELETE</code><span>, </span><code>CONNECT</code><span>, </span><code>OPTIONS</code><span>, and </span><code>TRACE</code><span>.</span></p><a class="anchor-hash" href="#get" style="display: flex; place-items: center;"><h4 id="get"><span>GET</span></h4></a><p><span>The </span><code>GET</code><span> HTTP request method asks the web server for a data representation of the resource. </span><code>GET</code><span> requests are </span><a href="https://developer.mozilla.org/en-US/docs/Glossary/Safe/HTTP"><span>safe</span></a><span>, </span><a href="https://developer.mozilla.org/en-US/docs/Glossary/Idempotent"><span>idempotent</span></a><span>, and </span><a href="https://developer.mozilla.org/en-US/docs/Glossary/Cacheable"><span>cacheable</span></a><span>.</span></p><a class="anchor-hash" href="#head" style="display: flex; place-items: center;"><h4 id="head"><span>HEAD</span></h4></a><p><span>The </span><code>HEAD</code><span> HTTP request method asks the web server for metadata about the resource. </span><code>HEAD</code><span> requests are safe, idempotent, and cacheable.</span></p><a class="anchor-hash" href="#post" style="display: flex; place-items: center;"><h4 id="post"><span>POST</span></h4></a><p><span>The </span><code>POST</code><span> HTTP request method sends data to the web server to create the resource. </span><code>POST</code><span> requests are not safe, are not idempotent, and are cacheable only when the response includes </span><a href="https://developer.mozilla.org/en-US/docs/Glossary/Cacheable"><span>freshness</span></a><span> information via the </span><code>Expires</code><span> or </span><code>Cache-Control</code><span> headers as well as a </span><code>Content-Location</code><span> header.</span></p><a class="anchor-hash" href="#put" style="display: flex; place-items: center;"><h4 id="put"><span>PUT</span></h4></a><p><span>The </span><code>PUT</code><span> HTTP request method sends data to the web server to replace the resource. If the resource doesn't exist, it may be created. </span><code>PUT</code><span> requests are not safe, are idempotent, and are cacheable.</span></p><a class="anchor-hash" href="#patch" style="display: flex; place-items: center;"><h4 id="patch"><span>PATCH</span></h4></a><p><span>The </span><code>PATCH</code><span> HTTP request method sends data to the web server to partially update the resource. </span><code>PATCH</code><span> requests are not safe, are not idempotent, and are cacheable only when the response includes freshness information via the </span><code>Expires</code><span> or </span><code>Cache-Control</code><span> headers as well as a </span><code>Content-Location</code><span> header.</span></p><a class="anchor-hash" href="#delete" style="display: flex; place-items: center;"><h4 id="delete"><span>DELETE</span></h4></a><p><span>The </span><code>DELETE</code><span> HTTP request method asks the web server to remove the resource. </span><code>DELETE</code><span> requests are not safe, are idempotent, and are not cacheable.</span></p><a class="anchor-hash" href="#connect" style="display: flex; place-items: center;"><h4 id="connect"><span>CONNECT</span></h4></a><p><span>The </span><code>CONNECT</code><span> HTTP request method asks the web server to establish a tunnel to the server identified by the resource. </span><code>CONNECT</code><span> requests are not safe, are not idempotent, and are not cacheable.</span></p><a class="anchor-hash" href="#options" style="display: flex; place-items: center;"><h4 id="options"><span>OPTIONS</span></h4></a><p><span>The </span><code>OPTIONS</code><span> HTTP request method asks the web server to describe the communication options of the resource. </span><code>OPTIONS</code><span> requests are safe, are idempotent, and are not cacheable.</span></p><a class="anchor-hash" href="#trace" style="display: flex; place-items: center;"><h4 id="trace"><span>TRACE</span></h4></a><p><span>The </span><code>TRACE</code><span> HTTP request method asks the web server to perform a </span><a href="https://lightyear.ai/tips/what-is-loopback-testing"><span>loop-back test</span></a><span> along the path of the URL. </span><code>TRACE</code><span> requests are safe, are idempotent, and are not cacheable.</span></p><a class="anchor-hash" href="#http-request-url" style="display: flex; place-items: center;"><h3 id="http-request-url"><span>HTTP Request URL</span></h3></a><p><span>The HTTP request URL is the </span><a href="#url"><span>URL</span></a><span> of a request. The request URL is provided to the request when the request is made by the client.</span></p><a class="anchor-hash" href="#http-request-headers" style="display: flex; place-items: center;"><h3 id="http-request-headers"><span>HTTP Request Headers</span></h3></a><p><span>HTTP request headers are key-value pairs assigned to each request. HTTP request headers pass additional context and metadata about the request.</span></p><a class="anchor-hash" href="#http-request-body" style="display: flex; place-items: center;"><h3 id="http-request-body"><span>HTTP Request Body</span></h3></a><p><span>The HTTP request body is the part of the request that carries the bulk of the data sent to the server. The content type of the request body should be specified in the request's </span><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Type"><span>Content-Type</span></a><span> header.</span></p><p><span>Some examples of HTTP request bodies:</span></p><ul><li><p><a href="https://www.json.org/json-en.html"><span>JSON</span></a><span> - request body used for web applications. The request method is typically </span><code>PUT</code><span>, </span><code>POST</code><span>, or </span><code>PATCH</code><span>. The </span><code>Content-Type</code><span> header field must be </span><code>application/json</code><span>.</span></p></li><li><p><span>Binary - request body used for media transfer. The request method is typically </span><code>PUT</code><span> or </span><code>POST</code><span>. The </span><code>Content-Type</code><span> header field can be </span><code>image/jpeg</code><span>, </span><code>image/png</code><span>, </span><code>audio/mpeg</code><span>, </span><code>audio/x-wav</code><span>, or </span><code>video/mp4</code><span>.</span></p></li></ul><a class="anchor-hash" href="#http-response" style="display: flex; place-items: center;"><h2 id="http-response"><span>HTTP Response</span></h2></a><p><span>An HTTP response is a message conforming to the HTTP protocol that a server sends back to the client. An HTTP response has the following properties:</span></p><ul><li><p><a href="#http-response-status-code"><span>status code</span></a></p></li><li><p><a href="#http-response-headers"><span>headers</span></a></p></li><li><p><a href="#http-response-body"><span>body</span></a></p></li></ul><a class="anchor-hash" href="#http-response-status-code" style="display: flex; place-items: center;"><h3 id="http-response-status-code"><span>HTTP Response Status Code</span></h3></a><p><span>The HTTP response status code is a three-digit code that indicates the status of the server's processing of the request.</span></p><a class="anchor-hash" href="#informational-status-codes-(100-199)" style="display: flex; place-items: center;"><h4 id="informational-status-codes-(100-199)"><span>Informational Status Codes (100-199)</span></h4></a><a class="anchor-hash" href="#100-continue" style="display: flex; place-items: center;"><h5 id="100-continue"><span>100 Continue</span></h5></a><p><span>The server has received the request headers and is ready for the client to send the request body.</span></p><a class="anchor-hash" href="#101-switching-protocols" style="display: flex; place-items: center;"><h5 id="101-switching-protocols"><span>101 Switching Protocols</span></h5></a><p><span>The server is switching to a different protocol, specified in the </span><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Upgrade"><span>Upgrade</span></a><span> header, at the client's request. </span><code>101 Switching Protocols</code><span> is used by the </span><a href="https://http.dev/ws"><span>WebSocket</span></a><span> protocol when switching from HTTP.</span></p><a class="anchor-hash" href="#102-processing" style="display: flex; place-items: center;"><h5 id="102-processing"><span>102 Processing</span></h5></a><p><span>The server has received and is processing the request but no response is available yet.</span></p><a class="anchor-hash" href="#103-early-hints" style="display: flex; place-items: center;"><h5 id="103-early-hints"><span>103 Early Hints</span></h5></a><p><span>The server returns some header information while preparing the rest of the response to allow for the client to start preloading resources.</span></p><a class="anchor-hash" href="#successful-status-codes-(200-299)" style="display: flex; place-items: center;"><h4 id="successful-status-codes-(200-299)"><span>Successful Status Codes (200-299)</span></h4></a><a class="anchor-hash" href="#200-ok" style="display: flex; place-items: center;"><h5 id="200-ok"><span>200 OK</span></h5></a><p><span>The server successfully processed the request. The meaning of success depends on the request method:</span></p><ul><li><p><code>GET</code><span> - The resource has been successfully retrieved and transmitted in the response message body.</span></p></li><li><p><code>HEAD</code><span> - The requested metadata about the resource is available in the response headers.</span></p></li><li><p><code>POST</code><span> - The resource was created successfully.</span></p></li><li><p><code>PUT</code><span> - The resource was created or updated successfully.</span></p></li><li><p><code>PATCH</code><span> - The resource was updated successfully.</span></p></li><li><p><code>DELETE</code><span> - The resource was deleted successfully.</span></p></li><li><p><code>CONNECT</code><span> - The connection was established successfully.</span></p></li><li><p><code>OPTIONS</code><span> - The communication options are available in the </span><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Allow"><span>Allow</span></a><span> header.</span></p></li><li><p><code>TRACE</code><span> - The server successfully received and echoed back the client's request.</span></p></li></ul><a class="anchor-hash" href="#201-created" style="display: flex; place-items: center;"><h5 id="201-created"><span>201 Created</span></h5></a><p><span>The request succeeded and a new resource was created.</span></p><a class="anchor-hash" href="#202-accepted" style="display: flex; place-items: center;"><h5 id="202-accepted"><span>202 Accepted</span></h5></a><p><span>The request has been received but has not yet been processed.</span></p><a class="anchor-hash" href="#203-non-authoritative-information" style="display: flex; place-items: center;"><h5 id="203-non-authoritative-information"><span>203 Non-Authoritative Information</span></h5></a><p><span>The request succeeded but the response headers or body were modified by a proxy server before being sent to the client.</span></p><a class="anchor-hash" href="#204-no-content" style="display: flex; place-items: center;"><h5 id="204-no-content"><span>204 No Content</span></h5></a><p><span>The server has successfully processed the request, but there is no content available for this request. The client may update its cached headers for the requested resource with the response headers from this request.</span></p><a class="anchor-hash" href="#205-reset-content" style="display: flex; place-items: center;"><h5 id="205-reset-content"><span>205 Reset Content</span></h5></a><p><span>The server has successfully processed the request, and asks the client to reset the document to its original state.</span></p><a class="anchor-hash" href="#206-partial-content" style="display: flex; place-items: center;"><h5 id="206-partial-content"><span>206 Partial Content</span></h5></a><p><span>The server has successfully processed the request, and is delivering only part of the requested resource. </span><code>206 Partial Content</code><span> is commonly used in </span><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Range_requests"><span>range requests</span></a><span>.</span></p><a class="anchor-hash" href="#redirection-status-codes-(300-399)" style="display: flex; place-items: center;"><h4 id="redirection-status-codes-(300-399)"><span>Redirection Status Codes (300-399)</span></h4></a><a class="anchor-hash" href="#300-multiple-choices" style="display: flex; place-items: center;"><h5 id="300-multiple-choices"><span>300 Multiple Choices</span></h5></a><p><span>The resource has multiple representations, and the client needs to choose which one to access.</span></p><a class="anchor-hash" href="#301-moved-permanently" style="display: flex; place-items: center;"><h5 id="301-moved-permanently"><span>301 Moved Permanently</span></h5></a><p><span>The URL of the requested resource has been moved permanently. The URL of the redirected resource is available in the </span><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Location"><span>Location</span></a><span> header of the response.</span></p><a class="anchor-hash" href="#302-found" style="display: flex; place-items: center;"><h5 id="302-found"><span>302 Found</span></h5></a><p><span>The URL of the requested resource has been moved temporarily. The URL of the redirected resource is available in the </span><code>Location</code><span> header of the response.</span></p><a class="anchor-hash" href="#303-see-other" style="display: flex; place-items: center;"><h5 id="303-see-other"><span>303 See Other</span></h5></a><p><span>The server is redirecting the client's request for the resource to a different resource. The URL of the redirected resource is available in the </span><code>Location</code><span> header of the response. The client should use the HTTP </span><code>GET</code><span> method to request the redirected resource.</span></p><a class="anchor-hash" href="#304-not-modified" style="display: flex; place-items: center;"><h5 id="304-not-modified"><span>304 Not Modified</span></h5></a><p><span>The resource has not been modified since the last access, so the client can continue to use the same cached version of the resource.</span></p><a class="anchor-hash" href="#307-temporary-redirect" style="display: flex; place-items: center;"><h5 id="307-temporary-redirect"><span>307 Temporary Redirect</span></h5></a><p><span>The URL of the requested resource has been moved temporarily. The URL of the redirected resource is available in the </span><code>Location</code><span> header of the response. The client should use the original HTTP method to request the redirected resource.</span></p><a class="anchor-hash" href="#308-permanent-redirect" style="display: flex; place-items: center;"><h5 id="308-permanent-redirect"><span>308 Permanent Redirect</span></h5></a><p><span>The URL of the requested resource has been moved permanently. The URL of the redirected resource is available in the </span><code>Location</code><span> header of the response. The client should use the original HTTP method to request the redirected resource.</span></p><a class="anchor-hash" href="#client-error-status-codes-(400-499)" style="display: flex; place-items: center;"><h4 id="client-error-status-codes-(400-499)"><span>Client Error Status Codes (400-499)</span></h4></a><a class="anchor-hash" href="#400-bad-request" style="display: flex; place-items: center;"><h5 id="400-bad-request"><span>400 Bad Request</span></h5></a><p><span>The server cannot process the request due to client error, e.g. invalid syntax.</span></p><a class="anchor-hash" href="#401-unauthorized" style="display: flex; place-items: center;"><h5 id="401-unauthorized"><span>401 Unauthorized</span></h5></a><p><span>The request lacks valid authentication credentials.</span></p><a class="anchor-hash" href="#402-payment-required" style="display: flex; place-items: center;"><h5 id="402-payment-required"><span>402 Payment Required</span></h5></a><p><span>The requested content is not available until the client makes a payment.</span></p><a class="anchor-hash" href="#403-forbidden" style="display: flex; place-items: center;"><h5 id="403-forbidden"><span>403 Forbidden</span></h5></a><p><span>The server is refusing the client access to the requested resource.</span></p><a class="anchor-hash" href="#404-not-found" style="display: flex; place-items: center;"><h5 id="404-not-found"><span>404 Not Found</span></h5></a><p><span>The server cannot find the requested resource. Either the URL is not recognized, or the URL is recognized but the requested resource does not exist.</span></p><a class="anchor-hash" href="#405-method-not-allowed" style="display: flex; place-items: center;"><h5 id="405-method-not-allowed"><span>405 Method Not Allowed</span></h5></a><p><span>The request method is known by the server but it is not supported for the requested resource.</span></p><a class="anchor-hash" href="#406-not-acceptable" style="display: flex; place-items: center;"><h5 id="406-not-acceptable"><span>406 Not Acceptable</span></h5></a><p><span>The server is unable to provide a response that matches the client's requested format, typically specified in the </span><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Accept"><span>Accept</span></a><span> header of the request.</span></p><a class="anchor-hash" href="#407-proxy-authentication-required" style="display: flex; place-items: center;"><h5 id="407-proxy-authentication-required"><span>407 Proxy Authentication Required</span></h5></a><p><span>The request lacks valid authentication credentials for the </span><a href="https://en.wikipedia.org/wiki/Proxy_server"><span>proxy server</span></a><span>.</span></p><a class="anchor-hash" href="#408-request-timeout" style="display: flex; place-items: center;"><h5 id="408-request-timeout"><span>408 Request Timeout</span></h5></a><p><span>The server would like to shut down the unused connection.</span></p><a class="anchor-hash" href="#409-conflict" style="display: flex; place-items: center;"><h5 id="409-conflict"><span>409 Conflict</span></h5></a><p><span>The request conflicts with the current state of the resource, e.g. when trying to create a resource that already exists.</span></p><a class="anchor-hash" href="#410-gone" style="display: flex; place-items: center;"><h5 id="410-gone"><span>410 Gone</span></h5></a><p><span>The resource has been permanently removed from the server.</span></p><a class="anchor-hash" href="#411-length-required" style="display: flex; place-items: center;"><h5 id="411-length-required"><span>411 Length Required</span></h5></a><p><span>The </span><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Length"><span>Content-Length</span></a><span> request header is required but not present.</span></p><a class="anchor-hash" href="#412-precondition-failed" style="display: flex; place-items: center;"><h5 id="412-precondition-failed"><span>412 Precondition Failed</span></h5></a><p><span>The request headers have indicated preconditions that the server does not meet.</span></p><a class="anchor-hash" href="#413-content-too-large" style="display: flex; place-items: center;"><h5 id="413-content-too-large"><span>413 Content Too Large</span></h5></a><p><span>The request body is larger than the limits defined by the server. The server might close the connection or respond with a </span><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Retry-After"><span>Retry-After</span></a><span> header.</span></p><a class="anchor-hash" href="#414-uri-too-long" style="display: flex; place-items: center;"><h5 id="414-uri-too-long"><span>414 URI Too Long</span></h5></a><p><span>The URL of the requested resource is too long.</span></p><a class="anchor-hash" href="#415-unsupported-media-type" style="display: flex; place-items: center;"><h5 id="415-unsupported-media-type"><span>415 Unsupported Media Type</span></h5></a><p><span>The media format of the requested resource is not supported by the server.</span></p><a class="anchor-hash" href="#416-range-not-satisfiable" style="display: flex; place-items: center;"><h5 id="416-range-not-satisfiable"><span>416 Range Not Satisfiable</span></h5></a><p><span>The ranges specified in the request's </span><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Range"><span>Range</span></a><span> header cannot be fulfilled by the server.</span></p><a class="anchor-hash" href="#417-expectation-failed" style="display: flex; place-items: center;"><h5 id="417-expectation-failed"><span>417 Expectation Failed</span></h5></a><p><span>The expectation indicated by the request's </span><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Expect"><span>Expect</span></a><span> header cannot be met by the server.</span></p><a class="anchor-hash" href="#418-i'm-a-teapot" style="display: flex; place-items: center;"><h5 id="418-i'm-a-teapot"><span>418 I'm a teapot</span></h5></a><p><span>The server refuses the attempt to brew coffee with a teapot.</span></p><a class="anchor-hash" href="#421-misdirected-request" style="display: flex; place-items: center;"><h5 id="421-misdirected-request"><span>421 Misdirected Request</span></h5></a><p><span>The request was directed at a server that is not configured to produce a response for the request URL's scheme and authority.</span></p><a class="anchor-hash" href="#422-unprocessable-content" style="display: flex; place-items: center;"><h5 id="422-unprocessable-content"><span>422 Unprocessable Content</span></h5></a><p><span>The request was well-formed but was unable to be processed due to semantic errors.</span></p><a class="anchor-hash" href="#423-locked" style="display: flex; place-items: center;"><h5 id="423-locked"><span>423 Locked</span></h5></a><p><span>The requested resource is locked.</span></p><a class="anchor-hash" href="#424-failed-dependency" style="display: flex; place-items: center;"><h5 id="424-failed-dependency"><span>424 Failed Dependency</span></h5></a><p><span>The request failed due to the failure of a previous request.</span></p><a class="anchor-hash" href="#425-too-early" style="display: flex; place-items: center;"><h5 id="425-too-early"><span>425 Too Early</span></h5></a><p><span>The server is unwilling to risk processing a request that might be replayed.</span></p><a class="anchor-hash" href="#426-upgrade-required" style="display: flex; place-items: center;"><h5 id="426-upgrade-required"><span>426 Upgrade Required</span></h5></a><p><span>The server refuses to process the request under the current protocol but might be willing to do so after the client upgrades to a different protocol. The server sends an </span><code>Upgrade</code><span> header in the response to indicate the required protocol(s).</span></p><a class="anchor-hash" href="#428-precondition-required" style="display: flex; place-items: center;"><h5 id="428-precondition-required"><span>428 Precondition Required</span></h5></a><p><span>The origin server requires the request to be </span><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Conditional_requests"><span>conditional</span></a><span>.</span></p><a class="anchor-hash" href="#429-too-many-requests" style="display: flex; place-items: center;"><h5 id="429-too-many-requests"><span>429 Too Many Requests</span></h5></a><p><span>The client has sent too many requests in a given time period. See </span><a href="https://developer.mozilla.org/en-US/docs/Glossary/Rate_limit"><span>rate limiting</span></a><span>.</span></p><a class="anchor-hash" href="#431-request-header-fields-too-large" style="display: flex; place-items: center;"><h5 id="431-request-header-fields-too-large"><span>431 Request Header Fields Too Large</span></h5></a><p><span>The request header fields are too large.</span></p><a class="anchor-hash" href="#451-unavailable-for-legal-reasons" style="display: flex; place-items: center;"><h5 id="451-unavailable-for-legal-reasons"><span>451 Unavailable For Legal Reasons</span></h5></a><p><span>The requested resource is unavailable due to legal reasons.</span></p><a class="anchor-hash" href="#server-error-status-codes-(500-599)" style="display: flex; place-items: center;"><h4 id="server-error-status-codes-(500-599)"><span>Server Error Status Codes (500-599)</span></h4></a><a class="anchor-hash" href="#500-internal-server-error" style="display: flex; place-items: center;"><h5 id="500-internal-server-error"><span>500 Internal Server Error</span></h5></a><p><span>The server has encountered a situation it does not know how to handle.</span></p><a class="anchor-hash" href="#501-not-implemented" style="display: flex; place-items: center;"><h5 id="501-not-implemented"><span>501 Not Implemented</span></h5></a><p><span>The request method is not supported by the server and cannot be handled.</span></p><a class="anchor-hash" href="#502-bad-gateway" style="display: flex; place-items: center;"><h5 id="502-bad-gateway"><span>502 Bad Gateway</span></h5></a><p><span>The gateway server received an invalid response from an upstream server or origin server.</span></p><a class="anchor-hash" href="#503-service-unavailable" style="display: flex; place-items: center;"><h5 id="503-service-unavailable"><span>503 Service Unavailable</span></h5></a><p><span>The server is not ready to handle the request.</span></p><a class="anchor-hash" href="#504-gateway-timeout" style="display: flex; place-items: center;"><h5 id="504-gateway-timeout"><span>504 Gateway Timeout</span></h5></a><p><span>The gateway server's request to an upstream server or origin server timed out.</span></p><a class="anchor-hash" href="#505-http-version-not-supported" style="display: flex; place-items: center;"><h5 id="505-http-version-not-supported"><span>505 HTTP Version Not Supported</span></h5></a><p><span>The HTTP version used in the request is not supported by the server.</span></p><a class="anchor-hash" href="#506-variant-also-negotiates" style="display: flex; place-items: center;"><h5 id="506-variant-also-negotiates"><span>506 Variant Also Negotiates</span></h5></a><p><span>The server has an internal configuration error related to content negotiation.</span></p><a class="anchor-hash" href="#507-insufficient-storage" style="display: flex; place-items: center;"><h5 id="507-insufficient-storage"><span>507 Insufficient Storage</span></h5></a><p><span>The server does not have enough available storage to successfully process the request.</span></p><a class="anchor-hash" href="#508-loop-detected" style="display: flex; place-items: center;"><h5 id="508-loop-detected"><span>508 Loop Detected</span></h5></a><p><span>The server detected an infinite loop while processing the request.</span></p><a class="anchor-hash" href="#510-not-extended" style="display: flex; place-items: center;"><h5 id="510-not-extended"><span>510 Not Extended</span></h5></a><p><span>The client declares an HTTP Extension (</span><a href="https://datatracker.ietf.org/doc/html/rfc2774"><span>RFC 2774</span></a><span>) that should be used to process the request, but the extension is not supported by the server.</span></p><a class="anchor-hash" href="#511-network-authentication-required" style="display: flex; place-items: center;"><h5 id="511-network-authentication-required"><span>511 Network Authentication Required</span></h5></a><p><span>The client needs to authenticate to gain network access.</span></p><a class="anchor-hash" href="#http-response-headers" style="display: flex; place-items: center;"><h3 id="http-response-headers"><span>HTTP Response Headers</span></h3></a><p><span>HTTP response headers are key-value pairs assigned to each response. HTTP response headers pass additional context and metadata about the response.</span></p><a class="anchor-hash" href="#http-response-body" style="display: flex; place-items: center;"><h3 id="http-response-body"><span>HTTP Response Body</span></h3></a><p><span>The HTTP response body is the part of the response that carries the bulk of the data sent back to the client. The content type of the response body should be specified in the response's </span><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Type"><span>Content-Type</span></a><span> header.</span></p><p><span>Some examples of HTTP response bodies:</span></p><ul><li><p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML"><span>HTML</span></a><span> - response body used for web pages. The method of the request is typically </span><code>GET</code><span>. The </span><code>Content-Type</code><span> header field must be </span><code>text/html</code><span>.</span></p></li><li><p><a href="https://www.json.org/json-en.html"><span>JSON</span></a><span> - response body used for web applications. The method of the request is typically </span><code>PUT</code><span>, </span><code>POST</code><span>, or </span><code>PATCH</code><span>. The </span><code>Content-Type</code><span> header field must be </span><code>application/json</code><span>.</span></p></li><li><p><a href="https://aws.amazon.com/what-is/xml/"><span>XML</span></a><span> - response body used for </span><a href="https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview"><span>sitemaps</span></a><span> or web applications. The method of the request can be </span><code>GET</code><span>, </span><code>PUT</code><span>, </span><code>POST</code><span>, or </span><code>PATCH</code><span>. The </span><code>Content-Type</code><span> header field can be </span><code>application/xml</code><span> or </span><code>text/xml</code><span>.</span></p></li><li><p><span>Binary - response body used for media transfer. The method of the request is typically </span><code>GET</code><span>. The </span><code>Content-Type</code><span> header field can be </span><code>image/jpeg</code><span>, </span><code>image/png</code><span>, </span><code>audio/mpeg</code><span>, </span><code>audio/x-wav</code><span>, or </span><code>video/mp4</code><span>.</span></p></li></ul><a class="anchor-hash" href="#http-server" style="display: flex; place-items: center;"><h2 id="http-server"><span>HTTP Server</span></h2></a><p><span>An HTTP server is a component of a "web server" or software application running inside a computer that listens on a specific port for HTTP requests. The HTTP server processes those requests and sends back HTTP responses. The </span><a href="https://nodejs.org/en"><span>NodeJS</span></a><span> JavaScript code below is part of a software application that runs inside a computer or "server" in a data center.</span></p><p><span>We can use the NodeJS </span><code>http</code><span> module to create an HTTP server.</span></p><div class="code-viewer"><button class="copy-button"><div class="copy-icon">
+<svg width="1055" height="1043" viewBox="0 0 1055 1043" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M650 242.266C732.843 242.266 800 309.423 800 392.266V892.266C800 975.108 732.842 1042.27 650 1042.27H150C67.1575 1042.27 0.000263959 975.108 0 892.266V392.266C0 309.423 67.1573 242.266 150 242.266H650ZM200 392.266C172.386 392.266 150 414.652 150 442.266V842.266C150 869.88 172.386 892.266 200 892.266H600C627.614 892.266 650 869.88 650 842.266V442.266C650 414.652 627.614 392.266 600 392.266H200Z" fill="black"/>
+<path d="M904.449 0C987.291 0.000131945 1054.45 67.1583 1054.45 150.001V650.001C1054.45 732.843 987.291 800.001 904.449 800.001H727.766V650.001H854.449C882.063 650.001 904.448 627.615 904.449 600.001V200.001C904.449 172.387 882.063 150.001 854.449 150.001H454.449C426.834 150.001 404.449 172.387 404.449 200.001V319.509H254.449V150.001C254.449 67.1583 321.606 0 404.449 0H904.449Z" fill="black"/>
+</svg>
+      </div></button><code><pre><span class="variable-declaration-keyword">const</span> http <span class="operator">=</span> <span class="global-object">require</span>(<span class="string">'http'</span>)
 
-<script type="module" src="/index.js"></script>
+<span class="variable-declaration-keyword">const</span> server <span class="operator">=</span> http<span class="property-accessor">.</span><span class="function-name">createServer</span>((request, response) <span class="arrow-function-operator">=></span> {
+  response<span class="property-accessor">.</span><span class="function-name">writeHead</span>(<span class="number">200</span>, {
+    <span class="string">'Content-Type'</span><span class="object-colon">:</span> <span class="string">'text/plain'</span>,
+  })
+  response<span class="property-accessor">.</span><span class="function-name">end</span>(<span class="string">'ok'</span>)
+})
+
+<span class="variable-declaration-keyword">const</span> port <span class="operator">=</span> <span class="number">8080</span>
+
+server<span class="property-accessor">.</span><span class="function-name">listen</span>(port)</pre></code></div><p><span>The example code above creates a NodeJS HTTP server with </span><code>http.createServer</code><span> that takes a simple handler </span><code>(request, response) => {...}</code><span> that only responds with status </span><code>200</code><span> and body </span><code>ok</code><span>. The HTTP server starts listening on port </span><code>8080</code><span> with the call to </span><code>server.listen</code><span>.</span></p><p><span>An HTTP server has the following properties:</span></p><ul><li><p><a href="#http-server-port"><span>port</span></a></p></li><li><p><a href="#http-server-host"><span>host</span></a></p></li></ul><a class="anchor-hash" href="#http-server-port" style="display: flex; place-items: center;"><h3 id="http-server-port"><span>HTTP Server Port</span></h3></a><p><span>The HTTP server port is a number that represents the network port on which the server is listening. A network port is a logical communication endpoint within a network. The value for the port can range from 0 and 65535. In the above example, we created an HTTP web server that listened on port </span><code>8080</code><span>.</span></p><a class="anchor-hash" href="#http-server-host" style="display: flex; place-items: center;"><h3 id="http-server-host"><span>HTTP Server Host</span></h3></a><p><span>The HTTP server host is the IP address of the </span><a href="https://www.lepide.com/blog/the-most-common-types-of-network-devices/"><span>network device</span></a><span> on which the server is running.</span></p><a class="anchor-hash" href="#http-handler" style="display: flex; place-items: center;"><h2 id="http-handler"><span>HTTP Handler</span></h2></a><p><span>An HTTP handler is a component of an HTTP server that processes or "handles" incoming requests from clients.</span></p><p><span>Generally, an HTTP handler is responsible for the following:</span></p><ul><li><p><span>Parsing information from a request such as its headers, path, and body</span></p></li><li><p><span>Validating the information parsed from a request</span></p></li><li><p><span>Sending additional requests to other web servers or "web services", for example sending a request to a database web service (Amazon DynamoDB, Amazon RDS running PostgreSQL or MySQL) or external cache (Redis) to retrieve or store data</span></p></li><li><p><span>Generating the response to the request, including setting the appropriate response headers and writing to the response body.</span></p></li></ul><a class="anchor-hash" href="#http-handlers-in-nodejs" style="display: flex; place-items: center;"><h3 id="http-handlers-in-nodejs"><span>HTTP Handlers in NodeJS</span></h3></a><p><span>The NodeJS JavaScript runtime's </span><code>http</code><span> module handles most of the processing of the raw HTTP request message and abstracts the parsed information into a NodeJS </span><code>ClientRequest</code><span> object.</span></p><div><div class="code-viewer"><button class="copy-button"><div class="copy-icon">
+<svg width="1055" height="1043" viewBox="0 0 1055 1043" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M650 242.266C732.843 242.266 800 309.423 800 392.266V892.266C800 975.108 732.842 1042.27 650 1042.27H150C67.1575 1042.27 0.000263959 975.108 0 892.266V392.266C0 309.423 67.1573 242.266 150 242.266H650ZM200 392.266C172.386 392.266 150 414.652 150 442.266V842.266C150 869.88 172.386 892.266 200 892.266H600C627.614 892.266 650 869.88 650 842.266V442.266C650 414.652 627.614 392.266 600 392.266H200Z" fill="black"/>
+<path d="M904.449 0C987.291 0.000131945 1054.45 67.1583 1054.45 150.001V650.001C1054.45 732.843 987.291 800.001 904.449 800.001H727.766V650.001H854.449C882.063 650.001 904.448 627.615 904.449 600.001V200.001C904.449 172.387 882.063 150.001 854.449 150.001H454.449C426.834 150.001 404.449 172.387 404.449 200.001V319.509H254.449V150.001C254.449 67.1583 321.606 0 404.449 0H904.449Z" fill="black"/>
+</svg>
+      </div></button><code><pre>type ClientRequest = {
+  method: string,
+  url: string,
+  headers: Object<string>,
+  on: (eventName string, eventHandler function)=>undefined,
+}
+
+request ClientRequest
+
+request.on('data', (data Buffer)=>undefined)
+request.on('error', (error Error)=>undefined)
+request.on('end', ()=>undefined)</pre></code></div></div><p><span>The NodeJS </span><code>http</code><span> module offers an interface or "API" for generating HTTP responses as </span><code>ServerResponse</code><span> objects.</span></p><div><div class="code-viewer"><button class="copy-button"><div class="copy-icon">
+<svg width="1055" height="1043" viewBox="0 0 1055 1043" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M650 242.266C732.843 242.266 800 309.423 800 392.266V892.266C800 975.108 732.842 1042.27 650 1042.27H150C67.1575 1042.27 0.000263959 975.108 0 892.266V392.266C0 309.423 67.1573 242.266 150 242.266H650ZM200 392.266C172.386 392.266 150 414.652 150 442.266V842.266C150 869.88 172.386 892.266 200 892.266H600C627.614 892.266 650 869.88 650 842.266V442.266C650 414.652 627.614 392.266 600 392.266H200Z" fill="black"/>
+<path d="M904.449 0C987.291 0.000131945 1054.45 67.1583 1054.45 150.001V650.001C1054.45 732.843 987.291 800.001 904.449 800.001H727.766V650.001H854.449C882.063 650.001 904.448 627.615 904.449 600.001V200.001C904.449 172.387 882.063 150.001 854.449 150.001H454.449C426.834 150.001 404.449 172.387 404.449 200.001V319.509H254.449V150.001C254.449 67.1583 321.606 0 404.449 0H904.449Z" fill="black"/>
+</svg>
+      </div></button><code><pre>type ServerResponse = {
+  writeHead: (statusCode number, headers Object<string>),
+  write: (data Buffer|string)=>undefined,
+  end: (data Buffer|string)=>undefined
+}</pre></code></div></div><p><span>An HTTP handler in NodeJS handles </span><code>ClientRequest</code><span> and </span><code>ServerResponse</code><span> objects and has the following structure:</span></p><div><div class="code-viewer"><button class="copy-button"><div class="copy-icon">
+<svg width="1055" height="1043" viewBox="0 0 1055 1043" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M650 242.266C732.843 242.266 800 309.423 800 392.266V892.266C800 975.108 732.842 1042.27 650 1042.27H150C67.1575 1042.27 0.000263959 975.108 0 892.266V392.266C0 309.423 67.1573 242.266 150 242.266H650ZM200 392.266C172.386 392.266 150 414.652 150 442.266V842.266C150 869.88 172.386 892.266 200 892.266H600C627.614 892.266 650 869.88 650 842.266V442.266C650 414.652 627.614 392.266 600 392.266H200Z" fill="black"/>
+<path d="M904.449 0C987.291 0.000131945 1054.45 67.1583 1054.45 150.001V650.001C1054.45 732.843 987.291 800.001 904.449 800.001H727.766V650.001H854.449C882.063 650.001 904.448 627.615 904.449 600.001V200.001C904.449 172.387 882.063 150.001 854.449 150.001H454.449C426.834 150.001 404.449 172.387 404.449 200.001V319.509H254.449V150.001C254.449 67.1583 321.606 0 404.449 0H904.449Z" fill="black"/>
+</svg>
+      </div></button><code><pre>type ClientRequest = {
+  method: string,
+  url: string,
+  headers: Object<string>,
+  on: (eventName string, eventHandler function)=>undefined,
+}
+
+type ServerResponse = {
+  writeHead: (statusCode number, headers Object<string>),
+  write: (data Buffer|string)=>undefined,
+  end: (data Buffer|string)=>undefined
+}
+
+type HttpHandler = (request ClientRequest, response ServerResponse)=>Promise|undefined</pre></code></div></div><p><span>Below is a theoretical NodeJS HTTP handler that handles the request made in the </span><a href="#http-client"><span>HTTP client</span></a><span> example.</span></p><div class="code-viewer"><button class="copy-button"><div class="copy-icon">
+<svg width="1055" height="1043" viewBox="0 0 1055 1043" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M650 242.266C732.843 242.266 800 309.423 800 392.266V892.266C800 975.108 732.842 1042.27 650 1042.27H150C67.1575 1042.27 0.000263959 975.108 0 892.266V392.266C0 309.423 67.1573 242.266 150 242.266H650ZM200 392.266C172.386 392.266 150 414.652 150 442.266V842.266C150 869.88 172.386 892.266 200 892.266H600C627.614 892.266 650 869.88 650 842.266V442.266C650 414.652 627.614 392.266 600 392.266H200Z" fill="black"/>
+<path d="M904.449 0C987.291 0.000131945 1054.45 67.1583 1054.45 150.001V650.001C1054.45 732.843 987.291 800.001 904.449 800.001H727.766V650.001H854.449C882.063 650.001 904.448 627.615 904.449 600.001V200.001C904.449 172.387 882.063 150.001 854.449 150.001H454.449C426.834 150.001 404.449 172.387 404.449 200.001V319.509H254.449V150.001C254.449 67.1583 321.606 0 404.449 0H904.449Z" fill="black"/>
+</svg>
+      </div></button><code><pre><span class="variable-declaration-keyword">const</span> http <span class="operator">=</span> <span class="global-object">require</span>(<span class="string">'http'</span>)
+
+<span class="variable-declaration-keyword">const</span> handler <span class="operator">=</span> <span class="function-keyword">function</span> (request, response) {
+  <span class="keyword">if</span> (request<span class="property-accessor">.</span>method <span class="operator">==</span> <span class="string">'GET'</span> <span class="operator">&&</span> request<span class="property-accessor">.</span>url <span class="operator">==</span> <span class="string">'/todos/1'</span>) {
+    <span class="variable-declaration-keyword">const</span> status <span class="operator">=</span> <span class="number">200</span>
+
+    <span class="variable-declaration-keyword">const</span> headers <span class="operator">=</span> {
+      <span class="string">'Cache-Control'</span><span class="object-colon">:</span> <span class="string">'max-age=43200'</span>,
+      <span class="string">'Content-Type'</span><span class="object-colon">:</span> <span class="string">'application/json; charset=utf-8'</span>,
+      <span class="string">'Expires'</span><span class="object-colon">:</span> <span class="string">'-1'</span>,
+      <span class="string">'Pragma'</span><span class="object-colon">:</span> <span class="string">'no-cache'</span>,
+    }
+
+    response<span class="property-accessor">.</span><span class="function-name">writeHead</span>(status, headers)
+
+    <span class="variable-declaration-keyword">const</span> data <span class="operator">=</span> {
+      userId<span class="object-colon">:</span> <span class="number">1</span>,
+      id<span class="object-colon">:</span> <span class="number">1</span>,
+      title<span class="object-colon">:</span> <span class="string">'delectus aut autem'</span>,
+      completed<span class="object-colon">:</span> <span class="boolean">false</span>,
+    }
+
+    response<span class="property-accessor">.</span><span class="function-name">end</span>(JSON<span class="property-accessor">.</span><span class="function-name">stringify</span>(data))
+  }
+
+  <span class="comment">// ...</span>
+}
+
+<span class="variable-declaration-keyword">const</span> server <span class="operator">=</span> http<span class="property-accessor">.</span><span class="function-name">createServer</span>(handler)
+
+<span class="variable-declaration-keyword">const</span> port <span class="operator">=</span> <span class="number">8080</span>
+
+server<span class="property-accessor">.</span><span class="function-name">listen</span>(port)</pre></code></div><p><span>The HTTP server </span><code>server</code><span> created by the NodeJS </span><code>http</code><span> module's </span><code>createServer</code><span> accepts the HTTP handler </span><code>handler</code><span> as a single argument. To start the server we only need to call </span><code>server.listen</code><span>, specifying port </span><code>8080</code><span>.</span></p><a class="anchor-hash" href="#http-handlers-in-a-synchronous-functional-programming" style="display: flex; place-items: center;"><h3 id="http-handlers-in-a-synchronous-functional-programming"><span>Http Handlers in [A]synchronous Functional Programming</span></h3></a><p><span>In [A]synchronous Functional Programming, HTTP handlers are simple, reusable, and modular. Consider the following web server implementation with a complex HTTP handler:</span></p><div class="code-viewer"><button class="copy-button"><div class="copy-icon">
+<svg width="1055" height="1043" viewBox="0 0 1055 1043" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M650 242.266C732.843 242.266 800 309.423 800 392.266V892.266C800 975.108 732.842 1042.27 650 1042.27H150C67.1575 1042.27 0.000263959 975.108 0 892.266V392.266C0 309.423 67.1573 242.266 150 242.266H650ZM200 392.266C172.386 392.266 150 414.652 150 442.266V842.266C150 869.88 172.386 892.266 200 892.266H600C627.614 892.266 650 869.88 650 842.266V442.266C650 414.652 627.614 392.266 600 392.266H200Z" fill="black"/>
+<path d="M904.449 0C987.291 0.000131945 1054.45 67.1583 1054.45 150.001V650.001C1054.45 732.843 987.291 800.001 904.449 800.001H727.766V650.001H854.449C882.063 650.001 904.448 627.615 904.449 600.001V200.001C904.449 172.387 882.063 150.001 854.449 150.001H454.449C426.834 150.001 404.449 172.387 404.449 200.001V319.509H254.449V150.001C254.449 67.1583 321.606 0 404.449 0H904.449Z" fill="black"/>
+</svg>
+      </div></button><code><pre><span class="variable-declaration-keyword">const</span> http <span class="operator">=</span> <span class="global-object">require</span>(<span class="string">'http'</span>)
+
+<span class="variable-declaration-keyword">const</span> complexHandler <span class="operator">=</span> <span class="keyword">async</span> <span class="function-keyword">function</span> (request, response) {
+  try {
+    <span class="keyword">if</span> (request<span class="property-accessor">.</span>url<span class="property-accessor">.</span><span class="function-name">startsWith</span>(<span class="string">'/health'</span>)) {
+      <span class="comment">// GET /health</span>
+
+      response<span class="property-accessor">.</span><span class="function-name">writeHead</span>(<span class="number">200</span>, {
+        <span class="string">'Content-Type'</span><span class="object-colon">:</span> <span class="string">'text/plain'</span>,
+      })
+      response<span class="property-accessor">.</span><span class="function-name">end</span>(<span class="string">'ok'</span>)
+
+    } else <span class="keyword">if</span> (request<span class="property-accessor">.</span>method <span class="operator">==</span> <span class="string">'OPTIONS'</span>) {
+      <span class="comment">// OPTIONS</span>
+
+      response<span class="property-accessor">.</span><span class="function-name">writeHead</span>(<span class="number">204</span>, {
+        <span class="string">'Access-Control-Allow-Origin'</span><span class="object-colon">:</span> <span class="string">'*'</span>,
+        <span class="string">'Access-Control-Allow-Methods'</span><span class="object-colon">:</span> <span class="string">'*'</span>,
+        <span class="string">'Access-Control-Allow-Headers'</span><span class="object-colon">:</span> <span class="string">'*'</span>,
+        <span class="string">'Access-Control-Max-Age'</span><span class="object-colon">:</span> <span class="string">'86400'</span>,
+      })
+      response<span class="property-accessor">.</span><span class="function-name">end</span>()
+
+    } else <span class="keyword">if</span> (request<span class="property-accessor">.</span>method <span class="operator">==</span> <span class="string">'GET'</span> <span class="operator">&&</span> <span class="operator">/^</span>\<span class="operator">/</span>user\<span class="operator">/</span>\d<span class="operator">+</span>$<span class="operator">/</span><span class="property-accessor">.</span><span class="function-name">test</span>(request<span class="property-accessor">.</span>url)) {
+      <span class="comment">// GET /user/:userId</span>
+      <span class="comment">// retrieves a user resource</span>
+
+      <span class="variable-declaration-keyword">const</span> userId <span class="operator">=</span> request<span class="property-accessor">.</span>url<span class="property-accessor">.</span><span class="function-name">match</span>(<span class="operator">/</span>\d<span class="operator">+/</span>)[<span class="number">0</span>]
+
+      <span class="comment">// validate</span>
+      <span class="keyword">if</span> (<span class="global-object">isNaN</span>(<span class="function-name">Number</span>(userId))) {
+        <span class="variable-declaration-keyword">const</span> error <span class="operator">=</span> <span class="keyword">new</span> <span class="function-name">Error</span>(<span class="string">'Bad Request'</span>)
+        error<span class="property-accessor">.</span>code <span class="operator">=</span> <span class="number">400</span>
+        throw error
+      }
+
+      <span class="comment">// retrieve the user record from the db</span>
+      <span class="variable-declaration-keyword">const</span> user <span class="operator">=</span> <span class="keyword">await</span> userTable<span class="property-accessor">.</span><span class="function-name">getById</span>(userId)
+
+      <span class="comment">// handle not found</span>
+      <span class="keyword">if</span> (user <span class="operator">==</span> <span class="null">null</span>) {
+        <span class="variable-declaration-keyword">const</span> error <span class="operator">=</span> <span class="keyword">new</span> <span class="function-name">Error</span>(<span class="string">'Not Found'</span>)
+        error<span class="property-accessor">.</span>code <span class="operator">=</span> <span class="number">404</span>
+        throw error
+      }
+
+      <span class="comment">// ensure no private user information is exposed</span>
+      <span class="variable-declaration-keyword">const</span> publicUser <span class="operator">=</span> {
+        id<span class="object-colon">:</span> user<span class="property-accessor">.</span>id,
+        name<span class="object-colon">:</span> user<span class="property-accessor">.</span>name,
+        birthdate<span class="object-colon">:</span> user<span class="property-accessor">.</span>birthdate,
+        profilePictureUrl<span class="object-colon">:</span> user<span class="property-accessor">.</span>profilePictureUrl,
+        createTime<span class="object-colon">:</span> user<span class="property-accessor">.</span>createTime,
+      }
+
+      <span class="comment">// send back the user resource in the response body</span>
+      response<span class="property-accessor">.</span><span class="function-name">writeHead</span>(<span class="number">200</span>, {
+        <span class="string">'Access-Control-Allow-Origin'</span><span class="object-colon">:</span> <span class="string">'*'</span>,
+        <span class="string">'Content-Type'</span><span class="object-colon">:</span> <span class="string">'application/json'</span>,
+      })
+      response<span class="property-accessor">.</span><span class="function-name">end</span>(JSON<span class="property-accessor">.</span><span class="function-name">stringify</span>({
+        user<span class="object-colon">:</span> publicUser,
+      }))
+
+    } else <span class="keyword">if</span> (request<span class="property-accessor">.</span>method <span class="operator">==</span> <span class="string">'PUT'</span> <span class="operator">&&</span> <span class="operator">/^</span>\<span class="operator">/</span>user\<span class="operator">/</span>\d<span class="operator">+</span>$<span class="operator">/</span><span class="property-accessor">.</span><span class="function-name">test</span>(request<span class="property-accessor">.</span>url)) {
+      <span class="comment">// PUT /user/:userId</span>
+      <span class="comment">// creates or updates a user resource</span>
+
+      <span class="variable-declaration-keyword">const</span> userId <span class="operator">=</span> request<span class="property-accessor">.</span>url<span class="property-accessor">.</span><span class="function-name">match</span>(<span class="operator">/</span>\d<span class="operator">+/</span>)[<span class="number">0</span>]
+
+      <span class="variable-declaration-keyword">const</span> requestBodyBuffer <span class="operator">=</span> <span class="keyword">await</span> <span class="keyword">new</span> <span class="function-name">Promise</span>(resolve <span class="arrow-function-operator">=></span> {
+        <span class="variable-declaration-keyword">const</span> binaryArray <span class="operator">=</span> []
+        request<span class="property-accessor">.</span><span class="function-name">on</span>(<span class="string">'data'</span>, chunk <span class="arrow-function-operator">=></span> {
+          binaryArray<span class="property-accessor">.</span><span class="function-name">push</span>(chunk)
+        })
+        request<span class="property-accessor">.</span><span class="function-name">on</span>(<span class="string">'end'</span>, () <span class="arrow-function-operator">=></span> {
+          <span class="function-name">resolve</span>(Buffer<span class="property-accessor">.</span><span class="function-name">concat</span>(binaryArray))
+        })
+      })
+      <span class="variable-declaration-keyword">const</span> requestBodyString <span class="operator">=</span> requestBodyBuffer<span class="property-accessor">.</span><span class="function-name">toString</span>(<span class="string">'utf8'</span>)
+      <span class="variable-declaration-keyword">const</span> requestBodyJSON <span class="operator">=</span> JSON<span class="property-accessor">.</span><span class="function-name">parse</span>(requestBodyString)
+
+      <span class="comment">// validate</span>
+      <span class="keyword">if</span> (<span class="global-object">isNaN</span>(<span class="function-name">Number</span>(userId))) {
+        <span class="variable-declaration-keyword">const</span> error <span class="operator">=</span> <span class="keyword">new</span> <span class="function-name">Error</span>(<span class="string">'Bad Request'</span>)
+        error<span class="property-accessor">.</span>code <span class="operator">=</span> <span class="number">400</span>
+        throw error
+      }
+      <span class="keyword">if</span> (typeof requestBodyJSON<span class="property-accessor">.</span>id <span class="operator">!=</span> <span class="string">'string'</span>) {
+        <span class="variable-declaration-keyword">const</span> error <span class="operator">=</span> <span class="keyword">new</span> <span class="function-name">Error</span>(<span class="string">'Bad Request'</span>)
+        error<span class="property-accessor">.</span>code <span class="operator">=</span> <span class="number">400</span>
+        throw error
+      }
+      <span class="keyword">if</span> (typeof requestBodyJSON<span class="property-accessor">.</span>name <span class="operator">!=</span> <span class="string">'string'</span>) {
+        <span class="variable-declaration-keyword">const</span> error <span class="operator">=</span> <span class="keyword">new</span> <span class="function-name">Error</span>(<span class="string">'Bad Request'</span>)
+        error<span class="property-accessor">.</span>code <span class="operator">=</span> <span class="number">400</span>
+        throw error
+      }
+      <span class="keyword">if</span> (typeof requestBodyJSON<span class="property-accessor">.</span>birthdate <span class="operator">!=</span> <span class="string">'string'</span>) {
+        <span class="variable-declaration-keyword">const</span> error <span class="operator">=</span> <span class="keyword">new</span> <span class="function-name">Error</span>(<span class="string">'Bad Request'</span>)
+        error<span class="property-accessor">.</span>code <span class="operator">=</span> <span class="number">400</span>
+        throw error
+      }
+      <span class="keyword">if</span> (typeof requestBodyJSON<span class="property-accessor">.</span>profilePictureUrl <span class="operator">!=</span> <span class="string">'string'</span>) {
+        <span class="variable-declaration-keyword">const</span> error <span class="operator">=</span> <span class="keyword">new</span> <span class="function-name">Error</span>(<span class="string">'Bad Request'</span>)
+        error<span class="property-accessor">.</span>code <span class="operator">=</span> <span class="number">400</span>
+        throw error
+      }
+      <span class="keyword">if</span> (typeof requestBodyJSON<span class="property-accessor">.</span>email <span class="operator">!=</span> <span class="string">'string'</span>) {
+        <span class="variable-declaration-keyword">const</span> error <span class="operator">=</span> <span class="keyword">new</span> <span class="function-name">Error</span>(<span class="string">'Bad Request'</span>)
+        error<span class="property-accessor">.</span>code <span class="operator">=</span> <span class="number">400</span>
+        throw error
+      }
+
+      <span class="variable-declaration-keyword">const</span> user <span class="operator">=</span> {
+        id<span class="object-colon">:</span> requestBodyJSON<span class="property-accessor">.</span>id,
+        name<span class="object-colon">:</span> requestBodyJSON<span class="property-accessor">.</span>name,
+        birthdate<span class="object-colon">:</span> requestBodyJSON<span class="property-accessor">.</span>birthdate,
+        profilePictureUrl<span class="object-colon">:</span> requestBodyJSON<span class="property-accessor">.</span>profilePictureUrl,
+        email<span class="object-colon">:</span> requestBodyJSON<span class="property-accessor">.</span>email,
+        createTime<span class="object-colon">:</span> Date<span class="property-accessor">.</span><span class="function-name">now</span>(),
+      }
+
+      <span class="comment">// save user record to the db</span>
+      <span class="keyword">await</span> userTable<span class="property-accessor">.</span><span class="function-name">put</span>(user)
+
+      <span class="comment">// send back a successful response</span>
+      response<span class="property-accessor">.</span><span class="function-name">writeHead</span>(<span class="number">200</span>, {
+        <span class="string">'Access-Control-Allow-Origin'</span><span class="object-colon">:</span> <span class="string">'*'</span>,
+        <span class="string">'Content-Type'</span><span class="object-colon">:</span> <span class="string">'application/json'</span>,
+      })
+      response<span class="property-accessor">.</span><span class="function-name">end</span>(JSON<span class="property-accessor">.</span><span class="function-name">stringify</span>({
+        message<span class="object-colon">:</span> <span class="string">'success'</span>,
+      }))
+
+    } else { <span class="comment">// not found</span>
+      response<span class="property-accessor">.</span><span class="function-name">writeHead</span>(<span class="number">404</span>, {
+        <span class="string">'Content-Type'</span><span class="object-colon">:</span> <span class="string">'text/plain'</span>,
+      })
+      response<span class="property-accessor">.</span><span class="function-name">end</span>(<span class="string">'Not Found'</span>)
+    }
+  } <span class="function-name">catch</span> (error) {
+    <span class="global-object">console</span><span class="property-accessor">.</span><span class="function-name">error</span>(error)
+    <span class="keyword">if</span> (typeof error<span class="property-accessor">.</span>code <span class="operator">!=</span> <span class="string">'number'</span>) {
+      error<span class="property-accessor">.</span>code <span class="operator">=</span> <span class="number">500</span>
+    }
+    response<span class="property-accessor">.</span><span class="function-name">writeHead</span>(error<span class="property-accessor">.</span>code, {
+      <span class="string">'Access-Control-Allow-Origin'</span><span class="object-colon">:</span> <span class="string">'*'</span>,
+      <span class="string">'Content-Type'</span><span class="object-colon">:</span> <span class="string">'text/plain'</span>,
+    })
+    response<span class="property-accessor">.</span><span class="function-name">end</span>(error<span class="property-accessor">.</span>message)
+  }
+}
+
+<span class="variable-declaration-keyword">const</span> server <span class="operator">=</span> http<span class="property-accessor">.</span><span class="function-name">createServer</span>(complexHandler)
+
+<span class="variable-declaration-keyword">const</span> port <span class="operator">=</span> <span class="number">8080</span>
+
+server<span class="property-accessor">.</span><span class="function-name">listen</span>(port)</pre></code></div><p><span>The above handler </span><code>complexHandler</code><span> has many responsibilities, including handling health checks, handling options requests, retrieving user resources, updating or creating user resources, and handling application errors.</span></p><p><span>With [A]synchronous Functional Programming, we can break down the above complex HTTP handler into simple, modular, and reusable handlers, then use the library </span><a href="https://rubico.land/"><span>Rubico</span></a><span> to combine those handlers in a meaningful way.</span></p><p><span>First, let's break down the complex handler.</span></p><div class="code-viewer"><button class="copy-button"><div class="copy-icon">
+<svg width="1055" height="1043" viewBox="0 0 1055 1043" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M650 242.266C732.843 242.266 800 309.423 800 392.266V892.266C800 975.108 732.842 1042.27 650 1042.27H150C67.1575 1042.27 0.000263959 975.108 0 892.266V392.266C0 309.423 67.1573 242.266 150 242.266H650ZM200 392.266C172.386 392.266 150 414.652 150 442.266V842.266C150 869.88 172.386 892.266 200 892.266H600C627.614 892.266 650 869.88 650 842.266V442.266C650 414.652 627.614 392.266 600 392.266H200Z" fill="black"/>
+<path d="M904.449 0C987.291 0.000131945 1054.45 67.1583 1054.45 150.001V650.001C1054.45 732.843 987.291 800.001 904.449 800.001H727.766V650.001H854.449C882.063 650.001 904.448 627.615 904.449 600.001V200.001C904.449 172.387 882.063 150.001 854.449 150.001H454.449C426.834 150.001 404.449 172.387 404.449 200.001V319.509H254.449V150.001C254.449 67.1583 321.606 0 404.449 0H904.449Z" fill="black"/>
+</svg>
+      </div></button><code><pre><span class="function-keyword">function</span> <span class="function-name">healthCheckHandler</span>(request, response) {
+  response<span class="property-accessor">.</span><span class="function-name">writeHead</span>(<span class="number">200</span>, {
+    <span class="string">'Content-Type'</span><span class="object-colon">:</span> <span class="string">'text/plain'</span>,
+  })
+  response<span class="property-accessor">.</span><span class="function-name">end</span>(<span class="string">'ok'</span>)
+}
+
+<span class="function-keyword">function</span> <span class="function-name">optionsHandler</span>(request, response) {
+  response<span class="property-accessor">.</span><span class="function-name">writeHead</span>(<span class="number">204</span>, {
+    <span class="string">'Access-Control-Allow-Origin'</span><span class="object-colon">:</span> <span class="string">'*'</span>,
+    <span class="string">'Access-Control-Allow-Methods'</span><span class="object-colon">:</span> <span class="string">'*'</span>,
+    <span class="string">'Access-Control-Allow-Headers'</span><span class="object-colon">:</span> <span class="string">'*'</span>,
+    <span class="string">'Access-Control-Max-Age'</span><span class="object-colon">:</span> <span class="string">'86400'</span>,
+  })
+  response<span class="property-accessor">.</span><span class="function-name">end</span>()
+}
+
+<span class="comment">// GET /user/:userId</span>
+<span class="comment">// retrieves a user resource</span>
+<span class="keyword">async</span> <span class="function-keyword">function</span> <span class="function-name">getUserHandler</span>(request, response) {
+  <span class="variable-declaration-keyword">const</span> userId <span class="operator">=</span> request<span class="property-accessor">.</span>url<span class="property-accessor">.</span><span class="function-name">match</span>(<span class="operator">/</span>\d<span class="operator">+/</span>)[<span class="number">0</span>]
+
+  <span class="comment">// validate</span>
+  <span class="keyword">if</span> (<span class="global-object">isNaN</span>(<span class="function-name">Number</span>(userId))) {
+    <span class="variable-declaration-keyword">const</span> error <span class="operator">=</span> <span class="keyword">new</span> <span class="function-name">Error</span>(<span class="string">'Bad Request'</span>)
+    error<span class="property-accessor">.</span>code <span class="operator">=</span> <span class="number">400</span>
+    throw error
+  }
+
+  <span class="comment">// userTable is a theoretical client for a database</span>
+  <span class="variable-declaration-keyword">const</span> user <span class="operator">=</span> <span class="keyword">await</span> userTable<span class="property-accessor">.</span><span class="function-name">getById</span>(userId)
+
+  <span class="comment">// handle not found</span>
+  <span class="keyword">if</span> (user <span class="operator">==</span> <span class="null">null</span>) {
+    <span class="variable-declaration-keyword">const</span> error <span class="operator">=</span> <span class="keyword">new</span> <span class="function-name">Error</span>(<span class="string">'Not Found'</span>)
+    error<span class="property-accessor">.</span>code <span class="operator">=</span> <span class="number">404</span>
+    throw error
+  }
+
+  <span class="comment">// ensure no private user information is exposed</span>
+  <span class="variable-declaration-keyword">const</span> publicUser <span class="operator">=</span> {
+    id<span class="object-colon">:</span> user<span class="property-accessor">.</span>id,
+    name<span class="object-colon">:</span> user<span class="property-accessor">.</span>name,
+    birthdate<span class="object-colon">:</span> user<span class="property-accessor">.</span>birthdate,
+    profilePictureUrl<span class="object-colon">:</span> user<span class="property-accessor">.</span>profilePictureUrl,
+    createTime<span class="object-colon">:</span> user<span class="property-accessor">.</span>createTime,
+  }
+
+  <span class="comment">// send back the user resource in the response body</span>
+  response<span class="property-accessor">.</span><span class="function-name">writeHead</span>(<span class="number">200</span>, {
+    <span class="string">'Access-Control-Allow-Origin'</span><span class="object-colon">:</span> <span class="string">'*'</span>,
+    <span class="string">'Content-Type'</span><span class="object-colon">:</span> <span class="string">'application/json'</span>,
+  })
+  response<span class="property-accessor">.</span><span class="function-name">end</span>(JSON<span class="property-accessor">.</span><span class="function-name">stringify</span>({
+    user<span class="object-colon">:</span> publicUser,
+  }))
+}
+
+<span class="comment">// PUT /user/:userId</span>
+<span class="comment">// creates or updates a user resource</span>
+<span class="keyword">async</span> <span class="function-keyword">function</span> <span class="function-name">putUserHandler</span>(request, response) {
+  <span class="variable-declaration-keyword">const</span> userId <span class="operator">=</span> request<span class="property-accessor">.</span>url<span class="property-accessor">.</span><span class="function-name">match</span>(<span class="operator">/</span>\d<span class="operator">+/</span>)[<span class="number">0</span>]
+
+  <span class="variable-declaration-keyword">const</span> requestBodyBuffer <span class="operator">=</span> <span class="keyword">await</span> <span class="keyword">new</span> <span class="function-name">Promise</span>(resolve <span class="arrow-function-operator">=></span> {
+    <span class="variable-declaration-keyword">const</span> binaryArray <span class="operator">=</span> []
+    request<span class="property-accessor">.</span><span class="function-name">on</span>(<span class="string">'data'</span>, chunk <span class="arrow-function-operator">=></span> {
+      binaryArray<span class="property-accessor">.</span><span class="function-name">push</span>(chunk)
+    })
+    request<span class="property-accessor">.</span><span class="function-name">on</span>(<span class="string">'end'</span>, () <span class="arrow-function-operator">=></span> {
+      <span class="function-name">resolve</span>(Buffer<span class="property-accessor">.</span><span class="function-name">concat</span>(binaryArray))
+    })
+  })
+  <span class="variable-declaration-keyword">const</span> requestBodyString <span class="operator">=</span> requestBodyBuffer<span class="property-accessor">.</span><span class="function-name">toString</span>(<span class="string">'utf8'</span>)
+  <span class="variable-declaration-keyword">const</span> requestBodyJSON <span class="operator">=</span> JSON<span class="property-accessor">.</span><span class="function-name">parse</span>(requestBodyString)
+
+  <span class="comment">// validate</span>
+  <span class="keyword">if</span> (<span class="global-object">isNaN</span>(<span class="function-name">Number</span>(userId))) {
+    <span class="variable-declaration-keyword">const</span> error <span class="operator">=</span> <span class="keyword">new</span> <span class="function-name">Error</span>(<span class="string">'Bad Request'</span>)
+    error<span class="property-accessor">.</span>code <span class="operator">=</span> <span class="number">400</span>
+    throw error
+  }
+  <span class="keyword">if</span> (typeof requestBodyJSON<span class="property-accessor">.</span>id <span class="operator">!=</span> <span class="string">'string'</span>) {
+    <span class="variable-declaration-keyword">const</span> error <span class="operator">=</span> <span class="keyword">new</span> <span class="function-name">Error</span>(<span class="string">'Bad Request'</span>)
+    error<span class="property-accessor">.</span>code <span class="operator">=</span> <span class="number">400</span>
+    throw error
+  }
+  <span class="keyword">if</span> (typeof requestBodyJSON<span class="property-accessor">.</span>name <span class="operator">!=</span> <span class="string">'string'</span>) {
+    <span class="variable-declaration-keyword">const</span> error <span class="operator">=</span> <span class="keyword">new</span> <span class="function-name">Error</span>(<span class="string">'Bad Request'</span>)
+    error<span class="property-accessor">.</span>code <span class="operator">=</span> <span class="number">400</span>
+    throw error
+  }
+  <span class="keyword">if</span> (typeof requestBodyJSON<span class="property-accessor">.</span>birthdate <span class="operator">!=</span> <span class="string">'string'</span>) {
+    <span class="variable-declaration-keyword">const</span> error <span class="operator">=</span> <span class="keyword">new</span> <span class="function-name">Error</span>(<span class="string">'Bad Request'</span>)
+    error<span class="property-accessor">.</span>code <span class="operator">=</span> <span class="number">400</span>
+    throw error
+  }
+  <span class="keyword">if</span> (typeof requestBodyJSON<span class="property-accessor">.</span>profilePictureUrl <span class="operator">!=</span> <span class="string">'string'</span>) {
+    <span class="variable-declaration-keyword">const</span> error <span class="operator">=</span> <span class="keyword">new</span> <span class="function-name">Error</span>(<span class="string">'Bad Request'</span>)
+    error<span class="property-accessor">.</span>code <span class="operator">=</span> <span class="number">400</span>
+    throw error
+  }
+  <span class="keyword">if</span> (typeof requestBodyJSON<span class="property-accessor">.</span>email <span class="operator">!=</span> <span class="string">'string'</span>) {
+    <span class="variable-declaration-keyword">const</span> error <span class="operator">=</span> <span class="keyword">new</span> <span class="function-name">Error</span>(<span class="string">'Bad Request'</span>)
+    error<span class="property-accessor">.</span>code <span class="operator">=</span> <span class="number">400</span>
+    throw error
+  }
+
+  <span class="variable-declaration-keyword">const</span> user <span class="operator">=</span> {
+    id<span class="object-colon">:</span> requestBodyJSON<span class="property-accessor">.</span>id,
+    name<span class="object-colon">:</span> requestBodyJSON<span class="property-accessor">.</span>name,
+    birthdate<span class="object-colon">:</span> requestBodyJSON<span class="property-accessor">.</span>birthdate,
+    profilePictureUrl<span class="object-colon">:</span> requestBodyJSON<span class="property-accessor">.</span>profilePictureUrl,
+    email<span class="object-colon">:</span> requestBodyJSON<span class="property-accessor">.</span>email,
+    createTime<span class="object-colon">:</span> Date<span class="property-accessor">.</span><span class="function-name">now</span>(),
+  }
+
+  <span class="comment">// save user record to the db</span>
+  <span class="keyword">await</span> userTable<span class="property-accessor">.</span><span class="function-name">put</span>(user)
+
+  <span class="comment">// send back a successful response</span>
+  response<span class="property-accessor">.</span><span class="function-name">writeHead</span>(<span class="number">200</span>, {
+    <span class="string">'Access-Control-Allow-Origin'</span><span class="object-colon">:</span> <span class="string">'*'</span>,
+    <span class="string">'Content-Type'</span><span class="object-colon">:</span> <span class="string">'application/json'</span>,
+  })
+  response<span class="property-accessor">.</span><span class="function-name">end</span>(JSON<span class="property-accessor">.</span><span class="function-name">stringify</span>({
+    message<span class="object-colon">:</span> <span class="string">'success'</span>,
+  }))
+}
+
+<span class="function-keyword">function</span> <span class="function-name">notFoundHandler</span>(request, response) {
+  response<span class="property-accessor">.</span><span class="function-name">writeHead</span>(<span class="number">404</span>, {
+    <span class="string">'Content-Type'</span><span class="object-colon">:</span> <span class="string">'text/plain'</span>,
+  })
+  response<span class="property-accessor">.</span><span class="function-name">end</span>(<span class="string">'Not Found'</span>)
+}
+
+<span class="function-keyword">function</span> <span class="function-name">errorHandler</span>(error, request, response) {
+  <span class="global-object">console</span><span class="property-accessor">.</span><span class="function-name">error</span>(error)
+  <span class="keyword">if</span> (typeof error<span class="property-accessor">.</span>code <span class="operator">!=</span> <span class="string">'number'</span>) {
+    error<span class="property-accessor">.</span>code <span class="operator">=</span> <span class="number">500</span>
+  }
+  response<span class="property-accessor">.</span><span class="function-name">writeHead</span>(error<span class="property-accessor">.</span>code, {
+    <span class="string">'Access-Control-Allow-Origin'</span><span class="object-colon">:</span> <span class="string">'*'</span>,
+    <span class="string">'Content-Type'</span><span class="object-colon">:</span> <span class="string">'text/plain'</span>,
+  })
+  response<span class="property-accessor">.</span><span class="function-name">end</span>(error<span class="property-accessor">.</span>message)
+}</pre></code></div><p><span>We've broken down the complex handler </span><code>complexHandler</code><span> into smaller, simpler handlers </span><code>healthCheckHandler</code><span>, </span><code>optionsHandler</code><span>, </span><code>getUserHandler</code><span>, </span><code>notFoundHandler</code><span>, and </span><code>errorHandler</code><span>.</span></p><p><span>Now let's combine the smaller handlers using Rubico's </span><a href="/docs/tryCatch"><span>tryCatch</span></a><span> and </span><a href="/docs/switchCase"><span>switchCase</span></a><span>.</span></p><div class="code-viewer"><button class="copy-button"><div class="copy-icon">
+<svg width="1055" height="1043" viewBox="0 0 1055 1043" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M650 242.266C732.843 242.266 800 309.423 800 392.266V892.266C800 975.108 732.842 1042.27 650 1042.27H150C67.1575 1042.27 0.000263959 975.108 0 892.266V392.266C0 309.423 67.1573 242.266 150 242.266H650ZM200 392.266C172.386 392.266 150 414.652 150 442.266V842.266C150 869.88 172.386 892.266 200 892.266H600C627.614 892.266 650 869.88 650 842.266V442.266C650 414.652 627.614 392.266 600 392.266H200Z" fill="black"/>
+<path d="M904.449 0C987.291 0.000131945 1054.45 67.1583 1054.45 150.001V650.001C1054.45 732.843 987.291 800.001 904.449 800.001H727.766V650.001H854.449C882.063 650.001 904.448 627.615 904.449 600.001V200.001C904.449 172.387 882.063 150.001 854.449 150.001H454.449C426.834 150.001 404.449 172.387 404.449 200.001V319.509H254.449V150.001C254.449 67.1583 321.606 0 404.449 0H904.449Z" fill="black"/>
+</svg>
+      </div></button><code><pre><span class="global-object">require</span>(<span class="string">'rubico/global'</span>) <span class="comment">// imports Rubico's tryCatch and switchCase operators</span>
+
+<span class="variable-declaration-keyword">const</span> combinedHandler <span class="operator">=</span> <span class="function-name">tryCatch</span>(
+  <span class="function-name">switchCase</span>([
+    request <span class="arrow-function-operator">=></span> request<span class="property-accessor">.</span>url<span class="property-accessor">.</span><span class="function-name">startsWith</span>(<span class="string">'/health'</span>),
+    healthCheckHandler,
+
+    request <span class="arrow-function-operator">=></span> request<span class="property-accessor">.</span>method <span class="operator">==</span> <span class="string">'OPTIONS'</span>,
+    optionsHandler,
+
+    request <span class="arrow-function-operator">=></span> request<span class="property-accessor">.</span>method <span class="operator">==</span> <span class="string">'GET'</span> <span class="operator">&&</span> <span class="operator">/^</span>\<span class="operator">/</span>user\<span class="operator">/</span>\d<span class="operator">+</span>$<span class="operator">/</span><span class="property-accessor">.</span><span class="function-name">test</span>(request<span class="property-accessor">.</span>url),
+    getUserHandler,
+
+    request <span class="arrow-function-operator">=></span> request<span class="property-accessor">.</span>method <span class="operator">==</span> <span class="string">'PUT'</span> <span class="operator">&&</span> <span class="operator">/^</span>\<span class="operator">/</span>user\<span class="operator">/</span>\d<span class="operator">+</span>$<span class="operator">/</span><span class="property-accessor">.</span><span class="function-name">test</span>(request<span class="property-accessor">.</span>url),
+    putUserHandler,
+
+    notFoundHandler,
+  ]),
+
+  errorHandler
+)</pre></code></div><p><code>combinedHandler</code><span> is functionally equivalent to </span><code>complexHandler</code><span>, but is able to be expressed using a combination of smaller, simpler HTTP handlers. The benefits are as follows: being able to structure your application as small, simple components lends itself well to development, testing, and maintenance.</span></p><p><span>Development is quick and easy: where you once had to digest and add onto the entire complex component, now you only need to write a simple, greenfield component.</span></p><p><span>Testing is simplified: where you once had to write a complex integration test with many controls and conditions for the complex component, now you only need to write simple integration tests for the simple components.</span></p><p><span>The maintenance overhead is reduced: where you once had to concern yourself with testing changes over large areas of code with complex components, now you can reduce the burden to smaller areas of code with simple components.</span></p><p><span>Putting everything together:</span></p><div class="code-viewer"><button class="copy-button"><div class="copy-icon">
+<svg width="1055" height="1043" viewBox="0 0 1055 1043" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M650 242.266C732.843 242.266 800 309.423 800 392.266V892.266C800 975.108 732.842 1042.27 650 1042.27H150C67.1575 1042.27 0.000263959 975.108 0 892.266V392.266C0 309.423 67.1573 242.266 150 242.266H650ZM200 392.266C172.386 392.266 150 414.652 150 442.266V842.266C150 869.88 172.386 892.266 200 892.266H600C627.614 892.266 650 869.88 650 842.266V442.266C650 414.652 627.614 392.266 600 392.266H200Z" fill="black"/>
+<path d="M904.449 0C987.291 0.000131945 1054.45 67.1583 1054.45 150.001V650.001C1054.45 732.843 987.291 800.001 904.449 800.001H727.766V650.001H854.449C882.063 650.001 904.448 627.615 904.449 600.001V200.001C904.449 172.387 882.063 150.001 854.449 150.001H454.449C426.834 150.001 404.449 172.387 404.449 200.001V319.509H254.449V150.001C254.449 67.1583 321.606 0 404.449 0H904.449Z" fill="black"/>
+</svg>
+      </div></button><code><pre><span class="global-object">require</span>(<span class="string">'rubico/global'</span>)
+<span class="variable-declaration-keyword">const</span> http <span class="operator">=</span> <span class="global-object">require</span>(<span class="string">'http'</span>)
+
+<span class="function-keyword">function</span> <span class="function-name">healthCheckHandler</span>(request, response) {
+  response<span class="property-accessor">.</span><span class="function-name">writeHead</span>(<span class="number">200</span>, {
+    <span class="string">'Content-Type'</span><span class="object-colon">:</span> <span class="string">'text/plain'</span>,
+  })
+  response<span class="property-accessor">.</span><span class="function-name">end</span>(<span class="string">'ok'</span>)
+}
+
+<span class="function-keyword">function</span> <span class="function-name">optionsHandler</span>(request, response) {
+  response<span class="property-accessor">.</span><span class="function-name">writeHead</span>(<span class="number">204</span>, {
+    <span class="string">'Access-Control-Allow-Origin'</span><span class="object-colon">:</span> <span class="string">'*'</span>,
+    <span class="string">'Access-Control-Allow-Methods'</span><span class="object-colon">:</span> <span class="string">'*'</span>,
+    <span class="string">'Access-Control-Allow-Headers'</span><span class="object-colon">:</span> <span class="string">'*'</span>,
+    <span class="string">'Access-Control-Max-Age'</span><span class="object-colon">:</span> <span class="string">'86400'</span>,
+  })
+  response<span class="property-accessor">.</span><span class="function-name">end</span>()
+}
+
+<span class="comment">// GET /user/:userId</span>
+<span class="comment">// retrieves a user resource</span>
+<span class="keyword">async</span> <span class="function-keyword">function</span> <span class="function-name">getUserHandler</span>(request, response) {
+  <span class="variable-declaration-keyword">const</span> userId <span class="operator">=</span> request<span class="property-accessor">.</span>url<span class="property-accessor">.</span><span class="function-name">match</span>(<span class="operator">/</span>\d<span class="operator">+/</span>)[<span class="number">0</span>]
+
+  <span class="comment">// validate</span>
+  <span class="keyword">if</span> (<span class="global-object">isNaN</span>(<span class="function-name">Number</span>(userId))) {
+    <span class="variable-declaration-keyword">const</span> error <span class="operator">=</span> <span class="keyword">new</span> <span class="function-name">Error</span>(<span class="string">'Bad Request'</span>)
+    error<span class="property-accessor">.</span>code <span class="operator">=</span> <span class="number">400</span>
+    throw error
+  }
+
+  <span class="comment">// userTable is a theoretical client for a database</span>
+  <span class="variable-declaration-keyword">const</span> user <span class="operator">=</span> <span class="keyword">await</span> userTable<span class="property-accessor">.</span><span class="function-name">getById</span>(userId)
+
+  <span class="comment">// handle not found</span>
+  <span class="keyword">if</span> (user <span class="operator">==</span> <span class="null">null</span>) {
+    <span class="variable-declaration-keyword">const</span> error <span class="operator">=</span> <span class="keyword">new</span> <span class="function-name">Error</span>(<span class="string">'Not Found'</span>)
+    error<span class="property-accessor">.</span>code <span class="operator">=</span> <span class="number">404</span>
+    throw error
+  }
+
+  <span class="comment">// ensure no private user information is exposed</span>
+  <span class="variable-declaration-keyword">const</span> publicUser <span class="operator">=</span> {
+    id<span class="object-colon">:</span> user<span class="property-accessor">.</span>id,
+    name<span class="object-colon">:</span> user<span class="property-accessor">.</span>name,
+    birthdate<span class="object-colon">:</span> user<span class="property-accessor">.</span>birthdate,
+    profilePictureUrl<span class="object-colon">:</span> user<span class="property-accessor">.</span>profilePictureUrl,
+    createTime<span class="object-colon">:</span> user<span class="property-accessor">.</span>createTime,
+  }
+
+  <span class="comment">// send back the user resource in the response body</span>
+  response<span class="property-accessor">.</span><span class="function-name">writeHead</span>(<span class="number">200</span>, {
+    <span class="string">'Access-Control-Allow-Origin'</span><span class="object-colon">:</span> <span class="string">'*'</span>,
+    <span class="string">'Content-Type'</span><span class="object-colon">:</span> <span class="string">'application/json'</span>,
+  })
+  response<span class="property-accessor">.</span><span class="function-name">end</span>(JSON<span class="property-accessor">.</span><span class="function-name">stringify</span>({
+    user<span class="object-colon">:</span> publicUser,
+  }))
+}
+
+<span class="comment">// PUT /user/:userId</span>
+<span class="comment">// creates or updates a user resource</span>
+<span class="keyword">async</span> <span class="function-keyword">function</span> <span class="function-name">putUserHandler</span>(request, response) {
+  <span class="variable-declaration-keyword">const</span> userId <span class="operator">=</span> request<span class="property-accessor">.</span>url<span class="property-accessor">.</span><span class="function-name">match</span>(<span class="operator">/</span>\d<span class="operator">+/</span>)[<span class="number">0</span>]
+
+  <span class="variable-declaration-keyword">const</span> requestBodyBuffer <span class="operator">=</span> <span class="keyword">await</span> <span class="keyword">new</span> <span class="function-name">Promise</span>(resolve <span class="arrow-function-operator">=></span> {
+    <span class="variable-declaration-keyword">const</span> binaryArray <span class="operator">=</span> []
+    request<span class="property-accessor">.</span><span class="function-name">on</span>(<span class="string">'data'</span>, chunk <span class="arrow-function-operator">=></span> {
+      binaryArray<span class="property-accessor">.</span><span class="function-name">push</span>(chunk)
+    })
+    request<span class="property-accessor">.</span><span class="function-name">on</span>(<span class="string">'end'</span>, () <span class="arrow-function-operator">=></span> {
+      <span class="function-name">resolve</span>(Buffer<span class="property-accessor">.</span><span class="function-name">concat</span>(binaryArray))
+    })
+  })
+  <span class="variable-declaration-keyword">const</span> requestBodyString <span class="operator">=</span> requestBodyBuffer<span class="property-accessor">.</span><span class="function-name">toString</span>(<span class="string">'utf8'</span>)
+  <span class="variable-declaration-keyword">const</span> requestBodyJSON <span class="operator">=</span> JSON<span class="property-accessor">.</span><span class="function-name">parse</span>(requestBodyString)
+
+  <span class="comment">// validate</span>
+  <span class="keyword">if</span> (<span class="global-object">isNaN</span>(<span class="function-name">Number</span>(userId))) {
+    <span class="variable-declaration-keyword">const</span> error <span class="operator">=</span> <span class="keyword">new</span> <span class="function-name">Error</span>(<span class="string">'Bad Request'</span>)
+    error<span class="property-accessor">.</span>code <span class="operator">=</span> <span class="number">400</span>
+    throw error
+  }
+  <span class="keyword">if</span> (typeof requestBodyJSON<span class="property-accessor">.</span>id <span class="operator">!=</span> <span class="string">'string'</span>) {
+    <span class="variable-declaration-keyword">const</span> error <span class="operator">=</span> <span class="keyword">new</span> <span class="function-name">Error</span>(<span class="string">'Bad Request'</span>)
+    error<span class="property-accessor">.</span>code <span class="operator">=</span> <span class="number">400</span>
+    throw error
+  }
+  <span class="keyword">if</span> (typeof requestBodyJSON<span class="property-accessor">.</span>name <span class="operator">!=</span> <span class="string">'string'</span>) {
+    <span class="variable-declaration-keyword">const</span> error <span class="operator">=</span> <span class="keyword">new</span> <span class="function-name">Error</span>(<span class="string">'Bad Request'</span>)
+    error<span class="property-accessor">.</span>code <span class="operator">=</span> <span class="number">400</span>
+    throw error
+  }
+  <span class="keyword">if</span> (typeof requestBodyJSON<span class="property-accessor">.</span>birthdate <span class="operator">!=</span> <span class="string">'string'</span>) {
+    <span class="variable-declaration-keyword">const</span> error <span class="operator">=</span> <span class="keyword">new</span> <span class="function-name">Error</span>(<span class="string">'Bad Request'</span>)
+    error<span class="property-accessor">.</span>code <span class="operator">=</span> <span class="number">400</span>
+    throw error
+  }
+  <span class="keyword">if</span> (typeof requestBodyJSON<span class="property-accessor">.</span>profilePictureUrl <span class="operator">!=</span> <span class="string">'string'</span>) {
+    <span class="variable-declaration-keyword">const</span> error <span class="operator">=</span> <span class="keyword">new</span> <span class="function-name">Error</span>(<span class="string">'Bad Request'</span>)
+    error<span class="property-accessor">.</span>code <span class="operator">=</span> <span class="number">400</span>
+    throw error
+  }
+  <span class="keyword">if</span> (typeof requestBodyJSON<span class="property-accessor">.</span>email <span class="operator">!=</span> <span class="string">'string'</span>) {
+    <span class="variable-declaration-keyword">const</span> error <span class="operator">=</span> <span class="keyword">new</span> <span class="function-name">Error</span>(<span class="string">'Bad Request'</span>)
+    error<span class="property-accessor">.</span>code <span class="operator">=</span> <span class="number">400</span>
+    throw error
+  }
+
+  <span class="variable-declaration-keyword">const</span> user <span class="operator">=</span> {
+    id<span class="object-colon">:</span> requestBodyJSON<span class="property-accessor">.</span>id,
+    name<span class="object-colon">:</span> requestBodyJSON<span class="property-accessor">.</span>name,
+    birthdate<span class="object-colon">:</span> requestBodyJSON<span class="property-accessor">.</span>birthdate,
+    profilePictureUrl<span class="object-colon">:</span> requestBodyJSON<span class="property-accessor">.</span>profilePictureUrl,
+    email<span class="object-colon">:</span> requestBodyJSON<span class="property-accessor">.</span>email,
+    createTime<span class="object-colon">:</span> Date<span class="property-accessor">.</span><span class="function-name">now</span>(),
+  }
+
+  <span class="comment">// save user record to the db</span>
+  <span class="keyword">await</span> userTable<span class="property-accessor">.</span><span class="function-name">put</span>(user)
+
+  <span class="comment">// send back a successful response</span>
+  response<span class="property-accessor">.</span><span class="function-name">writeHead</span>(<span class="number">200</span>, {
+    <span class="string">'Access-Control-Allow-Origin'</span><span class="object-colon">:</span> <span class="string">'*'</span>,
+    <span class="string">'Content-Type'</span><span class="object-colon">:</span> <span class="string">'application/json'</span>,
+  })
+  response<span class="property-accessor">.</span><span class="function-name">end</span>(JSON<span class="property-accessor">.</span><span class="function-name">stringify</span>({
+    message<span class="object-colon">:</span> <span class="string">'success'</span>,
+  }))
+}
+
+<span class="function-keyword">function</span> <span class="function-name">notFoundHandler</span>(request, response) {
+  response<span class="property-accessor">.</span><span class="function-name">writeHead</span>(<span class="number">404</span>, {
+    <span class="string">'Content-Type'</span><span class="object-colon">:</span> <span class="string">'text/plain'</span>,
+  })
+  response<span class="property-accessor">.</span><span class="function-name">end</span>(<span class="string">'Not Found'</span>)
+}
+
+<span class="function-keyword">function</span> <span class="function-name">errorHandler</span>(error, request, response) {
+  <span class="global-object">console</span><span class="property-accessor">.</span><span class="function-name">error</span>(error)
+  <span class="keyword">if</span> (typeof error<span class="property-accessor">.</span>code <span class="operator">!=</span> <span class="string">'number'</span>) {
+    error<span class="property-accessor">.</span>code <span class="operator">=</span> <span class="number">500</span>
+  }
+  response<span class="property-accessor">.</span><span class="function-name">writeHead</span>(error<span class="property-accessor">.</span>code, {
+    <span class="string">'Access-Control-Allow-Origin'</span><span class="object-colon">:</span> <span class="string">'*'</span>,
+    <span class="string">'Content-Type'</span><span class="object-colon">:</span> <span class="string">'text/plain'</span>,
+  })
+  response<span class="property-accessor">.</span><span class="function-name">end</span>(error<span class="property-accessor">.</span>message)
+}
+
+<span class="variable-declaration-keyword">const</span> combinedHandler <span class="operator">=</span> <span class="function-name">tryCatch</span>(
+  <span class="function-name">switchCase</span>([
+    request <span class="arrow-function-operator">=></span> request<span class="property-accessor">.</span>url<span class="property-accessor">.</span><span class="function-name">startsWith</span>(<span class="string">'/health'</span>),
+    healthCheckHandler,
+
+    request <span class="arrow-function-operator">=></span> request<span class="property-accessor">.</span>method <span class="operator">==</span> <span class="string">'OPTIONS'</span>,
+    optionsHandler,
+
+    request <span class="arrow-function-operator">=></span> request<span class="property-accessor">.</span>method <span class="operator">==</span> <span class="string">'GET'</span> <span class="operator">&&</span> <span class="operator">/^</span>\<span class="operator">/</span>user\<span class="operator">/</span>\d<span class="operator">+</span>$<span class="operator">/</span><span class="property-accessor">.</span><span class="function-name">test</span>(request<span class="property-accessor">.</span>url),
+    getUserHandler,
+
+    request <span class="arrow-function-operator">=></span> request<span class="property-accessor">.</span>method <span class="operator">==</span> <span class="string">'PUT'</span> <span class="operator">&&</span> <span class="operator">/^</span>\<span class="operator">/</span>user\<span class="operator">/</span>\d<span class="operator">+</span>$<span class="operator">/</span><span class="property-accessor">.</span><span class="function-name">test</span>(request<span class="property-accessor">.</span>url),
+    putUserHandler,
+
+    notFoundHandler,
+  ]),
+
+  errorHandler
+)
+
+<span class="variable-declaration-keyword">const</span> server <span class="operator">=</span> http<span class="property-accessor">.</span><span class="function-name">createServer</span>(combinedHandler)
+
+<span class="variable-declaration-keyword">const</span> port <span class="operator">=</span> <span class="number">8080</span>
+
+server<span class="property-accessor">.</span><span class="function-name">listen</span>(port)</pre></code></div><p><span>You can find a working example of the above HTTP server code at </span><a href="https://github.com/a-synchronous/rubico/tree/master/examples/rubico-http-server"><span>rubico-http-server</span></a><span>.</span></p><a class="anchor-hash" href="#conclusion" style="display: flex; place-items: center;"><h3 id="conclusion"><span>Conclusion</span></h3></a><p><span>This concludes Handling HTTP in [A]synchronous Functional Programming.</span></p><p><span>If you are curious about Rubico and would like to get started, please visit Rubico's home page: </span><a href="/"><span>rubico.land</span></a><span>.</span></p></article></div></div><div class="blog-post inactive"><div class="title"><a href="/blog/transducers-crash-course" class=""><h1>Transducers Crash Course</h1><svg class="down-arrow-svg" width="200" height="133" viewBox="0 0 200 133" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="143.875" height="41.9555" rx="20.9777" transform="matrix(0.683998 -0.729484 0.756447 0.654055 69.8527 105.123)" fill="black"></rect><rect width="143.875" height="41.9555" rx="20.9777" transform="matrix(0.683998 0.729484 -0.756447 0.654055 31.7371 0)" fill="black"></rect></svg></a><p>Updated October 9, 2026 by Richard Tong, King of Technology at CLOUŢ</p></div><div class="description"><h3>A crash course on Rubico transducers.</h3><button class="read-more">Read more</button></div><div class="fade-in-out"></div></div><div class="blog-post inactive"><div class="title"><a href="/blog/a-synchronous-functional-programming-intro" class=""><h1>[A]synchronous Functional Programming - Intro</h1><svg class="down-arrow-svg" width="200" height="133" viewBox="0 0 200 133" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="143.875" height="41.9555" rx="20.9777" transform="matrix(0.683998 -0.729484 0.756447 0.654055 69.8527 105.123)" fill="black"></rect><rect width="143.875" height="41.9555" rx="20.9777" transform="matrix(0.683998 0.729484 -0.756447 0.654055 31.7371 0)" fill="black"></rect></svg></a><p>Updated October 9, 2026 by Richard Tong, King of Technology at CLOUŢ</p></div><div class="cover"><img src="https://rubico.land/assets/rubico-logo-3-3.jpg" alt="https://rubico.land/assets/rubico-logo-3-3.jpg"></img></div><div class="description"><h3>An introduction to the [A]synchronous Functional Programming paradigm.</h3><button class="read-more">Read more</button></div><div class="fade-in-out"></div></div><div class="blog-post inactive"><div class="title"><a href="/blog/a-synchronous-functional-programming-data-types" class=""><h1>[A]synchronous Functional Programming - Data Types</h1><svg class="down-arrow-svg" width="200" height="133" viewBox="0 0 200 133" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="143.875" height="41.9555" rx="20.9777" transform="matrix(0.683998 -0.729484 0.756447 0.654055 69.8527 105.123)" fill="black"></rect><rect width="143.875" height="41.9555" rx="20.9777" transform="matrix(0.683998 0.729484 -0.756447 0.654055 31.7371 0)" fill="black"></rect></svg></a><p>Updated October 9, 2026 by Richard Tong, King of Technology at CLOUŢ</p></div><div class="cover"><img src="/assets/monad.png" alt="/assets/monad.png"></img></div><div class="description"><h3>Data types in [A]synchronous Functional Programming.</h3><button class="read-more">Read more</button></div><div class="fade-in-out"></div></div><div class="blog-post inactive"><div class="title"><a href="/blog/a-synchronous-functional-programming-statements-vs-expressions" class=""><h1>[A]synchronous Functional Programming - Statements vs Expressions</h1><svg class="down-arrow-svg" width="200" height="133" viewBox="0 0 200 133" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="143.875" height="41.9555" rx="20.9777" transform="matrix(0.683998 -0.729484 0.756447 0.654055 69.8527 105.123)" fill="black"></rect><rect width="143.875" height="41.9555" rx="20.9777" transform="matrix(0.683998 0.729484 -0.756447 0.654055 31.7371 0)" fill="black"></rect></svg></a><p>Updated October 9, 2026 by Richard Tong, King of Technology at CLOUŢ</p></div><div class="description"><h3>Statements vs Expressions in [A]synchronous Functional Programming.</h3><button class="read-more">Read more</button></div><div class="fade-in-out"></div></div></div></main></div><div class="panel" style="width: 50%;"><div id="hamburger-menu" class=""><nav><a href="/" class="nav-link">Home</a><hr></hr><a href="/tour" class="nav-link">Tour</a><hr></hr><a href="/docs" class="nav-link">Docs</a><hr></hr><a href="/blog" class="nav-link active">Blog</a></nav><div class="docs-nav"><nav><section><div id="docs-search"><input type="text" value="" placeholder="Search"></input></div></section><section><h4>Function Composition</h4><div class="docs-nav-item"><a href="/docs/pipe">pipe</a></div><div class="docs-nav-item"><a href="/docs/compose">compose</a></div><div class="docs-nav-item"><a href="/docs/tap">tap</a></div></section><section><h4>Conditional Operators</h4><div class="docs-nav-item"><a href="/docs/tap.if">tap.if</a></div><div class="docs-nav-item"><a href="/docs/switchCase">switchCase</a></div></section><section><h4>Error Handling</h4><div class="docs-nav-item"><a href="/docs/tryCatch">tryCatch</a></div></section><section><h4>Data Construction</h4><div class="docs-nav-item"><a href="/docs/all">all</a></div><div class="docs-nav-item"><a href="/docs/all.series">all.series</a></div><div class="docs-nav-item"><a href="/docs/assign">assign</a></div><div class="docs-nav-item"><a href="/docs/get">get</a></div><div class="docs-nav-item"><a href="/docs/set">set</a></div><div class="docs-nav-item"><a href="/docs/pick">pick</a></div><div class="docs-nav-item"><a href="/docs/omit">omit</a></div></section><section><h4>Iteration</h4><div class="docs-nav-item"><a href="/docs/forEach">forEach</a></div><div class="docs-nav-item"><a href="/docs/forEach.series">forEach.series</a></div></section><section><h4>Transformation</h4><div class="docs-nav-item"><a href="/docs/map">map</a></div><div class="docs-nav-item"><a href="/docs/map.entries">map.entries</a></div><div class="docs-nav-item"><a href="/docs/map.series">map.series</a></div><div class="docs-nav-item"><a href="/docs/map.pool">map.pool</a></div><div class="docs-nav-item"><a href="/docs/filter">filter</a></div><div class="docs-nav-item"><a href="/docs/reduce">reduce</a></div><div class="docs-nav-item"><a href="/docs/transform">transform</a></div><div class="docs-nav-item"><a href="/docs/flatMap">flatMap</a></div></section><section><h4>Data Testing</h4><div class="docs-nav-item"><a href="/docs/some">some</a></div><div class="docs-nav-item"><a href="/docs/every">every</a></div></section><section><h4>Logical Operators</h4><div class="docs-nav-item"><a href="/docs/and">and</a></div><div class="docs-nav-item"><a href="/docs/or">or</a></div><div class="docs-nav-item"><a href="/docs/not">not</a></div></section><section><h4>Comparison Operators</h4><div class="docs-nav-item"><a href="/docs/eq">eq</a></div><div class="docs-nav-item"><a href="/docs/gt">gt</a></div><div class="docs-nav-item"><a href="/docs/lt">lt</a></div><div class="docs-nav-item"><a href="/docs/gte">gte</a></div><div class="docs-nav-item"><a href="/docs/lte">lte</a></div></section><section><h4>Partial Application</h4><div class="docs-nav-item"><a href="/docs/thunkify">thunkify</a></div><div class="docs-nav-item"><a href="/docs/thunkify.call">thunkify.call</a></div><div class="docs-nav-item"><a href="/docs/always">always</a></div><div class="docs-nav-item"><a href="/docs/curry">curry</a></div><div class="docs-nav-item"><a href="/docs/curry.arity">curry.arity</a></div><div class="docs-nav-item"><a href="/docs/curry.call">curry.call</a></div><div class="docs-nav-item"><a href="/docs/__">__</a></div></section><section><h4>Transducers</h4><div class="docs-nav-item"><a href="/docs/Transducer">Transducer</a></div><div class="docs-nav-item"><a href="/docs/Transducer.map">Transducer.map</a></div><div class="docs-nav-item"><a href="/docs/Transducer.filter">Transducer.filter</a></div><div class="docs-nav-item"><a href="/docs/Transducer.flatMap">Transducer.flatMap</a></div><div class="docs-nav-item"><a href="/docs/Transducer.forEach">Transducer.forEach</a></div><div class="docs-nav-item"><a href="/docs/Transducer.passthrough">Transducer.passthrough</a></div><div class="docs-nav-item"><a href="/docs/Transducer.tryCatch">Transducer.tryCatch</a></div></section><section><h4>x</h4><div class="docs-nav-item"><a href="/docs/x/append">append</a></div><div class="docs-nav-item"><a href="/docs/x/callProp">callProp</a></div><div class="docs-nav-item"><a href="/docs/x/defaultsDeep">defaultsDeep</a></div><div class="docs-nav-item"><a href="/docs/x/differenceWith">differenceWith</a></div><div class="docs-nav-item"><a href="/docs/x/filterOut">filterOut</a></div><div class="docs-nav-item"><a href="/docs/x/find">find</a></div><div class="docs-nav-item"><a href="/docs/x/findIndex">findIndex</a></div><div class="docs-nav-item"><a href="/docs/x/first">first</a></div><div class="docs-nav-item"><a href="/docs/x/flatten">flatten</a></div><div class="docs-nav-item"><a href="/docs/x/forEach">forEach</a></div><div class="docs-nav-item"><a href="/docs/x/groupBy">groupBy</a></div><div class="docs-nav-item"><a href="/docs/x/has">has</a></div><div class="docs-nav-item"><a href="/docs/x/identity">identity</a></div><div class="docs-nav-item"><a href="/docs/x/includes">includes</a></div><div class="docs-nav-item"><a href="/docs/x/isDeepEqual">isDeepEqual</a></div><div class="docs-nav-item"><a href="/docs/x/isEmpty">isEmpty</a></div><div class="docs-nav-item"><a href="/docs/x/isFunction">isFunction</a></div><div class="docs-nav-item"><a href="/docs/x/isIn">isIn</a></div><div class="docs-nav-item"><a href="/docs/x/isObject">isObject</a></div><div class="docs-nav-item"><a href="/docs/x/isString">isString</a></div><div class="docs-nav-item"><a href="/docs/x/keys">keys</a></div><div class="docs-nav-item"><a href="/docs/x/last">last</a></div><div class="docs-nav-item"><a href="/docs/x/maxBy">maxBy</a></div><div class="docs-nav-item"><a href="/docs/x/noop">noop</a></div><div class="docs-nav-item"><a href="/docs/x/pluck">pluck</a></div><div class="docs-nav-item"><a href="/docs/x/prepend">prepend</a></div><div class="docs-nav-item"><a href="/docs/x/size">size</a></div><div class="docs-nav-item"><a href="/docs/x/trace">trace</a></div><div class="docs-nav-item"><a href="/docs/x/unionWith">unionWith</a></div><div class="docs-nav-item"><a href="/docs/x/uniq">uniq</a></div><div class="docs-nav-item"><a href="/docs/x/unless">unless</a></div><div class="docs-nav-item"><a href="/docs/x/values">values</a></div><div class="docs-nav-item"><a href="/docs/x/when">when</a></div></section></nav></div></div></div></div></div><footer><p style="font-size: 12px; text-align: center; padding: 15px 0;">All content on this site is freely released in the public domain.</p></footer></div></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/rubico@2.8.2/dist/rubico.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/rubico@2.8.2/dist/Transducer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/arche@1.0.2/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/arche-highlight@0.7.1/ArcheHighlight.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react@17.0.1/umd/react.production.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-dom@17.0.1/umd/react-dom.production.min.js"></script>
+  <script type="module" src="/index.js"></script>
+</body>
 
 </html>

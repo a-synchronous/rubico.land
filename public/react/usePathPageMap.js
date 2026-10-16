@@ -1,7 +1,7 @@
 import useGlobalState from './useGlobalState.js'
-import rubicoV1 from 'https://cdn.jsdelivr.net/npm/rubico@1/dist/rubico.es.min.js'
-import rubicoV2 from 'https://cdn.jsdelivr.net/npm/rubico@2/dist/rubico.es.min.js'
-import Transducer from 'https://cdn.jsdelivr.net/npm/rubico@2/dist/Transducer.es.min.js'
+import rubicoV1 from '../javascript/rubico-v1.es.min.js'
+import rubicoV2 from '../javascript/rubico-v2.es.min.js'
+import Transducer from '../javascript/rubico-v2-Transducer.es.min.js'
 import FunctionNames from './FunctionNames.js'
 import useBlogPostList from './useBlogPostList.js'
 

@@ -1,17 +1,7 @@
 import inspect from './inspect.js'
-
-const ReactElement = Arche(React)
-
-const {
-  H1, H2, H3, H4, H5, H6,
-  A, P, B, Button, Img,
-  Span, Div, Section,
-  Script, Iframe,
-  Ul, Ol, Li,
-  Code, Pre,
-} = ReactElement
-
-const { useState, useEffect, useRef, useCallback, useReducer } = React
+import CopyIcon from './CopyIcon.js'
+import CopySuccessIcon from './CopySuccessIcon.js'
+import copyToClipboard from './copyToClipboard.js'
 
 const codeMirrors = new Map()
 
@@ -23,29 +13,32 @@ const CodeViewer = ReactElement(({
   lineWrapping = false,
   lineNumbers = false,
 }) => {
-  const codeAreaRef = useRef(null)
-  useEffect(() => {
-    if (!codeMirrors.has(codeAreaRef)) return
-    codeMirrors.get(codeAreaRef).getDoc().setValue(code)
-  }, [code])
-  useEffect(() => {
-    const cm = CodeMirror(codeAreaRef.current, {
-      value: code,
-      mode,
-      lineWrapping,
-      lineNumbers,
-      theme,
-      readOnly: 'nocursor',
-      // cursorBlinkRate: -1,
-    })
-    codeMirrors.set(codeAreaRef, cm)
-    return () => {
-      codeMirrors.delete(codeAreaRef)
-    }
-  }, [])
 
-  return Div({ class: 'code-viewer' }, [
-    Div({ ref: codeAreaRef }),
+  const [hover, setHover] = useState(false)
+  const [copySuccess, setCopySuccess] = useState(false)
+
+  return Div({
+    class: hover ? 'code-viewer hover' : 'code-viewer',
+    onMouseEnter() {
+      setHover(true)
+    },
+    onMouseLeave() {
+      setHover(false)
+    }
+  }, [
+    Button({
+      class: 'copy-button',
+      onClick() {
+        copyToClipboard(code)
+        setCopySuccess(true)
+        setTimeout(() => {
+          setCopySuccess(false)
+        }, 500)
+      },
+    }, [copySuccess ? CopySuccessIcon() : CopyIcon()]),
+    mode == "javascript"
+      ? Code([Pre(ArcheHighlight.parseJavaScript(code))])
+      : Code([Pre(code)]),
   ])
 })
 

@@ -7,6 +7,8 @@
  *   title: string,
  *   description: string,
  *   path: string,
+ *   image: string,
+ *   reactRootHTML: string,
  * }) -> html string
  * ```
  */
@@ -16,6 +18,7 @@ const IndexHtml = function (options) {
     description,
     path,
     image,
+    reactRootHTML = '',
   } = options
 
   const url = `https://rubico.land${path}`
@@ -48,11 +51,6 @@ const IndexHtml = function (options) {
   <link rel="manifest" href="/site.webmanifest">
   <link rel="canonical" href="${url}">
 
-  <script src="https://cdn.jsdelivr.net/npm/rubico@2.8.2/dist/rubico.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/rubico@2.8.2/dist/Transducer.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/arche@1.0.2/index.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/react@17.0.1/umd/react.production.min.js" crossorigin></script>
-  <script src="https://cdn.jsdelivr.net/npm/react-dom@17.0.1/umd/react-dom.production.min.js" crossorigin></script>
   <script src="/codemirror/index.js"></script>
   <link rel="stylesheet" href="/codemirror/styles.css">
   <link rel="stylesheet" href="/codemirror/theme/rubico.css">
@@ -69,10 +67,16 @@ const IndexHtml = function (options) {
 </head>
 
 <body>
-  <div id="react-root"></div>
-</body>
+  <div id="react-root">${reactRootHTML}</div>
 
-<script type="module" src="/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/rubico@2.8.2/dist/rubico.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/rubico@2.8.2/dist/Transducer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/arche@1.0.2/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/arche-highlight@0.7.1/ArcheHighlight.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react@17.0.1/umd/react.production.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-dom@17.0.1/umd/react-dom.production.min.js"></script>
+  <script type="module" src="/index.js"></script>
+</body>
 
 </html>
   `.trim()

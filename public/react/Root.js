@@ -12,12 +12,6 @@ import useGlobalState from './useGlobalState.js'
 import useBlogPostList from './useBlogPostList.js'
 import usePathPageMap from './usePathPageMap.js'
 
-// Tour Docs Blog
-const tabAnchors = [...document.querySelectorAll('header > nav > a')]
-
-// rubico
-const homeAnchor = document.getElementById('home')
-
 // initialState { path: string } -> ReactElement
 const Root = ReactElement(props => {
   const [blogPostList] = useBlogPostList()

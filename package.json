@@ -17,6 +17,8 @@
   ],
   "dependencies": {
     "arche": "latest",
+    "arche-highlight": "^0.8.1",
+    "arche-html": "^1.2.1",
     "presidium": "^1.0.6",
     "react": "latest",
     "react-dom": "latest",

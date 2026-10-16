@@ -112,6 +112,106 @@ h4 {
   margin: 0;
 }
 
+.code-viewer .shebang-interpreter-directive {
+  color: #888;
+}
+
+.code-viewer .comment {
+  color: #888;
+}
+
+.code-viewer .number, .code-viewer .bigint, .code-viewer .undefined, .code-viewer .null, .code-viewer .boolean, .code-viewer .not-a-number {
+  color: #8807bf;
+}
+
+.code-viewer .variable-declaration-keyword {
+  /* color: #36e2ce; */
+  color: green;
+}
+
+.code-viewer .keyword {
+  color: red
+}
+
+.code-viewer .function-keyword {
+  color: green;
+}
+
+.code-viewer .arrow-function-operator {
+  color: green;
+}
+
+.code-viewer .function-name {
+  color: blue;
+}
+
+.code-viewer .string {
+  color: orange;
+}
+
+.code-viewer .operator {
+  color: #000;
+}
+
+.code-viewer .object-colon {
+  color: #000;
+}
+
+.code-viewer .property-accessor {
+  color: #000;
+}
+
+.code-viewer .spread-operator {
+  color: #000;
+}
+
+.code-viewer .global-object {
+  color: magenta;
+}
+
+.code-viewer .template-literal {
+  color: orange;
+}
+
+.code-viewer .template-variable {
+  color: #000;
+}
+
+.code-viewer code  {
+  padding: 0;
+  margin: 0;
+}
+
+.code-viewer .copy-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  visibility: hidden;
+  background: #fff;
+  border-radius: 3px;
+  padding-left: 3px;
+  padding-right: 3px;
+  padding-top: 3px;
+  padding-bottom: 1px;
+}
+
+.code-viewer.hover .copy-button {
+  visibility: visible;
+}
+
+.copy-icon svg {
+  width: 20px;
+  height: auto;
+}
+
+.copy-success-icon svg {
+  width: 20px;
+  height: auto;
+}
+
 .image {
   display: inline;
 }

@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 require('rubico/global')
+const ArcheHTML = require('arche-html')
 const rubico = require('../rubico')
 const Transducer = require('../rubico/Transducer')
 const x = require('../rubico/x')
@@ -30,6 +31,13 @@ const FunctionNames = function (lib) {
  * ```
  */
 const main = async function (options) {
+  const archeHTML = new ArcheHTML(`${__dirname}/public/react/Root.js`, {
+    scriptImports: [
+      `${__dirname}/ssr-polyfills.mjs`,
+      `${__dirname}/public/global.js`,
+    ],
+  })
+
   const publicFs = new FileSystem({ cwd: `${__dirname}/public` })
 
   await publicFs.rmrf('/index.html')
@@ -38,10 +46,12 @@ const main = async function (options) {
   await publicFs.rmrf('/blog')
 
   console.log('Creating index.html')
+
   await publicFs.writeFile('index.html', IndexHtml({
     path: '/',
     title: 'Rubico - [A]synchronous Functional Programming',
     description: 'A library for creating async-enabled function compositions.',
+    reactRootHTML: await archeHTML.render('/'),
   }))
 
   console.log('Creating tour/index.html')
@@ -49,6 +59,7 @@ const main = async function (options) {
     path: '/tour/',
     title: 'A tour of Rubico',
     description: 'An overview of the Rubico library',
+    reactRootHTML: await archeHTML.render('/tour'),
   }))
 
   console.log('Creating docs/index.html')
@@ -56,6 +67,7 @@ const main = async function (options) {
     path: '/docs/',
     title: 'Rubico documentation',
     description: 'A reference for the Rubico library',
+    reactRootHTML: await archeHTML.render('/docs'),
   }))
 
   console.log('Creating blog/index.html')
@@ -63,6 +75,7 @@ const main = async function (options) {
     path: '/blog/',
     title: 'Rubico blog',
     description: 'A blog about the Rubico library, JavaScript, and [A]synchronous Functional Programming',
+    reactRootHTML: await archeHTML.render('/blog'),
   }))
 
   const coreFunctionNames = FunctionNames(rubico)
@@ -87,7 +100,8 @@ const main = async function (options) {
       path: `/docs/${functionName}`,
       title: `${functionName} - Rubico documentation`,
       description: `Reference for ${functionName}`,
-      image: '/assets/rubico-logo-3-3.jpg'
+      image: '/assets/rubico-logo-3-3.jpg',
+      reactRootHTML: await archeHTML.render(`/docs/${functionName}`),
     }))
   }
 
@@ -96,7 +110,8 @@ const main = async function (options) {
     path: `/docs/Transducer`,
     title: 'Transducer - Rubico documentation',
     description: 'Transducer reference',
-    image: '/assets/rubico-logo-3-3.jpg'
+    image: '/assets/rubico-logo-3-3.jpg',
+    reactRootHTML: await archeHTML.render('/docs/Transducer'),
   }))
 
   for (const functionName of transducerFunctionNames) {
@@ -105,7 +120,8 @@ const main = async function (options) {
       path: `/docs/Transducer.${functionName}`,
       title: `Transducer.${functionName} - Rubico documentation`,
       description: `Reference for Transducer.${functionName}`,
-      image: '/assets/rubico-logo-3-3.jpg'
+      image: '/assets/rubico-logo-3-3.jpg',
+      reactRootHTML: await archeHTML.render(`/docs/Transducer.${functionName}`),
     }))
   }
 
@@ -117,7 +133,8 @@ const main = async function (options) {
       path: `/docs/x/${functionName}`,
       title: `x/${functionName} - Rubico documentation`,
       description: `Reference for x/${functionName}`,
-      image: '/assets/rubico-logo-3-3.jpg'
+      image: '/assets/rubico-logo-3-3.jpg',
+      reactRootHTML: await archeHTML.render(`/docs/x/${functionName}`),
     }))
   }
 
@@ -143,7 +160,13 @@ const main = async function (options) {
     const { path, title, description, image } = metadata
 
     console.log('Creating', path)
-    await publicFs.writeFile(path, IndexHtml({ path, title, description, image }))
+    await publicFs.writeFile(path, IndexHtml({
+      path,
+      title,
+      description,
+      image,
+      reactRootHTML: await archeHTML.render(path),
+    }))
   }
 }
 
