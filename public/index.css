@@ -94,6 +94,7 @@ article .code-runner {
   margin: 15px 0;
 }
 article .code-viewer {
+  position: relative;
   margin: 15px 0 20px 0;
 }
 article p + p {
@@ -203,13 +204,13 @@ h4 {
 }
 
 .copy-icon svg {
-  width: 20px;
-  height: auto;
+  width: auto;
+  height: 20px;
 }
 
 .copy-success-icon svg {
-  width: 20px;
-  height: auto;
+  width: auto;
+  height: 20px;
 }
 
 .image {
