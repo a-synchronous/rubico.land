@@ -6,6 +6,7 @@ updated: 2026-10-09
 path: /blog/a-synchronous-functional-programming-data-types
 description: Data types in [A]synchronous Functional Programming.
 image: /assets/monad.png
+disable-copy-button: true
 ---
 
 Welcome to Data Types in [A]synchronous Functional Programming. In this article we will discuss the data types used for the [A]synchronous Functional Programming paradigm in JavaScript.

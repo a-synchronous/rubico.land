@@ -8,14 +8,14 @@ const codeMirrors = new Map()
 // { code } -> codeViewer React.Element
 const CodeViewer = ReactElement(({
   code,
-  mode = 'javascript',
-  theme = 'default',
-  lineWrapping = false,
-  lineNumbers = false,
+  mode,
+  metadata = {},
 }) => {
-
   const [hover, setHover] = useState(false)
   const [copySuccess, setCopySuccess] = useState(false)
+
+  console.log(metadata)
+  const { disableCopyButton } = metadata
 
   return Div({
     class: hover ? 'code-viewer hover' : 'code-viewer',
@@ -26,7 +26,7 @@ const CodeViewer = ReactElement(({
       setHover(false)
     }
   }, [
-    Button({
+    disableCopyButton ? [] : Button({
       class: 'copy-button',
       onClick() {
         copyToClipboard(code)

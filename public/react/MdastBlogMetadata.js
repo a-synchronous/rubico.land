@@ -20,6 +20,7 @@ const MdastBlogMetadata = function (mdast) {
     coverImageUrl: data.coverImageUrl,
     description: data.description,
     image: data.image,
+    disableCopyButton: data['disable-copy-button'] == 'true',
   }
   return data
 }

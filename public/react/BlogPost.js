@@ -42,6 +42,7 @@ const BlogPost = ReactElement(props => {
     href,
     description,
     image,
+    disableCopyButton,
   } = metadata
 
   const isActive = path == href

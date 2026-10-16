@@ -25,9 +25,9 @@ const anchorHashFromMdast = function (mdast) {
 }
 
 // mdast -> ReactElement
-const ReactElementFromMdastRecurse = function (mdast) {
+const ReactElementFromMdastRecurse = function ({ mdast, metadata }) {
   return isArray(mdast.children)
-    ? mdast.children.map(mdast => ReactElementFromMdast({ mdast }))
+    ? mdast.children.map(mdast => ReactElementFromMdast({ mdast, metadata }))
     : mdast.value
 }
 
@@ -53,9 +53,12 @@ const codeSpliceImports = function (code) {
 //     value: string,
 //     children: Array<this>,
 //   },
+//   metadata: {
+//     disableCopyButton: boolean,
+//   },
 // )) -> ReactElement
 const ReactElementFromMdast = ReactElement(props => {
-  const { mdast } = props
+  const { mdast, metadata } = props
 
   switch (mdast.type) {
     case 'yaml': {
@@ -73,7 +76,7 @@ const ReactElementFromMdast = ReactElement(props => {
           return Span()
       }
     case 'root':
-      return Article(ReactElementFromMdastRecurse(mdast))
+      return Article(ReactElementFromMdastRecurse({ mdast, metadata }))
     case 'heading':
       switch (mdast.depth) {
         case 1: {
@@ -85,7 +88,7 @@ const ReactElementFromMdast = ReactElement(props => {
             class: 'anchor-hash',
             href: `#${anchorHash}`,
             style: { display: 'flex', placeItems: 'center' },
-          }, [H1({ id: anchorHash }, ReactElementFromMdastRecurse(mdast))])
+          }, [H1({ id: anchorHash }, ReactElementFromMdastRecurse({ mdast, metadata }))])
         }
         case 2: {
           const anchorHash = pipe(mdast, [
@@ -96,7 +99,7 @@ const ReactElementFromMdast = ReactElement(props => {
             class: 'anchor-hash',
             href: `#${anchorHash}`,
             style: { display: 'flex', placeItems: 'center' },
-          }, [H2({ id: anchorHash }, ReactElementFromMdastRecurse(mdast))])
+          }, [H2({ id: anchorHash }, ReactElementFromMdastRecurse({ mdast, metadata }))])
         }
         case 3: {
           const anchorHash = pipe(mdast, [
@@ -107,7 +110,7 @@ const ReactElementFromMdast = ReactElement(props => {
             class: 'anchor-hash',
             href: `#${anchorHash}`,
             style: { display: 'flex', placeItems: 'center' },
-          }, [H3({ id: anchorHash }, ReactElementFromMdastRecurse(mdast))])
+          }, [H3({ id: anchorHash }, ReactElementFromMdastRecurse({ mdast, metadata }))])
         }
         case 4: {
           const anchorHash = pipe(mdast, [
@@ -118,7 +121,7 @@ const ReactElementFromMdast = ReactElement(props => {
             class: 'anchor-hash',
             href: `#${anchorHash}`,
             style: { display: 'flex', placeItems: 'center' },
-          }, [H4({ id: anchorHash }, ReactElementFromMdastRecurse(mdast))])
+          }, [H4({ id: anchorHash }, ReactElementFromMdastRecurse({ mdast, metadata }))])
         }
         case 5: {
           const anchorHash = pipe(mdast, [
@@ -129,9 +132,9 @@ const ReactElementFromMdast = ReactElement(props => {
             class: 'anchor-hash',
             href: `#${anchorHash}`,
             style: { display: 'flex', placeItems: 'center' },
-          }, [H5({ id: anchorHash }, ReactElementFromMdastRecurse(mdast))])
+          }, [H5({ id: anchorHash }, ReactElementFromMdastRecurse({ mdast, metadata }))])
         }
-        default: return H6(ReactElementFromMdastRecurse(mdast))
+        default: return H6(ReactElementFromMdastRecurse({ mdast, metadata }))
       }
 
     case 'image':
@@ -139,21 +142,21 @@ const ReactElementFromMdast = ReactElement(props => {
         Img({ src: mdast.url, alt: mdast.alt })
       ])
     case 'blockquote':
-      return Blockquote(ReactElementFromMdastRecurse(mdast))
+      return Blockquote(ReactElementFromMdastRecurse({ mdast, metadata }))
     case 'paragraph':
-      return P(ReactElementFromMdastRecurse(mdast))
+      return P(ReactElementFromMdastRecurse({ mdast, metadata }))
     case 'strong':
-      return B(ReactElementFromMdastRecurse(mdast))
+      return B(ReactElementFromMdastRecurse({ mdast, metadata }))
     case 'text':
-      return Span(ReactElementFromMdastRecurse(mdast))
+      return Span(ReactElementFromMdastRecurse({ mdast, metadata }))
     case 'list':
       return mdast.ordered
-        ? Ol({ start: mdast.start ?? 1 }, ReactElementFromMdastRecurse(mdast))
-        : Ul(ReactElementFromMdastRecurse(mdast))
+        ? Ol({ start: mdast.start ?? 1 }, ReactElementFromMdastRecurse({ mdast, metadata }))
+        : Ul(ReactElementFromMdastRecurse({ mdast, metadata }))
     case 'listItem':
-      return Li(ReactElementFromMdastRecurse(mdast))
+      return Li(ReactElementFromMdastRecurse({ mdast, metadata }))
     case 'inlineCode':
-      return Code(ReactElementFromMdastRecurse(mdast))
+      return Code(ReactElementFromMdastRecurse({ mdast, metadata }))
 
     case 'code':
       switch (mdast.meta) {
@@ -164,6 +167,7 @@ const ReactElementFromMdast = ReactElement(props => {
               code: mdast.value,
               mode: mdast.lang,
               theme: 'coffeescript',
+              metadata,
             }),
           ])
         case '[playground]':
@@ -179,19 +183,21 @@ const ReactElementFromMdast = ReactElement(props => {
             code: mdast.value,
             mode: mdast.lang,
             theme: 'rubico',
+            metadata,
           })
         default:
           return CodeViewer({
             code: mdast.value,
             mode: mdast.meta == null ? mdast.lang : mdast.meta.slice(1, -1),
             theme: 'default',
+            metadata,
           })
       }
 
     case 'link':
-      return A({ href: mdast.url }, ReactElementFromMdastRecurse(mdast))
+      return A({ href: mdast.url }, ReactElementFromMdastRecurse({ mdast, metadata }))
     case 'linkReference':
-      return Span([Span('['), ReactElementFromMdastRecurse(mdast), Span(']')])
+      return Span([Span('['), ReactElementFromMdastRecurse({ mdast, metadata }), Span(']')])
     case 'html':
       if (mdast.value == '<br />' || mdast.value == '<br>') {
         return Br()
