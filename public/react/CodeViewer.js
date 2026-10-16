@@ -14,7 +14,6 @@ const CodeViewer = ReactElement(({
   const [hover, setHover] = useState(false)
   const [copySuccess, setCopySuccess] = useState(false)
 
-  console.log(metadata)
   const { disableCopyButton } = metadata
 
   return Div({
