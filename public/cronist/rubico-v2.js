@@ -39126,9 +39126,8 @@ export default [
       '\n' +
       'map.call(functor Promise|Functor, mapper Mapper, context object) -> mappedFunctor Promise|Functor\n' +
       'map.call(mapper Mapper, context object)(functor Functor) -> mappedFunctor Promise|Functor\n' +
-      '```\n' +
-      '\n' +
-      '[map](/docs/map) with the specified context.\n' +
+      '```',
+    description: '[map](/docs/map) with the specified context.\n' +
       '\n' +
       '```javascript [playground]\n' +
       'function parseString(s) {\n' +
@@ -39215,7 +39214,16 @@ export default [
               start: { line: 1, column: 1, offset: 0 },
               end: { line: 12, column: 4, offset: 407 }
             }
-          },
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 12, column: 4, offset: 407 }
+        }
+      },
+      description: {
+        type: 'root',
+        children: [
           {
             type: 'paragraph',
             children: [
@@ -39228,28 +39236,28 @@ export default [
                     type: 'text',
                     value: 'map',
                     position: {
-                      start: { line: 14, column: 2, offset: 410 },
-                      end: { line: 14, column: 5, offset: 413 }
+                      start: { line: 1, column: 2, offset: 1 },
+                      end: { line: 1, column: 5, offset: 4 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 14, column: 1, offset: 409 },
-                  end: { line: 14, column: 17, offset: 425 }
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 17, offset: 16 }
                 }
               },
               {
                 type: 'text',
                 value: ' with the specified context.',
                 position: {
-                  start: { line: 14, column: 17, offset: 425 },
-                  end: { line: 14, column: 45, offset: 453 }
+                  start: { line: 1, column: 17, offset: 16 },
+                  end: { line: 1, column: 45, offset: 44 }
                 }
               }
             ],
             position: {
-              start: { line: 14, column: 1, offset: 409 },
-              end: { line: 14, column: 45, offset: 453 }
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 45, offset: 44 }
             }
           },
           {
@@ -39281,8 +39289,8 @@ export default [
               '\n' +
               'console.log(parsed)',
             position: {
-              start: { line: 16, column: 1, offset: 455 },
-              end: { line: 41, column: 4, offset: 852 }
+              start: { line: 3, column: 1, offset: 46 },
+              end: { line: 28, column: 4, offset: 443 }
             }
           },
           {
@@ -39292,14 +39300,14 @@ export default [
                 type: 'text',
                 value: 'See also:',
                 position: {
-                  start: { line: 43, column: 1, offset: 854 },
-                  end: { line: 43, column: 10, offset: 863 }
+                  start: { line: 30, column: 1, offset: 445 },
+                  end: { line: 30, column: 10, offset: 454 }
                 }
               }
             ],
             position: {
-              start: { line: 43, column: 1, offset: 854 },
-              end: { line: 43, column: 10, offset: 863 }
+              start: { line: 30, column: 1, offset: 445 },
+              end: { line: 30, column: 10, offset: 454 }
             }
           },
           {
@@ -39325,26 +39333,26 @@ export default [
                             type: 'text',
                             value: 'map',
                             position: {
-                              start: { line: 44, column: 5, offset: 868 },
-                              end: { line: 44, column: 8, offset: 871 }
+                              start: { line: 31, column: 5, offset: 459 },
+                              end: { line: 31, column: 8, offset: 462 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 44, column: 4, offset: 867 },
-                          end: { line: 44, column: 20, offset: 883 }
+                          start: { line: 31, column: 4, offset: 458 },
+                          end: { line: 31, column: 20, offset: 474 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 44, column: 4, offset: 867 },
-                      end: { line: 44, column: 20, offset: 883 }
+                      start: { line: 31, column: 4, offset: 458 },
+                      end: { line: 31, column: 20, offset: 474 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 44, column: 2, offset: 865 },
-                  end: { line: 44, column: 20, offset: 883 }
+                  start: { line: 31, column: 2, offset: 456 },
+                  end: { line: 31, column: 20, offset: 474 }
                 }
               },
               {
@@ -39364,26 +39372,26 @@ export default [
                             type: 'text',
                             value: 'map.entries',
                             position: {
-                              start: { line: 45, column: 5, offset: 888 },
-                              end: { line: 45, column: 16, offset: 899 }
+                              start: { line: 32, column: 5, offset: 479 },
+                              end: { line: 32, column: 16, offset: 490 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 45, column: 4, offset: 887 },
-                          end: { line: 45, column: 36, offset: 919 }
+                          start: { line: 32, column: 4, offset: 478 },
+                          end: { line: 32, column: 36, offset: 510 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 45, column: 4, offset: 887 },
-                      end: { line: 45, column: 36, offset: 919 }
+                      start: { line: 32, column: 4, offset: 478 },
+                      end: { line: 32, column: 36, offset: 510 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 45, column: 2, offset: 885 },
-                  end: { line: 45, column: 36, offset: 919 }
+                  start: { line: 32, column: 2, offset: 476 },
+                  end: { line: 32, column: 36, offset: 510 }
                 }
               },
               {
@@ -39403,26 +39411,26 @@ export default [
                             type: 'text',
                             value: 'map.series',
                             position: {
-                              start: { line: 46, column: 5, offset: 924 },
-                              end: { line: 46, column: 15, offset: 934 }
+                              start: { line: 33, column: 5, offset: 515 },
+                              end: { line: 33, column: 15, offset: 525 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 46, column: 4, offset: 923 },
-                          end: { line: 46, column: 34, offset: 953 }
+                          start: { line: 33, column: 4, offset: 514 },
+                          end: { line: 33, column: 34, offset: 544 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 46, column: 4, offset: 923 },
-                      end: { line: 46, column: 34, offset: 953 }
+                      start: { line: 33, column: 4, offset: 514 },
+                      end: { line: 33, column: 34, offset: 544 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 46, column: 2, offset: 921 },
-                  end: { line: 46, column: 34, offset: 953 }
+                  start: { line: 33, column: 2, offset: 512 },
+                  end: { line: 33, column: 34, offset: 544 }
                 }
               },
               {
@@ -39442,26 +39450,26 @@ export default [
                             type: 'text',
                             value: 'map.pool',
                             position: {
-                              start: { line: 47, column: 5, offset: 958 },
-                              end: { line: 47, column: 13, offset: 966 }
+                              start: { line: 34, column: 5, offset: 549 },
+                              end: { line: 34, column: 13, offset: 557 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 47, column: 4, offset: 957 },
-                          end: { line: 47, column: 30, offset: 983 }
+                          start: { line: 34, column: 4, offset: 548 },
+                          end: { line: 34, column: 30, offset: 574 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 47, column: 4, offset: 957 },
-                      end: { line: 47, column: 30, offset: 983 }
+                      start: { line: 34, column: 4, offset: 548 },
+                      end: { line: 34, column: 30, offset: 574 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 47, column: 2, offset: 955 },
-                  end: { line: 47, column: 30, offset: 983 }
+                  start: { line: 34, column: 2, offset: 546 },
+                  end: { line: 34, column: 30, offset: 574 }
                 }
               },
               {
@@ -39481,26 +39489,26 @@ export default [
                             type: 'text',
                             value: 'filter',
                             position: {
-                              start: { line: 48, column: 5, offset: 988 },
-                              end: { line: 48, column: 11, offset: 994 }
+                              start: { line: 35, column: 5, offset: 579 },
+                              end: { line: 35, column: 11, offset: 585 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 48, column: 4, offset: 987 },
-                          end: { line: 48, column: 26, offset: 1009 }
+                          start: { line: 35, column: 4, offset: 578 },
+                          end: { line: 35, column: 26, offset: 600 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 48, column: 4, offset: 987 },
-                      end: { line: 48, column: 26, offset: 1009 }
+                      start: { line: 35, column: 4, offset: 578 },
+                      end: { line: 35, column: 26, offset: 600 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 48, column: 2, offset: 985 },
-                  end: { line: 48, column: 26, offset: 1009 }
+                  start: { line: 35, column: 2, offset: 576 },
+                  end: { line: 35, column: 26, offset: 600 }
                 }
               },
               {
@@ -39520,26 +39528,26 @@ export default [
                             type: 'text',
                             value: 'reduce',
                             position: {
-                              start: { line: 49, column: 5, offset: 1014 },
-                              end: { line: 49, column: 11, offset: 1020 }
+                              start: { line: 36, column: 5, offset: 605 },
+                              end: { line: 36, column: 11, offset: 611 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 49, column: 4, offset: 1013 },
-                          end: { line: 49, column: 26, offset: 1035 }
+                          start: { line: 36, column: 4, offset: 604 },
+                          end: { line: 36, column: 26, offset: 626 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 49, column: 4, offset: 1013 },
-                      end: { line: 49, column: 26, offset: 1035 }
+                      start: { line: 36, column: 4, offset: 604 },
+                      end: { line: 36, column: 26, offset: 626 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 49, column: 2, offset: 1011 },
-                  end: { line: 49, column: 26, offset: 1035 }
+                  start: { line: 36, column: 2, offset: 602 },
+                  end: { line: 36, column: 26, offset: 626 }
                 }
               },
               {
@@ -39559,26 +39567,26 @@ export default [
                             type: 'text',
                             value: 'transform',
                             position: {
-                              start: { line: 50, column: 5, offset: 1040 },
-                              end: { line: 50, column: 14, offset: 1049 }
+                              start: { line: 37, column: 5, offset: 631 },
+                              end: { line: 37, column: 14, offset: 640 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 50, column: 4, offset: 1039 },
-                          end: { line: 50, column: 32, offset: 1067 }
+                          start: { line: 37, column: 4, offset: 630 },
+                          end: { line: 37, column: 32, offset: 658 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 50, column: 4, offset: 1039 },
-                      end: { line: 50, column: 32, offset: 1067 }
+                      start: { line: 37, column: 4, offset: 630 },
+                      end: { line: 37, column: 32, offset: 658 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 50, column: 2, offset: 1037 },
-                  end: { line: 50, column: 32, offset: 1067 }
+                  start: { line: 37, column: 2, offset: 628 },
+                  end: { line: 37, column: 32, offset: 658 }
                 }
               },
               {
@@ -39598,26 +39606,26 @@ export default [
                             type: 'text',
                             value: 'flatMap',
                             position: {
-                              start: { line: 51, column: 5, offset: 1072 },
-                              end: { line: 51, column: 12, offset: 1079 }
+                              start: { line: 38, column: 5, offset: 663 },
+                              end: { line: 38, column: 12, offset: 670 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 51, column: 4, offset: 1071 },
-                          end: { line: 51, column: 28, offset: 1095 }
+                          start: { line: 38, column: 4, offset: 662 },
+                          end: { line: 38, column: 28, offset: 686 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 51, column: 4, offset: 1071 },
-                      end: { line: 51, column: 28, offset: 1095 }
+                      start: { line: 38, column: 4, offset: 662 },
+                      end: { line: 38, column: 28, offset: 686 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 51, column: 2, offset: 1069 },
-                  end: { line: 51, column: 28, offset: 1095 }
+                  start: { line: 38, column: 2, offset: 660 },
+                  end: { line: 38, column: 28, offset: 686 }
                 }
               },
               {
@@ -39637,38 +39645,38 @@ export default [
                             type: 'text',
                             value: 'some',
                             position: {
-                              start: { line: 52, column: 5, offset: 1100 },
-                              end: { line: 52, column: 9, offset: 1104 }
+                              start: { line: 39, column: 5, offset: 691 },
+                              end: { line: 39, column: 9, offset: 695 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 52, column: 4, offset: 1099 },
-                          end: { line: 52, column: 22, offset: 1117 }
+                          start: { line: 39, column: 4, offset: 690 },
+                          end: { line: 39, column: 22, offset: 708 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 52, column: 4, offset: 1099 },
-                      end: { line: 52, column: 22, offset: 1117 }
+                      start: { line: 39, column: 4, offset: 690 },
+                      end: { line: 39, column: 22, offset: 708 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 52, column: 2, offset: 1097 },
-                  end: { line: 52, column: 22, offset: 1117 }
+                  start: { line: 39, column: 2, offset: 688 },
+                  end: { line: 39, column: 22, offset: 708 }
                 }
               }
             ],
             position: {
-              start: { line: 44, column: 2, offset: 865 },
-              end: { line: 52, column: 22, offset: 1117 }
+              start: { line: 31, column: 2, offset: 456 },
+              end: { line: 39, column: 22, offset: 708 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 52, column: 22, offset: 1117 }
+          end: { line: 39, column: 22, offset: 708 }
         }
       }
     },

@@ -156,6 +156,7 @@ const DocsNav = ReactElement(props => {
         Section([
           H4('Transform data'),
           CoreDocsNavItem('map'),
+          CoreDocsNavItem('map.call'),
           CoreDocsNavItem('map.entries'),
           CoreDocsNavItem('map.series'),
           CoreDocsNavItem('map.pool'),
@@ -290,6 +291,7 @@ const DocsNav = ReactElement(props => {
       Section([
         H4('Transformation'),
         CoreDocsNavItem('map'),
+        CoreDocsNavItem('map.call'),
         CoreDocsNavItem('map.entries'),
         CoreDocsNavItem('map.series'),
         CoreDocsNavItem('map.pool'),

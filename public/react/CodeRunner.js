@@ -130,8 +130,8 @@ const CodeRunner = ReactElement(({
     rubico: `https://cdn.jsdelivr.net/npm/rubico@${rubicoVersion}/dist/rubico.es.min.js`,
   }) : ({
     ...propsImports,
-    rubico: `https://cdn.jsdelivr.net/npm/rubico@${rubicoVersion}/dist/rubico.es.min.js`,
-    Transducer: `https://cdn.jsdelivr.net/npm/rubico@${rubicoVersion}/dist/Transducer.es.min.js`,
+    rubico: `https://cdn.jsdelivr.net/npm/rubico@${rubicoVersion}.22.1/dist/rubico.es.min.js`,
+    Transducer: `https://cdn.jsdelivr.net/npm/rubico@${rubicoVersion}.22.1/dist/Transducer.es.min.js`,
   })
 
   const [imports, setImports] = useState(createImports(rubicoVersion))
