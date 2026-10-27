@@ -101,7 +101,8 @@ const main = async function (options) {
       title: `${functionName} - Rubico documentation`,
       description: `Reference for ${functionName}`,
       image: '/assets/rubico-logo-3-3.jpg',
-      reactRootHTML: await archeHTML.render(`/docs/${functionName}`),
+      // reactRootHTML: await archeHTML.render(`/docs/${functionName}`),
+      reactRootHTML: "",
     }))
   }
 
@@ -111,7 +112,8 @@ const main = async function (options) {
     title: 'Transducer - Rubico documentation',
     description: 'Transducer reference',
     image: '/assets/rubico-logo-3-3.jpg',
-    reactRootHTML: await archeHTML.render('/docs/Transducer'),
+    // reactRootHTML: await archeHTML.render('/docs/Transducer'),
+    reactRootHTML: "",
   }))
 
   for (const functionName of transducerFunctionNames) {
@@ -121,7 +123,8 @@ const main = async function (options) {
       title: `Transducer.${functionName} - Rubico documentation`,
       description: `Reference for Transducer.${functionName}`,
       image: '/assets/rubico-logo-3-3.jpg',
-      reactRootHTML: await archeHTML.render(`/docs/Transducer.${functionName}`),
+      // reactRootHTML: await archeHTML.render(`/docs/Transducer.${functionName}`),
+      reactRootHTML: "",
     }))
   }
 
@@ -134,7 +137,8 @@ const main = async function (options) {
       title: `x/${functionName} - Rubico documentation`,
       description: `Reference for x/${functionName}`,
       image: '/assets/rubico-logo-3-3.jpg',
-      reactRootHTML: await archeHTML.render(`/docs/x/${functionName}`),
+      // reactRootHTML: await archeHTML.render(`/docs/x/${functionName}`),
+      reactRootHTML: "",
     }))
   }
 

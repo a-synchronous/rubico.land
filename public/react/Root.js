@@ -62,7 +62,6 @@ const Root = ReactElement(props => {
     }, [path])
   }
 
-
   const [transition, setTransition] =
     useGlobalState('BlogPost:transition', 'none')
 
